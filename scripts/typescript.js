@@ -11,9 +11,11 @@ const cwd = process.cwd();
     const packages = await getPackages(cwd);
     await packages.forEach(async ({ location }) => {
       await del([`${location}/lib`, `${location}/index.ts`]);
-      const fileNames = await glob('source/**/*{Component,Context}.{ts,tsx}', {
-        cwd: location,
-      });
+      const fileNames = (
+        await glob('source/**/*{Component,Context}.{ts,tsx}', {
+          cwd: location,
+        })
+      ).sort();
       if (fileNames.length) {
         const indexContent = fileNames
           .map(
