@@ -1,0 +1,26 @@
+@use 'settings/base/headlines';
+
+$event-list__date-pill-border-radius:          3px !default;
+
+// Date Pill small size
+$event-list__date-pill-width-small:            2rem !default;
+$event-list__date-pill-height-small:           3.5rem !default;
+$event-list__date-pill-font-size-small:        1rem !default;
+$event-list__date-pill-line-height-small:      1.2 !default;
+
+// Date Pill normal size
+$event-list__date-pill-width:                  3.5rem !default;
+$event-list__date-pill-height:                 3.5rem !default;
+$event-list__date-pill-font-size:              headlines.$h3-font-size-s !default;
+$event-list__date-pill-day-line-height:        1 !default;
+$event-list__date-pill-month-line-height:      1 !default;
+
+// Categories & Header
+$event-list__categories-margin-bottom:         2rem !default;
+$event-list__header-margin-bottom:             1rem !default;
+
+$event-list__description-font-size:            1em !default;
+$event-list__info-item-margin-bottom:          1rem !default;
+$event-list__info-item-font-size:              1em !default;
+$event-list__price-padding:                    0.5rem 0 !default;
+$event-list__item-hover-background:          rgba(196, 196, 196, 0.26) !default;

@@ -1,0 +1,10 @@
+{
+  "class": "float-label__field",
+  "type": "text",
+  "placeholder": " ",
+  "label": {
+    "inline": true,
+    "class": "float-label__label",
+    "content": "Beispiel***"
+  }
+}

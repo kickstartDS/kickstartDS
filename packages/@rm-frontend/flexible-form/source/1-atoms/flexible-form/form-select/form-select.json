@@ -1,0 +1,16 @@
+{
+  "options": [
+    {
+      "value": "",
+      "option": "Bitte wählen *"
+    },
+    {
+      "value": "Beispiel 1",
+      "option": "Beispiel 1"
+    },
+    {
+      "value": "Beispiel 2",
+      "option": "Beispiel 2"
+    }
+  ]
+}

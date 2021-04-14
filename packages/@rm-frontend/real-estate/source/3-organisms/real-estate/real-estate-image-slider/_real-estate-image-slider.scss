@@ -1,0 +1,30 @@
+@use '@rm-frontend/base/source/0-base/1-tools/scss/breakpoint';
+@use '@rm-frontend/base/source/0-base/0-settings/selector';
+
+.real-estate-image-slider {
+  #{selector.$slider-nav-slides} {
+    margin-top: 1em;
+
+    @include breakpoint.media('≥s') {
+      justify-content: flex-start;
+    }
+  }
+
+  #{selector.$slider-nav-slide} {
+    @include breakpoint.media('≥s') {
+      width: calc(99% / 7);
+    }
+  }
+
+  #{selector.$slider-bullet} {
+    @include breakpoint.media('≥s') {
+      display: none;
+    }
+  }
+
+  .real-estate-image-slide--preview {
+    @include breakpoint.media('<s') {
+      display: none;
+    }
+  }
+}

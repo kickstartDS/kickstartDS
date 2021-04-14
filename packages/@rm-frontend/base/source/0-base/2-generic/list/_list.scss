@@ -1,0 +1,41 @@
+/// Genral
+
+@use '../../1-tools/scss/breakpoint';
+
+ul,
+ol {
+  margin: 0;
+  margin-bottom: 1em;
+  padding: 0;
+  padding-left: 1.5em;
+
+  @include breakpoint.media('≥m') {
+    padding-left: 2em;
+  }
+
+  li {
+    margin-bottom: 0.5em;
+  }
+}
+
+/// ul
+
+ul {
+  list-style: disc;
+
+  ul {
+    margin-top: 0.5em;
+    margin-bottom: 0;
+  }
+}
+
+/// ol
+
+ol {
+  list-style: decimal;
+
+  ol {
+    margin-top: 0.5em;
+    margin-bottom: 0;
+  }
+}

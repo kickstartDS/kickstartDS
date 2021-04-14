@@ -1,0 +1,98 @@
+@use '../../../0-base/1-tools/scss/breakpoint';
+@use 'settings/base';
+
+.input-radio-wrap {
+  margin-top: 0.6em;
+
+  @include breakpoint.media('≥s') {
+    margin-top: 0.3em;
+  }
+}
+
+.input-radio {
+  // Hide real radio button
+  position: absolute;
+  opacity: 0;
+
+  + label {
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+    padding-left: 2.6em;
+    font-size: base.$font-size-small;
+    line-height: 1.9;
+    padding-top: 1em;
+    display: inline-block;
+
+    @include breakpoint.media('≥s') {
+      padding-left: 2.3em;
+      line-height: 1.6;
+      padding-top: 0.7em;
+    }
+  }
+
+  // styled radio button
+  &-field {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: inline-block;
+    vertical-align: text-top;
+    width: 1.9em;
+    height: 1.9em;
+    background: base.$radio-field__background;
+    border: base.$radio-field__border-width solid
+      base.$radio-field__border-color;
+    border-radius: 100%;
+    margin-top: 1em; // same as label padding-top
+
+    @include breakpoint.media('≥s') {
+      width: 1.6em;
+      height: 1.6em;
+      margin-top: 0.7em; // same as label padding-top
+    }
+  }
+
+  &.form-item--error + label &-field {
+    background: base.$radio-field__error-background;
+    border-color: base.$radio-field__error-border-color;
+  }
+
+  // Radio focus
+  &:focus + label &-field {
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
+  }
+
+  // Radio checked
+  &:checked + label &-field {
+    background: base.$color-brand;
+  }
+
+  // Disabled state label.
+  &:disabled + label {
+    cursor: auto;
+    opacity: 0.4;
+  }
+
+  // Disabled rm.radio.
+  &:disabled + label &-field {
+    box-shadow: none;
+  }
+
+  // active Radio
+  &:checked + label &-field::after {
+    $radio-checked-size: 6px;
+
+    position: absolute;
+    top: calc(50% - #{$radio-checked-size} / 2);
+    left: calc(50% - #{$radio-checked-size} / 2);
+
+    content: '';
+    display: block;
+
+    width: $radio-checked-size;
+    height: $radio-checked-size;
+    background: base.$color-white;
+    border-radius: 100%;
+  }
+}

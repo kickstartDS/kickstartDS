@@ -1,0 +1,41 @@
+@use 'bourbon/core/bourbon';
+
+@if rm('modules.base.atoms.fileupload') {
+  .input-file {
+    @include bourbon.hide-visually;
+
+    &-wrap {
+      margin-top: 0.25em;
+    }
+
+    + label {
+      cursor: pointer;
+      display: flex;
+      align-items: stretch;
+
+      .button {
+        display: flex;
+        align-items: center;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        flex-shrink: 0;
+
+        &:active {
+          transform: none;
+        }
+
+        .icon {
+          @include bourbon.size(1.1em);
+          margin-right: 0.5em;
+        }
+      }
+
+      .input-field {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        margin-top: 0;
+        border-left: 0;
+      }
+    }
+  }
+}

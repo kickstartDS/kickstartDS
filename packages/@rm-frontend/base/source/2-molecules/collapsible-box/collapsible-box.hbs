@@ -1,0 +1,19 @@
+<div class="collapsible-box lazyload" data-component="base.collapsible-box" id="c{{ id }}-cb{{ @index }}">
+  <details>
+    <summary class="collapsible-box__header">
+      <div class="collapsible-box__header-wrapper">
+        <span class="collapsible-box__header__text">
+          {{ header-text }}
+        </span>
+        <span class="collapsible-box__header__icon">
+          {{> atoms-icon icon="chevron-down" }}
+        </span>
+      </div>
+    </summary>
+    <div class="collapsible-box__content">
+      <div class="collapsible-box__content__item">
+        {{{ collapsed-box }}}
+      </div>
+    </div>
+  </details>
+</div>

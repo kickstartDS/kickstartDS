@@ -1,0 +1,167 @@
+@use '@rm-frontend/base/source/0-base/1-tools/scss/helpers';
+@use '@rm-frontend/base/source/0-base/1-tools/scss/breakpoint';
+@use 'bourbon/core/bourbon';
+@use 'settings/base';
+
+.real-estate-attributes {
+  &-primary {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5em;
+    padding: 1.5em;
+    background: base.$color-black-5;
+
+    @include breakpoint.media('print') {
+      background: none;
+      border: 1px solid;
+    }
+
+    > div {
+      margin-right: 5%;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &__item {
+      dl {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        margin: 0;
+      }
+
+      dt {
+        font-weight: helpers.get-font-weight(bold);
+        font-size: 1.1em;
+        color: inherit;
+      }
+
+      dd {
+        margin: 0;
+        font-weight: helpers.get-font-weight(regular);
+        font-size: 0.8em;
+        color: base.$color-black-50;
+      }
+    }
+  }
+
+  &-primary-data {
+    margin-bottom: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 auto;
+
+    @include breakpoint.media('≥m') {
+      justify-content: space-between;
+    }
+
+    &__item {
+      display: flex;
+      margin-right: 2em;
+      margin-bottom: 1.5em;
+
+      @include breakpoint.media('≥m') {
+        width: 48%;
+        margin: 0;
+      }
+
+      &--address {
+        margin: 0;
+
+        @include breakpoint.media('>s') {
+          flex-grow: 1;
+          justify-content: center;
+        }
+      }
+
+      &__icon {
+        margin-right: 1em;
+      }
+    }
+
+    table {
+      tr {
+        td {
+          &:first-child {
+            color: base.$color-black-50;
+            padding-right: 1em;
+          }
+        }
+      }
+    }
+  }
+
+  &-secondary {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5em;
+
+    &__item {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5em;
+      background: base.$color-black-5;
+      width: 48%;
+
+      @include breakpoint.media('print') {
+        background: none;
+        border: 1px solid;
+      }
+
+      &:first-child {
+        margin: 0;
+      }
+
+      &__icon {
+        font-size: base.$font-size-small;
+        margin-right: 1em;
+      }
+
+      &__value {
+        font-size: 1.25em;
+        font-weight: helpers.get-font-weight(bold);
+      }
+
+      &__description {
+        width: 100%;
+        color: base.$color-black-50;
+        text-align: center;
+
+        @include breakpoint.media('≥m') {
+          margin-left: 1em;
+          width: auto;
+        }
+      }
+    }
+  }
+
+  &-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    &__item {
+      display: flex;
+      width: 48%;
+      align-items: center;
+      margin-bottom: 1em;
+
+      &__icon {
+        font-size: base.$font-size-small;
+        margin-right: 0.75em;
+      }
+
+      &__text {
+        @include bourbon.ellipsis;
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{{#> base-section width="narrow"}}
+  <div class="news-list">
+    {{#each (slice newsItems 1 5)}}
+      {{> molecules-news-list-item this index=@index }}
+    {{/each}}
+  </div>
+
+  {{try "molecules-pagination" }}
+{{/base-section}}

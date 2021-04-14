@@ -1,0 +1,13 @@
+{
+  "card": {
+    "cardImage": "dummy/4-3-s.png"
+  },
+  "topic": "Lorem Ipsum",
+  "number": "123 456 789",
+  "teaser": "Lorem ipsum dolor sit amet",
+  "price": "29,90€",
+  "special": "dummy/1-1-xs.png",
+  "additionalContent": true,
+  "open-in-tab-buy": false,
+  "open-in-tab-info": true
+}

@@ -1,0 +1,11 @@
+{{#> base-section headline=(object content="Content-Navigation" subheader="3 columns")}}
+  <div class="content-navigation-wrap content-navigation-wrap--col-3">
+    <div class="content-navigation" data-component="base.content-navigation">
+      {{#each content-navigation}}
+        <div class="content-navigation__column">
+          {{> molecules-content-navigation-item this }}
+        </div>
+      {{/each}}
+    </div>
+  </div>
+{{/base-section}}

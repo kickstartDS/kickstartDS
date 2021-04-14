@@ -1,0 +1,9 @@
+{{#> base-section width=layout-variant headline=(object content="Teaser-Box" subheader="4 columns")}}
+  <div class="teaser-box-wrap grid-container grid-container--1-per-row grid-container--s--2-per-row grid-container--m--4-per-row">
+    {{#each (slice teaser-box 0 4)}}
+      <div class="teaser-box">
+        {{> molecules-teaser-box-item}}
+      </div>
+    {{/each}}
+  </div>
+{{/base-section}}

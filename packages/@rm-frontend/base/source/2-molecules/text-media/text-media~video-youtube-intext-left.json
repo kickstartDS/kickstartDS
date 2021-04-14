@@ -1,0 +1,12 @@
+{
+  "mediaAlignment": "intext-left",
+  "media": [
+    {
+      "video": {
+        "title": "Lorem Ipsum",
+        "iframe": true,
+        "src": "https://www.youtube.com/embed/2M6dJ2Uynhg"
+      }
+    }
+  ]
+}

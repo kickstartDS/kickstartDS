@@ -1,0 +1,110 @@
+@use '@rm-frontend/base/source/0-base/1-tools/scss/breakpoint';
+@use '@rm-frontend/base/source/0-base/0-settings/selector';
+@use 'bourbon/core/bourbon';
+@use 'settings/base';
+
+.product-slide {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid base.$color-black-10;
+  width: 100%;
+
+  #{selector.$section--bg-1} & {
+    border-color: base.$color-black-15;
+  }
+
+  @include breakpoint.media('≥s') {
+    display: flex;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  // IMAGE
+  &__image {
+    display: flex;
+    position: relative;
+    flex-shrink: 0;
+    margin: 1em;
+    margin-bottom: 0;
+
+    &::before {
+      content: '';
+      float: left;
+      // padding-top:100%;
+      // padding-top: 56.25%; /* 16:9 Aspect Ratio */
+      padding-top: 75%; /* 4:3 Aspect Ratio */
+    }
+
+    &--without-spacing {
+      margin: 0;
+    }
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  // CONTENT
+  &__content {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  &__action {
+    padding: 0 1em 1em;
+  }
+
+  .product__topic {
+    font-size: 1em;
+  }
+
+  .product__price {
+    margin-top: 0.5em;
+    line-height: 1.2;
+
+    .product__price-amount {
+      font-size: 1.2em;
+    }
+
+    .product__price-info {
+      @include bourbon.ellipsis();
+
+      display: block;
+      margin-top: 0.5em;
+      font-size: base.$font-size-tiny;
+    }
+  }
+
+  .product__teaser {
+    font-size: base.$font-size-small;
+
+    @include breakpoint.media('≥m') {
+      font-size: base.$font-size-tiny;
+    }
+  }
+
+  .product__more {
+    margin-top: auto;
+    align-self: center;
+    text-align: center;
+
+    a {
+      width: 100%;
+    }
+
+    a + a {
+      margin-top: 0.5em;
+    }
+  }
+}

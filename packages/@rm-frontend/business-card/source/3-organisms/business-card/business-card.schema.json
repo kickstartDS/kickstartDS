@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://frontend.ruhmesmeile.com/business-card/organisms/business-card.schema.json",
+  "title": "Business Card/Business Card",
+  "description": "Business-card",
+  "type": "object",
+  "properties": {
+    "businessCard": {
+      "type": "array",
+      "items": {
+        "$ref": "http://frontend.ruhmesmeile.com/business-card/molecules/business-card-item.schema.json"
+      }
+    }
+  }
+}

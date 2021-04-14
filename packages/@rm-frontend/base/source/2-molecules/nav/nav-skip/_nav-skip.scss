@@ -1,0 +1,31 @@
+@use '../../../0-base/1-tools/scss/helpers';
+@use 'settings/base';
+@use 'settings/global';
+
+/* critical:start */
+.nav-skip {
+  height: 0;
+
+  &__list {
+    @include helpers.clearlist;
+  }
+
+  &__link {
+    position: absolute;
+    top: -999em;
+    right: 0;
+    z-index: 1;
+    left: 0;
+    padding: 0.5em 1em;
+    background-color: base.$color-white;
+    text-align: center;
+
+    &:focus {
+      top: 0;
+      z-index: global.$skip_nav_zindex;
+
+      background-color: base.$color-white;
+    }
+  }
+}
+/* critical:end */

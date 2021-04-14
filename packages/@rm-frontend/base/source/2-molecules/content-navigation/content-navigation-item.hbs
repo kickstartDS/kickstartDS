@@ -1,0 +1,39 @@
+<div class="content-navigation__item" data-component="base.content-navigation-item">
+  <p class="content-navigation__topic">{{ topic }}</p>
+  <img src="{{@root.asset_paths.images}}/{{ image }}" alt="" class="content-navigation__item__image">
+  <div class="content-navigation__item__box">
+    <div class="content-navigation__links-collection">
+      <ul>
+        {{#each list-items}}
+          <li>
+            {{#if (math @index '%' 2)}}
+            <span>{{ this }}</span>
+            {{else}}
+            <a href="{{@root.url}}">{{ this }}</a>
+            {{/if}}
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+    {{#if collapsible}}
+      <div class="content-navigation__links-collection content-navigation__links-collection--more" style="display:none;">
+        <ul>
+          {{#each list-items}}
+            <li>
+              {{#if (math @index '%' 2)}}
+              <span>{{ this }}</span>
+              {{else}}
+              <a href="{{@root.url}}">{{ this }}</a>
+              {{/if}}
+            </li>
+          {{/each}}
+        </ul>
+      </div>
+      <div class="content-navigation__toggle">
+        {{> atoms-icon icon="chevron-down" }}
+        <span class="content-navigation__toggle__text">mehr anzeigen</span>
+        <span class="content-navigation__toggle__text is-hidden">weniger anzeigen</span>
+      </div>
+    {{/if}}
+  </div>
+</div>

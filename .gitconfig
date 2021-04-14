@@ -1,0 +1,2 @@
+[tig "bind"]
+    status = C !npx git-cz

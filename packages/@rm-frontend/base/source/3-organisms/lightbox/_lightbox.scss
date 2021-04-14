@@ -1,0 +1,39 @@
+@use 'settings/base';
+@use 'photoswipe/src/css/main' with (
+  $pswp__show-hide-transition-duration: base.$pswp__show-hide-transition-duration,
+  $pswp__controls-transition-duration: base.$pswp__controls-transition-duration,
+  $pswp__background-color: base.$pswp__background-color,
+  $pswp__placeholder-color: base.$pswp__placeholder-color,
+  $pswp__box-sizing-border-box: base.$pswp__box-sizing-border-box,
+  $pswp__root-z-index: base.$pswp__root-z-index,
+  $pswp__assets-path: base.$pswp__assets-path,
+  $pswp__error-text-color: base.$pswp__error-text-color,
+  $pswp__include-minimal-style: base.$pswp__include-minimal-style
+);
+@use 'photoswipe/src/css/default-skin/default-skin' with (
+  $pswp__show-hide-transition-duration: base.$pswp__show-hide-transition-duration,
+  $pswp__controls-transition-duration: base.$pswp__controls-transition-duration,
+  $pswp__background-color: base.$pswp__background-color,
+  $pswp__placeholder-color: base.$pswp__placeholder-color,
+  $pswp__box-sizing-border-box: base.$pswp__box-sizing-border-box,
+  $pswp__root-z-index: base.$pswp__root-z-index,
+  $pswp__assets-path: base.$pswp__assets-path,
+  $pswp__error-text-color: base.$pswp__error-text-color,
+  $pswp__include-minimal-style: base.$pswp__include-minimal-style
+);
+
+.pswp {
+  z-index: base.$pswp__root-z-index;
+
+  &__share-modal {
+    z-index: base.$pswp__root-z-index + 100;
+  }
+
+  &__share-tooltip {
+    z-index: base.$pswp__root-z-index + 120;
+  }
+
+  &__ui {
+    z-index: base.$pswp__root-z-index + 50;
+  }
+}

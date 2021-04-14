@@ -1,0 +1,17 @@
+@use 'settings/base/colors';
+
+$scroll-to-top__size: 3.35em !default;
+$scroll-to-top__size-s: 2.65em !default;
+$scroll-to-top__icon-size: 2em !default;
+$scroll-to-top__margin: 1.5em auto -1.5em !default; // only applies on mobile
+$scroll-to-top__position-s: null 1.6em 1.6em null !default; // format: top right bottom left
+
+$scroll-to-top__color: colors.$color-white !default;
+$scroll-to-top__background: colors.$color-brand !default;
+$scroll-to-top__border: null !default;
+$scroll-to-top__border-radius: 100% !default;
+
+$scroll-to-top__color--hover: null !default;
+$scroll-to-top__background--hover: lighten(colors.$color-brand, 5%) !default;
+$scroll-to-top__border--hover: null !default;
+$scroll-to-top__transform--hover: translateY(-5px) !default;

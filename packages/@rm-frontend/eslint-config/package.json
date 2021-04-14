@@ -1,0 +1,27 @@
+{
+  "name": "@rm-frontend/eslint-config",
+  "version": "1.2.4",
+  "description": "RM Frontend ESLint config",
+  "author": "ruhmesmeile GmbH <mail@ruhmesmeile.com> (https://ruhmesmeile.com)",
+  "homepage": "https://bitbucket.ruhmesmeile.tools/projects/FRONT/repos/rm-frontend/browse/packages/@rm-frontend/eslint-config",
+  "license": "SEE LICENSE IN LICENSE",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@bitbucket.ruhmesmeile.tools:7999/front/rm-frontend.git",
+    "directory": "packages/@rm-frontend/eslint-config"
+  },
+  "peerDependencies": {
+    "eslint": "^7.21.0"
+  },
+  "dependencies": {
+    "@babel/eslint-parser": "^7.13.8",
+    "@rm-frontend/build-tools": ">= 4.0.0 < 8.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.16.1",
+    "@typescript-eslint/parser": "^4.16.1",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-import-resolver-webpack": "^0.13.0",
+    "eslint-plugin-import": "^2.22.1"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "packages": ["packages/@rm-frontend/*"],
+  "version": "independent",
+  "npmClient": "npm",
+  "command": {
+    "bootstrap": {
+      "hoist": true
+    }
+  }
+}

@@ -1,0 +1,14 @@
+@use '../../0-base/1-tools/scss/breakpoint';
+@use '../../0-base/1-tools/scss/anchor';
+
+.content-wrap {
+  @include anchor.anchor-target;
+
+  &:focus {
+    outline: 0;
+  }
+
+  @include breakpoint.media('print') {
+    background-color: transparent;
+  }
+}

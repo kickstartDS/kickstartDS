@@ -1,0 +1,38 @@
+<div class="contact">
+  <div class="contact__wrap">
+    <form action="#" class="contact-form lazyload" data-component="base.form" data-url="/api/contact-form/invalid">
+      <div class="form-row form-row--notification"></div>
+      <fieldset>
+
+        <div class="contact__form__row">
+          <div class="contact__form__column">
+
+            {{#each select-input}}
+              {{> atoms-select-input}}
+            {{/each}}
+
+            <div class="float-label form-row">
+              {{> atoms-input label=(object inline=true class="float-label__label" content="Name")
+              class="float-label__field" type="text" id="a_cart_name" name="a_cart_name" placeholder=" "}}
+            </div>
+
+            <div class="float-label form-row">
+              {{> atoms-input label=(object inline=true class="float-label__label" content="Email*")
+              class="float-label__field" type="email" id="a_cart_email" name="a_cart_email" placeholder=" " required="required"}}
+            </div>
+
+            <div class="float-label form-row">
+              {{> atoms-textarea label=(object inline=true class="float-label__label" content="Nachricht*")
+              class="float-label__field" id="a_cart_message" name="a_cart_message" placeholder="test" required="required"}}
+            </div>
+
+            <div class="form-row form-controls">
+              <div class="form-legend">* Pflichtfelder</div>
+              {{> atoms-button label="Absenden" type="submit" style="solid"}}
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://frontend.ruhmesmeile.com/news/organisms/news-latest.schema.json",
+  "title": "News Latest",
+  "description": "News latest collection of news items",
+  "type": "object",
+  "properties": {
+    "newsItems": {
+      "type": "array",
+      "items": {
+        "$ref": "http://frontend.ruhmesmeile.com/news/molecules/news-latest-item.schema.json"
+      }
+    }
+  }
+}

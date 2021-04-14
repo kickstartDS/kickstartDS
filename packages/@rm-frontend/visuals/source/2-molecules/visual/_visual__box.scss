@@ -1,0 +1,119 @@
+@use '@rm-frontend/base/source/0-base/1-tools/scss/grid';
+@use '@rm-frontend/base/source/0-base/1-tools/scss/helpers';
+@use '@rm-frontend/base/source/0-base/1-tools/scss/sizes';
+@use '@rm-frontend/base/source/0-base/1-tools/scss/breakpoint';
+@use 'settings/base';
+@use 'settings/global';
+@use 'settings/visuals';
+@use 'sass:meta';
+
+@mixin visual-box {
+  @include sizes.global-padding;
+
+  /* critical:start */
+  width: 100%;
+  max-width: global.$grid__max-width;
+  max-height: 100%;
+  position: relative;
+  overflow: auto;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  border: visuals.$box__border;
+  background: visuals.$box__dark-background;
+  color: visuals.$box__dark-text-color;
+  /* critical:end */
+
+  .visual__topic {
+    /* critical:start */
+    color: visuals.$box__dark-topic-color;
+    /* critical:end */
+  }
+
+  a:not(.button) {
+    /* critical:start */
+    color: inherit;
+    /* critical:end */
+  }
+
+  @include breakpoint.media('≥s') {
+    /* critical:start */
+    max-width: 50%;
+    border: visuals.$box__border-m;
+    border-radius: if(
+      meta.global-variable-exists('box__border-radius', 'visuals'),
+      visuals.$box__border-radius,
+      null
+    );
+    width: auto;
+    /* critical:end */
+  }
+
+  @include breakpoint.media(
+    '≥#{visuals.$box__max-width * 2 + global.$padding-m * 4 + 8}'
+  ) {
+    /* critical:start */
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    max-width: visuals.$box__max-width;
+    /* critical:end */
+  }
+
+  .visual__content--inbox &,
+  .visual__content:only-child & {
+    /* critical:start */
+    border-radius: if(
+      meta.global-variable-exists('box__border-radius', 'visuals'),
+      visuals.$box__border-radius,
+      null
+    );
+    /* critical:end */
+  }
+
+  &--light {
+    &,
+    .visual__content--inbox &,
+    .visual__content:only-child & {
+      /* critical:start */
+      background: visuals.$box__light-background;
+      color: visuals.$box__light-text-color;
+      /* critical:end */
+
+      .visual__topic {
+        /* critical:start */
+        color: visuals.$box__light-topic-color;
+        /* critical:end */
+      }
+    }
+  }
+
+  &--transparent {
+    .visual__content--inbox &,
+    .visual__content:only-child & {
+      /* critical:start */
+      background: none;
+      padding: 0;
+      border-radius: 0;
+      /* critical:end */
+    }
+
+    @include breakpoint.media('≥s') {
+      /* critical:start */
+      background: none;
+      padding: 0 !important;
+      border-radius: 0;
+      /* critical:end */
+    }
+  }
+
+  @include breakpoint.media('print') {
+    background-color: transparent;
+    border: 2px solid base.$color-black-25;
+    margin: 1cm 0;
+    width: auto;
+
+    &,
+    a {
+      color: base.$color-black;
+    }
+  }
+}

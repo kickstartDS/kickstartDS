@@ -1,0 +1,33 @@
+@use '@rm-frontend/base/source/0-base/1-tools/scss/helpers';
+@use '@rm-frontend/base/source/0-base/1-tools/scss/breakpoint';
+@use '@rm-frontend/base/source/2-molecules/notification/notification';
+
+.typo3-messages {
+  @extend %notification;
+
+  @include helpers.clearlist;
+
+  margin-bottom: 1em;
+
+  @include breakpoint.media('≥s') {
+    margin-bottom: 2em;
+  }
+
+  .alert {
+    @extend %notification__content;
+
+    &-success {
+      @extend %notification--success;
+    }
+
+    &-info,
+    &-notice {
+      @extend %notification--info;
+    }
+
+    &-danger,
+    &-warning {
+      @extend %notification--error;
+    }
+  }
+}

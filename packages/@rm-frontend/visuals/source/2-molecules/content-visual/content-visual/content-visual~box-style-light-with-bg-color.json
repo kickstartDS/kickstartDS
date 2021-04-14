@@ -1,0 +1,14 @@
+{
+  "content-visual": {
+    "media": {
+      "mode": "none"
+    },
+    "backgroundColor": "#000",
+    "box": {
+      "light": true,
+      "link": {
+        "style": "outline"
+      }
+    }
+  }
+}

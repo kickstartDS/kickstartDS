@@ -1,0 +1,14 @@
+{
+  "mediaAlignment": "above-center",
+  "media": [
+    {
+      "video": {
+        "title": "Lorem Ipsum",
+        "width": "1920",
+        "height": "1080",
+        "iframe": true,
+        "src": "https://www.youtube.com/embed/2M6dJ2Uynhg"
+      }
+    }
+  ]
+}

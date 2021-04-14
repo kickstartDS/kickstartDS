@@ -1,0 +1,111 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://frontend.ruhmesmeile.com/storytelling/molecules/storytelling.schema.json",
+  "title": "Storytelling",
+  "description": "Storytelling",
+  "type": "object",
+  "properties": {
+    "backgroundImage": {
+      "type": "string",
+      "title": "Background image",
+      "format": "image"
+    },
+    "backgroundColor": {
+      "type": "string",
+      "title": "Background color",
+      "format": "color"
+    },
+    "full": {
+      "type": "boolean",
+      "title": "Full size image",
+      "default": false
+    },
+    "image": {
+      "type": "object",
+      "title": "Image",
+      "properties": {
+        "source": {
+          "type": "string",
+          "format": "image",
+          "title": "Image",
+          "default": "default/images/dummy/4-3-s.png"
+        },
+        "ratio": {
+          "type": "string",
+          "title": "Image aspect ratio",
+          "enum": ["4:3", "3:2", "16:9", "1:1", "none"],
+          "default": "none"
+        },
+        "vAlign": {
+          "type": "string",
+          "title": "Image vertical alignment",
+          "enum": ["center", "top", "top-edge", "bottom", "bottom-edge"],
+          "default": "center"
+        },
+        "hAlign": {
+          "type": "string",
+          "title": "Image horizontal alignment",
+          "enum": ["center", "left", "left-edge", "right", "right-edge"],
+          "default": "center"
+        },
+        "order": {
+          "type": "object",
+          "title": "Order",
+          "properties": {
+            "mobileImageLast": {
+              "type": "boolean",
+              "title": "Mobile image after text",
+              "default": false
+            },
+            "desktopImageLast": {
+              "type": "boolean",
+              "title": "Desktop image after text",
+              "default": false
+            }
+          }
+        }
+      }
+    },
+    "box": {
+      "type": "object",
+      "title": "Box",
+      "properties": {
+        "headline": {
+          "$ref": "http://frontend.ruhmesmeile.com/base/molecules/content-headline.schema.json"
+        },
+        "text": {
+          "type": "string",
+          "title": "text",
+          "default": "Autem voluptas quis facere et qui voluptate earum. Dolorum totam animi perferendis. Est est et dolor maiores vero architecto aperiam.\n\nQuo et et aut neque neque reiciendis nihil aut. Culpa et consequuntur omnis."
+        },
+        "textAlign": {
+          "type": "string",
+          "title": "Text align",
+          "enum": ["left", "center"],
+          "default": "left"
+        },
+        "textColor": {
+          "type": "string",
+          "title": "Text color",
+          "format": "color"
+        },
+        "vAlign": {
+          "type": "string",
+          "title": "Box vertical alignment",
+          "enum": ["center", "top", "bottom"],
+          "default": "center"
+        },
+        "hAlign": {
+          "type": "string",
+          "title": "Box horizontal alignment",
+          "enum": ["center", "left", "right"],
+          "default": "center"
+        },
+        "link": {
+          "$ref": "http://frontend.ruhmesmeile.com/base/atoms/link-button.schema.json"
+        }
+      }
+    }
+  },
+  "required": ["image", "box"]
+}

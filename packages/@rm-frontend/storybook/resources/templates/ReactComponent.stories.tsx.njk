@@ -1,0 +1,30 @@
+// eslint-disable-next-line import/no-unresolved
+import { Story, Meta } from '@storybook/react';
+import { capitalCase } from 'capital-case';
+import * as storyHelpers from '@rm-frontend/storybook/source/story-helpers';
+import schema from './{{ componentLowercased }}.schema.dereffed.json';
+import { {{ componentPascalcased }} } from './{{ componentPascalcased }}Component';
+import { {{ componentPascalcased }}Props } from './{{ componentPascalcased }}Props';
+
+{% if imageAssetPathPrefix %}
+storyHelpers.setImageAssetPathPrefix('{{ imageAssetPathPrefix }}');
+{% endif %}
+
+const [, moduleName] = schema.$id.match(/\/\/[\w-\.]+\/([\w-]+)/);
+
+const Template: Story<{{ componentPascalcased }}Props> = (args) => <{{ componentPascalcased }} {...storyHelpers.unpack(args)} />;
+
+export default {
+  title: `${capitalCase(moduleName)}/${capitalCase(schema.title)}`,
+  component: {{ componentPascalcased }},
+  argTypes: {
+    ...storyHelpers.getArgTypes(schema.properties),
+    render: {
+      table: { disable: true },
+      control: { disable: true },
+    },
+  },
+} as Meta;
+
+export const Default = Template.bind({});
+Default.args = storyHelpers.getArgs(schema.properties);

@@ -1,0 +1,12 @@
+{
+  "mediaAlignment": "intext-right",
+  "media": [
+    {
+      "video": {
+        "title": "Lorem Ipsum",
+        "iframe": false,
+        "src": "dummy/video/video-compressed.mp4"
+      }
+    }
+  ]
+}

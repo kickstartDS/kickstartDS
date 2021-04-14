@@ -1,0 +1,65 @@
+@use '../../0-base/1-tools/scss/grid';
+@use '../../0-base/1-tools/scss/helpers';
+@use '../../0-base/1-tools/scss/breakpoint';
+@use '../../0-base/0-settings/selector';
+@use 'settings/base';
+
+@if rm('modules.base.molecules.content-slide') {
+  .content-slide {
+    @include grid.grid-container();
+
+    font-size: base.$font-size-small;
+
+    &__image {
+      @include grid.grid-break-at(450px, 12, 4);
+
+      margin-bottom: 0.5em;
+      box-sizing: border-box;
+
+      @include breakpoint.media('≥s') {
+        max-width: 45%;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+
+    &__text {
+      @include grid.grid-break-at(450px, 12, 8);
+
+      overflow: visible;
+    }
+
+    &__topic {
+      font-size: base.$h3-font-size;
+      line-height: base.$h3-line-height;
+      font-weight: helpers.get-font-weight(bold);
+      margin-bottom: 0.5em;
+    }
+
+    &__more {
+      text-align: center;
+      padding-top: 1em;
+    }
+  }
+
+  .content-slide--preview {
+    flex: 0 1 100%;
+    font-size: base.$font-size-tiny;
+    line-height: base.$line-height-tiny;
+    text-align: center;
+    padding: 0.75em 1em;
+    transition: 0.3s;
+
+    #{selector.$slider-nav-slide}:hover &,
+    #{selector.$slider-nav-slide}:focus & {
+      background-color: base.$color-black-10;
+    }
+
+    #{selector.$slider-nav-slide}--active & {
+      background-color: base.$color-black-10;
+      color: base.$color-brand;
+    }
+  }
+}

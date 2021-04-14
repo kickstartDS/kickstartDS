@@ -1,0 +1,151 @@
+/**
+  * ## Detail
+  */
+
+@use '@rm-frontend/base/source/0-base/1-tools/scss/helpers';
+@use '@rm-frontend/base/source/0-base/1-tools/scss/breakpoint';
+@use 'bourbon/core/bourbon';
+@use 'settings/base';
+@use 'settings/event';
+
+.event-detail {
+  &__categories {
+    /* critical:start */
+    margin-bottom: event.$event-detail__categories-margin-bottom;
+    /* critical:end */
+  }
+
+  h1 {
+    margin-bottom: 0.2em;
+  }
+
+  &__gallery {
+    margin-bottom: 2em;
+
+    @include breakpoint.media('≥s') {
+      margin-top: 2em;
+    }
+
+    // TODO: this selector isn't used anywhere. do we need this?
+    // &__item {
+    //   &--main {
+    //     flex: 0 0 100% !important;
+    //     max-width: 100% !important;
+    //   }
+    // }
+  }
+
+  &__location {
+    margin-bottom: 2em;
+    border-bottom: 1px solid base.$color-black-10;
+
+    &__item {
+      /* critical:start */
+      display: flex;
+      flex-direction: column;
+      padding: 1.5em 1em;
+      /* critical:end */
+
+      &:nth-child(odd) {
+        /* critical:start */
+        background: base.$color-black-7;
+        /* critical:end */
+      }
+
+      @include breakpoint.media('≥m') {
+        padding: 2.5rem 1.5rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+    }
+
+    &__map {
+      flex: 0 0 100%;
+      margin-bottom: 1em;
+      /* critical:start */
+      display: none;
+      /* critical:end */
+
+      @include breakpoint.media('≥m') {
+        margin-bottom: 2em;
+      }
+    }
+
+    .is-hidden {
+      display: none;
+    }
+
+    &__dates {
+      flex: 2;
+
+      .event__infos {
+        flex: 1.3;
+        padding-right: 1em;
+      }
+    }
+
+    &__date {
+      display: flex;
+      flex-direction: column;
+
+      @include breakpoint.media('≥m') {
+        flex-direction: row;
+      }
+
+      & + & {
+        margin-top: 1em;
+        border-top: 1px dashed base.$color-black-25;
+        padding-top: 1em;
+      }
+    }
+
+    &__offer {
+      flex: 0.8;
+      display: flex;
+      flex-direction: column;
+
+      &__price {
+        font-size: base.$font-size-default;
+        font-weight: helpers.get-font-weight(bold);
+        margin: 0.7rem 0;
+
+        @include breakpoint.media('≥m') {
+          margin: 0 0 0.4rem;
+        }
+      }
+
+      &__cta {
+        .button {
+          font-size: base.$font-size-default;
+          width: 100%;
+
+          @include breakpoint.media('≥s') {
+            width: auto;
+            font-size: base.$font-size-small;
+          }
+        }
+      }
+    }
+
+    &__info {
+      flex: 1;
+
+      @include breakpoint.media('≥s') {
+        padding-right: 1rem;
+      }
+    }
+  }
+
+  &__download {
+    @include bourbon.clearfix;
+    margin-bottom: 2em;
+  }
+
+  &__maps {
+    margin-bottom: 2em;
+  }
+
+  &__back {
+    margin: 2em 0;
+  }
+}

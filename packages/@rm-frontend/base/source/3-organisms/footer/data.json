@@ -1,0 +1,11 @@
+{
+  "footer": {
+    "name": "Firmenname",
+    "telephone": "+49 (0)221 12 34 56-0",
+    "email": "info@REPLACE_PROJECTKEY.com",
+    "street-address": "Hauptstrasse 16",
+    "postal-code": "50987",
+    "address-locality": "Hauptstadt",
+    "address-country": "Deutschland"
+  }
+}

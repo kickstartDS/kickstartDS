@@ -1,0 +1,37 @@
+{
+  "businessCard": [
+    {
+      "image": "dummy/16-9-s.png",
+      "logo": "dummy/logo.png",
+      "address": "<p> Hauptstrasse 16 <br> 50987 Hauptstadt <br> Deutschland </p>",
+      "topic": "Lorem Ipsum",
+      "contactPersonImage": "dummy/1-1-s.png",
+      "phone": "+49 (0)221 12 34 56-0",
+      "email": "info@25sheepstreet.com",
+      "button1": true,
+      "button2": true
+    },
+    {
+      "image": "",
+      "logo": "dummy/logo.png",
+      "address": "<p> Hauptstrasse 16 <br> 50987 Hauptstadt <br> Deutschland </p>",
+      "topic": "Lorem Ipsum",
+      "contactPersonImage": "dummy/1-1-s.png",
+      "phone": "+49 (0)221 12 34 56-0",
+      "email": "info@25sheepstreet.com",
+      "button1": false,
+      "button2": true
+    },
+    {
+      "image": "dummy/16-9-s.png",
+      "logo": "dummy/logo.png",
+      "address": "<p> Hauptstrasse 16 <br> 50987 Hauptstadt <br> Deutschland </p>",
+      "topic": "Lorem Ipsum",
+      "contactPersonImage": "dummy/1-1-s.png",
+      "phone": "+49 (0)221 12 34 56-0",
+      "email": "",
+      "button1": false,
+      "button2": false
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "keyvisual": false,
+  "headline": false,
+  "templates": [
+    {
+      "type": "100",
+      "content": [
+        {
+          "component": "organisms-product-listing"
+        }
+      ]
+    }
+  ]
+}

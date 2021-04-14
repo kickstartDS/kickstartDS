@@ -1,0 +1,5 @@
+@use 'settings/global';
+
+@forward 'include-media/dist/include-media' with (
+  $breakpoints: global.$breakpoints
+);

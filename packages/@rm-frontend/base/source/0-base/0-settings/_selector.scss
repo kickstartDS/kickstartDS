@@ -1,0 +1,33 @@
+/// # Selectors
+
+// Header
+$header--scrolling: '.header-is-scrolling';
+
+$header--variant-1: '.main-header--variant-1';
+$header--variant-2: '.main-header--variant-2';
+$header--sidebar: '.main-header-sidebar';
+$header--transparent: '.transparent-header:not(#{$header--scrolling})';
+
+// Template
+$template--content-100: '.template--content-100';
+$template--sidebar-left: '.template--sidebar-30-content-70';
+$template--sidebar-right: '.template--content-70-sidebar-30';
+$template--content-70: '.template__content';
+$template--content-30: '.template__sidebar';
+
+$l-main-wrap: '.l-main-wrap';
+$l-main-wrap--narrow: '.l-main-wrap--narrow';
+$l-main-wrap--full-gap: '.l-main-wrap--full-gap';
+$l-main-wrap--full: '.l-main-wrap--full';
+
+$section--bg-1: '.l-section--bg-1';
+
+$nav-main--mobile-is-shown: '.nav-main--mobile-is-shown';
+
+// Slider
+$slider-main-slide: '.slider__slide';
+$slider-nav-root: '.slider-nav';
+$slider-nav-slide: '.slider-nav__slide';
+$slider-nav-slides: '.slider-nav__slides';
+$slider-nav-constrol-slide: '[data-glide-el="controls[nav]"] .slider-nav__slide';
+$slider-bullet: '.slider__bullet';

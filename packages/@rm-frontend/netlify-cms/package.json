@@ -1,0 +1,28 @@
+{
+  "name": "@rm-frontend/netlify-cms",
+  "version": "1.4.0",
+  "description": "RM Frontend Netlify CMS admin backend",
+  "author": "ruhmesmeile GmbH <mail@ruhmesmeile.com> (https://ruhmesmeile.com)",
+  "homepage": "https://bitbucket.ruhmesmeile.tools/projects/FRONT/repos/rm-frontend/browse/packages/@rm-frontend/netlify-cms",
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@bitbucket.ruhmesmeile.tools:7999/front/rm-frontend.git",
+    "directory": "packages/@rm-frontend/netlify-cms"
+  },
+  "dependencies": {
+    "netlify-cms": "^2.9.7",
+    "netlify-cms-widget-simple-uuid": "^0.0.2",
+    "netlify-cms-backend-github": "2.11.3",
+    "js-yaml": "^3.13.1",
+    "fast-glob": "^3.2.5",
+    "json-schema-ref-parser": "^9.0.7"
+  },
+  "devDependencies": {
+    "json-schema-faker": "^0.5.0-rcv.33",
+    "@ruhmesmeile/json-schema-to-openapi-schema": "^0.3.1"
+  },
+  "peerDependencies": {
+    "netlify-cms-backend-github": "2.11.3"
+  }
+}

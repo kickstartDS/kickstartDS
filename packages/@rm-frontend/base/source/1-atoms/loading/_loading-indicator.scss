@@ -1,0 +1,35 @@
+/**
+ * # Loading Indicator
+ */
+
+@use '../../0-base/1-tools/scss/breakpoint';
+@use 'settings/base';
+
+.loading-indicator {
+  font-size: 1em;
+  margin: 0 auto;
+
+  border-width: 0.2em;
+  border-style: solid;
+  border-color: rgba(base.$color-brand, 0.15);
+  border-left-color: base.$color-brand;
+  border-radius: 50%;
+  width: 2em;
+  height: 2em;
+
+  animation: spinner 1.1s infinite linear;
+
+  @include breakpoint.media('≥s') {
+    font-size: 1.33em;
+  }
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "teaser-box": [
+    {
+      "contentCenter": true,
+      "image": "dummy/16-9-s.png",
+      "topic": "Lorem Ipsum",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ispum dolor distinctio minima unde voluptatum aut.",
+      "imageSpacing": true,
+      "link": {
+        "style": "solid",
+        "label": "Button"
+      }
+    },
+    {
+      "contentCenter": true,
+      "image": "dummy/16-9-s.png",
+      "topic": "Lorem Ipsum",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ispum dolor distinctio minima unde voluptatum aut.",
+      "imageSpacing": true,
+      "link": {
+        "style": "solid",
+        "label": "Button"
+      }
+    },
+    {
+      "contentCenter": true,
+      "image": "dummy/16-9-s.png",
+      "topic": "Lorem Ipsum",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ispum dolor distinctio minima unde voluptatum aut.",
+      "imageSpacing": true,
+      "link": {
+        "style": "solid",
+        "label": "Button"
+      }
+    },
+    {
+      "contentCenter": true,
+      "image": "dummy/16-9-s.png",
+      "topic": "Lorem Ipsum",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ispum dolor distinctio minima unde voluptatum aut.",
+      "imageSpacing": true,
+      "link": {
+        "style": "solid",
+        "label": "Button"
+      }
+    }
+  ]
+}

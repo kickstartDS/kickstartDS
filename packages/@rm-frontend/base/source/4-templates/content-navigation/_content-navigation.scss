@@ -1,0 +1,28 @@
+@use '../../0-base/1-tools/scss/breakpoint';
+@use '../../0-base/0-settings/selector';
+
+@if rm('modules.base.molecules.content-navigation-item') {
+  #{selector.$template--content-70} {
+    .content-navigation-wrap {
+      &--col-2 {
+        .content-navigation__item {
+          font-size: 0.85em;
+        }
+      }
+
+      &--col-3 {
+        .content-navigation__item {
+          font-size: 0.85em;
+
+          @include breakpoint.media('≥s') {
+            font-size: 0.75em;
+          }
+
+          @include breakpoint.media('≥m') {
+            font-size: 0.75em;
+          }
+        }
+      }
+    }
+  }
+}

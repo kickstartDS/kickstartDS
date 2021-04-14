@@ -1,0 +1,9 @@
+@use '../../0-base/1-tools/scss/grid';
+
+.tag-label-container {
+  @include grid.grid-container(0.5rem);
+
+  > * {
+    width: auto;
+  }
+}

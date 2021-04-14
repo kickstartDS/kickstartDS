@@ -1,0 +1,67 @@
+{
+  "gallery": [
+    {
+      "image": "dummy/16-9-xxxl.png",
+      "thumb": "dummy/16-9-m.png",
+      "width": "1920",
+      "height": "1280",
+      "caption": "Lorem Ipsum",
+      "zoomIcon": true
+    },
+    {
+      "image": "dummy/16-9-xxxl.png",
+      "thumb": "dummy/16-9-m.png",
+      "width": "1920",
+      "height": "1280",
+      "caption": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
+      "zoomIcon": true
+    },
+    {
+      "image": "dummy/16-9-xxxl.png",
+      "thumb": "dummy/16-9-m.png",
+      "width": "1920",
+      "height": "1280",
+      "zoomIcon": true
+    },
+    {
+      "image": "dummy/16-9-xxxl.png",
+      "thumb": "dummy/16-9-m.png",
+      "width": "1920",
+      "height": "1280",
+      "caption": "Lorem Ipsum",
+      "zoomIcon": false
+    },
+    {
+      "image": "dummy/16-9-xxxl.png",
+      "thumb": "dummy/16-9-m.png",
+      "width": "1920",
+      "height": "1280",
+      "caption": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
+      "zoomIcon": false
+    },
+    {
+      "image": "dummy/16-9-xxxl.png",
+      "thumb": "dummy/16-9-m.png",
+      "width": "1920",
+      "height": "1280",
+      "caption": "Lorem Ipsum",
+      "zoomIcon": false
+    },
+    {
+      "image": "dummy/16-9-xxxl.png",
+      "thumb": "dummy/16-9-m.png",
+      "width": "1920",
+      "height": "1280",
+      "caption": "Lorem Ipsum",
+      "zoomIcon": false
+    },
+    {
+      "image": "dummy/16-9-xxxl.png",
+      "thumb": "dummy/16-9-m.png",
+      "width": "1920",
+      "height": "1280",
+      "caption": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
+      "zoomIcon": false
+    }
+  ]
+}

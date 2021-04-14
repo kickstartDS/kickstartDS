@@ -1,0 +1,9 @@
+{{#> base-section headline=(object content="Logos" subheader="Subheader Logos")}}
+  <ul class="logo-tiles">
+    {{#each logos}}
+      <li class="logo-tiles__item">
+        {{> atoms-lazy-img }}
+      </li>
+    {{/each}}
+  </ul>
+{{/base-section}}

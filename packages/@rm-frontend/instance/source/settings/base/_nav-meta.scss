@@ -1,0 +1,35 @@
+@use 'settings/base/colors';
+@use 'settings/base/typo';
+
+$nav-meta__item-height:         if(rm('modules.base.organisms.header.meta'), 2rem, 0) !default;
+
+$nav-meta__height:              $nav-meta__item-height !default; // smartphone; all header variants
+$nav-meta__height--nav-main--1: $nav-meta__item-height !default; // desktop, header variant 1
+$nav-meta__height--nav-main--2: 3.5rem !default;                 // desktop, header variant 2
+
+$nav-meta__height--nav-main:    if(
+  rm('modules.base.organisms.header.variant') == 1,
+  $nav-meta__height--nav-main--1,
+  $nav-meta__height--nav-main--2
+) !default;
+
+$nav-meta__item-font-size--desktop:          typo.$font-size-tiny !default;
+$nav-meta__item-line-height--desktop:        typo.$line-height-tiny !default;
+$nav-meta__item-color--desktop:              colors.$color-white !default;
+// hover
+$nav-meta__item-color-hover--desktop:        colors.$color-white !default;
+$nav-meta__item-background-hover--desktop:   colors.$color-brand-75 !default;
+
+$nav-meta__background--mobile:               colors.$color-white !default;
+$nav-meta__item-color--mobile:               colors.$color-brand-75 !default;
+$nav-meta__item-background--mobile:          colors.$color-white !default;
+$nav-meta__item-border-color--mobile:        colors.$color-white !default;
+$nav-meta__item-text-transform--mobile:      none !default;
+$nav-meta__item-hover-color--mobile:         null !default;
+
+$nav-meta__background:                       colors.$color-brand !default;
+
+// Transparent Header
+$nav-meta__background-transparent:     colors.$color-black-10 !default;
+$nav-meta__item-color-transparent:     colors.$color-white !default;
+$nav-meta__item-background-hover-transparent: $nav-meta__item-background-hover--desktop !default;

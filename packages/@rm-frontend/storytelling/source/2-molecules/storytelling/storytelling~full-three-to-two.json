@@ -1,0 +1,13 @@
+{
+  "full": true,
+  "image": {
+    "source": "dummy/3-2-l.png",
+    "ratio": "3:2"
+  },
+  "box": {
+    "headline": {
+      "content": "Storytelling"
+    },
+    "text": "Lorem ipsum dolor sit amet.  \n4:3"
+  }
+}

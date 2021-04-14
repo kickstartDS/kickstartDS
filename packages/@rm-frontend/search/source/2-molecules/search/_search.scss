@@ -1,0 +1,160 @@
+@use '@rm-frontend/base/source/0-base/1-tools/scss/breakpoint';
+@use '@rm-frontend/pagination/source/0-base/base' as pagination;
+@use 'bourbon/core/bourbon';
+@use 'settings/base';
+@use 'settings/global';
+
+.search {
+  &__form {
+    transition-duration: 0.3s;
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    margin-bottom: 0.5em;
+    font-size: 1em;
+    color: base.$color-black-75;
+    border-bottom: 3px solid base.$color-brand-25;
+
+    &::after {
+      left: 0;
+      transition: width 0.3s linear;
+      position: absolute;
+      top: 100%;
+      display: block;
+      width: 0;
+      border-bottom: 3px solid base.$color-brand;
+
+      content: '';
+    }
+
+    &--focussed {
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+
+  &__input,
+  &__submit {
+    appearance: none;
+    padding: 0;
+    color: inherit;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    box-sizing: content-box;
+  }
+
+  &__input {
+    flex: 1 1 auto;
+    min-width: 4.45em;
+    padding-bottom: 0.1em;
+    font-size: 1.5em;
+    letter-spacing: 0.025em;
+
+    @include breakpoint.media('≥s') {
+      font-size: 2em;
+    }
+  }
+
+  &__submit {
+    transition-duration: inherit;
+
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      color: base.$color-brand;
+    }
+
+    .icon {
+      @include bourbon.size(1.7em);
+
+      padding: 0.2em 0.5em;
+      fill: currentColor;
+
+      @include breakpoint.media('≥s') {
+        @include bourbon.size(2em);
+      }
+    }
+  }
+}
+
+/**
+ * Solr specific styles
+ */
+
+.results-highlight {
+  background-color: base.$color-black-10;
+}
+
+// Pagination
+
+/* stylelint-disable */
+#solr-pagination {
+  @extend %pagination;
+
+  .pagination {
+    @extend %pagination__list;
+
+    li {
+      @extend %pagination__item;
+
+      &.active {
+        @extend %pagination__item--current;
+      }
+    }
+  }
+}
+/* stylelint-enable */
+
+/**
+ * ## Autocomplete
+ */
+
+.ui-menu {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  background-color: rgba(bourbon.shade(base.$color-brand, 30%), 0.9);
+
+  // Autocomplete on search-overlay
+  &:last-of-type {
+    position: fixed;
+    z-index: global.$search-suggestion-zindex;
+  }
+
+  &-item {
+    margin: 0;
+    list-style-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7');
+
+    &-wrapper {
+      color: rgba(base.$color-white, 0.8);
+      display: block;
+      padding: 0.8em 1em;
+      cursor: pointer;
+
+      &:hover,
+      &:focus,
+      &.ui-state-focus,
+      &.ui-state-active {
+        background-color: base.$color-brand-75;
+      }
+    }
+  }
+}
+
+.ui-helper-hidden-accessible {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}

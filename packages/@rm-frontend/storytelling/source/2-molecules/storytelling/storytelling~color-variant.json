@@ -1,0 +1,14 @@
+{
+  "backgroundColor": "orange",
+  "backgroundImage": false,
+  "image": {
+    "source": "dummy/9-16-s.png"
+  },
+  "box": {
+    "headline": {
+      "content": "Storytelling"
+    },
+    "text": "Lorem ipsum dolor sit amet.  \nbox-right",
+    "textColor": "white"
+  }
+}

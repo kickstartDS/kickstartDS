@@ -1,0 +1,99 @@
+@use '../../1-tools/scss/grid';
+@use '../../1-tools/scss/sizes';
+@use '../../1-tools/scss/breakpoint';
+@use '../../1-tools/scss/anchor';
+@use '../../0-settings/selector';
+@use 'settings/base';
+@use 'settings/global';
+
+.l-section {
+  @include sizes.vertical-padding;
+  @include anchor.anchor-target;
+
+  /* critical:start */
+  font-size: 1rem;
+  background-color: base.$section-background;
+  box-sizing: content-box;
+  /* critical:end */
+
+  #{selector.$template--content-30} & {
+    @include breakpoint.media('≥m') {
+      /* critical:start */
+      font-size: 0.8rem;
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+      /* critical:end */
+    }
+  }
+
+  #{selector.$template--content-70} & {
+    @include breakpoint.media('≥m') {
+      /* critical:start */
+      width: 100%;
+      /* critical:end */
+    }
+  }
+
+  &--bg-1 {
+    /* critical:start */
+    background-color: base.$section-background--bg-1;
+    /* critical:end */
+  }
+
+  &--space-before-small {
+    @include sizes.vertical-padding-top-small;
+  }
+
+  &--space-after-small {
+    @include sizes.vertical-padding-bottom-small;
+  }
+
+  &--space-before-none {
+    padding-top: 0 !important;
+  }
+
+  &--space-after-none {
+    padding-bottom: 0 !important;
+  }
+}
+
+.l-main-wrap {
+  /* critical:start */
+  @include grid.outer-container;
+  @include sizes.global-padding;
+  width: 100%;
+  /* critical:end */
+
+  &--full-gap {
+    @include breakpoint.media('≥m') {
+      /* critical:start */
+      max-width: 100%;
+      /* critical:end */
+    }
+  }
+
+  &--full {
+    padding: 0;
+
+    @include breakpoint.media('≥m') {
+      /* critical:start */
+      max-width: 100%;
+      /* critical:end */
+    }
+  }
+
+  &--narrow {
+    /* critical:start */
+    @include breakpoint.media('≥s') {
+      max-width: global.$grid__max-width-narrow;
+      margin: auto;
+
+      #{selector.$template--content-70} & {
+        max-width: percentage(
+          global.$grid__max-width-narrow / global.$grid__max-width
+        );
+      }
+    }
+    /* critical:end */
+  }
+}

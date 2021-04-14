@@ -1,0 +1,22 @@
+{
+  "tabs": [
+    {
+      "panel-id": "tabpanel-1",
+      "tab-id": "tab-1",
+      "content": "Nils Frahm",
+      "icon": "home"
+    },
+    {
+      "panel-id": "tabpanel-2",
+      "tab-id": "tab-2",
+      "content": "Agnes Obel",
+      "icon": "person"
+    },
+    {
+      "panel-id": "tabpanel-3",
+      "tab-id": "tab-3",
+      "content": "Joke",
+      "icon": "star"
+    }
+  ]
+}

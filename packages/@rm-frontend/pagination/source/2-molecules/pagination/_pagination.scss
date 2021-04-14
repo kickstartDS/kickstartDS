@@ -1,0 +1,5 @@
+@use '../../0-base/base';
+
+.nav-pagination {
+  @include base.pagination;
+}

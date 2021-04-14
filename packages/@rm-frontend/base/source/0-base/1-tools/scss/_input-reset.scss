@@ -1,0 +1,10 @@
+@mixin input-number-reset {
+  appearance: textfield; // firefox
+
+  // webkit
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    appearance: none;
+    margin: 0;
+  }
+}

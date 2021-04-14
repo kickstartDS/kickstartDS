@@ -1,0 +1,100 @@
+@use 'settings/base/colors';
+@use 'settings/base/typo';
+
+$headline__color:                            colors.$text-color !default;
+$headline__margin:                           0 0 1em 0 !default;
+
+/// ### h1
+$h1-font-size:                              1.7em !default;
+$h1-line-height:                            1.1 !default;
+$h1-font-weight:                            bold !default;
+$h1-font-color:                             $headline__color !default;
+$h1-text-transform:                         null !default;
+$h1-margin:                                 $headline__margin !default;
+
+$h1-font-size-s:                            2em !default;
+$h1-line-height-s:                          1.1 !default;
+
+/// ### h2
+$h2-font-size:                              1.4em !default;
+$h2-line-height:                            1.1 !default;
+$h2-font-weight:                            bold !default;
+$h2-font-color:                             $headline__color !default;
+$h2-text-transform:                         null !default;
+$h2-margin:                                 $headline__margin !default;
+
+$h2-font-size-s:                            1.6em !default;
+$h2-line-height-s:                          1.1 !default;
+
+/// ### h3
+$h3-font-size:                              1.2em !default;
+$h3-line-height:                            1.1 !default;
+$h3-font-weight:                            bold !default;
+$h3-font-color:                             $headline__color !default;
+$h3-text-transform:                         null !default;
+$h3-margin:                                 $headline__margin !default;
+
+$h3-font-size-s:                            1.2em !default;
+$h3-line-height-s:                          1.1 !default;
+
+/// ### section headline
+$section-headline-font-size:                typo.$font-size-default !default;
+$section-headline-line-height:              typo.$line-height-default !default;
+$section-headline-font-weight:              bold !default;
+$section-headline-font-color:               $headline__color !default;
+$section-headline-text-transform:           uppercase !default;
+$section-headline-letter-spacing:           2.71px !default;
+$section-headline-margin:                   $headline__margin !default;
+
+$section-headline-font-size-s:              typo.$font-size-default !default;
+$section-headline-line-height-s:            typo.$line-height-default !default;
+
+/// ### subheader
+$subheader-font-size:                       1.1em !default;
+$subheader-line-height:                     1.4 !default;
+$subheader-font-weight:                     regular !default;
+$subheader-font-color:                      $headline__color !default;
+$subheader-margin:                          0.5em 0 0 !default;
+
+$subheader-font-size-s:                     1em !default;
+$subheader-line-height-s:                   1.4 !default;
+
+/// ### h1 subheader
+$subheader-h1-font-size:                    $subheader-font-size !default;
+$subheader-h1-line-height:                  $subheader-line-height !default;
+$subheader-h1-font-weight:                  $subheader-font-weight !default;
+$subheader-h1-font-color:                   $subheader-font-color !default;
+$subheader-h1-margin:                       $subheader-margin !default;
+
+$subheader-h1-font-size-s:                  $subheader-font-size-s !default;
+$subheader-h1-line-height-s:                $subheader-line-height-s !default;
+
+/// ### h2 subheader
+$subheader-h2-font-size:                    $subheader-font-size !default;
+$subheader-h2-line-height:                  $subheader-line-height !default;
+$subheader-h2-font-weight:                  $subheader-font-weight !default;
+$subheader-h2-font-color:                   $subheader-font-color !default;
+$subheader-h2-margin:                       $subheader-margin !default;
+
+$subheader-h2-font-size-s:                  $subheader-font-size-s !default;
+$subheader-h2-line-height-s:                $subheader-line-height-s !default;
+
+/// ### h3 subheader
+$subheader-h3-font-size:                    $subheader-font-size !default;
+$subheader-h3-line-height:                  $subheader-line-height !default;
+$subheader-h3-font-weight:                  $subheader-font-weight !default;
+$subheader-h3-font-color:                   $subheader-font-color !default;
+$subheader-h3-margin:                       $subheader-margin !default;
+
+$subheader-h3-font-size-s:                  $subheader-font-size-s !default;
+$subheader-h3-line-height-s:                $subheader-line-height-s !default;
+
+/// ### section_headline subheader
+$subheader-section-headline-font-size-s:    $subheader-font-size-s !default;
+$subheader-section-headline-line-height-s:  $subheader-line-height-s !default;
+$subheader-section-headline-font-weight:    $subheader-font-weight !default;
+$subheader-section-headline-font-color:     $subheader-font-color !default;
+$subheader-section-headline-margin:         $subheader-margin !default;
+
+$subheader-section-headline-font-size:      $subheader-font-size !default;
+$subheader-section-headline-line-height:    $subheader-line-height !default;

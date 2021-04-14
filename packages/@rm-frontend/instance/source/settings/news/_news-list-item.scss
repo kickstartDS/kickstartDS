@@ -1,0 +1,11 @@
+@use 'settings/base';
+
+$news-list-item__date-font-size:                  base.$font-size-small !default;
+$news-list-item__date-font-weight:                regular !default;
+$news-list-item__date-color:                      base.$color-black-50 !default;
+
+$news-list-item__headline-font-size:              1.6em !default;
+$news-list-item__headline-font-weight:            bold !default;
+$news-list-item__headline-line-height:            1.1 !default;
+$news-list-item__headline-color:                  base.$color-black !default;
+$news-list-item__headline-color-hover:            base.$color-black !default;

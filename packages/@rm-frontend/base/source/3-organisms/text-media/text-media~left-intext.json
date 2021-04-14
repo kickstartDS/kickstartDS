@@ -1,0 +1,21 @@
+{
+  "layout-variant": "narrow",
+  "center": false,
+  "above": false,
+  "right": false,
+  "intext": true,
+  "nowrap": false,
+  "left": true,
+  "below": false,
+  "media": [
+    {
+      "image": {
+        "src": "dummy/1-1-s.png",
+        "width": 500,
+        "height": 500,
+        "alt": "Square",
+        "caption": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum."
+      }
+    }
+  ]
+}

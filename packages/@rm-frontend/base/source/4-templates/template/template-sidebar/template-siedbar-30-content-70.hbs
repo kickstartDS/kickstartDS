@@ -1,0 +1,34 @@
+{{#> organisms-main }}
+  {{#if keyvisual}}
+    <div class="page-intro">
+      {{try "molecules-keyvisual" keyvisual}}
+    </div>
+  {{/if}}
+
+  {{> organisms-breadcrumb }}
+
+  {{> organisms-headline content="Template 30/70" }}
+
+  <div class="template template--content-100">
+    {{> molecules-highlight-text id=increment }}
+  </div>
+
+  <div class="template template--sidebar-30-content-70">
+    <div class="template__content">
+      {{> organisms-typo3-standard-content id=increment }}
+    </div>
+
+    <aside class="template__sidebar" data-component="base.sidebar-sticky">
+      {{> molecules-nav-content-menu id=increment }}
+      {{> organisms-typo3-standard-content--sidebar id=increment }}
+
+      {{#> base-section}}
+        {{try "molecules-contact-form-personal" id=increment }}
+      {{/base-section}}
+    </aside>
+  </div>
+
+  <div class="template template--content-100">
+    {{try "organisms-news-latest" id=increment }}
+  </div>
+{{/organisms-main }}

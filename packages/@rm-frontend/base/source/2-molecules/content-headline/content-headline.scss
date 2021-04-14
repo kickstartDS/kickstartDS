@@ -1,0 +1,129 @@
+@use '../../0-base/1-tools/scss/sizes';
+@use '../../0-base/1-tools/scss/helpers';
+@use '../../0-base/1-tools/scss/breakpoint';
+@use 'settings/base';
+
+.content-headline {
+  /* critical:start */
+  max-width: 70%;
+  margin: 0 auto base.$content-headline__margin;
+  text-align: center;
+
+  &--align-left {
+    margin-left: 0;
+    text-align: left;
+  }
+
+  &--align-right {
+    margin-right: 0;
+    text-align: left;
+  }
+  /* critical:end */
+  @include breakpoint.media('≥m') {
+    /* critical:start */
+    margin-bottom: base.$content-headline__margin-m;
+    /* critical:end */
+  }
+
+  &--page-header {
+    /* critical:start */
+    margin-bottom: 0 !important;
+    /* critical:end */
+  }
+
+  &--space-after-small {
+    @include sizes.vertical-padding-bottom-small;
+  }
+
+  &--space-after-large {
+    @include sizes.vertical-padding-bottom;
+  }
+
+  > * {
+    /* critical:start */
+    margin-bottom: 0;
+    /* critical:end */
+  }
+
+  &__subheader {
+    margin: base.$subheader-margin;
+    font-size: base.$subheader-font-size;
+    line-height: base.$subheader-line-height;
+    font-weight: helpers.get-font-weight(base.$subheader-font-weight);
+    color: base.$subheader-font-color;
+
+    @include breakpoint.media('≥s') {
+      font-size: base.$subheader-font-size-s;
+      line-height: base.$subheader-line-height-s;
+    }
+
+    h1 + & {
+      margin: base.$subheader-h1-margin;
+      font-size: base.$subheader-h1-font-size;
+      line-height: base.$subheader-h1-line-height;
+      font-weight: helpers.get-font-weight(base.$subheader-h1-font-weight);
+      color: base.$subheader-h1-font-color;
+
+      @include breakpoint.media('≥s') {
+        font-size: base.$subheader-h1-font-size-s;
+        line-height: base.$subheader-h1-line-height-s;
+      }
+    }
+
+    h2 + & {
+      margin: base.$subheader-h2-margin;
+      font-size: base.$subheader-h2-font-size;
+      line-height: base.$subheader-h2-line-height;
+      font-weight: helpers.get-font-weight(base.$subheader-h2-font-weight);
+      color: base.$subheader-h2-font-color;
+
+      @include breakpoint.media('≥s') {
+        font-size: base.$subheader-h2-font-size-s;
+        line-height: base.$subheader-h2-line-height-s;
+      }
+    }
+
+    h3 + & {
+      margin: base.$subheader-h3-margin;
+      font-size: base.$subheader-h3-font-size;
+      line-height: base.$subheader-h3-line-height;
+      font-weight: helpers.get-font-weight(base.$subheader-h3-font-weight);
+      color: base.$subheader-h3-font-color;
+
+      @include breakpoint.media('≥s') {
+        font-size: base.$subheader-h3-font-size-s;
+        line-height: base.$subheader-h3-line-height;
+      }
+    }
+
+    .section-headline + & {
+      margin: base.$subheader-section-headline-margin;
+      font-size: base.$subheader-section-headline-font-size;
+      line-height: base.$subheader-section-headline-line-height;
+      font-weight: helpers.get-font-weight(
+        base.$subheader-section-headline-font-weight
+      );
+      color: base.$subheader-section-headline-font-color;
+
+      @include breakpoint.media('≥s') {
+        font-size: base.$subheader-section-headline-font-size-s;
+        line-height: base.$subheader-section-headline-line-height-s;
+      }
+    }
+  }
+}
+
+.section-headline {
+  font-size: base.$section-headline-font-size;
+  line-height: base.$section-headline-line-height;
+  font-weight: helpers.get-font-weight(base.$section-headline-font-weight);
+  color: base.$section-headline-font-color;
+  margin: base.$section-headline-margin;
+  text-transform: base.$section-headline-text-transform;
+  letter-spacing: base.$section-headline-letter-spacing;
+
+  @include breakpoint.media('≥s') {
+    font-size: base.$section-headline-font-size-s;
+    line-height: base.$section-headline-line-height-s;
+  }
+}

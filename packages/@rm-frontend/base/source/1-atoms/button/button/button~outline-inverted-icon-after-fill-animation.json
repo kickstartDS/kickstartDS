@@ -1,0 +1,9 @@
+{
+  "variant": "outline-inverted",
+  "fillAnimation": true,
+  "label": "Button",
+  "icon": {
+    "icon": "arrow-right"
+  },
+  "iconAfter": true
+}

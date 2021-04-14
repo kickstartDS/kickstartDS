@@ -1,0 +1,37 @@
+<article class="news-list__item">
+  <div class="news-list__item__header">
+
+    <div class="news-list__item__meta">
+      <time datetime="{{dateFormat date 'yyy-MM-dd'}}" class="news-list__item__date">{{ dateFormat date 'dd.MM.yyyy' }}</time>
+      {{#if tag-labels}}{{> molecules-tag-label-container }}{{/if}}
+    </div>
+
+    <h2 id="news-header-{{index}}" class="news-list__item__headline">
+      <a href="{{link}}">{{title}}</a>
+    </h2>
+  </div>
+
+  <div class="news-list__item__content-wrap">
+    {{#if image}}
+      <div class="news-list__item__image">
+        <img src="{{@root.asset_paths.images}}/{{ image }}" alt="">
+      </div>
+    {{/if}}
+
+    <div class="news-list__item__teaser">
+      <p>{{ body }}</p>
+      <div class="news-list__item__more">
+        {{> atoms-link-button
+          href=link
+          newTab=open-in-tab
+          id=(concat "news-link-more-" index)
+          ariaLabelledby=(concat "news-link-more-" index " news-header-" index)
+          label="weiter zum Newseintrag"
+          icon=(object icon="arrow-right")
+          iconAfter=true
+          style="clear"
+        }}
+      </div>
+    </div>
+  </div>
+</article>

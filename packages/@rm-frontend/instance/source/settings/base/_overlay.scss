@@ -1,0 +1,13 @@
+@use 'settings/base/colors';
+@use 'bourbon/core/bourbon';
+
+$overlay__button-hover-color: bourbon.tint(colors.$color-brand, 40%) !default;
+
+/// Overlay Dialog
+$dialog__background-color: colors.$color-white !default;
+$dialog__color: colors.$text-color !default;
+$dialog__max-width: 45rem !default;
+$dialog__border-radius: 0.5rem !default;
+$dialog__box-shadow: null !default;
+
+$dialog__footer-border: 1px solid !default;

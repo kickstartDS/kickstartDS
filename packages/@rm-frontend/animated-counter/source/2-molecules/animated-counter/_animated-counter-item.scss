@@ -1,0 +1,55 @@
+@use '@rm-frontend/base/source/0-base/1-tools/scss/breakpoint';
+@use '@rm-frontend/base/source/0-base/1-tools/scss/helpers';
+@use 'settings/animated-counter';
+
+.animated-counter {
+  &__item {
+    display: flex;
+    flex-direction: column;
+    text-align: animated-counter.$text-align;
+    height: 100%;
+  }
+
+  &__number-wrap {
+    margin: animated-counter.$number__margin;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: animated-counter.$icon__size;
+    color: animated-counter.$icon__color;
+    margin-bottom: animated-counter.$icon__margin;
+
+    img,
+    svg {
+      width: auto;
+      height: 100%;
+      max-height: 100%;
+    }
+  }
+
+  &__number {
+    font-size: animated-counter.$number__font-size;
+    line-height: animated-counter.$number__line-height;
+    font-weight: helpers.get-font-weight(animated-counter.$number__font-weight);
+    color: animated-counter.$number__font-color;
+  }
+
+  &__topic {
+    font-size: animated-counter.$topic__font-size;
+    line-height: animated-counter.$topic__line-height;
+    font-weight: helpers.get-font-weight(animated-counter.$topic__font-weight);
+    color: animated-counter.$topic__font-color;
+    margin: animated-counter.$topic__margin;
+  }
+
+  &__text {
+    font-size: animated-counter.$text__font-size;
+  }
+
+  &__link {
+    margin-top: auto;
+  }
+}

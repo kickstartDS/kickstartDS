@@ -1,0 +1,35 @@
+{{#each (slice text-media-section 4 20)}}
+  {{#> base-section background=section-bg width="narrow"}}
+    {{> molecules-text-media this.text-media }}
+  {{/base-section}}
+{{/each}}
+
+{{#> base-section width="narrow" headline=(object content="RTE Styles")}}
+  {{#> molecules-text-media mediaAlignment="above-center" }}
+    <h3>Bullet-List</h3>
+    <ul>
+      <li>Lorem ipsum dolor sit amet,</li>
+      <li>consetetur sadipscing elitr,</li>
+      <li>sed diam nonumy eirmod tempor</li>
+      <li>invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</li>
+    </ul>
+    <h3>Ordered List</h3>
+    <ol>
+      <li>Lorem ipsum dolor sit</li>
+      <li>amet, consetetur sadipscing</li>
+      <li>elitr, sed diam nonumy eirmod tempor</li>
+      <li>invidunt ut labore et dolore magna</li>
+      <li>aliquyam erat, sed diam voluptua.&nbsp;</li>
+    </ol>
+    <p><a href="/">Link intern</a></p>
+    <p><a href="http://ruhmesmeile.com" target="_blank">Link extern</a></p>
+    <p><a href="fileadmin/Redakteur/Example/computer.jpg">Link File</a></p>
+    <p><a href="javascript:linkTo_UnCryptMailto('jxfiql7pcassc1csxspspsXascs6501gacsgege+apt');">Link Mail</a></p>
+    <p><b>Bold text</b></p>
+    <p><i>Italic text</i></p>
+    <p class="teaser">{{ text.plain.short }}</p>
+    <h3>Special Characters:</h3>
+    <p>©&nbsp;®&nbsp;™&nbsp;€&nbsp;£&nbsp;Ω&nbsp;ω&nbsp;¼&nbsp;½&nbsp;¾&nbsp;¹&nbsp;²&nbsp;³&nbsp;‰&nbsp;∗</p>
+    <p>&nbsp;</p>
+  {{/molecules-text-media}}
+{{/base-section}}

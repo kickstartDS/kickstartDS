@@ -1,0 +1,39 @@
+@use './breakpoint';
+@use '../../0-settings/selector';
+@use 'settings/base';
+
+:root {
+  --rm-header-height: #{base.header__height(default)};
+
+  @include breakpoint.media('≥s') {
+    --rm-header-height: #{base.header__height(s)};
+  }
+
+  @include breakpoint.media('≥nav-main') {
+    --rm-header-height: #{base.header__height(nav-main)};
+  }
+}
+
+@if base.$hide-meta-nav-on-scroll-s {
+  #{selector.$header--scrolling} {
+    @include breakpoint.media('≥s') {
+      --rm-header-height: #{base.$nav-main__height--s};
+    }
+  }
+}
+
+@if base.$hide-meta-nav-on-scroll-nav-main {
+  #{selector.$header--scrolling} {
+    @include breakpoint.media('≥nav-main') {
+      --rm-header-height: #{base.header__height(nav-main--scrolling)};
+    }
+  }
+}
+
+@mixin anchor-target($offset: 0) {
+  scroll-margin-top: if(
+    $offset > 0,
+    calc(var(--rm-header-height) + #{$offset}),
+    var(--rm-header-height)
+  );
+}

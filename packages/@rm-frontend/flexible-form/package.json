@@ -1,0 +1,25 @@
+{
+  "name": "@rm-frontend/flexible-form",
+  "version": "6.1.0",
+  "description": "RM Frontend Flexible Form Module",
+  "author": "ruhmesmeile GmbH <mail@ruhmesmeile.com> (https://ruhmesmeile.com)",
+  "homepage": "https://bitbucket.ruhmesmeile.tools/projects/FRONT/repos/rm-frontend/browse/packages/@rm-frontend/flexible-form",
+  "license": "SEE LICENSE IN LICENSE",
+  "directories": {
+    "lib": "source"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@bitbucket.ruhmesmeile.tools:7999/front/rm-frontend.git",
+    "directory": "packages/@rm-frontend/flexible-form"
+  },
+  "dependencies": {
+    "@rm-frontend/base": "^12.0.0"
+  },
+  "peerDependencies": {
+    "@rm-frontend/core": ">= 2.1.0 < 4.0.0"
+  },
+  "config": {
+    "rm-frontend": true
+  }
+}

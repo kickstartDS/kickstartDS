@@ -1,0 +1,30 @@
+@use '../input-field/input-field';
+@use '../../../0-base/1-tools/scss/helpers';
+@use 'settings/base';
+
+.select-field {
+  @include input-field.input-field();
+
+  padding-left: 0.3rem;
+  padding-right: 2rem;
+
+  /* stylelint-disable-next-line order/order */
+  background-image: helpers.str-replace(
+    url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z' fill='#{base.$color-black}'/%3E%3C/svg%3E"),
+    '#',
+    '%23'
+  );
+  background-repeat: no-repeat;
+  background-position: calc(100% - 10px) calc(50% + 2px);
+  background-size: 25px;
+
+  transition: width 0.15s;
+
+  &:required:invalid {
+    color: base.$color-black-50;
+  }
+}
+
+select::-ms-expand {
+  display: none;
+}

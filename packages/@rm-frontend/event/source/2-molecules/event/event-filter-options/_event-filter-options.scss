@@ -1,0 +1,16 @@
+.event {
+  &-list-filter {
+    &__section {
+      margin-bottom: 1em;
+    }
+
+    &__headline {
+      width: 100%;
+      margin-bottom: 0;
+    }
+
+    &__action-button {
+      width: 100%;
+    }
+  }
+}

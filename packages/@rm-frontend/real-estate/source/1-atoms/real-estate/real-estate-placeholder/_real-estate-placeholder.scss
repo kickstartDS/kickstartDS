@@ -1,0 +1,5 @@
+@use 'settings/real-estate';
+
+.real-estate-placehoderimage {
+  background: real-estate.$placeholder__image-background;
+}

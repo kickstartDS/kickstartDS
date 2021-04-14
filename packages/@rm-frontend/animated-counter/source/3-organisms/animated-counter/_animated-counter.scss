@@ -1,0 +1,23 @@
+@use '@rm-frontend/base/source/0-base/1-tools/scss/helpers';
+@use '@rm-frontend/base/source/0-base/1-tools/scss/breakpoint';
+@use '@rm-frontend/base/source/0-base/1-tools/scss/grid';
+@use 'settings/animated-counter';
+
+.animated-counter {
+  &--list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    @include grid.grid-gutter(animated-counter.$item__gutter);
+
+    @include breakpoint.media('≥s') {
+      @include grid.grid-gutter(animated-counter.$item__gutter-s);
+    }
+
+    > * {
+      background-clip: content-box;
+      width: 100%;
+      max-width: animated-counter.$item__max-width;
+    }
+  }
+}

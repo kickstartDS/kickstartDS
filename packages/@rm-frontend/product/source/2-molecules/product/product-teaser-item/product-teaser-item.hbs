@@ -1,0 +1,43 @@
+{{#unless teaser.fullWidth}}
+  <div class="product-teaser {{#if teaser.productTeaserLarge}}product-teaser--large{{/if}}">
+{{/unless}}
+{{#if teaser.fullWidth}}
+  <div class="product-teaser product-teaser--full-width">
+    <div class="l-main-wrap">
+      {{> molecules-content-headline content="h2 Heading" subheader="Subheader Text & Media" }}
+{{/if}}
+      <div class="product-teaser__item {{#if teaser.clickable}}product-teaser__item__clickable{{/if}}" data-component="product.product-teaser">
+        <div class="product-teaser__item__image {{#if teaser.withoutSpacing}}product-teaser__item__image--without-spacing{{/if}}">
+          <img src="{{@root.asset_paths.images}}/{{ teaser.teaserImage }}" alt="">
+        </div>
+
+        <div class="product-teaser__item__content">
+
+          <div class="product-teaser__item__topic">
+            <a href="{{url}}" {{#if open-in-tab}} target="_blank" rel="noopener" {{/if}}>{{link-text}}</a>
+          </div>
+
+          <div class="product-teaser__item__info">
+            Artikelnummer: {{number}}
+          </div>
+
+          <div class="product-teaser__item__price">
+            <span class="product-teaser__item__price-amount">{{price}}</span>
+            <span class="product-teaser__item__price-info">inkl. MwSt.</span>
+          </div>
+
+          <div class="product-teaser__item__teaser">
+            <p>{{content}}</p>
+          </div>
+
+          <div class="product-teaser__item__more">
+            {{> atoms-link-button label="Produkt kaufen" style="solid-inverted" size="small"}}
+            {{> atoms-link-button label="mehr Informationen" size="small" style="outline-inverted"}}
+          </div>
+        </div>
+      </div>
+{{#if teaser.fullWidth}}
+    </div>
+{{/if}}
+  </div>
+

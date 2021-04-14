@@ -1,0 +1,53 @@
+<nav class="nav-skip" aria-label="Sprungmarken">
+  <ul class="nav-skip__list">
+    <li><a class="nav-skip__link" href="#content">Zum Inhalt springen</a></li>
+    {{#if modules.base.organisms.sidebar}}
+    <li><a class="nav-skip__link" data-nav="sidebar" href="#nav-sidebar">Zur Hauptnavigation springen</a></li>
+    {{else if modules.base.organisms.header}}
+    <li><a class="nav-skip__link" data-nav="main" href="#nav-main">Zur Hauptnavigation springen</a></li>
+    {{/if}}
+  </ul>
+</nav>
+
+{{#unless modules.base.organisms.sidebar}}
+
+  {{> organisms-header }}
+  <main class="content-wrap" id="content" tabindex="-1">
+  {{> @partial-block }}
+  </main>
+  {{> organisms-footer }}
+
+{{else}}
+
+  <div class="page-wrap">
+    {{> atoms-nav-toggle id="toggle-sidebar" controls-id="sidebar" className="nav-sidebar-toggle" component="base.sidebar-toggle"}}
+    <div id="sidebar" class="page-wrap__sidebar lazyload" data-component="base.sidebar">
+      <div class="page-wrap__sidebar__content" id="sidebar-content">
+
+        <div class="logo-main-wrap">
+          <meta itemprop="name" content="25SheepStreet" />
+          <a href="index.html" class="logo-main" itemprop="url" title="Startseite">
+            <img src="{{@root.asset_paths.images}}/logo-dark.svg" alt="Startseite" itemprop="logo" width="230" height="33">
+          </a>
+        </div>
+
+        {{try "molecules-nav-sidebar" }}
+
+      </div>
+    </div>
+
+    <div class="page-wrap__content">
+      <div class="sidebar-overlay" tabindex="0"></div>
+
+      {{> organisms-header--sidebar }}
+
+      <main class="content-wrap" id="content" tabindex="-1">
+        {{> @partial-block }}
+      </main>
+      {{> organisms-footer }}
+    </div>
+  </div>
+
+{{/unless}}
+
+{{> organisms-lightbox }}

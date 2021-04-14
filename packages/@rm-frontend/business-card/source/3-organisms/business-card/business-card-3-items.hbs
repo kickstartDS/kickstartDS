@@ -1,0 +1,11 @@
+{{#> base-section headline=(object content="Business card" subheader="3 columns")}}
+  <div class="business-card-wrap business-card-wrap--col-3">
+    <div class="business-card">
+      {{#each (slice business-card 0 3)}}
+        <div class="business-card__column">
+          {{> molecules-business-card-item this }}
+        </div>
+      {{/each}}
+    </div>
+  </div>
+{{/base-section}}

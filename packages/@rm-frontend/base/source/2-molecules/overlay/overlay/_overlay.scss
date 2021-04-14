@@ -1,0 +1,81 @@
+@use '../../../0-base/1-tools/scss/grid';
+@use '../../../0-base/1-tools/scss/sizes';
+@use '../../../0-base/1-tools/scss/breakpoint';
+@use 'bourbon/core/bourbon';
+@use 'settings/base';
+@use 'settings/global';
+
+.overlay {
+  font-size: 1rem;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: global.$search-overlay-zindex;
+  display: none;
+  height: 100vh;
+  background-color: rgba(bourbon.shade(base.$color-brand, 80%), 0.95);
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  &,
+  .form-legend {
+    color: base.$color-brand-10;
+  }
+
+  &__close {
+    transition: color 0.3s;
+    appearance: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1em;
+    color: inherit;
+    border: 0;
+    outline: 0;
+    background: transparent;
+
+    cursor: pointer;
+
+    @include breakpoint.media('≥s') {
+      top: 1em;
+      right: 1em;
+    }
+
+    &:hover,
+    &:focus {
+      color: base.$overlay__button-hover-color;
+    }
+
+    .icon {
+      @include bourbon.size(2em);
+
+      fill: currentColor;
+
+      @include breakpoint.media('≥s') {
+        @include bourbon.size(2.5em);
+      }
+    }
+  }
+
+  &__inner {
+    @include grid.outer-container;
+    @include sizes.global-padding();
+
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  &__content {
+    box-sizing: border-box;
+    margin: 4em 0;
+    width: 100%;
+
+    @include breakpoint.media('≥s') {
+      margin: 7em 0;
+    }
+  }
+}

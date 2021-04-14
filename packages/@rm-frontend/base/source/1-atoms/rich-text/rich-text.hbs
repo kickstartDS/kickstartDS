@@ -1,0 +1,7 @@
+<div class="rich-text {{className}}">
+  {{~#if @partial-block~}}
+    {{#markdown}}{{{ @partial-block }}}{{/markdown}}
+  {{~else if text~}}
+    {{markdown text}}
+  {{~/if~}}
+</div>

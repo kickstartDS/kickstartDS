@@ -1,0 +1,59 @@
+@use '@rm-frontend/base/source/0-base/1-tools/scss/grid';
+@use '@rm-frontend/base/source/0-base/1-tools/scss/breakpoint';
+@use '@rm-frontend/base/source/0-base/0-settings/selector';
+
+.real-estate-image-slide {
+  @include breakpoint.media('print') {
+    @include grid.grid-columns(6);
+  }
+
+  display: flex;
+  position: relative;
+
+  &::before {
+    content: '';
+    float: left;
+    // padding-top:100%; // 1:1 Aspect Ratio
+    // padding-top: 56.25%; // 16:9 Aspect Ratio
+    padding-top: 75%; // 4:3 Aspect Ratio
+  }
+
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  figcaption {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background: rgba(white, 0.75);
+  }
+}
+
+.real-estate-image-slide--preview {
+  margin: 0.25em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  opacity: 0.3;
+  transition: 0.3s;
+
+  #{selector.$slider-nav-slide}:hover &,
+  #{selector.$slider-nav-slide}:focus &,
+  #{selector.$slider-nav-slide}--active & {
+    opacity: 1;
+  }
+
+  img {
+    width: 100%;
+  }
+}

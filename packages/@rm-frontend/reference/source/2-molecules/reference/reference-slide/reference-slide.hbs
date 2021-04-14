@@ -1,0 +1,17 @@
+<div class="reference-slide" data-title="{{ title }}">
+  {{#if image}}
+  <div class="reference-slide__image {{#if logo}}reference-slide__image--logo{{/if}}">
+    {{> atoms-lazy-img src=image alt="" js=slider.index }}
+  </div>
+  {{/if}}
+  <div class="reference-slide__text">
+    <div class="reference-slide__logo-name">
+      {{ title }}
+    </div>
+    <div class="reference-slide__topic">
+      {{ default topic "Lorem Ipsum" }}
+    </div>
+    {{{ text }}}
+    <a href="{{url}}" {{#if open-in-tab}} target="_blank" rel="noopener" {{/if}} class="button">Button {{ @index }}</a>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+/* stylelint-disable order/properties-alphabetical-order */
+/* stylelint-enable */
+.news-latest {
+  /* critical:start */
+  /* critical:start */
+  margin: -0.5vw 0 -0.5vw -1vw;
+  /* critical:end */
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 100%;
+  box-sizing: border-box;
+  /* critical:end */
+}
+.news-latest > * {
+  /* critical:start */
+  padding: 0.5vw 0 0.5vw 1vw;
+  /* critical:end */
+}
+.news-latest > * {
+  /* critical:start */
+  position: relative;
+  width: 100%;
+  background-clip: content-box;
+  /* critical:end */
+}
+@media (min-width: 60em) {
+  .news-latest__item {
+    /* critical:start */
+    flex: 0 0 33.3333333333%;
+    max-width: 33.3333333333%;
+    /* critical:end */
+  }
+}
+@media (max-width: 59.99em) {
+  .news-latest__item {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  .news-latest__item:first-child {
+    padding-top: 0;
+  }
+}
+.news-latest__more {
+  text-align: center;
+  margin: 2em 0;
+}
+@media (min-width: 40em) {
+  .news-latest__more {
+    margin-bottom: 0;
+  }
+}

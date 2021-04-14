@@ -1,0 +1,41 @@
+@use '@rm-frontend/base/source/0-base/1-tools/scss/helpers';
+@use '@rm-frontend/base/source/0-base/1-tools/scss/contrast';
+@use 'bourbon/core/bourbon';
+@use 'settings/base';
+
+.search__form {
+  .visually-hidden {
+    @include bourbon.hide-visually;
+  }
+
+  [role='listbox'] {
+    @include helpers.clearlist;
+
+    background-color: rgba(base.$color-brand, 0.95);
+    color: white;
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    margin-top: 3px;
+    z-index: 1;
+
+    li {
+      padding: 0.8em 1em;
+      cursor: pointer;
+
+      &:hover,
+      &[aria-selected='true'] {
+        background-color: rgba(
+          contrast.yiq-contrast-color(base.$color-brand, white, black),
+          0.2
+        );
+      }
+    }
+
+    mark {
+      color: inherit;
+      font-weight: helpers.get-font-weight(bold);
+      background-color: transparent;
+    }
+  }
+}

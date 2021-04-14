@@ -1,0 +1,176 @@
+{
+  "table-variants": [
+    {
+      "headline": {
+        "content": "Table",
+        "subheader": "Table scrolling"
+      },
+      "table": {
+        "scrolling": true,
+        "caption": "Lorem ipsum dolor sit amet",
+        "responsive": false,
+        "header": "col",
+        "content": [
+          ["Tabellenhead 1", "Lorem", "ipsum", "dolor", "Lorem", "ipsum"],
+          [
+            "Tabellenhead 2",
+            "sit amet",
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+            "sadipscing",
+            "Lorem",
+            "ipsum"
+          ],
+          [
+            "Tabellenhead 3",
+            "elitr sed",
+            "diam nonumy",
+            "eirmod",
+            "Lorem",
+            "ipsum"
+          ]
+        ]
+      }
+    },
+    {
+      "background": "1",
+      "headline": {
+        "content": "Table",
+        "subheader": "Table scrolling dark bg & \"table reponsive style on mobile\""
+      },
+      "table": {
+        "scrolling": true,
+        "responsive": true,
+        "header": "col",
+        "content": [
+          ["Tabellenhead 1", "Lorem", "ipsum", "dolor", "Lorem", "ipsum"],
+          [
+            "Tabellenhead 2",
+            "sit amet",
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+            "sadipscing",
+            "Lorem",
+            "ipsum"
+          ],
+          [
+            "Tabellenhead 3",
+            "elitr sed",
+            "diam nonumy",
+            "eirmod",
+            "Lorem",
+            "ipsum"
+          ]
+        ]
+      }
+    },
+    {
+      "headline": {
+        "content": "Table",
+        "subheader": "Table without scrolling"
+      },
+      "table": {
+        "scrolling": false,
+        "responsive": false,
+        "header": "col",
+        "content": [
+          ["Tabellenhead 1", "Lorem", "ipsum", "dolor", "Lorem", "ipsum"],
+          [
+            "Tabellenhead 2",
+            "sit amet",
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+            "sadipscing",
+            "Lorem",
+            "ipsum"
+          ],
+          [
+            "Tabellenhead 3",
+            "elitr sed",
+            "diam nonumy",
+            "eirmod",
+            "Lorem",
+            "ipsum"
+          ]
+        ]
+      }
+    },
+    {
+      "headline": {
+        "content": "Table",
+        "subheader": "Subheader Table"
+      },
+      "table": {
+        "scrolling": true,
+        "responsive": false,
+        "header": "row",
+        "content": [
+          [
+            "Tabellenhead 1",
+            "Tabellenhead 2",
+            "Tabellenhead 3",
+            "Lorem",
+            "ipsum"
+          ],
+          ["Lorem", "ipsum", "dolor", "Lorem", "ipsum"],
+          [
+            "sit amet",
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+            "sadipscing",
+            "Lorem",
+            "ipsum"
+          ],
+          ["elitr sed", "diam nonumy", "eirmod", "Lorem", "ipsum"]
+        ]
+      }
+    },
+    {
+      "headline": {
+        "content": "Table",
+        "subheader": "reponsive style on mobile"
+      },
+      "table": {
+        "scrolling": true,
+        "responsive": true,
+        "header": "row",
+        "content": [
+          [
+            "Tabellenhead 1",
+            "Tabellenhead 2",
+            "Tabellenhead 3",
+            "Lorem",
+            "ipsum"
+          ],
+          ["Lorem", "ipsum", "dolor", "Lorem", "ipsum"],
+          [
+            "sit amet",
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+            "sadipscing",
+            "Lorem",
+            "ipsum"
+          ],
+          ["elitr sed", "diam nonumy", "eirmod", "Lorem", "ipsum"]
+        ]
+      }
+    },
+    {
+      "headline": {
+        "content": "Table",
+        "subheader": "Subheader Table"
+      },
+      "table": {
+        "scrolling": false,
+        "responsive": false,
+        "header": "",
+        "content": [
+          ["Lorem", "ipsum", "dolor", "Lorem", "ipsum"],
+          [
+            "sit amet",
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+            "sadipscing",
+            "Lorem",
+            "ipsum"
+          ],
+          ["elitr sed", "diam nonumy", "eirmod", "Lorem", "ipsum"]
+        ]
+      }
+    }
+  ]
+}

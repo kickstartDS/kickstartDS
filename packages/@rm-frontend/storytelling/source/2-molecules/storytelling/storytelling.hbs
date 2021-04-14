@@ -1,0 +1,63 @@
+{{#*inline "myStorytelling"}}
+<div class="storytelling
+  {{~#if image.order.mobileImageLast}} storytelling--order-mobile-image-last{{/if}}
+  {{~#if image.order.desktopImageLast}} storytelling--order-desktop-image-last{{/if}}
+
+  {{~#if full}} storytelling--full{{/if}}
+  {{~#if (comp image.ratio "===" "4:3")}} storytelling--four-to-three{{/if}}
+  {{~#if (comp image.ratio "===" "3:2")}} storytelling--three-to-two{{/if}}
+  {{~#if (comp image.ratio "===" "16:9")}} storytelling--sixteen-to-nine{{/if}}
+  {{~#if (comp image.ratio "===" "1:1")}} storytelling--square{{/if~}}
+
+  {{~#if (comp lazy "&&" backgroundImage)}} lazyload{{/if~}}
+"
+  {{~#if (comp lazy "&&" backgroundImage)}} data-bg="{{@root.asset_paths.images}}/{{backgroundImage}}"{{/if}}
+  {{~#if (comp backgroundImage "||" backgroundColor)}}
+    style="
+      {{~#unless lazy}}{{#if backgroundImage}}background-image: url({{@root.asset_paths.images}}/{{backgroundImage}});{{/if}}{{/unless~}}
+      {{~#if backgroundColor}}background-color: {{backgroundColor}};{{/if~}}
+      "
+  {{~/if}}>
+  <div class="storytelling__image
+    {{~#if image.vAlign}} storytelling__image--{{image.vAlign}}{{/if~}}
+    {{~#if image.hAlign}} storytelling__image--{{image.hAlign}}{{/if~}}
+  ">
+    {{#if lazy}}
+      <img class="lazyload" data-src="{{@root.asset_paths.images}}/{{ image.source }}" alt="" {{#if image.ratio}}data-object-fit{{/if}}>
+      {{#unless backgroundImage}}
+        <noscript><img src="{{@root.asset_paths.images}}/{{ image.source }}" alt="" {{#if image.ratio}}data-object-fit{{/if}}></noscript>
+      {{/unless}}
+    {{else}}
+      <img src="{{@root.asset_paths.images}}/{{ image }}" alt="" {{#if image.ratio}}data-object-fit{{/if}}>
+    {{/if}}
+  </div>
+
+  <div class="storytelling__box
+    {{~#if box.vAlign}} storytelling__box--{{box.vAlign}}{{/if~}}
+    {{~#if box.hAlign}} storytelling__box--{{box.hAlign}}{{/if~}}
+  ">
+    <div class="storytelling__box__content
+      {{~#if box.textAlign}} storytelling__box__content--{{box.textAlign}}{{/if~}}
+    "
+    {{~#if box.textColor}}
+      style="color: {{box.textColor}};"
+    {{~/if}}
+    >
+      {{> molecules-content-headline box.headline }}
+      {{> atoms-rich-text text=box.text className="storytelling__text"}}
+
+      {{#if box.link}}
+        {{> atoms-link-button box.link}}
+      {{/if}}
+
+    </div>
+  </div>
+</div>
+{{/inline}}
+
+<div class="storytelling__wrapper">
+  {{> myStorytelling lazy=true}}
+  {{#if backgroundImage}}
+    <noscript>{{> myStorytelling lazy=false}}</noscript>
+  {{/if}}
+</div>

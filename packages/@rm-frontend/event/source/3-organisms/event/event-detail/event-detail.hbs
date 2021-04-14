@@ -1,0 +1,36 @@
+{{#> base-section }}
+  <div class="event-detail">
+    <h1 itemprop="name" id="microdata-event-name">Veranstaltung</h1>
+
+    <div class="event-detail__categories">
+      {{> molecules-tag-label-container }}
+    </div>
+    <div class="event-detail__wrapper">
+      <div class="event-detail__information">
+        <p class="text text--teaser" itemprop="description" id="microdata-event-description">
+          Absatz Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, at, illo alias voluptatibus quisquam cumque inventore.
+        </p>
+
+        <div class="event-detail__location">
+          {{#each event-locations}}
+            {{> molecules-event-detail-location-item this}}
+          {{/each}}
+        </div>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe repellendus doloremque eos amet ipsum, aperiam ullam quibusdam nobis sequi velit architecto minus voluptatum suscipit, alias! Expedita similique laudantium, quod corporis repellat quaerat iste repellendus illum voluptate nisi rerum quae repudiandae odit, blanditiis dolor laborum at officiis aperiam vero beatae obcaecati!</p>
+
+        {{> molecules-event-detail-gallery }}
+        {{> molecules-event-detail-download }}
+
+        <div class="event-detail__back l-centered">
+          {{> atoms-link-button style="outline" label="Alle Veranstaltungen"}}
+        </div>
+      </div>
+      <div class="event-detail__profile">
+        {{#each event-detail-profile }}
+        {{> molecules-profile }}
+        {{/each}}
+      </div>
+    </div>
+  </div>
+{{/base-section}}

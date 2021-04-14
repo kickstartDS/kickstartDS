@@ -1,0 +1,62 @@
+{
+  "select-input": [
+    {
+      "required": true,
+      "wrapper": {
+        "class": "form-row"
+      },
+      "label": {
+        "content": "Anrede",
+        "hidden": true
+      },
+      "options": [
+        {
+          "disabled": true,
+          "selected": true,
+          "content": "Anrede*"
+        },
+        {
+          "value": "Lorem Ipsum",
+          "content": "Lorem Ipsum"
+        },
+        {
+          "value": "Lorem Ipsum 1",
+          "content": "Lorem Ipsum 1"
+        },
+        {
+          "value": "Lorem Ipsum 2",
+          "content": "Lorem Ipsum 2"
+        }
+      ]
+    },
+    {
+      "required": true,
+      "wrapper": {
+        "class": "form-row"
+      },
+      "label": {
+        "content": "Anrede",
+        "hidden": false
+      },
+      "options": [
+        {
+          "disabled": true,
+          "selected": true,
+          "content": "Anrede*"
+        },
+        {
+          "value": "Lorem Ipsum",
+          "content": "Lorem Ipsum"
+        },
+        {
+          "value": "Lorem Ipsum 1",
+          "content": "Lorem Ipsum 1"
+        },
+        {
+          "value": "Lorem Ipsum 2",
+          "content": "Lorem Ipsum 2"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "keyvisual": false,
+  "headline": false,
+  "templates": [
+    {
+      "type": "100",
+      "content": [
+        {
+          "component": "organisms-reference-detail",
+          "data": {
+            "categories": [
+              {
+                "label": "Energiedienstleistungen",
+                "link": "https://example.com",
+                "size": "s"
+              },
+              {
+                "label": "Unterkategorie",
+                "link": "https://example.com",
+                "size": "s"
+              }
+            ],
+            "extended": [
+              {
+                "icon": "place",
+                "text": "50Hertz Transmission GmbH <br> Heidenstraße 2 <br> 10557 Berlin"
+              },
+              {
+                "icon": "person",
+                "text": "Person"
+              },
+              {
+                "icon": "phone",
+                "text": "<a href=\"tel:0049221987654321\">+49 (0)221 / 9876-4321</a>"
+              },
+              {
+                "icon": "email",
+                "text": "<a href=\"mailto:mail@example.com\">mail@example.com</a>"
+              },
+              {
+                "icon": "browser",
+                "text": "<a href=\"https://www.example.com\">www.example.com</a>"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

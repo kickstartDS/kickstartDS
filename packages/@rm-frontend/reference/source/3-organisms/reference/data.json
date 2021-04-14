@@ -1,0 +1,41 @@
+{
+  "reference-slider": [
+    {
+      "slideComponent": "molecules-reference-slide",
+      "previewComponent": "molecules-reference-slide-preview",
+      "title": "Lorem Ipsum Firma",
+      "image": "dummy/1-1-xs.png",
+      "logo": true,
+      "text": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia alias labore soluta harum! Illum sequi perferendis ex, quos eos at!</p> <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia alias labore soluta harum! Illum sequi perferendis ex, quos eos at!</p>"
+    },
+    {
+      "slideComponent": "molecules-reference-slide",
+      "previewComponent": "molecules-reference-slide-preview",
+      "title": "Lorem Ipsum Firma",
+      "image": "dummy/27-64-s.png",
+      "logo": true,
+      "text": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia alias labore soluta harum! Illum sequi perferendis ex, quos eos at!</p> <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia alias labore soluta harum! Illum sequi perferendis ex, quos eos at!</p>"
+    },
+    {
+      "slideComponent": "molecules-reference-slide",
+      "previewComponent": "molecules-reference-slide-preview",
+      "title": "Lorem Ipsum Firma",
+      "image": "dummy/64-27-s.png",
+      "logo": true,
+      "text": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia alias labore soluta harum! Illum sequi perferendis ex, quos eos at!</p> <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia alias labore soluta harum! Illum sequi perferendis ex, quos eos at!</p>"
+    },
+    {
+      "slideComponent": "molecules-reference-slide",
+      "previewComponent": "molecules-reference-slide-preview",
+      "title": "Firma Lorem Ipsum Investments GmbH",
+      "text": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia alias labore soluta harum! Illum sequi perferendis ex, quos eos at!</p> <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia alias labore soluta harum! Illum sequi perferendis ex, quos eos at!</p>"
+    },
+    {
+      "slideComponent": "molecules-reference-slide",
+      "previewComponent": "molecules-reference-slide-preview",
+      "title": "Slider 1",
+      "image": "dummy/1-1-xs.png",
+      "text": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia alias labore soluta harum! Illum sequi perferendis ex, quos eos at!</p> <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia alias labore soluta harum! Illum sequi perferendis ex, quos eos at!</p>"
+    }
+  ]
+}

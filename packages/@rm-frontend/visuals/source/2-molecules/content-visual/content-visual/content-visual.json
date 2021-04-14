@@ -1,0 +1,32 @@
+{
+  "content-visual": {
+    "media": {
+      "mode": "image",
+      "image": {
+        "srcMobile": "dummy/64-27-l.png",
+        "srcTablet": "dummy/64-27-xl.png",
+        "srcDesktop": "dummy/64-27-xxxl.png"
+      },
+      "video": {
+        "srcMobile": "dummy/64-27-l.mp4",
+        "srcTablet": "dummy/64-27-xl.mp4",
+        "srcDesktop": "dummy/64-27-xxxl.mp4"
+      }
+    },
+    "inbox": false,
+    "box": {
+      "enabled": true,
+      "horizontal": "left",
+      "vertical": "center",
+      "light": false,
+      "transparent": false,
+      "headline": "Lorem Ipsum",
+      "text": "Hic maxime sed eos non. Consequatur ut qui amet accusantium nesciunt.",
+      "link": {
+        "style": "outline-inverted",
+        "label": "Button"
+      }
+    },
+    "backgroundColor": false
+  }
+}

@@ -1,0 +1,58 @@
+@use '@rm-frontend/base/source/0-base/1-tools/scss/grid';
+@use '@rm-frontend/base/source/0-base/1-tools/scss/breakpoint';
+@use 'settings/base';
+
+.event-list-container {
+  /* critical:start */
+  @include grid.grid-container(2.5rem);
+  /* critical:end */
+
+  @if rm('modules.base.molecules.filter-area') {
+    .filter-area {
+      @include breakpoint.media('≥m') {
+        /* critical:start */
+        @include grid.grid-columns(4);
+        /* critical:end */
+      }
+    }
+  }
+
+  .event-list-wrap {
+    @include breakpoint.media('≥m') {
+      /* critical:start */
+      @include grid.grid-columns(8);
+      /* critical:end */
+    }
+  }
+}
+
+.event-list {
+  &-count {
+    /* critical:start */
+    display: flex;
+    align-items: center;
+    margin: 0 -1em;
+    color: base.$color-black-50-solid;
+
+    &::before,
+    &::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      margin: 0 1em;
+      background: base.$color-black-50-solid;
+    }
+    /* critical:end */
+  }
+
+  &-year {
+    color: base.$color-black-75;
+    padding-bottom: 1em;
+    border-bottom: 1px solid base.$color-black-10;
+    margin-bottom: 0;
+  }
+}
+
+.event-archive {
+  margin-bottom: 2em;
+}

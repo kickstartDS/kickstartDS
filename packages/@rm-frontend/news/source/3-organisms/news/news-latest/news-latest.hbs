@@ -1,0 +1,11 @@
+{{#> base-section}}
+  <div class="news news-latest">
+    {{#each (slice newsItems 0 3)}}
+      {{> molecules-news-latest-item this index=@index }}
+    {{/each}}
+  </div>
+
+  <div class="news news-latest__more">
+    {{> atoms-link-button label="Alle Neuigkeiten" style="outline"}}
+  </div>
+{{/base-section}}

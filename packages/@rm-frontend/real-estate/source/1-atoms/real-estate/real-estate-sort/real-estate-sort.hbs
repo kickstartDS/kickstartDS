@@ -1,0 +1,18 @@
+{{> atoms-select-input
+    wrapper=(object class="real-estate-sort")
+    class="real-estate-sort__select"
+    label=(object content="Sortieren nach")
+    component=true
+    data=(object auto-width='' submit='')
+    options=(array
+      (object value="currency-asc" content="Aktualität ▲ neueste zuerst" selected=true)
+      (object value="rent-desc" content="Kaltmiete ▲ höchste zuerst")
+      (object value="rent-asc" content="Kaltmiete ▼ niedrigste zuerst")
+      (object value="bedrooms-desc" content="Schlafzimmeranzahl ▲ höchste zuerst")
+      (object value="bedrooms-asc" content="Schlafzimmeranzahl ▼ niedrigste zuerst")
+      (object value="living-space-desc" content="Wohnfläche ▲ größte zuerst")
+      (object value="living-space-asc" content="Wohnfläche ▼ kleinste zuerst")
+    )
+    id="real-estate-sort"
+    name="sort"
+  }}

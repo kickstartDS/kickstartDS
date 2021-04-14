@@ -1,0 +1,37 @@
+{{#if label.top}}
+  <label class="{{label.class}}" for="{{id}}">
+    {{label.content}}
+{{/if}}
+  {{#unless textarea}}
+  <input class="input-field {{class}}"
+    {{~#if type}} type="{{type}}"{{/if~}}
+    {{~#if value}} value="{{value}}"{{/if~}}
+    {{~#if step}} step="{{step}}"{{/if~}}
+    {{~#if min}} min="{{min}}"{{/if~}}
+    {{~#if max}} max="{{max}}"{{/if~}}
+    {{~#if pattern}} pattern="{{pattern}}"{{/if~}}
+    {{~#if inputmode}} inputmode="{{inputmode}}"{{/if~}}
+  {{/unless}}
+  {{#if textarea}}
+  <textarea class="input-field {{class}}"
+    {{~#if rows}} rows="{{rows}}"{{/if~}}
+  {{/if}}
+    {{~#if placeholder}} placeholder="{{placeholder}}"{{/if~}}
+    {{~#if name}} name="{{name}}"{{/if~}}
+    {{~#if id}} id="{{id}}"{{/if~}}
+    {{~#if autocomplete}} autocomplete="{{autocomplete}}"{{/if~}}
+    {{~#if required}} required=""{{/if~}}
+    {{~#if maxlength}} maxlength="{{maxlength}}"{{/if~}}
+    {{~#if minlength}} minlength="{{minlength}}"{{/if~}}
+    {{~#each data}} data-{{@key}}="{{this}}"{{/each~}}
+  >{{#if textarea}}</textarea>{{/if}}
+{{#if label.inline}}
+  <label class="{{label.class}}" for="{{id}}">
+    {{label.content}}
+{{/if}}
+{{#if (comp class "==" "form-item--error")}}
+  <div class="form-item--error" id="bouncer-error_email">Dieses Feld ist ein Pflichtfeld.</div>
+{{/if}}
+{{#if (comp label.top "||" label.inline)}}
+  </label>
+{{/if}}

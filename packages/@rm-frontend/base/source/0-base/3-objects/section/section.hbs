@@ -1,0 +1,10 @@
+<div class="l-section
+  {{~#if background}} l-section--bg-{{background}}{{/if~}}
+  {{~#if space-before}} l-section--space-before-{{space-before}}{{/if~}}
+  {{~#if space-after}} l-section--space-after-{{space-after}}{{/if~}}
+" id="sid{{ increment }}">
+  <div class="l-main-wrap{{#if width}} l-main-wrap--{{width}}{{/if}}">
+    {{#if headline}}{{> molecules-content-headline headline}}{{/if}}
+    {{> @partial-block }}
+  </div>
+</div>

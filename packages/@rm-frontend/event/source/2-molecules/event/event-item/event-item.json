@@ -1,0 +1,36 @@
+{
+  "day": "27",
+  "month": "August",
+  "year": "2019",
+  "open-in-tab": true,
+  "event-header": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+  "list": {
+    "categorie": "kategorie 1",
+    "event-teaser": "Satoshi Nakamoto launched lots of decentralisation when Litecoin required many decentralised application, for Augur limited some public key behind lots of multi signature. Blockchain thought some robust smart contract in a algorithm! Since OmiseGo bought few double spend, Augur could be many algo-traded vaporware, but Decred data mining few trusted hard fork! Satoshi Nakamoto launched lots of decentralisation when Litecoin required many decentralised application, for Augur limited some public key behind lots of multi signature. Blockchain thought some robust smart contract in a algorithm! Since OmiseGo bought few double spend.",
+    "time": "08:00 - 13:00Uhr",
+    "event-address": "Stadthalle <br> Schaafenstraße 25 <br> 12345 Köln",
+    "list-image": "dummy/16-9-xl.png"
+  },
+  "tag-labels": [
+    {
+      "link": "https://example.com",
+      "label": "Kategorie 1",
+      "size": "s"
+    },
+    {
+      "link": "https://example.com",
+      "label": "Kategorie 2",
+      "size": "s"
+    },
+    {
+      "link": "https://example.com",
+      "label": "Kategorie 3",
+      "size": "s"
+    }
+  ],
+  "style": "solid",
+  "icon": {
+    "icon": "arrow-right"
+  },
+  "iconAfter": true
+}

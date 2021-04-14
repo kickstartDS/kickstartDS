@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://frontend.ruhmesmeile.com/base/atoms/icon.definitons.json",
+  "title": "Icon",
+  "description": "Icon",
+  "type": "object",
+  "properties": {
+    "icon": {
+      "type": "string",
+      "title": "Icon identifier"
+    },
+    "role": {
+      "type": "string",
+      "title": "Aria role"
+    },
+    "className": {
+      "type": "string",
+      "title": "additional class"
+    }
+  }
+}

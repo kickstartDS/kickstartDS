@@ -1,0 +1,82 @@
+{
+  "product-teaser": [
+    {
+      "clickable": true,
+      "productTeaserLarge": false,
+      "withoutSpacing": false,
+      "fullWidth": false,
+      "id": "id",
+      "image": "dummy/1-1-s.png",
+      "number": "123 456 789",
+      "price": "29,90€",
+      "href": "https://ruhmesmeile.com",
+      "link": "Lorem Ipsum",
+      "text": "Lorem ipsum dolor sit amet, consectetur corporis laboriosam nam unde adipisicing elit."
+    },
+    {
+      "clickable": false,
+      "productTeaserLarge": true,
+      "withoutSpacing": false,
+      "fullWidth": false,
+      "id": "id",
+      "image": "dummy/1-1-s.png",
+      "number": "123 456 789",
+      "price": "29,90€",
+      "href": "https://ruhmesmeile.com",
+      "link": "Lorem Ipsum",
+      "text": "Lorem ipsum dolor sit amet, consectetur corporis laboriosam nam unde adipisicing elit."
+    },
+    {
+      "clickable": false,
+      "productTeaserLarge": false,
+      "withoutSpacing": true,
+      "fullWidth": false,
+      "id": "id",
+      "image": "dummy/1-1-s.png",
+      "number": "123 456 789",
+      "price": "29,90€",
+      "href": "https://ruhmesmeile.com",
+      "link": "Lorem Ipsum",
+      "text": "Lorem ipsum dolor sit amet, consectetur corporis laboriosam nam unde adipisicing elit."
+    },
+    {
+      "clickable": false,
+      "productTeaserLarge": false,
+      "withoutSpacing": false,
+      "fullWidth": false,
+      "id": "id",
+      "image": "dummy/256-81-xl.png",
+      "number": "123 456 789",
+      "price": "29,90€",
+      "href": "https://ruhmesmeile.com",
+      "link": "Lorem Ipsum",
+      "text": "Lorem ipsum dolor sit amet, consectetur corporis laboriosam nam unde adipisicing elit."
+    },
+    {
+      "clickable": false,
+      "productTeaserLarge": false,
+      "withoutSpacing": false,
+      "fullWidth": false,
+      "id": "id",
+      "image": "dummy/81-256-xl.png",
+      "number": "123 456 789",
+      "price": "29,90€",
+      "href": "https://ruhmesmeile.com",
+      "link": "Lorem Ipsum",
+      "text": "Lorem ipsum dolor sit amet, consectetur corporis laboriosam nam unde adipisicing elit."
+    },
+    {
+      "clickable": false,
+      "productTeaserLarge": false,
+      "withoutSpacing": false,
+      "fullWidth": true,
+      "id": "id",
+      "image": "dummy/1-1-s.png",
+      "number": "123 456 789",
+      "price": "29,90€",
+      "href": "https://ruhmesmeile.com",
+      "link": "Lorem Ipsum",
+      "text": "Lorem ipsum dolor sit amet, consectetur corporis laboriosam nam unde adipisicing elit."
+    }
+  ]
+}

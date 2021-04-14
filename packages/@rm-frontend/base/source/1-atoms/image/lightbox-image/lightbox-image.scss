@@ -1,0 +1,56 @@
+@use 'bourbon/core/bourbon';
+@use 'settings/base';
+
+.lightbox-image {
+  $hover-transition: 0.3s ease-out;
+
+  position: relative;
+
+  &__link {
+    display: block;
+    overflow: hidden;
+    background: black;
+    text-decoration: none;
+  }
+
+  &__thumb {
+    width: 100%;
+    transition: $hover-transition;
+  }
+
+  &__zoom-icon {
+    transition: $hover-transition;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -45%);
+    text-align: center;
+    color: #fff;
+
+    svg {
+      @include bourbon.size(2em);
+    }
+  }
+
+  &:hover,
+  &:focus {
+    .lightbox-image__thumb {
+      transform: scale(base.$gallery__hover-scale);
+    }
+  }
+
+  &--with-zoom-icon {
+    &:hover,
+    &:focus {
+      .lightbox-image__thumb {
+        opacity: 0.8;
+      }
+
+      .lightbox-image__zoom-icon {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+<nav class="glossary-nav">
+  <ol class="glossary-nav__list">
+
+    {{#each glossaryNav}}
+      <li class="glossary-nav__item {{#unless this.link}}glossary-nav__item--disabled{{/unless}}">
+        {{#if this.link}}
+          <a class="glossary-nav__link {{#if this.current}}glossary-nav__link--current{{/if}}"
+            href="{{this.link}}"
+            title="{{this.alphabetLetter}}"
+          >
+            {{this.alphabetLetter}}
+          </a>
+        {{else}}
+          {{this.alphabetLetter}}
+        {{/if}}
+      </li>
+    {{/each}}
+
+  </ol>
+</nav>

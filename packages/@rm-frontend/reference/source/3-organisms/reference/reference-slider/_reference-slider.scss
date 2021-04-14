@@ -1,0 +1,25 @@
+@use '@rm-frontend/base/source/0-base/1-tools/scss/breakpoint';
+@use '@rm-frontend/base/source/0-base/0-settings/selector';
+@use 'bourbon/core/bourbon';
+@use 'settings/base';
+
+.reference-slider {
+  font-size: base.$font-size-small;
+  line-height: base.$line-height-small;
+
+  #{selector.$slider-nav-slides} {
+    margin-top: 2em;
+  }
+
+  #{selector.$slider-bullet} {
+    @include breakpoint.media('≥s') {
+      display: none;
+    }
+  }
+
+  .reference-slide--preview {
+    @include breakpoint.media('<s') {
+      @include bourbon.hide-visually;
+    }
+  }
+}

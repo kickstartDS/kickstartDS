@@ -1,0 +1,39 @@
+@charset "UTF-8";
+/* stylelint-disable order/properties-alphabetical-order */
+/* stylelint-enable */
+/* critical:start */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:not([class]) {
+  transition: 0.15s;
+  color: #050505;
+  text-decoration: underline;
+}
+@media print {
+  a:not([class]) {
+    text-decoration: none;
+  }
+}
+a:not([class]):focus, a:not([class]):hover {
+  color: inherit;
+  text-decoration: inherit;
+  background-color: rgba(5, 5, 5, 0.1);
+}
+@media print {
+  a:not([class]) {
+    color: inherit;
+  }
+}
+
+/* critical:end */
+.external-link[target=_blank]::after,
+.external-link-new-window[target=_blank]::after {
+  display: inline-block;
+  padding: 0 0.1em 0 0.2em;
+  font-size: 0.9em;
+  content: "◳";
+  vertical-align: top;
+  text-decoration: none;
+}

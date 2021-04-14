@@ -1,0 +1,28 @@
+@use 'settings/base';
+
+img {
+  /* critical:start */
+  max-width: 100%;
+  height: auto;
+  /* critical:end */
+  margin-bottom: 0;
+  vertical-align: top;
+}
+
+figure {
+  margin: 0;
+
+  img {
+    width: 100%;
+  }
+}
+
+%caption,
+caption,
+figcaption {
+  padding-top: 0.35em;
+
+  font-size: base.$font-size-tiny;
+  font-style: italic;
+  line-height: base.$line-height-small;
+}

@@ -1,0 +1,64 @@
+@use '@rm-frontend/base/source/0-base/1-tools/scss/breakpoint';
+@use '@rm-frontend/base/source/0-base/0-settings/selector';
+@use 'settings/base';
+
+@if rm('modules.gallery.molecules.gallery-slide') {
+  .gallery-slide {
+    figcaption {
+      color: base.$color-black;
+      font-size: base.$font-size-default;
+      line-height: base.$line-height-default;
+      width: 100%;
+      box-sizing: border-box;
+      font-style: normal;
+
+      @include breakpoint.media('≥s') {
+        position: absolute;
+        color: base.$color-white;
+        background: base.$color-black-50;
+        padding: 1em;
+        margin-top: 0;
+        font-size: base.$font-size-small;
+        line-height: base.$font-size-small;
+        bottom: 0;
+        left: 0;
+      }
+
+      p:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .gallery-slide-preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    opacity: 0.3;
+    transition: 0.3s;
+    padding: 0 0.25em;
+
+    #{selector.$slider-nav-slide}:first-child & {
+      padding-left: 0;
+    }
+
+    #{selector.$slider-nav-slide}:last-child & {
+      padding-right: 0;
+    }
+
+    #{selector.$slider-nav-constrol-slide} & {
+      min-width: 7rem;
+    }
+
+    #{selector.$slider-nav-slide}:hover &,
+    #{selector.$slider-nav-slide}:focus &,
+    #{selector.$slider-nav-slide}--active & {
+      opacity: 1;
+    }
+
+    &__img {
+      width: 100%;
+    }
+  }
+}

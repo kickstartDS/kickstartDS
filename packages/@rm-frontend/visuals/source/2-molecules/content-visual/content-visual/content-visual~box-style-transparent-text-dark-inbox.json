@@ -1,0 +1,12 @@
+{
+  "content-visual": {
+    "inbox": true,
+    "box": {
+      "transparent": true,
+      "light": true,
+      "link": {
+        "style": "outline"
+      }
+    }
+  }
+}

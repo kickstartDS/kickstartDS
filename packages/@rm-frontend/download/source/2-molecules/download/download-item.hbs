@@ -1,0 +1,68 @@
+<div class="download__item" role="group" aria-labelledby="download-headline-{{@index}}" data-component="download.item">
+
+  <div class="download__item__icon">
+    {{#if (comp (comp format '===' "zip") '||' (comp format '===' "rar") )}}
+      <svg viewbox="0 0 78 100" xmlns="http://www.w3.org/2000/svg">
+        <g fill="none" fill-rule="evenodd">
+          <path class="download-icon__bg" d="M1.99677895 0C.8939884 0 0 .89505147 0 1.9975379v96.0049242C0 99.1056718.90295086 100 2.0064843 100h73.9870314C77.1016664 100 78 99.0975516 78 97.9935843V19.6428571L58.5 0H1.99677895z" fill="#D0D0D0"></path>
+          <path d="M58 0v18.0092049C58 19.1086907 58.8982124 20 59.9907951 20H78L58 0z" fill="#000" opacity=".2"></path>
+          <path class="download-icon__drawing" d="M33 44h6v-4h-6M39 40h6v-4h-6M33 36h6v-4h-6M39 32h6v-4h-6M33 28h6v-4h-6M39 24h6v-4h-6M33 20h6v-4h-6M39 16h6v-4h-6M33 12h6V8h-6M33 4h6V-.001h-6M39 8h6V4h-6M31.8457 50.9941c0 1.119.898 2.006 2.006 2.006h9.988c1.109 0 2.006-.899 2.006-2.006v-2.988c0-1.119-.898-2.006-2.006-2.006h-9.988c-1.109 0-2.006.898-2.006 2.006v2.988zM38.9942 78.5h-.298c-3.027 0-5.188-2.456-4.802-5.459l.554-4.313c.09-.703.688-1.228 1.395-1.228h6.005c.707 0 1.304.525 1.395 1.228l.555 4.321c.386 3.011-1.753 5.451-4.804 5.451m7.67-4.978l-1.305-16.525c-.09-1.102-1.057-1.997-2.161-1.997h-8.705c-1.105 0-2.072.895-2.162 1.997l-1.304 16.525c-.36 4.417 2.93 7.978 7.347 7.978h.942c4.406 0 7.706-3.571 7.348-7.978" fill="#FFF"></path>
+        </g>
+      </svg>
+    {{/if}}
+    {{#if (comp format '===' "eps")}}
+      <svg viewbox="0 0 78 100" xmlns="http://www.w3.org/2000/svg">
+        <g fill="none" fill-rule="evenodd">
+          <path class="download-icon__bg" d="M1.99677895 0C.8939884 0 0 .89505147 0 1.9975379v96.0049242C0 99.1056718.90295086 100 2.0064843 100h73.9870314C77.1016664 100 78 99.0975516 78 97.9935843V19.6428571L58.5 0H1.99677895z" fill="#D0D0D0"></path>
+          <path d="M58 0v18.0092049C58 19.1086907 58.8982124 20 59.9907951 20H78L58 0z" fill="#000" opacity=".2"></path>
+          <path class="download-icon__drawing" d="M30 56c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zm19.077-3.018L33.932 67.026l-8.322-5.931L19 66.383V44h40v16.32l-9.923-7.338zM17 42v32.029L61 74V42H17zm-3 35h50V39H14v38zm-4 4h58V35H10v46z" fill="#FFF"></path>
+        </g>
+      </svg>
+    {{/if}}
+    {{#if (comp (comp (comp (comp format '===' "gif") '||' (comp format '===' "jpg")) '||' (comp format '===' "png")) '||' (comp format '===' "svg") )}}
+      <img alt="" src="{{@root.asset_paths.images}}/dummy/64-27-xs.png" width="100">
+    {{/if}}
+    {{#if (comp format '===' "pdf")}}
+      <img alt="" src="{{@root.asset_paths.images}}/dummy/9-16-s.png" width="169">
+    {{/if}}
+    {{#if (comp (comp (comp (comp format '===' "key") '||' (comp format '===' "odp")) '||' (comp format '===' "ppt")) '||' (comp format '===' "pptx") )}}
+      <svg viewbox="0 0 78 100" xmlns="http://www.w3.org/2000/svg">
+        <g fill="none" fill-rule="evenodd">
+          <path class="download-icon__bg" d="M1.99677895 0C.8939884 0 0 .89505147 0 1.9975379v96.0049242C0 99.1056718.90295086 100 2.0064843 100h73.9870314C77.1016664 100 78 99.0975516 78 97.9935843V19.6428571L58.5 0H1.99677895z" fill="#D0D0D0"></path>
+          <path d="M58 0v18.0092049C58 19.1086907 58.8982124 20 59.9907951 20H78L58 0z" fill="#000" opacity=".2"></path>
+          <path class="download-icon__drawing" d="M35 47h33v-4H35v4zm0-9h33v-4H35v4zm0-9h33v-4H35v4zM20 47c6.075 0 11-4.925 11-11H20s3.068-5.297 5.579-9.482C23.943 25.554 22.036 25 20 25c-6.075 0-11 4.925-11 11s4.925 11 11 11zm37 39h8V71h-8v15zm-11 0h8V63h-8v23zm-11 0h8V56h-8v30zm-11 0h8V71h-8v15zm-14 4h58v-2H10v2zm3-4h8V76h-8v10z" fill="#FFF"></path>
+        </g>
+      </svg>
+    {{/if}}
+    {{#if (comp (comp (comp (comp format '===' "numbers") '||' (comp format '===' "ods")) '||' (comp format '===' "xls")) '||' (comp format '===' "xlsx") )}}
+      <svg viewbox="0 0 78 100" xmlns="http://www.w3.org/2000/svg">
+        <g fill="none" fill-rule="evenodd">
+          <path class="download-icon__bg" d="M1.99677895 0C.8939884 0 0 .89505147 0 1.9975379v96.0049242C0 99.1056718.90295086 100 2.0064843 100h73.9870314C77.1016664 100 78 99.0975516 78 97.9935843V19.6428571L58.5 0H1.99677895z" fill="#D0D0D0"></path>
+          <path d="M58 0v18.0092049C58 19.1086907 58.8982124 20 59.9907951 20H78L58 0z" fill="#000" opacity=".2"></path>
+          <path class="download-icon__drawing" d="M10 25v64h58V25H10zm2 2h54v9H12v-9zm33 19h21v-8H45v8zm-23 0h21.001v-8H22v8zm-10 0h8v-8h-8v8zm33 9h21v-7H45v7zm-23 0h21.001v-7H22v7zm-10 0h8v-7h-8v7zm33 11h21v-9H45v9zm-23 0h21.001v-9H22v9zm-10 0h8v-9h-8v9zm33 10h21v-8H45v8zm-23 0h21.001v-8H22v8zm-10 0h8v-8h-8v8zm33 11h21v-9H45v9zm-23 0h21.001v-9H22v9zm-10 0h8v-9h-8v9zm2-53h49.974v-5H14v5z" fill="#FFF"></path>
+        </g>
+      </svg>
+    {{/if}}
+    {{#if (comp (comp (comp (comp (comp format '===' "doc") '||' (comp format '===' "docx")) '||' (comp format '===' "odt")) '||' (comp format '===' "rtf")) '||' (comp format '===' "txt"))}}
+      <svg viewbox="0 0 78 100" xmlns="http://www.w3.org/2000/svg">
+        <g fill="none" fill-rule="evenodd">
+          <path class="download-icon__bg" d="M1.99677895 0C.8939884 0 0 .89505147 0 1.9975379v96.0049242C0 99.1056718.90295086 100 2.0064843 100h73.9870314C77.1016664 100 78 99.0975516 78 97.9935843V19.6428571L58.5 0H1.99677895z" fill="#D0D0D0"></path>
+          <path d="M58 0v18.0092049C58 19.1086907 58.8982124 20 59.9907951 20H78L58 0z" fill="#000" opacity=".2"></path>
+          <path class="download-icon__drawing" d="M37 29h31v-4H37v4zm-17.864-4l-7.399 21.144-1.737.251V49h8.284v-2.605l-1.687-.302 1.069-3.34h7.882l1.07 3.34-1.687.302V49h8.109v-2.605l-1.562-.251L24.129 25h-4.993zm2.421 5.594h.1l2.739 8.569h-5.578l2.739-8.569zM37 39h31v-4H37v4zm0 10h31v-4.001H37V49zM10 59h58v-4.001H10V59zm0 10h58v-4.001H10V69zm0 10h58v-4.001H10V79zm0 10h58v-4H10v4z" fill="#FFF"></path>
+        </g>
+      </svg>
+    {{/if}}
+  </div>
+  <div class="download__item__title-text">
+    <p class="download__item__headline" id="download-headline-{{@index}}">{{ filename }}</p>
+    {{#if description}}<p class="download__item__description">{{ description }}</p>{{/if}}
+  </div>
+  <div class="download__item__meta">
+    <span class="download__item__format">{{ format }}</span> <span>{{ size }}</span>
+  </div>
+  <div class="download__item__download">
+    <a href="{{url}}" {{#if open-in-tab}} target="_blank" rel="noopener" {{/if}} id="download-link-{{@index}}" aria-labelledby="download-link-{{@index}} download-headline-{{@index}}">
+      {{> atoms-icon icon="download" className="icon-download" role="img" }}Download
+    </a>
+  </div>
+</div>

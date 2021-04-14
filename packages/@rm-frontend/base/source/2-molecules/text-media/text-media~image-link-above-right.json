@@ -1,0 +1,16 @@
+{
+  "mediaAlignment": "above-right",
+  "media": [
+    {
+      "lightboxImage": {
+        "image": "dummy/1-1-l.png",
+        "thumb": "dummy/1-1-s.png",
+        "width": 300,
+        "height": 300,
+        "zoomIcon": true,
+        "alt": "Square",
+        "caption": "Lorem ipsum."
+      }
+    }
+  ]
+}

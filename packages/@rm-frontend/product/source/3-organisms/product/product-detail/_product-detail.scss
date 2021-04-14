@@ -1,0 +1,40 @@
+// DETAIL
+
+@use '@rm-frontend/base/source/0-base/1-tools/scss/breakpoint';
+@use '@rm-frontend/base/source/1-atoms/rich-text/rich-text';
+@use 'bourbon/core/bourbon';
+
+.product-detail {
+  &__description,
+  &__data {
+    @include bourbon.clearfix;
+
+    margin-bottom: 2em;
+
+    @include breakpoint.media('≥s') {
+      margin-bottom: 3em;
+    }
+  }
+
+  &__infos {
+    display: block;
+    margin-bottom: 2em;
+
+    @include breakpoint.media('≥s') {
+      display: flex;
+      margin-bottom: 5em;
+    }
+
+    &__images {
+      width: 100%;
+      margin-bottom: 1em;
+      box-sizing: border-box;
+      flex-shrink: 0;
+
+      @include breakpoint.media('≥s') {
+        width: 50%;
+        margin-bottom: 0;
+      }
+    }
+  }
+}

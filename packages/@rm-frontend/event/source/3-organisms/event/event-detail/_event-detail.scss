@@ -1,0 +1,30 @@
+@use '@rm-frontend/base/source/0-base/1-tools/scss/breakpoint';
+@use 'settings/event';
+
+.event-detail__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+
+  @include breakpoint.media('≥m') {
+    flex-direction: row;
+  }
+
+  .event-detail__information {
+    flex: 2.1;
+
+    @include breakpoint.media('≥m') {
+      margin-right: 4rem;
+    }
+  }
+
+  .event-detail__profile {
+    flex: 0.9;
+
+    .profile__image {
+      min-width: event.$event-detail__profile-image-width;
+      width: event.$event-detail__profile-image-width;
+      height: event.$event-detail__profile-image-height;
+    }
+  }
+}

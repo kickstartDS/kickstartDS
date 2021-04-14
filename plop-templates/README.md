@@ -1,0 +1,1 @@
+# {{titleCase name}} Module

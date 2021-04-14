@@ -1,0 +1,29 @@
+{
+  "select-radius": {
+    "wrapper": {
+      "class": "form-column"
+    },
+    "label": {
+      "content": "Radius",
+      "hidden": false
+    },
+    "name": "selectbox-without-label",
+    "id": "radius-125",
+    "required": false,
+    "options": [
+      {
+        "content": "5"
+      },
+      {
+        "content": "25"
+      },
+      {
+        "content": "50"
+      },
+      {
+        "selected": true,
+        "content": "100"
+      }
+    ]
+  }
+}

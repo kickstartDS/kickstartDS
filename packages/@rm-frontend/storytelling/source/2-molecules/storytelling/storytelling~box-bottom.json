@@ -1,0 +1,18 @@
+{
+  "backgroundColor": false,
+  "backgroundImage": "dummy/16-9-xxxl.png",
+  "image": {
+    "source": "dummy/9-16-s-i.png",
+    "order": {
+      "mobileImageLast": true,
+      "desktopImageLast": ""
+    }
+  },
+  "box": {
+    "headline": {
+      "subheader": false
+    },
+    "textColor": false,
+    "vAlign": "bottom"
+  }
+}

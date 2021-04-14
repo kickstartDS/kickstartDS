@@ -1,0 +1,88 @@
+<nav class="nav-sidebar" id="nav-sidebar" aria-label="Hauptnavigation" data-component="base.nav-sidebar">
+  <ul class="nav-sidebar__list nav-sidebar__list--level-1">
+    {{#each nav-sidebar}}
+      <li class="nav-sidebar__item nav-sidebar__item--level-1{{#if current}} nav-sidebar__item--current{{/if}}"{{#if dropdown}} data-component="base.slide-dropdown"{{/if}}>
+        {{#if dropdown}}
+        <details>
+          <summary>
+            <div class="nav-sidebar__item__link">
+              {{label}}
+              {{> atoms-icon icon="chevron-down" role="img" className="nav-sidebar__icon" }}
+            </div>
+          </summary>
+          <ul class="nav-sidebar__list nav-sidebar__list--level-2">
+            {{#each dropdown}}
+              <li class="nav-sidebar__item nav-sidebar__item--level-2{{#if current}} nav-sidebar__item--current{{/if}}"{{#if dropdown}} data-component="base.slide-dropdown"{{/if}}>
+                {{#if dropdown}}
+                <details>
+                  <summary>
+                    <div class="nav-sidebar__item__link">
+                      {{label}}
+                      {{> atoms-icon icon="chevron-down" role="img" className="nav-sidebar__icon" }}
+                    </div>
+                  </summary>
+                  <ul class="nav-sidebar__list nav-sidebar__list--level-3">
+                    {{#each dropdown}}
+                      <li class="nav-sidebar__item nav-sidebar__item--level-3{{#if current}} nav-sidebar__item--current{{/if}}"{{#if dropdown}} data-component="base.slide-dropdown"{{/if}}>
+                        {{#if dropdown}}
+                        <details>
+                          <summary>
+                            <div class="nav-sidebar__item__link">
+                              {{label}}
+                              {{> atoms-icon icon="chevron-down" role="img" className="nav-sidebar__icon" }}
+                            </div>
+                          </summary>
+                          <ul class="nav-sidebar__list nav-sidebar__list--level-4">
+                            {{#each dropdown}}
+                              <li class="nav-sidebar__item nav-sidebar__item--level-4{{#if current}} nav-sidebar__item--current{{/if}}"{{#if dropdown}} data-component="base.slide-dropdown"{{/if}}>
+                                {{#if dropdown}}
+                                <details>
+                                  <summary>
+                                    <div class="nav-sidebar__item__link">
+                                      {{label}}
+                                      {{> atoms-icon icon="chevron-down" role="img" className="nav-sidebar__icon" }}
+                                    </div>
+                                  </summary>
+                                  <ul class="nav-sidebar__list nav-sidebar__list--level-5">
+                                    {{#each dropdown}}
+                                      <li class="nav-sidebar__item nav-sidebar__item--level-5{{#if current}} nav-sidebar__item--current{{/if}}"{{#if dropdown}} data-component="base.slide-dropdown"{{/if}}>
+                                        <a href="{{@root.url}}" class="nav-sidebar__item__link">{{label}}</a>
+                                      </li>
+                                    {{/each}}
+                                  </ul>
+                                </details>
+                                {{else}}
+                                <a href="{{@root.url}}" class="nav-sidebar__item__link">{{label}}</a>
+                                {{/if}}
+                              </li>
+                            {{/each}}
+                          </ul>
+                        </details>
+                        {{else}}
+                        <a href="{{@root.url}}" class="nav-sidebar__item__link">{{label}}</a>
+                        {{/if}}
+                      </li>
+                    {{/each}}
+                  </ul>
+                </details>
+                {{else}}
+                <a href="{{@root.url}}" class="nav-sidebar__item__link">{{label}}</a>
+                {{/if}}
+              </li>
+            {{/each}}
+          </ul>
+        </details>
+        {{else}}
+          {{#if search}}
+          <a href="{{ link.templates-search }}" class="nav-item-search nav-sidebar__item__link" tabindex="0">
+            {{label}}
+            {{> atoms-icon icon="search" }}
+          </a>
+          {{else}}
+          <a href="{{@root.url}}" class="nav-sidebar__item__link">{{label}}</a>
+          {{/if}}
+        {{/if}}
+      </li>
+    {{/each}}
+  </ul>
+</nav>

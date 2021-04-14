@@ -1,0 +1,11 @@
+/**
+ * # Textarea
+ */
+
+textarea {
+  resize: vertical;
+
+  &:not([rows]) {
+    height: 13.35em;
+  }
+}

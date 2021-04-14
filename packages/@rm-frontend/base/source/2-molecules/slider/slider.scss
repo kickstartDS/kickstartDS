@@ -1,0 +1,49 @@
+@use '../../0-base/1-tools/scss/breakpoint';
+
+@use './glide.core';
+@use './slider-arrows/slider-arrows';
+@use './slider-bullet/slider-bullet';
+
+.slider-main {
+  .slider {
+    &__track {
+      width: 100%;
+      transition: 0.3s;
+    }
+
+    &__slides {
+      align-items: flex-start;
+    }
+  }
+}
+
+.slider-nav {
+  @include breakpoint.media('print') {
+    display: none;
+  }
+
+  overflow: hidden;
+
+  &__slides {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &__slide {
+    white-space: normal;
+  }
+}
+
+.slider--disabled {
+  .slider__slide--clone,
+  .slider__arrows,
+  .slider-nav {
+    display: none !important;
+  }
+
+  .slider__slides {
+    transform: none !important;
+    width: auto !important;
+    justify-content: center;
+  }
+}

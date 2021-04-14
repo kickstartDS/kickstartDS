@@ -1,0 +1,116 @@
+{
+  "background": 1,
+  "download": [
+    {
+      "filename": "Archiv.rar",
+      "format": "rar",
+      "size": "83 KB"
+    },
+    {
+      "filename": "Archiv.zip",
+      "format": "zip",
+      "size": "27 KB"
+    },
+    {
+      "filename": "Image.eps",
+      "format": "eps",
+      "size": "254 KB",
+      "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore"
+    },
+    {
+      "filename": "Image.gif",
+      "format": "gif",
+      "size": "60 KB"
+    },
+    {
+      "filename": "Image.jpg",
+      "format": "jpg",
+      "size": "786 KB"
+    },
+    {
+      "filename": "Image.png",
+      "format": "png",
+      "size": "5 KB",
+      "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore"
+    },
+    {
+      "filename": "Image.svg",
+      "format": "svg",
+      "size": "4 KB"
+    },
+    {
+      "filename": "PDF.pdf",
+      "format": "pdf",
+      "size": "321 KB"
+    },
+    {
+      "filename": "Pra__sentation.key",
+      "format": "key",
+      "size": "357 KB"
+    },
+    {
+      "filename": "Pra__sentation.odp",
+      "format": "odp",
+      "size": "131 KB"
+    },
+    {
+      "filename": "Pra__sentation.ppt",
+      "format": "ppt",
+      "size": "3 MB",
+      "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore"
+    },
+    {
+      "filename": "Pra__sentation.pptx",
+      "format": "pptx",
+      "size": "168 KB"
+    },
+    {
+      "filename": "Spreadsheet.numbers",
+      "format": "numbers",
+      "size": "133 KB"
+    },
+    {
+      "filename": "Spreadsheet.ods",
+      "format": "ods",
+      "size": "8 KB"
+    },
+    {
+      "filename": "Spreadsheet.xls",
+      "format": "xls",
+      "size": "60 KB",
+      "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore"
+    },
+    {
+      "filename": "Spreadsheet.xlsx",
+      "format": "xlsx",
+      "size": "23 KB",
+      "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore"
+    },
+    {
+      "filename": "Text.doc",
+      "format": "doc",
+      "size": "204 KB"
+    },
+    {
+      "filename": "Text.docx",
+      "format": "docx",
+      "size": "75 KB"
+    },
+    {
+      "filename": "Text.odt",
+      "format": "odt",
+      "size": "17 KB"
+    },
+    {
+      "filename": "Text.rtf",
+      "format": "rtf",
+      "size": "17 KB"
+    },
+    {
+      "filename": "Text.txt",
+      "format": "txt",
+      "size": "598 KB",
+      "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore"
+    }
+  ]
+}

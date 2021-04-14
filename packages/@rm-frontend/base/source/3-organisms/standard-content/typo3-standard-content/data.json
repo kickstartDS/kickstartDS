@@ -1,0 +1,306 @@
+{
+  "text-media-section": [
+    {
+      "id": "id",
+      "headline": {
+        "content": "Image above center",
+        "subheader": "Subheader Text & Media"
+      },
+      "text-media": {
+        "mediaAlignment": "above-center",
+        "media": [
+          {
+            "image": {
+              "src": "dummy/1-1-xs.png"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "id",
+      "section-bg": "1",
+      "headline": {
+        "content": "Text image intext right",
+        "subheader": "Subheader Text & Media"
+      },
+      "text-media": {
+        "mediaAlignment": "intext-right",
+        "media": [
+          {
+            "image": {
+              "src": "dummy/1-1-xs.png",
+              "caption": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "id",
+      "headline": {
+        "content": "Text image beside text left",
+        "subheader": "Subheader Text & Media"
+      },
+      "text-media": {
+        "mediaAlignment": "beside-left",
+        "media": [
+          {
+            "image": {
+              "src": "dummy/1-1-xs.png",
+              "caption": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "id",
+      "headline": {
+        "content": "Text image beside text left",
+        "subheader": "Subheader Text & Media"
+      },
+      "text-media": {
+        "mediaAlignment": "above-center",
+        "media": [
+          {
+            "video": {
+              "iframe": true,
+              "src": "https://www.youtube.com/embed/LMx4SmK4s0U?autohide=1&amp;controls=2&amp;enablejsapi=1&amp;origin=http%3A%2F%2Fsheepstreet.machine&amp;showinfo=0"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "id",
+      "text-media": {
+        "mediaAlignment": "above-center"
+      }
+    },
+    {
+      "id": "id",
+      "section-bg": "1",
+      "headline": {
+        "content": "h2 Heading Left",
+        "subheader": "Subheader Text & Media",
+        "align": "left"
+      },
+      "text-media": {
+        "mediaAlignment": "above-right"
+      }
+    },
+    {
+      "id": "id",
+      "section-bg": "1",
+      "headline": {
+        "content": "h3 Heading Left",
+        "subheader": "Subheader Text & Media",
+        "align": "left",
+        "level": "h3"
+      },
+      "text-media": {
+        "mediaAlignment": "above-center"
+      }
+    },
+    {
+      "id": "id",
+      "section-bg": "1",
+      "headline": {
+        "content": "Image above center",
+        "subheader": "Subheader Text & Media"
+      },
+      "text-media": {
+        "mediaAlignment": "above-center",
+        "media": [
+          {
+            "image": {
+              "src": "dummy/1-1-xs.png",
+              "caption": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "id",
+      "headline": {
+        "content": "Text image intext right",
+        "subheader": "Subheader Text & Media"
+      },
+      "text-media": {
+        "mediaAlignment": "intext-right",
+        "media": [
+          {
+            "image": {
+              "src": "dummy/1-1-xs.png",
+              "caption": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "id",
+      "headline": {
+        "content": "Text image intext left",
+        "subheader": "Subheader Text & Media"
+      },
+      "text-media": {
+        "mediaAlignment": "intext-left",
+        "media": [
+          {
+            "image": {
+              "src": "dummy/1-1-xs.png",
+              "caption": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "id",
+      "headline": {
+        "content": "Text image beside text left",
+        "subheader": "Subheader Text & Media"
+      },
+      "text-media": {
+        "mediaAlignment": "beside-left",
+        "media": [
+          {
+            "image": {
+              "src": "dummy/1-1-xs.png",
+              "caption": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "id",
+      "headline": {
+        "content": "Text image beside text right",
+        "subheader": "Subheader Text & Media"
+      },
+      "text-media": {
+        "mediaAlignment": "beside-right",
+        "media": [
+          {
+            "image": {
+              "src": "dummy/1-1-xs.png",
+              "caption": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "id",
+      "headline": {
+        "content": "Text image below text center",
+        "subheader": "Subheader Text & Media"
+      },
+      "text-media": {
+        "mediaAlignment": "below-center",
+        "media": [
+          {
+            "image": {
+              "src": "dummy/1-1-xs.png",
+              "caption": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "id",
+      "headline": {
+        "content": "Video above center",
+        "subheader": "Subheader Text & Media"
+      },
+      "text-media": {
+        "mediaAlignment": "above-center",
+        "media": [
+          {
+            "video": {
+              "iframe": true,
+              "src": "https://www.youtube.com/embed/LMx4SmK4s0U?autohide=1&amp;controls=2&amp;enablejsapi=1&amp;origin=http%3A%2F%2Fsheepstreet.machine&amp;showinfo=0"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "id",
+      "headline": {
+        "content": "Video image intext right",
+        "subheader": "Subheader Text & Media"
+      },
+      "text-media": {
+        "mediaAlignment": "intext-right",
+        "media": [
+          {
+            "video": {
+              "iframe": true,
+              "src": "https://www.youtube.com/embed/LMx4SmK4s0U?autohide=1&amp;controls=2&amp;enablejsapi=1&amp;origin=http%3A%2F%2Fsheepstreet.machine&amp;showinfo=0"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "id",
+      "headline": {
+        "content": "Video image intext left",
+        "subheader": "Subheader Text & Media"
+      },
+      "text-media": {
+        "mediaAlignment": "intext-left",
+        "media": [
+          {
+            "video": {
+              "iframe": true,
+              "src": "https://www.youtube.com/embed/LMx4SmK4s0U?autohide=1&amp;controls=2&amp;enablejsapi=1&amp;origin=http%3A%2F%2Fsheepstreet.machine&amp;showinfo=0"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "id",
+      "headline": {
+        "content": "Video image beside text left",
+        "subheader": "Subheader Text & Media"
+      },
+      "text-media": {
+        "mediaAlignment": "beside-left",
+        "media": [
+          {
+            "video": {
+              "iframe": true,
+              "src": "https://www.youtube.com/embed/LMx4SmK4s0U?autohide=1&amp;controls=2&amp;enablejsapi=1&amp;origin=http%3A%2F%2Fsheepstreet.machine&amp;showinfo=0"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "id",
+      "headline": {
+        "content": "Video image beside text right",
+        "subheader": "Subheader Text & Media"
+      },
+      "text-media": {
+        "mediaAlignment": "beside-right",
+        "media": [
+          {
+            "video": {
+              "iframe": true,
+              "src": "https://www.youtube.com/embed/LMx4SmK4s0U?autohide=1&amp;controls=2&amp;enablejsapi=1&amp;origin=http%3A%2F%2Fsheepstreet.machine&amp;showinfo=0"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "full": true,
+  "image": {
+    "source": "dummy/16-9-xl.png",
+    "ratio": "16:9"
+  },
+  "box": {
+    "headline": {
+      "content": "Storytelling"
+    },
+    "text": "Lorem ipsum dolor sit amet.  \n16:9"
+  }
+}

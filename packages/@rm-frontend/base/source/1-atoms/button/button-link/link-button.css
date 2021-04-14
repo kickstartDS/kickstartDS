@@ -1,0 +1,358 @@
+@charset "UTF-8";
+/* stylelint-disable order/properties-alphabetical-order */
+/* stylelint-enable */
+.button {
+  /* critical:start */
+  font-weight: 400;
+  box-sizing: border-box;
+  display: inline-flex;
+  position: relative;
+  margin: 0;
+  padding: 0.5em 1.3em;
+  font-size: 1em;
+  text-align: center;
+  text-decoration: none;
+  line-height: 1.2;
+  vertical-align: middle;
+  cursor: pointer;
+  border-radius: 3px;
+  appearance: none;
+  background-clip: padding-box;
+  transition-property: background, color, border, transform, padding;
+  transition-duration: 0.15s;
+  justify-content: center;
+  /* critical:end */
+}
+.button::after {
+  transition-property: opacity, transform;
+  transition-duration: 0.3s;
+  position: relative;
+  opacity: 0;
+  margin: auto;
+}
+.button > * {
+  display: block;
+}
+@media print {
+  .button {
+    display: none;
+  }
+}
+.button .icon {
+  /* critical:start */
+  height: 1.2em;
+  width: 1.2em;
+  margin: 0 0.5rem;
+  /* critical:end */
+}
+.button .icon:first-child {
+  margin-left: 0;
+}
+.button .icon:last-child {
+  margin-right: 0;
+}
+.button--clear {
+  /* critical:start */
+  background-color: transparent;
+  color: #333333;
+  padding-left: 0;
+  /* critical:end */
+}
+.button--clear:hover, .button--clear:focus {
+  background-color: rgba(51, 51, 51, 0.2);
+  text-decoration: none;
+  color: #303030;
+}
+.button--clear:active:not(:disabled) {
+  color: #2e2e2e;
+  background-color: rgba(51, 51, 51, 0.3);
+  transform: scale(0.95);
+}
+.button--clear[disabled] {
+  background-color: rgba(0, 0, 0, 0);
+  color: #333333;
+  opacity: 0.5;
+  cursor: default;
+}
+.button--clear:focus, .button--clear:hover {
+  padding: 0.5em 1.3em;
+}
+.button--clear.button--fill-animation {
+  background: linear-gradient(to right, #333333 50%, #fff 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all 0.3s ease-out;
+}
+.button--clear.button--fill-animation:focus, .button--clear.button--fill-animation:hover {
+  color: #fff;
+  background-position: left bottom;
+  border-color: #333333;
+}
+.button--clear-inverted {
+  /* critical:start */
+  background-color: transparent;
+  color: #fff;
+  padding-left: 0;
+  /* critical:end */
+}
+.button--clear-inverted:hover, .button--clear-inverted:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+  text-decoration: none;
+}
+.button--clear-inverted:active:not(:disabled) {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: scale(0.95);
+}
+.button--clear-inverted[disabled] {
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  opacity: 0.5;
+  cursor: default;
+}
+.button--clear-inverted:focus, .button--clear-inverted:hover {
+  padding: 0.5em 1.3em;
+}
+.button--clear-inverted.button--fill-animation {
+  background: linear-gradient(to right, #fff 50%, #333333 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all 0.3s ease-out;
+}
+.button--clear-inverted.button--fill-animation:focus, .button--clear-inverted.button--fill-animation:hover {
+  color: #333333;
+  background-position: left bottom;
+  border-color: #fff;
+}
+.button--solid {
+  /* critical:start */
+  background-color: #333333;
+  color: #fff;
+  /* critical:end */
+}
+.button--solid:hover, .button--solid:focus {
+  background-color: #5c5c5c;
+  text-decoration: none;
+}
+.button--solid:active:not(:disabled) {
+  background-color: #707070;
+  transform: scale(0.95);
+}
+.button--solid[disabled] {
+  background-color: #333333;
+  color: white;
+  opacity: 0.5;
+  cursor: default;
+}
+.button--solid.button--fill-animation {
+  background: linear-gradient(to right, #fff 50%, #333333 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all 0.3s ease-out;
+}
+.button--solid.button--fill-animation:focus, .button--solid.button--fill-animation:hover {
+  color: #333333;
+  background-position: left bottom;
+}
+.button--solid-inverted {
+  /* critical:start */
+  background-color: #fff;
+  color: #303030;
+  /* critical:end */
+}
+.button--solid-inverted:hover, .button--solid-inverted:focus {
+  background-color: #d6d6d6;
+  text-decoration: none;
+}
+.button--solid-inverted:active:not(:disabled) {
+  background-color: #c1c1c1;
+  transform: scale(0.95);
+}
+.button--solid-inverted[disabled] {
+  background-color: white;
+  color: #303030;
+  opacity: 0.5;
+  cursor: default;
+}
+.button--solid-inverted.button--fill-animation {
+  background: linear-gradient(to right, #303030 50%, #fff 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all 0.3s ease-out;
+}
+.button--solid-inverted.button--fill-animation:focus, .button--solid-inverted.button--fill-animation:hover {
+  color: #fff;
+  background-position: left bottom;
+}
+.button--outline {
+  /* critical:start */
+  background-color: transparent;
+  color: #333333;
+  border-color: #333333;
+  border-width: 1px;
+  border-style: solid;
+  /* critical:end */
+}
+.button--outline:hover, .button--outline:focus {
+  background-color: rgba(51, 51, 51, 0.2);
+  text-decoration: none;
+  color: #303030;
+}
+.button--outline:active:not(:disabled) {
+  color: #2e2e2e;
+  background-color: rgba(51, 51, 51, 0.3);
+  transform: scale(0.95);
+}
+.button--outline[disabled] {
+  background-color: rgba(0, 0, 0, 0);
+  color: #333333;
+  opacity: 0.5;
+  cursor: default;
+}
+.button--outline.button--fill-animation {
+  background: linear-gradient(to right, #333333 50%, #fff 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all 0.3s ease-out;
+}
+.button--outline.button--fill-animation:focus, .button--outline.button--fill-animation:hover {
+  color: #fff;
+  background-position: left bottom;
+  border-color: #333333;
+}
+.button--outline-inverted {
+  /* critical:start */
+  background-color: transparent;
+  color: #fff;
+  border-width: 1px;
+  border-style: solid;
+  /* critical:end */
+}
+.button--outline-inverted:hover, .button--outline-inverted:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+  text-decoration: none;
+}
+.button--outline-inverted:active:not(:disabled) {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: scale(0.95);
+}
+.button--outline-inverted[disabled] {
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  opacity: 0.5;
+  cursor: default;
+}
+.button--outline-inverted.button--fill-animation {
+  background: linear-gradient(to right, #fff 50%, #333333 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all 0.3s ease-out;
+}
+.button--outline-inverted.button--fill-animation:focus, .button--outline-inverted.button--fill-animation:hover {
+  color: #333333;
+  background-position: left bottom;
+  border-color: #fff;
+}
+.button--is-loading, .button--is-successful {
+  display: inline-block;
+  padding-left: 0;
+  padding-right: 0;
+}
+.button--is-loading span, .button--is-successful span {
+  height: 0;
+  visibility: hidden;
+}
+.button--is-loading {
+  cursor: progress;
+}
+.button--is-loading::after {
+  height: 1.3em;
+  width: 1.3em;
+  content: "";
+  display: block;
+  animation: btnSpinner 1.5s infinite 0.1s linear;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 2px solid #fff;
+  border-top-color: transparent;
+  opacity: 1;
+}
+.button--is-successful::after {
+  content: "✓";
+  transform: scale(2);
+  opacity: 1;
+}
+.button--small {
+  /* critical:start */
+  font-size: 0.75em;
+  line-height: 1.2;
+  padding: 0.45em 1em;
+  /* critical:end */
+}
+.button--small.button--is-loading::after {
+  height: 1.5em;
+  width: 1.5em;
+}
+.button--small .icon {
+  height: 1.2em;
+  width: 1.2em;
+}
+.button--large {
+  /* critical:start */
+  font-size: 1.1em;
+  line-height: 1.2;
+  padding: 0.5em 1.7em 0.45em;
+  /* critical:end */
+}
+.button--large.button--is-loading::after {
+  height: 1.5em;
+  width: 1.5em;
+}
+.button--large .icon {
+  height: 1.2em;
+  width: 1.2em;
+}
+.button--icon-animation:hover .icon {
+  animation: hover-effect 0.6s;
+}
+
+@keyframes btnSpinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.button--deals {
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(5, 5, 5, 0.4);
+}
+.button--deals.button--without_box-shadow {
+  box-shadow: none;
+}
+.button--deals:hover {
+  background: transparent;
+  opacity: 0.8;
+  border: 1px solid #fff;
+}
+
+@keyframes hover-effect {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  60% {
+    transform: translateX(50%);
+    opacity: 0;
+  }
+  75% {
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

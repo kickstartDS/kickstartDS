@@ -1,0 +1,28 @@
+/* stylelint-disable order/properties-alphabetical-order */
+/* stylelint-enable */
+.tag-label-container {
+  /* critical:start */
+  /* critical:start */
+  margin: -0.25rem 0 -0.25rem -0.5rem;
+  /* critical:end */
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 100%;
+  box-sizing: border-box;
+  /* critical:end */
+}
+.tag-label-container > * {
+  /* critical:start */
+  padding: 0.25rem 0 0.25rem 0.5rem;
+  /* critical:end */
+}
+.tag-label-container > * {
+  /* critical:start */
+  position: relative;
+  width: 100%;
+  background-clip: content-box;
+  /* critical:end */
+}
+.tag-label-container > * {
+  width: auto;
+}

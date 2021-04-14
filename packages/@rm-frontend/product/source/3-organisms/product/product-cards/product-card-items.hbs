@@ -1,0 +1,8 @@
+
+{{#each productItems}}
+  <div class="product-cards__item" data-component="product.product-card">
+    <div class="product-cards__item__inner">
+      {{> molecules-product-card-item--content this download=../download }}
+    </div>
+  </div>
+{{/each}}

@@ -1,0 +1,171 @@
+/* stylelint-disable order/properties-alphabetical-order */
+/* stylelint-enable */
+.nav-meta-container {
+  /* critical:start */
+  display: none;
+  /* critical:end */
+}
+@media print {
+  .nav-meta-container {
+    display: none;
+  }
+}
+@media (min-width: 40em) {
+  .nav-meta-container {
+    /* critical:start */
+    display: block !important;
+    /* critical:end */
+  }
+}
+.main-header--variant-1 .nav-meta-container {
+  background-color: #333333;
+}
+@media (min-width: 67em) {
+  .transparent-header .main-header--variant-1 .nav-meta-container {
+    background-color: rgba(5, 5, 5, 0.1);
+  }
+}
+.main-header--variant-2 .nav-meta-container {
+  background-color: transparent;
+}
+@media (min-width: 67em) {
+  .nav-meta-container {
+    display: none;
+    background-color: transparent;
+  }
+}
+.main-header-sidebar .nav-meta-container, .main-header--variant-2 .nav-meta-container {
+  width: 100%;
+}
+@media (min-width: 67em) {
+  .main-header-sidebar .nav-meta-container, .main-header--variant-2 .nav-meta-container {
+    width: auto;
+  }
+}
+.nav-meta__list {
+  /* critical:start */
+  display: none;
+  margin-right: -0.8em;
+  /* critical:end */
+}
+@media print {
+  .nav-meta__list {
+    display: none;
+  }
+}
+@media (min-width: 40em) {
+  .nav-meta__list {
+    /* critical:start */
+    display: flex;
+    /* critical:end */
+  }
+}
+.main-header-sidebar .nav-meta__list, .main-header--variant-1 .nav-meta__list, .main-header--variant-2 .nav-meta__list {
+  /* critical:start */
+  /* critical:start */
+  padding-right: 0.666rem;
+  padding-left: 0.666rem;
+  /* critical:end */
+  max-width: 62rem;
+  margin: auto;
+  /* critical:end */
+}
+@media (min-width: 40em) {
+  .main-header-sidebar .nav-meta__list, .main-header--variant-1 .nav-meta__list, .main-header--variant-2 .nav-meta__list {
+    /* critical:start */
+    padding-right: 1.3rem;
+    padding-left: 1.3rem;
+    /* critical:end */
+  }
+}
+@media (min-width: 60em) {
+  .main-header-sidebar .nav-meta__list, .main-header--variant-1 .nav-meta__list, .main-header--variant-2 .nav-meta__list {
+    /* critical:start */
+    padding-right: 2rem;
+    padding-left: 2rem;
+    /* critical:end */
+  }
+}
+@media (min-width: 67em) {
+  .main-header-sidebar .nav-meta__list, .main-header--variant-2 .nav-meta__list {
+    max-width: none;
+    padding: 0;
+    margin-right: -0.8em;
+  }
+}
+.nav-meta__list__item {
+  /* critical:start */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  font-size: 0.65em;
+  line-height: 1.4;
+  /* critical:end */
+}
+.nav-meta__list__item li {
+  margin: 0;
+  list-style-image: url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7");
+}
+.nav-meta__list__item:first-child {
+  /* critical:start */
+  margin-left: auto;
+  /* critical:end */
+}
+.nav-meta__list__item:last-child {
+  /* critical:start */
+  margin-right: -1.2em;
+  /* critical:end */
+}
+.nav-meta__list__item a,
+.nav-meta__list__item .dropdown__toggle {
+  /* critical:start */
+  display: flex;
+  height: 2rem;
+  color: #fff;
+  padding: 0 1.2em;
+  text-decoration: none;
+  align-items: center;
+  /* critical:end */
+}
+.nav-meta__list__item a:active, .nav-meta__list__item a:hover,
+.nav-meta__list__item .dropdown__toggle:active,
+.nav-meta__list__item .dropdown__toggle:hover {
+  background: #666666;
+  color: #fff;
+}
+.nav-meta__list__item li {
+  /* critical:start */
+  display: block;
+  /* critical:end */
+}
+.nav-meta__list__item > li > a,
+.nav-meta__list__item .dropdown__toggle {
+  /* critical:start */
+  /* critical:end */
+}
+.transparent-header .nav-meta__list__item > li > a,
+.transparent-header .nav-meta__list__item .dropdown__toggle {
+  color: #fff;
+}
+.transparent-header .nav-meta__list__item > li > a:active, .transparent-header .nav-meta__list__item > li > a:hover,
+.transparent-header .nav-meta__list__item .dropdown__toggle:active,
+.transparent-header .nav-meta__list__item .dropdown__toggle:hover {
+  background: #666666;
+}
+.nav-meta__icon {
+  /* critical:start */
+  height: 1.6em;
+  width: 1.6em;
+  fill: currentColor;
+  position: relative;
+  top: -0.1em;
+  margin-right: 0.4em;
+  /* critical:end */
+}
+.nav-meta__icon--login {
+  /* critical:start */
+  height: 1.45em;
+  width: 1.45em;
+  /* critical:end */
+}

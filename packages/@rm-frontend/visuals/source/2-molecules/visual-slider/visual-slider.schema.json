@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://frontend.ruhmesmeile.com/visuals/molecules/visual-slider.schema.json",
+  "title": "Visual Slider",
+  "description": "Visual Slider",
+  "type": "object",
+  "required": ["slides"],
+  "properties": {
+    "autoplay": {
+      "$ref": "http://frontend.ruhmesmeile.com/base/molecules/slider.schema.json#/definitions/autoplay"
+    },
+    "slides": {
+      "type": "array",
+      "items": {
+        "allOf": [
+          {
+            "$ref": "http://frontend.ruhmesmeile.com/visuals/molecules/visual.schema.json"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "label": {
+                "title": "Slide preview label",
+                "description": "preview label",
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        ]
+      }
+    }
+  }
+}

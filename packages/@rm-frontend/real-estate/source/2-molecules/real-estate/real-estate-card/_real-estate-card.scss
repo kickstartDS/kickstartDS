@@ -1,0 +1,160 @@
+@use '@rm-frontend/base/source/0-base/1-tools/scss/helpers';
+@use '@rm-frontend/base/source/0-base/1-tools/scss/breakpoint';
+@use 'bourbon/core/bourbon';
+@use 'settings/real-estate';
+
+.real-estate-card {
+  font-size: real-estate.$card__font-size;
+
+  @include breakpoint.media('≥xs') {
+    font-size: real-estate.$card__font-size--xs;
+  }
+
+  &--clickable {
+    &:hover {
+      .real-estate-card__inner {
+        cursor: pointer;
+
+        @include breakpoint.media('≥m') {
+          background: real-estate.$card__background--hover;
+          box-shadow: real-estate.$card__box-shadow--hover;
+        }
+      }
+    }
+  }
+
+  &__inner {
+    background: real-estate.$card__background;
+    box-shadow: real-estate.$card__box-shadow;
+    border: real-estate.$card__border;
+    height: 100%;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  // CARD PREVIEW
+  &__preview {
+    &__inner {
+      position: relative;
+      padding-bottom: real-estate.$card__preview-aspect-ratio;
+
+      img {
+        position: absolute;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  // CARD BODY
+  &__body {
+    padding: 1em;
+    flex-grow: 1;
+
+    &__content {
+      > :last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__title {
+    @include bourbon.ellipsis;
+    vertical-align: top;
+    margin-bottom: 0.75em;
+    font-size: real-estate.$card__title-font-size;
+    font-weight: helpers.get-font-weight(real-estate.$card__title-font-weight);
+    text-transform: real-estate.$card__title-text-transform;
+    color: real-estate.$card__title-color;
+  }
+
+  &__attributes {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75em;
+
+    > div {
+      margin-right: 5%;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &__primary {
+      dl {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        margin: 0;
+      }
+
+      dt {
+        font-weight: helpers.get-font-weight(
+          real-estate.$card__attribute-term-font-weight
+        );
+        font-size: real-estate.$card__attribute-term-font-size;
+        color: real-estate.$card__attribute-term-color;
+      }
+
+      dd {
+        margin: 0;
+        font-weight: helpers.get-font-weight(
+          real-estate.$card__attribute-description-font-weight
+        );
+        font-size: real-estate.$card__attribute-description-font-size;
+        color: real-estate.$card__attribute-description-color;
+      }
+    }
+
+    &__secondary {
+      display: flex;
+      align-items: center;
+
+      .icon {
+        @include bourbon.size(1.25em);
+        margin-right: 0.25em;
+      }
+    }
+  }
+
+  // CARD FOOTER
+  &__footer {
+    @include helpers.no-print;
+
+    padding: 1em;
+    padding-top: 0;
+
+    display: flex;
+  }
+
+  &__toggle-favourite {
+    margin-left: auto;
+    color: real-estate.$card__toggle-color;
+    padding: 0.35em;
+
+    &__icon-active {
+      display: none;
+    }
+
+    &[aria-pressed='true'] {
+      .real-estate-card__toggle-favourite__icon-active {
+        display: inline-block;
+      }
+
+      .real-estate-card__toggle-favourite__icon-inactive {
+        display: none;
+      }
+    }
+
+    .icon {
+      @include bourbon.size(real-estate.$card__toggle-size);
+    }
+  }
+}

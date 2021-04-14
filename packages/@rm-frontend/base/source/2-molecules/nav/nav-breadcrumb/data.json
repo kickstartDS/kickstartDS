@@ -1,0 +1,16 @@
+{
+  "breadcrumb": [
+    {
+      "label": "Home",
+      "link": "link.pages-startpage"
+    },
+    {
+      "label": "Forschung",
+      "link": "#"
+    },
+    {
+      "label": "Software Entwicklung",
+      "current": true
+    }
+  ]
+}

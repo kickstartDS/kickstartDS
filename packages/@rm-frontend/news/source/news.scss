@@ -1,0 +1,5 @@
+// @use './2-molecules/news/news-latest-item/news-latest' as *;
+// @use './2-molecules/news/news-list-item/news-list' as *;
+// @use './3-organisms/news/news-latest/news-latest' as *;
+// @use './3-organisms/news/news-list/news-list' as *;
+@use './3-organisms/news/news-detail/news-detail' as *;

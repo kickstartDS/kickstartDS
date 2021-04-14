@@ -1,0 +1,190 @@
+@use '@rm-frontend/base/source/0-base/1-tools/scss/button';
+@use '@rm-frontend/base/source/0-base/1-tools/scss/helpers';
+@use '@rm-frontend/base/source/0-base/1-tools/scss/breakpoint';
+@use 'settings/base';
+
+.download {
+  &__item {
+    display: grid;
+    grid-template-columns: auto 1fr 1.5fr;
+    grid-auto-rows: max-content;
+    transition: background 0.15s ease-in-out;
+    padding: 1.5em 1em;
+    border-top: 1px solid base.$color-black-10;
+    font-size: 1em;
+    line-height: base.$line-height-small;
+
+    &:first-child {
+      border: 0;
+    }
+
+    &:hover {
+      background: none;
+      cursor: pointer;
+
+      a {
+        background: none;
+      }
+    }
+
+    @include breakpoint.media('≥s') {
+      display: flex;
+      grid-template-columns: none;
+      align-items: center;
+      grid-auto-rows: auto;
+      font-size: base.$font-size-small;
+      padding: 1.5rem;
+
+      &:hover {
+        background-color: base.$color-black-7;
+      }
+    }
+
+    @include breakpoint.media('print') {
+      page-break-inside: avoid;
+    }
+
+    &__icon {
+      padding-right: 1.5em;
+      width: 2.7rem;
+      flex-shrink: 0;
+      grid-column: auto / span 1;
+      grid-row: auto / span 3;
+
+      @include breakpoint.media('≥s') {
+        width: 3.7rem;
+        padding-right: 1.5em;
+      }
+
+      @include breakpoint.media('≥m') {
+        grid-column: auto / auto;
+        grid-row: auto / auto;
+      }
+
+      img,
+      svg {
+        width: 100%;
+        height: auto;
+      }
+
+      &-base {
+        fill: base.$color-brand;
+      }
+
+      &-element {
+        fill: base.$color-white;
+      }
+
+      &-base-corner {
+        fill: base.$color-black-25;
+      }
+    }
+
+    &__title-text {
+      flex: 1 auto;
+      grid-column: 2 / span 2;
+
+      @include breakpoint.media('≥s') {
+        grid-column: auto / auto;
+      }
+    }
+
+    &__headline {
+      margin-bottom: 0.5em;
+      word-break: break-all;
+      font-weight: helpers.get-font-weight(bold);
+
+      @include breakpoint.media('≥s') {
+        margin: 0;
+      }
+    }
+
+    &__description {
+      font-size: base.$font-size-small;
+      line-height: base.$line-height-small;
+      margin-bottom: 0.5em;
+
+      @include breakpoint.media('≥s') {
+        margin-bottom: 1em;
+      }
+    }
+
+    &__meta {
+      align-self: center;
+      font-size: base.$font-size-small;
+      flex-shrink: 0;
+
+      @include breakpoint.media('≥s') {
+        align-self: auto;
+        padding-left: 2em;
+        font-size: 1em;
+      }
+
+      span {
+        display: inline-block;
+        text-align: left;
+        min-width: auto;
+        margin: 0;
+
+        &:first-child {
+          margin-right: 1em;
+        }
+
+        @include breakpoint.media('≥s') {
+          min-width: 3em;
+          margin-right: 1.5em;
+          text-align: right;
+        }
+      }
+    }
+
+    &__format {
+      text-transform: uppercase;
+    }
+
+    &__download {
+      flex-shrink: 0;
+      text-align: right;
+
+      @include breakpoint.media('≥s') {
+        text-align: start;
+      }
+
+      a {
+        font-size: base.$font-size-default;
+
+        @include breakpoint.media('<=m') {
+          @include button.button--solid-inverted;
+          @include button.button--small;
+          background-color: transparent;
+        }
+
+        @include breakpoint.media('print') {
+          @include helpers.dont-break-out;
+
+          background-color: inherit;
+
+          &::after {
+            @include helpers.dont-break-out;
+            content: attr(href);
+            opacity: 1;
+          }
+        }
+      }
+
+      .icon {
+        margin-right: 0.5em;
+      }
+    }
+  }
+}
+
+.download-icon {
+  &__bg {
+    fill: base.$color-brand;
+  }
+
+  &__drwaing {
+    fill: base.$color-white;
+  }
+}

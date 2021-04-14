@@ -1,0 +1,37 @@
+<div class="contact">
+  <div class="contact__wrap">
+    <div class="contact__context">
+      <div class="contact__context__wrap">
+        <div class="contact__context__img">
+          <img src="{{@root.asset_paths.images}}/dummy/1-1-s.png" alt="Portrait von Shaun dem Schaf">
+        </div>
+        <div class="contact__context__text">
+          <p><b>Shaun das Schaf</b><br>Position</p>
+          <p>Tel. 02345 123 456 789<br>shaun@sheepstreet.de</p>
+        </div>
+      </div>
+    </div>
+    <form action="#" class="contact__form contact-form lazyload" data-component="base.form" data-url="/api/contact-form/success">
+      <div class="form-row form-row--notification"></div>
+      <fieldset>
+
+        <div class="form-row">
+          {{> atoms-input label=(object top=true class="form-label" content="Name") type="text" id="name-c-{{ id }}" name="name"}}
+        </div>
+
+        <div class="form-row">
+          {{> atoms-input label=(object top=true class="form-label" content="Email*") type="email" id="email-c-{{ id }}" name="email" required="required"}}
+        </div>
+
+        <div class="form-row">
+          {{> atoms-textarea label=(object top=true class="form-label" content="Nachricht*") id="nachricht-c-{{ id }}" name="nachricht" required="required"}}
+        </div>
+
+        <div class="form-row form-controls">
+          <div class="form-legend">* Pflichtfelder</div>
+          {{> atoms-button label="Absenden" type="submit" style="solid"}}
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>

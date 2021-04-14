@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://frontend.ruhmesmeile.com/base/atoms/link-button.schema.json",
+  "title": "Link Button",
+  "description": "link-button",
+  "allOf": [
+    {
+      "$ref": "http://frontend.ruhmesmeile.com/base/atoms/button.schema.json#/definitions/button"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "href": {
+          "type": "string",
+          "title": "Button href?",
+          "description": "Link used for button",
+          "default": "https://example.com"
+        },
+        "newTab": {
+          "type": "boolean",
+          "title": "Open link in new Tab",
+          "description": "Open link in new Tab",
+          "default": false
+        },
+        "itemprop": {
+          "type": "string",
+          "title": "`itemprop` Attribute"
+        },
+        "ariaLabelledby": {
+          "type": "string",
+          "title": "`aria-labelledby` Attribute"
+        }
+      },
+      "required": ["href"]
+    }
+  ]
+}

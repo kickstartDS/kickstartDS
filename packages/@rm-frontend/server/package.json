@@ -1,0 +1,23 @@
+{
+  "name": "@rm-frontend/server",
+  "version": "2.0.0",
+  "description": "rm-frontend mock server",
+  "author": "ruhmesmeile GmbH <mail@ruhmesmeile.com> (https://ruhmesmeile.com)",
+  "homepage": "https://bitbucket.ruhmesmeile.tools/projects/FRONT/repos/rm-frontend/browse/packages/@rm-frontend/server",
+  "license": "SEE LICENSE IN LICENSE",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@bitbucket.ruhmesmeile.tools:7999/front/rm-frontend.git",
+    "directory": "packages/@rm-frontend/server"
+  },
+  "scripts": {
+    "start": "node ./index.js"
+  },
+  "dependencies": {
+    "miragejs": "^0.1.35"
+  },
+  "config": {
+    "rm-frontend": false
+  }
+}

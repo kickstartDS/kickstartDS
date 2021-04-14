@@ -1,0 +1,7 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://frontend.ruhmesmeile.com/visuals/molecules/keyvisual-slider.schema.json",
+  "title": "Visual Slider",
+  "description": "Visual Slider",
+  "$ref": "http://frontend.ruhmesmeile.com/visuals/molecules/visual-slider.schema.json"
+}

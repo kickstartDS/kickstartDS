@@ -1,0 +1,92 @@
+{
+  "content-box": [
+    {
+      "image": "dummy/16-9-m.png",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ispum dolor distinctio minima unde voluptatum aut. Lorem ipsum dolor sit amet.",
+      "topic": "Lorem Ipsum"
+    },
+    {
+      "image": "dummy/16-9-m.png",
+      "caption": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ispum dolor distinctio minima unde voluptatum aut.",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ispum dolor distinctio minima unde voluptatum aut. Lorem ipsum dolor sit amet consectetur adipisicing. Lorem ipsum dolor sit amet consectetur adipisicing."
+    },
+    {
+      "image": "dummy/16-9-xl.png",
+      "caption": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ispum dolor distinctio minima unde voluptatum aut.",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ispum dolor distinctio minima unde voluptatum aut. Lorem ipsum dolor sit amet consectetur adipisicing. Lorem ipsum dolor sit amet consectetur adipisicing."
+    },
+    {
+      "image": "dummy/16-9-xl.png",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ispum dolor distinctio minima unde voluptatum aut. Lorem ipsum dolor sit amet consectetur adipisicing. Lorem ipsum dolor sit amet consectetur adipisicing.",
+      "topic": "Topic topic"
+    },
+    {
+      "image": "dummy/16-9-m.png",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ispum dolor distinctio minima unde voluptatum aut. Lorem ipsum dolor sit amet.",
+      "topic": "Topic topic"
+    },
+    {
+      "image": "dummy/16-9-xl.png",
+      "caption": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ispum dolor distinctio minima unde voluptatum aut.",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ispum dolor distinctio minima unde voluptatum aut. Lorem ipsum dolor sit amet consectetur adipisicing. Lorem ipsum dolor sit amet consectetur adipisicing."
+    },
+    {
+      "image": "dummy/16-9-xl.png",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ispum dolor distinctio minima unde voluptatum aut. Lorem ipsum dolor sit amet consectetur adipisicing. Lorem ipsum dolor sit amet consectetur adipisicing.",
+      "topic": "Topic topic"
+    },
+    {
+      "image": "dummy/16-9-xl.png",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ispum dolor distinctio minima unde voluptatum aut. Lorem ipsum dolor sit amet consectetur adipisicing. Lorem ipsum dolor sit amet consectetur adipisicing.",
+      "topic": "Topic topic"
+    },
+    {
+      "ratio": "4:3",
+      "image": "dummy/16-9-xl.png",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ispum dolor distinctio minima unde voluptatum aut. Lorem ipsum dolor sit amet consectetur adipisicing. Lorem ipsum dolor sit amet consectetur adipisicing.",
+      "topic": "Topic topic"
+    },
+    {
+      "ratio": "4:3",
+      "image": "dummy/16-9-xl.png",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ispum dolor distinctio minima unde voluptatum aut. Lorem ipsum dolor sit amet consectetur adipisicing. Lorem ipsum dolor sit amet consectetur adipisicing.",
+      "topic": "Topic topic"
+    },
+    {
+      "ratio": "4:3",
+      "image": "dummy/16-9-xl.png",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ispum dolor distinctio minima unde voluptatum aut. Lorem ipsum dolor sit amet consectetur adipisicing. Lorem ipsum dolor sit amet consectetur adipisicing.",
+      "topic": "Topic topic"
+    },
+    {
+      "image": "dummy/100x100.png",
+      "width": "150",
+      "height": "150",
+      "caption": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ispum dolor distinctio minima unde voluptatum aut.",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ispum dolor distinctio minima unde voluptatum aut. Lorem ipsum dolor sit amet consectetur adipisicing. Lorem ipsum dolor sit amet consectetur adipisicing."
+    },
+    {
+      "image": "dummy/100x100.png",
+      "width": "150",
+      "height": "150",
+      "caption": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ispum dolor distinctio minima unde voluptatum aut.",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ispum dolor distinctio minima unde voluptatum aut. Lorem ipsum dolor sit amet consectetur adipisicing. Lorem ipsum dolor sit amet consectetur adipisicing."
+    },
+    {
+      "alignement": "content-box__item__image--align-center",
+      "image": "dummy/100x100.png",
+      "width": "150",
+      "height": "150",
+      "caption": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ispum dolor distinctio minima unde voluptatum aut.",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ispum dolor distinctio minima unde voluptatum aut. Lorem ipsum dolor sit amet consectetur adipisicing. Lorem ipsum dolor sit amet consectetur adipisicing."
+    },
+    {
+      "alignement": "content-box__item__image--align-right",
+      "image": "dummy/100x100.png",
+      "width": "150",
+      "height": "150",
+      "caption": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ispum dolor distinctio minima unde voluptatum aut.",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ispum dolor distinctio minima unde voluptatum aut. Lorem ipsum dolor sit amet consectetur adipisicing. Lorem ipsum dolor sit amet consectetur adipisicing."
+    }
+  ]
+}

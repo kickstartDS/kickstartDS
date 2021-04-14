@@ -1,0 +1,27 @@
+<article class="reference-list-item-compact" data-component="reference.item">
+  <div class="reference-list-item-compact__wrapper">
+    <div class="reference-list-item-compact__logo">
+      <div class="reference-list-item-compact__logo-ratio">
+        {{#if logo}}
+        <div>
+          <img src="{{@root.asset_paths.images}}/{{logo}}" alt="">
+        </div>
+        {{/if}}
+      </div>
+    </div>
+
+    <div class="reference-list-item-compact__content">
+      <div class="reference-list-item-compact__headline">
+        <a href="#" class="reference-list-item-compact__link">{{headline}}</a>
+        {{#if categories}}
+        {{> molecules-tag-label-container tag-labels=categories}}
+        {{/if}}
+      </div>
+
+      <div class="reference-list-item-compact__meta">
+        {{meta}}
+      </div>
+
+    </div>
+  </div>
+</article>

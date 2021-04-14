@@ -1,0 +1,12 @@
+{
+  "image": {
+    "source": "dummy/9-16-s.png"
+  },
+  "box": {
+    "headline": {
+      "content": "Storytelling"
+    },
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  \ntext-center",
+    "textAlign": "center"
+  }
+}

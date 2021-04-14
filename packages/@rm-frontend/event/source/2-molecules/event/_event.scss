@@ -1,0 +1,51 @@
+/**
+ * # Event
+ */
+
+@use '@rm-frontend/base/source/0-base/1-tools/scss/helpers';
+@use '@rm-frontend/base/source/0-base/1-tools/scss/breakpoint';
+@use 'bourbon/core/bourbon';
+@use 'settings/base';
+
+/* critical:start */
+.event {
+  &__infos {
+    &__item {
+      display: flex;
+      margin-bottom: 0.65rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .icon {
+        @include helpers.icon-color(base.$color-brand);
+        @include bourbon.size(1.45rem);
+
+        position: relative;
+        top: -0.15em;
+        margin-right: 0.65em;
+        /* critical:end */
+      }
+    }
+
+    &__address {
+      margin-bottom: 1em;
+
+      @include breakpoint.media('≥m') {
+        margin-bottom: 0;
+      }
+    }
+
+    &__additional {
+      // font-style: italic;
+      font-size: base.$font-size-small;
+      color: base.$color-black-50;
+      margin-top: 1em;
+
+      @include breakpoint.media('≥m') {
+        font-size: 0.7em;
+      }
+    }
+  }
+}

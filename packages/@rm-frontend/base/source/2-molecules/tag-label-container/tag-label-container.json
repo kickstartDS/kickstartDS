@@ -1,0 +1,20 @@
+{
+  "tag-labels": [
+    {
+      "label": "Kategorie 1"
+    },
+    {
+      "link": "https://example.com",
+      "label": "Kategorie 2"
+    },
+    {
+      "link": "https://example.com",
+      "label": "Kategorie 3"
+    },
+    {
+      "removable": true,
+      "link": "https://example.com",
+      "label": "Removable"
+    }
+  ]
+}

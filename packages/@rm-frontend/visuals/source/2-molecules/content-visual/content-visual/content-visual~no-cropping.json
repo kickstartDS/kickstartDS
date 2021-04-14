@@ -1,0 +1,13 @@
+{
+  "content-visual": {
+    "height": "fullImage",
+    "media": {
+      "mode": "image",
+      "image": {
+        "srcMobile": "dummy/1-1-xs.png",
+        "srcTablet": "dummy/1-1-s.png",
+        "srcDesktop": "dummy/1-1-xl.png"
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<figure class="real-estate-image-slide">
+  <a href="{{@root.asset_paths.images}}/{{ image }}" data-gallery="c{{ id }}" data-size-w="{{ image-width }}"
+    data-size-h="{{ image-height }}" class="js-open-lightbox">
+    {{#if slider.first}}
+    <img src="{{ concat @root.asset_paths.images '/' image }}" alt="">
+    {{else}}
+    {{> atoms-lazy-img src=image alt="" js=true }}
+    {{/if}}
+  </a>
+  {{#if caption}}
+  <figcaption>{{ caption }}</figcaption>
+  {{/if}}
+</figure>

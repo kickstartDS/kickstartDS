@@ -1,0 +1,39 @@
+/* stylelint-disable order/properties-alphabetical-order */
+/* stylelint-enable */
+.lightbox-image {
+  position: relative;
+}
+.lightbox-image__link {
+  display: block;
+  overflow: hidden;
+  background: black;
+  text-decoration: none;
+}
+.lightbox-image__thumb {
+  width: 100%;
+  transition: 0.3s ease-out;
+}
+.lightbox-image__zoom-icon {
+  transition: 0.3s ease-out;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -45%);
+  text-align: center;
+  color: #fff;
+}
+.lightbox-image__zoom-icon svg {
+  height: 2em;
+  width: 2em;
+}
+.lightbox-image:hover .lightbox-image__thumb, .lightbox-image:focus .lightbox-image__thumb {
+  transform: scale(1.1);
+}
+.lightbox-image--with-zoom-icon:hover .lightbox-image__thumb, .lightbox-image--with-zoom-icon:focus .lightbox-image__thumb {
+  opacity: 0.8;
+}
+.lightbox-image--with-zoom-icon:hover .lightbox-image__zoom-icon, .lightbox-image--with-zoom-icon:focus .lightbox-image__zoom-icon {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}

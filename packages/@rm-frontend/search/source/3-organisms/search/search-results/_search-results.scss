@@ -1,0 +1,58 @@
+@use '@rm-frontend/base/source/0-base/1-tools/scss/helpers';
+@use '@rm-frontend/base/source/0-base/1-tools/scss/breakpoint';
+@use '@rm-frontend/base/source/0-base/0-settings/selector';
+@use 'settings/base';
+
+.search__results {
+  &__list {
+    @include helpers.type-reset;
+
+    list-style: none;
+    margin-top: 1rem;
+
+    @include breakpoint.media('≥s') {
+      margin-top: 2rem;
+    }
+  }
+
+  &__entry {
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid base.$color-black-10;
+
+    &:first-child {
+      padding-top: 0;
+      border-top: 1px solid base.$color-black-10;
+
+      @include breakpoint.media('≥s') {
+        padding-top: 1rem;
+      }
+    }
+
+    @include breakpoint.media('≥s') {
+      padding-bottom: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    #{selector.$section--bg-1} & {
+      border-color: base.$color-black-15;
+    }
+
+    h2 {
+      text-align: left;
+      margin: 0.5em 0;
+    }
+  }
+
+  &__content {
+    margin: 0;
+  }
+
+  &__link {
+    @include helpers.dont-break-out;
+
+    display: inline-block;
+    margin-top: 1em;
+    color: base.$color-black-50;
+  }
+}

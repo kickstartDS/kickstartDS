@@ -1,0 +1,9 @@
+<div class="gallery event-detail__gallery">
+  {{#each (slice gallery 4 8)}}
+    {{#if @first}}
+      {{> atoms-lightbox-image this hideCaption=true id="microdata-event-image" alt="" }}
+    {{else}}
+      {{> atoms-lightbox-image this hideCaption=true id="" alt="" }}
+    {{/if}}
+  {{/each}}
+</div>

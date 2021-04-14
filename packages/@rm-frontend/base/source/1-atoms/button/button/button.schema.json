@@ -1,0 +1,124 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://frontend.ruhmesmeile.com/base/atoms/button.schema.json",
+  "title": "Button",
+  "description": "Button",
+  "definitions": {
+    "button": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "string",
+          "title": "Label",
+          "description": "Text used on button",
+          "default": "Lorem Ipsum"
+        },
+        "variant": {
+          "type": "string",
+          "enum": [
+            "solid",
+            "solid-inverted",
+            "clear",
+            "clear-inverted",
+            "outline",
+            "outline-inverted"
+          ],
+          "title": "Button Style",
+          "default": "solid"
+        },
+        "size": {
+          "type": "string",
+          "enum": ["small", "medium", "large"],
+          "default": "medium",
+          "title": "Button Size"
+        },
+        "className": {
+          "type": "string",
+          "title": "Additional Classes"
+        },
+        "icon": {
+          "$ref": "http://frontend.ruhmesmeile.com/base/atoms/icon.definitions.json"
+        },
+        "iconBefore": {
+          "type": "boolean",
+          "title": "Button icon before",
+          "description": "Display Button icon before text",
+          "default": false
+        },
+        "iconAfter": {
+          "type": "boolean",
+          "title": "Button icon after",
+          "description": "Display Button icon after text",
+          "default": false
+        },
+        "id": {
+          "type": "string",
+          "title": "ID",
+          "description": "ID",
+          "default": ""
+        },
+        "dataComponent": {
+          "type": "string",
+          "title": "`data-component` Attribute"
+        },
+        "fillAnimation": {
+          "type": "boolean",
+          "default": false,
+          "title": "Fill Animation",
+          "description": "Add fill animation on hover"
+        },
+        "iconAnimation": {
+          "type": "boolean",
+          "default": false,
+          "title": "Icon Animation",
+          "description": "Add icon animation on hover"
+        }
+      },
+      "required": ["variant"]
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "#/definitions/button"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["button", "submit", "reset"],
+          "default": "button",
+          "title": "Button type"
+        },
+        "value": {
+          "type": "string",
+          "title": "Input value"
+        },
+        "name": {
+          "type": "string",
+          "title": "Input name"
+        },
+        "disabled": {
+          "type": "boolean",
+          "default": false,
+          "title": "Disabled"
+        },
+        "isLoading": {
+          "type": "boolean",
+          "default": false,
+          "title": "Loading Button"
+        },
+        "isSuccessful": {
+          "type": "boolean",
+          "default": false,
+          "title": "Success Button"
+        },
+        "onclick": {
+          "type": "string",
+          "title": "`onclick` attribute"
+        }
+      },
+      "required": ["type"]
+    }
+  ]
+}

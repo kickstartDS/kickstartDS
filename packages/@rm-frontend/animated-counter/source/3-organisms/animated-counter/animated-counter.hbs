@@ -1,0 +1,39 @@
+{{#> base-section width="narrow"}}
+  <div class="animated-counter animated-counter--list">
+    {{#each animated-counter-items}}
+      <div>
+        {{> molecules-animated-counter-item this }}
+      </div>
+    {{/each}}
+  </div>
+{{/base-section}}
+
+{{#> base-section}}
+  <div class="animated-counter animated-counter--list">
+    {{#each animated-counter-items}}
+      <div>
+        {{> molecules-animated-counter-item this }}
+      </div>
+    {{/each}}
+  </div>
+{{/base-section}}
+
+{{#> base-section width="full-gap"}}
+  <div class="animated-counter animated-counter--list">
+    {{#each animated-counter-items}}
+      <div>
+        {{> molecules-animated-counter-item this }}
+      </div>
+    {{/each}}
+  </div>
+{{/base-section}}
+
+{{#> base-section width="full-gap"}}
+  <div class="animated-counter animated-counter--list">
+    {{#each (slice animated-counter-items 0 3)}}
+      <div>
+        {{> molecules-animated-counter-item this }}
+      </div>
+    {{/each}}
+  </div>
+{{/base-section}}

@@ -1,0 +1,70 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://frontend.ruhmesmeile.com/glossary/organisms/glossary.schema.json",
+  "title": "Glossary",
+  "description": "Glossary",
+  "type": "object",
+  "properties": {
+    "glossary": {
+      "type": "object",
+      "properties": {
+        "image": {
+          "type": "object",
+          "properties": {
+            "src": { "type": "string" },
+            "caption": { "type": "string" },
+            "positionX": { "type": "string", "enum": ["", "left", "right"] },
+            "positionY": { "type": "string", "enum": ["top", "bottom"] }
+          }
+        },
+        "content": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "headline": { "type": "string" },
+              "id": { "type": "string" },
+              "text": { "type": "string" },
+              "content": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "headline": { "type": "string" },
+                    "id": { "type": "string" },
+                    "text": { "type": "string" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+
+      "definitions": {
+        "glossarySubnav": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "text": { "type": "string" },
+              "current": { "type": "boolean" }
+            }
+          }
+        },
+
+        "glossaryNav": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "alphabetLetter": { "type": "string" },
+              "link": { "type": "string" },
+              "current": { "type": "boolean" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

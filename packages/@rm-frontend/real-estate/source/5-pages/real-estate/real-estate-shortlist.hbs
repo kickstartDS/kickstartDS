@@ -1,0 +1,26 @@
+{{#> organisms-main }}
+  {{> organisms-breadcrumb }}
+
+  <div class="template template--content-100">
+    {{#> base-section width="narrow"}}
+      {{#unless empty}}
+        {{#> molecules-real-estate-list-meta}}
+          <div>{{> atoms-shortlist-count}} Objekte</div>
+          <button type="button" onclick="window.print();" class="no-print">Liste drucken</button>
+        {{/molecules-real-estate-list-meta}}
+
+        <div class="real-estate-cards real-estate-cards--list real-estate-cards--shortlist">
+          {{> organisms-real-estate-card-items }}
+        </div>
+
+        {{> molecules-real-estate-btn-print }}
+
+      {{else}}
+        {{> molecules-content-headline content="Keine Objekte in der Merkliste vorhanden" }}
+        <p class="l-centered">
+          {{> atoms-link-button style="solid" label="zurück zur Objektsuche" href=link.pages-real-estate-list}}
+        </p>
+      {{/unless}}
+    {{/base-section}}
+  </div>
+{{/organisms-main }}

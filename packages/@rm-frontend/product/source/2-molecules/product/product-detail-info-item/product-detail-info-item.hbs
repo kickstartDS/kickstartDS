@@ -1,0 +1,25 @@
+<div class="product-detail__infos__text">
+  <h1 class="product__topic" itemprop="name">
+    {{ topic }}
+  </h1>
+  <div class="product__info">
+    Artikelnummer: <span itemprop="productID" >{{ number }}</span>
+  </div>
+  <div class="product__teaser" itemprop="description">
+    <p>{{ content }}</p>
+  </div>
+
+  <div class="product__special">
+    <img itemprop="image" src="{{@root.asset_paths.images}}/{{ detail.detailImage }}" alt="">
+  </div>
+
+  <div class="product__price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+    <meta itemprop="priceCurrency" content="EUR">
+    <span class="product__price-amount" itemprop="price" content="{{replace (replace price "," ".") "€" ""}}">{{ price }}</span>
+    <span class="product__price-info">inkl. MwSt. <a href="#">zzgl. Versandkosten</a></span>
+  </div>
+
+  <div class="product__link">
+    {{> atoms-link-button style="solid" label="Kaufen"}}
+  </div>
+</div>

@@ -1,0 +1,34 @@
+<div class="real-estate-attributes-secondary">
+  <div class="real-estate-attributes-secondary__item">
+    <div class="real-estate-attributes-secondary__item__icon">
+      {{> atoms-icon icon="bed" }}
+    </div>
+    <div class="real-estate-attributes-secondary__item__value">
+      {{ attributes.bedrooms }}
+    </div>
+    <div class="real-estate-attributes-secondary__item__description">
+      Schlafzimmer
+    </div>
+  </div>
+  <div class="real-estate-attributes-secondary__item">
+    <div class="real-estate-attributes-secondary__item__icon">
+      {{> atoms-icon icon="bath" }}
+    </div>
+    <div class="real-estate-attributes-secondary__item__value">
+      {{ attributes.baths }}
+    </div>
+    <div class="real-estate-attributes-secondary__item__description">
+      Badezimmer
+    </div>
+  </div>
+</div>
+
+{{> molecules-tag-label-container tag-labels=(array
+  (object label=attributes.balkony)
+  (object label=attributes.elevator)
+  (object label=attributes.garden_terrace)
+  (object label=attributes.smoking_allowed)
+  (object label=attributes.praking_space_available)
+  (object label=attributes.pets_allowed)
+  (object label=attributes.accessibility)
+)}}

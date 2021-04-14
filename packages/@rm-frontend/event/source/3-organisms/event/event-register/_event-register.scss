@@ -1,0 +1,17 @@
+/**
+  * ## Register
+  */
+
+@use '@rm-frontend/base/source/0-base/1-tools/scss/grid';
+@use '@rm-frontend/base/source/0-base/1-tools/scss/breakpoint';
+
+.event-register {
+  @include breakpoint.media('≥m') {
+    @include grid.grid-columns(6);
+    @include grid.grid-push(3);
+  }
+
+  .event__infos {
+    margin-bottom: 2em;
+  }
+}

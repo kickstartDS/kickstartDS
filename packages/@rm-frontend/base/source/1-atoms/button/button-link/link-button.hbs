@@ -1,0 +1,29 @@
+<a
+  href="{{default href @root.url}}"
+  class="button button--{{default variant 'solid'}}
+    {{~#if fillAnimation}} button--fill-animation {{/if~}}
+    {{~#if iconAnimation}} button--icon-animation {{/if~}}
+    {{~#if size}} button--{{size}} {{/if~}}
+    {{~#if className}} {{className}} {{/if~}}
+  "
+
+  {{#if newTab}} target="_blank" rel="noopener" {{/if}}
+  {{#if dataComponent}} data-component="{{dataComponent}}"{{/if}}
+  {{#if id}}id="{{id}}"{{/if}}
+  {{#if itemprop}} itemprop="{{itemprop}}"{{/if}}
+  {{#if ariaLabelledby}}aria-labelledby="{{ariaLabelledby}}"{{/if}}
+>
+  {{#if label}}
+    {{#if (comp icon '&&' iconBefore)}}
+      {{> atoms-icon icon}}
+    {{/if}}
+
+    <span>{{label}}</span>
+
+    {{#if (comp icon '&&' iconAfter)}}
+      {{> atoms-icon icon }}
+    {{/if}}
+  {{else if icon}}
+    {{> atoms-icon icon}}
+  {{/if}}
+</a>

@@ -1,0 +1,112 @@
+@use '../../0-base/1-tools/scss/aspect-ratio';
+@use '../../0-base/1-tools/scss/helpers';
+@use '../../0-base/1-tools/scss/breakpoint';
+@use 'bourbon/core/bourbon';
+
+.text-media {
+  @include bourbon.clearfix;
+
+  &__gallery {
+    @include bourbon.clearfix;
+    display: flex;
+    flex-wrap: wrap;
+    margin: -1rem 0 0 -1rem;
+
+    // above/below left (default), center, right
+    .text-media--above & {
+      padding-bottom: 1rem;
+    }
+
+    .text-media--below & {
+      padding-top: 1rem;
+    }
+
+    .text-media--center & {
+      justify-content: center;
+    }
+
+    .text-media--right & {
+      justify-content: flex-end;
+    }
+
+    // intext left, right
+    .text-media--intext & {
+      padding-bottom: 1rem;
+
+      @include breakpoint.media('≥s') {
+        padding-bottom: 0.5rem;
+        max-width: 50%;
+        min-width: 0;
+      }
+
+      @include breakpoint.media('print') {
+        width: 30%;
+      }
+    }
+
+    .text-media--intext.text-media--left & {
+      @include breakpoint.media('≥s') {
+        float: left;
+        padding-right: 1.5rem;
+      }
+    }
+
+    .text-media--intext.text-media--right & {
+      @include breakpoint.media('≥s') {
+        float: right;
+        padding-left: 1.5rem;
+      }
+    }
+  }
+
+  &__media {
+    padding: 1rem 0 0 1rem;
+
+    &--full {
+      &,
+      > * {
+        width: 100%;
+      }
+    }
+  }
+
+  &--beside {
+    .text-media__text {
+      @include breakpoint.media('≥s') {
+        overflow: hidden;
+      }
+
+      @include breakpoint.media('print') {
+        overflow: visible;
+      }
+    }
+  }
+
+  figure {
+    display: table;
+    table-layout: fixed;
+
+    @include helpers.browser(ie11) {
+      display: block;
+    }
+
+    a {
+      display: table-cell;
+
+      @include helpers.browser(ie11) {
+        display: block;
+      }
+    }
+
+    figcaption {
+      table-layout: fixed;
+      display: table-caption;
+      caption-side: bottom;
+      text-align: left;
+
+      @include helpers.browser(ie11) {
+        display: block;
+      }
+    }
+  }
+}

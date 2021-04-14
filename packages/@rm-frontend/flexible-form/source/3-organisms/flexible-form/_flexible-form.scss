@@ -1,0 +1,264 @@
+@use '@rm-frontend/base/source/0-base/1-tools/scss/grid';
+@use '@rm-frontend/base/source/0-base/1-tools/scss/helpers';
+@use '@rm-frontend/base/source/0-base/1-tools/scss/breakpoint';
+@use '@rm-frontend/base/source/0-base/0-settings/selector';
+@use 'settings/base';
+@use 'settings/global';
+
+.flexible-form__form__column {
+  position: relative;
+
+  #{selector.$template--content-100} & {
+    @include grid.grid-columns(12);
+
+    @include breakpoint.media('≥s') {
+      @include grid.grid-columns(10);
+      @include grid.grid-push(1);
+    }
+
+    @include breakpoint.media('≥m') {
+      @include grid.grid-columns(6);
+      @include grid.grid-push(3);
+    }
+  }
+
+  p {
+    margin: 0;
+
+    + p {
+      margin-top: 1em;
+    }
+  }
+}
+
+.frame-type-form_formframework {
+  .form-row {
+    $grid__gutter: 0.85em;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 $grid__gutter / -2 $grid__gutter;
+
+    &.form-controls {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    > .form-row-column {
+      padding: 0 $grid__gutter / 2;
+      box-sizing: border-box;
+    }
+  }
+
+  .col-sm-4 {
+    width: 33.3%;
+  }
+
+  .col-sm-6 {
+    width: 50%;
+  }
+
+  .col-sm-8 {
+    width: 66.6%;
+  }
+
+  .col-sm-12 {
+    width: 100%;
+
+    + .col-sm-12 {
+      margin-top: 0.75rem;
+
+      @include breakpoint.media('≥s') {
+        margin-top: 0;
+      }
+    }
+  }
+
+  @include breakpoint.media('≥m') {
+    .col-lg-4 {
+      width: 33.3%;
+    }
+
+    .col-lg-6 {
+      width: 50%;
+    }
+
+    .col-lg-8 {
+      width: 66.6%;
+    }
+
+    .col-lg-12 {
+      width: 100%;
+
+      + .col-lg-12 {
+        margin-top: 0.75rem;
+      }
+    }
+  }
+
+  @include breakpoint.media('≥s') {
+    .col-md-4 {
+      width: 33.3%;
+    }
+
+    .col-md-6 {
+      width: 50%;
+    }
+
+    .col-md-8 {
+      width: 66.6%;
+    }
+
+    .col-md-12 {
+      width: 100%;
+
+      + .col-md-12 {
+        margin-top: 0.75rem;
+      }
+    }
+  }
+
+  .help-block {
+    font-size: base.$font-size-tiny;
+    font-style: italic;
+    line-height: base.$line-height-tiny;
+
+    &,
+    a {
+      color: base.$color-black-50;
+    }
+
+    &.error {
+      &,
+      a {
+        color: base.$color-error;
+      }
+    }
+  }
+
+  .flexible-form-confirmation {
+    $success-text-color: base.$color-white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: base.$color-success;
+    color: $success-text-color;
+    padding: 3em 2em;
+    border-radius: 5px;
+
+    @include breakpoint.media('≥s') {
+      padding: 4em 2em;
+    }
+
+    &__checkmark {
+      position: relative;
+      top: -5px;
+      margin-right: 1em;
+
+      &::after {
+        content: '';
+        display: block;
+        width: 0.5em;
+        height: 1em;
+        border: solid $success-text-color;
+        border-width: 0 4px 4px 0;
+        transform: rotate(45deg);
+
+        @include breakpoint.media('≥s') {
+          border-width: 0 5px 5px 0;
+        }
+      }
+    }
+  }
+}
+
+.input-multi-checkbox {
+  @include helpers.clearlist();
+
+  li {
+    margin-top: 0.25em;
+  }
+}
+
+.formframework-contact-person.form-row {
+  .l-section {
+    padding: 0;
+    background: transparent;
+    scroll-margin-top: 0;
+  }
+
+  .l-main-wrap {
+    position: static;
+    padding: 0;
+  }
+
+  .text-media {
+    display: flex;
+    // align-items: center;
+    // margin-left: 0;
+    // margin-right: 0;
+    margin: 0;
+    float: none;
+    width: auto;
+
+    @include breakpoint.media('≥m') {
+      display: block;
+      align-items: normal;
+    }
+
+    .gallery {
+      flex-shrink: 0;
+      align-self: flex-start;
+      margin-right: 1em;
+      min-width: 0;
+
+      @include breakpoint.media('≥m') {
+        margin-right: 2em;
+      }
+    }
+
+    .gallery__column {
+      max-width: 75px;
+      margin-bottom: 0;
+
+      @include breakpoint.media('≥s') {
+        max-width: 200px;
+      }
+
+      @include breakpoint.media('≥m') {
+        max-width: none;
+        margin-bottom: 1em;
+      }
+    }
+
+    .bodytext {
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+
+      hyphens: auto;
+    }
+  }
+
+  @include breakpoint.media('≥m') {
+    display: block !important; // IE 11 fix
+    position: absolute;
+    right: 100%;
+    left: -50%;
+    top: 0;
+    font-size: base.$font-size-small;
+
+    .text-media {
+      padding-right: 25px;
+      max-width: none;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .gallery {
+      max-width: none;
+      float: none;
+      margin-right: 0;
+    }
+  }
+}

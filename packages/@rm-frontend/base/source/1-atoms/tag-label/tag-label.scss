@@ -1,0 +1,81 @@
+@use 'bourbon/core/bourbon';
+@use '../../0-base/1-tools/scss/breakpoint';
+@use '../../0-base/1-tools/scss/helpers';
+@use 'settings/base';
+@use 'sass:meta';
+
+.tag-label {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  background-color: base.$tag-label__background-color;
+  border: base.$tag-label__border;
+  color: base.$tag-label__color;
+
+  @each $size, $props in base.$tag-label__sizes {
+    &--#{$size} {
+      font-size: map-get($props, font-size);
+      line-height: map-get($props, line-height);
+      font-weight: helpers.get-font-weight(map-get($props, font-weight));
+      border-radius: map-get($props, border-radius);
+    }
+  }
+
+  @include breakpoint.media('print') {
+    background-color: transparent;
+    border: 1px solid;
+  }
+
+  &__content {
+    border-radius: inherit;
+    transition: 0.3s;
+
+    @each $size, $props in base.$tag-label__sizes {
+      .tag-label--#{$size} & {
+        padding: map-get($props, vertical-padding)
+          map-get($props, horizontal-padding);
+      }
+    }
+
+    @at-root {
+      a#{&} {
+        &:hover,
+        &:focus {
+          background-color: base.$tag-label__hover-background-color;
+          color: base.$tag-label__hover-color;
+        }
+      }
+    }
+  }
+
+  &__remove-btn {
+    line-height: 0;
+    border-radius: inherit;
+
+    @each $size, $props in base.$tag-label__sizes {
+      $icon: map-get($props, icon);
+
+      .tag-label--#{$size} & {
+        margin-left: map-get($icon, margin-left);
+        padding: map-get($props, vertical-padding)
+          map-get($icon, horizontal-padding);
+      }
+    }
+
+    &:hover,
+    &:focus {
+      background-color: base.$tag-label__hover-background-color;
+      color: base.$tag-label__hover-color;
+    }
+
+    .icon {
+      @each $size, $props in base.$tag-label__sizes {
+        $icon: map-get($props, icon);
+
+        .tag-label--#{$size} & {
+          @include bourbon.size(map-get($icon, size));
+        }
+      }
+    }
+  }
+}

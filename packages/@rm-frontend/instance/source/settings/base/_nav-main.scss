@@ -1,0 +1,104 @@
+@use 'settings/base/colors';
+@use 'settings/base/typo';
+
+$nav-main__height: 3.35rem !default;
+$nav-main__height--s: 3.5rem !default;
+$nav-main__height--m: 3.5rem !default;
+$nav-main__height--nav-main: 5.25rem !default;
+$nav-main__height--nav-main-scrolling: 2.63rem !default;
+
+// ## Desktop
+// Level 1
+$nav-main__item-color:                       colors.$color-brand !default;
+$nav-main__item-font-size:                   typo.$font-size-small !default;
+$nav-main__item-line-height:                 typo.$line-height-small !default;
+$nav-main__item-font-weight:                 bold !default;
+$nav-main__item-text-transform:              uppercase !default;
+$nav-main__item-dropdown-open-background:    colors.$color-black-7-solid !default;
+// hover
+$nav-main__item-hover-color:                 null !default;
+$nav-main__item-hover-background:            colors.$color-black-5 !default;
+// active/current (the variables are named `active`, but they're also used for `current` state)
+$nav-main__item-active-color:                null !default;
+$nav-main__item-active-indicator-height:     0.25rem !default;
+$nav-main__item-active-indicator-color:      colors.$color-brand !default;
+$nav-main__item-active-indicator-hover-color: $nav-main__item-active-indicator-color !default;
+
+// Transparent header
+$nav-main__item-color-transparent:                    colors.$color-white !default;
+$nav-main__item-hover-background-transparent:         $nav-main__item-hover-background !default;
+$nav-main__item-dropdown-open-background-transparent: colors.$color-black-7 !default;
+$nav-main__item-active-color-transparent:             null !default;
+$nav-main__item-active-indicator-color-transparent:   rgba(colors.$color-white, 0.5) !default;
+$nav-main__item-active-indicator-hover-color-transparent: $nav-main__item-active-indicator-color-transparent !default;
+
+// Dropdown / Level 2 and 3
+$nav-main__dropdown-end_spacing:             1em !default;
+
+$nav-main__dropdown-item-padding:            0.63rem 1rem !default;
+$nav-main__dropdown-item-background:         colors.$color-black-7-solid !default;
+$nav-main__dropdown-item-color:              colors.$color-brand !default;
+$nav-main__dropdown-item-font-size:          typo.$font-size-small !default;
+$nav-main__dropdown-item-line-height:        typo.$line-height-small !default;
+$nav-main__dropdown-item-font-weight:        regular !default;
+$nav-main__dropdown-item-text-transform:     none !default;
+// hover
+$nav-main__dropdown-item-hover-color:        colors.$color-black !default;
+$nav-main__dropdown-item-hover-background:   colors.$color-black-5 !default;
+// active/current
+$nav-main__dropdown-item-active_current-background: colors.$color-black-5 !default;
+$nav-main__dropdown-item-active-color:       colors.$color-black !default;
+
+// ## Mobile
+$nav-main__container-background--mobile:     colors.$color-white !default;
+
+// Level 1
+$nav-main__item-color--mobile:               colors.$color-brand !default;
+$nav-main__item-background--mobile:          colors.$color-white !default;
+$nav-main__item-font-size--mobile:           typo.$font-size-default !default;
+$nav-main__item-line-height--mobile:         typo.$line-height-default !default;
+$nav-main__item-font-weight--mobile:         bold !default;
+$nav-main__item-text-transform--mobile:      uppercase !default;
+$nav-main__item-border--mobile:              none !default;
+// hover
+$nav-main__item-hover-color--mobile:         null !default;
+// active/current
+$nav-main__item-dropdown-open-background--mobile: colors.$color-brand-2 !default;
+$nav-main__item-current-color--mobile:       colors.$color-white !default;
+$nav-main__item-current-background--mobile:  colors.$color-brand-110 !default;
+
+// Dropdown / Level 2 and 3
+$nav-main__dropdown-item-color--mobile:      colors.$color-brand !default;
+$nav-main__dropdown-item-background--mobile: colors.$color-white !default;
+$nav-main__dropdown-item-font-size--mobile:  typo.$font-size-default !default;
+$nav-main__dropdown-item-line-height--mobile: typo.$line-height-default !default;
+$nav-main__dropdown-item-font-weight--mobile: regular !default;
+$nav-main__dropdown-item-text-transform--mobile: none !default;
+$nav-main__dropdown-item-border--mobile:     1px solid colors.$color-black-10 !default;
+// hover
+$nav-main__dropdown-item-hover-color--mobile: null !default;
+// active/current
+$nav-main__dropdown-item-active-background:  colors.$color-black-5 !default;
+$nav-main__dropdown-item-current-background: colors.$color-black-5 !default;
+$nav-main__dropdown-item-current-color--mobile: colors.$color-brand !default;
+
+///  HEADER VARIANT 2
+/// ========
+
+$nav-main__container-background--varaint-2:  colors.$color-black-25 !default;
+
+// Footer nav items in mobile main nav
+$nav-main__footer-item-background--mobile:   transparent !default;
+$nav-main__footer-item-color--mobile:        colors.$color-brand !default;
+$nav-main__footer-item-background--mobile:   colors.$color-white !default;
+$nav-main__footer-item-border-color--mobile: colors.$color-white !default;
+$nav-main__footer-item-text-transform--mobile: none !default;
+$nav-main__footer-item-hover-color--mobile:  null !default;
+
+/// @deprecated
+/// the following variables are deprecated and shouldn't be used anymore
+/// use the `$nav-main__height--*` variables instead
+/// they stay for compatibility, but will be removed some day
+$nav-main__item-height--breakpoint-m: $nav-main__height--s !default;
+$nav-main__item-height: $nav-main__height--nav-main !default;
+$nav-main__item-height--scrolling: $nav-main__height--nav-main-scrolling !default;

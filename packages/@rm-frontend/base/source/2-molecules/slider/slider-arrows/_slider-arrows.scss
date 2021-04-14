@@ -1,0 +1,67 @@
+@use '../../../0-base/1-tools/scss/breakpoint';
+@use '../../../0-base/0-settings/selector';
+@use 'bourbon/core/bourbon';
+@use 'settings/base';
+@use 'settings/global';
+
+.slider__arrows {
+  display: none;
+  opacity: 0;
+  transition: 0.3s;
+
+  @include breakpoint.media('≥m') {
+    display: block;
+  }
+
+  .slider:hover & {
+    opacity: 1;
+  }
+}
+
+.slider__arrow {
+  $arrow-icon-size: 2.65rem;
+
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  color: base.$color-brand;
+  user-select: none;
+  border-radius: 3px;
+  z-index: global.$slider-arrows-zindex;
+  transition: inherit;
+
+  &:hover,
+  &:focus {
+    background-color: base.$color-black-10;
+  }
+
+  .icon {
+    @include bourbon.size($arrow-icon-size);
+  }
+
+  &--prev {
+    left: 0;
+
+    [data-slider-arrows='outer'] & {
+      margin-left: -$arrow-icon-size;
+
+      #{selector.$l-main-wrap--full-gap} &,
+      #{selector.$l-main-wrap--full} & {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &--next {
+    right: 0;
+
+    [data-slider-arrows='outer'] & {
+      margin-right: -$arrow-icon-size;
+
+      #{selector.$l-main-wrap--full-gap} &,
+      #{selector.$l-main-wrap--full} & {
+        margin-right: 0;
+      }
+    }
+  }
+}

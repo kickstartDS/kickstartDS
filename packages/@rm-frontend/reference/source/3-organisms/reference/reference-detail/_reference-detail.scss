@@ -1,0 +1,18 @@
+/**
+  * ## Detail
+  */
+
+.reference-detail {
+  &__gallery {
+    margin-top: 2em;
+    margin-bottom: 2em;
+
+    // TODO: this selector isn't used anywhere. do we need this?
+    // &__item {
+    //   &--main {
+    //     flex: 0 0 100% !important;
+    //     max-width: 100% !important;
+    //   }
+    // }
+  }
+}

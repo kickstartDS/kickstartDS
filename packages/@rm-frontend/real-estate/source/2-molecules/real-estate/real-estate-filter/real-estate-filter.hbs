@@ -1,0 +1,134 @@
+<div class="real-estate-filter" data-component="real-estate.filter">
+  <div class="form-row">
+    <header>Unterkünfte filtern</header>
+  </div>
+
+  {{> atoms-select-input
+    wrapper=(object class="form-row")
+    label=(object content="Stadt")
+    class=""
+    options=(array
+      (object content="Stadt auswählen" selected=true disabled=true)
+      (object value="bonn" content="Bonn")
+      (object value="koeln" content="Köln")
+      (object value="krefeld" content="Krefeld")
+    )
+    id="real-estate-city"
+    name="city"
+  }}
+
+  <div class="form-row">
+    {{> molecules-date-range-picker
+      label="Mietzeitraum"
+      from=(object name="date-from" id="real-estate__date-range--start")
+      to=(object name="date-to" id="real-estate__date-range--end")
+    }}
+  </div>
+
+  <div class="form-row">
+    <label class="form-label" for="real-estate__price-range--min">Mietpreis</label>
+    <div class="real-estate-filter__price-range">
+      <div>
+        <div class="float-label">
+          {{> atoms-input type="number" step="100" min="0" label=(object inline=true content="von" class="float-label__label") name="price-from" id="real-estate__price-range--min" class="float-label__field" placeholder="von"}}
+        </div>
+      </div>
+      <div>
+        <div class="float-label">
+          {{> atoms-input type="number" data=(object more-than='#real-estate__price-range--min') step="100" min="0" label=(object inline=true content="bis" class="float-label__label") name="price-to" id="real-estate__price-range--max" class="float-label__field" placeholder="bis"}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{> atoms-select-input
+      wrapper=(object class="form-row")
+      label=(object content="Möblierung")
+      class=""
+      options=(array
+        (object value="0" content="Möblierung auswählen" selected=true)
+        (object value="full" content="vollmöbliert")
+        (object value="partly" content="teilmöbliert")
+        (object value="none" content="unmöbliert")
+      )
+      id="real-estate-furnishing"
+      name="furnishing"
+    }}
+
+  <div class="form-row">
+    <label class="form-label" for="real-estate__level-range--min">Etage</label>
+    <div class="real-estate-filter__level-range">
+      <div>
+        <div class="float-label">
+          {{> atoms-input label=(object inline=true content="von" class="float-label__label") name="level-from" id="real-estate__level-range--min" class="float-label__field" placeholder="von"}}
+        </div>
+      </div>
+      <div>
+        <div class="float-label">
+          {{> atoms-input label=(object inline=true content="bis" class="float-label__label") name="level-to" id="real-estate__level-range--max" class="float-label__field" placeholder="bis"}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{> atoms-select-input
+    wrapper=(object class="form-row")
+    label=(object content="Schlafzimmer")
+    class=""
+    options=(array
+      (object value="0" content="egal" selected=true)
+      (object value="1" content="1")
+      (object value="2" content="2")
+      (object value="3" content="3")
+      (object value="4" content="4")
+      (object value="5+" content="5+")
+    )
+    id="real-estate-filter-bedrooms"
+    name="bedrooms"
+  }}
+
+  {{> atoms-select-input
+    wrapper=(object class="form-row")
+    label=(object content="Badezimmer")
+    class=""
+    options=(array
+      (object value="0" content="egal" selected=true)
+      (object value="1" content="1")
+      (object value="2" content="2")
+      (object value="3" content="3")
+      (object value="4" content="4")
+      (object value="5+" content="5+")
+    )
+    id="real-estate-bathrooms"
+    name="bathrooms"
+  }}
+
+  <div class="form-row">
+    {{> atoms-checkbox label="Balkon" id="filter-1" name="filter-1"}}
+  </div>
+  <div class="form-row">
+    {{> atoms-checkbox label="Aufzug" id="filter-2" name="filter-2"}}
+  </div>
+  <div class="form-row">
+    {{> atoms-checkbox label="Garten/Terasse" id="filter-3" name="filter-3"}}
+  </div>
+  <div class="form-row">
+    {{> atoms-checkbox label="Rauchen erlaubt" id="filter-4" name="filter-4"}}
+  </div>
+  <div class="form-row">
+    {{> atoms-checkbox label="KFZ-Stellplatz vorhanden" id="filter-5" name="filter-5"}}
+  </div>
+  <div class="form-row">
+    {{> atoms-checkbox label="Haustiere erlaubt" id="filter-6" name="filter-6"}}
+  </div>
+  <div class="form-row">
+    {{> atoms-checkbox label="Barrierefreiheit" id="filter-7" name="filter-7"}}
+  </div>
+
+  <div class="form-row">
+    {{> atoms-button style="solid" className="real-estate-filter__submit-button" label="Filtern" type="submit"}}
+  </div>
+  <div class="form-row">
+    {{> atoms-link-button style="outline" className="real-estate-filter__reset-button" label="Filter zurücksetzen" href=link.pages-real-estate-list}}
+  </div>
+</div>

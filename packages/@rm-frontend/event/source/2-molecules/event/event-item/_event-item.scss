@@ -1,0 +1,183 @@
+@use '@rm-frontend/base/source/0-base/1-tools/scss/helpers';
+@use '@rm-frontend/base/source/0-base/1-tools/scss/contrast';
+@use '@rm-frontend/base/source/0-base/1-tools/scss/breakpoint';
+@use 'bourbon/core/bourbon';
+@use 'settings/base';
+@use 'settings/event';
+
+.event-item {
+  display: flex;
+  border-bottom: 1px solid base.$color-black-10;
+  padding: 1rem 0;
+  box-sizing: border-box;
+
+  &:hover {
+    background-color: event.$event-list__item-hover-background;
+    cursor: pointer;
+
+    h2 {
+      a {
+        background: none;
+      }
+    }
+  }
+
+  &__wrapper {
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  &__date-pill {
+    /* critical:start */
+    @include contrast.yiq-contrasted(base.$color-brand);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: event.$event-list__date-pill-width-small;
+    height: event.$event-list__date-pill-height-small;
+    font-size: event.$event-list__date-pill-font-size-small;
+    margin-left: 1rem;
+    box-sizing: border-box;
+    border-radius: event.$event-list__date-pill-border-radius;
+    line-height: event.$event-list__date-pill-line-height-small;
+    font-weight: helpers.get-font-weight(bold);
+    text-align: center;
+    text-decoration: none;
+    /* critical:end */
+
+    @include breakpoint.media('≥s') {
+      /* critical:start */
+      width: event.$event-list__date-pill-width;
+      min-width: event.$event-list__date-pill-width;
+      height: event.$event-list__date-pill-height;
+      font-size: event.$event-list__date-pill-font-size;
+      border-radius: event.$event-list__date-pill-border-radius;
+      /* critical:end */
+    }
+
+    &__day {
+      line-height: event.$event-list__date-pill-day-line-height;
+    }
+
+    &__month {
+      font-size: 75%;
+      line-height: event.$event-list__date-pill-month-line-height;
+    }
+  }
+
+  &__categories {
+    margin-bottom: event.$event-list__categories-margin-bottom;
+  }
+
+  &__header {
+    h2 {
+      margin-bottom: event.$event-list__header-margin-bottom;
+    }
+  }
+
+  &__description {
+    @include breakpoint.media('≥s') {
+      display: flex;
+    }
+  }
+
+  &__summary {
+    @include breakpoint.media('≥s') {
+      order: 1;
+      flex: 2;
+    }
+
+    p {
+      font-size: event.$event-list__description-font-size;
+    }
+  }
+
+  &__image {
+    float: right;
+    width: 30%;
+    margin-left: 1.5rem;
+
+    @include breakpoint.media('≥s') {
+      width: 100%;
+      order: 2;
+      flex: 1;
+    }
+  }
+
+  &__information-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+
+    @include breakpoint.media('≥s') {
+      flex-direction: row;
+    }
+  }
+
+  &__info {
+    order: 2;
+    flex: 2;
+
+    @include breakpoint.media('≥s') {
+      order: 1;
+    }
+
+    &__item {
+      display: flex;
+      margin-bottom: event.$event-list__info-item-margin-bottom;
+      font-size: event.$event-list__info-item-font-size;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .icon {
+        @include helpers.icon-color(base.$color-brand);
+        @include bourbon.size(1.45rem);
+
+        position: relative;
+        top: -0.15em;
+        margin-right: 0.65em;
+      }
+    }
+
+    &__price {
+      font-size: event.$event-list__info-item-font-size;
+      padding: event.$event-list__price-padding;
+    }
+
+    &__additional {
+      font-style: italic;
+      font-size: base.$font-size-small;
+      color: base.$color-black-50;
+      margin-top: 1em;
+
+      @include breakpoint.media('≥m') {
+        font-size: 0.7em;
+      }
+    }
+  }
+
+  &__profile-list {
+    order: 1;
+    flex: 1;
+    margin-left: 0;
+    margin-bottom: 1rem;
+
+    @include breakpoint.media('≥s') {
+      margin-left: 1.5rem;
+      order: 2;
+    }
+  }
+
+  &__cta {
+    .button {
+      width: 100%;
+
+      @include breakpoint.media('≥s') {
+        width: auto;
+      }
+    }
+  }
+}

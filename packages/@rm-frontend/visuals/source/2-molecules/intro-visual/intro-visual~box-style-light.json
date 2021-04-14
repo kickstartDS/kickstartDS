@@ -1,0 +1,10 @@
+{
+  "intro-visual": {
+    "box": {
+      "light": true,
+      "link": {
+        "style": "outline"
+      }
+    }
+  }
+}

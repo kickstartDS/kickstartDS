@@ -1,0 +1,153 @@
+{
+  "keyvisual": {
+    "image": {
+      "srcMobile": "dummy/64-27-l.png",
+      "srcTablet": "dummy/64-27-xl.png",
+      "srcDesktop": "dummy/64-27-xxxl.png",
+      "indent": false
+    },
+    "inbox": false,
+    "box": {
+      "enabled": true,
+      "horizontal": "left",
+      "vertical": "center",
+      "light": false,
+      "transparent": false,
+      "headline": "Lorem Ipsum",
+      "text": "Hic maxime sed eos non. Consequatur ut qui amet accusantium nesciunt.",
+      "link": {
+        "label": "Button",
+        "style": "outline-inverted"
+      }
+    }
+  },
+  "keyvisualSlider": [
+    {
+      "slideComponent": "molecules-visual",
+      "previewComponent": "molecules-visual-slide-preview",
+      "previewLabel": "Slide 1",
+      "image": {
+        "srcMobile": "dummy/64-27-l.png",
+        "srcTablet": "dummy/64-27-xl.png",
+        "srcDesktop": "dummy/64-27-xxxl.png",
+        "indent": false
+      },
+      "inbox": false,
+      "box": {
+        "enabled": true,
+        "horizontal": "left",
+        "vertical": "center",
+        "light": false,
+        "transparent": false,
+        "headline": "Lorem Ipsum",
+        "text": "Hic maxime sed eos non. Consequatur ut qui amet accusantium nesciunt.",
+        "link": {
+          "label": "Button",
+          "style": "outline-inverted"
+        }
+      }
+    },
+    {
+      "slideComponent": "molecules-visual",
+      "previewComponent": "molecules-visual-slide-preview",
+      "previewLabel": "Slide 2",
+      "image": {
+        "srcMobile": "dummy/64-27-l-i.png",
+        "srcTablet": "dummy/64-27-xl-i.png",
+        "srcDesktop": "dummy/64-27-xxxl-i.png",
+        "indent": false
+      },
+      "inbox": false,
+      "box": {
+        "enabled": true,
+        "horizontal": "left",
+        "vertical": "center",
+        "light": true,
+        "indent": true,
+        "transparent": false,
+        "headline": "Lorem Ipsum",
+        "text": "Hic maxime sed eos non. Consequatur ut qui amet accusantium nesciunt.",
+        "link": {
+          "label": "Button",
+          "style": "outline"
+        }
+      }
+    },
+    {
+      "slideComponent": "molecules-visual",
+      "previewComponent": "molecules-visual-slide-preview",
+      "previewLabel": "Slide 3",
+      "image": {
+        "srcMobile": "dummy/64-27-l.png",
+        "srcTablet": "dummy/64-27-xl.png",
+        "srcDesktop": "dummy/64-27-xxxl.png",
+        "indent": false
+      },
+      "inbox": false,
+      "box": {
+        "enabled": true,
+        "horizontal": "center",
+        "vertical": "center",
+        "light": false,
+        "transparent": true,
+        "headline": "Lorem Ipsum",
+        "text": "Hic maxime sed eos non. Consequatur ut qui amet accusantium nesciunt.",
+        "link": {
+          "label": "Button",
+          "style": "outline-inverted"
+        }
+      }
+    },
+    {
+      "slideComponent": "molecules-visual",
+      "previewComponent": "molecules-visual-slide-preview",
+      "previewLabel": "Slide 4",
+      "image": {
+        "srcMobile": "dummy/64-27-l-i.png",
+        "srcTablet": "dummy/64-27-xl-i.png",
+        "srcDesktop": "dummy/64-27-xxxl-i.png",
+        "indent": false
+      },
+      "inbox": false,
+      "box": {
+        "enabled": true,
+        "horizontal": "right",
+        "vertical": "center",
+        "light": false,
+        "transparent": true,
+        "indent": true,
+        "headline": "Lorem Ipsum",
+        "text": "Hic maxime sed eos non. Consequatur ut qui amet accusantium nesciunt.",
+        "link": {
+          "label": "Button",
+          "style": "outline-inverted"
+        }
+      }
+    },
+    {
+      "slideComponent": "molecules-visual",
+      "previewComponent": "molecules-visual-slide-preview",
+      "previewLabel": "Slider 5",
+      "image": {
+        "srcMobile": "dummy/64-27-l.png",
+        "srcTablet": "dummy/64-27-xl.png",
+        "srcDesktop": "dummy/64-27-xxxl.png",
+        "indent": false
+      },
+      "inbox": false,
+      "box": {
+        "enabled": true,
+        "horizontal": "right",
+        "vertical": "center",
+        "light": true,
+        "transparent": false,
+        "headline": "Lorem Ipsum",
+        "text": "Hic maxime sed eos non. Consequatur ut qui amet accusantium nesciunt.",
+        "link": {
+          "label": "Button",
+          "style": "outline"
+        }
+      }
+    }
+  ]
+}

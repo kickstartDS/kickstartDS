@@ -1,0 +1,70 @@
+/**
+ * ## Contact Forms
+ */
+
+@use '@rm-frontend/base/source/0-base/1-tools/scss/button';
+@use '@rm-frontend/base/source/0-base/1-tools/scss/grid';
+@use 'settings/base';
+
+.contact {
+  &__wrap {
+    @include grid.grid-container(1.5rem);
+  }
+
+  &__context {
+    font-size: base.$font-size-small;
+    line-height: base.$line-height-small;
+    word-wrap: break-word;
+
+    @include grid.grid-break-at(700px, 12, 3);
+
+    &__wrap {
+      @include grid.grid-container;
+
+      align-items: flex-start;
+    }
+
+    &__img {
+      @include grid.grid-break-at(270px, 12, 4);
+
+      > img {
+        width: 100%;
+      }
+    }
+
+    &__text {
+      @include grid.grid-break-at(300px, 12, 8);
+    }
+  }
+
+  &__form {
+    @include grid.grid-break-at(650px, 12, 9);
+  }
+
+  #emailcheck {
+    display: none;
+  }
+
+  .button {
+    .template__sidebar & {
+      @include button.button--small;
+    }
+  }
+}
+
+.contact-form-expanded--location {
+  display: flex;
+  flex-flow: row wrap;
+
+  .form-row {
+    flex-grow: 1;
+
+    &:first-child {
+      margin-right: 0.5rem;
+    }
+
+    &:last-child {
+      margin-left: 0.5rem;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "@rm-frontend/share-bar",
+  "version": "5.0.1",
+  "description": "RM Frontend Share-Bar Module",
+  "author": "ruhmesmeile GmbH <mail@ruhmesmeile.com> (https://ruhmesmeile.com)",
+  "homepage": "https://bitbucket.ruhmesmeile.tools/projects/FRONT/repos/rm-frontend/browse/packages/@rm-frontend/share-bar",
+  "license": "SEE LICENSE IN LICENSE",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@bitbucket.ruhmesmeile.tools:7999/front/rm-frontend.git",
+    "directory": "packages/@rm-frontend/share-bar"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "dependencies": {
+    "@rm-frontend/base": "^12.0.0",
+    "@rm-frontend/core": ">= 2.1.0 < 4.0.0",
+    "shariff": "^3.2.1"
+  },
+  "config": {
+    "rm-frontend": true
+  }
+}

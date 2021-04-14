@@ -1,0 +1,55 @@
+<form class="event-list-filter__form" action="#" data-component="event.filter-form">
+  <div class="event-list-filter__section">
+    <div class="form-row">
+      <header class="section-headline event-list-filter__headline">
+        Termin finden
+      </header>
+    </div>
+
+    <div class="form-row">
+      {{> molecules-date-range-picker
+            label="Datum"
+            from=(object name="date-from" id="ef-date_start")
+            to=(object name="date-to" id="ef-date_end")
+          }}
+    </div>
+  </div>
+
+  <div class="event-list-filter__section">
+    <div class="form-row">
+      <header class="section-headline event-list-filter__headline">
+        Art der veranstalltungen
+      </header>
+    </div>
+    <div class="form-row">
+      {{> atoms-checkbox label="Seminare/Kurse" id="filter-1" name="filter-1"}}
+    </div>
+    <div class="form-row">
+      {{> atoms-checkbox label="Meetups" id="filter-2" name="filter-2"}}
+    </div>
+    <div class="form-row">
+      {{> atoms-checkbox label="Veranstaltungen" id="filter-3" name="filter-3"}}
+    </div>
+  </div>
+
+  <div class="event-list-filter__section">
+    <div class="form-row">
+      <header class="section-headline event-list-filter__headline">
+        Kategorien
+      </header>
+    </div>
+    <div class="form-row">
+      {{> atoms-checkbox label="Agile & Scrum" id="filter-4" name="filter-4"}}
+    </div>
+    <div class="form-row">
+      {{> atoms-checkbox label="Software & Craftmanship" id="filter-5" name="filter-5"}}
+    </div>
+  </div>
+
+  <div class="form-row">
+    {{> atoms-button style="solid" className=" event-list-filter__action-button" label="Veranstaltungen filtern" type="submit"}}
+  </div>
+  <div class="form-row event-list-filter__reset">
+    <a href="{{link.pages-event-list}}" class="button button--outline event-list-filter__action-button">Filter zurücksetzen</a>
+  </div>
+</form>

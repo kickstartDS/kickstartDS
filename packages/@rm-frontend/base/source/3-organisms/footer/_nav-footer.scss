@@ -1,0 +1,100 @@
+@use '../../0-base/1-tools/scss/helpers';
+@use '../../0-base/1-tools/scss/breakpoint';
+@use 'settings/base';
+
+.nav-footer {
+  width: 100%;
+  margin: base.$footer__nav-margin;
+  padding: 1.65em 0;
+  border-top: 1px solid base.$footer__nav-divider-color;
+  border-bottom: 1px solid base.$footer__nav-divider-color;
+  text-align: center;
+  font-weight: helpers.get-font-weight(base.$footer__nav-font-weight);
+  text-transform: base.$footer__nav-text-transform;
+
+  @include breakpoint.media('≥s') {
+    width: auto;
+    margin: 0;
+    padding: 0;
+    border-top: 0;
+    border-bottom: 0;
+    text-align: start;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    list-style: none;
+    margin-bottom: 0;
+
+    @include breakpoint.media('≥m') {
+      flex-wrap: nowrap;
+      justify-content: normal;
+      align-items: normal;
+      margin: 0;
+    }
+
+    &__item {
+      width: 33%;
+      margin: 1.65em 0 0;
+      border-left: 1px solid base.$footer__nav-divider-color;
+      font-size: base.$footer__nav-font-size;
+      line-height: base.$footer__nav-line-height;
+
+      &:nth-child(3n + 1) {
+        border-left: 0;
+      }
+
+      @include breakpoint.media('≥s') {
+        margin: 0;
+        width: auto;
+        font-size: base.$footer__nav-font-size-s;
+        line-height: base.$footer__nav-line-height-s;
+
+        &:nth-child(3n + 4) {
+          border-left: 1px solid base.$footer__nav-divider-color;
+        }
+      }
+
+      > a {
+        transition: 0.15s ease-in-out;
+        display: inline-block;
+        padding: 0.4em;
+        color: base.$footer__nav-font-color;
+        text-decoration: none;
+
+        &:hover {
+          color: base.$footer__nav-color-hover;
+          background: base.$footer__nav-background-hover;
+        }
+
+        @include breakpoint.media('≥s') {
+          padding: 0.2em 0.65em;
+        }
+
+        @include breakpoint.media('print') {
+          @include helpers.dont-break-out;
+
+          color: inherit;
+          padding-left: 1em;
+          text-indent: -1em;
+
+          &::after {
+            content: ': ' attr(href);
+          }
+        }
+      }
+    }
+  }
+}
+
+.nav-social {
+  font-size: base.$footer__nav-social-icon-size;
+
+  @include breakpoint.media('≥s') {
+    font-size: base.$footer__nav-social-icon-size-s;
+  }
+}

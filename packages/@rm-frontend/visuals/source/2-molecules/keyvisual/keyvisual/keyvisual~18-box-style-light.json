@@ -1,0 +1,16 @@
+{
+  "media": {
+    "mode": "image",
+    "image": {
+      "srcMobile": "dummy/64-27-l-i.png",
+      "srcTablet": "dummy/64-27-xl-i.png",
+      "srcDesktop": "dummy/64-27-xxxl-i.png"
+    }
+  },
+  "box": {
+    "light": true,
+    "link": {
+      "style": "outline"
+    }
+  }
+}

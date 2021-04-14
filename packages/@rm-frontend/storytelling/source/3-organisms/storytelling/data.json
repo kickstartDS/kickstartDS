@@ -1,0 +1,115 @@
+{
+  "storytelling": [
+    {
+      "image": {
+        "source": "dummy/4-3-l.png",
+        "ratio": "4:3"
+      },
+      "box": {
+        "headline": {
+          "content": "Storytelling"
+        },
+        "text": "Lorem ipsum dolor sit amet.  \n4:3"
+      }
+    },
+    {
+      "image": {
+        "source": "dummy/1-1-xl.png",
+        "order": {
+          "mobileImageLast": false,
+          "desktopImageLast": true
+        },
+        "ratio": "1:1"
+      },
+      "box": {
+        "headline": {
+          "content": "Storytelling"
+        },
+        "text": "Lorem ipsum dolor sit amet.  \n1:1 reverse"
+      }
+    },
+    {
+      "image": {
+        "source": "dummy/16-9-xl.png",
+        "ratio": "16:9"
+      },
+      "box": {
+        "headline": {
+          "content": "Storytelling"
+        },
+        "text": "Lorem ipsum dolor sit amet.  \n16:9"
+      }
+    },
+    {
+      "image": {
+        "source": "dummy/4-3-l.png",
+        "ratio": "4:3",
+        "order": {
+          "mobileImageLast": false,
+          "desktopImageLast": true
+        }
+      },
+      "box": {
+        "headline": {
+          "content": "Storytelling"
+        },
+        "text": "Lorem ipsum dolor sit amet.  \n4:3 reverse"
+      }
+    },
+    {
+      "image": {
+        "source": "dummy/9-16-s.png",
+        "hAlign": "left",
+        "order": {
+          "mobileImageLast": false,
+          "desktopImageLast": true
+        }
+      },
+      "box": {
+        "headline": {
+          "content": "Storytelling"
+        },
+        "text": "Lorem ipsum dolor sit amet.  \nbox-left reverse"
+      }
+    },
+    {
+      "image": {
+        "source": "dummy/9-16-s-i.png",
+        "vAlign": "top"
+      },
+      "backgroundImage": "dummy/16-9-xxxl.png",
+      "content-headline": "Storytelling",
+      "box": {
+        "text": "Lorem ipsum dolor sit amet.  \nbox-top with-background"
+      }
+    },
+    {
+      "image": {
+        "source": "dummy/16-9-s.png",
+        "hAlign": "left",
+        "order": {
+          "mobileImageLast": false,
+          "desktopImageLast": true
+        }
+      },
+      "box": {
+        "headline": {
+          "content": "Storytelling Lorem ipsum"
+        },
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  \nimage-left reverse"
+      }
+    },
+    {
+      "image": {
+        "source": "dummy/16-9-s.png",
+        "hAlign": "right"
+      },
+      "box": {
+        "headline": {
+          "content": "Storytelling Lorem ipsum"
+        },
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  \nimage-right"
+      }
+    }
+  ]
+}

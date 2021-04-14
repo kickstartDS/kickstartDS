@@ -1,0 +1,7 @@
+.shortlist-count {
+  font-style: normal;
+
+  &:empty {
+    display: none;
+  }
+}

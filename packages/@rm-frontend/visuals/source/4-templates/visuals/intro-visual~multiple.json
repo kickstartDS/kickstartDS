@@ -1,0 +1,56 @@
+{
+  "main-header--transparent": true,
+  "keyvisual": false,
+  "intro-visuals": [
+    {
+      "height": "fullScreen",
+      "overlay": true,
+      "image": {
+        "srcMobile": "dummy/4-3-m.png",
+        "srcTablet": "dummy/4-3-l.png",
+        "srcDesktop": "dummy/4-3-xxxl.png"
+      },
+      "inbox": true,
+      "box": {
+        "light": true,
+        "headline": "Lorem Ipsum",
+        "text": "Hic maxime sed eos non. Consequatur ut qui amet accusantium nesciunt.",
+        "link": {
+          "label": "Button",
+          "style": "outline"
+        }
+      }
+    },
+    {
+      "height": "fullScreen",
+      "image": {
+        "srcMobile": "dummy/4-3-m-i.png",
+        "srcTablet": "dummy/4-3-l-i.png",
+        "srcDesktop": "dummy/4-3-xxxl-i.png"
+      },
+      "inbox": true,
+      "box": {
+        "light": true,
+        "headline": "Lorem Ipsum",
+        "text": "Hic maxime sed eos non. Consequatur ut qui amet accusantium nesciunt.",
+        "link": {
+          "label": "Button",
+          "style": "outline"
+        }
+      }
+    }
+  ],
+  "templates": [
+    {
+      "type": "100",
+      "content": [
+        {
+          "component": "organisms-text-media",
+          "data": {
+            "headline": false
+          }
+        }
+      ]
+    }
+  ]
+}

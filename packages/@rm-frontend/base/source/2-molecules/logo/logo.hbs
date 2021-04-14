@@ -1,0 +1,17 @@
+<div class="logo-main-wrap">
+  <meta itemprop="name" content="{{@root.organization.name}}" />
+  <a itemprop="url" href="{{ link.pages-startpage }}" class="logo-main" title="Startseite">
+    <img src="{{@root.asset_paths.images}}/
+      {{~#if main-header--transparent~}}
+        {{@root.logo.src.transparent-header}}
+      {{~else~}}
+        {{@root.logo.src.default}}
+      {{~/if}}"
+      itemprop="logo"
+      data-src="{{@root.asset_paths.images}}/{{@root.logo.src.default}}"
+      alt="{{@root.logo.alt}}"
+      width="{{@root.logo.width}}"
+      height="{{@root.logo.height}}"
+    >
+  </a>
+</div>

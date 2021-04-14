@@ -1,0 +1,34 @@
+<div class="product-slide">
+  <div class="product-slide__image">
+    {{> atoms-lazy-img src=slider.sliderItemImage alt="" js=slider.index }}
+  </div>
+
+  <div class="product-slide__content">
+
+    <div class="product__topic">
+      <a href="{{ @root.url }}">{{ topic }}</a>
+    </div>
+
+    <div class="product__info">
+      Artikelnummer: {{ number }}
+    </div>
+
+    <div class="product__price">
+      <span class="product__price-amount">{{ price }}</span>
+      <span class="product__price-info">inkl. MwSt. <a href="{{ @root.url }}">zzgl. Versandkosten</a></span>
+    </div>
+
+
+    <div class="product__teaser">
+      <p>{{ content }}</p>
+    </div>
+  </div>
+
+  <div class="product-slide__action">
+    <div class="product__more">
+      {{> atoms-link-button label="Produkt kaufen" size="small" style="solid"}}
+      {{> atoms-link-button label="mehr Informationen" size="small" style="outline"}}
+    </div>
+  </div>
+</div>
+

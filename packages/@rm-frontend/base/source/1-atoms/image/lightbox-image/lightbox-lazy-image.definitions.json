@@ -1,0 +1,70 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://frontend.ruhmesmeile.com/base/atoms/lightbox-lazy-image.definitions.json",
+  "title": "Lazy Lightbox Image",
+  "description": "Lazy Lightbox Image",
+  "type": "object",
+  "properties": {
+    "thumb": {
+      "title": "Thumbnail Source",
+      "description": "Thumbnail Source",
+      "type": "string",
+      "format": "image",
+      "default": "default/images/dummy/16-9-s.png"
+    },
+    "image": {
+      "title": "Lightbox Image Source",
+      "description": "Lightbox Image Source",
+      "type": "string",
+      "format": "image",
+      "default": "default/images/dummy/16-9-xxxl.png"
+    },
+    "width": {
+      "title": "Width",
+      "description": "Width",
+      "type": "integer",
+      "minimum": 0,
+      "default": 1920
+    },
+    "height": {
+      "title": "Height",
+      "description": "height",
+      "type": "integer",
+      "minimum": 0,
+      "default": 1280
+    },
+    "zoomIcon": {
+      "title": "Hover Zoom Icon",
+      "description": "Hover Zoom Icon",
+      "type": "boolean",
+      "default": true
+    },
+    "caption": {
+      "title": "Caption",
+      "description": "Caption",
+      "type": "string"
+    },
+    "hideCaption": {
+      "title": "Hide caption visually",
+      "description": "Hide caption visually",
+      "type": "boolean",
+      "default": false
+    },
+    "gallery": {
+      "type": "string",
+      "title": "Gallery identifier",
+      "description": "Gallery identifier",
+      "default": "lightbox"
+    },
+    "id": {
+      "type": "string",
+      "title": "ID",
+      "description": "ID"
+    },
+    "class": {
+      "type": "string",
+      "title": "Additional Image Class",
+      "description": "Additional Image Class"
+    }
+  }
+}

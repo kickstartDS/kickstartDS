@@ -1,0 +1,16 @@
+<nav class="nav-breadcrumb" aria-label="Sie sind hier:">
+  <ol class="nav-breadcrumb__list" itemscope itemtype="http://schema.org/BreadcrumbList">
+    {{#each breadcrumb}}
+      <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="nav-breadcrumb__item {{#if current}}current{{/if}}">
+        {{#if link}}<a class="nav-breadcrumb__link" href="{{link}}" itemprop="item">{{/if}}
+          {{#if current}}
+          <meta itemprop="item url" content="CURRENT URL" />
+          {{/if}}
+          <span itemprop="name" {{#if current}}aria-current="page" {{/if}}>{{label}}</span>
+        {{~#if link~}}</a>{{~/if~}}
+        {{#unless @last}}{{> atoms-icon icon="chevron-right" role="none"}}{{/unless}}
+        <meta itemprop="position" content="{{ math @index '+' '1' }}" />
+      </li>
+    {{/each}}
+  </ol>
+</nav>

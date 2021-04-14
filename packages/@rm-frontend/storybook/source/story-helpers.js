@@ -1,0 +1,232 @@
+/* eslint-disable no-nested-ternary */
+let imageAssetPathPrefix;
+const fixes = (string) =>
+  string &&
+  string.replace(
+    'media/dummy/',
+    imageAssetPathPrefix ? `${imageAssetPathPrefix}/dummy/` : 'media/dummy/'
+  );
+
+const setImageAssetPathPrefix = (newImageAssetPathPrefix) => {
+  imageAssetPathPrefix = newImageAssetPathPrefix;
+};
+
+const getArgsShared = (properties, group = 'general', subgroup) => {
+  const argTypes = {};
+  const args = {};
+
+  Object.entries(properties).forEach(([propertyName, propertySchema]) => {
+    switch (propertySchema.type) {
+      case 'string':
+        argTypes[propertyName] = {
+          ...argTypes[propertyName],
+          options:
+            propertySchema.enum && propertySchema.enum.length > 0
+              ? propertySchema.enum
+              : undefined,
+          control:
+            propertySchema.enum && propertySchema.enum.length > 0
+              ? {
+                  type:
+                    propertySchema.enum.length > 5 ? 'select' : 'inline-radio',
+                }
+              : propertySchema.format
+              ? propertySchema.format === 'color'
+                ? 'color'
+                : propertySchema.format === 'date'
+                ? 'date'
+                : 'text'
+              : 'text',
+          name: group === 'general' ? propertyName : `${group}.${propertyName}`,
+          description: `**${propertySchema.title}:**\n\n${propertySchema.description}`,
+          defaultValue: fixes(propertySchema.default),
+          table: {
+            category: group,
+            defaultValue: { summary: fixes(propertySchema.default) },
+            subcategory: subgroup || undefined,
+          },
+        };
+
+        args[propertyName] = fixes(propertySchema.default);
+
+        break;
+
+      case 'boolean':
+        argTypes[propertyName] = {
+          control: 'boolean',
+          name: group === 'general' ? propertyName : `${group}.${propertyName}`,
+          description: `**${propertySchema.title}:**\n\n${propertySchema.description}`,
+          defaultValue: propertySchema.default,
+          table: {
+            category: group,
+            defaultValue: { summary: propertySchema.default },
+            subcategory: subgroup || undefined,
+          },
+        };
+
+        args[propertyName] = propertySchema.default;
+
+        break;
+
+      case 'object':
+        if (propertySchema.properties) {
+          const sharedArgs = getArgsShared(
+            propertySchema.properties,
+            group === 'general' ? propertyName : group,
+            group === 'general' ? '' : `${group}.${propertyName}`
+          );
+
+          Object.entries(sharedArgs.argTypes).forEach(([argName, argType]) => {
+            argTypes[`${propertyName}.${argName}`] = argType;
+          });
+
+          argTypes[propertyName] = {
+            table: { disable: true },
+            control: { disable: true },
+          };
+
+          Object.entries(sharedArgs.args).forEach(([argName, arg]) => {
+            args[`${propertyName}.${argName}`] = arg;
+          });
+        } else {
+          argTypes[propertyName] = {
+            control: 'object',
+            name:
+              group === 'general' ? propertyName : `${group}.${propertyName}`,
+            description: `**${propertySchema.title}:**\n\n${propertySchema.description}`,
+            defaultValue: propertySchema.default,
+            table: {
+              category: group,
+              defaultValue: { summary: JSON.stringify(propertySchema.default) },
+              subcategory: subgroup || undefined,
+            },
+          };
+        }
+
+        break;
+
+      case 'array':
+        if (propertySchema.items.properties) {
+          const sharedArgs = getArgsShared(
+            propertySchema.items.properties,
+            group === 'general' ? propertyName : group,
+            group === 'general' ? '' : `${group}.${propertyName}`
+          );
+
+          const count = 3;
+          [...Array(count)].forEach((_, index) => {
+            Object.entries(sharedArgs.argTypes).forEach(
+              ([argName, argType]) => {
+                argTypes[`${propertyName}[${index}].${argName}`] = argType;
+              }
+            );
+
+            Object.entries(sharedArgs.args).forEach(([argName, arg]) => {
+              args[`${propertyName}[${index}].${argName}`] = arg;
+            });
+          });
+
+          argTypes[propertyName] = {
+            table: { disable: true },
+            control: { disable: true },
+          };
+          // } else if (propertySchema.items.anyOf) {
+          //   propertySchema.items.anyOf.forEach((props, index) => {
+          //     const sharedArgs = getArgsShared(
+          //       props,
+          //       group === 'general' ? propertyName : group,
+          //       group === 'general' ? '' : `${group}.${propertyName}`
+          //     );
+          //     Object.entries(sharedArgs.argTypes).forEach(
+          //       ([argName, argType]) => {
+          //         argTypes[`${propertyName}[${index}].${argName}`] = argType;
+          //       }
+          //     );
+
+          //     Object.entries(sharedArgs.args).forEach(([argName, arg]) => {
+          //       args[`${propertyName}[${index}].${argName}`] = arg;
+          //     });
+          //   });
+        }
+        args[propertyName] = propertySchema.default;
+
+        break;
+
+      case 'integer':
+      case 'number':
+        argTypes[propertyName] = {
+          control: {
+            type:
+              typeof propertySchema.minimum === 'number' &&
+              typeof propertySchema.maximum === 'number'
+                ? 'range'
+                : 'number',
+            min: propertySchema.minimum,
+            max: propertySchema.maximum,
+          },
+          name: group === 'general' ? propertyName : `${group}.${propertyName}`,
+          description: `**${propertySchema.title}:**\n\n${propertySchema.description}`,
+          defaultValue: propertySchema.default,
+          table: {
+            category: group,
+            defaultValue: { summary: propertySchema.default },
+            subcategory: subgroup || undefined,
+          },
+        };
+
+        args[propertyName] = propertySchema.default;
+
+        break;
+
+      default:
+        break;
+    }
+  });
+
+  return { argTypes, args };
+};
+
+const getArgTypes = (properties) => {
+  const argsShared = getArgsShared(properties);
+  return { ...argsShared.argTypes };
+};
+
+const getArgs = (properties) => {
+  const argsShared = getArgsShared(properties);
+  return { ...argsShared.args };
+};
+
+const unpack = (flatArgs) => {
+  const args = {};
+
+  // eslint-disable-next-line no-restricted-syntax
+  for (const [key, value] of Object.entries(flatArgs)) {
+    key.split('.').reduce(
+      // eslint-disable-next-line no-return-assign
+      (r, e, i, arr) => (r[e] = r[e] || (arr[i + 1] ? {} : value)),
+      args
+    );
+  }
+
+  // eslint-disable-next-line no-restricted-syntax
+  for (const [key, value] of Object.entries(args)) {
+    const bracePosition = key.indexOf('[');
+
+    if (bracePosition > -1) {
+      const arrayIndex = key.substring(bracePosition + 1, bracePosition + 2);
+      const arrayName = key.substring(0, bracePosition);
+
+      if (!args[arrayName] && !Array.isArray(args[arrayName])) {
+        args[arrayName] = [];
+      }
+
+      args[arrayName][arrayIndex] = value;
+
+      delete args[key];
+    }
+  }
+
+  return args;
+};
+
+export { unpack, getArgTypes, getArgs, setImageAssetPathPrefix };

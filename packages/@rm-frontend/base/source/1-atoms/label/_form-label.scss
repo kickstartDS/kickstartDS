@@ -1,0 +1,23 @@
+@use '../../0-base/1-tools/scss/helpers';
+@use 'settings/base';
+
+.form-label {
+  margin-bottom: 0.2em;
+  font-size: base.$font-size-small;
+  line-height: 1.2;
+  font-weight: helpers.get-font-weight(bold);
+  flex-grow: 1;
+  min-width: 5rem;
+
+  & + & {
+    margin-left: 1em;
+  }
+
+  &--short {
+    flex-basis: 5rem;
+  }
+
+  &--hidden {
+    display: none;
+  }
+}

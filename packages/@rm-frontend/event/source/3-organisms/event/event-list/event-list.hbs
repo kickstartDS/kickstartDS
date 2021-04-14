@@ -1,0 +1,35 @@
+{{#> base-section}}
+  <div class="event-list-container">
+    {{#> molecules-filter-area toggle="Veranstaltungen Filtern" }}
+      {{> molecules-event-filter-options }}
+    {{/molecules-filter-area}}
+
+    <div class="event-list-wrap">
+
+      {{#unless archive-item}}
+        <div class="event-list-count line one-line">427 Veranstaltungen</div>
+        {{#each event-items}}
+          {{> molecules-event-item this }}
+        {{/each}}
+      {{/unless}}
+
+      {{#if archive-item}}
+        <div class="event-archive">
+          <p class="event-list-year">2016</p>
+          {{#each event-items}}
+            {{> molecules-event-archive-item this }}
+          {{/each}}
+        </div>
+        <div class="event-archive">
+          <p class="event-list-year">2017</p>
+          {{#each event-items}}
+            {{> molecules-event-archive-item this }}
+          {{/each}}
+        </div>
+      {{/if}}
+
+      <!-- Pagination -->
+      {{try "molecules-pagination" }}
+    </div>
+  </div>
+{{/base-section}}

@@ -1,0 +1,47 @@
+/**
+ * ## Float Label
+ */
+
+@use '../../0-base/1-tools/scss/helpers';
+@use 'settings/base';
+
+.float-label {
+  position: relative;
+
+  &__field {
+    margin: 0;
+    padding-top: 0.9rem;
+    padding-bottom: 0.15rem;
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    @each $s in (':placeholder-shown' '.placeholder-shown') {
+      &#{$s} {
+        &:not(:focus) {
+          + label {
+            top: 0.75rem;
+            font-size: 0.9rem;
+            color: base.$color-black-50-solid;
+            font-weight: helpers.get-font-weight(regular);
+          }
+        }
+      }
+    }
+  }
+
+  &__label {
+    display: block;
+    position: absolute;
+    cursor: text;
+    opacity: 1;
+    transition: all 0.2s;
+    left: calc(0.5rem + 1px);
+
+    font-size: 0.65rem;
+    top: 4px;
+    color: base.$color-brand;
+    font-weight: helpers.get-font-weight(bold);
+  }
+}

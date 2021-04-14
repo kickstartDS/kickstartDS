@@ -1,0 +1,298 @@
+{
+  "real-estate-items": [
+    {
+      "slideComponent": "molecules-real-estate-card",
+      "id": 1,
+      "image": false,
+      "title": "Lorem ipsum dolor sit",
+      "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.",
+      "images": [
+        {
+          "slideComponent": "molecules-real-estate-image-slide",
+          "previewComponent": "molecules-real-estate-image-slide-preview",
+          "image": "dummy/4-3-l.png",
+          "image-width": "900",
+          "image-height": "675",
+          "thumbnail": "dummy/1-1-s.png",
+          "caption": "Lorem Ipsum"
+        },
+        {
+          "slideComponent": "molecules-real-estate-image-slide",
+          "previewComponent": "molecules-real-estate-image-slide-preview",
+          "image": "dummy/9-16-xl.png",
+          "image-width": "639",
+          "image-height": "1278",
+          "thumbnail": "dummy/1-1-s.png",
+          "caption": "At vero eos et accusam et justo duo dolores et ea rebum"
+        },
+        {
+          "slideComponent": "molecules-real-estate-image-slide",
+          "previewComponent": "molecules-real-estate-image-slide-preview",
+          "image": "dummy/1-1-xl.png",
+          "image-width": "1278",
+          "image-height": "1278",
+          "thumbnail": "dummy/1-1-s.png",
+          "caption": "Lorem ipsum dolor sit"
+        },
+        {
+          "slideComponent": "molecules-real-estate-image-slide",
+          "previewComponent": "molecules-real-estate-image-slide-preview",
+          "image": "dummy/1-1-xs.png",
+          "image-width": "150",
+          "image-height": "150",
+          "thumbnail": "dummy/1-1-s.png"
+        },
+        {
+          "slideComponent": "molecules-real-estate-image-slide",
+          "previewComponent": "molecules-real-estate-image-slide-preview",
+          "image": "dummy/4-3-l.png",
+          "image-width": "900",
+          "image-height": "675",
+          "thumbnail": "dummy/1-1-s.png",
+          "caption": "Lorem Ipsum"
+        },
+        {
+          "slideComponent": "molecules-real-estate-image-slide",
+          "previewComponent": "molecules-real-estate-image-slide-preview",
+          "image": "dummy/9-16-xl.png",
+          "image-width": "639",
+          "image-height": "1278",
+          "thumbnail": "dummy/1-1-s.png",
+          "caption": "At vero eos et accusam et justo duo dolores et ea rebum"
+        },
+        {
+          "slideComponent": "molecules-real-estate-image-slide",
+          "previewComponent": "molecules-real-estate-image-slide-preview",
+          "image": "dummy/1-1-xl.png",
+          "image-width": "1278",
+          "image-height": "1278",
+          "thumbnail": "dummy/1-1-s.png",
+          "caption": "Lorem ipsum dolor sit"
+        },
+        {
+          "slideComponent": "molecules-real-estate-image-slide",
+          "previewComponent": "molecules-real-estate-image-slide-preview",
+          "image": "dummy/1-1-xs.png",
+          "image-width": "150",
+          "image-height": "150",
+          "thumbnail": "dummy/1-1-s.png"
+        },
+        {
+          "slideComponent": "molecules-real-estate-image-slide",
+          "previewComponent": "molecules-real-estate-image-slide-preview",
+          "image": "dummy/4-3-l.png",
+          "image-width": "900",
+          "image-height": "675",
+          "thumbnail": "dummy/1-1-s.png",
+          "caption": "Lorem Ipsum"
+        },
+        {
+          "slideComponent": "molecules-real-estate-image-slide",
+          "previewComponent": "molecules-real-estate-image-slide-preview",
+          "image": "dummy/9-16-xl.png",
+          "image-width": "639",
+          "image-height": "1278",
+          "thumbnail": "dummy/1-1-s.png",
+          "caption": "At vero eos et accusam et justo duo dolores et ea rebum"
+        },
+        {
+          "slideComponent": "molecules-real-estate-image-slide",
+          "previewComponent": "molecules-real-estate-image-slide-preview",
+          "image": "dummy/1-1-xl.png",
+          "image-width": "1278",
+          "image-height": "1278",
+          "thumbnail": "dummy/1-1-s.png",
+          "caption": "Lorem ipsum dolor sit"
+        },
+        {
+          "slideComponent": "molecules-real-estate-image-slide",
+          "previewComponent": "molecules-real-estate-image-slide-preview",
+          "image": "dummy/1-1-xs.png",
+          "image-width": "150",
+          "image-height": "150",
+          "thumbnail": "dummy/1-1-s.png"
+        },
+        {
+          "slideComponent": "molecules-real-estate-image-slide",
+          "previewComponent": "molecules-real-estate-image-slide-preview",
+          "image": "dummy/16-9-l.png",
+          "image-width": "900",
+          "image-height": "506",
+          "thumbnail": "dummy/1-1-s.png",
+          "caption": "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren"
+        }
+      ],
+      "location": {
+        "country": "Musterland",
+        "state": "Musterlandbereich",
+        "city": "Musterstadt",
+        "district": "Musterstadtviertel",
+        "zipcode": "12345",
+        "street_address": "Musterstraße 17",
+        "lat": "50.934860",
+        "long": "6.942230"
+      },
+      "attributes": {
+        "price": "1100 €",
+        "additionalcost": "150 €",
+        "size": "75 m²",
+        "property_area": "120 m²",
+        "min_rental_period": "12 Monate",
+        "type_house": "Haus",
+        "type_property": "Doppelhaushälfte",
+        "rooms": "3",
+        "bedrooms": "2",
+        "baths": "1",
+        "furnishing": "voll möbliert",
+        "floor_number": 4,
+        "balkony": "Balkon",
+        "elevator": "Aufzug",
+        "garden_terrace": "Garten/Terasse",
+        "smoking_allowed": "Rauchen erlaubt",
+        "praking_space_available": "KFZ-Stellplatz",
+        "pets_allowed": "Haustiere erlaubt",
+        "accessibility": "Barrierefreiheit",
+        "kitchen": "Küche",
+        "wifi": "WLAN",
+        "washing_machine": "Waschmaschine",
+        "dryer": "Trockner",
+        "workspace": "Arbeitsplatz",
+        "fireplace": "Kamin",
+        "iron": "Bügeleisen",
+        "hairdryer": "Föhn",
+        "tv": "TV",
+        "baby_cot": "Babybett",
+        "high_chair": "Hochstuhl"
+      }
+    },
+    {
+      "slideComponent": "molecules-real-estate-card",
+      "id": 2,
+      "image": "dummy/4-3-m.png",
+      "title": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr",
+      "attributes": {
+        "price": "900 €",
+        "additionalcost": "150 €",
+        "size": "25 m²",
+        "rooms": "2 ",
+        "location": "Köln",
+        "bedrooms": "1",
+        "baths": "1"
+      }
+    },
+    {
+      "slideComponent": "molecules-real-estate-card",
+      "id": 3,
+      "image": "dummy/4-3-m.png",
+      "title": "Lorem ipsum dolor sit amet",
+      "attributes": {
+        "price": "1450 €",
+        "additionalcost": "150 €",
+        "size": "115 m²",
+        "rooms": "6",
+        "location": "Köln",
+        "bedrooms": "2",
+        "baths": "2"
+      }
+    },
+    {
+      "slideComponent": "molecules-real-estate-card",
+      "id": 4,
+      "image": "dummy/4-3-m.png",
+      "title": "Lorem ipsum dolor sit",
+      "attributes": {
+        "price": "1100 €",
+        "additionalcost": "150 €",
+        "size": "75 m²",
+        "rooms": "3",
+        "location": "Ravensburg",
+        "bedrooms": "1",
+        "baths": "1"
+      }
+    },
+    {
+      "slideComponent": "molecules-real-estate-card",
+      "id": 5,
+      "image": "dummy/4-3-m.png",
+      "title": "Lorem ipsum",
+      "attributes": {
+        "price": "750 €",
+        "additionalcost": "150 €",
+        "size": "35 m²",
+        "rooms": "1",
+        "location": "Köln",
+        "bedrooms": "1",
+        "baths": "1"
+      }
+    },
+    {
+      "slideComponent": "molecules-real-estate-card",
+      "id": 6,
+      "image": "dummy/4-3-m.png",
+      "title": "Lorem ipsum",
+      "attributes": {
+        "price": "750 €",
+        "additionalcost": "150 €",
+        "size": "35 m²",
+        "rooms": "1",
+        "location": "Köln",
+        "bedrooms": "1",
+        "baths": "1"
+      }
+    },
+    {
+      "slideComponent": "molecules-real-estate-card",
+      "id": 7,
+      "image": "dummy/4-3-m.png",
+      "title": "Lorem ipsum",
+      "attributes": {
+        "price": "750 €",
+        "additionalcost": "150 €",
+        "size": "35 m²",
+        "rooms": "1",
+        "location": "Dortmund",
+        "bedrooms": "1",
+        "baths": "1"
+      }
+    },
+    {
+      "slideComponent": "molecules-real-estate-card",
+      "id": 8,
+      "image": "dummy/4-3-m.png",
+      "title": "Lorem ipsum",
+      "attributes": {
+        "price": "750 €",
+        "additionalcost": "150 €",
+        "size": "35 m²",
+        "rooms": "1",
+        "location": "Bonn",
+        "bedrooms": "1",
+        "baths": "1"
+      }
+    },
+    {
+      "slideComponent": "molecules-real-estate-card",
+      "id": 9,
+      "image": "dummy/4-3-m.png",
+      "title": "Lorem ipsum",
+      "attributes": {
+        "price": "750 €",
+        "additionalcost": "150 €",
+        "size": "35 m²",
+        "rooms": "1",
+        "location": "Leverkusen",
+        "bedrooms": "1",
+        "baths": "1"
+      }
+    }
+  ],
+  "real-estate-request": {
+    "title": "Lorem ipsum dolor sit amet",
+    "date-range": {
+      "from": "30.10.2019",
+      "to": "12.06.2020"
+    },
+    "image": "dummy/4-3-m.png",
+    "endpoint": "success"
+  }
+}

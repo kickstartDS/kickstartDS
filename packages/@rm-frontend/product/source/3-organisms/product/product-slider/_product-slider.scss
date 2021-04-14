@@ -1,0 +1,19 @@
+.product-slider {
+  .slider__slides {
+    align-items: stretch;
+  }
+
+  .slider__slide {
+    height: auto;
+    display: flex;
+    justify-content: stretch;
+  }
+
+  // .slick-arrow {
+  //   opacity: 1;
+  // }
+
+  .slider-nav {
+    margin-top: 1rem;
+  }
+}

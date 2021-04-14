@@ -1,0 +1,72 @@
+/**
+ * # Business Card
+ */
+
+@use '@rm-frontend/base/source/0-base/1-tools/scss/grid';
+@use '@rm-frontend/base/source/0-base/1-tools/scss/breakpoint';
+@use '@rm-frontend/base/source/0-base/0-settings/selector';
+@use 'settings/base';
+
+@if rm('modules.business-card.organisms.business-card') {
+  .business-card {
+    @include grid.grid-container();
+
+    &__column {
+      align-items: stretch;
+      display: flex;
+
+      .business-card-wrap--col-2 & {
+        @include grid.grid-break-at(550px, 12, 6);
+      }
+
+      .business-card-wrap--col-3 & {
+        @include grid.grid-break-at(650px, 12, 4);
+      }
+    }
+
+    &__item {
+      #{selector.$section--bg-1} & {
+        border-color: base.$color-black-15;
+      }
+
+      .business-card-wrap--col-1 & {
+        width: 100%;
+      }
+
+      .business-card-wrap--col-2 &,
+      .business-card-wrap--col-3 & {
+        display: flex;
+      }
+
+      &__box {
+        .business-card-wrap--col-1 & {
+          font-size: 1em;
+
+          @include breakpoint.media('≥s') {
+            font-size: base.$font-size-base-s;
+          }
+        }
+
+        .business-card-wrap--col-2 & {
+          font-size: 1em;
+
+          @include breakpoint.media('≥m') {
+            font-size: 0.85em;
+          }
+        }
+
+        .business-card-wrap--col-3 & {
+          font-size: 1em;
+
+          @include breakpoint.media('≥s') {
+            font-size: 0.75em;
+          }
+
+          @include breakpoint.media('≥m') {
+            font-size: 0.85em;
+          }
+        }
+      }
+    }
+  }
+}

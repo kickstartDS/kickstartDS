@@ -1,0 +1,36 @@
+<div class="real-estate-teaser">
+  <div class="real-estate-teaser__inner">
+    <h3 class="real-estate-teaser__header">Jetzt Wohnungen finden</h3>
+    <div>
+      <form class="real-estate-teaser__form">
+        <div class="real-estate-teaser__city">
+          {{> atoms-select-input
+              label=(object content="Lage")
+              class=""
+              options=(array
+                (object content="Stadt auswählen" selected=true disabled=true)
+                (object value="bonn" content="Bonn")
+                (object value="koeln" content="Köln")
+                (object value="krefeld" content="Krefeld")
+              )
+              id="real-estate-city"
+              name="location"
+            }}
+        </div>
+
+        <div class="real-estate-teaser__date-range-wrapper">
+          {{> molecules-date-range-picker
+            label="Mietzeitraum"
+            from=(object name="date-from" id="real-estate__date-range--start")
+            to=(object name="date-to" id="real-estate__date-range--end")
+            date-ranges="[[1577923200,1578614400],[1579046400,1579478400]]"
+          }}
+        </div>
+
+        <div class="real-estate-teaser__cta">
+          {{> atoms-button style="solid" label="Suchen" type="submit"}}
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

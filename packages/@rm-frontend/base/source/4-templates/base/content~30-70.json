@@ -1,0 +1,27 @@
+{
+  "headline": "Template 30/70",
+  "templates": [
+    {
+      "type": "100",
+      "content": [{ "component": "molecules-highlight-text" }]
+    },
+    {
+      "type": "30-70",
+      "content": [
+        { "component": "organisms-storytelling-variable" },
+        { "component": "organisms-typo3-standard-content" }
+      ],
+      "sidebar": [
+        { "component": "molecules-nav-content-menu" },
+        { "component": "organisms-storytelling-full" },
+        { "component": "organisms-typo3-standard-content--sidebar" },
+        { "component": "organisms-storytelling-variable" },
+        { "component": "organisms-contact-form-personal" }
+      ]
+    },
+    {
+      "type": "100",
+      "content": [{ "component": "organisms-news-latest" }]
+    }
+  ]
+}

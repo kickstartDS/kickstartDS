@@ -1,0 +1,55 @@
+@use '@rm-frontend/base/source/0-base/1-tools/scss/grid';
+@use '@rm-frontend/base/source/0-base/1-tools/scss/breakpoint';
+@use 'settings/base';
+
+.real-estate-teaser {
+  $gutter: 1rem;
+
+  padding: $gutter;
+  background-color: base.$color-black-10;
+
+  &__inner {
+    @include grid.grid-container($gutter);
+  }
+
+  &__header {
+    margin: 0;
+  }
+
+  &__form {
+    @include grid.grid-container($gutter);
+
+    @include breakpoint.media('≥s') {
+      flex-wrap: nowrap;
+      align-items: flex-end;
+
+      > * {
+        width: auto;
+        flex-basis: 0;
+      }
+    }
+  }
+
+  &__city {
+    flex-grow: 1;
+  }
+
+  &__date-range-wrapper {
+    flex-grow: 2;
+  }
+
+  &__date-range {
+    @include breakpoint.media('≥s') {
+      @include grid.grid-container($gutter);
+      @include grid.grid-cols-per-row(2);
+    }
+  }
+
+  &__cta {
+    flex-grow: 1;
+
+    .button {
+      width: 100%;
+    }
+  }
+}

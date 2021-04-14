@@ -1,0 +1,21 @@
+{
+  "name": "@rm-frontend/location-finder",
+  "version": "5.1.0",
+  "description": "RM Frontend Location Finder Module",
+  "author": "ruhmesmeile GmbH <mail@ruhmesmeile.com> (https://ruhmesmeile.com)",
+  "homepage": "https://bitbucket.ruhmesmeile.tools/projects/FRONT/repos/rm-frontend/browse/packages/@rm-frontend/location-finder",
+  "license": "SEE LICENSE IN LICENSE",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@bitbucket.ruhmesmeile.tools:7999/front/rm-frontend.git",
+    "directory": "packages/@rm-frontend/location-finder"
+  },
+  "dependencies": {
+    "@rm-frontend/base": "^12.0.0"
+  },
+  "config": {
+    "rm-frontend": true
+  }
+}

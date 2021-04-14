@@ -1,0 +1,59 @@
+@use '@rm-frontend/base/source/0-base/0-settings/selector';
+@use 'settings/visuals';
+
+@keyframes slider-nav-autoplay {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@if rm('modules.visuals.molecules.visual-slide-preview') {
+  .visual-slide--preview {
+    $current-animation-duration: 4s;
+
+    flex: 0 1 100%;
+    font-size: visuals.$slide-preview__font-size;
+    line-height: visuals.$slide-preview__line-height;
+    text-align: center;
+    padding: 0.75em 1em;
+    transition: 0.3s;
+
+    #{selector.$slider-nav-constrol-slide} & {
+      min-width: 7rem;
+    }
+
+    #{selector.$slider-nav-slide}:hover &,
+    #{selector.$slider-nav-slide}:focus & {
+      background: visuals.$slide-preview__background--hover;
+      color: visuals.$slide-preview__color--hover;
+    }
+
+    #{selector.$slider-nav-slide}--active & {
+      background: visuals.$slide-preview__background--active;
+      color: visuals.$slide-preview__color--active;
+
+      .slider--autoplay &::after {
+        animation: slider-nav-autoplay $current-animation-duration linear;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+      }
+    }
+
+    .slider--autoplay & {
+      position: relative;
+
+      &::after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 0.2em;
+        background-color: visuals.$slide-preview__autoplay-indicator-color;
+        content: '';
+      }
+    }
+  }
+}

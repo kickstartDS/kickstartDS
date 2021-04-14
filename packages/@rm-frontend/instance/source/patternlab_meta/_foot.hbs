@@ -1,0 +1,26 @@
+    {{> organisms-lightbox }}
+
+  {{#if (comp RM_JS_MODULES "===" "true")}}
+    {{#each assets.js.esm}}
+    <script type="module" src="{{this}}?{{ ../cacheBuster }}"></script>
+    {{/each}}
+    {{#each assets.js.es5}}
+    <script nomodule defer src="{{this}}?{{ ../cacheBuster }}"></script>
+    {{/each}}
+  {{else}}
+    {{#each assets.js}}
+    <script defer src="{{this}}?{{ ../cacheBuster }}"></script>
+    {{/each}}
+  {{/if}}
+
+{{!-- Pattern Lab specific. Don't use this in production --}}
+{{{ patternLabFoot }}}
+<script>
+  if (window.location.href.match(/\/patterns\/(0-base|1-atoms|2-molecules|3-organisms)/)) {
+    document.body.style.display = 'block';
+    document.body.style.padding = '1rem';
+  }
+</script>
+{{!-- End of Pattern Lab specific --}}
+  </body>
+</html>

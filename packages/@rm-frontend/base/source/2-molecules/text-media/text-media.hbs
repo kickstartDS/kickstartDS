@@ -1,0 +1,71 @@
+<div class="text-media
+  {{~#if (comp mediaAlignment "===" "above-left")}} text-media--above text-media--left{{/if~}}
+  {{~#if (comp mediaAlignment "===" "above-center")}} text-media--above text-media--center{{/if~}}
+  {{~#if (comp mediaAlignment "===" "above-right")}} text-media--above text-media--right{{/if~}}
+
+  {{~#if (comp mediaAlignment "===" "beside-left")}} text-media--beside text-media--intext text-media--left{{/if~}}
+  {{~#if (comp mediaAlignment "===" "beside-right")}} text-media--beside text-media--intext text-media--right{{/if~}}
+
+  {{~#if (comp mediaAlignment "===" "intext-left")}} text-media--intext text-media--left{{/if~}}
+  {{~#if (comp mediaAlignment "===" "intext-right")}} text-media--intext text-media--right{{/if~}}
+
+  {{~#if (comp mediaAlignment "===" "below-left")}} text-media--below text-media--left{{/if~}}
+  {{~#if (comp mediaAlignment "===" "below-center")}} text-media--below text-media--center{{/if~}}
+  {{~#if (comp mediaAlignment "===" "below-right")}} text-media--below text-media--right{{/if~}}
+">
+
+  {{#if (comp (comp mediaAlignment "===" "below-left") "||" (comp (comp mediaAlignment "===" "below-center") "||" (comp mediaAlignment "===" "below-right")))}}
+    <div class="text-media__text rich-text">
+      {{#if @partial-block}}
+        {{> @partial-block }}
+      {{else}}
+      <p>{{ default bodytext "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+        At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+        sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+        Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
+        ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+        ipsum dolor sit amet. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et
+        accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet," }}</p>
+      {{/if}}
+    </div>
+  {{/if}}
+
+  {{#if media}}
+    <div class="text-media__gallery">
+      {{#each media}}
+        <div class="text-media__media {{#if (comp video.src "||" full)}}text-media__media--full{{/if}}">
+        {{#if video.src}}
+          {{#if video.iframe}}
+            {{> atoms-iframe-ratio video}}
+          {{else}}
+            <video controls class="lazyload" title="{{ video.title }}" data-src="{{@root.asset_paths.images}}/{{ video.src }}"></video>
+            <noscript>
+              <video controls title="{{ video.title }}" src="{{@root.asset_paths.images}}/{{ video.src }}"></video>
+            </noscript>
+          {{/if}}
+        {{else if image}}
+          {{> atoms-lazy-img image }}
+        {{else if lightboxImage}}
+          {{> atoms-lightbox-lazy-image lightboxImage }}
+        {{/if}}
+        </div>
+      {{/each}}
+    </div>
+  {{/if}}
+
+  {{#unless (comp (comp mediaAlignment "===" "below-left") "||" (comp (comp mediaAlignment "===" "below-center") "||" (comp mediaAlignment "===" "below-right")))}}
+  <div class="text-media__text rich-text">
+    {{#if @partial-block}}
+      {{> @partial-block }}
+    {{else}}
+    <p>{{ default bodytext "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+      At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+      sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+      Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
+      ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+      ipsum dolor sit amet. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et
+      accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet," }}</p>
+    {{/if}}
+  </div>
+  {{/unless}}
+</div>

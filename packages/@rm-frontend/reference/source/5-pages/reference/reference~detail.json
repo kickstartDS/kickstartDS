@@ -1,0 +1,15 @@
+{
+  "keyvisual": false,
+  "headline": false,
+  "layout-variant": "narrow",
+  "templates": [
+    {
+      "type": "100",
+      "content": [
+        {
+          "component": "organisms-reference-detail"
+        }
+      ]
+    }
+  ]
+}

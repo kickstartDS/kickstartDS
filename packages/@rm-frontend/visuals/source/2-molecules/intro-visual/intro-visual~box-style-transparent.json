@@ -1,0 +1,18 @@
+{
+  "intro-visual": {
+    "media": {
+      "mode": "image",
+      "image": {
+        "srcMobile": "dummy/4-3-m-i.png",
+        "srcTablet": "dummy/4-3-l-i.png",
+        "srcDesktop": "dummy/4-3-xxxl-i.png"
+      }
+    },
+    "box": {
+      "transparent": true,
+      "link": {
+        "style": "outline-inverted"
+      }
+    }
+  }
+}

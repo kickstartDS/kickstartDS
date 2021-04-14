@@ -1,0 +1,51 @@
+@use 'settings/base/colors';
+@use 'settings/base/typo';
+
+/// # Tag-label
+$tag-label__background-color:            colors.$color-black-5 !default;
+$tag-label__hover-background-color:      colors.$color-black-10 !default;
+$tag-label__border:                      null !default;
+$tag-label__color:                       colors.$color-black-75 !default;
+$tag-label__hover-color:                 colors.$color-black !default;
+
+$tag-label__sizes: (
+  s: (
+    font-size:           0.65rem,
+    line-height:         0.8rem,
+    font-weight:         regular,
+    border-radius:       0.8rem,
+    vertical-padding:    0.325rem,
+    horizontal-padding:  0.65rem,
+    icon: (
+      size:              0.8rem,
+      margin-left:       -0.325rem,
+      horizontal-padding: 0.325rem
+    )
+  ),
+  m: (
+    font-size:            0.9rem,
+    line-height:          1.25rem,
+    font-weight:          regular,
+    border-radius:        1.25rem,
+    vertical-padding:     0.4rem,
+    horizontal-padding:   1rem,
+    icon: (
+      size:               1.25rem,
+      margin-left:        -0.6rem,
+      horizontal-padding: 0.5rem
+    )
+  ),
+  l: (
+    font-size:           1.1rem,
+    line-height:         1.25rem,
+    font-weight:         regular,
+    border-radius:       1.25rem,
+    vertical-padding:    0.5rem,
+    horizontal-padding:  1.25rem,
+    icon: (
+      size:              1.25rem,
+      margin-left:       -0.75rem,
+      horizontal-padding: 0.5rem
+    )
+  )
+) !default;

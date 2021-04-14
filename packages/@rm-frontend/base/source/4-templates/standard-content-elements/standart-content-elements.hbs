@@ -1,0 +1,42 @@
+{{#> organisms-main }}
+
+  {{> organisms-breadcrumb }}
+
+  {{> organisms-headline }}
+
+  <div class="template template--content-70-sidebar-30">
+    <div class="template__content">
+
+      {{> organisms-typo3-standard-content id=increment }}
+      {{> organisms-divider id=increment }}
+
+      {{#if (module "download")}}
+        {{try "organisms-download" id=increment }}
+        {{> organisms-divider id=increment }}
+      {{/if}}
+
+      {{try "atoms-table-variants" id=increment }}
+
+      {{#> base-section background="1"}}
+        {{> molecules-embedded-map }}
+      {{/base-section}}
+    </div>
+
+    <aside class="template__sidebar">
+      {{try "organisms-contact-form-basic" id=increment }}
+    </aside>
+  </div>
+
+  <div class="template template--content-100">
+    {{> organisms-typo3-standard-content id=increment }}
+    {{> organisms-divider id=increment }}
+
+    {{#if (module "download")}}
+      {{try "organisms-download" id=increment }}
+      {{> organisms-divider id=increment }}
+    {{/if}}
+
+    {{try "atoms-table-variants" id=increment }}
+    {{> organisms-embedded-map id=increment }}
+  </div>
+{{/organisms-main }}

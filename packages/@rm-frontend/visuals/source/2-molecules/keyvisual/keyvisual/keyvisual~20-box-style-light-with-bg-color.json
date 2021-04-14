@@ -1,0 +1,12 @@
+{
+  "media": {
+    "mode": "none"
+  },
+  "box": {
+    "light": true,
+    "link": {
+      "style": "outline"
+    }
+  },
+  "backgroundColor": "#000"
+}

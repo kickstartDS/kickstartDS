@@ -1,0 +1,19 @@
+<header class="main-header main-header--variant-1"
+  data-component="base.header" itemscope id="microdata-org"
+  itemtype="http://schema.org/Organization" itemprop="publisher author" itemref="microdata-org-address microdata-org-social">
+  {{#if modules.base.organisms.header.meta}}
+  <div class="nav-meta-container">
+    {{> molecules-nav-meta }}
+  </div>
+  {{/if}}
+
+  <div class="main-header__logo-nav">
+    {{#if modules.base.molecules.contact-flag-label}}
+    {{try "molecules-contact-flag-label" }}
+    {{/if}}
+    {{> molecules-logo }}
+    {{> molecules-nav-main }}
+  </div>
+</header>
+
+<div class="main-header-spacer"></div>

@@ -1,0 +1,29 @@
+{
+  "class": "form-item--error",
+  "wrapper": {
+    "class": "form-row"
+  },
+  "label": {
+    "content": "Anrede",
+    "hidden": false
+  },
+  "name": "tx_rmlocationfinder_pilocationfinderresult[request][radius]",
+  "id": "selectbox-without-label",
+  "required": true,
+  "options": [
+    {
+      "disabled": true,
+      "selected": true,
+      "content": "Anrede*"
+    },
+    {
+      "content": "Lorem Ipsum"
+    },
+    {
+      "content": "Lorem Ipsum 1"
+    },
+    {
+      "content": "Lorem Ipsum 2"
+    }
+  ]
+}

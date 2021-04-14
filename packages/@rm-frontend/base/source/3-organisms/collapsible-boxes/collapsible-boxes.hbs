@@ -1,0 +1,11 @@
+<div class="l-section" id="c{{ id }}">
+  <div class="l-main-wrap">
+    {{> molecules-content-headline content="Collapsible elements" subheader="Subheader Collapsible elements" }}
+  </div>
+
+  <div class="l-main-wrap{{#if layout-variant}} l-main-wrap--{{layout-variant}}{{/if}}">
+    {{#each collapsible-box }}
+      {{> molecules-collapsible-box this id=../id }}
+    {{/each}}
+  </div>
+</div>

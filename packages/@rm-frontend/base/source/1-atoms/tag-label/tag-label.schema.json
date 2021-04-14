@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://frontend.ruhmesmeile.com/base/atoms/tag-label.schema.json",
+  "title": "Tag Label",
+  "description": "Tag Label",
+  "type": "object",
+  "properties": {
+    "label": {
+      "type": "string",
+      "title": "Label",
+      "default": "Lorem Ipsum"
+    },
+    "size": {
+      "type": "string",
+      "enum": ["s", "m", "l"],
+      "default": "m",
+      "title": "Size"
+    },
+    "link": {
+      "type": "string",
+      "title": "Link Target",
+      "format": "uri"
+    },
+    "removable": {
+      "type": "boolean",
+      "title": "Removable",
+      "default": false
+    }
+  },
+  "required": ["label"]
+}

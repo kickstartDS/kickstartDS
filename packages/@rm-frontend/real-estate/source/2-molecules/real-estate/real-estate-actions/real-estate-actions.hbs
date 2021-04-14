@@ -1,0 +1,47 @@
+<div class="real-estate-actions" data-component="real-estate.actions" data-estate-id="re{{id}}">
+  <div class="overlay real-estate-actions__overlay" data-component="base.overlay">
+    <div class="overlay__inner">
+
+      <form action="" method="GET" class="real-estate-actions__form">
+        {{> atoms-button className="overlay__close" icon=(object icon="close" role="img")}}
+        <h2 class="real-estate-actions__headline">Anfragen</h2>
+        <div class="form-row">
+          {{> molecules-date-range-picker
+            label="Mietzeitraum"
+            from=(object name="date-from" id="real-estate__date-range--start")
+            to=(object name="date-to" id="real-estate__date-range--end")
+            date-ranges="[[1577923200,1578614400],[1579046400,1579478400]]"
+          }}
+        </div>
+        {{> atoms-button style="solid" className="real-estate-actions__btn real-estate-actions__btn--submit" label="Anfrage schicken" type="submit" disabled=true}}
+      </form>
+
+    </div>
+  </div>
+  <div class="real-estate-actions__sticky">
+    <div class="real-estate-actions__sticky__inner">
+      <div class="real-estate-actions__btn-wrapper--share">
+        {{> atoms-link-button data-component="base.share-mail-link" href="" style="outline" className="real-estate-actions__btn" label="Weiterleiten" iconBefore=true icon=(object icon="share")}}
+      </div>
+      <div>
+        <button type="button" class="button button--outline real-estate-actions__btn real-estate-actions__favourite" aria-pressed="false"
+          data-component="real-estate.shortlist-toggle">
+          <span class="button__icon--before">
+          {{> atoms-icon icon="star" className="real-estate-actions__favourite__icon-active"}}
+          {{> atoms-icon icon="star-outline" className="real-estate-actions__favourite__icon-inactive"}}
+          </span>
+          <span class="button__text">Merken</span>
+        </button>
+      </div>
+      <div class="real-estate-actions__btn-wrapper--trigger">
+        {{> atoms-button type="button" style="solid" className="real-estate-actions__btn real-estate-actions__btn--trigger" label="Anfragen" iconBefore=true icon=(object icon="date" )}}
+      </div>
+      <div class="real-estate-actions__btn-wrapper--print">
+        {{> atoms-button type="button" onclick="window.print();" style="clear" className="no-print" label="Druckansicht" iconBefore=true icon=(object icon="print" )}}
+      </div>
+      <div class="real-estate-actions__btn-wrapper--share-m">
+        {{> atoms-link-button data-component="base.share-mail-link" href="" style="clear" label="Angebot weiterempfehlen" iconBefore=true icon=(object icon="share" )}}
+      </div>
+    </div>
+  </div>
+</div>

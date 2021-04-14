@@ -1,0 +1,24 @@
+{
+  "name": "@rm-frontend/quotes",
+  "version": "3.2.0",
+  "description": "RM Frontend Quotes Module",
+  "author": "ruhmesmeile GmbH <mail@ruhmesmeile.com> (https://ruhmesmeile.com)",
+  "homepage": "https://bitbucket.ruhmesmeile.tools/projects/FRONT/repos/rm-frontend/browse/packages/@rm-frontend/quotes",
+  "license": "SEE LICENSE IN LICENSE",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@bitbucket.ruhmesmeile.tools:7999/front/rm-frontend.git",
+    "directory": "packages/@rm-frontend/quotes"
+  },
+  "config": {
+    "rm-frontend": true
+  },
+  "dependencies": {
+    "@rm-frontend/base": "^12.0.0",
+    "@rm-frontend/core": ">= 2.0.0 < 4.0.0",
+    "date-fns": "^2.19.0",
+    "react": "^17.0.2"
+  }
+}

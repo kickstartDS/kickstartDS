@@ -1,0 +1,55 @@
+@use 'settings/base/colors';
+@use 'settings/base/typo';
+
+
+$footer__color:                              colors.$color-white !default;
+$footer__background:                         colors.$color-black-75-solid !default;
+$footer__font-size:                          typo.$font-size-small !default;
+$footer__line-height:                        typo.$line-height-small !default;
+
+// # Top
+// FOOTER Address
+$footer__adress-link-color:                  colors.$color-white !default;
+
+$footer__adress-font-size:                   typo.$font-size-default !default;
+$footer__adress-font-size-s:                 $footer__adress-font-size !default;
+$footer__adress-font-weight:                 regular !default;
+$footer__adress-font-color:                  colors.$color-white !default;
+$footer__adress-line-height:                 typo.$line-height-default !default;
+$footer__adress-line-height-s:               $footer__adress-line-height !default;
+$footer__adress-text-transform:              none !default;
+$footer__adress-margin:                      0 !default;
+
+// hover
+$footer__adress-link-color-hover:            colors.$color-white !default;
+$footer__adress-link-background-hover:       colors.$color-black-25 !default;
+
+// FOOTER Address Company
+$footer__adress-company-font-size:           $footer__adress-font-size !default;
+$footer__adress-company-font-weight:         bold !default;
+$footer__adress-company-font-color:          $footer__adress-font-color !default;
+$footer__adress-company-line-height:         $footer__adress-line-height !default;
+
+// FOOTER Nav
+$footer__nav-color:                          colors.$color-white !default;
+$footer__nav-divider-color:                  colors.$color-white !default;
+
+$footer__nav-font-size:                      typo.$font-size-default !default;
+$footer__nav-font-size-s:                    $footer__nav-font-size !default;
+$footer__nav-font-weight:                    regular !default;
+$footer__nav-font-color:                     colors.$color-white !default;
+$footer__nav-line-height:                    1 !default;
+$footer__nav-line-height-s:                  $footer__nav-line-height !default;
+$footer__nav-text-transform:                 none !default;
+$footer__nav-margin:                         2.5em 0 !default;
+
+// hover
+$footer__nav-color-hover:                    colors.$color-white !default;
+$footer__nav-background-hover:               colors.$color-black-25 !default;
+
+// # Bottom
+$footer__bottom-border-top-s:                1px solid colors.$color-white !default;
+
+// FOOTER Nav Social
+$footer__nav-social-icon-size:               typo.$font-size-default !default;
+$footer__nav-social-icon-size-s:             $footer__nav-social-icon-size !default;

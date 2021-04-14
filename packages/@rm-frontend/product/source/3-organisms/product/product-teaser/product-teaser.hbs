@@ -1,0 +1,13 @@
+{{#each (slice @root.productItems 0 6)}}
+  {{#if teaser.fullWidth}}
+    {{> molecules-product-teaser-item this}}
+  {{else}}
+    <div class="l-section {{#if bg-1}}l-section--bg-1{{/if}}" id="c{{ id }}">
+      <div class="l-main-wrap">
+        {{> molecules-content-headline content="h2 Heading" subheader="Subheader Text & Media" }}
+
+        {{> molecules-product-teaser-item this}}
+      </div>
+    </div>
+  {{/if}}
+{{/each}}

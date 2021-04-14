@@ -1,0 +1,16 @@
+{
+  "options": [
+    {
+      "value": "",
+      "option": "Bitte wählen *"
+    },
+    {
+      "value": "Frau",
+      "option": "Frau"
+    },
+    {
+      "value": "Herr",
+      "option": "Herr"
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+@use '@rm-frontend/base/source/0-base/1-tools/scss/grid';
+@use '@rm-frontend/base/source/0-base/1-tools/scss/sizes';
+@use '@rm-frontend/base/source/0-base/1-tools/scss/helpers';
+@use '@rm-frontend/base/source/0-base/1-tools/scss/breakpoint';
+@use 'bourbon/core/bourbon';
+@use 'settings/base';
+
+.deals {
+  @include bourbon.clearfix();
+
+  position: relative;
+
+  &__item {
+    // item size "M" or "S"
+    &--m,
+    &--s {
+      @include grid.outer-container;
+    }
+
+    &__wrap {
+      @include sizes.vertical-padding;
+
+      position: relative;
+      background-color: base.$color-black-10;
+    }
+
+    &__background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      z-index: 0;
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    @include breakpoint.media('≥s') {
+      flex-direction: row;
+
+      &--center {
+        flex-direction: column;
+      }
+
+      &--reverse {
+        flex-direction: row-reverse;
+      }
+    }
+
+    &__image {
+      width: 75%;
+      max-width: none;
+      margin-bottom: 2em;
+      text-align: center;
+
+      @include breakpoint.media('≥s') {
+        width: 100%;
+        max-width: 40%;
+        margin-bottom: 0;
+
+        .deals__content--center & {
+          width: 60%;
+          max-width: none;
+          margin-bottom: 2em;
+        }
+      }
+    }
+
+    &__box {
+      width: 100%;
+      text-align: left;
+      color: base.$color-white;
+
+      @include breakpoint.media('≥s') {
+        @include sizes.global-padding;
+
+        width: auto;
+        max-width: 60%;
+        text-align: start;
+
+        .deals__content--regular & {
+          padding-right: 0;
+        }
+
+        .deals__content--reverse & {
+          padding-left: 0;
+        }
+
+        .deals__content--reverse & {
+          padding-left: 0;
+        }
+
+        .deals__content--center & {
+          width: 60%;
+          max-width: none;
+          text-align: center;
+          padding: 0;
+        }
+      }
+
+      .overlay {
+        text-align: left;
+      }
+
+      a:not(.button) {
+        color: inherit;
+      }
+    }
+  }
+
+  &__topic {
+    font-size: 1.5em;
+    line-height: 1.1;
+    font-weight: helpers.get-font-weight(bold);
+    margin-bottom: 0.6em;
+
+    @include breakpoint.media('≥m') {
+      margin-bottom: 1em;
+    }
+  }
+
+  &__text {
+    p {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__button {
+    margin-top: 1.5em;
+  }
+
+  &__overlay {
+    @include breakpoint.media('≥s') {
+      @include grid.grid-columns(10);
+      @include grid.grid-push(1);
+    }
+
+    @include breakpoint.media('≥m') {
+      @include grid.grid-columns(6);
+      @include grid.grid-push(3);
+    }
+
+    h2 {
+      color: base.$color-white;
+    }
+  }
+}

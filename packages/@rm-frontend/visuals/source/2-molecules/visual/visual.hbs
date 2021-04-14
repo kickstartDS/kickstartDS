@@ -1,0 +1,76 @@
+<div data-component="visual" class="visual {{className}}
+  {{~#if (comp height '===' 'small')}} visual--small{{/if~}}
+  {{~#if (comp height '===' 'fullScreen')}} visual--full{{/if~}}
+  {{~#if (comp height '===' 'fullImage')}} visual--no-crop{{/if~}}
+  "
+  {{~#if backgroundColor}} style="background-color:{{backgroundColor}}" {{/if}}>
+
+  {{#if (comp media.mode "===" "image")}}
+  <picture class="visual__image
+      {{~#if (comp image.indent "!==" "none")}} visual__image--indent-{{image.indent}}{{/if~}}
+      {{~#if inbox}} visual__image--inbox{{/if~}}
+    ">
+    {{#if (comp slider.index ">" 0)}}
+    {{!-- if visual is part of a slider AND not first element, load image lazily --}}
+    <source media="(min-width: 950px)" data-srcset="{{@root.asset_paths.images}}/{{ media.image.srcDesktop }}">
+    <source media="(min-width: 600px)" data-srcset="{{@root.asset_paths.images}}/{{ media.image.srcTablet }}">
+    <source data-srcset="{{@root.asset_paths.images}}/{{ media.image.srcMobile }}">
+    {{> atoms-lazy-img src=media.image.srcMobile alt="" objectFit=true js=true}}
+    {{else}}
+    <source media="(min-width: 950px)" srcset="{{@root.asset_paths.images}}/{{ media.image.srcDesktop }}">
+    <source media="(min-width: 600px)" srcset="{{@root.asset_paths.images}}/{{ media.image.srcTablet }}">
+    <source srcset="{{@root.asset_paths.images}}/{{ media.image.srcMobile }}">
+    <img src="{{@root.asset_paths.images}}/{{ media.image.srcMobile }}" alt="" data-object-fit>
+    {{/if}}
+  </picture>
+  {{/if}}
+
+  {{#if (comp media.mode "===" "video")}}
+  <video class="visual__video" autobuffer muted loop autoplay playsInline data-object-fit>
+    <source media="(min-width: 950px)" src="{{@root.asset_paths.images}}/{{ media.video.srcDesktop }}" type="video/mp4">
+    <source media="(min-width: 600px)" src="{{@root.asset_paths.images}}/{{ media.video.srcTablet}}" type="video/mp4">
+    <source src="{{@root.asset_paths.images}}/{{ media.video.srcMobile }}" type="video/mp4">
+  </video>
+  {{/if}}
+
+  {{#if overlay}}
+    <div class="visual__overlay"></div>
+  {{/if}}
+
+  {{#if box.enabled}}
+  <div class="visual__content
+      {{~#if inbox}} visual__content--inbox{{/if~}}
+      {{~#if box.indent}} visual__content--indent{{/if~}}
+      {{~#if (comp box.horizontal "===" "left")}} visual__content--left{{/if~}}
+      {{~#if (comp box.horizontal "===" "center")}} visual__content--center{{/if~}}
+      {{~#if (comp box.horizontal "===" "right")}} visual__content--right{{/if~}}
+      {{~#if (comp box.vertical "===" "bottom")}} visual__content--bottom{{/if~}}
+      {{~#if (comp box.vertical "===" "top")}} visual__content--top{{/if~}}
+      ">
+    <div class="visual__box
+        {{~#if (comp box.style "===" "light")}} visual__box--light{{/if~}}
+        {{~#if (comp box.style "===" "transparent")}} visual__box--transparent{{/if~}}
+        ">
+      {{#if box.headline}}
+      <p class="visual__topic">{{ box.headline }}</p>
+      {{/if}}
+      <div class="visual__text rich-text">
+        <p>{{ box.text }}</p>
+      </div>
+      {{#if box.link}}
+      <div class="visual__link">
+        {{> atoms-link-button box.link}}
+      </div>
+      {{/if}}
+    </div>
+  </div>
+  {{/if}}
+
+  {{#if skipButton}}
+  <div class="visual__continue">
+    <button type="button" class="visual__continue-btn">
+      {{> atoms-icon icon="chevron-down" }}
+    </button>
+  </div>
+  {{/if}}
+</div>

@@ -1,0 +1,10 @@
+{
+  "variant": "solid",
+  "iconAnimation": true,
+  "label": "Button",
+  "icon": {
+    "icon": "arrow-right"
+  },
+  "iconAfter": true,
+  "icon-animation": true
+}

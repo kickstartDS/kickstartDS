@@ -1,0 +1,128 @@
+@use '@rm-frontend/base/source/0-base/1-tools/scss/grid';
+@use '@rm-frontend/base/source/0-base/1-tools/scss/breakpoint';
+@use '@rm-frontend/base/source/0-base/1-tools/scss/helpers';
+@use 'settings/base';
+@use 'settings/news';
+@use 'sass:meta';
+
+.news-list {
+  &__item {
+    padding: 2rem 0;
+    border-bottom: 1px solid base.$color-black-10;
+    box-sizing: border-box;
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    @include breakpoint.media('≥m') {
+      padding: 1.6rem 0;
+    }
+
+    &__date {
+      // TODO: remove conditions in version 6
+      font-size: if(
+        meta.global-variable-exists('news-list-item__date-font-size', 'news'),
+        news.$news-list-item__date-font-size,
+        base.$font-size-small
+      );
+      font-weight: if(
+        meta.global-variable-exists('news-list-item__date-font-weight', 'news'),
+        helpers.get-font-weight(news.$news-list-item__date-font-weight),
+        helpers.get-font-weight(regular)
+      );
+      color: if(
+        meta.global-variable-exists('news-list-item__date-color', 'news'),
+        news.$news-list-item__date-color,
+        base.$color-black-50
+      );
+      line-height: base.$line-height-small;
+      padding-right: 1rem;
+    }
+
+    &__meta {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+
+    &__headline {
+      // TODO: remove conditions in version 6
+      font-size: if(
+        meta.global-variable-exists(
+          'news-list-item__headline-font-size',
+          'news'
+        ),
+        news.$news-list-item__headline-font-size,
+        null
+      );
+      font-weight: if(
+        meta.global-variable-exists(
+          'news-list-item__headline-font-weight',
+          'news'
+        ),
+        helpers.get-font-weight(news.$news-list-item__headline-font-weight),
+        null
+      );
+      line-height: if(
+        meta.global-variable-exists(
+          'news-list-item__headline-line-height',
+          'news'
+        ),
+        news.$news-list-item__headline-line-height,
+        null
+      );
+      color: if(
+        meta.global-variable-exists(
+          'news-list-item__headline-color-hover',
+          'news'
+        ),
+        news.$news-list-item__headline-color-hover,
+        null
+      );
+
+      > a {
+        // TODO: remove conditions in version 6
+        color: if(
+          meta.global-variable-exists('news-list-item__headline-color', 'news'),
+          news.$news-list-item__headline-color,
+          null
+        );
+      }
+    }
+
+    &__content-wrap {
+      @include grid.grid-container(1em);
+    }
+
+    .media__video,
+    &__image {
+      @include grid.grid-break-at(450px, 12, 5);
+    }
+
+    &__teaser {
+      @include grid.grid-break-at(450px, 12, 7);
+    }
+
+    &__more {
+      margin: 1em 0 0;
+    }
+  }
+
+  .tag-label-container {
+    min-width: 0;
+    margin: -0.15rem;
+
+    > * {
+      padding: 0.15rem;
+    }
+
+    @include breakpoint.media('≥s') {
+      margin: -0.25rem;
+
+      > * {
+        padding: 0.25rem;
+      }
+    }
+  }
+}

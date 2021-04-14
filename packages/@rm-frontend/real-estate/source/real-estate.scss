@@ -1,0 +1,21 @@
+@use './1-atoms/real-estate/real-estate-sort/real-estate-sort' as *;
+@use './1-atoms/real-estate/shortlist/shortlist-count' as *;
+@use './1-atoms/real-estate/shortlist/shortlist-counter' as *;
+@use './1-atoms/real-estate/real-estate-placeholder/real-estate-placeholder' as *;
+
+@use './2-molecules/real-estate/real-estate-card/real-estate-card' as *;
+@use './2-molecules/real-estate/real-estate-list-meta/real-estate-list-meta' as *;
+@use './2-molecules/real-estate/real-estate-filter/real-estate-filter' as *;
+@use './2-molecules/real-estate/real-estate-request/real-estate-request' as *;
+@use './2-molecules/real-estate/real-estate-teaser/real-estate-teaser' as *;
+@use './2-molecules/real-estate/real-estate-actions/real-estate-actions' as *;
+@use './2-molecules/real-estate/real-estate-image-slide/real-estate-image-slide' as *;
+@use './2-molecules/real-estate/real-estate-attributes/real-estate-attributes' as *;
+@use './2-molecules/real-estate/real-estate-location/real-estate-location' as *;
+@use './2-molecules/real-estate/real-estate-btn-print/real-estate-btn-print' as *;
+
+@use './3-organisms/real-estate/real-estate-cards/real-estate-cards' as *;
+@use './3-organisms/real-estate/real-estate-cards-slider/real-estate-cards-slider' as *;
+@use './3-organisms/real-estate/real-estate-list/real-estate-list' as *;
+@use './3-organisms/real-estate/real-estate-image-slider/real-estate-image-slider' as *;
+@use './3-organisms/real-estate/real-estate-detail/real-estate-detail' as *;

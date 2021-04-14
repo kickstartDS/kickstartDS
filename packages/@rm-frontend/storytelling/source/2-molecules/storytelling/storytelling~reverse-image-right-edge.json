@@ -1,0 +1,16 @@
+{
+  "image": {
+    "source": "dummy/16-9-s.png",
+    "hAlign": "right-edge",
+    "order": {
+      "mobileImageLast": true,
+      "desktopImageLast": true
+    }
+  },
+  "box": {
+    "headline": {
+      "content": "Storytelling Lorem ipsum"
+    },
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pharetra vel turpis nunc eget lorem dolor sed. Ut sem nulla pharetra diam. Elit ut aliquam purus sit amet luctus venenatis lectus magna. Bibendum enim facilisis gravida neque convallis. Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat. Purus sit amet luctus venenatis lectus. Elementum nisi quis eleifend quam adipiscing vitae. Euismod nisi porta lorem mollis aliquam ut. Tincidunt eget nullam non nisi est. In pellentesque massa placerat duis ultricies."
+  }
+}

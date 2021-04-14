@@ -1,0 +1,41 @@
+@use 'settings/base/colors';
+
+//Input fields
+$input-field__border-radius:             3px !default;
+$input-field__border-width:              1px !default;
+$input-field__border-color:              colors.$color-black-25-solid !default;
+$input-field__background-color:          colors.$color-white !default;
+$input-field__color:                     colors.$color-black !default;
+$input-field__focus-border-color:        colors.$color-brand !default;
+$input-field__error-border-color:        colors.$color-error !default;
+$input-field__error-color:               colors.$color-error !default;
+
+//Checkbox
+$checkbox-field__background:             colors.$color-white !default;
+$checkbox-field__border-color:           colors.$color-black-25-solid !default;
+$checkbox-field__border-width:           1px !default;
+$checkbox-field__border-radius:          3px !default;
+$checkbox-field__error-background:       rgba(colors.$color-error, 0.1) !default;
+$checkbox-field__error-border-color:     colors.$color-error !default;
+
+//Radio-Button
+$radio-field__background:                colors.$color-white !default;
+$radio-field__border-color:              colors.$color-black-25-solid !default;
+$radio-field__border-width:              1px !default;
+$radio-field__error-background:          rgba(colors.$color-error, 0.1) !default;
+$radio-field__error-border-color:        colors.$color-error !default;
+
+//Toggle
+$toggle__label-width:                               4em !default;
+$toggle__label-height:                              1.54em !default;
+$toggle__label-border-width:                        1px !default;
+$toggle__label-border-color:                        colors.$color-black-25-solid !default;
+$toggle__label-border-color-disabled:               colors.$color-black-25-solid !default;
+$toggle__label-box-shadow-color-focused:            rgba(0, 0, 0, 0.12) !default;
+$toggle__label-background-color:                    transparent !default;
+$toggle__label-background-color-checked:            colors.$color-black-7-solid !default;
+$toggle__label-background-color-disabled:           colors.$color-black-25-solid !default;
+
+$toggle__indicator-gutter:                          0.2em !default;
+$toggle__indicator-background-color:                colors.$color-brand !default;
+$toggle__indicator-background-color-disabled:       colors.$color-black-15-solid !default;

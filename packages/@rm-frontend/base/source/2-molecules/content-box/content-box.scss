@@ -1,0 +1,98 @@
+@use '../../0-base/1-tools/scss/helpers';
+@use 'settings/base';
+@use 'settings/global';
+
+.content-box {
+  &--align-centered {
+    // text-align: center;
+    justify-content: center !important;
+  }
+
+  &__item {
+    flex-direction: column;
+    margin-bottom: 2em;
+    box-sizing: border-box;
+
+    &__image {
+      flex-grow: 0;
+      flex-shrink: 0;
+      width: 100%;
+      margin-bottom: 1em;
+
+      img {
+        width: auto;
+      }
+
+      &--align-center {
+        text-align: center;
+      }
+
+      &--align-right {
+        text-align: right;
+      }
+
+      &--square {
+        position: relative;
+        padding-bottom: 100%;
+      }
+
+      &--sixteen-to-nine {
+        position: relative;
+        padding-bottom: 56.25%;
+      }
+
+      &--four-to-three {
+        position: relative;
+        padding-bottom: 75%;
+      }
+
+      &--square,
+      &--sixteen-to-nine,
+      &--four-to-three {
+        img {
+          position: absolute;
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    &__box {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      flex: 1 auto;
+
+      &--align-center {
+        text-align: center;
+      }
+
+      @each $key, $value in base.$content-box__adaptive-font-sizes {
+        &[min-width~='#{$key}'] {
+          font-size: $value;
+        }
+      }
+    }
+  }
+
+  &__topic {
+    font-size: global.$topic__font-size;
+    line-height: global.$topic__line-height;
+    font-weight: helpers.get-font-weight(global.$topic__font-weight);
+    color: global.$topic__font-color;
+    margin: global.$topic__margin;
+  }
+
+  &__text {
+    flex: 1 auto;
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    margin-top: 1em;
+  }
+}

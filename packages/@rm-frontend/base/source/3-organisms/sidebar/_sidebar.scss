@@ -1,0 +1,133 @@
+@use '../../0-base/1-tools/scss/breakpoint';
+@use 'settings/base';
+@use 'settings/global';
+
+@if rm('modules.base.organisms.sidebar') {
+  .page-wrap {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+
+    &__sidebar {
+      top: 0;
+      left: base.$sidebar__width-tablet * -1;
+      right: auto;
+      min-height: 100vh;
+      width: base.$sidebar__width;
+      z-index: global.$sidebar-zindex;
+      background-color: base.$sidebar__background;
+      transition: all 0.3s;
+      flex-shrink: 0;
+      box-shadow: base.$sidebar__box-shadow;
+
+      @include breakpoint.media('<nav-main') {
+        position: fixed;
+        height: 100vh;
+      }
+
+      @include breakpoint.media('≥s') {
+        width: base.$sidebar__width-tablet;
+      }
+
+      @if rm('modules.base.organisms.sidebar') ==
+        'static'
+        OR
+        rm('modules.base.organisms.sidebar') ==
+        'fixed'
+      {
+        @include breakpoint.media('≥nav-main') {
+          width: base.$sidebar__width--smaller;
+          left: 0;
+        }
+      }
+
+      @include breakpoint.media('≥87.5em') {
+        width: base.$sidebar__width;
+      }
+
+      // Fixed on Desktop (default: visible)
+      @if rm('modules.base.organisms.sidebar') ==
+        'fixed'
+        OR
+        rm('modules.base.organisms.sidebar') ==
+        'hidden'
+        OR
+        rm('modules.base.organisms.sidebar') ==
+        'rtl'
+      {
+        @include breakpoint.media('≥nav-main') {
+          position: fixed;
+          height: 100vh;
+        }
+
+        + .page-wrap__content {
+          @include breakpoint.media('≥nav-main') {
+            margin-left: base.$sidebar__width--smaller;
+          }
+
+          @include breakpoint.media('≥87.5em') {
+            margin-left: base.$sidebar__width;
+          }
+        }
+      }
+
+      // Fixed on Desktop (default: hidden)
+      @if rm('modules.base.organisms.sidebar') == 'hidden' {
+        @include breakpoint.media('≥nav-main') {
+          left: base.$sidebar__width-tablet * -1;
+          width: base.$sidebar__width-tablet;
+
+          .sidebar-is-shown & {
+            left: 0;
+          }
+        }
+
+        + .page-wrap__content {
+          @include breakpoint.media('≥nav-main') {
+            margin-left: 0;
+          }
+        }
+      }
+
+      @if rm('modules.base.organisms.sidebar') == 'rtl' {
+        right: base.$sidebar__width * -1;
+        left: auto;
+
+        .sidebar-is-shown & {
+          right: 0;
+          left: auto;
+        }
+      }
+
+      &__content {
+        height: 100%;
+        overflow-y: auto;
+      }
+    }
+
+    &__content {
+      height: 100%;
+      min-height: 100vh;
+      width: 100%;
+
+      @include breakpoint.media('≥nav-main') {
+        min-width: calc(100% - #{base.$sidebar__width--smaller});
+      }
+
+      @include breakpoint.media('≥87.5em') {
+        min-width: calc(100% - #{base.$sidebar__width});
+      }
+    }
+  }
+
+  .sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: base.$sidebar__overlay-background;
+    z-index: global.$sidebar-overlay-zindex;
+    display: none;
+  }
+}

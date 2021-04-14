@@ -1,0 +1,50 @@
+<div class="product-cards__item__content">
+  <div class="product-cards__image">
+    {{#if card.cardImage}}
+    <img src="{{@root.asset_paths.images}}/{{ card.cardImage }}" alt="">
+    {{/if}}
+  </div>
+  <div class="product-cards__infos">
+    <h2 class="product__topic">
+      {{ topic }}
+    </h2>
+    <div class="product__info">
+      {{ number }}
+    </div>
+    <div class="product__teaser">
+      <p>{{ content }}</p>
+    </div>
+    {{#if price}}
+    <div class="product__price-wrap">
+      <div class="product__price">
+        <span class="product__price-amount">{{ price }}</span>
+        <span class="product__price-info">inkl. MwSt. <a href="#">zzgl. Versandkosten</a></span>
+      </div>
+      {{#if card.special}}
+      <div class="product__special">
+        <img src="{{@root.asset_paths.images}}/{{ card.special }}" alt="">
+      </div>
+      {{/if}}
+    </div>
+    {{/if}}
+    <div class="product__more">
+      {{> atoms-link-button label="Produkt kaufen" open-in-tab=open-in-tab-buy style="solid" size="small"}}
+      {{> atoms-link-button label="mehr Informationen" open-in-tab=open-in-tab-info style="outline" size="small"}}
+    </div>
+  </div>
+</div>
+{{#if card.additionalContent}}
+<div class="product-cards__item__additional-content">
+
+  <div class="product-cards__description">
+    {{> molecules-product-description }}
+  </div>
+  <div class="product-cards__data">
+    {{> molecules-product-data }}
+  </div>
+  <div class="product-cards__downloads">
+    {{> molecules-product-downloads }}
+  </div>
+
+</div>
+{{/if}}

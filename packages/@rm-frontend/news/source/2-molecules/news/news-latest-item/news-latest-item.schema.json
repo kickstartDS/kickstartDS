@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://frontend.ruhmesmeile.com/news/molecules/news-latest-item.schema.json",
+  "title": "News Latest Item",
+  "description": "News latest item",
+  "type": "object",
+  "properties": {
+    "image": {
+      "$ref": "http://frontend.ruhmesmeile.com/news/molecules/news-item.definitions.json#/definitions/image"
+    },
+    "date": {
+      "$ref": "http://frontend.ruhmesmeile.com/news/molecules/news-item.definitions.json#/definitions/date"
+    },
+    "link": {
+      "$ref": "http://frontend.ruhmesmeile.com/news/molecules/news-item.definitions.json#/definitions/link"
+    },
+    "title": {
+      "$ref": "http://frontend.ruhmesmeile.com/news/molecules/news-item.definitions.json#/definitions/title"
+    },
+    "body": {
+      "$ref": "http://frontend.ruhmesmeile.com/news/molecules/news-item.definitions.json#/definitions/body"
+    },
+    "categories": {
+      "$ref": "http://frontend.ruhmesmeile.com/news/molecules/news-item.definitions.json#/definitions/categories"
+    },
+    "index": {
+      "type": "integer",
+      "title": "Unique id"
+    }
+  },
+  "required": ["index", "link"]
+}

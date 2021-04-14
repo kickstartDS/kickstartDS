@@ -1,0 +1,6 @@
+<figure {{#if class}}class="{{ class }}"{{/if}}>
+  <img src="{{@root.asset_paths.images}}/{{ src }}" alt="{{ alt }}" width="{{ width }}" height="{{ height }}">
+  {{#if caption}}
+  <figcaption>{{ caption }}</figcaption>
+  {{/if}}
+</figure>

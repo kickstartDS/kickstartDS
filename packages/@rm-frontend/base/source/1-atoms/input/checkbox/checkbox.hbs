@@ -1,0 +1,12 @@
+<input class="input-checkbox {{#if error}}form-item--error{{/if}}"
+  type="checkbox"
+  id="{{default id "bsp-checkbox"}}"
+  {{#if name}}name="{{name}}"{{/if}}
+  {{#if checked}}checked{{/if}}
+  {{#if required}}required{{/if}}
+  {{#if disabled}}disabled{{/if}}
+  value="{{value}}">
+<label for="{{default id "bsp-checkbox"}}">
+  <span class="input-checkbox-field"></span>
+  {{{default label "Checkbox"}}}
+</label>

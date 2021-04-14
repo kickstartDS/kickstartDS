@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://frontend.ruhmesmeile.com/news/molecules/news-item.definitions.json",
+  "title": "News List / Latest Definitions",
+  "description": "News List / Latest Definitions",
+  "definitions": {
+    "image": {
+      "title": "Image",
+      "description": "Image source for news item",
+      "type": "string",
+      "format": "image",
+      "default": "media/dummy/64-27-l.png"
+    },
+    "date": {
+      "title": "Date",
+      "description": "Date for news item",
+      "type": "string",
+      "format": "date",
+      "default": "2021-03-29"
+    },
+    "link": {
+      "title": "Link",
+      "description": "Link for news item",
+      "type": "string",
+      "format": "uri"
+    },
+    "title": {
+      "title": "Title",
+      "description": "Title for news item",
+      "type": "string",
+      "default": "Lorem ipsum, dolor sit"
+    },
+    "body": {
+      "title": "Bodytext",
+      "description": "Bodytext for news item",
+      "type": "string",
+      "default": "Hic maxime sed eos non. Consequatur ut qui amet accusantium nesciunt."
+    },
+    "categories": {
+      "title": "Categories",
+      "type": "array",
+      "items": {
+        "$ref": "http://frontend.ruhmesmeile.com/base/atoms/tag-label.schema.json"
+      }
+    }
+  }
+}

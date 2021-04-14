@@ -1,0 +1,11 @@
+{
+  "topic": "Lorem Ipsum",
+  "number": "123 456 789",
+  "content": "Lorem ipsum dolor sit amet. Odio ipsa exercitationem veritatis animi eius delectus praesentium reiciendis recusandae natus amet.",
+  "price": "22,90€",
+  "link": "Lorem Ipsum",
+  "href": "https://ruhmesmeile.com",
+  "slider": {
+    "sliderItemImage": "dummy/16-9-xl.png"
+  }
+}

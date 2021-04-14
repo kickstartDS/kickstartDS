@@ -1,0 +1,9 @@
+{
+  "variant": "outline",
+  "fillAnimation": true,
+  "label": "Button",
+  "icon": {
+    "icon": "arrow-right"
+  },
+  "iconAfter": true
+}

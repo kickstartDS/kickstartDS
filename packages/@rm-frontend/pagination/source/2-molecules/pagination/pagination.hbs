@@ -1,0 +1,59 @@
+{{#with pagination}}
+<nav class="nav-pagination" aria-label="Seitenzahlen">
+  <ul class="nav-pagination__list">
+    <li class="nav-pagination__item nav-pagination-arrow">
+      <a href="{{url}}" title="Zur ersten Seite">
+        <div>
+          {{> atoms-icon icon="first-page" role="img" }}
+        </div>
+      </a>
+    </li>
+    <li class="nav-pagination__item nav-pagination-arrow is-prev">
+      <a href="{{url}}" title="Zur vorherigen Seite">
+        <div>
+          {{> atoms-icon icon="chevron-left" role="img" }}
+        </div>
+      </a>
+    </li>
+
+    {{#each (pagination current last)}}
+      {{#if (comp this "===" "...")}}
+        <li class="nav-pagination__item">
+          <div class="spacer">
+            <div>...</div>
+          </div>
+        </li>
+      {{else}}
+        {{#if (comp this "===" ../current)}}
+          <li class="nav-pagination__item nav-pagination__item--current">
+            <div class="number">
+              <div aria-current="page">{{ this }}</div>
+            </div>
+          </li>
+        {{else}}
+          <li class="nav-pagination__item">
+            <a href="{{@root.url}}" title="Seite {{ this }}">
+              <div>{{ this }}</div>
+            </a>
+          </li>
+        {{/if}}
+      {{/if}}
+    {{/each}}
+
+    <li class="nav-pagination__item nav-pagination-arrow is-next">
+      <a href="{{url}}" title="Zur nächsten Seite">
+        <div>
+          {{> atoms-icon icon="chevron-right" role="img" }}
+        </div>
+      </a>
+    </li>
+    <li class="nav-pagination__item nav-pagination-arrow">
+      <a href="{{url}}" title="Zur letzen Seite">
+        <div>
+          {{> atoms-icon icon="last-page" role="img" }}
+        </div>
+      </a>
+    </li>
+  </ul>
+</nav>
+{{/with}}

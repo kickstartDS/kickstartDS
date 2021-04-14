@@ -1,0 +1,120 @@
+@use '../../0-base/1-tools/scss/helpers';
+@use '../../0-base/1-tools/scss/breakpoint';
+@use 'bourbon/core/bourbon';
+@use 'settings/base';
+@use 'settings/global';
+@use 'sass:meta';
+
+@if rm('modules.base.atoms.scroll-to-top') {
+  .scroll-to-top {
+    // TODO: remove condition in version 10
+    @include bourbon.size(
+      if(
+        meta.global-variable-exists('scroll-to-top__size', 'base'),
+        base.$scroll-to-top__size,
+        3.35em
+      )
+    );
+
+    position: relative;
+    margin: if(
+      meta.global-variable-exists('scroll-to-top__margin', 'base'),
+      base.$scroll-to-top__margin,
+      1.5em auto -1.5em
+    );
+    display: block;
+    z-index: global.$scroll-to-top-zindex;
+
+    // TODO: remove conditions in version 10
+    color: if(
+      meta.global-variable-exists('scroll-to-top__color', 'base'),
+      base.$scroll-to-top__color,
+      base.$color-white
+    );
+    background: if(
+      meta.global-variable-exists('scroll-to-top__background', 'base'),
+      base.$scroll-to-top__background,
+      base.$color-brand
+    );
+    border: if(
+      meta.global-variable-exists('scroll-to-top__border', 'base'),
+      base.$scroll-to-top__border,
+      null
+    );
+    border-radius: if(
+      meta.global-variable-exists('scroll-to-top__border-radius', 'base'),
+      base.$scroll-to-top__border-radius,
+      100%
+    );
+
+    transition: 0.15s ease-in-out;
+
+    @include breakpoint.media('≥s') {
+      // TODO: remove conditions in version 10
+      @include bourbon.size(
+        if(
+          meta.global-variable-exists('scroll-to-top__size-s', 'base'),
+          base.$scroll-to-top__size-s,
+          2.65em
+        )
+      );
+      @include bourbon.position(
+        fixed,
+        if(
+          meta.global-variable-exists('scroll-to-top__position-s', 'base'),
+          base.$scroll-to-top__position-s,
+          null 1.6em 1.6em null
+        )
+      );
+
+      display: none;
+      margin: 0;
+    }
+
+    .overlay-open & {
+      transition: none;
+    }
+
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      // TODO: remove conditions in version 10
+      color: if(
+        meta.global-variable-exists('scroll-to-top__color--hover', 'base'),
+        base.$scroll-to-top__color--hover,
+        null
+      );
+      background: if(
+        meta.global-variable-exists('scroll-to-top__background--hover', 'base'),
+        base.$scroll-to-top__background--hover,
+        lighten(base.$color-brand, 5%)
+      );
+      border: if(
+        meta.global-variable-exists('scroll-to-top__border--hover', 'base'),
+        base.$scroll-to-top__border--hover,
+        null
+      );
+      transform: if(
+        meta.global-variable-exists('scroll-to-top__transform--hover', 'base'),
+        base.$scroll-to-top__transform--hover,
+        translateY(-5px)
+      );
+    }
+
+    .icon {
+      // TODO: remove condition in version 10
+      @include bourbon.size(
+        if(
+          meta.global-variable-exists('scroll-to-top__icon-size', 'base'),
+          base.$scroll-to-top__icon-size,
+          2em
+        )
+      );
+      @include helpers.vertical-and-horizontal-centerer;
+    }
+
+    @include breakpoint.media('print') {
+      display: none !important;
+    }
+  }
+}

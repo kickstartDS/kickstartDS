@@ -1,0 +1,12 @@
+<details class="filter-area {{class}}" data-component="{{ default data-component "base.filter-area" }}">
+  <summary class="button button--outline filter-area__toggle">
+    {{toggle}}
+    {{> atoms-icon icon="chevron-down" role="img" }}
+  </summary>
+
+  <div>
+    <div class="filter-area__content">
+      {{> @partial-block }}
+    </div>
+  </div>
+</details>

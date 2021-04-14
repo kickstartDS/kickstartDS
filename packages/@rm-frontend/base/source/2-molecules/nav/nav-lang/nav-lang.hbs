@@ -1,0 +1,31 @@
+<div class="nav-lang nav-lang--desktop" data-component="base.nav-lang">
+  <div class="dropdown" data-component="base.slide-dropdown" data-close-on-blur="">
+    <details>
+      <summary>
+        <div class="dropdown__toggle">
+          <div class="dropdown__title">
+            <span class="nav-lang__title-info">Sprache:</span>
+            {{#each modules.base.molecules.nav-lang}}
+            {{#if @first}}
+            <span class="nav-lang__title">{{this}}</span>
+            <span class="nav-lang__title-short">{{@key}}</span>
+            {{/if}}
+            {{/each}}
+          </div>
+          {{> atoms-icon icon="chevron-down" role="none" }}
+        </div>
+      </summary>
+      <div class="dropdown__content">
+        <div class="dropdown__scroll-content">
+          <ul class="dropdown__list">
+            {{#each modules.base.molecules.nav-lang}}
+              <li class="dropdown__list__item">
+                <a lang="{{@key}}" href="https://ruhmesmeile.com">{{this}}</a>
+              </li>
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+    </details>
+  </div>
+</div>

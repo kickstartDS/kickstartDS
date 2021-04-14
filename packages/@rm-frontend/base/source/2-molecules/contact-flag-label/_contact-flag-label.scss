@@ -1,0 +1,88 @@
+@use '../../0-base/1-tools/scss/helpers';
+@use '../../0-base/1-tools/scss/breakpoint';
+@use 'settings/base';
+
+@if rm('modules.base.molecules.contact-flag-label') {
+  .contact-flag-label {
+    @include breakpoint.media('≥nav-main') {
+      /* critical:start */
+      position: fixed;
+      right: 0;
+      top: 50% !important;
+      margin-right: -5px;
+      left: auto;
+      display: flex;
+      flex-flow: row nowrap;
+      width: auto;
+      height: auto;
+      color: base.$contact-flag-label__color;
+      background: base.$contact-flag-label__background;
+      padding: 0.5em 0.75em;
+      padding-bottom: calc(0.5em + 5px);
+      padding-left: 1em;
+
+      border-top-left-radius: base.$contact-flag-label__border-radius;
+      border-top-right-radius: base.$contact-flag-label__border-radius;
+      /* critical:start */
+
+      transform: rotate(-90deg) translate(50%, -100%);
+      transform-origin: 100% 0;
+      transition-property: background, right;
+      transition-duration: 0.15s;
+      transition-timing-function: ease-in-out;
+
+      &:hover {
+        background: base.$contact-flag-label__hover-background;
+        right: 5px;
+      }
+
+      .overlay-open & {
+        transition: none;
+      }
+    }
+
+    .icon {
+      @include breakpoint.media('≥nav-main') {
+        width: 1.25rem;
+        height: 1.25rem;
+      }
+    }
+
+    &__icon {
+      @include breakpoint.media('≥nav-main') {
+        margin-left: 0.75em;
+        transform: rotate(90deg);
+
+        svg {
+          fill: currentColor;
+        }
+      }
+    }
+
+    &__text {
+      /* critical:start */
+      display: none;
+      /* critical:end */
+
+      @include breakpoint.media('≥nav-main') {
+        /* critical:start */
+        display: block;
+        /* critical:end */
+      }
+    }
+
+    @include helpers.no-print;
+  }
+
+  .contact-flag-label--left {
+    left: 0;
+
+    @include breakpoint.media('≥s') {
+      left: 10px;
+    }
+
+    @include breakpoint.media('≥nav-main') {
+      left: auto;
+    }
+  }
+}

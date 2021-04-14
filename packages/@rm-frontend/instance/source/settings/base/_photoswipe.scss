@@ -1,0 +1,14 @@
+@use 'settings/base/colors';
+@use 'settings/global/z-index';
+
+// https://github.com/dimsemenov/PhotoSwipe/blob/master/src/css/_main-settings.scss
+
+$pswp__show-hide-transition-duration: 333ms !default;
+$pswp__controls-transition-duration: 333ms !default;
+$pswp__background-color: colors.$color-black !default;
+$pswp__placeholder-color: transparent !default;
+$pswp__box-sizing-border-box: true !default; // disable .pswp * { box-sizing:border-box } (in case you already have it in your site css)
+$pswp__root-z-index: z-index.$lightbox-overlay-zindex !default;
+$pswp__assets-path: '#{rm("paths.images")}/lightbox/' !default; // path to skin assets folder (preloader, PNG and SVG sprite)
+$pswp__error-text-color: #ccc !default; // "Image not loaded" text color
+$pswp__include-minimal-style: true !default;

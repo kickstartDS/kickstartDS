@@ -1,0 +1,23 @@
+{
+  "main-header--transparent": true,
+  "headline": "Template Transparent Header",
+  "templates": [
+    {
+      "type": "100",
+      "content": [{ "component": "molecules-highlight-text" }]
+    },
+    {
+      "type": "70-30",
+      "content": [{ "component": "organisms-typo3-standard-content" }],
+      "sidebar": [
+        { "component": "molecules-nav-content-menu" },
+        { "component": "organisms-typo3-standard-content--sidebar" },
+        { "component": "organisms-contact-form-personal" }
+      ]
+    },
+    {
+      "type": "100",
+      "content": [{ "component": "organisms-news-latest" }]
+    }
+  ]
+}

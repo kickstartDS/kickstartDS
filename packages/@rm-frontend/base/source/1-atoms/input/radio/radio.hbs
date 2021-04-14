@@ -1,0 +1,14 @@
+<div class="input-radio-wrap">
+  <input required="required" class="input-radio {{#if error}}form-item--error{{/if}}"
+    type="radio"
+    id="{{id}}"
+    value="{{value}}"
+    {{#if name}}name="{{name}}"{{/if}}
+    {{#if checked}}checked{{/if}}
+    {{#if disabled}}disabled{{/if}}
+  >
+  <label for="{{id}}">
+    <span class="input-radio-field"></span>
+    <span>{{label}}</span>
+  </label>
+</div>

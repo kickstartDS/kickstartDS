@@ -1,0 +1,10 @@
+@use 'settings/base/colors';
+
+$sidebar__width:                             18rem !default;
+$sidebar__width--smaller:                    14rem !default; // 13 inch lap tops etc.
+$sidebar__width-tablet:                      21rem !default;
+
+$sidebar__background:                        colors.$color-black-5-solid !default;
+$sidebar__box-shadow:                        none !default;
+
+$sidebar__overlay-background:              rgba(0, 0, 0, 0.7) !default;

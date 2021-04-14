@@ -1,0 +1,41 @@
+@use 'bourbon/core/bourbon';
+
+@mixin font-sans($weight) {
+  font-family: $font-sans, $font-sans-fallback;
+  font-weight: map_get($font-sans-weights, $weight);
+}
+
+/// ### Sans-serif
+$font-sans:                                 bourbon.$font-stack-system !default;
+$font-sans-fallback:                        null !default;
+$font-sans-weights: (
+  thin: 100,
+  extra-light: 200,
+  light: 300,
+  regular: 400,
+  medium: 500,
+  semi-bold: 600,
+  bold: 700,
+  extra-bold: 800,
+  black: 900
+) !default;
+
+/// ## Font-Sizes
+$font-size-base:                            percentage(15px/16px) !default;
+$font-size-base-s:                          percentage(19px/16px) !default;
+
+/// ### Text Default
+$font-size-default:                         1em !default;
+$line-height-default:                       1.5 !default;
+
+/// ### Text Large
+$font-size-large:                           1.3em !default;
+$line-height-large:                         1.5 !default;
+
+/// ### Text Small
+$font-size-small:                           0.8em !default;
+$line-height-small:                         1.5 !default;
+
+/// ### Text Tiny
+$font-size-tiny:                            0.65em !default;
+$line-height-tiny:                          1.4 !default;

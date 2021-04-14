@@ -1,0 +1,16 @@
+<figure class="lightbox-image {{#if zoomIcon}}lightbox-image--with-zoom-icon{{/if}} {{class}}">
+  <a href="{{@root.asset_paths.images}}/{{ image }}" data-gallery="{{default gallery 'lightbox'}}" data-size-w="{{ width }}"
+    data-size-h="{{ height }}" class="lightbox-image__link js-open-lightbox" title="Bild vergrößern" {{#if id}}itemscope{{/if}}>
+    <img src="{{@root.asset_paths.images}}/{{ thumb }}" alt="{{ alt }}" class="lightbox-image__thumb" {{#if id}}id="{{ id }}" itemprop="image"{{/if}}>
+    {{#if zoomIcon}}
+    <div class="lightbox-image__zoom-icon">
+      {{> atoms-icon icon="zoom" role="img" }}
+    </div>
+    {{/if}}
+  </a>
+  {{#if caption}}
+  <figcaption {{#if hideCaption}}hidden=""{{/if}}>
+    {{ caption }}
+  </figcaption>
+  {{/if}}
+</figure>

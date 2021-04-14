@@ -1,0 +1,21 @@
+@use './notification.extends';
+
+.notification {
+  @extend %notification;
+
+  &__content {
+    @extend %notification__content;
+  }
+
+  &--info {
+    @extend %notification--info;
+  }
+
+  &--success {
+    @extend %notification--success;
+  }
+
+  &--error {
+    @extend %notification--error;
+  }
+}

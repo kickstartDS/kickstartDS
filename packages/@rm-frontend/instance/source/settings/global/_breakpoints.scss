@@ -1,0 +1,22 @@
+// $breakpoints is not namespaced (it's not $global__breakpoints)
+// b/c it is directly used by include-media library (https://include-media.com/)
+
+// default screensize breakpoints
+$breakpoints: (
+  'xs': 23em,
+  's': 40em,
+  'm': 60em,
+  'l': 64em,
+  'xl': 75em,
+  'xxl': 90em,
+);
+
+// custom breakpoints
+$breakpoints: map-merge($breakpoints, (
+  'nav-main': 67em,
+  'gallery-three-per-row': map-get($breakpoints, 's'),
+  'gallery-four-per-row': 52em,
+  'gallery-five-per-row': 55em,
+  'keyvisual-smaller': 100em,
+  'contentvisual-smaller': 100em
+));

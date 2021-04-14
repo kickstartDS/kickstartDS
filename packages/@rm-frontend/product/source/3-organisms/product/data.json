@@ -1,0 +1,192 @@
+{
+  "productItems": [
+    {
+      "slideComponent": "molecules-product-slide",
+      "topic": "Lorem Ipsum",
+      "number": "123 456 789",
+      "content": "Lorem ipsum dolor sit amet. Odio ipsa exercitationem veritatis animi eius delectus praesentium reiciendis recusandae natus amet.",
+      "price": "22,90€",
+      "card": {
+        "cardImage": "dummy/4-3-s.png"
+      },
+      "detail": {
+        "detailImage": "dummy/1-1-xs.png"
+      },
+      "slider": {
+        "sliderItemImage": "dummy/16-9-xl.png"
+      },
+      "teaser": {
+        "clickable": true,
+        "productTeaserLarge": false,
+        "withoutSpacing": false,
+        "fullWidth": false,
+        "id": "id",
+        "teaserImage": "dummy/1-1-s.png"
+      },
+      "imageSlider": {
+        "slideComponent": "molecules-product-image-slide",
+        "previewComponent": "molecules-product-image-slide-preview",
+        "thumbnail": "dummy/1-1-xs.png",
+        "imageWidth": "150",
+        "imageHeight": "150",
+        "image": "dummy/1-1-xs.png"
+      }
+    },
+    {
+      "slideComponent": "molecules-product-slide",
+      "topic": "Lorem Ipsum",
+      "number": "123 645 789",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio ipsa exercitationem veritatis animi eius delectus praesentium reiciendis recusandae natus amet.",
+      "price": "22,90€",
+      "card": {
+        "cardImage": "dummy/4-3-s.png",
+        "special": "dummy/1-1-xs.png"
+      },
+      "slider": {
+        "sliderItemImage": "dummy/9-16-xl.png"
+      },
+      "teaser": {
+        "clickable": false,
+        "productTeaserLarge": true,
+        "withoutSpacing": false,
+        "fullWidth": false,
+        "id": "id",
+        "teaserImage": "dummy/1-1-s.png"
+      },
+      "imageSlider": {
+        "slideComponent": "molecules-product-image-slide",
+        "previewComponent": "molecules-product-image-slide-preview",
+        "thumbnail": "dummy/1-1-xs.png",
+        "imageWidth": "639",
+        "imageHeight": "1278",
+        "image": "dummy/9-16-xl.png"
+      }
+    },
+    {
+      "slideComponent": "molecules-product-slide",
+      "topic": "Lorem Ipsum",
+      "number": "123 456 789",
+      "content": "Lorem ipsum dolor sit amet",
+      "price": "29,90€",
+      "card": {
+        "cardImage": "dummy/4-3-s.png"
+      },
+      "slider": {
+        "sliderItemImage": "dummy/1-1-xs.png"
+      },
+      "teaser": {
+        "clickable": false,
+        "productTeaserLarge": false,
+        "withoutSpacing": true,
+        "fullWidth": false,
+        "id": "id",
+        "teaserImage": "dummy/1-1-s.png"
+      },
+      "imageSlider": {
+        "slideComponent": "molecules-product-image-slide",
+        "previewComponent": "molecules-product-image-slide-preview",
+        "thumbnail": "dummy/1-1-xs.png",
+        "imageWidth": "1278",
+        "imageHeight": "639",
+        "image": "dummy/16-9-xl.png"
+      }
+    },
+    {
+      "slideComponent": "molecules-product-slide",
+      "topic": "Lorem Ipsum",
+      "number": "123 334 921",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio ipsa exercitationem veritatis animi eius delectus praesentium reiciendis recusandae natus amet.",
+      "price": "25,20€",
+      "card": {
+        "cardImage": "dummy/16-9-xl.png",
+        "special": "dummy/1-1-xs.png"
+      },
+      "slider": {
+        "sliderItemImage": "dummy/1-1-xs.png"
+      },
+      "teaser": {
+        "clickable": false,
+        "productTeaserLarge": false,
+        "withoutSpacing": false,
+        "fullWidth": false,
+        "id": "id",
+        "teaserImage": "dummy/256-81-xl.png"
+      },
+      "imageSlider": {
+        "slideComponent": "molecules-product-image-slide",
+        "previewComponent": "molecules-product-image-slide-preview",
+        "thumbnail": "dummy/1-1-xs.png",
+        "imageWidth": "1278",
+        "imageHeight": "1278",
+        "image": "dummy/1-1-xl.png"
+      }
+    },
+    {
+      "slideComponent": "molecules-product-slide",
+      "topic": "Lorem Ipsum",
+      "number": "831 496 271",
+      "content": "Lorem ipsum dolor sit amet",
+      "price": "29,00€",
+      "card": {
+        "special": "dummy/1-1-xs.png"
+      },
+      "slider": {
+        "sliderItemImage": "dummy/1-1-xs.png"
+      },
+      "teaser": {
+        "clickable": false,
+        "productTeaserLarge": false,
+        "withoutSpacing": false,
+        "fullWidth": false,
+        "id": "id",
+        "teaserImage": "dummy/81-256-xl.png"
+      },
+      "imageSlider": {
+        "slideComponent": "molecules-product-image-slide",
+        "previewComponent": "molecules-product-image-slide-preview",
+        "thumbnail": "dummy/1-1-xs.png",
+        "imageWidth": "1920",
+        "imageHeight": "1278",
+        "image": "dummy/16-9-xxxl.png"
+      }
+    },
+    {
+      "slideComponent": "molecules-product-slide",
+      "topic": "Lorem Ipsum",
+      "number": "599 444 329",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio ipsa exercitationem veritatis animi eius delectus praesentium reiciendis recusandae natus amet.",
+      "price": "27,90€",
+      "card": {
+        "cardImage": "dummy/9-16-xl.png",
+        "special": "dummy/1-1-xs.png",
+        "additionalContent": true
+      },
+      "slider": {
+        "sliderItemImage": "dummy/1-1-xs.png"
+      },
+      "teaser": {
+        "clickable": false,
+        "productTeaserLarge": false,
+        "withoutSpacing": false,
+        "fullWidth": true,
+        "id": "id",
+        "teaserImage": "dummy/1-1-s.png"
+      }
+    },
+    {
+      "slideComponent": "molecules-product-slide",
+      "topic": "Lorem Ipsum",
+      "number": "123 456 789",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio ipsa exercitationem veritatis animi eius delectus praesentium reiciendis recusandae natus amet.",
+      "price": "22,00€",
+      "card": {
+        "cardImage": "dummy/1-1-xl.png",
+        "special": "dummy/1-1-xs.png",
+        "additionalContent": true
+      },
+      "slider": {
+        "sliderItemImage": "1278x639.png"
+      }
+    }
+  ]
+}
