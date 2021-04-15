@@ -1,16 +1,16 @@
 import { FunctionComponent } from 'react';
 import classnames from 'classnames';
-import { Picture } from '../../1-atoms/image/PictureComponent';
-import { LightboxLazyImage } from '../../1-atoms/image/lightbox-image/LightboxLazyImageComponent';
-import { IframeRatio } from '../../1-atoms/iframe/IframeRatioComponent';
-import { RichText } from '../../1-atoms/rich-text/RichTextComponent';
+import { Picture } from '../../1-atoms/image/picture';
+import { LightboxLazyImage } from '../../1-atoms/image/lightbox-image';
+import { IframeRatio } from '../../1-atoms/iframe';
+import { RichText } from '../../1-atoms/rich-text';
 import {
   TextMediaProps,
   Video as IVideo,
   Picture as IPicture,
   LazyLightboxImage as ILightboxImage,
 } from './TextMediaProps';
-import './text-media.css';
+import './text-media.scss';
 
 const Video = ({ iframe, src, title, width, height }: IVideo) =>
   iframe ? (

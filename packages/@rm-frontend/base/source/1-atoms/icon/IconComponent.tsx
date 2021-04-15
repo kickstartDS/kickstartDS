@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'react';
 import classnames from 'classnames';
 import { IconProps } from './IconProps';
-import './icon.css';
+import './icon.scss';
 
 export const Icon: FunctionComponent<IconProps> = ({
   icon,

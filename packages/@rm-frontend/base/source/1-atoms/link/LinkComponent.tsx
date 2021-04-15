@@ -6,7 +6,7 @@ import {
   useContext,
   Ref,
 } from 'react';
-import './link.css';
+import './link.scss';
 
 type LinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
   ref?: Ref<HTMLAnchorElement>;

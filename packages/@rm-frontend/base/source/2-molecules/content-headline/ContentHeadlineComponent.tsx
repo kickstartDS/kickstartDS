@@ -1,7 +1,7 @@
 import { FunctionComponent, createContext, useContext } from 'react';
 import classnames from 'classnames';
 import { ContentHeadlineProps } from './ContentHeadlineProps';
-import './content-headline.css';
+import './content-headline.scss';
 
 const ContentHeadlineComponent: FunctionComponent<ContentHeadlineProps> = ({
   content,

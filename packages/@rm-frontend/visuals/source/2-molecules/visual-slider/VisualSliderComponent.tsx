@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react';
-import { Slider } from '@rm-frontend/base';
+import { Slider } from '@rm-frontend/base/lib/slider';
 import { Visual } from '../visual/VisualComponent';
 import { VisualSliderProps } from './VisualSliderProps';
 

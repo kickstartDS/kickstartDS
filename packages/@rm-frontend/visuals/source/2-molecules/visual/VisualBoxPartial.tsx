@@ -1,6 +1,7 @@
 import { FunctionComponent } from 'react';
 import classnames from 'classnames';
-import { LinkButton, RichText } from '@rm-frontend/base';
+import { LinkButton } from '@rm-frontend/base/lib/link-button';
+import { RichText } from '@rm-frontend/base/lib/rich-text';
 import { TextBox, Inbox } from './VisualProps';
 
 interface IBox extends TextBox {

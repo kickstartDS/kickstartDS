@@ -1,8 +1,8 @@
 import { FunctionComponent, createContext, useContext } from 'react';
-import { Icon } from '../icon/IconComponent';
-import { Link } from '../link/LinkComponent';
+import { Icon } from '../icon';
+import { Link } from '../link';
 import { TagLabelProps } from './TagLabelProps';
-import './tag-label.css';
+import './tag-label.scss';
 
 const TagLabelComponent: FunctionComponent<TagLabelProps> = ({
   label,

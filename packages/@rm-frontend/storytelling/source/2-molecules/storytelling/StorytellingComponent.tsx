@@ -1,13 +1,11 @@
 import { FunctionComponent } from 'react';
 import classnames from 'classnames';
-import {
-  LinkButton,
-  RichText,
-  Picture,
-  ContentHeadline,
-} from '@rm-frontend/base';
+import { ContentHeadline } from '@rm-frontend/base/lib/content-headline';
+import { LinkButton } from '@rm-frontend/base/lib/link-button';
+import { RichText } from '@rm-frontend/base/lib/rich-text';
+import { Picture } from '@rm-frontend/base/lib/picture';
 import { StorytellingProps } from './StorytellingProps';
-import './storytelling.css';
+import './storytelling.scss';
 
 interface ILazy {
   lazy: boolean;

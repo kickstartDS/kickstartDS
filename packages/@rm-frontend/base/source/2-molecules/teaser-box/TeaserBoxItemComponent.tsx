@@ -1,10 +1,10 @@
 import { FunctionComponent } from 'react';
 import ReactMarkdown from 'react-markdown';
 import classnames from 'classnames';
-import { LinkButton } from '../../1-atoms/button/button-link/LinkButtonComponent';
-import { Picture } from '../../1-atoms/image/PictureComponent';
+import { LinkButton } from '../../1-atoms/button/link-button';
+import { Picture } from '../../1-atoms/image/picture';
 import { TeaserBoxItemProps } from './TeaserBoxItemProps';
-import './teaser-box-item.css';
+import './teaser-box-item.scss';
 
 export const TeaserBoxItem: FunctionComponent<TeaserBoxItemProps> = ({
   image,

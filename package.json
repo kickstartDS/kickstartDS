@@ -2,25 +2,6 @@
   "name": "rm-frontend",
   "version": "1.0.0",
   "private": true,
-  "dependencies": {
-    "@lerna/project": "^4.0.0",
-    "change-case": "^4.1.2",
-    "chokidar": "^3.5.1",
-    "del": "^6.0.0",
-    "execa": "^3.2.0",
-    "fancy-log": "^1.3.3",
-    "fast-glob": "^3.2.5",
-    "fs-extra": "^9.1.0",
-    "graphql": "^15.5.0",
-    "json-csv": "^3.0.1",
-    "json-schema-faker": "^0.5.0-rcv.33",
-    "json-schema-merge-allof": "^0.8.1",
-    "json-schema-ref-parser": "^9.0.7",
-    "json-schema-to-typescript": "^10.1.3",
-    "jsonschema2graphql": "^1.1.1",
-    "license-checker": "^25.0.1",
-    "sass": "^1.32.8"
-  },
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "build": "run-s 'rm-frontend:build default' storybook:generate storybook:build",
@@ -36,9 +17,6 @@
     "multi-build": "./packages/@rm-frontend/build-tools/cli multi-build",
     "postinstall": "run-p git-config copy-env-file clear-cache",
     "pre-commit": "cp package.json bamboo-specs/src/main/resources/ && git add bamboo-specs/src/main/resources/package.json",
-    "patternlab:build": "node packages/@rm-frontend/patternlab build",
-    "patternlab:serve": "node packages/@rm-frontend/patternlab serve",
-    "patternlab": "npm-run-all 'rm-frontend:build {1}' --parallel 'rm-frontend:watch {1}' 'patternlab:serve {1}' --",
     "rm-frontend-cli:build": "packages/@rm-frontend/build-tools/cli build",
     "rm-frontend-cli:watch": "packages/@rm-frontend/build-tools/cli watch",
     "rm-frontend:build": "run-s schema2ts scss 'rm-frontend-cli:build {1}' --",
@@ -49,7 +27,6 @@
     "scss": "node ./scripts/scss.js",
     "scss:watch": "node ./scripts/scss.js --watch",
     "semantic-release": "lerna exec --concurrency 1 -- 'export MODULE_NAME=$(echo $LERNA_PACKAGE_NAME | cut -d / -f 2) && SLACK_WEBHOOK=https://hooks.slack.com/services/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 npx --no-install semantic-release -e @ruhmesmeile/semantic-release-monorepo --tag-format=\"${MODULE_NAME}@\\${version}\"'",
-    "start": "npm run patternlab default",
     "stylelint": "stylelint \"**/*.scss\"",
     "storybook": "npm-run-all 'rm-frontend:build default' storybook:generate --parallel 'rm-frontend:watch default' storybook:start",
     "storybook:build": "node packages/@rm-frontend/storybook build",
@@ -57,30 +34,32 @@
     "storybook:generate": "node packages/@rm-frontend/storybook generate",
     "storybook:start": "node packages/@rm-frontend/storybook start",
     "staged": "git diff --name-only --cached | grep '@rm-frontend' | cut -d / -f 3 | awk '!seen[$0]++'",
-    "ts": "node scripts/typescript.js && lerna exec -- '[ -f index.ts ] && tsc -d --outDir lib --resolveJsonModule --jsx react-jsx --esModuleInterop index.ts || true'"
+    "lib": "run-s schema2ts lib:build lib:deref",
+    "lib:build": "lerna run --stream lib",
+    "lib:deref": "node scripts/lib/schemaDereference.js"
   },
-  "config": {
-    "commitizen": {
-      "path": "node_modules/cz-conventional-changelog"
-    },
-    "unsafe-perm": true
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "npm run schema2ts && git add packages/@rm-frontend/*/source/**/*Props.ts && lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx,md,json,scss}": "prettier --write"
-  },
-  "rmConfiguration": {
-    "rmProjectKey": "frontend",
-    "rmProjectName": "Frontend",
-    "rmVersion": "1.0.0",
-    "rmBambooProjectKey": "FRONT",
-    "rmBambooProjectName": "Frontend",
-    "rmProductionUrl": "https://frontend.static.ruhmesmeile.solutions"
+  "dependencies": {
+    "@lerna/project": "^4.0.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@wessberg/rollup-plugin-ts": "^1.3.14",
+    "change-case": "^4.1.2",
+    "chokidar": "^3.5.1",
+    "del": "^6.0.0",
+    "execa": "^3.2.0",
+    "fancy-log": "^1.3.3",
+    "fast-glob": "^3.2.5",
+    "fs-extra": "^9.1.0",
+    "graphql": "^15.5.0",
+    "json-csv": "^3.0.1",
+    "json-schema-faker": "^0.5.0-rcv.33",
+    "json-schema-merge-allof": "^0.8.1",
+    "json-schema-ref-parser": "^9.0.7",
+    "json-schema-to-typescript": "^10.1.3",
+    "jsonschema2graphql": "^1.1.1",
+    "license-checker": "^25.0.1",
+    "rollup": "^2.45.2",
+    "rollup-plugin-auto-external": "^2.0.0",
+    "sass": "^1.32.8"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.1.0",
@@ -102,5 +81,20 @@
     "semantic-release-slack-bot": "^1.3.0",
     "stylelint": "^13.12.0",
     "typescript": "^4.2.3"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    },
+    "unsafe-perm": true
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "npm run schema2ts && git add packages/@rm-frontend/*/source/**/*Props.ts && lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,md,json,scss}": "prettier --write"
   }
 }

@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'react';
-import { Icon } from '../../1-atoms/icon/IconComponent';
-import { Link } from '../../1-atoms/link/LinkComponent';
-import './footer.css';
+import { Icon } from '../../1-atoms/icon';
+import { Link } from '../../1-atoms/link';
+import './footer.scss';
 
 // TODO readd scroll-to-top: {{> atoms-scroll-to-top }}
 // TODO readd search-overlay: {{try "organisms-search-overlay"}}

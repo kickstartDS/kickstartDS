@@ -1,8 +1,8 @@
 import { FunctionComponent } from 'react';
 import { format } from 'date-fns';
-import { Picture } from '@rm-frontend/base';
+import { Picture } from '@rm-frontend/base/lib/picture';
 import { QuoteProps } from './QuoteProps';
-import './quote.css';
+import './quote.scss';
 
 export const Quote: FunctionComponent<QuoteProps> = ({
   image,

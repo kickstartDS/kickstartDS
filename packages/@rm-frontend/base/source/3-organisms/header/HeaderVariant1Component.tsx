@@ -1,10 +1,10 @@
 import { FunctionComponent } from 'react';
-import { NavMeta } from '../../2-molecules/nav/nav-meta/NavMetaComponent';
-import { Logo } from '../../2-molecules/logo/LogoComponent';
-import { NavMain } from '../../2-molecules/nav/nav-main/NavMainComponent';
+import { NavMeta } from '../../2-molecules/nav/nav-meta';
+import { Logo } from '../../2-molecules/logo';
+import { NavMain } from '../../2-molecules/nav/nav-meta';
 
 import navJsonData from '../../2-molecules/nav/nav-main/data.json';
-import './header.css';
+import './header.scss';
 
 // TODO render meta conditionally
 // TODO readd {{try "molecules-contact-flag-label" }}

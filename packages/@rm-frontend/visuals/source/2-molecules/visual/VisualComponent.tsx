@@ -1,10 +1,10 @@
 import { FunctionComponent } from 'react';
 import classnames from 'classnames';
-import { Icon } from '@rm-frontend/base';
+import { Icon } from '@rm-frontend/base/lib/icon';
 import { VisualProps } from './VisualProps';
 import { VisualMediaPartial } from './VisualMediaPartial';
 import { VisualBoxPartial } from './VisualBoxPartial';
-import './visual.css';
+import './visual.scss';
 
 export const Visual: FunctionComponent<VisualProps> = ({
   media,

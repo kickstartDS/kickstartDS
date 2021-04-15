@@ -1,9 +1,9 @@
 import { FunctionComponent } from 'react';
 import classnames from 'classnames';
-import { NavToggle } from '../../../1-atoms/nav-toggle/NavToggleComponent';
-import { Icon } from '../../../1-atoms/icon/IconComponent';
-import { Link } from '../../../1-atoms/link/LinkComponent';
-import './nav-main.css';
+import { NavToggle } from '../../../1-atoms/nav-toggle';
+import { Icon } from '../../../1-atoms/icon';
+import { Link } from '../../../1-atoms/link';
+import './nav-main.scss';
 
 // TODO add schema / storybook
 // TODO test if data-component=false -> no attribute rendered (should be! see: https://stackoverflow.com/a/31164090)

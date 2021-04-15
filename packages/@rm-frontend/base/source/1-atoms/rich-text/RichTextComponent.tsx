@@ -1,7 +1,7 @@
 import { FunctionComponent, createContext, useContext } from 'react';
 import ReactMarkdown from 'react-markdown';
 import classnames from 'classnames';
-import './rich-text.css';
+import './rich-text.scss';
 
 interface RichTextProps {
   className?: string;

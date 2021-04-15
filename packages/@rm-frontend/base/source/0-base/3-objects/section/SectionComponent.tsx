@@ -2,7 +2,7 @@ import { FunctionComponent } from 'react';
 import classnames from 'classnames';
 import { ContentHeadline } from '../../../2-molecules/content-headline/ContentHeadlineComponent';
 import { ContentHeadlineProps } from '../../../2-molecules/content-headline/ContentHeadlineProps';
-import './section.css';
+import './section.scss';
 
 interface SectionProps {
   background?: '0' | '1';

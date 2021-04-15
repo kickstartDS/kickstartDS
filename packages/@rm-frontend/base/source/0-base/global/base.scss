@@ -1,0 +1,19 @@
+@use '../1-tools/scss/breakpoint-export';
+
+@use '../2-generic/polyfills/focus-visible' as *;
+@use '../2-generic/root/root' as *;
+@use '../2-generic/media/image' as *;
+@use '../2-generic/media/video' as *;
+@use '../2-generic/iframe/iframe' as *;
+@use '../2-generic/kbd/kbd' as *;
+@use '../2-generic/list/list' as *;
+@use '../2-generic/fieldset/fieldset' as *;
+@use '../2-generic/button/button' as *;
+@use '../2-generic/headline/headline' as *;
+@use '../2-generic/lazyload/lazyload' as *;
+
+@use '../3-objects/grid' as *;
+
+/* critical:start */
+@include breakpoint-export.im-export('body::after');
+/* critical:end */

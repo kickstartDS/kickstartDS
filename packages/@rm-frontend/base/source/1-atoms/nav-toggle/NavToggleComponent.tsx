@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react';
 import classnames from 'classnames';
-import './nav-toggle.css';
+import './nav-toggle.scss';
 // TODO add schema / storybook
 // TODO readd id: id="{{id}}"
 // TODO readd functionality to aria controls: aria-controls="{{controls-id}}"

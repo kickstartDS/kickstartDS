@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react';
-import { Icon } from '../../../1-atoms/icon/IconComponent';
+import { Icon } from '../../../1-atoms/icon';
 
 export const SliderArrows: FunctionComponent = () => (
   <div className="slider__arrows" data-glide-el="controls">

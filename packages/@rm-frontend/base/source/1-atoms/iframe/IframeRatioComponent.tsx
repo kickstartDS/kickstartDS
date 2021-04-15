@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react';
-import './iframe-ratio.css';
+import './iframe-ratio.scss';
 
 type IframeRatioProps = {
   src: string;

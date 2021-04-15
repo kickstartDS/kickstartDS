@@ -5,8 +5,9 @@
   "author": "ruhmesmeile GmbH <mail@ruhmesmeile.com> (https://ruhmesmeile.com)",
   "homepage": "https://bitbucket.ruhmesmeile.tools/projects/FRONT/repos/rm-frontend/browse/packages/@rm-frontend/quotes",
   "license": "SEE LICENSE IN LICENSE",
-  "main": "lib/index.js",
-  "typings": "lib/index.d.ts",
+  "scripts": {
+    "lib": "node ../../../scripts/lib"
+  },
   "repository": {
     "type": "git",
     "url": "ssh://git@bitbucket.ruhmesmeile.tools:7999/front/rm-frontend.git",

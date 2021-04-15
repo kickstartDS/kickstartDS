@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react';
-import { Link } from '../../1-atoms/link/LinkComponent';
-import { Picture } from '../../1-atoms/image/PictureComponent';
+import { Link } from '../../1-atoms/link';
+import { Picture } from '../../1-atoms/image/picture';
 
 // TODO add schema / storybook
 // TODO add dynamic data / props

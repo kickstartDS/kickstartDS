@@ -1,10 +1,10 @@
 import { FunctionComponent } from 'react';
 import classnames from 'classnames';
-import { Icon } from '../../icon/IconComponent';
-import { Link } from '../../link/LinkComponent';
-import { Picture } from '../PictureComponent';
+import { Icon } from '../../icon';
+import { Link } from '../../link';
+import { Picture } from '../picture/PictureComponent';
 import { LazyLightboxImageProps } from './LightboxLazyImageProps';
-import './lightbox-image.css';
+import './lightbox-image.scss';
 
 export const LightboxLazyImage: FunctionComponent<LazyLightboxImageProps> = ({
   image,

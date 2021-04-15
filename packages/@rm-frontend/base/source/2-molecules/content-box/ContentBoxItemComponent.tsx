@@ -1,10 +1,10 @@
 import { createContext, FunctionComponent, useContext } from 'react';
 import ReactMarkdown from 'react-markdown';
 import classnames from 'classnames';
-import { LinkButton } from '../../1-atoms/button/button-link/LinkButtonComponent';
-import { Picture } from '../../1-atoms/image/PictureComponent';
+import { LinkButton } from '../../1-atoms/button/link-button';
+import { Picture } from '../../1-atoms/image/picture';
 import { ContentBoxItemProps } from './ContentBoxItemProps';
-import './content-box.css';
+import './content-box.scss';
 
 const ContentBoxItemComponent: FunctionComponent<ContentBoxItemProps> = ({
   image,

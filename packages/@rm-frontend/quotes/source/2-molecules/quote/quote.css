@@ -31,7 +31,7 @@
 .quote__content::before {
   position: absolute;
   left: 1rem;
-  content: "”";
+  content: '”';
   font-size: 2.5em;
   line-height: 1;
   color: #333333;

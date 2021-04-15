@@ -1,7 +1,6 @@
 import { FunctionComponent } from 'react';
-import { TagLabel } from '../../1-atoms/tag-label/TagLabelComponent';
-import { TagLabelProps } from '../../1-atoms/tag-label/TagLabelProps';
-import './tag-label-container.css';
+import { TagLabel, TagLabelProps } from '../../1-atoms/tag-label';
+import './tag-label-container.scss';
 
 interface TagLabelContainerProps {
   tagLabels: TagLabelProps[];

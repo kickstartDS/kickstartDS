@@ -2,7 +2,7 @@ import { FunctionComponent, Children, ReactNode } from 'react';
 import classnames from 'classnames';
 import { SliderProps } from './SliderProps';
 import { SlideContext } from './SlideContext';
-import './slider.css';
+import './slider.scss';
 
 type Slides = {
   preview?: ReactNode;

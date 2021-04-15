@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react';
-import { Icon } from '../../../1-atoms/icon/IconComponent';
-import './nav-meta.css';
+import { Icon } from '../../../1-atoms/icon';
+import './nav-meta.scss';
 
 // TODO add schema / storybook
 // TODO add dynamic data / props
