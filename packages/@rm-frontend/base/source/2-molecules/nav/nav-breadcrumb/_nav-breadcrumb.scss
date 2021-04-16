@@ -1,45 +1,43 @@
 @use '../../../0-base/1-tools/scss/helpers';
 @use 'settings/base';
 
-@if rm('modules.base.molecules.nav-breadcrumb') {
-  /* critical:start */
-  .nav-breadcrumb {
-    position: relative;
-    z-index: 1;
-    padding-top: 0.5em;
+/* critical:start */
+.nav-breadcrumb {
+  position: relative;
+  z-index: 1;
+  padding-top: 0.5em;
 
-    &__list {
-      @include helpers.clearlist;
+  &__list {
+    @include helpers.clearlist;
 
-      display: flex;
-      flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    padding-bottom: 0.4em;
+    font-size: base.$font-size-tiny;
+    line-height: base.$line-height-tiny;
+
+    .icon {
+      width: 1.3em;
+      height: 1.3em;
+      margin: 0 0.4em;
+      fill: base.$color-black-50;
     }
 
-    &__item {
-      padding-bottom: 0.4em;
-      font-size: base.$font-size-tiny;
-      line-height: base.$line-height-tiny;
-
-      .icon {
-        width: 1.3em;
-        height: 1.3em;
-        margin: 0 0.4em;
-        fill: base.$color-black-50;
-      }
-
-      &.current span {
-        color: base.$color-black;
-      }
+    &.current span {
+      color: base.$color-black;
     }
+  }
 
-    &__link {
-      color: base.$color-black-50;
-      text-decoration: none;
-      /* critical:end */
+  &__link {
+    color: base.$color-black-50;
+    text-decoration: none;
+    /* critical:end */
 
-      &:hover {
-        text-decoration: underline;
-      }
+    &:hover {
+      text-decoration: underline;
     }
   }
 }

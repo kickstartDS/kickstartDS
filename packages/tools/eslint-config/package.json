@@ -1,0 +1,21 @@
+{
+  "name": "@kickstartds/eslint-config",
+  "version": "0.0.0",
+  "description": "kickstartDS ESLint config",
+  "author": "ruhmesmeile GmbH <mail@ruhmesmeile.com> (https://ruhmesmeile.com)",
+  "homepage": "https://ruhmesmeile.com",
+  "license": "SEE LICENSE IN LICENSE",
+  "main": "index.js",
+  "peerDependencies": {
+    "eslint": "^7.21.0"
+  },
+  "dependencies": {
+    "@babel/eslint-parser": "^7.13.14",
+    "@typescript-eslint/eslint-plugin": "^4.16.1",
+    "@typescript-eslint/parser": "^4.16.1",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-import": "^2.22.1",
+    "find-up": "^5.0.0"
+  }
+}

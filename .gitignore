@@ -3,8 +3,6 @@
 
 dist
 storybook-static
-tmp
-dependencyGraph.*
 licenses-*.csv
 packages/**/package-lock.json
 packages/*/*/lib

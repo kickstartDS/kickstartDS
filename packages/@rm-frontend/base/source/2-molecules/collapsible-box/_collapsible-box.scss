@@ -5,85 +5,83 @@
 @use 'bourbon/core/bourbon';
 @use 'settings/base';
 
-@if rm('modules.base.molecules.collapsible-box') {
-  .collapsible-box {
-    @include anchor.anchor-target;
+.collapsible-box {
+  @include anchor.anchor-target;
+
+  #{selector.$section--bg-1} & {
+    border-color: base.$color-black-15;
+  }
+
+  details {
+    @include details-reset.details-reset;
+
+    border-top: 1px solid base.$color-black-10;
+    border-bottom: 1px solid base.$color-black-10;
 
     #{selector.$section--bg-1} & {
       border-color: base.$color-black-15;
     }
+  }
 
+  & + & {
     details {
-      @include details-reset.details-reset;
+      border-top: 0;
+    }
+  }
 
-      border-top: 1px solid base.$color-black-10;
-      border-bottom: 1px solid base.$color-black-10;
+  &__header {
+    &-wrapper {
+      position: relative;
+      padding: 1em 0;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
 
-      #{selector.$section--bg-1} & {
-        border-color: base.$color-black-15;
+      @include breakpoint.media('≥s') {
+        padding: 1em;
       }
     }
 
-    & + & {
-      details {
-        border-top: 0;
+    &__text {
+      flex: 1;
+
+      @include breakpoint.media('≥s') {
+        padding-right: 1em;
       }
     }
 
-    &__header {
-      &-wrapper {
-        position: relative;
-        padding: 1em 0;
-        cursor: pointer;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    &__icon {
+      .icon {
+        @include bourbon.size(1.65em);
 
         @include breakpoint.media('≥s') {
-          padding: 1em;
+          @include bourbon.size(1.85em);
         }
       }
 
-      &__text {
-        flex: 1;
-
-        @include breakpoint.media('≥s') {
-          padding-right: 1em;
-        }
+      [open] & {
+        transform: rotate(-180deg);
       }
 
-      &__icon {
-        .icon {
-          @include bourbon.size(1.65em);
+      svg {
+        pointer-events: none;
+      }
+    }
+  }
 
-          @include breakpoint.media('≥s') {
-            @include bourbon.size(1.85em);
-          }
-        }
+  &__content {
+    &__item {
+      padding: 1em 0;
 
-        [open] & {
-          transform: rotate(-180deg);
-        }
-
-        svg {
-          pointer-events: none;
-        }
+      @include breakpoint.media('≥s') {
+        padding: 1em;
+        padding-right: 4em;
       }
     }
 
-    &__content {
-      &__item {
-        padding: 1em 0;
-
-        @include breakpoint.media('≥s') {
-          padding: 1em;
-          padding-right: 4em;
-        }
-      }
-
-      .is-closed & {
-        display: none;
-      }
+    .is-closed & {
+      display: none;
     }
   }
 }

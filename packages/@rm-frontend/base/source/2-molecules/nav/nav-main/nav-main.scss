@@ -304,13 +304,11 @@
       }
     }
 
-    @if rm('modules.search') {
-      .nav-item-search .icon {
-        @include bourbon.size(1.7em);
+    .nav-item-search .icon {
+      @include bourbon.size(1.7em);
 
-        order: -1;
-        margin-right: 0.75em;
-      }
+      order: -1;
+      margin-right: 0.75em;
     }
 
     &::before {
@@ -596,14 +594,12 @@
       }
     }
 
-    @if rm('modules.search') {
-      .nav-item-search .icon {
-        /* critical:start */
-        position: relative;
-        top: -0.065em;
-        margin-left: 0.26em;
-        /* critical:end */
-      }
+    .nav-item-search .icon {
+      /* critical:start */
+      position: relative;
+      top: -0.065em;
+      margin-left: 0.26em;
+      /* critical:end */
     }
   }
 }

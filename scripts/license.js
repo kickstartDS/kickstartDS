@@ -60,7 +60,9 @@ async function install(dir) {
 }
 
 (async function createLicenseCsV() {
-  const matches = await glob('packages/@rm-frontend/*/package.json');
+  const matches = await glob(
+    'packages/{@rm-frontend,components}/*/package.json'
+  );
 
   const modules = await Promise.all(
     matches.map(async (match) => {

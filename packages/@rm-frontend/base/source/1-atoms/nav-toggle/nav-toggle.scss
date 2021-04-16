@@ -29,13 +29,7 @@
     /* critical:end */
 
     #{selector.$header--scrolling} & {
-      // TODO: remove condition in version 10
-      $hide-meta-nav-on-scroll-s: if(
-        meta.global-variable-exists('hide-meta-nav-on-scroll-s', 'base'),
-        base.$hide-meta-nav-on-scroll-s,
-        rm('modules.base.organisms.header.variant') == 2
-      );
-      top: if($hide-meta-nav-on-scroll-s, 0, null);
+      top: if(base.$hide-meta-nav-on-scroll-s, 0, null);
     }
   }
 

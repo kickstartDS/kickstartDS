@@ -263,17 +263,3 @@
     background-size: 1rem;
   }
 }
-
-// TODO: remove condition in version 10
-@if meta.global-variable-exists('content-visual-border-radius', 'visuals') {
-  @if rm('modules.visuals.content-visual') and
-    visuals.$content-visual-border-radius
-  {
-    .content-visual {
-      .l-main-wrap:not(.l-main-wrap--full) & {
-        border-radius: visuals.$content-visual-border-radius;
-        overflow: hidden;
-      }
-    }
-  }
-}

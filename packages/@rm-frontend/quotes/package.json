@@ -6,7 +6,7 @@
   "homepage": "https://bitbucket.ruhmesmeile.tools/projects/FRONT/repos/rm-frontend/browse/packages/@rm-frontend/quotes",
   "license": "SEE LICENSE IN LICENSE",
   "scripts": {
-    "lib": "node ../../../scripts/lib"
+    "lib": "node ../../tools/build-components/source"
   },
   "repository": {
     "type": "git",

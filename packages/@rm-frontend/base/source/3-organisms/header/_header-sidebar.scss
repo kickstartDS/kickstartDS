@@ -3,34 +3,32 @@
 @use 'settings/base';
 @use 'settings/global';
 
-@if rm('modules.base.organisms.sidebar') {
-  #{selector.$header--sidebar} {
+#{selector.$header--sidebar} {
+  @include breakpoint.media('≥nav-main') {
+    /* critical:start */
+    position: relative;
+    /* critical:end */
+  }
+
+  .logo-main-wrap {
     @include breakpoint.media('≥nav-main') {
       /* critical:start */
-      position: relative;
+      visibility: hidden;
       /* critical:end */
     }
-
-    .logo-main-wrap {
-      @include breakpoint.media('≥nav-main') {
-        /* critical:start */
-        visibility: hidden;
-        /* critical:end */
-      }
-    }
   }
-
-  /* critical:start */
-  .main-header-sidebar-spacer {
-    height: base.header__height(default);
-
-    @include breakpoint.media('≥s') {
-      height: base.header__height(s);
-    }
-
-    @include breakpoint.media('≥nav-main') {
-      height: 0;
-    }
-  }
-  /* critical:end */
 }
+
+/* critical:start */
+.main-header-sidebar-spacer {
+  height: base.header__height(default);
+
+  @include breakpoint.media('≥s') {
+    height: base.header__height(s);
+  }
+
+  @include breakpoint.media('≥nav-main') {
+    height: 0;
+  }
+}
+/* critical:end */

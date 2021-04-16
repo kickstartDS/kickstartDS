@@ -4,11 +4,9 @@
 .search-results-container {
   @include grid.grid-container(2.5rem);
 
-  @if rm('modules.base.molecules.filter-area') {
-    .filter-area {
-      @include breakpoint.media('≥m') {
-        @include grid.grid-columns(4);
-      }
+  .filter-area {
+    @include breakpoint.media('≥m') {
+      @include grid.grid-columns(4);
     }
   }
 

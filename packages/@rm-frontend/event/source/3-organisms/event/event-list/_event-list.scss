@@ -7,13 +7,11 @@
   @include grid.grid-container(2.5rem);
   /* critical:end */
 
-  @if rm('modules.base.molecules.filter-area') {
-    .filter-area {
-      @include breakpoint.media('≥m') {
-        /* critical:start */
-        @include grid.grid-columns(4);
-        /* critical:end */
-      }
+  .filter-area {
+    @include breakpoint.media('≥m') {
+      /* critical:start */
+      @include grid.grid-columns(4);
+      /* critical:end */
     }
   }
 

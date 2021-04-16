@@ -4,56 +4,54 @@
 @use 'bourbon/core/bourbon';
 @use 'settings/base';
 
-@if rm('modules.base.molecules.highlight-text') {
-  .highlight-text {
-    max-width: 70%;
-    margin: auto;
-    text-align: center;
+.highlight-text {
+  max-width: 70%;
+  margin: auto;
+  text-align: center;
 
-    &--align-left {
-      margin-left: 0;
-      text-align: left;
+  &--align-left {
+    margin-left: 0;
+    text-align: left;
+  }
+
+  &--align-right {
+    margin-right: 0;
+    text-align: left;
+  }
+
+  &__item {
+    &__icon {
+      @include bourbon.size(2.65em);
+      @include helpers.icon-color(base.$color-brand);
     }
 
-    &--align-right {
-      margin-right: 0;
-      text-align: left;
-    }
-
-    &__item {
-      &__icon {
-        @include bourbon.size(2.65em);
-        @include helpers.icon-color(base.$color-brand);
-      }
-
-      &__text {
-        font-size: base.$font-size-default;
-        line-height: base.$line-height-default;
-        font-weight: helpers.get-font-weight(base.$highlight-text__font-weight);
-        color: base.$highlight-text__color;
-
-        @include breakpoint.media('≥s') {
-          font-size: base.$font-size-large;
-          line-height: base.$line-height-large;
-        }
-      }
-
-      :last-child {
-        margin-bottom: 0;
-      }
-    }
-
-    .button {
-      margin-top: base.$font-size-default;
+    &__text {
+      font-size: base.$font-size-default;
+      line-height: base.$line-height-default;
+      font-weight: helpers.get-font-weight(base.$highlight-text__font-weight);
+      color: base.$highlight-text__color;
 
       @include breakpoint.media('≥s') {
-        margin-top: base.$font-size-large;
+        font-size: base.$font-size-large;
+        line-height: base.$line-height-large;
       }
     }
 
-    h1 {
-      margin-top: 0;
-      margin-bottom: 1em;
+    :last-child {
+      margin-bottom: 0;
     }
+  }
+
+  .button {
+    margin-top: base.$font-size-default;
+
+    @include breakpoint.media('≥s') {
+      margin-top: base.$font-size-large;
+    }
+  }
+
+  h1 {
+    margin-top: 0;
+    margin-bottom: 1em;
   }
 }

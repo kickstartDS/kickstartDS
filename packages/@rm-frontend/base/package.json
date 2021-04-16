@@ -11,7 +11,7 @@
     "directory": "packages/@rm-frontend/base"
   },
   "scripts": {
-    "lib": "node ../../../scripts/lib"
+    "lib": "node ../../tools/build-components/source"
   },
   "dependencies": {
     "@glidejs/glide": "git://github.com/glidejs/glide.git#master",

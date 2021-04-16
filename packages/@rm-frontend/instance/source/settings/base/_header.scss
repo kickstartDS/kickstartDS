@@ -40,7 +40,7 @@ $header__heights: (
   )
 ) !default;
 
-$header-variant: rm('modules.base.organisms.header.variant') or 1;
+$header-variant: 1;
 @function header__height($breakpoint) {
   @return map-get(map-get($header__heights, $header-variant), $breakpoint);
 }

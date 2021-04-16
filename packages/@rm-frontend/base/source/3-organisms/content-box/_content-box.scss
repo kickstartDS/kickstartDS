@@ -6,21 +6,19 @@
 @use '../../0-base/1-tools/scss/breakpoint';
 @use 'settings/base';
 
-@if rm('modules.base.organisms.content-box') {
-  .content-box {
-    @include grid.grid-gutter(base.$content-box__grid-gutter);
+.content-box {
+  @include grid.grid-gutter(base.$content-box__grid-gutter);
 
-    &__text {
-      &__item {
+  &__text {
+    &__item {
+      font-size: 1em;
+
+      @include breakpoint.media('≥s') {
+        font-size: 0.85em;
+      }
+
+      @include breakpoint.media('≥m') {
         font-size: 1em;
-
-        @include breakpoint.media('≥s') {
-          font-size: 0.85em;
-        }
-
-        @include breakpoint.media('≥m') {
-          font-size: 1em;
-        }
       }
     }
   }

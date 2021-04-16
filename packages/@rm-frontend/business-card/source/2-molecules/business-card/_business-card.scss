@@ -4,119 +4,117 @@
 @use 'settings/base';
 @use 'settings/global';
 
-@if rm('modules.business-card.molecules.business-card-item') {
-  .business-card {
-    &__item {
+.business-card {
+  &__item {
+    flex-direction: column;
+    align-items: stretch;
+    border: 1px solid base.$color-black-10;
+    box-sizing: border-box;
+    text-align: center;
+    width: 100%;
+
+    &__image {
+      flex-grow: 0;
+      flex-shrink: 0;
+      width: 100%;
+    }
+
+    &__box {
+      display: flex;
       flex-direction: column;
       align-items: stretch;
-      border: 1px solid base.$color-black-10;
-      box-sizing: border-box;
-      text-align: center;
-      width: 100%;
-
-      &__image {
-        flex-grow: 0;
-        flex-shrink: 0;
-        width: 100%;
-      }
-
-      &__box {
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        flex: 1 auto;
-        padding: 1.5em 1em;
-
-        @include breakpoint.media('≥s') {
-          padding: 2em 1em;
-        }
-      }
-    }
-
-    &__logo {
-      max-width: 11.65em;
-      height: auto;
-      margin-bottom: 2em;
+      flex: 1 auto;
+      padding: 1.5em 1em;
 
       @include breakpoint.media('≥s') {
-        max-width: 11em;
+        padding: 2em 1em;
       }
     }
+  }
 
-    &__topic {
-      font-size: global.$topic__font-size;
-      line-height: global.$topic__line-height;
-      font-weight: helpers.get-font-weight(global.$topic__font-weight);
-      color: global.$topic__font-color;
-      margin: global.$topic__margin;
+  &__logo {
+    max-width: 11.65em;
+    height: auto;
+    margin-bottom: 2em;
+
+    @include breakpoint.media('≥s') {
+      max-width: 11em;
     }
+  }
 
-    &__text {
-      &__item {
-        p {
-          &:last-child {
-            margin: 0;
-          }
-        }
-      }
-    }
+  &__topic {
+    font-size: global.$topic__font-size;
+    line-height: global.$topic__line-height;
+    font-weight: helpers.get-font-weight(global.$topic__font-weight);
+    color: global.$topic__font-color;
+    margin: global.$topic__margin;
+  }
 
-    &__contact-person {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 1.5em 0;
-
-      &__img {
-        img {
-          border-radius: 100%;
-          max-width: 3.5em;
-          height: auto;
-        }
-      }
-
-      &__name {
-        padding-left: 1em;
-        text-align: left;
-        line-height: 1.2;
-      }
-    }
-
-    &__contact {
-      @include helpers.clearlist;
-
-      margin: 1.5em 0;
-
-      li {
-        margin-bottom: 0.5em;
-
+  &__text {
+    &__item {
+      p {
         &:last-child {
-          margin-bottom: 0;
+          margin: 0;
         }
       }
+    }
+  }
 
-      a {
-        text-decoration: none;
-      }
+  &__contact-person {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5em 0;
 
-      &__icon {
-        @include bourbon.size(1em);
-        @include helpers.icon-color(currentColor);
-
-        vertical-align: middle;
-        margin-right: 0.3em;
+    &__img {
+      img {
+        border-radius: 100%;
+        max-width: 3.5em;
+        height: auto;
       }
     }
 
-    &__link {
-      display: flex;
-      justify-content: center;
-      width: auto;
-      flex-flow: row wrap;
+    &__name {
+      padding-left: 1em;
+      text-align: left;
+      line-height: 1.2;
+    }
+  }
 
-      .button {
-        margin: 0.1em;
+  &__contact {
+    @include helpers.clearlist;
+
+    margin: 1.5em 0;
+
+    li {
+      margin-bottom: 0.5em;
+
+      &:last-child {
+        margin-bottom: 0;
       }
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    &__icon {
+      @include bourbon.size(1em);
+      @include helpers.icon-color(currentColor);
+
+      vertical-align: middle;
+      margin-right: 0.3em;
+    }
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    width: auto;
+    flex-flow: row wrap;
+
+    .button {
+      margin: 0.1em;
     }
   }
 }

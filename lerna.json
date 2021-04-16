@@ -1,5 +1,5 @@
 {
-  "packages": ["packages/@rm-frontend/*"],
+  "packages": ["packages/*/*"],
   "version": "independent",
   "npmClient": "npm",
   "command": {

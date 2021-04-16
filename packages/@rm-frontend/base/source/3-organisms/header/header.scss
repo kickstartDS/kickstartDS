@@ -8,7 +8,7 @@
 @use 'settings/global';
 @use 'sass:meta';
 
-$header-variant: rm('modules.base.organisms.header.variant');
+$header-variant: 1;
 
 .main-header {
   /* critical:start */
@@ -210,11 +210,9 @@ $header-variant: rm('modules.base.organisms.header.variant');
     margin: 0;
   }
 
-  @if rm('modules.base.organisms.sidebar') {
-    .page-wrap__sidebar__content & {
-      margin: 0 auto;
-      width: 100%;
-    }
+  .page-wrap__sidebar__content & {
+    margin: 0 auto;
+    width: 100%;
   }
 }
 

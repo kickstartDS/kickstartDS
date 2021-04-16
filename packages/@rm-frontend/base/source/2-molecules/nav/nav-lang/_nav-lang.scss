@@ -6,208 +6,200 @@
 @use 'settings/global';
 @use 'sass:meta';
 
-@if rm('modules.base.molecules.nav-lang') {
-  .nav-lang {
-    @include helpers.no-print;
+.nav-lang {
+  @include helpers.no-print;
 
+  /* critical:start */
+  display: block;
+  z-index: 2;
+  /* critical:end */
+
+  .dropdown {
+    &__toggle {
+      /* critical:start */
+      background: transparent;
+      border-color: transparent;
+      box-sizing: border-box;
+      /* critical:end */
+      transition: background ease-in-out 0.03s;
+
+      span {
+        /* critical:start */
+        padding: 0;
+        /* critical:end */
+      }
+
+      .icon {
+        /* critical:start */
+        @include bourbon.size(1.4em);
+        /* critical:end */
+      }
+    }
+
+    .nav-lang__title {
+      /* critical:start */
+      font-weight: helpers.get-font-weight(bold);
+      /* critical:end */
+
+      &-info {
+        /* critical:start */
+        padding-right: 0.5em;
+        /* critical:end */
+      }
+
+      &-short {
+        text-transform: uppercase;
+      }
+    }
+
+    &__content {
+      &,
+      a {
+        font-weight: helpers.get-font-weight(bold);
+        border-color: #fff;
+        color: base.$color-brand;
+      }
+    }
+  }
+
+  // Desktop
+  &--desktop {
     /* critical:start */
-    display: block;
-    z-index: 2;
+    display: none;
     /* critical:end */
+
+    @include breakpoint.media('≥nav-main') {
+      /* critical:start */
+      display: block;
+      /* critical:end */
+    }
+
+    .dropdown {
+      details[open] {
+        .dropdown__toggle {
+          background: base.$color-white;
+
+          #{selector.$header--transparent} & {
+            background-color: base.$nav-meta__background;
+          }
+
+          &,
+          span {
+            color: base.$color-brand;
+
+            #{selector.$header--transparent} & {
+              color: base.$nav-meta__item-color-transparent;
+            }
+          }
+        }
+      }
+
+      &__title {
+        /* critical:start */
+        display: flex;
+        /* critical:end */
+      }
+
+      &__content a:hover {
+        color: inherit;
+      }
+    }
+
+    .nav-lang__title-short {
+      /* critical:start */
+      display: none;
+      /* critical:end */
+    }
+  }
+
+  // Mobile
+  &--mobile {
+    /* critical:start */
+    position: fixed;
+    left: 0;
+    top: 0;
+    align-items: center;
+    display: flex;
+    transition: 0.15s;
+    /* critical:end */
+
+    @include breakpoint.media('≥s') {
+      /* critical:start */
+      top: base.$nav-meta__item-height;
+      /* critical:end */
+
+      #{selector.$header--scrolling} & {
+        top: if(base.$hide-meta-nav-on-scroll-s, 0, null);
+      }
+    }
+
+    @include breakpoint.media('≥nav-main') {
+      /* critical:start */
+      display: none;
+      /* critical:end */
+    }
 
     .dropdown {
       &__toggle {
         /* critical:start */
-        background: transparent;
-        border-color: transparent;
-        box-sizing: border-box;
-        /* critical:end */
-        transition: background ease-in-out 0.03s;
-
-        span {
-          /* critical:start */
-          padding: 0;
-          /* critical:end */
-        }
-
-        .icon {
-          /* critical:start */
-          @include bourbon.size(1.4em);
-          /* critical:end */
-        }
-      }
-
-      .nav-lang__title {
-        /* critical:start */
-        font-weight: helpers.get-font-weight(bold);
+        height: base.$nav-main__height;
+        padding-left: global.$padding;
+        padding-right: 0;
+        width: 100%;
         /* critical:end */
 
-        &-info {
+        @include breakpoint.media('≥s') {
           /* critical:start */
-          padding-right: 0.5em;
+          height: base.$nav-main__height--s;
+          padding-left: 0.8rem;
+          padding-right: 0.8rem;
           /* critical:end */
-        }
-
-        &-short {
-          text-transform: uppercase;
         }
       }
 
       &__content {
-        &,
-        a {
-          font-weight: helpers.get-font-weight(bold);
-          border-color: #fff;
-          color: base.$color-brand;
+        width: 100vw;
+
+        @include breakpoint.media('≥s') {
+          width: 18.45em;
+        }
+      }
+
+      &__scroll-content {
+        max-height: 16em;
+      }
+
+      &__list {
+        li {
+          border-bottom: 1px solid base.$color-black-10-solid;
+
+          &:last-child {
+            border-bottom: 0;
+          }
+        }
+
+        &__item {
+          a {
+            display: block;
+            text-decoration: none;
+            padding: 1em 1.3em;
+          }
         }
       }
     }
 
-    // Desktop
-    &--desktop {
+    .nav-lang__title,
+    .nav-lang__title-info {
       /* critical:start */
       display: none;
       /* critical:end */
-
-      @include breakpoint.media('≥nav-main') {
-        /* critical:start */
-        display: block;
-        /* critical:end */
-      }
-
-      .dropdown {
-        details[open] {
-          .dropdown__toggle {
-            background: base.$color-white;
-
-            #{selector.$header--transparent} & {
-              background-color: base.$nav-meta__background;
-            }
-
-            &,
-            span {
-              color: base.$color-brand;
-
-              #{selector.$header--transparent} & {
-                color: base.$nav-meta__item-color-transparent;
-              }
-            }
-          }
-        }
-
-        &__title {
-          /* critical:start */
-          display: flex;
-          /* critical:end */
-        }
-
-        &__content a:hover {
-          color: inherit;
-        }
-      }
-
-      .nav-lang__title-short {
-        /* critical:start */
-        display: none;
-        /* critical:end */
-      }
     }
 
-    // Mobile
-    &--mobile {
+    .nav-lang__title-short {
       /* critical:start */
-      position: fixed;
-      left: 0;
-      top: 0;
-      align-items: center;
-      display: flex;
-      transition: 0.15s;
+      font-weight: helpers.get-font-weight(bold);
+      display: inline;
       /* critical:end */
-
-      @include breakpoint.media('≥s') {
-        /* critical:start */
-        top: base.$nav-meta__item-height;
-        /* critical:end */
-
-        #{selector.$header--scrolling} & {
-          // TODO: remove condition in version 10
-          $hide-meta-nav-on-scroll-s: if(
-            meta.global-variable-exists('hide-meta-nav-on-scroll-s', 'base'),
-            base.$hide-meta-nav-on-scroll-s,
-            rm('modules.base.organisms.header.variant') == 2
-          );
-          top: if($hide-meta-nav-on-scroll-s, 0, null);
-        }
-      }
-
-      @include breakpoint.media('≥nav-main') {
-        /* critical:start */
-        display: none;
-        /* critical:end */
-      }
-
-      .dropdown {
-        &__toggle {
-          /* critical:start */
-          height: base.$nav-main__height;
-          padding-left: global.$padding;
-          padding-right: 0;
-          width: 100%;
-          /* critical:end */
-
-          @include breakpoint.media('≥s') {
-            /* critical:start */
-            height: base.$nav-main__height--s;
-            padding-left: 0.8rem;
-            padding-right: 0.8rem;
-            /* critical:end */
-          }
-        }
-
-        &__content {
-          width: 100vw;
-
-          @include breakpoint.media('≥s') {
-            width: 18.45em;
-          }
-        }
-
-        &__scroll-content {
-          max-height: 16em;
-        }
-
-        &__list {
-          li {
-            border-bottom: 1px solid base.$color-black-10-solid;
-
-            &:last-child {
-              border-bottom: 0;
-            }
-          }
-
-          &__item {
-            a {
-              display: block;
-              text-decoration: none;
-              padding: 1em 1.3em;
-            }
-          }
-        }
-      }
-
-      .nav-lang__title,
-      .nav-lang__title-info {
-        /* critical:start */
-        display: none;
-        /* critical:end */
-      }
-
-      .nav-lang__title-short {
-        /* critical:start */
-        font-weight: helpers.get-font-weight(bold);
-        display: inline;
-        /* critical:end */
-      }
     }
   }
 }

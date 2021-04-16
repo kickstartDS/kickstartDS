@@ -3,27 +3,25 @@
 @use 'bourbon/core/bourbon';
 @use 'settings/base';
 
-@if rm('modules.base.organisms.content-slider') {
-  .content-slider {
-    #{selector.$slider-nav-slides} {
-      margin: 1em auto 0;
+.content-slider {
+  #{selector.$slider-nav-slides} {
+    margin: 1em auto 0;
 
-      @include breakpoint.media('≥s') {
-        border-top: 1px solid base.$color-black-10;
-        border-bottom: 1px solid base.$color-black-10;
-      }
+    @include breakpoint.media('≥s') {
+      border-top: 1px solid base.$color-black-10;
+      border-bottom: 1px solid base.$color-black-10;
     }
+  }
 
-    #{selector.$slider-bullet} {
-      @include breakpoint.media('≥s') {
-        display: none;
-      }
+  #{selector.$slider-bullet} {
+    @include breakpoint.media('≥s') {
+      display: none;
     }
+  }
 
-    .content-slide--preview {
-      @include breakpoint.media('<s') {
-        @include bourbon.hide-visually;
-      }
+  .content-slide--preview {
+    @include breakpoint.media('<s') {
+      @include bourbon.hide-visually;
     }
   }
 }
