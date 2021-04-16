@@ -1,9 +1,0 @@
-{
-  "box": {
-    "transparent": true,
-    "light": true,
-    "link": {
-      "style": "outline"
-    }
-  }
-}
