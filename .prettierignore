@@ -5,4 +5,4 @@ node_modules
 package-lock.json
 CHANGELOG.md
 packages/@rm-frontend/instance/source/settings/**/*.scss
-packages/@rm-forntend/*/lib
+packages/components/*/lib

@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react';
-import { Section } from '@rm-frontend/base/lib/section';
-import { LinkButton } from '@rm-frontend/base/lib/link-button';
+import { Section } from '@kickstartds/base/lib/section';
+import { LinkButton } from '@kickstartds/base/lib/link-button';
 import { NewsLatestItem } from '../../2-molecules/news-latest-item';
 import { NewsLatestProps } from './NewsLatestProps';
 import './news-latest.scss';

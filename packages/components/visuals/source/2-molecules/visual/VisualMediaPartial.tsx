@@ -1,7 +1,7 @@
 import { FunctionComponent, useContext } from 'react';
 import classnames from 'classnames';
-import { Picture } from '@rm-frontend/base/lib/picture';
-import { SlideContext } from '@rm-frontend/base/lib/slider';
+import { Picture } from '@kickstartds/base/lib/picture';
+import { SlideContext } from '@kickstartds/base/lib/slider';
 import { MediaWrapper, Inbox } from './VisualProps';
 
 // TODO readd: autobuffer, autoplay, playsinline on <video> tag, wasn't allowed according to TypeScript typings

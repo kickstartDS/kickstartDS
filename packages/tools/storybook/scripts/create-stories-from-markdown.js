@@ -33,11 +33,11 @@ const templateStory = async (mod, name, mdContent) => {
 };
 
 module.exports = async () => {
-  const modules = (
-    await glob('packages/{@rm-frontend,components}/*/lib/exports.json')
-  ).map((mod) => mod.split('/')[2]);
+  const modules = (await glob('packages/components/*/lib/exports.json')).map(
+    (mod) => mod.split('/')[2]
+  );
   const filePaths = await glob(
-    `packages/{@rm-frontend,components}/{${modules.join(',')}}/*.md`
+    `packages/components/{${modules.join(',')}}/*.md`
   );
   filePaths.forEach(async (filePath) => {
     const [, mod, name] = filePath.match(/.*\/(.*)\/(\w+)\.md/);

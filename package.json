@@ -22,7 +22,7 @@
     "storybook:build": "node packages/tools/storybook build",
     "storybook:debug": "node packages/tools/storybook debug",
     "storybook:generate": "node packages/tools/storybook generate",
-    "staged": "git diff --name-only --cached | grep '@rm-frontend' | cut -d / -f 3 | awk '!seen[$0]++'",
+    "staged": "git diff --name-only --cached | grep '@kickstartds' | cut -d / -f 3 | awk '!seen[$0]++'",
     "lib": "run-s schema2ts lib:build lib:deref",
     "lib:build": "lerna run --stream lib",
     "lib:deref": "node scripts/schemaDereference.js"

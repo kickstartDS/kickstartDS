@@ -24,7 +24,7 @@ module.exports = async function () {
       json(),
       externals({
         deps: true,
-        exclude: /^@rm-frontend\/[a-z-]+\/source\//,
+        exclude: /^@kickstartds\/[a-z-]+\/source\//,
       }),
       ts({
         tsconfig: {

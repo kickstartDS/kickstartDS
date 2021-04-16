@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react';
-import { Section } from '@rm-frontend/base/lib/section';
+import { Section } from '@kickstartds/base/lib/section';
 import { NewsListItem } from '../../2-molecules/news-list-item';
 import { NewsListProps } from './NewsListProps';
 import './news-list.scss';

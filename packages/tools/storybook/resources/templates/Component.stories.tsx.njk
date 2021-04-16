@@ -1,8 +1,8 @@
 import { Story, Meta } from '@storybook/react';
 import { capitalCase } from 'change-case';
 import * as storyHelpers from '../../source/story-helpers';
-import schema from '../../../../{{ dir }}/{{ module }}/lib/{{ componentDir }}/{{ componentLowercased }}.schema.dereffed.json';
-import { {{ componentPascalcased }} } from '../../../../{{ dir }}/{{ module }}/lib/{{ componentDir }}';
+import schema from '../../../../components/{{ module }}/lib/{{ componentDir }}/{{ componentLowercased }}.schema.dereffed.json';
+import { {{ componentPascalcased }} } from '../../../../components/{{ module }}/lib/{{ componentDir }}';
 
 const Template: Story = (args) => <{{ componentPascalcased }} {...storyHelpers.unpack(args)} />;
 

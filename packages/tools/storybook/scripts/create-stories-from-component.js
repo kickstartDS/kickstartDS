@@ -14,7 +14,7 @@ const nunjucksEnvironment = new nunjucks.Environment(
 const nunjucksRenderPromise = util.promisify(nunjucksEnvironment.render);
 const render = nunjucksRenderPromise.bind(nunjucksEnvironment);
 
-const templateStory = async (component, componentDir, mod, dir) => {
+const templateStory = async (component, componentDir, mod) => {
   const componentLowercased = component.toLowerCase();
   const componentPascalcased = pascalCase(component);
 
@@ -23,7 +23,6 @@ const templateStory = async (component, componentDir, mod, dir) => {
     componentLowercased,
     componentPascalcased,
     module: mod,
-    dir,
   };
 
   return render('Component.stories.tsx.njk', options)
@@ -39,26 +38,25 @@ const templateStory = async (component, componentDir, mod, dir) => {
 };
 
 module.exports = async () => {
-  const exportsAbsolute = await glob(
-    'packages/{@rm-frontend,components}/*/lib/exports.json'
-  );
+  const exportsAbsolute = await glob('packages/components/*/lib/exports.json');
   const exportsRelative = exportsAbsolute.map((e) =>
     path.relative(__dirname, e)
   );
   exportsRelative.forEach(async (e) => {
-    const [, , , dir, mod] = e.split('/');
+    const [, , , , mod] = e.split('/');
     const exports = require(e);
     const exportsKeys = Object.keys(exports);
+    if (!exportsKeys.length) return;
+    const exportKeysGlob =
+      exportsKeys.length > 1 ? `{${exportsKeys.join(',')}}` : exportsKeys[0];
     const schemaPaths = await glob(
-      `packages/${dir}/${mod}/lib/{${exportsKeys.join(
-        ','
-      )}}/[!_]*.schema.dereffed.json`
+      `packages/components/${mod}/lib/${exportKeysGlob}/[!_]*.schema.dereffed.json`
     );
     schemaPaths.forEach(async (schemaPath) => {
       const [, componentDir, component] = schemaPath.match(
         /.*\/(.*)\/([0-9a-z-]+)\.schema\.dereffed\.json/
       );
-      await templateStory(component, componentDir, mod, dir);
+      await templateStory(component, componentDir, mod);
     });
   });
 };

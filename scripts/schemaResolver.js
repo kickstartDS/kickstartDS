@@ -17,7 +17,7 @@ const schemaResolver = {
   async read(file) {
     const [, module, type, name] = urlRegExp.exec(file.url);
     const [resolvedPath] = await glob(
-      `packages/{@rm-frontend,components}/${module}/source/${numberingMapping[type]}/**/${name}.(schema|definitions).json`
+      `packages/components/${module}/source/${numberingMapping[type]}/**/${name}.(schema|definitions).json`
     );
     return fs.readJSON(resolvedPath);
   },

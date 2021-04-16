@@ -1,5 +1,5 @@
 import { Component, registerModule } from '@rm-frontend/core';
-import { events as windowEvents } from '@rm-frontend/base/source/0-base/2-generic/window/window';
+import { events as windowEvents } from '@kickstartds/base/source/0-base/2-generic/window/window';
 import 'objectFitPolyfill/dist/objectFitPolyfill.basic.min';
 
 const identifier = 'visual';

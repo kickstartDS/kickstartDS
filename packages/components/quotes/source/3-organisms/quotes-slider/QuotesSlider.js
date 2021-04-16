@@ -1,6 +1,6 @@
 import { registerModule } from '@rm-frontend/core';
-// import { lazySlider } from '@rm-frontend/base/source/2-molecules/slider/lazySlider';
-import Slider from '@rm-frontend/base/source/2-molecules/slider/Slider';
+// import { lazySlider } from '@kickstartds/base/source/2-molecules/slider/lazySlider';
+import Slider from '@kickstartds/base/source/2-molecules/slider/Slider';
 
 const identifier = 'quotes.quotes-slider';
 // TODO: use lazySlider instead of Slider

@@ -57,7 +57,7 @@ const createTypes = async (schemaPath) => {
 (async () => {
   const [, , param] = process.argv;
   const schemaGlob =
-    'packages/{@rm-frontend,components}/*/source/**/*.(schema|definitions).json';
+    'packages/components/*/source/**/*.(schema|definitions).json';
   if (param === '--watch') {
     chokidar
       .watch(schemaGlob, { ignoreInitial: true })

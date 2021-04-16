@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react';
 import classnames from 'classnames';
-import { Icon } from '@rm-frontend/base/lib/icon';
+import { Icon } from '@kickstartds/base/lib/icon';
 import { VisualProps } from './VisualProps';
 import { VisualMediaPartial } from './VisualMediaPartial';
 import { VisualBoxPartial } from './VisualBoxPartial';

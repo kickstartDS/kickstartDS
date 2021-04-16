@@ -1,9 +1,9 @@
 import { FunctionComponent } from 'react';
 import classnames from 'classnames';
-import { ContentHeadline } from '@rm-frontend/base/lib/content-headline';
-import { LinkButton } from '@rm-frontend/base/lib/link-button';
-import { RichText } from '@rm-frontend/base/lib/rich-text';
-import { Picture } from '@rm-frontend/base/lib/picture';
+import { ContentHeadline } from '@kickstartds/base/lib/content-headline';
+import { LinkButton } from '@kickstartds/base/lib/link-button';
+import { RichText } from '@kickstartds/base/lib/rich-text';
+import { Picture } from '@kickstartds/base/lib/picture';
 import { StorytellingProps } from './StorytellingProps';
 import './storytelling.scss';
 

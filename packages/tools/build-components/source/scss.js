@@ -7,7 +7,7 @@ const { dirRe } = require('./utils');
 
 const cwd = process.cwd();
 const includePaths = [
-  `../../../packages`,
+  `../../../packages/components`,
   `../../../node_modules`,
   `../../../packages/@rm-frontend/instance/source`,
 ];
