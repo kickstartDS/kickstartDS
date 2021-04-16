@@ -15,11 +15,11 @@ const exec = (...args) =>
 const storybookOptions = [
   '--config-dir',
   `${__dirname}/.storybook`,
-  '--port',
-  '3000',
   '--static-dir',
   './packages/@rm-frontend/instance/source',
 ];
+const storybookOptionsBuild = [...storybookOptions, '--output-dir', 'dist'];
+const storybookOptionsStart = [...storybookOptions, '--port', '3000'];
 const [, , task] = process.argv;
 
 cleanup()
@@ -34,16 +34,16 @@ cleanup()
   .then(() => {
     switch (task) {
       case 'build': {
-        return exec('build-storybook', [...storybookOptions, '-o', 'dist']);
+        return exec('build-storybook', storybookOptionsBuild);
       }
 
       case 'start': {
-        return exec('start-storybook', storybookOptions);
+        return exec('start-storybook', storybookOptionsStart);
       }
 
       case 'debug': {
         return exec('start-storybook', [
-          ...storybookOptions,
+          ...storybookOptionsStart,
           '--debug-webpack',
         ]);
       }
