@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'react';
 import { NavMeta } from '../../2-molecules/nav/nav-meta';
 import { Logo } from '../../2-molecules/logo';
-import { NavMain } from '../../2-molecules/nav/nav-meta';
+import { NavMain } from '../../2-molecules/nav/nav-main';
 
 import navJsonData from '../../2-molecules/nav/nav-main/data.json';
 import './header.scss';

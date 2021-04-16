@@ -1,4 +1,4 @@
-import { lazyChildrenLoaded } from '../../../../1-atoms/image/lazy-img/LazyImg';
+import { lazyChildrenLoaded } from '../../../2-generic/lazyload/lazysizes';
 import forceRepaint from '../forceRepaint';
 
 export default function (Glide, Components, Events) {

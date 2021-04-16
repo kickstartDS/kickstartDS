@@ -33,21 +33,21 @@
               "description": "Background image source for small screens",
               "type": "string",
               "format": "image",
-              "default": "media/dummy/64-27-l.png"
+              "default": "images/dummy/64-27-l.png"
             },
             "srcTablet": {
               "title": "Tablet image source",
               "description": "Background image source for medium screens",
               "type": "string",
               "format": "image",
-              "default": "media/dummy/64-27-xl.png"
+              "default": "images/dummy/64-27-xl.png"
             },
             "srcDesktop": {
               "title": "Desktop image source",
               "description": "Background image source for large screens",
               "type": "string",
               "format": "image",
-              "default": "media/dummy/64-27-xxxl.png"
+              "default": "images/dummy/64-27-xxxl.png"
             },
             "indent": {
               "title": "Image indent",
@@ -69,21 +69,21 @@
               "description": "Background video source for small screens",
               "type": "string",
               "format": "video",
-              "default": "media/dummy/video/video-compressed.mp4"
+              "default": "images/dummy/video/video-compressed.mp4"
             },
             "srcTablet": {
               "title": "Tablet video source",
               "description": "Background video source for medium screens",
               "type": "string",
               "format": "video",
-              "default": "media/dummy/video/video-compressed.mp4"
+              "default": "images/dummy/video/video-compressed.mp4"
             },
             "srcDesktop": {
               "title": "Desktop video source",
               "description": "Background video source for large screens",
               "type": "string",
               "format": "video",
-              "default": "media/dummy/video/video-compressed.mp4"
+              "default": "images/dummy/video/video-compressed.mp4"
             }
           }
         }

@@ -48,7 +48,7 @@
                     "description": "Source",
                     "type": "string",
                     "format": "video",
-                    "default": "media/dummy/video/video-compressed.mp4"
+                    "default": "images/dummy/video/video-compressed.mp4"
                   },
                   "iframe": {
                     "title": "Embedded video",
@@ -108,7 +108,7 @@
       "default": [
         {
           "image": {
-            "src": "default/images/dummy/1-1-s.png",
+            "src": "images/dummy/1-1-s.png",
             "width": 300,
             "height": 300,
             "alt": "Square"

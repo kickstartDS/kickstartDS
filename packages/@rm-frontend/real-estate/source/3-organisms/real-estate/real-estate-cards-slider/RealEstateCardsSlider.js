@@ -1,4 +1,4 @@
-import lazySlider from '@rm-frontend/base/source/2-molecules/slider/lazySlider';
+import { lazySlider } from '@rm-frontend/base/source/2-molecules/slider/lazySlider';
 import { identifier } from './RealEstateCardSlider.desc';
 
 export default function () {

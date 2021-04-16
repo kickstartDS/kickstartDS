@@ -8,7 +8,7 @@
     "image": {
       "type": "string",
       "format": "image",
-      "default": "default/images/dummy/1-1-xl.png"
+      "default": "images/dummy/1-1-xl.png"
     },
     "text": {
       "type": "string",

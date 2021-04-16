@@ -5,7 +5,7 @@
   "description": "teaser-box-item",
   "type": "object",
   "properties": {
-    "image": { "type": "string", "default": "default/images/dummy/16-9-s.png" },
+    "image": { "type": "string", "default": "images/dummy/16-9-s.png" },
     "topic": { "type": "string" },
     "text": { "type": "string" },
     "darkStyle": { "type": "boolean" },

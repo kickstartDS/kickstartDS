@@ -3,6 +3,8 @@ import classnames from 'classnames';
 import { SliderProps } from './SliderProps';
 import { SlideContext } from './SlideContext';
 import './slider.scss';
+// TODO: import lazySlider instead
+import './Slider.js';
 
 type Slides = {
   preview?: ReactNode;

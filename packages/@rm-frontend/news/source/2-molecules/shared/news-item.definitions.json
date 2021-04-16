@@ -9,7 +9,7 @@
       "description": "Image source for news item",
       "type": "string",
       "format": "image",
-      "default": "media/dummy/64-27-l.png"
+      "default": "images/dummy/64-27-l.png"
     },
     "date": {
       "title": "Date",

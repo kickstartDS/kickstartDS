@@ -5,6 +5,7 @@ import { VisualProps } from './VisualProps';
 import { VisualMediaPartial } from './VisualMediaPartial';
 import { VisualBoxPartial } from './VisualBoxPartial';
 import './visual.scss';
+import './Visual.js';
 
 export const Visual: FunctionComponent<VisualProps> = ({
   media,

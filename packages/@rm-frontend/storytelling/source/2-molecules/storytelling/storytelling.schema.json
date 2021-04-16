@@ -28,7 +28,7 @@
           "type": "string",
           "format": "image",
           "title": "Image",
-          "default": "default/images/dummy/4-3-s.png"
+          "default": "images/dummy/4-3-s.png"
         },
         "ratio": {
           "type": "string",

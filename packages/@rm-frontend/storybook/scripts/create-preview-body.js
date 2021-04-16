@@ -1,12 +1,33 @@
-/* eslint-disable global-require */
-const fs = require('fs-extra');
 const path = require('path');
+const fs = require('fs-extra');
+const svgstore = require('svgstore');
+const fg = require('fast-glob');
+
+const storybookRoot = path.resolve(__dirname, '..');
+const createIconSprite = async () => {
+  const filePaths = await fg(
+    'packages/@rm-frontend/instance/source/icons/*.svg'
+  );
+  const files = await Promise.all(
+    filePaths.map(async (filePath) => [
+      `icon-${path.basename(filePath, '.svg')}`,
+      await fs.readFile(filePath),
+    ])
+  );
+  const sprite = svgstore({
+    svgAttrs: {
+      xmlns: 'http://www.w3.org/2000/svg',
+      'xmlns:xlink': 'http://www.w3.org/1999/xlink',
+      hidden: '',
+      height: '0',
+      width: '0',
+    },
+  });
+  files.forEach((file) => sprite.add(...file));
+  return sprite.toString({ inline: true });
+};
 
 module.exports = async () => {
-  const rmConfig = require('@rm-frontend/build-tools/tasks/rmConfig');
-  const storybookRoot = path.resolve(__dirname, '..');
-  return fs.copy(
-    `${rmConfig.temppath}/patterns/1-atoms/icon/icon-sprite.hbs`,
-    `${storybookRoot}/.storybook/preview-body.html`
-  );
+  const body = await createIconSprite();
+  return fs.writeFile(`${storybookRoot}/.storybook/preview-body.html`, body);
 };

@@ -5,6 +5,7 @@ import { LinkButton } from '../../1-atoms/button/link-button';
 import { Picture } from '../../1-atoms/image/picture';
 import { TeaserBoxItemProps } from './TeaserBoxItemProps';
 import './teaser-box-item.scss';
+import './TeaserBox.js';
 
 export const TeaserBoxItem: FunctionComponent<TeaserBoxItemProps> = ({
   image,

@@ -7,3 +7,4 @@ plop-templates
 package-lock.json
 CHANGELOG.md
 packages/@rm-frontend/instance/source/settings/**/*.scss
+packages/@rm-forntend/*/lib

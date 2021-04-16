@@ -1,13 +1,9 @@
 @use 'bourbon/core/bourbon';
 
 /* critical:start */
-svg {
-  @include bourbon.size(2em);
-}
-
 .icon {
+  @include bourbon.size(2em);
   display: inline-block;
-
   vertical-align: middle;
   fill: currentColor;
 }

@@ -1,5 +1,6 @@
 import { Component, registerModule } from '@rm-frontend/core';
 import linkedArea from '../../0-base/1-tools/js/linkedArea';
+import '../../0-base/4-utilities/elementQueries';
 
 const identifier = 'base.teaser-box';
 export default class TeaserBox extends Component {

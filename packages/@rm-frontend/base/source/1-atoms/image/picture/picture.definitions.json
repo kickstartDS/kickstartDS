@@ -10,7 +10,7 @@
       "title": "Image Source",
       "description": "Image Source",
       "format": "image",
-      "default": "default/images/dummy/16-9-l.png"
+      "default": "images/dummy/16-9-l.png"
     },
     "srcSet": {
       "type": "string",

@@ -1,5 +1,3 @@
-// inspired by https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby-plugin-image/src/components/picture.tsx
-
 import {
   FunctionComponent,
   ForwardRefRenderFunction,
@@ -10,6 +8,7 @@ import {
 } from 'react';
 import classnames from 'classnames';
 import { PictureProps } from './PictureProps';
+import '../../../0-base/2-generic/lazyload/lazysizes.js';
 
 type ImageProps = PictureProps & {
   imgRef?: Ref<HTMLImageElement>;

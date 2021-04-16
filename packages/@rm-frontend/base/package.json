@@ -20,11 +20,10 @@
     "bourbon": "^6.0.0",
     "classnames": "^2.2.6",
     "css-element-queries": "^1.2.3",
-    "custom-event-polyfill": "^1.0.7",
     "date-fns": "^2.19.0",
-    "details-element-polyfill": "^2.4.0",
     "focus-visible": "^5.0.2",
     "formbouncerjs": "^1.4.6",
+    "htm": "^3.0.4",
     "include-media": "^1.4.9",
     "include-media-export": "^1.0.3",
     "lazysizes": "^5.3.0",
@@ -37,7 +36,7 @@
     "sass-yiq": "^1.0.0",
     "simplebar": "^5.0.7",
     "stickybits": "^3.7.0",
-    "whatwg-fetch": "^3.6.2"
+    "vhtml": "^2.2.0"
   },
   "config": {
     "rm-frontend": true

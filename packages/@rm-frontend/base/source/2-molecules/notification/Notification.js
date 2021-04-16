@@ -1,7 +1,7 @@
 import { Component } from '@rm-frontend/core';
 import { slideDown } from '../../0-base/1-tools/js/slide';
-import render from '../../0-base/1-tools/js/render';
-import { Notification as notificationTemplate } from './NotificationComponent.tsx';
+import { render } from '../../0-base/1-tools/js/render';
+import notificationTemplate from './NotificationTemplate';
 
 export default class Notification extends Component {
   static identifier = 'base.notification';
@@ -17,7 +17,6 @@ export function addNotification(parent, type, message, title) {
     type,
     message,
     title,
-    'server-rendered': false,
   });
   render(notificationHtml, parent);
 }

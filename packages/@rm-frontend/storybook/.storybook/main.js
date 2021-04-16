@@ -1,11 +1,10 @@
-const fg = require('fast-glob');
 const path = require('path');
-const rmConfig = require('@rm-frontend/build-tools/tasks/rmConfig');
 
 module.exports = {
   stories: [
-    `${rmConfig.temppath}/patterns/**/*.stories.@(js|tsx|mdx)`,
-    `${rmConfig.rootpath}/packages/@rm-frontend/storybook/source/*.stories.@(mdx)`,
+    `../tmp/**/*.stories.@(tsx|mdx)`,
+    `../tmp/**/*.story.mdx`,
+    `../source/*.stories.@(mdx)`,
   ],
   features: {
     postcss: false,
@@ -30,7 +29,6 @@ module.exports = {
       ...(config.resolve.modules || []),
       path.resolve('./'),
       path.resolve('./packages'),
-      fg.sync(`${rmConfig.temppath}/patterns`, { onlyFiles: false })[0],
     ];
 
     config.devtool = false;

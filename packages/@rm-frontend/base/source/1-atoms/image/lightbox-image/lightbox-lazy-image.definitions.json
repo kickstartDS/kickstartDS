@@ -10,14 +10,14 @@
       "description": "Thumbnail Source",
       "type": "string",
       "format": "image",
-      "default": "default/images/dummy/16-9-s.png"
+      "default": "images/dummy/16-9-s.png"
     },
     "image": {
       "title": "Lightbox Image Source",
       "description": "Lightbox Image Source",
       "type": "string",
       "format": "image",
-      "default": "default/images/dummy/16-9-xxxl.png"
+      "default": "images/dummy/16-9-xxxl.png"
     },
     "width": {
       "title": "Width",

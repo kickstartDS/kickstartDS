@@ -5,9 +5,12 @@ import 'lazysizes/plugins/attrchange/ls.attrchange';
 // TODO this probably needs a type?
 import { DocsContainer } from './components/DocContainer';
 
+import '../../base/lib/global';
+import '../../base/lib/global/design-tokens.css';
+
 // TODO this probably needs to be done differently in the future (no more -instance), and in instances right now
 const tokenContextComponents = require.context(
-  '!!raw-loader!../../../../tmp/default/css/',
+  '!!raw-loader!../../base/lib/global/',
   true,
   /.\.(css)$/
 );
@@ -21,15 +24,15 @@ const tokenFilesComponents = tokenContextComponents
     };
   });
 
-const tokenContextTmp = require.context(
-  '!!raw-loader!../../../../tmp/',
-  true,
-  /.\.(svg)$/
-);
+// const tokenContextTmp = require.context(
+//   '!!raw-loader!../tmp/',
+//   true,
+//   /.\.(svg)$/
+// );
 
-const tokenFilesTmp = tokenContextTmp.keys().map(function (filename) {
-  return { filename: filename, content: tokenContextTmp(filename).default };
-});
+// const tokenFilesTmp = tokenContextTmp.keys().map(function (filename) {
+//   return { filename: filename, content: tokenContextTmp(filename).default };
+// });
 
 const tokenContextIcons = require.context(
   '!!raw-loader!../../instance/source/icons',
@@ -42,7 +45,7 @@ const tokenFilesIcons = tokenContextIcons.keys().map(function (filename) {
 });
 
 const tokenFiles = [
-  ...tokenFilesTmp,
+  // ...tokenFilesTmp,
   ...tokenFilesIcons,
   ...tokenFilesComponents,
 ];

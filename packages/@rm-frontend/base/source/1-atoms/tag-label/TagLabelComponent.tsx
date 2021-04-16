@@ -3,6 +3,7 @@ import { Icon } from '../icon';
 import { Link } from '../link';
 import { TagLabelProps } from './TagLabelProps';
 import './tag-label.scss';
+import './TagLabel.js';
 
 const TagLabelComponent: FunctionComponent<TagLabelProps> = ({
   label,

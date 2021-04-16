@@ -1,26 +1,46 @@
 import { registerModule } from '@rm-frontend/core';
-import lazySlider from '@rm-frontend/base/source/2-molecules/slider/lazySlider';
+// import { lazySlider } from '@rm-frontend/base/source/2-molecules/slider/lazySlider';
+import Slider from '@rm-frontend/base/source/2-molecules/slider/Slider';
 
 const identifier = 'quotes.quotes-slider';
-const lazyQuotesSlider = () =>
-  lazySlider().then(
-    ({ default: Slider }) =>
-      class QuotesSlider extends Slider {
-        static identifier = identifier;
+// TODO: use lazySlider instead of Slider
 
-        constructor(element) {
-          const mainOptions = {
-            perView: 1,
-            gap: 16,
-          };
+// const lazyQuotesSlider = () =>
+//   lazySlider().then(
+//     ({ default: Slider }) =>
+//       class QuotesSlider extends Slider {
+//         static identifier = identifier;
 
-          super(element, mainOptions);
-        }
-      }
-  );
+//         constructor(element) {
+//           const mainOptions = {
+//             perView: 1,
+//             gap: 16,
+//           };
 
-export default lazyQuotesSlider;
+//           super(element, mainOptions);
+//         }
+//       }
+//   );
+
+// export default lazyQuotesSlider;
+
+// registerModule({
+//   [identifier]: lazyQuotesSlider,
+// });
+
+export default class QuotesSlider extends Slider {
+  static identifier = identifier;
+
+  constructor(element) {
+    const mainOptions = {
+      perView: 1,
+      gap: 16,
+    };
+
+    super(element, mainOptions);
+  }
+}
 
 registerModule({
-  [identifier]: lazyQuotesSlider,
+  [identifier]: QuotesSlider,
 });

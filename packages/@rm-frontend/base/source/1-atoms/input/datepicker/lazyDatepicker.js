@@ -1,2 +1,1 @@
-export default () =>
-  import(/* webpackChunkName: "event-datepicker" */ './Datepicker');
+export default () => import('./Datepicker.js');

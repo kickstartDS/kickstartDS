@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="/default/patterns/0-base/base.css" />
-
 <!-- TODO this should find a better place! global storybook preview-pane theming (dark mode for now) -->
 <!-- TODO also: the color should be inferred (from project design tokens) -->
 <style>
@@ -50,16 +48,3 @@
     }
   })(window);
 </script>
-
-{% if jsIncludes.esm %}
-{% for file in jsIncludes.esm %}
-<script type="module" src="{{ file }}"></script>
-{% endfor %}
-{% for file in jsIncludes.es5 %}
-<script nomodule src="{{ file }}" defer></script>
-{% endfor %}
-{% else %}
-{% for file in jsIncludes -%}
-<script src="{{ file }}" defer></script>
-{% endfor %}
-{% endif %}

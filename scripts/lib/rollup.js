@@ -3,7 +3,7 @@ const fg = require('fast-glob');
 const fs = require('fs-extra');
 const rollup = require('rollup');
 const json = require('@rollup/plugin-json');
-const autoExternal = require('rollup-plugin-auto-external');
+const externals = require('rollup-plugin-node-externals');
 const ts = require('@wessberg/rollup-plugin-ts');
 const { dirRe } = require('./utils');
 
@@ -19,10 +19,13 @@ module.exports = async function () {
 
   const inputOptions = {
     input,
-    external: ['react/jsx-runtime', /\.scss$/, /^@.*/],
+    external: [/\.scss$/],
     plugins: [
       json(),
-      autoExternal(),
+      externals({
+        deps: true,
+        exclude: /^@rm-frontend\/[a-z-]+\/source\//,
+      }),
       ts({
         tsconfig: {
           resolveJsonModule: true,
@@ -31,6 +34,7 @@ module.exports = async function () {
           declaration: true,
           target: 'ES6',
           moduleResolution: 'node',
+          allowJs: true,
         },
       }),
     ],

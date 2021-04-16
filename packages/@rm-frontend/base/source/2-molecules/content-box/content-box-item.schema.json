@@ -18,7 +18,7 @@
     "image": {
       "type": "string",
       "format": "image",
-      "default": "default/images/dummy/16-9-s.png"
+      "default": "images/dummy/16-9-s.png"
     },
     "topic": { "type": "string", "default": "Lorem Ipsum" },
     "text": {
