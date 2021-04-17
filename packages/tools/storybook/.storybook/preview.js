@@ -5,7 +5,8 @@ import 'lazysizes/plugins/attrchange/ls.attrchange';
 // TODO this probably needs a type?
 import { DocsContainer } from './components/DocContainer';
 
-import '../../../components/base/lib/global';
+import '../../../components/base/lib/global/base.js';
+import '../../../components/base/lib/global/base.css';
 import '../../../components/base/lib/global/design-tokens.css';
 
 // TODO this probably needs to be done differently in the future (no more -instance), and in instances right now

@@ -1,46 +1,27 @@
 import { registerModule } from '@rm-frontend/core';
-// import { lazySlider } from '@kickstartds/base/source/2-molecules/slider/lazySlider';
-import Slider from '@kickstartds/base/source/2-molecules/slider/Slider';
+import { lazySlider } from '@kickstartds/base/lib/slider/lazySlider';
 
 const identifier = 'quotes.quotes-slider';
-// TODO: use lazySlider instead of Slider
 
-// const lazyQuotesSlider = () =>
-//   lazySlider().then(
-//     ({ default: Slider }) =>
-//       class QuotesSlider extends Slider {
-//         static identifier = identifier;
+const lazyQuotesSlider = () =>
+  lazySlider().then(
+    ({ default: Slider }) =>
+      class QuotesSlider extends Slider {
+        static identifier = identifier;
 
-//         constructor(element) {
-//           const mainOptions = {
-//             perView: 1,
-//             gap: 16,
-//           };
+        constructor(element) {
+          const mainOptions = {
+            perView: 1,
+            gap: 16,
+          };
 
-//           super(element, mainOptions);
-//         }
-//       }
-//   );
+          super(element, mainOptions);
+        }
+      }
+  );
 
-// export default lazyQuotesSlider;
-
-// registerModule({
-//   [identifier]: lazyQuotesSlider,
-// });
-
-export default class QuotesSlider extends Slider {
-  static identifier = identifier;
-
-  constructor(element) {
-    const mainOptions = {
-      perView: 1,
-      gap: 16,
-    };
-
-    super(element, mainOptions);
-  }
-}
+export default lazyQuotesSlider;
 
 registerModule({
-  [identifier]: QuotesSlider,
+  [identifier]: lazyQuotesSlider,
 });

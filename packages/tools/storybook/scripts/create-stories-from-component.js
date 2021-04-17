@@ -45,7 +45,13 @@ module.exports = async () => {
   exportsRelative.forEach(async (e) => {
     const [, , , , mod] = e.split('/');
     const exports = require(e);
-    const exportsKeys = Object.keys(exports);
+    const exportsKeys = Object.keys(exports).reduce((prev, curr) => {
+      const [dir, name] = curr.split('/');
+      if (name === 'index.js') {
+        prev.push(dir);
+      }
+      return prev;
+    }, []);
     if (!exportsKeys.length) return;
     const exportKeysGlob =
       exportsKeys.length > 1 ? `{${exportsKeys.join(',')}}` : exportsKeys[0];

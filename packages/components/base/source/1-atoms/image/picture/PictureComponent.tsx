@@ -8,7 +8,7 @@ import {
 } from 'react';
 import classnames from 'classnames';
 import { PictureProps } from './PictureProps';
-import '../../../0-base/2-generic/lazyload/lazysizes.js';
+import './Picture.js';
 
 type ImageProps = PictureProps & {
   imgRef?: Ref<HTMLImageElement>;
