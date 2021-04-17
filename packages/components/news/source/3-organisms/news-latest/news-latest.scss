@@ -1,5 +1,5 @@
-@use 'base/source/0-base/1-tools/scss/grid';
-@use 'base/source/0-base/1-tools/scss/breakpoint';
+@use '@kickstartds/base/source/0-base/1-tools/scss/grid';
+@use '@kickstartds/base/source/0-base/1-tools/scss/breakpoint';
 
 .news-latest {
   @include grid.grid-container();

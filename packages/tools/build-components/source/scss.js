@@ -3,20 +3,30 @@ const path = require('path');
 const fg = require('fast-glob');
 const sass = require('sass');
 const chokidar = require('chokidar');
-const { dirRe } = require('./utils');
+const { root, dirRe } = require('./utils');
 
 const cwd = process.cwd();
 const includePaths = [
-  `../../../packages/components`,
-  `../../../node_modules`,
-  `../../../packages/@rm-frontend/instance/source`,
+  `${root}/packages/components`,
+  `${root}/node_modules`,
+  `${root}/packages/@rm-frontend/instance/source`,
 ];
+
+const search = '@kickstartds/';
+const searchLength = search.length;
+const importer = (url) => {
+  if (url.indexOf(search) === 0) {
+    return {
+      file: url.slice(searchLength),
+    };
+  }
+};
 
 const dependencies = {};
 
 const compile = async (file) => {
   try {
-    const { css, stats } = sass.renderSync({ file, includePaths });
+    const { css, stats } = sass.renderSync({ file, includePaths, importer });
     dependencies[path.relative(cwd, stats.entry)] = stats.includedFiles.reduce(
       (prev, curr) => {
         if (!curr.includes('/node_modules/')) {
