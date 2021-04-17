@@ -7,7 +7,7 @@ import Click from '../../0-base/1-tools/js/glide/Click';
 import Autoheight from '../../0-base/1-tools/js/glide/Autoheight';
 import { render } from '../../0-base/1-tools/js/render';
 import { events as windowEvents } from '../../0-base/2-generic/window/window';
-import sliderArrowsTemplate from './slider-arrows/SliderArrowsTemplate';
+import { SliderArrows as sliderArrowsTemplate } from './slider-arrows/SliderArrowsComponent.tsx';
 import { identifier, actions } from './Slider.desc';
 
 // Keep these in sync with `$current-animation-duration` in _slider-nav.scss

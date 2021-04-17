@@ -1,21 +1,21 @@
-import { html } from '../../../0-base/1-tools/js/render';
-import IconTemplate from '../../../1-atoms/icon/IconTemplate';
+import { FunctionComponent } from 'react';
+import { Icon } from '../../../1-atoms/icon/PureIconComponent';
 
-export default () => html`
+export const SliderArrows: FunctionComponent = () => (
   <div className="slider__arrows" data-glide-el="controls">
     <button
       className="slider__arrow slider__arrow--prev"
       data-glide-dir="|<"
-      tabindex="{-1}"
+      tabIndex={-1}
     >
-      <${IconTemplate} icon="chevron-left" />
+      <Icon icon="chevron-left" />
     </button>
     <button
       className="slider__arrow slider__arrow--next"
       data-glide-dir="|>"
-      tabindex="{-1}"
+      tabIndex={-1}
     >
-      <${IconTemplate} icon="chevron-right" />
+      <Icon icon="chevron-right" />
     </button>
   </div>
-`;
+);

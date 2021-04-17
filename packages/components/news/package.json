@@ -9,7 +9,9 @@
     "lib": "node ../../tools/build-components/source"
   },
   "dependencies": {
+    "@babel/runtime-corejs3": "^7.13.10",
     "@kickstartds/base": "^0.0.0",
+    "@kickstartds/core": "^0.0.0",
     "@rm-frontend/core": ">= 2.0.0 < 4.0.0",
     "@rm-frontend/download": "^4.0.0",
     "@rm-frontend/gallery": "^4.0.0",

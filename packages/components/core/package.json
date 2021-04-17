@@ -1,0 +1,13 @@
+{
+  "name": "@kickstartds/core",
+  "version": "0.0.0",
+  "description": "kickstartDs Core Module",
+  "author": "ruhmesmeile GmbH <mail@ruhmesmeile.com> (https://ruhmesmeile.com)",
+  "homepage": "https://ruhmesmeile.com",
+  "license": "SEE LICENSE IN LICENSE",
+  "dependencies": {
+    "@babel/runtime-corejs3": "^7.13.10",
+    "htm": "^3.0.4",
+    "vhtml": "^2.2.0"
+  }
+}

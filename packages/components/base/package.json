@@ -9,7 +9,9 @@
     "lib": "node ../../tools/build-components/source"
   },
   "dependencies": {
+    "@babel/runtime-corejs3": "^7.13.10",
     "@glidejs/glide": "git://github.com/glidejs/glide.git#master",
+    "@kickstartds/core": "^0.0.0",
     "@rm-frontend/core": ">= 2.1.0 < 4.0.0",
     "animate.js": "^2.0.2",
     "bourbon": "^6.0.0",
