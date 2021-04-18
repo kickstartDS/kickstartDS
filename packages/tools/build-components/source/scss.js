@@ -2,7 +2,9 @@ const fs = require('fs-extra');
 const path = require('path');
 const sass = require('sass');
 // const chokidar = require('chokidar');
+const postcss = require('postcss');
 const { root, dirRe } = require('./utils');
+const postcssPlugins = require('./postcssPlugins');
 
 const cwd = process.cwd();
 const includePaths = [
@@ -37,7 +39,11 @@ const compile = async (file) => {
     );
     const [, dir, base] = stats.entry.match(dirRe);
     const dest = `lib/${dir}/${base}.css`;
-    await fs.outputFile(dest, css);
+    const result = await postcss(postcssPlugins).process(css, {
+      from: file,
+      to: dest,
+    });
+    await fs.outputFile(dest, result.css);
     return `${dir}/${base}.css`;
   } catch (err) {
     throw new Error(err);

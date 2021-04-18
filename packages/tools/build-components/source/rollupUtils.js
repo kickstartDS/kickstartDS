@@ -1,5 +1,8 @@
 const json = require('@rollup/plugin-json');
 const externals = require('rollup-plugin-node-externals');
+const { terser } = require('rollup-plugin-terser');
+
+const production = process.env.NODE_ENV === 'production';
 
 module.exports = {
   sharedInputPlugins: [json(), externals({ deps: true })],
@@ -7,6 +10,7 @@ module.exports = {
     dir: 'lib',
     format: 'es',
     chunkFileNames: '_shared/[name]-[hash].js',
+    plugins: [production && terser({ safari10: true })],
   },
   sharedBabelConfig: {
     babelrc: false,
