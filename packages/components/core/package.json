@@ -8,6 +8,9 @@
   "scripts": {
     "lib": "node ../../tools/build-components/source"
   },
+  "files": [
+    "lib"
+  ],
   "dependencies": {
     "@babel/runtime-corejs3": "^7.13.10",
     "htm": "^3.0.4",
