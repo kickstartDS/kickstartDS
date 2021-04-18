@@ -1,5 +1,5 @@
 import im from 'include-media-export/include-media'; // https://github.com/eduardoboucas/include-media-export
-import { domLoaded } from '@rm-frontend/core';
+import { domLoaded } from '@kickstartds/core/lib/core';
 import { events as windowEvents } from '../../2-generic/window/window';
 
 export const events = {

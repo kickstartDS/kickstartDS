@@ -1,4 +1,4 @@
-import { Component } from '@rm-frontend/core';
+import { Component } from '@kickstartds/core/lib/core';
 import { slideDown } from '../../0-base/1-tools/js/slide';
 import { render } from '../../0-base/1-tools/js/render';
 import { Notification as notificationTemplate } from './NotificationComponent.tsx';

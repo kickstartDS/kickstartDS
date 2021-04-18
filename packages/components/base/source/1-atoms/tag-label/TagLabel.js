@@ -1,4 +1,4 @@
-import { Component, registerModule } from '@rm-frontend/core';
+import { Component, define } from '@kickstartds/core/lib/core';
 
 const identifier = 'base.tag-label';
 export default class TagLabel extends Component {
@@ -19,6 +19,4 @@ export default class TagLabel extends Component {
   }
 }
 
-registerModule({
-  [identifier]: TagLabel,
-});
+define(identifier, TagLabel);

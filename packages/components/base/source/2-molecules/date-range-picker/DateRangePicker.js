@@ -1,4 +1,4 @@
-import { Component } from '@rm-frontend/core';
+import { Component } from '@kickstartds/core/lib/core';
 import {
   events as datepickerEvents,
   actions as datepickerActions,

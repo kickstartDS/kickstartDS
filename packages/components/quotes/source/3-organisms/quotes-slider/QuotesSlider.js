@@ -1,4 +1,4 @@
-import { registerModule } from '@rm-frontend/core';
+import { define } from '@kickstartds/core/lib/core';
 import { lazySlider } from '@kickstartds/base/lib/slider/lazySlider';
 
 const identifier = 'quotes.quotes-slider';
@@ -22,6 +22,4 @@ const lazyQuotesSlider = () =>
 
 export default lazyQuotesSlider;
 
-registerModule({
-  [identifier]: lazyQuotesSlider,
-});
+define(identifier, lazyQuotesSlider);

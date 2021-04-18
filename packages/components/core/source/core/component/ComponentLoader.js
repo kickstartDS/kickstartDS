@@ -1,7 +1,8 @@
 /* eslint-disable no-new */
 import 'lazysizes';
-import { findComponentClass, executeHooks, uid } from './helper';
-import domLoaded from '../domLoaded';
+import { findComponentClass, executeHooks } from './helper';
+import { uid } from './uid';
+import { domLoaded } from '../domLoaded';
 
 const identifier = 'component';
 const eachElement = (nodeList, cb) =>

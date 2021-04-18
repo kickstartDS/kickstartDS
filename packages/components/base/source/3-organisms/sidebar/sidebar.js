@@ -1,5 +1,5 @@
 import SimpleBar from 'simplebar';
-import { Component } from '@rm-frontend/core';
+import { Component } from '@kickstartds/core/lib/core';
 import { isIE } from '../../0-base/1-tools/js/browser-sniffing';
 import { fadeIn, fadeOut } from '../../0-base/1-tools/js/fade';
 import { identifier, actions } from './Sidebar.desc';

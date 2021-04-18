@@ -1,4 +1,4 @@
-import { Component } from '@rm-frontend/core';
+import { Component } from '@kickstartds/core/lib/core';
 import styles from '~instance/settings/base/google-maps-styles';
 import loadJs from '../../../0-base/1-tools/js/load-js';
 import marker from './location-map-marker';

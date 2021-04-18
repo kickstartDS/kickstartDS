@@ -1,4 +1,4 @@
-import { Component, registerModule } from '@rm-frontend/core';
+import { Component, define } from '@kickstartds/core/lib/core';
 import { events as windowEvents } from '@kickstartds/base/lib/window/window';
 import 'objectFitPolyfill/dist/objectFitPolyfill.basic.min';
 
@@ -63,6 +63,4 @@ export default class Visual extends Component {
   }
 }
 
-registerModule({
-  [identifier]: Visual,
-});
+define(identifier, Visual);

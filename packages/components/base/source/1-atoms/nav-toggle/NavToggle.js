@@ -1,4 +1,4 @@
-import { Component } from '@rm-frontend/core';
+import { Component } from '@kickstartds/core/lib/core';
 import breakpoints, {
   events as breakpointEvents,
 } from '../../0-base/1-tools/js/breakpoints';

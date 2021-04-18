@@ -10,7 +10,7 @@ if (!ready) {
   });
 }
 
-export default function domLoaded(callback) {
+export function domLoaded(callback) {
   if (ready) {
     setTimeout(callback);
   } else {

@@ -4,7 +4,7 @@
   Available for use under the MIT License
 */
 
-import { Component } from '@rm-frontend/core';
+import { Component } from '@kickstartds/core/lib/core';
 
 export default class FileUpload extends Component {
   static identifier = 'base.fileupload';

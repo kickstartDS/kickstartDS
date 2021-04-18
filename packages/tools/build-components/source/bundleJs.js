@@ -38,7 +38,7 @@ module.exports = async function bundleJs(jsPaths) {
               {
                 tag: 'html',
                 import: {
-                  module: '@kickstartds/core',
+                  module: '@kickstartds/core/lib/core',
                   export: 'html',
                 },
               },

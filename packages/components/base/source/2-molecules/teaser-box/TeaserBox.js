@@ -1,4 +1,4 @@
-import { Component, registerModule } from '@rm-frontend/core';
+import { Component, define } from '@kickstartds/core/lib/core';
 import linkedArea from '../../0-base/1-tools/js/linkedArea';
 import '../../0-base/4-utilities/elementQueries';
 
@@ -17,6 +17,4 @@ export default class TeaserBox extends Component {
   }
 }
 
-registerModule({
-  [identifier]: TeaserBox,
-});
+define(identifier, TeaserBox);

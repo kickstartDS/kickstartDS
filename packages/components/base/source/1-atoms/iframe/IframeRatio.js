@@ -1,4 +1,4 @@
-import { Component } from '@rm-frontend/core';
+import { Component } from '@kickstartds/core/lib/core';
 
 export default class VideoIframe extends Component {
   static identifier = 'base.iframe-ratio';

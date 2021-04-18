@@ -1,5 +1,5 @@
 import Bouncer from 'formbouncerjs/dist/bouncer';
-import { uid } from '@rm-frontend/core';
+import { uid } from '@kickstartds/core/lib/core';
 import breakpoints from './breakpoints';
 
 const mainHeader = document.querySelector('.main-header');
