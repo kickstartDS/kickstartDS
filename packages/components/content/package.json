@@ -1,6 +1,6 @@
 {
   "name": "@kickstartds/content",
-  "version": "0.0.0",
+  "version": "1.0.0-alpha.0",
   "description": "kickstartDS Content Module",
   "author": "ruhmesmeile GmbH <mail@ruhmesmeile.com> (https://ruhmesmeile.com)",
   "homepage": "https://ruhmesmeile.com",
@@ -16,8 +16,8 @@
   ],
   "dependencies": {
     "@babel/runtime-corejs3": "^7.13.10",
-    "@kickstartds/base": "^0.0.0",
-    "@kickstartds/core": "^0.0.0",
+    "@kickstartds/base": "^1.0.0-alpha.0",
+    "@kickstartds/core": "^1.0.0-alpha.0",
     "classnames": "^2.2.6",
     "date-fns": "^2.19.0",
     "objectFitPolyfill": "^2.3.0",

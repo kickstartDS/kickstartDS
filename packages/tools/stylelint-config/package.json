@@ -1,6 +1,6 @@
 {
   "name": "@kickstartds/stylelint-config",
-  "version": "0.0.0",
+  "version": "1.0.0-alpha.0",
   "description": "kickstartDS Stylelint config",
   "author": "ruhmesmeile GmbH <mail@ruhmesmeile.com> (https://ruhmesmeile.com)",
   "homepage": "https://ruhmesmeile.com",
