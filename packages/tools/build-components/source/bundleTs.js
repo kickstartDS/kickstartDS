@@ -21,6 +21,9 @@ module.exports = async function bundleTs(tsPaths) {
 
   const input = Object.fromEntries(
     tsPaths.map((file) => {
+      if (file === 'source/index.ts') {
+        return ['index', file];
+      }
       const [, dir] = file.match(dirRe);
       return [`${dir}/index`, file];
     })

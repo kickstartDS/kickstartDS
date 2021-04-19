@@ -5,6 +5,8 @@
   "author": "ruhmesmeile GmbH <mail@ruhmesmeile.com> (https://ruhmesmeile.com)",
   "homepage": "https://ruhmesmeile.com",
   "license": "SEE LICENSE IN LICENSE",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "scripts": {
     "lib": "node ../../tools/build-components/source"
   },
