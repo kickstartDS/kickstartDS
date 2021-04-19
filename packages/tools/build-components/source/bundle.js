@@ -4,6 +4,18 @@ const bundleTs = require('./bundleTs');
 const bundleJs = require('./bundleJs');
 const scss = require('./scss');
 
+const createIndex = (tsPaths) => {
+  const indexContent = tsPaths.reduce(
+    (prev, fileName) =>
+      `${prev}export * from '${fileName.replace(
+        /^(source)(\/.*)(\/index\.ts)$/,
+        '.$2'
+      )}';\n`,
+    ''
+  );
+  return fs.writeFile('source/index.ts', indexContent);
+};
+
 const exportsFromRollupOutput = (output) =>
   output.reduce((prev, { isEntry, fileName, exports }) => {
     if (isEntry) {
@@ -15,15 +27,7 @@ const exportsFromRollupOutput = (output) =>
 module.exports = async function () {
   try {
     const tsPaths = (await fg('source/*/**/index.ts')).sort();
-    const indexContent = tsPaths
-      .map(
-        (fileName) =>
-          `export * from '${fileName
-            .replace('source', '.')
-            .replace('/index.ts', '')}';`
-      )
-      .join('\n');
-    await fs.writeFile('source/index.ts', indexContent);
+    await createIndex(tsPaths);
     tsPaths.push('source/index.ts');
 
     const { output: tsOutput, cssAssets, jsAssets } = await bundleTs(tsPaths);

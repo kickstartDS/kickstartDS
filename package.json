@@ -2,9 +2,10 @@
   "name": "kickstartds",
   "private": true,
   "scripts": {
-    "bootstrap": "lerna bootstrap",
-    "build": "npm run lib",
+    "build": "run-s schema2ts build-components dereference",
+    "build-components": "lerna run --stream build",
     "copy-env-file": "[ ! -f .env ] && cp .env-example .env || true",
+    "dereference": "node scripts/schemaDereference.js",
     "eslint": "eslint \"**/*.{js,jsx,ts,tsx}\"",
     "find-licenses": "node ./scripts/license.js",
     "format": "prettier --write .",
@@ -14,15 +15,12 @@
     "postinstall": "run-p git-config copy-env-file clear-cache",
     "schema2ts": "node ./scripts/schemaToTypescript.js",
     "schema2ts:watch": "node ./scripts/schemaToTypescript.js --watch",
-    "stylelint": "stylelint \"**/*.scss\"",
+    "staged": "git diff --name-only --cached | grep '@kickstartds' | cut -d / -f 3 | awk '!seen[$0]++'",
     "storybook": "node packages/tools/storybook",
     "storybook:build": "node packages/tools/storybook build",
     "storybook:debug": "node packages/tools/storybook debug",
     "storybook:generate": "node packages/tools/storybook generate",
-    "staged": "git diff --name-only --cached | grep '@kickstartds' | cut -d / -f 3 | awk '!seen[$0]++'",
-    "lib": "run-s schema2ts lib:build lib:deref",
-    "lib:build": "lerna run --stream lib",
-    "lib:deref": "node scripts/schemaDereference.js"
+    "stylelint": "stylelint \"**/*.scss\""
   },
   "dependencies": {
     "@lerna/project": "^4.0.0",

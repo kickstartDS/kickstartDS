@@ -8,7 +8,8 @@
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "scripts": {
-    "lib": "node ../../tools/build-components/source"
+    "build": "node ../../tools/build-components/source",
+    "prepublishOnly": "NODE_ENV=production npm run build"
   },
   "files": [
     "lib"
