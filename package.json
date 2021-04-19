@@ -4,7 +4,6 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "build": "npm run lib",
-    "clear-cache": "rm -rf node_modules/.cache",
     "copy-env-file": "[ ! -f .env ] && cp .env-example .env || true",
     "eslint": "eslint \"**/*.{js,jsx,ts,tsx}\"",
     "find-licenses": "node ./scripts/license.js",
@@ -16,7 +15,6 @@
     "schema2ts": "node ./scripts/schemaToTypescript.js",
     "schema2ts:watch": "node ./scripts/schemaToTypescript.js --watch",
     "schema2graphql": "node ./scripts/schemaToGraphQL.js",
-    "semantic-release": "lerna exec --concurrency 1 -- 'export MODULE_NAME=$(echo $LERNA_PACKAGE_NAME | cut -d / -f 2) && SLACK_WEBHOOK=https://hooks.slack.com/services/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 npx --no-install semantic-release -e @ruhmesmeile/semantic-release-monorepo --tag-format=\"${MODULE_NAME}@\\${version}\"'",
     "stylelint": "stylelint \"**/*.scss\"",
     "storybook": "node packages/tools/storybook",
     "storybook:build": "node packages/tools/storybook build",
@@ -48,12 +46,8 @@
   "devDependencies": {
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-conventional": "^8.1.0",
-    "@ruhmesmeile/semantic-release-monorepo": "^6.2.0",
-    "@semantic-release/changelog": "^5.0.0",
-    "@semantic-release/git": "9.0.0",
     "builtin-modules": "^3.1.0",
     "commitizen": "^4.0.3",
-    "conventional-changelog-angular-bitbucket": "^1.2.0",
     "cz-conventional-changelog": "^3.0.2",
     "eslint": "^7.21.0",
     "husky": "^4.3.8",
@@ -61,8 +55,6 @@
     "lint-staged": "^10.5.4",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.2.1",
-    "semantic-release": "^17.0.4",
-    "semantic-release-slack-bot": "^1.3.0",
     "stylelint": "^13.12.0",
     "typescript": "^4.2.3"
   },

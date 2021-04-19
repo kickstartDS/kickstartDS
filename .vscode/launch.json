@@ -8,20 +8,6 @@
       "type": "node",
       "request": "launch",
       "runtimeVersion": "12.18.3",
-      "name": "Launch Semantic Release",
-      "args": [
-        "-e",
-        "@ruhmesmeile/semantic-release-monorepo",
-        "--tag-format=\"gallery@${version}\""
-      ],
-      "program": "${workspaceRoot}/node_modules/semantic-release/bin/semantic-release.js",
-      "cwd": "${workspaceRoot}/packages/@rm-frontend/gallery",
-      "outputCapture": "std"
-    },
-    {
-      "type": "node",
-      "request": "launch",
-      "runtimeVersion": "12.18.3",
       "name": "Launch Schema Convert",
       "program": "${workspaceRoot}/packages/@rm-frontend/netlify-cms/scripts/schema-convert-to-netlify-yaml.js",
       "cwd": "${workspaceRoot}",
