@@ -42,7 +42,7 @@
     "license-checker": "^25.0.1"
   },
   "devDependencies": {
-    "@commitlint/cli": "^8.1.0",
+    "@commitlint/cli": "^12.1.1",
     "@commitlint/config-conventional": "^8.1.0",
     "builtin-modules": "^3.1.0",
     "commitizen": "^4.0.3",
