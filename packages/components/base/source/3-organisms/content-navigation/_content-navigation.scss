@@ -1,0 +1,75 @@
+@use '../../0-base/1-tools/scss/grid';
+@use '../../0-base/1-tools/scss/breakpoint';
+@use '../../0-base/0-settings/selector';
+@use 'settings/base';
+@use 'settings/global';
+
+.content-navigation {
+  @include grid.grid-container();
+
+  &__column {
+    align-items: stretch;
+    display: flex;
+
+    .content-navigation-wrap--col-2 & {
+      @include grid.grid-break-at(550px, 12, 6);
+    }
+
+    .content-navigation-wrap--col-3 & {
+      @include grid.grid-break-at(650px, 12, 4);
+    }
+  }
+
+  &__item {
+    #{selector.$section--bg-1} & {
+      border-color: base.$color-black-15;
+    }
+
+    .content-navigation-wrap--col-1 & {
+      width: 100%;
+      font-size: 0.85em;
+
+      &:nth-child(n + 2) {
+        margin-top: 2em;
+      }
+
+      @include breakpoint.media('≥s') {
+        font-size: 1em;
+      }
+    }
+
+    .content-navigation-wrap--col-2 & {
+      margin-right: 0;
+      margin-bottom: global.$padding;
+      font-size: 0.85em;
+
+      &:nth-child(n + 3) {
+        margin-top: 2em;
+      }
+
+      @include breakpoint.media('≥s') {
+        font-size: 0.85em;
+        margin-bottom: 0;
+      }
+
+      @include breakpoint.media('≥m') {
+        font-size: 1em;
+      }
+    }
+
+    .content-navigation-wrap--col-3 & {
+      margin-right: 0;
+      margin-bottom: global.$padding;
+      font-size: 0.85em;
+
+      @include breakpoint.media('≥s') {
+        margin-bottom: 0;
+        font-size: 0.75em;
+      }
+
+      @include breakpoint.media('≥m') {
+        font-size: 0.85em;
+      }
+    }
+  }
+}

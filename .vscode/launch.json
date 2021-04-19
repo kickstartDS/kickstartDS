@@ -8,31 +8,8 @@
       "type": "node",
       "request": "launch",
       "runtimeVersion": "12.18.3",
-      "name": "Launch Semantic Release",
-      "args": [
-        "-e",
-        "@ruhmesmeile/semantic-release-monorepo",
-        "--tag-format=\"gallery@${version}\""
-      ],
-      "program": "${workspaceRoot}/node_modules/semantic-release/bin/semantic-release.js",
-      "cwd": "${workspaceRoot}/packages/@rm-frontend/gallery",
-      "outputCapture": "std"
-    },
-    {
-      "type": "node",
-      "request": "launch",
-      "runtimeVersion": "12.18.3",
-      "name": "Launch Schema Convert",
-      "program": "${workspaceRoot}/packages/@rm-frontend/netlify-cms/scripts/schema-convert-to-netlify-yaml.js",
-      "cwd": "${workspaceRoot}",
-      "outputCapture": "std"
-    },
-    {
-      "type": "node",
-      "request": "launch",
-      "runtimeVersion": "12.18.3",
       "name": "Launch Schema Dereffing",
-      "program": "${workspaceRoot}/packages/@rm-frontend/storybook/scripts/schema-dereference-components.js",
+      "program": "${workspaceRoot}/packages/tools/storybook/scripts/schema-dereference-components.js",
       "cwd": "${workspaceRoot}",
       "outputCapture": "std"
     },
@@ -41,7 +18,7 @@
       "request": "launch",
       "runtimeVersion": "12.18.3",
       "name": "Launch Storybook Story Creation",
-      "program": "${workspaceRoot}/packages/@rm-frontend/storybook/scripts/create-stories-from-template.js",
+      "program": "${workspaceRoot}/packages/tools/storybook/scripts/create-stories-from-template.js",
       "cwd": "${workspaceRoot}",
       "outputCapture": "std"
     },
@@ -50,7 +27,7 @@
       "request": "launch",
       "runtimeVersion": "12.18.3",
       "name": "Launch Storybook Data Migration",
-      "program": "${workspaceRoot}/packages/@rm-frontend/storybook/scripts/migrate-data-to-current-schema.js",
+      "program": "${workspaceRoot}/packages/tools/storybook/scripts/migrate-data-to-current-schema.js",
       "cwd": "${workspaceRoot}",
       "outputCapture": "std"
     },
@@ -60,12 +37,7 @@
       "runtimeVersion": "12.19.1",
       "name": "Launch Storybook Webpack Build",
       "program": "${workspaceRoot}/node_modules/.bin/start-storybook",
-      "args": [
-        "-c",
-        "packages/@rm-frontend/storybook/.storybook",
-        "-s",
-        "dist/"
-      ],
+      "args": ["-c", "packages/tools/storybook/.storybook", "-s", "dist/"],
       "cwd": "${workspaceRoot}",
       "outputCapture": "std"
     },
@@ -74,7 +46,7 @@
       "request": "launch",
       "runtimeVersion": "12.18.3",
       "name": "Launch Storybook Preview Head Generation",
-      "program": "${workspaceRoot}/packages/@rm-frontend/storybook/scripts/create-preview-head-from-assets.js",
+      "program": "${workspaceRoot}/packages/tools/storybook/scripts/create-preview-head-from-assets.js",
       "cwd": "${workspaceRoot}",
       "outputCapture": "std"
     }

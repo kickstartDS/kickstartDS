@@ -1,0 +1,10 @@
+@use 'bourbon/core/bourbon';
+
+/* critical:start */
+.icon {
+  @include bourbon.size(2em);
+  display: inline-block;
+  vertical-align: middle;
+  fill: currentColor;
+}
+/* critical:end */

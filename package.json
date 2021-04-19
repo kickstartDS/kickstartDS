@@ -1,7 +1,27 @@
 {
-  "name": "rm-frontend",
-  "version": "1.0.0",
+  "name": "kickstartds",
   "private": true,
+  "scripts": {
+    "build": "run-s schema2ts build-components dereference",
+    "build-components": "lerna run --stream build",
+    "copy-env-file": "[ ! -f .env ] && cp .env-example .env || true",
+    "dereference": "node scripts/schemaDereference.js",
+    "eslint": "eslint \"**/*.{js,jsx,ts,tsx}\"",
+    "find-licenses": "node ./scripts/license.js",
+    "format": "prettier --write .",
+    "git-config": "git config --local include.path ../.gitconfig",
+    "lint": "run-p eslint stylelint",
+    "list": "lerna la",
+    "postinstall": "run-p git-config copy-env-file clear-cache",
+    "schema2ts": "node ./scripts/schemaToTypescript.js",
+    "schema2ts:watch": "node ./scripts/schemaToTypescript.js --watch",
+    "staged": "git diff --name-only --cached | grep '@kickstartds' | cut -d / -f 3 | awk '!seen[$0]++'",
+    "storybook": "node packages/tools/storybook",
+    "storybook:build": "node packages/tools/storybook build",
+    "storybook:debug": "node packages/tools/storybook debug",
+    "storybook:generate": "node packages/tools/storybook generate",
+    "stylelint": "stylelint \"**/*.scss\""
+  },
   "dependencies": {
     "@lerna/project": "^4.0.0",
     "change-case": "^4.1.2",
@@ -18,46 +38,22 @@
     "json-schema-ref-parser": "^9.0.7",
     "json-schema-to-typescript": "^10.1.3",
     "jsonschema2graphql": "^1.1.1",
-    "license-checker": "^25.0.1",
-    "sass": "^1.32.8"
+    "license-checker": "^25.0.1"
   },
-  "scripts": {
-    "bootstrap": "lerna bootstrap",
-    "build": "run-s 'rm-frontend:build default' storybook:generate storybook:build",
-    "clear-cache": "rm -rf node_modules/.cache packages/@rm-frontend/build-tools/node_modules/.cache",
-    "copy-env-file": "[ ! -f .env ] && cp .env-example .env || true",
-    "create": "plop",
-    "eslint": "eslint \"**/*.{js,jsx,ts,tsx}\"",
-    "find-licenses": "node ./scripts/license.js",
-    "format": "prettier --write .",
-    "git-config": "git config --local include.path ../.gitconfig",
-    "lint": "run-p eslint stylelint",
-    "list": "lerna la",
-    "multi-build": "./packages/@rm-frontend/build-tools/cli multi-build",
-    "postinstall": "run-p git-config copy-env-file clear-cache",
-    "pre-commit": "cp package.json bamboo-specs/src/main/resources/ && git add bamboo-specs/src/main/resources/package.json",
-    "patternlab:build": "node packages/@rm-frontend/patternlab build",
-    "patternlab:serve": "node packages/@rm-frontend/patternlab serve",
-    "patternlab": "npm-run-all 'rm-frontend:build {1}' --parallel 'rm-frontend:watch {1}' 'patternlab:serve {1}' --",
-    "rm-frontend-cli:build": "packages/@rm-frontend/build-tools/cli build",
-    "rm-frontend-cli:watch": "packages/@rm-frontend/build-tools/cli watch",
-    "rm-frontend:build": "run-s schema2ts scss 'rm-frontend-cli:build {1}' --",
-    "rm-frontend:watch": "run-p schema2ts:watch scss:watch 'rm-frontend-cli:watch {1}' --",
-    "schema2ts": "node ./scripts/schemaToTypescript.js",
-    "schema2ts:watch": "node ./scripts/schemaToTypescript.js --watch",
-    "schema2graphql": "node ./scripts/schemaToGraphQL.js",
-    "scss": "node ./scripts/scss.js",
-    "scss:watch": "node ./scripts/scss.js --watch",
-    "semantic-release": "lerna exec --concurrency 1 -- 'export MODULE_NAME=$(echo $LERNA_PACKAGE_NAME | cut -d / -f 2) && SLACK_WEBHOOK=https://hooks.slack.com/services/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 npx --no-install semantic-release -e @ruhmesmeile/semantic-release-monorepo --tag-format=\"${MODULE_NAME}@\\${version}\"'",
-    "start": "npm run patternlab default",
-    "stylelint": "stylelint \"**/*.scss\"",
-    "storybook": "npm-run-all 'rm-frontend:build default' storybook:generate --parallel 'rm-frontend:watch default' storybook:start",
-    "storybook:build": "node packages/@rm-frontend/storybook build",
-    "storybook:debug": "node packages/@rm-frontend/storybook debug",
-    "storybook:generate": "node packages/@rm-frontend/storybook generate",
-    "storybook:start": "node packages/@rm-frontend/storybook start",
-    "staged": "git diff --name-only --cached | grep '@rm-frontend' | cut -d / -f 3 | awk '!seen[$0]++'",
-    "ts": "node scripts/typescript.js && lerna exec -- '[ -f index.ts ] && tsc -d --outDir lib --resolveJsonModule --jsx react-jsx --esModuleInterop index.ts || true'"
+  "devDependencies": {
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
+    "builtin-modules": "^3.1.0",
+    "commitizen": "^4.0.3",
+    "cz-conventional-changelog": "^3.0.2",
+    "eslint": "^7.21.0",
+    "husky": "^4.3.8",
+    "lerna": "^4.0.0",
+    "lint-staged": "^10.5.4",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.2.1",
+    "stylelint": "^13.12.0",
+    "typescript": "^4.2.3"
   },
   "config": {
     "commitizen": {
@@ -68,39 +64,10 @@
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "npm run schema2ts && git add packages/@rm-frontend/*/source/**/*Props.ts && lint-staged"
+      "pre-commit": "npm run schema2ts && git add packages/*/*/source/**/*Props.ts && lint-staged"
     }
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,md,json,scss}": "prettier --write"
-  },
-  "rmConfiguration": {
-    "rmProjectKey": "frontend",
-    "rmProjectName": "Frontend",
-    "rmVersion": "1.0.0",
-    "rmBambooProjectKey": "FRONT",
-    "rmBambooProjectName": "Frontend",
-    "rmProductionUrl": "https://frontend.static.ruhmesmeile.solutions"
-  },
-  "devDependencies": {
-    "@commitlint/cli": "^8.1.0",
-    "@commitlint/config-conventional": "^8.1.0",
-    "@ruhmesmeile/semantic-release-monorepo": "^6.2.0",
-    "@semantic-release/changelog": "^5.0.0",
-    "@semantic-release/git": "9.0.0",
-    "commitizen": "^4.0.3",
-    "conventional-changelog-angular-bitbucket": "^1.2.0",
-    "cz-conventional-changelog": "^3.0.2",
-    "eslint": "^7.21.0",
-    "husky": "^4.3.8",
-    "lerna": "^4.0.0",
-    "lint-staged": "^10.5.4",
-    "npm-run-all": "^4.1.5",
-    "plop": "^2.5.2",
-    "prettier": "^2.2.1",
-    "semantic-release": "^17.0.4",
-    "semantic-release-slack-bot": "^1.3.0",
-    "stylelint": "^13.12.0",
-    "typescript": "^4.2.3"
   }
 }

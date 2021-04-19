@@ -60,7 +60,7 @@ async function install(dir) {
 }
 
 (async function createLicenseCsV() {
-  const matches = await glob('packages/@rm-frontend/*/package.json');
+  const matches = await glob('packages/components/*/package.json');
 
   const modules = await Promise.all(
     matches.map(async (match) => {
@@ -69,7 +69,7 @@ async function install(dir) {
       await install(dir);
       const deps = await getDeps(dir);
       return {
-        isFrontend: pckg.config && pckg.config['rm-frontend'],
+        isFrontend: true,
         deps,
       };
     })
@@ -87,7 +87,7 @@ async function install(dir) {
     Object.entries(splittedDeps).map(async ([type, deps]) => {
       const merged = deps.reduce((prev, curr) => Object.assign(prev, curr), {});
       const filtered = Object.entries(merged).reduce((prev, [name, val]) => {
-        if (!name.startsWith('@rm-frontend')) prev.push({ name, ...val });
+        if (!name.startsWith('@kickstartds')) prev.push({ name, ...val });
         return prev;
       }, []);
 

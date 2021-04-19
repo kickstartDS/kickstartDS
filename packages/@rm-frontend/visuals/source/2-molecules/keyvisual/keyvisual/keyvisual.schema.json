@@ -1,7 +1,0 @@
-{
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://frontend.ruhmesmeile.com/visuals/molecules/keyvisual.schema.json",
-  "title": "Keyvisual",
-  "description": "keyvisual",
-  "$ref": "http://frontend.ruhmesmeile.com/visuals/molecules/visual.schema.json"
-}

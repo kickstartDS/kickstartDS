@@ -1,3 +1,0 @@
----
-title: Deals size s
----

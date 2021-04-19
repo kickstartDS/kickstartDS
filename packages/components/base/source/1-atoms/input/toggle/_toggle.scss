@@ -1,0 +1,93 @@
+@use 'settings/base';
+
+@mixin before-after {
+  content: '';
+  display: block;
+  position: absolute;
+}
+
+$toggle__indicator-size: calc(
+  #{base.$toggle__label-height - (base.$toggle__indicator-gutter * 2)} - #{(
+      base.$toggle__label-border-width * 2
+    )}
+);
+$toggle__radius: base.$toggle__label-height / 2;
+$toggle__checked-x-transform: base.$toggle__label-width -
+  base.$toggle__label-height;
+
+.input-toggle {
+  display: inline-block;
+  box-sizing: border-box;
+
+  label {
+    // background
+    display: inline-block;
+    position: relative;
+    box-sizing: border-box;
+    cursor: pointer;
+    width: base.$toggle__label-width;
+    height: base.$toggle__label-height;
+    border-radius: $toggle__radius;
+    background: base.$toggle__label-background-color;
+    border: base.$toggle__label-border-width solid
+      base.$toggle__label-border-color;
+    transition: all 0.3s ease;
+
+    &::before {
+      // indicator
+      @include before-after;
+      width: $toggle__indicator-size;
+      height: $toggle__indicator-size;
+      top: base.$toggle__indicator-gutter;
+      left: base.$toggle__indicator-gutter;
+      border-radius: $toggle__radius;
+      background: base.$toggle__indicator-background-color;
+      transition: 0.3s ease;
+    }
+  }
+
+  input {
+    position: absolute;
+    box-sizing: border-box;
+    height: 0;
+    width: 0;
+    font-size: inherit;
+    margin: 0;
+    z-index: 1;
+    cursor: pointer;
+    appearance: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  input:checked + label {
+    // background
+    background: base.$toggle__label-background-color-checked;
+
+    &::before {
+      // indicator
+      transform: translateX($toggle__checked-x-transform);
+    }
+  }
+
+  input:disabled {
+    + label {
+      // background
+      background: base.$toggle__label-background-color-disabled !important;
+      border: base.$toggle__label-border-width solid
+        base.$toggle__label-border-color-disabled !important;
+      cursor: not-allowed !important;
+
+      &::before {
+        // indicator
+        background: base.$toggle__indicator-background-color-disabled !important;
+      }
+    }
+  }
+
+  input:focus + label {
+    box-shadow: 0 0 0 3px base.$toggle__label-box-shadow-color-focused;
+  }
+}

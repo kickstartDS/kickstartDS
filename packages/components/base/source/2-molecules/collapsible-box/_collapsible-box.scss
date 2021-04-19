@@ -1,0 +1,87 @@
+@use '../../0-base/1-tools/scss/details-reset';
+@use '../../0-base/1-tools/scss/breakpoint';
+@use '../../0-base/0-settings/selector';
+@use '../../0-base/1-tools/scss/anchor';
+@use 'bourbon/core/bourbon';
+@use 'settings/base';
+
+.collapsible-box {
+  @include anchor.anchor-target;
+
+  #{selector.$section--bg-1} & {
+    border-color: base.$color-black-15;
+  }
+
+  details {
+    @include details-reset.details-reset;
+
+    border-top: 1px solid base.$color-black-10;
+    border-bottom: 1px solid base.$color-black-10;
+
+    #{selector.$section--bg-1} & {
+      border-color: base.$color-black-15;
+    }
+  }
+
+  & + & {
+    details {
+      border-top: 0;
+    }
+  }
+
+  &__header {
+    &-wrapper {
+      position: relative;
+      padding: 1em 0;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      @include breakpoint.media('≥s') {
+        padding: 1em;
+      }
+    }
+
+    &__text {
+      flex: 1;
+
+      @include breakpoint.media('≥s') {
+        padding-right: 1em;
+      }
+    }
+
+    &__icon {
+      .icon {
+        @include bourbon.size(1.65em);
+
+        @include breakpoint.media('≥s') {
+          @include bourbon.size(1.85em);
+        }
+      }
+
+      [open] & {
+        transform: rotate(-180deg);
+      }
+
+      svg {
+        pointer-events: none;
+      }
+    }
+  }
+
+  &__content {
+    &__item {
+      padding: 1em 0;
+
+      @include breakpoint.media('≥s') {
+        padding: 1em;
+        padding-right: 4em;
+      }
+    }
+
+    .is-closed & {
+      display: none;
+    }
+  }
+}

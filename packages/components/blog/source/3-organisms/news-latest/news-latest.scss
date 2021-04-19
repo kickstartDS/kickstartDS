@@ -1,0 +1,30 @@
+@use '@kickstartds/base/source/0-base/1-tools/scss/grid';
+@use '@kickstartds/base/source/0-base/1-tools/scss/breakpoint';
+
+.news-latest {
+  @include grid.grid-container();
+
+  &__item {
+    @include breakpoint.media('≥m') {
+      @include grid.grid-columns(4);
+    }
+
+    @include breakpoint.media('<m') {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+
+      &:first-child {
+        padding-top: 0;
+      }
+    }
+  }
+
+  &__more {
+    text-align: center;
+    margin: 2em 0;
+
+    @include breakpoint.media('≥s') {
+      margin-bottom: 0;
+    }
+  }
+}

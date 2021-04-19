@@ -1,9 +1,8 @@
 *.hbs
 dist
 tmp
-patternlab
 node_modules
-plop-templates
 package-lock.json
 CHANGELOG.md
-packages/@rm-frontend/instance/source/settings/**/*.scss
+legacy-instance/settings/**/*.scss
+packages/components/*/lib

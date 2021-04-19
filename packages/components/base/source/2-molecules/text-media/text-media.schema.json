@@ -1,0 +1,128 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://frontend.ruhmesmeile.com/base/molecules/text-media.schema.json",
+  "title": "Text-Media",
+  "description": "Text-Media",
+  "type": "object",
+  "properties": {
+    "text": {
+      "title": "Text",
+      "description": "RTE text (Markdown)",
+      "type": "string",
+      "default": "Consequuntur est quia atque eum ducimus. Consequatur fugiat hic eos perferendis. Libero unde omnis dolorem maxime occaecati sapiente distinctio. Consectetur non placeat dolorem est animi.\n\nSuscipit quos rem suscipit culpa. Et distinctio et veritatis consectetur quae dolorem aut. Explicabo commodi repudiandae fugiat. Accusamus alias mollitia perferendis qui iure magni. Minus est vitae dolor dolor."
+    },
+    "mediaAlignment": {
+      "title": "Media Alignment",
+      "description": "relative to text",
+      "type": "string",
+      "enum": [
+        "above-left",
+        "above-center",
+        "above-right",
+        "beside-left",
+        "beside-right",
+        "intext-left",
+        "intext-right",
+        "below-left",
+        "below-center",
+        "below-right"
+      ],
+      "default": "above-center"
+    },
+    "media": {
+      "title": "Media",
+      "description": "Media",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "anyOf": [
+          {
+            "properties": {
+              "video": {
+                "title": "Video",
+                "description": "Video",
+                "type": "object",
+                "properties": {
+                  "src": {
+                    "title": "Source",
+                    "description": "Source",
+                    "type": "string",
+                    "format": "video",
+                    "default": "images/dummy/video/video-compressed.mp4"
+                  },
+                  "iframe": {
+                    "title": "Embedded video",
+                    "description": "Embedded video",
+                    "type": "boolean",
+                    "default": false
+                  },
+                  "title": {
+                    "title": "Video Title",
+                    "description": "video title",
+                    "type": "string"
+                  },
+                  "width": {
+                    "title": "Width",
+                    "description": "Width",
+                    "type": "integer",
+                    "minimum": 0,
+                    "default": 320
+                  },
+                  "height": {
+                    "title": "Height",
+                    "description": "height",
+                    "type": "integer",
+                    "minimum": 0,
+                    "default": 180
+                  }
+                },
+                "required": ["src", "width", "height"]
+              },
+              "full": {
+                "$ref": "#/definitions/full"
+              }
+            }
+          },
+          {
+            "properties": {
+              "image": {
+                "$ref": "http://frontend.ruhmesmeile.com/base/atoms/picture.definitions.json"
+              },
+              "full": {
+                "$ref": "#/definitions/full"
+              }
+            }
+          },
+          {
+            "properties": {
+              "lightboxImage": {
+                "$ref": "http://frontend.ruhmesmeile.com/base/atoms/lightbox-lazy-image.definitions.json"
+              },
+              "full": {
+                "$ref": "#/definitions/full"
+              }
+            }
+          }
+        ]
+      },
+      "default": [
+        {
+          "image": {
+            "src": "images/dummy/1-1-s.png",
+            "width": 300,
+            "height": 300,
+            "alt": "Square"
+          }
+        }
+      ]
+    }
+  },
+  "definitions": {
+    "full": {
+      "title": "Full width media",
+      "description": "Full width media",
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

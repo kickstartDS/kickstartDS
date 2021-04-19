@@ -2,16 +2,10 @@
 # https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore
 
 dist
-patternlab
 storybook-static
-tmp
-dependencyGraph.*
-packages/**/package-lock.json
 licenses-*.csv
-
-# Typescript transpilation
+packages/**/package-lock.json
 packages/*/*/lib
-packages/*/*/built
 
 # Logs
 logs

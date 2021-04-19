@@ -1,4 +1,4 @@
-# ruhmesmeile Frontend
+# kickstartDS
 
 This project is managed by [lerna](https://lernajs.io/). Each module is an independent lerna package. Install module-specific dependencies only via `lerna add` (see "Install npm dependencies" section)!
 
@@ -21,34 +21,23 @@ If you cannot or don't want to install global packages, you can use [`npx`](http
 
 ### Installation
 
-- Your NPM registry has to be set to ruhmesmeile's private registry.  
-  `npm get registry` should print `https://verdaccio.ruhmesmeile.tools`  
-  Otherwise run `npm set registry https://verdaccio.ruhmesmeile.tools`
-
-- You have to be logged in.  
-  `npm whoami` should print your user name  
-  Otherwise run `npm login`
-
-- `npm install` – installs npm dependencies and performs some post-install-scripts
-- `lerna bootstrap` or `npm run bootstrap` - installs npm dependencies for all frontend modules
+- `npx lerna bootstrap` - installs npm dependencies for all frontend modules
 
 ### Scripts
 
-- `npm start` – builds the pattern library, starts a local dev-server on <http://127.0.0.1:3000> and watches for changes
 - `npm run build` – builds the pattern library
+- `npm run storybook start` - starts a storybook with all components
 - `npm run lint` – checks sass- & js-files against potential errors
 - `npm run list` – lists all lerna packages
 
+## Release
+
+1. `npx lerna version prerelease` - see [lerna docs](https://github.com/lerna/lerna/tree/main/commands/version#readme)
+2. `npx lerna publish from-git` - see [lerna docs](https://github.com/lerna/lerna/tree/main/commands/publish#readme)
+
 ## Module Development
 
-All modules are placed in the _modules_ directory. They are individual npm packages mangaged by [lerna](https://lernajs.io/).
-
-### Add Module
-
-- run `npm run create` and follow the cli wizzard.
-- import all component's scss-files into the module's root scss-file, same for the js-file
-
-Also see "Install npm dependencies"-section.
+All modules are placed in the _pacakges/components_ directory. They are individual npm packages mangaged by [lerna](https://lernajs.io/).
 
 ### File Structure
 
@@ -72,20 +61,10 @@ The file structure of each module is a mix of [atomic design](http://bradfrost.c
 
 All directories under **source** are optional.
 
-### Handlebars
-
-#### Data
-
-You can create "data.json"-files beside your components to define some default data. All components "data.json"s will be merged into one big [patternlab data.json](https://patternlab.io/docs/data-overview.html), so it's accessible to any pattern. You can always overwrite the default data by using pattern specific data.
-
-#### Helper
-
-Custom [handlebars helpers](http://handlebarsjs.com/#helpers) are placed in modules/core/source/handlebar-helpers and are registered in patternlab/patternlab-handlebars-config.js.
-
 ### Install npm dependencies
 
 Don't install module dependencies manually, let lerna do the job!
-E.g. to install "package-xy" in module "news", run `lerna add package-xy modules/news` in the projects root directory (see [lerna docs](https://github.com/lerna/lerna/tree/master/commands/add) for more info)
+E.g. to install "package-xy" in module "news", run `lerna add package-xy pacakges/components/news` in the projects root directory (see [lerna docs](https://github.com/lerna/lerna/tree/master/commands/add) for more info)
 
 ## Commit changes
 
@@ -106,7 +85,3 @@ This convention is based loosely on the [angular commit message guidlines](https
 ## Install npm dependencies in the root
 
 Build related packages are installed in the root. In contrast to module dependencies, root dependencies are installed via `npm install` (only modules are managed by lerna).
-
-## Configuration
-
-To exclude a module from compilation, you can disable it in `.rm-frontendrc.js` (by setting its value to `false`).

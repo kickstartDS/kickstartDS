@@ -1,0 +1,73 @@
+@use '../../0-base/1-tools/scss/details-reset';
+@use '../../0-base/1-tools/scss/breakpoint';
+@use 'settings/base';
+
+.filter-area {
+  /* critical:start */
+  @include details-reset.details-reset;
+
+  margin-bottom: 1rem;
+  margin-top: -1rem;
+  outline: 0;
+  text-align: center;
+  /* critical:end */
+
+  &--open {
+    .filter-area__toggle .icon {
+      transform: rotateX(-180deg);
+      position: relative;
+      top: -0.15em;
+    }
+  }
+
+  @include breakpoint.media('≥m') {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  @include breakpoint.media('print') {
+    display: none;
+  }
+
+  &__toggle {
+    /* critical:start */
+    display: inline-flex;
+    transform: translateY(50%);
+    background: base.$color-white;
+    /* critical:end */
+
+    &.button:active {
+      transform: scale(base.$button__active-scale) translateY(50%);
+    }
+
+    @include breakpoint.media('≥m') {
+      /* critical:start */
+      display: none;
+      /* critical:end */
+    }
+
+    .icon {
+      font-size: 0.7em;
+      transition: transform 0.3s;
+    }
+  }
+
+  &__content {
+    /* critical:start */
+    max-width: 26.7em;
+    padding: 1.5em;
+    background-color: base.$color-black-7;
+    margin: 0 auto;
+    padding-top: 3em;
+    text-align: left;
+    /* critical:end */
+
+    @include breakpoint.media('≥m') {
+      /* critical:start */
+      padding: 1.5em;
+      margin-bottom: 2em;
+      max-width: 21em;
+      /* critical:end */
+    }
+  }
+}

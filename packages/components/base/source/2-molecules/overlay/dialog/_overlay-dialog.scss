@@ -1,0 +1,58 @@
+@use 'settings/base';
+@use 'bourbon/core/bourbon';
+@use '../../../0-base/1-tools/scss/breakpoint';
+
+.overlay-dialog {
+  position: relative;
+  margin: auto;
+  border-radius: base.$dialog__border-radius;
+  background: base.$dialog__background-color;
+  color: base.$dialog__color;
+  max-width: base.$dialog__max-width;
+  box-shadow: base.$dialog__box-shadow;
+
+  &__body,
+  &__footer {
+    padding: 1rem;
+
+    @include breakpoint.media('≥s') {
+      padding: 1.5rem 2rem;
+    }
+  }
+
+  &__body *:last-child {
+    margin-bottom: 0;
+  }
+
+  &__footer {
+    border-top: base.$dialog__footer-border;
+  }
+
+  &__actions {
+    margin: -0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+  }
+
+  &__action {
+    padding: 0.5rem;
+  }
+
+  .overlay__close {
+    right: -0.25rem;
+
+    .icon {
+      @include bourbon.size(2rem);
+    }
+    @include breakpoint.media('≥s') {
+      top: 0;
+      right: 0.5rem;
+
+      .icon {
+        @include bourbon.size(2rem);
+      }
+    }
+  }
+}

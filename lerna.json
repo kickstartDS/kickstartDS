@@ -1,10 +1,14 @@
 {
-  "packages": ["packages/@rm-frontend/*"],
+  "packages": ["packages/*/*"],
   "version": "independent",
   "npmClient": "npm",
   "command": {
     "bootstrap": {
       "hoist": true
+    },
+    "version": {
+      "message": "chore: new release",
+      "no-private": true
     }
   }
 }

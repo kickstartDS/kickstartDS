@@ -1,0 +1,9 @@
+@use '../../0-base/1-tools/scss/grid';
+
+.date-range {
+  @include grid.grid-container;
+
+  > * {
+    @include grid.grid-break-at(16rem);
+  }
+}

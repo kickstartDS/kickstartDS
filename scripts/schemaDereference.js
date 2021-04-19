@@ -1,3 +1,5 @@
+// TODO: move this to packages/tools/build-components
+
 const fs = require('fs-extra');
 const path = require('path');
 const glob = require('fast-glob');
@@ -28,8 +30,7 @@ const dereference = async (schemaPath) => {
 
 (async () => {
   const [, , param] = process.argv;
-  const schemaGlob =
-    'packages/@rm-frontend/*/source/**/*.(schema|definitions).json';
+  const schemaGlob = 'packages/components/*/lib/**/*.(schema|definitions).json';
   if (param === '--watch') {
     chokidar
       .watch(schemaGlob, { ignoreInitial: true })
