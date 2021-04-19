@@ -1,5 +1,5 @@
 {
-  "packages": ["packages/components/*", "packages/tools/*"],
+  "packages": ["packages/*/*"],
   "version": "independent",
   "npmClient": "npm",
   "command": {

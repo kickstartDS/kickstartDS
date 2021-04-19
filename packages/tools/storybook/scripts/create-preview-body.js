@@ -5,9 +5,7 @@ const fg = require('fast-glob');
 
 const storybookRoot = path.resolve(__dirname, '..');
 const createIconSprite = async () => {
-  const filePaths = await fg(
-    'packages/@rm-frontend/instance/source/icons/*.svg'
-  );
+  const filePaths = await fg('legacy-instance/icons/*.svg');
   const files = await Promise.all(
     filePaths.map(async (filePath) => [
       `icon-${path.basename(filePath, '.svg')}`,

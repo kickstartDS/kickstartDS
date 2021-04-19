@@ -8,15 +8,6 @@
       "type": "node",
       "request": "launch",
       "runtimeVersion": "12.18.3",
-      "name": "Launch Schema Convert",
-      "program": "${workspaceRoot}/packages/@rm-frontend/netlify-cms/scripts/schema-convert-to-netlify-yaml.js",
-      "cwd": "${workspaceRoot}",
-      "outputCapture": "std"
-    },
-    {
-      "type": "node",
-      "request": "launch",
-      "runtimeVersion": "12.18.3",
       "name": "Launch Schema Dereffing",
       "program": "${workspaceRoot}/packages/tools/storybook/scripts/schema-dereference-components.js",
       "cwd": "${workspaceRoot}",

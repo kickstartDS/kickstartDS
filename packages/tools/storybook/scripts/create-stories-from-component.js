@@ -46,9 +46,8 @@ module.exports = async () => {
     const [, , , , mod] = e.split('/');
     const exports = require(e);
     const exportsKeys = Object.keys(exports).reduce((prev, curr) => {
-      const [dir, name] = curr.split('/');
-      if (name === 'index.js') {
-        prev.push(dir);
+      if (/^[\w-]+$/.test(curr)) {
+        prev.push(curr);
       }
       return prev;
     }, []);

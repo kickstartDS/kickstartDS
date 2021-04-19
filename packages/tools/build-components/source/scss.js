@@ -10,7 +10,7 @@ const cwd = process.cwd();
 const includePaths = [
   `${root}/packages/components`,
   `${root}/node_modules`,
-  `${root}/packages/@rm-frontend/instance/source`,
+  `${root}/legacy-instance`,
 ];
 
 const search = '@kickstartds/';

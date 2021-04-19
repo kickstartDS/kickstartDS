@@ -1,5 +1,4 @@
 dist
 tmp
 node_modules
-packages/@rm-frontend/netlify-cms
 packages/components/*/lib

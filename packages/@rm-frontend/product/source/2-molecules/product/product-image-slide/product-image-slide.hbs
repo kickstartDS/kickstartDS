@@ -1,9 +1,0 @@
-<div class="product-image-slide">
-  <a href="{{@root.asset_paths.images}}/{{ image }}" data-gallery="c{{ id }}" data-size-w="{{ imageWidth }}" data-size-h="{{ imageHeight }}" class="js-open-lightbox">
-    {{#if slider.first}}
-    <img src="{{ concat @root.asset_paths.images '/' image }}" alt="">
-    {{else}}
-    {{> atoms-lazy-img src=image alt="" js=true }}
-    {{/if}}
-  </a>
-</div>

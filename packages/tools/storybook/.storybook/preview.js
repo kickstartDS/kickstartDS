@@ -36,7 +36,7 @@ const tokenFilesComponents = tokenContextComponents
 // });
 
 const tokenContextIcons = require.context(
-  '!!raw-loader!../../../@rm-frontend/instance/source/icons',
+  '!!raw-loader!../../../../legacy-instance/icons',
   true,
   /.\.(svg)$/
 );

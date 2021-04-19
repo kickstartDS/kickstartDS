@@ -4,5 +4,5 @@ tmp
 node_modules
 package-lock.json
 CHANGELOG.md
-packages/@rm-frontend/instance/source/settings/**/*.scss
+legacy-instance/settings/**/*.scss
 packages/components/*/lib

@@ -1,3 +1,0 @@
----
-title: Deals element colors
----

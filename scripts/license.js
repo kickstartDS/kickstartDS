@@ -69,7 +69,7 @@ async function install(dir) {
       await install(dir);
       const deps = await getDeps(dir);
       return {
-        isFrontend: pckg.config && pckg.config['rm-frontend'],
+        isFrontend: true,
         deps,
       };
     })

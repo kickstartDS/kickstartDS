@@ -16,7 +16,7 @@ const storybookOptions = [
   '--config-dir',
   `${__dirname}/.storybook`,
   '--static-dir',
-  './packages/@rm-frontend/instance/source',
+  'legacy-instance',
 ];
 const storybookOptionsBuild = [...storybookOptions, '--output-dir', 'dist'];
 const storybookOptionsStart = [...storybookOptions, '--port', '3000'];

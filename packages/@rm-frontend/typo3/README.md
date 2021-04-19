@@ -1,1 +1,0 @@
-# Typo3 Module

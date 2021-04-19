@@ -1,5 +1,5 @@
 {
-  "name": "rm-frontend",
+  "name": "kickstartds",
   "private": true,
   "scripts": {
     "bootstrap": "lerna bootstrap",
@@ -14,7 +14,6 @@
     "postinstall": "run-p git-config copy-env-file clear-cache",
     "schema2ts": "node ./scripts/schemaToTypescript.js",
     "schema2ts:watch": "node ./scripts/schemaToTypescript.js --watch",
-    "schema2graphql": "node ./scripts/schemaToGraphQL.js",
     "stylelint": "stylelint \"**/*.scss\"",
     "storybook": "node packages/tools/storybook",
     "storybook:build": "node packages/tools/storybook build",

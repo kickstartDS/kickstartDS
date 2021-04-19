@@ -3,7 +3,6 @@
 @use 'bourbon/core/bourbon';
 @use 'settings/base';
 
-/// TODO: find a solution to only import pikaday if datepicker is enabled in rm-frontendrc
 @use 'pikaday/scss/pikaday' with (
   /// @see https://github.com/Pikaday/Pikaday/blob/1.8.0/scss/pikaday.scss
   $pd-text-color: base.$color-black,
