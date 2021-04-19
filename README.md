@@ -25,10 +25,15 @@ If you cannot or don't want to install global packages, you can use [`npx`](http
 
 ### Scripts
 
-- `npm start` – builds the pattern library, starts a local dev-server on <http://127.0.0.1:3000> and watches for changes
 - `npm run build` – builds the pattern library
+- `npm run storybook start` - starts a storybook with all components
 - `npm run lint` – checks sass- & js-files against potential errors
 - `npm run list` – lists all lerna packages
+
+## Release
+
+1. `npx lerna version prerelease` - see [lerna docs](https://github.com/lerna/lerna/tree/main/commands/version#readme)
+2. `npx lerna publish from-git` - see [lerna docs](https://github.com/lerna/lerna/tree/main/commands/publish#readme)
 
 ## Module Development
 
