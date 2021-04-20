@@ -16,7 +16,6 @@ export type ButtonProps = Button & {
   isLoading?: LoadingButton;
   isSuccessful?: SuccessButton;
   onclick?: OnclickAttribute;
-  [k: string]: unknown;
 };
 /**
  * Text used on button
@@ -75,7 +74,6 @@ export interface Button {
   dataComponent?: DataComponentAttribute;
   fillAnimation?: FillAnimation;
   iconAnimation?: IconAnimation;
-  [k: string]: unknown;
 }
 /**
  * Icon

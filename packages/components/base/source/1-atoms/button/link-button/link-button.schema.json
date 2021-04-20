@@ -31,7 +31,8 @@
           "title": "`aria-labelledby` Attribute"
         }
       },
-      "required": ["href"]
+      "required": ["href"],
+      "additionalProperties": false
     }
   ]
 }
