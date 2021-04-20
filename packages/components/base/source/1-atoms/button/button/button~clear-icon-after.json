@@ -1,8 +1,0 @@
-{
-  "variant": "clear",
-  "label": "Button",
-  "icon": {
-    "icon": "arrow-right"
-  },
-  "iconAfter": true
-}
