@@ -1,3 +1,4 @@
+module.exports = () => `
 <!-- TODO this should find a better place! global storybook preview-pane theming (dark mode for now) -->
 <!-- TODO also: the color should be inferred (from project design tokens) -->
 <style>
@@ -44,7 +45,8 @@
     };
     w.rm.shareMail = {
       subject: 'Sehen Sie sich diese Seite an!',
-      body: 'Hallo,\n\nsehen Sie sich die Seite "{title}" an:\n{url}\n\nMit freundlichen Grüßen'
+      body: 'Hallo,\\n\\nsehen Sie sich die Seite "{title}" an:\\n{url}\\n\\nMit freundlichen Grüßen'
     }
   })(window);
 </script>
+`;

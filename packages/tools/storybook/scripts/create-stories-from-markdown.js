@@ -1,35 +1,19 @@
 /* eslint-disable global-require, import/no-dynamic-require */
 const fs = require('fs-extra');
 const glob = require('fast-glob');
-const path = require('path');
-const util = require('util');
-const nunjucks = require('nunjucks');
 const { capitalCase } = require('change-case');
+const template = require('../resources/templates/Markdown.story.mdx');
 
-const templates = path.resolve(__dirname, '..', 'resources', 'templates');
-nunjucks.configure(templates);
-const nunjucksEnvironment = new nunjucks.Environment(
-  new nunjucks.FileSystemLoader(templates)
-);
-const nunjucksRenderPromise = util.promisify(nunjucksEnvironment.render);
-const render = nunjucksRenderPromise.bind(nunjucksEnvironment);
-
-const templateStory = async (mod, name, mdContent) => {
+const templateStory = (mod, name, mdContent) => {
   const options = {
     title: `${capitalCase(mod)}/${capitalCase(name)}`,
     content: mdContent,
   };
 
-  return render('Markdown.story.mdx.njk', options)
-    .then((content) =>
-      fs.outputFile(
-        `packages/tools/storybook/tmp/${mod}/${name}.story.mdx`,
-        content
-      )
-    )
-    .catch((err) => {
-      console.log(err);
-    });
+  return fs.outputFile(
+    `packages/tools/storybook/tmp/${mod}/${name}.story.mdx`,
+    template(options)
+  );
 };
 
 module.exports = async () => {
