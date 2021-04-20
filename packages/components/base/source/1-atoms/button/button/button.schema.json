@@ -74,7 +74,8 @@
           "description": "Add icon animation on hover"
         }
       },
-      "required": ["variant"]
+      "required": ["variant"],
+      "additionalProperties": false
     }
   },
   "allOf": [
@@ -118,7 +119,8 @@
           "title": "`onclick` attribute"
         }
       },
-      "required": ["type"]
+      "required": ["type"],
+      "additionalProperties": false
     }
   ]
 }

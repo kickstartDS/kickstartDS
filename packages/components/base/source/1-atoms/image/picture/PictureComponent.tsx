@@ -2,6 +2,7 @@ import {
   FunctionComponent,
   ForwardRefRenderFunction,
   forwardRef,
+  ImgHTMLAttributes,
   createContext,
   Ref,
   useContext,
@@ -10,9 +11,10 @@ import classnames from 'classnames';
 import { PictureProps } from './PictureProps';
 import './Picture.js';
 
-type ImageProps = PictureProps & {
-  imgRef?: Ref<HTMLImageElement>;
-};
+type ImageProps = PictureProps &
+  ImgHTMLAttributes<HTMLImageElement> & {
+    imgRef?: Ref<HTMLImageElement>;
+  };
 
 const Image: FunctionComponent<ImageProps> = ({
   className,
@@ -45,7 +47,7 @@ const Image: FunctionComponent<ImageProps> = ({
 
 const PictureComponent: ForwardRefRenderFunction<
   HTMLImageElement,
-  PictureProps
+  PictureProps & ImgHTMLAttributes<HTMLImageElement>
 > = ({ sources = [], lazy = true, pictureClassName, ...props }, ref) => {
   const fallbackImage = <Image {...props} lazy={lazy} imgRef={ref} />;
 

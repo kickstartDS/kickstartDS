@@ -21,13 +21,11 @@ export type LinkButton = {
   dataComponent?: DataComponentAttribute;
   fillAnimation?: FillAnimation;
   iconAnimation?: IconAnimation;
-  [k: string]: unknown;
 } & {
   href: ButtonHref;
   newTab?: OpenLinkInNewTab;
   itemprop?: ItempropAttribute;
   ariaLabelledby?: AriaLabelledbyAttribute;
-  [k: string]: unknown;
 };
 /**
  * Text used on button

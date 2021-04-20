@@ -3,6 +3,7 @@ import {
   forwardRef,
   createContext,
   useContext,
+  AnchorHTMLAttributes,
 } from 'react';
 import classnames from 'classnames';
 import { Icon } from '../../icon';
@@ -12,7 +13,7 @@ import './link-button.scss';
 
 const LinkButtonComponent: ForwardRefRenderFunction<
   HTMLAnchorElement,
-  LinkButtonProps
+  LinkButtonProps & AnchorHTMLAttributes<HTMLAnchorElement>
 > = (
   {
     label,
