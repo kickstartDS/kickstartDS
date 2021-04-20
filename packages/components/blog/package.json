@@ -18,7 +18,9 @@
     "@babel/runtime-corejs3": "^7.13.10",
     "@kickstartds/base": "^1.0.0-alpha.2",
     "@kickstartds/core": "^1.0.0-alpha.2",
-    "date-fns": "^2.19.0",
+    "date-fns": "^2.19.0"
+  },
+  "peerDependencies": {
     "react": "^17.0.2"
   }
 }
