@@ -2,19 +2,10 @@
 const fs = require('fs-extra');
 const glob = require('fast-glob');
 const path = require('path');
-const util = require('util');
-const nunjucks = require('nunjucks');
 const { pascalCase } = require('change-case');
+const template = require('../resources/templates/Component.stories.tsx');
 
-const templates = path.resolve(__dirname, '..', 'resources', 'templates');
-nunjucks.configure(templates);
-const nunjucksEnvironment = new nunjucks.Environment(
-  new nunjucks.FileSystemLoader(templates)
-);
-const nunjucksRenderPromise = util.promisify(nunjucksEnvironment.render);
-const render = nunjucksRenderPromise.bind(nunjucksEnvironment);
-
-const templateStory = async (component, componentDir, mod) => {
+const templateStory = (component, componentDir, moduleDir) => {
   const componentLowercased = component.toLowerCase();
   const componentPascalcased = pascalCase(component);
 
@@ -22,19 +13,13 @@ const templateStory = async (component, componentDir, mod) => {
     componentDir,
     componentLowercased,
     componentPascalcased,
-    module: mod,
+    moduleDir,
   };
 
-  return render('Component.stories.tsx.njk', options)
-    .then((content) =>
-      fs.outputFile(
-        `packages/tools/storybook/tmp/${mod}/${componentPascalcased}.stories.tsx`,
-        content
-      )
-    )
-    .catch((err) => {
-      console.log('Error: ', JSON.stringify(err));
-    });
+  return fs.outputFile(
+    `packages/tools/storybook/tmp/${moduleDir}/${componentPascalcased}.stories.tsx`,
+    template(options)
+  );
 };
 
 module.exports = async () => {
