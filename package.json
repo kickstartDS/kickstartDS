@@ -11,6 +11,8 @@
     "find-licenses": "node ./scripts/license.js",
     "format": "prettier --write .",
     "git-config": "git config --local include.path ../.gitconfig",
+    "husky-commit-msg": "commitlint -E GIT_PARAMS",
+    "husky-pre-commit": "npm run schema2ts && git add packages/*/*/source/**/*Props.ts && lint-staged",
     "lint": "run-p eslint stylelint",
     "list": "lerna la",
     "postinstall": "run-p git-config copy-env-file",
@@ -21,7 +23,8 @@
     "storybook:build": "node packages/tools/storybook build",
     "storybook:debug": "node packages/tools/storybook debug",
     "storybook:generate": "node packages/tools/storybook generate",
-    "stylelint": "stylelint \"**/*.scss\""
+    "stylelint": "stylelint \"**/*.scss\"",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@lerna/project": "^4.0.0",
@@ -60,12 +63,6 @@
       "path": "node_modules/cz-conventional-changelog"
     },
     "unsafe-perm": true
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "npm run schema2ts && git add packages/*/*/source/**/*Props.ts && lint-staged"
-    }
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,md,json,scss}": "prettier --write"
