@@ -17,4 +17,5 @@ jobs:
 workflows:
   chromatic-deploy:
     jobs:
-      - chromatic-deployment
+      - chromatic-deployment:
+          context: kickstartDS
