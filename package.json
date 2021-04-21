@@ -5,7 +5,7 @@
     "build": "run-s schema2ts build-components dereference",
     "build-components": "lerna run --stream build",
     "copy-env-file": "[ ! -f .env ] && cp .env-example .env || true",
-    "chromatic": "chromatic --project-token $CHROMATIC_PROJECT_TOKEN --build-script-name 'storybook:build' --exit-zero-on-changes",
+    "chromatic": "npm run build && chromatic --project-token $CHROMATIC_PROJECT_TOKEN --build-script-name 'storybook:build' --skip '@(renovate/**|dependabot/**)' --exit-zero-on-changes",
     "dereference": "node scripts/schemaDereference.js",
     "eslint": "eslint \"**/*.{js,jsx,ts,tsx}\"",
     "find-licenses": "node ./scripts/license.js",
