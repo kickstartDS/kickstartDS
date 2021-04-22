@@ -22,7 +22,7 @@ const dereference = async (schemaPath) => {
   const schema = await schemaLoader(new $RefParser(), schemaPath);
   const dirname = path.dirname(schemaPath);
   const basename = path.basename(schemaPath, '.json');
-  const mergedSchema = merge(schema);
+  const mergedSchema = merge(schema, { ignoreAdditionalProperties: true });
   fs.writeJSON(path.join(dirname, `${basename}.dereffed.json`), mergedSchema, {
     spaces: 2,
   });

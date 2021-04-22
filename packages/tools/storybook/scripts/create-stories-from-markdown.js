@@ -7,7 +7,9 @@ const template = require('../resources/templates/Markdown.story.mdx');
 const templateStory = (mod, name, mdContent) => {
   const options = {
     title: `${capitalCase(mod)}/${capitalCase(name)}`,
-    content: mdContent,
+    content: mdContent.toString()
+      // add linebreak between `<a>`-tag and headline
+      .replace(/<\/a>(\r\n|\r|\n)#\s/g, '</a>\n\n# '),
   };
 
   return fs.outputFile(
