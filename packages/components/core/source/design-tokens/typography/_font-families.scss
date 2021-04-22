@@ -13,7 +13,7 @@ $line-height-factor-ui: 1 !default;
 $_line-heigt-factor-search-string: 'line-height-factor-';
 @mixin render($name, $value) {
   @if string.index($name, 'line-height-factor') {
-    --#{$name}: $value;
+    --#{$name}: #{$value};
   } @else {
     /*!
     * @tokens Font Families

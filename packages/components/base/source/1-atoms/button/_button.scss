@@ -3,211 +3,203 @@
 @use 'bourbon/core/bourbon';
 @use 'settings/base';
 
+:root {
+  /* critical:start */
+  --c-button--padding: 0.4rem 1.3rem 0.35rem;
+  --c-button--border-color: transparent;
+  --c-button--border-width: 0;
+  --c-button--border-radius: 3px;
+  --c-button--color: var(--color-primary);
+  --c-button--background-color: transparent;
+  --c-button-transform-active: scale(0.95);
+  /* critical:end */
+}
+
 .button {
   /* critical:start */
-  @include button.btn-default;
+  &--clear {
+    --c-button--color-hover: var(--color-primary-darker-1);
+    --c-button--color-active: var(--color-primary-darker-2);
+    --c-button--background-color-hover: var(--color-primary-alpha-2);
+    --c-button--background-color-active: var(--color-primary-alpha-3);
+    --c-button_fill-animation--background-color-hover: var(--c-button--color);
+    --c-button_fill-animation--color-hover: var(--color-white);
+  }
+
+  &--clear-inverted {
+    --c-button--color: var(--color-white);
+    --c-button--background-color-hover: var(--color-white-alpha-2);
+    --c-button--background-color-active: var(--color-white-alpha-3);
+    --c-button_fill-animation--background-color-hover: var(--c-button--color);
+    --c-button_fill-animation--color-hover: var(--color-primary);
+  }
+
+  &--solid {
+    --c-button--color: var(--color-white);
+    --c-button--background-color: var(--color-primary);
+    --c-button--background-color-hover: var(--color-primary-lighter-2);
+    --c-button--background-color-active: var(--color-primary-lighter-3);
+    --c-button_fill-animation--background-color-hover: var(--c-button--color);
+    --c-button_fill-animation--color-hover: var(--color-primary);
+  }
+
+  &--solid-inverted {
+    --c-button--color: var(--color-primary-darker-1);
+    --c-button--color-hover: var(--color-primary-darker-2);
+    --c-button--background-color: var(--color-white);
+    --c-button--background-color-hover: var(--color-primary-lighter-8);
+    --c-button--background-color-active: var(--color-primary-lighter-7);
+    --c-button_fill-animation--background-color-hover: var(--c-button--color);
+    --c-button_fill-animation--color-hover: var(--color-white);
+  }
+
+  &--outline {
+    --c-button--border-width: 1px;
+    --c-button--border-color: var(--color-primary);
+    --c-button--color-hover: var(--color-primary-darker-1);
+    --c-button--color-active: var(--color-primary-darker-2);
+    --c-button--background-color-hover: var(--color-primary-alpha-2);
+    --c-button--background-color-active: var(--color-primary-alpha-3);
+    --c-button_fill-animation--background-color-hover: var(--c-button--color);
+    --c-button_fill-animation--color-hover: var(--color-white);
+  }
+
+  &--outline-inverted {
+    --c-button--border-width: 1px;
+    --c-button--color: var(--color-white);
+    --c-button--border-color: var(--c-button--color);
+    --c-button--background-color-hover: var(--color-white-alpha-2);
+    --c-button--background-color-active: var(--color-white-alpha-3);
+    --c-button_fill-animation--background-color-hover: var(--c-button--color);
+    --c-button_fill-animation--color-hover: var(--color-primary);
+  }
   /* critical:end */
+}
+
+.button {
+  /* critical:start */
+  @include button.button-reset(
+    $skip: (
+      'background',
+      'border',
+      'color',
+      'font',
+      'line-height',
+      'padding',
+      'text-align',
+    )
+  );
+  display: inline-flex;
+  justify-content: center;
+  padding: var(--c-button--padding);
+  border: var(--c-button--border-width) solid var(--c-button--border-color);
+  border-radius: var(--c-button--border-radius);
+  font: var(--font-ui-m);
+  text-align: center;
+  transition-duration: 0.12s;
+  transition-property: background, color, border, transform, padding;
+  user-select: none;
+  vertical-align: middle;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: var(--c-button--color);
+  background-color: var(--c-button--background-color);
+  /* critical:end */
+
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+
+  &:hover,
+  &:focus {
+    color: var(--c-button--color-hover, var(--c-button--color));
+    background-color: var(
+      --c-button--background-color-hover,
+      var(--c-button--background-color)
+    );
+    border-color: var(
+      --c-button--border-color-hover,
+      var(--c-button--border-color)
+    );
+    text-decoration: none;
+  }
+
+  &:active:not(:disabled) {
+    color: var(
+      --c-button--color-active,
+      var(--c-button--color-hover, var(--c-button--color))
+    );
+    background-color: var(
+      --c-button--background-color-active,
+      var(--c-button--background-color-hover, var(--c-button--background-color))
+    );
+    border-color: var(
+      --c-button--border-color-active,
+      var(--c-button--border-color-hover, var(--c-button--border-color))
+    );
+    transform: var(--c-button-transform-active);
+  }
+
+  &:disabled {
+    box-shadow: none;
+    opacity: 0.5;
+  }
+
+  &--fill-animation {
+    background: linear-gradient(
+        to right,
+        var(--c-button_fill-animation--background-color-hover) 50%,
+        var(--c-button--background-color) 50%
+      )
+      no-repeat;
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: 0.24s ease-out;
+
+    &:focus,
+    &:hover {
+      color: var(--c-button_fill-animation--color-hover);
+      background-position: left bottom;
+      background-color: var(--c-button--background-color);
+      border-color: var(--c-button_fill-animation--background-color-hover);
+    }
+  }
 
   @include breakpoint.media('print') {
     display: none;
   }
 
-  .icon {
-    /* critical:start */
-    @include bourbon.size(base.$button__line-height * 1em);
-
-    margin: 0 0.5rem;
-
-    &:first-child {
-      margin-left: 0;
-    }
-
-    &:last-child {
-      margin-right: 0;
-    }
-    /* critical:end */
-  }
-
-  &--clear {
-    /* critical:start */
-    @include button.button--clear;
-    /* critical:end */
-
-    &.button--fill-animation {
-      @include button.btn-animate(
-        base.$button__clear-color,
-        base.$color-white,
-        base.$button__clear-color
-      );
-    }
-  }
-
+  &--clear,
   &--clear-inverted {
     /* critical:start */
-    @include button.btn-style(
-      $text-color: base.$button__clear-inverted-color,
-      $bg-color: base.$button__clear-inverted-bg-color,
-      $border-color: base.$button__clear-inverted-border-color,
-      $text-color-hover: base.$button__clear-inverted-color-hover,
-      $bg-color-hover: base.$button__clear-inverted-bg-color-hover,
-      $border-color-hover: base.$button__clear-inverted-border-color-hover,
-      $text-color-active: base.$button__clear-inverted-color-active,
-      $bg-color-active: base.$button__clear-inverted-bg-color-active,
-      $border-color-active: base.$button__clear-inverted-border-color-active
-    );
     padding-left: 0;
     /* critical:end */
 
     &:focus,
     &:hover {
-      padding: base.$button__padding;
-    }
-
-    &.button--fill-animation {
-      @include button.btn-animate(
-        base.$color-white,
-        base.$color-brand,
-        base.$color-white
-      );
-    }
-  }
-
-  &--solid {
-    /* critical:start */
-    @include button.btn-style(
-      $text-color: base.$button__solid-color,
-      $bg-color: base.$button__solid-bg-color,
-      $border-color: base.$button__solid-border-color,
-      $text-color-hover: base.$button__solid-color-hover,
-      $bg-color-hover: base.$button__solid-bg-color-hover,
-      $border-color-hover: base.$button__solid-border-color-hover,
-      $text-color-active: base.$button__solid-color-active,
-      $bg-color-active: base.$button__solid-bg-color-active,
-      $border-color-active: base.$button__solid-border-color-active
-    );
-    /* critical:end */
-
-    &.button--fill-animation {
-      @include button.btn-animate(
-        base.$button__solid-color,
-        base.$button__solid-bg-color,
-        base.$button__solid-border-color
-      );
-    }
-  }
-
-  &--solid-inverted {
-    /* critical:start */
-    @include button.button--solid-inverted;
-    /* critical:end */
-
-    &.button--fill-animation {
-      @include button.btn-animate(
-        base.$button__solid-inverted-color,
-        base.$color-white,
-        base.$button__solid-inverted-border-color
-      );
-    }
-  }
-
-  &--outline {
-    /* critical:start */
-    @include button.btn-style(
-      $text-color: base.$button__outline-color,
-      $bg-color: base.$button__outline-bg-color,
-      $border-color: base.$button__outline-border-color,
-      $text-color-hover: base.$button__outline-color-hover,
-      $bg-color-hover: base.$button__outline-bg-color-hover,
-      $border-color-hover: base.$button__outline-border-color-hover,
-      $text-color-active: base.$button__outline-color-active,
-      $bg-color-active: base.$button__outline-bg-color-active,
-      $border-color-active: base.$button__outline-border-color-active
-    );
-    border-width: base.$button__border-width;
-    border-style: solid;
-    /* critical:end */
-
-    &.button--fill-animation {
-      @include button.btn-animate(
-        base.$button__outline-color,
-        base.$color-white,
-        base.$button__outline-color
-      );
-    }
-  }
-
-  &--outline-inverted {
-    /* critical:start */
-    @include button.btn-style(
-      $text-color: base.$button__outline-inverted-color,
-      $bg-color: base.$button__outline-inverted-bg-color,
-      $border-color: base.$button__outline-inverted-border-color,
-      $text-color-hover: base.$button__outline-inverted-color-hover,
-      $bg-color-hover: base.$button__outline-inverted-bg-color-hover,
-      $border-color-hover: base.$button__outline-inverted-border-color-hover,
-      $text-color-active: base.$button__outline-inverted-color-active,
-      $bg-color-active: base.$button__outline-inverted-bg-color-active,
-      $border-color-active: base.$button__outline-inverted-border-color-active
-    );
-    border-width: base.$button__border-width;
-    border-style: solid;
-    /* critical:end */
-
-    &.button--fill-animation {
-      @include button.btn-animate(
-        base.$color-white,
-        base.$color-brand,
-        base.$color-white
-      );
-    }
-  }
-
-  &--is-loading,
-  &--is-successful {
-    display: inline-block;
-    padding-left: 0;
-    padding-right: 0;
-
-    span {
-      height: 0;
-      visibility: hidden;
-    }
-  }
-
-  &--is-loading {
-    cursor: progress;
-
-    &::after {
-      @include bourbon.size(1.3em); // = default button line-height
-
-      content: '';
-      display: block;
-      animation: btnSpinner 1.5s infinite 0.1s linear;
-      border-radius: 50%;
-      background-color: transparent;
-      border: 2px solid base.$button__solid-color;
-      border-top-color: transparent;
-      opacity: 1;
-    }
-  }
-
-  &--is-successful {
-    &::after {
-      content: '✓';
-      transform: scale(2);
-      opacity: 1;
+      padding: var(--c-button--padding);
     }
   }
 
   &--small {
     /* critical:start */
-    @include button.button--small;
+    --c-button--padding: 0.4rem 1rem 0.45rem;
+    font: var(--font-ui-s);
+
+    .icon {
+      @include bourbon.size(var(--line-height-s));
+    }
     /* critical:end */
   }
 
   &--large {
     /* critical:start */
-    @include button.button--large;
+    --c-button--padding: 0.45rem 1.7rem 0.5rem;
+    font: var(--font-ui-l);
+
+    .icon {
+      @include bourbon.size(var(--line-height-l));
+    }
     /* critical:end */
   }
 
@@ -216,6 +208,26 @@
       .icon {
         animation: hover-effect 0.6s;
       }
+    }
+  }
+
+  .icon {
+    /* critical:start */
+    @include bourbon.size(var(--line-height-m));
+
+    margin: 0 0.5rem;
+    /* critical:end */
+
+    &:first-child {
+      /* critical:start */
+      margin-left: 0;
+      /* critical:end */
+    }
+
+    &:last-child {
+      /* critical:start */
+      margin-right: 0;
+      /* critical:end */
     }
   }
 }
