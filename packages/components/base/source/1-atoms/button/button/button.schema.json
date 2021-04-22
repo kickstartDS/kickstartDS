@@ -51,12 +51,6 @@
           "description": "Display Button icon after text",
           "default": false
         },
-        "id": {
-          "type": "string",
-          "title": "ID",
-          "description": "ID",
-          "default": ""
-        },
         "dataComponent": {
           "type": "string",
           "title": "`data-component` Attribute"

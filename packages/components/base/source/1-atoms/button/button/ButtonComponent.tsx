@@ -3,28 +3,26 @@ import {
   forwardRef,
   createContext,
   useContext,
-  AnchorHTMLAttributes,
+  ButtonHTMLAttributes,
 } from 'react';
 import classnames from 'classnames';
 import { Icon } from '../../icon';
-import { Link } from '../../link';
-import { LinkButtonProps } from './LinkButtonProps';
-import '../button/button.scss';
+import { ButtonProps } from './ButtonProps';
+import './button.scss';
 
-const LinkButtonComponent: ForwardRefRenderFunction<
-  HTMLAnchorElement,
-  LinkButtonProps & AnchorHTMLAttributes<HTMLAnchorElement>
+const ButtonComponent: ForwardRefRenderFunction<
+  HTMLButtonElement,
+  ButtonProps & ButtonHTMLAttributes<HTMLButtonElement>
 > = (
   {
     label,
-    href,
+    type = 'button',
     variant = 'solid',
     size,
     className,
     fillAnimation,
     iconAnimation,
     dataComponent,
-    newTab,
     icon,
     iconBefore,
     iconAfter,
@@ -32,8 +30,8 @@ const LinkButtonComponent: ForwardRefRenderFunction<
   },
   ref
 ) => (
-  <Link
-    href={href}
+  <button
+    type={type}
     className={classnames(
       'button',
       `button--${variant}`,
@@ -46,7 +44,6 @@ const LinkButtonComponent: ForwardRefRenderFunction<
       className
     )}
     data-component={dataComponent}
-    {...(newTab ? { target: '_blank', rel: 'noopener' } : {})}
     ref={ref}
     {...props}
   >
@@ -61,14 +58,14 @@ const LinkButtonComponent: ForwardRefRenderFunction<
     ) : (
       ''
     )}
-  </Link>
+  </button>
 );
 
-export const LinkButtonContextDefault = forwardRef(LinkButtonComponent);
-export const LinkButtonContext = createContext(LinkButtonContextDefault);
-export const LinkButton: typeof LinkButtonContextDefault = forwardRef(
+export const ButtonContextDefault = forwardRef(ButtonComponent);
+export const ButtonContext = createContext(ButtonContextDefault);
+export const Button: typeof ButtonContextDefault = forwardRef(
   (props, ref) => {
-    const Component = useContext(LinkButtonContext);
+    const Component = useContext(ButtonContext);
     return <Component {...props} ref={ref} />;
   }
 );

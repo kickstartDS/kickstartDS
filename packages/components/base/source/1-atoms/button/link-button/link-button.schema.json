@@ -21,14 +21,6 @@
           "title": "Open link in new Tab",
           "description": "Open link in new Tab",
           "default": false
-        },
-        "itemprop": {
-          "type": "string",
-          "title": "`itemprop` Attribute"
-        },
-        "ariaLabelledby": {
-          "type": "string",
-          "title": "`aria-labelledby` Attribute"
         }
       },
       "required": ["href"],

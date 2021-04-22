@@ -65,15 +65,12 @@ export type Link = {
   icon?: Icon;
   iconBefore?: ButtonIconBefore;
   iconAfter?: ButtonIconAfter;
-  id?: ID;
   dataComponent?: DataComponentAttribute;
   fillAnimation?: FillAnimation;
   iconAnimation?: IconAnimation;
 } & {
   href: ButtonHref;
   newTab?: OpenLinkInNewTab;
-  itemprop?: ItempropAttribute;
-  ariaLabelledby?: AriaLabelledbyAttribute;
 };
 /**
  * Text used on button
@@ -99,10 +96,6 @@ export type ButtonIconBefore = boolean;
  * Display Button icon after text
  */
 export type ButtonIconAfter = boolean;
-/**
- * ID
- */
-export type ID = string;
 export type DataComponentAttribute = string;
 /**
  * Add fill animation on hover
@@ -120,8 +113,6 @@ export type ButtonHref = string;
  * Open link in new Tab
  */
 export type OpenLinkInNewTab = boolean;
-export type ItempropAttribute = string;
-export type AriaLabelledbyAttribute = string;
 /**
  * The text box is aligned inside the content grid
  */

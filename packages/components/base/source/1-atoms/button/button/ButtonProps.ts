@@ -41,10 +41,6 @@ export type ButtonIconBefore = boolean;
  * Display Button icon after text
  */
 export type ButtonIconAfter = boolean;
-/**
- * ID
- */
-export type ID = string;
 export type DataComponentAttribute = string;
 /**
  * Add fill animation on hover
@@ -70,7 +66,6 @@ export interface Button {
   icon?: Icon;
   iconBefore?: ButtonIconBefore;
   iconAfter?: ButtonIconAfter;
-  id?: ID;
   dataComponent?: DataComponentAttribute;
   fillAnimation?: FillAnimation;
   iconAnimation?: IconAnimation;
