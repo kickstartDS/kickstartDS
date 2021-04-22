@@ -2,7 +2,6 @@
 @use '@kickstartds/base/source/0-base/1-tools/scss/helpers';
 @use '@kickstartds/base/source/0-base/1-tools/scss/sizes';
 @use '@kickstartds/base/source/0-base/1-tools/scss/breakpoint';
-@use 'settings/base';
 @use 'settings/global';
 @use 'settings/visuals';
 @use 'sass:meta';
@@ -19,13 +18,13 @@
   padding-top: 1.5em;
   padding-bottom: 1.5em;
   border: visuals.$box__border;
-  background: visuals.$box__dark-background;
-  color: visuals.$box__dark-text-color;
+  background: var(--color-primary-alpha-8);
+  color: var(--color-white);
   /* critical:end */
 
   .visual__topic {
     /* critical:start */
-    color: visuals.$box__dark-topic-color;
+    color: var(--color-white);
     /* critical:end */
   }
 
@@ -74,13 +73,13 @@
     .visual__content--inbox &,
     .visual__content:only-child & {
       /* critical:start */
-      background: visuals.$box__light-background;
-      color: visuals.$box__light-text-color;
+      background: var(--color-white-alpha-9);
+      color: var(--color-primary);
       /* critical:end */
 
       .visual__topic {
         /* critical:start */
-        color: visuals.$box__light-topic-color;
+        color: var(--color-primary);
         /* critical:end */
       }
     }
@@ -107,13 +106,13 @@
 
   @include breakpoint.media('print') {
     background-color: transparent;
-    border: 2px solid base.$color-black-25;
+    border: 2px solid var(--color-grey-3);
     margin: 1cm 0;
     width: auto;
 
     &,
     a {
-      color: base.$color-black;
+      color: var(--color-black);
     }
   }
 }

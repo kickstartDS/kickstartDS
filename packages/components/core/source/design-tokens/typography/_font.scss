@@ -1,0 +1,9 @@
+@mixin render {
+  @each $style in (display, copy, ui) {
+    @each $scale in (xs, s, l, m, xl, xxl) {
+      --font-#{$style}-#{$scale}: var(--font-size-#{$scale}) /
+        calc(var(--line-height-#{$scale}) * var(--line-height-factor-#{$style}))
+        var(--font-family-#{$style});
+    }
+  }
+}

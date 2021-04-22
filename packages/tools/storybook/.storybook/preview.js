@@ -7,11 +7,11 @@ import { DocsContainer } from './components/DocContainer';
 
 import '../../../components/base/lib/global/base.js';
 import '../../../components/base/lib/global/base.css';
-import '../../../components/base/lib/global/design-tokens.css';
+import '../../../components/core/lib/design-tokens/tokens.css';
 
 // TODO this probably needs to be done differently in the future (no more -instance), and in instances right now
 const tokenContextComponents = require.context(
-  '!!raw-loader!../../../components/base/lib/global/',
+  '!!raw-loader!../../../components/core/lib/design-tokens/',
   true,
   /.\.(css)$/
 );
@@ -24,16 +24,6 @@ const tokenFilesComponents = tokenContextComponents
       content: tokenContextComponents(filename).default,
     };
   });
-
-// const tokenContextTmp = require.context(
-//   '!!raw-loader!../tmp/',
-//   true,
-//   /.\.(svg)$/
-// );
-
-// const tokenFilesTmp = tokenContextTmp.keys().map(function (filename) {
-//   return { filename: filename, content: tokenContextTmp(filename).default };
-// });
 
 const tokenContextIcons = require.context(
   '!!raw-loader!../../../../legacy-instance/icons',
@@ -78,7 +68,7 @@ export const parameters = {
     light: { ...themes.normal },
     stylePreview: true,
   },
-  designToken: {
-    files: tokenFiles,
-  },
+  // designToken: {
+  //   files: tokenFiles,
+  // },
 };

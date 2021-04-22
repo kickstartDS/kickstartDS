@@ -229,24 +229,6 @@
   }
 }
 
-// TODO: move this to deals module
-.button--deals {
-  border: 1px solid #fff;
-  background: transparent;
-  color: #fff;
-  box-shadow: 0 0 15px rgba(base.$color-black, 0.4);
-
-  &.button--without_box-shadow {
-    box-shadow: none;
-  }
-
-  &:hover {
-    background: transparent;
-    opacity: 0.8;
-    border: 1px solid #fff;
-  }
-}
-
 @keyframes hover-effect {
   0% {
     transform: translateX(0);

@@ -17,7 +17,7 @@ module.exports = {
     '@storybook/addon-actions',
     '@whitespace/storybook-addon-html',
     'storybook-dark-mode',
-    'storybook-design-token',
+    // 'storybook-design-token',
   ],
   webpackFinal: async (config, { configType }) => {
     // `configType` has a value of 'DEVELOPMENT' or 'PRODUCTION'

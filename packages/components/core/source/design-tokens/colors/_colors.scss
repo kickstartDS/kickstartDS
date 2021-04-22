@@ -1,0 +1,66 @@
+@use 'sass:meta';
+@use 'sass:color';
+@use 'sass:string';
+@use './helpers';
+
+$_primary: #333333 !default;
+$_white: #fff !default;
+$_black: color.mix(black, $_primary, 90%) !default;
+
+$brand--primary: $_primary !default;
+$brand--primary-alpha: helpers.alpha($brand--primary) !default;
+$brand--primary-lighter: helpers.mix($_white, $brand--primary) !default;
+$brand--primary-darker: helpers.mix($_black, $brand--primary) !default;
+
+$brand--secondary: #999999 !default;
+
+$shades--white: $_white !default;
+$shades--white-alpha: helpers.alpha($shades--white) !default;
+
+$shades--black: $_black !default;
+$shades--black-alpha: helpers.alpha($shades--black) !default;
+
+$shades--grey: helpers.mix($shades--black, $shades--white) !default;
+
+$functional--info: #3ca8ff !default;
+$functional--success: #8dc63f !default;
+$functional--warning: #ffc103 !default;
+$functional--error: #e60201 !default;
+
+@mixin cp($name, $value, $category) {
+  @if meta.type-of($value) == 'map' {
+    @each $modifier, $val in $value {
+      @include cp($name + '-' + $modifier, $val, $category);
+    }
+  } @else {
+    @if $category == 'brand' {
+      /*!
+       * @tokens Colors: Brand
+       * @presenter Color
+       */
+    } @else if $category == 'shades' {
+      /*!
+       * @tokens Colors: Shades
+       * @presenter Color
+       */
+    } @else if $category == 'functional' {
+      /*!
+       * @tokens Colors: Functional
+       * @presenter Color
+       */
+    } @else {
+      /*!
+       * @tokens Colors: Misc
+       * @presenter Color
+       */
+    }
+    --color-#{$name}: #{$value};
+  }
+}
+
+@mixin render($name, $value) {
+  $i: string.index($name, '--');
+  $category: string.slice($name, 0, $i - 1);
+  $prop: string.slice($name, $i + 2, string.length($name));
+  @include cp($prop, $value, $category);
+}
