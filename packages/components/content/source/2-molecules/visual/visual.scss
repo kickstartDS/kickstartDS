@@ -2,7 +2,7 @@
 @use '@kickstartds/base/source/0-base/1-tools/scss/grid';
 @use '@kickstartds/base/source/0-base/1-tools/scss/helpers';
 @use '@kickstartds/base/source/0-base/1-tools/scss/sizes';
-@use '@kickstartds/base/source/0-base/1-tools/scss/breakpoint';
+@use '@kickstartds/core/source/core/breakpoint';
 @use 'settings/base';
 @use 'settings/global';
 @use 'settings/visuals';
@@ -92,19 +92,19 @@
       /* critical:end */
     }
 
-    @include breakpoint.media('≥nav-main') {
-      /* critical:start */
-      height: calc(100vh - #{base.header__height(nav-main)});
-      /* critical:end */
+    // @include breakpoint.media('≥nav-main') {
+    //   /* critical:start */
+    //   height: calc(100vh - #{base.header__height(nav-main)});
+    //   /* critical:end */
 
-      .transparent-header & {
-        height: 100vh;
-      }
+    //   .transparent-header & {
+    //     height: 100vh;
+    //   }
 
-      #{selector.$header--scrolling} & ~ & {
-        height: calc(100vh - #{base.header__height(nav-main--scrolling)});
-      }
-    }
+    //   #{selector.$header--scrolling} & ~ & {
+    //     height: calc(100vh - #{base.header__height(nav-main--scrolling)});
+    //   }
+    // }
   }
 
   &--no-crop {
@@ -113,28 +113,28 @@
     /* critical:end */
   }
 
-  .transparent-header .page-intro &:first-child {
-    @include breakpoint.media('≥nav-main') {
-      /* critical:start */
-      @include pull-up(visuals.$min-height-m, base.header__height(nav-main));
-      /* critical:end */
+  // .transparent-header .page-intro &:first-child {
+  //   @include breakpoint.media('≥nav-main') {
+  //     /* critical:start */
+  //     @include pull-up(visuals.$min-height-m, base.header__height(nav-main));
+  //     /* critical:end */
 
-      &.visual--small {
-        /* critical:start */
-        @include pull-up(
-          visuals.$min-height-small-m,
-          base.header__height(nav-main)
-        );
-        /* critical:end */
-      }
+  //     &.visual--small {
+  //       /* critical:start */
+  //       @include pull-up(
+  //         visuals.$min-height-small-m,
+  //         base.header__height(nav-main)
+  //       );
+  //       /* critical:end */
+  //     }
 
-      .visual__content {
-        /* critical:start */
-        padding-top: global.$padding-m + base.header__height(nav-main);
-        /* critical:end */
-      }
-    }
-  }
+  //     .visual__content {
+  //       /* critical:start */
+  //       padding-top: global.$padding-m + base.header__height(nav-main);
+  //       /* critical:end */
+  //     }
+  //   }
+  // }
 
   &__image {
     @include visual__image.visual-image;

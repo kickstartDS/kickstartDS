@@ -1,6 +1,6 @@
 @use 'sass:meta';
 @use 'sass:string';
-@use '../../../../../../node_modules/bourbon/core/bourbon';
+@use 'bourbon/core/bourbon';
 
 $display: bourbon.$font-stack-garamond !default;
 $copy: bourbon.$font-stack-helvetica !default;

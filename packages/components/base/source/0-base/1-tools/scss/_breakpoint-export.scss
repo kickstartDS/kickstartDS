@@ -1,5 +1,4 @@
-@use './breakpoint';
-@use 'settings/global';
+@use '@kickstartds/core/source/core/breakpoint';
 
 ///
 /// Generates a JSON string with each breakpoint's value and information about
@@ -14,9 +13,9 @@
 ///
 @function im-breakpoints-to-json($target-name) {
   $breakpoints-json: ();
-  $target-value: map-get(global.$breakpoints, $target-name) or 0;
+  $target-value: map-get(breakpoint.$breakpoints, $target-name) or 0;
 
-  @each $name, $value in global.$breakpoints {
+  @each $name, $value in breakpoint.$breakpoints {
     $breakpoint: '"#{$name}":{"value": "#{$value}", "active": #{$target-value >= $value}}';
     $breakpoints-json: append($breakpoints-json, $breakpoint, 'comma');
   }
@@ -37,7 +36,7 @@
     width: 0;
     content: im-breakpoints-to-json(0);
   }
-  @each $name, $value in global.$breakpoints {
+  @each $name, $value in breakpoint.$breakpoints {
     @include breakpoint.media('>=#{$name}') {
       #{$element} {
         content: im-breakpoints-to-json($name);

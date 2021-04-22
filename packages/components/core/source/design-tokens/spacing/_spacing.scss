@@ -1,5 +1,5 @@
 @use 'sass:meta';
-@use '../breakpoints/breakpoints';
+@use '../../core/breakpoint';
 
 $_xxs: 0.125rem !default;
 $_xs: 0.25rem !default;
@@ -25,7 +25,7 @@ $xl: _responsive($_xl) !default;
       @if $bp == 'xs' {
         @include cp($name, $val);
       } @else {
-        @include breakpoints.media($bp) {
+        @include breakpoint.media('≥#{$bp}') {
           @include cp($name, $val, $bp);
         }
       }

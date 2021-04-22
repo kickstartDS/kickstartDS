@@ -1,6 +1,6 @@
 @use '../../0-base/1-tools/scss/aspect-ratio';
 @use '../../0-base/1-tools/scss/helpers';
-@use '../../0-base/1-tools/scss/breakpoint';
+@use '@kickstartds/core/source/core/breakpoint';
 @use 'bourbon/core/bourbon';
 
 .text-media {

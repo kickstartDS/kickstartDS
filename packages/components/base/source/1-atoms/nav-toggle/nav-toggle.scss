@@ -1,7 +1,7 @@
 @use '../../0-base/0-settings/selector';
 @use '../../0-base/1-tools/scss/helpers';
 @use '../../0-base/1-tools/scss/sizes';
-@use '../../0-base/1-tools/scss/breakpoint';
+@use '@kickstartds/core/source/core/breakpoint';
 @use 'bourbon/core/bourbon';
 @use 'settings/base';
 @use 'settings/global';
@@ -33,11 +33,11 @@
     }
   }
 
-  @include breakpoint.media('≥nav-main') {
-    /* critical:start */
-    display: none;
-    /* critical:end */
-  }
+  // @include breakpoint.media('≥nav-main') {
+  //   /* critical:start */
+  //   display: none;
+  //   /* critical:end */
+  // }
 
   &__label {
     /* critical:start */

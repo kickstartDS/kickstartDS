@@ -1,5 +1,5 @@
 @use 'sass:meta';
-@use '../breakpoints/breakpoints';
+@use '../../core/breakpoint';
 
 $xs: (
   xs: 0.75rem,
@@ -39,7 +39,7 @@ $xxl: (
       @if $bp == 'xs' {
         @include cp($name, $val);
       } @else {
-        @include breakpoints.media($bp) {
+        @include breakpoint.media('≥#{$bp}') {
           @include cp($name, $val, $bp);
         }
       }

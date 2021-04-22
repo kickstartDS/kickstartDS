@@ -1,23 +1,23 @@
-@use '../../0-base/1-tools/scss/breakpoint';
+@use '@kickstartds/core/source/core/breakpoint';
 @use '../../0-base/0-settings/selector';
 @use 'settings/base';
 @use 'settings/global';
 
-#{selector.$header--sidebar} {
-  @include breakpoint.media('≥nav-main') {
-    /* critical:start */
-    position: relative;
-    /* critical:end */
-  }
+// #{selector.$header--sidebar} {
+//   @include breakpoint.media('≥nav-main') {
+//     /* critical:start */
+//     position: relative;
+//     /* critical:end */
+//   }
 
-  .logo-main-wrap {
-    @include breakpoint.media('≥nav-main') {
-      /* critical:start */
-      visibility: hidden;
-      /* critical:end */
-    }
-  }
-}
+//   .logo-main-wrap {
+//     @include breakpoint.media('≥nav-main') {
+//       /* critical:start */
+//       visibility: hidden;
+//       /* critical:end */
+//     }
+//   }
+// }
 
 /* critical:start */
 .main-header-sidebar-spacer {
@@ -27,8 +27,8 @@
     height: base.header__height(s);
   }
 
-  @include breakpoint.media('≥nav-main') {
-    height: 0;
-  }
+  // @include breakpoint.media('≥nav-main') {
+  //   height: 0;
+  // }
 }
 /* critical:end */

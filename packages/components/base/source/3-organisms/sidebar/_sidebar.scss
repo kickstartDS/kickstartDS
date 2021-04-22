@@ -1,4 +1,4 @@
-@use '../../0-base/1-tools/scss/breakpoint';
+@use '@kickstartds/core/source/core/breakpoint';
 @use 'settings/base';
 @use 'settings/global';
 
@@ -19,19 +19,19 @@
     flex-shrink: 0;
     box-shadow: base.$sidebar__box-shadow;
 
-    @include breakpoint.media('<nav-main') {
-      position: fixed;
-      height: 100vh;
-    }
+    // @include breakpoint.media('<nav-main') {
+    //   position: fixed;
+    //   height: 100vh;
+    // }
 
     @include breakpoint.media('≥s') {
       width: base.$sidebar__width-tablet;
     }
 
-    @include breakpoint.media('≥nav-main') {
-      width: base.$sidebar__width--smaller;
-      left: 0;
-    }
+    // @include breakpoint.media('≥nav-main') {
+    //   width: base.$sidebar__width--smaller;
+    //   left: 0;
+    // }
 
     @include breakpoint.media('≥87.5em') {
       width: base.$sidebar__width;
@@ -89,13 +89,13 @@
     min-height: 100vh;
     width: 100%;
 
-    @include breakpoint.media('≥nav-main') {
-      min-width: calc(100% - #{base.$sidebar__width--smaller});
-    }
+    // @include breakpoint.media('≥nav-main') {
+    //   min-width: calc(100% - #{base.$sidebar__width--smaller});
+    // }
 
-    @include breakpoint.media('≥87.5em') {
-      min-width: calc(100% - #{base.$sidebar__width});
-    }
+    // @include breakpoint.media('≥87.5em') {
+    //   min-width: calc(100% - #{base.$sidebar__width});
+    // }
   }
 }
 
