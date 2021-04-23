@@ -1,7 +1,7 @@
 @use '../../../0-base/1-tools/scss/grid';
 @use '../../../0-base/1-tools/scss/helpers';
 @use '../../../0-base/1-tools/scss/sizes';
-@use '../../../0-base/1-tools/scss/breakpoint';
+@use '@kickstartds/core/source/core/breakpoint';
 @use '../../../0-base/0-settings/selector';
 @use 'bourbon/core/bourbon';
 @use 'settings/base';
@@ -23,29 +23,29 @@
     #{selector.$header--variant-1} & {
       background-color: base.$nav-meta__background;
 
-      .transparent-header & {
-        @include breakpoint.media('≥nav-main') {
-          background-color: base.$nav-meta__background-transparent;
-        }
-      }
+      // .transparent-header & {
+      //   @include breakpoint.media('≥nav-main') {
+      //     background-color: base.$nav-meta__background-transparent;
+      //   }
+      // }
     }
 
     #{selector.$header--variant-2} & {
       background-color: transparent;
     }
 
-    @include breakpoint.media('≥nav-main') {
-      display: none;
-      background-color: transparent;
-    }
+    // @include breakpoint.media('≥nav-main') {
+    //   display: none;
+    //   background-color: transparent;
+    // }
 
     #{selector.$header--sidebar} &,
     #{selector.$header--variant-2} & {
       width: 100%;
 
-      @include breakpoint.media('≥nav-main') {
-        width: auto;
-      }
+      // @include breakpoint.media('≥nav-main') {
+      //   width: auto;
+      // }
     }
   }
 
@@ -75,14 +75,14 @@
       /* critical:end */
     }
 
-    #{selector.$header--sidebar} &,
-    #{selector.$header--variant-2} & {
-      @include breakpoint.media('≥nav-main') {
-        max-width: none;
-        padding: 0;
-        margin-right: -0.8em;
-      }
-    }
+    // #{selector.$header--sidebar} &,
+    // #{selector.$header--variant-2} & {
+    //   @include breakpoint.media('≥nav-main') {
+    //     max-width: none;
+    //     padding: 0;
+    //     margin-right: -0.8em;
+    //   }
+    // }
 
     &__item {
       /* critical:start */

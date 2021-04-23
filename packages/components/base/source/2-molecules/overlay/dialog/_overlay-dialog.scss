@@ -1,6 +1,6 @@
 @use 'settings/base';
 @use 'bourbon/core/bourbon';
-@use '../../../0-base/1-tools/scss/breakpoint';
+@use '@kickstartds/core/source/core/breakpoint';
 
 .overlay-dialog {
   position: relative;

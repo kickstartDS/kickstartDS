@@ -1,0 +1,36 @@
+@use 'sass:meta';
+@use './colors/colors';
+@use './spacing/spacing';
+@use './typography/font-weights';
+@use './typography/font-families';
+@use './typography/font-sizes';
+@use './typography/line-heights';
+@use './typography/font';
+
+:root {
+  @each $name, $value in meta.module-variables(colors) {
+    @include colors.render($name, $value);
+  }
+
+  @each $name, $value in meta.module-variables(spacing) {
+    @include spacing.render($name, $value);
+  }
+
+  @each $name, $value in meta.module-variables(font-weights) {
+    @include font-weights.render($name, $value);
+  }
+
+  @each $name, $value in meta.module-variables(font-families) {
+    @include font-families.render($name, $value);
+  }
+
+  @each $name, $value in meta.module-variables(font-sizes) {
+    @include font-sizes.render($name, $value);
+  }
+
+  @each $name, $value in meta.module-variables(line-heights) {
+    @include line-heights.render($name, $value);
+  }
+
+  @include font.render;
+}

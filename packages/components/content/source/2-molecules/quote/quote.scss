@@ -1,77 +1,63 @@
 @use '@kickstartds/base/source/0-base/1-tools/scss/helpers';
-@use '@kickstartds/base/source/0-base/1-tools/scss/breakpoint';
-@use 'settings/quotes';
+@use '@kickstartds/core/source/core/breakpoint';
+
+:root {
+  --c-quote--align: normal;
+  --c-quote_image--max-width: 20%;
+  --c-quote_content--pad-left: 2rem;
+  --c-quote_icon--font-size: 2.5rem;
+
+  @include breakpoint.media('≥m') {
+    --c-quote-align: center;
+    --c-quote_image--max-width: 30%;
+    --c-quote_content--pad-left: 4rem;
+    --c-quote_icon--font-size: 4rem;
+  }
+}
 
 .quote {
   display: flex;
-  align-items: quotes.$align-items;
-
-  @include breakpoint.media('≥m') {
-    align-items: quotes.$align-items-m;
-  }
+  align-items: var(--c-quote-align);
 
   &__image-wrap {
     flex-shrink: 0;
-    max-width: quotes.$image__max-width;
-
-    @include breakpoint.media('≥m') {
-      max-width: quotes.$image__max-width-m;
-    }
+    max-width: var(--c-quote_image--max-width);
   }
 
   &__content {
     position: relative;
-    padding-left: quotes.$content__padding-left;
-
-    @include breakpoint.media('≥m') {
-      padding-left: quotes.$content__padding-left-m;
-    }
+    padding-left: var(--c-quote_content--pad-left);
 
     &::before {
       position: absolute;
-      left: quotes.$icon__position-left;
-      content: quotes.$icon__content;
-      font-size: quotes.$icon__font-size;
-      line-height: quotes.$icon__line-height;
-      color: quotes.$icon__color;
-      transform: quotes.$icon__transform;
-
-      @include breakpoint.media('≥m') {
-        left: quotes.$icon__position-left-m;
-        font-size: quotes.$icon__font-size-m;
-      }
+      left: var(
+        --c-quote_icon--left,
+        calc(var(--c-quote_content--pad-left) / 2)
+      );
+      content: var(--c-quote_icon--content, '\201D');
+      font-size: var(--c-quote_icon--font-size);
+      line-height: 1;
+      color: var(--c-quote_icon--color, var(--color-primary));
+      transform: var(--c-quote_icon--transform, translateX(-50%));
     }
   }
 
   &__text {
-    font-size: quotes.$text__font-size;
-    margin-bottom: quotes.$text__margin-bottom;
-
-    @include breakpoint.media('≥m') {
-      font-size: quotes.$text__font-size-m;
-      margin-bottom: quotes.$text__margin-bottom-m;
-    }
+    font: var(--c-quote_text--font, var(--font-copy-m));
+    margin-bottom: var(--c-quote_text--margin-bottom, var(--spacing-xs));
   }
 
   &__source {
-    font-size: quotes.$source__font-size;
-    font-weight: helpers.get-font-weight(quotes.$source__font-weight);
-    font-style: quotes.$source__font-style;
-    text-transform: quotes.$source__text-transform;
-
-    @include breakpoint.media('≥m') {
-      font-size: quotes.$source__font-size-m;
-    }
+    font: var(--c-quote_source--font-style, normal)
+      var(--c-quote_source--font-weight, var(--font-weight-bold))
+      var(--c-quote_source--font, var(--font-ui-s));
+    text-transform: var(--c-quote_source--text-transform);
   }
 
   &__date {
-    font-size: quotes.$date__font-size;
-    font-weight: helpers.get-font-weight(quotes.$date__font-weight);
-    font-style: quotes.$date__font-style;
-    text-transform: quotes.$date__text-transform;
-
-    @include breakpoint.media('≥m') {
-      font-size: quotes.$date__font-size-m;
-    }
+    font: var(--c-quote_date--font-style, normal)
+      var(--c-quote_date--font-weight, var(--font-weight-bold))
+      var(--c-quote_date--font, var(--font-ui-s));
+    text-transform: var(--c-quote_date--text-transform);
   }
 }

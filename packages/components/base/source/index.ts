@@ -1,4 +1,5 @@
 export * from './0-base/3-objects/section';
+export * from './1-atoms/button/button';
 export * from './1-atoms/button/link-button';
 export * from './1-atoms/icon';
 export * from './1-atoms/iframe';

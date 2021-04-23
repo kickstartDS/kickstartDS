@@ -1,8 +1,8 @@
-/// # Clearlist
-
-@use './breakpoint';
+@use '@kickstartds/core/source/core/breakpoint';
 @use '../../0-settings/selector';
 @use 'settings/base/typo';
+
+/// # Clearlist
 
 @mixin clearlist {
   margin: 0;

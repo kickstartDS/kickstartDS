@@ -1,7 +1,7 @@
 @use '../../0-base/1-tools/scss/grid';
 @use '../../0-base/1-tools/scss/helpers';
 @use '../../0-base/1-tools/scss/sizes';
-@use '../../0-base/1-tools/scss/breakpoint';
+@use '@kickstartds/core/source/core/breakpoint';
 @use '../../0-base/0-settings/selector';
 @use 'bourbon/core/bourbon';
 @use 'settings/base';
@@ -27,22 +27,22 @@ $header-variant: 1;
     box-shadow: base.$header__box_shadow--mobile-on-scroll;
   }
 
-  @include breakpoint.media('≥nav-main') {
-    box-shadow: base.$header__box_shadow--desktop;
+  // @include breakpoint.media('≥nav-main') {
+  //   box-shadow: base.$header__box_shadow--desktop;
 
-    .header-is-scrolling & {
-      box-shadow: base.$header__box_shadow--desktop-on-scroll;
-    }
-  }
+  //   .header-is-scrolling & {
+  //     box-shadow: base.$header__box_shadow--desktop-on-scroll;
+  //   }
+  // }
 
-  @include breakpoint.media('≥nav-main') {
-    #{selector.$header--transparent} & {
-      /* critical:start */
-      background-color: transparent;
-      border-bottom: base.$header__border-bottom-transparent;
-      /* critical:end */
-    }
-  }
+  // @include breakpoint.media('≥nav-main') {
+  //   #{selector.$header--transparent} & {
+  //     /* critical:start */
+  //     background-color: transparent;
+  //     border-bottom: base.$header__border-bottom-transparent;
+  //     /* critical:end */
+  //   }
+  // }
 
   &__logo-nav {
     /* critical:start */
@@ -51,15 +51,15 @@ $header-variant: 1;
     flex-wrap: wrap;
     /* critical:end */
 
-    @include breakpoint.media('≥nav-main') {
-      /* critical:start */
-      @include sizes.global-padding();
+    // @include breakpoint.media('≥nav-main') {
+    //   /* critical:start */
+    //   @include sizes.global-padding();
 
-      max-width: base.$header__max-width;
-      margin: auto;
-      flex-wrap: nowrap;
-      /* critical:end */
-    }
+    //   max-width: base.$header__max-width;
+    //   margin: auto;
+    //   flex-wrap: nowrap;
+    //   /* critical:end */
+    // }
 
     @include breakpoint.media('print') {
       display: block;
@@ -73,11 +73,11 @@ $header-variant: 1;
       base.$hide-meta-nav-on-scroll-s,
       $header-variant == 2
     );
-    @if ($hide-meta-nav-on-scroll-s) {
-      @include breakpoint.media('≥s', '<nav-main') {
-        top: base.$nav-meta__height * -1;
-      }
-    }
+    // @if ($hide-meta-nav-on-scroll-s) {
+    //   @include breakpoint.media('≥s', '<nav-main') {
+    //     top: base.$nav-meta__height * -1;
+    //   }
+    // }
 
     // TODO: remove condition in version 10
     $hide-meta-nav-on-scroll-nav-main: if(
@@ -85,11 +85,11 @@ $header-variant: 1;
       base.$hide-meta-nav-on-scroll-nav-main,
       $header-variant == 2
     );
-    @if ($hide-meta-nav-on-scroll-nav-main) {
-      @include breakpoint.media('≥nav-main') {
-        top: base.$nav-meta__height--nav-main * -1;
-      }
-    }
+    // @if ($hide-meta-nav-on-scroll-nav-main) {
+    //   @include breakpoint.media('≥nav-main') {
+    //     top: base.$nav-meta__height--nav-main * -1;
+    //   }
+    // }
   }
 
   @include breakpoint.media('print') {
@@ -169,11 +169,11 @@ $header-variant: 1;
     /* critical:end */
   }
 
-  @include breakpoint.media('≥nav-main') {
-    /* critical:start */
-    height: base.header__height(nav-main);
-    /* critical:end */
-  }
+  // @include breakpoint.media('≥nav-main') {
+  //   /* critical:start */
+  //   height: base.header__height(nav-main);
+  //   /* critical:end */
+  // }
 }
 
 /// Logo
@@ -191,20 +191,20 @@ $header-variant: 1;
     /* critical:end */
   }
 
-  @include breakpoint.media('≥nav-main') {
-    /* critical:start */
-    margin-right: auto;
-    margin-left: -1rem;
-    width: auto;
-    /* critical:end */
+  // @include breakpoint.media('≥nav-main') {
+  //   /* critical:start */
+  //   margin-right: auto;
+  //   margin-left: -1rem;
+  //   width: auto;
+  //   /* critical:end */
 
-    #{selector.$header--sidebar} &,
-    #{selector.$header--variant-2} & {
-      /* critical:start */
-      order: 0;
-      /* critical:end */
-    }
-  }
+  //   #{selector.$header--sidebar} &,
+  //   #{selector.$header--variant-2} & {
+  //     /* critical:start */
+  //     order: 0;
+  //     /* critical:end */
+  //   }
+  // }
 
   @include breakpoint.media('print') {
     margin: 0;
@@ -232,19 +232,19 @@ $header-variant: 1;
     /* critical:end */
   }
 
-  @include breakpoint.media('≥nav-main') {
-    /* critical:start */
-    height: base.$header__logo-height--nav-main;
-    /* critical:end */
+  // @include breakpoint.media('≥nav-main') {
+  //   /* critical:start */
+  //   height: base.$header__logo-height--nav-main;
+  //   /* critical:end */
 
-    @if $header-variant == 1 {
-      #{selector.$header--scrolling} & {
-        /* critical:start */
-        height: base.$nav-main__height--nav-main-scrolling;
-        /* critical:end */
-      }
-    }
-  }
+  //   @if $header-variant == 1 {
+  //     #{selector.$header--scrolling} & {
+  //       /* critical:start */
+  //       height: base.$nav-main__height--nav-main-scrolling;
+  //       /* critical:end */
+  //     }
+  //   }
+  // }
 
   @include breakpoint.media('print') {
     display: inline-block;
@@ -259,16 +259,16 @@ $header-variant: 1;
     transition: max-height 0.2s;
     /* critical:end */
 
-    @include breakpoint.media('≥nav-main') {
-      /* critical:start */
-      max-height: base.$logo__height-desktop;
-      /* critical:end */
+    // @include breakpoint.media('≥nav-main') {
+    //   /* critical:start */
+    //   max-height: base.$logo__height-desktop;
+    //   /* critical:end */
 
-      @if $header-variant == 1 {
-        #{selector.$header--scrolling} & {
-          max-height: base.$logo__height-desktop-on-scroll;
-        }
-      }
-    }
+    //   @if $header-variant == 1 {
+    //     #{selector.$header--scrolling} & {
+    //       max-height: base.$logo__height-desktop-on-scroll;
+    //     }
+    //   }
+    // }
   }
 }

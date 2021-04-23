@@ -1,0 +1,60 @@
+@use 'sass:meta';
+@use '../../core/breakpoint';
+
+$xs: (
+  xs: 0.75rem,
+) !default;
+
+$s: (
+  xs: 0.875rem,
+  s: 0.9375rem,
+  m: 0.9375rem,
+) !default;
+
+$m: (
+  xs: 1rem,
+  s: 1.125rem,
+) !default;
+
+$l: (
+  xs: 1.125rem,
+  s: 1.3125rem,
+) !default;
+
+$xl: (
+  xs: 1.5rem,
+  s: 1.75rem,
+  m: 2rem,
+) !default;
+
+$xxl: (
+  xs: 1.875rem,
+  s: 2.25rem,
+  m: 2.875rem,
+) !default;
+
+@mixin cp($name, $value, $category: null) {
+  @if meta.type-of($value) == 'map' {
+    @each $bp, $val in $value {
+      @if $bp == 'xs' {
+        @include cp($name, $val);
+      } @else {
+        @include breakpoint.media('≥#{$bp}') {
+          @include cp($name, $val, $bp);
+        }
+      }
+    }
+  } @else {
+    @if $category == 'm' {
+      /*!
+      * @tokens Font Sizes
+      * @presenter FontSize
+      */
+    }
+    --font-size-#{$name}: #{$value};
+  }
+}
+
+@mixin render($name, $value) {
+  @include cp($name, $value);
+}

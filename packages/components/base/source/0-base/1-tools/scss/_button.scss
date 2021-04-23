@@ -1,179 +1,26 @@
 @use './helpers';
-@use 'sass:meta';
+@use 'sass:list';
 @use 'bourbon/core/bourbon';
 @use 'settings/base';
 
-@mixin button-reset() {
-  appearance: none;
-  background: transparent;
-  border: 0;
-  color: inherit;
-  cursor: pointer;
-  font: inherit;
-  line-height: inherit;
-  padding: 0;
-  margin: 0;
-  overflow: visible;
-  text-align: inherit;
-  width: auto;
-
-  -moz-osx-font-smoothing: inherit;
-  -webkit-font-smoothing: inherit;
-  -webkit-tap-highlight-color: transparent;
+@function value($prop, $fallback, $skip) {
+  @return if(list.index($skip, $prop), null, $fallback);
 }
 
-@mixin btn-animate($first-color, $second-color, $hover-border-color) {
-  background: linear-gradient(to right, $first-color 50%, $second-color 50%);
-  background-size: 200% 100%;
-  background-position: right bottom;
-  transition: all 0.3s ease-out;
+@mixin button-reset($skip: ()) {
+  appearance: value('font', none, $skip);
+  background: value('background', transparent, $skip);
+  border: value('border', 0, $skip);
+  color: value('color', inherit, $skip);
+  font: value('font', inherit, $skip);
+  line-height: value('line-height', inherit, $skip);
+  padding: value('padding', 0, $skip);
+  margin: value('margin', 0, $skip);
+  overflow: value('overflow', visible, $skip);
+  text-align: value('text-align', inherit, $skip);
+  width: value('width', auto, $skip);
 
-  &:focus,
-  &:hover {
-    color: $second-color;
-    background-position: left bottom;
-    border-color: $hover-border-color;
-  }
-}
-
-@mixin btn-default {
-  font-weight: helpers.get-font-weight(base.$button__font-weight);
-  box-sizing: border-box;
-  display: inline-flex;
-  position: relative;
-  margin: 0;
-  padding: base.$button__padding;
-  font-size: base.$button__font-size;
-  text-align: center;
-  text-decoration: none;
-  line-height: base.$button__line-height;
-  vertical-align: middle;
-  cursor: pointer;
-  border-radius: base.$button__border-radius;
-  appearance: none;
-  background-clip: padding-box;
-  transition-property: background, color, border, transform, padding;
-  transition-duration: 0.15s;
-  justify-content: center;
-
-  &::after {
-    transition-property: opacity, transform;
-    transition-duration: 0.3s;
-    position: relative;
-    opacity: 0;
-    margin: auto;
-  }
-
-  > * {
-    display: block;
-  }
-}
-
-@mixin btn-style(
-  $text-color,
-  $bg-color,
-  $border-color,
-  $text-color-hover,
-  $bg-color-hover,
-  $border-color-hover,
-  $text-color-active,
-  $bg-color-active,
-  $border-color-active
-) {
-  background-color: $bg-color;
-  color: $text-color;
-
-  @if meta.type-of($border-color) != null {
-    border-color: $border-color;
-  }
-
-  &:hover,
-  &:focus {
-    background-color: $bg-color-hover;
-    text-decoration: none;
-    color: $text-color-hover;
-
-    @if meta.type-of($border-color-hover) != null {
-      border-color: $border-color-hover;
-    }
-  }
-
-  &:active:not(:disabled) {
-    color: $text-color-active;
-    background-color: $bg-color-active;
-    transform: scale(base.$button__active-scale);
-
-    @if meta.type-of($border-color-active) != null {
-      border-color: $border-color-active;
-    }
-  }
-
-  &[disabled] {
-    background-color: desaturate($bg-color, 30%);
-    color: desaturate($text-color, 30%);
-    opacity: 0.5;
-    cursor: default;
-  }
-}
-
-@mixin button--solid-inverted {
-  @include btn-style(
-    $text-color: base.$button__solid-inverted-color,
-    $bg-color: base.$button__solid-inverted-bg-color,
-    $border-color: base.$button__solid-inverted-border-color,
-    $text-color-hover: base.$button__solid-inverted-color-hover,
-    $bg-color-hover: base.$button__solid-inverted-bg-color-hover,
-    $border-color-hover: base.$button__solid-inverted-border-color-hover,
-    $text-color-active: base.$button__solid-inverted-color-active,
-    $bg-color-active: base.$button__solid-inverted-bg-color-active,
-    $border-color-active: base.$button__solid-inverted-border-color-active
-  );
-}
-
-@mixin button--clear {
-  @include btn-style(
-    $text-color: base.$button__clear-color,
-    $bg-color: base.$button__clear-bg-color,
-    $border-color: base.$button__clear-border-color,
-    $text-color-hover: base.$button__clear-color-hover,
-    $bg-color-hover: base.$button__clear-bg-color-hover,
-    $border-color-hover: base.$button__clear-border-color-hover,
-    $text-color-active: base.$button__clear-color-active,
-    $bg-color-active: base.$button__clear-bg-color-active,
-    $border-color-active: base.$button__clear-border-color-active
-  );
-  padding-left: 0;
-
-  &:focus,
-  &:hover {
-    padding: base.$button__padding;
-  }
-}
-
-@mixin button--small {
-  font-size: base.$button__font-size-small;
-  line-height: base.$button__line-height-small;
-  padding: base.$button__padding-small;
-
-  &.button--is-loading::after {
-    @include bourbon.size(base.$line-height-small * 1em);
-  }
-
-  .icon {
-    @include bourbon.size(base.$button__line-height-small * 1em);
-  }
-}
-
-@mixin button--large {
-  font-size: base.$button__font-size-large;
-  line-height: base.$button__line-height-large;
-  padding: base.$button__padding-large;
-
-  &.button--is-loading::after {
-    @include bourbon.size(base.$line-height-large * 1em);
-  }
-
-  .icon {
-    @include bourbon.size(base.$button__line-height-large * 1em);
+  &:not(:disabled) {
+    cursor: value('cursor', pointer, $skip);
   }
 }

@@ -1,0 +1,24 @@
+@use 'sass:meta';
+@use 'sass:string';
+@use 'bourbon/core/bourbon';
+
+$display: bourbon.$font-stack-garamond !default;
+$copy: bourbon.$font-stack-helvetica !default;
+$ui: bourbon.$font-stack-system !default;
+
+$line-height-factor-display: 1 !default;
+$line-height-factor-copy: 1 !default;
+$line-height-factor-ui: 1 !default;
+
+$_line-heigt-factor-search-string: 'line-height-factor-';
+@mixin render($name, $value) {
+  @if string.index($name, 'line-height-factor') {
+    --#{$name}: #{$value};
+  } @else {
+    /*!
+    * @tokens Font Families
+    * @presenter FontFamily
+    */
+    --font-family-#{$name}: #{meta.inspect($value)};
+  }
+}

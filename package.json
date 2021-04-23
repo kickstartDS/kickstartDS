@@ -24,7 +24,8 @@
     "storybook:debug": "node packages/tools/storybook debug",
     "storybook:generate": "node packages/tools/storybook generate",
     "stylelint": "stylelint \"**/*.scss\"",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "watch-tokens": "sass --watch --load-path=node_modules packages/components/core/source/design-tokens/tokens.scss packages/components/core/lib/design-tokens/tokens.css"
   },
   "dependencies": {
     "@lerna/project": "^4.0.0",

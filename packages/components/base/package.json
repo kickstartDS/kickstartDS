@@ -39,8 +39,7 @@
   },
   "devDependencies": {
     "@types/classnames": "^2.2.11",
-    "bourbon": "^6.0.0",
-    "include-media": "^1.4.9",
+    "bourbon": "^7.0.0",
     "sass-yiq": "^1.0.0"
   },
   "peerDependencies": {

@@ -9,7 +9,7 @@ import classnames from 'classnames';
 import { Icon } from '../../icon';
 import { Link } from '../../link';
 import { LinkButtonProps } from './LinkButtonProps';
-import './link-button.scss';
+import '../button/button.scss';
 
 const LinkButtonComponent: ForwardRefRenderFunction<
   HTMLAnchorElement,
@@ -23,9 +23,6 @@ const LinkButtonComponent: ForwardRefRenderFunction<
     className,
     fillAnimation,
     iconAnimation,
-    id,
-    itemprop,
-    ariaLabelledby,
     dataComponent,
     newTab,
     icon,
@@ -48,9 +45,6 @@ const LinkButtonComponent: ForwardRefRenderFunction<
       },
       className
     )}
-    id={id}
-    itemProp={itemprop}
-    aria-labelledby={ariaLabelledby}
     data-component={dataComponent}
     {...(newTab ? { target: '_blank', rel: 'noopener' } : {})}
     ref={ref}
