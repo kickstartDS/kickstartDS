@@ -3,7 +3,7 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "storybook": "start-storybook --debug-webpack"
+    "storybook": "start-storybook"
   },
   "dependencies": {
     "@storybook/addon-actions": "^6.3.0-alpha.14",
