@@ -9,15 +9,13 @@ module.exports = {
   features: {
     postcss: false,
   },
-  addons: [
-    '@storybook/addon-essentials',
-    'storybook-dark-mode',
-    // 'storybook-design-token',
-  ],
+  addons: ['@storybook/addon-essentials'],
   core: {
     builder: 'storybook-builder-vite',
   },
   async viteFinal(config, { configType }) {
+    config.esbuild = { jsxInject: `import React from 'react'` };
+
     return config;
   },
 };
