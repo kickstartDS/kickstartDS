@@ -3,14 +3,14 @@ import { themes } from '@storybook/theming';
 // @see https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/attrchange
 import 'lazysizes/plugins/attrchange/ls.attrchange';
 // TODO this probably needs a type?
-import { DocsContainer } from './components/DocContainer';
+// import { DocsContainer } from './components/DocContainer';
 
 import '../../../components/base/lib/global/base.js';
 import '../../../components/base/lib/global/base.css';
 import '../../../components/core/lib/design-tokens/tokens.css';
 
 // TODO this probably needs to be done differently in the future (no more -instance), and in instances right now
-const tokenContextComponents = require.context(
+/*const tokenContextComponents = require.context(
   '!!raw-loader!../../../components/core/lib/design-tokens/',
   true,
   /.\.(css)$/
@@ -39,7 +39,7 @@ const tokenFiles = [
   // ...tokenFilesTmp,
   ...tokenFilesIcons,
   ...tokenFilesComponents,
-];
+];*/
 
 export const parameters = {
   options: {
@@ -60,14 +60,14 @@ export const parameters = {
         : a[1].id.localeCompare(b[1].id, 'de', { numeric: true });
     },
   },
-  docs: {
-    container: DocsContainer,
-  },
-  darkMode: {
-    dark: { ...themes.dark },
-    light: { ...themes.normal },
-    stylePreview: true,
-  },
+  // docs: {
+  //   container: DocsContainer,
+  // },
+  // darkMode: {
+  //  dark: { ...themes.dark },
+  //  light: { ...themes.normal },
+  //  stylePreview: true,
+  //},
   // designToken: {
   //   files: tokenFiles,
   // },

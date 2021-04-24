@@ -6,6 +6,7 @@ module.exports = ({
   componentLowercased,
   componentPascalcased,
 }) => `
+import React from 'react';
 import { Story, Meta } from '@storybook/react';
 import { capitalCase } from 'change-case';
 import * as storyHelpers from '../../source/story-helpers';

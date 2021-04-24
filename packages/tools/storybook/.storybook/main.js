@@ -10,15 +10,13 @@ module.exports = {
     postcss: false,
   },
   addons: [
-    '@storybook/addon-docs',
-    '@storybook/addon-controls',
-    '@storybook/addon-a11y',
-    '@storybook/addon-viewport',
-    '@storybook/addon-actions',
-    '@whitespace/storybook-addon-html',
+    '@storybook/addon-essentials',
     'storybook-dark-mode',
     // 'storybook-design-token',
   ],
+  core: {
+    builder: 'storybook-builder-vite',
+  },
   webpackFinal: async (config, { configType }) => {
     // `configType` has a value of 'DEVELOPMENT' or 'PRODUCTION'
     // You can change the configuration based on that.
