@@ -1,4 +1,4 @@
-const path = require('path');
+const commonjs = require('@rollup/plugin-commonjs');
 
 module.exports = {
   stories: [
@@ -15,6 +15,10 @@ module.exports = {
   },
   async viteFinal(config, { configType }) {
     config.esbuild = { jsxInject: `import React from 'react'` };
+
+    if (configType === 'PRODUCTION') {
+      config.plugins.unshift(commonjs());
+    }
 
     return config;
   },
