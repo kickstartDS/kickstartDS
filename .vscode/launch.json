@@ -35,9 +35,26 @@
       "type": "node",
       "request": "launch",
       "runtimeVersion": "12.19.1",
-      "name": "Launch Storybook Webpack Build",
+      "name": "Launch Storybook Start",
       "program": "${workspaceRoot}/node_modules/.bin/start-storybook",
       "args": ["-c", "packages/tools/storybook/.storybook", "-s", "dist/"],
+      "cwd": "${workspaceRoot}",
+      "outputCapture": "std"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "runtimeVersion": "12.19.1",
+      "name": "Launch Storybook Build",
+      "program": "${workspaceRoot}/node_modules/.bin/build-storybook",
+      "args": [
+        "--config-dir",
+        "${workspaceRoot}/packages/tools/storybook/.storybook",
+        "--static-dir",
+        "legacy-instance",
+        "--output-dir",
+        "dist"
+      ],
       "cwd": "${workspaceRoot}",
       "outputCapture": "std"
     },
