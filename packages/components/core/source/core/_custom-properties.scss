@@ -1,0 +1,50 @@
+@use 'sass:meta';
+@use 'sass:map';
+@use './breakpoint';
+
+@mixin responsive-custom-property($name, $value, $critical) {
+  @if meta.type-of($value) == 'map' {
+    @each $bp, $val in $value {
+      @if $bp == 'xs' or $bp == null {
+        @include responsive-custom-property($name, $val, $critical);
+      } @else {
+        @include breakpoint.media('≥#{$bp}') {
+          @include responsive-custom-property($name, $val, $critical);
+        }
+      }
+    }
+  } @else if $value != null {
+    @if $critical {
+      /* critical:start */
+    }
+    #{$name}: #{$value};
+    @if $critical {
+      /* critical:end */
+    }
+  }
+}
+
+@mixin styles($map, $critical: false) {
+  @if not map.has-key($map, 'name-') {
+    @error '`name-`-property is requred.';
+  }
+  $name: map.get($map, 'name-');
+  $map: map.remove($map, 'name-');
+
+  @each $key, $rules in $map {
+    $group: if($key == 'host', null, '_#{$key}');
+    $prefix: '--#{$name + $group}--';
+
+    @each $selector, $properties in $rules {
+      #{$selector} {
+        @each $property, $value in $properties {
+          @include responsive-custom-property(
+            $prefix + $property,
+            $value,
+            $critical
+          );
+        }
+      }
+    }
+  }
+}

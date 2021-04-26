@@ -1,0 +1,85 @@
+$name-: 'c-button';
+
+$host: (
+  '.button': (
+    padding: 0.4rem 1.3rem 0.35rem,
+    border-color: transparent,
+    border-width: 0,
+    border-radius: 3px,
+    color: var(--color-primary),
+    background-color: transparent,
+    transform-active: scale(0.95),
+  ),
+  '.button--clear': (
+    color-hover: var(--color-primary-darker-1),
+    color-active: var(--color-primary-darker-2),
+    background-color-hover: var(--color-primary-alpha-2),
+    background-color-active: var(--color-primary-alpha-3),
+  ),
+  '.button--clear-inverted': (
+    color: var(--color-white),
+    background-color-hover: var(--color-white-alpha-2),
+    background-color-active: var(--color-white-alpha-3),
+  ),
+  '.button--solid': (
+    color: var(--color-white),
+    background-color: var(--color-primary),
+    background-color-hover: var(--color-primary-lighter-2),
+    background-color-active: var(--color-primary-lighter-3),
+  ),
+  '.button--solid-inverted': (
+    color: var(--color-primary-darker-1),
+    color-hover: var(--color-primary-darker-2),
+    background-color: var(--color-white),
+    background-color-hover: var(--color-primary-lighter-8),
+    background-color-active: var(--color-primary-lighter-7),
+  ),
+  '.button--outline': (
+    border-width: 1px,
+    border-color: var(--color-primary),
+    color-hover: var(--color-primary-darker-1),
+    color-active: var(--color-primary-darker-2),
+    background-color-hover: var(--color-primary-alpha-2),
+    background-color-active: var(--color-primary-alpha-3),
+  ),
+  '.button--outline-inverted': (
+    border-width: 1px,
+    color: var(--color-white),
+    border-color: var(--c-button--color),
+    background-color-hover: var(--color-white-alpha-2),
+    background-color-active: var(--color-white-alpha-3),
+  ),
+  '.button--small': (
+    padding: 0.4rem 1rem 0.45rem,
+  ),
+  '.button--large': (
+    padding: 0.45rem 1.7rem 0.5rem,
+  ),
+) !default;
+
+$fill-animation: (
+  '.button--clear': (
+    background-color-hover: var(--c-button--color),
+    color-hover: var(--color-white),
+  ),
+  '.button--clear-inverted': (
+    background-color-hover: var(--c-button--color),
+    color-hover: var(--color-primary),
+  ),
+  '.button--solid': (
+    background-color-hover: var(--c-button--color),
+    color-hover: var(--color-primary),
+  ),
+  '.button--solid-inverted': (
+    background-color-hover: var(--c-button--color),
+    color-hover: var(--color-white),
+  ),
+  '.button--outline': (
+    background-color-hover: var(--c-button--color),
+    color-hover: var(--color-white),
+  ),
+  '.button--outline-inverted': (
+    background-color-hover: var(--c-button--color),
+    color-hover: var(--color-primary),
+  ),
+) !default;

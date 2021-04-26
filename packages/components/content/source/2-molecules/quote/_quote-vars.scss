@@ -1,0 +1,65 @@
+$name-: 'c-quote';
+
+$host: (
+  '.quote': (
+    align: (
+      xs: normal,
+      m: center,
+    ),
+  ),
+) !default;
+
+$image: (
+  '.quote': (
+    max-width: (
+      xs: 20%,
+      m: 30%,
+    ),
+  ),
+) !default;
+
+$content: (
+  '.quote': (
+    padding-left: (
+      xs: 2rem,
+      m: 4rem,
+    ),
+  ),
+) !default;
+
+$icon: (
+  '.quote': (
+    font-size: (
+      xs: 2.5rem,
+      m: 4rem,
+    ),
+    content: null,
+    color: null,
+    transform: null,
+  ),
+) !default;
+
+$text: (
+  '.quote': (
+    font: null,
+    margin-bottom: null,
+  ),
+) !default;
+
+$source: (
+  '.quote': (
+    font-style: null,
+    font-weight: null,
+    font: null,
+    text-transform: null,
+  ),
+) !default;
+
+$date: (
+  '.quote': (
+    font-style: null,
+    font-weight: null,
+    font: null,
+    text-transform: null,
+  ),
+) !default;
