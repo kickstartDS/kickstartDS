@@ -1,18 +1,28 @@
 const fs = require('fs-extra');
 const rollup = require('rollup');
 const ts = require('@wessberg/rollup-plugin-ts');
+const styles = require('rollup-plugin-styles');
 const merge = require('lodash/merge');
+const log = require('./log');
 const { dirRe, sourcePath } = require('./utils');
 const {
   sharedInputPlugins,
   sharedOutputOptions,
   sharedBabelConfig,
 } = require('./rollupUtils');
+const sassOptions = require('./sassOptions');
+const postcssPlugins = require('./postcssPlugins');
 
 const assetPaths = (paths = []) =>
   paths.map((assetPath) => `${sourcePath}/${assetPath}`);
 
-module.exports = async function bundleTs(tsPaths) {
+const externalRe = {
+  js: /\.js$/,
+  exclude: /(tslib|rollup-plugin-styles)/,
+};
+
+const prepare = async (tsPaths) => {
+  log('prepare bundleTs');
   const assets = await fs
     .readJSON(`${sourcePath}/assets.json`)
     .catch(() => ({}));
@@ -28,19 +38,22 @@ module.exports = async function bundleTs(tsPaths) {
       return [`${dir}/index`, file];
     })
   );
-  const externalRe = {
-    scss: /\.scss$/,
-    js: /\.js$/,
-    tslib: /tslib/,
-  };
   const inputOptions = {
     input,
     external: (id) => {
-      if (externalRe.scss.test(id)) return true;
-      if (externalRe.js.test(id)) return !externalRe.tslib.test(id);
+      if (externalRe.js.test(id)) return !externalRe.exclude.test(id);
     },
     plugins: [
       ...sharedInputPlugins,
+      styles({
+        config: false,
+        mode: ['inject', { prepend: true }],
+        sass: sassOptions,
+        plugins: postcssPlugins,
+        onImport(data, id) {
+          cssAssets.add(id);
+        },
+      }),
       ts({
         transpiler: 'babel',
         tsconfig: {
@@ -62,10 +75,6 @@ module.exports = async function bundleTs(tsPaths) {
     paths(id) {
       if (id.indexOf('/packages/components/') !== -1) {
         const [, dir, base, ext] = id.match(dirRe);
-        if (ext === 'scss') {
-          cssAssets.add(id);
-          return `${dir}/${base}.css`;
-        }
         if (ext === 'js') {
           jsAssets.add(id);
           return `${dir}/${base}.${ext}`;
@@ -74,8 +83,52 @@ module.exports = async function bundleTs(tsPaths) {
       return id;
     },
   };
+
+  return {
+    inputOptions,
+    outputOptions,
+    cssAssets,
+    jsAssets,
+  };
+};
+
+const bundleTs = async (tsPaths) => {
+  const { inputOptions, outputOptions, cssAssets, jsAssets } = await prepare(
+    tsPaths
+  );
+  log('starting bundleTs');
   const bundle = await rollup.rollup(inputOptions);
   const { output } = await bundle.write(outputOptions);
   await bundle.close();
+  log('finished bundleTs');
   return { output, cssAssets, jsAssets };
+};
+
+const watchTs = async (tsPaths) => {
+  const { inputOptions, outputOptions, cssAssets, jsAssets } = await prepare(
+    tsPaths
+  );
+  const watcher = rollup.watch({
+    ...inputOptions,
+    output: [outputOptions],
+  });
+  return new Promise((resolve) => {
+    watcher.on('event', ({ result, code }) => {
+      if (result) {
+        result.close();
+      }
+      if (code === 'START') {
+        log('starting bundleTs');
+      }
+      if (code === 'END') {
+        log('finished bundleTs');
+        resolve({ cssAssets, jsAssets });
+      }
+    });
+  });
+};
+
+module.exports = {
+  bundleTs,
+  watchTs,
 };

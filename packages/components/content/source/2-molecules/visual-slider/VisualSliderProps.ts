@@ -59,24 +59,6 @@ export type Headline = string;
  */
 export type Text = string;
 /**
- * Text box link configuration
- */
-export type Link = {
-  label?: Label;
-  variant: ButtonStyle;
-  size?: ButtonSize;
-  className?: AdditionalClasses;
-  icon?: Icon;
-  iconBefore?: ButtonIconBefore;
-  iconAfter?: ButtonIconAfter;
-  dataComponent?: DataComponentAttribute;
-  fillAnimation?: FillAnimation;
-  iconAnimation?: IconAnimation;
-} & {
-  href: ButtonHref;
-  newTab?: OpenLinkInNewTab;
-};
-/**
  * Text used on button
  */
 export type Label = string;
@@ -156,9 +138,7 @@ export type SlidePreviewLabel = string;
  */
 export interface VisualSliderProps {
   autoplay?: AutoPlay;
-  slides: (Visual & {
-    label?: SlidePreviewLabel;
-  })[];
+  slides: Visual[];
   [k: string]: unknown;
 }
 /**
@@ -173,6 +153,7 @@ export interface Visual {
   inbox?: Inbox;
   skipButton?: SkipButton;
   className?: AdditionalClasses1;
+  label?: SlidePreviewLabel;
 }
 /**
  * Wrapper for all media types
@@ -213,6 +194,23 @@ export interface TextBox {
   horizontal?: HorizontalOrientation;
   vertical?: VerticalOrientation;
   style?: StyleOfTheBox;
+}
+/**
+ * Text box link configuration
+ */
+export interface Link {
+  label?: Label;
+  variant: ButtonStyle;
+  size?: ButtonSize;
+  className?: AdditionalClasses;
+  icon?: Icon;
+  iconBefore?: ButtonIconBefore;
+  iconAfter?: ButtonIconAfter;
+  dataComponent?: DataComponentAttribute;
+  fillAnimation?: FillAnimation;
+  iconAnimation?: IconAnimation;
+  href: ButtonHref;
+  newTab?: OpenLinkInNewTab;
 }
 /**
  * Icon

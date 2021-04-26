@@ -102,6 +102,10 @@ export type Sources = {
 }[];
 export type PictureClass = string;
 /**
+ * Full width media
+ */
+export type FullWidthMedia1 = boolean;
+/**
  * Thumbnail Source
  */
 export type ThumbnailSource = string;
@@ -142,6 +146,10 @@ export type ID1 = string;
  */
 export type AdditionalImageClass = string;
 /**
+ * Full width media
+ */
+export type FullWidthMedia2 = boolean;
+/**
  * Media
  */
 export type Media = (
@@ -152,12 +160,12 @@ export type Media = (
     }
   | {
       image?: Picture;
-      full?: FullWidthMedia;
+      full?: FullWidthMedia1;
       [k: string]: unknown;
     }
   | {
       lightboxImage?: LazyLightboxImage;
-      full?: FullWidthMedia;
+      full?: FullWidthMedia2;
       [k: string]: unknown;
     }
 )[];
