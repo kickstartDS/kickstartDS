@@ -7,24 +7,6 @@
 
 export type ImageAlignment = 'left' | 'center' | 'right';
 /**
- * link-button
- */
-export type LinkButton = {
-  label?: Label;
-  variant: ButtonStyle;
-  size?: ButtonSize;
-  className?: AdditionalClasses;
-  icon?: Icon;
-  iconBefore?: ButtonIconBefore;
-  iconAfter?: ButtonIconAfter;
-  dataComponent?: DataComponentAttribute;
-  fillAnimation?: FillAnimation;
-  iconAnimation?: IconAnimation;
-} & {
-  href: ButtonHref;
-  newTab?: OpenLinkInNewTab;
-};
-/**
  * Text used on button
  */
 export type Label = string;
@@ -74,6 +56,23 @@ export interface ContentBoxItemProps {
   text?: string;
   link?: LinkButton;
   [k: string]: unknown;
+}
+/**
+ * link-button
+ */
+export interface LinkButton {
+  label?: Label;
+  variant: ButtonStyle;
+  size?: ButtonSize;
+  className?: AdditionalClasses;
+  icon?: Icon;
+  iconBefore?: ButtonIconBefore;
+  iconAfter?: ButtonIconAfter;
+  dataComponent?: DataComponentAttribute;
+  fillAnimation?: FillAnimation;
+  iconAnimation?: IconAnimation;
+  href: ButtonHref;
+  newTab?: OpenLinkInNewTab;
 }
 /**
  * Icon

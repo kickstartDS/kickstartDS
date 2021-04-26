@@ -6,24 +6,6 @@
  */
 
 /**
- * link-button
- */
-export type LinkButton = {
-  label?: Label;
-  variant: ButtonStyle;
-  size?: ButtonSize;
-  className?: AdditionalClasses;
-  icon?: Icon;
-  iconBefore?: ButtonIconBefore;
-  iconAfter?: ButtonIconAfter;
-  dataComponent?: DataComponentAttribute;
-  fillAnimation?: FillAnimation;
-  iconAnimation?: IconAnimation;
-} & {
-  href: ButtonHref;
-  newTab?: OpenLinkInNewTab;
-};
-/**
  * Text used on button
  */
 export type Label = string;
@@ -75,11 +57,26 @@ export interface TeaserBoxItemProps {
   darkStyle?: boolean;
   ratio?: '4:3' | '16:9' | '1:1';
   imageSpacing?: boolean;
-  link?: LinkButton & {
-    hidden?: boolean;
-    [k: string]: unknown;
-  };
+  link?: LinkButton;
   [k: string]: unknown;
+}
+/**
+ * link-button
+ */
+export interface LinkButton {
+  label?: Label;
+  variant: ButtonStyle;
+  size?: ButtonSize;
+  className?: AdditionalClasses;
+  icon?: Icon;
+  iconBefore?: ButtonIconBefore;
+  iconAfter?: ButtonIconAfter;
+  dataComponent?: DataComponentAttribute;
+  fillAnimation?: FillAnimation;
+  iconAnimation?: IconAnimation;
+  href: ButtonHref;
+  newTab?: OpenLinkInNewTab;
+  hidden?: boolean;
 }
 /**
  * Icon

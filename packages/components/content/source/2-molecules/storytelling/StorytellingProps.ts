@@ -54,24 +54,6 @@ export type TextColor = string;
 export type BoxVerticalAlignment = 'center' | 'top' | 'bottom';
 export type BoxHorizontalAlignment = 'center' | 'left' | 'right';
 /**
- * link-button
- */
-export type LinkButton = {
-  label?: Label;
-  variant: ButtonStyle;
-  size?: ButtonSize;
-  className?: AdditionalClasses;
-  icon?: Icon;
-  iconBefore?: ButtonIconBefore;
-  iconAfter?: ButtonIconAfter;
-  dataComponent?: DataComponentAttribute;
-  fillAnimation?: FillAnimation;
-  iconAnimation?: IconAnimation;
-} & {
-  href: ButtonHref;
-  newTab?: OpenLinkInNewTab;
-};
-/**
  * Text used on button
  */
 export type Label = string;
@@ -158,6 +140,23 @@ export interface ContentHeadline {
   spaceAfter?: BottomSpacing;
   pageHeader?: PageHeader;
   [k: string]: unknown;
+}
+/**
+ * link-button
+ */
+export interface LinkButton {
+  label?: Label;
+  variant: ButtonStyle;
+  size?: ButtonSize;
+  className?: AdditionalClasses;
+  icon?: Icon;
+  iconBefore?: ButtonIconBefore;
+  iconAfter?: ButtonIconAfter;
+  dataComponent?: DataComponentAttribute;
+  fillAnimation?: FillAnimation;
+  iconAnimation?: IconAnimation;
+  href: ButtonHref;
+  newTab?: OpenLinkInNewTab;
 }
 /**
  * Icon

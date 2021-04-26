@@ -1,7 +1,7 @@
 const fg = require('fast-glob');
 const fs = require('fs-extra');
-const bundleTs = require('./bundleTs');
-const bundleJs = require('./bundleJs');
+const { bundleTs, watchTs } = require('./bundleTs');
+const { bundleJs, watchJs } = require('./bundleJs');
 const scss = require('./scss');
 
 const createIndex = (tsPaths) => {
@@ -24,12 +24,16 @@ const exportsFromRollupOutput = (output) =>
     return prev;
   }, new Map());
 
-module.exports = async function () {
-  try {
-    const tsPaths = (await fg('source/*/**/index.ts')).sort();
-    await createIndex(tsPaths);
-    tsPaths.push('source/index.ts');
+const getTsPaths = async () => {
+  const tsPaths = (await fg('source/*/**/index.ts')).sort();
+  await createIndex(tsPaths);
+  tsPaths.push('source/index.ts');
+  return tsPaths;
+};
 
+const buildBundle = async () => {
+  try {
+    const tsPaths = await getTsPaths();
     const { output: tsOutput, cssAssets, jsAssets } = await bundleTs(tsPaths);
     const [cssExports, { output: jsOutput }] = await Promise.all([
       scss([...cssAssets]),
@@ -47,4 +51,14 @@ module.exports = async function () {
   } catch (e) {
     console.error(e);
   }
+};
+
+const watchBundle = async () => {
+  const tsPaths = await getTsPaths();
+  const { cssAssets, jsAssets } = await watchTs(tsPaths);
+  watchJs([...jsAssets]);
+};
+module.exports = {
+  buildBundle,
+  watchBundle,
 };

@@ -55,24 +55,6 @@ export type Headline = string;
  */
 export type Text = string;
 /**
- * Text box link configuration
- */
-export type Link = {
-  label?: Label;
-  variant: ButtonStyle;
-  size?: ButtonSize;
-  className?: AdditionalClasses;
-  icon?: Icon;
-  iconBefore?: ButtonIconBefore;
-  iconAfter?: ButtonIconAfter;
-  dataComponent?: DataComponentAttribute;
-  fillAnimation?: FillAnimation;
-  iconAnimation?: IconAnimation;
-} & {
-  href: ButtonHref;
-  newTab?: OpenLinkInNewTab;
-};
-/**
  * Text used on button
  */
 export type Label = string;
@@ -195,6 +177,23 @@ export interface TextBox {
   horizontal?: HorizontalOrientation;
   vertical?: VerticalOrientation;
   style?: StyleOfTheBox;
+}
+/**
+ * Text box link configuration
+ */
+export interface Link {
+  label?: Label;
+  variant: ButtonStyle;
+  size?: ButtonSize;
+  className?: AdditionalClasses;
+  icon?: Icon;
+  iconBefore?: ButtonIconBefore;
+  iconAfter?: ButtonIconAfter;
+  dataComponent?: DataComponentAttribute;
+  fillAnimation?: FillAnimation;
+  iconAnimation?: IconAnimation;
+  href: ButtonHref;
+  newTab?: OpenLinkInNewTab;
 }
 /**
  * Icon

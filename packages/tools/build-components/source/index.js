@@ -1,9 +1,25 @@
+process.env.DEBUG = 'kickstartDS:*';
+process.env.DEBUG_COLORS =
+  process.env.NODE_ENV === 'production' ? undefined : 'true';
+
 const del = require('del');
-const bundle = require('./bundle');
-// const scss = require('./scss');
-const copySchema = require('./copySchema');
+const { buildBundle, watchBundle } = require('./bundle');
+const { buildSchema, watchSchema } = require('./schema');
 
 (async () => {
-  await del('lib');
-  await Promise.all([bundle(), copySchema()]);
+  const [, , param] = process.argv;
+  switch (param) {
+    case '--schema': {
+      return buildSchema();
+    }
+    case '--watch': {
+      await watchSchema();
+      return watchBundle();
+    }
+    default: {
+      await del('lib');
+      await buildSchema();
+      return buildBundle();
+    }
+  }
 })();
