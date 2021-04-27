@@ -19,6 +19,7 @@ module.exports = {
     config.esbuild = { jsxInject: `import React from 'react'` };
     /*config.optimizeDeps = { include: [
       'core-js-pure',
+      'css-element-queries',
       '@babel/runtime-corejs3',
       'core-js-pure/features/object/get-own-property-symbols.js?commonjs-proxy',
       'core-js-pure/features/object/get-own-property-symbols.js?commonjs-require',
