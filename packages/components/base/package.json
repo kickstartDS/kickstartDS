@@ -21,7 +21,7 @@
     "source/**/*-vars.scss"
   ],
   "dependencies": {
-    "@babel/runtime-corejs3": "^7.13.10",
+    "@babel/runtime": "^7.13.17",
     "@glidejs/glide": "git://github.com/glidejs/glide.git#master",
     "@kickstartds/core": "^1.0.0-alpha.4",
     "animate.js": "^2.0.2",
