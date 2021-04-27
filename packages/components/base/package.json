@@ -1,6 +1,6 @@
 {
   "name": "@kickstartds/base",
-  "version": "1.0.0-alpha.6",
+  "version": "1.0.0-alpha.7",
   "description": "kickstartDS Base Module",
   "author": "ruhmesmeile GmbH <mail@ruhmesmeile.com> (https://ruhmesmeile.com)",
   "homepage": "https://ruhmesmeile.com",
@@ -22,7 +22,7 @@
   "dependencies": {
     "@babel/runtime": "^7.13.17",
     "@glidejs/glide": "git://github.com/glidejs/glide.git#master",
-    "@kickstartds/core": "^1.0.0-alpha.4",
+    "@kickstartds/core": "^1.0.0-alpha.5",
     "animate.js": "^2.0.2",
     "classnames": "^2.2.6",
     "css-element-queries": "^1.2.3",
