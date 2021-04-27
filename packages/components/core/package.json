@@ -17,7 +17,7 @@
     "lib"
   ],
   "dependencies": {
-    "@babel/runtime-corejs3": "^7.13.10",
+    "@babel/runtime": "^7.13.17",
     "bourbon": "^7.0.0",
     "htm": "^3.0.4",
     "lazysizes": "^5.3.2",
