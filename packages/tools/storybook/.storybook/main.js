@@ -1,39 +1,38 @@
-const path = require('path');
+// const commonjs = require('@rollup/plugin-commonjs');
+// const resolve = require('@rollup/plugin-node-resolve').nodeResolve;
+// const optimizeLodashImports = require('@optimize-lodash/rollup-plugin').optimizeLodashImports;
 
 module.exports = {
   stories: [
     `../tmp/**/*.stories.@(tsx|mdx)`,
-    `../tmp/**/*.story.mdx`,
+    `../tmp/**/*.story.@(mdx)`,
     `../source/*.stories.@(mdx)`,
   ],
   features: {
     postcss: false,
   },
-  addons: [
-    '@storybook/addon-docs',
-    '@storybook/addon-controls',
-    '@storybook/addon-a11y',
-    '@storybook/addon-viewport',
-    '@storybook/addon-actions',
-    '@whitespace/storybook-addon-html',
-    'storybook-dark-mode',
-    // 'storybook-design-token',
-  ],
-  webpackFinal: async (config, { configType }) => {
-    // `configType` has a value of 'DEVELOPMENT' or 'PRODUCTION'
-    // You can change the configuration based on that.
-    // 'PRODUCTION' is used when building the static version of storybook.
+  addons: ['@storybook/addon-essentials'],
+  core: {
+    builder: 'storybook-builder-vite',
+  },
+  async viteFinal(config, { configType }) {
+    config.esbuild = { jsxInject: `import React from 'react'` };
+    /*config.optimizeDeps = { include: [
+      'core-js-pure',
+      'css-element-queries',
+      '@babel/runtime-corejs3',
+      'core-js-pure/features/object/get-own-property-symbols.js?commonjs-proxy',
+      'core-js-pure/features/object/get-own-property-symbols.js?commonjs-require',
+      'core-js-pure/features/object/get-own-property-symbols.js',
+      '@babel/runtime-corejs3/core-js/object/get-own-property-symbols.js',
+    ], auto: true };*/
 
-    // Make whatever fine-grained changes you need
-    config.resolve.modules = [
-      ...(config.resolve.modules || []),
-      path.resolve('./'),
-      path.resolve('./packages'),
-    ];
+    /*if (configType === 'PRODUCTION') {
+      config.plugins.unshift(optimizeLodashImports());
+      config.plugins.unshift(commonjs());
+      config.plugins.unshift(resolve());
+    }*/
 
-    config.devtool = false;
-
-    // Return the altered config
     return config;
   },
 };

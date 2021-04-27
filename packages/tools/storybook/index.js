@@ -1,7 +1,7 @@
 const { spawn } = require('child_process');
 const cleanup = require('./scripts/cleanup-stories');
 const createComponentStories = require('./scripts/create-stories-from-component');
-const createMarkdownStories = require('./scripts/create-stories-from-markdown');
+// const createMarkdownStories = require('./scripts/create-stories-from-markdown');
 const createPreviewHead = require('./scripts/create-preview-head-from-assets');
 const createPreviewBody = require('./scripts/create-preview-body');
 
@@ -26,7 +26,7 @@ cleanup()
   .then(() =>
     Promise.all([
       createComponentStories(),
-      createMarkdownStories(),
+      // createMarkdownStories(),
       createPreviewHead(),
       createPreviewBody(),
     ])
@@ -41,10 +41,11 @@ cleanup()
         return exec('start-storybook', storybookOptionsStart);
       }
 
+      // TODO add a way to debug when using Vite
       case 'debug': {
         return exec('start-storybook', [
           ...storybookOptionsStart,
-          '--debug-webpack',
+          // '--debug-webpack', // TODO remove this when done migrating to Vite
         ]);
       }
 
