@@ -2,22 +2,20 @@
   "name": "kickstartds",
   "private": true,
   "scripts": {
-    "build": "run-s schema2ts build-components dereference",
-    "build-components": "lerna run --stream build",
+    "build": "lerna run --stream --no-prefix build",
+    "watch": "lerna run --parallel --no-prefix watch",
     "copy-env-file": "[ ! -f .env ] && cp .env-example .env || true",
     "chromatic": "npm run build && chromatic --project-token $CHROMATIC_PROJECT_TOKEN --build-script-name 'storybook:build' --skip '@(renovate/**|dependabot/**)' --exit-zero-on-changes",
-    "dereference": "node scripts/schemaDereference.js",
     "eslint": "eslint \"**/*.{js,jsx,ts,tsx}\"",
     "find-licenses": "node ./scripts/license.js",
     "format": "prettier --write .",
     "git-config": "git config --local include.path ../.gitconfig",
     "husky-commit-msg": "commitlint -E GIT_PARAMS",
-    "husky-pre-commit": "npm run schema2ts && git add packages/*/*/source/**/*Props.ts && lint-staged",
+    "husky-pre-commit": "npm run schema && git add packages/*/*/source/**/*Props.ts && lint-staged",
     "lint": "run-p eslint stylelint",
     "list": "lerna la",
     "postinstall": "run-p git-config copy-env-file",
-    "schema2ts": "node ./scripts/schemaToTypescript.js",
-    "schema2ts:watch": "node ./scripts/schemaToTypescript.js --watch",
+    "schema": "lerna run --parallel --no-prefix schema",
     "staged": "git diff --name-only --cached | grep '@kickstartds' | cut -d / -f 3 | awk '!seen[$0]++'",
     "storybook": "node packages/tools/storybook",
     "storybook:build": "node packages/tools/storybook build",
@@ -28,7 +26,6 @@
     "watch-tokens": "sass --watch --load-path=node_modules packages/components/core/source/design-tokens/tokens.scss packages/components/core/lib/design-tokens/tokens.css"
   },
   "dependencies": {
-    "@lerna/project": "^4.0.0",
     "change-case": "^4.1.2",
     "chokidar": "^3.5.1",
     "del": "^6.0.0",
@@ -39,9 +36,6 @@
     "graphql": "^15.5.0",
     "json-csv": "^3.0.1",
     "json-schema-faker": "^0.5.0-rcv.33",
-    "json-schema-merge-allof": "^0.8.1",
-    "json-schema-ref-parser": "^9.0.7",
-    "json-schema-to-typescript": "^10.1.3",
     "jsonschema2graphql": "^1.1.1",
     "license-checker": "^25.0.1"
   },
@@ -56,7 +50,7 @@
     "lint-staged": "^10.5.4",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.2.1",
-    "stylelint": "^13.12.0",
+    "stylelint": "^13.13.0",
     "typescript": "^4.2.3"
   },
   "config": {

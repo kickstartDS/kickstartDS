@@ -1,6 +1,6 @@
 {
   "name": "@kickstartds/base",
-  "version": "1.0.0-alpha.5",
+  "version": "1.0.0-alpha.6",
   "description": "kickstartDS Base Module",
   "author": "ruhmesmeile GmbH <mail@ruhmesmeile.com> (https://ruhmesmeile.com)",
   "homepage": "https://ruhmesmeile.com",
@@ -12,15 +12,17 @@
   "types": "./lib/index.d.ts",
   "scripts": {
     "build": "node ../../tools/build-components/source",
+    "watch": "node ../../tools/build-components/source --watch",
+    "schema": "node ../../tools/build-components/source --schema",
     "prepublishOnly": "NODE_ENV=production npm run build"
   },
   "files": [
     "lib"
   ],
   "dependencies": {
-    "@babel/runtime-corejs3": "^7.13.10",
+    "@babel/runtime": "^7.13.17",
     "@glidejs/glide": "git://github.com/glidejs/glide.git#master",
-    "@kickstartds/core": "^1.0.0-alpha.3",
+    "@kickstartds/core": "^1.0.0-alpha.4",
     "animate.js": "^2.0.2",
     "classnames": "^2.2.6",
     "css-element-queries": "^1.2.3",

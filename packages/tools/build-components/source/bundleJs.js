@@ -3,6 +3,7 @@ const { babel } = require('@rollup/plugin-babel');
 const replace = require('@rollup/plugin-replace');
 const importResolver = require('rollup-plugin-import-resolver');
 const merge = require('lodash/merge');
+const log = require('./log');
 const { dirRe } = require('./utils');
 const {
   sharedInputPlugins,
@@ -10,9 +11,8 @@ const {
   sharedBabelConfig,
 } = require('./rollupUtils');
 
-module.exports = async function bundleJs(jsPaths) {
-  if (!jsPaths.length) return { output: [] };
-
+const prepare = async (jsPaths) => {
+  log('prepare bundleJs');
   const input = Object.fromEntries(
     jsPaths.map((file) => {
       const [, dir, name] = file.match(dirRe);
@@ -63,8 +63,40 @@ module.exports = async function bundleJs(jsPaths) {
   const outputOptions = {
     ...sharedOutputOptions,
   };
+  return {
+    inputOptions,
+    outputOptions,
+  };
+};
+
+const bundleJs = async (jsPaths) => {
+  if (!jsPaths.length) return { output: [] };
+  const { inputOptions, outputOptions } = await prepare(jsPaths);
+  log('starting bundleJs');
   const bundle = await rollup.rollup(inputOptions);
   const { output } = await bundle.write(outputOptions);
   await bundle.close();
+  log('finished bundleJs');
   return { output };
 };
+
+const watchJs = async (jsPaths) => {
+  if (!jsPaths.length) return { output: [] };
+  const { inputOptions, outputOptions } = await prepare(jsPaths);
+  const watcher = rollup.watch({
+    ...inputOptions,
+    output: [outputOptions],
+  });
+  watcher.on('event', ({ result, code }) => {
+    if (result) {
+      result.close();
+    }
+    if (code === 'START') {
+      log('starting bundleJs');
+    } else if (code === 'END') {
+      log('finished bundleJs');
+    }
+  });
+};
+
+module.exports = { bundleJs, watchJs };
