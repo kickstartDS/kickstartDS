@@ -10,17 +10,6 @@ $vars: meta.module-variables(button-vars);
 
 .button {
   /* critical:start */
-  @include button.button-reset(
-    $skip: (
-      'background',
-      'border',
-      'color',
-      'font',
-      'line-height',
-      'padding',
-      'text-align',
-    )
-  );
   display: inline-flex;
   justify-content: center;
   padding: var(--c-button--padding);
@@ -37,10 +26,6 @@ $vars: meta.module-variables(button-vars);
   color: var(--c-button--color);
   background-color: var(--c-button--background-color);
   /* critical:end */
-
-  &:not(:disabled) {
-    cursor: pointer;
-  }
 
   &:hover,
   &:focus {
