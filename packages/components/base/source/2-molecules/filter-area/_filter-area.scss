@@ -36,7 +36,7 @@
     background: base.$color-white;
     /* critical:end */
 
-    &.button:active {
+    &.c-button:active {
       transform: scale(base.$button__active-scale) translateY(50%);
     }
 

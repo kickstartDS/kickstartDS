@@ -8,7 +8,7 @@
 $vars: meta.module-variables(button-vars);
 @include custom-properties.styles($vars, true);
 
-.button {
+.c-button {
   /* critical:start */
   display: inline-flex;
   justify-content: center;

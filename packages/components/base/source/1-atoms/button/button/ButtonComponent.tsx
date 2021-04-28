@@ -33,13 +33,13 @@ const ButtonComponent: ForwardRefRenderFunction<
   <button
     type={type}
     className={classnames(
-      'button',
-      `button--${variant}`,
+      'c-button',
+      `c-button--${variant}`,
       {
-        'button--small': size === 'small',
-        'button--large': size === 'large',
-        'button--fill-animation': fillAnimation,
-        'button--icon-animation': iconAnimation,
+        'c-button--small': size === 'small',
+        'c-button--large': size === 'large',
+        'c-button--fill-animation': fillAnimation,
+        'c-button--icon-animation': iconAnimation,
       },
       className
     )}
@@ -63,9 +63,7 @@ const ButtonComponent: ForwardRefRenderFunction<
 
 export const ButtonContextDefault = forwardRef(ButtonComponent);
 export const ButtonContext = createContext(ButtonContextDefault);
-export const Button: typeof ButtonContextDefault = forwardRef(
-  (props, ref) => {
-    const Component = useContext(ButtonContext);
-    return <Component {...props} ref={ref} />;
-  }
-);
+export const Button: typeof ButtonContextDefault = forwardRef((props, ref) => {
+  const Component = useContext(ButtonContext);
+  return <Component {...props} ref={ref} />;
+});
