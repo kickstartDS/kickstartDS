@@ -1,5 +1,9 @@
+:root {
+  --c-rich-text-font: var(--font-copy-m);
+}
+
 .rich-text {
-  font: var(--font-copy-m);
+  font: var(--c-rich-text-font);
 
   h4,
   h5,

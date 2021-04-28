@@ -15,7 +15,7 @@ $vars: meta.module-variables(button-vars);
   padding: var(--c-button--padding);
   border: var(--c-button--border-width) solid var(--c-button--border-color);
   border-radius: var(--c-button--border-radius);
-  font: var(--font-ui-m);
+  font: var(--c-button--font);
   text-align: center;
   transition-duration: 0.12s;
   transition-property: background, color, border, transform, padding;
@@ -101,7 +101,6 @@ $vars: meta.module-variables(button-vars);
   &--small {
     /* critical:start */
     --c-button--padding: 0.4rem 1rem 0.45rem;
-    font: var(--font-ui-s);
 
     .icon {
       @include bourbon.size(var(--line-height-s));
@@ -112,7 +111,6 @@ $vars: meta.module-variables(button-vars);
   &--large {
     /* critical:start */
     --c-button--padding: 0.45rem 1.7rem 0.5rem;
-    font: var(--font-ui-l);
 
     .icon {
       @include bourbon.size(var(--line-height-l));
