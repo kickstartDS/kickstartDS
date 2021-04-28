@@ -1,16 +1,23 @@
+@use 'sass:meta';
 @use '@kickstartds/core/source/core/breakpoint';
-@use '../../1-tools/scss/helpers';
+@use '@kickstartds/core/source/core/custom-properties';
 @use 'settings/base';
+@use './headline-vars';
+
+$vars: meta.module-variables(headline-vars);
+@include custom-properties.styles($vars, true);
 
 /* critical:start */
 h1,
 h2,
 h3,
-.h1,
-.h2,
-.h3 {
-  margin: 0;
-  font-weight: helpers.get-font-weight(regular);
+h4,
+h5 {
+  font: var(--g-headline--font);
+  font-weight: var(--g-headline--font-weight);
+  text-transform: var(--g-headline--text-transform);
+  color: var(--g-headline--color);
+  margin: var(--g-headline--margin);
 
   @include breakpoint.media('print') {
     page-break-after: avoid;
@@ -21,59 +28,3 @@ h3,
   }
 }
 /* critical:end */
-
-h1,
-.h1 {
-  /* critical:start */
-  font-size: base.$h1-font-size;
-  line-height: base.$h1-line-height;
-  font-weight: helpers.get-font-weight(base.$h1-font-weight);
-  color: base.$h1-font-color;
-  text-transform: base.$h1-text-transform;
-  margin-bottom: 0.5em;
-  /* critical:end */
-
-  @include breakpoint.media('≥s') {
-    /* critical:start */
-    font-size: base.$h1-font-size-s;
-    line-height: base.$h1-line-height-s;
-    margin: base.$h1-margin;
-    /* critical:end */
-  }
-}
-
-h2,
-.h2 {
-  /* critical:start */
-  font-size: base.$h2-font-size;
-  line-height: base.$h2-line-height;
-  font-weight: helpers.get-font-weight(base.$h2-font-weight);
-  color: base.$h2-font-color;
-  text-transform: base.$h2-text-transform;
-  margin-bottom: 0.5em;
-  /* critical:end */
-
-  @include breakpoint.media('≥s') {
-    /* critical:start */
-    font-size: base.$h2-font-size-s;
-    line-height: base.$h2-line-height-s;
-    margin: base.$h2-margin;
-    /* critical:end */
-  }
-}
-
-h3,
-.h3 {
-  font-size: base.$h3-font-size;
-  line-height: base.$h3-line-height;
-  font-weight: helpers.get-font-weight(base.$h3-font-weight);
-  color: base.$h3-font-color;
-  text-transform: base.$h3-text-transform;
-  margin-bottom: 0.5em;
-
-  @include breakpoint.media('≥s') {
-    font-size: base.$h3-font-size-s;
-    line-height: base.$h3-line-height-s;
-    margin: base.$h3-margin;
-  }
-}

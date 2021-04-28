@@ -33,11 +33,11 @@ export type PageHeader = boolean;
 /**
  * Headline
  */
-export interface ContentHeadlineProps {
+export interface HeadlineProps {
   level: HeadlineLevel;
   align?: TextAlign;
   content: HeadlineText;
-  subheader?: SubheadlineText;
+  subheadline?: SubheadlineText;
   spaceAfter?: BottomSpacing;
   pageHeader?: PageHeader;
   [k: string]: unknown;

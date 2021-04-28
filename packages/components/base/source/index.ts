@@ -10,7 +10,7 @@ export * from './1-atoms/nav-toggle';
 export * from './1-atoms/rich-text';
 export * from './1-atoms/tag-label';
 export * from './2-molecules/content-box';
-export * from './2-molecules/content-headline';
+export * from './2-molecules/headline';
 export * from './2-molecules/logo';
 export * from './2-molecules/nav/nav-main';
 export * from './2-molecules/nav/nav-meta';

@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react';
 import classnames from 'classnames';
-import { ContentHeadline } from '@kickstartds/base/lib/content-headline';
+import { Headline } from '@kickstartds/base/lib/headline';
 import { LinkButton } from '@kickstartds/base/lib/link-button';
 import { RichText } from '@kickstartds/base/lib/rich-text';
 import { Picture } from '@kickstartds/base/lib/picture';
@@ -74,7 +74,7 @@ const StorytellingMixin: FunctionComponent<StorytellingProps & ILazy> = ({
         )}
         style={{ color: box.textColor }}
       >
-        {box.headline && <ContentHeadline {...box.headline} />}
+        {box.headline && <Headline {...box.headline} />}
         {box.text && (
           <RichText text={box.text} className="storytelling__text" />
         )}

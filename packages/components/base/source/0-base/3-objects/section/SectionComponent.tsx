@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'react';
 import classnames from 'classnames';
-import { ContentHeadline } from '../../../2-molecules/content-headline/ContentHeadlineComponent';
-import { ContentHeadlineProps } from '../../../2-molecules/content-headline/ContentHeadlineProps';
+import { Headline } from '../../../2-molecules/headline/HeadlineComponent';
+import { HeadlineProps } from '../../../2-molecules/headline/HeadlineProps';
 import './section.scss';
 
 interface SectionProps {
@@ -10,7 +10,7 @@ interface SectionProps {
   width?: 'full' | 'full-gap' | 'default' | 'narrow';
   'space-before'?: 'default' | 'small' | 'none';
   'space-after'?: 'default' | 'small' | 'none';
-  headline?: ContentHeadlineProps;
+  headline?: HeadlineProps;
   className?: string;
 }
 
@@ -37,7 +37,7 @@ export const Section: FunctionComponent<SectionProps> = ({
     <div
       className={classnames('l-main-wrap', width && `l-main-wrap--${width}`)}
     >
-      {headline ? <ContentHeadline {...headline} /> : ''}
+      {headline ? <Headline {...headline} /> : ''}
       {children}
     </div>
   </div>

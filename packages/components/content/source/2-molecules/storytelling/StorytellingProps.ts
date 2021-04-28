@@ -120,7 +120,7 @@ export interface Order {
   [k: string]: unknown;
 }
 export interface Box {
-  headline?: ContentHeadline;
+  headline?: Headline;
   text?: Text;
   textAlign?: TextAlign1;
   textColor?: TextColor;
@@ -132,11 +132,11 @@ export interface Box {
 /**
  * Headline
  */
-export interface ContentHeadline {
+export interface Headline {
   level: HeadlineLevel;
   align?: TextAlign;
   content: HeadlineText;
-  subheader?: SubheadlineText;
+  subheadline?: SubheadlineText;
   spaceAfter?: BottomSpacing;
   pageHeader?: PageHeader;
   [k: string]: unknown;
