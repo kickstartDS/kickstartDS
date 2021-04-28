@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react';
+import { createContext, FunctionComponent, useContext } from 'react';
 import classnames from 'classnames';
 import { Headline } from '@kickstartds/base/lib/headline';
 import { LinkButton } from '@kickstartds/base/lib/link-button';
@@ -84,7 +84,7 @@ const StorytellingMixin: FunctionComponent<StorytellingProps & ILazy> = ({
   </div>
 );
 
-export const Storytelling: FunctionComponent<StorytellingProps> = (props) => (
+const StorytellingComponent: FunctionComponent<StorytellingProps> = (props) => (
   <div className="c-storytelling__wrapper">
     <StorytellingMixin {...props} lazy={true} />
     {props.backgroundImage && (
@@ -94,3 +94,10 @@ export const Storytelling: FunctionComponent<StorytellingProps> = (props) => (
     )}
   </div>
 );
+
+export const StorytellingContextDefault = StorytellingComponent;
+export const StorytellingContext = createContext(StorytellingContextDefault);
+export const Storytelling: typeof StorytellingContextDefault = (props) => {
+  const Component = useContext(StorytellingContext);
+  return <Component {...props} />;
+};

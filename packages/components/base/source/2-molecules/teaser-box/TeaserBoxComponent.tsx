@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react';
+import { createContext, FunctionComponent, useContext } from 'react';
 import classnames from 'classnames';
 import { LinkButton } from '../../1-atoms/button/link-button';
 import { Picture } from '../../1-atoms/image/picture';
@@ -7,7 +7,7 @@ import { TeaserBoxProps } from './TeaserBoxProps';
 import './teaser-box.scss';
 import './TeaserBox.js';
 
-export const TeaserBox: FunctionComponent<TeaserBoxProps> = ({
+const TeaserBoxComponent: FunctionComponent<TeaserBoxProps> = ({
   image,
   topic,
   text,
@@ -52,3 +52,10 @@ export const TeaserBox: FunctionComponent<TeaserBoxProps> = ({
     </div>
   </div>
 );
+
+export const TeaserBoxContextDefault = TeaserBoxComponent;
+export const TeaserBoxContext = createContext(TeaserBoxContextDefault);
+export const TeaserBox: typeof TeaserBoxContextDefault = (props) => {
+  const Component = useContext(TeaserBoxContext);
+  return <Component {...props} />;
+};

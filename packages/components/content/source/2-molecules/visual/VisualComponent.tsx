@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent, createContext, useContext } from 'react';
 import classnames from 'classnames';
 import { Icon } from '@kickstartds/base/lib/icon';
 import { VisualProps } from './VisualProps';
@@ -7,7 +7,7 @@ import { VisualBoxPartial } from './VisualBoxPartial';
 import './visual.scss';
 import './Visual.js';
 
-export const Visual: FunctionComponent<VisualProps> = ({
+const VisualComponent: FunctionComponent<VisualProps> = ({
   media,
   box,
   overlay,
@@ -43,3 +43,10 @@ export const Visual: FunctionComponent<VisualProps> = ({
     )}
   </div>
 );
+
+export const VisualContextDefault = VisualComponent;
+export const VisualContext = createContext(VisualContextDefault);
+export const Visual: typeof VisualContextDefault = (props) => {
+  const Component = useContext(VisualContext);
+  return <Component {...props} />;
+};

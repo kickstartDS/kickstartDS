@@ -1,10 +1,10 @@
-import { FunctionComponent } from 'react';
+import { createContext, FunctionComponent, useContext } from 'react';
 import { format } from 'date-fns';
 import { Picture } from '@kickstartds/base/lib/picture';
 import { QuoteProps } from './QuoteProps';
 import './quote.scss';
 
-export const Quote: FunctionComponent<QuoteProps> = ({
+const QuoteComponent: FunctionComponent<QuoteProps> = ({
   image,
   text,
   source,
@@ -31,3 +31,10 @@ export const Quote: FunctionComponent<QuoteProps> = ({
     </div>
   </div>
 );
+
+export const QuoteContextDefault = QuoteComponent;
+export const QuoteContext = createContext(QuoteContextDefault);
+export const Quote: typeof QuoteContextDefault = (props) => {
+  const Component = useContext(QuoteContext);
+  return <Component {...props} />;
+};
