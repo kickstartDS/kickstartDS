@@ -176,7 +176,7 @@ export interface TextBox {
   indent?: Indent;
   horizontal?: HorizontalOrientation;
   vertical?: VerticalOrientation;
-  style?: StyleOfTheBox;
+  background?: StyleOfTheBox;
 }
 /**
  * Text box link configuration
