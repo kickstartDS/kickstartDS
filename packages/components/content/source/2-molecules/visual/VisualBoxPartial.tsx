@@ -13,31 +13,34 @@ export const VisualBoxPartial: FunctionComponent<IBox> = ({
   indent,
   horizontal,
   vertical,
-  style,
+  background,
   headline,
   text,
   link,
 }) => (
   <div
     className={classnames(
-      'visual__content',
-      horizontal && `visual__content--${horizontal}`,
-      vertical !== 'center' && `visual__content--${vertical}`,
+      'c-visual__content',
+      horizontal && `c-visual__content--${horizontal}`,
+      vertical !== 'center' && `c-visual__content--${vertical}`,
       {
-        'visual__content--inbox': inbox,
-        'visual__content--indent': indent,
+        'c-visual__content--inbox': inbox,
+        'c-visual__content--indent': indent,
       }
     )}
   >
     <div
-      className={classnames('visual__box', style && `visual__box--${style}`)}
+      className={classnames(
+        'c-visual__box',
+        background && `c-visual__box--${background}`
+      )}
     >
-      {headline && <p className="visual__topic">{headline}</p>}
+      {headline && <p className="c-visual__topic">{headline}</p>}
 
-      {text && <RichText text={text} className="visual__text" />}
+      {text && <RichText text={text} className="c-visual__text" />}
 
       {link && (
-        <div className="visual__link">
+        <div className="c-visual__link">
           <LinkButton {...link} />
         </div>
       )}

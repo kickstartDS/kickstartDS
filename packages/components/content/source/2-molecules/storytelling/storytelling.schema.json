@@ -71,7 +71,7 @@
       "title": "Box",
       "properties": {
         "headline": {
-          "$ref": "http://frontend.ruhmesmeile.com/base/molecules/content-headline.schema.json"
+          "$ref": "http://frontend.ruhmesmeile.com/base/molecules/headline.schema.json"
         },
         "text": {
           "type": "string",

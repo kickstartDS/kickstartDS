@@ -1,30 +1,31 @@
+@use 'sass:meta';
 @use '@kickstartds/base/source/0-base/1-tools/scss/helpers';
-@use '@kickstartds/base/source/0-base/1-tools/scss/sizes';
 @use '@kickstartds/core/source/core/breakpoint';
-@use 'settings/base';
-@use 'settings/global';
-@use 'settings/storytelling';
+@use '@kickstartds/core/source/core/custom-properties';
+@use './storytelling-vars';
 
-.storytelling {
-  @include sizes.global-padding;
-  @include sizes.vertical-padding;
+$vars: meta.module-variables(storytelling-vars);
+@include custom-properties.styles($vars, true);
 
+.c-storytelling {
   display: flex;
   flex-direction: column;
-  background-color: storytelling.$background-color;
-  color: storytelling.$color;
+  background-color: var(--c-storytelling--background-color);
+  color: var(--c-storytelling--color);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  padding: var(--c-storytelling--vertical-padding)
+    var(--c-storytelling--horizontal-padding);
 
   @include breakpoint.media('≥s') {
     flex-direction: row;
   }
 
-  @include helpers.in-sidebar {
-    display: block;
-    padding: 1.5rem 1rem;
-  }
+  // @include helpers.in-sidebar {
+  //   display: block;
+  //   padding: 1.5rem 1rem;
+  // }
 
   &--full {
     padding: 0;
@@ -41,24 +42,23 @@
     align-items: center;
     margin-bottom: 1rem;
 
-    .storytelling--full & {
+    .c-storytelling--full & {
       margin-bottom: 0;
     }
 
     @include breakpoint.media('≥s') {
-      padding-right: global.$padding-s;
+      padding-right: var(--c-storytelling--horizontal-padding);
       margin-bottom: 0;
 
-      .storytelling--full & {
+      .c-storytelling--full & {
         padding-right: 0;
       }
     }
 
     @include breakpoint.media('≥m') {
-      padding-right: global.$padding-m;
-      margin-bottom: 0;
+      // margin-bottom: 0;
 
-      .storytelling--full & {
+      .c-storytelling--full & {
         padding-right: 0;
       }
     }
@@ -71,20 +71,12 @@
       align-items: flex-start;
 
       img {
-        margin-top: -1 * global.$vertical-padding;
+        margin-top: calc(var(--c-storytelling--vertical-padding) * -1);
 
         @include breakpoint.media('<s') {
-          .storytelling--order-mobile-image-last & {
+          .c-storytelling--order-mobile-image-last & {
             margin-top: 0;
           }
-        }
-
-        @include breakpoint.media('≥s') {
-          margin-top: -1 * global.$vertical-padding-s;
-        }
-
-        @include breakpoint.media('≥m') {
-          margin-top: -1 * global.$vertical-padding-m;
         }
       }
     }
@@ -97,18 +89,12 @@
       align-items: flex-end;
 
       img {
-        @include breakpoint.media('<s') {
-          .storytelling--order-mobile-image-last & {
-            margin-bottom: -1 * global.$vertical-padding;
-          }
+        .c-storytelling--order-mobile-image-last & {
+          margin-bottom: calc(var(--c-storytelling--vertical-padding) * -1);
         }
 
         @include breakpoint.media('≥s') {
-          margin-bottom: -1 * global.$vertical-padding-s;
-        }
-
-        @include breakpoint.media('≥m') {
-          margin-bottom: -1 * global.$vertical-padding-m;
+          margin-bottom: calc(var(--c-storytelling--vertical-padding) * -1);
         }
       }
     }
@@ -121,15 +107,7 @@
       justify-content: flex-start;
 
       img {
-        margin-left: -1 * global.$padding;
-
-        @include breakpoint.media('≥s') {
-          margin-left: -1 * global.$padding-s;
-        }
-
-        @include breakpoint.media('≥m') {
-          margin-left: -1 * global.$padding-m;
-        }
+        margin-left: calc(var(--c-storytelling--horizontal-padding) * -1);
       }
     }
 
@@ -141,19 +119,11 @@
       justify-content: flex-end;
 
       img {
-        margin-right: -1 * global.$padding;
-
-        @include breakpoint.media('≥s') {
-          margin-right: -1 * global.$padding-s;
-        }
-
-        @include breakpoint.media('≥m') {
-          margin-right: -1 * global.$padding-m;
-        }
+        margin-right: calc(var(--c-storytelling--horizontal-padding) * -1);
       }
     }
 
-    .storytelling--order-mobile-image-last & {
+    .c-storytelling--order-mobile-image-last & {
       @include breakpoint.media('<s') {
         order: 2;
         margin-bottom: 0;
@@ -161,20 +131,16 @@
       }
     }
 
-    .storytelling--order-desktop-image-last & {
+    .c-storytelling--order-desktop-image-last & {
       @include breakpoint.media('≥s') {
         order: 2;
         padding-right: 0;
-        padding-left: global.$padding-s;
-      }
-
-      @include breakpoint.media('≥m') {
-        padding-left: global.$padding-m;
+        padding-left: var(--c-storytelling--horizontal-padding);
       }
     }
 
-    .storytelling--full &,
-    .storytelling--full.storytelling--order-desktop-image-last & {
+    .c-storytelling--full &,
+    .c-storytelling--full.c-storytelling--order-desktop-image-last & {
       padding: 0;
 
       @include breakpoint.media('≥s') {
@@ -186,34 +152,34 @@
       }
     }
 
-    .storytelling--sixteen-to-nine & {
+    .c-storytelling--sixteen-to-nine & {
       &::before {
         padding-top: 56.25%; /* 16:9 Aspect Ratio */
       }
     }
 
-    .storytelling--four-to-three & {
+    .c-storytelling--four-to-three & {
       &::before {
         padding-top: 75%; /* 4:3 Aspect Ratio */
       }
     }
 
-    .storytelling--three-to-two & {
+    .c-storytelling--three-to-two & {
       &::before {
         padding-top: 66%; /* 3:2 Aspect Ratio */
       }
     }
 
-    .storytelling--square & {
+    .c-storytelling--square & {
       &::before {
         padding-top: 100%; /* 1:1 Aspect Ratio */
       }
     }
 
-    .storytelling--sixteen-to-nine &,
-    .storytelling--four-to-three &,
-    .storytelling--three-to-two &,
-    .storytelling--square & {
+    .c-storytelling--sixteen-to-nine &,
+    .c-storytelling--four-to-three &,
+    .c-storytelling--three-to-two &,
+    .c-storytelling--square & {
       position: relative;
 
       &::before {
@@ -233,9 +199,9 @@
       flex: 0 0 auto; // ie fix
     }
 
-    @include helpers.in-sidebar {
-      padding: 0 0 1rem !important;
-    }
+    // @include helpers.in-sidebar {
+    //   padding: 0 0 1rem !important;
+    // }
   }
 
   &__box {
@@ -246,11 +212,7 @@
     align-items: center;
 
     @include breakpoint.media('≥s') {
-      padding-left: global.$padding-s;
-    }
-
-    @include breakpoint.media('≥m') {
-      padding-left: global.$padding-m;
+      padding-left: var(--c-storytelling--horizontal-padding);
     }
 
     &--top {
@@ -273,30 +235,27 @@
       }
     }
 
-    .storytelling--full & {
-      @include sizes.global-padding;
-      @include sizes.vertical-padding;
+    .c-storytelling--full & {
+      padding: var(--c-storytelling--vertical-padding)
+        var(--c-storytelling--horizontal-padding);
     }
 
-    .storytelling--order-desktop-image-last & {
+    .c-storytelling--order-desktop-image-last & {
       padding-left: 0;
 
       @include breakpoint.media('≥s') {
-        padding-right: global.$padding-s;
-      }
-
-      @include breakpoint.media('≥m') {
-        padding-right: global.$padding-m;
+        padding-right: var(--spacing-m);
       }
     }
 
-    .storytelling--full.storytelling--order-desktop-image-last & {
-      @include sizes.global-padding;
+    .c-storytelling--full.c-storytelling--order-desktop-image-last & {
+      padding-left: var(--c-storytelling--horizontal-padding);
+      padding-right: var(--c-storytelling--horizontal-padding);
     }
 
-    @include helpers.in-sidebar {
-      padding: 0 !important;
-    }
+    // @include helpers.in-sidebar {
+    //   padding: 0 !important;
+    // }
 
     &__content {
       max-width: 36.85em;
@@ -304,13 +263,13 @@
 
       &--center {
         &,
-        .content-headline > * {
+        .c-headline > * {
           text-align: center;
         }
       }
 
       &[style] {
-        .content-headline > * {
+        .c-headline > * {
           &,
           a,
           a:not([class]) {
@@ -320,17 +279,12 @@
       }
     }
 
-    .content-headline {
+    .c-headline {
       width: 100%;
       max-width: none;
-      margin-bottom: storytelling.$headline__margin;
       margin-left: 0;
       margin-right: 0;
       text-align: left;
-
-      @include breakpoint.media('≥m') {
-        margin-bottom: storytelling.$headline__margin-m;
-      }
     }
   }
 

@@ -1,7 +1,6 @@
 @use 'bourbon/core/bourbon';
 @use '@kickstartds/base/source/0-base/1-tools/scss/helpers';
 @use '@kickstartds/core/source/core/breakpoint';
-@use 'settings/visuals';
 @use 'sass:meta';
 
 @mixin visual-image {
@@ -13,7 +12,7 @@
     /* critical:start */
     @include bourbon.position(absolute, 0);
 
-    .visual--no-crop & {
+    .c-visual--no-crop & {
       position: static;
     }
     /* critical:end */
@@ -28,31 +27,17 @@
   &--indent {
     &-left {
       img {
-        @include breakpoint.media('<m') {
-          /* critical:start */
-          object-position: if(
-              meta.global-variable-exists('image__indent-left', 'visuals'),
-              visuals.$image__indent-left,
-              20%
-            )
-            50%;
-          /* critical:end */
-        }
+        /* critical:start */
+        object-position: var(--c-visual_image--indent-left) 50%;
+        /* critical:end */
       }
     }
 
     &-right {
       img {
-        @include breakpoint.media('<m') {
-          /* critical:start */
-          object-position: if(
-              meta.global-variable-exists('image__indent-right', 'visuals'),
-              visuals.$image__indent-right,
-              70%
-            )
-            50%;
-          /* critical:end */
-        }
+        /* critical:start */
+        object-position: var(--c-visual_image--indent-right) 50%;
+        /* critical:end */
       }
     }
   }

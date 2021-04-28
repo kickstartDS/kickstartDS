@@ -14,17 +14,14 @@ module.exports = {
   },
   sharedBabelConfig: {
     babelrc: false,
-    presets: ['@babel/modules', '@babel/preset-typescript'],
+    presets: [
+      ['@babel/preset-env', { bugfixes: true }],
+      ['@babel/preset-typescript'],
+    ],
     plugins: [
-      [
-        '@babel/plugin-transform-runtime',
-        {
-          corejs: 3,
-          version: '^7.13.10', // this must match the version of `@babel/runtime-corejs3` in components dependencies
-        },
-      ],
-      '@babel/plugin-syntax-dynamic-import',
-      '@babel/plugin-proposal-class-properties',
+      ['@babel/plugin-proposal-private-methods', { loose: true }],
+      ['@babel/plugin-proposal-class-properties', { loose: true }],
+      ['@babel/plugin-transform-runtime', { useESModules: true }],
     ],
   },
 };

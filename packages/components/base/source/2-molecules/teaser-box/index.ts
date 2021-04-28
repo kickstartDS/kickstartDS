@@ -1,1 +1,1 @@
-export * from './TeaserBoxItemComponent';
+export * from './TeaserBoxComponent';

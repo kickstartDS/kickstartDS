@@ -1,5 +1,4 @@
 @use '@kickstartds/base/source/0-base/0-settings/selector';
-@use 'settings/visuals';
 
 @keyframes slider-nav-autoplay {
   0% {
@@ -10,12 +9,11 @@
   }
 }
 
-.visual-slide--preview {
+.c-visual-slide--preview {
   $current-animation-duration: 4s;
 
   flex: 0 1 100%;
-  font-size: visuals.$slide-preview__font-size;
-  line-height: visuals.$slide-preview__line-height;
+  font: var(--c-visual-slider_preview--font);
   text-align: center;
   padding: 0.75em 1em;
   transition: 0.3s;
@@ -26,13 +24,13 @@
 
   #{selector.$slider-nav-slide}:hover &,
   #{selector.$slider-nav-slide}:focus & {
-    background: visuals.$slide-preview__background--hover;
-    color: visuals.$slide-preview__color--hover;
+    background: var(--c-visual-slider_preview--background-hover);
+    color: var(--c-visual-slider_preview--color-hover);
   }
 
   #{selector.$slider-nav-slide}--active & {
-    background: visuals.$slide-preview__background--active;
-    color: visuals.$slide-preview__color--active;
+    background: var(--c-visual-slider_preview--background-active);
+    color: var(--c-visual-slider_preview--color-active);
 
     .slider--autoplay &::after {
       animation: slider-nav-autoplay $current-animation-duration linear;
@@ -50,7 +48,7 @@
       left: 0;
       width: 0;
       height: 0.2em;
-      background-color: visuals.$slide-preview__autoplay-indicator-color;
+      background-color: var(--c-visual-slider--autoplay-indicator-color);
       content: '';
     }
   }

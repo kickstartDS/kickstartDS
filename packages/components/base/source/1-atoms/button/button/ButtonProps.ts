@@ -6,18 +6,6 @@
  */
 
 /**
- * Button
- */
-export type ButtonProps = Button & {
-  type: ButtonType;
-  value?: InputValue;
-  name?: InputName;
-  disabled?: Disabled;
-  isLoading?: LoadingButton;
-  isSuccessful?: SuccessButton;
-  onclick?: OnclickAttribute;
-};
-/**
  * Text used on button
  */
 export type Label = string;
@@ -54,11 +42,11 @@ export type ButtonType = 'button' | 'submit' | 'reset';
 export type InputValue = string;
 export type InputName = string;
 export type Disabled = boolean;
-export type LoadingButton = boolean;
-export type SuccessButton = boolean;
-export type OnclickAttribute = string;
 
-export interface Button {
+/**
+ * Button
+ */
+export interface ButtonProps {
   label?: Label;
   variant: ButtonStyle;
   size?: ButtonSize;
@@ -69,6 +57,10 @@ export interface Button {
   dataComponent?: DataComponentAttribute;
   fillAnimation?: FillAnimation;
   iconAnimation?: IconAnimation;
+  type: ButtonType;
+  value?: InputValue;
+  name?: InputName;
+  disabled?: Disabled;
 }
 /**
  * Icon

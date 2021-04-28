@@ -158,7 +158,7 @@
           "enum": ["top", "center", "bottom"],
           "default": "center"
         },
-        "style": {
+        "background": {
           "title": "Style of the box",
           "description": "Choose a style for the box",
           "type": "string",

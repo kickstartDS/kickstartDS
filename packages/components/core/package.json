@@ -1,6 +1,6 @@
 {
   "name": "@kickstartds/core",
-  "version": "1.0.0-alpha.3",
+  "version": "1.0.0-alpha.6",
   "description": "kickstartDS Core Module",
   "author": "ruhmesmeile GmbH <mail@ruhmesmeile.com> (https://ruhmesmeile.com)",
   "homepage": "https://ruhmesmeile.com",
@@ -9,13 +9,17 @@
   "types": "./lib/index.d.ts",
   "scripts": {
     "build": "node ../../tools/build-components/source",
+    "watch": "node ../../tools/build-components/source --watch",
+    "schema": "node ../../tools/build-components/source --schema",
     "prepublishOnly": "NODE_ENV=production npm run build"
   },
   "files": [
-    "lib"
+    "lib",
+    "source/core/*.scss",
+    "source/design-tokens/**/*.scss"
   ],
   "dependencies": {
-    "@babel/runtime-corejs3": "^7.13.10",
+    "@babel/runtime": "^7.13.17",
     "bourbon": "^7.0.0",
     "htm": "^3.0.4",
     "lazysizes": "^5.3.2",

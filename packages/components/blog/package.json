@@ -1,6 +1,6 @@
 {
   "name": "@kickstartds/blog",
-  "version": "1.0.0-alpha.4",
+  "version": "1.0.0-alpha.8",
   "description": "kickstartDS Blog Module",
   "author": "ruhmesmeile GmbH <mail@ruhmesmeile.com> (https://ruhmesmeile.com)",
   "homepage": "https://ruhmesmeile.com",
@@ -12,15 +12,18 @@
   "types": "./lib/index.d.ts",
   "scripts": {
     "build": "node ../../tools/build-components/source",
+    "watch": "node ../../tools/build-components/source --watch",
+    "schema": "node ../../tools/build-components/source --schema",
     "prepublishOnly": "NODE_ENV=production npm run build"
   },
   "files": [
-    "lib"
+    "lib",
+    "source/**/*-vars.scss"
   ],
   "dependencies": {
-    "@babel/runtime-corejs3": "^7.13.10",
-    "@kickstartds/base": "^1.0.0-alpha.4",
-    "@kickstartds/core": "^1.0.0-alpha.3",
+    "@babel/runtime": "^7.13.17",
+    "@kickstartds/base": "^1.0.0-alpha.8",
+    "@kickstartds/core": "^1.0.0-alpha.6",
     "date-fns": "^2.19.0"
   },
   "peerDependencies": {

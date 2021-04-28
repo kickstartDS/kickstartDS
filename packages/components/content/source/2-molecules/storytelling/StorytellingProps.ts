@@ -54,24 +54,6 @@ export type TextColor = string;
 export type BoxVerticalAlignment = 'center' | 'top' | 'bottom';
 export type BoxHorizontalAlignment = 'center' | 'left' | 'right';
 /**
- * link-button
- */
-export type LinkButton = {
-  label?: Label;
-  variant: ButtonStyle;
-  size?: ButtonSize;
-  className?: AdditionalClasses;
-  icon?: Icon;
-  iconBefore?: ButtonIconBefore;
-  iconAfter?: ButtonIconAfter;
-  dataComponent?: DataComponentAttribute;
-  fillAnimation?: FillAnimation;
-  iconAnimation?: IconAnimation;
-} & {
-  href: ButtonHref;
-  newTab?: OpenLinkInNewTab;
-};
-/**
  * Text used on button
  */
 export type Label = string;
@@ -138,7 +120,7 @@ export interface Order {
   [k: string]: unknown;
 }
 export interface Box {
-  headline?: ContentHeadline;
+  headline?: Headline;
   text?: Text;
   textAlign?: TextAlign1;
   textColor?: TextColor;
@@ -150,14 +132,31 @@ export interface Box {
 /**
  * Headline
  */
-export interface ContentHeadline {
+export interface Headline {
   level: HeadlineLevel;
   align?: TextAlign;
   content: HeadlineText;
-  subheader?: SubheadlineText;
+  subheadline?: SubheadlineText;
   spaceAfter?: BottomSpacing;
   pageHeader?: PageHeader;
   [k: string]: unknown;
+}
+/**
+ * link-button
+ */
+export interface LinkButton {
+  label?: Label;
+  variant: ButtonStyle;
+  size?: ButtonSize;
+  className?: AdditionalClasses;
+  icon?: Icon;
+  iconBefore?: ButtonIconBefore;
+  iconAfter?: ButtonIconAfter;
+  dataComponent?: DataComponentAttribute;
+  fillAnimation?: FillAnimation;
+  iconAnimation?: IconAnimation;
+  href: ButtonHref;
+  newTab?: OpenLinkInNewTab;
 }
 /**
  * Icon

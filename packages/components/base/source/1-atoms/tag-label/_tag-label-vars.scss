@@ -1,0 +1,50 @@
+$name-: 'c-tag-label';
+
+$host: (
+  '.c-tag-label': (
+    background-color: var(--color-black-alpha-1),
+    background-color-hover: var(--color-black-alpha-2),
+    border: null,
+    color: var(--color-black-alpha-8),
+    color-hover: var(--color-black),
+  ),
+  '.c-tag-label--s': (
+    font: var(--font-ui-xs),
+    font-weight: var(--font-weight-m),
+    border-radius: 0.8rem,
+    vertical-padding: 0.325rem,
+    horizontal-padding: 0.65rem,
+  ),
+  '.c-tag-label--m': (
+    font: var(--font-ui-s),
+    font-weight: var(--font-weight-m),
+    border-radius: 1.25rem,
+    vertical-padding: 0.4rem,
+    horizontal-padding: 1rem,
+  ),
+  '.c-tag-label--l': (
+    font: var(--font-ui-m),
+    font-weight: var(--font-weight-m),
+    border-radius: 1.5rem,
+    vertical-padding: 0.5rem,
+    horizontal-padding: 1.25rem,
+  ),
+) !default;
+
+$icon: (
+  '.c-tag-label--s': (
+    size: 0.8rem,
+    margin-left: -0.325rem,
+    horizontal-padding: 0.325rem,
+  ),
+  '.c-tag-label--m': (
+    size: 1.25rem,
+    margin-left: -0.6rem,
+    horizontal-padding: 0.5rem,
+  ),
+  '.c-tag-label--l': (
+    size: 1.25rem,
+    margin-left: -0.75rem,
+    horizontal-padding: 0.5rem,
+  ),
+) !default;

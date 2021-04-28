@@ -1,1 +1,1 @@
-export * from './ContentBoxItemComponent';
+export * from './ContentBoxComponent';

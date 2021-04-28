@@ -1,9 +1,5 @@
 @use 'bourbon/core/bourbon';
-@use '@kickstartds/base/source/0-base/1-tools/scss/helpers';
-@use '@kickstartds/base/source/0-base/1-tools/scss/sizes';
 @use '@kickstartds/core/source/core/breakpoint';
-@use 'settings/global';
-@use 'settings/visuals';
 
 @mixin visual-content {
   /* critical:start */
@@ -16,10 +12,7 @@
 
   @include breakpoint.media('≥s') {
     /* critical:start */
-    @include sizes.global-padding();
-
-    padding-top: global.$padding-m;
-    padding-bottom: global.$padding-m;
+    padding: var(--spacing-m);
     min-height: inherit; // ie fix
     /* critical:end */
   }
@@ -57,46 +50,22 @@
 
   &--indent {
     /* critical:start */
-    max-width: global.$grid__max-width;
+    max-width: var(--g-content-width-default);
     /* critical:end */
   }
 
   &--inbox,
   &:only-child {
     /* critical:start */
-    @include sizes.global-padding;
-    @include sizes.vertical-padding;
-
     // ie fix
-    height: visuals.$min-height;
-
-    .visual--small & {
-      height: visuals.$min-height-small;
-
-      @each $bp,
-        $height
-          in (
-            s: visuals.$min-height-small-s,
-            m: visuals.$min-height-small-m,
-            l: visuals.$min-height-small-l
-          )
-      {
-        @if $height < visuals.$min-height {
-          @include breakpoint.media('≥#{$bp}') {
-            height: $height;
-          }
-        }
-      }
-    }
+    height: var(--c-visual--min-height);
     /* critical:end */
   }
 
-  .visual--no-crop & {
+  .c-visual--no-crop & {
     @include breakpoint.media('≥s') {
       /* critical:start */
       @include bourbon.position(absolute, 0);
-      @include sizes.global-padding;
-      @include sizes.vertical-padding;
       /* critical:end */
     }
   }

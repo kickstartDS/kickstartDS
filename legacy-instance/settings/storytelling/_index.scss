@@ -1,8 +1,0 @@
-@use 'settings/base/colors';
-@use 'settings/base/content-headline';
-
-$background-color:                     transparent !default;
-$color:                                colors.$text-color !default;
-
-$headline__margin:                     content-headline.$content-headline__margin !default;
-$headline__margin-m:                   content-headline.$content-headline__margin-m !default;

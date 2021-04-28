@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://frontend.ruhmesmeile.com/base/molecules/content-box.schema.json",
+  "title": "Content-Box",
+  "type": "object",
+  "properties": {
+    "ratio": {
+      "type": "string",
+      "enum": ["none", "4:3", "16:9", "1:1"],
+      "default": "none"
+    },
+    "alignement": {
+      "title": "Image alignment",
+      "type": "string",
+      "enum": ["left", "center", "right"],
+      "default": "left"
+    },
+    "image": {
+      "type": "string",
+      "format": "image",
+      "default": "images/dummy/16-9-s.png"
+    },
+    "topic": { "type": "string", "default": "Lorem Ipsum" },
+    "text": {
+      "type": "string",
+      "default": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ispum dolor distinctio minima unde voluptatum aut. Lorem ipsum dolor sit amet. "
+    },
+    "link": {
+      "$ref": "http://frontend.ruhmesmeile.com/base/atoms/link-button.schema.json"
+    }
+  }
+}

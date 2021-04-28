@@ -35,13 +35,13 @@ const LinkButtonComponent: ForwardRefRenderFunction<
   <Link
     href={href}
     className={classnames(
-      'button',
-      `button--${variant}`,
+      'c-button',
+      `c-button--${variant}`,
       {
-        'button--small': size === 'small',
-        'button--large': size === 'large',
-        'button--fill-animation': fillAnimation,
-        'button--icon-animation': iconAnimation,
+        'c-button--small': size === 'small',
+        'c-button--large': size === 'large',
+        'c-button--fill-animation': fillAnimation,
+        'c-button--icon-animation': iconAnimation,
       },
       className
     )}
