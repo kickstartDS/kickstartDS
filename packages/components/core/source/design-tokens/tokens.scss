@@ -8,6 +8,7 @@
 @use './typography/font';
 
 :root {
+  // Design Tokens
   @each $name, $value in meta.module-variables(colors) {
     @include colors.render($name, $value);
   }
@@ -33,4 +34,9 @@
   }
 
   @include font.render;
+
+  // Global Tokens
+  --g-header-height: 0;
+  --g-content-width-default: 62rem;
+  --g-content-width-narrow: 46.5rem;
 }

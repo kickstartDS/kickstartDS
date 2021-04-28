@@ -18,25 +18,25 @@ export const Visual: FunctionComponent<VisualProps> = ({
   className,
 }) => (
   <div
-    data-component="visual"
+    data-component="c-visual"
     className={classnames(
-      'visual',
+      'c-visual',
       {
-        'visual--full': height === 'fullScreen',
-        'visual--small': height === 'small',
-        'visual--no-crop': height === 'fullImage',
+        'c-visual--full': height === 'fullScreen',
+        'c-visual--small': height === 'small',
+        'c-visual--no-crop': height === 'fullImage',
       },
       className
     )}
     style={{ backgroundColor }}
   >
     {media && <VisualMediaPartial {...{ ...media, inbox }} />}
-    {overlay && <div className="visual__overlay"></div>}
+    {overlay && <div className="c-visual__overlay"></div>}
     {box?.enabled && <VisualBoxPartial {...{ ...box, inbox }} />}
 
     {skipButton && (
-      <div className="visual__continue">
-        <button type="button" className="visual__continue-btn">
+      <div className="c-visual__continue">
+        <button type="button" className="c-visual__continue-btn">
           <Icon icon="chevron-down" />
         </button>
       </div>

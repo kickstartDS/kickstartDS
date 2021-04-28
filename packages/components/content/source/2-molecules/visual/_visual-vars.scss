@@ -1,0 +1,72 @@
+$name-: 'c-visual' !default;
+
+$host: (
+  '.c-visual': (
+    background: null,
+    min-height: (
+      xs: 20rem,
+      s: 21rem,
+      m: 31.5rem,
+      l: 35rem,
+    ),
+  ),
+  '.c-visual--small': (
+    min-height: (
+      xs: 13.35rem,
+      s: 13.2rem,
+      m: 15.8rem,
+      l: 20rem,
+    ),
+  ),
+) !default;
+
+$image: (
+  '.c-visual': (
+    indent-left: (
+      xs: 20%,
+      s: 50%,
+    ),
+    indent-right: (
+      xs: 70%,
+      s: 50%,
+    ),
+  ),
+) !default;
+
+$box: (
+  '.c-visual__box': (
+    border: null,
+    border-radius: null,
+    color: var(--color-white),
+    background: var(--color-primary-alpha-8),
+    max-width: (
+      xs: var(--g-content-width-default),
+      s: 50%,
+      xl: 40rem,
+    ),
+  ),
+  '.c-visual__box--light': (
+    color: var(--color-primary),
+    background: var(--color-white-alpha-9),
+  ),
+) !default;
+
+$topic: (
+  '.c-visual__box': (
+    font: var(--font-display-xl),
+    font-weight: var(--font-weight-bold),
+    margin: null,
+    color: null,
+  ),
+  '.c-visual__box--light': (
+    color: null,
+  ),
+) !default;
+
+$text: (
+  '.c-visual__box': (
+    font: var(--font-copy-m),
+    font-weight: var(--font-weight-regular),
+    margin: 1.2em 0 0,
+  ),
+) !default;

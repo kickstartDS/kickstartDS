@@ -14,9 +14,21 @@ $_xl: 2.5rem !default;
 
 $xxs: _responsive($_xxs) !default;
 $xs: _responsive($_xs) !default;
-$s: _responsive($_s) !default;
-$m: _responsive($_m) !default;
-$l: _responsive($_l) !default;
+$s: (
+  xs: 0.5rem,
+  s: 1rem,
+  m: 2rem,
+) !default;
+$m: (
+  xs: 0.625rem,
+  s: 1.25rem,
+  m: 2.25rem,
+) !default;
+$l: (
+  xs: 2rem,
+  s: 3rem,
+  m: 4rem,
+) !default;
 $xl: _responsive($_xl) !default;
 
 @mixin cp($name, $value, $category: null) {

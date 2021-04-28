@@ -1,0 +1,18 @@
+$name-: 'c-visual-slider' !default;
+
+$nav: (
+  '.c-visual-slider': (
+    border-bottom-color: var(--color-black-alpha-1),
+  ),
+) !default;
+
+$preview: (
+  '.c-visual-slider': (
+    font: var(--font-ui-s),
+    background-hover: var(--color-black-alpha-1),
+    background-active: var(--color-black-alpha-2),
+    color-hover: null,
+    color-active: var(--color-primary),
+    autoplay-indicator-color: var(--color-black-alpha-2),
+  ),
+) !default;

@@ -1,110 +1,31 @@
-@use '@kickstartds/base/source/0-base/0-settings/selector';
-@use '@kickstartds/base/source/0-base/1-tools/scss/grid';
-@use '@kickstartds/base/source/0-base/1-tools/scss/helpers';
-@use '@kickstartds/base/source/0-base/1-tools/scss/sizes';
-@use '@kickstartds/core/source/core/breakpoint';
-@use 'settings/base';
-@use 'settings/global';
-@use 'settings/visuals';
-@use 'bourbon/core/bourbon';
 @use 'sass:meta';
+@use 'bourbon/core/bourbon';
+@use '@kickstartds/core/source/core/breakpoint';
+@use '@kickstartds/core/source/core/custom-properties';
 
 @use './visual__image';
 @use './visual__content';
 @use './visual__box';
+@use './visual-vars';
 
-@mixin pull-up($visual-height, $header-height, $important: false) {
-  min-height: if(
-    $important,
-    $visual-height + $header-height !important,
-    $visual-height + $header-height
-  );
-  margin-top: $header-height * -1;
-}
+$vars: meta.module-variables(visual-vars);
+@include custom-properties.styles($vars, true);
 
-.visual {
+.c-visual {
   /* critical:start */
   display: flex;
   flex-direction: column;
   position: relative;
-  background: visuals.$background;
+  background: var(--c-visual--background);
   z-index: 1;
+  min-height: var(--c-visual--min-height);
   /* critical:end */
-
-  @include breakpoint.media('<s') {
-    /* critical:start */
-    min-height: visuals.$min-height;
-    /* critical:end */
-  }
-
-  @include breakpoint.media('≥s') {
-    /* critical:start */
-    min-height: visuals.$min-height-s;
-    /* critical:end */
-  }
-
-  @include breakpoint.media('≥m') {
-    /* critical:start */
-    min-height: visuals.$min-height-m;
-    /* critical:end */
-  }
-
-  @include breakpoint.media('≥l') {
-    /* critical:start */
-    min-height: visuals.$min-height-l;
-    /* critical:end */
-  }
-
-  &--small {
-    @include breakpoint.media('<s') {
-      /* critical:start */
-      min-height: visuals.$min-height-small !important;
-      /* critical:end */
-    }
-
-    @include breakpoint.media('≥s') {
-      /* critical:start */
-      min-height: visuals.$min-height-small-s;
-      /* critical:end */
-    }
-
-    @include breakpoint.media('≥m') {
-      /* critical:start */
-      min-height: visuals.$min-height-small-m;
-      /* critical:end */
-    }
-
-    @include breakpoint.media('≥l') {
-      /* critical:start */
-      min-height: visuals.$min-height-small-l;
-      /* critical:end */
-    }
-  }
 
   &--full {
     /* critical:start */
     min-height: 0 !important;
-    height: calc(100vh - #{base.$header__height--s});
-
-    @include breakpoint.media('≥s') {
-      /* critical:start */
-      height: calc(100vh - #{base.$header__height--m});
-      /* critical:end */
-    }
-
-    // @include breakpoint.media('≥nav-main') {
-    //   /* critical:start */
-    //   height: calc(100vh - #{base.header__height(nav-main)});
-    //   /* critical:end */
-
-    //   .transparent-header & {
-    //     height: 100vh;
-    //   }
-
-    //   #{selector.$header--scrolling} & ~ & {
-    //     height: calc(100vh - #{base.header__height(nav-main--scrolling)});
-    //   }
-    // }
+    height: calc(100vh - var(--g-header-height));
+    /* critical:end */
   }
 
   &--no-crop {
@@ -112,29 +33,6 @@
     min-height: 0 !important;
     /* critical:end */
   }
-
-  // .transparent-header .page-intro &:first-child {
-  //   @include breakpoint.media('≥nav-main') {
-  //     /* critical:start */
-  //     @include pull-up(visuals.$min-height-m, base.header__height(nav-main));
-  //     /* critical:end */
-
-  //     &.visual--small {
-  //       /* critical:start */
-  //       @include pull-up(
-  //         visuals.$min-height-small-m,
-  //         base.header__height(nav-main)
-  //       );
-  //       /* critical:end */
-  //     }
-
-  //     .visual__content {
-  //       /* critical:start */
-  //       padding-top: global.$padding-m + base.header__height(nav-main);
-  //       /* critical:end */
-  //     }
-  //   }
-  // }
 
   &__image {
     @include visual__image.visual-image;
@@ -161,54 +59,18 @@
 
   &__topic {
     /* critical:start */
-    font-size: visuals.$box__topic-font-size;
-    line-height: visuals.$box__topic-line-height;
-    font-weight: helpers.get-font-weight(visuals.$box__topic-font-weight);
-    margin: visuals.$box__topic-margin;
+    font: var(--c-visual_topic--font);
+    font-weight: var(--c-visual_topic--font-weight);
+    margin: var(--c-visual_topic--margin);
     /* critical:end */
-
-    @include breakpoint.media('≥s') {
-      /* critical:start */
-      font-size: visuals.$box__topic-font-size-s;
-      /* critical:end */
-    }
-
-    @include breakpoint.media('≥m') {
-      /* critical:start */
-      // TODO: remove condition in version 10
-      font-size: if(
-        meta.global-variable-exists('box__topic-font-size-m', 'visuals'),
-        visuals.$box__topic-font-size-m,
-        null
-      );
-      /* critical:end */
-    }
   }
 
   &__text {
     /* critical:start */
-    font-size: visuals.$box__text-font-size;
-    font-weight: visuals.$box__text-font-weight;
-    line-height: visuals.$box__text-line-height;
-    margin: visuals.$box__text-margin;
+    font: var(--c-visual_text--font);
+    font-weight: var(--c-visual_text--font-weight);
+    margin: var(--c-visual_text--margin);
     /* critical:end */
-
-    @include breakpoint.media('≥s') {
-      /* critical:start */
-      font-size: visuals.$box__text-font-size-s;
-      /* critical:end */
-    }
-
-    @include breakpoint.media('≥m') {
-      /* critical:start */
-      // TODO: remove condition in version 10
-      font-size: if(
-        meta.global-variable-exists('box__text-font-size-m', 'visuals'),
-        visuals.$box__text-font-size-m,
-        null
-      );
-      /* critical:end */
-    }
 
     p {
       /* critical:start */
