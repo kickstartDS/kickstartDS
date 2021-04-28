@@ -1,0 +1,13 @@
+$name-: 'c-storytelling' !default;
+
+$host: (
+  '.c-storytelling': (
+    background-color: null,
+    color: var(--color-black),
+    vertical-padding: var(--spacing-l),
+    horizontal-padding: var(--spacing-m),
+  ),
+  '.c-headline': (
+    margin-bottom: var(--c-headline--margin),
+  ),
+) !default;

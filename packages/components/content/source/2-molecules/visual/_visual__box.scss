@@ -2,33 +2,29 @@
 @use '@kickstartds/base/source/0-base/1-tools/scss/helpers';
 @use '@kickstartds/base/source/0-base/1-tools/scss/sizes';
 @use '@kickstartds/core/source/core/breakpoint';
-@use 'settings/global';
-@use 'settings/visuals';
 @use 'sass:meta';
 
 @mixin visual-box {
-  @include sizes.global-padding;
-
   /* critical:start */
   width: 100%;
-  max-width: global.$grid__max-width;
+  max-width: var(--c-visual_box--max-width);
   max-height: 100%;
   position: relative;
   overflow: auto;
-  padding-top: 1.5em;
-  padding-bottom: 1.5em;
-  border: visuals.$box__border;
-  background: var(--color-primary-alpha-8);
-  color: var(--color-white);
+  padding: 1.5rem var(--spacing-m);
+  border: var(--c-visual_box--border);
+  border-radius: var(--c-visual_box--border-radius);
+  background: var(--c-visual_box--background);
+  color: var(--c-visual_box--color);
   /* critical:end */
 
-  .visual__topic {
+  .c-visual__topic {
     /* critical:start */
-    color: var(--color-white);
+    color: var(--c-visual_topic--color);
     /* critical:end */
   }
 
-  a:not(.button) {
+  a:not(.c-button) {
     /* critical:start */
     color: inherit;
     /* critical:end */
@@ -36,58 +32,20 @@
 
   @include breakpoint.media('≥s') {
     /* critical:start */
-    max-width: 50%;
-    border: visuals.$box__border-m;
-    border-radius: if(
-      meta.global-variable-exists('box__border-radius', 'visuals'),
-      visuals.$box__border-radius,
-      null
-    );
     width: auto;
     /* critical:end */
   }
 
-  @include breakpoint.media(
-    '≥#{visuals.$box__max-width * 2 + global.$padding-m * 4 + 8}'
-  ) {
+  @include breakpoint.media('≥xl') {
     /* critical:start */
     padding-top: 3rem;
     padding-bottom: 3rem;
-    max-width: visuals.$box__max-width;
     /* critical:end */
-  }
-
-  .visual__content--inbox &,
-  .visual__content:only-child & {
-    /* critical:start */
-    border-radius: if(
-      meta.global-variable-exists('box__border-radius', 'visuals'),
-      visuals.$box__border-radius,
-      null
-    );
-    /* critical:end */
-  }
-
-  &--light {
-    &,
-    .visual__content--inbox &,
-    .visual__content:only-child & {
-      /* critical:start */
-      background: var(--color-white-alpha-9);
-      color: var(--color-primary);
-      /* critical:end */
-
-      .visual__topic {
-        /* critical:start */
-        color: var(--color-primary);
-        /* critical:end */
-      }
-    }
   }
 
   &--transparent {
-    .visual__content--inbox &,
-    .visual__content:only-child & {
+    .c-visual__content--inbox &,
+    .c-visual__content:only-child & {
       /* critical:start */
       background: none;
       padding: 0;

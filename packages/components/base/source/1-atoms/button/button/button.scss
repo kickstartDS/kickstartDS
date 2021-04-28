@@ -1,100 +1,21 @@
-@use '@kickstartds/core/source/core/breakpoint';
-@use '../../../0-base/1-tools/scss/button';
+@use 'sass:meta';
 @use 'bourbon/core/bourbon';
-@use 'settings/base';
+@use '@kickstartds/core/source/core/breakpoint';
+@use '@kickstartds/core/source/core/custom-properties';
+@use '../../../0-base/1-tools/scss/button';
+@use './button-vars';
 
-:root {
+$vars: meta.module-variables(button-vars);
+@include custom-properties.styles($vars, true);
+
+.c-button {
   /* critical:start */
-  --c-button--padding: 0.4rem 1.3rem 0.35rem;
-  --c-button--border-color: transparent;
-  --c-button--border-width: 0;
-  --c-button--border-radius: 3px;
-  --c-button--color: var(--color-primary);
-  --c-button--background-color: transparent;
-  --c-button-transform-active: scale(0.95);
-  /* critical:end */
-}
-
-.button {
-  /* critical:start */
-  &--clear {
-    --c-button--color-hover: var(--color-primary-darker-1);
-    --c-button--color-active: var(--color-primary-darker-2);
-    --c-button--background-color-hover: var(--color-primary-alpha-2);
-    --c-button--background-color-active: var(--color-primary-alpha-3);
-    --c-button_fill-animation--background-color-hover: var(--c-button--color);
-    --c-button_fill-animation--color-hover: var(--color-white);
-  }
-
-  &--clear-inverted {
-    --c-button--color: var(--color-white);
-    --c-button--background-color-hover: var(--color-white-alpha-2);
-    --c-button--background-color-active: var(--color-white-alpha-3);
-    --c-button_fill-animation--background-color-hover: var(--c-button--color);
-    --c-button_fill-animation--color-hover: var(--color-primary);
-  }
-
-  &--solid {
-    --c-button--color: var(--color-white);
-    --c-button--background-color: var(--color-primary);
-    --c-button--background-color-hover: var(--color-primary-lighter-2);
-    --c-button--background-color-active: var(--color-primary-lighter-3);
-    --c-button_fill-animation--background-color-hover: var(--c-button--color);
-    --c-button_fill-animation--color-hover: var(--color-primary);
-  }
-
-  &--solid-inverted {
-    --c-button--color: var(--color-primary-darker-1);
-    --c-button--color-hover: var(--color-primary-darker-2);
-    --c-button--background-color: var(--color-white);
-    --c-button--background-color-hover: var(--color-primary-lighter-8);
-    --c-button--background-color-active: var(--color-primary-lighter-7);
-    --c-button_fill-animation--background-color-hover: var(--c-button--color);
-    --c-button_fill-animation--color-hover: var(--color-white);
-  }
-
-  &--outline {
-    --c-button--border-width: 1px;
-    --c-button--border-color: var(--color-primary);
-    --c-button--color-hover: var(--color-primary-darker-1);
-    --c-button--color-active: var(--color-primary-darker-2);
-    --c-button--background-color-hover: var(--color-primary-alpha-2);
-    --c-button--background-color-active: var(--color-primary-alpha-3);
-    --c-button_fill-animation--background-color-hover: var(--c-button--color);
-    --c-button_fill-animation--color-hover: var(--color-white);
-  }
-
-  &--outline-inverted {
-    --c-button--border-width: 1px;
-    --c-button--color: var(--color-white);
-    --c-button--border-color: var(--c-button--color);
-    --c-button--background-color-hover: var(--color-white-alpha-2);
-    --c-button--background-color-active: var(--color-white-alpha-3);
-    --c-button_fill-animation--background-color-hover: var(--c-button--color);
-    --c-button_fill-animation--color-hover: var(--color-primary);
-  }
-  /* critical:end */
-}
-
-.button {
-  /* critical:start */
-  @include button.button-reset(
-    $skip: (
-      'background',
-      'border',
-      'color',
-      'font',
-      'line-height',
-      'padding',
-      'text-align',
-    )
-  );
   display: inline-flex;
   justify-content: center;
   padding: var(--c-button--padding);
   border: var(--c-button--border-width) solid var(--c-button--border-color);
   border-radius: var(--c-button--border-radius);
-  font: var(--font-ui-m);
+  font: var(--c-button--font);
   text-align: center;
   transition-duration: 0.12s;
   transition-property: background, color, border, transform, padding;
@@ -105,10 +26,6 @@
   color: var(--c-button--color);
   background-color: var(--c-button--background-color);
   /* critical:end */
-
-  &:not(:disabled) {
-    cursor: pointer;
-  }
 
   &:hover,
   &:focus {
@@ -137,7 +54,7 @@
       --c-button--border-color-active,
       var(--c-button--border-color-hover, var(--c-button--border-color))
     );
-    transform: var(--c-button-transform-active);
+    transform: var(--c-button--transform-active);
   }
 
   &:disabled {
@@ -184,7 +101,6 @@
   &--small {
     /* critical:start */
     --c-button--padding: 0.4rem 1rem 0.45rem;
-    font: var(--font-ui-s);
 
     .icon {
       @include bourbon.size(var(--line-height-s));
@@ -195,7 +111,6 @@
   &--large {
     /* critical:start */
     --c-button--padding: 0.45rem 1.7rem 0.5rem;
-    font: var(--font-ui-l);
 
     .icon {
       @include bourbon.size(var(--line-height-l));

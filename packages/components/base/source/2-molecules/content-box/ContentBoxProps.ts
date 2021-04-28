@@ -48,7 +48,7 @@ export type ButtonHref = string;
  */
 export type OpenLinkInNewTab = boolean;
 
-export interface ContentBoxItemProps {
+export interface ContentBoxProps {
   ratio?: 'none' | '4:3' | '16:9' | '1:1';
   alignement?: ImageAlignment;
   image?: string;

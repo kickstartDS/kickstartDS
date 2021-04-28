@@ -1,23 +1,15 @@
+@use 'sass:meta';
 @use '@kickstartds/base/source/0-base/1-tools/scss/helpers';
 @use '@kickstartds/core/source/core/breakpoint';
+@use '@kickstartds/core/source/core/custom-properties';
+@use './quote-vars';
 
-:root {
-  --c-quote--align: normal;
-  --c-quote_image--max-width: 20%;
-  --c-quote_content--pad-left: 2rem;
-  --c-quote_icon--font-size: 2.5rem;
+$vars: meta.module-variables(quote-vars);
+@include custom-properties.styles($vars);
 
-  @include breakpoint.media('≥m') {
-    --c-quote-align: center;
-    --c-quote_image--max-width: 30%;
-    --c-quote_content--pad-left: 4rem;
-    --c-quote_icon--font-size: 4rem;
-  }
-}
-
-.quote {
+.c-quote {
   display: flex;
-  align-items: var(--c-quote-align);
+  align-items: var(--c-quote--align);
 
   &__image-wrap {
     flex-shrink: 0;
@@ -26,13 +18,13 @@
 
   &__content {
     position: relative;
-    padding-left: var(--c-quote_content--pad-left);
+    padding-left: var(--c-quote_content--padding-left);
 
     &::before {
       position: absolute;
       left: var(
         --c-quote_icon--left,
-        calc(var(--c-quote_content--pad-left) / 2)
+        calc(var(--c-quote_content--padding-left) / 2)
       );
       content: var(--c-quote_icon--content, '\201D');
       font-size: var(--c-quote_icon--font-size);

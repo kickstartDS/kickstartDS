@@ -9,12 +9,12 @@ export default class Visual extends Component {
   constructor(element) {
     super(element);
 
-    this.continueBtn = element.querySelector('.visual__continue-btn');
+    this.continueBtn = element.querySelector('.c-visual__continue-btn');
     if (this.continueBtn) {
       this.continueBtn.addEventListener('click', this);
     }
 
-    this.video = element.querySelector('.visual__video');
+    this.video = element.querySelector('.c-visual__video');
     if (this.video) {
       // prevent multiple scroll listeners
       if (!this.scrollToken) {

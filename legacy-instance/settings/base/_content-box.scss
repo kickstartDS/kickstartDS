@@ -1,9 +1,0 @@
-@use 'settings/global/grid';
-
-$content-box__grid-gutter:     grid.$grid__gutter !default;
-$content-box__adaptive-font-sizes: (
-  // [minimum box width]: [font-size]
-  '0px': 70%,     // 0px-199px box width
-  '200px': 85%,   // 200px-399px box width
-  '400px': 100%   // ≥400px box width
-) !default;

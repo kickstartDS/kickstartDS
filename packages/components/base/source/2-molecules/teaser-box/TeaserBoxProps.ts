@@ -48,9 +48,9 @@ export type ButtonHref = string;
 export type OpenLinkInNewTab = boolean;
 
 /**
- * teaser-box-item
+ * teaser-box
  */
-export interface TeaserBoxItemProps {
+export interface TeaserBoxProps {
   image?: string;
   topic?: string;
   text?: string;

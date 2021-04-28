@@ -1,6 +1,10 @@
-@use 'settings/base';
+:root {
+  --c-rich-text-font: var(--font-copy-m);
+}
 
 .rich-text {
+  font: var(--c-rich-text-font);
+
   h4,
   h5,
   h6 {
@@ -20,7 +24,7 @@
   code {
     font-size: 0.85em;
 
-    background-color: base.$color-black-5-solid;
+    background-color: var(--color-grey-1);
     border-radius: 0.4em;
 
     padding: 0.2em 0.5em;
@@ -36,7 +40,7 @@
   }
 
   blockquote {
-    border-left: 0.3em solid base.$color-black-15-solid;
+    border-left: 0.3em solid var(--color-grey-2);
 
     margin-left: 0;
     margin-right: 0;

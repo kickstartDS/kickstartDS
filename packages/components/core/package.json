@@ -14,7 +14,9 @@
     "prepublishOnly": "NODE_ENV=production npm run build"
   },
   "files": [
-    "lib"
+    "lib",
+    "source/core/*.scss",
+    "source/design-tokens/**/*.scss"
   ],
   "dependencies": {
     "@babel/runtime": "^7.13.17",

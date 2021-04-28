@@ -9,7 +9,7 @@ export default class TeaserBox extends Component {
   constructor(element) {
     super(element);
 
-    const link = element.querySelector('.teaser-box__link a');
+    const link = element.querySelector('.c-teaser-box__link a');
     if (link) {
       element.classList.add('js-linked');
       linkedArea(element, link);

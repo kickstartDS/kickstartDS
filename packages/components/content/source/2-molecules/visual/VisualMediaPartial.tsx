@@ -16,9 +16,9 @@ const Image: FunctionComponent<IMedia> = ({ image = {}, inbox }) => {
   return (
     <picture
       className={classnames(
-        'visual__image',
-        indent !== 'none' && `visual__image--indent-${indent}`,
-        { 'visual__image--inbox': inbox }
+        'c-visual__image',
+        indent !== 'none' && `c-visual__image--indent-${indent}`,
+        { 'c-visual__image--inbox': inbox }
       )}
     >
       {slide && !slide.first ? (
@@ -55,7 +55,7 @@ const Image: FunctionComponent<IMedia> = ({ image = {}, inbox }) => {
 const Video: FunctionComponent<IMedia> = ({ video = {} }) => {
   const { srcMobile, srcTablet, srcDesktop } = video;
   return (
-    <video className="visual__video" muted loop data-object-fit>
+    <video className="c-visual__video" muted loop data-object-fit>
       <source media="(min-width: 950px)" src={srcDesktop} type="video/mp4" />
       <source media="(min-width: 600px)" src={srcTablet} type="video/mp4" />
       <source src={srcMobile} type="video/mp4" />

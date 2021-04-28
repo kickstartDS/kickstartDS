@@ -1,14 +1,18 @@
-@use '@kickstartds/base/source/0-base/1-tools/scss/helpers';
+@use 'sass:meta';
 @use '@kickstartds/core/source/core/breakpoint';
+@use '@kickstartds/core/source/core/custom-properties';
 @use '@kickstartds/base/source/0-base/0-settings/selector';
 @use 'bourbon/core/bourbon';
-@use 'settings/visuals';
 
+@use './visual-slider-vars';
 @use './slide-preview/visual-slide-preview';
 
-.visual-slider {
+$vars: meta.module-variables(visual-slider-vars);
+@include custom-properties.styles($vars, true);
+
+.c-visual-slider {
   // hide preview on small screens
-  .visual-slide--preview {
+  .c-visual-slide--preview {
     @include breakpoint.media('<s') {
       /* critical:start */
       @include bourbon.hide-visually;
@@ -30,7 +34,7 @@
 
     @include breakpoint.media('≥s') {
       margin-top: 0;
-      border-bottom: 1px solid visuals.$slider-nav__border-bottom-color;
+      border-bottom: 1px solid var(--c-visual-slider_nav--border-bottom-color);
     }
   }
 }

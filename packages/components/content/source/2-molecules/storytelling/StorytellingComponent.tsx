@@ -1,6 +1,6 @@
-import { FunctionComponent } from 'react';
+import { createContext, FunctionComponent, useContext } from 'react';
 import classnames from 'classnames';
-import { ContentHeadline } from '@kickstartds/base/lib/content-headline';
+import { Headline } from '@kickstartds/base/lib/headline';
 import { LinkButton } from '@kickstartds/base/lib/link-button';
 import { RichText } from '@kickstartds/base/lib/rich-text';
 import { Picture } from '@kickstartds/base/lib/picture';
@@ -20,16 +20,16 @@ const StorytellingMixin: FunctionComponent<StorytellingProps & ILazy> = ({
   backgroundImage,
 }) => (
   <div
-    className={classnames('storytelling', {
-      'storytelling--order-mobile-image-last':
+    className={classnames('c-storytelling', {
+      'c-storytelling--order-mobile-image-last':
         image.order && image.order.mobileImageLast,
-      'storytelling--order-desktop-image-last':
+      'c-storytelling--order-desktop-image-last':
         image.order && image.order.desktopImageLast,
-      'storytelling--full': full,
-      'storytelling--four-to-three': image.ratio === '4:3',
-      'storytelling--three-to-two': image.ratio === '3:2',
-      'storytelling--sixteen-to-nine': image.ratio === '16:9',
-      'storytelling--square': image.ratio === '1:1',
+      'c-storytelling--full': full,
+      'c-storytelling--four-to-three': image.ratio === '4:3',
+      'c-storytelling--three-to-two': image.ratio === '3:2',
+      'c-storytelling--sixteen-to-nine': image.ratio === '16:9',
+      'c-storytelling--square': image.ratio === '1:1',
       lazyload: lazy && backgroundImage,
     })}
     style={{
@@ -40,13 +40,13 @@ const StorytellingMixin: FunctionComponent<StorytellingProps & ILazy> = ({
   >
     <div
       className={classnames(
-        'storytelling__image',
+        'c-storytelling__image',
         image.vAlign &&
           image.vAlign !== 'center' &&
-          `storytelling__image--${image.vAlign}`,
+          `c-storytelling__image--${image.vAlign}`,
         image.hAlign &&
           image.hAlign !== 'center' &&
-          `storytelling__image--${image.hAlign}`
+          `c-storytelling__image--${image.hAlign}`
       )}
     >
       {image.source && (
@@ -61,22 +61,22 @@ const StorytellingMixin: FunctionComponent<StorytellingProps & ILazy> = ({
 
     <div
       className={classnames(
-        'storytelling__box',
-        box.vAlign !== 'center' && `storytelling__box--${box.vAlign}`,
-        box.hAlign !== 'center' && `storytelling__box--${box.hAlign}`
+        'c-storytelling__box',
+        box.vAlign !== 'center' && `c-storytelling__box--${box.vAlign}`,
+        box.hAlign !== 'center' && `c-storytelling__box--${box.hAlign}`
       )}
     >
       <div
         className={classnames(
-          'storytelling__box__content',
+          'c-storytelling__box__content',
           box.textAlign !== 'left' &&
-            `storytelling__box__content--${box.textAlign}`
+            `c-storytelling__box__content--${box.textAlign}`
         )}
         style={{ color: box.textColor }}
       >
-        {box.headline && <ContentHeadline {...box.headline} />}
+        {box.headline && <Headline {...box.headline} />}
         {box.text && (
-          <RichText text={box.text} className="storytelling__text" />
+          <RichText text={box.text} className="c-storytelling__text" />
         )}
         {box.link && <LinkButton {...box.link} />}
       </div>
@@ -84,8 +84,8 @@ const StorytellingMixin: FunctionComponent<StorytellingProps & ILazy> = ({
   </div>
 );
 
-export const Storytelling: FunctionComponent<StorytellingProps> = (props) => (
-  <div className="storytelling__wrapper">
+const StorytellingComponent: FunctionComponent<StorytellingProps> = (props) => (
+  <div className="c-storytelling__wrapper">
     <StorytellingMixin {...props} lazy={true} />
     {props.backgroundImage && (
       <noscript>
@@ -94,3 +94,10 @@ export const Storytelling: FunctionComponent<StorytellingProps> = (props) => (
     )}
   </div>
 );
+
+export const StorytellingContextDefault = StorytellingComponent;
+export const StorytellingContext = createContext(StorytellingContextDefault);
+export const Storytelling: typeof StorytellingContextDefault = (props) => {
+  const Component = useContext(StorytellingContext);
+  return <Component {...props} />;
+};

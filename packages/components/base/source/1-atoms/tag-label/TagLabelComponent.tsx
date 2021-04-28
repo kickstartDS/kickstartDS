@@ -12,18 +12,18 @@ const TagLabelComponent: FunctionComponent<TagLabelProps> = ({
   removable,
 }) => (
   <div
-    className={`tag-label tag-label--${size}`}
+    className={`c-tag-label c-tag-label--${size}`}
     data-component={removable ? 'base.tag-label' : null}
   >
     {link ? (
-      <Link href={link} className="tag-label__content">
+      <Link href={link} className="c-tag-label__content">
         {label}
       </Link>
     ) : (
-      <span className="tag-label__content">{label}</span>
+      <span className="c-tag-label__content">{label}</span>
     )}
     {removable && (
-      <button className="tag-label__remove-btn" title="entfernen">
+      <button className="c-tag-label__remove-btn" title="entfernen">
         <Icon icon="close" role="none" />
       </button>
     )}
