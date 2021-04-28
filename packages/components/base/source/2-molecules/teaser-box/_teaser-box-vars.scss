@@ -1,0 +1,43 @@
+$name-: 'c-teaser-box' !default;
+
+$host: (
+  '.c-teaser-box': (
+    font: var(--font-copy-m),
+    color: var(--color-black),
+    background: var(--color-white),
+    border: 1px solid var(--color-grey-1),
+    border-radius: null,
+    shadow: null,
+    shadow-hover: (
+      0 0 30px rgba(0, 0, 0, 0.1),
+      0 10px 20px -15px rgba(0, 0, 0, 0.023),
+      0 25px 25px -35px rgba(0, 0, 0, 0.057),
+    ),
+  ),
+  '.c-teaser-box--style-dark': (
+    color: var(--color-white),
+    background: var(--color-primary),
+    border: null,
+    shadow: null,
+    shadow-hover: (
+      0 0 30px rgba(0, 0, 0, 0.2),
+      0 10px 20px -15px rgba(0, 0, 0, 0.15),
+      0 25px 25px -35px rgba(0, 0, 0, 0.25),
+    ),
+  ),
+) !default;
+
+$topic: (
+  '.c-teaser-box': (
+    font-xs: var(--font-display-s),
+    font-s: var(--font-display-m),
+    font-m: var(--font-display-l),
+    font: var(--c-content-box_topic--font-m),
+    font-weight: var(--g-headline--font-weight),
+    color: var(--g-headline-color),
+    margin: var(--g-headline-margin),
+  ),
+  '.c-teaser-box--style-dark': (
+    color: var(--color-white),
+  ),
+) !default;
