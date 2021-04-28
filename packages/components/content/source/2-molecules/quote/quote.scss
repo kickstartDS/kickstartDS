@@ -7,7 +7,7 @@
 $vars: meta.module-variables(quote-vars);
 @include custom-properties.styles($vars);
 
-.quote {
+.c-quote {
   display: flex;
   align-items: var(--c-quote--align);
 

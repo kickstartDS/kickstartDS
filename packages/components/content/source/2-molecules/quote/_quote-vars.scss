@@ -1,7 +1,7 @@
 $name-: 'c-quote';
 
 $host: (
-  '.quote': (
+  '.c-quote': (
     align: (
       xs: normal,
       m: center,
@@ -10,7 +10,7 @@ $host: (
 ) !default;
 
 $image: (
-  '.quote': (
+  '.c-quote': (
     max-width: (
       xs: 20%,
       m: 30%,
@@ -19,7 +19,7 @@ $image: (
 ) !default;
 
 $content: (
-  '.quote': (
+  '.c-quote': (
     padding-left: (
       xs: 2rem,
       m: 4rem,
@@ -28,7 +28,7 @@ $content: (
 ) !default;
 
 $icon: (
-  '.quote': (
+  '.c-quote': (
     font-size: (
       xs: 2.5rem,
       m: 4rem,
@@ -40,14 +40,14 @@ $icon: (
 ) !default;
 
 $text: (
-  '.quote': (
+  '.c-quote': (
     font: null,
     margin-bottom: null,
   ),
 ) !default;
 
 $source: (
-  '.quote': (
+  '.c-quote': (
     font-style: null,
     font-weight: null,
     font: null,
@@ -56,7 +56,7 @@ $source: (
 ) !default;
 
 $date: (
-  '.quote': (
+  '.c-quote': (
     font-style: null,
     font-weight: null,
     font: null,

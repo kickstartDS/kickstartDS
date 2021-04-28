@@ -10,21 +10,21 @@ export const Quote: FunctionComponent<QuoteProps> = ({
   source,
   date,
 }) => (
-  <div className="quote">
+  <div className="c-quote">
     {image && (
-      <div className="quote__image-wrap">
-        <div className="quote__image">
+      <div className="c-quote__image-wrap">
+        <div className="c-quote__image">
           <Picture src={image} />
         </div>
       </div>
     )}
-    <div className="quote__content">
-      <div className="quote__text">{text}</div>
+    <div className="c-quote__content">
+      <div className="c-quote__text">{text}</div>
 
-      {source && <div className="quote__source">{source}</div>}
+      {source && <div className="c-quote__source">{source}</div>}
 
       {date && (
-        <div className="quote__date">
+        <div className="c-quote__date">
           {format(new Date(date), 'dd.MM.yyyy')}
         </div>
       )}
