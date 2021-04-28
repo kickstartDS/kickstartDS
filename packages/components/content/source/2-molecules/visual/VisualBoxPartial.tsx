@@ -13,7 +13,7 @@ export const VisualBoxPartial: FunctionComponent<IBox> = ({
   indent,
   horizontal,
   vertical,
-  style,
+  background,
   headline,
   text,
   link,
@@ -32,7 +32,7 @@ export const VisualBoxPartial: FunctionComponent<IBox> = ({
     <div
       className={classnames(
         'c-visual__box',
-        style && `c-visual__box--${style}`
+        background && `c-visual__box--${background}`
       )}
     >
       {headline && <p className="c-visual__topic">{headline}</p>}

@@ -42,9 +42,6 @@ export type ButtonType = 'button' | 'submit' | 'reset';
 export type InputValue = string;
 export type InputName = string;
 export type Disabled = boolean;
-export type LoadingButton = boolean;
-export type SuccessButton = boolean;
-export type OnclickAttribute = string;
 
 /**
  * Button
@@ -64,9 +61,6 @@ export interface ButtonProps {
   value?: InputValue;
   name?: InputName;
   disabled?: Disabled;
-  isLoading?: LoadingButton;
-  isSuccessful?: SuccessButton;
-  onclick?: OnclickAttribute;
 }
 /**
  * Icon

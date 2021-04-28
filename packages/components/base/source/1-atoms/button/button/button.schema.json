@@ -97,20 +97,6 @@
           "type": "boolean",
           "default": false,
           "title": "Disabled"
-        },
-        "isLoading": {
-          "type": "boolean",
-          "default": false,
-          "title": "Loading Button"
-        },
-        "isSuccessful": {
-          "type": "boolean",
-          "default": false,
-          "title": "Success Button"
-        },
-        "onclick": {
-          "type": "string",
-          "title": "`onclick` attribute"
         }
       },
       "required": ["type"],
