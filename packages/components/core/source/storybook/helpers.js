@@ -1,16 +1,4 @@
 /* eslint-disable no-nested-ternary */
-let imageAssetPathPrefix;
-const fixes = (string) =>
-  string &&
-  string.replace(
-    'media/dummy/',
-    imageAssetPathPrefix ? `${imageAssetPathPrefix}/dummy/` : 'media/dummy/'
-  );
-
-const setImageAssetPathPrefix = (newImageAssetPathPrefix) => {
-  imageAssetPathPrefix = newImageAssetPathPrefix;
-};
-
 const getArgsShared = (properties, group = 'general', subgroup) => {
   const argTypes = {};
   const args = {};
@@ -39,15 +27,15 @@ const getArgsShared = (properties, group = 'general', subgroup) => {
               : 'text',
           name: group === 'general' ? propertyName : `${group}.${propertyName}`,
           description: `**${propertySchema.title}:**\n\n${propertySchema.description}`,
-          defaultValue: fixes(propertySchema.default),
+          defaultValue: propertySchema.default,
           table: {
             category: group,
-            defaultValue: { summary: fixes(propertySchema.default) },
+            defaultValue: { summary: propertySchema.default },
             subcategory: subgroup || undefined,
           },
         };
 
-        args[propertyName] = fixes(propertySchema.default);
+        args[propertyName] = propertySchema.default;
 
         break;
 
@@ -229,4 +217,4 @@ const unpack = (flatArgs) => {
   return args;
 };
 
-export { unpack, getArgTypes, getArgs, setImageAssetPathPrefix };
+export { unpack, getArgsShared, getArgTypes, getArgs };
