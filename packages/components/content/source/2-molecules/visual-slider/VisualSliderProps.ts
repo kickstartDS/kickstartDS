@@ -59,6 +59,10 @@ export type Headline = string;
  */
 export type Text = string;
 /**
+ * Toggles visibility of the link
+ */
+export type DisplayLink = boolean;
+/**
  * Text used on button
  */
 export type Label = string;
@@ -199,6 +203,7 @@ export interface TextBox {
  * Text box link configuration
  */
 export interface Link {
+  enabled?: DisplayLink;
   label?: Label;
   variant: ButtonStyle;
   size?: ButtonSize;
