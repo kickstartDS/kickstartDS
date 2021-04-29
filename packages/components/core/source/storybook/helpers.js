@@ -210,9 +210,12 @@ const unpack = (flatArgs) => {
 const unpackDecorator = (story, config) =>
   story({ ...config, args: unpack(config.args) });
 
+const isObject = (obj) =>
+  Object.prototype.toString.call(obj) === '[object Object]';
+
 const pack = (obj) =>
   Object.entries(obj).reduce((prev, [key, value]) => {
-    if (typeof value === 'object') {
+    if (isObject(value)) {
       Object.entries(pack(value)).forEach(([key2, value2]) => {
         prev[`${key}.${key2}`] = value2;
       });
