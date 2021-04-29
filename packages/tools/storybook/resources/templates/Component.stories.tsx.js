@@ -12,6 +12,8 @@ import { getArgsShared, unpack } from '../../../../components/core/lib/storybook
 import schema from '../../../../components/${moduleDir}/lib/${componentDir}/${componentLowercased}.schema.dereffed.json';
 import { ${componentPascalcased} } from '../../../../components/${moduleDir}/lib/${componentDir}';
 
+${componentPascalcased}.displayName = '${componentPascalcased}';
+
 const { argTypes, defaultArgs } = getArgsShared(schema.properties);
 const Template: Story = (args) => <${componentPascalcased} {...args} />;
 

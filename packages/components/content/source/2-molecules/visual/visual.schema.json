@@ -136,7 +136,21 @@
         "link": {
           "title": "Link",
           "description": "Text box link configuration",
-          "$ref": "http://frontend.ruhmesmeile.com/base/atoms/link-button.schema.json"
+          "allOf": [
+            {
+              "properties": {
+                "enabled": {
+                  "title": "Display Link",
+                  "description": "Toggles visibility of the link",
+                  "type": "boolean",
+                  "default": true
+                }
+              }
+            },
+            {
+              "$ref": "http://frontend.ruhmesmeile.com/base/atoms/link-button.schema.json"
+            }
+          ]
         },
         "indent": {
           "title": "Indent",
