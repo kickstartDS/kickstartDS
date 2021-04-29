@@ -1,7 +1,7 @@
 /* eslint-disable no-nested-ternary */
 const getArgsShared = (properties, group = 'general', subgroup) => {
   const argTypes = {};
-  const args = {};
+  const defaultArgs = {};
 
   Object.entries(properties).forEach(([propertyName, propertySchema]) => {
     switch (propertySchema.type) {
@@ -35,7 +35,7 @@ const getArgsShared = (properties, group = 'general', subgroup) => {
           },
         };
 
-        args[propertyName] = propertySchema.default;
+        defaultArgs[propertyName] = propertySchema.default;
 
         break;
 
@@ -52,7 +52,7 @@ const getArgsShared = (properties, group = 'general', subgroup) => {
           },
         };
 
-        args[propertyName] = propertySchema.default;
+        defaultArgs[propertyName] = propertySchema.default;
 
         break;
 
@@ -73,8 +73,8 @@ const getArgsShared = (properties, group = 'general', subgroup) => {
             control: { disable: true },
           };
 
-          Object.entries(sharedArgs.args).forEach(([argName, arg]) => {
-            args[`${propertyName}.${argName}`] = arg;
+          Object.entries(sharedArgs.defaultArgs).forEach(([argName, arg]) => {
+            defaultArgs[`${propertyName}.${argName}`] = arg;
           });
         } else {
           argTypes[propertyName] = {
@@ -109,8 +109,8 @@ const getArgsShared = (properties, group = 'general', subgroup) => {
               }
             );
 
-            Object.entries(sharedArgs.args).forEach(([argName, arg]) => {
-              args[`${propertyName}[${index}].${argName}`] = arg;
+            Object.entries(sharedArgs.defaultArgs).forEach(([argName, arg]) => {
+              defaultArgs[`${propertyName}[${index}].${argName}`] = arg;
             });
           });
 
@@ -131,12 +131,12 @@ const getArgsShared = (properties, group = 'general', subgroup) => {
           //       }
           //     );
 
-          //     Object.entries(sharedArgs.args).forEach(([argName, arg]) => {
+          //     Object.entries(sharedArgs.defaultArgs).forEach(([argName, arg]) => {
           //       args[`${propertyName}[${index}].${argName}`] = arg;
           //     });
           //   });
         }
-        args[propertyName] = propertySchema.default;
+        defaultArgs[propertyName] = propertySchema.default;
 
         break;
 
@@ -162,7 +162,7 @@ const getArgsShared = (properties, group = 'general', subgroup) => {
           },
         };
 
-        args[propertyName] = propertySchema.default;
+        defaultArgs[propertyName] = propertySchema.default;
 
         break;
 
@@ -171,17 +171,7 @@ const getArgsShared = (properties, group = 'general', subgroup) => {
     }
   });
 
-  return { argTypes, args };
-};
-
-const getArgTypes = (properties) => {
-  const argsShared = getArgsShared(properties);
-  return { ...argsShared.argTypes };
-};
-
-const getArgs = (properties) => {
-  const argsShared = getArgsShared(properties);
-  return { ...argsShared.args };
+  return { argTypes, defaultArgs };
 };
 
 const unpack = (flatArgs) => {
@@ -217,4 +207,19 @@ const unpack = (flatArgs) => {
   return args;
 };
 
-export { unpack, getArgsShared, getArgTypes, getArgs };
+const unpackDecorator = (story, config) =>
+  story({ ...config, args: unpack(config.args) });
+
+const pack = (obj) =>
+  Object.entries(obj).reduce((prev, [key, value]) => {
+    if (typeof value === 'object') {
+      Object.entries(pack(value)).forEach(([key2, value2]) => {
+        prev[`${key}.${key2}`] = value2;
+      });
+    } else {
+      prev[key] = value;
+    }
+    return prev;
+  }, {});
+
+export { unpack, unpackDecorator, pack, getArgsShared };

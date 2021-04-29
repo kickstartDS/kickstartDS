@@ -1,6 +1,7 @@
 import '@storybook/react';
 // @see https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/attrchange
 import 'lazysizes/plugins/attrchange/ls.attrchange';
+import { unpackDecorator } from '../../../components/core/lib/storybook/helpers';
 
 import '../../../components/base/lib/global/base.js';
 import '../../../components/base/lib/global/base.css';
@@ -26,3 +27,5 @@ export const parameters = {
     },
   },
 };
+
+export const decorators = [unpackDecorator];
