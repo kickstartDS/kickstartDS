@@ -1,8 +1,10 @@
-const docState = document.readyState;
+export const inBrowser = typeof window !== 'undefined';
+
+const docState = inBrowser && document.readyState;
 const ready = docState === 'interactive' || docState === 'complete';
 const queue = [];
 
-if (!ready) {
+if (inBrowser && !ready) {
   document.addEventListener('DOMContentLoaded', () => {
     while (queue.length) {
       queue.pop()();
@@ -11,9 +13,11 @@ if (!ready) {
 }
 
 export function domLoaded(callback) {
-  if (ready) {
-    setTimeout(callback);
-  } else {
-    queue.push(callback);
+  if (inBrowser) {
+    if (ready) {
+      setTimeout(callback);
+    } else {
+      queue.push(callback);
+    }
   }
 }

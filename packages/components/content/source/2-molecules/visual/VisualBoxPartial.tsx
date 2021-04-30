@@ -41,7 +41,7 @@ export const VisualBoxPartial: FunctionComponent<IBox> = ({
 
       {link && link.enabled && (
         <div className="c-visual__link">
-          <LinkButton {...link} />
+          <LinkButton {...{ ...link, enabled: undefined }} />
         </div>
       )}
     </div>

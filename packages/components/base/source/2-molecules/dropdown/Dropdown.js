@@ -1,4 +1,4 @@
-import { Component } from '@kickstartds/core/lib/core';
+import { Component, inBrowser } from '@kickstartds/core/lib/core';
 
 export default class Dropdown extends Component {
   static identifier = 'base.dropdown';
@@ -74,18 +74,20 @@ export default class Dropdown extends Component {
   }
 }
 
-document.addEventListener('focusout', (event) => {
-  let dropdown = event.target;
+if (inBrowser) {
+  document.addEventListener('focusout', (event) => {
+    let dropdown = event.target;
 
-  while (dropdown) {
-    dropdown = dropdown.closest('[data-close-on-blur]');
-    if (dropdown) {
-      if (!dropdown.contains(event.relatedTarget)) {
-        window.rm.radio.emit(`${dropdown.dataset.component}.close`, {
-          element: dropdown,
-        });
+    while (dropdown) {
+      dropdown = dropdown.closest('[data-close-on-blur]');
+      if (dropdown) {
+        if (!dropdown.contains(event.relatedTarget)) {
+          window.rm.radio.emit(`${dropdown.dataset.component}.close`, {
+            element: dropdown,
+          });
+        }
+        dropdown = dropdown.parentElement;
       }
-      dropdown = dropdown.parentElement;
     }
-  }
-});
+  });
+}

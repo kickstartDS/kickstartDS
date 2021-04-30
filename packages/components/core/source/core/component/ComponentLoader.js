@@ -2,7 +2,7 @@
 import 'lazysizes';
 import { findComponentClass, executeHooks } from './helper';
 import { uid } from './uid';
-import { domLoaded } from '../domLoaded';
+import { domLoaded, inBrowser } from '../domLoaded';
 
 const identifier = 'component';
 const eachElement = (nodeList, cb) =>
@@ -14,12 +14,15 @@ const eachElement = (nodeList, cb) =>
   });
 
 const loadedTopic = 'loadLazyComponent';
-document.addEventListener('lazybeforeunveil', (event) => {
-  const componentName = event.target.dataset.component;
-  if (componentName) {
-    rm.radio.emit(`${loadedTopic}.${componentName}`, event.target);
-  }
-});
+
+if (inBrowser) {
+  document.addEventListener('lazybeforeunveil', (event) => {
+    const componentName = event.target.dataset.component;
+    if (componentName) {
+      window.rm.radio.emit(`${loadedTopic}.${componentName}`, event.target);
+    }
+  });
+}
 
 function mountElement(
   element,
@@ -61,6 +64,8 @@ function mountElement(
 
 export default class ComponentLoader {
   constructor({ mountHooks = [], unmountHooks = [] } = {}) {
+    if (!inBrowser) return;
+
     this.mountHooks = mountHooks;
     this.unmountHooks = unmountHooks;
     this.classes = {};

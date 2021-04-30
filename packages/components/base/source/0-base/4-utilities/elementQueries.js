@@ -1,3 +1,6 @@
 import { ElementQueries } from 'css-element-queries';
+import { inBrowser } from '@kickstartds/core/lib/core';
 
-ElementQueries.listen();
+if (inBrowser) {
+  ElementQueries.listen();
+}
