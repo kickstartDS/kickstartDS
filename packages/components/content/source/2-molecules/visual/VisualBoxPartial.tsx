@@ -39,7 +39,7 @@ export const VisualBoxPartial: FunctionComponent<IBox> = ({
 
       {text && <RichText text={text} className="c-visual__text" />}
 
-      {link && (
+      {link && link.enabled && (
         <div className="c-visual__link">
           <LinkButton {...link} />
         </div>
