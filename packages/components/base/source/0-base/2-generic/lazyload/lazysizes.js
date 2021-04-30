@@ -1,11 +1,15 @@
+import { inBrowser } from '@kickstartds/core/lib/core';
+
 export { default } from 'lazysizes';
 
-document.addEventListener('lazybeforeunveil', (event) => {
-  const bg = event.target.getAttribute('data-bg');
-  if (bg) {
-    event.target.style.backgroundImage = `url(${bg})`;
-  }
-});
+if (inBrowser) {
+  document.addEventListener('lazybeforeunveil', (event) => {
+    const bg = event.target.getAttribute('data-bg');
+    if (bg) {
+      event.target.style.backgroundImage = `url(${bg})`;
+    }
+  });
+}
 
 export function lazyChildrenLoaded(element) {
   const lazyElements = element.querySelectorAll('.lazyload, .lazyloading');

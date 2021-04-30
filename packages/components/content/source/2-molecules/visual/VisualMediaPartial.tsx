@@ -4,7 +4,6 @@ import { Picture } from '@kickstartds/base/lib/picture';
 import { SlideContext } from '@kickstartds/base/lib/slider';
 import { MediaWrapper, Inbox } from './VisualProps';
 
-// TODO readd: autobuffer, autoplay, playsinline on <video> tag, wasn't allowed according to TypeScript typings
 // TODO readd: alt-text / altText
 interface IMedia extends MediaWrapper {
   inbox?: Inbox;
@@ -55,7 +54,14 @@ const Image: FunctionComponent<IMedia> = ({ image = {}, inbox }) => {
 const Video: FunctionComponent<IMedia> = ({ video = {} }) => {
   const { srcMobile, srcTablet, srcDesktop } = video;
   return (
-    <video className="c-visual__video" muted loop data-object-fit>
+    <video
+      className="c-visual__video"
+      muted
+      loop
+      autoPlay
+      playsInline
+      data-object-fit
+    >
       <source media="(min-width: 950px)" src={srcDesktop} type="video/mp4" />
       <source media="(min-width: 600px)" src={srcTablet} type="video/mp4" />
       <source src={srcMobile} type="video/mp4" />

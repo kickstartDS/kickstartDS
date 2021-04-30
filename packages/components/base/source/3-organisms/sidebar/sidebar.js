@@ -1,6 +1,5 @@
 import SimpleBar from 'simplebar';
 import { Component } from '@kickstartds/core/lib/core';
-import { isIE } from '../../0-base/1-tools/js/browser-sniffing';
 import { fadeIn, fadeOut } from '../../0-base/1-tools/js/fade';
 import { identifier, actions } from './Sidebar.desc';
 import SidebarToggle from './SidebarToggle';
@@ -24,11 +23,7 @@ export default class Sidebar extends Component {
     const content = this.element.querySelector('#sidebar-content');
 
     if (content) {
-      if (!isIE()) {
-        new SimpleBar(content); // eslint-disable-line no-new
-      } else {
-        content.style.overflowY = 'auto';
-      }
+      new SimpleBar(content); // eslint-disable-line no-new
     }
   }
 
