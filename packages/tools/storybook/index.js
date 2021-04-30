@@ -12,15 +12,15 @@ const exec = (...args) =>
       .on('error', reject);
   });
 
+const [, , task, kdsModule] = process.argv;
 const storybookOptions = [
   '--config-dir',
-  `${__dirname}/.storybook`,
+  `${__dirname}/.storybook${kdsModule ? `-${kdsModule}` : ''}`,
   '--static-dir',
   'legacy-instance',
 ];
 const storybookOptionsBuild = [...storybookOptions, '--output-dir', 'dist'];
 const storybookOptionsStart = [...storybookOptions, '--port', '3000'];
-const [, , task] = process.argv;
 
 cleanup()
   .then(() =>

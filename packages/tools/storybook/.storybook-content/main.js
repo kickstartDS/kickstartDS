@@ -1,0 +1,19 @@
+module.exports = {
+  stories: [
+    `../tmp/content/**/*.stories.@(tsx|mdx)`,
+    `../tmp/content/**/*.story.mdx`,
+    `../source/*.stories.@(mdx)`,
+  ],
+  features: {
+    postcss: false,
+  },
+  addons: ['@storybook/addon-essentials'],
+  core: {
+    builder: 'storybook-builder-vite',
+  },
+  async viteFinal(config, { configType }) {
+    config.esbuild = { jsxInject: `import React from 'react'` };
+
+    return config;
+  },
+};
