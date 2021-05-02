@@ -1,0 +1,993 @@
+backend:
+  name: git-gateway
+  branch: master
+local_backend: true
+media_folder: static/images
+public_folder: /images
+locale: de
+collections:
+  - name: pages
+    label: Pages
+    label_singular: Page
+    description: Pages consisting of default content element
+    folder: content
+    create: true
+    slug: page/{{slug}}
+    fields:
+      - label: Id
+        name: Id
+        description: Id
+        widget: id
+      - label: Layout
+        name: layout
+        description: Layout to use
+        widget: hidden
+        default: default
+      - label: Heading
+        name: heading
+        description: Main headline of the page
+        widget: string
+      - label: Content
+        name: content
+        description: Content for the page
+        widget: list
+        types:
+          - label: Button
+            name: button
+            widget: object
+            fields:
+              - label: Label
+                name: label
+                widget: string
+                default: Lorem Ipsum
+                hint: Text used on button
+                required: false
+              - label: Button Style
+                name: variant
+                widget: select
+                default: solid
+                required: true
+                options:
+                  - label: solid
+                    value: solid
+                  - label: solid-inverted
+                    value: solid-inverted
+                  - label: clear
+                    value: clear
+                  - label: clear-inverted
+                    value: clear-inverted
+                  - label: outline
+                    value: outline
+                  - label: outline-inverted
+                    value: outline-inverted
+              - label: Button Size
+                name: size
+                widget: select
+                default: medium
+                required: false
+                options:
+                  - label: small
+                    value: small
+                  - label: medium
+                    value: medium
+                  - label: large
+                    value: large
+              - label: Additional Classes
+                name: className
+                widget: string
+                required: false
+              - label: Button icon before
+                name: iconBefore
+                widget: boolean
+                default: false
+                hint: Display Button icon before text
+                required: false
+              - label: Button icon after
+                name: iconAfter
+                widget: boolean
+                default: false
+                hint: Display Button icon after text
+                required: false
+              - label: '`data-component` Attribute'
+                name: dataComponent
+                widget: string
+                required: false
+              - label: Fill Animation
+                name: fillAnimation
+                widget: boolean
+                default: false
+                hint: Add fill animation on hover
+                required: false
+              - label: Icon Animation
+                name: iconAnimation
+                widget: boolean
+                default: false
+                hint: Add icon animation on hover
+                required: false
+              - label: Button type
+                name: type
+                widget: select
+                default: button
+                required: true
+                options:
+                  - label: button
+                    value: button
+                  - label: submit
+                    value: submit
+                  - label: reset
+                    value: reset
+              - label: Input value
+                name: value
+                widget: string
+                required: false
+              - label: Input name
+                name: name
+                widget: string
+                required: false
+              - label: Disabled
+                name: disabled
+                widget: boolean
+                default: false
+                required: false
+          - label: Collapsible Box
+            name: collapsible-box
+            widget: object
+            fields:
+              - name: header-text
+                widget: string
+                required: false
+              - name: collapsed-box
+                widget: string
+                required: false
+          - label: Content-Box
+            name: content-box
+            widget: object
+            fields:
+              - name: ratio
+                widget: select
+                default: none
+                required: false
+                options:
+                  - label: none
+                    value: none
+                  - label: '4:3'
+                    value: '4:3'
+                  - label: '16:9'
+                    value: '16:9'
+                  - label: '1:1'
+                    value: '1:1'
+              - label: Image alignment
+                name: alignement
+                widget: select
+                default: left
+                required: false
+                options:
+                  - label: left
+                    value: left
+                  - label: center
+                    value: center
+                  - label: right
+                    value: right
+              - name: image
+                widget: image
+                default: images/dummy/16-9-s.png
+                required: false
+              - name: topic
+                widget: string
+                default: Lorem Ipsum
+                required: false
+              - name: text
+                widget: string
+                default: >-
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Lorem ispum dolor distinctio minima unde voluptatum aut. Lorem
+                  ipsum dolor sit amet. 
+                required: false
+          - label: Headline
+            name: headline
+            widget: object
+            fields:
+              - label: Headline Level
+                name: level
+                widget: select
+                default: h2
+                hint: Headline Level
+                required: true
+                options:
+                  - label: h1
+                    value: h1
+                  - label: h2
+                    value: h2
+                  - label: h3
+                    value: h3
+                  - label: h4
+                    value: h4
+                  - label: h5
+                    value: h5
+                  - label: p
+                    value: p
+              - label: Text Align
+                name: align
+                widget: select
+                default: center
+                hint: Text Align
+                required: false
+                options:
+                  - label: left
+                    value: left
+                  - label: center
+                    value: center
+                  - label: right
+                    value: right
+              - label: Headline Text
+                name: content
+                widget: string
+                default: Headline
+                hint: Headline Text
+                required: true
+              - label: Subheadline Text
+                name: subheadline
+                widget: string
+                default: ''
+                hint: Subheadline Text
+                required: false
+              - label: Bottom Spacing
+                name: spaceAfter
+                widget: select
+                default: none
+                hint: Bottom Spacing
+                required: false
+                options:
+                  - label: none
+                    value: none
+                  - label: small
+                    value: small
+                  - label: large
+                    value: large
+              - label: Page Header
+                name: pageHeader
+                widget: boolean
+                default: false
+                hint: Page Header
+                required: false
+          - label: Link Button
+            name: link-button
+            widget: object
+            fields:
+              - label: Label
+                name: label
+                widget: string
+                default: Lorem Ipsum
+                hint: Text used on button
+                required: false
+              - label: Button Style
+                name: variant
+                widget: select
+                default: solid
+                required: true
+                options:
+                  - label: solid
+                    value: solid
+                  - label: solid-inverted
+                    value: solid-inverted
+                  - label: clear
+                    value: clear
+                  - label: clear-inverted
+                    value: clear-inverted
+                  - label: outline
+                    value: outline
+                  - label: outline-inverted
+                    value: outline-inverted
+              - label: Button Size
+                name: size
+                widget: select
+                default: medium
+                required: false
+                options:
+                  - label: small
+                    value: small
+                  - label: medium
+                    value: medium
+                  - label: large
+                    value: large
+              - label: Additional Classes
+                name: className
+                widget: string
+                required: false
+              - label: Button icon before
+                name: iconBefore
+                widget: boolean
+                default: false
+                hint: Display Button icon before text
+                required: false
+              - label: Button icon after
+                name: iconAfter
+                widget: boolean
+                default: false
+                hint: Display Button icon after text
+                required: false
+              - label: '`data-component` Attribute'
+                name: dataComponent
+                widget: string
+                required: false
+              - label: Fill Animation
+                name: fillAnimation
+                widget: boolean
+                default: false
+                hint: Add fill animation on hover
+                required: false
+              - label: Icon Animation
+                name: iconAnimation
+                widget: boolean
+                default: false
+                hint: Add icon animation on hover
+                required: false
+              - label: Button href?
+                name: href
+                widget: string
+                default: https://example.com
+                hint: Link used for button
+                required: true
+              - label: Open link in new Tab
+                name: newTab
+                widget: boolean
+                default: false
+                hint: Open link in new Tab
+                required: false
+          - label: Slider
+            name: slider
+            widget: object
+            fields:
+              - label: Auto play
+                name: autoplay
+                widget: boolean
+                default: false
+                hint: >-
+                  Automatically move to next slide after 4 seconds without user
+                  interaction
+                required: false
+              - label: Class
+                name: className
+                widget: string
+                default: ''
+                hint: Additional css classes attached to the wrapping element
+                required: false
+              - label: Component
+                name: component
+                widget: string
+                default: base.slider
+                hint: Optional custom component identifier
+                required: false
+              - label: Arrows
+                name: arrows
+                widget: select
+                default: none
+                hint: >-
+                  Add arrows on the left and right to navigate to next or
+                  previous slide
+                required: false
+                options:
+                  - label: none
+                    value: none
+                  - label: outer
+                    value: outer
+                  - label: inner
+                    value: inner
+          - label: Tag Label
+            name: tag-label
+            widget: object
+            fields:
+              - label: Label
+                name: label
+                widget: string
+                default: Lorem Ipsum
+                required: true
+              - label: Size
+                name: size
+                widget: select
+                default: m
+                required: false
+                options:
+                  - label: s
+                    value: s
+                  - label: m
+                    value: m
+                  - label: l
+                    value: l
+              - label: Link Target
+                name: link
+                widget: string
+                required: false
+              - label: Removable
+                name: removable
+                widget: boolean
+                default: false
+                required: false
+          - label: Teaser-Box
+            name: teaser-box
+            widget: object
+            fields:
+              - name: image
+                widget: string
+                default: images/dummy/16-9-s.png
+                required: false
+              - name: topic
+                widget: string
+                default: Lorem Ipsum
+                required: false
+              - name: text
+                widget: string
+                default: >-
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Lorem ispum dolor distinctio minima unde voluptatum aut. Lorem
+                  ipsum dolor sit amet.
+                required: false
+              - name: darkStyle
+                widget: boolean
+                default: false
+                required: false
+              - name: ratio
+                widget: select
+                default: '16:9'
+                required: false
+                options:
+                  - label: '4:3'
+                    value: '4:3'
+                  - label: '16:9'
+                    value: '16:9'
+                  - label: '1:1'
+                    value: '1:1'
+              - name: imageSpacing
+                widget: boolean
+                default: false
+                required: false
+          - label: Text-Media
+            name: text-media
+            widget: object
+            fields:
+              - label: Text
+                name: text
+                widget: string
+                default: >-
+                  Consequuntur est quia atque eum ducimus. Consequatur fugiat
+                  hic eos perferendis. Libero unde omnis dolorem maxime
+                  occaecati sapiente distinctio. Consectetur non placeat dolorem
+                  est animi.
+
+
+                  Suscipit quos rem suscipit culpa. Et distinctio et veritatis
+                  consectetur quae dolorem aut. Explicabo commodi repudiandae
+                  fugiat. Accusamus alias mollitia perferendis qui iure magni.
+                  Minus est vitae dolor dolor.
+                hint: RTE text (Markdown)
+                required: false
+              - label: Media Alignment
+                name: mediaAlignment
+                widget: select
+                default: above-center
+                hint: relative to text
+                required: false
+                options:
+                  - label: above-left
+                    value: above-left
+                  - label: above-center
+                    value: above-center
+                  - label: above-right
+                    value: above-right
+                  - label: beside-left
+                    value: beside-left
+                  - label: beside-right
+                    value: beside-right
+                  - label: intext-left
+                    value: intext-left
+                  - label: intext-right
+                    value: intext-right
+                  - label: below-left
+                    value: below-left
+                  - label: below-center
+                    value: below-center
+                  - label: below-right
+                    value: below-right
+              - label: Media
+                name: media
+                widget: list
+                default:
+                  - image:
+                      src: images/dummy/1-1-s.png
+                      width: 300
+                      height: 300
+                      alt: Square
+                hint: Media
+                required: false
+                types:
+                  - label: Video
+                    name: video
+                    widget: object
+                    fields:
+                      - label: Source
+                        name: src
+                        widget: string
+                        default: images/dummy/video/video-compressed.mp4
+                        hint: Source
+                        required: true
+                      - label: Embedded video
+                        name: iframe
+                        widget: boolean
+                        default: false
+                        hint: Embedded video
+                        required: false
+                      - label: Video Title
+                        name: title
+                        widget: string
+                        hint: video title
+                        required: false
+                      - label: Width
+                        name: width
+                        default: 320
+                        hint: Width
+                        required: true
+                      - label: Height
+                        name: height
+                        default: 180
+                        hint: height
+                        required: true
+                  - label: Picture
+                    name: image
+                    widget: object
+                    fields:
+                      - label: Image Source
+                        name: src
+                        widget: image
+                        default: images/dummy/16-9-l.png
+                        hint: Image Source
+                        required: false
+                      - label: Image Sourceset
+                        name: srcSet
+                        widget: image
+                        hint: Image Sourceset
+                        required: false
+                      - label: Alt text
+                        name: alt
+                        widget: string
+                        hint: Alt text
+                        required: false
+                      - label: Width
+                        name: width
+                        default: 900
+                        hint: Width
+                        required: false
+                      - label: Height
+                        name: height
+                        default: 506
+                        hint: height
+                        required: false
+                      - label: Class
+                        name: className
+                        widget: string
+                        hint: Image Class
+                        required: false
+                      - label: ID
+                        name: id
+                        widget: string
+                        hint: ID
+                        required: false
+                      - label: Itemprop
+                        name: itemProp
+                        widget: string
+                        hint: Itemprop
+                        required: false
+                      - label: Object fit
+                        name: objectFit
+                        widget: select
+                        default: none
+                        hint: Object fit
+                        required: false
+                        options:
+                          - label: contain
+                            value: contain
+                          - label: cover
+                            value: cover
+                          - label: fill
+                            value: fill
+                          - label: none
+                            value: none
+                          - label: scale-down
+                            value: scale-down
+                      - label: Render noscript fallback
+                        name: noscript
+                        widget: boolean
+                        default: true
+                        hint: Render noscript fallback
+                        required: false
+                      - label: Lazy
+                        name: lazy
+                        widget: boolean
+                        default: true
+                        hint: Load Image Lazily
+                        required: false
+                      - label: Sources
+                        name: sources
+                        widget: list
+                        hint: >-
+                          Additional sources. This will result in a
+                          `picture`-Element
+                        required: false
+                        fields:
+                          - name: srcSet
+                            widget: string
+                            required: false
+                          - name: media
+                            widget: string
+                            required: false
+                          - name: type
+                            widget: string
+                            required: false
+                      - label: Picture Class
+                        name: pictureClassName
+                        widget: string
+                        required: false
+                  - label: Lazy Lightbox Image
+                    name: lightboxImage
+                    widget: object
+                    fields:
+                      - label: Thumbnail Source
+                        name: thumb
+                        widget: image
+                        default: images/dummy/16-9-s.png
+                        hint: Thumbnail Source
+                        required: false
+                      - label: Lightbox Image Source
+                        name: image
+                        widget: image
+                        default: images/dummy/16-9-xxxl.png
+                        hint: Lightbox Image Source
+                        required: false
+                      - label: Width
+                        name: width
+                        default: 1920
+                        hint: Width
+                        required: false
+                      - label: Height
+                        name: height
+                        default: 1280
+                        hint: height
+                        required: false
+                      - label: Hover Zoom Icon
+                        name: zoomIcon
+                        widget: boolean
+                        default: true
+                        hint: Hover Zoom Icon
+                        required: false
+                      - label: Caption
+                        name: caption
+                        widget: string
+                        hint: Caption
+                        required: false
+                      - label: Hide caption visually
+                        name: hideCaption
+                        widget: boolean
+                        default: false
+                        hint: Hide caption visually
+                        required: false
+                      - label: Gallery identifier
+                        name: gallery
+                        widget: string
+                        default: lightbox
+                        hint: Gallery identifier
+                        required: false
+                      - label: ID
+                        name: id
+                        widget: string
+                        hint: ID
+                        required: false
+                      - label: Additional Image Class
+                        name: class
+                        widget: string
+                        hint: Additional Image Class
+                        required: false
+          - label: Toggle Switch
+            name: toggle
+            widget: object
+            fields:
+              - label: ID
+                name: id
+                widget: string
+                default: ''
+                hint: Input id
+                required: true
+              - label: Name
+                name: name
+                widget: string
+                default: ''
+                hint: Name
+                required: true
+              - label: Checked
+                name: checked
+                widget: boolean
+                default: false
+                hint: Toggle is checked
+                required: true
+              - label: Disabled
+                name: disabled
+                widget: boolean
+                default: false
+                hint: Toggle is disabled
+                required: true
+          - label: Quote
+            name: quote
+            widget: object
+            fields:
+              - name: image
+                widget: image
+                default: images/dummy/1-1-xl.png
+                required: false
+              - name: text
+                widget: string
+                default: >-
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                  diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                  aliquyam erat, sed diam voluptua.
+                required: true
+              - name: source
+                widget: string
+                default: Lorem Ipsum
+                required: false
+              - name: date
+                widget: string
+                default: '2021-03-29'
+                required: false
+          - label: Quotes Slider
+            name: quotes-slider
+            widget: object
+            fields:
+              - name: slides
+                widget: list
+                required: false
+                fields:
+                  - name: image
+                    widget: image
+                    default: images/dummy/1-1-xl.png
+                    required: false
+                  - name: text
+                    widget: string
+                    default: >-
+                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                      sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                      magna aliquyam erat, sed diam voluptua.
+                    required: true
+                  - name: source
+                    widget: string
+                    default: Lorem Ipsum
+                    required: false
+                  - name: date
+                    widget: string
+                    default: '2021-03-29'
+                    required: false
+          - label: Visual Slide Preview
+            name: visual-slide-preview
+            widget: object
+            fields:
+              - label: Preview label
+                name: previewLabel
+                widget: string
+                default: Slide 1
+                hint: Preview label for slide in slider
+                required: false
+          - label: Storytelling
+            name: storytelling
+            widget: object
+            fields:
+              - label: Background image
+                name: backgroundImage
+                widget: image
+                required: false
+              - label: Background color
+                name: backgroundColor
+                widget: string
+                required: false
+              - label: Full size image
+                name: full
+                widget: boolean
+                default: false
+                required: false
+          - label: Visual
+            name: visual
+            fields:
+              - label: Height
+                name: height
+                widget: select
+                default: default
+                required: false
+                options:
+                  - label: small
+                    value: small
+                  - label: default
+                    value: default
+                  - label: fullImage
+                    value: fullImage
+                  - label: fullScreen
+                    value: fullScreen
+              - label: Grid layer
+                name: overlay
+                widget: boolean
+                default: false
+                hint: Enable grid layer
+                required: false
+              - label: Custom background color
+                name: backgroundColor
+                widget: string
+                default: '#ccc'
+                hint: Custom css background color
+                required: false
+              - label: Inbox
+                name: inbox
+                widget: boolean
+                default: false
+                hint: The text box is in front of the image on small screens
+                required: false
+              - label: Skip Button
+                name: skipButton
+                widget: boolean
+                default: false
+                hint: Show skip button
+                required: false
+              - label: Additional Classes
+                name: className
+                widget: string
+                required: false
+          - label: Visual Slider
+            name: visual-slider
+            widget: object
+            fields:
+              - label: Auto play
+                name: autoplay
+                widget: boolean
+                default: false
+                hint: >-
+                  Automatically move to next slide after 4 seconds without user
+                  interaction
+                required: false
+              - name: slides
+                widget: list
+                required: true
+                fields:
+                  - label: Height
+                    name: height
+                    widget: select
+                    default: default
+                    required: false
+                    options:
+                      - label: small
+                        value: small
+                      - label: default
+                        value: default
+                      - label: fullImage
+                        value: fullImage
+                      - label: fullScreen
+                        value: fullScreen
+                  - label: Grid layer
+                    name: overlay
+                    widget: boolean
+                    default: false
+                    hint: Enable grid layer
+                    required: false
+                  - label: Custom background color
+                    name: backgroundColor
+                    widget: string
+                    default: '#ccc'
+                    hint: Custom css background color
+                    required: false
+                  - label: Inbox
+                    name: inbox
+                    widget: boolean
+                    default: false
+                    hint: The text box is in front of the image on small screens
+                    required: false
+                  - label: Skip Button
+                    name: skipButton
+                    widget: boolean
+                    default: false
+                    hint: Show skip button
+                    required: false
+                  - label: Additional Classes
+                    name: className
+                    widget: string
+                    required: false
+                  - label: Slide preview label
+                    name: label
+                    widget: string
+                    hint: preview label
+                    required: false
+  - name: settings
+    description: General settings
+    label: Settings
+    label_singular: Setting
+    files:
+      - label: Navigation
+        name: navigation
+        file: source/settings/navigation.yml
+        fields:
+          - widget: object
+            label: Homepage
+            name: homepage
+            description: Page to initially display
+            fields:
+              - label: Label
+                name: label
+                description: Link text
+                widget: string
+              - label: Page
+                name: page
+                description: Link any page
+                widget: relation
+                collection: pages
+                searchFields:
+                  - title
+                valueField: Id
+                displayFields:
+                  - title
+          - widget: object
+            label: Main navigation
+            name: main-nav
+            description: Main navigation (sidebar or top)
+            fields:
+              - label: Links
+                label_singular: Link
+                name: links
+                description: 1st level links
+                widget: list
+                fields:
+                  - label: Label
+                    name: label
+                    description: Link text
+                    widget: string
+                  - label: Page
+                    name: page
+                    description: Link any page
+                    widget: relation
+                    collection: pages
+                    searchFields:
+                      - title
+                    valueField: Id
+                    displayFields:
+                      - title
+                  - label: Links
+                    label_singular: Link
+                    name: links
+                    description: 2nd level links
+                    widget: list
+                    fields:
+                      - label: Label
+                        name: label
+                        description: Link text
+                        widget: string
+                      - label: Page
+                        name: page
+                        description: Link any page
+                        widget: relation
+                        collection: pages
+                        searchFields:
+                          - title
+                        valueField: Id
+                        displayFields:
+                          - title
+                      - label: Links
+                        label_singular: Link
+                        name: links
+                        description: 3rd level links
+                        widget: list
+                        fields:
+                          - label: Label
+                            name: label
+                            description: Link text
+                            widget: string
+                          - label: Page
+                            name: page
+                            description: Link any page
+                            widget: relation
+                            collection: pages
+                            searchFields:
+                              - title
+                            valueField: Id
+                            displayFields:
+                              - title

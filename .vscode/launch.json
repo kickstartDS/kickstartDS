@@ -66,6 +66,15 @@
       "program": "${workspaceRoot}/packages/tools/storybook/scripts/create-preview-head-from-assets.js",
       "cwd": "${workspaceRoot}",
       "outputCapture": "std"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "runtimeVersion": "12.18.3",
+      "name": "Launch Netlify CMS Config Conversion",
+      "program": "${workspaceRoot}/packages/tools/netlify-cms/scripts/schema-convert-to-netlify-yaml.js",
+      "cwd": "${workspaceRoot}",
+      "outputCapture": "std"
     }
   ]
 }

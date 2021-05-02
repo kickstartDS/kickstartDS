@@ -1,0 +1,8 @@
+backend:
+  name: git-gateway
+  branch: master
+local_backend: true
+media_folder: static/images
+public_folder: /images
+locale: de
+collections:

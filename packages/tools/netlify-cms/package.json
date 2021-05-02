@@ -1,0 +1,11 @@
+{
+  "name": "@kickstartds-internal/netlify-cms",
+  "private": true,
+  "main": "index.js",
+  "scripts": {},
+  "dependencies": {
+    "fast-glob": "^3.2.5",
+    "js-yaml": "^4.1.0"
+  },
+  "devDependencies": {}
+}
