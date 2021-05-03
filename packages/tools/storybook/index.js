@@ -18,7 +18,7 @@ const kdsModule = argv.module;
 
 const storybookOptions = [
   '--config-dir',
-  `${__dirname}/.storybook${kdsModule ? `-${kdsModule}` : ''}`,
+  `${__dirname}/.storybook`,
   '--static-dir',
   'legacy-instance',
 ];
@@ -28,7 +28,7 @@ const storybookOptionsStart = [...storybookOptions, '--port', '3000'];
 cleanup()
   .then(() =>
     Promise.all([
-      createComponentStories(),
+      createComponentStories(kdsModule),
       // createMarkdownStories(),
       createPreviewHead(),
       createPreviewBody(),

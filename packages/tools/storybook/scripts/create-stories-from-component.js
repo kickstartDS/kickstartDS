@@ -22,8 +22,10 @@ const templateStory = (component, componentDir, moduleDir) => {
   );
 };
 
-module.exports = async () => {
-  const exportsAbsolute = await glob('packages/components/*/lib/exports.json');
+module.exports = async (kdsModule = '*') => {
+  const exportsAbsolute = await glob(
+    `packages/components/${kdsModule}/lib/exports.json`
+  );
   const exportsRelative = exportsAbsolute.map((e) =>
     path.relative(__dirname, e)
   );
