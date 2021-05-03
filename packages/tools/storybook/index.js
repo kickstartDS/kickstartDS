@@ -2,7 +2,7 @@ const { spawn } = require('child_process');
 const argv = require('yargs-parser')(process.argv.slice(2));
 const cleanup = require('./scripts/cleanup-stories');
 const createComponentStories = require('./scripts/create-stories-from-component');
-// const createMarkdownStories = require('./scripts/create-stories-from-markdown');
+const createMarkdownStories = require('./scripts/create-stories-from-markdown');
 const createPreviewHead = require('./scripts/create-preview-head-from-assets');
 const createPreviewBody = require('./scripts/create-preview-body');
 
@@ -29,7 +29,7 @@ cleanup()
   .then(() =>
     Promise.all([
       createComponentStories(kdsModule),
-      // createMarkdownStories(),
+      createMarkdownStories(kdsModule),
       createPreviewHead(),
       createPreviewBody(),
     ])

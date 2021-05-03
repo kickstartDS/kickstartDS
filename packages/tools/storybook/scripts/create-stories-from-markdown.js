@@ -7,7 +7,8 @@ const template = require('../resources/templates/Markdown.story.mdx');
 const templateStory = (mod, name, mdContent) => {
   const options = {
     title: `${capitalCase(mod)}/${capitalCase(name)}`,
-    content: mdContent.toString()
+    content: mdContent
+      .toString()
       // add linebreak between `<a>`-tag and headline
       .replace(/<\/a>(\r\n|\r|\n)#\s/g, '</a>\n\n# '),
   };
@@ -18,15 +19,15 @@ const templateStory = (mod, name, mdContent) => {
   );
 };
 
-module.exports = async () => {
-  const modules = (await glob('packages/components/*/lib/exports.json')).map(
-    (mod) => mod.split('/')[2]
-  );
-  const filePaths = await glob(
-    `packages/components/{${modules.join(',')}}/*.md`
-  );
+module.exports = async (kdsModule) => {
+  const kdsModules = kdsModule ? `{${kdsModule},core}` : '*';
+  const filePaths = await glob(`packages/components/${kdsModules}/**/*.md`, {
+    ignore: 'packages/components/*/node_modules',
+  });
   filePaths.forEach(async (filePath) => {
-    const [, mod, name] = filePath.match(/.*\/(.*)\/(\w+)\.md/);
+    const [, mod, name] = filePath.match(
+      /components\/(\w+)\/(?:.*\/)*(\w+)\.md$/
+    );
     const content = await fs.readFile(filePath);
     await templateStory(mod, name, content);
   });
