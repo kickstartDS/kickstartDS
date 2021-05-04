@@ -1,16 +1,27 @@
 import { FunctionComponent } from 'react';
 import classnames from 'classnames';
 import { LinkButton } from '@kickstartds/base/lib/link-button';
-import { RichText } from '@kickstartds/base/lib/rich-text';
-import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
+import {
+  RichText,
+  defaultRenderFn as richTextDefaultRenderFn,
+} from '@kickstartds/base/lib/rich-text';
+import {
+  renderFn,
+  renderTextFn,
+  defaultRenderFn,
+} from '@kickstartds/core/lib/core';
 import { TextBox, Inbox } from './VisualProps';
+
+export interface RenderFunctions {
+  renderHeadline?: renderFn;
+  renderText?: renderTextFn;
+}
 
 interface IBox extends TextBox {
   inbox?: Inbox;
-  renderHeadline?: renderFn;
 }
 
-export const VisualBoxPartial: FunctionComponent<IBox> = ({
+export const VisualBoxPartial: FunctionComponent<IBox & RenderFunctions> = ({
   inbox,
   indent,
   horizontal,
@@ -20,6 +31,7 @@ export const VisualBoxPartial: FunctionComponent<IBox> = ({
   text,
   link,
   renderHeadline = defaultRenderFn,
+  renderText = richTextDefaultRenderFn,
 }) => (
   <div
     className={classnames(
@@ -46,7 +58,7 @@ export const VisualBoxPartial: FunctionComponent<IBox> = ({
         <RichText
           text={text}
           className="c-visual__text"
-          renderText={(t: string) => <pre>{t}</pre>}
+          renderText={renderText}
         />
       )}
 

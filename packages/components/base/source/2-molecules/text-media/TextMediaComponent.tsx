@@ -1,9 +1,10 @@
 import { FunctionComponent } from 'react';
 import classnames from 'classnames';
+import { renderFn } from '@kickstartds/core/lib/core';
 import { Picture } from '../../1-atoms/image/picture';
 import { LightboxLazyImage } from '../../1-atoms/image/lightbox-image';
 import { IframeRatio } from '../../1-atoms/iframe';
-import { RichText } from '../../1-atoms/rich-text';
+import { RichText, defaultRenderFn } from '../../1-atoms/rich-text';
 import {
   TextMediaProps,
   Video as IVideo,
@@ -11,6 +12,10 @@ import {
   LazyLightboxImage as ILightboxImage,
 } from './TextMediaProps';
 import './text-media.scss';
+
+export interface RenderFunctions {
+  renderText?: renderFn;
+}
 
 const Video = ({ iframe, src, title, width, height }: IVideo) =>
   iframe ? (
@@ -55,10 +60,11 @@ const Media = ({ media }: TextMediaProps) =>
     </div>
   ) : null;
 
-export const TextMedia: FunctionComponent<TextMediaProps> = ({
+export const TextMedia: FunctionComponent<TextMediaProps & RenderFunctions> = ({
   text = '',
   media,
   mediaAlignment,
+  renderText = defaultRenderFn,
 }) => (
   <div
     className={classnames('text-media', {
@@ -75,13 +81,21 @@ export const TextMedia: FunctionComponent<TextMediaProps> = ({
   >
     {mediaAlignment?.startsWith('below') ? (
       <>
-        <RichText className="text-media__text" text={text} />
+        <RichText
+          className="text-media__text"
+          text={text}
+          renderText={renderText}
+        />
         <Media media={media} />
       </>
     ) : (
       <>
         <Media media={media} />
-        <RichText className="text-media__text" text={text} />
+        <RichText
+          className="text-media__text"
+          text={text}
+          renderText={renderText}
+        />
       </>
     )}
   </div>
