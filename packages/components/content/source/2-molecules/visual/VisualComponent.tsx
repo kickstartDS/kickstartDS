@@ -3,11 +3,16 @@ import classnames from 'classnames';
 import { Icon } from '@kickstartds/base/lib/icon';
 import { VisualProps } from './VisualProps';
 import { VisualMediaPartial } from './VisualMediaPartial';
-import { VisualBoxPartial } from './VisualBoxPartial';
+import {
+  RenderFunctions as BoxRenderFunctions,
+  VisualBoxPartial,
+} from './VisualBoxPartial';
 import './visual.scss';
 import './Visual.js';
 
-const VisualComponent: FunctionComponent<VisualProps> = ({
+const VisualComponent: FunctionComponent<
+  VisualProps & { box?: BoxRenderFunctions }
+> = ({
   media,
   box,
   overlay,
@@ -18,7 +23,7 @@ const VisualComponent: FunctionComponent<VisualProps> = ({
   className,
 }) => (
   <div
-    data-component="c-visual"
+    data-component="visual"
     className={classnames(
       'c-visual',
       {

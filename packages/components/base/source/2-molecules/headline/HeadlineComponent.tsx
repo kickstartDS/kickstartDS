@@ -1,15 +1,23 @@
 import { FunctionComponent, createContext, useContext } from 'react';
 import classnames from 'classnames';
+import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
 import { HeadlineProps } from './HeadlineProps';
 import './headline.scss';
 
-const HeadlineComponent: FunctionComponent<HeadlineProps> = ({
+interface RenderFunctions {
+  renderContent?: renderFn;
+  renderSubheadline?: renderFn;
+}
+
+const HeadlineComponent: FunctionComponent<HeadlineProps & RenderFunctions> = ({
   content,
   level = 'h2',
   align = 'left',
   pageHeader,
   subheadline,
   spaceAfter = 'none',
+  renderContent = defaultRenderFn,
+  renderSubheadline = defaultRenderFn,
 }) => {
   const TagName = level as keyof JSX.IntrinsicElements;
   return (
@@ -21,8 +29,12 @@ const HeadlineComponent: FunctionComponent<HeadlineProps> = ({
         { 'c-headline--page-header': pageHeader }
       )}
     >
-      <TagName>{content}</TagName>
-      {subheadline && <p className="c-headline__subheadline">{subheadline}</p>}
+      <TagName>{renderContent(content)}</TagName>
+      {subheadline && (
+        <p className="c-headline__subheadline">
+          {renderSubheadline(subheadline)}
+        </p>
+      )}
     </header>
   );
 };

@@ -2,7 +2,7 @@ const { spawn } = require('child_process');
 const argv = require('yargs-parser')(process.argv.slice(2));
 const cleanup = require('./scripts/cleanup-stories');
 const createComponentStories = require('./scripts/create-stories-from-component');
-// const createMarkdownStories = require('./scripts/create-stories-from-markdown');
+const createMarkdownStories = require('./scripts/create-stories-from-markdown');
 const createPreviewHead = require('./scripts/create-preview-head-from-assets');
 const createPreviewBody = require('./scripts/create-preview-body');
 
@@ -18,7 +18,7 @@ const kdsModule = argv.module;
 
 const storybookOptions = [
   '--config-dir',
-  `${__dirname}/.storybook${kdsModule ? `-${kdsModule}` : ''}`,
+  `${__dirname}/.storybook`,
   '--static-dir',
   'legacy-instance',
 ];
@@ -28,8 +28,8 @@ const storybookOptionsStart = [...storybookOptions, '--port', '3000'];
 cleanup()
   .then(() =>
     Promise.all([
-      createComponentStories(),
-      // createMarkdownStories(),
+      createComponentStories(kdsModule),
+      createMarkdownStories(kdsModule),
       createPreviewHead(),
       createPreviewBody(),
     ])

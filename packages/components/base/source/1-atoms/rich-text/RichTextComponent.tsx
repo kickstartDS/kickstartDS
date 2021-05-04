@@ -1,19 +1,28 @@
-import { FunctionComponent, createContext, useContext } from 'react';
+import {
+  FunctionComponent,
+  createContext,
+  useContext,
+  HTMLAttributes,
+} from 'react';
 import ReactMarkdown from 'react-markdown';
 import classnames from 'classnames';
+import { renderTextFn } from '@kickstartds/core/lib/core';
 import './rich-text.scss';
 
+export const defaultRenderFn: renderTextFn = (t) => (
+  <ReactMarkdown children={t} />
+);
+
 interface RichTextProps {
-  className?: string;
   text: string;
+  renderText?: renderTextFn;
 }
 
-const RichTextComponent: FunctionComponent<RichTextProps> = ({
-  text,
-  className,
-}) => (
-  <div className={classnames('rich-text', className)}>
-    <ReactMarkdown children={text} />
+const RichTextComponent: FunctionComponent<
+  RichTextProps & HTMLAttributes<HTMLDivElement>
+> = ({ text, renderText = defaultRenderFn, className, ...props }) => (
+  <div className={classnames('rich-text', className)} {...props}>
+    {renderText(text)}
   </div>
 );
 

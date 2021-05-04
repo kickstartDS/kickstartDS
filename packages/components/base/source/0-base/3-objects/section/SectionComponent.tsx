@@ -1,44 +1,78 @@
-import { FunctionComponent } from 'react';
+import {
+  FunctionComponent,
+  createContext,
+  useContext,
+  HTMLAttributes,
+} from 'react';
 import classnames from 'classnames';
 import { Headline } from '../../../2-molecules/headline/HeadlineComponent';
-import { HeadlineProps } from '../../../2-molecules/headline/HeadlineProps';
+import { SectionProps } from './SectionProps';
 import './section.scss';
 
-interface SectionProps {
-  background?: '0' | '1';
-  id?: string;
-  width?: 'full' | 'full-gap' | 'default' | 'narrow';
-  'space-before'?: 'default' | 'small' | 'none';
-  'space-after'?: 'default' | 'small' | 'none';
-  headline?: HeadlineProps;
-  className?: string;
-}
-
-export const Section: FunctionComponent<SectionProps> = ({
-  children,
-  background,
-  id,
+const Container: FunctionComponent<SectionProps> = ({
   width,
+  gutter,
+  mode,
+  children,
+}) => (
+  <div
+    className={classnames(
+      'l-section__container',
+      width && width !== 'default' && `l-section__container--${width}`,
+      gutter &&
+        gutter !== 'default' &&
+        `l-section__container--gutter-${gutter}`,
+      mode && mode !== 'default' && `l-section__container--${mode}`
+    )}
+  >
+    {children}
+  </div>
+);
+
+const SectionComponent: FunctionComponent<
+  SectionProps & HTMLAttributes<HTMLDivElement>
+> = ({
+  background,
   'space-before': spaceBefore,
   'space-after': spaceAfter,
   headline,
+  width,
+  gutter,
+  mode,
   className,
+  children,
+  ...props
 }) => (
   <div
     className={classnames(
       'l-section',
-      background && `l-section--bg-${background}`,
-      spaceBefore && `l-section--space-before-${spaceBefore}`,
-      spaceAfter && `l-section--space-after-${spaceAfter}`,
+      background && background !== 'default' && `l-section--${background}`,
+      spaceBefore &&
+        spaceBefore !== 'default' &&
+        `l-section--space-before-${spaceBefore}`,
+      spaceAfter &&
+        spaceAfter !== 'default' &&
+        `l-section--space-after-${spaceAfter}`,
       className
     )}
-    id={id}
+    {...props}
   >
-    <div
-      className={classnames('l-main-wrap', width && `l-main-wrap--${width}`)}
-    >
-      {headline ? <Headline {...headline} /> : ''}
-      {children}
-    </div>
+    {headline && (
+      <Container width={width}>
+        <Headline {...headline} />
+      </Container>
+    )}
+    {children && (
+      <Container width={width} gutter={gutter} mode={mode}>
+        {children}
+      </Container>
+    )}
   </div>
 );
+
+export const SectionContextDefault = SectionComponent;
+export const SectionContext = createContext(SectionContextDefault);
+export const Section: typeof SectionContextDefault = (props) => {
+  const Component = useContext(SectionContext);
+  return <Component {...props} />;
+};
