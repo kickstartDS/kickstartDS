@@ -1,0 +1,53 @@
+$name-: 'l-section';
+
+$host: (
+  '.l-section': (
+    background: null,
+    padding-top: var(--spacing-l),
+    padding-bottom: var(--spacing-l),
+  ),
+  '.l-section--accent': (
+    background: var(--color-primary-alpha-2),
+  ),
+  '.l-section--dark': (
+    background: var(--color-black-alpha-7),
+  ),
+  '.l-section--space-before-small': (
+    padding-top: var(--spacing-m),
+  ),
+  '.l-section--space-before-none': (
+    padding-top: 0,
+  ),
+  '.l-section--space-after-small': (
+    padding-bottom: var(--spacing-m),
+  ),
+  '.l-section--space-after-none': (
+    padding-bottom: 0,
+  ),
+) !default;
+
+$container: (
+  '.l-section__container': (
+    gutter: 1rem,
+  ),
+  '.l-section__container--gutter-large': (
+    gutter: 1.5rem,
+  ),
+  '.l-section__container--gutter-small': (
+    gutter: 0.5rem,
+  ),
+  '.l-section__container--gutter-none': (
+    gutter: 0,
+  ),
+) !default;
+
+$col: (
+  '.l-section__container': (
+    min-width: 18rem,
+    max-width: 1fr,
+    repeat: 'auto-fit',
+  ),
+  '.l-section__container--tile': (
+    repeat: 'auto-fill',
+  ),
+) !default;
