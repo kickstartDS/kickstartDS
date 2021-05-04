@@ -6,14 +6,22 @@ import {
   AnchorHTMLAttributes,
 } from 'react';
 import classnames from 'classnames';
+import {
+  renderFn,
+  defaultRenderFn,
+} from '../../../0-base/1-tools/ts/renderFunctions';
 import { Icon } from '../../icon';
 import { Link } from '../../link';
 import { LinkButtonProps } from './LinkButtonProps';
 import '../button/button.scss';
 
+interface RenderFunctions {
+  renderLabel?: renderFn;
+}
+
 const LinkButtonComponent: ForwardRefRenderFunction<
   HTMLAnchorElement,
-  LinkButtonProps & AnchorHTMLAttributes<HTMLAnchorElement>
+  LinkButtonProps & RenderFunctions & AnchorHTMLAttributes<HTMLAnchorElement>
 > = (
   {
     label,
@@ -28,6 +36,7 @@ const LinkButtonComponent: ForwardRefRenderFunction<
     icon,
     iconBefore,
     iconAfter,
+    renderLabel = defaultRenderFn,
     ...props
   },
   ref
@@ -53,7 +62,7 @@ const LinkButtonComponent: ForwardRefRenderFunction<
     {label ? (
       <>
         {icon && iconBefore && <Icon {...icon} />}
-        <span>{label}</span>
+        <span>{renderLabel(label)}</span>
         {icon && iconAfter && <Icon {...icon} />}
       </>
     ) : icon ? (
