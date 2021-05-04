@@ -6,10 +6,7 @@ import {
   AnchorHTMLAttributes,
 } from 'react';
 import classnames from 'classnames';
-import {
-  renderFn,
-  defaultRenderFn,
-} from '../../../0-base/1-tools/ts/renderFunctions';
+import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
 import { Icon } from '../../icon';
 import { Link } from '../../link';
 import { LinkButtonProps } from './LinkButtonProps';

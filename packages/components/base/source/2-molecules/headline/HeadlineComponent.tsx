@@ -1,9 +1,6 @@
 import { FunctionComponent, createContext, useContext } from 'react';
 import classnames from 'classnames';
-import {
-  renderFn,
-  defaultRenderFn,
-} from '../../0-base/1-tools/ts/renderFunctions';
+import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
 import { HeadlineProps } from './HeadlineProps';
 import './headline.scss';
 
