@@ -23,9 +23,9 @@ const VisualComponent: FunctionComponent<
   className,
 }) => (
   <div
-    data-component="c-visual"
+    data-component="visual"
     className={classnames(
-      'visual',
+      'c-visual',
       {
         'c-visual--full': height === 'fullScreen',
         'c-visual--small': height === 'small',
