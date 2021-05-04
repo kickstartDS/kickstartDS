@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://frontend.ruhmesmeile.com/base/base/section.schema.json",
+  "title": "Section",
+  "definitions": {
+    "container": {
+      "type": "object",
+      "properties": {
+        "width": {
+          "type": "string",
+          "enum": ["full", "max", "wide", "default", "narrow"],
+          "default": "default"
+        },
+        "gutter": {
+          "type": "string",
+          "enum": ["large", "default", "small", "none"],
+          "default": "default"
+        },
+        "mode": {
+          "type": "string",
+          "enum": ["default", "tile"],
+          "default": "default"
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "#/definitions/container"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "background": {
+          "type": "string",
+          "enum": ["default", "accent", "dark"],
+          "default": "default"
+        },
+        "space-before": {
+          "type": "string",
+          "enum": ["default", "small", "none"],
+          "default": "default"
+        },
+        "space-after": {
+          "type": "string",
+          "enum": ["default", "small", "none"],
+          "default": "default"
+        },
+        "headline": {
+          "$ref": "http://frontend.ruhmesmeile.com/base/molecules/headline.schema.json"
+        }
+      }
+    }
+  ]
+}
