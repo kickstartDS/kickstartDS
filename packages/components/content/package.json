@@ -28,6 +28,9 @@
     "date-fns": "^2.19.0",
     "objectFitPolyfill": "^2.3.0"
   },
+  "devDependencies": {
+    "bourbon": "^7.0.0"
+  },
   "peerDependencies": {
     "react": "^17.0.2"
   }
