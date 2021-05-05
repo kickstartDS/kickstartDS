@@ -3,6 +3,7 @@ const fs = require('fs-extra');
 const glob = require('fast-glob');
 const { capitalCase } = require('change-case');
 const template = require('../resources/templates/Markdown.story.mdx');
+const { root } = require('./utils');
 
 const templateStory = (mod, name, mdContent) => {
   const options = {
@@ -13,15 +14,14 @@ const templateStory = (mod, name, mdContent) => {
       .replace(/<\/a>(\r\n|\r|\n)#\s/g, '</a>\n\n# '),
   };
 
-  return fs.outputFile(
-    `packages/tools/storybook/tmp/${mod}/${name}.story.mdx`,
-    template(options)
-  );
+  return fs.outputFile(`tmp/${mod}/${name}.story.mdx`, template(options));
 };
 
 module.exports = async (kdsModule) => {
   const kdsModules = kdsModule ? `{${kdsModule},core}` : '*';
   const filePaths = await glob(`packages/components/${kdsModules}/**/*.md`, {
+    cwd: root,
+    absolute: true,
     ignore: 'packages/components/*/node_modules',
   });
   filePaths.forEach(async (filePath) => {

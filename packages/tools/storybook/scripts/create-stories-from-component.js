@@ -4,6 +4,7 @@ const glob = require('fast-glob');
 const path = require('path');
 const { pascalCase } = require('change-case');
 const template = require('../resources/templates/Component.stories.tsx');
+const { root } = require('./utils');
 
 const templateStory = (component, componentDir, moduleDir) => {
   const componentLowercased = component.toLowerCase();
@@ -17,14 +18,15 @@ const templateStory = (component, componentDir, moduleDir) => {
   };
 
   return fs.outputFile(
-    `packages/tools/storybook/tmp/${moduleDir}/${componentPascalcased}.stories.tsx`,
+    `tmp/${moduleDir}/${componentPascalcased}.stories.tsx`,
     template(options)
   );
 };
 
 module.exports = async (kdsModule = '*') => {
   const exportsAbsolute = await glob(
-    `packages/components/${kdsModule}/lib/exports.json`
+    `packages/components/${kdsModule}/lib/exports.json`,
+    { cwd: root, absolute: true }
   );
   const exportsRelative = exportsAbsolute.map((e) =>
     path.relative(__dirname, e)
@@ -42,7 +44,8 @@ module.exports = async (kdsModule = '*') => {
     const exportKeysGlob =
       exportsKeys.length > 1 ? `{${exportsKeys.join(',')}}` : exportsKeys[0];
     const schemaPaths = await glob(
-      `packages/components/${mod}/lib/${exportKeysGlob}/[!_]*.schema.dereffed.json`
+      `packages/components/${mod}/lib/${exportKeysGlob}/[!_]*.schema.dereffed.json`,
+      { cwd: root, absolute: true }
     );
     schemaPaths.forEach(async (schemaPath) => {
       const [, componentDir, component] = schemaPath.match(

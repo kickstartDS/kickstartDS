@@ -18,11 +18,15 @@ const kdsModule = argv.module;
 
 const storybookOptions = [
   '--config-dir',
-  `${__dirname}/.storybook`,
+  '.storybook',
   '--static-dir',
-  'legacy-instance',
+  '../../../legacy-instance',
 ];
-const storybookOptionsBuild = [...storybookOptions, '--output-dir', 'dist'];
+const storybookOptionsBuild = [
+  ...storybookOptions,
+  '--output-dir',
+  argv.outputDir || 'storybook-static',
+];
 const storybookOptionsStart = [...storybookOptions, '--port', '3000'];
 
 cleanup()
