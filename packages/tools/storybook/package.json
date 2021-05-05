@@ -3,7 +3,7 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "storybook": "start-storybook"
+    "chromatic": "chromatic --storybook-build-dir dist --skip '@(renovate/**|dependabot/**)' --exit-zero-on-changes --exit-once-uploaded --project-token $CHROMATIC_PROJECT_TOKEN"
   },
   "dependencies": {
     "ajv": "^7.2.1",

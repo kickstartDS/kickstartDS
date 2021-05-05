@@ -22,7 +22,11 @@ const storybookOptions = [
   '--static-dir',
   'legacy-instance',
 ];
-const storybookOptionsBuild = [...storybookOptions, '--output-dir', 'dist'];
+const storybookOptionsBuild = [
+  ...storybookOptions,
+  '--output-dir',
+  `${__dirname}/dist`,
+];
 const storybookOptionsStart = [...storybookOptions, '--port', '3000'];
 
 cleanup()
