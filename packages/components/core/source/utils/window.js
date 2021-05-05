@@ -1,25 +1,25 @@
 import throttle from 'lodash-es/throttle';
 import debounce from 'lodash-es/debounce';
-import { inBrowser } from '@kickstartds/core/lib/core';
+import { inBrowser } from '../core/domLoaded';
 
-export const events = {
-  resize: 'base.window.resize',
-  scroll: 'base.window.scroll',
-  scrollEnd: 'base.window.scrollEnd',
-  hashchange: 'base.window.hashchange',
+export const windowEvents = {
+  resize: 'core.window.resize',
+  scroll: 'core.window.scroll',
+  scrollEnd: 'core.window.scrollEnd',
+  hashchange: 'core.window.hashchange',
 };
 
 if (inBrowser) {
   const resizeEndPublisher = debounce(
-    () => window.rm.radio.emitSync(events.resize),
+    () => window.rm.radio.emitSync(windowEvents.resize),
     100
   );
   const scrollPublisher = throttle(
-    () => window.rm.radio.emitSync(events.scroll),
+    () => window.rm.radio.emitSync(windowEvents.scroll),
     100
   );
   const scrollEndPublisher = debounce(
-    () => window.rm.radio.emitSync(events.scrollEnd),
+    () => window.rm.radio.emitSync(windowEvents.scrollEnd),
     100
   );
 
@@ -34,6 +34,6 @@ if (inBrowser) {
   );
   window.addEventListener('hashchange', (event) => {
     event.preventDefault();
-    window.rm.radio.emit(events.hashchange);
+    window.rm.radio.emit(windowEvents.hashchange);
   });
 }

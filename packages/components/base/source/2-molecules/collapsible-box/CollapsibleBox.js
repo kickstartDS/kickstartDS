@@ -1,6 +1,5 @@
 import { Component } from '@kickstartds/core/lib/core';
-import { slideDown, slideUp } from '../../0-base/1-tools/js/slide';
-import { events as windowEvents } from '../../0-base/2-generic/window/window';
+import { slideDown, slideUp, windowEvents } from '@kickstartds/core/lib/utils';
 import { identifier } from './CollapsibleBox.desc';
 
 export default class CollapsibleBox extends Component {

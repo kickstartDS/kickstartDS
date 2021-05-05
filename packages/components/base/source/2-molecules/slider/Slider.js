@@ -1,12 +1,12 @@
 import merge from 'lodash-es/merge';
 
 import { Component } from '@kickstartds/core/lib/core';
+import { windowEvents } from '@kickstartds/core/lib/utils';
 import Keyboard from '@glidejs/glide/src/components/keyboard';
 import Glide from '../../0-base/1-tools/js/glide/Glide';
 import Click from '../../0-base/1-tools/js/glide/Click';
 import Autoheight from '../../0-base/1-tools/js/glide/Autoheight';
 import { render } from '../../0-base/1-tools/js/render';
-import { events as windowEvents } from '../../0-base/2-generic/window/window';
 import { SliderArrows as sliderArrowsTemplate } from './slider-arrows/SliderArrowsComponent.tsx';
 import { identifier, actions } from './Slider.desc';
 

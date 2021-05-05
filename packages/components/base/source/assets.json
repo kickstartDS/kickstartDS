@@ -1,4 +1,4 @@
 {
-  "js": ["0-base/2-generic/window/window.js", "0-base/global/base.js"],
+  "js": ["0-base/global/base.js"],
   "css": ["0-base/global/base.scss"]
 }

@@ -1,5 +1,5 @@
 import { Component } from '@kickstartds/core/lib/core';
-import { events as breakpointEvents } from '../../../0-base/1-tools/js/breakpoints';
+import { breakpointEvents } from '@kickstartds/core/lib/utils';
 
 export default class SelectInput extends Component {
   static identifier = 'base.select-input';
