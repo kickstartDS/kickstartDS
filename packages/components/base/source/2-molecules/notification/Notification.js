@@ -1,5 +1,5 @@
 import { Component } from '@kickstartds/core/lib/core';
-import { slideDown } from '../../0-base/1-tools/js/slide';
+import { slideDown } from '@kickstartds/core/lib/utils';
 import { render } from '../../0-base/1-tools/js/render';
 import { Notification as notificationTemplate } from './NotificationComponent.tsx';
 

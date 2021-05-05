@@ -1,3 +1,3 @@
 const del = require('del');
 
-module.exports = () => del('packages/tools/storybook/tmp');
+module.exports = () => del(['tmp', 'storybook-static']);

@@ -1,9 +1,10 @@
 import { Component } from '@kickstartds/core/lib/core';
-import breakpoints, {
-  events as breakpointEvents,
-} from '../../0-base/1-tools/js/breakpoints';
+import {
+  windowEvents,
+  breakpoints,
+  breakpointEvents,
+} from '@kickstartds/core/lib/utils';
 import { fadeIn, fadeOut } from '../../0-base/1-tools/js/fade';
-import { events as windowEvents } from '../../0-base/2-generic/window/window';
 
 export default class ScrollToTop extends Component {
   static identifier = 'base.scroll-to-top';

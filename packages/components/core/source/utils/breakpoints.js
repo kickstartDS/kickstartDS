@@ -1,9 +1,9 @@
 import im from 'include-media-export/include-media'; // https://github.com/eduardoboucas/include-media-export
-import { domLoaded } from '@kickstartds/core/lib/core';
-import { events as windowEvents } from '../../2-generic/window/window';
+import { domLoaded } from '../core/domLoaded';
+import { windowEvents } from './window';
 
-export const events = {
-  change: 'base.breakpoint.change',
+export const breakpointEvents = {
+  change: 'core.breakpoint.change',
 };
 
 domLoaded(() => {
@@ -17,9 +17,9 @@ domLoaded(() => {
     const currentBreakpoint = im.getActive();
     if (currentBreakpoint !== activeBreakpoint) {
       activeBreakpoint = currentBreakpoint;
-      window.rm.radio.emit(events.change, activeBreakpoint);
+      window.rm.radio.emit(breakpointEvents.change, activeBreakpoint);
     }
   });
 });
 
-export default im;
+export const breakpoints = im;

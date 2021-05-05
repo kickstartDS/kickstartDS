@@ -2,10 +2,13 @@ const path = require('path');
 const fs = require('fs-extra');
 const svgstore = require('svgstore');
 const fg = require('fast-glob');
+const { root } = require('./utils');
 
-const storybookRoot = path.resolve(__dirname, '..');
 const createIconSprite = async () => {
-  const filePaths = await fg('legacy-instance/icons/*.svg');
+  const filePaths = await fg('legacy-instance/icons/*.svg', {
+    cwd: root,
+    absolute: true,
+  });
   const files = await Promise.all(
     filePaths.map(async (filePath) => [
       `icon-${path.basename(filePath, '.svg')}`,
@@ -27,5 +30,5 @@ const createIconSprite = async () => {
 
 module.exports = async () => {
   const body = await createIconSprite();
-  return fs.writeFile(`${storybookRoot}/.storybook/preview-body.html`, body);
+  return fs.writeFile(`.storybook/preview-body.html`, body);
 };

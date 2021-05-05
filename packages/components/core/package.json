@@ -22,7 +22,9 @@
     "@babel/runtime": "^7.13.17",
     "bourbon": "^7.0.0",
     "htm": "^3.0.4",
+    "include-media-export": "^1.0.3",
     "lazysizes": "^5.3.2",
+    "lodash-es": "^4.17.21",
     "pubsub-js": "^1.9.3",
     "vhtml": "^2.2.0"
   },

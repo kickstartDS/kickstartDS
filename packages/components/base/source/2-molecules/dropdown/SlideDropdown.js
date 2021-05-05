@@ -1,5 +1,5 @@
+import { slideDown, slideUp } from '@kickstartds/core/lib/utils';
 import Dropdown from './Dropdown';
-import { slideDown, slideUp } from '../../0-base/1-tools/js/slide';
 
 export default class SlideDropdown extends Dropdown {
   static identifier = 'base.slide-dropdown';

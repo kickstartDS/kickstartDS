@@ -1,6 +1,6 @@
 import Bouncer from 'formbouncerjs/dist/bouncer';
 import { uid } from '@kickstartds/core/lib/core';
-import breakpoints from './breakpoints';
+import { breakpoints } from '@kickstartds/core/lib/utils';
 
 const mainHeader = document.querySelector('.main-header');
 const focusEvents = {
