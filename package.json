@@ -6,7 +6,6 @@
     "build:prod": "NODE_ENV=production npm run build",
     "watch": "lerna run --parallel --no-prefix watch",
     "copy-env-file": "[ ! -f .env ] && cp .env-example .env || true",
-    "clear-storybook-dist": "rm -rf packages/tools/storybook/dist",
     "run-chromatic": "lerna run --scope @kickstartds-internal/storybook --stream --no-prefix",
     "chromatic": "run-s build:prod 'run-chromatic -- chromatic'",
     "chromatic-base": "run-s build:prod 'run-chromatic -- chromatic-base'",
