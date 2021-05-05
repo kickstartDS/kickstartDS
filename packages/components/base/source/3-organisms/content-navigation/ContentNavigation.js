@@ -1,6 +1,5 @@
 import { Component } from '@kickstartds/core/lib/core';
-import breakpoints from '../../0-base/1-tools/js/breakpoints';
-import { events as windowEvents } from '../../0-base/2-generic/window/window';
+import { windowEvents, breakpoints } from '@kickstartds/core/lib/utils';
 
 export default class ContentNavigation extends Component {
   static identifier = 'base.content-navigation';

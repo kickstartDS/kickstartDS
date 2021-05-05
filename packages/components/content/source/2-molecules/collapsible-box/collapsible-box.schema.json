@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://frontend.ruhmesmeile.com/content/molecules/collapsible-box.schema.json",
+  "title": "Collapsible Box",
+  "description": "Collapsible Box",
+  "type": "object",
+  "properties": {
+    "summary": {
+      "type": "string",
+      "default": "Lorem ipsum dolor sit amet"
+    },
+    "text": {
+      "type": "string",
+      "default": "Lorem ipsum dolor sit amet"
+    }
+  },
+  "required": ["summary"]
+}
