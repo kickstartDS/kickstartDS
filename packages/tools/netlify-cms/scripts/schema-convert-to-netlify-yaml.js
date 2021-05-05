@@ -161,6 +161,9 @@ const getContentElementConfig = (
     )
   );
 
+  let sectionComponent;
+  let components = [];
+
   contentElementSchemaJsons.forEach((contentElementSchemaJson) => {
     const contentElementSchemaId = url.parse(contentElementSchemaJson.$id);
     const contentElementSchemaName = getSchemaNameFromPath(
@@ -172,7 +175,19 @@ const getContentElementConfig = (
       contentElementSchemaJson
     );
 
-    contentElements.types.push(contentElementConfig);
+    if (contentElementConfig.label === 'Section') {
+      sectionComponent = contentElementConfig;
+      contentElements.types.push(sectionComponent);
+    } else {
+      components.push(contentElementConfig);
+    }
+  });
+
+  sectionComponent.fields.push({
+    name: 'content',
+    description: 'Content for the section',
+    widget: 'list',
+    types: components,
   });
 
   netlifyAdminConfig.collections.push(settingsConfig);
