@@ -3,13 +3,23 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "chromatic": "chromatic --storybook-build-dir dist --skip '@(renovate/**|dependabot/**)' --exit-zero-on-changes --exit-once-uploaded --project-token $CHROMATIC_PROJECT_TOKEN"
+    "run-chromatic": "chromatic --skip '@(renovate/**|dependabot/**)' --exit-zero-on-changes --exit-once-uploaded --project-token $CHROMATIC_PROJECT_TOKEN",
+    "chromatic": "npm run run-chromatic -- --build-script-name 'storybook:build'",
+    "chromatic-base": "npm run run-chromatic -- --build-script-name 'storybook-base:build'",
+    "chromatic-blog": "npm run run-chromatic -- --build-script-name 'storybook-blog:build'",
+    "chromatic-content": "npm run run-chromatic -- --build-script-name 'storybook-content:build'",
+    "storybook": "node index.js",
+    "storybook:build": "node index.js build",
+    "storybook-base:build": "node index.js build --module=base",
+    "storybook-blog:build": "node index.js build --module=blog",
+    "storybook-content:build": "node index.js build --module=content"
   },
   "dependencies": {
     "ajv": "^7.2.1",
     "change-case": "^4.1.2",
     "del": "^6.0.0",
     "fast-glob": "^3.2.5",
+    "find-up": "^5.0.0",
     "fs-extra": "^10.0.0",
     "lazysizes": "^5.3.2",
     "react": "^17.0.2",
