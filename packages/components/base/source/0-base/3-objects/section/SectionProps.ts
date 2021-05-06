@@ -33,7 +33,7 @@ export type PageHeader = boolean;
 export interface SectionProps {
   width?: 'full' | 'max' | 'wide' | 'default' | 'narrow';
   gutter?: 'large' | 'default' | 'small' | 'none';
-  mode?: 'default' | 'tile';
+  mode?: 'default' | 'tile' | 'list';
   background?: 'default' | 'accent' | 'dark';
   'space-before'?: 'default' | 'small' | 'none';
   'space-after'?: 'default' | 'small' | 'none';

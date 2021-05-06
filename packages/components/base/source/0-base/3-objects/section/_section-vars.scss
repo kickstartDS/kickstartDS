@@ -50,4 +50,7 @@ $col: (
   '.l-section__container--tile': (
     repeat: 'auto-fill',
   ),
+  '.l-section__container--list': (
+    repeat: 1,
+  ),
 ) !default;
