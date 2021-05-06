@@ -1,15 +1,12 @@
-:root {
-  --c-rich-text-font: var(--font-copy-m);
-}
+@use 'sass:meta';
+@use '@kickstartds/core/source/core/custom-properties';
+@use './rich-text-vars';
 
-.rich-text {
-  font: var(--c-rich-text-font);
+$vars: meta.module-variables(rich-text-vars);
+@include custom-properties.styles($vars, true);
 
-  h4,
-  h5,
-  h6 {
-    font-size: 1em;
-  }
+.c-rich-text {
+  font: var(--c-rich-text--font);
 
   &__align {
     &-center {
@@ -21,41 +18,78 @@
     }
   }
 
+  p {
+    margin: var(--c-rich-text--vertical-spacing) 0;
+  }
+
   code {
     font-size: 0.85em;
 
-    background-color: var(--color-grey-1);
-    border-radius: 0.4em;
+    background: var(--c-rich-text_code--background, var(--color-black-alpha-1));
+    border-radius: var(--c-rich-text_code--border-radius, 0.25rem);
 
-    padding: 0.2em 0.5em;
-    margin: 0 0.2em;
+    padding: 0.2rem 0.5rem;
+    margin: 0 0.2rem;
     white-space: nowrap;
   }
 
   pre > code {
-    border-radius: 0;
     display: block;
-    padding: 1em 1.5em;
+    padding: var(--c-rich-text--horizontal-spacing);
     white-space: pre;
+    overflow: auto;
   }
 
   blockquote {
-    border-left: 0.3em solid var(--color-grey-2);
+    border-left: var(
+      --c-rich-text_blockquote--border-left,
+      0.3rem solid var(--color-black-alpha-2)
+    );
+    margin: var(--c-rich-text--vertical-spacing) 0;
+    padding: 0 var(--c-rich-text--horizontal-spacing);
 
-    margin-left: 0;
-    margin-right: 0;
-    margin-bottom: 1em;
-    padding: 0.5em 1.5em;
-
-    font-style: italic;
-
-    p {
-      margin-bottom: 0;
-    }
+    font-style: var(--c-rich-text_blockquote--font-style);
   }
 
   hr {
-    margin-bottom: 1em;
+    border: 0;
+    border-bottom: var(
+      --c-rich-text_hr--border,
+      1px solid var(--color-black-alpha-3)
+    );
+    margin: calc(var(--c-rich-text--vertical-spacing) * 2) 0;
+  }
+
+  ul,
+  ol {
+    margin: var(--c-rich-text--vertical-spacing) 0;
+    padding-left: 1.5rem;
+
+    ul,
+    ol {
+      margin-top: 0;
+    }
+  }
+
+  li {
+    margin: calc(var(--c-rich-text--vertical-spacing) / 4) 0;
+  }
+
+  ul {
+    list-style: var(--c-rich-text_ul--style, disc);
+  }
+
+  ol {
+    list-style: var(--c-rich-text_ol--style, decimal);
+  }
+
+  a {
+    // TODO: color, bg, hover, active, focus, ...
+    text-decoration: var(--c-rich-text_a--decoration, underline);
+  }
+
+  :first-child {
+    margin-top: 0;
   }
 
   :last-child {
