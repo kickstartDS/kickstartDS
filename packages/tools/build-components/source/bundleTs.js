@@ -22,7 +22,6 @@ const externalRe = {
 };
 
 const prepare = async (tsPaths) => {
-  log('prepare bundleTs');
   const assets = await fs
     .readJSON(`${sourcePath}/assets.json`)
     .catch(() => ({}));
@@ -93,14 +92,14 @@ const prepare = async (tsPaths) => {
 };
 
 const bundleTs = async (tsPaths) => {
+  log('starting ts bundle');
   const { inputOptions, outputOptions, cssAssets, jsAssets } = await prepare(
     tsPaths
   );
-  log('starting bundleTs');
   const bundle = await rollup.rollup(inputOptions);
   const { output } = await bundle.write(outputOptions);
   await bundle.close();
-  log('finished bundleTs');
+  log('finished ts bundle');
   return { output, cssAssets, jsAssets };
 };
 
@@ -118,10 +117,10 @@ const watchTs = async (tsPaths) => {
         result.close();
       }
       if (code === 'START') {
-        log('starting bundleTs');
+        log('starting ts bundle');
       }
       if (code === 'END') {
-        log('finished bundleTs');
+        log('finished ts bundle');
         resolve({ cssAssets, jsAssets });
       }
     });

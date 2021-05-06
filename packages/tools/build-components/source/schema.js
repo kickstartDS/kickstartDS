@@ -24,9 +24,9 @@ const schemaGlob = 'source/**/!(_)*.(schema|definitions).json';
 
 const buildSchema = async () => {
   const schemaPaths = await fg(schemaGlob);
-  log('startig buildSchema');
+  log('startig schema transform');
   await Promise.all(schemaPaths.map(processSchema));
-  log('finished buildSchema');
+  log('finished schema transform');
 };
 
 const watchSchema = () =>

@@ -5,6 +5,7 @@ const sass = require('sass');
 const postcss = require('postcss');
 const { root, dirRe } = require('./utils');
 const postcssPlugins = require('./postcssPlugins');
+const log = require('./log');
 
 const cwd = process.cwd();
 const includePaths = [
@@ -50,8 +51,20 @@ const compile = async (file) => {
   }
 };
 
+const finalBundle = async (cssPaths) => {
+  log('starting final css bundle');
+  const files = await Promise.all(cssPaths.map((p) => fs.readFile(`lib/${p}`)));
+  const css = Buffer.concat(files)
+    .toString()
+    .replace(/@charset "UTF-8";/g, '');
+  await fs.writeFile('lib/bundle.css', css);
+  log('finished final css bundle');
+};
+
 module.exports = async function (scssPaths, watch) {
+  log('starting scss transform');
   const outFiles = await Promise.all(scssPaths.map(compile));
+  log('finished scss transform');
   // const [, , param] = process.argv;
   // if (watch || param === '--watch') {
   //   chokidar
@@ -75,5 +88,6 @@ module.exports = async function (scssPaths, watch) {
   //       }
   //     });
   // }
+  finalBundle(outFiles);
   return outFiles.map((f) => [f, []]);
 };
