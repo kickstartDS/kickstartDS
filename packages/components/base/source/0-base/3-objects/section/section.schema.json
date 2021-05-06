@@ -18,7 +18,7 @@
         },
         "mode": {
           "type": "string",
-          "enum": ["default", "tile"],
+          "enum": ["default", "tile", "list"],
           "default": "default"
         }
       }
