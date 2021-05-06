@@ -161,8 +161,8 @@ const getContentElementConfig = (
     )
   );
 
+  const components = [];
   let sectionComponent;
-  let components = [];
 
   contentElementSchemaJsons.forEach((contentElementSchemaJson) => {
     const contentElementSchemaId = url.parse(contentElementSchemaJson.$id);
