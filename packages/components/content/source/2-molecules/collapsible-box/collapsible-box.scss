@@ -34,6 +34,7 @@ $vars: meta.module-variables(collapsible-box-vars);
       display: flex;
       justify-content: space-between;
       align-items: center;
+      font: var(--c-collapsible-box_header--font);
 
       @include breakpoint.media('≥s') {
         padding: 1em;
@@ -50,15 +51,11 @@ $vars: meta.module-variables(collapsible-box-vars);
 
     &__icon {
       .icon {
-        @include bourbon.size(1.65em);
-
-        @include breakpoint.media('≥s') {
-          @include bourbon.size(1.85em);
-        }
+        @include bourbon.size(var(--c-collapsible-box_icon--size));
       }
 
       [open] & {
-        transform: rotate(-180deg);
+        transform: var(--c-collapsible-box_icon--transform-open);
       }
 
       svg {
@@ -72,8 +69,7 @@ $vars: meta.module-variables(collapsible-box-vars);
       padding: 1em 0;
 
       @include breakpoint.media('≥s') {
-        padding: 1em;
-        padding-right: 4em;
+        padding: 1em 4em 1em 1em;
       }
     }
 
