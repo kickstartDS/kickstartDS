@@ -11,7 +11,6 @@ const {
 } = require('./rollupUtils');
 
 const prepare = async (jsPaths) => {
-  log('prepare bundleJs');
   const input = Object.fromEntries(
     jsPaths.map((file) => {
       const [, dir, name] = file.match(dirRe);
@@ -66,13 +65,13 @@ const prepare = async (jsPaths) => {
 };
 
 const bundleJs = async (jsPaths) => {
+  log('starting js bundle');
   if (!jsPaths.length) return { output: [] };
   const { inputOptions, outputOptions } = await prepare(jsPaths);
-  log('starting bundleJs');
   const bundle = await rollup.rollup(inputOptions);
   const { output } = await bundle.write(outputOptions);
   await bundle.close();
-  log('finished bundleJs');
+  log('finished js bundle');
   return { output };
 };
 
@@ -88,9 +87,9 @@ const watchJs = async (jsPaths) => {
       result.close();
     }
     if (code === 'START') {
-      log('starting bundleJs');
+      log('starting js bundle');
     } else if (code === 'END') {
-      log('finished bundleJs');
+      log('finished js bundle');
     }
   });
 };

@@ -35,9 +35,9 @@ const buildBundle = async () => {
   try {
     const tsPaths = await getTsPaths();
     const { output: tsOutput, cssAssets, jsAssets } = await bundleTs(tsPaths);
-    const [cssExports, { output: jsOutput }] = await Promise.all([
-      scss([...cssAssets]),
+    const [{ output: jsOutput }, cssExports] = await Promise.all([
       bundleJs([...jsAssets]),
+      scss([...cssAssets]),
     ]);
 
     const exports = [
