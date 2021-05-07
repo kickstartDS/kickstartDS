@@ -38,17 +38,7 @@ const compile = async (file) => {
       },
       []
     );
-    const dirMatches = stats.entry.match(dirRe);
-    let dir;
-    let base;
-    if (dirMatches) {
-      // default module build
-      [, dir, base] = dirMatches;
-    } else {
-      // final bunlde build
-      dir = 'bundle';
-      base = 'bundle';
-    }
+    const [, dir, base] = stats.entry.match(dirRe);
     const dest = `lib/${dir}/${base}.css`;
     const result = await postcss(postcssPlugins).process(css, {
       from: file,
