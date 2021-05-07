@@ -10,15 +10,14 @@ interface IMedia extends MediaWrapper {
   overlay?: boolean;
 }
 
-const Image: FunctionComponent<IMedia> = ({ image = {}, inbox }) => {
+const Image: FunctionComponent<IMedia> = ({ image = {} }) => {
   const { srcMobile, srcTablet, srcDesktop, indent } = image;
   const slide = useContext(SlideContext);
   return (
     <picture
       className={classnames(
         'c-visual__image',
-        indent !== 'none' && `c-visual__image--indent-${indent}`,
-        { 'c-visual__image--inbox': inbox }
+        indent !== 'none' && `c-visual__image--indent-${indent}`
       )}
     >
       {slide && !slide.first ? (
@@ -71,7 +70,12 @@ const Video: FunctionComponent<IMedia> = ({ video = {} }) => {
 };
 
 export const VisualMediaPartial: FunctionComponent<IMedia> = (props) => (
-  <div className="c-visual__media">
+  <div
+    className={classnames(
+      'c-visual__media',
+      props.inbox && 'c-visual__media--inbox'
+    )}
+  >
     {props.mode === 'image' && props.image && <Image {...props} />}
     {props.mode === 'video' && props.video && <Video {...props} />}
     {props.overlay && <div className="c-visual__overlay"></div>}

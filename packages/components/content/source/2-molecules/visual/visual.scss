@@ -42,6 +42,16 @@ $vars: meta.module-variables(visual-vars);
     @include breakpoint.media('≥s') {
       /* critical:start */
       @include bourbon.position(absolute, 0);
+
+      .c-visual--no-crop & {
+        position: static;
+      }
+      /* critical:end */
+    }
+
+    &--inbox {
+      /* critical:start */
+      @include bourbon.position(absolute, 0);
       /* critical:end */
     }
   }
@@ -52,10 +62,7 @@ $vars: meta.module-variables(visual-vars);
 
   &__video {
     /* critical:start */
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+    @include bourbon.position(inherit, inherit);
     height: 100%;
     object-fit: cover;
     /* critical:end */
