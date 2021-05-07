@@ -4,9 +4,7 @@
   "scripts": {
     "build": "lerna run --stream --no-prefix build",
     "build:prod": "NODE_ENV=production npm run build",
-    "watch": "lerna run --parallel --no-prefix watch",
     "copy-env-file": "[ ! -f .env ] && cp .env-example .env || true",
-    "run-chromatic": "lerna run --scope @kickstartds-internal/storybook --stream --no-prefix",
     "chromatic": "run-s build:prod 'run-chromatic -- chromatic'",
     "chromatic-base": "run-s build:prod 'run-chromatic -- chromatic-base'",
     "chromatic-blog": "run-s build:prod 'run-chromatic -- chromatic-blog'",
@@ -21,6 +19,7 @@
     "lint": "run-p eslint stylelint",
     "list": "lerna la",
     "postinstall": "run-p git-config copy-env-file",
+    "run-chromatic": "lerna run --scope @kickstartds-internal/storybook --stream --no-prefix",
     "schema": "lerna run --parallel --no-prefix schema",
     "staged": "git diff --name-only --cached | grep '@kickstartds' | cut -d / -f 3 | awk '!seen[$0]++'",
     "storybook": "lerna run --scope @kickstartds-internal/storybook --stream --no-prefix storybook --",
@@ -28,6 +27,7 @@
     "storybook:debug": "npm run storybook debug",
     "stylelint": "stylelint \"**/*.scss\"",
     "prepare": "husky install",
+    "watch": "lerna run --parallel --no-prefix watch",
     "watch-tokens": "sass --watch --load-path=node_modules packages/components/core/source/design-tokens/tokens.scss packages/components/core/lib/design-tokens/tokens.css"
   },
   "dependencies": {
