@@ -16,7 +16,7 @@ const buildJs = (entryPoints, corePath) =>
     write: true,
     outfile: `${corePath}/lib/bundle.js`,
     logLevel: 'error',
-    minify: true,
+    minify: process.env.NODE_ENV === 'production',
   });
 
 (async () => {
