@@ -5,3 +5,19 @@ $host: (
     border-color: var(--color-black-alpha-1),
   ),
 ) !default;
+
+$header: (
+  '.c-collapsible-box': (
+    font: var(--font-copy-m),
+  ),
+) !default;
+
+$icon: (
+  '.c-collapsible-box': (
+    size: (
+      xs: 1.65em,
+      s: 1.85em,
+    ),
+    transform-open: rotate(-180deg),
+  ),
+) !default;

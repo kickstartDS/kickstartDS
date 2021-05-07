@@ -6,23 +6,8 @@
 @mixin visual-image {
   /* critical:start */
   display: block;
+  @include bourbon.position(inherit, inherit);
   /* critical:end */
-
-  @include breakpoint.media('≥s') {
-    /* critical:start */
-    @include bourbon.position(absolute, 0);
-
-    .c-visual--no-crop & {
-      position: static;
-    }
-    /* critical:end */
-  }
-
-  &--inbox {
-    /* critical:start */
-    @include bourbon.position(absolute, 0);
-    /* critical:end */
-  }
 
   &--indent {
     &-left {

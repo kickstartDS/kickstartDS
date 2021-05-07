@@ -5,6 +5,7 @@ const sass = require('sass');
 const postcss = require('postcss');
 const { root, dirRe } = require('./utils');
 const postcssPlugins = require('./postcssPlugins');
+const log = require('./log');
 
 const cwd = process.cwd();
 const includePaths = [
@@ -51,7 +52,9 @@ const compile = async (file) => {
 };
 
 module.exports = async function (scssPaths, watch) {
+  log('starting scss transform');
   const outFiles = await Promise.all(scssPaths.map(compile));
+  log('finished scss transform');
   // const [, , param] = process.argv;
   // if (watch || param === '--watch') {
   //   chokidar

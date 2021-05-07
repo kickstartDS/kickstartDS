@@ -21,7 +21,7 @@ interface RichTextProps {
 const RichTextComponent: FunctionComponent<
   RichTextProps & HTMLAttributes<HTMLDivElement>
 > = ({ text, renderText = defaultRenderFn, className, ...props }) => (
-  <div className={classnames('rich-text', className)} {...props}>
+  <div className={classnames('c-rich-text', className)} {...props}>
     {renderText(text)}
   </div>
 );

@@ -34,16 +34,35 @@ $vars: meta.module-variables(visual-vars);
     /* critical:end */
   }
 
+  &__media {
+    /* critical:start */
+    position: relative;
+    /* critical:end */
+
+    @include breakpoint.media('≥s') {
+      /* critical:start */
+      @include bourbon.position(absolute, 0);
+
+      .c-visual--no-crop & {
+        position: static;
+      }
+      /* critical:end */
+    }
+
+    &--inbox {
+      /* critical:start */
+      @include bourbon.position(absolute, 0);
+      /* critical:end */
+    }
+  }
+
   &__image {
     @include visual__image.visual-image;
   }
 
   &__video {
     /* critical:start */
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+    @include bourbon.position(inherit, inherit);
     height: 100%;
     object-fit: cover;
     /* critical:end */
@@ -121,7 +140,7 @@ $vars: meta.module-variables(visual-vars);
 
   &__overlay {
     @include bourbon.position(absolute, 0);
-    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoAgMAAADxkFD+AAAACVBMVEUAAAD///8AAABzxoNxAAAAA3RSTlMAAJlzpe8+AAAAG0lEQVQY02NcwAAFjIxITAaszFG1A6w2FM4GAMpWDSVzkJMQAAAAAElFTkSuQmCC');
-    background-size: 1rem;
+    background: var(--c-visual_overlay--background);
+    background-size: var(--c-visual_overlay--background-size);
   }
 }

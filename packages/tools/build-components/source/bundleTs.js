@@ -1,5 +1,6 @@
 const fs = require('fs-extra');
 const rollup = require('rollup');
+const { babel } = require('@rollup/plugin-babel');
 const ts = require('@wessberg/rollup-plugin-ts');
 const styles = require('rollup-plugin-styles');
 const merge = require('lodash/merge');
@@ -21,8 +22,11 @@ const externalRe = {
   exclude: /(tslib|rollup-plugin-styles)/,
 };
 
+const babelConfig = merge({}, sharedBabelConfig, {
+  presets: [['@babel/preset-react', { runtime: 'automatic' }]],
+});
+
 const prepare = async (tsPaths) => {
-  log('prepare bundleTs');
   const assets = await fs
     .readJSON(`${sourcePath}/assets.json`)
     .catch(() => ({}));
@@ -54,20 +58,25 @@ const prepare = async (tsPaths) => {
           cssAssets.add(id);
         },
       }),
-      ts({
-        transpiler: 'babel',
-        tsconfig: {
-          resolveJsonModule: true,
-          jsx: 'react-jsx',
-          esModuleInterop: true,
-          declaration: true,
-          target: 'ES6',
-          moduleResolution: 'node',
-        },
-        babelConfig: merge({}, sharedBabelConfig, {
-          presets: ['@babel/preset-react'],
-        }),
-      }),
+      process.env.NODE_ENV === 'production'
+        ? ts({
+            transpiler: 'babel',
+            tsconfig: {
+              resolveJsonModule: true,
+              jsx: 'react-jsx',
+              esModuleInterop: true,
+              declaration: true,
+              target: 'ES6',
+              moduleResolution: 'node',
+            },
+            babelConfig,
+          })
+        : babel({
+            ...babelConfig,
+            babelHelpers: 'runtime',
+            extensions: ['.js', '.ts', '.tsx'],
+            skipPreflightCheck: true,
+          }),
     ],
   };
   const outputOptions = {
@@ -93,14 +102,14 @@ const prepare = async (tsPaths) => {
 };
 
 const bundleTs = async (tsPaths) => {
+  log('starting ts bundle');
   const { inputOptions, outputOptions, cssAssets, jsAssets } = await prepare(
     tsPaths
   );
-  log('starting bundleTs');
   const bundle = await rollup.rollup(inputOptions);
   const { output } = await bundle.write(outputOptions);
   await bundle.close();
-  log('finished bundleTs');
+  log('finished ts bundle');
   return { output, cssAssets, jsAssets };
 };
 
@@ -118,10 +127,10 @@ const watchTs = async (tsPaths) => {
         result.close();
       }
       if (code === 'START') {
-        log('starting bundleTs');
+        log('starting ts bundle');
       }
       if (code === 'END') {
-        log('finished bundleTs');
+        log('finished ts bundle');
         resolve({ cssAssets, jsAssets });
       }
     });

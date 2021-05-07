@@ -1,6 +1,6 @@
 {
   "name": "@kickstartds/core",
-  "version": "1.0.0-alpha.12",
+  "version": "1.0.0-alpha.13",
   "description": "kickstartDS Core Module",
   "author": "ruhmesmeile GmbH <mail@ruhmesmeile.com> (https://ruhmesmeile.com)",
   "homepage": "https://ruhmesmeile.com",
@@ -16,16 +16,22 @@
   "files": [
     "lib",
     "source/core/*.scss",
-    "source/design-tokens/**/*.scss"
+    "source/design-tokens/**/*.scss",
+    "bundle/*.js"
   ],
   "dependencies": {
     "@babel/runtime": "^7.13.17",
     "bourbon": "^7.0.0",
+    "del": "^6.0.0",
+    "dependency-graph": "^0.11.0",
+    "esbuild": "^0.11.19",
+    "fs-extra": "^10.0.0",
     "htm": "^3.0.4",
     "include-media-export": "^1.0.3",
     "lazysizes": "^5.3.2",
     "lodash-es": "^4.17.21",
     "pubsub-js": "^1.9.3",
+    "sass": "^1.32.8",
     "vhtml": "^2.2.0"
   },
   "devDependencies": {
