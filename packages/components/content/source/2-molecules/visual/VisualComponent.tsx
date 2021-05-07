@@ -35,8 +35,7 @@ const VisualComponent: FunctionComponent<
     )}
     style={{ backgroundColor }}
   >
-    {media && <VisualMediaPartial {...{ ...media, inbox }} />}
-    {overlay && <div className="c-visual__overlay"></div>}
+    {media && <VisualMediaPartial {...{ ...media, inbox, overlay }} />}
     {box?.enabled && <VisualBoxPartial {...{ ...box, inbox }} />}
 
     {skipButton && (

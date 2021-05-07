@@ -1,0 +1,47 @@
+$name-: 'c-rich-text';
+
+$host: (
+  ':root': (
+    font: var(--font-copy-m),
+    vertical-spacing: calc(var(--spacing-m) / 2),
+    horizontal-spacing: 1em,
+  ),
+) !default;
+
+$code: (
+  ':root': (
+    background: null,
+    border-radius: null,
+  ),
+) !default;
+
+$blockquote: (
+  ':root': (
+    border-left: null,
+    font-style: null,
+  ),
+) !default;
+
+$hr: (
+  ':root': (
+    border: null,
+  ),
+) !default;
+
+$ul: (
+  ':root': (
+    style: null,
+  ),
+) !default;
+
+$ol: (
+  ':root': (
+    style: null,
+  ),
+) !default;
+
+$a: (
+  ':root': (
+    decoration: null,
+  ),
+) !default;

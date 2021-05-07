@@ -1,7 +1,6 @@
 const rollup = require('rollup');
 const { babel } = require('@rollup/plugin-babel');
 const replace = require('@rollup/plugin-replace');
-const importResolver = require('rollup-plugin-import-resolver');
 const merge = require('lodash/merge');
 const log = require('./log');
 const { dirRe } = require('./utils');
@@ -24,9 +23,6 @@ const prepare = async (jsPaths) => {
     input,
     plugins: [
       ...sharedInputPlugins,
-      importResolver({
-        extensions: ['.js', '.tsx'],
-      }),
       babel(
         merge({}, sharedBabelConfig, {
           extensions: ['.js', '.tsx'],

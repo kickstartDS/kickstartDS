@@ -34,6 +34,18 @@ $vars: meta.module-variables(visual-vars);
     /* critical:end */
   }
 
+  &__media {
+    /* critical:start */
+    position: relative;
+    /* critical:end */
+
+    @include breakpoint.media('≥s') {
+      /* critical:start */
+      @include bourbon.position(absolute, 0);
+      /* critical:end */
+    }
+  }
+
   &__image {
     @include visual__image.visual-image;
   }
@@ -121,7 +133,7 @@ $vars: meta.module-variables(visual-vars);
 
   &__overlay {
     @include bourbon.position(absolute, 0);
-    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoAgMAAADxkFD+AAAACVBMVEUAAAD///8AAABzxoNxAAAAA3RSTlMAAJlzpe8+AAAAG0lEQVQY02NcwAAFjIxITAaszFG1A6w2FM4GAMpWDSVzkJMQAAAAAElFTkSuQmCC');
-    background-size: 1rem;
+    background: var(--c-visual_overlay--background);
+    background-size: var(--c-visual_overlay--background-size);
   }
 }

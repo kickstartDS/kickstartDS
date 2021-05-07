@@ -1,5 +1,6 @@
 const fs = require('fs-extra');
 const rollup = require('rollup');
+const { babel } = require('@rollup/plugin-babel');
 const ts = require('@wessberg/rollup-plugin-ts');
 const styles = require('rollup-plugin-styles');
 const merge = require('lodash/merge');
@@ -20,6 +21,10 @@ const externalRe = {
   js: /\.js$/,
   exclude: /(tslib|rollup-plugin-styles)/,
 };
+
+const babelConfig = merge({}, sharedBabelConfig, {
+  presets: [['@babel/preset-react', { runtime: 'automatic' }]],
+});
 
 const prepare = async (tsPaths) => {
   log('prepare bundleTs');
@@ -54,20 +59,25 @@ const prepare = async (tsPaths) => {
           cssAssets.add(id);
         },
       }),
-      ts({
-        transpiler: 'babel',
-        tsconfig: {
-          resolveJsonModule: true,
-          jsx: 'react-jsx',
-          esModuleInterop: true,
-          declaration: true,
-          target: 'ES6',
-          moduleResolution: 'node',
-        },
-        babelConfig: merge({}, sharedBabelConfig, {
-          presets: ['@babel/preset-react'],
-        }),
-      }),
+      process.env.NODE_ENV === 'production'
+        ? ts({
+            transpiler: 'babel',
+            tsconfig: {
+              resolveJsonModule: true,
+              jsx: 'react-jsx',
+              esModuleInterop: true,
+              declaration: true,
+              target: 'ES6',
+              moduleResolution: 'node',
+            },
+            babelConfig,
+          })
+        : babel({
+            ...babelConfig,
+            babelHelpers: 'runtime',
+            extensions: ['.js', '.ts', '.tsx'],
+            skipPreflightCheck: true,
+          }),
     ],
   };
   const outputOptions = {
