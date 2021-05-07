@@ -13,6 +13,7 @@
     "chromatic-content": "run-s build:prod 'run-chromatic -- chromatic-content'",
     "dereference": "node scripts/schemaDereference.js",
     "eslint": "eslint \"**/*.{js,jsx,ts,tsx}\"",
+    "final-bundle": "lerna run --scope @kickstartds-internal/build-components --stream --no-prefix final-bundle",
     "find-licenses": "node ./scripts/license.js",
     "format": "prettier --write .",
     "git-config": "git config --local include.path ../.gitconfig",

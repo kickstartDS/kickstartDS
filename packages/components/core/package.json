@@ -11,7 +11,8 @@
     "build": "node ../../tools/build-components/source",
     "watch": "node ../../tools/build-components/source --watch",
     "schema": "node ../../tools/build-components/source --schema",
-    "prepublishOnly": "NODE_ENV=production npm run build"
+    "final-bundle": "node ../../tools/build-components && npm run final-bundle",
+    "prepublishOnly": "NODE_ENV=production npm run build && npm run final-bundle"
   },
   "files": [
     "lib",

@@ -38,7 +38,17 @@ const compile = async (file) => {
       },
       []
     );
-    const [, dir, base] = stats.entry.match(dirRe);
+    const dirMatches = stats.entry.match(dirRe);
+    let dir;
+    let base;
+    if (dirMatches) {
+      // default module build
+      [, dir, base] = dirMatches;
+    } else {
+      // final bunlde build
+      dir = 'bundle';
+      base = 'bundle';
+    }
     const dest = `lib/${dir}/${base}.css`;
     const result = await postcss(postcssPlugins).process(css, {
       from: file,
@@ -49,16 +59,6 @@ const compile = async (file) => {
   } catch (err) {
     throw new Error(err);
   }
-};
-
-const finalBundle = async (cssPaths) => {
-  log('starting final css bundle');
-  const files = await Promise.all(cssPaths.map((p) => fs.readFile(`lib/${p}`)));
-  const css = Buffer.concat(files)
-    .toString()
-    .replace(/@charset "UTF-8";/g, '');
-  await fs.writeFile('lib/bundle.css', css);
-  log('finished final css bundle');
 };
 
 module.exports = async function (scssPaths, watch) {
@@ -88,6 +88,5 @@ module.exports = async function (scssPaths, watch) {
   //       }
   //     });
   // }
-  finalBundle(outFiles);
   return outFiles.map((f) => [f, []]);
 };
