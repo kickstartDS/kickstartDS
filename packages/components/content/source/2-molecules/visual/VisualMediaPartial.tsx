@@ -7,6 +7,7 @@ import { MediaWrapper, Inbox } from './VisualProps';
 // TODO readd: alt-text / altText
 interface IMedia extends MediaWrapper {
   inbox?: Inbox;
+  overlay?: boolean;
 }
 
 const Image: FunctionComponent<IMedia> = ({ image = {}, inbox }) => {
@@ -70,8 +71,9 @@ const Video: FunctionComponent<IMedia> = ({ video = {} }) => {
 };
 
 export const VisualMediaPartial: FunctionComponent<IMedia> = (props) => (
-  <>
+  <div className="c-visual__media">
     {props.mode === 'image' && props.image && <Image {...props} />}
     {props.mode === 'video' && props.video && <Video {...props} />}
-  </>
+    {props.overlay && <div className="c-visual__overlay"></div>}
+  </div>
 );

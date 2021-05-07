@@ -33,6 +33,14 @@ $image: (
   ),
 ) !default;
 
+$overlay: (
+  '.c-visual': (
+    background:
+      url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoAgMAAADxkFD+AAAACVBMVEUAAAD///8AAABzxoNxAAAAA3RSTlMAAJlzpe8+AAAAG0lEQVQY02NcwAAFjIxITAaszFG1A6w2FM4GAMpWDSVzkJMQAAAAAElFTkSuQmCC'),
+    background-size: 1rem,
+  ),
+) !default;
+
 $box: (
   '.c-visual__box': (
     border: null,
