@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "http://frontend.ruhmesmeile.com/base/molecules/content-box.schema.json",
-  "title": "Content-Box",
+  "title": "Content Box",
   "description": "Component to display content in a condensed, boxed form",
   "type": "object",
   "properties": {
@@ -23,7 +23,7 @@
       "title": "Image source",
       "type": "string",
       "format": "image",
-      "default": "https://picsum.photos/500/300",
+      "default": "https://picsum.photos/seed/kdscontentbox/500/300",
       "description": "Select an image to display inside the content box, at the top"
     },
     "topic": {
@@ -46,7 +46,7 @@
         {
           "properties": {
             "enabled": {
-              "title": "Display Link",
+              "title": "Display link",
               "description": "Toggles visibility of the link",
               "type": "boolean",
               "default": false

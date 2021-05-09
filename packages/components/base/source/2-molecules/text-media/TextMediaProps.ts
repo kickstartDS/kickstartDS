@@ -6,11 +6,11 @@
  */
 
 /**
- * RTE text (Markdown)
+ * Copy text for the element
  */
-export type Text = string;
+export type TextContent = string;
 /**
- * relative to text
+ * In relation to the text content
  */
 export type MediaAlignment =
   | 'above-left'
@@ -24,85 +24,104 @@ export type MediaAlignment =
   | 'below-center'
   | 'below-right';
 /**
- * Source
+ * Url (mp4) for the video to display
  */
 export type Source = string;
 /**
- * Embedded video
+ * Use an iframe embed
  */
-export type EmbeddedVideo = boolean;
+export type EmbeddedIframe = boolean;
 /**
- * video title
+ * Title to use for the video
  */
 export type VideoTitle = string;
 /**
- * Width
+ * Width of the video
  */
 export type Width = number;
 /**
- * height
+ * Height of the video
  */
 export type Height = number;
 /**
- * Full width media
+ * Display media item over full width
  */
 export type FullWidthMedia = boolean;
 /**
- * Image Source
+ * Picture source
  */
-export type ImageSource = string;
+export type Source1 = string;
 /**
- * Image Sourceset
+ * Use a srcSet to display picture
  */
-export type ImageSourceset = string;
+export type PictureSourceset = string;
 /**
- * Alt text
+ * Alt text to display for picture
  */
 export type AltText = string;
 /**
- * Width
+ * Width of the picture
  */
 export type Width1 = number;
 /**
- * height
+ * Height of the picture
  */
 export type Height1 = number;
 /**
- * Image Class
+ * Add additional css classes that should be applied to the button
  */
-export type Class = string;
+export type AdditionalClasses = string;
 /**
- * ID
+ * Add id attribute to the image
  */
-export type ID = string;
+export type Id = string;
 /**
- * Itemprop
+ * Define an itemprop attribute for the picture
  */
-export type Itemprop = string;
+export type ItempropAttribute = string;
 /**
- * Object fit
+ * Define a style attribute for the picture
+ */
+export type StyleAttribute = string;
+/**
+ * Select a value for the picture object fit
  */
 export type ObjectFit = 'contain' | 'cover' | 'fill' | 'none' | 'scale-down';
 /**
  * Render noscript fallback
  */
-export type RenderNoscriptFallback = boolean;
+export type Noscript = boolean;
 /**
- * Load Image Lazily
+ * Load the picture lazily
  */
 export type Lazy = boolean;
+/**
+ * Use a srcSet to display picture
+ */
+export type PictureSourceset1 = string;
+/**
+ * TODO MEDIA DESCRIPTION
+ */
+export type TODOMEDIATITLE = string;
+/**
+ * TODO TYPE DESCRIPTION
+ */
+export type TODOTYPETITLE = string;
 /**
  * Additional sources. This will result in a `picture`-Element
  */
 export type Sources = {
-  srcSet?: string;
-  media?: string;
-  type?: string;
+  srcSet?: PictureSourceset1;
+  media?: TODOMEDIATITLE;
+  type?: TODOTYPETITLE;
   [k: string]: unknown;
 }[];
-export type PictureClass = string;
 /**
- * Full width media
+ * Set additional class(es) to the picture
+ */
+export type ClassAttribute = string;
+/**
+ * Display media item over full width
  */
 export type FullWidthMedia1 = boolean;
 /**
@@ -140,17 +159,17 @@ export type GalleryIdentifier = string;
 /**
  * ID
  */
-export type ID1 = string;
+export type ID = string;
 /**
  * Additional Image Class
  */
 export type AdditionalImageClass = string;
 /**
- * Full width media
+ * Display media item over full width
  */
 export type FullWidthMedia2 = boolean;
 /**
- * Media
+ * Collection of media items to display
  */
 export type Media = (
   | {
@@ -171,49 +190,42 @@ export type Media = (
 )[];
 
 /**
- * Text-Media
+ * Component to display copy text, including media
  */
 export interface TextMediaProps {
-  text?: Text;
-  mediaAlignment?: MediaAlignment;
+  text: TextContent;
+  mediaAlignment: MediaAlignment;
   media?: Media;
-  [k: string]: unknown;
 }
 /**
- * Video
+ * Video item to display
  */
 export interface Video {
   src: Source;
-  iframe?: EmbeddedVideo;
+  iframe?: EmbeddedIframe;
   title?: VideoTitle;
   width: Width;
   height: Height;
   [k: string]: unknown;
 }
 /**
- * Picture
+ * Base component to display a picture
  */
 export interface Picture {
-  src?: ImageSource;
-  srcSet?: ImageSourceset;
+  src?: Source1;
+  srcSet?: PictureSourceset;
   alt?: AltText;
   width?: Width1;
   height?: Height1;
-  className?: Class;
-  id?: ID;
-  itemProp?: Itemprop;
-  style?: Style;
+  className?: AdditionalClasses;
+  id?: Id;
+  itemProp?: ItempropAttribute;
+  style?: StyleAttribute;
   objectFit?: ObjectFit;
-  noscript?: RenderNoscriptFallback;
+  noscript?: Noscript;
   lazy?: Lazy;
   sources?: Sources;
-  pictureClassName?: PictureClass;
-  [k: string]: unknown;
-}
-/**
- * Style
- */
-export interface Style {
+  pictureClassName?: ClassAttribute;
   [k: string]: unknown;
 }
 /**
@@ -228,7 +240,7 @@ export interface LazyLightboxImage {
   caption?: Caption;
   hideCaption?: HideCaptionVisually;
   gallery?: GalleryIdentifier;
-  id?: ID1;
+  id?: ID;
   class?: AdditionalImageClass;
   [k: string]: unknown;
 }

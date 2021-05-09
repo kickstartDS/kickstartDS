@@ -77,7 +77,9 @@ const getContentElementConfig = (
       label: propertySchema.title,
       name: propertyName,
       widget,
-      default: propertySchema.default,
+      default: Array.isArray(propertySchema.default)
+        ? []
+        : propertySchema.default,
       hint: propertySchema.description,
       required: required.includes(propertyName),
     };
@@ -120,7 +122,6 @@ const getContentElementConfig = (
       } else {
         fieldConfig = null;
       }
-      console.log(fieldConfig);
     }
 
     return fieldConfig;

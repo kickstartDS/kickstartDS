@@ -33,21 +33,21 @@
               "description": "Background image source for small screens",
               "type": "string",
               "format": "image",
-              "default": "images/dummy/64-27-l.png"
+              "default": "https://picsum.photos/seed/kdsvisual/640/270"
             },
             "srcTablet": {
               "title": "Tablet image source",
               "description": "Background image source for medium screens",
               "type": "string",
               "format": "image",
-              "default": "images/dummy/64-27-xl.png"
+              "default": "https://picsum.photos/seed/kdsvisual/1280/540"
             },
             "srcDesktop": {
               "title": "Desktop image source",
               "description": "Background image source for large screens",
               "type": "string",
               "format": "image",
-              "default": "images/dummy/64-27-xxxl.png"
+              "default": "https://picsum.photos/seed/kdsvisual/1920/810"
             },
             "indent": {
               "title": "Image indent",
@@ -69,21 +69,21 @@
               "description": "Background video source for small screens",
               "type": "string",
               "format": "video",
-              "default": "images/dummy/video/video-compressed.mp4"
+              "default": "https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_2mb.mp4"
             },
             "srcTablet": {
               "title": "Tablet video source",
               "description": "Background video source for medium screens",
               "type": "string",
               "format": "video",
-              "default": "images/dummy/video/video-compressed.mp4"
+              "default": "https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_2mb.mp4"
             },
             "srcDesktop": {
               "title": "Desktop video source",
               "description": "Background video source for large screens",
               "type": "string",
               "format": "video",
-              "default": "images/dummy/video/video-compressed.mp4"
+              "default": "https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_2mb.mp4"
             }
           }
         }

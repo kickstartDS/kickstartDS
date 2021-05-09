@@ -6,6 +6,30 @@
  */
 
 /**
+ * Select an image to display inside the teaser box, at the top
+ */
+export type ImageSource = string;
+/**
+ * Topic for the teaser box. Displayed before the text, in bold
+ */
+export type Topic = string;
+/**
+ * Text for the teaser box
+ */
+export type TextContent = string;
+/**
+ * Optionally use this to apply a dark variant to the box
+ */
+export type DarkVariant = boolean;
+/**
+ * Choose the ratio used to crop and display the image
+ */
+export type ImageRatio = '4:3' | '16:9' | '1:1';
+/**
+ * Optionally add inner spacing to the displayed image
+ */
+export type ImageSpacing = boolean;
+/**
  * Text used on button
  */
 export type Label = string;
@@ -58,19 +82,22 @@ export type ButtonHref = string;
  * Open link in new Tab
  */
 export type OpenLinkInNewTab = boolean;
+/**
+ * Hides the link. The box as a whole keeps being clickable
+ */
+export type HideLink = boolean;
 
 /**
- * teaser-box
+ * Component to tease external content
  */
 export interface TeaserBoxProps {
-  image?: string;
-  topic?: string;
-  text?: string;
-  darkStyle?: boolean;
-  ratio?: '4:3' | '16:9' | '1:1';
-  imageSpacing?: boolean;
+  image?: ImageSource;
+  topic?: Topic;
+  text?: TextContent;
+  darkStyle?: DarkVariant;
+  ratio: ImageRatio;
+  imageSpacing?: ImageSpacing;
   link?: LinkButton;
-  [k: string]: unknown;
 }
 /**
  * link-button
@@ -88,7 +115,7 @@ export interface LinkButton {
   iconAnimation?: IconAnimation;
   href: ButtonHref;
   newTab?: OpenLinkInNewTab;
-  hidden?: boolean;
+  hidden?: HideLink;
 }
 /**
  * Icon

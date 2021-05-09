@@ -5,17 +5,34 @@
  * and run `npm run schema2ts` to regenerate this file.
  */
 
+/**
+ * Select an image to display inside the quote, to the left
+ */
+export type ImageSource = string;
+/**
+ * Copy text for the element
+ */
+export type TextContent = string;
+/**
+ * Optionally display the source for the quote
+ */
+export type Source = string;
+/**
+ * Optionally display a date for the quote
+ */
+export type Date = string;
+
 export interface QuotesSliderProps {
   slides?: Quote[];
   [k: string]: unknown;
 }
 /**
- * Quote
+ * Component to display a rich quote
  */
 export interface Quote {
-  image?: string;
-  text: string;
-  source?: string;
-  date?: string;
+  image?: ImageSource;
+  text: TextContent;
+  source?: Source;
+  date?: Date;
   [k: string]: unknown;
 }
