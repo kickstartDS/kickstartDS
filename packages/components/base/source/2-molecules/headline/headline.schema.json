@@ -44,5 +44,5 @@
       "default": false
     }
   },
-  "required": ["level", "content", "align", "spaceAfter"]
+  "required": ["level", "align", "spaceAfter"]
 }

@@ -46,7 +46,7 @@ export interface SectionProps {
 export interface Headline {
   level: Level;
   align: Alignment;
-  content: Text;
+  content?: Text;
   subheadline?: Subheadline;
   spaceAfter: BottomSpacing;
   pageHeader?: PageHeader;
