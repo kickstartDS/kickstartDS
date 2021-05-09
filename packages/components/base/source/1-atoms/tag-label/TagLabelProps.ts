@@ -5,18 +5,29 @@
  * and run `npm run schema2ts` to regenerate this file.
  */
 
+/**
+ * Text to display inside tag label
+ */
 export type Label = string;
+/**
+ * Choose a size to scale the tag label up or down
+ */
 export type Size = 's' | 'm' | 'l';
+/**
+ * Set optional href to link the tag
+ */
 export type LinkTarget = string;
+/**
+ * Choose whether the element is removable or not
+ */
 export type Removable = boolean;
 
 /**
- * Tag Label
+ * Component to render a pill / tag / label
  */
 export interface TagLabelProps {
   label: Label;
-  size?: Size;
+  size: Size;
   link?: LinkTarget;
   removable?: Removable;
-  [k: string]: unknown;
 }

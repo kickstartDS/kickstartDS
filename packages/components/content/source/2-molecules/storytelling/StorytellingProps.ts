@@ -57,6 +57,9 @@ export type BoxHorizontalAlignment = 'center' | 'left' | 'right';
  * Text used on button
  */
 export type Label = string;
+/**
+ * Choose one of the styles from the list
+ */
 export type ButtonStyle =
   | 'solid'
   | 'solid-inverted'
@@ -64,19 +67,28 @@ export type ButtonStyle =
   | 'clear-inverted'
   | 'outline'
   | 'outline-inverted';
+/**
+ * Choose a size between small, medium and large
+ */
 export type ButtonSize = 'small' | 'medium' | 'large';
+/**
+ * Add additional css classes that should be applied to the button
+ */
 export type AdditionalClasses = string;
 export type IconIdentifier = string;
 export type AriaRole = string;
 export type AdditionalClass = string;
 /**
- * Display Button icon before text
+ * Display icon before the button text
  */
-export type ButtonIconBefore = boolean;
+export type IconBeforeButton = boolean;
 /**
- * Display Button icon after text
+ * Display icon after the button text
  */
-export type ButtonIconAfter = boolean;
+export type IconAfterButton = boolean;
+/**
+ * Overwrite the data-component to use for rendering
+ */
 export type DataComponentAttribute = string;
 /**
  * Add fill animation on hover
@@ -145,13 +157,13 @@ export interface Headline {
  * link-button
  */
 export interface LinkButton {
-  label?: Label;
+  label: Label;
   variant: ButtonStyle;
-  size?: ButtonSize;
+  size: ButtonSize;
   className?: AdditionalClasses;
   icon?: Icon;
-  iconBefore?: ButtonIconBefore;
-  iconAfter?: ButtonIconAfter;
+  iconBefore?: IconBeforeButton;
+  iconAfter?: IconAfterButton;
   dataComponent?: DataComponentAttribute;
   fillAnimation?: FillAnimation;
   iconAnimation?: IconAnimation;

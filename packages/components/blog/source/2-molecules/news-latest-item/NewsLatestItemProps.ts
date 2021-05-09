@@ -25,9 +25,21 @@ export type Title = string;
  * Bodytext for news item
  */
 export type Bodytext = string;
+/**
+ * Text to display inside tag label
+ */
 export type Label = string;
+/**
+ * Choose a size to scale the tag label up or down
+ */
 export type Size = 's' | 'm' | 'l';
+/**
+ * Set optional href to link the tag
+ */
 export type LinkTarget = string;
+/**
+ * Choose whether the element is removable or not
+ */
 export type Removable = boolean;
 export type Categories = TagLabel[];
 export type UniqueId = number;
@@ -46,12 +58,11 @@ export interface NewsLatestItemProps {
   [k: string]: unknown;
 }
 /**
- * Tag Label
+ * Component to render a pill / tag / label
  */
 export interface TagLabel {
   label: Label;
-  size?: Size;
+  size: Size;
   link?: LinkTarget;
   removable?: Removable;
-  [k: string]: unknown;
 }
