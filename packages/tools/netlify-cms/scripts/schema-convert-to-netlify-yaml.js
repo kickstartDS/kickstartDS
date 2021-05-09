@@ -14,6 +14,8 @@ const netlifyAdminConfig = yaml.load(netlifyAdminYaml);
 const pageConfig = require('../resources/page.config.json');
 const settingsConfig = require('../resources/settings.config.json');
 
+// TODO: try running this from inside the 'node_modules' of a project
+
 if (!netlifyAdminConfig.collections) {
   netlifyAdminConfig.collections = [];
 }
@@ -110,11 +112,15 @@ const getContentElementConfig = (
     }
 
     if (fieldConfig.widget === 'object') {
-      if (propertySchema.properties && propertySchema.properties.length) {
+      if (
+        propertySchema.properties &&
+        !!Object.keys(propertySchema.properties).length
+      ) {
         fieldConfig = getContentElementConfig(propertyName, propertySchema);
       } else {
         fieldConfig = null;
       }
+      console.log(fieldConfig);
     }
 
     return fieldConfig;
@@ -192,6 +198,8 @@ const getContentElementConfig = (
 
   netlifyAdminConfig.collections.push(settingsConfig);
 
+  // TODO read target location from CLI parameters (optionally)
+  // for a more direct way to integrate the resulting file
   fs.writeFileSync(
     `${root}/config.generated.yml`,
     yaml.dump(netlifyAdminConfig, { noRefs: true })
