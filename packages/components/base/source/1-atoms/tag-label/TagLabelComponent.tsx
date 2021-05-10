@@ -1,15 +1,21 @@
 import { FunctionComponent, createContext, useContext } from 'react';
+import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
 import { Icon } from '../icon';
 import { Link } from '../link';
 import { TagLabelProps } from './TagLabelProps';
 import './tag-label.scss';
 import './TagLabel.js';
 
-const TagLabelComponent: FunctionComponent<TagLabelProps> = ({
+interface RenderFunctions {
+  renderLabel?: renderFn;
+}
+
+const TagLabelComponent: FunctionComponent<TagLabelProps & RenderFunctions> = ({
   label,
   size = 'm',
   link,
   removable,
+  renderLabel = defaultRenderFn,
 }) => (
   <div
     className={`c-tag-label c-tag-label--${size}`}
@@ -17,7 +23,7 @@ const TagLabelComponent: FunctionComponent<TagLabelProps> = ({
   >
     {link ? (
       <Link href={link} className="c-tag-label__content">
-        {label}
+        {renderLabel(label)}
       </Link>
     ) : (
       <span className="c-tag-label__content">{label}</span>

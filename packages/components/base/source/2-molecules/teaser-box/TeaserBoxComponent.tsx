@@ -1,13 +1,24 @@
 import { createContext, FunctionComponent, useContext } from 'react';
 import classnames from 'classnames';
+import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
+import {
+  RichText,
+  defaultRenderFn as richTextDefaultRenderFn,
+} from '../../1-atoms/rich-text';
 import { LinkButton } from '../../1-atoms/button/link-button';
 import { Picture } from '../../1-atoms/image/picture';
-import { RichText } from '../../1-atoms/rich-text';
 import { TeaserBoxProps } from './TeaserBoxProps';
 import './teaser-box.scss';
 import './TeaserBox.js';
 
-const TeaserBoxComponent: FunctionComponent<TeaserBoxProps> = ({
+interface RenderFunctions {
+  renderTopic?: renderFn;
+  renderText?: renderFn;
+}
+
+const TeaserBoxComponent: FunctionComponent<
+  TeaserBoxProps & RenderFunctions
+> = ({
   image,
   topic,
   text,
@@ -15,6 +26,8 @@ const TeaserBoxComponent: FunctionComponent<TeaserBoxProps> = ({
   link,
   ratio,
   imageSpacing,
+  renderText = richTextDefaultRenderFn,
+  renderTopic = defaultRenderFn,
 }) => (
   <div
     className={classnames('c-teaser-box', {
@@ -39,8 +52,8 @@ const TeaserBoxComponent: FunctionComponent<TeaserBoxProps> = ({
       hidden={!topic && !text && (!link || link.hidden)}
     >
       <div className="c-teaser-box__text">
-        <p className="c-teaser-box__topic">{topic}</p>
-        {text && <RichText text={text} />}
+        <p className="c-teaser-box__topic">{renderTopic(topic)}</p>
+        {text && <RichText text={text} renderText={renderText} />}
       </div>
       {link?.label ? (
         <div className="c-teaser-box__link" hidden={link.hidden}>
