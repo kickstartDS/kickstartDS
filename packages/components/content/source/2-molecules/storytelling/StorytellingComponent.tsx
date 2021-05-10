@@ -1,8 +1,12 @@
 import { createContext, FunctionComponent, useContext } from 'react';
 import classnames from 'classnames';
+import { renderFn } from '@kickstartds/core/lib/core';
 import { Headline } from '@kickstartds/base/lib/headline';
 import { LinkButton } from '@kickstartds/base/lib/link-button';
-import { RichText } from '@kickstartds/base/lib/rich-text';
+import {
+  RichText,
+  defaultRenderFn as richTextDefaultRenderFn,
+} from '@kickstartds/base/lib/rich-text';
 import { Picture } from '@kickstartds/base/lib/picture';
 import { StorytellingProps } from './StorytellingProps';
 import './storytelling.scss';
@@ -11,13 +15,20 @@ interface ILazy {
   lazy: boolean;
 }
 
-const StorytellingMixin: FunctionComponent<StorytellingProps & ILazy> = ({
+interface RenderFunctions {
+  renderText?: renderFn;
+}
+
+const StorytellingMixin: FunctionComponent<
+  StorytellingProps & ILazy & RenderFunctions
+> = ({
   lazy,
   image,
   box,
   full,
   backgroundColor,
   backgroundImage,
+  renderText = richTextDefaultRenderFn,
 }) => (
   <div
     className={classnames('c-storytelling', {
@@ -76,7 +87,11 @@ const StorytellingMixin: FunctionComponent<StorytellingProps & ILazy> = ({
       >
         {box.headline && <Headline {...box.headline} />}
         {box.text && (
-          <RichText text={box.text} className="c-storytelling__text" />
+          <RichText
+            text={box.text}
+            renderText={renderText}
+            className="c-storytelling__text"
+          />
         )}
         {box.link && <LinkButton {...box.link} />}
       </div>

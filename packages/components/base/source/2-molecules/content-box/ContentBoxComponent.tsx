@@ -1,19 +1,32 @@
 import { createContext, FunctionComponent, useContext } from 'react';
 import classnames from 'classnames';
-import { RichText } from '../../1-atoms/rich-text';
+import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
+import {
+  RichText,
+  defaultRenderFn as richTextDefaultRenderFn,
+} from '../../1-atoms/rich-text';
 import { LinkButton } from '../../1-atoms/button/link-button';
 import { Picture } from '../../1-atoms/image/picture';
 import { ContentBoxProps } from './ContentBoxProps';
 import './content-box.scss';
 import './ContentBox.js';
 
-const ContentBoxComponent: FunctionComponent<ContentBoxProps> = ({
+interface RenderFunctions {
+  renderTopic?: renderFn;
+  renderText?: renderFn;
+}
+
+const ContentBoxComponent: FunctionComponent<
+  ContentBoxProps & RenderFunctions
+> = ({
   image,
   topic,
   alignement,
   text,
   link,
   ratio,
+  renderTopic = defaultRenderFn,
+  renderText = richTextDefaultRenderFn,
 }) => (
   <div
     className={classnames(
@@ -34,8 +47,8 @@ const ContentBoxComponent: FunctionComponent<ContentBoxProps> = ({
     )}
     <div className="c-content-box__body">
       <div className="c-content-box__text">
-        {topic && <p className="c-content-box__topic">{topic}</p>}
-        {text && <RichText text={text} />}
+        {topic && <p className="c-content-box__topic">{renderTopic(topic)}</p>}
+        {text && <RichText text={text} renderText={renderText} />}
       </div>
       {link?.label && (
         <div className="c-content-box__link">
