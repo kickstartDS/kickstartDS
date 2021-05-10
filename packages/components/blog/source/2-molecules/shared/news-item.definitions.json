@@ -9,7 +9,7 @@
       "description": "Image source for news item",
       "type": "string",
       "format": "image",
-      "default": "images/dummy/64-27-l.png"
+      "default": "https://picsum.photos/seed/kdsnewsitem/900/380"
     },
     "date": {
       "title": "Date",

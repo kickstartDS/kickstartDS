@@ -10,14 +10,14 @@
       "description": "Thumbnail Source",
       "type": "string",
       "format": "image",
-      "default": "images/dummy/16-9-s.png"
+      "default": "https://picsum.photos/seed/kdslightboximage/600/338"
     },
     "image": {
       "title": "Lightbox Image Source",
       "description": "Lightbox Image Source",
       "type": "string",
       "format": "image",
-      "default": "images/dummy/16-9-xxxl.png"
+      "default": "https://picsum.photos/seed/kdslightboximage/1800/1013"
     },
     "width": {
       "title": "Width",
