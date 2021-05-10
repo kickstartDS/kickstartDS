@@ -15,15 +15,18 @@ const ContentBoxComponent: FunctionComponent<ContentBoxProps> = ({
   link,
   ratio,
 }) => (
-  <div className="c-content-box">
+  <div
+    className={classnames(
+      'c-content-box',
+      alignement !== 'left' && `c-content-box--align-${alignement}`
+    )}
+  >
     {image && (
       <div
         className={classnames('c-content-box__image', {
           'c-content-box__image--four-to-three': ratio === '4:3',
           'c-content-box__image--sixteen-to-nine': ratio === '16:9',
           'c-content-box__image--square': ratio === '1:1',
-          [`c-content-box__image--align-${alignement}`]:
-            (!ratio || ratio === 'none') && alignement !== 'left',
         })}
       >
         <Picture src={image} alt="" objectFit={true} />

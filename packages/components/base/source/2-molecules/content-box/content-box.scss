@@ -9,6 +9,14 @@ $vars: meta.module-variables(content-box-vars);
   margin-bottom: 2em;
   box-sizing: border-box;
 
+  &--align-center {
+    text-align: center;
+  }
+
+  &--align-right {
+    text-align: right;
+  }
+
   &__image {
     flex-grow: 0;
     flex-shrink: 0;
@@ -17,14 +25,6 @@ $vars: meta.module-variables(content-box-vars);
 
     img {
       width: auto;
-    }
-
-    &--align-center {
-      text-align: center;
-    }
-
-    &--align-right {
-      text-align: right;
     }
 
     &--square {
@@ -59,10 +59,6 @@ $vars: meta.module-variables(content-box-vars);
     flex-direction: column;
     align-items: stretch;
     flex: 1 auto;
-
-    &--align-center {
-      text-align: center;
-    }
 
     &[min-width~='0px'] {
       --c-content-box_topic--font: var(--font-display-s);

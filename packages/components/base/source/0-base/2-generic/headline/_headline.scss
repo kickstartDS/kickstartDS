@@ -24,6 +24,10 @@ h6 {
     page-break-after: avoid;
   }
 
+  &:first-child {
+    margin-top: 0;
+  }
+
   a {
     text-decoration: none !important;
   }

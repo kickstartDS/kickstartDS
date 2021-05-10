@@ -10,9 +10,9 @@
  */
 export type ImageRatio = 'none' | '4:3' | '16:9' | '1:1';
 /**
- * Choose an alignment for the image inside its box, only applies for a `ratio` value of `none`
+ * Choose an alignment for the box. For the image it only applies for a `ratio` value of `none`
  */
-export type ImageAlignment = 'left' | 'center' | 'right';
+export type Alignment = 'left' | 'center' | 'right';
 /**
  * Select an image to display inside the content box, at the top
  */
@@ -88,7 +88,7 @@ export type OpenLinkInNewTab = boolean;
  */
 export interface ContentBoxProps {
   ratio: ImageRatio;
-  alignement: ImageAlignment;
+  alignement: Alignment;
   image?: ImageSource;
   topic?: Topic;
   text?: TextContent;
