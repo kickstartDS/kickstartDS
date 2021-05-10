@@ -13,11 +13,11 @@
       "description": "Choose one of the set ratios, all ratios except `none` stretch the image to 100% width"
     },
     "alignement": {
-      "title": "Image alignment",
+      "title": "Alignment",
       "type": "string",
       "enum": ["left", "center", "right"],
       "default": "left",
-      "description": "Choose an alignment for the image inside its box, only applies for a `ratio` value of `none`"
+      "description": "Choose an alignment for the box. For the image it only applies for a `ratio` value of `none`"
     },
     "image": {
       "title": "Image source",
