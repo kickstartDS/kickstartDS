@@ -6,9 +6,36 @@
  */
 
 /**
+ * Select an image to display inside the teaser box, at the top
+ */
+export type ImageSource = string;
+/**
+ * Topic for the teaser box. Displayed before the text, in bold
+ */
+export type Topic = string;
+/**
+ * Text for the teaser box
+ */
+export type TextContent = string;
+/**
+ * Optionally use this to apply a dark variant to the box
+ */
+export type DarkVariant = boolean;
+/**
+ * Choose the ratio used to crop and display the image
+ */
+export type ImageRatio = '4:3' | '16:9' | '1:1';
+/**
+ * Optionally add inner spacing to the displayed image
+ */
+export type ImageSpacing = boolean;
+/**
  * Text used on button
  */
 export type Label = string;
+/**
+ * Choose one of the styles from the list
+ */
 export type ButtonStyle =
   | 'solid'
   | 'solid-inverted'
@@ -16,19 +43,28 @@ export type ButtonStyle =
   | 'clear-inverted'
   | 'outline'
   | 'outline-inverted';
+/**
+ * Choose a size between small, medium and large
+ */
 export type ButtonSize = 'small' | 'medium' | 'large';
+/**
+ * Add additional css classes that should be applied to the button
+ */
 export type AdditionalClasses = string;
 export type IconIdentifier = string;
 export type AriaRole = string;
 export type AdditionalClass = string;
 /**
- * Display Button icon before text
+ * Display icon before the button text
  */
-export type ButtonIconBefore = boolean;
+export type IconBeforeButton = boolean;
 /**
- * Display Button icon after text
+ * Display icon after the button text
  */
-export type ButtonIconAfter = boolean;
+export type IconAfterButton = boolean;
+/**
+ * Overwrite the data-component to use for rendering
+ */
 export type DataComponentAttribute = string;
 /**
  * Add fill animation on hover
@@ -46,37 +82,40 @@ export type ButtonHref = string;
  * Open link in new Tab
  */
 export type OpenLinkInNewTab = boolean;
+/**
+ * Hides the link. The box as a whole keeps being clickable
+ */
+export type HideLink = boolean;
 
 /**
- * teaser-box
+ * Component to tease external content
  */
 export interface TeaserBoxProps {
-  image?: string;
-  topic?: string;
-  text?: string;
-  darkStyle?: boolean;
-  ratio?: '4:3' | '16:9' | '1:1';
-  imageSpacing?: boolean;
+  image?: ImageSource;
+  topic?: Topic;
+  text?: TextContent;
+  darkStyle?: DarkVariant;
+  ratio: ImageRatio;
+  imageSpacing?: ImageSpacing;
   link?: LinkButton;
-  [k: string]: unknown;
 }
 /**
  * link-button
  */
 export interface LinkButton {
-  label?: Label;
+  label: Label;
   variant: ButtonStyle;
-  size?: ButtonSize;
+  size: ButtonSize;
   className?: AdditionalClasses;
   icon?: Icon;
-  iconBefore?: ButtonIconBefore;
-  iconAfter?: ButtonIconAfter;
+  iconBefore?: IconBeforeButton;
+  iconAfter?: IconAfterButton;
   dataComponent?: DataComponentAttribute;
   fillAnimation?: FillAnimation;
   iconAnimation?: IconAnimation;
   href: ButtonHref;
   newTab?: OpenLinkInNewTab;
-  hidden?: boolean;
+  hidden?: HideLink;
 }
 /**
  * Icon

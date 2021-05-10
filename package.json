@@ -18,6 +18,7 @@
     "husky-pre-commit": "npm run schema && git add packages/*/*/source/**/*Props.ts && lint-staged",
     "lint": "run-p eslint stylelint",
     "list": "lerna la",
+    "netlifycms-config": "node packages/tools/netlify-cms/scripts/schema-convert-to-netlify-yaml.js",
     "postinstall": "run-p git-config copy-env-file",
     "run-chromatic": "lerna run --scope @kickstartds-internal/storybook --stream --no-prefix",
     "schema": "lerna run --parallel --no-prefix schema",

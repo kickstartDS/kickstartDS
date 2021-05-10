@@ -1,32 +1,64 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "http://frontend.ruhmesmeile.com/base/molecules/content-box.schema.json",
-  "title": "Content-Box",
+  "title": "Content Box",
+  "description": "Component to display content in a condensed, boxed form",
   "type": "object",
   "properties": {
     "ratio": {
+      "title": "Image ratio",
       "type": "string",
       "enum": ["none", "4:3", "16:9", "1:1"],
-      "default": "none"
+      "default": "none",
+      "description": "Choose one of the set ratios, all ratios except `none` stretch the image to 100% width"
     },
     "alignement": {
       "title": "Image alignment",
       "type": "string",
       "enum": ["left", "center", "right"],
-      "default": "left"
+      "default": "left",
+      "description": "Choose an alignment for the image inside its box, only applies for a `ratio` value of `none`"
     },
     "image": {
+      "title": "Image source",
       "type": "string",
       "format": "image",
-      "default": "images/dummy/16-9-s.png"
+      "default": "https://picsum.photos/seed/kdscontentbox/500/300",
+      "description": "Select an image to display inside the content box, at the top"
     },
-    "topic": { "type": "string", "default": "Lorem Ipsum" },
-    "text": {
+    "topic": {
+      "title": "Topic",
       "type": "string",
-      "default": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ispum dolor distinctio minima unde voluptatum aut. Lorem ipsum dolor sit amet. "
+      "default": "Lorem Ipsum",
+      "description": "Topic for the content box. Displayed before the text, in bold"
+    },
+    "text": {
+      "title": "Text content",
+      "type": "string",
+      "default": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ispum dolor distinctio minima unde voluptatum aut. Lorem ipsum dolor sit amet.",
+      "description": "Text for the content box",
+      "format": "markdown"
     },
     "link": {
-      "$ref": "http://frontend.ruhmesmeile.com/base/atoms/link-button.schema.json"
+      "title": "Link",
+      "description": "Content box link configuration",
+      "allOf": [
+        {
+          "properties": {
+            "enabled": {
+              "title": "Display link",
+              "description": "Toggles visibility of the link",
+              "type": "boolean",
+              "default": false
+            }
+          }
+        },
+        {
+          "$ref": "http://frontend.ruhmesmeile.com/base/atoms/link-button.schema.json"
+        }
+      ]
     }
-  }
+  },
+  "required": ["ratio", "alignement"],
+  "additionalProperties": false
 }

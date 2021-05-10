@@ -2,77 +2,77 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "http://frontend.ruhmesmeile.com/base/atoms/picture.definitions.json",
   "title": "Picture",
-  "description": "Picture",
+  "description": "Base component to display a picture",
   "type": "object",
   "properties": {
     "src": {
       "type": "string",
-      "title": "Image Source",
-      "description": "Image Source",
+      "title": "Source",
+      "description": "Picture source",
       "format": "image",
-      "default": "images/dummy/16-9-l.png"
+      "default": "https://picsum.photos/seed/kdspicture/300/300"
     },
     "srcSet": {
       "type": "string",
-      "title": "Image Sourceset",
-      "description": "Image Sourceset",
+      "title": "Picture sourceset",
+      "description": "Use a srcSet to display picture",
       "format": "image"
     },
     "alt": {
       "type": "string",
       "title": "Alt text",
-      "description": "Alt text"
+      "description": "Alt text to display for picture"
     },
     "width": {
       "title": "Width",
-      "description": "Width",
+      "description": "Width of the picture",
       "type": "integer",
       "minimum": 0,
       "default": 900
     },
     "height": {
       "title": "Height",
-      "description": "height",
+      "description": "Height of the picture",
       "type": "integer",
       "minimum": 0,
       "default": 506
     },
     "className": {
       "type": "string",
-      "title": "Class",
-      "description": "Image Class"
+      "title": "Additional Classes",
+      "description": "Add additional css classes that should be applied to the button"
     },
     "id": {
       "type": "string",
-      "title": "ID",
-      "description": "ID"
+      "title": "Id",
+      "description": "Add id attribute to the image"
     },
     "itemProp": {
       "type": "string",
-      "title": "Itemprop",
-      "description": "Itemprop"
+      "title": "`itemprop` attribute",
+      "description": "Define an itemprop attribute for the picture"
     },
     "style": {
-      "type": "object",
-      "title": "Style",
-      "description": "Style"
+      "type": "string",
+      "title": "`style` attribute",
+      "description": "Define a style attribute for the picture"
     },
     "objectFit": {
       "title": "Object fit",
-      "description": "Object fit",
+      "description": "Select a value for the picture object fit",
       "type": "string",
       "enum": ["contain", "cover", "fill", "none", "scale-down"],
       "default": "none"
     },
     "noscript": {
-      "title": "Render noscript fallback",
+      "title": "Noscript",
       "description": "Render noscript fallback",
       "type": "boolean",
       "default": true
     },
     "lazy": {
       "title": "Lazy",
-      "description": "Load Image Lazily",
+      "description": "Load the picture lazily",
       "type": "boolean",
       "default": true
     },
@@ -84,20 +84,28 @@
         "type": "object",
         "properties": {
           "srcSet": {
-            "type": "string"
+            "type": "string",
+            "title": "Picture sourceset",
+            "description": "Use a srcSet to display picture",
+            "format": "image"
           },
           "media": {
-            "type": "string"
+            "type": "string",
+            "title": "TODO MEDIA TITLE",
+            "description": "TODO MEDIA DESCRIPTION"
           },
           "type": {
-            "type": "string"
+            "type": "string",
+            "title": "TODO TYPE TITLE",
+            "description": "TODO TYPE DESCRIPTION"
           }
         }
       }
     },
     "pictureClassName": {
       "type": "string",
-      "title": "Picture Class"
+      "title": "`class` attribute",
+      "description": "Set additional class(es) to the picture"
     }
   }
 }

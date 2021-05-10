@@ -1,25 +1,48 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "http://frontend.ruhmesmeile.com/base/molecules/teaser-box.schema.json",
-  "title": "Teaser-Box",
-  "description": "teaser-box",
+  "title": "Teaser Box",
+  "description": "Component to tease external content",
   "type": "object",
   "properties": {
-    "image": { "type": "string", "default": "images/dummy/16-9-s.png" },
-    "topic": { "type": "string", "default": "Lorem Ipsum" },
-    "text": {
+    "image": {
       "type": "string",
-      "default": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ispum dolor distinctio minima unde voluptatum aut. Lorem ipsum dolor sit amet."
+      "default": "https://picsum.photos/seed/kdsteaserbox/500/300",
+      "format": "image",
+      "title": "Image source",
+      "description": "Select an image to display inside the teaser box, at the top"
     },
-    "darkStyle": { "type": "boolean", "default": false },
+    "topic": {
+      "title": "Topic",
+      "type": "string",
+      "default": "Lorem Ipsum",
+      "description": "Topic for the teaser box. Displayed before the text, in bold"
+    },
+    "text": {
+      "title": "Text content",
+      "type": "string",
+      "default": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ispum dolor distinctio minima unde voluptatum aut. Lorem ipsum dolor sit amet.",
+      "description": "Text for the teaser box",
+      "format": "markdown"
+    },
+    "darkStyle": {
+      "type": "boolean",
+      "default": false,
+      "title": "Dark variant",
+      "description": "Optionally use this to apply a dark variant to the box"
+    },
     "ratio": {
       "type": "string",
       "enum": ["4:3", "16:9", "1:1"],
-      "default": "16:9"
+      "default": "16:9",
+      "title": "Image ratio",
+      "description": "Choose the ratio used to crop and display the image"
     },
     "imageSpacing": {
       "type": "boolean",
-      "default": false
+      "default": false,
+      "title": "Image spacing",
+      "description": "Optionally add inner spacing to the displayed image"
     },
     "link": {
       "allOf": [
@@ -28,10 +51,17 @@
         },
         {
           "properties": {
-            "hidden": { "type": "boolean", "default": false }
+            "hidden": {
+              "type": "boolean",
+              "default": false,
+              "title": "Hide link",
+              "description": "Hides the link. The box as a whole keeps being clickable"
+            }
           }
         }
       ]
     }
-  }
+  },
+  "required": ["ratio"],
+  "additionalProperties": false
 }

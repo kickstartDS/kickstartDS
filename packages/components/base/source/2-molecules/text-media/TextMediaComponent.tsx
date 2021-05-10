@@ -17,6 +17,8 @@ export interface RenderFunctions {
   renderText?: renderFn;
 }
 
+type TMedia = Omit<TextMediaProps, 'text' | 'mediaAlignment'>;
+
 const Video = ({ iframe, src, title, width, height }: IVideo) =>
   iframe ? (
     <IframeRatio
@@ -36,7 +38,7 @@ const Video = ({ iframe, src, title, width, height }: IVideo) =>
     </>
   );
 
-const Media = ({ media }: TextMediaProps) =>
+const Media = ({ media }: TMedia) =>
   media ? (
     <div className="text-media__gallery">
       {media.map((m, i) => (

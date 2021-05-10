@@ -55,6 +55,7 @@ export const NewsLatestItem: FunctionComponent<NewsLatestItemProps> = ({
           icon={{ icon: 'chevron-right' }}
           iconAfter={true}
           variant="clear"
+          size="medium"
         />
       </div>
     </div>

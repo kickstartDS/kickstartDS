@@ -6,83 +6,96 @@
  */
 
 /**
- * Image Source
+ * Picture source
  */
-export type ImageSource = string;
+export type Source = string;
 /**
- * Image Sourceset
+ * Use a srcSet to display picture
  */
-export type ImageSourceset = string;
+export type PictureSourceset = string;
 /**
- * Alt text
+ * Alt text to display for picture
  */
 export type AltText = string;
 /**
- * Width
+ * Width of the picture
  */
 export type Width = number;
 /**
- * height
+ * Height of the picture
  */
 export type Height = number;
 /**
- * Image Class
+ * Add additional css classes that should be applied to the button
  */
-export type Class = string;
+export type AdditionalClasses = string;
 /**
- * ID
+ * Add id attribute to the image
  */
-export type ID = string;
+export type Id = string;
 /**
- * Itemprop
+ * Define an itemprop attribute for the picture
  */
-export type Itemprop = string;
+export type ItempropAttribute = string;
 /**
- * Object fit
+ * Define a style attribute for the picture
+ */
+export type StyleAttribute = string;
+/**
+ * Select a value for the picture object fit
  */
 export type ObjectFit = 'contain' | 'cover' | 'fill' | 'none' | 'scale-down';
 /**
  * Render noscript fallback
  */
-export type RenderNoscriptFallback = boolean;
+export type Noscript = boolean;
 /**
- * Load Image Lazily
+ * Load the picture lazily
  */
 export type Lazy = boolean;
+/**
+ * Use a srcSet to display picture
+ */
+export type PictureSourceset1 = string;
+/**
+ * TODO MEDIA DESCRIPTION
+ */
+export type TODOMEDIATITLE = string;
+/**
+ * TODO TYPE DESCRIPTION
+ */
+export type TODOTYPETITLE = string;
 /**
  * Additional sources. This will result in a `picture`-Element
  */
 export type Sources = {
-  srcSet?: string;
-  media?: string;
-  type?: string;
+  srcSet?: PictureSourceset1;
+  media?: TODOMEDIATITLE;
+  type?: TODOTYPETITLE;
   [k: string]: unknown;
 }[];
-export type PictureClass = string;
+/**
+ * Set additional class(es) to the picture
+ */
+export type ClassAttribute = string;
 
 /**
- * Picture
+ * Base component to display a picture
  */
 export interface PictureProps {
-  src?: ImageSource;
-  srcSet?: ImageSourceset;
+  src?: Source;
+  srcSet?: PictureSourceset;
   alt?: AltText;
   width?: Width;
   height?: Height;
-  className?: Class;
-  id?: ID;
-  itemProp?: Itemprop;
-  style?: Style;
+  className?: AdditionalClasses;
+  id?: Id;
+  itemProp?: ItempropAttribute;
+  style?: StyleAttribute;
   objectFit?: ObjectFit;
-  noscript?: RenderNoscriptFallback;
+  noscript?: Noscript;
   lazy?: Lazy;
   sources?: Sources;
-  pictureClassName?: PictureClass;
-  [k: string]: unknown;
-}
-/**
- * Style
- */
-export interface Style {
+  pictureClassName?: ClassAttribute;
   [k: string]: unknown;
 }

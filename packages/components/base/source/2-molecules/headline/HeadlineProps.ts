@@ -6,27 +6,27 @@
  */
 
 /**
- * Headline Level
+ * Select the headline level to use, or p alternatively
  */
-export type HeadlineLevel = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
+export type Level = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
 /**
- * Text Align
+ * Choose an alignment for the headline
  */
-export type TextAlign = 'left' | 'center' | 'right';
+export type Alignment = 'left' | 'center' | 'right';
 /**
- * Headline Text
+ * Text content for the headline
  */
-export type HeadlineText = string;
+export type Text = string;
 /**
- * Subheadline Text
+ * Text content for the optional subheadline
  */
-export type SubheadlineText = string;
+export type Subheadline = string;
 /**
- * Bottom Spacing
+ * Add additional spacing to the bottom of the headline
  */
 export type BottomSpacing = 'none' | 'small' | 'large';
 /**
- * Page Header
+ * Set the headline as a page header, triggering special css treatment
  */
 export type PageHeader = boolean;
 
@@ -34,11 +34,11 @@ export type PageHeader = boolean;
  * Headline
  */
 export interface HeadlineProps {
-  level: HeadlineLevel;
-  align?: TextAlign;
-  content: HeadlineText;
-  subheadline?: SubheadlineText;
-  spaceAfter?: BottomSpacing;
+  level: Level;
+  align: Alignment;
+  content?: Text;
+  subheadline?: Subheadline;
+  spaceAfter: BottomSpacing;
   pageHeader?: PageHeader;
   [k: string]: unknown;
 }

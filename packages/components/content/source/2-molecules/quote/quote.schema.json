@@ -2,26 +2,35 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "http://frontend.ruhmesmeile.com/content/molecules/quote.schema.json",
   "title": "Quote",
-  "description": "Quote",
+  "description": "Component to display a rich quote",
   "type": "object",
   "properties": {
     "image": {
+      "title": "Image source",
       "type": "string",
       "format": "image",
-      "default": "images/dummy/1-1-xl.png"
+      "default": "https://picsum.photos/seed/kdsquote/300/300",
+      "description": "Select an image to display inside the quote, to the left"
     },
     "text": {
+      "title": "Text content",
+      "description": "Copy text for the element",
       "type": "string",
-      "default": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
+      "format": "markdown",
+      "default": "Consequuntur est quia atque eum ducimus. Consequatur fugiat hic eos perferendis. Libero unde omnis dolorem maxime occaecati sapiente distinctio. Consectetur non placeat dolorem est animi.\n\nSuscipit quos rem suscipit culpa. Et distinctio et veritatis consectetur quae dolorem aut. Explicabo commodi repudiandae fugiat. Accusamus alias mollitia perferendis qui iure magni. Minus est vitae dolor dolor."
     },
     "source": {
       "type": "string",
-      "default": "Lorem Ipsum"
+      "default": "Richard McClintock",
+      "title": "Source",
+      "description": "Optionally display the source for the quote"
     },
     "date": {
       "type": "string",
       "format": "date",
-      "default": "2021-03-29"
+      "default": "2021-03-29",
+      "title": "Date",
+      "description": "Optionally display a date for the quote"
     }
   },
   "required": ["text"]

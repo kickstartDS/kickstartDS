@@ -5,11 +5,37 @@
  * and run `npm run schema2ts` to regenerate this file.
  */
 
+/**
+ * Choose one of the set ratios, all ratios except `none` stretch the image to 100% width
+ */
+export type ImageRatio = 'none' | '4:3' | '16:9' | '1:1';
+/**
+ * Choose an alignment for the image inside its box, only applies for a `ratio` value of `none`
+ */
 export type ImageAlignment = 'left' | 'center' | 'right';
+/**
+ * Select an image to display inside the content box, at the top
+ */
+export type ImageSource = string;
+/**
+ * Topic for the content box. Displayed before the text, in bold
+ */
+export type Topic = string;
+/**
+ * Text for the content box
+ */
+export type TextContent = string;
+/**
+ * Toggles visibility of the link
+ */
+export type DisplayLink = boolean;
 /**
  * Text used on button
  */
 export type Label = string;
+/**
+ * Choose one of the styles from the list
+ */
 export type ButtonStyle =
   | 'solid'
   | 'solid-inverted'
@@ -17,19 +43,28 @@ export type ButtonStyle =
   | 'clear-inverted'
   | 'outline'
   | 'outline-inverted';
+/**
+ * Choose a size between small, medium and large
+ */
 export type ButtonSize = 'small' | 'medium' | 'large';
+/**
+ * Add additional css classes that should be applied to the button
+ */
 export type AdditionalClasses = string;
 export type IconIdentifier = string;
 export type AriaRole = string;
 export type AdditionalClass = string;
 /**
- * Display Button icon before text
+ * Display icon before the button text
  */
-export type ButtonIconBefore = boolean;
+export type IconBeforeButton = boolean;
 /**
- * Display Button icon after text
+ * Display icon after the button text
  */
-export type ButtonIconAfter = boolean;
+export type IconAfterButton = boolean;
+/**
+ * Overwrite the data-component to use for rendering
+ */
 export type DataComponentAttribute = string;
 /**
  * Add fill animation on hover
@@ -48,26 +83,29 @@ export type ButtonHref = string;
  */
 export type OpenLinkInNewTab = boolean;
 
+/**
+ * Component to display content in a condensed, boxed form
+ */
 export interface ContentBoxProps {
-  ratio?: 'none' | '4:3' | '16:9' | '1:1';
-  alignement?: ImageAlignment;
-  image?: string;
-  topic?: string;
-  text?: string;
-  link?: LinkButton;
-  [k: string]: unknown;
+  ratio: ImageRatio;
+  alignement: ImageAlignment;
+  image?: ImageSource;
+  topic?: Topic;
+  text?: TextContent;
+  link?: Link;
 }
 /**
- * link-button
+ * Content box link configuration
  */
-export interface LinkButton {
-  label?: Label;
+export interface Link {
+  enabled?: DisplayLink;
+  label: Label;
   variant: ButtonStyle;
-  size?: ButtonSize;
+  size: ButtonSize;
   className?: AdditionalClasses;
   icon?: Icon;
-  iconBefore?: ButtonIconBefore;
-  iconAfter?: ButtonIconAfter;
+  iconBefore?: IconBeforeButton;
+  iconAfter?: IconAfterButton;
   dataComponent?: DataComponentAttribute;
   fillAnimation?: FillAnimation;
   iconAnimation?: IconAnimation;
