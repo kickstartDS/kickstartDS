@@ -1,9 +1,6 @@
 @use 'sass:meta';
-@use '../../0-base/1-tools/scss/sizes';
-@use '../../0-base/1-tools/scss/helpers';
 @use '@kickstartds/core/source/core/breakpoint';
 @use '@kickstartds/core/source/core/custom-properties';
-@use 'settings/base';
 @use './headline-vars';
 
 $vars: meta.module-variables(headline-vars);
@@ -11,7 +8,6 @@ $vars: meta.module-variables(headline-vars);
 
 .c-headline {
   /* critical:start */
-  max-width: 70%;
   margin: 0 auto var(--c-headline--margin-bottom);
   text-align: center;
 
@@ -25,6 +21,12 @@ $vars: meta.module-variables(headline-vars);
     text-align: left;
   }
   /* critical:end */
+
+  @include breakpoint.media('≥s') {
+    /* critical:start */
+    max-width: 70%;
+    /* critical:end */
+  }
 
   &--page-header {
     /* critical:start */
