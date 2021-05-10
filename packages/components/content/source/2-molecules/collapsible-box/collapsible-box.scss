@@ -29,16 +29,12 @@ $vars: meta.module-variables(collapsible-box-vars);
   &__header {
     &-wrapper {
       position: relative;
-      padding: 1em 0;
+      padding: var(--c-collapsible-box_header--padding);
       cursor: pointer;
       display: flex;
       justify-content: space-between;
       align-items: center;
       font: var(--c-collapsible-box_header--font);
-
-      @include breakpoint.media('≥s') {
-        padding: 1em;
-      }
     }
 
     &__text {
@@ -66,11 +62,7 @@ $vars: meta.module-variables(collapsible-box-vars);
 
   &__content {
     &__item {
-      padding: 1em 0;
-
-      @include breakpoint.media('≥s') {
-        padding: 1em 4em 1em 1em;
-      }
+      padding: var(--c-collapsible-box_content--padding);
     }
 
     .is-closed & {

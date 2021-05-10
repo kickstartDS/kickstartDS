@@ -9,6 +9,10 @@ $host: (
 $header: (
   '.c-collapsible-box': (
     font: var(--font-copy-m),
+    padding: (
+      xs: 1em 0,
+      s: 1em,
+    ),
   ),
 ) !default;
 
@@ -19,5 +23,14 @@ $icon: (
       s: 1.85em,
     ),
     transform-open: rotate(-180deg),
+  ),
+) !default;
+
+$content: (
+  '.c-collapsible-box': (
+    padding: (
+      xs: 1em 0,
+      s: 1em 4em 1em 1em,
+    ),
   ),
 ) !default;
