@@ -12,12 +12,8 @@
     box-sizing: border-box;
 
     &__date {
+      font: var(--font-ui-s);
       // TODO: remove conditions in version 6
-      font-size: if(
-        meta.global-variable-exists('news-list-item__date-font-size', 'news'),
-        news.$news-list-item__date-font-size,
-        base.$font-size-small
-      );
       font-weight: if(
         meta.global-variable-exists('news-list-item__date-font-weight', 'news'),
         helpers.get-font-weight(news.$news-list-item__date-font-weight),
@@ -28,7 +24,6 @@
         news.$news-list-item__date-color,
         base.$color-black-50
       );
-      line-height: base.$line-height-small;
       padding-right: 1rem;
     }
 
