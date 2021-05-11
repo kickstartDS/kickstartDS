@@ -1,13 +1,6 @@
 @use 'bourbon/core/bourbon';
 
-@mixin font-sans($weight) {
-  font-family: $font-sans, $font-sans-fallback;
-  font-weight: map_get($font-sans-weights, $weight);
-}
-
 /// ### Sans-serif
-$font-sans:                                 bourbon.$font-stack-system !default;
-$font-sans-fallback:                        null !default;
 $font-sans-weights: (
   thin: 100,
   extra-light: 200,
