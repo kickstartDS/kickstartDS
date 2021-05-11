@@ -24,7 +24,6 @@
     "@babel/runtime": "^7.13.17",
     "@glidejs/glide": "git://github.com/glidejs/glide.git#master",
     "@kickstartds/core": "^1.0.0-alpha.13",
-    "animate.js": "^2.0.2",
     "classnames": "^2.2.6",
     "css-element-queries": "^1.2.3",
     "date-fns": "^2.19.0",
