@@ -20,6 +20,10 @@ $vars: meta.module-variables(headline-vars);
     margin-right: 0;
     text-align: left;
   }
+
+  .l-section &:not(:first-child) {
+    margin-top: calc(var(--c-headline--margin-bottom) * 1.5);
+  }
   /* critical:end */
 
   @include breakpoint.media('≥s') {
