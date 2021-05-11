@@ -12,7 +12,7 @@
     box-sizing: border-box;
 
     &__date {
-      font: var(--font-ui-s);
+      font: var(--font-ui-xs);
       // TODO: remove conditions in version 6
       font-weight: if(
         meta.global-variable-exists('news-list-item__date-font-weight', 'news'),

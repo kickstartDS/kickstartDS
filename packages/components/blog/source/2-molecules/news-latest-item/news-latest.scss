@@ -24,7 +24,7 @@
     }
 
     &__date {
-      font: var(--font-ui-s);
+      font: var(--font-ui-xs);
       // TODO: remove conditions in version 6
       font-weight: if(
         meta.global-variable-exists('news-latest__date-font-weight', 'news'),
@@ -103,7 +103,7 @@
     }
 
     &__teaser {
-      font: var(--font-copy-m);
+      font: var(--font-copy-s);
     }
 
     &__more {
