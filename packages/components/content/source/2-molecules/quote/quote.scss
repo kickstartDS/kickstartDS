@@ -27,6 +27,7 @@ $vars: meta.module-variables(quote-vars);
         calc(var(--c-quote_content--padding-left) / 2)
       );
       content: var(--c-quote_icon--content, '\201D');
+      font-family: var(--c-quote_icon--font-family, var(--font-family-display));
       font-size: var(--c-quote_icon--font-size);
       line-height: 1;
       color: var(--c-quote_icon--color, var(--color-primary));

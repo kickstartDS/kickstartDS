@@ -1,7 +1,7 @@
 /* stylelint-disable plugin/selector-bem-pattern, selector-no-qualifying-type */
-/* critical:start */
 @use './normalize';
 
+/* critical:start */
 * {
   &,
   &::before,
@@ -19,5 +19,21 @@ html {
 body {
   &.overlay-open {
     overflow: hidden;
+  }
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

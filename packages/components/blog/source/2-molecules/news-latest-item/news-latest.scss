@@ -24,12 +24,8 @@
     }
 
     &__date {
+      font: var(--font-ui-xs);
       // TODO: remove conditions in version 6
-      font-size: if(
-        meta.global-variable-exists('news-latest__date-font-size', 'news'),
-        news.$news-latest__date-font-size,
-        base.$font-size-small
-      );
       font-weight: if(
         meta.global-variable-exists('news-latest__date-font-weight', 'news'),
         helpers.get-font-weight(news.$news-latest__date-font-weight),
@@ -104,6 +100,10 @@
           base.$color-black
         );
       }
+    }
+
+    &__teaser {
+      font: var(--font-copy-s);
     }
 
     &__more {

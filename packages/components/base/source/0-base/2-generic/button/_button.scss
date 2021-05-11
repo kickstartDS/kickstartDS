@@ -1,7 +1,0 @@
-@use '../../1-tools/scss/button';
-
-button {
-  /* critical:start */
-  @include button.button-reset;
-  /* critical:end */
-}
