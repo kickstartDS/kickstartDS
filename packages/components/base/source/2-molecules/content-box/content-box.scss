@@ -45,6 +45,8 @@ $vars: meta.module-variables(content-box-vars);
     &--square,
     &--sixteen-to-nine,
     &--four-to-three {
+      text-align: left;
+
       img {
         position: absolute;
         object-fit: cover;
