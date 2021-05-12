@@ -1,13 +1,18 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent, HTMLAttributes } from 'react';
+import classnames from 'classnames';
 import { Slider } from '@kickstartds/base/lib/slider';
 import { Visual } from '../visual/VisualComponent';
 import { VisualSliderProps } from './VisualSliderProps';
 import './visual-slider.scss';
 
-export const VisualSlider: FunctionComponent<VisualSliderProps> = ({
-  slides,
-}) => (
-  <Slider autoplay={false} class="c-visual-slider">
+export const VisualSlider: FunctionComponent<
+  VisualSliderProps & HTMLAttributes<HTMLDivElement>
+> = ({ slides, className, ...props }) => (
+  <Slider
+    autoplay={false}
+    className={classnames('c-visual-slider', className)}
+    {...props}
+  >
     {slides?.map((slide, i) => (
       <Visual
         key={i}

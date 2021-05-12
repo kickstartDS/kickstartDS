@@ -1,4 +1,9 @@
-import { createContext, FunctionComponent, useContext } from 'react';
+import {
+  createContext,
+  FunctionComponent,
+  useContext,
+  HTMLAttributes,
+} from 'react';
 import classnames from 'classnames';
 import { renderFn } from '@kickstartds/core/lib/core';
 import { Headline } from '@kickstartds/base/lib/headline';
@@ -20,7 +25,7 @@ interface RenderFunctions {
 }
 
 const StorytellingMixin: FunctionComponent<
-  StorytellingProps & ILazy & RenderFunctions
+  StorytellingProps & ILazy & RenderFunctions & HTMLAttributes<HTMLDivElement>
 > = ({
   lazy,
   image,
@@ -29,25 +34,32 @@ const StorytellingMixin: FunctionComponent<
   backgroundColor,
   backgroundImage,
   renderText = richTextDefaultRenderFn,
+  className,
+  ...props
 }) => (
   <div
-    className={classnames('c-storytelling', {
-      'c-storytelling--order-mobile-image-last':
-        image.order && image.order.mobileImageLast,
-      'c-storytelling--order-desktop-image-last':
-        image.order && image.order.desktopImageLast,
-      'c-storytelling--full': full,
-      'c-storytelling--four-to-three': image.ratio === '4:3',
-      'c-storytelling--three-to-two': image.ratio === '3:2',
-      'c-storytelling--sixteen-to-nine': image.ratio === '16:9',
-      'c-storytelling--square': image.ratio === '1:1',
-      lazyload: lazy && backgroundImage,
-    })}
+    className={classnames(
+      'c-storytelling',
+      {
+        'c-storytelling--order-mobile-image-last':
+          image.order && image.order.mobileImageLast,
+        'c-storytelling--order-desktop-image-last':
+          image.order && image.order.desktopImageLast,
+        'c-storytelling--full': full,
+        'c-storytelling--four-to-three': image.ratio === '4:3',
+        'c-storytelling--three-to-two': image.ratio === '3:2',
+        'c-storytelling--sixteen-to-nine': image.ratio === '16:9',
+        'c-storytelling--square': image.ratio === '1:1',
+        lazyload: lazy && backgroundImage,
+      },
+      className
+    )}
     style={{
       backgroundColor,
       backgroundImage: lazy ? undefined : `url(${backgroundImage})`,
     }}
     data-bg={(lazy && backgroundImage) || null}
+    {...props}
   >
     <div
       className={classnames(
@@ -99,7 +111,9 @@ const StorytellingMixin: FunctionComponent<
   </div>
 );
 
-const StorytellingComponent: FunctionComponent<StorytellingProps> = (props) => (
+const StorytellingComponent: FunctionComponent<
+  StorytellingProps & HTMLAttributes<HTMLDivElement>
+> = (props) => (
   <div className="c-storytelling__wrapper">
     <StorytellingMixin {...props} lazy={true} />
     {props.backgroundImage && (

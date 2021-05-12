@@ -1,4 +1,9 @@
-import { createContext, FunctionComponent, useContext } from 'react';
+import {
+  createContext,
+  FunctionComponent,
+  useContext,
+  HTMLAttributes,
+} from 'react';
 import classnames from 'classnames';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
 import {
@@ -17,7 +22,7 @@ interface RenderFunctions {
 }
 
 const TeaserBoxComponent: FunctionComponent<
-  TeaserBoxProps & RenderFunctions
+  TeaserBoxProps & RenderFunctions & HTMLAttributes<HTMLDivElement>
 > = ({
   image,
   topic,
@@ -28,13 +33,20 @@ const TeaserBoxComponent: FunctionComponent<
   imageSpacing,
   renderText = richTextDefaultRenderFn,
   renderTopic = defaultRenderFn,
+  className,
+  ...props
 }) => (
   <div
-    className={classnames('c-teaser-box', {
-      'c-teaser-box--style-dark': darkStyle,
-      'image--spacing': imageSpacing,
-    })}
+    className={classnames(
+      'c-teaser-box',
+      {
+        'c-teaser-box--style-dark': darkStyle,
+        'image--spacing': imageSpacing,
+      },
+      className
+    )}
     data-component="base.teaser-box"
+    {...props}
   >
     {image && (
       <div

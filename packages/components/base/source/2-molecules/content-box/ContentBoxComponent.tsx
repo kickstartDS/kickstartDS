@@ -1,4 +1,9 @@
-import { createContext, FunctionComponent, useContext } from 'react';
+import {
+  createContext,
+  FunctionComponent,
+  useContext,
+  HTMLAttributes,
+} from 'react';
 import classnames from 'classnames';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
 import {
@@ -17,7 +22,7 @@ interface RenderFunctions {
 }
 
 const ContentBoxComponent: FunctionComponent<
-  ContentBoxProps & RenderFunctions
+  ContentBoxProps & RenderFunctions & HTMLAttributes<HTMLDivElement>
 > = ({
   image,
   topic,
@@ -27,12 +32,16 @@ const ContentBoxComponent: FunctionComponent<
   ratio,
   renderTopic = defaultRenderFn,
   renderText = richTextDefaultRenderFn,
+  className,
+  ...props
 }) => (
   <div
     className={classnames(
       'c-content-box',
-      alignement !== 'left' && `c-content-box--align-${alignement}`
+      alignement !== 'left' && `c-content-box--align-${alignement}`,
+      className
     )}
+    {...props}
   >
     {image && (
       <div

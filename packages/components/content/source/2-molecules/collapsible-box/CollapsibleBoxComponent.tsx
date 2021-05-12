@@ -4,6 +4,7 @@ import {
   useContext,
   HTMLAttributes,
 } from 'react';
+import classnames from 'classnames';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
 import { Icon } from '@kickstartds/base/lib/icon';
 import {
@@ -27,10 +28,11 @@ const CollapsibleBoxComponent: FunctionComponent<
   text,
   renderText = richTextDefaultRenderFn,
   children,
+  className,
   ...props
 }) => (
   <div
-    className="c-collapsible-box lazyload"
+    className={classnames('c-collapsible-box lazyload', className)}
     data-component="content.collapsible-box"
     {...props}
   >

@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent, HTMLAttributes } from 'react';
 import classnames from 'classnames';
 import { renderFn } from '@kickstartds/core/lib/core';
 import { Picture } from '../../1-atoms/image/picture';
@@ -62,24 +62,33 @@ const Media = ({ media }: TMedia) =>
     </div>
   ) : null;
 
-export const TextMedia: FunctionComponent<TextMediaProps & RenderFunctions> = ({
+export const TextMedia: FunctionComponent<
+  TextMediaProps & RenderFunctions & HTMLAttributes<HTMLDivElement>
+> = ({
   text = '',
   media,
   mediaAlignment,
   renderText = defaultRenderFn,
+  className,
+  ...props
 }) => (
   <div
-    className={classnames('text-media', {
-      'text-media--above': mediaAlignment?.startsWith('above'),
-      'text-media--beside': mediaAlignment?.startsWith('beside'),
-      'text-media--intext':
-        mediaAlignment?.startsWith('intext') ||
-        mediaAlignment?.startsWith('beside'),
-      'text-media--below': mediaAlignment?.startsWith('below'),
-      'text-media--left': mediaAlignment?.endsWith('left'),
-      'text-media--center': mediaAlignment?.endsWith('center'),
-      'text-media--right': mediaAlignment?.endsWith('right'),
-    })}
+    className={classnames(
+      'text-media',
+      {
+        'text-media--above': mediaAlignment?.startsWith('above'),
+        'text-media--beside': mediaAlignment?.startsWith('beside'),
+        'text-media--intext':
+          mediaAlignment?.startsWith('intext') ||
+          mediaAlignment?.startsWith('beside'),
+        'text-media--below': mediaAlignment?.startsWith('below'),
+        'text-media--left': mediaAlignment?.endsWith('left'),
+        'text-media--center': mediaAlignment?.endsWith('center'),
+        'text-media--right': mediaAlignment?.endsWith('right'),
+      },
+      className
+    )}
+    {...props}
   >
     {mediaAlignment?.startsWith('below') ? (
       <>

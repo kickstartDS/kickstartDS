@@ -1,4 +1,10 @@
-import { FunctionComponent, createContext, useContext } from 'react';
+import {
+  FunctionComponent,
+  createContext,
+  useContext,
+  HTMLAttributes,
+} from 'react';
+import classnames from 'classnames';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
 import { Icon } from '../icon';
 import { Link } from '../link';
@@ -10,16 +16,21 @@ interface RenderFunctions {
   renderLabel?: renderFn;
 }
 
-const TagLabelComponent: FunctionComponent<TagLabelProps & RenderFunctions> = ({
+const TagLabelComponent: FunctionComponent<
+  TagLabelProps & RenderFunctions & HTMLAttributes<HTMLDivElement>
+> = ({
   label,
   size = 'm',
   link,
   removable,
   renderLabel = defaultRenderFn,
+  className,
+  ...props
 }) => (
   <div
-    className={`c-tag-label c-tag-label--${size}`}
+    className={classnames('c-tag-label', `c-tag-label--${size}`, className)}
     data-component={removable ? 'base.tag-label' : null}
+    {...props}
   >
     {link ? (
       <Link href={link} className="c-tag-label__content">

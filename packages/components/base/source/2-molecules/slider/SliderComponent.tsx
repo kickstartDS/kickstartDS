@@ -1,4 +1,4 @@
-import { FunctionComponent, Children, ReactNode } from 'react';
+import { FunctionComponent, Children, ReactNode, HTMLAttributes } from 'react';
 import classnames from 'classnames';
 import { SliderProps } from './SliderProps';
 import { SlideContext } from './SlideContext';
@@ -26,12 +26,15 @@ const slides = (children: ReactNode) => {
   ));
 };
 
-export const Slider: FunctionComponent<SliderProps> = ({
+export const Slider: FunctionComponent<
+  SliderProps & HTMLAttributes<HTMLDivElement>
+> = ({
   autoplay,
   className,
   component = 'base.slider',
   arrows,
   children,
+  ...props
 }) => (
   <div
     className={classnames(
@@ -41,6 +44,7 @@ export const Slider: FunctionComponent<SliderProps> = ({
       className
     )}
     data-component={component}
+    {...props}
   >
     <div className="slider-main" data-slider-arrows={arrows}>
       <div className="slider__track">

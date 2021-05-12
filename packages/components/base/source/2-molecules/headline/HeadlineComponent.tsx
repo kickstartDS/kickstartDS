@@ -1,4 +1,9 @@
-import { FunctionComponent, createContext, useContext } from 'react';
+import {
+  FunctionComponent,
+  createContext,
+  useContext,
+  HTMLAttributes,
+} from 'react';
 import classnames from 'classnames';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
 import { HeadlineProps } from './HeadlineProps';
@@ -9,7 +14,9 @@ interface RenderFunctions {
   renderSubheadline?: renderFn;
 }
 
-const HeadlineComponent: FunctionComponent<HeadlineProps & RenderFunctions> = ({
+const HeadlineComponent: FunctionComponent<
+  HeadlineProps & RenderFunctions & HTMLAttributes<HTMLElement>
+> = ({
   content,
   level = 'h2',
   align = 'left',
@@ -18,6 +25,8 @@ const HeadlineComponent: FunctionComponent<HeadlineProps & RenderFunctions> = ({
   spaceAfter = 'none',
   renderContent = defaultRenderFn,
   renderSubheadline = defaultRenderFn,
+  className,
+  ...props
 }) => {
   const TagName = level as keyof JSX.IntrinsicElements;
   return (
@@ -26,8 +35,10 @@ const HeadlineComponent: FunctionComponent<HeadlineProps & RenderFunctions> = ({
         'c-headline',
         align && `c-headline--align-${align}`,
         spaceAfter && `c-headline--space-after-${spaceAfter}`,
-        { 'c-headline--page-header': pageHeader }
+        { 'c-headline--page-header': pageHeader },
+        className
       )}
+      {...props}
     >
       <TagName>{renderContent(content)}</TagName>
       {subheadline && (

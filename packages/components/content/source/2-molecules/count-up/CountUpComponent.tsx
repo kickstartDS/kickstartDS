@@ -1,4 +1,10 @@
-import { createContext, FunctionComponent, useContext } from 'react';
+import {
+  createContext,
+  FunctionComponent,
+  useContext,
+  HTMLAttributes,
+} from 'react';
+import classnames from 'classnames';
 import {
   renderFn,
   renderTextFn,
@@ -21,7 +27,9 @@ interface RenderFunctions {
   renderLinkLabel?: renderFn;
 }
 
-const CountUpComponent: FunctionComponent<CountUpProps & RenderFunctions> = ({
+const CountUpComponent: FunctionComponent<
+  CountUpProps & RenderFunctions & HTMLAttributes<HTMLDivElement>
+> = ({
   icon,
   to,
   topic,
@@ -31,8 +39,10 @@ const CountUpComponent: FunctionComponent<CountUpProps & RenderFunctions> = ({
   renderTopic = defaultRenderFn,
   renderText = richTextDefaultRenderFn,
   renderLinkLabel = defaultRenderFn,
+  className,
+  ...props
 }) => (
-  <div className="c-count-up">
+  <div className={classnames('c-count-up', className)} {...props}>
     {icon && icon.icon ? (
       <div className="c-count-up__icon">
         <Icon {...icon} />
