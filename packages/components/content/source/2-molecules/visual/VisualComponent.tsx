@@ -1,4 +1,9 @@
-import { FunctionComponent, createContext, useContext } from 'react';
+import {
+  FunctionComponent,
+  createContext,
+  useContext,
+  HTMLAttributes,
+} from 'react';
 import classnames from 'classnames';
 import { Icon } from '@kickstartds/base/lib/icon';
 import { VisualProps } from './VisualProps';
@@ -11,7 +16,7 @@ import './visual.scss';
 import './Visual.js';
 
 const VisualComponent: FunctionComponent<
-  VisualProps & { box?: BoxRenderFunctions }
+  VisualProps & { box?: BoxRenderFunctions } & HTMLAttributes<HTMLDivElement>
 > = ({
   media,
   box,
@@ -21,6 +26,7 @@ const VisualComponent: FunctionComponent<
   height,
   skipButton,
   className,
+  ...props
 }) => (
   <div
     data-component="visual"
@@ -34,6 +40,7 @@ const VisualComponent: FunctionComponent<
       className
     )}
     style={{ backgroundColor }}
+    {...props}
   >
     {media && <VisualMediaPartial {...{ ...media, inbox, overlay }} />}
     {box?.enabled && <VisualBoxPartial {...{ ...box, inbox }} />}

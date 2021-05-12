@@ -1,4 +1,10 @@
-import { createContext, FunctionComponent, useContext } from 'react';
+import {
+  createContext,
+  FunctionComponent,
+  useContext,
+  HTMLAttributes,
+} from 'react';
+import classnames from 'classnames';
 import { format } from 'date-fns';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
 import { Picture } from '@kickstartds/base/lib/picture';
@@ -18,7 +24,9 @@ interface RenderFunctions {
   renderDate?: renderFn;
 }
 
-const QuoteComponent: FunctionComponent<QuoteProps & RenderFunctions> = ({
+const QuoteComponent: FunctionComponent<
+  QuoteProps & RenderFunctions & HTMLAttributes<HTMLDivElement>
+> = ({
   image,
   text,
   source,
@@ -26,8 +34,10 @@ const QuoteComponent: FunctionComponent<QuoteProps & RenderFunctions> = ({
   renderText = richTextDefaultRenderFn,
   renderSource = defaultRenderFn,
   renderDate = defaultDateRenderFn,
+  className,
+  ...props
 }) => (
-  <div className="c-quote">
+  <div className={classnames('c-quote', className)} {...props}>
     {image && (
       <div className="c-quote__image-wrap">
         <div className="c-quote__image">

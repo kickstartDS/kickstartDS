@@ -7,7 +7,6 @@ $vars: meta.module-variables(teaser-box-vars);
 @include custom-properties.styles($vars, true);
 
 .c-teaser-box {
-  margin-bottom: 1em;
   display: flex;
   flex-direction: column;
   align-items: stretch;
