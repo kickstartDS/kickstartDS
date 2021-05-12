@@ -25,16 +25,17 @@ export default class CountUpNumber extends Component {
   constructor(element) {
     super(element);
 
+    const text = element.textContent.replace(/\./g, '').replace(',', '.');
+    const countUp = new CountUp(element, parseFloat(text), countUpOptions);
+
     const token = window.rm.radio.on(events.inView, (_, el) => {
       if (el === element) {
-        const text = element.textContent.replace(/\./g, '').replace(',', '.');
-        const countUp = new CountUp(element, parseFloat(text), countUpOptions);
         countUp.start();
         window.rm.radio.off(token);
       }
     });
 
-    element.dataset.expand = '-20';
+    element.dataset.expand = element.dataset.expand || '-100';
     element.classList.add('lazyload');
   }
 }
