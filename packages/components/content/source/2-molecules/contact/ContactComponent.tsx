@@ -24,7 +24,15 @@ const ContactComponent: FunctionComponent<
       ''
     )}
     <div className="c-contact__body">
-      {title && <Headline level="h3" content={title} subheadline={subtitle} />}
+      {title && (
+        <Headline
+          level="h3"
+          content={title}
+          subheadline={subtitle}
+          align="left"
+          spaceAfter="none"
+        />
+      )}
       {phone || email ? (
         <ul className="c-contact__links">
           {phone && (
