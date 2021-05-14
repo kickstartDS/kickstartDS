@@ -1,0 +1,8 @@
+$name-: 'c-teaser-row';
+
+$body: (
+  '.c-teaser-row': (
+    gutter: 0.7rem,
+    wrap-threshold: 40rem,
+  ),
+) !default;

@@ -17,4 +17,5 @@ export * from './2-molecules/nav/nav-meta';
 export * from './2-molecules/slider';
 export * from './2-molecules/tag-label-container';
 export * from './2-molecules/teaser-box';
+export * from './2-molecules/teaser-row';
 export * from './2-molecules/text-media';
