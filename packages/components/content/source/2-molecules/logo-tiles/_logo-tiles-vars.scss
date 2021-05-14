@@ -1,0 +1,14 @@
+$name-: 'c-logo-tiles';
+
+$host: (
+  '.c-logo-tiles': (
+    gutter: (
+      xs: 1rem,
+      s: 2rem,
+    ),
+    cols: (
+      xs: 3,
+      s: 4,
+    ),
+  ),
+) !default;
