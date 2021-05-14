@@ -1,4 +1,5 @@
 export * from './2-molecules/collapsible-box';
+export * from './2-molecules/contact';
 export * from './2-molecules/count-up';
 export * from './2-molecules/logo-tiles';
 export * from './2-molecules/quote';

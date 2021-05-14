@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://frontend.ruhmesmeile.com/content/molecules/contact.schema.json",
+  "title": "Contact",
+  "description": "Component to show contact information",
+  "type": "object",
+  "properties": {
+    "image": {
+      "title": "Image",
+      "type": "object",
+      "properties": {
+        "src": {
+          "$ref": "http://frontend.ruhmesmeile.com/base/atoms/picture.definitions.json#/properties/src",
+          "default": "https://picsum.photos/seed/kdscontact/400/400"
+        },
+        "alt": {
+          "$ref": "http://frontend.ruhmesmeile.com/base/atoms/picture.definitions.json#/properties/alt",
+          "default": "Picture of Max Mütze"
+        },
+        "width": {
+          "$ref": "http://frontend.ruhmesmeile.com/base/atoms/picture.definitions.json#/properties/width",
+          "default": 400
+        },
+        "height": {
+          "$ref": "http://frontend.ruhmesmeile.com/base/atoms/picture.definitions.json#/properties/height",
+          "default": 400
+        }
+      }
+    },
+    "title": {
+      "title": "Title",
+      "description": "Name, company name, etc.",
+      "type": "string",
+      "default": "Max Mütze"
+    },
+    "subtitle": {
+      "title": "Subtitle",
+      "description": "Position, profession, department, location, etc.",
+      "type": "string",
+      "default": "Geschäftsführer"
+    },
+    "phone": {
+      "title": "Phone number",
+      "type": "string",
+      "default": "0228 / 688 966 20"
+    },
+    "email": {
+      "title": "Email address",
+      "type": "string",
+      "format": "email",
+      "default": "mail@example.com"
+    },
+    "copy": {
+      "title": "Copy text",
+      "type": "string"
+    }
+  }
+}

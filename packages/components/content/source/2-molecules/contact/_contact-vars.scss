@@ -1,0 +1,8 @@
+$name-: 'c-contact';
+
+$host: (
+  '.c-contact': (
+    gutter: 0.7rem,
+    wrap-threshold: 40rem,
+  ),
+) !default;
