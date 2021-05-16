@@ -6,6 +6,535 @@
  */
 
 /**
+ * Select an image to display inside the quote, to the left
+ */
+export type ImageSource = string;
+/**
+ * Copy text for the element
+ */
+export type TextContent = string;
+/**
+ * Optionally display the source for the quote
+ */
+export type Source = string;
+/**
+ * Optionally display a date for the quote
+ */
+export type Date = string;
+/**
+ * Text used on button
+ */
+export type Label = string;
+/**
+ * Choose one of the styles from the list
+ */
+export type ButtonStyle =
+  | 'solid'
+  | 'solid-inverted'
+  | 'clear'
+  | 'clear-inverted'
+  | 'outline'
+  | 'outline-inverted';
+/**
+ * Choose a size between small, medium and large
+ */
+export type ButtonSize = 'small' | 'medium' | 'large';
+/**
+ * Add additional css classes that should be applied to the button
+ */
+export type AdditionalClasses = string;
+export type IconIdentifier = string;
+export type AriaRole = string;
+export type AdditionalClass = string;
+/**
+ * Display icon before the button text
+ */
+export type IconBeforeButton = boolean;
+/**
+ * Display icon after the button text
+ */
+export type IconAfterButton = boolean;
+/**
+ * Overwrite the data-component to use for rendering
+ */
+export type DataComponentAttribute = string;
+/**
+ * Add fill animation on hover
+ */
+export type FillAnimation = boolean;
+/**
+ * Add icon animation on hover
+ */
+export type IconAnimation = boolean;
+/**
+ * Link used for button
+ */
+export type ButtonHref = string;
+/**
+ * Open link in new Tab
+ */
+export type OpenLinkInNewTab = boolean;
+/**
+ * Input id
+ */
+export type ID = string;
+/**
+ * Name
+ */
+export type Name = string;
+/**
+ * Toggle is checked
+ */
+export type Checked = boolean;
+/**
+ * Toggle is disabled
+ */
+export type Disabled = boolean;
+/**
+ * Text used on button
+ */
+export type Label1 = string;
+/**
+ * Choose one of the styles from the list
+ */
+export type ButtonStyle1 =
+  | 'solid'
+  | 'solid-inverted'
+  | 'clear'
+  | 'clear-inverted'
+  | 'outline'
+  | 'outline-inverted';
+/**
+ * Choose a size between small, medium and large
+ */
+export type ButtonSize1 = 'small' | 'medium' | 'large';
+/**
+ * Add additional css classes that should be applied to the button
+ */
+export type AdditionalClasses1 = string;
+export type IconIdentifier1 = string;
+export type AriaRole1 = string;
+export type AdditionalClass1 = string;
+/**
+ * Display icon before the button text
+ */
+export type IconBeforeButton1 = boolean;
+/**
+ * Display icon after the button text
+ */
+export type IconAfterButton1 = boolean;
+/**
+ * Overwrite the data-component to use for rendering
+ */
+export type DataComponentAttribute1 = string;
+/**
+ * Add fill animation on hover
+ */
+export type FillAnimation1 = boolean;
+/**
+ * Add icon animation on hover
+ */
+export type IconAnimation1 = boolean;
+/**
+ * Select the type attribute for the button
+ */
+export type TypeAttribute = 'button' | 'submit' | 'reset';
+/**
+ * Define a value attribute for the button
+ */
+export type ValueAttribute = string;
+/**
+ * Define a name attribute for the button
+ */
+export type NameAttribute = string;
+/**
+ * Set the disabled attribute for the button
+ */
+export type DisabledAttribute = boolean;
+/**
+ * Text to display inside tag label
+ */
+export type Label2 = string;
+/**
+ * Choose a size to scale the tag label up or down
+ */
+export type Size = 's' | 'm' | 'l';
+/**
+ * Set optional href to link the tag
+ */
+export type LinkTarget = string;
+/**
+ * Choose whether the element is removable or not
+ */
+export type Removable = boolean;
+export type Height = 'small' | 'default' | 'fullImage' | 'fullScreen';
+/**
+ * Choose a media type between image, video and none
+ */
+export type MediaType = 'image' | 'video' | 'none';
+/**
+ * Background image source for small screens
+ */
+export type MobileImageSource = string;
+/**
+ * Background image source for medium screens
+ */
+export type TabletImageSource = string;
+/**
+ * Background image source for large screens
+ */
+export type DesktopImageSource = string;
+/**
+ * Choose to indent the image horizontally on small screens
+ */
+export type ImageIndent = 'none' | 'left' | 'right';
+/**
+ * Background video source for small screens
+ */
+export type MobileVideoSource = string;
+/**
+ * Background video source for medium screens
+ */
+export type TabletVideoSource = string;
+/**
+ * Background video source for large screens
+ */
+export type DesktopVideoSource = string;
+/**
+ * Enable grid layer
+ */
+export type GridLayer = boolean;
+/**
+ * Toggles visibility of the box
+ */
+export type DisplayBox = boolean;
+/**
+ * Text box headline
+ */
+export type Headline = string;
+/**
+ * Text box copy text
+ */
+export type Text = string;
+/**
+ * Toggles visibility of the link
+ */
+export type DisplayLink = boolean;
+/**
+ * Text used on button
+ */
+export type Label3 = string;
+/**
+ * Choose one of the styles from the list
+ */
+export type ButtonStyle2 =
+  | 'solid'
+  | 'solid-inverted'
+  | 'clear'
+  | 'clear-inverted'
+  | 'outline'
+  | 'outline-inverted';
+/**
+ * Choose a size between small, medium and large
+ */
+export type ButtonSize2 = 'small' | 'medium' | 'large';
+/**
+ * Add additional css classes that should be applied to the button
+ */
+export type AdditionalClasses2 = string;
+export type IconIdentifier2 = string;
+export type AriaRole2 = string;
+export type AdditionalClass2 = string;
+/**
+ * Display icon before the button text
+ */
+export type IconBeforeButton2 = boolean;
+/**
+ * Display icon after the button text
+ */
+export type IconAfterButton2 = boolean;
+/**
+ * Overwrite the data-component to use for rendering
+ */
+export type DataComponentAttribute2 = string;
+/**
+ * Add fill animation on hover
+ */
+export type FillAnimation2 = boolean;
+/**
+ * Add icon animation on hover
+ */
+export type IconAnimation2 = boolean;
+/**
+ * Link used for button
+ */
+export type ButtonHref1 = string;
+/**
+ * Open link in new Tab
+ */
+export type OpenLinkInNewTab1 = boolean;
+/**
+ * The text box is aligned inside the content grid
+ */
+export type Indent = boolean;
+/**
+ * Horizontal orientation of the box inside the keyvisual
+ */
+export type HorizontalOrientation = 'left' | 'center' | 'right';
+/**
+ * Vertical orientation of the box inside the keyvisual
+ */
+export type VerticalOrientation = 'top' | 'center' | 'bottom';
+/**
+ * Choose a style for the box
+ */
+export type StyleOfTheBox = 'default' | 'light' | 'transparent';
+/**
+ * Custom css background color
+ */
+export type CustomBackgroundColor = string;
+/**
+ * The text box is in front of the image on small screens
+ */
+export type Inbox = boolean;
+/**
+ * Show skip button
+ */
+export type SkipButton = boolean;
+export type AdditionalClasses3 = string;
+/**
+ * Select an image to display inside the quote, to the left
+ */
+export type ImageSource1 = string;
+/**
+ * Copy text for the element
+ */
+export type TextContent1 = string;
+/**
+ * Optionally display the source for the quote
+ */
+export type Source1 = string;
+/**
+ * Optionally display a date for the quote
+ */
+export type Date1 = string;
+/**
+ * Automatically move to next slide after 4 seconds without user interaction
+ */
+export type AutoPlay = boolean;
+export type Height1 = 'small' | 'default' | 'fullImage' | 'fullScreen';
+/**
+ * Choose a media type between image, video and none
+ */
+export type MediaType1 = 'image' | 'video' | 'none';
+/**
+ * Background image source for small screens
+ */
+export type MobileImageSource1 = string;
+/**
+ * Background image source for medium screens
+ */
+export type TabletImageSource1 = string;
+/**
+ * Background image source for large screens
+ */
+export type DesktopImageSource1 = string;
+/**
+ * Choose to indent the image horizontally on small screens
+ */
+export type ImageIndent1 = 'none' | 'left' | 'right';
+/**
+ * Background video source for small screens
+ */
+export type MobileVideoSource1 = string;
+/**
+ * Background video source for medium screens
+ */
+export type TabletVideoSource1 = string;
+/**
+ * Background video source for large screens
+ */
+export type DesktopVideoSource1 = string;
+/**
+ * Enable grid layer
+ */
+export type GridLayer1 = boolean;
+/**
+ * Toggles visibility of the box
+ */
+export type DisplayBox1 = boolean;
+/**
+ * Text box headline
+ */
+export type Headline1 = string;
+/**
+ * Text box copy text
+ */
+export type Text1 = string;
+/**
+ * Toggles visibility of the link
+ */
+export type DisplayLink1 = boolean;
+/**
+ * Text used on button
+ */
+export type Label4 = string;
+/**
+ * Choose one of the styles from the list
+ */
+export type ButtonStyle3 =
+  | 'solid'
+  | 'solid-inverted'
+  | 'clear'
+  | 'clear-inverted'
+  | 'outline'
+  | 'outline-inverted';
+/**
+ * Choose a size between small, medium and large
+ */
+export type ButtonSize3 = 'small' | 'medium' | 'large';
+/**
+ * Add additional css classes that should be applied to the button
+ */
+export type AdditionalClasses4 = string;
+export type IconIdentifier3 = string;
+export type AriaRole3 = string;
+export type AdditionalClass3 = string;
+/**
+ * Display icon before the button text
+ */
+export type IconBeforeButton3 = boolean;
+/**
+ * Display icon after the button text
+ */
+export type IconAfterButton3 = boolean;
+/**
+ * Overwrite the data-component to use for rendering
+ */
+export type DataComponentAttribute3 = string;
+/**
+ * Add fill animation on hover
+ */
+export type FillAnimation3 = boolean;
+/**
+ * Add icon animation on hover
+ */
+export type IconAnimation3 = boolean;
+/**
+ * Link used for button
+ */
+export type ButtonHref2 = string;
+/**
+ * Open link in new Tab
+ */
+export type OpenLinkInNewTab2 = boolean;
+/**
+ * The text box is aligned inside the content grid
+ */
+export type Indent1 = boolean;
+/**
+ * Horizontal orientation of the box inside the keyvisual
+ */
+export type HorizontalOrientation1 = 'left' | 'center' | 'right';
+/**
+ * Vertical orientation of the box inside the keyvisual
+ */
+export type VerticalOrientation1 = 'top' | 'center' | 'bottom';
+/**
+ * Choose a style for the box
+ */
+export type StyleOfTheBox1 = 'default' | 'light' | 'transparent';
+/**
+ * Custom css background color
+ */
+export type CustomBackgroundColor1 = string;
+/**
+ * The text box is in front of the image on small screens
+ */
+export type Inbox1 = boolean;
+/**
+ * Show skip button
+ */
+export type SkipButton1 = boolean;
+export type AdditionalClasses5 = string;
+/**
+ * preview label
+ */
+export type SlidePreviewLabel = string;
+/**
+ * Picture source
+ */
+export type Source2 = string;
+/**
+ * Alt text to display for picture
+ */
+export type AltText = string;
+/**
+ * Width of the picture
+ */
+export type Width = number;
+/**
+ * Height of the picture
+ */
+export type Height2 = number;
+/**
+ * Name, company name, etc.
+ */
+export type Title = string;
+/**
+ * Position, profession, department, location, etc.
+ */
+export type Subtitle = string;
+export type PhoneNumber = string;
+export type EmailAddress = string;
+export type CopyText = string;
+/**
+ * Background image for the whole element
+ */
+export type BackgroundImage2 = string;
+/**
+ * Background color for the whole element
+ */
+export type BackgroundColor = string;
+/**
+ * Display a full sized version of the image
+ */
+export type FullSizeImage = boolean;
+/**
+ * Image source to use
+ */
+export type ImageSource2 = string;
+/**
+ * Select an aspect ratio to use for cropping and displaying the image
+ */
+export type ImageAspectRatio = '4:3' | '3:2' | '16:9' | '1:1' | 'none';
+/**
+ * Select a vertical alignment for the image
+ */
+export type ImageVerticalAlignment =
+  | 'center'
+  | 'top'
+  | 'top-edge'
+  | 'bottom'
+  | 'bottom-edge';
+/**
+ * Select a horizontal alignment for the image
+ */
+export type ImageHorizontalAlignment =
+  | 'center'
+  | 'left'
+  | 'left-edge'
+  | 'right'
+  | 'right-edge';
+/**
+ * Switch to displaying the image after the text on mobile
+ */
+export type MobileImageAfterText = boolean;
+/**
+ * Switch to displaying the image after the text on desktop
+ */
+export type DesktopImageAfterText = boolean;
+/**
  * Select the headline level to use, or p alternatively
  */
 export type Level = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
@@ -16,7 +545,7 @@ export type Alignment = 'left' | 'center' | 'right';
 /**
  * Text content for the headline
  */
-export type Text = string;
+export type Text2 = string;
 /**
  * Text content for the optional subheadline
  */
@@ -29,26 +558,1283 @@ export type BottomSpacing = 'none' | 'small' | 'large';
  * Set the headline as a page header, triggering special css treatment
  */
 export type PageHeader = boolean;
+/**
+ * Text content to display inside the element
+ */
+export type Text3 = string;
+/**
+ * Switch text alignment between left and center
+ */
+export type TextAlignment = 'left' | 'center';
+/**
+ * Overwrite the color to use for the text content
+ */
+export type TextColor = string;
+/**
+ * Select a vertical alignment for the box
+ */
+export type BoxVerticalAlignment = 'center' | 'top' | 'bottom';
+/**
+ * Select a horizontal alignment for the box
+ */
+export type BoxHorizontalAlignment = 'center' | 'left' | 'right';
+/**
+ * Text used on button
+ */
+export type Label5 = string;
+/**
+ * Choose one of the styles from the list
+ */
+export type ButtonStyle4 =
+  | 'solid'
+  | 'solid-inverted'
+  | 'clear'
+  | 'clear-inverted'
+  | 'outline'
+  | 'outline-inverted';
+/**
+ * Choose a size between small, medium and large
+ */
+export type ButtonSize4 = 'small' | 'medium' | 'large';
+/**
+ * Add additional css classes that should be applied to the button
+ */
+export type AdditionalClasses6 = string;
+export type IconIdentifier4 = string;
+export type AriaRole4 = string;
+export type AdditionalClass4 = string;
+/**
+ * Display icon before the button text
+ */
+export type IconBeforeButton4 = boolean;
+/**
+ * Display icon after the button text
+ */
+export type IconAfterButton4 = boolean;
+/**
+ * Overwrite the data-component to use for rendering
+ */
+export type DataComponentAttribute4 = string;
+/**
+ * Add fill animation on hover
+ */
+export type FillAnimation4 = boolean;
+/**
+ * Add icon animation on hover
+ */
+export type IconAnimation4 = boolean;
+/**
+ * Link used for button
+ */
+export type ButtonHref3 = string;
+/**
+ * Open link in new Tab
+ */
+export type OpenLinkInNewTab3 = boolean;
+/**
+ * Include the text for the collapsible that should be visible before opening
+ */
+export type SummaryTextForTheCollapsible = string;
+/**
+ * Include the text for the collapsible that should be visible after opening
+ */
+export type ContentOfTheCollapsible = string;
+/**
+ * Final number to count to
+ */
+export type Number = number;
+export type IconIdentifier5 = string;
+export type AriaRole5 = string;
+export type AdditionalClass5 = string;
+/**
+ * Topic for the count-up box. Displayed before the text, in bold
+ */
+export type Topic = string;
+/**
+ * Copy text for the element
+ */
+export type TextContent2 = string;
+/**
+ * Text used on button
+ */
+export type Label6 = string;
+/**
+ * Choose one of the styles from the list
+ */
+export type ButtonStyle5 =
+  | 'solid'
+  | 'solid-inverted'
+  | 'clear'
+  | 'clear-inverted'
+  | 'outline'
+  | 'outline-inverted';
+/**
+ * Choose a size between small, medium and large
+ */
+export type ButtonSize5 = 'small' | 'medium' | 'large';
+/**
+ * Add additional css classes that should be applied to the button
+ */
+export type AdditionalClasses7 = string;
+export type IconIdentifier6 = string;
+export type AriaRole6 = string;
+export type AdditionalClass6 = string;
+/**
+ * Display icon before the button text
+ */
+export type IconBeforeButton5 = boolean;
+/**
+ * Display icon after the button text
+ */
+export type IconAfterButton5 = boolean;
+/**
+ * Overwrite the data-component to use for rendering
+ */
+export type DataComponentAttribute5 = string;
+/**
+ * Add fill animation on hover
+ */
+export type FillAnimation5 = boolean;
+/**
+ * Add icon animation on hover
+ */
+export type IconAnimation5 = boolean;
+/**
+ * Link used for button
+ */
+export type ButtonHref4 = string;
+/**
+ * Open link in new Tab
+ */
+export type OpenLinkInNewTab4 = boolean;
+/**
+ * Choose one of the set ratios, all ratios except `none` stretch the image to 100% width
+ */
+export type ImageRatio = 'none' | '4:3' | '16:9' | '1:1';
+/**
+ * Choose an alignment for the box. For the image it only applies for a `ratio` value of `none`
+ */
+export type Alignment1 = 'left' | 'center' | 'right';
+/**
+ * Select an image to display inside the content box, at the top
+ */
+export type ImageSource3 = string;
+/**
+ * Topic for the content box. Displayed before the text, in bold
+ */
+export type Topic1 = string;
+/**
+ * Text for the content box
+ */
+export type TextContent3 = string;
+/**
+ * Toggles visibility of the link
+ */
+export type DisplayLink2 = boolean;
+/**
+ * Text used on button
+ */
+export type Label7 = string;
+/**
+ * Choose one of the styles from the list
+ */
+export type ButtonStyle6 =
+  | 'solid'
+  | 'solid-inverted'
+  | 'clear'
+  | 'clear-inverted'
+  | 'outline'
+  | 'outline-inverted';
+/**
+ * Choose a size between small, medium and large
+ */
+export type ButtonSize6 = 'small' | 'medium' | 'large';
+/**
+ * Add additional css classes that should be applied to the button
+ */
+export type AdditionalClasses8 = string;
+export type IconIdentifier7 = string;
+export type AriaRole7 = string;
+export type AdditionalClass7 = string;
+/**
+ * Display icon before the button text
+ */
+export type IconBeforeButton6 = boolean;
+/**
+ * Display icon after the button text
+ */
+export type IconAfterButton6 = boolean;
+/**
+ * Overwrite the data-component to use for rendering
+ */
+export type DataComponentAttribute6 = string;
+/**
+ * Add fill animation on hover
+ */
+export type FillAnimation6 = boolean;
+/**
+ * Add icon animation on hover
+ */
+export type IconAnimation6 = boolean;
+/**
+ * Link used for button
+ */
+export type ButtonHref5 = string;
+/**
+ * Open link in new Tab
+ */
+export type OpenLinkInNewTab5 = boolean;
+/**
+ * Select the headline level to use, or p alternatively
+ */
+export type Level1 = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
+/**
+ * Choose an alignment for the headline
+ */
+export type Alignment2 = 'left' | 'center' | 'right';
+/**
+ * Text content for the headline
+ */
+export type Text4 = string;
+/**
+ * Text content for the optional subheadline
+ */
+export type Subheadline1 = string;
+/**
+ * Add additional spacing to the bottom of the headline
+ */
+export type BottomSpacing1 = 'none' | 'small' | 'large';
+/**
+ * Set the headline as a page header, triggering special css treatment
+ */
+export type PageHeader1 = boolean;
+/**
+ * Copy text for the element
+ */
+export type TextContent4 = string;
+/**
+ * In relation to the text content
+ */
+export type MediaAlignment =
+  | 'above-left'
+  | 'above-center'
+  | 'above-right'
+  | 'beside-left'
+  | 'beside-right'
+  | 'intext-left'
+  | 'intext-right'
+  | 'below-left'
+  | 'below-center'
+  | 'below-right';
+/**
+ * Url (mp4) for the video to display
+ */
+export type Source3 = string;
+/**
+ * Use an iframe embed
+ */
+export type EmbeddedIframe = boolean;
+/**
+ * Title to use for the video
+ */
+export type VideoTitle = string;
+/**
+ * Width of the video
+ */
+export type Width1 = number;
+/**
+ * Height of the video
+ */
+export type Height3 = number;
+/**
+ * Display media item over full width
+ */
+export type FullWidthMedia = boolean;
+/**
+ * Picture source
+ */
+export type Source4 = string;
+/**
+ * Use a srcSet to display picture
+ */
+export type PictureSourceset = string;
+/**
+ * Alt text to display for picture
+ */
+export type AltText1 = string;
+/**
+ * Width of the picture
+ */
+export type Width2 = number;
+/**
+ * Height of the picture
+ */
+export type Height4 = number;
+/**
+ * Add additional css classes that should be applied to the button
+ */
+export type AdditionalClasses9 = string;
+/**
+ * Add id attribute to the image
+ */
+export type Id = string;
+/**
+ * Define an itemprop attribute for the picture
+ */
+export type ItempropAttribute = string;
+/**
+ * Define a style attribute for the picture
+ */
+export type StyleAttribute = string;
+/**
+ * Select a value for the picture object fit
+ */
+export type ObjectFit = 'contain' | 'cover' | 'fill' | 'none' | 'scale-down';
+/**
+ * Render noscript fallback
+ */
+export type Noscript = boolean;
+/**
+ * Load the picture lazily
+ */
+export type Lazy = boolean;
+/**
+ * Use a srcSet to display picture
+ */
+export type PictureSourceset1 = string;
+/**
+ * TODO MEDIA DESCRIPTION
+ */
+export type TODOMEDIATITLE = string;
+/**
+ * TODO TYPE DESCRIPTION
+ */
+export type TODOTYPETITLE = string;
+/**
+ * Additional sources. This will result in a `picture`-Element
+ */
+export type Sources = {
+  srcSet?: PictureSourceset1;
+  media?: TODOMEDIATITLE;
+  type?: TODOTYPETITLE;
+  [k: string]: unknown;
+}[];
+/**
+ * Set additional class(es) to the picture
+ */
+export type ClassAttribute = string;
+/**
+ * Display media item over full width
+ */
+export type FullWidthMedia1 = boolean;
+/**
+ * Thumbnail Source
+ */
+export type ThumbnailSource = string;
+/**
+ * Lightbox Image Source
+ */
+export type LightboxImageSource = string;
+/**
+ * Width
+ */
+export type Width3 = number;
+/**
+ * height
+ */
+export type Height5 = number;
+/**
+ * Hover Zoom Icon
+ */
+export type HoverZoomIcon = boolean;
+/**
+ * Caption
+ */
+export type Caption = string;
+/**
+ * Hide caption visually
+ */
+export type HideCaptionVisually = boolean;
+/**
+ * Gallery identifier
+ */
+export type GalleryIdentifier = string;
+/**
+ * ID
+ */
+export type ID1 = string;
+/**
+ * Additional Image Class
+ */
+export type AdditionalImageClass = string;
+/**
+ * Display media item over full width
+ */
+export type FullWidthMedia2 = boolean;
+/**
+ * Collection of media items to display
+ */
+export type Media = (
+  | {
+      video?: Video;
+      full?: FullWidthMedia;
+      [k: string]: unknown;
+    }
+  | {
+      image?: Picture;
+      full?: FullWidthMedia1;
+      [k: string]: unknown;
+    }
+  | {
+      lightboxImage?: LazyLightboxImage;
+      full?: FullWidthMedia2;
+      [k: string]: unknown;
+    }
+)[];
+/**
+ * Topic for the teaser box. Displayed before the text, in bold
+ */
+export type Topic2 = string;
+/**
+ * Text for the teaser box
+ */
+export type TextContent5 = string;
+/**
+ * Optionally use this to apply a dark variant to the box
+ */
+export type DarkVariant = boolean;
+/**
+ * Text used on button
+ */
+export type Label8 = string;
+/**
+ * Choose one of the styles from the list
+ */
+export type ButtonStyle7 =
+  | 'solid'
+  | 'solid-inverted'
+  | 'clear'
+  | 'clear-inverted'
+  | 'outline'
+  | 'outline-inverted';
+/**
+ * Choose a size between small, medium and large
+ */
+export type ButtonSize7 = 'small' | 'medium' | 'large';
+/**
+ * Add additional css classes that should be applied to the button
+ */
+export type AdditionalClasses10 = string;
+export type IconIdentifier8 = string;
+export type AriaRole8 = string;
+export type AdditionalClass8 = string;
+/**
+ * Display icon before the button text
+ */
+export type IconBeforeButton7 = boolean;
+/**
+ * Display icon after the button text
+ */
+export type IconAfterButton7 = boolean;
+/**
+ * Overwrite the data-component to use for rendering
+ */
+export type DataComponentAttribute7 = string;
+/**
+ * Add fill animation on hover
+ */
+export type FillAnimation7 = boolean;
+/**
+ * Add icon animation on hover
+ */
+export type IconAnimation7 = boolean;
+/**
+ * Link used for button
+ */
+export type ButtonHref6 = string;
+/**
+ * Open link in new Tab
+ */
+export type OpenLinkInNewTab6 = boolean;
+/**
+ * Hides the link. The box as a whole keeps being clickable
+ */
+export type HideLink = boolean;
+/**
+ * Select an image to display inside the teaser box, at the top
+ */
+export type ImageSource4 = string;
+/**
+ * Choose the ratio used to crop and display the image
+ */
+export type ImageRatio1 = '4:3' | '16:9' | '1:1';
+/**
+ * Optionally add inner spacing to the displayed image
+ */
+export type ImageSpacing = boolean;
+/**
+ * Picture source
+ */
+export type Source5 = string;
+/**
+ * Alt text to display for picture
+ */
+export type AltText2 = string;
+/**
+ * Width of the picture
+ */
+export type Width4 = number;
+/**
+ * Height of the picture
+ */
+export type Height6 = number;
+export type Logos = LogoImage[];
+/**
+ * Topic for the teaser box. Displayed before the text, in bold
+ */
+export type Topic3 = string;
+/**
+ * Text for the teaser box
+ */
+export type TextContent6 = string;
+/**
+ * Optionally use this to apply a dark variant to the box
+ */
+export type DarkVariant1 = boolean;
+/**
+ * Text used on button
+ */
+export type Label9 = string;
+/**
+ * Choose one of the styles from the list
+ */
+export type ButtonStyle8 =
+  | 'solid'
+  | 'solid-inverted'
+  | 'clear'
+  | 'clear-inverted'
+  | 'outline'
+  | 'outline-inverted';
+/**
+ * Choose a size between small, medium and large
+ */
+export type ButtonSize8 = 'small' | 'medium' | 'large';
+/**
+ * Add additional css classes that should be applied to the button
+ */
+export type AdditionalClasses11 = string;
+export type IconIdentifier9 = string;
+export type AriaRole9 = string;
+export type AdditionalClass9 = string;
+/**
+ * Display icon before the button text
+ */
+export type IconBeforeButton8 = boolean;
+/**
+ * Display icon after the button text
+ */
+export type IconAfterButton8 = boolean;
+/**
+ * Overwrite the data-component to use for rendering
+ */
+export type DataComponentAttribute8 = string;
+/**
+ * Add fill animation on hover
+ */
+export type FillAnimation8 = boolean;
+/**
+ * Add icon animation on hover
+ */
+export type IconAnimation8 = boolean;
+/**
+ * Link used for button
+ */
+export type ButtonHref7 = string;
+/**
+ * Open link in new Tab
+ */
+export type OpenLinkInNewTab7 = boolean;
+/**
+ * Hides the link. The box as a whole keeps being clickable
+ */
+export type HideLink1 = boolean;
+/**
+ * Select the headline level to use, or p alternatively
+ */
+export type Level2 = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
+/**
+ * Choose an alignment for the headline
+ */
+export type Alignment3 = 'left' | 'center' | 'right';
+/**
+ * Text content for the headline
+ */
+export type Text5 = string;
+/**
+ * Text content for the optional subheadline
+ */
+export type Subheadline2 = string;
+/**
+ * Add additional spacing to the bottom of the headline
+ */
+export type BottomSpacing2 = 'none' | 'small' | 'large';
+/**
+ * Set the headline as a page header, triggering special css treatment
+ */
+export type PageHeader2 = boolean;
 
 export interface SectionProps {
   width?: 'full' | 'max' | 'wide' | 'default' | 'narrow';
   gutter?: 'large' | 'default' | 'small' | 'none';
   mode?: 'default' | 'tile' | 'list';
+  content?: (
+    | QuotesSlider
+    | LinkButton
+    | ToggleSwitch
+    | Button
+    | TagLabel
+    | Visual
+    | Quote1
+    | VisualSlider
+    | Contact
+    | Storytelling
+    | CollapsibleBox
+    | CountUp
+    | ContentBox
+    | Headline3
+    | TextMedia
+    | TeaserBox
+    | LogoTiles
+    | TeaserRow
+  )[];
   background?: 'default' | 'accent' | 'dark';
-  'space-before'?: 'default' | 'small' | 'none';
-  'space-after'?: 'default' | 'small' | 'none';
+  spaceBefore?: 'default' | 'small' | 'none';
+  spaceAfter?: 'default' | 'small' | 'none';
+  headline?: Headline4;
+  [k: string]: unknown;
+}
+export interface QuotesSlider {
+  slides?: Quote[];
+  [k: string]: unknown;
+}
+/**
+ * Component to display a rich quote
+ */
+export interface Quote {
+  image?: ImageSource;
+  text: TextContent;
+  source?: Source;
+  date?: Date;
+  [k: string]: unknown;
+}
+/**
+ * link-button
+ */
+export interface LinkButton {
+  label: Label;
+  variant: ButtonStyle;
+  size: ButtonSize;
+  className?: AdditionalClasses;
+  icon?: Icon;
+  iconBefore?: IconBeforeButton;
+  iconAfter?: IconAfterButton;
+  dataComponent?: DataComponentAttribute;
+  fillAnimation?: FillAnimation;
+  iconAnimation?: IconAnimation;
+  href: ButtonHref;
+  newTab?: OpenLinkInNewTab;
+}
+/**
+ * Icon
+ */
+export interface Icon {
+  icon?: IconIdentifier;
+  role?: AriaRole;
+  className?: AdditionalClass;
+  [k: string]: unknown;
+}
+/**
+ * Toggle Switch
+ */
+export interface ToggleSwitch {
+  id: ID;
+  name: Name;
+  checked: Checked;
+  disabled: Disabled;
+  [k: string]: unknown;
+}
+/**
+ * Component to display links and call-to-actions
+ */
+export interface Button {
+  label: Label1;
+  variant: ButtonStyle1;
+  size: ButtonSize1;
+  className?: AdditionalClasses1;
+  icon?: Icon1;
+  iconBefore?: IconBeforeButton1;
+  iconAfter?: IconAfterButton1;
+  dataComponent?: DataComponentAttribute1;
+  fillAnimation?: FillAnimation1;
+  iconAnimation?: IconAnimation1;
+  type: TypeAttribute;
+  value?: ValueAttribute;
+  name?: NameAttribute;
+  disabled?: DisabledAttribute;
+}
+/**
+ * Icon
+ */
+export interface Icon1 {
+  icon?: IconIdentifier1;
+  role?: AriaRole1;
+  className?: AdditionalClass1;
+  [k: string]: unknown;
+}
+/**
+ * Component to render a pill / tag / label
+ */
+export interface TagLabel {
+  label: Label2;
+  size: Size;
+  link?: LinkTarget;
+  removable?: Removable;
+}
+/**
+ * visual
+ */
+export interface Visual {
+  height?: Height;
+  media?: MediaWrapper;
+  overlay?: GridLayer;
+  box?: TextBox;
+  backgroundColor?: CustomBackgroundColor;
+  inbox?: Inbox;
+  skipButton?: SkipButton;
+  className?: AdditionalClasses3;
+}
+/**
+ * Wrapper for all media types
+ */
+export interface MediaWrapper {
+  mode?: MediaType;
+  image?: BackgroundImage;
+  video?: BackgroundVideo;
+}
+/**
+ * Sources of background images for different screen sizes
+ */
+export interface BackgroundImage {
+  srcMobile: MobileImageSource;
+  srcTablet: TabletImageSource;
+  srcDesktop: DesktopImageSource;
+  indent?: ImageIndent;
+  [k: string]: unknown;
+}
+/**
+ * Sources of background videos for different screen sizes
+ */
+export interface BackgroundVideo {
+  srcMobile: MobileVideoSource;
+  srcTablet: TabletVideoSource;
+  srcDesktop: DesktopVideoSource;
+  [k: string]: unknown;
+}
+/**
+ * Content and style configuration for the text box
+ */
+export interface TextBox {
+  enabled?: DisplayBox;
   headline?: Headline;
+  text?: Text;
+  link?: Link;
+  indent?: Indent;
+  horizontal?: HorizontalOrientation;
+  vertical?: VerticalOrientation;
+  background?: StyleOfTheBox;
+}
+/**
+ * Text box link configuration
+ */
+export interface Link {
+  enabled?: DisplayLink;
+  label: Label3;
+  variant: ButtonStyle2;
+  size: ButtonSize2;
+  className?: AdditionalClasses2;
+  icon?: Icon2;
+  iconBefore?: IconBeforeButton2;
+  iconAfter?: IconAfterButton2;
+  dataComponent?: DataComponentAttribute2;
+  fillAnimation?: FillAnimation2;
+  iconAnimation?: IconAnimation2;
+  href: ButtonHref1;
+  newTab?: OpenLinkInNewTab1;
+}
+/**
+ * Icon
+ */
+export interface Icon2 {
+  icon?: IconIdentifier2;
+  role?: AriaRole2;
+  className?: AdditionalClass2;
+  [k: string]: unknown;
+}
+/**
+ * Component to display a rich quote
+ */
+export interface Quote1 {
+  image?: ImageSource1;
+  text: TextContent1;
+  source?: Source1;
+  date?: Date1;
+  [k: string]: unknown;
+}
+/**
+ * Visual Slider
+ */
+export interface VisualSlider {
+  autoplay?: AutoPlay;
+  slides: Visual1[];
+  [k: string]: unknown;
+}
+/**
+ * visual
+ */
+export interface Visual1 {
+  height?: Height1;
+  media?: MediaWrapper1;
+  overlay?: GridLayer1;
+  box?: TextBox1;
+  backgroundColor?: CustomBackgroundColor1;
+  inbox?: Inbox1;
+  skipButton?: SkipButton1;
+  className?: AdditionalClasses5;
+  label?: SlidePreviewLabel;
+}
+/**
+ * Wrapper for all media types
+ */
+export interface MediaWrapper1 {
+  mode?: MediaType1;
+  image?: BackgroundImage1;
+  video?: BackgroundVideo1;
+}
+/**
+ * Sources of background images for different screen sizes
+ */
+export interface BackgroundImage1 {
+  srcMobile: MobileImageSource1;
+  srcTablet: TabletImageSource1;
+  srcDesktop: DesktopImageSource1;
+  indent?: ImageIndent1;
+  [k: string]: unknown;
+}
+/**
+ * Sources of background videos for different screen sizes
+ */
+export interface BackgroundVideo1 {
+  srcMobile: MobileVideoSource1;
+  srcTablet: TabletVideoSource1;
+  srcDesktop: DesktopVideoSource1;
+  [k: string]: unknown;
+}
+/**
+ * Content and style configuration for the text box
+ */
+export interface TextBox1 {
+  enabled?: DisplayBox1;
+  headline?: Headline1;
+  text?: Text1;
+  link?: Link1;
+  indent?: Indent1;
+  horizontal?: HorizontalOrientation1;
+  vertical?: VerticalOrientation1;
+  background?: StyleOfTheBox1;
+}
+/**
+ * Text box link configuration
+ */
+export interface Link1 {
+  enabled?: DisplayLink1;
+  label: Label4;
+  variant: ButtonStyle3;
+  size: ButtonSize3;
+  className?: AdditionalClasses4;
+  icon?: Icon3;
+  iconBefore?: IconBeforeButton3;
+  iconAfter?: IconAfterButton3;
+  dataComponent?: DataComponentAttribute3;
+  fillAnimation?: FillAnimation3;
+  iconAnimation?: IconAnimation3;
+  href: ButtonHref2;
+  newTab?: OpenLinkInNewTab2;
+}
+/**
+ * Icon
+ */
+export interface Icon3 {
+  icon?: IconIdentifier3;
+  role?: AriaRole3;
+  className?: AdditionalClass3;
+  [k: string]: unknown;
+}
+/**
+ * Component to show contact information
+ */
+export interface Contact {
+  image?: Image;
+  title?: Title;
+  subtitle?: Subtitle;
+  phone?: PhoneNumber;
+  email?: EmailAddress;
+  copy?: CopyText;
+  [k: string]: unknown;
+}
+export interface Image {
+  src?: Source2;
+  alt?: AltText;
+  width?: Width;
+  height?: Height2;
+  [k: string]: unknown;
+}
+/**
+ * Component to present rich combinations of text and media, best used sequentially
+ */
+export interface Storytelling {
+  backgroundImage?: BackgroundImage2;
+  backgroundColor?: BackgroundColor;
+  full?: FullSizeImage;
+  image: Image1;
+  box: TextBox2;
+  [k: string]: unknown;
+}
+/**
+ * Image displayed alongside the text content
+ */
+export interface Image1 {
+  source?: ImageSource2;
+  ratio?: ImageAspectRatio;
+  vAlign?: ImageVerticalAlignment;
+  hAlign?: ImageHorizontalAlignment;
+  order?: Order;
+  [k: string]: unknown;
+}
+/**
+ * Choose what comes first on mobile and desktop: image or text
+ */
+export interface Order {
+  mobileImageLast?: MobileImageAfterText;
+  desktopImageLast?: DesktopImageAfterText;
+  [k: string]: unknown;
+}
+/**
+ * Text content to display
+ */
+export interface TextBox2 {
+  headline?: Headline2;
+  text?: Text3;
+  textAlign?: TextAlignment;
+  textColor?: TextColor;
+  vAlign?: BoxVerticalAlignment;
+  hAlign?: BoxHorizontalAlignment;
+  link?: LinkButton1;
   [k: string]: unknown;
 }
 /**
  * Headline
  */
-export interface Headline {
+export interface Headline2 {
   level: Level;
   align: Alignment;
-  content?: Text;
+  content?: Text2;
   subheadline?: Subheadline;
   spaceAfter: BottomSpacing;
   pageHeader?: PageHeader;
+  [k: string]: unknown;
+}
+/**
+ * link-button
+ */
+export interface LinkButton1 {
+  label: Label5;
+  variant: ButtonStyle4;
+  size: ButtonSize4;
+  className?: AdditionalClasses6;
+  icon?: Icon4;
+  iconBefore?: IconBeforeButton4;
+  iconAfter?: IconAfterButton4;
+  dataComponent?: DataComponentAttribute4;
+  fillAnimation?: FillAnimation4;
+  iconAnimation?: IconAnimation4;
+  href: ButtonHref3;
+  newTab?: OpenLinkInNewTab3;
+}
+/**
+ * Icon
+ */
+export interface Icon4 {
+  icon?: IconIdentifier4;
+  role?: AriaRole4;
+  className?: AdditionalClass4;
+  [k: string]: unknown;
+}
+/**
+ * Component to conditionally show additional info
+ */
+export interface CollapsibleBox {
+  summary: SummaryTextForTheCollapsible;
+  text: ContentOfTheCollapsible;
+}
+/**
+ * Component to to increase a number up to a final value
+ */
+export interface CountUp {
+  to: Number;
+  icon?: Icon5;
+  topic?: Topic;
+  text?: TextContent2;
+  link?: LinkButton2;
+  [k: string]: unknown;
+}
+/**
+ * Icon
+ */
+export interface Icon5 {
+  icon?: IconIdentifier5;
+  role?: AriaRole5;
+  className?: AdditionalClass5;
+  [k: string]: unknown;
+}
+/**
+ * link-button
+ */
+export interface LinkButton2 {
+  label: Label6;
+  variant: ButtonStyle5;
+  size: ButtonSize5;
+  className?: AdditionalClasses7;
+  icon?: Icon6;
+  iconBefore?: IconBeforeButton5;
+  iconAfter?: IconAfterButton5;
+  dataComponent?: DataComponentAttribute5;
+  fillAnimation?: FillAnimation5;
+  iconAnimation?: IconAnimation5;
+  href: ButtonHref4;
+  newTab?: OpenLinkInNewTab4;
+}
+/**
+ * Icon
+ */
+export interface Icon6 {
+  icon?: IconIdentifier6;
+  role?: AriaRole6;
+  className?: AdditionalClass6;
+  [k: string]: unknown;
+}
+/**
+ * Component to display content in a condensed, boxed form
+ */
+export interface ContentBox {
+  ratio: ImageRatio;
+  alignement: Alignment1;
+  image?: ImageSource3;
+  topic?: Topic1;
+  text?: TextContent3;
+  link?: Link2;
+}
+/**
+ * Content box link configuration
+ */
+export interface Link2 {
+  enabled?: DisplayLink2;
+  label: Label7;
+  variant: ButtonStyle6;
+  size: ButtonSize6;
+  className?: AdditionalClasses8;
+  icon?: Icon7;
+  iconBefore?: IconBeforeButton6;
+  iconAfter?: IconAfterButton6;
+  dataComponent?: DataComponentAttribute6;
+  fillAnimation?: FillAnimation6;
+  iconAnimation?: IconAnimation6;
+  href: ButtonHref5;
+  newTab?: OpenLinkInNewTab5;
+}
+/**
+ * Icon
+ */
+export interface Icon7 {
+  icon?: IconIdentifier7;
+  role?: AriaRole7;
+  className?: AdditionalClass7;
+  [k: string]: unknown;
+}
+/**
+ * Headline
+ */
+export interface Headline3 {
+  level: Level1;
+  align: Alignment2;
+  content?: Text4;
+  subheadline?: Subheadline1;
+  spaceAfter: BottomSpacing1;
+  pageHeader?: PageHeader1;
+  [k: string]: unknown;
+}
+/**
+ * Component to display copy text, including media
+ */
+export interface TextMedia {
+  text: TextContent4;
+  mediaAlignment: MediaAlignment;
+  media?: Media;
+}
+/**
+ * Video item to display
+ */
+export interface Video {
+  src: Source3;
+  iframe?: EmbeddedIframe;
+  title?: VideoTitle;
+  width: Width1;
+  height: Height3;
+  [k: string]: unknown;
+}
+/**
+ * Base component to display a picture
+ */
+export interface Picture {
+  src?: Source4;
+  srcSet?: PictureSourceset;
+  alt?: AltText1;
+  width?: Width2;
+  height?: Height4;
+  className?: AdditionalClasses9;
+  id?: Id;
+  itemProp?: ItempropAttribute;
+  style?: StyleAttribute;
+  objectFit?: ObjectFit;
+  noscript?: Noscript;
+  lazy?: Lazy;
+  sources?: Sources;
+  pictureClassName?: ClassAttribute;
+  [k: string]: unknown;
+}
+/**
+ * Lazy Lightbox Image
+ */
+export interface LazyLightboxImage {
+  thumb?: ThumbnailSource;
+  image?: LightboxImageSource;
+  width?: Width3;
+  height?: Height5;
+  zoomIcon?: HoverZoomIcon;
+  caption?: Caption;
+  hideCaption?: HideCaptionVisually;
+  gallery?: GalleryIdentifier;
+  id?: ID1;
+  class?: AdditionalImageClass;
+  [k: string]: unknown;
+}
+/**
+ * Component to tease external content
+ */
+export interface TeaserBox {
+  topic?: Topic2;
+  text?: TextContent5;
+  darkStyle?: DarkVariant;
+  link?: LinkButton3;
+  image?: ImageSource4;
+  ratio: ImageRatio1;
+  imageSpacing?: ImageSpacing;
+}
+/**
+ * link-button
+ */
+export interface LinkButton3 {
+  label: Label8;
+  variant: ButtonStyle7;
+  size: ButtonSize7;
+  className?: AdditionalClasses10;
+  icon?: Icon8;
+  iconBefore?: IconBeforeButton7;
+  iconAfter?: IconAfterButton7;
+  dataComponent?: DataComponentAttribute7;
+  fillAnimation?: FillAnimation7;
+  iconAnimation?: IconAnimation7;
+  href: ButtonHref6;
+  newTab?: OpenLinkInNewTab6;
+  hidden?: HideLink;
+}
+/**
+ * Icon
+ */
+export interface Icon8 {
+  icon?: IconIdentifier8;
+  role?: AriaRole8;
+  className?: AdditionalClass8;
+  [k: string]: unknown;
+}
+/**
+ * Component to list logos or seals
+ */
+export interface LogoTiles {
+  logos?: Logos;
+  [k: string]: unknown;
+}
+export interface LogoImage {
+  src?: Source5;
+  alt?: AltText2;
+  width?: Width4;
+  height?: Height6;
+  [k: string]: unknown;
+}
+/**
+ * Component to tease external content
+ */
+export interface TeaserRow {
+  topic?: Topic3;
+  text?: TextContent6;
+  darkStyle?: DarkVariant1;
+  link?: LinkButton4;
+}
+/**
+ * link-button
+ */
+export interface LinkButton4 {
+  label: Label9;
+  variant: ButtonStyle8;
+  size: ButtonSize8;
+  className?: AdditionalClasses11;
+  icon?: Icon9;
+  iconBefore?: IconBeforeButton8;
+  iconAfter?: IconAfterButton8;
+  dataComponent?: DataComponentAttribute8;
+  fillAnimation?: FillAnimation8;
+  iconAnimation?: IconAnimation8;
+  href: ButtonHref7;
+  newTab?: OpenLinkInNewTab7;
+  hidden?: HideLink1;
+}
+/**
+ * Icon
+ */
+export interface Icon9 {
+  icon?: IconIdentifier9;
+  role?: AriaRole9;
+  className?: AdditionalClass9;
+  [k: string]: unknown;
+}
+/**
+ * Headline
+ */
+export interface Headline4 {
+  level: Level2;
+  align: Alignment3;
+  content?: Text5;
+  subheadline?: Subheadline2;
+  spaceAfter: BottomSpacing2;
+  pageHeader?: PageHeader2;
   [k: string]: unknown;
 }

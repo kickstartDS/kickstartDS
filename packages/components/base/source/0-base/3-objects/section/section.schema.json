@@ -20,6 +20,67 @@
           "type": "string",
           "enum": ["default", "tile", "list"],
           "default": "default"
+        },
+        "content": {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "http://frontend.ruhmesmeile.com/content/organisms/quotes-slider.schema.json"
+              },
+              {
+                "$ref": "http://frontend.ruhmesmeile.com/base/atoms/link-button.schema.json"
+              },
+              {
+                "$ref": "http://frontend.ruhmesmeile.com/base/atoms/toggle.schema.json"
+              },
+              {
+                "$ref": "http://frontend.ruhmesmeile.com/base/atoms/button.schema.json"
+              },
+              {
+                "$ref": "http://frontend.ruhmesmeile.com/base/atoms/tag-label.schema.json"
+              },
+              {
+                "$ref": "http://frontend.ruhmesmeile.com/content/molecules/visual.schema.json"
+              },
+              {
+                "$ref": "http://frontend.ruhmesmeile.com/content/molecules/quote.schema.json"
+              },
+              {
+                "$ref": "http://frontend.ruhmesmeile.com/content/molecules/visual-slider.schema.json"
+              },
+              {
+                "$ref": "http://frontend.ruhmesmeile.com/content/molecules/contact.schema.json"
+              },
+              {
+                "$ref": "http://frontend.ruhmesmeile.com/content/molecules/storytelling.schema.json"
+              },
+              {
+                "$ref": "http://frontend.ruhmesmeile.com/content/molecules/collapsible-box.schema.json"
+              },
+              {
+                "$ref": "http://frontend.ruhmesmeile.com/content/molecules/count-up.schema.json"
+              },
+              {
+                "$ref": "http://frontend.ruhmesmeile.com/base/molecules/content-box.schema.json"
+              },
+              {
+                "$ref": "http://frontend.ruhmesmeile.com/base/molecules/headline.schema.json"
+              },
+              {
+                "$ref": "http://frontend.ruhmesmeile.com/base/molecules/text-media.schema.json"
+              },
+              {
+                "$ref": "http://frontend.ruhmesmeile.com/base/molecules/teaser-box.schema.json"
+              },
+              {
+                "$ref": "http://frontend.ruhmesmeile.com/content/molecules/logo-tiles.schema.json"
+              },
+              {
+                "$ref": "http://frontend.ruhmesmeile.com/base/molecules/teaser-row.schema.json"
+              }
+            ]
+          }
         }
       }
     }
@@ -36,12 +97,12 @@
           "enum": ["default", "accent", "dark"],
           "default": "default"
         },
-        "space-before": {
+        "spaceBefore": {
           "type": "string",
           "enum": ["default", "small", "none"],
           "default": "default"
         },
-        "space-after": {
+        "spaceAfter": {
           "type": "string",
           "enum": ["default", "small", "none"],
           "default": "default"
