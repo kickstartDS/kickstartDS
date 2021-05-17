@@ -1,10 +1,9 @@
 @use '@kickstartds/core/source/core/breakpoint';
-@use '../../0-base/0-settings/selector';
 @use 'bourbon/core/bourbon';
 @use 'settings/base';
 
 .content-slider {
-  #{selector.$slider-nav-slides} {
+  .c-slider-nav__slides {
     margin: 1em auto 0;
 
     @include breakpoint.media('≥s') {
@@ -13,7 +12,7 @@
     }
   }
 
-  #{selector.$slider-bullet} {
+  .c-slider__bullet {
     @include breakpoint.media('≥s') {
       display: none;
     }
