@@ -55,6 +55,11 @@
               "type": "string",
               "enum": ["none", "left", "right"],
               "default": "none"
+            },
+            "alt": {
+              "type": "string",
+              "title": "Alt text",
+              "description": "Alt text to display for picture"
             }
           }
         },

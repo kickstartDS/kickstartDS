@@ -7,7 +7,6 @@ import { MediaWrapper, Inbox } from './VisualProps';
 interface IMedia extends MediaWrapper {
   inbox?: Inbox;
   overlay?: boolean;
-  image?: MediaWrapper['image'] & HTMLImageElement;
 }
 
 const Image: FunctionComponent<IMedia> = ({ image = {} }) => {
