@@ -20,15 +20,15 @@ const MAIN_SLIDER_OPTIONS = {
   hoverpause: false,
   autoheight: true,
   classes: {
-    slider: 'slider-main--slider',
-    carousel: 'slider-main--carousel',
+    slider: 'c-slider-main--slider',
+    carousel: 'c-slider-main--carousel',
     slide: {
-      active: 'slider__slide--active',
-      clone: 'slider__slide--clone',
+      active: 'c-slider__slide--active',
+      clone: 'c-slider__slide--clone',
     },
-    cloneSlide: 'slider__slide--clone',
+    cloneSlide: 'c-slider__slide--clone',
     nav: {
-      active: 'slider-nav__slide--active',
+      active: 'c-slider-nav__slide--active',
     },
   },
 };
@@ -42,10 +42,10 @@ const NAV_SLIDER_OPTIONS = {
   swipeThreshold: false,
   dragThreshold: false,
   classes: {
-    slider: 'slider-nav--slider',
-    carousel: 'slider-nav--carousel',
+    slider: 'c-slider-nav--slider',
+    carousel: 'c-slider-nav--carousel',
     slide: {
-      active: 'slider-nav__slide--active',
+      active: 'c-slider-nav__slide--active',
     },
   },
   breakpoints: {
@@ -90,19 +90,18 @@ export default class Slider extends Component {
   constructor(element, mainOptions = {}, navOptions = {}) {
     super(element);
 
-    this.mainSliderElement = element.querySelector('.slider-main');
-    this.mainSliderNav = this.mainSliderElement.querySelector('.slider-nav');
+    this.mainSliderElement = element.querySelector('.c-slider-main');
+    this.mainSliderNav = this.mainSliderElement.querySelector('.c-slider-nav');
     this.navSliderElement = this.mainSliderNav.cloneNode(true);
-    this.navSliderElement.classList.add('slider-nav--slider');
+    this.navSliderElement.classList.add('c-slider-nav--slider');
     this.mainNavSlides = this.mainSliderNav.querySelector(
-      '.slider-nav__slides'
+      '.c-slider-nav__slides'
     );
     this.navSliderElement
-      .querySelector('.slider-nav__slides')
+      .querySelector('.c-slider-nav__slides')
       .removeAttribute('data-glide-el');
-    this.slidesCount = this.mainSliderElement.querySelectorAll(
-      '.slider__slide'
-    ).length;
+    this.slidesCount =
+      this.mainSliderElement.querySelectorAll('.c-slider__slide').length;
 
     if (!this.slidesCount) {
       return;
@@ -111,7 +110,7 @@ export default class Slider extends Component {
     element.appendChild(this.navSliderElement);
 
     [this.mainSliderElement, this.navSliderElement].forEach((slider) => {
-      slider.querySelector('.slider__track').dataset.glideEl = 'track';
+      slider.querySelector('.c-slider__track').dataset.glideEl = 'track';
 
       if (slider.dataset.sliderArrows !== 'none') {
         render(arrowsHtml, slider);
@@ -119,7 +118,7 @@ export default class Slider extends Component {
     });
 
     this.mainSliderOptions = merge(MAIN_SLIDER_OPTIONS, mainOptions, {
-      autoplay: element.classList.contains('slider--autoplay')
+      autoplay: element.classList.contains('c-slider--autoplay')
         ? MILLISECONDS_PER_SLIDE
         : false,
     });
@@ -161,10 +160,10 @@ export default class Slider extends Component {
     // deactivate slider if slides count is equal to perView
     if (this.slidesCount <= this.mainSlider.settings.perView) {
       this.mainSlider.disable();
-      this.element.classList.add('slider--disabled');
+      this.element.classList.add('c-slider--disabled');
     } else {
       this.mainSlider.enable();
-      this.element.classList.remove('slider--disabled');
+      this.element.classList.remove('c-slider--disabled');
     }
   }
 
@@ -180,13 +179,13 @@ export default class Slider extends Component {
 
   setAutoplay() {
     if (this.isScrolledOutOfView) {
-      if (this.element.classList.contains('slider--autoplay')) {
+      if (this.element.classList.contains('c-slider--autoplay')) {
         this.mainSlider.update({ autoplay: false });
-        this.element.classList.remove('slider--autoplay');
+        this.element.classList.remove('c-slider--autoplay');
       }
-    } else if (!this.element.classList.contains('slider--autoplay')) {
+    } else if (!this.element.classList.contains('c-slider--autoplay')) {
       this.mainSlider.update({ autoplay: this.mainSliderOptions.autoplay });
-      this.element.classList.add('slider--autoplay');
+      this.element.classList.add('c-slider--autoplay');
     }
   }
 

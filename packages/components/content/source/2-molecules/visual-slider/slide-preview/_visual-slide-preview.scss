@@ -1,5 +1,3 @@
-@use '@kickstartds/base/source/0-base/0-settings/selector';
-
 @keyframes slider-nav-autoplay {
   0% {
     width: 0;
@@ -18,17 +16,17 @@
   padding: 0.75em 1em;
   transition: 0.3s;
 
-  #{selector.$slider-nav-constrol-slide} & {
+  [data-glide-el='controls[nav]'] .c-slider-nav__slide & {
     min-width: 7rem;
   }
 
-  #{selector.$slider-nav-slide}:hover &,
-  #{selector.$slider-nav-slide}:focus & {
+  .c-slider-nav__slide:hover &,
+  .c-slider-nav__slide:focus & {
     background: var(--c-visual-slider_preview--background-hover);
     color: var(--c-visual-slider_preview--color-hover);
   }
 
-  #{selector.$slider-nav-slide}--active & {
+  .c-slider-nav__slide--active & {
     background: var(--c-visual-slider_preview--background-active);
     color: var(--c-visual-slider_preview--color-active);
 

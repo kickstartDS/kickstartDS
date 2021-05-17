@@ -1,11 +1,17 @@
+@use 'sass:meta';
 @use '@kickstartds/core/source/core/breakpoint';
+@use '@kickstartds/core/source/core/custom-properties';
+@use './slider-vars';
 
 @use './glide.core';
 @use './slider-arrows/slider-arrows';
 @use './slider-bullet/slider-bullet';
 
-.slider-main {
-  .slider {
+$vars: meta.module-variables(slider-vars);
+@include custom-properties.styles($vars);
+
+.c-slider-main {
+  .c-slider {
     &__track {
       width: 100%;
       transition: 0.3s;
@@ -17,7 +23,7 @@
   }
 }
 
-.slider-nav {
+.c-slider-nav {
   @include breakpoint.media('print') {
     display: none;
   }
@@ -34,14 +40,14 @@
   }
 }
 
-.slider--disabled {
-  .slider__slide--clone,
-  .slider__arrows,
-  .slider-nav {
+.c-slider--disabled {
+  .c-slider__slide--clone,
+  .c-slider__arrows,
+  .c-slider-nav {
     display: none !important;
   }
 
-  .slider__slides {
+  .c-slider__slides {
     transform: none !important;
     width: auto !important;
     justify-content: center;
