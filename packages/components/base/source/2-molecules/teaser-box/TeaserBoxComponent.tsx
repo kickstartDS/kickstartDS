@@ -5,19 +5,13 @@ import {
   HTMLAttributes,
 } from 'react';
 import classnames from 'classnames';
-import { renderFn } from '@kickstartds/core/lib/core';
 import { Picture } from '../../1-atoms/image/picture';
 import { TeaserBoxProps } from './TeaserBoxProps';
-import { Teaser } from '../teaser/TeaserComponent';
+import { Teaser, TeaserRenderFunctions } from '../teaser/TeaserComponent';
 import './teaser-box.scss';
 
-interface RenderFunctions {
-  renderTopic?: renderFn;
-  renderText?: renderFn;
-}
-
 const TeaserBoxComponent: FunctionComponent<
-  TeaserBoxProps & RenderFunctions & HTMLAttributes<HTMLDivElement>
+  TeaserBoxProps & TeaserRenderFunctions & HTMLAttributes<HTMLDivElement>
 > = ({ image, ratio, imageSpacing, className, ...props }) => (
   <Teaser
     className={classnames(

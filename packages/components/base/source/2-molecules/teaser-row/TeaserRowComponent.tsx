@@ -5,18 +5,12 @@ import {
   HTMLAttributes,
 } from 'react';
 import classnames from 'classnames';
-import { renderFn } from '@kickstartds/core/lib/core';
 import { TeaserRowProps } from './TeaserRowProps';
 import './teaser-row.scss';
-import { Teaser } from '../teaser/TeaserComponent';
-
-interface RenderFunctions {
-  renderTopic?: renderFn;
-  renderText?: renderFn;
-}
+import { Teaser, TeaserRenderFunctions } from '../teaser/TeaserComponent';
 
 const TeaserRowComponent: FunctionComponent<
-  TeaserRowProps & RenderFunctions & HTMLAttributes<HTMLDivElement>
+  TeaserRowProps & TeaserRenderFunctions & HTMLAttributes<HTMLDivElement>
 > = ({ className, ...props }) => (
   <Teaser className={classnames('c-teaser-row', className)} {...props} />
 );

@@ -10,13 +10,13 @@ import { TeaserProps } from './TeaserProps';
 import './teaser.scss';
 import './Teaser.js';
 
-interface RenderFunctions {
+export interface TeaserRenderFunctions {
   renderTopic?: renderFn;
   renderText?: renderFn;
 }
 
 export const Teaser: FunctionComponent<
-  TeaserProps & RenderFunctions & HTMLAttributes<HTMLDivElement>
+  TeaserProps & TeaserRenderFunctions & HTMLAttributes<HTMLDivElement>
 > = ({
   topic,
   text,
