@@ -4,14 +4,14 @@ import { Picture } from '@kickstartds/base/lib/picture';
 import { SlideContext } from '@kickstartds/base/lib/slider';
 import { MediaWrapper, Inbox } from './VisualProps';
 
-// TODO readd: alt-text / altText
 interface IMedia extends MediaWrapper {
   inbox?: Inbox;
   overlay?: boolean;
+  image?: MediaWrapper['image'] & HTMLImageElement;
 }
 
 const Image: FunctionComponent<IMedia> = ({ image = {} }) => {
-  const { srcMobile, srcTablet, srcDesktop, indent } = image;
+  const { srcMobile, srcTablet, srcDesktop, indent, alt } = image;
   const slide = useContext(SlideContext);
   return (
     <picture
@@ -29,7 +29,7 @@ const Image: FunctionComponent<IMedia> = ({ image = {} }) => {
             src={srcMobile}
             objectFit="cover"
             noscript={false}
-            alt="TODO readd"
+            alt={alt}
             itemProp="image"
           />
         </>
@@ -42,7 +42,7 @@ const Image: FunctionComponent<IMedia> = ({ image = {} }) => {
             src={srcMobile}
             lazy={false}
             objectFit="cover"
-            alt="TODO readd"
+            alt={alt}
             itemProp="image"
           />
         </>
