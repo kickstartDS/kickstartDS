@@ -35,3 +35,16 @@ $box-checked: (
     background: var(--color-primary),
   ),
 ) !default;
+
+$group: (
+  ':root': (
+    horizontal-gutter: 0.75rem,
+    vertical-gutter: 0.125rem,
+  ),
+) !default;
+
+$group-label: (
+  ':root': (
+    padding: 0.25rem 0,
+  ),
+) !default;

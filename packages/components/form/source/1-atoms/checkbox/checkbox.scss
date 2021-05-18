@@ -8,7 +8,7 @@ $vars: meta.module-variables(checkbox-vars);
 @include custom-properties.styles($vars);
 
 .c-checkbox {
-  @include input-field.wrapper;
+  @include input-field.wrapper($width: null);
 
   &__input {
     @include bourbon.hide-visually;

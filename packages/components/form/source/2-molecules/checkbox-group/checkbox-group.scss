@@ -1,0 +1,21 @@
+.c-checkbox-group {
+  &__label {
+    display: inline-block;
+    font: var(--font-ui-s);
+    padding: var(--g-input_group-label--padding);
+    cursor: default;
+  }
+
+  &__group {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: calc(var(--g-input_group--vertical-gutter) * -1)
+      calc(var(--g-input_group--horizontal-gutter) * -1);
+
+    > * {
+      margin: var(--g-input_group--vertical-gutter)
+        var(--g-input_group--horizontal-gutter);
+    }
+  }
+}
