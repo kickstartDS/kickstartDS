@@ -15,12 +15,12 @@ export const VisualSlider: FunctionComponent<
   >
     {slides?.map((slide, i) => (
       <Visual
-        key={i}
+        key={`slide-${i}`}
         {...{
           ...slide,
           preview: (
             <div className="c-visual-slide--preview">
-              {slide.label || `Slide ${i}`}
+              {slide.label || `Slide ${i + 1}`}
             </div>
           ),
         }}

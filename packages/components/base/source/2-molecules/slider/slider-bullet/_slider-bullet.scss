@@ -1,26 +1,24 @@
-@use '../../../0-base/0-settings/selector';
 @use 'bourbon/core/bourbon';
-@use 'settings/base';
 
-.slider__bullet {
-  @include bourbon.size(0.8rem);
+.c-slider__bullet {
+  @include bourbon.size(var(--c-slider_bullet--size));
 
   align-self: center;
   border-radius: 50%;
-  border: 1px solid base.$color-black-25;
+  border: 1px solid var(--c-slider_bullet--outline-color);
   transition: inherit;
-  margin: 0.25rem 0.5rem;
+  margin: var(--c-slider_bullet--margin);
   display: inline-block;
 
-  #{selector.$slider-nav-slide}--active & {
-    background-color: base.$color-brand;
-    border-color: base.$color-brand;
+  .c-slider-nav__slide--active & {
+    border-color: var(--c-slider_bullet--outline-color-active);
+    background: var(--c-slider_bullet--background-active);
   }
 
-  #{selector.$slider-nav-slide}:not(#{selector.$slider-nav-slide}--active) & {
+  .c-slider-nav__slide:not(.c-slider-nav__slide--active) & {
     &:hover,
     &:focus {
-      background-color: base.$color-black-10;
+      background: var(--c-slider_bullet--background-hover);
     }
   }
 }

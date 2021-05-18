@@ -1,20 +1,25 @@
 const combineDuplicatedSelectors = require('postcss-combine-duplicated-selectors');
 const sortMediaQueries = require('postcss-sort-media-queries');
 const autoprefixer = require('autoprefixer');
-const cssmin = require('postcss-clean');
+const cssnano = require('cssnano');
 
 const dev = [sortMediaQueries(), combineDuplicatedSelectors(), autoprefixer()];
 
 const prod = [
   ...dev,
-  cssmin({
-    // https://github.com/jakubpawlowicz/clean-css/tree/v4.2.1#constructor-options
-    rebase: false,
-    level: {
-      1: {
-        specialComments: 'all',
+  cssnano({
+    preset: [
+      'default',
+      {
+        discardComments: {
+          remove(comment) {
+            return !(
+              comment.indexOf('!') === 0 || comment.indexOf('critical:') === 0
+            );
+          },
+        },
       },
-    },
+    ],
   }),
 ];
 

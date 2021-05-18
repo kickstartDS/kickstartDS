@@ -21,7 +21,7 @@ $vars: meta.module-variables(visual-slider-vars);
   }
 
   // hide bullets on large screens
-  #{selector.$slider-bullet} {
+  .c-slider__bullet {
     @include breakpoint.media('≥s') {
       /* critical:start */
       display: none;
@@ -29,7 +29,7 @@ $vars: meta.module-variables(visual-slider-vars);
     }
   }
 
-  #{selector.$slider-nav-root} {
+  .c-slider-nav {
     margin-top: 0.5em;
 
     @include breakpoint.media('≥s') {
