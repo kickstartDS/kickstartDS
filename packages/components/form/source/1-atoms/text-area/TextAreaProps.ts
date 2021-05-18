@@ -25,33 +25,15 @@ export type Disabled = boolean;
  * Temporary text that occupies the text input when it is empty
  */
 export type Placeholder = string;
-/**
- * The type of input to render
- */
-export type Type = 'text' | 'search' | 'url' | 'tel' | 'email' | 'password';
-/**
- * Hints at the type of data that might be entered by the user while editing the element or its contents
- */
-export type InputMode =
-  | 'none'
-  | 'text'
-  | 'search'
-  | 'url'
-  | 'tel'
-  | 'email'
-  | 'numeric'
-  | 'decimal';
 
 /**
- * TextFields are text inputs that allow users to input custom text entries with a keyboard.
+ * Multiline text input, useful for cases where users have a sizable amount of text to enter.
  */
-export interface TextFieldProps {
+export interface TextAreaProps {
   label?: Label;
   value?: Value;
   name?: Name;
   disabled?: Disabled;
   placeholder?: Placeholder;
-  type?: Type;
-  inputMode?: InputMode;
   [k: string]: unknown;
 }

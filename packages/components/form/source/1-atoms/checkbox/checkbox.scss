@@ -1,17 +1,14 @@
 @use 'sass:meta';
 @use 'bourbon/core/bourbon';
 @use '@kickstartds/core/source/core/custom-properties';
+@use '../../0-base/input-field';
 @use './checkbox-vars';
 
 $vars: meta.module-variables(checkbox-vars);
 @include custom-properties.styles($vars);
 
 .c-checkbox {
-  display: inline-flex;
-  align-items: flex-start;
-  position: relative;
-  vertical-align: top;
-  font: var(--font-ui-s);
+  @include input-field.wrapper;
 
   &__input {
     @include bourbon.hide-visually;
