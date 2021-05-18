@@ -18,7 +18,7 @@ $vars: meta.module-variables(input-field-vars);
   width: 100%;
   border: var(--g-input--border);
   border-radius: var(--g-input--border-radius);
-  background: var(--g-input--background);
+  background-color: var(--g-input--background);
   color: var(--g-input--color);
   transition: 0.2s;
   overflow: hidden;
@@ -33,5 +33,9 @@ $vars: meta.module-variables(input-field-vars);
     outline: 0;
     appearance: none;
     flex: 1;
+
+    &:disabled {
+      background-color: var(--g-input--background-disabled);
+    }
   }
 }

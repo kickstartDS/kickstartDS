@@ -14,9 +14,5 @@
   &__input {
     @include input-field.input-field(textarea);
     resize: vertical;
-
-    &:disabled {
-      opacity: 0.5;
-    }
   }
 }

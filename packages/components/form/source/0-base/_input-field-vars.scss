@@ -5,6 +5,7 @@ $host: (
     border: 1px solid var(--color-grey-2),
     border-radius: 0.2rem,
     background: var(--color-white),
+    background-disabled: var(--color-black-alpha-1),
     color: var(--color-black),
   ),
 ) !default;

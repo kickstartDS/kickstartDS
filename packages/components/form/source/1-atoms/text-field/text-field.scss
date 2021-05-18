@@ -12,10 +12,6 @@
   }
 
   &__input {
-    @include input-field.input-field;
-
-    &:disabled {
-      opacity: 0.5;
-    }
+    @include input-field.input-field(input);
   }
 }
