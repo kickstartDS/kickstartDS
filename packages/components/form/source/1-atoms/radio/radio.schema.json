@@ -6,16 +6,10 @@
   "type": "object",
   "properties": {
     "label": {
-      "title": "Label",
-      "description": "The label for the element",
-      "type": "string",
-      "default": "Est dolore a debitis"
+      "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/label"
     },
     "selected": {
-      "title": "Selected",
-      "description": "Whether the element should be selected",
-      "type": "boolean",
-      "default": false
+      "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/selected"
     },
     "value": {
       "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/value"

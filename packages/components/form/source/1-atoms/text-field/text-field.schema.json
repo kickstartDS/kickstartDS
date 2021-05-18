@@ -6,10 +6,7 @@
   "type": "object",
   "properties": {
     "label": {
-      "title": "Label",
-      "description": "The label for the element",
-      "type": "string",
-      "default": "Est dolore a debitis"
+      "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/label"
     },
     "value": {
       "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/value"
@@ -21,9 +18,7 @@
       "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/disabled"
     },
     "placeholder": {
-      "title": "Placeholder",
-      "description": "Temporary text that occupies the text input when it is empty",
-      "type": "string"
+      "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/placeholder"
     },
     "type": {
       "title": "Type",

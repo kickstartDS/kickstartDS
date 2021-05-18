@@ -3,6 +3,18 @@
   "$id": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json",
   "title": "Input",
   "definitions": {
+    "label": {
+      "title": "Label",
+      "description": "The label for the element",
+      "type": "string",
+      "default": "Est dolore a debitis"
+    },
+    "selected": {
+      "title": "Selected",
+      "description": "Whether the element should be selected",
+      "type": "boolean",
+      "default": false
+    },
     "value": {
       "title": "Value",
       "description": "The value of the input element, used when submitting an HTML form",
@@ -24,6 +36,11 @@
       "description": "Whether the input is disabled",
       "type": "boolean",
       "default": false
+    },
+    "placeholder": {
+      "title": "Placeholder",
+      "description": "Temporary text that occupies the text input when it is empty",
+      "type": "string"
     }
   }
 }

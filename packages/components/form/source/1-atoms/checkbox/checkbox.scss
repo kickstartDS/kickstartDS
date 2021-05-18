@@ -19,17 +19,17 @@ $vars: meta.module-variables(checkbox-vars);
   }
 
   &__box {
-    @include bourbon.size(var(--c-checkbox_box--size));
+    @include bourbon.size(var(--g-input_box--size));
     position: relative;
-    flex: 0 0 var(--c-checkbox_box--size);
-    border: var(--c-checkbox_box--border);
-    border-radius: var(--c-checkbox_box--border-radius);
-    margin-top: calc((var(--line-height-s) - var(--c-checkbox_box--size)) / 2);
-    background: var(--c-checkbox_box--background);
+    flex: 0 0 var(--g-input_box--size);
+    border: var(--g-input_box--border);
+    border-radius: var(--g-input_box--border-radius);
+    margin-top: calc((var(--line-height-s) - var(--g-input_box--size)) / 2);
+    background: var(--g-input_box--background);
     transition: 0.2s;
 
     :checked ~ & {
-      background: var(--c-checkbox_box-checked--background);
+      background: var(--g-input_box-checked--background);
 
       &::after {
         transform: translate(-50%, -50%) rotate(45deg);

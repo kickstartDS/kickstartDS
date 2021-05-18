@@ -11,7 +11,7 @@ $vars: meta.module-variables(input-field-vars);
   font: var(--font-ui-s);
 }
 
-@mixin input-field {
+@mixin input-field($input-selector: 'input') {
   display: flex;
   box-sizing: border-box;
   font: var(--font-ui-s);
@@ -27,7 +27,7 @@ $vars: meta.module-variables(input-field-vars);
     border-color: var(--g-input_focus--border-color);
   }
 
-  input {
+  #{$input-selector} {
     padding: 0.5rem 0.5rem 0.45rem;
     border: 0;
     outline: 0;

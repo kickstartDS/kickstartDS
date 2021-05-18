@@ -1,15 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://frontend.ruhmesmeile.com/form/atoms/checkbox.schema.json",
-  "title": "Checkbox",
-  "description": "Checkboxes allow users to select multiple items from a list of individual items, or to mark one individual item as selected.",
+  "$id": "http://frontend.ruhmesmeile.com/form/atoms/text-area.schema.json",
+  "title": "Text Area",
+  "description": "Multiline text input, useful for cases where users have a sizable amount of text to enter.",
   "type": "object",
   "properties": {
     "label": {
       "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/label"
-    },
-    "selected": {
-      "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/selected"
     },
     "value": {
       "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/value"
@@ -19,7 +16,9 @@
     },
     "disabled": {
       "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/disabled"
+    },
+    "placeholder": {
+      "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/placeholder"
     }
-  },
-  "required": ["label"]
+  }
 }
