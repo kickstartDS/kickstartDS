@@ -1,0 +1,23 @@
+$name-: 'c-checkbox';
+
+$box: (
+  '.c-checkbox': (
+    size: 1rem,
+    border: 1px solid var(--color-primary),
+    border-radius: 0.2rem,
+    background: var(--color-white),
+  ),
+) !default;
+
+$box-checked: (
+  '.c-checkbox': (
+    background: var(--color-primary),
+  ),
+) !default;
+
+$checkmark: (
+  '.c-checkbox': (
+    width: 2px,
+    color: var(--color-white),
+  ),
+) !default;

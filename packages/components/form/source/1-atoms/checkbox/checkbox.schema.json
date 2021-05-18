@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://frontend.ruhmesmeile.com/form/atoms/checkbox.schema.json",
+  "title": "Checkbox",
+  "description": "Checkboxes allow users to select multiple items from a list of individual items, or to mark one individual item as selected.",
+  "type": "object",
+  "properties": {
+    "label": {
+      "title": "Label",
+      "description": "The label for the element",
+      "type": "string",
+      "default": "Est dolore a debitis"
+    },
+    "selected": {
+      "title": "Selected",
+      "description": "Whether the element should be selected",
+      "type": "boolean",
+      "default": false
+    },
+    "value": {
+      "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/value"
+    },
+    "name": {
+      "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/name"
+    },
+    "disabled": {
+      "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/disabled"
+    }
+  },
+  "required": ["label"]
+}
