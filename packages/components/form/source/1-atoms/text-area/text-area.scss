@@ -12,7 +12,8 @@
   }
 
   &__input {
-    @include input-field.input-field(textarea);
-    resize: vertical;
+    @include input-field.input-field(textarea) {
+      resize: vertical;
+    }
   }
 }

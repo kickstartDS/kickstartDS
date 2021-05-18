@@ -7,6 +7,7 @@ import { unpackDecorator } from '../../../components/core/lib/storybook/helpers'
 import '../../../components/base/lib/global/base.js';
 import '../../../components/base/lib/global/base.css';
 import '../../../components/core/lib/design-tokens/tokens.css';
+import '../../../components/form/lib/global/form.css';
 
 const myActions = actions('radio');
 window.rm.radio.on('*', myActions.radio);

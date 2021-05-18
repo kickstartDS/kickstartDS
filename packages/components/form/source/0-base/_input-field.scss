@@ -1,21 +1,15 @@
-@use 'sass:meta';
 @use 'bourbon/core/bourbon';
-@use '@kickstartds/core/source/core/custom-properties';
-@use './input-field-vars';
-
-$vars: meta.module-variables(input-field-vars);
-@include custom-properties.styles($vars);
 
 @mixin wrapper {
   display: inline-flex;
   font: var(--font-ui-s);
+  width: 100%;
 }
 
 @mixin input-field($input-selector: 'input') {
   display: flex;
   box-sizing: border-box;
   font: var(--font-ui-s);
-  width: 100%;
   border: var(--g-input--border);
   border-radius: var(--g-input--border-radius);
   background-color: var(--g-input--background);
@@ -37,5 +31,7 @@ $vars: meta.module-variables(input-field-vars);
     &:disabled {
       background-color: var(--g-input--background-disabled);
     }
+
+    @content;
   }
 }
