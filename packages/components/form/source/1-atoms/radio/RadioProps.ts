@@ -31,7 +31,7 @@ export type Disabled = boolean;
  */
 export interface RadioButtonProps {
   label: Label;
-  selected?: Selected;
+  checked?: Selected;
   value?: Value;
   name?: Name;
   disabled?: Disabled;

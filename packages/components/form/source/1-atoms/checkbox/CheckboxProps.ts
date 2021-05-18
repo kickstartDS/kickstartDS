@@ -31,7 +31,7 @@ export type Disabled = boolean;
  */
 export interface CheckboxProps {
   label: Label;
-  selected?: Selected;
+  checked?: Selected;
   value?: Value;
   name?: Name;
   disabled?: Disabled;

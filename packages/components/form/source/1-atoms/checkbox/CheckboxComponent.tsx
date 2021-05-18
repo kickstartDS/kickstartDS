@@ -1,21 +1,40 @@
-import { FunctionComponent, HTMLAttributes } from 'react';
+import {
+  ForwardRefRenderFunction,
+  forwardRef,
+  createContext,
+  useContext,
+  HTMLAttributes,
+} from 'react';
 import classnames from 'classnames';
+import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
 import { CheckboxProps } from './CheckboxProps';
 import './checkbox.scss';
 
-export const Checkbox: FunctionComponent<
-  CheckboxProps & HTMLAttributes<HTMLInputElement>
-> = ({ name, value, disabled, selected, label, className }) => (
-  <label className={classnames('c-checkbox', className)}>
+interface RenderFunctions {
+  renderLabel?: renderFn;
+}
+
+const CheckboxComponent: ForwardRefRenderFunction<
+  HTMLInputElement,
+  CheckboxProps & RenderFunctions & HTMLAttributes<HTMLInputElement>
+> = ({ label, renderLabel = defaultRenderFn, className, ...props }, ref) => (
+  <label className="c-checkbox">
     <input
-      className="c-checkbox__input"
+      className={classnames('c-checkbox__input', className)}
       type="checkbox"
-      name={name}
-      disabled={disabled}
-      defaultChecked={selected}
-      defaultValue={value}
+      ref={ref}
+      {...props}
     />
     <span className="c-checkbox__box"></span>
-    <span className="c-checkbox__label">{label}</span>
+    <span className="c-checkbox__label">{renderLabel(label)}</span>
   </label>
+);
+
+export const CheckboxContextDefault = forwardRef(CheckboxComponent);
+export const CheckboxContext = createContext(CheckboxContextDefault);
+export const Checkbox: typeof CheckboxContextDefault = forwardRef(
+  (props, ref) => {
+    const Component = useContext(CheckboxContext);
+    return <Component {...props} ref={ref} />;
+  }
 );

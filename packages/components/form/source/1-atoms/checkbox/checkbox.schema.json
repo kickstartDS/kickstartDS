@@ -8,7 +8,7 @@
     "label": {
       "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/label"
     },
-    "selected": {
+    "checked": {
       "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/selected"
     },
     "value": {
