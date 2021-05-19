@@ -189,6 +189,10 @@ export type DesktopImageSource = string;
  */
 export type ImageIndent = 'none' | 'left' | 'right';
 /**
+ * Alt text to display for picture
+ */
+export type AltText = string;
+/**
  * Background video source for small screens
  */
 export type MobileVideoSource = string;
@@ -344,6 +348,10 @@ export type DesktopImageSource1 = string;
  */
 export type ImageIndent1 = 'none' | 'left' | 'right';
 /**
+ * Alt text to display for picture
+ */
+export type AltText1 = string;
+/**
  * Background video source for small screens
  */
 export type MobileVideoSource1 = string;
@@ -468,7 +476,7 @@ export type Source2 = string;
 /**
  * Alt text to display for picture
  */
-export type AltText = string;
+export type AltText2 = string;
 /**
  * Width of the picture
  */
@@ -861,7 +869,7 @@ export type PictureSourceset = string;
 /**
  * Alt text to display for picture
  */
-export type AltText1 = string;
+export type AltText3 = string;
 /**
  * Width of the picture
  */
@@ -1079,7 +1087,7 @@ export type Source5 = string;
 /**
  * Alt text to display for picture
  */
-export type AltText2 = string;
+export type AltText4 = string;
 /**
  * Width of the picture
  */
@@ -1329,6 +1337,7 @@ export interface BackgroundImage {
   srcTablet: TabletImageSource;
   srcDesktop: DesktopImageSource;
   indent?: ImageIndent;
+  alt?: AltText;
   [k: string]: unknown;
 }
 /**
@@ -1428,6 +1437,7 @@ export interface BackgroundImage1 {
   srcTablet: TabletImageSource1;
   srcDesktop: DesktopImageSource1;
   indent?: ImageIndent1;
+  alt?: AltText1;
   [k: string]: unknown;
 }
 /**
@@ -1493,7 +1503,7 @@ export interface Contact {
 }
 export interface Image {
   src?: Source2;
-  alt?: AltText;
+  alt?: AltText2;
   width?: Width;
   height?: Height2;
   [k: string]: unknown;
@@ -1707,7 +1717,7 @@ export interface Video {
 export interface Picture {
   src?: Source4;
   srcSet?: PictureSourceset;
-  alt?: AltText1;
+  alt?: AltText3;
   width?: Width2;
   height?: Height4;
   className?: AdditionalClasses9;
@@ -1785,7 +1795,7 @@ export interface LogoTiles {
 }
 export interface LogoImage {
   src?: Source5;
-  alt?: AltText2;
+  alt?: AltText4;
   width?: Width4;
   height?: Height6;
   [k: string]: unknown;
