@@ -27,6 +27,10 @@ export type DesktopImageSource = string;
  */
 export type ImageIndent = 'none' | 'left' | 'right';
 /**
+ * Alt text to display for picture
+ */
+export type AltText = string;
+/**
  * Background video source for small screens
  */
 export type MobileVideoSource = string;
@@ -170,6 +174,7 @@ export interface BackgroundImage {
   srcTablet: TabletImageSource;
   srcDesktop: DesktopImageSource;
   indent?: ImageIndent;
+  alt?: AltText;
   [k: string]: unknown;
 }
 /**

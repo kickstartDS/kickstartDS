@@ -1,7 +1,7 @@
-$name-: 'c-teaser-box' !default;
+$name-: 'c-teaser' !default;
 
 $host: (
-  '.c-teaser-box': (
+  '.c-teaser': (
     font: var(--font-copy-m),
     color: var(--color-black),
     background: var(--color-white),
@@ -14,7 +14,7 @@ $host: (
       0 25px 25px -35px rgba(0, 0, 0, 0.057),
     ),
   ),
-  '.c-teaser-box--style-dark': (
+  '.c-teaser--style-dark': (
     color: var(--color-white),
     background: var(--color-primary),
     border: null,
@@ -27,17 +27,8 @@ $host: (
   ),
 ) !default;
 
-$topic: (
-  '.c-teaser-box': (
-    font-xs: var(--font-display-s),
-    font-s: var(--font-display-m),
-    font-m: var(--font-display-l),
-    font: var(--c-content-box_topic--font-m),
-    font-weight: var(--g-headline--font-weight),
-    color: var(--g-headline-color),
-    margin: var(--g-headline-margin),
-  ),
-  '.c-teaser-box--style-dark': (
-    color: var(--color-white),
+$text: (
+  '.c-teaser': (
+    spacing: 0.5rem,
   ),
 ) !default;

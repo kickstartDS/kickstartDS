@@ -35,9 +35,9 @@
       "description": "Collection of media items to display",
       "type": "array",
       "items": {
-        "type": "object",
         "anyOf": [
           {
+            "type": "object",
             "properties": {
               "video": {
                 "title": "Video",
@@ -85,6 +85,7 @@
             }
           },
           {
+            "type": "object",
             "properties": {
               "image": {
                 "$ref": "http://frontend.ruhmesmeile.com/base/atoms/picture.definitions.json"
@@ -95,6 +96,7 @@
             }
           },
           {
+            "type": "object",
             "properties": {
               "lightboxImage": {
                 "$ref": "http://frontend.ruhmesmeile.com/base/atoms/lightbox-lazy-image.definitions.json"

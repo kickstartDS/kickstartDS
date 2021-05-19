@@ -1,0 +1,10 @@
+$name-: 'g-topic' !default;
+
+$host: (
+  ':root': (
+    color: var(--color-black),
+    font: var(--font-display-l),
+    font-weight: var(--font-weight-bold),
+    text-transform: null,
+  ),
+) !default;

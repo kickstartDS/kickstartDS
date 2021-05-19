@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://frontend.ruhmesmeile.com/base/molecules/teaser.definitions.json",
+  "title": "Teaser",
+  "description": "Component to tease external content",
+  "definitions": {
+    "teaser": {
+      "type": "object",
+      "properties": {
+        "topic": {
+          "title": "Topic",
+          "type": "string",
+          "default": "Lorem Ipsum",
+          "description": "Topic for the teaser box. Displayed before the text, in bold"
+        },
+        "text": {
+          "title": "Text content",
+          "type": "string",
+          "default": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ispum dolor distinctio minima unde voluptatum aut. Lorem ipsum dolor sit amet.",
+          "description": "Text for the teaser box",
+          "format": "markdown"
+        },
+        "darkStyle": {
+          "type": "boolean",
+          "default": false,
+          "title": "Dark variant",
+          "description": "Optionally use this to apply a dark variant to the box"
+        },
+        "link": {
+          "allOf": [
+            {
+              "$ref": "http://frontend.ruhmesmeile.com/base/atoms/link-button.schema.json"
+            },
+            {
+              "properties": {
+                "hidden": {
+                  "type": "boolean",
+                  "default": false,
+                  "title": "Hide link",
+                  "description": "Hides the link. The box as a whole keeps being clickable"
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "#/definitions/teaser"
+    }
+  ]
+}

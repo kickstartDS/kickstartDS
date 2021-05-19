@@ -1,6 +1,6 @@
 {
   "name": "@kickstartds/blog",
-  "version": "1.0.0-alpha.18",
+  "version": "1.0.0-alpha.20",
   "description": "kickstartDS Blog Module",
   "author": "ruhmesmeile GmbH <mail@ruhmesmeile.com> (https://ruhmesmeile.com)",
   "homepage": "https://ruhmesmeile.com",
@@ -22,7 +22,7 @@
   ],
   "dependencies": {
     "@babel/runtime": "^7.13.17",
-    "@kickstartds/base": "^1.0.0-alpha.18",
+    "@kickstartds/base": "^1.0.0-alpha.20",
     "@kickstartds/core": "^1.0.0-alpha.14",
     "date-fns": "^2.19.0"
   },

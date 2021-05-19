@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://frontend.ruhmesmeile.com/content/molecules/logo-tiles.schema.json",
+  "title": "Logo Tiles",
+  "description": "Component to list logos or seals",
+  "type": "object",
+  "properties": {
+    "logos": {
+      "title": "Logos",
+      "type": "array",
+      "items": {
+        "title": "Logo image",
+        "type": "object",
+        "properties": {
+          "src": {
+            "$ref": "http://frontend.ruhmesmeile.com/base/atoms/picture.definitions.json#/properties/src"
+          },
+          "alt": {
+            "$ref": "http://frontend.ruhmesmeile.com/base/atoms/picture.definitions.json#/properties/alt"
+          },
+          "width": {
+            "$ref": "http://frontend.ruhmesmeile.com/base/atoms/picture.definitions.json#/properties/width"
+          },
+          "height": {
+            "$ref": "http://frontend.ruhmesmeile.com/base/atoms/picture.definitions.json#/properties/height"
+          }
+        }
+      },
+      "default": [
+        {
+          "src": "https://picsum.photos/seed/kdslogotiles1/300/225",
+          "width": 300,
+          "height": 225
+        },
+        {
+          "src": "https://picsum.photos/seed/kdslogotiles2/169/300",
+          "width": 169,
+          "height": 300
+        },
+        {
+          "src": "https://picsum.photos/seed/kdslogotiles3/127/300",
+          "width": 127,
+          "height": 300
+        },
+        {
+          "src": "https://picsum.photos/seed/kdslogotiles4/300/300",
+          "width": 300,
+          "height": 300
+        },
+        {
+          "src": "https://picsum.photos/seed/kdslogotiles5/300/127",
+          "width": 300,
+          "height": 127
+        },
+        {
+          "src": "https://picsum.photos/seed/kdslogotiles6/300/169",
+          "width": 300,
+          "height": 169
+        }
+      ]
+    }
+  }
+}

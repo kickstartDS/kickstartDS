@@ -3,6 +3,7 @@
   "$id": "http://frontend.ruhmesmeile.com/content/molecules/visual.schema.json",
   "title": "Visual",
   "description": "visual",
+  "type": "object",
   "properties": {
     "height": {
       "title": "Height",
@@ -55,6 +56,11 @@
               "type": "string",
               "enum": ["none", "left", "right"],
               "default": "none"
+            },
+            "alt": {
+              "type": "string",
+              "title": "Alt text",
+              "description": "Alt text to display for picture"
             }
           }
         },

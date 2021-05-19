@@ -12,7 +12,7 @@ type Slides = {
 const slides = (children: ReactNode) => {
   const count = Children.count(children);
   return Children.map(children, (child, i) => (
-    <div className="slider__slide" key={i}>
+    <div className="c-slider__slide" key={i}>
       <SlideContext.Provider
         value={{
           index: i,
@@ -38,38 +38,38 @@ export const Slider: FunctionComponent<
 }) => (
   <div
     className={classnames(
-      'slider',
+      'c-slider',
       'lazyload',
-      autoplay && 'slider--autoplay',
+      autoplay && 'c-slider--autoplay',
       className
     )}
     data-component={component}
     {...props}
   >
-    <div className="slider-main" data-slider-arrows={arrows}>
-      <div className="slider__track">
+    <div className="c-slider-main" data-slider-arrows={arrows}>
+      <div className="c-slider__track">
         <div
-          className="slider__slides slider-nav__slides"
+          className="c-slider__slides c-slider-nav__slides"
           data-glide-el="controls[nav]"
         >
           {children && slides(children)}
         </div>
       </div>
 
-      <div className="slider-nav">
-        <div className="slider__track">
+      <div className="c-slider-nav">
+        <div className="c-slider__track">
           <div
-            className="slider__slides slider-nav__slides"
+            className="c-slider__slides c-slider-nav__slides"
             data-glide-el="controls[nav]"
           >
             {children &&
               Children.map(children as Slides, (slide, i) => (
                 <button
-                  className="slider-nav__slide"
+                  className="c-slider-nav__slide"
                   data-glide-dir={`=${i}`}
-                  key={i}
+                  key={`slide-${i}`}
                 >
-                  {slide.preview || <span className="slider__bullet"></span>}
+                  {slide.preview || <span className="c-slider__bullet"></span>}
                 </button>
               ))}
           </div>
