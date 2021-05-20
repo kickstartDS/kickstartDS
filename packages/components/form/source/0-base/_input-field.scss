@@ -9,7 +9,7 @@
 @mixin input-field($input-selector: 'input') {
   display: flex;
   box-sizing: border-box;
-  font: var(--font-ui-s);
+  font: var(--font-ui-m);
   border: var(--g-input--border);
   border-radius: var(--g-input--border-radius);
   background-color: var(--g-input--background);
@@ -17,21 +17,57 @@
   transition: 0.2s;
   overflow: hidden;
 
+  &:hover {
+    border-color: var(--g-input_hover--border-color);
+  }
+
   &:focus-within {
     border-color: var(--g-input_focus--border-color);
   }
 
   #{$input-selector} {
-    padding: 0.5rem 0.5rem 0.45rem;
+    box-sizing: content-box;
+    padding: 0.4rem 0.75rem 0.35rem;
     border: 0;
     outline: 0;
     appearance: none;
     flex: 1;
+    line-height: inherit;
 
     &:disabled {
       background-color: var(--g-input--background-disabled);
     }
 
     @content;
+  }
+}
+
+@mixin radio-check($wrapper-selector) {
+  @include bourbon.size(var(--g-input_box--size));
+  position: relative;
+  flex: 0 0 var(--g-input_box--size);
+  border: var(--g-input_box--border);
+  border-color: var(--g-input_box--border-color);
+  border-radius: var(--g-input_box--border-radius);
+  margin-top: calc((var(--line-height-s) - var(--g-input_box--size)) / 2);
+  background: var(--g-input_box--background);
+  transition: 0.2s;
+
+  :checked ~ & {
+    background: var(--g-input_box-checked--background);
+    border-color: var(--g-input_box-checked--border-color);
+
+    &::after {
+      @content;
+    }
+  }
+
+  #{$wrapper-selector} & {
+    border-color: var(--g-input_box-hover--border-color);
+  }
+
+  :focus-visible ~ & {
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
+    border-color: var(--g-input_box-focus--border-color);
   }
 }

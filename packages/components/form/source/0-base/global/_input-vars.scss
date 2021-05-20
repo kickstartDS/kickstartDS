@@ -10,6 +10,12 @@ $host: (
   ),
 ) !default;
 
+$hover: (
+  ':root': (
+    border-color: var(--color-grey-3),
+  ),
+) !default;
+
 $focus: (
   ':root': (
     border-color: var(--color-primary),
@@ -19,7 +25,8 @@ $focus: (
 $box: (
   ':root': (
     size: 1rem,
-    border: 1px solid var(--color-primary),
+    border: 1px solid,
+    border-color: var(--color-primary-alpha-8),
     background: var(--color-white),
   ),
   '.c-checkbox': (
@@ -30,9 +37,22 @@ $box: (
   ),
 ) !default;
 
+$box-hover: (
+  ':root': (
+    border-color: var(--color-primary-alpha-9),
+  ),
+) !default;
+
+$box-focus: (
+  ':root': (
+    border-color: var(--color-primary),
+  ),
+) !default;
+
 $box-checked: (
   ':root': (
     background: var(--color-primary),
+    border-color: var(--color-primary),
   ),
 ) !default;
 
