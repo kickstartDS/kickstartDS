@@ -5,6 +5,7 @@ import {
   useContext,
   HTMLAttributes,
 } from 'react';
+import classnames from 'classnames';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
 import { TextFieldProps } from './TextFieldProps';
 import './text-field.scss';
@@ -17,11 +18,17 @@ const TextFieldComponent: ForwardRefRenderFunction<
   HTMLInputElement,
   TextFieldProps & RenderFunctions & HTMLAttributes<HTMLInputElement>
 > = (
-  { type = 'text', label, renderLabel = defaultRenderFn, ...props },
+  { type = 'text', label, hideLabel, renderLabel = defaultRenderFn, ...props },
   ref
 ) => (
   <label className="c-text-field">
-    <span className="c-text-field__label">{renderLabel(label)}</span>
+    <span
+      className={classnames('c-text-field__label', {
+        'c-text-field__label--hidden': hideLabel,
+      })}
+    >
+      {renderLabel(label)}
+    </span>
     <div className="c-text-field__input">
       <input type={type} ref={ref} {...props} />
     </div>

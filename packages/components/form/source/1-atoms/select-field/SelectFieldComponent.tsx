@@ -5,6 +5,7 @@ import {
   useContext,
   HTMLAttributes,
 } from 'react';
+import classnames from 'classnames';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
 import { SelectFieldProps } from './SelectFieldProps';
 import './select-field.scss';
@@ -16,9 +17,18 @@ interface RenderFunctions {
 const SelectFieldComponent: ForwardRefRenderFunction<
   HTMLSelectElement,
   SelectFieldProps & RenderFunctions & HTMLAttributes<HTMLSelectElement>
-> = ({ label, renderLabel = defaultRenderFn, options, ...props }, ref) => (
+> = (
+  { label, hideLabel, renderLabel = defaultRenderFn, options, ...props },
+  ref
+) => (
   <label className="c-select-field">
-    <span className="c-select-field__label">{renderLabel(label)}</span>
+    <span
+      className={classnames('c-select-field__label', {
+        'c-select-field__label--hidden': hideLabel,
+      })}
+    >
+      {renderLabel(label)}
+    </span>
     <div className="c-select-field__input">
       <select ref={ref} {...props}>
         {options &&

@@ -25,6 +25,10 @@ export type Disabled = boolean;
  * Temporary text that occupies the text input when it is empty
  */
 export type Placeholder = string;
+/**
+ * Hide label visually
+ */
+export type HideLabel = boolean;
 
 /**
  * Multiline text input, useful for cases where users have a sizable amount of text to enter.
@@ -35,5 +39,6 @@ export interface TextAreaProps {
   name?: Name;
   disabled?: Disabled;
   placeholder?: Placeholder;
+  hideLabel?: HideLabel;
   [k: string]: unknown;
 }

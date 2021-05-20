@@ -41,6 +41,11 @@
       "title": "Placeholder",
       "description": "Temporary text that occupies the text input when it is empty",
       "type": "string"
+    },
+    "hideLabel": {
+      "title": "Hide Label",
+      "description": "Hide label visually",
+      "type": "boolean"
     }
   }
 }

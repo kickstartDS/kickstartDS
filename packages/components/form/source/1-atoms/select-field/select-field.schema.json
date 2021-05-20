@@ -38,6 +38,9 @@
         },
         "required": ["label"]
       }
+    },
+    "hideLabel": {
+      "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/hideLabel"
     }
   }
 }

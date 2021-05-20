@@ -19,6 +19,9 @@
     },
     "placeholder": {
       "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/placeholder"
+    },
+    "hideLabel": {
+      "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/hideLabel"
     }
   }
 }

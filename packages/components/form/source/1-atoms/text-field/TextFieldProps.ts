@@ -41,6 +41,10 @@ export type InputMode =
   | 'email'
   | 'numeric'
   | 'decimal';
+/**
+ * Hide label visually
+ */
+export type HideLabel = boolean;
 
 /**
  * TextFields are text inputs that allow users to input custom text entries with a keyboard.
@@ -53,5 +57,6 @@ export interface TextFieldProps {
   placeholder?: Placeholder;
   type?: Type;
   inputMode?: InputMode;
+  hideLabel?: HideLabel;
   [k: string]: unknown;
 }

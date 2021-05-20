@@ -9,6 +9,10 @@
 
   &__label {
     padding: 0.25rem 0;
+
+    &--hidden {
+      @include bourbon.hide-visually;
+    }
   }
 
   &__input {

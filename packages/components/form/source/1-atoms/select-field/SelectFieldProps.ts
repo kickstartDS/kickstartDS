@@ -36,6 +36,10 @@ export type Options = {
   disabled?: Disabled1;
   [k: string]: unknown;
 }[];
+/**
+ * Hide label visually
+ */
+export type HideLabel = boolean;
 
 /**
  * Input that allow users to select a single option from a list of mutually exclusive options.
@@ -46,5 +50,6 @@ export interface SelectFieldProps {
   name?: Name;
   disabled?: Disabled;
   options?: Options;
+  hideLabel?: HideLabel;
   [k: string]: unknown;
 }
