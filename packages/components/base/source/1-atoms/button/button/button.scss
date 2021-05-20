@@ -98,26 +98,6 @@ $vars: meta.module-variables(button-vars);
     }
   }
 
-  &--small {
-    /* critical:start */
-    --c-button--padding: 0.4rem 1rem 0.45rem;
-
-    .icon {
-      @include bourbon.size(var(--line-height-s));
-    }
-    /* critical:end */
-  }
-
-  &--large {
-    /* critical:start */
-    --c-button--padding: 0.45rem 1.7rem 0.5rem;
-
-    .icon {
-      @include bourbon.size(var(--line-height-l));
-    }
-    /* critical:end */
-  }
-
   &--icon-animation {
     &:hover {
       .icon {
@@ -128,9 +108,9 @@ $vars: meta.module-variables(button-vars);
 
   .icon {
     /* critical:start */
-    @include bourbon.size(var(--line-height-m));
+    @include bourbon.size(var(--c-button--icon-size));
 
-    margin: 0 0.5rem;
+    margin: 0 0.5em;
     /* critical:end */
 
     &:first-child {

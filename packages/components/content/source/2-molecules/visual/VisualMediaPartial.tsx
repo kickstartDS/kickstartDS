@@ -16,7 +16,7 @@ const Image: FunctionComponent<IMedia> = ({ image = {} }) => {
     <picture
       className={classnames(
         'c-visual__image',
-        indent !== 'none' && `c-visual__image--indent-${indent}`
+        indent && indent !== 'none' && `c-visual__image--indent-${indent}`
       )}
     >
       {slide && !slide.first ? (

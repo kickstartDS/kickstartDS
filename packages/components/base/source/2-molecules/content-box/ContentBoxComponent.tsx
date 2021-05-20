@@ -38,7 +38,9 @@ const ContentBoxComponent: FunctionComponent<
   <div
     className={classnames(
       'c-content-box',
-      alignement !== 'left' && `c-content-box--align-${alignement}`,
+      alignement &&
+        alignement !== 'left' &&
+        `c-content-box--align-${alignement}`,
       className
     )}
     {...props}
