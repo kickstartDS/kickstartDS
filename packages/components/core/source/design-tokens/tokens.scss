@@ -36,7 +36,8 @@
   @include font.render;
 
   // Global Tokens
-  --g-header-height: 0;
+  /* stylelint-disable-next-line length-zero-no-unit */
+  --g-header-height: 0px;
 
   --g-content-width-default: 62rem;
   --g-content-width-narrow: 46.5rem;
