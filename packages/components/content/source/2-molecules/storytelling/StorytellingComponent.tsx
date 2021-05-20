@@ -85,14 +85,19 @@ const StorytellingMixin: FunctionComponent<
     <div
       className={classnames(
         'c-storytelling__box',
-        box.vAlign !== 'center' && `c-storytelling__box--${box.vAlign}`,
-        box.hAlign !== 'center' && `c-storytelling__box--${box.hAlign}`
+        box.vAlign &&
+          box.vAlign !== 'center' &&
+          `c-storytelling__box--${box.vAlign}`,
+        box.hAlign &&
+          box.hAlign !== 'center' &&
+          `c-storytelling__box--${box.hAlign}`
       )}
     >
       <div
         className={classnames(
           'c-storytelling__box__content',
-          box.textAlign !== 'left' &&
+          box.textAlign &&
+            box.textAlign !== 'left' &&
             `c-storytelling__box__content--${box.textAlign}`
         )}
         style={{ color: box.textColor }}
