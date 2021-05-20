@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json",
+  "title": "Input",
+  "definitions": {
+    "label": {
+      "title": "Label",
+      "description": "The label for the element",
+      "type": "string",
+      "default": "Est dolore a debitis"
+    },
+    "selected": {
+      "title": "Selected",
+      "description": "Whether the element should be selected",
+      "type": "boolean",
+      "default": false
+    },
+    "value": {
+      "title": "Value",
+      "description": "The value of the input element, used when submitting an HTML form",
+      "type": "string"
+    },
+    "name": {
+      "title": "Name",
+      "description": "The name of the input element, used when submitting an HTML form",
+      "type": "string"
+    },
+    "required": {
+      "title": "Required",
+      "description": "Whether user input is required on the input before form submission",
+      "type": "boolean",
+      "default": false
+    },
+    "disabled": {
+      "title": "Disabled",
+      "description": "Whether the input is disabled",
+      "type": "boolean",
+      "default": false
+    },
+    "placeholder": {
+      "title": "Placeholder",
+      "description": "Temporary text that occupies the text input when it is empty",
+      "type": "string"
+    },
+    "hideLabel": {
+      "title": "Hide Label",
+      "description": "Hide label visually",
+      "type": "boolean"
+    }
+  }
+}

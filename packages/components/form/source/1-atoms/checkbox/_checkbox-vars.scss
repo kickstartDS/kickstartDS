@@ -1,0 +1,8 @@
+$name-: 'c-checkbox';
+
+$checkmark: (
+  '.c-checkbox': (
+    width: 2px,
+    color: var(--color-white),
+  ),
+) !default;

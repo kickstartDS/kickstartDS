@@ -1,0 +1,50 @@
+$name-: 'g-input';
+
+$host: (
+  ':root': (
+    border: 1px solid var(--color-grey-2),
+    border-radius: 0.2rem,
+    background: var(--color-white),
+    background-disabled: var(--color-black-alpha-1),
+    color: var(--color-black),
+  ),
+) !default;
+
+$focus: (
+  ':root': (
+    border-color: var(--color-primary),
+  ),
+) !default;
+
+$box: (
+  ':root': (
+    size: 1rem,
+    border: 1px solid var(--color-primary),
+    background: var(--color-white),
+  ),
+  '.c-checkbox': (
+    border-radius: 0.2rem,
+  ),
+  '.c-radio': (
+    border-radius: 50%,
+  ),
+) !default;
+
+$box-checked: (
+  ':root': (
+    background: var(--color-primary),
+  ),
+) !default;
+
+$group: (
+  ':root': (
+    horizontal-gutter: 0.75rem,
+    vertical-gutter: 0.125rem,
+  ),
+) !default;
+
+$group-label: (
+  ':root': (
+    padding: 0.25rem 0,
+  ),
+) !default;
