@@ -46,6 +46,11 @@
       "title": "Hide Label",
       "description": "Hide label visually",
       "type": "boolean"
+    },
+    "icon": {
+      "title": "Icon",
+      "description": "Decoration Icon",
+      "type": "string"
     }
   }
 }

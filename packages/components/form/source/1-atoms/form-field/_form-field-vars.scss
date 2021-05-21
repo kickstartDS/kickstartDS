@@ -1,0 +1,30 @@
+$name-: 'c-form-field';
+
+$host: (
+  '.c-form-field': (
+    border: 1px solid var(--color-grey-2),
+    border-radius: 0.2rem,
+    background: var(--color-white),
+    background-disabled: var(--color-black-alpha-1),
+    color: var(--color-black),
+  ),
+) !default;
+
+$hover: (
+  '.c-form-field': (
+    border-color: var(--color-grey-3),
+  ),
+) !default;
+
+$focus: (
+  '.c-form-field': (
+    border-color: var(--color-primary),
+  ),
+) !default;
+
+$icon: (
+  '.c-form-field': (
+    size: calc(var(--line-height-m) * 0.75),
+    color: var(--color-black-alpha-7),
+  ),
+) !default;
