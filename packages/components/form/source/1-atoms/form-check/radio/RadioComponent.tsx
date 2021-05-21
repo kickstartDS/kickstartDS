@@ -23,6 +23,7 @@ export const RadioComponent: ForwardRefRenderFunction<
     renderLabel = defaultRenderFn,
     invalid,
     invalidMessage,
+    hint,
     className,
     ...props
   },
@@ -41,9 +42,12 @@ export const RadioComponent: ForwardRefRenderFunction<
       <span className="c-form-check__box"></span>
       <span className="c-form-check__label">{renderLabel(label)}</span>
     </div>
+
     {invalid && invalidMessage && (
       <p className="c-form-check__invalid-message">{invalidMessage}</p>
     )}
+
+    {hint && <p className="c-form-check__hint">{hint}</p>}
   </label>
 );
 

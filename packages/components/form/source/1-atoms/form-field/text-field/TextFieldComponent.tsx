@@ -26,6 +26,7 @@ const TextFieldComponent: ForwardRefRenderFunction<
     renderLabel = defaultRenderFn,
     invalid,
     invalidMessage,
+    hint,
     icon,
     ...props
   },
@@ -50,9 +51,12 @@ const TextFieldComponent: ForwardRefRenderFunction<
         {...props}
       />
     </div>
+
     {invalid && invalidMessage && (
       <p className="c-form-field__invalid-message">{invalidMessage}</p>
     )}
+
+    {hint && <p className="c-form-field__hint">{hint}</p>}
   </label>
 );
 

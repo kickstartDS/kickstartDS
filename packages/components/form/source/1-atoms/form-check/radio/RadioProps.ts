@@ -21,6 +21,10 @@ export type Invalid = boolean;
  * Message to show if the input is invalid
  */
 export type InvalidMessage = string;
+/**
+ * Help text that gives more context about what a user needs to input
+ */
+export type HintMessage = string;
 
 /**
  * Radio buttons allow users to select a single option from a list of mutually exclusive options.
@@ -30,5 +34,6 @@ export interface RadioButtonProps {
   disabled?: Disabled;
   invalid?: Invalid;
   invalidMessage?: InvalidMessage;
+  hint?: HintMessage;
   [k: string]: unknown;
 }

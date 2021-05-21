@@ -103,4 +103,9 @@ $vars: meta.module-variables(form-check-vars);
     background: var(--color-error);
     border-radius: var(--c-form-field--border-radius);
   }
+
+  &__hint {
+    margin: 0.25rem 0 0;
+    color: var(--color-black-alpha-7);
+  }
 }

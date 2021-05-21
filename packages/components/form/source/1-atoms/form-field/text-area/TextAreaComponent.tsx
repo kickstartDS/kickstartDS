@@ -27,6 +27,7 @@ const TextAreaComponent: ForwardRefRenderFunction<
     icon,
     invalid,
     invalidMessage,
+    hint,
     ...props
   },
   ref
@@ -51,9 +52,12 @@ const TextAreaComponent: ForwardRefRenderFunction<
         {value}
       </textarea>
     </div>
+
     {invalid && invalidMessage && (
       <p className="c-form-field__invalid-message">{invalidMessage}</p>
     )}
+
+    {hint && <p className="c-form-field__hint">{hint}</p>}
   </label>
 );
 

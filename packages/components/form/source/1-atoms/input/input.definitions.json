@@ -61,6 +61,11 @@
       "title": "Invalid message",
       "description": "Message to show if the input is invalid",
       "type": "string"
+    },
+    "hint": {
+      "title": "Hint message",
+      "description": "Help text that gives more context about what a user needs to input",
+      "type": "string"
     }
   }
 }

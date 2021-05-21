@@ -81,13 +81,16 @@ $vars: meta.module-variables(form-field-vars);
   }
 
   &__invalid-message {
-    position: relative;
-    top: calc(var(--c-form-field--border-radius) * -1);
-    margin: 0;
-    padding: 0 0.5rem 0.125rem;
+    margin: calc(var(--c-form-field--border-radius) * -1) 0 0;
+    padding: var(--c-form-field--border-radius) 0.5rem 0.125rem;
     color: var(--color-white);
     background: var(--color-error);
     border-bottom-left-radius: var(--c-form-field--border-radius);
     border-bottom-right-radius: var(--c-form-field--border-radius);
+  }
+
+  &__hint {
+    margin: 0.25rem 0 0;
+    color: var(--color-black-alpha-7);
   }
 }

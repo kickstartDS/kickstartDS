@@ -41,6 +41,10 @@ export type Invalid = boolean;
  * Message to show if the input is invalid
  */
 export type InvalidMessage = string;
+/**
+ * Help text that gives more context about what a user needs to input
+ */
+export type HintMessage = string;
 
 /**
  * Multiline text input, useful for cases where users have a sizable amount of text to enter.
@@ -55,5 +59,6 @@ export interface TextAreaProps {
   icon?: Icon;
   invalid?: Invalid;
   invalidMessage?: InvalidMessage;
+  hint?: HintMessage;
   [k: string]: unknown;
 }

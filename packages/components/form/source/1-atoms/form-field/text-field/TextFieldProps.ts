@@ -57,6 +57,10 @@ export type Invalid = boolean;
  * Message to show if the input is invalid
  */
 export type InvalidMessage = string;
+/**
+ * Help text that gives more context about what a user needs to input
+ */
+export type HintMessage = string;
 
 /**
  * TextFields are text inputs that allow users to input custom text entries with a keyboard.
@@ -73,5 +77,6 @@ export interface TextFieldProps {
   icon?: Icon;
   invalid?: Invalid;
   invalidMessage?: InvalidMessage;
+  hint?: HintMessage;
   [k: string]: unknown;
 }
