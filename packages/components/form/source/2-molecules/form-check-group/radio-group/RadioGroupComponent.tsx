@@ -23,16 +23,26 @@ const RadioGroupComponent: FunctionComponent<
   label,
   name,
   renderLabel = defaultRenderFn,
+  invalid,
+  invalidMessage,
   children,
   className,
   ...props
 }) => (
-  <div className={classnames('c-form-check-group', className)} {...props}>
+  <div
+    className={classnames('c-form-check-group', className, {
+      'c-form-check-group--is-invalid': invalid,
+    })}
+    {...props}
+  >
     <span className="c-form-check-group__label">{renderLabel(label)}</span>
     <div className="c-form-check-group__group" role="presentation">
       {Children.map(
         children,
         (child) => isValidElement(child) && cloneElement(child, { name })
+      )}
+      {invalid && invalidMessage && (
+        <p className="c-form-check__invalid-message">{invalidMessage}</p>
       )}
     </div>
   </div>

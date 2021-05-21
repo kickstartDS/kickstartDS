@@ -24,6 +24,7 @@ const SelectFieldComponent: ForwardRefRenderFunction<
     hideLabel,
     renderLabel = defaultRenderFn,
     invalid,
+    invalidMessage,
     options,
     ...props
   },
@@ -59,6 +60,9 @@ const SelectFieldComponent: ForwardRefRenderFunction<
           ))}
       </select>
     </div>
+    {invalid && invalidMessage && (
+      <p className="c-form-field__invalid-message">{invalidMessage}</p>
+    )}
   </label>
 );
 

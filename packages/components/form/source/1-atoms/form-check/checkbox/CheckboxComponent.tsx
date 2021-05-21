@@ -18,20 +18,32 @@ const CheckboxComponent: ForwardRefRenderFunction<
   HTMLInputElement,
   CheckboxProps & RenderFunctions & HTMLAttributes<HTMLInputElement>
 > = (
-  { label, renderLabel = defaultRenderFn, invalid, className, ...props },
+  {
+    label,
+    renderLabel = defaultRenderFn,
+    invalid,
+    invalidMessage,
+    className,
+    ...props
+  },
   ref
 ) => (
   <label className="c-form-check c-form-check--checkbox">
-    <input
-      className={classnames('c-form-check__input', className, {
-        'c-form-check__input--is-invalid': invalid,
-      })}
-      type="checkbox"
-      ref={ref}
-      {...props}
-    />
-    <span className="c-form-check__box"></span>
-    <span className="c-form-check__label">{renderLabel(label)}</span>
+    <div className="c-form-check__field">
+      <input
+        className={classnames('c-form-check__input', className, {
+          'c-form-check__input--is-invalid': invalid,
+        })}
+        type="checkbox"
+        ref={ref}
+        {...props}
+      />
+      <span className="c-form-check__box"></span>
+      <span className="c-form-check__label">{renderLabel(label)}</span>
+    </div>
+    {invalid && invalidMessage && (
+      <p className="c-form-check__invalid-message">{invalidMessage}</p>
+    )}
   </label>
 );
 

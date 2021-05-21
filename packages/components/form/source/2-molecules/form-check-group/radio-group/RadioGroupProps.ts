@@ -13,6 +13,14 @@ export type Label = string;
  * The name of the input element, used when submitting an HTML form
  */
 export type Name = string;
+/**
+ * Wheter the input is invalid
+ */
+export type Invalid = boolean;
+/**
+ * Message to show if the input is invalid
+ */
+export type InvalidMessage = string;
 
 /**
  * A Radio Group allows users to select one item from a list of choices.
@@ -20,5 +28,7 @@ export type Name = string;
 export interface RadioGroupProps {
   label: Label;
   name?: Name;
+  invalid?: Invalid;
+  invalidMessage?: InvalidMessage;
   [k: string]: unknown;
 }

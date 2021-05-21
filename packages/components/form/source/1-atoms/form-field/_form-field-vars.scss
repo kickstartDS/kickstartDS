@@ -1,10 +1,10 @@
 $name-: 'c-form-field';
 
 $host: (
-  '.c-form-field': (
+  ':root': (
     border: 1px solid,
     border-color: var(--color-grey-2),
-    border-radius: 0.2rem,
+    border-radius: 3px,
     background: var(--color-white),
     background-disabled: var(--color-black-alpha-1),
     color: var(--color-black),
@@ -12,20 +12,20 @@ $host: (
 ) !default;
 
 $hover: (
-  '.c-form-field': (
+  ':root': (
     border-color: var(--color-grey-3),
   ),
 ) !default;
 
 $focus: (
-  '.c-form-field': (
+  ':root': (
     border-color: var(--color-primary),
     shadow: 0 0 4px -1px,
   ),
 ) !default;
 
 $icon: (
-  '.c-form-field': (
+  ':root': (
     size: calc(var(--line-height-m) * 0.75),
     color: var(--color-black-alpha-7),
   ),

@@ -17,6 +17,10 @@ export type Disabled = boolean;
  * Wheter the input is invalid
  */
 export type Invalid = boolean;
+/**
+ * Message to show if the input is invalid
+ */
+export type InvalidMessage = string;
 
 /**
  * Radio buttons allow users to select a single option from a list of mutually exclusive options.
@@ -25,5 +29,6 @@ export interface RadioButtonProps {
   label: Label;
   disabled?: Disabled;
   invalid?: Invalid;
+  invalidMessage?: InvalidMessage;
   [k: string]: unknown;
 }

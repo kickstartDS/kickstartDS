@@ -56,6 +56,11 @@
       "title": "Invalid",
       "description": "Wheter the input is invalid",
       "type": "boolean"
+    },
+    "invalidMessage": {
+      "title": "Invalid message",
+      "description": "Message to show if the input is invalid",
+      "type": "string"
     }
   }
 }

@@ -37,6 +37,10 @@ export type Icon = string;
  * Wheter the input is invalid
  */
 export type Invalid = boolean;
+/**
+ * Message to show if the input is invalid
+ */
+export type InvalidMessage = string;
 
 /**
  * Multiline text input, useful for cases where users have a sizable amount of text to enter.
@@ -50,5 +54,6 @@ export interface TextAreaProps {
   hideLabel?: HideLabel;
   icon?: Icon;
   invalid?: Invalid;
+  invalidMessage?: InvalidMessage;
   [k: string]: unknown;
 }

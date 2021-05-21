@@ -6,9 +6,10 @@ $vars: meta.module-variables(form-check-group-vars);
 @include custom-properties.styles($vars);
 
 .c-form-check-group {
+  font: var(--font-ui-s);
+
   &__label {
     display: inline-block;
-    font: var(--font-ui-s);
     padding: var(--c-form-check-group-label--padding);
     cursor: default;
   }
@@ -17,12 +18,13 @@ $vars: meta.module-variables(form-check-group-vars);
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
+    align-items: flex-start;
     margin: calc(var(--c-form-check-group--vertical-gutter) * -1)
       calc(var(--c-form-check-group--horizontal-gutter) * -1);
 
     > * {
       margin: var(--c-form-check-group--vertical-gutter)
-        var(--c-form-check-group--horizontal-gutter);
+        var(--c-form-check-group--horizontal-gutter) !important;
     }
   }
 }

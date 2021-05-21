@@ -44,6 +44,10 @@ export type HideLabel = boolean;
  * Wheter the input is invalid
  */
 export type Invalid = boolean;
+/**
+ * Message to show if the input is invalid
+ */
+export type InvalidMessage = string;
 
 /**
  * Input that allow users to select a single option from a list of mutually exclusive options.
@@ -56,5 +60,6 @@ export interface SelectFieldProps {
   options?: Options;
   hideLabel?: HideLabel;
   invalid?: Invalid;
+  invalidMessage?: InvalidMessage;
   [k: string]: unknown;
 }

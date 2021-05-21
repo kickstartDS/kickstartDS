@@ -53,6 +53,10 @@ export type Icon = string;
  * Wheter the input is invalid
  */
 export type Invalid = boolean;
+/**
+ * Message to show if the input is invalid
+ */
+export type InvalidMessage = string;
 
 /**
  * TextFields are text inputs that allow users to input custom text entries with a keyboard.
@@ -68,5 +72,6 @@ export interface TextFieldProps {
   hideLabel?: HideLabel;
   icon?: Icon;
   invalid?: Invalid;
+  invalidMessage?: InvalidMessage;
   [k: string]: unknown;
 }

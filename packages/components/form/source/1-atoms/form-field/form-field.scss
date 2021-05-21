@@ -8,6 +8,8 @@ $vars: meta.module-variables(form-field-vars);
 @include custom-properties.styles($vars);
 
 .c-form-field {
+  $input-padding: 0.4rem 0.75rem 0.35rem;
+
   @include input-field.wrapper;
   flex-direction: column;
 
@@ -29,7 +31,7 @@ $vars: meta.module-variables(form-field-vars);
       position: absolute;
       right: 0;
       bottom: calc((var(--line-height-m) - var(--c-form-field_icon--size)) / 2);
-      margin: 0.4rem 0.75rem 0.35rem 0;
+      margin: $input-padding;
       color: var(--c-form-field_icon--color);
 
       + .c-form-field__input {
@@ -39,7 +41,7 @@ $vars: meta.module-variables(form-field-vars);
   }
 
   &__input {
-    padding: 0.4rem 0.75rem 0.35rem;
+    padding: $input-padding;
     border: var(--c-form-field--border);
     border-color: var(--c-form-field--border-color);
     border-radius: var(--c-form-field--border-radius);
@@ -71,9 +73,21 @@ $vars: meta.module-variables(form-field-vars);
     }
 
     &--is-invalid {
+      --c-form-field--color: var(--color-error);
       --c-form-field--border-color: var(--color-error);
       --c-form-field_hover--border-color: var(--color-error);
       --c-form-field_focus--border-color: var(--color-error);
     }
+  }
+
+  &__invalid-message {
+    position: relative;
+    top: calc(var(--c-form-field--border-radius) * -1);
+    margin: 0;
+    padding: 0 0.5rem 0.125rem;
+    color: var(--color-white);
+    background: var(--color-error);
+    border-bottom-left-radius: var(--c-form-field--border-radius);
+    border-bottom-right-radius: var(--c-form-field--border-radius);
   }
 }
