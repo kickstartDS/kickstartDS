@@ -17,10 +17,15 @@ interface RenderFunctions {
 const CheckboxComponent: ForwardRefRenderFunction<
   HTMLInputElement,
   CheckboxProps & RenderFunctions & HTMLAttributes<HTMLInputElement>
-> = ({ label, renderLabel = defaultRenderFn, className, ...props }, ref) => (
+> = (
+  { label, renderLabel = defaultRenderFn, invalid, className, ...props },
+  ref
+) => (
   <label className="c-form-check c-form-check--checkbox">
     <input
-      className={classnames('c-form-check__input', className)}
+      className={classnames('c-form-check__input', className, {
+        'c-form-check__input--is-invalid': invalid,
+      })}
       type="checkbox"
       ref={ref}
       {...props}

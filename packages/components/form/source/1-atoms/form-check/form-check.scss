@@ -35,9 +35,13 @@ $vars: meta.module-variables(form-check-vars);
       border-color: var(--c-form-check_box-hover--border-color);
     }
 
-    :focus-visible ~ & {
-      box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
+    :focus ~ & {
       border-color: var(--c-form-check_box-focus--border-color);
+    }
+
+    :focus-visible ~ & {
+      box-shadow: var(--c-form-check_box-focus--shadow)
+        var(--c-form-check_box-focus--border-color);
     }
 
     :checked ~ & {
@@ -69,6 +73,14 @@ $vars: meta.module-variables(form-check-vars);
         background: var(--c-form-check_checkmark--color);
         border-radius: 50%;
       }
+    }
+
+    .c-form-check__input--is-invalid ~ & {
+      --c-form-check_box--border-color: var(--color-error);
+      --c-form-check_box-hover--border-color: var(--color-error);
+      --c-form-check_box-checked--border-color: var(--color-error);
+      --c-form-check_box-checked--background: var(--color-error);
+      --c-form-check_box-focus--border-color: var(--color-error);
     }
   }
 

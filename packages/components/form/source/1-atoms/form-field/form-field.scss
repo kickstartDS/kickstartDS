@@ -41,6 +41,7 @@ $vars: meta.module-variables(form-field-vars);
   &__input {
     padding: 0.4rem 0.75rem 0.35rem;
     border: var(--c-form-field--border);
+    border-color: var(--c-form-field--border-color);
     border-radius: var(--c-form-field--border-radius);
     outline: 0;
     appearance: none;
@@ -62,6 +63,17 @@ $vars: meta.module-variables(form-field-vars);
 
     &:focus {
       border-color: var(--c-form-field_focus--border-color);
+    }
+
+    &:focus-visible {
+      box-shadow: var(--c-form-field_focus--shadow)
+        var(--c-form-field_focus--border-color);
+    }
+
+    &--is-invalid {
+      --c-form-field--border-color: var(--color-error);
+      --c-form-field_hover--border-color: var(--color-error);
+      --c-form-field_focus--border-color: var(--color-error);
     }
   }
 }

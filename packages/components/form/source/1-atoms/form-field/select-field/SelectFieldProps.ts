@@ -40,6 +40,10 @@ export type Options = {
  * Hide label visually
  */
 export type HideLabel = boolean;
+/**
+ * Wheter the input is invalid
+ */
+export type Invalid = boolean;
 
 /**
  * Input that allow users to select a single option from a list of mutually exclusive options.
@@ -51,5 +55,6 @@ export interface SelectFieldProps {
   disabled?: Disabled;
   options?: Options;
   hideLabel?: HideLabel;
+  invalid?: Invalid;
   [k: string]: unknown;
 }

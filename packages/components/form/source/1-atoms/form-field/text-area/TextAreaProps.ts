@@ -33,6 +33,10 @@ export type HideLabel = boolean;
  * Decoration Icon
  */
 export type Icon = string;
+/**
+ * Wheter the input is invalid
+ */
+export type Invalid = boolean;
 
 /**
  * Multiline text input, useful for cases where users have a sizable amount of text to enter.
@@ -45,5 +49,6 @@ export interface TextAreaProps {
   placeholder?: Placeholder;
   hideLabel?: HideLabel;
   icon?: Icon;
+  invalid?: Invalid;
   [k: string]: unknown;
 }

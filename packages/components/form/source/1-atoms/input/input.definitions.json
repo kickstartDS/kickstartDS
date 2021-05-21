@@ -51,6 +51,11 @@
       "title": "Icon",
       "description": "Decoration Icon",
       "type": "string"
+    },
+    "invalid": {
+      "title": "Invalid",
+      "description": "Wheter the input is invalid",
+      "type": "boolean"
     }
   }
 }

@@ -49,6 +49,10 @@ export type HideLabel = boolean;
  * Decoration Icon
  */
 export type Icon = string;
+/**
+ * Wheter the input is invalid
+ */
+export type Invalid = boolean;
 
 /**
  * TextFields are text inputs that allow users to input custom text entries with a keyboard.
@@ -63,5 +67,6 @@ export interface TextFieldProps {
   inputMode?: InputMode;
   hideLabel?: HideLabel;
   icon?: Icon;
+  invalid?: Invalid;
   [k: string]: unknown;
 }

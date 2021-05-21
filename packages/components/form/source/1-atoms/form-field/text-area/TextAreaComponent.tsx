@@ -19,7 +19,15 @@ const TextAreaComponent: ForwardRefRenderFunction<
   HTMLTextAreaElement,
   TextAreaProps & RenderFunctions & HTMLAttributes<HTMLTextAreaElement>
 > = (
-  { value, label, hideLabel, renderLabel = defaultRenderFn, icon, ...props },
+  {
+    value,
+    label,
+    hideLabel,
+    renderLabel = defaultRenderFn,
+    invalid,
+    icon,
+    ...props
+  },
   ref
 ) => (
   <label className="c-form-field">
@@ -32,7 +40,13 @@ const TextAreaComponent: ForwardRefRenderFunction<
     </span>
     <div className="c-form-field__field">
       {icon && <Icon icon={icon} aria-hidden="true" focusable="false" />}
-      <textarea className="c-form-field__input" ref={ref} {...props}>
+      <textarea
+        className={classnames('c-form-field__input', {
+          'c-form-field__input--is-invalid': invalid,
+        })}
+        ref={ref}
+        {...props}
+      >
         {value}
       </textarea>
     </div>

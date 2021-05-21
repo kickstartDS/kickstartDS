@@ -41,6 +41,9 @@
     },
     "hideLabel": {
       "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/hideLabel"
+    },
+    "invalid": {
+      "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/invalid"
     }
   }
 }

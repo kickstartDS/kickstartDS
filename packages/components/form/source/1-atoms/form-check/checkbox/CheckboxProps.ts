@@ -13,6 +13,10 @@ export type Label = string;
  * Whether the input is disabled
  */
 export type Disabled = boolean;
+/**
+ * Wheter the input is invalid
+ */
+export type Invalid = boolean;
 
 /**
  * Checkboxes allow users to select multiple items from a list of individual items, or to mark one individual item as selected.
@@ -20,5 +24,6 @@ export type Disabled = boolean;
 export interface CheckboxProps {
   label: Label;
   disabled?: Disabled;
+  invalid?: Invalid;
   [k: string]: unknown;
 }

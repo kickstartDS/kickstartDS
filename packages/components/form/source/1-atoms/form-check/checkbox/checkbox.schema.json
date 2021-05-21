@@ -10,6 +10,9 @@
     },
     "disabled": {
       "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/disabled"
+    },
+    "invalid": {
+      "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/invalid"
     }
   },
   "required": ["label"]

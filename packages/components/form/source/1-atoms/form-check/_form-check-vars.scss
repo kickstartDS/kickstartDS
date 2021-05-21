@@ -24,6 +24,7 @@ $box-hover: (
 $box-focus: (
   '.c-form-check': (
     border-color: var(--color-primary),
+    shadow: 0 0 4px 0,
   ),
 ) !default;
 

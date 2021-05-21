@@ -19,7 +19,14 @@ const SelectFieldComponent: ForwardRefRenderFunction<
   HTMLSelectElement,
   SelectFieldProps & RenderFunctions & HTMLAttributes<HTMLSelectElement>
 > = (
-  { label, hideLabel, renderLabel = defaultRenderFn, options, ...props },
+  {
+    label,
+    hideLabel,
+    renderLabel = defaultRenderFn,
+    invalid,
+    options,
+    ...props
+  },
   ref
 ) => (
   <label className="c-form-field">
@@ -32,7 +39,13 @@ const SelectFieldComponent: ForwardRefRenderFunction<
     </span>
     <div className="c-form-field__field">
       <Icon icon="chevron-down" aria-hidden="true" focusable="false" />
-      <select className="c-form-field__input" ref={ref} {...props}>
+      <select
+        className={classnames('c-form-field__input', {
+          'c-form-field__input--is-invalid': invalid,
+        })}
+        ref={ref}
+        {...props}
+      >
         {options &&
           options.map((option, i) => (
             <option
