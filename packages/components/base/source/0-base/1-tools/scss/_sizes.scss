@@ -1,6 +1,7 @@
+@use "sass:math";
+@use 'sass:meta';
 @use '@kickstartds/core/source/core/breakpoint';
 @use 'settings/global';
-@use 'sass:meta';
 
 /// Global Padding
 
@@ -111,14 +112,14 @@
   padding-top: if(
     meta.global-variable-exists('vertical-padding-small', 'global'),
     global.$vertical-padding-small,
-    global.$vertical-padding / 4
+    math.div(global.$vertical-padding, 4)
   );
 
   @include breakpoint.media('≥s') {
     padding-top: if(
       meta.global-variable-exists('vertical-padding-small-s', 'global'),
       global.$vertical-padding-small-s,
-      global.$vertical-padding-s / 3
+      math.div(global.$vertical-padding-s, 3)
     );
   }
 
@@ -136,14 +137,14 @@
   padding-bottom: if(
     meta.global-variable-exists('vertical-padding-small', 'global'),
     global.$vertical-padding-small,
-    global.$vertical-padding / 4
+    math.div(global.$vertical-padding, 4)
   );
 
   @include breakpoint.media('≥s') {
     padding-bottom: if(
       meta.global-variable-exists('vertical-padding-small-s', 'global'),
       global.$vertical-padding-small-s,
-      global.$vertical-padding-s / 3
+      math.div(global.$vertical-padding-s, 3)
     );
   }
 

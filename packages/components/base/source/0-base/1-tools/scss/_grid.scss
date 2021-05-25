@@ -1,3 +1,4 @@
+@use "sass:math";
 @use 'settings/global';
 
 $grid__columns: 12;
@@ -17,10 +18,10 @@ $grid__columns: 12;
     transparent,
     transparent $gutter,
     $color $gutter,
-    $color percentage(1 / $grid__columns)
+    $color percentage(math.div(1, $grid__columns))
   );
 
-  background-position-x: $gutter / -2;
+  background-position-x: math.div($gutter, -2);
   background-image: repeating-linear-gradient($gradient);
 }
 
@@ -29,12 +30,12 @@ $grid__columns: 12;
   // @see https://www.rawkblog.com/2019/01/flexbox-gutters-negative-margins-solved/
 
   /* critical:start */
-  margin: $gutter/-2 0 $gutter/-2 $gutter * -1;
+  margin: math.div($gutter, -2) 0 math.div($gutter, -2) $gutter * -1;
   /* critical:end */
 
   > * {
     /* critical:start */
-    padding: $gutter/2 0 $gutter/2 $gutter;
+    padding: math.div($gutter, 2) 0 math.div($gutter, 2) $gutter;
     /* critical:end */
   }
 }
@@ -63,14 +64,14 @@ $grid__columns: 12;
 
 @mixin grid-cols-per-row($cols) {
   > * {
-    @include grid-cell(percentage(1 / $cols));
+    @include grid-cell(percentage(math.div(1, $cols)));
   }
 }
 
 /// column/cell mixins
 
 @mixin grid-columns($cols) {
-  @include grid-cell(percentage($cols / $grid__columns));
+  @include grid-cell(percentage(math.div($cols, $grid__columns)));
 }
 
 @mixin grid-cell($width) {
@@ -81,7 +82,7 @@ $grid__columns: 12;
 }
 
 @mixin grid-push($cols) {
-  margin-left: percentage($cols / $grid__columns);
+  margin-left: percentage(math.div($cols, $grid__columns));
 }
 
 /// @see http://www.heydonworks.com/article/the-flexbox-holy-albatross
@@ -96,7 +97,7 @@ $grid__columns: 12;
 
   @if $min-width {
     @if unitless($min-width) {
-      $min-width: percentage($min-width / $grid__columns);
+      $min-width: percentage(math.div($min-width, $grid__columns));
     }
 
     min-width: $min-width;
@@ -104,7 +105,7 @@ $grid__columns: 12;
 
   @if $max-width {
     @if unitless($max-width) {
-      $max-width: percentage($max-width / $grid__columns);
+      $max-width: percentage(math.div($max-width, $grid__columns));
     }
 
     @if $min-width and
