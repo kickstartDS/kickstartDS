@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://frontend.ruhmesmeile.com/form/atoms/radio.schema.json",
+  "title": "Radio Button",
+  "description": "Radio buttons allow users to select a single option from a list of mutually exclusive options.",
+  "type": "object",
+  "properties": {
+    "label": {
+      "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/label"
+    },
+    "disabled": {
+      "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/disabled"
+    },
+    "invalid": {
+      "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/invalid"
+    },
+    "invalidMessage": {
+      "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/invalidMessage"
+    },
+    "hint": {
+      "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/hint"
+    }
+  },
+  "required": ["label"]
+}

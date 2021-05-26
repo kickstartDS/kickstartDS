@@ -46,6 +46,26 @@
       "title": "Hide Label",
       "description": "Hide label visually",
       "type": "boolean"
+    },
+    "icon": {
+      "title": "Icon",
+      "description": "Decoration Icon",
+      "type": "string"
+    },
+    "invalid": {
+      "title": "Invalid",
+      "description": "Wheter the input is invalid",
+      "type": "boolean"
+    },
+    "invalidMessage": {
+      "title": "Invalid message",
+      "description": "Message to show if the input is invalid",
+      "type": "string"
+    },
+    "hint": {
+      "title": "Hint message",
+      "description": "Help text that gives more context about what a user needs to input",
+      "type": "string"
     }
   }
 }

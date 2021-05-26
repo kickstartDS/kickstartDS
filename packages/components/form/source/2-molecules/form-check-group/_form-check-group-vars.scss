@@ -1,0 +1,14 @@
+$name-: 'c-form-check-group';
+
+$host: (
+  '.c-form-check-group': (
+    horizontal-gutter: 0.75rem,
+    vertical-gutter: 0.125rem,
+  ),
+) !default;
+
+$label: (
+  '.c-form-check-group': (
+    padding: 0.25rem 0,
+  ),
+) !default;

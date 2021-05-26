@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://frontend.ruhmesmeile.com/form/atoms/text-field.schema.json",
+  "title": "Text Field",
+  "description": "TextFields are text inputs that allow users to input custom text entries with a keyboard.",
+  "type": "object",
+  "properties": {
+    "label": {
+      "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/label"
+    },
+    "value": {
+      "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/value"
+    },
+    "name": {
+      "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/name"
+    },
+    "disabled": {
+      "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/disabled"
+    },
+    "placeholder": {
+      "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/placeholder"
+    },
+    "type": {
+      "title": "Type",
+      "description": "The type of input to render",
+      "type": "string",
+      "enum": ["text", "search", "url", "tel", "email", "password"],
+      "default": "text"
+    },
+    "inputMode": {
+      "title": "Input Mode",
+      "description": "Hints at the type of data that might be entered by the user while editing the element or its contents",
+      "type": "string",
+      "enum": [
+        "none",
+        "text",
+        "search",
+        "url",
+        "tel",
+        "email",
+        "numeric",
+        "decimal"
+      ],
+      "default": "text"
+    },
+    "hideLabel": {
+      "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/hideLabel"
+    },
+    "icon": {
+      "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/icon"
+    },
+    "invalid": {
+      "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/invalid"
+    },
+    "invalidMessage": {
+      "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/invalidMessage"
+    },
+    "hint": {
+      "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/hint"
+    }
+  }
+}

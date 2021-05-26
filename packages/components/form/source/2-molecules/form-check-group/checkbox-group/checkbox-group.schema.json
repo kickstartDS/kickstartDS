@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://frontend.ruhmesmeile.com/form/molecules/checkbox-group.schema.json",
+  "title": "Checkbox Group",
+  "description": "A CheckboxGroup allows users to select one or more items from a list of choices.",
+  "type": "object",
+  "properties": {
+    "label": {
+      "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/label"
+    },
+    "name": {
+      "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/name"
+    },
+    "invalid": {
+      "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/invalid"
+    },
+    "invalidMessage": {
+      "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/invalidMessage"
+    },
+    "options": {
+      "title": "Options",
+      "type": "array",
+      "items": {
+        "title": "Checkbox",
+        "description": "Checkboxes allow users to select multiple items from a list of individual items, or to mark one individual item as selected.",
+        "type": "object",
+        "properties": {
+          "label": {
+            "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/label"
+          },
+          "disabled": {
+            "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/disabled"
+          },
+          "hint": {
+            "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/hint"
+          }
+        }
+      }
+    }
+  },
+  "required": ["label"]
+}
