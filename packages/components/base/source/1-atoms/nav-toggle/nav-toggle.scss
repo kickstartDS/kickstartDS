@@ -1,11 +1,12 @@
+@use "sass:math";
+@use 'sass:meta';
+@use 'bourbon/core/bourbon';
+@use '@kickstartds/core/source/core/breakpoint';
 @use '../../0-base/0-settings/selector';
 @use '../../0-base/1-tools/scss/helpers';
 @use '../../0-base/1-tools/scss/sizes';
-@use '@kickstartds/core/source/core/breakpoint';
-@use 'bourbon/core/bourbon';
 @use 'settings/base';
 @use 'settings/global';
-@use 'sass:meta';
 
 .nav-toggle {
   $ease: ease;
@@ -89,16 +90,16 @@
       /* critical:start */
       top: 6px;
       /* critical:end */
-      transition: top ($duration/2) $ease ($duration/2),
-        transform $ease ($duration/2);
+      transition: top math.div($duration, 2) $ease math.div($duration, 2),
+        transform $ease math.div($duration, 2);
     }
 
     &::after {
       /* critical:start */
       bottom: 6px;
       /* critical:end */
-      transition: bottom ($duration/2) $ease ($duration/2),
-        transform $ease ($duration/2);
+      transition: bottom math.div($duration, 2) $ease math.div($duration, 2),
+        transform $ease math.div($duration, 2);
     }
   }
 
@@ -110,15 +111,15 @@
 
       &::before {
         top: 17px;
-        transition: top $ease ($duration/2),
-          transform ($duration/2) $ease ($duration/2);
+        transition: top $ease math.div($duration, 2),
+          transform math.div($duration, 2) $ease math.div($duration, 2);
         transform: rotate(-45deg);
       }
 
       &::after {
         bottom: 16px;
-        transition: bottom $ease ($duration/2),
-          transform ($duration/2) $ease ($duration/2);
+        transition: bottom $ease math.div($duration, 2),
+          transform math.div($duration, 2) $ease math.div($duration, 2);
         transform: rotate(45deg);
       }
     }

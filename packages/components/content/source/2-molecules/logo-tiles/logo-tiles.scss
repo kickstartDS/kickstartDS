@@ -28,7 +28,7 @@ $vars: meta.module-variables(logo-tiles-vars);
     &::before {
       content: '';
       display: block;
-      padding-top: math.percentage(9/16);
+      padding-top: math.percentage(math.div(9, 16));
     }
   }
 
