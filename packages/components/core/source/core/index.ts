@@ -6,3 +6,4 @@ export { uid } from './component/uid.js';
 export { define } from './component/define.js';
 export { Component } from './component/Component.js';
 export * from './renderFunctions';
+export { events, lazyChildrenLoaded } from './lazysizes.js';

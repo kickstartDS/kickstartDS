@@ -1,5 +1,5 @@
 /* eslint-disable no-nested-ternary */
-const getArgsShared = (properties, group = 'general', subgroup) => {
+const getArgsShared = (properties = {}, group = 'general', subgroup) => {
   const argTypes = {};
   const defaultArgs = {};
 

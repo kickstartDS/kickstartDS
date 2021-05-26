@@ -1,9 +1,22 @@
-import { inBrowser } from '@kickstartds/core/lib/core';
+import 'lazysizes';
+import { inBrowser } from './domLoaded';
 
-export { default } from 'lazysizes';
+export const events = {
+  beforeunveil: 'core.lazysizes.beforeunveil',
+};
 
 if (inBrowser) {
   document.addEventListener('lazybeforeunveil', (event) => {
+    const componentName = event.target.dataset.component;
+    if (componentName) {
+      window.rm.radio.emit(
+        `${events.beforeunveil}.${componentName}`,
+        event.target
+      );
+    } else {
+      window.rm.radio.emit(events.beforeunveil, event.target);
+    }
+
     const bg = event.target.getAttribute('data-bg');
     if (bg) {
       event.target.style.backgroundImage = `url(${bg})`;

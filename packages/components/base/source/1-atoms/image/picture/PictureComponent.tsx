@@ -9,7 +9,6 @@ import {
 } from 'react';
 import classnames from 'classnames';
 import { PictureProps } from './PictureProps';
-import './Picture.js';
 
 type ImageProps = PictureProps &
   HTMLAttributes<HTMLImageElement> & {
