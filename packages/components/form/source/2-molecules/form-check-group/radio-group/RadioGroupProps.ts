@@ -21,6 +21,19 @@ export type Invalid = boolean;
  * Message to show if the input is invalid
  */
 export type InvalidMessage = string;
+/**
+ * The label for the element
+ */
+export type Label1 = string;
+/**
+ * Whether the input is disabled
+ */
+export type Disabled = boolean;
+/**
+ * Help text that gives more context about what a user needs to input
+ */
+export type HintMessage = string;
+export type Options = RadioButton[];
 
 /**
  * A Radio Group allows users to select one item from a list of choices.
@@ -30,5 +43,15 @@ export interface RadioGroupProps {
   name?: Name;
   invalid?: Invalid;
   invalidMessage?: InvalidMessage;
+  options?: Options;
+  [k: string]: unknown;
+}
+/**
+ * Radio buttons allow users to select a single option from a list of mutually exclusive options.
+ */
+export interface RadioButton {
+  label?: Label1;
+  disabled?: Disabled;
+  hint?: HintMessage;
   [k: string]: unknown;
 }

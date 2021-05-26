@@ -4,12 +4,10 @@ import {
   createContext,
   useContext,
   HTMLAttributes,
-  Children,
-  cloneElement,
-  isValidElement,
 } from 'react';
 import classnames from 'classnames';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
+import { Checkbox } from '../../../1-atoms/form-check/checkbox/CheckboxComponent';
 import { CheckboxGroupProps } from './CheckboxGroupProps';
 import '../form-check-group.scss';
 
@@ -25,7 +23,7 @@ const CheckboxGroupComponent: FunctionComponent<
   renderLabel = defaultRenderFn,
   invalid,
   invalidMessage,
-  children,
+  options,
   className,
   ...props
 }) => (
@@ -37,10 +35,11 @@ const CheckboxGroupComponent: FunctionComponent<
   >
     <span className="c-form-check-group__label">{renderLabel(label)}</span>
     <div className="c-form-check-group__group" role="presentation">
-      {Children.map(
-        children,
-        (child) => isValidElement(child) && cloneElement(child, { name })
-      )}
+      {options &&
+        options.length &&
+        options.map((option, index) => (
+          <Checkbox {...option} name={name} key={`checkbox-${index}`} />
+        ))}
       {invalid && invalidMessage && (
         <p className="c-form-check__invalid-message">{invalidMessage}</p>
       )}

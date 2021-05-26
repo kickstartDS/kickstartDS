@@ -4,12 +4,10 @@ import {
   createContext,
   useContext,
   HTMLAttributes,
-  Children,
-  cloneElement,
-  isValidElement,
 } from 'react';
 import classnames from 'classnames';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
+import { Radio } from '../../../1-atoms/form-check/radio/RadioComponent';
 import { RadioGroupProps } from './RadioGroupProps';
 import '../form-check-group.scss';
 
@@ -25,7 +23,7 @@ const RadioGroupComponent: FunctionComponent<
   renderLabel = defaultRenderFn,
   invalid,
   invalidMessage,
-  children,
+  options,
   className,
   ...props
 }) => (
@@ -37,10 +35,11 @@ const RadioGroupComponent: FunctionComponent<
   >
     <span className="c-form-check-group__label">{renderLabel(label)}</span>
     <div className="c-form-check-group__group" role="presentation">
-      {Children.map(
-        children,
-        (child) => isValidElement(child) && cloneElement(child, { name })
-      )}
+      {options &&
+        options.length &&
+        options.map((option, index) => (
+          <Radio {...option} name={name} key={`radio-${index}`} />
+        ))}
       {invalid && invalidMessage && (
         <p className="c-form-check__invalid-message">{invalidMessage}</p>
       )}

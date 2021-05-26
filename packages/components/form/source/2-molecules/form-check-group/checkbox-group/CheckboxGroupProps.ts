@@ -21,6 +21,19 @@ export type Invalid = boolean;
  * Message to show if the input is invalid
  */
 export type InvalidMessage = string;
+/**
+ * The label for the element
+ */
+export type Label1 = string;
+/**
+ * Whether the input is disabled
+ */
+export type Disabled = boolean;
+/**
+ * Help text that gives more context about what a user needs to input
+ */
+export type HintMessage = string;
+export type Options = Checkbox[];
 
 /**
  * A CheckboxGroup allows users to select one or more items from a list of choices.
@@ -30,5 +43,15 @@ export interface CheckboxGroupProps {
   name?: Name;
   invalid?: Invalid;
   invalidMessage?: InvalidMessage;
+  options?: Options;
+  [k: string]: unknown;
+}
+/**
+ * Checkboxes allow users to select multiple items from a list of individual items, or to mark one individual item as selected.
+ */
+export interface Checkbox {
+  label?: Label1;
+  disabled?: Disabled;
+  hint?: HintMessage;
   [k: string]: unknown;
 }

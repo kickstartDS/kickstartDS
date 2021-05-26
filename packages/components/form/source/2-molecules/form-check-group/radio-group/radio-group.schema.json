@@ -16,6 +16,27 @@
     },
     "invalidMessage": {
       "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/invalidMessage"
+    },
+    "options": {
+      "title": "Options",
+      "type": "array",
+      "items": {
+        "title": "Radio Button",
+        "description": "Radio buttons allow users to select a single option from a list of mutually exclusive options.",
+        "type": "object",
+        "properties": {
+          "label": {
+            "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/label"
+          },
+          "disabled": {
+            "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/disabled"
+          },
+          "hint": {
+            "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/hint"
+          }
+        }
+      },
+      "required": ["label"]
     }
   },
   "required": ["label"]
