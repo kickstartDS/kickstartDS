@@ -1,0 +1,8 @@
+$name-: 'c-divider';
+
+$host: (
+  '.c-divider': (
+    background: var(--color-black-alpha-1),
+    height: 1px,
+  ),
+) !default;
