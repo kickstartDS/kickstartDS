@@ -48,10 +48,7 @@ export const Slider: FunctionComponent<
   >
     <div className="c-slider-main" data-slider-arrows={arrows}>
       <div className="c-slider__track">
-        <div
-          className="c-slider__slides c-slider-nav__slides"
-          data-glide-el="controls[nav]"
-        >
+        <div className="c-slider__slides" data-glide-el="controls[nav]">
           {children && slides(children)}
         </div>
       </div>
