@@ -1,18 +1,15 @@
-import { Component, define, inBrowser } from '@kickstartds/core/lib/core';
+import {
+  Component,
+  define,
+  events as lazyEvents,
+} from '@kickstartds/core/lib/core';
 import { CountUp } from 'countup.js';
 
+const identifier = 'content.count-up';
 const events = {
-  inView: 'animate-number.inView',
+  start: `${identifier}.start`,
+  end: `${identifier}.end`,
 };
-
-if (inBrowser) {
-  document.addEventListener('lazybeforeunveil', (event) => {
-    const componentName = event.target.dataset.component;
-    if (componentName === 'content.count-up') {
-      window.rm.radio.emit(events.inView, event.target);
-    }
-  });
-}
 
 const countUpOptions = {
   separator: '.',
@@ -20,18 +17,23 @@ const countUpOptions = {
 };
 
 export default class CountUpNumber extends Component {
-  static identifier = 'content.count-up';
+  static identifier = identifier;
 
   constructor(element) {
     super(element);
 
     const text = element.textContent.replace(/\./g, '').replace(',', '.');
     const countUp = new CountUp(element, parseFloat(text), countUpOptions);
-
-    const token = window.rm.radio.on(events.inView, (_, el) => {
+    const token = window.rm.radio.on(lazyEvents.beforeunveil, (_, el) => {
       if (el === element) {
-        countUp.start();
         window.rm.radio.off(token);
+        window.rm.radio.emit(events.start, {
+          component: this,
+          data: countUp,
+        });
+        countUp.start(() =>
+          window.rm.radio.emit(events.end, { component: this })
+        );
       }
     });
 

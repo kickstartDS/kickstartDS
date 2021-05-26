@@ -1,8 +1,8 @@
 /* eslint-disable no-new */
-import 'lazysizes';
 import { findComponentClass, executeHooks } from './helper';
 import { uid } from './uid';
 import { domLoaded, inBrowser } from '../domLoaded';
+import { events } from '../lazysizes';
 
 const identifier = 'component';
 const eachElement = (nodeList, cb) =>
@@ -12,17 +12,6 @@ const eachElement = (nodeList, cb) =>
       elements.forEach(cb);
     }
   });
-
-const loadedTopic = 'loadLazyComponent';
-
-if (inBrowser) {
-  document.addEventListener('lazybeforeunveil', (event) => {
-    const componentName = event.target.dataset.component;
-    if (componentName) {
-      window.rm.radio.emit(`${loadedTopic}.${componentName}`, event.target);
-    }
-  });
-}
 
 function mountElement(
   element,
@@ -36,7 +25,7 @@ function mountElement(
       !element.classList.contains('lazyloaded')
     ) {
       const topic = rm.radio.on(
-        `${loadedTopic}.${componentClassName}`,
+        `${events.beforeunveil}.${componentClassName}`,
         (_, el) => {
           if (el === element) {
             rm.radio.off(topic);
