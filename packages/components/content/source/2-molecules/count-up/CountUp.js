@@ -29,7 +29,7 @@ export default class CountUpNumber extends Component {
     const to = parseFloat(text);
     const countUp = new CountUp(element, to, {
       ...defaultOptions,
-      duration: (defaultOptions.duration += durationModifier(to)),
+      duration: defaultOptions.duration + durationModifier(to),
     });
     const token = window.rm.radio.on(lazyEvents.beforeunveil, (_, el) => {
       if (el === element) {
