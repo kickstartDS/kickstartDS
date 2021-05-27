@@ -11,10 +11,13 @@ const events = {
   end: `${identifier}.end`,
 };
 
-const countUpOptions = {
+const defaultOptions = {
   separator: '.',
   decimal: ',',
+  duration: 2,
 };
+
+const durationModifier = (value) => Math.abs(value) ** (1 / 3) / 20;
 
 export default class CountUpNumber extends Component {
   static identifier = identifier;
@@ -23,17 +26,19 @@ export default class CountUpNumber extends Component {
     super(element);
 
     const text = element.textContent.replace(/\./g, '').replace(',', '.');
-    const countUp = new CountUp(element, parseFloat(text), countUpOptions);
+    const to = parseFloat(text);
+    const countUp = new CountUp(element, to, {
+      ...defaultOptions,
+      duration: (defaultOptions.duration += durationModifier(to)),
+    });
     const token = window.rm.radio.on(lazyEvents.beforeunveil, (_, el) => {
       if (el === element) {
         window.rm.radio.off(token);
         window.rm.radio.emit(events.start, {
-          component: this,
+          element,
           data: countUp,
         });
-        countUp.start(() =>
-          window.rm.radio.emit(events.end, { component: this })
-        );
+        countUp.start(() => window.rm.radio.emit(events.end, { element }));
       }
     });
 
