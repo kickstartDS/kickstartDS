@@ -33,8 +33,8 @@ const SectionComponent: FunctionComponent<
   SectionProps & HTMLAttributes<HTMLDivElement>
 > = ({
   background,
-  'space-before': spaceBefore,
-  'space-after': spaceAfter,
+  spaceBefore,
+  spaceAfter,
   headline,
   width,
   gutter,
