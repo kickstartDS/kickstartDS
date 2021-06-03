@@ -6,26 +6,7 @@
   "type": "object",
   "properties": {
     "image": {
-      "title": "Image",
-      "type": "object",
-      "properties": {
-        "src": {
-          "$ref": "http://frontend.ruhmesmeile.com/base/atoms/picture.definitions.json#/properties/src",
-          "default": "https://picsum.photos/seed/kdscontact/400/400"
-        },
-        "alt": {
-          "$ref": "http://frontend.ruhmesmeile.com/base/atoms/picture.definitions.json#/properties/alt",
-          "default": "Picture of Max Mütze"
-        },
-        "width": {
-          "$ref": "http://frontend.ruhmesmeile.com/base/atoms/picture.definitions.json#/properties/width",
-          "default": 400
-        },
-        "height": {
-          "$ref": "http://frontend.ruhmesmeile.com/base/atoms/picture.definitions.json#/properties/height",
-          "default": 400
-        }
-      }
+      "$ref": "http://frontend.ruhmesmeile.com/base/atoms/picture.definitions.json"
     },
     "title": {
       "title": "Title",

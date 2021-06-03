@@ -9,22 +9,7 @@
       "title": "Logos",
       "type": "array",
       "items": {
-        "title": "Logo image",
-        "type": "object",
-        "properties": {
-          "src": {
-            "$ref": "http://frontend.ruhmesmeile.com/base/atoms/picture.definitions.json#/properties/src"
-          },
-          "alt": {
-            "$ref": "http://frontend.ruhmesmeile.com/base/atoms/picture.definitions.json#/properties/alt"
-          },
-          "width": {
-            "$ref": "http://frontend.ruhmesmeile.com/base/atoms/picture.definitions.json#/properties/width"
-          },
-          "height": {
-            "$ref": "http://frontend.ruhmesmeile.com/base/atoms/picture.definitions.json#/properties/height"
-          }
-        }
+        "$ref": "http://frontend.ruhmesmeile.com/base/atoms/picture.definitions.json"
       },
       "default": [
         {
