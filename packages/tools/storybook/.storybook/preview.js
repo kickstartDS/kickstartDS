@@ -1,5 +1,6 @@
 import '@storybook/react';
 import { actions } from '@storybook/addon-actions';
+import { withPerformance } from 'storybook-addon-performance';
 // @see https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/attrchange
 import 'lazysizes/plugins/attrchange/ls.attrchange';
 import { unpackDecorator } from '../../../components/core/lib/storybook/helpers';
@@ -32,4 +33,4 @@ export const parameters = {
   },
 };
 
-export const decorators = [unpackDecorator];
+export const decorators = [unpackDecorator, withPerformance];

@@ -7,7 +7,7 @@ module.exports = {
   features: {
     postcss: false,
   },
-  addons: ['@storybook/addon-essentials'],
+  addons: ['@storybook/addon-essentials', 'storybook-addon-performance'],
   core: {
     builder: 'storybook-builder-vite',
   },
