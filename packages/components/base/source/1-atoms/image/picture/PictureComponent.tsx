@@ -33,7 +33,7 @@ const Image: FunctionComponent<ImageProps> = ({
       data-src={lazy ? src : undefined}
       srcSet={!lazy ? srcSet : undefined}
       data-srcset={lazy ? srcSet : undefined}
-      data-object-fit={objectFit}
+      data-object-fit={objectFit !== 'none' ? objectFit : undefined}
       ref={imgRef}
     />
     {lazy && noscript && (
