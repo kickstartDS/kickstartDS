@@ -100,8 +100,7 @@
             "description": "TODO TYPE DESCRIPTION"
           }
         }
-      },
-      "default": []
+      }
     },
     "pictureClassName": {
       "type": "string",
