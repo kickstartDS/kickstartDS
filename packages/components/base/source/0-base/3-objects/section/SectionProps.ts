@@ -474,6 +474,10 @@ export type SlidePreviewLabel = string;
  */
 export type Source2 = string;
 /**
+ * Use a srcSet to display picture
+ */
+export type PictureSourceset = string;
+/**
  * Alt text to display for picture
  */
 export type AltText2 = string;
@@ -485,6 +489,59 @@ export type Width = number;
  * Height of the picture
  */
 export type Height2 = number;
+/**
+ * Add additional css classes that should be applied to the button
+ */
+export type AdditionalClasses6 = string;
+/**
+ * Add id attribute to the image
+ */
+export type Id = string;
+/**
+ * Define an itemprop attribute for the picture
+ */
+export type ItempropAttribute = string;
+/**
+ * Define a style attribute for the picture
+ */
+export type StyleAttribute = string;
+/**
+ * Select a value for the picture object fit
+ */
+export type ObjectFit = 'contain' | 'cover' | 'fill' | 'none' | 'scale-down';
+/**
+ * Render noscript fallback
+ */
+export type Noscript = boolean;
+/**
+ * Load the picture lazily
+ */
+export type Lazy = boolean;
+/**
+ * Use a srcSet to display picture
+ */
+export type PictureSourceset1 = string;
+/**
+ * TODO MEDIA DESCRIPTION
+ */
+export type TODOMEDIATITLE = string;
+/**
+ * TODO TYPE DESCRIPTION
+ */
+export type TODOTYPETITLE = string;
+/**
+ * Additional sources. This will result in a `picture`-Element
+ */
+export type Sources = {
+  srcSet?: PictureSourceset1;
+  media?: TODOMEDIATITLE;
+  type?: TODOTYPETITLE;
+  [k: string]: unknown;
+}[];
+/**
+ * Set additional class(es) to the picture
+ */
+export type ClassAttribute = string;
 /**
  * Name, company name, etc.
  */
@@ -607,7 +664,7 @@ export type ButtonSize4 = 'small' | 'medium' | 'large';
 /**
  * Add additional css classes that should be applied to the button
  */
-export type AdditionalClasses6 = string;
+export type AdditionalClasses7 = string;
 export type IconIdentifier4 = string;
 export type AriaRole4 = string;
 export type AdditionalClass4 = string;
@@ -683,7 +740,7 @@ export type ButtonSize5 = 'small' | 'medium' | 'large';
 /**
  * Add additional css classes that should be applied to the button
  */
-export type AdditionalClasses7 = string;
+export type AdditionalClasses8 = string;
 export type IconIdentifier6 = string;
 export type AriaRole6 = string;
 export type AdditionalClass6 = string;
@@ -760,7 +817,7 @@ export type ButtonSize6 = 'small' | 'medium' | 'large';
 /**
  * Add additional css classes that should be applied to the button
  */
-export type AdditionalClasses8 = string;
+export type AdditionalClasses9 = string;
 export type IconIdentifier7 = string;
 export type AriaRole7 = string;
 export type AdditionalClass7 = string;
@@ -865,7 +922,7 @@ export type Source4 = string;
 /**
  * Use a srcSet to display picture
  */
-export type PictureSourceset = string;
+export type PictureSourceset2 = string;
 /**
  * Alt text to display for picture
  */
@@ -881,56 +938,56 @@ export type Height4 = number;
 /**
  * Add additional css classes that should be applied to the button
  */
-export type AdditionalClasses9 = string;
+export type AdditionalClasses10 = string;
 /**
  * Add id attribute to the image
  */
-export type Id = string;
+export type Id1 = string;
 /**
  * Define an itemprop attribute for the picture
  */
-export type ItempropAttribute = string;
+export type ItempropAttribute1 = string;
 /**
  * Define a style attribute for the picture
  */
-export type StyleAttribute = string;
+export type StyleAttribute1 = string;
 /**
  * Select a value for the picture object fit
  */
-export type ObjectFit = 'contain' | 'cover' | 'fill' | 'none' | 'scale-down';
+export type ObjectFit1 = 'contain' | 'cover' | 'fill' | 'none' | 'scale-down';
 /**
  * Render noscript fallback
  */
-export type Noscript = boolean;
+export type Noscript1 = boolean;
 /**
  * Load the picture lazily
  */
-export type Lazy = boolean;
+export type Lazy1 = boolean;
 /**
  * Use a srcSet to display picture
  */
-export type PictureSourceset1 = string;
+export type PictureSourceset3 = string;
 /**
  * TODO MEDIA DESCRIPTION
  */
-export type TODOMEDIATITLE = string;
+export type TODOMEDIATITLE1 = string;
 /**
  * TODO TYPE DESCRIPTION
  */
-export type TODOTYPETITLE = string;
+export type TODOTYPETITLE1 = string;
 /**
  * Additional sources. This will result in a `picture`-Element
  */
-export type Sources = {
-  srcSet?: PictureSourceset1;
-  media?: TODOMEDIATITLE;
-  type?: TODOTYPETITLE;
+export type Sources1 = {
+  srcSet?: PictureSourceset3;
+  media?: TODOMEDIATITLE1;
+  type?: TODOTYPETITLE1;
   [k: string]: unknown;
 }[];
 /**
  * Set additional class(es) to the picture
  */
-export type ClassAttribute = string;
+export type ClassAttribute1 = string;
 /**
  * Display media item over full width
  */
@@ -989,7 +1046,7 @@ export type Media = (
       [k: string]: unknown;
     }
   | {
-      image?: Picture;
+      image?: Picture1;
       full?: FullWidthMedia1;
       [k: string]: unknown;
     }
@@ -1032,7 +1089,7 @@ export type ButtonSize7 = 'small' | 'medium' | 'large';
 /**
  * Add additional css classes that should be applied to the button
  */
-export type AdditionalClasses10 = string;
+export type AdditionalClasses11 = string;
 export type IconIdentifier8 = string;
 export type AriaRole8 = string;
 export type AdditionalClass8 = string;
@@ -1085,6 +1142,10 @@ export type ImageSpacing = boolean;
  */
 export type Source5 = string;
 /**
+ * Use a srcSet to display picture
+ */
+export type PictureSourceset4 = string;
+/**
  * Alt text to display for picture
  */
 export type AltText4 = string;
@@ -1096,7 +1157,60 @@ export type Width4 = number;
  * Height of the picture
  */
 export type Height6 = number;
-export type Logos = LogoImage[];
+/**
+ * Add additional css classes that should be applied to the button
+ */
+export type AdditionalClasses12 = string;
+/**
+ * Add id attribute to the image
+ */
+export type Id2 = string;
+/**
+ * Define an itemprop attribute for the picture
+ */
+export type ItempropAttribute2 = string;
+/**
+ * Define a style attribute for the picture
+ */
+export type StyleAttribute2 = string;
+/**
+ * Select a value for the picture object fit
+ */
+export type ObjectFit2 = 'contain' | 'cover' | 'fill' | 'none' | 'scale-down';
+/**
+ * Render noscript fallback
+ */
+export type Noscript2 = boolean;
+/**
+ * Load the picture lazily
+ */
+export type Lazy2 = boolean;
+/**
+ * Use a srcSet to display picture
+ */
+export type PictureSourceset5 = string;
+/**
+ * TODO MEDIA DESCRIPTION
+ */
+export type TODOMEDIATITLE2 = string;
+/**
+ * TODO TYPE DESCRIPTION
+ */
+export type TODOTYPETITLE2 = string;
+/**
+ * Additional sources. This will result in a `picture`-Element
+ */
+export type Sources2 = {
+  srcSet?: PictureSourceset5;
+  media?: TODOMEDIATITLE2;
+  type?: TODOTYPETITLE2;
+  [k: string]: unknown;
+}[];
+/**
+ * Set additional class(es) to the picture
+ */
+export type ClassAttribute2 = string;
+export type Logos = Picture2[];
 /**
  * Topic for the teaser box. Displayed before the text, in bold
  */
@@ -1130,7 +1244,7 @@ export type ButtonSize8 = 'small' | 'medium' | 'large';
 /**
  * Add additional css classes that should be applied to the button
  */
-export type AdditionalClasses11 = string;
+export type AdditionalClasses13 = string;
 export type IconIdentifier9 = string;
 export type AriaRole9 = string;
 export type AdditionalClass9 = string;
@@ -1493,7 +1607,7 @@ export interface Icon3 {
  * Component to show contact information
  */
 export interface Contact {
-  image?: Image;
+  image?: Picture;
   title?: Title;
   subtitle?: Subtitle;
   phone?: PhoneNumber;
@@ -1501,11 +1615,24 @@ export interface Contact {
   copy?: CopyText;
   [k: string]: unknown;
 }
-export interface Image {
+/**
+ * Base component to display a picture
+ */
+export interface Picture {
   src?: Source2;
+  srcSet?: PictureSourceset;
   alt?: AltText2;
   width?: Width;
   height?: Height2;
+  className?: AdditionalClasses6;
+  id?: Id;
+  itemProp?: ItempropAttribute;
+  style?: StyleAttribute;
+  objectFit?: ObjectFit;
+  noscript?: Noscript;
+  lazy?: Lazy;
+  sources?: Sources;
+  pictureClassName?: ClassAttribute;
   [k: string]: unknown;
 }
 /**
@@ -1515,14 +1642,14 @@ export interface Storytelling {
   backgroundImage?: BackgroundImage2;
   backgroundColor?: BackgroundColor;
   full?: FullSizeImage;
-  image: Image1;
+  image: Image;
   box: TextBox2;
   [k: string]: unknown;
 }
 /**
  * Image displayed alongside the text content
  */
-export interface Image1 {
+export interface Image {
   source?: ImageSource2;
   ratio?: ImageAspectRatio;
   vAlign?: ImageVerticalAlignment;
@@ -1570,7 +1697,7 @@ export interface LinkButton1 {
   label: Label5;
   variant: ButtonStyle4;
   size: ButtonSize4;
-  className?: AdditionalClasses6;
+  className?: AdditionalClasses7;
   icon?: Icon4;
   iconBefore?: IconBeforeButton4;
   iconAfter?: IconAfterButton4;
@@ -1623,7 +1750,7 @@ export interface LinkButton2 {
   label: Label6;
   variant: ButtonStyle5;
   size: ButtonSize5;
-  className?: AdditionalClasses7;
+  className?: AdditionalClasses8;
   icon?: Icon6;
   iconBefore?: IconBeforeButton5;
   iconAfter?: IconAfterButton5;
@@ -1661,7 +1788,7 @@ export interface Link2 {
   label: Label7;
   variant: ButtonStyle6;
   size: ButtonSize6;
-  className?: AdditionalClasses8;
+  className?: AdditionalClasses9;
   icon?: Icon7;
   iconBefore?: IconBeforeButton6;
   iconAfter?: IconAfterButton6;
@@ -1714,21 +1841,21 @@ export interface Video {
 /**
  * Base component to display a picture
  */
-export interface Picture {
+export interface Picture1 {
   src?: Source4;
-  srcSet?: PictureSourceset;
+  srcSet?: PictureSourceset2;
   alt?: AltText3;
   width?: Width2;
   height?: Height4;
-  className?: AdditionalClasses9;
-  id?: Id;
-  itemProp?: ItempropAttribute;
-  style?: StyleAttribute;
-  objectFit?: ObjectFit;
-  noscript?: Noscript;
-  lazy?: Lazy;
-  sources?: Sources;
-  pictureClassName?: ClassAttribute;
+  className?: AdditionalClasses10;
+  id?: Id1;
+  itemProp?: ItempropAttribute1;
+  style?: StyleAttribute1;
+  objectFit?: ObjectFit1;
+  noscript?: Noscript1;
+  lazy?: Lazy1;
+  sources?: Sources1;
+  pictureClassName?: ClassAttribute1;
   [k: string]: unknown;
 }
 /**
@@ -1766,7 +1893,7 @@ export interface LinkButton3 {
   label: Label8;
   variant: ButtonStyle7;
   size: ButtonSize7;
-  className?: AdditionalClasses10;
+  className?: AdditionalClasses11;
   icon?: Icon8;
   iconBefore?: IconBeforeButton7;
   iconAfter?: IconAfterButton7;
@@ -1793,11 +1920,24 @@ export interface LogoTiles {
   logos?: Logos;
   [k: string]: unknown;
 }
-export interface LogoImage {
+/**
+ * Base component to display a picture
+ */
+export interface Picture2 {
   src?: Source5;
+  srcSet?: PictureSourceset4;
   alt?: AltText4;
   width?: Width4;
   height?: Height6;
+  className?: AdditionalClasses12;
+  id?: Id2;
+  itemProp?: ItempropAttribute2;
+  style?: StyleAttribute2;
+  objectFit?: ObjectFit2;
+  noscript?: Noscript2;
+  lazy?: Lazy2;
+  sources?: Sources2;
+  pictureClassName?: ClassAttribute2;
   [k: string]: unknown;
 }
 /**
@@ -1816,7 +1956,7 @@ export interface LinkButton4 {
   label: Label9;
   variant: ButtonStyle8;
   size: ButtonSize8;
-  className?: AdditionalClasses11;
+  className?: AdditionalClasses13;
   icon?: Icon9;
   iconBefore?: IconBeforeButton8;
   iconAfter?: IconAfterButton8;
