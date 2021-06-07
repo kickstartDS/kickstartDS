@@ -28,14 +28,14 @@
       "description": "Width of the picture",
       "type": "integer",
       "minimum": 0,
-      "default": 900
+      "default": 300
     },
     "height": {
       "title": "Height",
       "description": "Height of the picture",
       "type": "integer",
       "minimum": 0,
-      "default": 506
+      "default": 300
     },
     "className": {
       "type": "string",
@@ -100,7 +100,8 @@
             "description": "TODO TYPE DESCRIPTION"
           }
         }
-      }
+      },
+      "default": []
     },
     "pictureClassName": {
       "type": "string",
