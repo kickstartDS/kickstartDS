@@ -10,6 +10,10 @@
  */
 export type Source = string;
 /**
+ * Use a srcSet to display picture
+ */
+export type PictureSourceset = string;
+/**
  * Alt text to display for picture
  */
 export type AltText = string;
@@ -21,6 +25,59 @@ export type Width = number;
  * Height of the picture
  */
 export type Height = number;
+/**
+ * Add additional css classes that should be applied to the button
+ */
+export type AdditionalClasses = string;
+/**
+ * Add id attribute to the image
+ */
+export type Id = string;
+/**
+ * Define an itemprop attribute for the picture
+ */
+export type ItempropAttribute = string;
+/**
+ * Define a style attribute for the picture
+ */
+export type StyleAttribute = string;
+/**
+ * Select a value for the picture object fit
+ */
+export type ObjectFit = 'contain' | 'cover' | 'fill' | 'none' | 'scale-down';
+/**
+ * Render noscript fallback
+ */
+export type Noscript = boolean;
+/**
+ * Load the picture lazily
+ */
+export type Lazy = boolean;
+/**
+ * Use a srcSet to display picture
+ */
+export type PictureSourceset1 = string;
+/**
+ * TODO MEDIA DESCRIPTION
+ */
+export type TODOMEDIATITLE = string;
+/**
+ * TODO TYPE DESCRIPTION
+ */
+export type TODOTYPETITLE = string;
+/**
+ * Additional sources. This will result in a `picture`-Element
+ */
+export type Sources = {
+  srcSet?: PictureSourceset1;
+  media?: TODOMEDIATITLE;
+  type?: TODOTYPETITLE;
+  [k: string]: unknown;
+}[];
+/**
+ * Set additional class(es) to the picture
+ */
+export type ClassAttribute = string;
 /**
  * Name, company name, etc.
  */
@@ -37,7 +94,7 @@ export type CopyText = string;
  * Component to show contact information
  */
 export interface ContactProps {
-  image?: Image;
+  image?: Picture;
   title?: Title;
   subtitle?: Subtitle;
   phone?: PhoneNumber;
@@ -45,10 +102,23 @@ export interface ContactProps {
   copy?: CopyText;
   [k: string]: unknown;
 }
-export interface Image {
+/**
+ * Base component to display a picture
+ */
+export interface Picture {
   src?: Source;
+  srcSet?: PictureSourceset;
   alt?: AltText;
   width?: Width;
   height?: Height;
+  className?: AdditionalClasses;
+  id?: Id;
+  itemProp?: ItempropAttribute;
+  style?: StyleAttribute;
+  objectFit?: ObjectFit;
+  noscript?: Noscript;
+  lazy?: Lazy;
+  sources?: Sources;
+  pictureClassName?: ClassAttribute;
   [k: string]: unknown;
 }

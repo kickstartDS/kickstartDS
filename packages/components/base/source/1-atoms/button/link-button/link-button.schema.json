@@ -3,6 +3,7 @@
   "$id": "http://frontend.ruhmesmeile.com/base/atoms/link-button.schema.json",
   "title": "Link Button",
   "description": "link-button",
+  "type": "object",
   "allOf": [
     {
       "$ref": "http://frontend.ruhmesmeile.com/base/atoms/button.schema.json#/definitions/button"

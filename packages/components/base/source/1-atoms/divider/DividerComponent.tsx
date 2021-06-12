@@ -5,12 +5,21 @@ import {
   useContext,
   HTMLAttributes,
 } from 'react';
+import { DividerProps } from './DividerProps';
 import './divider.scss';
 
-const DividerComponent: FunctionComponent<HTMLAttributes<HTMLHRElement>> = ({
-  className,
-  ...props
-}) => <hr className={classNames('c-divider', className)} {...props} />;
+const DividerComponent: FunctionComponent<
+  DividerProps & HTMLAttributes<HTMLHRElement>
+> = ({ variant, className, ...props }) => (
+  <hr
+    className={classNames(
+      'c-divider',
+      variant && variant !== 'default' && `c-divider--${variant}`,
+      className
+    )}
+    {...props}
+  />
+);
 
 export const DividerContextDefault = DividerComponent;
 export const DividerContext = createContext(DividerContextDefault);

@@ -94,11 +94,6 @@
           }
         }
       },
-      "oneOf": [
-        { "mode": { "enum": ["image"] }, "required": ["mode", "image"] },
-        { "mode": { "enum": ["video"] }, "required": ["mode", "video"] },
-        { "mode": { "enum": ["none"] } }
-      ],
       "additionalProperties": false
     },
     "overlay": {
@@ -144,6 +139,7 @@
           "description": "Text box link configuration",
           "allOf": [
             {
+              "type": "object",
               "properties": {
                 "enabled": {
                   "title": "Display Link",

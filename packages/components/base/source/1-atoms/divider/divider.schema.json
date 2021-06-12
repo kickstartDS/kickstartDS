@@ -2,5 +2,15 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "http://frontend.ruhmesmeile.com/base/atoms/divider.schema.json",
   "title": "Divider",
-  "description": "Dividers bring clarity to a layout by grouping and dividing content in close proximity."
+  "description": "Dividers bring clarity to a layout by grouping and dividing content in close proximity.",
+  "type": "object",
+  "properties": {
+    "variant": {
+      "title": "Style of the divider",
+      "type": "string",
+      "description": "Choose a variant for the divider",
+      "enum": ["default", "accent", "dark"],
+      "default": "default"
+    }
+  }
 }
