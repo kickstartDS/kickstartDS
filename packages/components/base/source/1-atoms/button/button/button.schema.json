@@ -84,7 +84,7 @@
     {
       "type": "object",
       "properties": {
-        "type": {
+        "typeAttr": {
           "type": "string",
           "enum": ["button", "submit", "reset"],
           "default": "button",
@@ -108,7 +108,7 @@
           "description": "Set the disabled attribute for the button"
         }
       },
-      "required": ["type"],
+      "required": ["typeAttr"],
       "additionalProperties": false
     }
   ]

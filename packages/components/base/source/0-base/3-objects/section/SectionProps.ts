@@ -1399,7 +1399,7 @@ export interface Button {
   dataComponent?: DataComponentAttribute1;
   fillAnimation?: FillAnimation1;
   iconAnimation?: IconAnimation1;
-  type: TypeAttribute;
+  typeAttr: TypeAttribute;
   value?: ValueAttribute;
   name?: NameAttribute;
   disabled?: DisabledAttribute;

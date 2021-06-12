@@ -81,7 +81,7 @@ export interface ButtonProps {
   dataComponent?: DataComponentAttribute;
   fillAnimation?: FillAnimation;
   iconAnimation?: IconAnimation;
-  type: TypeAttribute;
+  typeAttr: TypeAttribute;
   value?: ValueAttribute;
   name?: NameAttribute;
   disabled?: DisabledAttribute;
