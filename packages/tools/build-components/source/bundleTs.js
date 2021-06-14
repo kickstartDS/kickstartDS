@@ -122,16 +122,25 @@ const watchTs = async (tsPaths) => {
     output: [outputOptions],
   });
   return new Promise((resolve) => {
-    watcher.on('event', ({ result, code }) => {
+    watcher.on('event', ({ result, code, error }) => {
       if (result) {
         result.close();
       }
-      if (code === 'START') {
-        log('starting ts bundle');
-      }
-      if (code === 'END') {
-        log('finished ts bundle');
-        resolve({ cssAssets, jsAssets });
+
+      // eslint-disable-next-line default-case
+      switch (code) {
+        case 'START':
+          log('starting ts bundle');
+          break;
+
+        case 'END':
+          log('finished ts bundle');
+          resolve({ cssAssets, jsAssets });
+          break;
+
+        case 'ERROR':
+          console.error(error);
+          break;
       }
     });
   });

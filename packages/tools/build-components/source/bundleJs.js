@@ -82,14 +82,24 @@ const watchJs = async (jsPaths) => {
     ...inputOptions,
     output: [outputOptions],
   });
-  watcher.on('event', ({ result, code }) => {
+  watcher.on('event', ({ result, code, error }) => {
     if (result) {
       result.close();
     }
-    if (code === 'START') {
-      log('starting js bundle');
-    } else if (code === 'END') {
-      log('finished js bundle');
+
+    // eslint-disable-next-line default-case
+    switch (code) {
+      case 'START':
+        log('starting js bundle');
+        break;
+
+      case 'END':
+        log('finished js bundle');
+        break;
+
+      case 'ERROR':
+        console.error(error);
+        break;
     }
   });
 };
