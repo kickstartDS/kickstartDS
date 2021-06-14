@@ -57,6 +57,7 @@
   &--inbox,
   &:only-child {
     /* critical:start */
+    padding: var(--spacing-m);
     // ie fix
     height: var(--c-visual--min-height);
     /* critical:end */
