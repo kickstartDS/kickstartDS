@@ -27,28 +27,24 @@ const importer = (url) => {
 const dependencies = {};
 
 const compile = async (file) => {
-  try {
-    const { css, stats } = sass.renderSync({ file, includePaths, importer });
-    dependencies[path.relative(cwd, stats.entry)] = stats.includedFiles.reduce(
-      (prev, curr) => {
-        if (!curr.includes('/node_modules/')) {
-          prev.push(path.relative(cwd, curr));
-        }
-        return prev;
-      },
-      []
-    );
-    const [, dir, base] = stats.entry.match(dirRe);
-    const dest = `lib/${dir}/${base}.css`;
-    const result = await postcss(postcssPlugins).process(css, {
-      from: file,
-      to: dest,
-    });
-    await fs.outputFile(dest, result.css);
-    return `${dir}/${base}.css`;
-  } catch (err) {
-    throw new Error(err);
-  }
+  const { css, stats } = sass.renderSync({ file, includePaths, importer });
+  dependencies[path.relative(cwd, stats.entry)] = stats.includedFiles.reduce(
+    (prev, curr) => {
+      if (!curr.includes('/node_modules/')) {
+        prev.push(path.relative(cwd, curr));
+      }
+      return prev;
+    },
+    []
+  );
+  const [, dir, base] = stats.entry.match(dirRe);
+  const dest = `lib/${dir}/${base}.css`;
+  const result = await postcss(postcssPlugins).process(css, {
+    from: file,
+    to: dest,
+  });
+  await fs.outputFile(dest, result.css);
+  return `${dir}/${base}.css`;
 };
 
 module.exports = async function (scssPaths, watch) {
