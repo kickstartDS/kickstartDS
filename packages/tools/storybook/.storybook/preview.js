@@ -3,11 +3,11 @@ import { actions } from '@storybook/addon-actions';
 import { withPerformance } from 'storybook-addon-performance';
 // @see https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/attrchange
 import 'lazysizes/plugins/attrchange/ls.attrchange';
-import { unpackDecorator } from '@kickstartds/core/lib/storybook/helpers';
+import { unpackDecorator } from '../../../components/core/lib/storybook/helpers';
 
-import '@kickstartds/base/lib/global/base.js';
-import '@kickstartds/base/lib/global/base.css';
-import '@kickstartds/core/lib/design-tokens/tokens.css';
+import '../../../components/base/lib/global/base.js';
+import '../../../components/base/lib/global/base.css';
+import '../../../components/core/lib/design-tokens/tokens.css';
 
 const myActions = actions('radio');
 window.rm.radio.on('*', myActions.radio);
