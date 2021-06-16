@@ -1,8 +1,9 @@
+const { root } = require('../scripts/utils');
+
 module.exports = {
   stories: [
-    `../tmp/**/*.stories.@(tsx|mdx)`,
+    `${root}/packages/components/*/lib/**/*.stories.@(js|mdx)`,
     `../tmp/**/*.story.@(mdx)`,
-    `../source/*.stories.@(mdx)`,
   ],
   features: {
     postcss: false,
@@ -17,7 +18,6 @@ module.exports = {
   },
   async viteFinal(config, { configType }) {
     config.esbuild = { jsxInject: `import React from 'react'` };
-
     return config;
   },
 };

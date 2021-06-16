@@ -1,10 +1,5 @@
-/* eslint-disable no-nested-ternary, no-console */
-// TODO: remove `getArgsShared` on next breaking change (see deprecation warning below, it is now part of the build pipeline)
+/* eslint-disable no-nested-ternary */
 const getArgsShared = (properties = {}, group = 'general', subgroup) => {
-  console.warn(
-    'importing `getArgsShared` from `@kickstartds/core` is deprecated.\n`argTypes` and `args` are properties of the default export of every components story.\nEg.g `import linkButtonStory from "@kickstartds/base/lib/link-button/link-button.stories"; const { argTypes, args } = linkButtonStory;'
-  );
-
   const argTypes = {};
   const defaultArgs = {};
 
@@ -179,55 +174,4 @@ const getArgsShared = (properties = {}, group = 'general', subgroup) => {
   return { argTypes, defaultArgs };
 };
 
-const unpack = (flatArgs) => {
-  const args = {};
-
-  // eslint-disable-next-line no-restricted-syntax
-  for (const [key, value] of Object.entries(flatArgs)) {
-    key.split('.').reduce(
-      // eslint-disable-next-line no-return-assign
-      (r, e, i, arr) => (r[e] = r[e] || (arr[i + 1] ? {} : value)),
-      args
-    );
-  }
-
-  // eslint-disable-next-line no-restricted-syntax
-  for (const [key, value] of Object.entries(args)) {
-    const bracePosition = key.indexOf('[');
-
-    if (bracePosition > -1) {
-      const arrayIndex = key.substring(bracePosition + 1, bracePosition + 2);
-      const arrayName = key.substring(0, bracePosition);
-
-      if (!args[arrayName] && !Array.isArray(args[arrayName])) {
-        args[arrayName] = [];
-      }
-
-      args[arrayName][arrayIndex] = value;
-
-      delete args[key];
-    }
-  }
-
-  return args;
-};
-
-const unpackDecorator = (story, config) =>
-  story({ ...config, args: unpack(config.args) });
-
-const isObject = (obj) =>
-  Object.prototype.toString.call(obj) === '[object Object]';
-
-const pack = (obj) =>
-  Object.entries(obj).reduce((prev, [key, value]) => {
-    if (isObject(value)) {
-      Object.entries(pack(value)).forEach(([key2, value2]) => {
-        prev[`${key}.${key2}`] = value2;
-      });
-    } else {
-      prev[key] = value;
-    }
-    return prev;
-  }, {});
-
-export { unpack, unpackDecorator, pack, getArgsShared };
+module.exports = { getArgsShared };

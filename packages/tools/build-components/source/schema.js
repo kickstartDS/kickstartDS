@@ -5,6 +5,7 @@ const { dirRe } = require('./utils');
 const { dereference } = require('./schemaDereference');
 const { createTypes } = require('./schemaToTypescript');
 const log = require('./log');
+const { createStory } = require('./createStory');
 
 const processSchema = async (schemaPath) => {
   const [, dir, base] = schemaPath.match(dirRe);
@@ -15,6 +16,7 @@ const processSchema = async (schemaPath) => {
       Promise.all([
         fs.outputJson(`${dest}/${base}.dereffed.json`, dereffed, { spaces: 2 }),
         createTypes(dereffed, schemaPath),
+        createStory(dereffed, dest),
       ])
     ),
   ]);
