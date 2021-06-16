@@ -2,7 +2,7 @@ const { root } = require('../scripts/utils');
 
 module.exports = {
   stories: [
-    `${root}/packages/components/*/lib/**/*.stories.@(js)`,
+    `${root}/packages/components/${process.env.KDS_MODULES}/lib/**/*.stories.@(js)`,
     `../tmp/**/*.story.@(mdx)`,
   ],
   features: {

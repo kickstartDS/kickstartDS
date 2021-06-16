@@ -12,7 +12,10 @@ const exec = (...args) =>
       .on('error', reject);
   });
 
-const [task, kdsModule] = argv._;
+const [task] = argv._;
+const kdsModule = argv.module;
+const kdsModules = kdsModule ? `{${kdsModule},core}` : '*';
+process.env.KDS_MODULES = kdsModules;
 
 const storybookOptions = [
   '--config-dir',
@@ -30,7 +33,7 @@ const storybookOptionsStart = [...storybookOptions, '--port', '3000'];
 cleanup()
   .then(() =>
     Promise.all([
-      createMarkdownStories(kdsModule),
+      createMarkdownStories(kdsModules),
       createPreviewHead(),
       createPreviewBody(),
     ])
