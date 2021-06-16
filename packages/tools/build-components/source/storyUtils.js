@@ -27,7 +27,6 @@ const getArgsShared = (properties = {}, group = 'general', subgroup) => {
               : 'text',
           name: group === 'general' ? propertyName : `${group}.${propertyName}`,
           description: `**${propertySchema.title}:**\n\n${propertySchema.description}`,
-          defaultValue: propertySchema.default,
           table: {
             category: group,
             defaultValue: { summary: propertySchema.default },
@@ -44,7 +43,6 @@ const getArgsShared = (properties = {}, group = 'general', subgroup) => {
           control: 'boolean',
           name: group === 'general' ? propertyName : `${group}.${propertyName}`,
           description: `**${propertySchema.title}:**\n\n${propertySchema.description}`,
-          defaultValue: propertySchema.default,
           table: {
             category: group,
             defaultValue: { summary: propertySchema.default },
@@ -82,7 +80,6 @@ const getArgsShared = (properties = {}, group = 'general', subgroup) => {
             name:
               group === 'general' ? propertyName : `${group}.${propertyName}`,
             description: `**${propertySchema.title}:**\n\n${propertySchema.description}`,
-            defaultValue: propertySchema.default,
             table: {
               category: group,
               defaultValue: { summary: JSON.stringify(propertySchema.default) },
@@ -154,7 +151,6 @@ const getArgsShared = (properties = {}, group = 'general', subgroup) => {
           },
           name: group === 'general' ? propertyName : `${group}.${propertyName}`,
           description: `**${propertySchema.title}:**\n\n${propertySchema.description}`,
-          defaultValue: propertySchema.default,
           table: {
             category: group,
             defaultValue: { summary: propertySchema.default },
