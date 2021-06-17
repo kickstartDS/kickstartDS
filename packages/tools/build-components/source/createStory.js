@@ -13,13 +13,14 @@ import { jsx } from 'react/jsx-runtime';
 import { ${componentPascalcased} } from './index.js';
 
 ${componentPascalcased}.displayName = '${componentPascalcased}';
-const Template = (args) => /*#__PURE__*/jsx(${componentPascalcased}, args);
+export const Template = (args) => /*#__PURE__*/jsx(${componentPascalcased}, args);
 
 export default {
   title: '${capitalCase(moduleDir)}/${capitalCase(schema.title)}',
   component: ${componentPascalcased},
   argTypes: ${JSON.stringify(argTypes, null, 2)},
   args: ${JSON.stringify(defaultArgs, null, 2)},
+  excludeStories: ['Template'],
 };
 
 export const Default = Template.bind({});
