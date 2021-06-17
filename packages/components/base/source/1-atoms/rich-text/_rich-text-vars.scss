@@ -5,6 +5,8 @@ $host: (
     font: var(--font-copy-m),
     vertical-spacing: calc(var(--spacing-m) / 2),
     horizontal-spacing: 1em,
+    color: var(--color-black),
+    font-weight: var(--font-weight-regular),
   ),
 ) !default;
 

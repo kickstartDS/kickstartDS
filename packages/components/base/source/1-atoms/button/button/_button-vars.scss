@@ -3,6 +3,7 @@ $name-: 'c-button';
 $host: (
   '.c-button': (
     font: var(--font-ui-m),
+    font-weight: var(--font-weight-regular),
     icon-size: var(--line-height-m),
     padding: 0.4rem 1.3rem 0.35rem,
     border-color: transparent,

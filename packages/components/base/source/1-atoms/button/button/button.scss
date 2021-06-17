@@ -16,6 +16,7 @@ $vars: meta.module-variables(button-vars);
   border: var(--c-button--border-width) solid var(--c-button--border-color);
   border-radius: var(--c-button--border-radius);
   font: var(--c-button--font);
+  font-weight: var(--c-button--font-weight);
   text-align: center;
   transition-duration: 0.12s;
   transition-property: background, color, border, transform, padding;
