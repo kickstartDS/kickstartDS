@@ -17,8 +17,7 @@ const templateStory = (mod, name, mdContent) => {
   return fs.outputFile(`tmp/${mod}/${name}.story.mdx`, template(options));
 };
 
-module.exports = async (kdsModule) => {
-  const kdsModules = kdsModule ? `{${kdsModule},core}` : '*';
+module.exports = async (kdsModules) => {
   const filePaths = await glob(`packages/components/${kdsModules}/**/*.md`, {
     cwd: root,
     absolute: true,

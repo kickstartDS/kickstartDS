@@ -22,9 +22,15 @@ const options = {
   style,
 };
 
-const createTypes = async (schema, schemaPath) => {
-  if (!(schema.title && (schema.properties || schema.allOf || schema.$ref)))
+const createTypes = async (dereffed, schemaPath) => {
+  if (
+    !(
+      dereffed.title &&
+      (dereffed.properties || dereffed.allOf || dereffed.$ref)
+    )
+  )
     return;
+  const schema = { ...dereffed };
   const basename = path.basename(schemaPath, '.json');
   const dirname = path.dirname(schemaPath);
   schema.title += ' Props';

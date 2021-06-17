@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://frontend.ruhmesmeile.com/content/molecules/visual-slide-preview.schema.json",
+  "$id": "http://frontend.ruhmesmeile.com/content/molecules/visual-slide-preview.definitions.json",
   "title": "Visual Slide Preview",
   "description": "Visual slide preview",
   "type": "object",
