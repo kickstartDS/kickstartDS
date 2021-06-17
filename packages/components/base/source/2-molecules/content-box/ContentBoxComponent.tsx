@@ -61,9 +61,9 @@ const ContentBoxComponent: FunctionComponent<
         {topic && <p className="c-content-box__topic">{renderTopic(topic)}</p>}
         {text && <RichText text={text} renderText={renderText} />}
       </div>
-      {link?.label && (
+      {link && link.enabled && (
         <div className="c-content-box__link">
-          <LinkButton {...link} />
+          <LinkButton {...{ ...link, enabled: undefined }} />
         </div>
       )}
     </div>
