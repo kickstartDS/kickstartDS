@@ -1,6 +1,6 @@
 {
   "name": "@kickstartds/form",
-  "version": "1.0.0-alpha.6",
+  "version": "1.0.0-alpha.7",
   "description": "kickstartDS Form Module",
   "author": "ruhmesmeile GmbH <mail@ruhmesmeile.com> (https://ruhmesmeile.com)",
   "homepage": "https://ruhmesmeile.com",
@@ -19,8 +19,8 @@
   ],
   "dependencies": {
     "@babel/runtime": "^7.13.17",
-    "@kickstartds/base": "^1.0.0-alpha.26",
-    "@kickstartds/core": "^1.0.0-alpha.15",
+    "@kickstartds/base": "^1.0.0-alpha.27",
+    "@kickstartds/core": "^1.0.0-alpha.16",
     "classnames": "^2.2.6"
   },
   "devDependencies": {
