@@ -1,4 +1,4 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-GIT_PARAMS=$1 npm run husky-commit-msg
+GIT_PARAMS=$1 yarn run husky-commit-msg

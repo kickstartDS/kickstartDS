@@ -8,42 +8,42 @@ This project is managed by [lerna](https://lernajs.io/). Each module is an indep
 
 - [node](https://nodejs.org/en/) >= v12 – if you have [nvm](https://github.com/creationix/nvm#node-version-manager---) installed, you can just run `nvm use` to select the right node version.
 
+- [yarn](https://classic.yarnpkg.com/lang/en/) classic
+
 ### Global npm packages
 
-- [lerna](https://lernajs.io/) - The monorepo manager.
 - [commitizen](http://commitizen.github.io/cz-cli/) – Constistent commit messages. Read more about the commit conventions in the "Commit changes"-section.
 
 `npm install -g lerna commitizen`
 
-If you cannot or don't want to install global packages, you can use [`npx`](https://www.npmjs.com/package/npx). E.g. instead of `git cz`, you can also call `npx git-cz`.
+If you cannot or don't want to install global packages, you can use yarn. E.g. instead of `git cz`, you can also call `yarn git-cz`.
 
 ## Locally
 
 ### Installation
 
-- `npx lerna bootstrap` - installs npm dependencies for all frontend modules
+- `yarn` - installs npm dependencies for all frontend modules
 
 ### Scripts
 
-- `npm run build` – builds the pattern library
-- `npm run storybook start` - starts a storybook with all components
-- `npm run lint` – checks sass- & js-files against potential errors
-- `npm run list` – lists all lerna packages
+- `yarn build` – builds the pattern library
+- `yarn storybook start` - starts a storybook with all components
+- `yarn lint` – checks sass- & js-files against potential errors
+- `yarn list` – lists all lerna packages
 
 ## Release
 
-1. `npx lerna version prerelease` - see [lerna docs](https://github.com/lerna/lerna/tree/main/commands/version#readme)
-2. `npx lerna publish from-git` - see [lerna docs](https://github.com/lerna/lerna/tree/main/commands/publish#readme)
+1. `yarn lerna version prerelease` - see [lerna docs](https://github.com/lerna/lerna/tree/main/commands/version#readme)
+2. `yarn lerna publish from-git` - see [lerna docs](https://github.com/lerna/lerna/tree/main/commands/publish#readme)
 
 ## Module Development
 
-All modules are placed in the _pacakges/components_ directory. They are individual npm packages mangaged by [lerna](https://lernajs.io/).
+All modules are placed in the _pacakges/components_ directory. They are individual npm packages mangaged by [yarn workspaces](https://classic.yarnpkg.com/en/docs/workspaces).
 
 ### File Structure
 
 The file structure of each module is a mix of [atomic design](http://bradfrost.com/blog/post/atomic-web-design/) and [ITCSS](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/):
 
-- **package-lock.json** - (If there are 3rd-party-dependencies)
 - **package.json**
 - **README.md**
 - **source**
@@ -63,12 +63,12 @@ All directories under **source** are optional.
 
 ### Install npm dependencies
 
-Don't install module dependencies manually, let lerna do the job!
-E.g. to install "package-xy" in module "news", run `lerna add package-xy pacakges/components/news` in the projects root directory (see [lerna docs](https://github.com/lerna/lerna/tree/master/commands/add) for more info)
+Don't install module dependencies manually, let yarn do the job!
+E.g. to install "package-xy" in module "news", run `yarn workspace news add package-xy` in the projects root directory.
 
 ## Commit changes
 
-This project uses [commitizen](http://commitizen.github.io/cz-cli/). So in order to commit your changes, run `git cz` (or `npx git-cz` if commitizen is not installed globally) instead of `git commit`. commitizen will then ask you a few questions about the change:
+This project uses [commitizen](http://commitizen.github.io/cz-cli/). So in order to commit your changes, run `git cz` (or `yarn git-cz` if commitizen is not installed globally) instead of `git commit`. commitizen will then ask you a few questions about the change:
 
 - **type** – The type of the change (e.g. feature, fix, refactoring)
 - **scope** - The name of the module affected (e.g. base, products, news)
@@ -81,7 +81,3 @@ This project uses [commitizen](http://commitizen.github.io/cz-cli/). So in order
 - **breaking changes** – Description of the change, justification and migration notes
 
 This convention is based loosely on the [angular commit message guidlines](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-guidelines) and ensures constistent commit messages, so they can be automatically converted into a changelog.
-
-## Install npm dependencies in the root
-
-Build related packages are installed in the root. In contrast to module dependencies, root dependencies are installed via `npm install` (only modules are managed by lerna).
