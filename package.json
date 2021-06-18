@@ -1,9 +1,12 @@
 {
   "name": "kickstartds",
   "private": true,
+  "workspaces": [
+    "packages/*/*"
+  ],
   "scripts": {
     "build": "lerna run --stream --no-prefix build",
-    "build:prod": "NODE_ENV=production npm run build",
+    "build:prod": "NODE_ENV=production yarn run build",
     "copy-env-file": "[ ! -f .env ] && cp .env-example .env || true",
     "chromatic": "run-s build:prod 'run-chromatic -- chromatic'",
     "chromatic-base": "run-s build:prod 'run-chromatic -- chromatic-base'",
@@ -15,7 +18,7 @@
     "format": "prettier --write .",
     "git-config": "git config --local include.path ../.gitconfig",
     "husky-commit-msg": "commitlint -E GIT_PARAMS",
-    "husky-pre-commit": "npm run schema && git add packages/*/*/source/**/*Props.ts && lint-staged",
+    "husky-pre-commit": "yarn run schema && git add packages/*/*/source/**/*Props.ts && lint-staged",
     "lint": "run-p eslint stylelint",
     "list": "lerna la",
     "netlifycms-config": "node packages/tools/netlify-cms/scripts/schema-convert-to-netlify-yaml.js",
@@ -24,8 +27,8 @@
     "schema": "lerna run --parallel --no-prefix schema",
     "staged": "git diff --name-only --cached | grep '@kickstartds' | cut -d / -f 3 | awk '!seen[$0]++'",
     "storybook": "lerna run --scope @kickstartds-internal/storybook --stream --no-prefix storybook --",
-    "storybook:build": "npm run storybook build",
-    "storybook:debug": "npm run storybook debug",
+    "storybook:build": "yarn run storybook build",
+    "storybook:debug": "yarn run storybook debug",
     "stylelint": "stylelint \"**/*.scss\"",
     "prepare": "husky install",
     "watch": "lerna run --parallel --no-prefix watch",
@@ -43,7 +46,8 @@
     "json-csv": "^3.0.1",
     "json-schema-faker": "^0.5.0-rcv.33",
     "jsonschema2graphql": "^1.1.1",
-    "license-checker": "^25.0.1"
+    "license-checker": "^25.0.1",
+    "react": "^17.0.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^12.1.4",

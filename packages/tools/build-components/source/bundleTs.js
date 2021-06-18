@@ -1,7 +1,7 @@
 const fs = require('fs-extra');
 const rollup = require('rollup');
 const { babel } = require('@rollup/plugin-babel');
-const ts = require('@wessberg/rollup-plugin-ts');
+const ts = require('rollup-plugin-ts');
 const styles = require('rollup-plugin-styles');
 const merge = require('lodash/merge');
 const log = require('./log');
