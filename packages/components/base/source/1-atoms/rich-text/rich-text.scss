@@ -7,8 +7,8 @@ $vars: meta.module-variables(rich-text-vars);
 
 .c-rich-text {
   font: var(--c-rich-text--font);
-  font-weight: var(--c-rich-text-font-weight);
-  color: var(--c-rich-text-color);
+  font-weight: var(--c-rich-text--font-weight);
+  color: var(--c-rich-text--color);
 
   &__align {
     &-center {

@@ -16,6 +16,10 @@ $vars: meta.module-variables(teaser-vars);
   overflow: hidden;
   font: var(--c-teaser--font);
 
+  .c-rich-text {
+    color: var(--c-teaser--color);
+  }
+
   &.js-linked {
     transition: box-shadow 0.2s;
 
