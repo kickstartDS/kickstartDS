@@ -15,7 +15,9 @@ jobs:
       - run:
           name: Install Dependencies
           command: yarn install --frozen-lockfile --cache-folder ~/.cache/yarn
-      - run: yarn run chromatic
+      - run:
+          name: Build Storybook & deploy to Chromatic
+          command: yarn run chromatic
       - save_cache:
           name: Save Yarn Package Cache
           key: yarn-packages-{{ checksum "yarn.lock" }}
