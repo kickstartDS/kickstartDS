@@ -50,8 +50,10 @@
     "react": "^17.0.2"
   },
   "devDependencies": {
+    "@auto-it/conventional-commits": "^10.29.3",
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^12.1.4",
+    "auto": "^10.29.3",
     "commitizen": "^4.2.4",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^7.29.0",
@@ -72,5 +74,15 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,md,json,scss}": "prettier --write"
+  },
+  "repository": "lmestel/kickstartDS",
+  "author": "lmestel <lukas.mestel@kickstartds.com>",
+  "auto": {
+    "plugins": [
+      "npm",
+      "conventional-commits",
+      "released"
+    ],
+    "onlyPublishWithReleaseLabel": true
   }
 }
