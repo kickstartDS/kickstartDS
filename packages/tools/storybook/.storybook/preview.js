@@ -8,6 +8,7 @@ import { unpackDecorator } from '../../../components/core/lib/storybook/helpers'
 import '../../../components/base/lib/global/base.js';
 import '../../../components/base/lib/global/base.css';
 import '../../../components/core/lib/design-tokens/tokens.css';
+import './preview.css';
 
 const myActions = actions('radio');
 window.rm.radio.on('*', myActions.radio);
@@ -30,6 +31,14 @@ export const parameters = {
         ? 0
         : a[1].id.localeCompare(b[1].id, 'de', { numeric: true });
     },
+  },
+  backgrounds: { disable: true },
+  themes: {
+    default: 'default',
+    list: [
+      { name: 'default', class: 'g-inverted-reset', color: '#fff' },
+      { name: 'inverted', class: 'g-inverted', color: '#333' },
+    ],
   },
 };
 

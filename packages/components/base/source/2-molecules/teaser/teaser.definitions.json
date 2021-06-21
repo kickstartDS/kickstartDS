@@ -20,11 +20,11 @@
           "description": "Text for the teaser box",
           "format": "markdown"
         },
-        "darkStyle": {
+        "inverted": {
           "type": "boolean",
           "default": false,
-          "title": "Dark variant",
-          "description": "Optionally use this to apply a dark variant to the box"
+          "title": "Inverted variant",
+          "description": "Optionally use this to invert the color of the box"
         },
         "link": {
           "allOf": [

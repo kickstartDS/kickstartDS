@@ -45,17 +45,17 @@ $box: (
   '.c-visual__box': (
     border: null,
     border-radius: null,
-    color: var(--color-white),
-    background: var(--color-primary-alpha-8),
+    color: var(--color-primary),
+    background: var(--color-white-alpha-9),
     max-width: (
       xs: var(--g-content-width-default),
       s: 50%,
       xl: 40rem,
     ),
   ),
-  '.c-visual__box--light': (
-    color: var(--color-primary),
-    background: var(--color-white-alpha-9),
+  '.c-visual.g-inverted .c-visual__box': (
+    color: var(--color-white),
+    background: var(--color-primary-alpha-8),
   ),
 ) !default;
 
@@ -66,7 +66,7 @@ $topic: (
     margin: null,
     color: null,
   ),
-  '.c-visual__box--light': (
+  '.c-visual.g-inverted .c-visual__box': (
     color: null,
   ),
 ) !default;

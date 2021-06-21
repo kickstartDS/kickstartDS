@@ -9,6 +9,7 @@ module.exports = {
     postcss: false,
   },
   addons: [
+    'storybook-addon-themes',
     '@storybook/addon-essentials',
     'storybook-addon-performance',
     '@storybook/addon-a11y',

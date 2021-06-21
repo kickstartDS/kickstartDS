@@ -1,0 +1,7 @@
+body.g-inverted-reset {
+  background-color: var(--color-white);
+}
+
+body.g-inverted {
+  background-color: var(--color-black-alpha-9);
+}

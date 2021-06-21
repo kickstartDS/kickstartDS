@@ -2,9 +2,14 @@ $name-: 'g-topic' !default;
 
 $host: (
   ':root': (
-    color: var(--color-black),
     font: var(--font-display-l),
     font-weight: var(--font-weight-bold),
     text-transform: null,
+  ),
+  ':root, .g-inverted-reset': (
+    color: var(--color-black),
+  ),
+  '.g-inverted': (
+    color: var(--color-white),
   ),
 ) !default;

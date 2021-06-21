@@ -25,6 +25,7 @@
     "lazysizes": "^5.3.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.1",
+    "storybook-addon-themes": "^6.1.0",
     "svgstore": "^3.0.0-2",
     "yargs-parser": "^20.2.7"
   },

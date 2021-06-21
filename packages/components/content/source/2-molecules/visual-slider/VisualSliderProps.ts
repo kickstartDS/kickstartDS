@@ -73,13 +73,7 @@ export type Label = string;
 /**
  * Choose one of the styles from the list
  */
-export type ButtonStyle =
-  | 'solid'
-  | 'solid-inverted'
-  | 'clear'
-  | 'clear-inverted'
-  | 'outline'
-  | 'outline-inverted';
+export type ButtonStyle = 'solid' | 'clear' | 'outline';
 /**
  * Choose a size between small, medium and large
  */
@@ -134,7 +128,7 @@ export type VerticalOrientation = 'top' | 'center' | 'bottom';
 /**
  * Choose a style for the box
  */
-export type StyleOfTheBox = 'default' | 'light' | 'transparent';
+export type StyleOfTheBox = 'solid' | 'transparent';
 /**
  * Custom css background color
  */
@@ -147,6 +141,10 @@ export type Inbox = boolean;
  * Show skip button
  */
 export type SkipButton = boolean;
+/**
+ * Optionally use this to invert the color of the box
+ */
+export type InvertedVariant = boolean;
 export type AdditionalClasses1 = string;
 /**
  * preview label
@@ -172,6 +170,7 @@ export interface Visual {
   backgroundColor?: CustomBackgroundColor;
   inbox?: Inbox;
   skipButton?: SkipButton;
+  inverted?: InvertedVariant;
   className?: AdditionalClasses1;
   label?: SlidePreviewLabel;
 }

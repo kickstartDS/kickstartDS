@@ -178,8 +178,8 @@
           "title": "Style of the box",
           "description": "Choose a style for the box",
           "type": "string",
-          "enum": ["default", "light", "transparent"],
-          "default": "default"
+          "enum": ["solid", "transparent"],
+          "default": "solid"
         }
       },
       "additionalProperties": false
@@ -203,6 +203,12 @@
       "description": "Show skip button",
       "type": "boolean",
       "default": false
+    },
+    "inverted": {
+      "type": "boolean",
+      "default": true,
+      "title": "Inverted variant",
+      "description": "Optionally use this to invert the color of the box"
     },
     "className": {
       "type": "string",

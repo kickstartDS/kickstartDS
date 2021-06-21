@@ -28,13 +28,7 @@ export type Label = string;
 /**
  * Choose one of the styles from the list
  */
-export type ButtonStyle =
-  | 'solid'
-  | 'solid-inverted'
-  | 'clear'
-  | 'clear-inverted'
-  | 'outline'
-  | 'outline-inverted';
+export type ButtonStyle = 'solid' | 'clear' | 'outline';
 /**
  * Choose a size between small, medium and large
  */
@@ -97,13 +91,7 @@ export type Label1 = string;
 /**
  * Choose one of the styles from the list
  */
-export type ButtonStyle1 =
-  | 'solid'
-  | 'solid-inverted'
-  | 'clear'
-  | 'clear-inverted'
-  | 'outline'
-  | 'outline-inverted';
+export type ButtonStyle1 = 'solid' | 'clear' | 'outline';
 /**
  * Choose a size between small, medium and large
  */
@@ -231,13 +219,7 @@ export type Label3 = string;
 /**
  * Choose one of the styles from the list
  */
-export type ButtonStyle2 =
-  | 'solid'
-  | 'solid-inverted'
-  | 'clear'
-  | 'clear-inverted'
-  | 'outline'
-  | 'outline-inverted';
+export type ButtonStyle2 = 'solid' | 'clear' | 'outline';
 /**
  * Choose a size between small, medium and large
  */
@@ -292,7 +274,7 @@ export type VerticalOrientation = 'top' | 'center' | 'bottom';
 /**
  * Choose a style for the box
  */
-export type StyleOfTheBox = 'default' | 'light' | 'transparent';
+export type StyleOfTheBox = 'solid' | 'transparent';
 /**
  * Custom css background color
  */
@@ -305,6 +287,10 @@ export type Inbox = boolean;
  * Show skip button
  */
 export type SkipButton = boolean;
+/**
+ * Optionally use this to invert the color of the box
+ */
+export type InvertedVariant = boolean;
 export type AdditionalClasses3 = string;
 /**
  * Select an image to display inside the quote, to the left
@@ -390,13 +376,7 @@ export type Label4 = string;
 /**
  * Choose one of the styles from the list
  */
-export type ButtonStyle3 =
-  | 'solid'
-  | 'solid-inverted'
-  | 'clear'
-  | 'clear-inverted'
-  | 'outline'
-  | 'outline-inverted';
+export type ButtonStyle3 = 'solid' | 'clear' | 'outline';
 /**
  * Choose a size between small, medium and large
  */
@@ -451,7 +431,7 @@ export type VerticalOrientation1 = 'top' | 'center' | 'bottom';
 /**
  * Choose a style for the box
  */
-export type StyleOfTheBox1 = 'default' | 'light' | 'transparent';
+export type StyleOfTheBox1 = 'solid' | 'transparent';
 /**
  * Custom css background color
  */
@@ -464,6 +444,10 @@ export type Inbox1 = boolean;
  * Show skip button
  */
 export type SkipButton1 = boolean;
+/**
+ * Optionally use this to invert the color of the box
+ */
+export type InvertedVariant1 = boolean;
 export type AdditionalClasses5 = string;
 /**
  * preview label
@@ -650,13 +634,7 @@ export type Label5 = string;
 /**
  * Choose one of the styles from the list
  */
-export type ButtonStyle4 =
-  | 'solid'
-  | 'solid-inverted'
-  | 'clear'
-  | 'clear-inverted'
-  | 'outline'
-  | 'outline-inverted';
+export type ButtonStyle4 = 'solid' | 'clear' | 'outline';
 /**
  * Choose a size between small, medium and large
  */
@@ -726,13 +704,7 @@ export type Label6 = string;
 /**
  * Choose one of the styles from the list
  */
-export type ButtonStyle5 =
-  | 'solid'
-  | 'solid-inverted'
-  | 'clear'
-  | 'clear-inverted'
-  | 'outline'
-  | 'outline-inverted';
+export type ButtonStyle5 = 'solid' | 'clear' | 'outline';
 /**
  * Choose a size between small, medium and large
  */
@@ -803,13 +775,7 @@ export type Label7 = string;
 /**
  * Choose one of the styles from the list
  */
-export type ButtonStyle6 =
-  | 'solid'
-  | 'solid-inverted'
-  | 'clear'
-  | 'clear-inverted'
-  | 'outline'
-  | 'outline-inverted';
+export type ButtonStyle6 = 'solid' | 'clear' | 'outline';
 /**
  * Choose a size between small, medium and large
  */
@@ -1065,9 +1031,9 @@ export type Topic2 = string;
  */
 export type TextContent5 = string;
 /**
- * Optionally use this to apply a dark variant to the box
+ * Optionally use this to invert the color of the box
  */
-export type DarkVariant = boolean;
+export type InvertedVariant2 = boolean;
 /**
  * Text used on button
  */
@@ -1075,13 +1041,7 @@ export type Label8 = string;
 /**
  * Choose one of the styles from the list
  */
-export type ButtonStyle7 =
-  | 'solid'
-  | 'solid-inverted'
-  | 'clear'
-  | 'clear-inverted'
-  | 'outline'
-  | 'outline-inverted';
+export type ButtonStyle7 = 'solid' | 'clear' | 'outline';
 /**
  * Choose a size between small, medium and large
  */
@@ -1220,9 +1180,9 @@ export type Topic3 = string;
  */
 export type TextContent6 = string;
 /**
- * Optionally use this to apply a dark variant to the box
+ * Optionally use this to invert the color of the box
  */
-export type DarkVariant1 = boolean;
+export type InvertedVariant3 = boolean;
 /**
  * Text used on button
  */
@@ -1230,13 +1190,7 @@ export type Label9 = string;
 /**
  * Choose one of the styles from the list
  */
-export type ButtonStyle8 =
-  | 'solid'
-  | 'solid-inverted'
-  | 'clear'
-  | 'clear-inverted'
-  | 'outline'
-  | 'outline-inverted';
+export type ButtonStyle8 = 'solid' | 'clear' | 'outline';
 /**
  * Choose a size between small, medium and large
  */
@@ -1433,6 +1387,7 @@ export interface Visual {
   backgroundColor?: CustomBackgroundColor;
   inbox?: Inbox;
   skipButton?: SkipButton;
+  inverted?: InvertedVariant;
   className?: AdditionalClasses3;
 }
 /**
@@ -1532,6 +1487,7 @@ export interface Visual1 {
   backgroundColor?: CustomBackgroundColor1;
   inbox?: Inbox1;
   skipButton?: SkipButton1;
+  inverted?: InvertedVariant1;
   className?: AdditionalClasses5;
   label?: SlidePreviewLabel;
 }
@@ -1880,7 +1836,7 @@ export interface LazyLightboxImage {
 export interface TeaserBox {
   topic?: Topic2;
   text?: TextContent5;
-  darkStyle?: DarkVariant;
+  inverted?: InvertedVariant2;
   link?: LinkButton3;
   image?: ImageSource4;
   ratio: ImageRatio1;
@@ -1946,7 +1902,7 @@ export interface Picture2 {
 export interface TeaserRow {
   topic?: Topic3;
   text?: TextContent6;
-  darkStyle?: DarkVariant1;
+  inverted?: InvertedVariant3;
   link?: LinkButton4;
 }
 /**

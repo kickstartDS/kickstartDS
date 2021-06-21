@@ -121,7 +121,6 @@ $vars: meta.module-variables(visual-vars);
 
   &__continue-btn {
     /* critical:start */
-    color: white;
     transition: transform 0.3s;
     transform: translate(0, -10px);
     /* critical:end */
@@ -142,5 +141,9 @@ $vars: meta.module-variables(visual-vars);
     @include bourbon.position(absolute, 0);
     background: var(--c-visual_overlay--background);
     background-size: var(--c-visual_overlay--background-size);
+  }
+
+  &.g-inverted {
+    color: white;
   }
 }

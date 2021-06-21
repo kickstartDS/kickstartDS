@@ -22,6 +22,7 @@ const VisualComponent: FunctionComponent<
   box,
   overlay,
   backgroundColor,
+  inverted = true,
   inbox,
   height,
   skipButton,
@@ -37,6 +38,7 @@ const VisualComponent: FunctionComponent<
         'c-visual--small': height === 'small',
         'c-visual--no-crop': height === 'fullImage',
       },
+      inverted ? 'g-inverted' : 'g-inverted-reset',
       className
     )}
     style={{ backgroundColor }}

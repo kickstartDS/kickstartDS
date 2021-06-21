@@ -14,9 +14,9 @@ export type Topic = string;
  */
 export type TextContent = string;
 /**
- * Optionally use this to apply a dark variant to the box
+ * Optionally use this to invert the color of the box
  */
-export type DarkVariant = boolean;
+export type InvertedVariant = boolean;
 /**
  * Text used on button
  */
@@ -24,13 +24,7 @@ export type Label = string;
 /**
  * Choose one of the styles from the list
  */
-export type ButtonStyle =
-  | 'solid'
-  | 'solid-inverted'
-  | 'clear'
-  | 'clear-inverted'
-  | 'outline'
-  | 'outline-inverted';
+export type ButtonStyle = 'solid' | 'clear' | 'outline';
 /**
  * Choose a size between small, medium and large
  */
@@ -81,7 +75,7 @@ export type HideLink = boolean;
 export interface TeaserProps {
   topic?: Topic;
   text?: TextContent;
-  darkStyle?: DarkVariant;
+  inverted?: InvertedVariant;
   link?: LinkButton;
   [k: string]: unknown;
 }

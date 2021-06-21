@@ -20,7 +20,7 @@ export const Teaser: FunctionComponent<
 > = ({
   topic,
   text,
-  darkStyle,
+  inverted,
   link,
   renderText = richTextDefaultRenderFn,
   renderTopic = defaultRenderFn,
@@ -31,9 +31,7 @@ export const Teaser: FunctionComponent<
   <div
     className={classnames(
       'c-teaser',
-      {
-        'c-teaser--style-dark': darkStyle,
-      },
+      inverted ? 'g-inverted' : 'g-inverted-reset',
       className
     )}
     data-component="base.teaser"
