@@ -93,12 +93,7 @@
       );
 
       > a {
-        // TODO: remove conditions in version 6
-        color: if(
-          meta.global-variable-exists('news-latest__headline-color', 'news'),
-          news.$news-latest__headline-color,
-          base.$color-black
-        );
+        color: news.$news-latest__headline-color;
       }
     }
 
