@@ -13,6 +13,7 @@
     "chromatic-base": "yarn run run-chromatic -- chromatic-base",
     "chromatic-blog": "yarn run run-chromatic -- chromatic-blog",
     "chromatic-content": "yarn run run-chromatic -- chromatic-content",
+    "chromatic-form": "yarn run run-chromatic -- chromatic-form",
     "dereference": "node scripts/schemaDereference.js",
     "eslint": "eslint \"**/*.{js,jsx,ts,tsx}\"",
     "find-licenses": "node ./scripts/license.js",

@@ -5,22 +5,24 @@ version: 2.1
 defaults: &defaults
   docker:
     - image: circleci/node:12
-  working_directory: ~/repo
+  working_directory: /mnt/ramdisk
+  resource_class: medium+
 
 aliases:
   - &restore-cache
     keys:
+      - yarn config set cache-folder /mnt/ramdisk/.yarn-cache
       - yarn-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
       - yarn-{{ checksum "yarn.lock" }}
       - yarn-
   - &save-cache
     key: yarn-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
     paths:
-      - ~/.cache/yarn
+      - .yarn-cache
       - node_modules
   - &attach_workspace
     attach_workspace:
-      at: ~/repo
+      at: /mnt/ramdisk
 
 jobs:
   build:
@@ -64,6 +66,7 @@ jobs:
 
   publish:
     <<: *defaults
+    parallelism: 4
     steps:
       - checkout
       - restore_cache: *restore-cache
