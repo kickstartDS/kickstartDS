@@ -11,7 +11,6 @@ defaults: &defaults
 aliases:
   - &restore-cache
     keys:
-      - yarn config set cache-folder /mnt/ramdisk/.yarn-cache
       - yarn-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
       - yarn-{{ checksum "yarn.lock" }}
       - yarn-
@@ -24,6 +23,8 @@ aliases:
     attach_workspace:
       at: /mnt/ramdisk
 
+
+
 jobs:
   build:
     <<: *defaults
@@ -31,8 +32,11 @@ jobs:
       - checkout
       - restore_cache: *restore-cache
       - run:
+          name: Set Yarn Cache Directory
+          command: yarn config set cache-folder /mnt/ramdisk/.yarn-cache
+      - run:
           name: Install Dependencies
-          command: yarn install --frozen-lockfile --cache-folder ~/.cache/yarn
+          command: yarn install --frozen-lockfile --cache-folder /mnt/ramdisk/.yarn-cache
       - save_cache: *save-cache
       - run:
           name: Build
@@ -114,10 +118,10 @@ workflows:
           requires:
             - build
 
-      - release:
-          context: kickstartDS
-          requires:
-            - build
+#      - release:
+#          context: kickstartDS
+#          requires:
+#            - build
 
       - publish-base:
           context: kickstartDS
