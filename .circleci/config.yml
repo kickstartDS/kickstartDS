@@ -37,16 +37,16 @@ jobs:
           environment:
             NODE_ENV: production
           command: yarn build
-      - run:
-          command: rm -rf .git
       - persist_to_workspace:
           root: .
           paths:
-            - .
+            - packages/components/*/lib
 
   chromatic:
     <<: *defaults
     steps:
+      - checkout
+      - restore_cache: *restore-cache
       - *attach_workspace
       - run:
           name: Build Storybook & deploy to Chromatic
@@ -55,6 +55,8 @@ jobs:
   release:
     <<: *defaults
     steps:
+      - checkout
+      - restore_cache: *restore-cache
       - *attach_workspace
       - run:
           name: Create Release
