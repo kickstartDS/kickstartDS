@@ -64,9 +64,8 @@ jobs:
           name: Create Release
           command: yarn auto shipit --dry-run
 
-  publish:
+  publish-base:
     <<: *defaults
-    parallelism: 4
     steps:
       - checkout
       - restore_cache: *restore-cache
@@ -74,12 +73,33 @@ jobs:
       - run:
           name: Publish Chromatic Module Base
           command: CHROMATIC_PROJECT_TOKEN=${CHROMATIC_PROJECT_TOKEN_BASE} yarn run chromatic-base
+
+  publish-blog:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache: *restore-cache
+      - *attach_workspace
       - run:
           name: Publish Chromatic Module Blog
           command: CHROMATIC_PROJECT_TOKEN=${CHROMATIC_PROJECT_TOKEN_BLOG} yarn run chromatic-blog
+
+  publish-content:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache: *restore-cache
+      - *attach_workspace
       - run:
           name: Publish Chromatic Module Content
           command: CHROMATIC_PROJECT_TOKEN=${CHROMATIC_PROJECT_TOKEN_CONTENT} yarn run chromatic-content
+
+  publish-form:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache: *restore-cache
+      - *attach_workspace
       - run:
           name: Publish Chromatic Module Form
           command: CHROMATIC_PROJECT_TOKEN=${CHROMATIC_PROJECT_TOKEN_FORM} yarn run chromatic-form
@@ -99,7 +119,22 @@ workflows:
           requires:
             - build
 
-      - publish:
+      - publish-base:
+          context: kickstartDS
+          requires:
+            - build
+
+      - publish-blog:
+          context: kickstartDS
+          requires:
+            - build
+
+      - publish-content:
+          context: kickstartDS
+          requires:
+            - build
+
+      - publish-form:
           context: kickstartDS
           requires:
             - build
