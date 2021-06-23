@@ -18,7 +18,6 @@ aliases:
     paths:
       - ~/.cache/yarn
       - node_modules
-      - packages/tools/*/node_modules
   - &attach_workspace
       attach_workspace:
         at: ~/repo
@@ -41,7 +40,7 @@ jobs:
       - persist_to_workspace:
           root: .
           paths:
-            - packages/components/*/lib
+            - packages/components
 
   chromatic:
     <<: *defaults
