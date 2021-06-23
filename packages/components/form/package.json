@@ -10,8 +10,7 @@
   "scripts": {
     "build": "node ../../tools/build-components/source",
     "watch": "node ../../tools/build-components/source --watch",
-    "schema": "node ../../tools/build-components/source --schema",
-    "prepublishOnly": "NODE_ENV=production yarn run build"
+    "schema": "node ../../tools/build-components/source --schema"
   },
   "files": [
     "lib",
