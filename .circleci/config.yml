@@ -71,22 +71,22 @@ jobs:
       - run:
           name: Publish Chromatic Module Base
           environment:
-            CHROMATIC_PROJECT_TOKEN: $CHROMATIC_PROJECT_TOKEN_BASE
+            CHROMATIC_PROJECT_TOKEN: ${CHROMATIC_PROJECT_TOKEN_BASE}
           command: yarn run chromatic-base
       - run:
           name: Publish Chromatic Module Blog
           environment:
-            CHROMATIC_PROJECT_TOKEN: $CHROMATIC_PROJECT_TOKEN_BLOG
+            CHROMATIC_PROJECT_TOKEN: ${CHROMATIC_PROJECT_TOKEN_BLOG}
           command: yarn run chromatic-blog
       - run:
           name: Publish Chromatic Module Content
           environment:
-            CHROMATIC_PROJECT_TOKEN: $CHROMATIC_PROJECT_TOKEN_CONTENT
+            CHROMATIC_PROJECT_TOKEN: ${CHROMATIC_PROJECT_TOKEN_CONTENT}
           command: yarn run chromatic-content
       - run:
           name: Publish Chromatic Module Form
           environment:
-            CHROMATIC_PROJECT_TOKEN: $CHROMATIC_PROJECT_TOKEN_FORM
+            CHROMATIC_PROJECT_TOKEN: ${CHROMATIC_PROJECT_TOKEN_FORM}
           command: yarn run chromatic-form
 
 workflows:
