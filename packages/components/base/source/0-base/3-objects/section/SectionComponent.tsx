@@ -47,6 +47,7 @@ const SectionComponent: FunctionComponent<
     className={classnames(
       'l-section',
       background && background !== 'default' && `l-section--${background}`,
+      background === 'dark' && 'g-inverted',
       spaceBefore &&
         spaceBefore !== 'default' &&
         `l-section--space-before-${spaceBefore}`,
