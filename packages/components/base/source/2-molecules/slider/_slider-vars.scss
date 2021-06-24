@@ -1,12 +1,20 @@
 $name-: 'c-slider';
+$_selector-default: '.c-slider, .g-inverted-reset .c-slider';
+$_selector-inverted: '.g-inverted .c-slider';
 
 $arrow: (
   '.c-slider': (
     size: 2.5rem,
     offset: -1.5,
-    color: var(--color-primary),
-    background-hover: var(--color-black-alpha-1),
   ),
+  #{$_selector-inverted}: (
+      color: var(--color-white),
+      background-hover: var(--color-white-alpha-1),
+    ),
+  #{$_selector-default}: (
+      color: var(--color-primary),
+      background-hover: var(--color-black-alpha-1),
+    ),
   '.l-section__container--max .c-slider, .l-section__container--full .c-slider':
   (
     offset: 0,
@@ -17,9 +25,17 @@ $bullet: (
   '.c-slider': (
     size: 0.8rem,
     margin: 0.25rem 0.5rem,
-    outline-color: var(--color-black-alpha-2),
-    outline-color-active: var(--color-primary),
-    background-active: var(--color-primary),
-    background-hover: var(--color-black-alpha-1),
   ),
+  #{$_selector-inverted}: (
+      outline-color: var(--color-white-alpha-2),
+      outline-color-active: var(--color-white),
+      background-active: var(--color-white),
+      background-hover: var(--color-white-alpha-1),
+    ),
+  #{$_selector-default}: (
+      outline-color: var(--color-black-alpha-2),
+      outline-color-active: var(--color-primary),
+      background-active: var(--color-primary),
+      background-hover: var(--color-black-alpha-1),
+    ),
 ) !default;
