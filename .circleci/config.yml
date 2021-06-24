@@ -9,16 +9,24 @@ defaults: &defaults
   resource_class: medium+
 
 aliases:
-  - &restore-cache
+  - &save-cache-yarn
+    key: yarn-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
+    paths:
+      - .yarn-cache
+  - &restore-cache-yarn
     keys:
       - yarn-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
       - yarn-{{ checksum "yarn.lock" }}
       - yarn-
-  - &save-cache
-    key: yarn-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
+  - &save-cache-node
+    key: node-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
     paths:
-      - .yarn-cache
       - node_modules
+  - &restore-cache-node
+    keys:
+      - node-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
+      - node-{{ checksum "yarn.lock" }}
+      - node-
   - &attach_workspace
     attach_workspace:
       at: /mnt/ramdisk
@@ -30,14 +38,16 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - restore_cache: *restore-cache
+      - restore_cache: *restore-cache-yarn
+      - restore_cache: *restore-cache-node
       - run:
           name: Set Yarn Cache Directory
           command: yarn config set cache-folder /mnt/ramdisk/.yarn-cache
       - run:
           name: Install Dependencies
           command: yarn install --frozen-lockfile --cache-folder /mnt/ramdisk/.yarn-cache
-      - save_cache: *save-cache
+      - save_cache: *save-cache-yarn
+      - save_cache: *save-cache-node
       - run:
           name: Build
           environment:
@@ -52,7 +62,7 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - restore_cache: *restore-cache
+      - restore_cache: *restore-cache-node
       - *attach_workspace
       - run:
           name: Build Storybook & deploy to Chromatic
@@ -62,7 +72,7 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - restore_cache: *restore-cache
+      - restore_cache: *restore-cache-node
       - *attach_workspace
       - run:
           name: Create Release
@@ -72,7 +82,7 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - restore_cache: *restore-cache
+      - restore_cache: *restore-cache-node
       - *attach_workspace
       - run:
           name: Publish Chromatic Module Base
@@ -82,7 +92,7 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - restore_cache: *restore-cache
+      - restore_cache: *restore-cache-node
       - *attach_workspace
       - run:
           name: Publish Chromatic Module Blog
@@ -92,7 +102,7 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - restore_cache: *restore-cache
+      - restore_cache: *restore-cache-node
       - *attach_workspace
       - run:
           name: Publish Chromatic Module Content
@@ -102,7 +112,7 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - restore_cache: *restore-cache
+      - restore_cache: *restore-cache-node
       - *attach_workspace
       - run:
           name: Publish Chromatic Module Form
