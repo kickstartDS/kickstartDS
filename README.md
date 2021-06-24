@@ -33,8 +33,7 @@ If you cannot or don't want to install global packages, you can use yarn. E.g. i
 
 ## Release
 
-1. `yarn lerna version prerelease` - see [lerna docs](https://github.com/lerna/lerna/tree/main/commands/version#readme)
-2. `yarn lerna publish from-git` - see [lerna docs](https://github.com/lerna/lerna/tree/main/commands/publish#readme)
+Releases are mangaged by [Auto](https://intuit.github.io/auto/index).
 
 ## Module Development
 
