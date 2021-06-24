@@ -57,15 +57,6 @@ $host: (
 ) !default;
 
 $clear: (
-  #{$_selector-default}: (
-      color: var(--color-primary),
-      color-hover: var(--color-primary-darker-1),
-      color-active: var(--color-primary-darker-2),
-      background-color-hover: var(--color-primary-alpha-2),
-      background-color-active: var(--color-primary-alpha-3),
-      animate-background-color-hover: var(--c-button_clear--color),
-      animate-color-hover: var(--color-white),
-    ),
   #{$_selector-inverted}: (
       color: var(--color-white),
       color-hover: var(--c-button_clear--color),
@@ -74,18 +65,19 @@ $clear: (
       background-color-active: var(--color-white-alpha-3),
       animate-background-color-hover: var(--c-button_clear--color),
       animate-color-hover: var(--color-primary),
+    ),
+  #{$_selector-default}: (
+      color: var(--color-primary),
+      color-hover: var(--color-primary-darker-1),
+      color-active: var(--color-primary-darker-2),
+      background-color-hover: var(--color-primary-alpha-2),
+      background-color-active: var(--color-primary-alpha-3),
+      animate-background-color-hover: var(--c-button_clear--color),
+      animate-color-hover: var(--color-white),
     )
 ) !default;
 
 $solid: (
-  #{$_selector-default}: (
-      color: var(--color-white),
-      background-color: var(--color-primary),
-      background-color-hover: var(--color-primary-lighter-2),
-      background-color-active: var(--color-primary-lighter-3),
-      animate-background-color-hover: var(--c-button_solid--color),
-      animate-color-hover: var(--color-primary),
-    ),
   #{$_selector-inverted}: (
       color: var(--color-primary-darker-1),
       color-hover: var(--color-primary-darker-2),
@@ -94,20 +86,18 @@ $solid: (
       background-color-active: var(--color-primary-lighter-7),
       animate-background-color-hover: var(--c-button_solid--color),
       animate-color-hover: var(--color-white),
+    ),
+  #{$_selector-default}: (
+      color: var(--color-white),
+      background-color: var(--color-primary),
+      background-color-hover: var(--color-primary-lighter-2),
+      background-color-active: var(--color-primary-lighter-3),
+      animate-background-color-hover: var(--c-button_solid--color),
+      animate-color-hover: var(--color-primary),
     )
 ) !default;
 
 $outline: (
-  #{$_selector-default}: (
-      color: var(--color-primary),
-      color-hover: var(--color-primary-darker-1),
-      color-active: var(--color-primary-darker-2),
-      border-color: var(--c-button_outline--color),
-      background-color-hover: var(--color-primary-alpha-2),
-      background-color-active: var(--color-primary-alpha-3),
-      animate-background-color-hover: var(--c-button_outline--color),
-      animate-color-hover: var(--color-white),
-    ),
   #{$_selector-inverted}: (
       color: var(--color-white),
       color-hover: var(--c-button_outline--color),
@@ -117,5 +107,15 @@ $outline: (
       background-color-active: var(--color-white-alpha-3),
       animate-background-color-hover: var(--c-button_outline--color),
       animate-color-hover: var(--color-primary),
+    ),
+  #{$_selector-default}: (
+      color: var(--color-primary),
+      color-hover: var(--color-primary-darker-1),
+      color-active: var(--color-primary-darker-2),
+      border-color: var(--c-button_outline--color),
+      background-color-hover: var(--color-primary-alpha-2),
+      background-color-active: var(--color-primary-alpha-3),
+      animate-background-color-hover: var(--c-button_outline--color),
+      animate-color-hover: var(--color-white),
     )
 ) !default;
