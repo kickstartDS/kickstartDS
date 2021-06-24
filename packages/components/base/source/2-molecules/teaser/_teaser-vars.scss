@@ -1,11 +1,11 @@
 $name-: 'c-teaser' !default;
 
 $host: (
-  ':root': (
+  '.c-teaser': (
     font: var(--font-copy-m),
     border-radius: null,
   ),
-  ':root, .g-inverted-reset': (
+  '.c-teaser, .g-inverted-reset .c-teaser': (
     color: var(--color-black),
     background: var(--color-white),
     border: 1px solid var(--color-grey-1),
@@ -16,7 +16,7 @@ $host: (
       0 25px 25px -35px rgba(0, 0, 0, 0.057),
     ),
   ),
-  '.g-inverted': (
+  '.g-inverted .c-teaser': (
     color: var(--color-white),
     background: var(--color-primary),
     border: null,

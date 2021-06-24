@@ -1,51 +1,49 @@
 $name-: 'c-rich-text';
 
 $host: (
-  ':root': (
+  '.c-rich-text': (
     font: var(--font-copy-m),
     vertical-spacing: calc(var(--spacing-m) / 2),
     horizontal-spacing: 1em,
     font-weight: var(--font-weight-regular),
-  ),
-  '*': (
     color: var(--g-text--color),
   ),
 ) !default;
 
 $code: (
-  ':root': (
+  '.c-rich-text': (
     background: null,
     border-radius: null,
   ),
 ) !default;
 
 $blockquote: (
-  ':root': (
+  '.c-rich-text': (
     border-left: null,
     font-style: null,
   ),
 ) !default;
 
 $hr: (
-  ':root': (
+  '.c-rich-text': (
     border: null,
   ),
 ) !default;
 
 $ul: (
-  ':root': (
+  '.c-rich-text': (
     style: null,
   ),
 ) !default;
 
 $ol: (
-  ':root': (
+  '.c-rich-text': (
     style: null,
   ),
 ) !default;
 
 $a: (
-  ':root': (
+  '.c-rich-text': (
     decoration: null,
   ),
 ) !default;

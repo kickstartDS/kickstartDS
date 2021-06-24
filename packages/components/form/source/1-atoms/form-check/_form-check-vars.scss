@@ -1,6 +1,6 @@
 $name-: 'c-form-check';
-$_selector-default: ':root, .g-inverted-reset';
-$_selector-inverted: '.g-inverted';
+$_selector-default: '.c-form-check, .g-inverted-reset .c-form-check';
+$_selector-inverted: '.g-inverted ';
 
 $box: (
   '.c-form-check': (

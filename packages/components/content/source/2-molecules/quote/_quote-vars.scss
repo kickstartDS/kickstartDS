@@ -37,10 +37,10 @@ $icon: (
     content: null,
     transform: null,
   ),
-  ':root, .g-inverted-reset': (
+  '.c-quote, .g-inverted-reset .c-quote': (
     color: var(--color-primary),
   ),
-  '.g-inverted': (
+  '.g-inverted .c-quote': (
     color: var(--color-white),
   ),
 ) !default;

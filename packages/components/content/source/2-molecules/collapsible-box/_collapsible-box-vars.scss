@@ -1,10 +1,10 @@
 $name-: 'c-collapsible-box';
 
 $host: (
-  ':root, .g-inverted-reset': (
+  '.c-collapsible-box, .g-inverted-reset .c-collapsible-box': (
     border-color: var(--color-black-alpha-1),
   ),
-  '.g-inverted': (
+  '.g-inverted .c-collapsible-box': (
     border-color: var(--color-white-alpha-5),
   ),
 ) !default;

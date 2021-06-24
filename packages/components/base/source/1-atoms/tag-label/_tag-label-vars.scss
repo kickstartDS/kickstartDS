@@ -1,14 +1,14 @@
 $name-: 'c-tag-label';
 
 $host: (
-  ':root, .g-inverted-reset': (
+  '.c-tag-label, .g-inverted-reset .c-tag-label': (
     background-color: var(--color-black-alpha-1),
     background-color-hover: var(--color-black-alpha-2),
     border: null,
     color: var(--color-black-alpha-8),
     color-hover: var(--color-black),
   ),
-  '.g-inverted': (
+  '.g-inverted .c-tag-label': (
     background-color: var(--color-white-alpha-7),
     background-color-hover: var(--color-white-alpha-9),
   ),
