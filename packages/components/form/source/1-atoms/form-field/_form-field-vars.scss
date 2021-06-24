@@ -1,32 +1,48 @@
 $name-: 'c-form-field';
+$_selector-default: ':root, .g-inverted-reset';
+$_selector-inverted: '.g-inverted';
 
 $host: (
-  ':root': (
+  '.c-form-field': (
     border: 1px solid,
-    border-color: var(--color-grey-2),
     border-radius: 3px,
-    background: var(--color-white),
-    background-disabled: var(--color-black-alpha-1),
-    color: var(--color-black),
+    color: var(--g-text--color),
   ),
+  #{$_selector-default}: (
+      border-color: var(--color-grey-2),
+      background: var(--color-white-alpha-9),
+      background-disabled: var(--color-black-alpha-1),
+    ),
+  #{$_selector-inverted}: (
+      border-color: var(--color-grey-2),
+      background: var(--color-black-alpha-9),
+      background-disabled: var(--color-black-white-1),
+    ),
 ) !default;
 
 $hover: (
-  ':root': (
-    border-color: var(--color-grey-3),
-  ),
+  #{$_selector-default}: (
+      border-color: var(--color-grey-3),
+    ),
+  #{$_selector-inverted}: (
+      border-color: var(--color-grey-1),
+    )
 ) !default;
 
 $focus: (
-  ':root': (
-    border-color: var(--color-primary),
-    shadow: 0 0 4px -1px,
-  ),
+  #{$_selector-default}: (
+      shadow: 0 0 4px -1px,
+      border-color: var(--color-primary),
+    ),
+  #{$_selector-inverted}: (
+      shadow: 0 0 5px 1px,
+      border-color: var(--color-white),
+    )
 ) !default;
 
 $icon: (
-  ':root': (
+  '.c-form-field': (
     size: calc(var(--line-height-m) * 0.75),
-    color: var(--color-black-alpha-7),
+    color: var(--g-text_dimmed--color),
   ),
 ) !default;

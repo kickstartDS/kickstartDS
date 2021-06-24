@@ -1,0 +1,21 @@
+$name-: 'g-text' !default;
+$_selector-default: ':root, .g-inverted-reset';
+$_selector-inverted: '.g-inverted';
+
+$host: (
+  #{$_selector-default}: (
+      color: var(--color-black),
+    ),
+  #{$_selector-inverted}: (
+      color: var(--color-white),
+    )
+) !default;
+
+$dimmed: (
+  #{$_selector-default}: (
+      color: var(--color-black-alpha-7),
+    ),
+  #{$_selector-inverted}: (
+      color: var(--color-white-alpha-8),
+    )
+) !default;

@@ -9,7 +9,7 @@ $host: (
 $icon: (
   '.c-count-up': (
     size: 3rem,
-    color: var(--color-black),
+    color: var(--g-text--color),
     margin-bottom: 1rem,
   ),
 ) !default;
@@ -19,16 +19,16 @@ $number: (
     margin: 0 0 0.5em,
     font: var(--font-ui-xl),
     font-weight: var(--font-weight-bold),
-    color: var(--color-black),
+    color: var(--g-text--color),
   ),
 ) !default;
 
 $topic: (
   '.c-count-up': (
     margin: 0 0 0.5em,
-    font: var(--font-display-l),
-    font-weight: var(--font-weight-bold),
-    color: var(--color-black),
+    font: var(--g-topic--font),
+    font-weight: var(--g-topic--font-weight),
+    color: var(--g-topic--color),
   ),
 ) !default;
 

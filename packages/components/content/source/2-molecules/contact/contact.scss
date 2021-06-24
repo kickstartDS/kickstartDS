@@ -10,6 +10,7 @@ $vars: meta.module-variables(contact-vars);
   display: flex;
   flex-wrap: wrap;
   margin: calc(var(--c-contact--gutter) * -1);
+  color: var(--g-text--color);
 
   > * {
     margin: var(--c-contact--gutter);
@@ -48,7 +49,7 @@ $vars: meta.module-variables(contact-vars);
 
     &__subheadline {
       --c-headline_subheadline--margin: 0;
-      --c-headline_subheadline--color: var(--color-black-alpha-7);
+      --c-headline_subheadline--color: var(--g-text_dimmed--color);
     }
   }
 }

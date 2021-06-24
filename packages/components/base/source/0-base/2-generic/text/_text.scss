@@ -1,0 +1,6 @@
+@use 'sass:meta';
+@use '@kickstartds/core/source/core/custom-properties';
+@use './text-vars';
+
+$vars: meta.module-variables(text-vars);
+@include custom-properties.styles($vars, true);

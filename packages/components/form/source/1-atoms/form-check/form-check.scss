@@ -11,6 +11,7 @@ $vars: meta.module-variables(form-check-vars);
   @include input-field.wrapper($width: null);
   flex-direction: column;
   align-items: flex-start;
+  color: var(--g-text--color);
 
   &__field {
     position: relative;
@@ -89,6 +90,7 @@ $vars: meta.module-variables(form-check-vars);
       --c-form-check_box-checked--border-color: var(--color-error);
       --c-form-check_box-checked--background: var(--color-error);
       --c-form-check_box-focus--border-color: var(--color-error);
+      --c-form-check_checkmark--color: var(--color-white);
     }
   }
 
@@ -106,6 +108,6 @@ $vars: meta.module-variables(form-check-vars);
 
   &__hint {
     margin: 0.25rem 0 0;
-    color: var(--color-black-alpha-7);
+    color: var(--g-text_dimmed--color);
   }
 }

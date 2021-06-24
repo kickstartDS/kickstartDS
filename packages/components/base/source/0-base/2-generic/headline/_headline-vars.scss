@@ -1,8 +1,8 @@
 $name-: 'g-headline' !default;
 
 $host: (
-  ':root': (
-    color: var(--color-black),
+  '*': (
+    color: var(--g-text--color),
     font: var(--font-display-m),
     font-weight: var(--font-weight-bold),
     text-transform: null,

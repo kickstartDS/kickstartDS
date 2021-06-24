@@ -35,8 +35,13 @@ $icon: (
       m: 4rem,
     ),
     content: null,
-    color: null,
     transform: null,
+  ),
+  ':root, .g-inverted-reset': (
+    color: var(--color-primary),
+  ),
+  '.g-inverted': (
+    color: var(--color-white),
   ),
 ) !default;
 

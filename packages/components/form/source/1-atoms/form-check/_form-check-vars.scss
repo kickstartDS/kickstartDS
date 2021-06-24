@@ -1,12 +1,18 @@
 $name-: 'c-form-check';
+$_selector-default: ':root, .g-inverted-reset';
+$_selector-inverted: '.g-inverted';
 
 $box: (
   '.c-form-check': (
     size: 1rem,
     border: 1px solid,
-    border-color: var(--color-primary-alpha-8),
-    background: var(--color-white),
   ),
+  #{$_selector-default}: (
+      border-color: var(--color-primary-alpha-8),
+    ),
+  #{$_selector-inverted}: (
+      border-color: var(--color-white-alpha-8),
+    ),
   '.c-form-check--checkbox': (
     border-radius: 3px,
   ),
@@ -16,33 +22,48 @@ $box: (
 ) !default;
 
 $box-hover: (
-  '.c-form-check': (
-    border-color: var(--color-primary-alpha-9),
-  ),
+  #{$_selector-default}: (
+      border-color: var(--color-primary),
+    ),
+  #{$_selector-inverted}: (
+      border-color: var(--color-white),
+    )
 ) !default;
 
 $box-focus: (
   '.c-form-check': (
-    border-color: var(--color-primary),
     shadow: 0 0 4px 0,
   ),
+  #{$_selector-default}: (
+      border-color: var(--color-primary),
+    ),
+  #{$_selector-inverted}: (
+      border-color: var(--color-white),
+    ),
 ) !default;
 
 $box-checked: (
-  '.c-form-check': (
-    background: var(--color-primary),
-    border-color: var(--color-primary),
-  ),
+  #{$_selector-default}: (
+      background: var(--color-primary),
+      border-color: var(--color-primary),
+    ),
+  #{$_selector-inverted}: (
+      background: var(--color-white),
+      border-color: var(--color-white),
+    )
 ) !default;
 
 $checkmark: (
-  '.c-form-check': (
-    color: var(--color-white),
-  ),
+  #{$_selector-default}: (
+      color: var(--color-white),
+    ),
+  #{$_selector-inverted}: (
+      color: var(--color-black),
+    ),
   '.c-form-check--checkbox': (
     width: 2px,
   ),
   '.c-form-check--radio': (
     size: 0.5rem,
-  ),
+  )
 ) !default;

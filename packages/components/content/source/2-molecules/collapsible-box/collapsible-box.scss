@@ -9,6 +9,8 @@ $vars: meta.module-variables(collapsible-box-vars);
 @include custom-properties.styles($vars);
 
 .c-collapsible-box {
+  color: var(--g-text--color);
+
   details {
     @include details-reset.details-reset;
 
