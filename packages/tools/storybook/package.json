@@ -19,7 +19,7 @@
     "ajv": "^7.2.1",
     "change-case": "^4.1.2",
     "del": "^6.0.0",
-    "fast-glob": "^3.2.5",
+    "fast-glob": "^3.2.6",
     "find-up": "^5.0.0",
     "fs-extra": "^10.0.0",
     "lazysizes": "^5.3.2",
