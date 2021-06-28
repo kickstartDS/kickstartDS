@@ -1,12 +1,14 @@
 $name-: 'c-collapsible-box';
+$_selector-default: ':root, .g-inverted-reset';
+$_selector-inverted: '.g-inverted';
 
 $host: (
-  '.c-collapsible-box, .g-inverted-reset .c-collapsible-box': (
-    border-color: var(--color-black-alpha-1),
-  ),
-  '.g-inverted .c-collapsible-box': (
-    border-color: var(--color-white-alpha-5),
-  ),
+  #{$_selector-default}: (
+      border-color: var(--color-black-alpha-1),
+    ),
+  #{$_selector-inverted}: (
+      border-color: var(--color-white-alpha-5),
+    )
 ) !default;
 
 $header: (

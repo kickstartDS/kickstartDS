@@ -546,6 +546,10 @@ export type BackgroundImage2 = string;
  */
 export type BackgroundColor = string;
 /**
+ * Optionally use this to invert the color of the box
+ */
+export type InvertedText = boolean;
+/**
  * Display a full sized version of the image
  */
 export type FullSizeImage = boolean;
@@ -1597,6 +1601,7 @@ export interface Picture {
 export interface Storytelling {
   backgroundImage?: BackgroundImage2;
   backgroundColor?: BackgroundColor;
+  inverted?: InvertedText;
   full?: FullSizeImage;
   image: Image;
   box: TextBox2;

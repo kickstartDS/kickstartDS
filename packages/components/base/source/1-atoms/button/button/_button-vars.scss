@@ -1,6 +1,6 @@
 $name-: 'c-button';
-$_selector-default: '.c-button, .g-inverted-reset .c-button';
-$_selector-inverted: '.g-inverted .c-button';
+$_selector-default: ':root, .g-inverted-reset';
+$_selector-inverted: '.g-inverted';
 
 $host: (
   '.c-button': (

@@ -1,17 +1,19 @@
 $name-: 'c-tag-label';
+$_selector-default: ':root, .g-inverted-reset';
+$_selector-inverted: '.g-inverted';
 
 $host: (
-  '.c-tag-label, .g-inverted-reset .c-tag-label': (
-    background-color: var(--color-black-alpha-1),
-    background-color-hover: var(--color-black-alpha-2),
-    border: null,
-    color: var(--color-black-alpha-8),
-    color-hover: var(--color-black),
-  ),
-  '.g-inverted .c-tag-label': (
-    background-color: var(--color-white-alpha-7),
-    background-color-hover: var(--color-white-alpha-9),
-  ),
+  #{$_selector-default}: (
+      background-color: var(--color-black-alpha-1),
+      background-color-hover: var(--color-black-alpha-2),
+      border: null,
+      color: var(--color-black-alpha-8),
+      color-hover: var(--color-black),
+    ),
+  #{$_selector-inverted}: (
+      background-color: var(--color-white-alpha-7),
+      background-color-hover: var(--color-white-alpha-9),
+    ),
   '.c-tag-label--s': (
     font: var(--font-ui-xs),
     font-weight: var(--font-weight-regular),
@@ -32,7 +34,7 @@ $host: (
     border-radius: 1.5rem,
     vertical-padding: 0.5rem,
     horizontal-padding: 1.25rem,
-  ),
+  )
 ) !default;
 
 $icon: (

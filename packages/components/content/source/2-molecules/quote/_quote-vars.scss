@@ -1,4 +1,6 @@
 $name-: 'c-quote';
+$_selector-default: ':root, .g-inverted-reset';
+$_selector-inverted: '.g-inverted';
 
 $host: (
   '.c-quote': (
@@ -37,12 +39,12 @@ $icon: (
     content: null,
     transform: null,
   ),
-  '.c-quote, .g-inverted-reset .c-quote': (
-    color: var(--color-primary),
-  ),
-  '.g-inverted .c-quote': (
-    color: var(--color-white),
-  ),
+  #{$_selector-default}: (
+      color: var(--color-primary),
+    ),
+  #{$_selector-inverted}: (
+      color: var(--color-white),
+    ),
 ) !default;
 
 $text: (

@@ -19,6 +19,7 @@ $vars: meta.module-variables(visual-vars);
   background: var(--c-visual--background);
   z-index: 1;
   min-height: var(--c-visual--min-height);
+  color: var(--g-text--color);
   /* critical:end */
 
   &--full {
@@ -141,9 +142,5 @@ $vars: meta.module-variables(visual-vars);
     @include bourbon.position(absolute, 0);
     background: var(--c-visual_overlay--background);
     background-size: var(--c-visual_overlay--background-size);
-  }
-
-  &.g-inverted {
-    color: white;
   }
 }

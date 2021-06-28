@@ -1,14 +1,13 @@
 $name-: 'c-teaser' !default;
+$_selector-default: ':root, .g-inverted-reset';
+$_selector-inverted: '.g-inverted';
 
 $host: (
   '.c-teaser': (
     font: var(--font-copy-m),
     border-radius: null,
   ),
-  '.c-teaser, .g-inverted-reset.c-teaser': (
-    color: var(--color-black),
-    background: var(--color-white),
-    border: 1px solid var(--color-grey-1),
+  '.c-teaser, .g-inverted-reset .c-teaser': (
     shadow: null,
     shadow-hover: (
       0 0 30px rgba(0, 0, 0, 0.1),
@@ -16,16 +15,24 @@ $host: (
       0 25px 25px -35px rgba(0, 0, 0, 0.057),
     ),
   ),
-  '.g-inverted.c-teaser': (
+  '.g-inverted .c-teaser': (
+    shadow: null,
+    shadow-hover: (
+      // TODO: adjust box-shadow for inverted style
+      0 0 30px rgba(255, 255, 255, 0.1),
+      0 10px 20px -15px rgba(255, 255, 255, 0.023),
+      0 25px 25px -35px rgba(255, 255, 255, 0.057),
+    ),
+  ),
+  '.c-teaser, .c-teaser.g-inverted-reset': (
+    color: var(--color-black),
+    background: var(--color-white),
+    border: 1px solid var(--color-grey-1),
+  ),
+  '.c-teaser.g-inverted': (
     color: var(--color-white),
     background: var(--color-primary),
     border: null,
-    shadow: null,
-    shadow-hover: (
-      0 0 30px rgba(0, 0, 0, 0.2),
-      0 10px 20px -15px rgba(0, 0, 0, 0.15),
-      0 25px 25px -35px rgba(0, 0, 0, 0.25),
-    ),
   ),
 ) !default;
 

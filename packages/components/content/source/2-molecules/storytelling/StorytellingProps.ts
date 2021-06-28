@@ -14,6 +14,10 @@ export type BackgroundImage = string;
  */
 export type BackgroundColor = string;
 /**
+ * Optionally use this to invert the color of the box
+ */
+export type InvertedText = boolean;
+/**
  * Display a full sized version of the image
  */
 export type FullSizeImage = boolean;
@@ -149,6 +153,7 @@ export type OpenLinkInNewTab = boolean;
 export interface StorytellingProps {
   backgroundImage?: BackgroundImage;
   backgroundColor?: BackgroundColor;
+  inverted?: InvertedText;
   full?: FullSizeImage;
   image: Image;
   box: TextBox;

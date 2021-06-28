@@ -31,6 +31,7 @@ const StorytellingMixin: FunctionComponent<
   image,
   box,
   full,
+  inverted,
   backgroundColor,
   backgroundImage,
   renderText = richTextDefaultRenderFn,
@@ -52,6 +53,7 @@ const StorytellingMixin: FunctionComponent<
         'c-storytelling--square': image.ratio === '1:1',
         lazyload: lazy && backgroundImage,
       },
+      inverted != null && (inverted ? 'g-inverted' : 'g-inverted-reset'),
       className
     )}
     style={{

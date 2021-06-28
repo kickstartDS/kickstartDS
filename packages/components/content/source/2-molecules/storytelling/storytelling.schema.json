@@ -17,6 +17,11 @@
       "format": "color",
       "description": "Background color for the whole element"
     },
+    "inverted": {
+      "type": "boolean",
+      "title": "Inverted text",
+      "description": "Optionally use this to invert the color of the box"
+    },
     "full": {
       "type": "boolean",
       "title": "Full size image",

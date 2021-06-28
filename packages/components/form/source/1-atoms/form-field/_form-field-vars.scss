@@ -1,6 +1,6 @@
 $name-: 'c-form-field';
-$_selector-default: '.c-form-field, .g-inverted-reset .c-form-field';
-$_selector-inverted: '.g-inverted .c-form-field';
+$_selector-default: ':root, .g-inverted-reset';
+$_selector-inverted: '.g-inverted';
 
 $host: (
   '.c-form-field': (

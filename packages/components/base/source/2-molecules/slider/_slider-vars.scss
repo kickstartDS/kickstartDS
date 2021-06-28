@@ -1,6 +1,6 @@
 $name-: 'c-slider';
-$_selector-default: '.c-slider, .g-inverted-reset .c-slider';
-$_selector-inverted: '.g-inverted .c-slider';
+$_selector-default: ':root, .g-inverted-reset';
+$_selector-inverted: '.g-inverted';
 
 $arrow: (
   '.c-slider': (
