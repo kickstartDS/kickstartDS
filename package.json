@@ -1,6 +1,7 @@
 {
   "name": "kickstartds",
   "private": true,
+  "repository": "kickstartDS/kickstartDS",
   "workspaces": [
     "packages/*/*"
   ],
@@ -8,10 +9,11 @@
     "build": "lerna run --stream --no-prefix build",
     "build:prod": "NODE_ENV=production yarn run build",
     "copy-env-file": "[ ! -f .env ] && cp .env-example .env || true",
-    "chromatic": "run-s build:prod 'run-chromatic -- chromatic'",
-    "chromatic-base": "run-s build:prod 'run-chromatic -- chromatic-base'",
-    "chromatic-blog": "run-s build:prod 'run-chromatic -- chromatic-blog'",
-    "chromatic-content": "run-s build:prod 'run-chromatic -- chromatic-content'",
+    "chromatic": "yarn run run-chromatic -- chromatic",
+    "chromatic-base": "yarn run run-chromatic -- chromatic-base",
+    "chromatic-blog": "yarn run run-chromatic -- chromatic-blog",
+    "chromatic-content": "yarn run run-chromatic -- chromatic-content",
+    "chromatic-form": "yarn run run-chromatic -- chromatic-form",
     "dereference": "node scripts/schemaDereference.js",
     "eslint": "eslint \"**/*.{js,jsx,ts,tsx}\"",
     "find-licenses": "node ./scripts/license.js",
@@ -50,8 +52,13 @@
     "react": "^17.0.2"
   },
   "devDependencies": {
+    "@auto-it/all-contributors": "^10.29.3",
+    "@auto-it/first-time-contributor": "^10.29.3",
+    "@auto-it/npm": "^10.29.3",
+    "@auto-it/released": "^10.29.3",
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^12.1.4",
+    "auto": "^10.29.3",
     "commitizen": "^4.2.4",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^7.29.0",
@@ -63,6 +70,10 @@
     "prettier": "^2.3.2",
     "stylelint": "^13.13.0",
     "typescript": "^4.3.4"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
   },
   "config": {
     "commitizen": {
