@@ -1,0 +1,18 @@
+{
+  "author": "Lukas Mestel <lukas.mestel@kickstartds.com>",
+  "baseBranch": "master",
+  "plugins": [
+    "npm",
+    [
+      "all-contributors",
+      {
+        "exclude": [
+          "dependabot",
+          "dependabot[bot]"
+        ]
+      }
+    ],
+    "first-time-contributor",
+    "released"
+  ]
+}
