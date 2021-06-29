@@ -25,6 +25,7 @@ node_modules/
 
 # Optional npm cache directory
 .npm
+.yarn-cache
 
 # Optional eslint cache
 .eslintcache
