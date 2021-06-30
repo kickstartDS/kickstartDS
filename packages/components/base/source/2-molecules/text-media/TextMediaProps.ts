@@ -171,23 +171,7 @@ export type FullWidthMedia2 = boolean;
 /**
  * Collection of media items to display
  */
-export type Media = (
-  | {
-      video?: Video;
-      full?: FullWidthMedia;
-      [k: string]: unknown;
-    }
-  | {
-      image?: Picture;
-      full?: FullWidthMedia1;
-      [k: string]: unknown;
-    }
-  | {
-      lightboxImage?: LazyLightboxImage;
-      full?: FullWidthMedia2;
-      [k: string]: unknown;
-    }
-)[];
+export type Media = (Video | Image | LazyImage)[];
 
 /**
  * Component to display copy text, including media
@@ -197,15 +181,25 @@ export interface TextMediaProps {
   mediaAlignment: MediaAlignment;
   media?: Media;
 }
+export interface Video {
+  video?: Video1;
+  full?: FullWidthMedia;
+  [k: string]: unknown;
+}
 /**
  * Video item to display
  */
-export interface Video {
+export interface Video1 {
   src: Source;
   iframe?: EmbeddedIframe;
   title?: VideoTitle;
   width: Width;
   height: Height;
+  [k: string]: unknown;
+}
+export interface Image {
+  image?: Picture;
+  full?: FullWidthMedia1;
   [k: string]: unknown;
 }
 /**
@@ -226,6 +220,11 @@ export interface Picture {
   lazy?: Lazy;
   sources?: Sources;
   pictureClassName?: ClassAttribute;
+  [k: string]: unknown;
+}
+export interface LazyImage {
+  lightboxImage?: LazyLightboxImage;
+  full?: FullWidthMedia2;
   [k: string]: unknown;
 }
 /**
