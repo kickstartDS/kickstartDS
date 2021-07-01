@@ -3,7 +3,7 @@
 
 dist
 storybook-static
-licenses-*.csv
+licenses*.csv
 packages/**/package-lock.json
 packages/*/*/lib
 
