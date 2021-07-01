@@ -1,5 +1,3 @@
-@use '../1-tools/scss/breakpoint-export';
-
 @use '../2-generic/polyfills/focus-visible' as *;
 @use '../2-generic/root/root' as *;
 @use '../2-generic/root/element-resets' as *;
@@ -9,7 +7,3 @@
 @use '../2-generic/headline/headline' as *;
 @use '../2-generic/topic/topic' as *;
 @use '../2-generic/lazyload/lazyload' as *;
-
-/* critical:start */
-@include breakpoint-export.im-export('body::after');
-/* critical:end */

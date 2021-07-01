@@ -1,25 +1,47 @@
-import im from 'include-media-export/include-media'; // https://github.com/eduardoboucas/include-media-export
+import debounce from 'lodash-es/debounce';
 import { domLoaded } from '../core/domLoaded';
-import { windowEvents } from './window';
 
-export const breakpointEvents = {
+const breakpointEvents = {
   change: 'core.breakpoint.change',
 };
 
-domLoaded(() => {
-  im.setElement(document.body);
-  let activeBreakpoint = im.getActive();
-
-  im.setUpdateMode('manual');
-  window.rm.radio.on(windowEvents.resize, () => {
-    im.update();
-
-    const currentBreakpoint = im.getActive();
-    if (currentBreakpoint !== activeBreakpoint) {
-      activeBreakpoint = currentBreakpoint;
-      window.rm.radio.emit(breakpointEvents.change, activeBreakpoint);
+const includeMediaExport = (() => {
+  let breakpoints = {};
+  domLoaded(() => {
+    const breakpointChangePublisher = debounce(
+      () => window.rm.radio.emit(breakpointEvents.change),
+      80
+    );
+    try {
+      const raw = window
+        .getComputedStyle(document.documentElement)
+        .getPropertyValue('--breakpoints');
+      breakpoints = Object.entries(JSON.parse(raw)).reduce(
+        (prev, [breakpoint, value]) => {
+          prev[breakpoint] = window.matchMedia(`(min-width:${value})`);
+          prev[breakpoint].addEventListener(
+            'change',
+            breakpointChangePublisher
+          );
+          return prev;
+        },
+        {}
+      );
+    } catch (e) {
+      // eslint-disable-next-line no-console
+      console.error(e);
     }
   });
-});
 
-export const breakpoints = im;
+  const isBreakpointActive = (breakpoint) =>
+    breakpoint in breakpoints && breakpoints[breakpoint].matches;
+
+  const isBreakpointNotActive = (breakpoint) => !isBreakpointActive(breakpoint);
+
+  return {
+    greaterThan: isBreakpointActive,
+    lessThan: isBreakpointNotActive,
+  };
+})();
+
+export { breakpointEvents, includeMediaExport as breakpoints };

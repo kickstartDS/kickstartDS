@@ -9891,11 +9891,6 @@ imurmurhash@^0.1.4:
   resolved "https://registry.yarnpkg.com/imurmurhash/-/imurmurhash-0.1.4.tgz#9218b9b2b928a238b13dc4fb6b6d576f231453ea"
   integrity sha1-khi5srkoojixPcT7a21XbyMUU+o=
 
-include-media-export@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/include-media-export/-/include-media-export-1.0.3.tgz#3acd8caeef65904e67a2aa86f8ad388b282c2d71"
-  integrity sha1-Os2Mru9lkE5noqqG+K04iygsLXE=
-
 include-media@^1.4.9:
   version "1.4.10"
   resolved "https://registry.yarnpkg.com/include-media/-/include-media-1.4.10.tgz#7a311c92c396c808504ec6a5365115d30571f259"
