@@ -7,7 +7,7 @@ import { IframeRatio } from '../../1-atoms/iframe';
 import { RichText, defaultRenderFn } from '../../1-atoms/rich-text';
 import {
   TextMediaProps,
-  Video1 as IVideo,
+  Video as IVideo,
   Picture as IPicture,
   LazyLightboxImage as ILightboxImage,
 } from './TextMediaProps';
