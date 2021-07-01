@@ -3,7 +3,8 @@
   "private": true,
   "repository": "kickstartDS/kickstartDS",
   "workspaces": [
-    "packages/*/*"
+    "packages/components/*",
+    "packages/tools/*"
   ],
   "scripts": {
     "build": "lerna run --stream --no-prefix build",
