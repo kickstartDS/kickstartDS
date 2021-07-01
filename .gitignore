@@ -143,6 +143,3 @@ $RECYCLE.BIN/
 
 # PhpStrom
 .idea/
-
-# generated netlify config
-config.generated.yml
