@@ -1039,7 +1039,7 @@ export type FullWidthMedia2 = boolean;
 /**
  * Collection of media items to display
  */
-export type Media = (Video | Image1 | LazyImage)[];
+export type Media = (TextMediaVideo | TextMediaImage | TextMediaLazyImage)[];
 /**
  * Topic for the teaser box. Displayed before the text, in bold
  */
@@ -1811,15 +1811,15 @@ export interface TextMedia {
   mediaAlignment: MediaAlignment;
   media?: Media;
 }
-export interface Video {
-  video?: Video1;
+export interface TextMediaVideo {
+  video?: Video;
   full?: FullWidthMedia;
   [k: string]: unknown;
 }
 /**
  * Video item to display
  */
-export interface Video1 {
+export interface Video {
   src: Source3;
   iframe?: EmbeddedIframe;
   title?: VideoTitle;
@@ -1827,7 +1827,7 @@ export interface Video1 {
   height: Height3;
   [k: string]: unknown;
 }
-export interface Image1 {
+export interface TextMediaImage {
   image?: Picture1;
   full?: FullWidthMedia1;
   [k: string]: unknown;
@@ -1852,7 +1852,7 @@ export interface Picture1 {
   pictureClassName?: ClassAttribute1;
   [k: string]: unknown;
 }
-export interface LazyImage {
+export interface TextMediaLazyImage {
   lightboxImage?: LazyLightboxImage;
   full?: FullWidthMedia2;
   [k: string]: unknown;

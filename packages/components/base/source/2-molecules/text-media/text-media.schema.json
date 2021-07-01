@@ -38,7 +38,7 @@
         "anyOf": [
           {
             "type": "object",
-            "title": "Video",
+            "title": "TextMediaVideo",
             "properties": {
               "video": {
                 "title": "Video",
@@ -87,7 +87,7 @@
           },
           {
             "type": "object",
-            "title": "Image",
+            "title": "TextMediaImage",
             "properties": {
               "image": {
                 "$ref": "http://frontend.ruhmesmeile.com/base/atoms/picture.definitions.json"
@@ -99,7 +99,7 @@
           },
           {
             "type": "object",
-            "title": "LazyImage",
+            "title": "TextMediaLazyImage",
             "properties": {
               "lightboxImage": {
                 "$ref": "http://frontend.ruhmesmeile.com/base/atoms/lightbox-lazy-image.definitions.json"
