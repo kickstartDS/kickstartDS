@@ -6,6 +6,7 @@
 @use './typography/font-sizes';
 @use './typography/line-heights';
 @use './typography/font';
+@use '../core/breakpoint';
 
 :root {
   // Design Tokens
@@ -42,4 +43,8 @@
   --g-content-width-default: 62rem;
   --g-content-width-narrow: 46.5rem;
   --g-content-width-wide: 75rem;
+
+  /* critical:start */
+  --breakpoints: #{breakpoint.breakpoints-to-json()};
+  /* critical:end */
 }
