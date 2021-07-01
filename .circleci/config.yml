@@ -31,8 +31,6 @@ aliases:
     attach_workspace:
       at: /mnt/ramdisk
 
-
-
 jobs:
   build:
     <<: *defaults
@@ -129,9 +127,9 @@ workflows:
             - build
 
       - release:
-         context: kickstartDS
-         requires:
-           - build
+          context: kickstartDS
+          requires:
+            - build
 
       - publish-base:
           context: kickstartDS
