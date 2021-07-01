@@ -2842,13 +2842,6 @@
   resolved "https://registry.yarnpkg.com/@storybook/addon-measure/-/addon-measure-1.3.1.tgz#a85b35a73ce9587d54d35e18307eeeb82f509534"
   integrity sha512-OTTbVOs/85zP5MzAMAAs/IyS3MNegSMvvGOzBRsX/7GBxhtjkrryamDkVr9py3JqPwRSndwwB7y0ZwWmf/9KJw==
 
-"@storybook/addon-svelte-csf@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-svelte-csf/-/addon-svelte-csf-1.1.0.tgz#1d6674830efdd4fea1ba266457ab2bc91fd19744"
-  integrity sha512-AjP9kxVbbAyucB8vy889WERafjNM020vWel+psCuDJ2vLU+uObqbCLSGKRIznXjeL0BYR73l9ZF+niJfw6QSlg==
-  dependencies:
-    ts-dedent "^2.0.0"
-
 "@storybook/addon-toolbars@6.3.1":
   version "6.3.1"
   resolved "https://registry.yarnpkg.com/@storybook/addon-toolbars/-/addon-toolbars-6.3.1.tgz#4b294d37f3b068045f7a4df1d3a56ca4a0794d43"
@@ -3357,30 +3350,10 @@
     "@storybook/core-client" "6.3.1"
     "@storybook/core-server" "6.3.1"
 
-"@storybook/csf-tools@6.3.1":
+"@storybook/csf-tools@6.3.1", "@storybook/csf-tools@^6.3.0-rc.4":
   version "6.3.1"
   resolved "https://registry.yarnpkg.com/@storybook/csf-tools/-/csf-tools-6.3.1.tgz#38f1796504166dbae964db179518916ce19a1cd0"
   integrity sha512-lq/8XnWQ9OBWwbag8Nk3tSSRDaGd4lBhXDV32L0xC0e8NH3ZRddiEYavi6H9nUpE4ZEdJ+1ITL2+jwfIZF79wQ==
-  dependencies:
-    "@babel/generator" "^7.12.11"
-    "@babel/parser" "^7.12.11"
-    "@babel/plugin-transform-react-jsx" "^7.12.12"
-    "@babel/preset-env" "^7.12.11"
-    "@babel/traverse" "^7.12.11"
-    "@babel/types" "^7.12.11"
-    "@mdx-js/mdx" "^1.6.22"
-    "@storybook/csf" "^0.0.1"
-    core-js "^3.8.2"
-    fs-extra "^9.0.1"
-    js-string-escape "^1.0.1"
-    lodash "^4.17.20"
-    prettier "~2.2.1"
-    regenerator-runtime "^0.13.7"
-
-"@storybook/csf-tools@^6.3.0-rc.4":
-  version "6.3.0"
-  resolved "https://registry.yarnpkg.com/@storybook/csf-tools/-/csf-tools-6.3.0.tgz#6ec59ebcf8739209b7871956e3be426018a18583"
-  integrity sha512-7bG83511Hj6Hb1J+NrHtmzew/ib5dlgl2HjIQYWvL1xyUqBIDJNgaSixO624Yu36Yrcyv3+018hPdnn8E1nNuQ==
   dependencies:
     "@babel/generator" "^7.12.11"
     "@babel/parser" "^7.12.11"
@@ -3648,17 +3621,6 @@
   dependencies:
     remark "^13.0.0"
     unist-util-find-all-after "^3.0.2"
-
-"@sveltejs/vite-plugin-svelte@^1.0.0-next.7":
-  version "1.0.0-next.11"
-  resolved "https://registry.yarnpkg.com/@sveltejs/vite-plugin-svelte/-/vite-plugin-svelte-1.0.0-next.11.tgz#1a415a1c4b1642a452e073438c63a73cfd203b51"
-  integrity sha512-EYR1I145k5rflVqhPwk3442m3bkYimTKSHM9uO5KdomXzt+GS9ZSBJQE3/wy1Di9V8OnGa3oKpckI3OZsHkTIA==
-  dependencies:
-    "@rollup/pluginutils" "^4.1.0"
-    chalk "^4.1.1"
-    debug "^4.3.2"
-    require-relative "^0.8.7"
-    svelte-hmr "^0.14.4"
 
 "@szmarczak/http-timer@^1.1.2":
   version "1.1.2"
@@ -4152,7 +4114,7 @@
     "@typescript-eslint/types" "4.28.0"
     eslint-visitor-keys "^2.0.0"
 
-"@vitejs/plugin-react-refresh@^1.3.1", "@vitejs/plugin-react-refresh@^1.3.2":
+"@vitejs/plugin-react-refresh@^1.3.1", "@vitejs/plugin-react-refresh@^1.3.4":
   version "1.3.4"
   resolved "https://registry.yarnpkg.com/@vitejs/plugin-react-refresh/-/plugin-react-refresh-1.3.4.tgz#d38fe876b0067df981181f318d90fb9b41605f81"
   integrity sha512-ArYbVo74P0tBSeNeDf3IdUZ3iMe8hE4eOLsXiefkCeffC9D8bhzj7FNOwvy4vuvAGNV6LPBcbVdlYuEwrUO5Aw==
@@ -4162,11 +4124,6 @@
     "@babel/plugin-transform-react-jsx-source" "^7.14.5"
     "@rollup/pluginutils" "^4.1.0"
     react-refresh "^0.9.0"
-
-"@vitejs/plugin-vue@^1.2.1":
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/@vitejs/plugin-vue/-/plugin-vue-1.2.4.tgz#a7aa6e6a31c556a8b781de730316deeecf7f56f2"
-  integrity sha512-D/3H9plevPQGgQGwmV6eecvOnooLTecPR63HPffVVWPEhbfvmtYLWgznzs456NBb2DItiRTCIa1yWxvGqC+I8A==
 
 "@webassemblyjs/ast@1.9.0":
   version "1.9.0"
@@ -7117,13 +7074,6 @@ debug@^3.0.0, debug@^3.1.0, debug@^3.2.7:
   integrity sha512-CFjzYYAi4ThfiQvizrFQevTTXHtnCqWfe7x1AhgEscTz6ZbLbfoLRLPugTQyBth6f8ZERVUSyWHFD/7Wu4t1XQ==
   dependencies:
     ms "^2.1.1"
-
-debug@^4.3.2:
-  version "4.3.2"
-  resolved "https://registry.yarnpkg.com/debug/-/debug-4.3.2.tgz#f0a49c18ac8779e31d4a0c6029dfb76873c7428b"
-  integrity sha512-mOp8wKcvj7XxC78zLgw/ZA+6TSgkoE2C/ienthhRD298T7UNwAg9diBpLRxC0mOezLl4B0xV7M0cCO6P/O0Xhw==
-  dependencies:
-    ms "2.1.2"
 
 debuglog@^1.0.1:
   version "1.0.1"
@@ -15238,11 +15188,6 @@ require-main-filename@^2.0.0:
   resolved "https://registry.yarnpkg.com/require-main-filename/-/require-main-filename-2.0.0.tgz#d0b329ecc7cc0f61649f62215be69af54aa8989b"
   integrity sha512-NKN5kMDylKuldxYLSUfrbo5Tuzh4hd+2E8NPPX02mZtn1VuREQToYe/ZdlJy+J3uCpfaiGF05e7B8W0iXbQHmg==
 
-require-relative@^0.8.7:
-  version "0.8.7"
-  resolved "https://registry.yarnpkg.com/require-relative/-/require-relative-0.8.7.tgz#7999539fc9e047a37928fa196f8e1563dabd36de"
-  integrity sha1-eZlTn8ngR6N5KPoZb44VY9q9Nt4=
-
 requireg@^0.2.2:
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/requireg/-/requireg-0.2.2.tgz#437e77a5316a54c9bcdbbf5d1f755fe093089830"
@@ -16213,17 +16158,14 @@ storybook-addon-performance@^0.16.0:
     tiny-invariant "^1.1.0"
     xstate "^4.11.0"
 
-storybook-builder-vite@^0.0.9:
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/storybook-builder-vite/-/storybook-builder-vite-0.0.9.tgz#d0f7d5dbdfd3def176898be114ab6580ec1f727a"
-  integrity sha512-8EF7c52E1drybHn6Ycq2ucI2OuwUxVjfI0bRxJKyDGOOQO1sIJ72s0I8RlAOOm1WHQaKe+YLGi2rwQ5gILwJZA==
+storybook-builder-vite@^0.0.10:
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/storybook-builder-vite/-/storybook-builder-vite-0.0.10.tgz#5eec0dda73f080030c2b9f922d818cd5a3c70177"
+  integrity sha512-qSkHFCIr5NqTiVjPjsekFKb+k3mZlvcoZq6v/HI06qSxXsG2SmaswEF/54Ur56Z7bLBIjkIcsRxTwCrlDVmekw==
   dependencies:
     "@mdx-js/mdx" "^1.6.22"
-    "@storybook/addon-svelte-csf" "^1.1.0"
     "@storybook/csf-tools" "^6.3.0-rc.4"
-    "@sveltejs/vite-plugin-svelte" "^1.0.0-next.7"
-    "@vitejs/plugin-react-refresh" "^1.3.2"
-    "@vitejs/plugin-vue" "^1.2.1"
+    "@vitejs/plugin-react-refresh" "^1.3.4"
     glob-promise "^4.1.0"
     vite-plugin-mdx "^3.5.1"
 
@@ -16658,11 +16600,6 @@ supports-hyperlinks@^2.0.0:
   dependencies:
     has-flag "^4.0.0"
     supports-color "^7.0.0"
-
-svelte-hmr@^0.14.4:
-  version "0.14.4"
-  resolved "https://registry.yarnpkg.com/svelte-hmr/-/svelte-hmr-0.14.4.tgz#b7ef2bfeef23916e0e912828c50645ca572ac355"
-  integrity sha512-kItFF7vqzStckSigoFmMnxJpTOdB9TWnQAW6Js+yAB4277tLbJIIE5KBlGHNmJNpA7MguqidsPB27Uw5UzQPCA==
 
 svg-tags@^1.0.0:
   version "1.0.0"
