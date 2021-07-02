@@ -1,8 +1,8 @@
 const path = require('path');
-const config = require('./packages/tools/eslint-config/index.js');
+const config = require('@kickstartds/eslint-config');
 
 module.exports = {
-  extends: './packages/tools/eslint-config/index.js',
+  extends: '@kickstartds/eslint-config',
   settings: {
     'import/resolver': {
       ...config.settings['import/resolver'],
