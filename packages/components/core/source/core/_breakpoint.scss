@@ -22,7 +22,7 @@ $breakpoints: (
   $breakpoints-json: ();
 
   @each $name, $value in $breakpoints {
-    $breakpoint: '"#{$name}":"#{$value}"';
+    $breakpoint: '\\"#{$name}\\":\\"#{$value}\\"';
     $breakpoints-json: append($breakpoints-json, $breakpoint, 'comma');
   }
 

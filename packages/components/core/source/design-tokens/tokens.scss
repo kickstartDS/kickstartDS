@@ -45,6 +45,6 @@
   --g-content-width-wide: 75rem;
 
   /* critical:start */
-  --breakpoints: #{breakpoint.breakpoints-to-json()};
+  --breakpoints: '#{breakpoint.breakpoints-to-json()}';
   /* critical:end */
 }

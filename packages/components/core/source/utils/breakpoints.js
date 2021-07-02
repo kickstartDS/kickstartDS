@@ -4,6 +4,9 @@ import { domLoaded } from '../core/domLoaded';
 const breakpointEvents = {
   change: 'core.breakpoint.change',
 };
+const removeQuotes = (string) =>
+  // removes backslashes and leading & trailing doublequotes
+  string.replace(/\\|^\s*"|"\s*$/g, '');
 
 const includeMediaExport = (() => {
   let breakpoints = {};
@@ -16,7 +19,7 @@ const includeMediaExport = (() => {
       const raw = window
         .getComputedStyle(document.documentElement)
         .getPropertyValue('--breakpoints');
-      breakpoints = Object.entries(JSON.parse(raw)).reduce(
+      breakpoints = Object.entries(JSON.parse(removeQuotes(raw))).reduce(
         (prev, [breakpoint, value]) => {
           prev[breakpoint] = window.matchMedia(`(min-width:${value})`);
           prev[breakpoint].addEventListener(
