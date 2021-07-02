@@ -9,17 +9,19 @@
     "chromatic-base": "yarn run run-chromatic -- --build-script-name 'storybook-base:build'",
     "chromatic-blog": "yarn run run-chromatic -- --build-script-name 'storybook-blog:build'",
     "chromatic-content": "yarn run run-chromatic -- --build-script-name 'storybook-content:build'",
+    "chromatic-form": "yarn run run-chromatic -- --build-script-name 'storybook-form:build'",
     "storybook": "node index.js",
     "storybook:build": "node index.js build",
     "storybook-base:build": "node index.js build --module=base",
     "storybook-blog:build": "node index.js build --module=blog",
-    "storybook-content:build": "node index.js build --module=content"
+    "storybook-content:build": "node index.js build --module=content",
+    "storybook-form:build": "node index.js build --module=form"
   },
   "dependencies": {
-    "ajv": "^7.2.1",
+    "@kickstartds/storybook-addon-component-tokens": "^0.1.2",
     "change-case": "^4.1.2",
     "del": "^6.0.0",
-    "fast-glob": "^3.2.5",
+    "fast-glob": "^3.2.6",
     "find-up": "^5.0.0",
     "fs-extra": "^10.0.0",
     "lazysizes": "^5.3.2",
@@ -30,17 +32,16 @@
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
-    "@storybook/addon-a11y": "^6.3.0-rc.11",
-    "@storybook/addon-essentials": "^6.3.0-rc.11",
-    "@storybook/core": "^6.3.0-rc.11",
-    "@storybook/cli": "^6.3.0-rc.11",
-    "@storybook/react": "^6.3.0-rc.11",
-    "@types/react": "^17.0.2",
+    "@storybook/addon-a11y": "^6.3.2",
+    "@storybook/addon-essentials": "^6.3.2",
+    "@storybook/cli": "^6.3.2",
+    "@storybook/core": "^6.3.2",
+    "@storybook/react": "^6.3.2",
+    "@types/react": "^17.0.13",
     "@types/react-dom": "^17.0.1",
-    "@vitejs/plugin-react-refresh": "^1.3.1",
     "chromatic": "^5.8.0",
     "storybook-addon-performance": "^0.16.0",
-    "storybook-builder-vite": "^0.0.9",
+    "storybook-builder-vite": "0.0.9",
     "vite": "^2.3.2"
   }
 }

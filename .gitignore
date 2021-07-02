@@ -3,7 +3,7 @@
 
 dist
 storybook-static
-licenses-*.csv
+licenses*.csv
 packages/**/package-lock.json
 packages/*/*/lib
 
@@ -25,6 +25,7 @@ node_modules/
 
 # Optional npm cache directory
 .npm
+.yarn-cache
 
 # Optional eslint cache
 .eslintcache
@@ -142,6 +143,3 @@ $RECYCLE.BIN/
 
 # PhpStrom
 .idea/
-
-# generated netlify config
-config.generated.yml

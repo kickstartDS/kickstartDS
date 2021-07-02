@@ -3,6 +3,7 @@ const fs = require('fs-extra');
 const del = require('del');
 const esbuild = require('esbuild');
 const sass = require('sass');
+const fg = require('fast-glob');
 const { DepGraph } = require('dependency-graph');
 
 const [, , outdir = '.'] = process.argv;
@@ -25,20 +26,26 @@ const bundleCss = async (file) => {
   await fs.outputFile(`${outdir}/index.css`, css);
 };
 
+// TODO: resolve package path with something like `require.resolve`
+const packagePath = (packageName) => `node_modules/${packageName}`;
 const getDeps = async (pkgJsonPath) => {
   const pkgJson = await fs.readJSON(pkgJsonPath);
-  return Object.keys(pkgJson.dependencies).filter((packageName) =>
-    packageName.startsWith('@kickstartds/')
+  return Object.keys(pkgJson.dependencies).filter(
+    (packageName) =>
+      packageName.startsWith('@kickstartds/') &&
+      fs.existsSync(`${packagePath(packageName)}/lib/exports.json`)
   );
 };
 
-// TODO: resolve package path with something like `require.resolve`
-const packagePath = (packageName) => `node_modules/${packageName}`;
-
 (async () => {
   try {
-    const kdsPackageNames = await getDeps('package.json');
-
+    const exportsPaths = await fg(
+      'node_modules/@kickstartds/*/lib/exports.json'
+    );
+    const kdsPackageNames = exportsPaths.map(
+      (exportsPath) =>
+        exportsPath.match(/^.*(@kickstartds\/.*)\/lib\/exports\.json$/)[1]
+    );
     await Promise.all(
       kdsPackageNames.map(async (packageName) => {
         const pkgPath = packagePath(packageName);

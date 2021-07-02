@@ -1039,23 +1039,7 @@ export type FullWidthMedia2 = boolean;
 /**
  * Collection of media items to display
  */
-export type Media = (
-  | {
-      video?: Video;
-      full?: FullWidthMedia;
-      [k: string]: unknown;
-    }
-  | {
-      image?: Picture1;
-      full?: FullWidthMedia1;
-      [k: string]: unknown;
-    }
-  | {
-      lightboxImage?: LazyLightboxImage;
-      full?: FullWidthMedia2;
-      [k: string]: unknown;
-    }
-)[];
+export type Media = (TextMediaVideo | TextMediaImage | TextMediaLazyImage)[];
 /**
  * Topic for the teaser box. Displayed before the text, in bold
  */
@@ -1399,7 +1383,7 @@ export interface Button {
   dataComponent?: DataComponentAttribute1;
   fillAnimation?: FillAnimation1;
   iconAnimation?: IconAnimation1;
-  type: TypeAttribute;
+  type?: TypeAttribute;
   value?: ValueAttribute;
   name?: NameAttribute;
   disabled?: DisabledAttribute;
@@ -1827,6 +1811,11 @@ export interface TextMedia {
   mediaAlignment: MediaAlignment;
   media?: Media;
 }
+export interface TextMediaVideo {
+  video?: Video;
+  full?: FullWidthMedia;
+  [k: string]: unknown;
+}
 /**
  * Video item to display
  */
@@ -1836,6 +1825,11 @@ export interface Video {
   title?: VideoTitle;
   width: Width1;
   height: Height3;
+  [k: string]: unknown;
+}
+export interface TextMediaImage {
+  image?: Picture1;
+  full?: FullWidthMedia1;
   [k: string]: unknown;
 }
 /**
@@ -1856,6 +1850,11 @@ export interface Picture1 {
   lazy?: Lazy1;
   sources?: Sources1;
   pictureClassName?: ClassAttribute1;
+  [k: string]: unknown;
+}
+export interface TextMediaLazyImage {
+  lightboxImage?: LazyLightboxImage;
+  full?: FullWidthMedia2;
   [k: string]: unknown;
 }
 /**

@@ -13,8 +13,7 @@
   "scripts": {
     "build": "node ../../tools/build-components/source",
     "watch": "node ../../tools/build-components/source --watch",
-    "schema": "node ../../tools/build-components/source --schema",
-    "prepublishOnly": "NODE_ENV=production yarn run build"
+    "schema": "node ../../tools/build-components/source --schema"
   },
   "files": [
     "lib",
@@ -38,7 +37,7 @@
     "stickybits": "^3.7.0"
   },
   "devDependencies": {
-    "@types/react": "^17.0.2",
+    "@types/react": "^17.0.13",
     "bourbon": "^7.0.0",
     "sass-yiq": "^1.0.0"
   },
