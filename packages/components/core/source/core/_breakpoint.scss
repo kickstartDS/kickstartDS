@@ -1,9 +1,30 @@
-@forward 'include-media/dist/include-media' with (
-  $breakpoints: (
-    xs: 25em,
-    s: 40em,
-    m: 60em,
-    l: 64em,
-    xl: 75em,
-  ),
+$breakpoints: (
+  xs: 25em,
+  s: 40em,
+  m: 60em,
+  l: 64em,
+  xl: 75em,
 );
+
+@forward 'include-media/dist/include-media' with (
+  $breakpoints: $breakpoints,
+);
+
+///
+/// Generates a JSON string with each breakpoint's value
+///
+/// @return {String} - Resulting JSON string
+///
+/// @example json
+///  '{"phone": "320px", "tablet": "768px", "desktop": "1024px"}'
+///
+@function breakpoints-to-json() {
+  $breakpoints-json: ();
+
+  @each $name, $value in $breakpoints {
+    $breakpoint: '\\"#{$name}\\":\\"#{$value}\\"';
+    $breakpoints-json: append($breakpoints-json, $breakpoint, 'comma');
+  }
+
+  @return '{#{$breakpoints-json}}';
+}

@@ -3,7 +3,7 @@
 
 dist
 storybook-static
-licenses-*.csv
+licenses*.csv
 packages/**/package-lock.json
 packages/*/*/lib
 
@@ -143,6 +143,3 @@ $RECYCLE.BIN/
 
 # PhpStrom
 .idea/
-
-# generated netlify config
-config.generated.yml

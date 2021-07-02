@@ -101,7 +101,6 @@
           "description": "Set the disabled attribute for the button"
         }
       },
-      "required": ["type"],
       "additionalProperties": false
     }
   ]

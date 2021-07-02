@@ -4,6 +4,7 @@ const { getArgsShared } = require('./storyUtils');
 
 const template = ({
   moduleDir,
+  componentName,
   componentPascalcased,
   schema,
   argTypes,
@@ -11,6 +12,7 @@ const template = ({
 }) => `
 import { jsx } from 'react/jsx-runtime';
 import { ${componentPascalcased} } from './index.js';
+import cssprops from './${componentName}-tokens.json';
 
 ${componentPascalcased}.displayName = '${componentPascalcased}';
 export const Template = (args) => /*#__PURE__*/jsx(${componentPascalcased}, args);
@@ -21,6 +23,9 @@ export default {
   argTypes: ${JSON.stringify(argTypes, null, 2)},
   args: ${JSON.stringify(defaultArgs, null, 2)},
   excludeStories: ['Template'],
+  parameters: {
+    cssprops,
+  },
 };
 
 export const Default = Template.bind({});
@@ -30,15 +35,19 @@ const createStory = (schema, dest) => {
   const [, moduleDir, fileName] = schema.$id.match(/^.*\/(.+)\/.*\/(.*)$/);
   const [componentName, type] = fileName.split('.');
   if (type === 'schema' && schema.properties) {
-    return fs.outputFile(
-      `${dest}/${componentName}.stories.js`,
-      template({
-        moduleDir,
-        componentPascalcased: pascalCase(componentName),
-        schema,
-        ...getArgsShared(schema.properties),
-      })
-    );
+    return Promise.all([
+      fs.outputFile(
+        `${dest}/${componentName}.stories.js`,
+        template({
+          moduleDir,
+          componentName,
+          componentPascalcased: pascalCase(componentName),
+          schema,
+          ...getArgsShared(schema.properties),
+        })
+      ),
+      fs.outputJSON(`${dest}/${componentName}-tokens.json`, {}),
+    ]);
   }
 };
 

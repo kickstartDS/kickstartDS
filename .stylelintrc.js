@@ -1,3 +1,3 @@
 module.exports = {
-  extends: './packages/tools/stylelint-config/index.js',
+  extends: '@kickstartds/stylelint-config',
 };

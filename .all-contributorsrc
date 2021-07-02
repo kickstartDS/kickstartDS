@@ -9,6 +9,19 @@
   "imageSize": 100,
   "commit": false,
   "commitConvention": "angular",
-  "contributors": [],
+  "contributors": [
+    {
+      "login": "julrich",
+      "name": "Jonas Ulrich",
+      "avatar_url": "https://avatars.githubusercontent.com/u/136760?v=4",
+      "profile": "https://ruhmesmeile.com/",
+      "contributions": [
+        "doc",
+        "infra",
+        "code",
+        "example"
+      ]
+    }
+  ],
   "contributorsPerLine": 7
 }
