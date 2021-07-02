@@ -3,6 +3,7 @@ const fs = require('fs-extra');
 const del = require('del');
 const esbuild = require('esbuild');
 const sass = require('sass');
+const fg = require('fast-glob');
 const { DepGraph } = require('dependency-graph');
 
 const [, , outdir = '.'] = process.argv;
@@ -38,8 +39,13 @@ const getDeps = async (pkgJsonPath) => {
 
 (async () => {
   try {
-    const kdsPackageNames = await getDeps('package.json');
-
+    const exportsPaths = await fg(
+      'node_modules/@kickstartds/*/lib/exports.json'
+    );
+    const kdsPackageNames = exportsPaths.map(
+      (exportsPath) =>
+        exportsPath.match(/^.*(@kickstartds\/.*)\/lib\/exports\.json$/)[1]
+    );
     await Promise.all(
       kdsPackageNames.map(async (packageName) => {
         const pkgPath = packagePath(packageName);
