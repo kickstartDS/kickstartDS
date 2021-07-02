@@ -126,7 +126,10 @@ jobs:
 workflows:
   release:
     jobs:
-      - build
+      - build:
+          filters:
+            branches:
+              ignore: /^dependabot\/.*$/
 
       - chromatic:
           context: kickstartDS
