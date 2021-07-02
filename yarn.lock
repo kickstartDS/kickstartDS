@@ -1661,6 +1661,11 @@
   resolved "https://registry.yarnpkg.com/@juggle/resize-observer/-/resize-observer-3.3.1.tgz#b50a781709c81e10701004214340f25475a171a0"
   integrity sha512-zMM9Ds+SawiUkakS7y94Ymqx+S0ORzpG3frZirN3l+UlXUmSUR7hF4wxCVqW+ei94JzV5kt0uXBcoOEAuiydrw==
 
+"@kickstartds/storybook-addon-component-tokens@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@kickstartds/storybook-addon-component-tokens/-/storybook-addon-component-tokens-0.1.2.tgz#a573ccaa31f630595018bc466d510e4c5966a73f"
+  integrity sha512-ithvCQ0FJRcIwkkKzVHt0GvtLw3NWxYewHoy7kQ3yMWr6MpbB0DVYi6BFIqaXCpnrOH6ued/vUu45+MYNcmCyg==
+
 "@lerna/add@4.0.0":
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@lerna/add/-/add-4.0.0.tgz#c36f57d132502a57b9e7058d1548b7a565ef183f"
@@ -6991,6 +6996,14 @@ currently-unhandled@^0.4.1:
   integrity sha1-mI3zP+qxke95mmE2nddsF635V+o=
   dependencies:
     array-find-index "^1.0.1"
+
+custom-property-extract@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/custom-property-extract/-/custom-property-extract-1.2.1.tgz#3560cb01e51115a12e2fb60b90f0baa02d6a6027"
+  integrity sha512-LTG3rLFXyxkXyoHLSrGlPPUu6G3RRMlgAM2lHPHmKKAsWHu4XUIcKSE5vDpUVmOQFqxe2l/W91ePD0Bht9SE+Q==
+  dependencies:
+    gonzales-pe "^4.3.0"
+    schema-utils "^3.0.0"
 
 cyclist@^1.0.1:
   version "1.0.1"
