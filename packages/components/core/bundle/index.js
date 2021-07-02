@@ -25,15 +25,16 @@ const bundleCss = async (file) => {
   await fs.outputFile(`${outdir}/index.css`, css);
 };
 
-const getDeps = async (pkgJsonPath) => {
-  const pkgJson = await fs.readJSON(pkgJsonPath);
-  return Object.keys(pkgJson.dependencies).filter((packageName) =>
-    packageName.startsWith('@kickstartds/')
-  );
-};
-
 // TODO: resolve package path with something like `require.resolve`
 const packagePath = (packageName) => `node_modules/${packageName}`;
+const getDeps = async (pkgJsonPath) => {
+  const pkgJson = await fs.readJSON(pkgJsonPath);
+  return Object.keys(pkgJson.dependencies).filter(
+    (packageName) =>
+      packageName.startsWith('@kickstartds/') &&
+      fs.existsSync(`${packagePath(packageName)}/lib/exports.json`)
+  );
+};
 
 (async () => {
   try {
