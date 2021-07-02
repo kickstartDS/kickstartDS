@@ -8,6 +8,13 @@ defaults: &defaults
   working_directory: /mnt/ramdisk
   resource_class: medium+
 
+release_branches_only: &release_branches_only
+  filters:
+    branches:
+      only:
+        - master
+        - next
+
 aliases:
   - &save-cache-yarn
     key: yarn-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
@@ -132,21 +139,25 @@ workflows:
             - build
 
       - publish-base:
+          <<: *release_branches_only
           context: kickstartDS
           requires:
             - build
 
       - publish-blog:
+          <<: *release_branches_only
           context: kickstartDS
           requires:
             - build
 
       - publish-content:
+          <<: *release_branches_only
           context: kickstartDS
           requires:
             - build
 
       - publish-form:
+          <<: *release_branches_only
           context: kickstartDS
           requires:
             - build
