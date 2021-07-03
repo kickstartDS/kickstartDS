@@ -145,22 +145,22 @@ workflows:
           <<: *release_branches_only
           context: kickstartDS
           requires:
-            - build
+            - release
 
       - publish-blog:
           <<: *release_branches_only
           context: kickstartDS
           requires:
-            - build
+            - release
 
       - publish-content:
           <<: *release_branches_only
           context: kickstartDS
           requires:
-            - build
+            - release
 
       - publish-form:
           <<: *release_branches_only
           context: kickstartDS
           requires:
-            - build
+            - release
