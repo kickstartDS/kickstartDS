@@ -1,5 +1,19 @@
 # (Sun Jul 04 2021)
 
+#### ⚠️ Pushed to `master`
+
+- ci(circleci): add another build stage ([@julrich](https://github.com/julrich))
+- `@kickstartds/base@1.1.1`, `@kickstartds/blog@1.1.1`, `@kickstartds/content@1.1.1`, `@kickstartds/core@1.1.1`, `@kickstartds/form@1.1.1`
+  - chore(documentation): trigger another release for packages ([@julrich](https://github.com/julrich))
+
+#### Authors: 1
+
+- Jonas Ulrich ([@julrich](https://github.com/julrich))
+
+---
+
+# (Sun Jul 04 2021)
+
 #### 🚀 Enhancement
 
 - `@kickstartds/base@1.1.0`, `@kickstartds/blog@1.1.0`, `@kickstartds/content@1.1.0`, `@kickstartds/core@1.1.0`, `@kickstartds/form@1.1.0`

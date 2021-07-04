@@ -1,3 +1,15 @@
+# v1.1.1 (Sun Jul 04 2021)
+
+#### ⚠️ Pushed to `master`
+
+- chore(documentation): trigger another release for packages ([@julrich](https://github.com/julrich))
+
+#### Authors: 1
+
+- Jonas Ulrich ([@julrich](https://github.com/julrich))
+
+---
+
 # v1.1.0 (Sun Jul 04 2021)
 
 #### 🚀 Enhancement
