@@ -1,3 +1,3 @@
 # Base Module
 
-see `CHANGELOG.md` for version history
+see `CHANGELOG.md` for version history!
