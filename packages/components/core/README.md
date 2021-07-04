@@ -1,3 +1,3 @@
-# Core Module
+# kickstartDS Core Module
 
 see `CHANGELOG.md` for version history!
