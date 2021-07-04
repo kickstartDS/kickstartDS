@@ -63,16 +63,6 @@ jobs:
           paths:
             - packages/components
 
-  chromatic:
-    <<: *defaults
-    steps:
-      - checkout
-      - restore_cache: *restore-cache-node
-      - *attach_workspace
-      - run:
-          name: Build Storybook & deploy to Chromatic
-          command: yarn run chromatic
-
   release:
     <<: *defaults
     steps:
@@ -82,6 +72,40 @@ jobs:
       - run:
           name: Create Release
           command: yarn auto shipit
+
+  build-again:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache: *restore-cache-yarn
+      - restore_cache: *restore-cache-node
+      - run:
+          name: Set Yarn Cache Directory
+          command: yarn config set cache-folder /mnt/ramdisk/.yarn-cache
+      - run:
+          name: Install Dependencies
+          command: yarn install --frozen-lockfile --cache-folder /mnt/ramdisk/.yarn-cache
+      - save_cache: *save-cache-yarn
+      - save_cache: *save-cache-node
+      - run:
+          name: Build
+          environment:
+            NODE_ENV: production
+          command: yarn build
+      - persist_to_workspace:
+          root: .
+          paths:
+            - packages/components
+
+  chromatic:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache: *restore-cache-node
+      - *attach_workspace
+      - run:
+          name: Build Storybook & deploy to Chromatic
+          command: yarn run chromatic
 
   publish-base:
     <<: *defaults
@@ -136,31 +160,35 @@ workflows:
           requires:
             - build
 
+      - build-again:
+          requires:
+            - release
+
       - chromatic:
           context: kickstartDS
           requires:
-            - release
+            - build-again
 
       - publish-base:
           <<: *release_branches_only
           context: kickstartDS
           requires:
-            - release
+            - build-again
 
       - publish-blog:
           <<: *release_branches_only
           context: kickstartDS
           requires:
-            - release
+            - build-again
 
       - publish-content:
           <<: *release_branches_only
           context: kickstartDS
           requires:
-            - release
+            - build-again
 
       - publish-form:
           <<: *release_branches_only
           context: kickstartDS
           requires:
-            - release
+            - build-again
