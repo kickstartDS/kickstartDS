@@ -1,5 +1,18 @@
 # (Sun Jul 04 2021)
 
+#### 🐛 Bug Fix
+
+- `@kickstartds/blog@1.1.2`, `@kickstartds/form@1.1.2`
+  - fix(schema): add missing props to select form and blog component schemas [#169](https://github.com/kickstartDS/kickstartDS/pull/169) ([@julrich](https://github.com/julrich))
+
+#### Authors: 1
+
+- Jonas Ulrich ([@julrich](https://github.com/julrich))
+
+---
+
+# (Sun Jul 04 2021)
+
 #### ⚠️ Pushed to `master`
 
 - ci(circleci): add another build stage ([@julrich](https://github.com/julrich))

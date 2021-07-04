@@ -1,3 +1,16 @@
+# v1.1.2 (Sun Jul 04 2021)
+
+#### 🐛 Bug Fix
+
+- fix(schema): add missing props to select form and blog component schemas [#169](https://github.com/kickstartDS/kickstartDS/pull/169) ([@julrich](https://github.com/julrich))
+- fix(types): add newly generated types from schema changes ([@julrich](https://github.com/julrich))
+
+#### Authors: 1
+
+- Jonas Ulrich ([@julrich](https://github.com/julrich))
+
+---
+
 # v1.1.1 (Sun Jul 04 2021)
 
 #### ⚠️ Pushed to `master`
