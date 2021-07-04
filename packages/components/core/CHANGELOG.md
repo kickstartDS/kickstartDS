@@ -1,3 +1,22 @@
+# v1.1.0 (Sun Jul 04 2021)
+
+#### 🚀 Enhancement
+
+- feat(documentation): trigger a release to fix versioning [#166](https://github.com/kickstartDS/kickstartDS/pull/166) ([@julrich](https://github.com/julrich))
+
+#### 🐛 Bug Fix
+
+- feat(documentation): trigger a release to fix versioning ([@julrich](https://github.com/julrich))
+- chore(documentation): update formatting in `README.md`s ([@julrich](https://github.com/julrich))
+- fix(documentation): add updated CHANGELOG.md to release [#164](https://github.com/kickstartDS/kickstartDS/pull/164) ([@julrich](https://github.com/julrich))
+- chore(documentation): add CHANGELOG.md hint to module README.mds ([@julrich](https://github.com/julrich))
+
+#### Authors: 1
+
+- Jonas Ulrich ([@julrich](https://github.com/julrich))
+
+---
+
 # v1.0.0 (Fri Jul 02 2021)
 
 :tada: This release contains work from a new contributor! :tada:
