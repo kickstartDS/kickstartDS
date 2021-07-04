@@ -6,7 +6,7 @@ This project is managed by [lerna](https://lernajs.io/). Each module is an indep
 
 ### Environment
 
-- [node](https://nodejs.org/en/) >= v12 – if you have [nvm](https://github.com/creationix/nvm#node-version-manager---) installed, you can just run `nvm use` to select the right node version.
+- [node](https://nodejs.org/en/) >= v14 – if you have [nvm](https://github.com/creationix/nvm#node-version-manager---) installed, you can just run `nvm use` to select the right node version.
 
 - [yarn](https://classic.yarnpkg.com/lang/en/) classic
 
