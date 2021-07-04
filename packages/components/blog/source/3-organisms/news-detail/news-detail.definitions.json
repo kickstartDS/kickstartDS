@@ -3,7 +3,13 @@
   "$id": "http://frontend.ruhmesmeile.com/blog/organisms/news-detail.definitions.json",
   "title": "News Detail Definitions",
   "description": "News Detail Definitions",
+  "type": "object",
   "definitions": {
     "date": { "type": "string", "format": "date", "default": "2021-03-29" }
+  },
+  "properties": {
+    "date": {
+      "$ref": "#/definitions/date"
+    }
   }
 }

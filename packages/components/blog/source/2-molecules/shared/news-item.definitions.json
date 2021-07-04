@@ -3,6 +3,7 @@
   "$id": "http://frontend.ruhmesmeile.com/blog/molecules/news-item.definitions.json",
   "title": "News List / Latest Definitions",
   "description": "News List / Latest Definitions",
+  "type": "object",
   "definitions": {
     "image": {
       "title": "Image",
@@ -42,6 +43,26 @@
       "items": {
         "$ref": "http://frontend.ruhmesmeile.com/base/atoms/tag-label.schema.json"
       }
+    }
+  },
+  "properties": {
+    "image": {
+      "$ref": "#/definitions/image"
+    },
+    "date": {
+      "$ref": "#/definitions/date"
+    },
+    "link": {
+      "$ref": "#/definitions/link"
+    },
+    "title": {
+      "$ref": "#/definitions/title"
+    },
+    "body": {
+      "$ref": "#/definitions/body"
+    },
+    "categories": {
+      "$ref": "#/definitions/categories"
     }
   }
 }
