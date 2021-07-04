@@ -28,6 +28,7 @@
     "run-chromatic": "lerna run --scope @kickstartds-internal/storybook --stream --no-prefix",
     "schema": "lerna run --parallel --no-prefix schema",
     "staged": "git diff --name-only --cached | grep '@kickstartds' | cut -d / -f 3 | awk '!seen[$0]++'",
+    "start": "run-p watch \"storybook start\"",
     "storybook": "lerna run --scope @kickstartds-internal/storybook --stream --no-prefix storybook --",
     "storybook:build": "yarn run storybook build",
     "storybook:debug": "yarn run storybook debug",
