@@ -24,7 +24,18 @@
 
   .c-visual__topic {
     /* critical:start */
-    color: var(--c-visual_topic--color);
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      color: var(--c-visual_box--color);
+    }
+
+    p {
+      margin-top: 0;
+    }
     /* critical:end */
   }
 

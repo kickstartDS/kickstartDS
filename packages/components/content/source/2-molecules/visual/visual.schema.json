@@ -114,19 +114,7 @@
           "default": true
         },
         "headline": {
-          "title": "Headline",
-          "description": "Text box headline",
-          "type": "string",
-          "default": "Lorem Ipsum dolor",
-          "examples": [
-            "Sed repudiandae consequuntur",
-            "Impedit ipsum libero",
-            "Accusamus enim iure",
-            "Odio maxime quas",
-            "Quasi exercitationem ullam",
-            "Ut eaque iure"
-          ],
-          "faker": "lorem.words"
+          "$ref": "http://frontend.ruhmesmeile.com/base/molecules/headline.schema.json"
         },
         "text": {
           "title": "Text",
