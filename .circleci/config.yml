@@ -131,36 +131,36 @@ workflows:
             branches:
               ignore: /^dependabot\/.*$/
 
-      - chromatic:
-          context: kickstartDS
-          requires:
-            - build
-
       - release:
           context: kickstartDS
           requires:
             - build
 
+      - chromatic:
+          context: kickstartDS
+          requires:
+            - release
+
       - publish-base:
           <<: *release_branches_only
           context: kickstartDS
           requires:
-            - build
+            - release
 
       - publish-blog:
           <<: *release_branches_only
           context: kickstartDS
           requires:
-            - build
+            - release
 
       - publish-content:
           <<: *release_branches_only
           context: kickstartDS
           requires:
-            - build
+            - release
 
       - publish-form:
           <<: *release_branches_only
           context: kickstartDS
           requires:
-            - build
+            - release
