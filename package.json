@@ -39,7 +39,7 @@
   },
   "dependencies": {
     "@kickstartds/eslint-config": "^1.0.0",
-    "@kickstartds/stylelint-config": "^1.0.0-alpha.1",
+    "@kickstartds/stylelint-config": "^1.0.0",
     "execa": "^5.1.1",
     "fast-glob": "^3.2.6",
     "fs-extra": "^10.0.0",
