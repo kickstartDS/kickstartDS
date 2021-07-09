@@ -42,7 +42,7 @@
     "@types/react-dom": "^17.0.9",
     "chromatic": "^5.8.0",
     "storybook-addon-performance": "^0.16.0",
-    "storybook-builder-vite": "0.0.9",
+    "storybook-builder-vite": "0.0.12",
     "vite": "^2.3.2"
   }
 }

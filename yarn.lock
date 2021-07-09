@@ -2886,13 +2886,6 @@
   resolved "https://registry.yarnpkg.com/@storybook/addon-measure/-/addon-measure-2.0.0.tgz#c40bbe91bacd3f795963dc1ee6ff86be87deeda9"
   integrity sha512-ZhdT++cX+L9LwjhGYggvYUUVQH/MGn2rwbrAwCMzA/f2QTFvkjxzX8nDgMxIhaLCDC+gHIxfJG2wrWN0jkBr3g==
 
-"@storybook/addon-svelte-csf@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-svelte-csf/-/addon-svelte-csf-1.1.0.tgz#1d6674830efdd4fea1ba266457ab2bc91fd19744"
-  integrity sha512-AjP9kxVbbAyucB8vy889WERafjNM020vWel+psCuDJ2vLU+uObqbCLSGKRIznXjeL0BYR73l9ZF+niJfw6QSlg==
-  dependencies:
-    ts-dedent "^2.0.0"
-
 "@storybook/addon-toolbars@6.3.3":
   version "6.3.3"
   resolved "https://registry.yarnpkg.com/@storybook/addon-toolbars/-/addon-toolbars-6.3.3.tgz#ef154035153247d766bc240968eedc7b988068a2"
@@ -3678,10 +3671,10 @@
     prettier "~2.2.1"
     regenerator-runtime "^0.13.7"
 
-"@storybook/csf-tools@^6.3.0-rc.4":
-  version "6.3.0"
-  resolved "https://registry.yarnpkg.com/@storybook/csf-tools/-/csf-tools-6.3.0.tgz#6ec59ebcf8739209b7871956e3be426018a18583"
-  integrity sha512-7bG83511Hj6Hb1J+NrHtmzew/ib5dlgl2HjIQYWvL1xyUqBIDJNgaSixO624Yu36Yrcyv3+018hPdnn8E1nNuQ==
+"@storybook/csf-tools@^6.3.3":
+  version "6.3.4"
+  resolved "https://registry.yarnpkg.com/@storybook/csf-tools/-/csf-tools-6.3.4.tgz#5c5df4fcb2bbb71cd6c04b2936ff2d6501562c24"
+  integrity sha512-q7+owEWlQa7e/YOt8HXqOvNbtk28YqFOt5/RliXr8s6w7KY7PAlXWckdSBThVSHQnpbk6Fzb0RPqNjxM+qEXiw==
   dependencies:
     "@babel/generator" "^7.12.11"
     "@babel/parser" "^7.12.11"
@@ -4038,17 +4031,6 @@
   dependencies:
     remark "^13.0.0"
     unist-util-find-all-after "^3.0.2"
-
-"@sveltejs/vite-plugin-svelte@^1.0.0-next.7":
-  version "1.0.0-next.11"
-  resolved "https://registry.yarnpkg.com/@sveltejs/vite-plugin-svelte/-/vite-plugin-svelte-1.0.0-next.11.tgz#1a415a1c4b1642a452e073438c63a73cfd203b51"
-  integrity sha512-EYR1I145k5rflVqhPwk3442m3bkYimTKSHM9uO5KdomXzt+GS9ZSBJQE3/wy1Di9V8OnGa3oKpckI3OZsHkTIA==
-  dependencies:
-    "@rollup/pluginutils" "^4.1.0"
-    chalk "^4.1.1"
-    debug "^4.3.2"
-    require-relative "^0.8.7"
-    svelte-hmr "^0.14.4"
 
 "@szmarczak/http-timer@^1.1.2":
   version "1.1.2"
@@ -4542,21 +4524,16 @@
     "@typescript-eslint/types" "4.28.1"
     eslint-visitor-keys "^2.0.0"
 
-"@vitejs/plugin-react-refresh@^1.3.2":
-  version "1.3.4"
-  resolved "https://registry.yarnpkg.com/@vitejs/plugin-react-refresh/-/plugin-react-refresh-1.3.4.tgz#d38fe876b0067df981181f318d90fb9b41605f81"
-  integrity sha512-ArYbVo74P0tBSeNeDf3IdUZ3iMe8hE4eOLsXiefkCeffC9D8bhzj7FNOwvy4vuvAGNV6LPBcbVdlYuEwrUO5Aw==
+"@vitejs/plugin-react-refresh@^1.3.5":
+  version "1.3.5"
+  resolved "https://registry.yarnpkg.com/@vitejs/plugin-react-refresh/-/plugin-react-refresh-1.3.5.tgz#be47e56d9965423968c8a6b2d62e5014e1e24478"
+  integrity sha512-7c4ELQMygKw5YFCNMLhDHrt4BOgXmROP65gPax/W43mJPNQaYW8ny1kI/bvCDNuzMqZWSK8uf2tEjPVVBnZ5IQ==
   dependencies:
     "@babel/core" "^7.14.6"
     "@babel/plugin-transform-react-jsx-self" "^7.14.5"
     "@babel/plugin-transform-react-jsx-source" "^7.14.5"
     "@rollup/pluginutils" "^4.1.0"
-    react-refresh "^0.9.0"
-
-"@vitejs/plugin-vue@^1.2.1":
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/@vitejs/plugin-vue/-/plugin-vue-1.2.4.tgz#a7aa6e6a31c556a8b781de730316deeecf7f56f2"
-  integrity sha512-D/3H9plevPQGgQGwmV6eecvOnooLTecPR63HPffVVWPEhbfvmtYLWgznzs456NBb2DItiRTCIa1yWxvGqC+I8A==
+    react-refresh "^0.10.0"
 
 "@webassemblyjs/ast@1.9.0":
   version "1.9.0"
@@ -7470,7 +7447,7 @@ debug@2.6.9, debug@^2.2.0, debug@^2.3.3, debug@^2.6.0, debug@^2.6.9:
   dependencies:
     ms "2.0.0"
 
-debug@4, debug@^4.0.0, debug@^4.0.1, debug@^4.1.0, debug@^4.1.1, debug@^4.3.1, debug@^4.3.2:
+debug@4, debug@^4.0.0, debug@^4.0.1, debug@^4.1.0, debug@^4.1.1, debug@^4.3.1:
   version "4.3.2"
   resolved "https://registry.yarnpkg.com/debug/-/debug-4.3.2.tgz#f0a49c18ac8779e31d4a0c6029dfb76873c7428b"
   integrity sha512-mOp8wKcvj7XxC78zLgw/ZA+6TSgkoE2C/ienthhRD298T7UNwAg9diBpLRxC0mOezLl4B0xV7M0cCO6P/O0Xhw==
@@ -8156,6 +8133,11 @@ es-get-iterator@^1.0.2:
     is-set "^2.0.2"
     is-string "^1.0.5"
     isarray "^2.0.5"
+
+es-module-lexer@^0.7.1:
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/es-module-lexer/-/es-module-lexer-0.7.1.tgz#c2c8e0f46f2df06274cdaf0dd3f3b33e0a0b267d"
+  integrity sha512-MgtWFl5No+4S3TmhDmCz2ObFGm6lEpTnzbQi+Dd+pw4mlTIZTmM2iAs5gRlmx5zS9luzobCSBSI90JM/1/JgOw==
 
 es-to-primitive@^1.2.1:
   version "1.2.1"
@@ -9427,7 +9409,7 @@ glob-promise@^3.4.0:
   dependencies:
     "@types/glob" "*"
 
-glob-promise@^4.1.0:
+glob-promise@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/glob-promise/-/glob-promise-4.2.0.tgz#d9f441482e70c71513066745783ed2054b87d6e0"
   integrity sha512-XQlQamNoMi++Sd5c8Y3l/FE2aqia+Lo1ghXEJZiqXdOvWOosA/zVetMahrdfRwwPjCXcFjg3fUogryAMa7IRQQ==
@@ -14974,15 +14956,15 @@ react-popper@^2.2.4:
     react-fast-compare "^3.0.1"
     warning "^4.0.2"
 
+react-refresh@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.10.0.tgz#2f536c9660c0b9b1d500684d9e52a65e7404f7e3"
+  integrity sha512-PgidR3wST3dDYKr6b4pJoqQFpPGNKDSCDx4cZoshjXipw3LzO7mG1My2pwEzz2JVkF+inx3xRpDeQLFQGH/hsQ==
+
 react-refresh@^0.8.3:
   version "0.8.3"
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.8.3.tgz#721d4657672d400c5e3c75d063c4a85fb2d5d68f"
   integrity sha512-X8jZHc7nCMjaCqoU+V2I0cOhNW+QMBwSUkeXnTi8IPe6zaRWfn60ZzvFDZqWPfmSJfjub7dDW1SP0jaHWLu/hg==
-
-react-refresh@^0.9.0:
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.9.0.tgz#71863337adc3e5c2f8a6bfddd12ae3bfe32aafbf"
-  integrity sha512-Gvzk7OZpiqKSkxsQvO/mbTN1poglhmAV7gR/DdIrRrSMXraRQQlfikRJOr3Nb9GTMPC5kof948Zy6jJZIFtDvQ==
 
 react-sizeme@^3.0.1:
   version "3.0.1"
@@ -15517,11 +15499,6 @@ require-main-filename@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/require-main-filename/-/require-main-filename-2.0.0.tgz#d0b329ecc7cc0f61649f62215be69af54aa8989b"
   integrity sha512-NKN5kMDylKuldxYLSUfrbo5Tuzh4hd+2E8NPPX02mZtn1VuREQToYe/ZdlJy+J3uCpfaiGF05e7B8W0iXbQHmg==
-
-require-relative@^0.8.7:
-  version "0.8.7"
-  resolved "https://registry.yarnpkg.com/require-relative/-/require-relative-0.8.7.tgz#7999539fc9e047a37928fa196f8e1563dabd36de"
-  integrity sha1-eZlTn8ngR6N5KPoZb44VY9q9Nt4=
 
 requireg@^0.2.2:
   version "0.2.2"
@@ -16488,19 +16465,17 @@ storybook-addon-performance@^0.16.0:
     tiny-invariant "^1.1.0"
     xstate "^4.11.0"
 
-storybook-builder-vite@0.0.9:
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/storybook-builder-vite/-/storybook-builder-vite-0.0.9.tgz#d0f7d5dbdfd3def176898be114ab6580ec1f727a"
-  integrity sha512-8EF7c52E1drybHn6Ycq2ucI2OuwUxVjfI0bRxJKyDGOOQO1sIJ72s0I8RlAOOm1WHQaKe+YLGi2rwQ5gILwJZA==
+storybook-builder-vite@0.0.12:
+  version "0.0.12"
+  resolved "https://registry.yarnpkg.com/storybook-builder-vite/-/storybook-builder-vite-0.0.12.tgz#3da34063139b0406156af2184863790a54e34817"
+  integrity sha512-XVSCb/WVHn1qzhQBv0AKTFk3Ux12CBa3+/dIxXOYxqk5BBmkYJVViK+fTv0WdKRNQBlTsq56dxbhpmVKaQzmXg==
   dependencies:
     "@mdx-js/mdx" "^1.6.22"
-    "@storybook/addon-svelte-csf" "^1.1.0"
-    "@storybook/csf-tools" "^6.3.0-rc.4"
-    "@sveltejs/vite-plugin-svelte" "^1.0.0-next.7"
-    "@vitejs/plugin-react-refresh" "^1.3.2"
-    "@vitejs/plugin-vue" "^1.2.1"
-    glob-promise "^4.1.0"
-    vite-plugin-mdx "^3.5.1"
+    "@storybook/csf-tools" "^6.3.3"
+    "@vitejs/plugin-react-refresh" "^1.3.5"
+    es-module-lexer "^0.7.1"
+    glob-promise "^4.2.0"
+    vite-plugin-mdx "^3.5.6"
 
 stream-browserify@^2.0.1:
   version "2.0.2"
@@ -16942,11 +16917,6 @@ supports-hyperlinks@^2.0.0:
   dependencies:
     has-flag "^4.0.0"
     supports-color "^7.0.0"
-
-svelte-hmr@^0.14.4:
-  version "0.14.4"
-  resolved "https://registry.yarnpkg.com/svelte-hmr/-/svelte-hmr-0.14.4.tgz#b7ef2bfeef23916e0e912828c50645ca572ac355"
-  integrity sha512-kItFF7vqzStckSigoFmMnxJpTOdB9TWnQAW6Js+yAB4277tLbJIIE5KBlGHNmJNpA7MguqidsPB27Uw5UzQPCA==
 
 svg-tags@^1.0.0:
   version "1.0.0"
@@ -18123,7 +18093,7 @@ vhtml@^2.2.0:
   resolved "https://registry.yarnpkg.com/vhtml/-/vhtml-2.2.0.tgz#369e6823ed6c32cbb9f6e33395bae7c65faa014c"
   integrity sha512-TPXrXrxBOslRUVnlVkiAqhoXneiertIg86bdvzionrUYhEuiROvyPZNiiP6GIIJ2Q7oPNVyEtIx8gMAZZE9lCQ==
 
-vite-plugin-mdx@^3.5.1:
+vite-plugin-mdx@^3.5.6:
   version "3.5.6"
   resolved "https://registry.yarnpkg.com/vite-plugin-mdx/-/vite-plugin-mdx-3.5.6.tgz#3366ec761c7881ffab3168bc0f7c8692e1f1e05e"
   integrity sha512-KRc6/MN/ZSJEv3PxfPEM3p5NRAnhknK9RO3h86GqOcFCCaaB88WpsLxBWPqg5cWoI3uJm+Fp/ZGfs1Fd7cQnSw==
