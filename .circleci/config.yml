@@ -1,5 +1,3 @@
-# Work in progress!!
-
 version: 2.1
 
 defaults: &defaults
@@ -39,7 +37,7 @@ aliases:
       at: /mnt/ramdisk
 
 jobs:
-  build:
+  release:
     <<: *defaults
     steps:
       - checkout
@@ -58,6 +56,9 @@ jobs:
           environment:
             NODE_ENV: production
           command: yarn build
+      - run:
+          name: Create Release
+          command: yarn auto shipit
       - persist_to_workspace:
           root: .
           paths:
@@ -72,16 +73,6 @@ jobs:
       - run:
           name: Build Storybook & deploy to Chromatic
           command: yarn run chromatic
-
-  release:
-    <<: *defaults
-    steps:
-      - checkout
-      - restore_cache: *restore-cache-node
-      - *attach_workspace
-      - run:
-          name: Create Release
-          command: yarn auto shipit
 
   publish-base:
     <<: *defaults
@@ -126,7 +117,8 @@ jobs:
 workflows:
   release:
     jobs:
-      - build:
+      - release:
+          context: kickstartDS
           filters:
             branches:
               ignore: /^dependabot\/.*$/
@@ -134,33 +126,28 @@ workflows:
       - chromatic:
           context: kickstartDS
           requires:
-            - build
-
-      - release:
-          context: kickstartDS
-          requires:
-            - build
+            - release
 
       - publish-base:
           <<: *release_branches_only
           context: kickstartDS
           requires:
-            - build
+            - release
 
       - publish-blog:
           <<: *release_branches_only
           context: kickstartDS
           requires:
-            - build
+            - release
 
       - publish-content:
           <<: *release_branches_only
           context: kickstartDS
           requires:
-            - build
+            - release
 
       - publish-form:
           <<: *release_branches_only
           context: kickstartDS
           requires:
-            - build
+            - release

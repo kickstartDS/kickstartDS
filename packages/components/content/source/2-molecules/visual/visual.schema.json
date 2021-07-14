@@ -120,6 +120,7 @@
           "title": "Text",
           "description": "Text box copy text",
           "type": "string",
+          "format": "markdown",
           "default": "Hic maxime sed eos non. Consequatur ut qui amet accusantium nesciunt."
         },
         "link": {

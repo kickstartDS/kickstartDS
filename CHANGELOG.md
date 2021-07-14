@@ -1,3 +1,52 @@
+# (Sun Jul 04 2021)
+
+#### 🐛 Bug Fix
+
+- `@kickstartds/blog@1.1.2`, `@kickstartds/form@1.1.2`
+  - fix(schema): add missing props to select form and blog component schemas [#169](https://github.com/kickstartDS/kickstartDS/pull/169) ([@julrich](https://github.com/julrich))
+
+#### Authors: 1
+
+- Jonas Ulrich ([@julrich](https://github.com/julrich))
+
+---
+
+# (Sun Jul 04 2021)
+
+#### ⚠️ Pushed to `master`
+
+- ci(circleci): add another build stage ([@julrich](https://github.com/julrich))
+- `@kickstartds/base@1.1.1`, `@kickstartds/blog@1.1.1`, `@kickstartds/content@1.1.1`, `@kickstartds/core@1.1.1`, `@kickstartds/form@1.1.1`
+  - chore(documentation): trigger another release for packages ([@julrich](https://github.com/julrich))
+
+#### Authors: 1
+
+- Jonas Ulrich ([@julrich](https://github.com/julrich))
+
+---
+
+# (Sun Jul 04 2021)
+
+#### 🚀 Enhancement
+
+- `@kickstartds/base@1.1.0`, `@kickstartds/blog@1.1.0`, `@kickstartds/content@1.1.0`, `@kickstartds/core@1.1.0`, `@kickstartds/form@1.1.0`
+  - feat(documentation): trigger a release to fix versioning [#166](https://github.com/kickstartDS/kickstartDS/pull/166) ([@julrich](https://github.com/julrich))
+
+#### 🐛 Bug Fix
+
+- `@kickstartds/base@1.1.0`, `@kickstartds/blog@1.1.0`, `@kickstartds/content@1.1.0`, `@kickstartds/core@1.1.0`, `@kickstartds/form@1.1.0`
+  - fix(documentation): add updated CHANGELOG.md to release [#164](https://github.com/kickstartDS/kickstartDS/pull/164) ([@julrich](https://github.com/julrich))
+
+#### ⚠️ Pushed to `master`
+
+- ci(circleci): change dependencies ([@julrich](https://github.com/julrich))
+
+#### Authors: 1
+
+- Jonas Ulrich ([@julrich](https://github.com/julrich))
+
+---
+
 # (Fri Jul 02 2021)
 
 :tada: This release contains work from new contributors! :tada:
