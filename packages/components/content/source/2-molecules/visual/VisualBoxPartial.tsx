@@ -5,11 +5,16 @@ import {
   RichText,
   defaultRenderFn as richTextDefaultRenderFn,
 } from '@kickstartds/base/lib/rich-text';
-import { renderTextFn } from '@kickstartds/core/lib/core';
+import {
+  renderFn,
+  renderTextFn,
+  defaultRenderFn,
+} from '@kickstartds/core/lib/core';
 import { Headline } from '@kickstartds/base/source/2-molecules/headline/HeadlineComponent';
 import { TextBox, Inbox } from './VisualProps';
 
 export interface RenderFunctions {
+  renderHeadline?: renderFn;
   renderText?: renderTextFn;
 }
 
@@ -26,6 +31,7 @@ export const VisualBoxPartial: FunctionComponent<IBox & RenderFunctions> = ({
   headline,
   text,
   link,
+  renderHeadline = defaultRenderFn,
   renderText = richTextDefaultRenderFn,
 }) => (
   <div
@@ -48,10 +54,10 @@ export const VisualBoxPartial: FunctionComponent<IBox & RenderFunctions> = ({
       {headline && (
         <Headline
           level="p"
-          title="Lorem Ipsum dolor"
           align="left"
-          className="c-visual__topic"
           {...headline}
+          renderContent={renderHeadline}
+          className="c-visual__topic"
         />
       )}
 
