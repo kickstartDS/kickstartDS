@@ -1,5 +1,3 @@
-# Work in progress!!
-
 version: 2.1
 
 defaults: &defaults
@@ -39,44 +37,10 @@ aliases:
       at: /mnt/ramdisk
 
 jobs:
-  build:
-    <<: *defaults
-    steps:
-      - checkout
-      - restore_cache: *restore-cache-yarn
-      - restore_cache: *restore-cache-node
-      - run:
-          name: Set Yarn Cache Directory
-          command: yarn config set cache-folder /mnt/ramdisk/.yarn-cache
-      - run:
-          name: Install Dependencies
-          command: yarn install --frozen-lockfile --cache-folder /mnt/ramdisk/.yarn-cache
-      - save_cache: *save-cache-yarn
-      - save_cache: *save-cache-node
-      - run:
-          name: Build
-          environment:
-            NODE_ENV: production
-          command: yarn build
-      - persist_to_workspace:
-          root: .
-          paths:
-            - packages/components
-
   release:
     <<: *defaults
     steps:
       - checkout
-      - restore_cache: *restore-cache-node
-      - *attach_workspace
-      - run:
-          name: Create Release
-          command: yarn auto shipit
-
-  build-again:
-    <<: *defaults
-    steps:
-      - checkout
       - restore_cache: *restore-cache-yarn
       - restore_cache: *restore-cache-node
       - run:
@@ -92,6 +56,9 @@ jobs:
           environment:
             NODE_ENV: production
           command: yarn build
+      - run:
+          name: Create Release
+          command: yarn auto shipit
       - persist_to_workspace:
           root: .
           paths:
@@ -150,45 +117,37 @@ jobs:
 workflows:
   release:
     jobs:
-      - build:
+      - release:
+          context: kickstartDS
           filters:
             branches:
               ignore: /^dependabot\/.*$/
 
-      - release:
-          context: kickstartDS
-          requires:
-            - build
-
-      - build-again:
-          requires:
-            - release
-
       - chromatic:
           context: kickstartDS
           requires:
-            - build-again
+            - release
 
       - publish-base:
           <<: *release_branches_only
           context: kickstartDS
           requires:
-            - build-again
+            - release
 
       - publish-blog:
           <<: *release_branches_only
           context: kickstartDS
           requires:
-            - build-again
+            - release
 
       - publish-content:
           <<: *release_branches_only
           context: kickstartDS
           requires:
-            - build-again
+            - release
 
       - publish-form:
           <<: *release_branches_only
           context: kickstartDS
           requires:
-            - build-again
+            - release
