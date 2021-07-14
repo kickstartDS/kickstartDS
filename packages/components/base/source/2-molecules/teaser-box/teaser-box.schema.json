@@ -3,6 +3,7 @@
   "$id": "http://frontend.ruhmesmeile.com/base/molecules/teaser-box.schema.json",
   "title": "Teaser Box",
   "description": "Component to tease external content",
+  "type": "object",
   "allOf": [
     {
       "$ref": "http://frontend.ruhmesmeile.com/base/molecules/teaser.definitions.json#/definitions/teaser"
