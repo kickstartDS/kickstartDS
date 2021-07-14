@@ -114,7 +114,19 @@
           "default": true
         },
         "headline": {
-          "$ref": "http://frontend.ruhmesmeile.com/base/molecules/headline.schema.json"
+          "allOf": [
+            {
+              "$ref": "http://frontend.ruhmesmeile.com/base/molecules/headline.schema.json"
+            }
+          ],
+          "properties": {
+            "level": {
+              "default": "p"
+            },
+            "align": {
+              "default": "left"
+            }
+          }
         },
         "text": {
           "title": "Text",
