@@ -1,3 +1,16 @@
+# v1.1.3 (Thu Jul 15 2021)
+
+#### 🐛 Bug Fix
+
+- merge latest fixes from master [#170](https://github.com/kickstartDS/kickstartDS/pull/170) ([@julrich](https://github.com/julrich) lukas.mestel@kickstartds.com)
+
+#### Authors: 2
+
+- Jonas Ulrich ([@julrich](https://github.com/julrich))
+- Lukas Mestel (lukas.mestel@kickstartds.com)
+
+---
+
 # v1.1.2 (Sun Jul 04 2021)
 
 #### 🐛 Bug Fix

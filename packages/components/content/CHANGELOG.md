@@ -1,3 +1,20 @@
+# v1.1.2 (Thu Jul 15 2021)
+
+#### 🐛 Bug Fix
+
+- fix(schema): add some missing properties for succesful validation [#196](https://github.com/kickstartDS/kickstartDS/pull/196) ([@julrich](https://github.com/julrich))
+- Merge branch 'next' into fix/more-schema-fixes ([@julrich](https://github.com/julrich))
+- fix(schema): add markdown format to visual box text ([@julrich](https://github.com/julrich))
+- merge latest fixes from master [#170](https://github.com/kickstartDS/kickstartDS/pull/170) ([@julrich](https://github.com/julrich) [@lmestel](https://github.com/lmestel))
+
+#### Authors: 3
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Jonas Ulrich ([@julrich](https://github.com/julrich))
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+
+---
+
 # v1.1.1 (Sun Jul 04 2021)
 
 #### ⚠️ Pushed to `master`
