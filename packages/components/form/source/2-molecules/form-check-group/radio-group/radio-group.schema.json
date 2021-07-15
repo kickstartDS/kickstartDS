@@ -34,9 +34,9 @@
           "hint": {
             "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/hint"
           }
-        }
-      },
-      "required": ["label"]
+        },
+        "required": ["label"]
+      }
     }
   },
   "required": ["label"]

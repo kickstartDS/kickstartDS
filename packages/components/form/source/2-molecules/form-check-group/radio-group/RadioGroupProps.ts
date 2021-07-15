@@ -50,7 +50,7 @@ export interface RadioGroupProps {
  * Radio buttons allow users to select a single option from a list of mutually exclusive options.
  */
 export interface RadioButton {
-  label?: Label1;
+  label: Label1;
   disabled?: Disabled;
   hint?: HintMessage;
   [k: string]: unknown;

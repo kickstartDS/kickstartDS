@@ -42,6 +42,7 @@
     "link": {
       "title": "Link",
       "description": "Content box link configuration",
+      "type": "object",
       "allOf": [
         {
           "properties": {
