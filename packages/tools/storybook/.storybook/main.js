@@ -19,6 +19,7 @@ module.exports = {
   },
   async viteFinal(config, { configType }) {
     config.esbuild = { jsxInject: `import React from 'react'` };
+    config.base = '';
     return config;
   },
 };
