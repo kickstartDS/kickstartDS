@@ -114,6 +114,9 @@
           "default": true
         },
         "headline": {
+          "title": "Headline",
+          "description": "Headline for the box",
+          "type": "object",
           "allOf": [
             {
               "$ref": "http://frontend.ruhmesmeile.com/base/molecules/headline.schema.json"

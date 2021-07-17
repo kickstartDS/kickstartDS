@@ -1501,7 +1501,7 @@ export interface TextBox {
   background?: StyleOfTheBox;
 }
 /**
- * Headline
+ * Headline for the box
  */
 export interface Headline {
   level: Level;
@@ -1613,7 +1613,7 @@ export interface TextBox1 {
   background?: StyleOfTheBox1;
 }
 /**
- * Headline
+ * Headline for the box
  */
 export interface Headline1 {
   level: Level1;

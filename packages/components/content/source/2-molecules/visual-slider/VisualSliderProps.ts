@@ -237,7 +237,7 @@ export interface TextBox {
   background?: StyleOfTheBox;
 }
 /**
- * Headline
+ * Headline for the box
  */
 export interface Headline {
   level: Level;
