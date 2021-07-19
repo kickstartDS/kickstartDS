@@ -102,12 +102,12 @@ const getArgsShared = (properties = {}, group = 'general', subgroup) => {
           [...Array(count)].forEach((_, index) => {
             Object.entries(sharedArgs.argTypes).forEach(
               ([argName, argType]) => {
-                argTypes[`${propertyName}[${index}].${argName}`] = argType;
+                argTypes[`${propertyName}.${index}.${argName}`] = argType;
               }
             );
 
             Object.entries(sharedArgs.defaultArgs).forEach(([argName, arg]) => {
-              defaultArgs[`${propertyName}[${index}].${argName}`] = arg;
+              defaultArgs[`${propertyName}.${index}.${argName}`] = arg;
             });
           });
 
