@@ -1,3 +1,29 @@
+# v1.1.2 (Thu Jul 15 2021)
+
+#### 🐛 Bug Fix
+
+- build(deps): bump simplebar from 5.3.4 to 5.3.5 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- fix(schema): add some missing properties for succesful validation [#196](https://github.com/kickstartDS/kickstartDS/pull/196) ([@julrich](https://github.com/julrich))
+- Merge branch 'next' into fix/more-schema-fixes ([@julrich](https://github.com/julrich))
+- Merge branch 'next' into dependabot/npm_and_yarn/vite-2.4.1 ([@lmestel](https://github.com/lmestel))
+- fix(schema): add some missing properties for succesful validation ([@julrich](https://github.com/julrich))
+- build(deps-dev): bump @types/react from 17.0.13 to 17.0.14 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- merge latest fixes from master [#170](https://github.com/kickstartDS/kickstartDS/pull/170) ([@julrich](https://github.com/julrich) [@lmestel](https://github.com/lmestel))
+
+#### 🔩 Dependency Updates
+
+- build(deps): bump simplebar from 5.3.4 to 5.3.5 [#208](https://github.com/kickstartDS/kickstartDS/pull/208) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump @storybook/addon-a11y from 6.3.2 to 6.3.3 [#185](https://github.com/kickstartDS/kickstartDS/pull/185) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump @types/react from 17.0.13 to 17.0.14 [#186](https://github.com/kickstartDS/kickstartDS/pull/186) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 3
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Jonas Ulrich ([@julrich](https://github.com/julrich))
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+
+---
+
 # v1.1.1 (Sun Jul 04 2021)
 
 #### ⚠️ Pushed to `master`

@@ -21,6 +21,15 @@
         "code",
         "example"
       ]
+    },
+    {
+      "login": "lmestel",
+      "name": "Lukas Mestel",
+      "avatar_url": "https://avatars.githubusercontent.com/u/31414552?v=4",
+      "profile": "https://github.com/lmestel",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7

@@ -1,3 +1,36 @@
+# v1.1.2 (Thu Jul 15 2021)
+
+#### 🐛 Bug Fix
+
+- Merge branch 'next' into fix/more-schema-fixes ([@julrich](https://github.com/julrich))
+- build(deps): bump htm from 3.0.4 to 3.1.0 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump rollup from 2.52.8 to 2.53.1 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump vite from 2.3.8 to 2.4.1 [#178](https://github.com/kickstartDS/kickstartDS/pull/178) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@julrich](https://github.com/julrich) [@lmestel](https://github.com/lmestel))
+- Merge branch 'next' into dependabot/npm_and_yarn/vite-2.4.1 ([@lmestel](https://github.com/lmestel))
+- fix(dependencies): update dependencies ([@julrich](https://github.com/julrich))
+- build(deps): bump sass from 1.35.1 to 1.35.2 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump esbuild from 0.12.14 to 0.12.15 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- merge latest fixes from master [#170](https://github.com/kickstartDS/kickstartDS/pull/170) ([@julrich](https://github.com/julrich) [@lmestel](https://github.com/lmestel))
+
+#### 🔩 Dependency Updates
+
+- build(deps): bump autoprefixer from 10.2.6 to 10.3.1 [#207](https://github.com/kickstartDS/kickstartDS/pull/207) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump vite from 2.4.1 to 2.4.2 [#205](https://github.com/kickstartDS/kickstartDS/pull/205) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump htm from 3.0.4 to 3.1.0 [#204](https://github.com/kickstartDS/kickstartDS/pull/204) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump babel-plugin-transform-jsx-to-htm from 2.1.0 to 2.2.0 [#197](https://github.com/kickstartDS/kickstartDS/pull/197) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump rollup from 2.52.7 to 2.52.8 [#182](https://github.com/kickstartDS/kickstartDS/pull/182) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump @storybook/cli from 6.3.2 to 6.3.3 [#183](https://github.com/kickstartDS/kickstartDS/pull/183) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump sass from 1.35.1 to 1.35.2 [#184](https://github.com/kickstartDS/kickstartDS/pull/184) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump esbuild from 0.12.14 to 0.12.15 [#179](https://github.com/kickstartDS/kickstartDS/pull/179) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 3
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Jonas Ulrich ([@julrich](https://github.com/julrich))
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+
+---
+
 # v1.1.1 (Sun Jul 04 2021)
 
 #### ⚠️ Pushed to `master`
