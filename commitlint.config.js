@@ -1,4 +1,4 @@
 module.exports = {
   extends: ['@commitlint/config-conventional'],
-  ignores: [(message) => message === 'Update versions'],
+  ignores: [(message) => message.includes('Update versions')],
 };
