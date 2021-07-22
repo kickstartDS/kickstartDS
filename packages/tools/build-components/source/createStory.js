@@ -43,7 +43,7 @@ const createStory = (schema, dest) => {
           componentName,
           componentPascalcased: pascalCase(componentName),
           schema,
-          ...getArgsShared(schema.properties),
+          ...getArgsShared(schema),
         })
       ),
       fs.outputJSON(`${dest}/${componentName}-tokens.json`, {}),
