@@ -1,12 +1,27 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://frontend.ruhmesmeile.com/blog/molecules/news-latest-item.schema.json",
-  "title": "News Latest Item",
-  "description": "News latest item",
+  "$id": "http://frontend.ruhmesmeile.com/blog/molecules/news-list.schema.json",
+  "title": "News List",
+  "description": "News list",
   "type": "object",
   "properties": {
     "image": {
-      "$ref": "http://frontend.ruhmesmeile.com/blog/molecules/news-item.definitions.json#/definitions/image"
+      "allOf": [
+        {
+          "$ref": "http://frontend.ruhmesmeile.com/base/atoms/picture.definitions.json"
+        }
+      ],
+      "properties": {
+        "src": {
+          "default": "https://picsum.photos/seed/kdsnewslist/900/380"
+        },
+        "width": {
+          "default": 900
+        },
+        "height": {
+          "default": 380
+        }
+      }
     },
     "date": {
       "$ref": "http://frontend.ruhmesmeile.com/blog/molecules/news-item.definitions.json#/definitions/date"

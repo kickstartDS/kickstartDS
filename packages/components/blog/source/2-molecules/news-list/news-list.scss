@@ -1,0 +1,73 @@
+@use 'sass:meta';
+@use '@kickstartds/core/source/core/breakpoint';
+@use '@kickstartds/core/source/core/custom-properties';
+@use '@kickstartds/base/source/0-base/1-tools/scss/grid';
+@use '@kickstartds/base/source/0-base/1-tools/scss/helpers';
+@use 'settings/base';
+@use './news-list-vars';
+
+$vars: meta.module-variables(news-list-vars);
+@include custom-properties.styles($vars, true);
+
+.c-news-list {
+  padding-bottom: var(--c-news-list--padding-bottom);
+  border-bottom: var(--c-news-list--border-bottom);
+
+  &__date {
+    font: var(--c-news-list_date--font);
+    font-weight: var(--c-news-list_date--font-weight);
+    color: var(--c-news-list_date--color);
+    padding-right: 1rem;
+  }
+
+  &__meta {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+
+  &__headline {
+    --g-headline--font: var(--c-news-list_headline--font);
+    --g-headline--font-weight: var(--c-news-list_headline--font-weight);
+    --g-headline--color: var(--c-news-list_headline--color-hover);
+    margin-top: 0;
+
+    > a {
+      color: var(--c-news-list_headline--color);
+    }
+  }
+
+  &__content-wrap {
+    @include grid.grid-container(1em);
+  }
+
+  .media__video,
+  &__image {
+    @include grid.grid-break-at(450px, 12, 5);
+  }
+
+  &__teaser {
+    @include grid.grid-break-at(450px, 12, 7);
+  }
+
+  &__more {
+    margin: 1em 0 0;
+  }
+
+  .tag-label-container {
+    min-width: 0;
+    margin: -0.15rem;
+
+    > * {
+      padding: 0.15rem;
+    }
+
+    @include breakpoint.media('≥s') {
+      margin: -0.25rem;
+
+      > * {
+        padding: 0.25rem;
+      }
+    }
+  }
+}

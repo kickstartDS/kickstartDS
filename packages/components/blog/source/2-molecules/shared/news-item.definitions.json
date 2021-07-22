@@ -5,13 +5,6 @@
   "description": "News List / Latest Definitions",
   "type": "object",
   "definitions": {
-    "image": {
-      "title": "Image",
-      "description": "Image source for news item",
-      "type": "string",
-      "format": "image",
-      "default": "https://picsum.photos/seed/kdsnewsitem/900/380"
-    },
     "date": {
       "title": "Date",
       "description": "Date for news item",
@@ -22,8 +15,17 @@
     "link": {
       "title": "Link",
       "description": "Link for news item",
-      "type": "string",
-      "format": "uri"
+      "type": "object",
+      "properties": {
+        "href": {
+          "$ref": "http://frontend.ruhmesmeile.com/base/atoms/link-button.schema.json#/definitions/href"
+        },
+        "label": {
+          "$ref": "http://frontend.ruhmesmeile.com/base/atoms/button.schema.json#/definitions/label",
+          "default": "weiter zum Newseintrag"
+        }
+      },
+      "required": ["href", "label"]
     },
     "title": {
       "title": "Title",
@@ -43,26 +45,6 @@
       "items": {
         "$ref": "http://frontend.ruhmesmeile.com/base/atoms/tag-label.schema.json"
       }
-    }
-  },
-  "properties": {
-    "image": {
-      "$ref": "#/definitions/image"
-    },
-    "date": {
-      "$ref": "#/definitions/date"
-    },
-    "link": {
-      "$ref": "#/definitions/link"
-    },
-    "title": {
-      "$ref": "#/definitions/title"
-    },
-    "body": {
-      "$ref": "#/definitions/body"
-    },
-    "categories": {
-      "$ref": "#/definitions/categories"
     }
   }
 }
