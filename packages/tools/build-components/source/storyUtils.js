@@ -11,18 +11,20 @@ const getArgsShared = (initialSchema) => {
     defaultValue,
     required
   ) => {
-    const add = (types) => {
+    const add = (typeProps) => {
       argTypes[name] = {
         name,
         description: `**${schema.title}:**\n\n${schema.description}`,
-        type: { required },
+        type: {
+          required,
+          summary: schema.type,
+        },
         table: {
           category: category ?? 'general',
           defaultValue: { summary: defaultValue ?? schema.default },
           subcategory,
-          type: { summary: schema.type },
         },
-        ...types,
+        ...typeProps,
       };
       defaultArgs[name] = defaultValue ?? schema.default;
     };
