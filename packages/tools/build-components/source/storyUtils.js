@@ -12,6 +12,7 @@ const getArgsShared = (initialSchema) => {
           category: category ?? 'general',
           defaultValue: { summary: defaultValue ?? schema.default },
           subcategory,
+          type: { summary: schema.type },
         },
         ...types,
       };
