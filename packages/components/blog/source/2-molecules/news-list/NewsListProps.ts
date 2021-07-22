@@ -118,9 +118,9 @@ export type Categories = TagLabel[];
 export type UniqueId = number;
 
 /**
- * News latest item
+ * News list
  */
-export interface NewsLatestItemProps {
+export interface NewsListProps {
   image?: Picture;
   date?: Date;
   link: Link;
