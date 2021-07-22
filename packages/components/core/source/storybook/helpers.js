@@ -3,11 +3,19 @@ const getArgsShared = (initialSchema) => {
   const argTypes = {};
   const defaultArgs = {};
 
-  const getArgTypes = (schema, name, category, subcategory, defaultValue) => {
+  const getArgTypes = (
+    schema,
+    name,
+    category,
+    subcategory,
+    defaultValue,
+    required
+  ) => {
     const add = (types) => {
       argTypes[name] = {
         name,
         description: `**${schema.title}:**\n\n${schema.description}`,
+        type: { required },
         table: {
           category: category ?? 'general',
           defaultValue: { summary: defaultValue ?? schema.default },
@@ -18,6 +26,7 @@ const getArgsShared = (initialSchema) => {
       };
       defaultArgs[name] = defaultValue ?? schema.default;
     };
+
     switch (schema.type) {
       case 'string':
         add({
@@ -73,7 +82,8 @@ const getArgsShared = (initialSchema) => {
                 name ? `${name}.${propName}` : propName,
                 cat,
                 subcat,
-                defaultValue?.[propName] ?? schema.default
+                defaultValue?.[propName] ?? schema.default,
+                schema.required?.includes(propName)
               );
             }
           );
