@@ -28,7 +28,7 @@
     "json-schema-ref-parser": "^9.0.7",
     "json-schema-to-typescript": "^10.1.4",
     "lodash": "^4.17.21",
-    "postcss": "^8.2.15",
+    "postcss": "^8.3.6",
     "postcss-combine-duplicated-selectors": "^10.0.3",
     "postcss-sort-media-queries": "^3.9.10",
     "rollup": "^2.53.2",
