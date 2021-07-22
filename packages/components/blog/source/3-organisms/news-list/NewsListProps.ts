@@ -14,9 +14,13 @@ export type Image = string;
  */
 export type Date = string;
 /**
- * Link for news item
+ * Link used for button
  */
-export type Link = string;
+export type ButtonHref = string;
+/**
+ * Text used on button
+ */
+export type Label = string;
 /**
  * Title for news item
  */
@@ -28,7 +32,7 @@ export type Bodytext = string;
 /**
  * Text to display inside tag label
  */
-export type Label = string;
+export type Label1 = string;
 /**
  * Choose a size to scale the tag label up or down
  */
@@ -65,10 +69,18 @@ export interface NewsListItem {
   [k: string]: unknown;
 }
 /**
+ * Link for news item
+ */
+export interface Link {
+  href: ButtonHref;
+  label: Label;
+  [k: string]: unknown;
+}
+/**
  * Component to render a pill / tag / label
  */
 export interface TagLabel {
-  label: Label;
+  label: Label1;
   size: Size;
   link?: LinkTarget;
   removable?: Removable;

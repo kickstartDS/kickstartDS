@@ -6,17 +6,90 @@
  */
 
 /**
- * Image source for news item
+ * Picture source
  */
-export type Image = string;
+export type Source = string;
+/**
+ * Width of the picture
+ */
+export type Width = number;
+/**
+ * Height of the picture
+ */
+export type Height = number;
+/**
+ * Use a srcSet to display picture
+ */
+export type PictureSourceset = string;
+/**
+ * Alt text to display for picture
+ */
+export type AltText = string;
+/**
+ * Add additional css classes that should be applied to the button
+ */
+export type AdditionalClasses = string;
+/**
+ * Add id attribute to the image
+ */
+export type Id = string;
+/**
+ * Define an itemprop attribute for the picture
+ */
+export type ItempropAttribute = string;
+/**
+ * Define a style attribute for the picture
+ */
+export type StyleAttribute = string;
+/**
+ * Select a value for the picture object fit
+ */
+export type ObjectFit = 'contain' | 'cover' | 'fill' | 'none' | 'scale-down';
+/**
+ * Render noscript fallback
+ */
+export type Noscript = boolean;
+/**
+ * Load the picture lazily
+ */
+export type Lazy = boolean;
+/**
+ * Use a srcSet to display picture
+ */
+export type PictureSourceset1 = string;
+/**
+ * TODO MEDIA DESCRIPTION
+ */
+export type TODOMEDIATITLE = string;
+/**
+ * TODO TYPE DESCRIPTION
+ */
+export type TODOTYPETITLE = string;
+/**
+ * Additional sources. This will result in a `picture`-Element
+ */
+export type Sources = {
+  srcSet?: PictureSourceset1;
+  media?: TODOMEDIATITLE;
+  type?: TODOTYPETITLE;
+  [k: string]: unknown;
+}[];
+/**
+ * Set additional class(es) to the picture
+ */
+export type ClassAttribute = string;
 /**
  * Date for news item
  */
 export type Date = string;
 /**
- * Link for news item
+ * Link used for button
  */
-export type Link = string;
+export type ButtonHref = string;
+/**
+ * Text used on button
+ */
+export type Label = string;
 /**
  * Title for news item
  */
@@ -28,7 +101,7 @@ export type Bodytext = string;
 /**
  * Text to display inside tag label
  */
-export type Label = string;
+export type Label1 = string;
 /**
  * Choose a size to scale the tag label up or down
  */
@@ -48,7 +121,7 @@ export type UniqueId = number;
  * News latest item
  */
 export interface NewsLatestItemProps {
-  image?: Image;
+  image?: Picture;
   date?: Date;
   link: Link;
   title?: Title;
@@ -58,10 +131,38 @@ export interface NewsLatestItemProps {
   [k: string]: unknown;
 }
 /**
+ * Base component to display a picture
+ */
+export interface Picture {
+  src?: Source;
+  width?: Width;
+  height?: Height;
+  srcSet?: PictureSourceset;
+  alt?: AltText;
+  className?: AdditionalClasses;
+  id?: Id;
+  itemProp?: ItempropAttribute;
+  style?: StyleAttribute;
+  objectFit?: ObjectFit;
+  noscript?: Noscript;
+  lazy?: Lazy;
+  sources?: Sources;
+  pictureClassName?: ClassAttribute;
+  [k: string]: unknown;
+}
+/**
+ * Link for news item
+ */
+export interface Link {
+  href: ButtonHref;
+  label: Label;
+  [k: string]: unknown;
+}
+/**
  * Component to render a pill / tag / label
  */
 export interface TagLabel {
-  label: Label;
+  label: Label1;
   size: Size;
   link?: LinkTarget;
   removable?: Removable;
