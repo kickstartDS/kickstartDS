@@ -1,22 +1,15 @@
-$name-: 'c-news-list' !default;
-
-$host: (
-  '.c-news-list': (
-    padding-bottom: 1rem,
-    border-bottom: 1px solid var(--color-black-alpha-1),
-  ),
-) !default;
+$name-: 'c-post-teaser' !default;
 
 $date: (
-  '.c-news-list': (
+  '.c-post-teaser': (
     font: var(--font-ui-xs),
-    font-weight: var(--font-weight-regular),
+    font-weight: var(--font-weight-bold),
     color: var(--color-black-alpha-5),
   ),
 ) !default;
 
 $headline: (
-  '.c-news-list': (
+  '.c-post-teaser': (
     font: var(--font-display-l),
     font-weight: var(--font-weight-bold),
     color: var(--color-black),

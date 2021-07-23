@@ -6,6 +6,10 @@
  */
 
 /**
+ * Choose one of the styles from the list
+ */
+export type TeaserStyle = 'image-first' | 'title-first';
+/**
  * Picture source
  */
 export type Source = string;
@@ -118,9 +122,10 @@ export type Categories = TagLabel[];
 export type UniqueId = number;
 
 /**
- * News list
+ * Post Teaser
  */
-export interface NewsListProps {
+export interface PostTeaserProps {
+  variant?: TeaserStyle;
   image?: Picture;
   date?: Date;
   link: Link;

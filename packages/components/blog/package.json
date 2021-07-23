@@ -23,6 +23,7 @@
     "@babel/runtime": "^7.14.8",
     "@kickstartds/base": "^1.1.2",
     "@kickstartds/core": "^1.1.2",
+    "classnames": "^2.2.6",
     "date-fns": "^2.19.0"
   },
   "peerDependencies": {

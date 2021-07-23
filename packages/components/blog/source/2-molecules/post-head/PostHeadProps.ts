@@ -83,25 +83,33 @@ export type ClassAttribute = string;
  */
 export type Date = string;
 /**
- * Link used for button
+ * Choose an alignment for the headline
  */
-export type ButtonHref = string;
+export type Alignment = 'left' | 'center' | 'right';
 /**
- * Text used on button
+ * Text content for the headline
  */
-export type Label = string;
+export type Text = string;
 /**
- * Title for news item
+ * Select the headline level to use, or p alternatively
  */
-export type Title = string;
+export type Level = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
 /**
- * Bodytext for news item
+ * Text content for the optional subheadline
  */
-export type Bodytext = string;
+export type Subheadline = string;
+/**
+ * Add additional spacing to the bottom of the headline
+ */
+export type BottomSpacing = 'none' | 'small' | 'large';
+/**
+ * Set the headline as a page header, triggering special css treatment
+ */
+export type PageHeader = boolean;
 /**
  * Text to display inside tag label
  */
-export type Label1 = string;
+export type Label = string;
 /**
  * Choose a size to scale the tag label up or down
  */
@@ -115,19 +123,15 @@ export type LinkTarget = string;
  */
 export type Removable = boolean;
 export type Categories = TagLabel[];
-export type UniqueId = number;
 
 /**
- * News latest
+ * Post Head
  */
-export interface NewsLatestProps {
+export interface PostHeadProps {
   image?: Picture;
   date?: Date;
-  link: Link;
-  title?: Title;
-  body?: Bodytext;
+  headline?: Headline;
   categories?: Categories;
-  index: UniqueId;
   [k: string]: unknown;
 }
 /**
@@ -151,18 +155,22 @@ export interface Picture {
   [k: string]: unknown;
 }
 /**
- * Link for news item
+ * Headline
  */
-export interface Link {
-  href: ButtonHref;
-  label: Label;
+export interface Headline {
+  align: Alignment;
+  content?: Text;
+  level: Level;
+  subheadline?: Subheadline;
+  spaceAfter: BottomSpacing;
+  pageHeader?: PageHeader;
   [k: string]: unknown;
 }
 /**
  * Component to render a pill / tag / label
  */
 export interface TagLabel {
-  label: Label1;
+  label: Label;
   size: Size;
   link?: LinkTarget;
   removable?: Removable;
