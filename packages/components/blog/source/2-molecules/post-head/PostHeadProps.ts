@@ -79,13 +79,17 @@ export type Sources = {
  */
 export type ClassAttribute = string;
 /**
+ * Choose an horizontal alignment for the image.
+ */
+export type Alignment = 'left' | 'center' | 'right';
+/**
  * Date for news item
  */
 export type Date = string;
 /**
  * Choose an alignment for the headline
  */
-export type Alignment = 'left' | 'center' | 'right';
+export type Alignment1 = 'left' | 'center' | 'right';
 /**
  * Text content for the headline
  */
@@ -129,6 +133,7 @@ export type Categories = TagLabel[];
  */
 export interface PostHeadProps {
   image?: Picture;
+  imageAlignment?: Alignment;
   date?: Date;
   headline?: Headline;
   categories?: Categories;
@@ -158,7 +163,7 @@ export interface Picture {
  * Headline
  */
 export interface Headline {
-  align: Alignment;
+  align: Alignment1;
   content?: Text;
   level: Level;
   subheadline?: Subheadline;
