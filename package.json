@@ -47,7 +47,7 @@
     "react": "^17.0.2"
   },
   "devDependencies": {
-    "@auto-it/all-contributors": "^10.29.3",
+    "@auto-it/all-contributors": "^10.30.0",
     "@auto-it/first-time-contributor": "^10.29.3",
     "@auto-it/npm": "^10.29.3",
     "@auto-it/released": "^10.29.3",
