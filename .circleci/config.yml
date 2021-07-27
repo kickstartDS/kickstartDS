@@ -58,6 +58,8 @@ jobs:
           command: yarn build
       - run:
           name: Create Release
+          environment:
+            HUSKY: 0
           command: yarn auto shipit
       - persist_to_workspace:
           root: .
