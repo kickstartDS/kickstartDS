@@ -37,7 +37,7 @@
     "watch-tokens": "sass --watch --load-path=node_modules packages/components/core/source/design-tokens/tokens.scss packages/components/core/lib/design-tokens/tokens.css"
   },
   "dependencies": {
-    "@kickstartds/eslint-config": "^1.0.0",
+    "@kickstartds/eslint-config": "^1.0.1",
     "@kickstartds/stylelint-config": "^1.0.0",
     "execa": "^5.1.1",
     "fast-glob": "^3.2.7",
