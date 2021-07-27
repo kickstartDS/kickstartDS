@@ -18,7 +18,7 @@
     "storybook-form:build": "node index.js build --module=form"
   },
   "dependencies": {
-    "@kickstartds/storybook-addon-component-tokens": "^0.1.2",
+    "@kickstartds/storybook-addon-component-tokens": "^0.1.4",
     "change-case": "^4.1.2",
     "del": "^6.0.0",
     "fast-glob": "^3.2.7",
