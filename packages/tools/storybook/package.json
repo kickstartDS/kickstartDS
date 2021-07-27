@@ -18,7 +18,6 @@
     "storybook-form:build": "node index.js build --module=form"
   },
   "dependencies": {
-    "@kickstartds/storybook-addon-component-tokens": "^0.1.2",
     "change-case": "^4.1.2",
     "del": "^6.0.0",
     "fast-glob": "^3.2.7",
@@ -33,11 +32,12 @@
   },
   "devDependencies": {
     "@babel/core": "^7.14.8",
-    "@storybook/addon-a11y": "^6.3.5",
-    "@storybook/addon-essentials": "^6.3.5",
-    "@storybook/cli": "^6.3.5",
-    "@storybook/core": "^6.3.5",
-    "@storybook/react": "^6.3.5",
+    "@kickstartds/storybook-addon-component-tokens": "^0.1.4",
+    "@storybook/addon-a11y": "^6.3.6",
+    "@storybook/addon-essentials": "^6.3.6",
+    "@storybook/cli": "^6.3.6",
+    "@storybook/core": "^6.3.6",
+    "@storybook/react": "^6.3.6",
     "@types/react": "^17.0.15",
     "@types/react-dom": "^17.0.9",
     "chromatic": "^5.8.0",
