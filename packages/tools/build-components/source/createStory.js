@@ -35,7 +35,6 @@ const createStory = (schema, dest) => {
   const [, moduleDir, fileName] = schema.$id.match(/^.*\/(.+)\/.*\/(.*)$/);
   const [componentName, type] = fileName.split('.');
   if (type === 'schema' && schema.properties) {
-    console.log('- createStory', `${dest}/${componentName}.stories.js`);
     return Promise.all([
       fs.outputFile(
         `${dest}/${componentName}.stories.js`,
