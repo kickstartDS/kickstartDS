@@ -30,14 +30,14 @@
     background: var(--c-visual-slider_preview--background-active);
     color: var(--c-visual-slider_preview--color-active);
 
-    .slider--autoplay &::after {
+    .c-slider--autoplay &::after {
       animation: slider-nav-autoplay $current-animation-duration linear;
       animation-iteration-count: 1;
       animation-fill-mode: forwards;
     }
   }
 
-  .slider--autoplay & {
+  .c-slider--autoplay & {
     position: relative;
 
     &::after {
@@ -46,7 +46,9 @@
       left: 0;
       width: 0;
       height: 0.2em;
-      background-color: var(--c-visual-slider--autoplay-indicator-color);
+      background-color: var(
+        --c-visual-slider_preview--autoplay-indicator-color
+      );
       content: '';
     }
   }
