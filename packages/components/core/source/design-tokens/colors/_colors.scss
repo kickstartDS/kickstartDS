@@ -14,7 +14,14 @@ $brand--primary-alpha: helpers.alpha('primary') !default;
 $brand--primary-lighter: helpers.mix('white', 'primary') !default;
 $brand--primary-darker: helpers.mix('black', 'primary') !default;
 
-$brand--secondary: #999999 !default;
+$brand--secondary-r: 153 !default;
+$brand--secondary-g: 153 !default;
+$brand--secondary-b: 153 !default;
+$brand--secondary: rgb(
+  var(--color-secondary-r),
+  var(--color-secondary-g),
+  var(--color-secondary-b)
+) !default;
 
 $shades--white-r: 255 !default;
 $shades--white-g: 255 !default;
