@@ -1,26 +1,42 @@
 @use 'sass:meta';
-@use 'sass:color';
 @use 'sass:string';
 @use './helpers';
 
-$_primary: #333333 !default;
-$_white: #fff !default;
-$_black: color.mix(black, $_primary, 90%) !default;
-
-$brand--primary: $_primary !default;
-$brand--primary-alpha: helpers.alpha($brand--primary) !default;
-$brand--primary-lighter: helpers.mix($_white, $brand--primary) !default;
-$brand--primary-darker: helpers.mix($_black, $brand--primary) !default;
+$brand--primary-r: 51 !default;
+$brand--primary-g: 51 !default;
+$brand--primary-b: 51 !default;
+$brand--primary: rgb(
+  var(--color-primary-r),
+  var(--color-primary-g),
+  var(--color-primary-b)
+) !default;
+$brand--primary-alpha: helpers.alpha('primary') !default;
+$brand--primary-lighter: helpers.mix('white', 'primary') !default;
+$brand--primary-darker: helpers.mix('black', 'primary') !default;
 
 $brand--secondary: #999999 !default;
 
-$shades--white: $_white !default;
-$shades--white-alpha: helpers.alpha($shades--white) !default;
+$shades--white-r: 255 !default;
+$shades--white-g: 255 !default;
+$shades--white-b: 255 !default;
+$shades--white: rgb(
+  var(--color-white-r),
+  var(--color-white-g),
+  var(--color-white-b)
+) !default;
+$shades--white-alpha: helpers.alpha('white') !default;
 
-$shades--black: $_black !default;
-$shades--black-alpha: helpers.alpha($shades--black) !default;
+$shades--black-r: calc(var(--color-primary-r) * 0.1) !default;
+$shades--black-g: calc(var(--color-primary-g) * 0.1) !default;
+$shades--black-b: calc(var(--color-primary-b) * 0.1) !default;
+$shades--black: rgb(
+  var(--color-black-r),
+  var(--color-black-g),
+  var(--color-black-b)
+) !default;
+$shades--black-alpha: helpers.alpha('black') !default;
 
-$shades--grey: helpers.mix($shades--black, $shades--white) !default;
+$shades--grey: helpers.mix('black', 'white') !default;
 
 $functional--info: #3ca8ff !default;
 $functional--success: #8dc63f !default;
