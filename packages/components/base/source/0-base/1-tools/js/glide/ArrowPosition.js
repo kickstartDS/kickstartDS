@@ -1,4 +1,4 @@
-import { breakpointEvents } from '@kickstartds/core/lib/utils';
+import { breakpointEvents } from '@kickstartds/core/utils';
 
 export default function (Glide, Components) {
   const ArrowPosition = {

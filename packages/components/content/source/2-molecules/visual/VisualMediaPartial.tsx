@@ -1,7 +1,7 @@
 import { FunctionComponent, useContext } from 'react';
 import classnames from 'classnames';
-import { Picture } from '@kickstartds/base/lib/picture';
-import { SlideContext } from '@kickstartds/base/lib/slider';
+import { Picture } from '@kickstartds/base/picture';
+import { SlideContext } from '@kickstartds/base/slider';
 import { MediaWrapper, Inbox } from './VisualProps';
 
 interface IMedia extends MediaWrapper {

@@ -34,7 +34,7 @@
     "stylelint": "stylelint \"**/*.scss\"",
     "prepare": "husky install",
     "watch": "lerna run --parallel --no-prefix watch",
-    "watch-tokens": "sass --watch --load-path=node_modules packages/components/core/source/design-tokens/tokens.scss packages/components/core/lib/design-tokens/tokens.css"
+    "watch-tokens": "sass --watch --load-path=node_modules packages/components/core/source/design-tokens/tokens.scss packages/components/core/design-tokens/tokens.css"
   },
   "dependencies": {
     "@kickstartds/eslint-config": "^1.0.1",
@@ -57,7 +57,6 @@
     "commitizen": "^4.2.4",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^7.31.0",
-    "eslint-import-resolver-lerna": "^2.0.0",
     "husky": "^7.0.1",
     "lerna": "^4.0.0",
     "lint-staged": "^11.1.1",

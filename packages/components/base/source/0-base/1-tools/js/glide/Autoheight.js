@@ -1,4 +1,4 @@
-import { lazyChildrenLoaded } from '@kickstartds/core/lib/core';
+import { lazyChildrenLoaded } from '@kickstartds/core/core';
 import forceRepaint from '../forceRepaint';
 
 export default function (Glide, Components, Events) {

@@ -9,13 +9,13 @@ import {
   renderFn,
   renderTextFn,
   defaultRenderFn,
-} from '@kickstartds/core/lib/core';
-import { Icon } from '@kickstartds/base/lib/icon';
+} from '@kickstartds/core/core';
+import { Icon } from '@kickstartds/base/icon';
 import {
   RichText,
   defaultRenderFn as richTextDefaultRenderFn,
-} from '@kickstartds/base/lib/rich-text';
-import { LinkButton } from '@kickstartds/base/lib/link-button';
+} from '@kickstartds/base/rich-text';
+import { LinkButton } from '@kickstartds/base/link-button';
 import { CountUpProps } from './CountUpProps';
 import './count-up.scss';
 import './CountUp.js';

@@ -6,7 +6,7 @@ import {
 } from 'react';
 import ReactMarkdown from 'react-markdown';
 import classnames from 'classnames';
-import { renderTextFn } from '@kickstartds/core/lib/core';
+import { renderTextFn } from '@kickstartds/core/core';
 import './rich-text.scss';
 
 export const defaultRenderFn: renderTextFn = (t) => (

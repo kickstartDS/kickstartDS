@@ -1,15 +1,15 @@
 import { FunctionComponent } from 'react';
 import classnames from 'classnames';
-import { LinkButton } from '@kickstartds/base/lib/link-button';
+import { LinkButton } from '@kickstartds/base/link-button';
 import {
   RichText,
   defaultRenderFn as richTextDefaultRenderFn,
-} from '@kickstartds/base/lib/rich-text';
+} from '@kickstartds/base/rich-text';
 import {
   renderFn,
   renderTextFn,
   defaultRenderFn,
-} from '@kickstartds/core/lib/core';
+} from '@kickstartds/core/core';
 import { TextBox, Inbox } from './VisualProps';
 
 export interface RenderFunctions {

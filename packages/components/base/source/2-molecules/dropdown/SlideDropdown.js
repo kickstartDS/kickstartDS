@@ -1,4 +1,4 @@
-import { slideDown, slideUp } from '@kickstartds/core/lib/utils';
+import { slideDown, slideUp } from '@kickstartds/core/utils';
 import Dropdown from './Dropdown';
 
 export default class SlideDropdown extends Dropdown {

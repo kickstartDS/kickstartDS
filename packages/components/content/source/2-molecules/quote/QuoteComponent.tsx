@@ -6,12 +6,12 @@ import {
 } from 'react';
 import classnames from 'classnames';
 import { format } from 'date-fns';
-import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
-import { Picture } from '@kickstartds/base/lib/picture';
+import { renderFn, defaultRenderFn } from '@kickstartds/core/core';
+import { Picture } from '@kickstartds/base/picture';
 import {
   RichText,
   defaultRenderFn as richTextDefaultRenderFn,
-} from '@kickstartds/base/lib/rich-text';
+} from '@kickstartds/base/rich-text';
 import { QuoteProps } from './QuoteProps';
 import './quote.scss';
 

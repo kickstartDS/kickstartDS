@@ -1,6 +1,6 @@
-import { define } from '@kickstartds/core/lib/core';
+import { define } from '@kickstartds/core/component';
 import { identifier } from './Slider.desc';
 
-export const lazySlider = () => import('./Slider.js');
+export const lazySlider = () => import('./Slider');
 
 define(identifier, lazySlider);

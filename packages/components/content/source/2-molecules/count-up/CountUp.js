@@ -1,8 +1,5 @@
-import {
-  Component,
-  define,
-  events as lazyEvents,
-} from '@kickstartds/core/lib/core';
+import { Component, define } from '@kickstartds/core/component';
+import { events as lazyEvents } from '@kickstartds/core/core';
 import { CountUp } from 'countup.js';
 
 const identifier = 'content.count-up';

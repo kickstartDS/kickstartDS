@@ -1,10 +1,10 @@
-import { Component } from '@kickstartds/core/lib/core';
+import { Component } from '@kickstartds/core/component';
 import {
   slideDown,
   slideUp,
   breakpoints,
   breakpointEvents,
-} from '@kickstartds/core/lib/utils';
+} from '@kickstartds/core/utils';
 
 export default class FilterArea extends Component {
   static identifier = 'base.filter-area';

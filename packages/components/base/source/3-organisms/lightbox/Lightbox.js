@@ -1,6 +1,6 @@
 import PhotoSwipe from 'photoswipe/dist/photoswipe';
 import PhotoSwipeUIDefault from 'photoswipe/dist/photoswipe-ui-default';
-import { Component } from '@kickstartds/core/lib/core';
+import { Component } from '@kickstartds/core/component';
 import { actions as sliderActions } from '../../2-molecules/slider/Slider.desc';
 import { identifier } from './Lightbox.desc';
 

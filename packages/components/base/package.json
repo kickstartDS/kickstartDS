@@ -8,8 +8,22 @@
     "url": "https://master--60832aa30a8f94002193547c.chromatic.com"
   },
   "license": "SEE LICENSE IN LICENSE",
-  "main": "./lib/index.js",
+  "type": "module",
+  "exports": {
+    "./package.json": "./package.json",
+    "./source/*": "./source/*",
+    ".": "./lib/index.js",
+    "./*": "./lib/*"
+  },
   "types": "./lib/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "lib/*",
+        "lib/*/index.d.ts"
+      ]
+    }
+  },
   "scripts": {
     "build": "node ../../tools/build-components/source",
     "watch": "node ../../tools/build-components/source --watch",

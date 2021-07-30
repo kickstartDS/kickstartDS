@@ -1,5 +1,5 @@
 import Pikaday from 'pikaday';
-import { Component } from '@kickstartds/core/lib/core';
+import { Component } from '@kickstartds/core/component';
 import startOfDay from 'date-fns/startOfDay';
 import endOfDay from 'date-fns/endOfDay';
 import isWithinInterval from 'date-fns/isWithinInterval';

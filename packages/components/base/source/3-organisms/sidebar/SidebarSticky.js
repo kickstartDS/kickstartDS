@@ -1,5 +1,5 @@
 import stickybits from 'stickybits';
-import { Component } from '@kickstartds/core/lib/core';
+import { Component } from '@kickstartds/core/component';
 
 export default class SidebarSticky extends Component {
   static identifier = 'base.sidebar-sticky';

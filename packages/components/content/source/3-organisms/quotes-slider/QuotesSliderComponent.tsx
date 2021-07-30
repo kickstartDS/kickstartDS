@@ -1,6 +1,6 @@
 import { FunctionComponent, HTMLAttributes } from 'react';
 import classnames from 'classnames';
-import { Slider } from '@kickstartds/base/lib/slider';
+import { Slider } from '@kickstartds/base/slider';
 import { Quote } from '../../2-molecules/quote/QuoteComponent';
 import { QuotesSliderProps } from './QuotesSliderProps';
 import './QuotesSlider.js';

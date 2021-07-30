@@ -1,5 +1,5 @@
 import ComponentLoader from './ComponentLoader';
-import { inBrowser } from '../domLoaded';
+import { inBrowser } from '../core/domLoaded';
 
 const loader = new ComponentLoader();
 

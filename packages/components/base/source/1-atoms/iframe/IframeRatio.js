@@ -1,4 +1,4 @@
-import { Component, define } from '@kickstartds/core/lib/core';
+import { Component, define } from '@kickstartds/core/component';
 
 export default class VideoIframe extends Component {
   static identifier = 'base.iframe-ratio';

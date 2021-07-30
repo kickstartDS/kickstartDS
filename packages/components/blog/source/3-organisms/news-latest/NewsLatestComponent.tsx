@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react';
-import { Section } from '@kickstartds/base/lib/section';
+import { Section } from '@kickstartds/base/section';
 import { NewsLatestItem } from '../../2-molecules/news-latest-item';
 import { NewsLatestProps } from './NewsLatestProps';
 import './news-latest.scss';

@@ -6,7 +6,7 @@ import {
   HTMLAttributes,
 } from 'react';
 import classnames from 'classnames';
-import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
+import { renderFn, defaultRenderFn } from '@kickstartds/core/core';
 import { RadioButtonProps } from './RadioProps';
 import '../form-check.scss';
 

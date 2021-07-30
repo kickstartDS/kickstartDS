@@ -5,10 +5,10 @@ import {
   HTMLAttributes,
 } from 'react';
 import classnames from 'classnames';
-import { Picture } from '@kickstartds/base/lib/picture';
-import { Headline } from '@kickstartds/base/lib/headline';
-import { RichText } from '@kickstartds/base/lib/rich-text';
-import { Icon } from '@kickstartds/base/lib/icon';
+import { Picture } from '@kickstartds/base/picture';
+import { Headline } from '@kickstartds/base/headline';
+import { RichText } from '@kickstartds/base/rich-text';
+import { Icon } from '@kickstartds/base/icon';
 import { ContactProps } from './ContactProps';
 import './contact.scss';
 

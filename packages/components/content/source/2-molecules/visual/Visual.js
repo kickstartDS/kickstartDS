@@ -1,5 +1,5 @@
-import { Component, define } from '@kickstartds/core/lib/core';
-import { windowEvents } from '@kickstartds/core/lib/utils';
+import { Component, define } from '@kickstartds/core/component';
+import { windowEvents } from '@kickstartds/core/utils';
 import 'objectFitPolyfill/dist/objectFitPolyfill.basic.min';
 
 const identifier = 'visual';

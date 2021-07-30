@@ -6,8 +6,8 @@ import {
   HTMLAttributes,
 } from 'react';
 import classnames from 'classnames';
-import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
-import { Icon } from '@kickstartds/base/lib/icon';
+import { renderFn, defaultRenderFn } from '@kickstartds/core/core';
+import { Icon } from '@kickstartds/base/icon';
 import { SelectFieldProps } from './SelectFieldProps';
 import '../form-field.scss';
 

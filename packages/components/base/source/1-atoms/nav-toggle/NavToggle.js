@@ -1,5 +1,5 @@
-import { Component } from '@kickstartds/core/lib/core';
-import { breakpoints, breakpointEvents } from '@kickstartds/core/lib/utils';
+import { Component } from '@kickstartds/core/component';
+import { breakpoints, breakpointEvents } from '@kickstartds/core/utils';
 import body from '../../0-base/2-generic/root/body';
 
 export default class NavToggle extends Component {

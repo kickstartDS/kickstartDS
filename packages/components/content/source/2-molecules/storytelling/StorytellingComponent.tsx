@@ -5,14 +5,14 @@ import {
   HTMLAttributes,
 } from 'react';
 import classnames from 'classnames';
-import { renderFn } from '@kickstartds/core/lib/core';
-import { Headline } from '@kickstartds/base/lib/headline';
-import { LinkButton } from '@kickstartds/base/lib/link-button';
+import { renderFn } from '@kickstartds/core/core';
+import { Headline } from '@kickstartds/base/headline';
+import { LinkButton } from '@kickstartds/base/link-button';
 import {
   RichText,
   defaultRenderFn as richTextDefaultRenderFn,
-} from '@kickstartds/base/lib/rich-text';
-import { Picture } from '@kickstartds/base/lib/picture';
+} from '@kickstartds/base/rich-text';
+import { Picture } from '@kickstartds/base/picture';
 import { StorytellingProps } from './StorytellingProps';
 import './storytelling.scss';
 

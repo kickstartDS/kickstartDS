@@ -5,12 +5,12 @@ import {
   HTMLAttributes,
 } from 'react';
 import classnames from 'classnames';
-import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
-import { Icon } from '@kickstartds/base/lib/icon';
+import { renderFn, defaultRenderFn } from '@kickstartds/core/core';
+import { Icon } from '@kickstartds/base/icon';
 import {
   RichText,
   defaultRenderFn as richTextDefaultRenderFn,
-} from '@kickstartds/base/lib/rich-text';
+} from '@kickstartds/base/rich-text';
 import { CollapsibleBoxProps } from './CollapsibleBoxProps';
 import './collapsible-box.scss';
 import './lazyCollapsibleBox.js';

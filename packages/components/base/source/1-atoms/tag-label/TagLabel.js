@@ -1,4 +1,4 @@
-import { Component, define } from '@kickstartds/core/lib/core';
+import { Component, define } from '@kickstartds/core/component';
 
 const identifier = 'base.tag-label';
 export default class TagLabel extends Component {

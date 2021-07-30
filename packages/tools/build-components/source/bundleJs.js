@@ -33,7 +33,7 @@ const prepare = async (jsPaths) => {
               {
                 tag: 'html',
                 import: {
-                  module: '@kickstartds/core/lib/core',
+                  module: '@kickstartds/core/core',
                   export: 'html',
                 },
               },

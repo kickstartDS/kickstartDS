@@ -1,9 +1,9 @@
 import { FunctionComponent } from 'react';
 import { format } from 'date-fns';
-import { TagLabelContainer } from '@kickstartds/base/lib/tag-label-container';
-import { Link } from '@kickstartds/base/lib/link';
-import { LinkButton } from '@kickstartds/base/lib/link-button';
-import { Picture } from '@kickstartds/base/lib/picture';
+import { TagLabelContainer } from '@kickstartds/base/tag-label-container';
+import { Link } from '@kickstartds/base/link';
+import { LinkButton } from '@kickstartds/base/link-button';
+import { Picture } from '@kickstartds/base/picture';
 import { NewsLatestItemProps } from './NewsLatestItemProps';
 import './news-latest.scss';
 

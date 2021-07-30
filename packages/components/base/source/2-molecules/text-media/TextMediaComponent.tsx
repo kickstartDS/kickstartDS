@@ -1,6 +1,6 @@
 import { FunctionComponent, HTMLAttributes } from 'react';
 import classnames from 'classnames';
-import { renderFn } from '@kickstartds/core/lib/core';
+import { renderFn } from '@kickstartds/core/core';
 import { Picture } from '../../1-atoms/image/picture';
 import { LightboxLazyImage } from '../../1-atoms/image/lightbox-image';
 import { IframeRatio } from '../../1-atoms/iframe';

@@ -1,4 +1,4 @@
-import { Component } from '@kickstartds/core/lib/core';
+import { Component } from '@kickstartds/core/component';
 
 function transform(str) {
   const replaced = str

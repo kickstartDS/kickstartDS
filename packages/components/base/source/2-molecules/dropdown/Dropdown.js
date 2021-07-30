@@ -1,4 +1,5 @@
-import { Component, inBrowser } from '@kickstartds/core/lib/core';
+import { Component } from '@kickstartds/core/component';
+import { inBrowser } from '@kickstartds/core/core';
 
 export default class Dropdown extends Component {
   static identifier = 'base.dropdown';

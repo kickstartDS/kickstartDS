@@ -1,9 +1,9 @@
-import { Component } from '@kickstartds/core/lib/core';
+import { Component } from '@kickstartds/core/component';
 import {
   windowEvents,
   breakpoints,
   breakpointEvents,
-} from '@kickstartds/core/lib/utils';
+} from '@kickstartds/core/utils';
 import Dropdown from '../../dropdown/Dropdown';
 
 export default class NavMain extends Component {

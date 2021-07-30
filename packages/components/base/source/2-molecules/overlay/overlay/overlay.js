@@ -1,4 +1,4 @@
-import { Component } from '@kickstartds/core/lib/core';
+import { Component } from '@kickstartds/core/component';
 import { fadeIn, fadeOut } from '../../../0-base/1-tools/js/fade';
 import body from '../../../0-base/2-generic/root/body';
 

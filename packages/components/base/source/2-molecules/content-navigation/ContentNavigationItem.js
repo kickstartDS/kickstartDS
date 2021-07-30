@@ -1,5 +1,5 @@
-import { Component } from '@kickstartds/core/lib/core';
-import { slideToggle } from '@kickstartds/core/lib/utils';
+import { Component } from '@kickstartds/core/component';
+import { slideToggle } from '@kickstartds/core/utils';
 import classToggle from '../../0-base/1-tools/js/classToggle';
 
 export default class ContentNavigationItem extends Component {

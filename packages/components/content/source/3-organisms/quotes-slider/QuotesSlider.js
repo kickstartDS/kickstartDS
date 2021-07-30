@@ -1,5 +1,5 @@
-import { define } from '@kickstartds/core/lib/core';
-import { lazySlider } from '@kickstartds/base/lib/slider/lazySlider';
+import { define } from '@kickstartds/core/component';
+import { lazySlider } from '@kickstartds/base/slider/lazySlider';
 
 const identifier = 'quotes.quotes-slider';
 

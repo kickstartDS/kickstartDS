@@ -5,7 +5,7 @@ import {
   HTMLAttributes,
 } from 'react';
 import classnames from 'classnames';
-import { Picture } from '@kickstartds/base/lib/picture';
+import { Picture } from '@kickstartds/base/picture';
 import { LogoTilesProps } from './LogoTilesProps';
 import './logo-tiles.scss';
 

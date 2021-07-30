@@ -1,4 +1,4 @@
-import { Component } from '@kickstartds/core/lib/core';
+import { Component } from '@kickstartds/core/component';
 
 export default class NavLang extends Component {
   static identifier = 'base.nav-lang';

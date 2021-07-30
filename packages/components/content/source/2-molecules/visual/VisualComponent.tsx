@@ -5,7 +5,7 @@ import {
   HTMLAttributes,
 } from 'react';
 import classnames from 'classnames';
-import { Icon } from '@kickstartds/base/lib/icon';
+import { Icon } from '@kickstartds/base/icon';
 import { VisualProps } from './VisualProps';
 import { VisualMediaPartial } from './VisualMediaPartial';
 import {

@@ -1,1 +1,1 @@
-export default () => import('./Datepicker.js');
+export default () => import('./Datepicker');

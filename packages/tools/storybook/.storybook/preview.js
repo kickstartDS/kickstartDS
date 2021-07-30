@@ -2,11 +2,11 @@ import '@storybook/react';
 import { actions } from '@storybook/addon-actions';
 // @see https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/attrchange
 import 'lazysizes/plugins/attrchange/ls.attrchange';
-import { unpackDecorator } from '../../../components/core/lib/storybook/helpers';
+import { unpackDecorator } from '../../../components/core/storybook/helpers';
 
-import '../../../components/base/lib/global/base.js';
-import '../../../components/base/lib/global/base.css';
-import '../../../components/core/lib/design-tokens/tokens.css';
+import '../../../components/base/global/base.js';
+import '../../../components/base/global/base.css';
+import '../../../components/core/design-tokens/tokens.css';
 
 const myActions = actions('radio');
 window.rm.radio.on('*', myActions.radio);

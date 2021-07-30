@@ -1,6 +1,6 @@
 import { FunctionComponent, HTMLAttributes } from 'react';
 import classnames from 'classnames';
-import { Slider } from '@kickstartds/base/lib/slider';
+import { Slider } from '@kickstartds/base/slider';
 import { Visual } from '../visual/VisualComponent';
 import { VisualSliderProps } from './VisualSliderProps';
 import './visual-slider.scss';
