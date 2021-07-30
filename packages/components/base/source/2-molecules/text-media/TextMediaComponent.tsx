@@ -44,7 +44,7 @@ const Media = ({ media }: TMedia) =>
       {media.map((m, i) => (
         <div
           className={classnames('text-media__media', {
-            'text-media__media--full': m.full || (m.video as IVideo)?.src,
+            'text-media__media--full': m.full,
           })}
           key={i}
         >
