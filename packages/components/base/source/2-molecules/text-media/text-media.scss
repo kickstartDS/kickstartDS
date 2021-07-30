@@ -61,11 +61,12 @@
 
   &__media {
     padding: 1rem 0 0 1rem;
+    max-width: 100%;
 
     &--full {
       &,
       > * {
-        width: 100%;
+        width: 100vw !important;
       }
     }
   }
