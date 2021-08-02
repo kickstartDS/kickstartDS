@@ -5,10 +5,12 @@
  * and run `yarn run schema` to regenerate this file.
  */
 
+export type HTMLString = string;
+
 /**
- * News Detail Definitions
+ * Display raw HTML.
  */
-export interface NewsDetailDefinitionsProps {
-  date?: string;
+export interface HTMLProps {
+  html?: HTMLString;
   [k: string]: unknown;
 }
