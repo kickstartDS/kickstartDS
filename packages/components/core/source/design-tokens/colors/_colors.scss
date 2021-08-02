@@ -7,8 +7,8 @@ $brand--primary-g: 51 !default;
 $brand--primary-b: 51 !default;
 $brand--primary: helpers.pack('primary') !default;
 $brand--primary-alpha: helpers.alpha('primary') !default;
-$brand--primary-lighter: helpers.mix('white', 'primary') !default;
-$brand--primary-darker: helpers.mix('black', 'primary') !default;
+$brand--primary-lighter: helpers.mix('primary', 'white') !default;
+$brand--primary-darker: helpers.mix('primary', 'black') !default;
 
 $brand--secondary-r: 153 !default;
 $brand--secondary-g: 153 !default;
@@ -27,7 +27,7 @@ $shades--black-b: calc(var(--color-primary-b) * 0.1) !default;
 $shades--black: helpers.pack('black') !default;
 $shades--black-alpha: helpers.alpha('black') !default;
 
-$shades--grey: helpers.mix('black', 'white') !default;
+$shades--grey: helpers.mix('white', 'black') !default;
 
 $functional--info: #3ca8ff !default;
 $functional--success: #8dc63f !default;

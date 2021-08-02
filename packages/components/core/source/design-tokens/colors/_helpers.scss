@@ -1,5 +1,5 @@
-@use "sass:math";
 @use 'sass:map';
+@use '../../core/color';
 
 $factors: (1, 2, 3, 4, 5, 6, 7, 8, 9);
 
@@ -9,12 +9,7 @@ $factors: (1, 2, 3, 4, 5, 6, 7, 8, 9);
     $color-map: map.set(
       $color-map,
       #{$factor},
-      rgba(
-        var(--color-#{$name}-r),
-        var(--color-#{$name}-g),
-        var(--color-#{$name}-b),
-        math.div($factor, 10)
-      )
+      color.alpha('--color-#{$name}', $factor)
     );
   }
   @return $color-map;
@@ -23,40 +18,15 @@ $factors: (1, 2, 3, 4, 5, 6, 7, 8, 9);
 @function mix($name1, $name2) {
   $color-map: ();
   @each $factor in $factors {
-    $factor1: math.div($factor, 10);
-    $factor2: 1 - $factor1;
     $color-map: map.set(
       $color-map,
       #{$factor},
-      rgb(
-        calc(
-          var(--color-#{$name1}-r) *
-            #{$factor1} +
-            var(--color-#{$name2}-r) *
-            #{$factor2}
-        ),
-        calc(
-          var(--color-#{$name1}-g) *
-            #{$factor1} +
-            var(--color-#{$name2}-g) *
-            #{$factor2}
-        ),
-        calc(
-          var(--color-#{$name1}-b) *
-            #{$factor1} +
-            var(--color-#{$name2}-b) *
-            #{$factor2}
-        )
-      )
+      color.mix('--color-#{$name1}', '--color-#{$name2}', $factor)
     );
   }
   @return $color-map;
 }
 
 @function pack($name) {
-  @return rgb(
-    var(--color-#{$name}-r),
-    var(--color-#{$name}-g),
-    var(--color-#{$name}-b)
-  );
+  @return color.pack('--color-#{$name}');
 }

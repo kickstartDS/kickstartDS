@@ -1,0 +1,24 @@
+@use 'sass:math';
+
+@function pack($name) {
+  @return rgb(var(#{$name}-r), var(#{$name}-g), var(#{$name}-b));
+}
+
+@function alpha($name, $factor) {
+  @return rgba(
+    var(#{$name}-r),
+    var(#{$name}-g),
+    var(#{$name}-b),
+    math.div($factor, 10)
+  );
+}
+
+@function mix($name1, $name2, $factor) {
+  $factor2: math.div($factor, 10);
+  $factor1: 1 - $factor2;
+  @return rgb(
+    calc(var(#{$name1}-r) * #{$factor1} + var(#{$name2}-r) * #{$factor2}),
+    calc(var(#{$name1}-g) * #{$factor1} + var(#{$name2}-g) * #{$factor2}),
+    calc(var(#{$name1}-b) * #{$factor1} + var(#{$name2}-b) * #{$factor2})
+  );
+}
