@@ -78,15 +78,14 @@ $vars: meta.module-variables(visual-vars);
 
   .c-headline {
     /* critical:start */
-    --c-headline--font: var(--c-visual_headline--font);
-    --c-headline--color: var(--c-visual_headline--color);
-    --c-headline--font-weight: var(--c-visual_headline--font-weight);
-    --c-headline--margin-bottom: 0;
-
+    margin: 0;
     max-width: none;
 
     :first-child {
       margin-top: 0;
+      font: var(--c-visual_headline--font);
+      font-weight: var(--c-visual_headline--font-weight);
+      color: var(--c-visual_headline--color);
     }
     /* critical:end */
   }
