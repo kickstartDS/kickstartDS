@@ -57,7 +57,6 @@ export const VisualBoxPartial: FunctionComponent<IBox & RenderFunctions> = ({
           align="left"
           {...headline}
           renderContent={renderHeadline}
-          className="c-visual__topic"
         />
       )}
 

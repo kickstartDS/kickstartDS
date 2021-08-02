@@ -18,26 +18,9 @@
   color: var(--c-visual_box--color);
 
   .c-rich-text {
-    color: var(--c-visual_box--color);
+    --c-rich-text--color: var(--c-visual_box--color);
   }
   /* critical:end */
-
-  .c-visual__topic {
-    /* critical:start */
-    p,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5 {
-      color: var(--c-visual_box--color);
-    }
-
-    p {
-      margin-top: 0;
-    }
-    /* critical:end */
-  }
 
   a:not(.c-button) {
     /* critical:start */
