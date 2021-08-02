@@ -213,13 +213,33 @@ export type GridLayer = boolean;
  */
 export type DisplayBox = boolean;
 /**
- * Text box headline
+ * Select the headline level to use, or p alternatively
  */
-export type Headline = string;
+export type Level = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
+/**
+ * Choose an alignment for the headline
+ */
+export type Alignment = 'left' | 'center' | 'right';
+/**
+ * Text content for the headline
+ */
+export type Text = string;
+/**
+ * Text content for the optional subheadline
+ */
+export type Subheadline = string;
+/**
+ * Add additional spacing to the bottom of the headline
+ */
+export type BottomSpacing = 'none' | 'small' | 'large';
+/**
+ * Set the headline as a page header, triggering special css treatment
+ */
+export type PageHeader = boolean;
 /**
  * Text box copy text
  */
-export type Text = string;
+export type Text1 = string;
 /**
  * Toggles visibility of the link
  */
@@ -372,13 +392,33 @@ export type GridLayer1 = boolean;
  */
 export type DisplayBox1 = boolean;
 /**
- * Text box headline
+ * Select the headline level to use, or p alternatively
  */
-export type Headline1 = string;
+export type Level1 = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
+/**
+ * Choose an alignment for the headline
+ */
+export type Alignment1 = 'left' | 'center' | 'right';
+/**
+ * Text content for the headline
+ */
+export type Text2 = string;
+/**
+ * Text content for the optional subheadline
+ */
+export type Subheadline1 = string;
+/**
+ * Add additional spacing to the bottom of the headline
+ */
+export type BottomSpacing1 = 'none' | 'small' | 'large';
+/**
+ * Set the headline as a page header, triggering special css treatment
+ */
+export type PageHeader1 = boolean;
 /**
  * Text box copy text
  */
-export type Text1 = string;
+export type Text3 = string;
 /**
  * Toggles visibility of the link
  */
@@ -602,31 +642,31 @@ export type DesktopImageAfterText = boolean;
 /**
  * Select the headline level to use, or p alternatively
  */
-export type Level = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
+export type Level2 = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
 /**
  * Choose an alignment for the headline
  */
-export type Alignment = 'left' | 'center' | 'right';
+export type Alignment2 = 'left' | 'center' | 'right';
 /**
  * Text content for the headline
  */
-export type Text2 = string;
+export type Text4 = string;
 /**
  * Text content for the optional subheadline
  */
-export type Subheadline = string;
+export type Subheadline2 = string;
 /**
  * Add additional spacing to the bottom of the headline
  */
-export type BottomSpacing = 'none' | 'small' | 'large';
+export type BottomSpacing2 = 'none' | 'small' | 'large';
 /**
  * Set the headline as a page header, triggering special css treatment
  */
-export type PageHeader = boolean;
+export type PageHeader2 = boolean;
 /**
  * Text content to display inside the element
  */
-export type Text3 = string;
+export type Text5 = string;
 /**
  * Switch text alignment between left and center
  */
@@ -779,7 +819,7 @@ export type ImageRatio = 'none' | '4:3' | '16:9' | '1:1';
 /**
  * Choose an alignment for the box. For the image it only applies for a `ratio` value of `none`
  */
-export type Alignment1 = 'left' | 'center' | 'right';
+export type Alignment3 = 'left' | 'center' | 'right';
 /**
  * Select an image to display inside the content box, at the top
  */
@@ -852,27 +892,27 @@ export type OpenLinkInNewTab5 = boolean;
 /**
  * Select the headline level to use, or p alternatively
  */
-export type Level1 = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
+export type Level3 = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
 /**
  * Choose an alignment for the headline
  */
-export type Alignment2 = 'left' | 'center' | 'right';
+export type Alignment4 = 'left' | 'center' | 'right';
 /**
  * Text content for the headline
  */
-export type Text4 = string;
+export type Text6 = string;
 /**
  * Text content for the optional subheadline
  */
-export type Subheadline1 = string;
+export type Subheadline3 = string;
 /**
  * Add additional spacing to the bottom of the headline
  */
-export type BottomSpacing1 = 'none' | 'small' | 'large';
+export type BottomSpacing3 = 'none' | 'small' | 'large';
 /**
  * Set the headline as a page header, triggering special css treatment
  */
-export type PageHeader1 = boolean;
+export type PageHeader3 = boolean;
 /**
  * Copy text for the element
  */
@@ -1267,27 +1307,27 @@ export type HideLink1 = boolean;
 /**
  * Select the headline level to use, or p alternatively
  */
-export type Level2 = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
+export type Level4 = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
 /**
  * Choose an alignment for the headline
  */
-export type Alignment3 = 'left' | 'center' | 'right';
+export type Alignment5 = 'left' | 'center' | 'right';
 /**
  * Text content for the headline
  */
-export type Text5 = string;
+export type Text7 = string;
 /**
  * Text content for the optional subheadline
  */
-export type Subheadline2 = string;
+export type Subheadline4 = string;
 /**
  * Add additional spacing to the bottom of the headline
  */
-export type BottomSpacing2 = 'none' | 'small' | 'large';
+export type BottomSpacing4 = 'none' | 'small' | 'large';
 /**
  * Set the headline as a page header, triggering special css treatment
  */
-export type PageHeader2 = boolean;
+export type PageHeader4 = boolean;
 
 export interface SectionProps {
   width?: 'full' | 'max' | 'wide' | 'default' | 'narrow';
@@ -1453,12 +1493,24 @@ export interface BackgroundVideo {
 export interface TextBox {
   enabled?: DisplayBox;
   headline?: Headline;
-  text?: Text;
+  text?: Text1;
   link?: Link;
   indent?: Indent;
   horizontal?: HorizontalOrientation;
   vertical?: VerticalOrientation;
   background?: StyleOfTheBox;
+}
+/**
+ * Headline for the box
+ */
+export interface Headline {
+  level: Level;
+  align: Alignment;
+  content?: Text;
+  subheadline?: Subheadline;
+  spaceAfter: BottomSpacing;
+  pageHeader?: PageHeader;
+  [k: string]: unknown;
 }
 /**
  * Text box link configuration
@@ -1553,12 +1605,24 @@ export interface BackgroundVideo1 {
 export interface TextBox1 {
   enabled?: DisplayBox1;
   headline?: Headline1;
-  text?: Text1;
+  text?: Text3;
   link?: Link1;
   indent?: Indent1;
   horizontal?: HorizontalOrientation1;
   vertical?: VerticalOrientation1;
   background?: StyleOfTheBox1;
+}
+/**
+ * Headline for the box
+ */
+export interface Headline1 {
+  level: Level1;
+  align: Alignment1;
+  content?: Text2;
+  subheadline?: Subheadline1;
+  spaceAfter: BottomSpacing1;
+  pageHeader?: PageHeader1;
+  [k: string]: unknown;
 }
 /**
  * Text box link configuration
@@ -1654,7 +1718,7 @@ export interface Order {
  */
 export interface TextBox2 {
   headline?: Headline2;
-  text?: Text3;
+  text?: Text5;
   textAlign?: TextAlignment;
   textColor?: TextColor;
   vAlign?: BoxVerticalAlignment;
@@ -1666,12 +1730,12 @@ export interface TextBox2 {
  * Headline
  */
 export interface Headline2 {
-  level: Level;
-  align: Alignment;
-  content?: Text2;
-  subheadline?: Subheadline;
-  spaceAfter: BottomSpacing;
-  pageHeader?: PageHeader;
+  level: Level2;
+  align: Alignment2;
+  content?: Text4;
+  subheadline?: Subheadline2;
+  spaceAfter: BottomSpacing2;
+  pageHeader?: PageHeader2;
   [k: string]: unknown;
 }
 /**
@@ -1758,7 +1822,7 @@ export interface Icon6 {
  */
 export interface ContentBox {
   ratio: ImageRatio;
-  alignement: Alignment1;
+  alignement: Alignment3;
   image?: ImageSource3;
   topic?: Topic1;
   text?: TextContent3;
@@ -1795,12 +1859,12 @@ export interface Icon7 {
  * Headline
  */
 export interface Headline3 {
-  level: Level1;
-  align: Alignment2;
-  content?: Text4;
-  subheadline?: Subheadline1;
-  spaceAfter: BottomSpacing1;
-  pageHeader?: PageHeader1;
+  level: Level3;
+  align: Alignment4;
+  content?: Text6;
+  subheadline?: Subheadline3;
+  spaceAfter: BottomSpacing3;
+  pageHeader?: PageHeader3;
   [k: string]: unknown;
 }
 /**
@@ -1979,11 +2043,11 @@ export interface Icon9 {
  * Headline
  */
 export interface Headline4 {
-  level: Level2;
-  align: Alignment3;
-  content?: Text5;
-  subheadline?: Subheadline2;
-  spaceAfter: BottomSpacing2;
-  pageHeader?: PageHeader2;
+  level: Level4;
+  align: Alignment5;
+  content?: Text7;
+  subheadline?: Subheadline4;
+  spaceAfter: BottomSpacing4;
+  pageHeader?: PageHeader4;
   [k: string]: unknown;
 }

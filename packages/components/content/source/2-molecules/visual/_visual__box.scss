@@ -15,15 +15,9 @@
   color: var(--c-visual_box--color);
 
   .c-rich-text {
-    color: var(--c-visual_box--color);
+    --c-rich-text--color: var(--c-visual_box--color);
   }
   /* critical:end */
-
-  .c-visual__topic {
-    /* critical:start */
-    color: var(--c-visual_topic--color);
-    /* critical:end */
-  }
 
   a:not(.c-button) {
     /* critical:start */

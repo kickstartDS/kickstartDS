@@ -59,11 +59,10 @@ $box: (
   ),
 ) !default;
 
-$topic: (
+$headline: (
   '.c-visual__box': (
     font: var(--font-display-xl),
     font-weight: var(--font-weight-bold),
-    margin: null,
     color: null,
   ),
   '.c-visual__box--light': (

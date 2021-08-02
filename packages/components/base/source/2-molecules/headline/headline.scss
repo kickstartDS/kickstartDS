@@ -49,6 +49,8 @@ $vars: meta.module-variables(headline-vars);
   > * {
     /* critical:start */
     margin-bottom: 0;
+    font-weight: var(--c-headline--font-weight);
+    color: var(--c-headline--color);
     /* critical:end */
   }
 

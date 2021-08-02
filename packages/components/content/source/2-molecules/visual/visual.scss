@@ -76,11 +76,17 @@ $vars: meta.module-variables(visual-vars);
     @include visual__box.visual-box;
   }
 
-  &__topic {
+  .c-headline {
     /* critical:start */
-    font: var(--c-visual_topic--font);
-    font-weight: var(--c-visual_topic--font-weight);
-    margin: var(--c-visual_topic--margin);
+    margin: 0;
+    max-width: none;
+
+    :first-child {
+      margin-top: 0;
+      font: var(--c-visual_headline--font);
+      font-weight: var(--c-visual_headline--font-weight);
+      color: var(--c-visual_headline--color);
+    }
     /* critical:end */
   }
 
