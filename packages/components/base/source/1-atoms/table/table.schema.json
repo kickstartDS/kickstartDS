@@ -41,6 +41,12 @@
         ["Lorem", "ipsum", "dolor", "Lorem ipsum"],
         ["Lorem", "ipsum", "dolor", "Lorem ipsum"]
       ]
+    },
+    "responsive": {
+      "title": "Responsive",
+      "description": "Stack table on small screens",
+      "type": "boolean",
+      "default": false
     }
   }
 }

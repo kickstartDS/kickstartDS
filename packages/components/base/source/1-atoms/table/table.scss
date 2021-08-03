@@ -1,5 +1,6 @@
 @use 'sass:meta';
 @use '@kickstartds/core/source/core/custom-properties';
+@use '@kickstartds/core/source/core/breakpoint';
 @use './table-vars';
 
 $vars: meta.module-variables(table-vars);
@@ -31,5 +32,37 @@ $vars: meta.module-variables(table-vars);
   th {
     font: var(--c-table_header--font);
     font-weight: var(--c-table_header--font-weight);
+  }
+
+  &--responsive {
+    @include breakpoint.media('<s') {
+      thead {
+        display: none;
+      }
+
+      tr {
+        display: block;
+        margin-top: 2rem;
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+
+      th,
+      td {
+        display: block;
+        padding-right: 0;
+      }
+
+      [data-th] {
+        &::before {
+          font: var(--c-table_header--font);
+          font-weight: var(--c-table_header--font-weight);
+          padding-right: 0.5em;
+          content: attr(data-th);
+        }
+      }
+    }
   }
 }

@@ -15,6 +15,10 @@ export type ColumnHead = boolean;
  */
 export type RowHead = boolean;
 export type TableRows = string[][];
+/**
+ * Stack table on small screens
+ */
+export type Responsive = boolean;
 
 /**
  * Table
@@ -24,5 +28,6 @@ export interface TableProps {
   colHead?: ColumnHead;
   rowHead?: RowHead;
   rows?: TableRows;
+  responsive?: Responsive;
   [k: string]: unknown;
 }
