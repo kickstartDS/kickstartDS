@@ -102,7 +102,14 @@ const StorytellingMixin: FunctionComponent<
         )}
         style={{ color: box.textColor }}
       >
-        {box.headline && <Headline {...box.headline} />}
+        {box.headline && (
+          <Headline
+            level="p"
+            styleAs="h2"
+            {...box.headline}
+            align={box.headline.align || box.textAlign || 'left'}
+          />
+        )}
         {box.text && (
           <RichText
             text={box.text}

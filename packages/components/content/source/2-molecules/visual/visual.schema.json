@@ -126,6 +126,9 @@
             "level": {
               "default": "p"
             },
+            "styleAs": {
+              "default": "h2"
+            },
             "align": {
               "default": "left"
             },

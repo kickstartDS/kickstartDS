@@ -54,6 +54,7 @@ export const VisualBoxPartial: FunctionComponent<IBox & RenderFunctions> = ({
       {headline && (
         <Headline
           level="p"
+          styleAs="h2"
           align="left"
           {...headline}
           renderContent={renderHeadline}

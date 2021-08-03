@@ -55,6 +55,10 @@ export type DisplayBox = boolean;
  */
 export type Level = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
 /**
+ * Select the headline style to use
+ */
+export type Style = 'none' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
+/**
  * Choose an alignment for the headline
  */
 export type Alignment = 'left' | 'center' | 'right';
@@ -224,6 +228,7 @@ export interface TextBox {
  */
 export interface Headline {
   level: Level;
+  styleAs?: Style;
   align: Alignment;
   content?: Text;
   subheadline?: Subheadline;

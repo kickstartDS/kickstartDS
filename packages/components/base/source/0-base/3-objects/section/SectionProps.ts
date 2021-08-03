@@ -217,6 +217,10 @@ export type DisplayBox = boolean;
  */
 export type Level = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
 /**
+ * Select the headline style to use
+ */
+export type Style = 'none' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
+/**
  * Choose an alignment for the headline
  */
 export type Alignment = 'left' | 'center' | 'right';
@@ -395,6 +399,10 @@ export type DisplayBox1 = boolean;
  * Select the headline level to use, or p alternatively
  */
 export type Level1 = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
+/**
+ * Select the headline style to use
+ */
+export type Style1 = 'none' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
 /**
  * Choose an alignment for the headline
  */
@@ -643,6 +651,10 @@ export type DesktopImageAfterText = boolean;
  * Select the headline level to use, or p alternatively
  */
 export type Level2 = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
+/**
+ * Select the headline style to use
+ */
+export type Style2 = 'none' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
 /**
  * Choose an alignment for the headline
  */
@@ -893,6 +905,10 @@ export type OpenLinkInNewTab5 = boolean;
  * Select the headline level to use, or p alternatively
  */
 export type Level3 = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
+/**
+ * Select the headline style to use
+ */
+export type Style3 = 'none' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
 /**
  * Choose an alignment for the headline
  */
@@ -1309,6 +1325,10 @@ export type HideLink1 = boolean;
  */
 export type Level4 = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
 /**
+ * Select the headline style to use
+ */
+export type Style4 = 'none' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
+/**
  * Choose an alignment for the headline
  */
 export type Alignment5 = 'left' | 'center' | 'right';
@@ -1505,6 +1525,7 @@ export interface TextBox {
  */
 export interface Headline {
   level: Level;
+  styleAs?: Style;
   align: Alignment;
   content?: Text;
   subheadline?: Subheadline;
@@ -1617,6 +1638,7 @@ export interface TextBox1 {
  */
 export interface Headline1 {
   level: Level1;
+  styleAs?: Style1;
   align: Alignment1;
   content?: Text2;
   subheadline?: Subheadline1;
@@ -1727,10 +1749,11 @@ export interface TextBox2 {
   [k: string]: unknown;
 }
 /**
- * Headline
+ * Headline for the box
  */
 export interface Headline2 {
   level: Level2;
+  styleAs?: Style2;
   align: Alignment2;
   content?: Text4;
   subheadline?: Subheadline2;
@@ -1860,6 +1883,7 @@ export interface Icon7 {
  */
 export interface Headline3 {
   level: Level3;
+  styleAs?: Style3;
   align: Alignment4;
   content?: Text6;
   subheadline?: Subheadline3;
@@ -2044,6 +2068,7 @@ export interface Icon9 {
  */
 export interface Headline4 {
   level: Level4;
+  styleAs?: Style4;
   align: Alignment5;
   content?: Text7;
   subheadline?: Subheadline4;

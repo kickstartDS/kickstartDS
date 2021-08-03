@@ -19,6 +19,7 @@ const HeadlineComponent: FunctionComponent<
 > = ({
   content,
   level = 'h2',
+  styleAs = 'none',
   align = 'left',
   pageHeader,
   subheadline,
@@ -40,7 +41,13 @@ const HeadlineComponent: FunctionComponent<
       )}
       {...props}
     >
-      <TagName>{renderContent(content)}</TagName>
+      <TagName
+        className={classnames(
+          styleAs !== 'none' && styleAs !== level && `c-headline__${styleAs}`
+        )}
+      >
+        {renderContent(content)}
+      </TagName>
       {subheadline && (
         <p className="c-headline__subheadline">
           {renderSubheadline(subheadline)}

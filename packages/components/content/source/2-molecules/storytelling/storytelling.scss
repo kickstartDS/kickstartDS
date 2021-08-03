@@ -262,10 +262,7 @@ $vars: meta.module-variables(storytelling-vars);
       width: auto;
 
       &--center {
-        &,
-        .c-headline > * {
-          text-align: center;
-        }
+        text-align: center;
       }
 
       &[style] {
@@ -276,15 +273,15 @@ $vars: meta.module-variables(storytelling-vars);
             color: inherit;
           }
         }
+
+        .c-rich-text {
+          color: inherit;
+        }
       }
     }
 
     .c-headline {
-      width: 100%;
       max-width: none;
-      margin-left: 0;
-      margin-right: 0;
-      text-align: left;
     }
   }
 
