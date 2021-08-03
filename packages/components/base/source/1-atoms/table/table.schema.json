@@ -47,6 +47,12 @@
       "description": "Stack table on small screens",
       "type": "boolean",
       "default": false
+    },
+    "variant": {
+      "title": "Table variant",
+      "type": "string",
+      "enum": ["border", "zebra"],
+      "default": "border"
     }
   }
 }

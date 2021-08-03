@@ -26,12 +26,38 @@ $vars: meta.module-variables(table-vars);
   td {
     text-align: left;
     padding: var(--c-table--cell-padding);
-    border-bottom: var(--c-table--border);
   }
 
   th {
     font: var(--c-table_header--font);
     font-weight: var(--c-table_header--font-weight);
+  }
+
+  &--border {
+    th,
+    td {
+      border-bottom: var(--c-table_border--border);
+    }
+  }
+
+  &--zebra {
+    tr {
+      &:nth-child(odd) {
+        background: var(--c-table_zebra--background-odd);
+      }
+      &:nth-child(even) {
+        background: var(--c-table_zebra--background-even);
+      }
+    }
+
+    thead + tbody tr {
+      &:nth-child(even) {
+        background: var(--c-table_zebra--background-odd);
+      }
+      &:nth-child(odd) {
+        background: var(--c-table_zebra--background-even);
+      }
+    }
   }
 
   &--responsive {
@@ -61,6 +87,17 @@ $vars: meta.module-variables(table-vars);
           font-weight: var(--c-table_header--font-weight);
           padding-right: 0.5em;
           content: attr(data-th);
+        }
+      }
+
+      &.c-table--zebra tr {
+        background: none !important;
+
+        > :nth-child(odd) {
+          background: var(--c-table_zebra--background-odd);
+        }
+        > :nth-child(even) {
+          background: var(--c-table_zebra--background-even);
         }
       }
     }

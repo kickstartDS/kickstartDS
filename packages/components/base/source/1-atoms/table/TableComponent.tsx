@@ -10,6 +10,7 @@ const TableComponent: FunctionComponent<TableProps> = ({
   colHead,
   rowHead,
   responsive,
+  variant,
   className,
   ...props
 }) => (
@@ -18,6 +19,8 @@ const TableComponent: FunctionComponent<TableProps> = ({
       'c-table',
       {
         'c-table--responsive': responsive,
+        'c-table--border': variant === 'border',
+        'c-table--zebra': variant === 'zebra',
       },
       className
     )}

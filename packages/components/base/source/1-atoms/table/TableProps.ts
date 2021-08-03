@@ -19,6 +19,7 @@ export type TableRows = string[][];
  * Stack table on small screens
  */
 export type Responsive = boolean;
+export type TableVariant = 'border' | 'zebra';
 
 /**
  * Table
@@ -29,5 +30,6 @@ export interface TableProps {
   rowHead?: RowHead;
   rows?: TableRows;
   responsive?: Responsive;
+  variant?: TableVariant;
   [k: string]: unknown;
 }
