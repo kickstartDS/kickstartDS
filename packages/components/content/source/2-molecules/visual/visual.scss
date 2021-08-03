@@ -80,12 +80,10 @@ $vars: meta.module-variables(visual-vars);
     /* critical:start */
     margin: 0;
     max-width: none;
+    --c-headline--color: var(--c-visual_headline--color, inherit);
 
-    :first-child {
-      margin-top: 0;
-      font: var(--c-visual_headline--font);
-      font-weight: var(--c-visual_headline--font-weight);
-      color: var(--c-visual_headline--color);
+    &__subheadline {
+      --c-headline_subheadline--color: inherit;
     }
     /* critical:end */
   }

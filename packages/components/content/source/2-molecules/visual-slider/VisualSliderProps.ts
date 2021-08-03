@@ -59,6 +59,10 @@ export type DisplayBox = boolean;
  */
 export type Level = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
 /**
+ * Select the headline style to use
+ */
+export type Style = 'none' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
+/**
  * Choose an alignment for the headline
  */
 export type Alignment = 'left' | 'center' | 'right';
@@ -66,10 +70,6 @@ export type Alignment = 'left' | 'center' | 'right';
  * Text content for the headline
  */
 export type Text = string;
-/**
- * Select the headline style to use
- */
-export type Style = 'none' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
 /**
  * Text content for the optional subheadline
  */
@@ -245,9 +245,9 @@ export interface TextBox {
  */
 export interface Headline {
   level: Level;
+  styleAs?: Style;
   align: Alignment;
   content?: Text;
-  styleAs?: Style;
   subheadline?: Subheadline;
   spaceAfter: BottomSpacing;
   pageHeader?: PageHeader;
