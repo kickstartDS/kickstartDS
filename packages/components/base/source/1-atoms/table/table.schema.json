@@ -37,9 +37,19 @@
           "Expedita eos",
           "Sed ducimus"
         ],
-        ["Lorem", "ipsum", "dolor", "Lorem ipsum"],
-        ["Lorem", "ipsum", "dolor", "Lorem ipsum"],
-        ["Lorem", "ipsum", "dolor", "Lorem ipsum"]
+        ["Sed et tempore", "Ut aud", "Reiciendis", "Explicabo ipsam"],
+        [
+          "Dolore culpa",
+          "Consectetur",
+          "Consectetur voluptatem",
+          "Nesciunt non rerum"
+        ],
+        [
+          "Placeat libero ratione",
+          "Laboriosam a expedita",
+          "Dolor",
+          "Omnis et cumque"
+        ]
       ]
     },
     "responsive": {
