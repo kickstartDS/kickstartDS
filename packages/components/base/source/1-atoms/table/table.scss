@@ -1,0 +1,35 @@
+@use 'sass:meta';
+@use '@kickstartds/core/source/core/custom-properties';
+@use './table-vars';
+
+$vars: meta.module-variables(table-vars);
+@include custom-properties.styles($vars, true);
+
+.c-table {
+  width: 100%;
+  border-collapse: collapse;
+
+  font: var(--c-table--font);
+  font-weight: var(--c-table--font-weight);
+
+  caption {
+    caption-side: bottom;
+    padding-top: 1rem;
+    text-align: left;
+    font: var(--c-table_caption--font);
+    font-weight: var(--c-table_caption--font-weight);
+    font-style: var(--c-table_caption--font-style);
+  }
+
+  th,
+  td {
+    text-align: left;
+    padding: var(--c-table--cell-padding);
+    border-bottom: var(--c-table--border);
+  }
+
+  th {
+    font: var(--c-table_header--font);
+    font-weight: var(--c-table_header--font-weight);
+  }
+}
