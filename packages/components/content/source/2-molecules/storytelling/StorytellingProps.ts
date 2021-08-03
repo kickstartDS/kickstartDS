@@ -197,7 +197,7 @@ export interface TextBox {
   [k: string]: unknown;
 }
 /**
- * Headline
+ * Headline for the box
  */
 export interface Headline {
   level: Level;
