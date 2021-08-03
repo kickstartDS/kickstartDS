@@ -99,6 +99,10 @@ export type Text = string;
  */
 export type Level = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
 /**
+ * Select the headline style to use
+ */
+export type Style = 'none' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
+/**
  * Text content for the optional subheadline
  */
 export type Subheadline = string;
@@ -166,6 +170,7 @@ export interface Headline {
   align: Alignment1;
   content?: Text;
   level: Level;
+  styleAs?: Style;
   subheadline?: Subheadline;
   spaceAfter: BottomSpacing;
   pageHeader?: PageHeader;

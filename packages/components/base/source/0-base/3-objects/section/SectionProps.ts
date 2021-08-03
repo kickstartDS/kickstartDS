@@ -225,6 +225,10 @@ export type Alignment = 'left' | 'center' | 'right';
  */
 export type Text = string;
 /**
+ * Select the headline style to use
+ */
+export type Style = 'none' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
+/**
  * Text content for the optional subheadline
  */
 export type Subheadline = string;
@@ -403,6 +407,10 @@ export type Alignment1 = 'left' | 'center' | 'right';
  * Text content for the headline
  */
 export type Text2 = string;
+/**
+ * Select the headline style to use
+ */
+export type Style1 = 'none' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
 /**
  * Text content for the optional subheadline
  */
@@ -643,6 +651,10 @@ export type DesktopImageAfterText = boolean;
  * Select the headline level to use, or p alternatively
  */
 export type Level2 = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
+/**
+ * Select the headline style to use
+ */
+export type Style2 = 'none' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
 /**
  * Choose an alignment for the headline
  */
@@ -893,6 +905,10 @@ export type OpenLinkInNewTab5 = boolean;
  * Select the headline level to use, or p alternatively
  */
 export type Level3 = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
+/**
+ * Select the headline style to use
+ */
+export type Style3 = 'none' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
 /**
  * Choose an alignment for the headline
  */
@@ -1309,6 +1325,10 @@ export type HideLink1 = boolean;
  */
 export type Level4 = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
 /**
+ * Select the headline style to use
+ */
+export type Style4 = 'none' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
+/**
  * Choose an alignment for the headline
  */
 export type Alignment5 = 'left' | 'center' | 'right';
@@ -1507,6 +1527,7 @@ export interface Headline {
   level: Level;
   align: Alignment;
   content?: Text;
+  styleAs?: Style;
   subheadline?: Subheadline;
   spaceAfter: BottomSpacing;
   pageHeader?: PageHeader;
@@ -1619,6 +1640,7 @@ export interface Headline1 {
   level: Level1;
   align: Alignment1;
   content?: Text2;
+  styleAs?: Style1;
   subheadline?: Subheadline1;
   spaceAfter: BottomSpacing1;
   pageHeader?: PageHeader1;
@@ -1731,6 +1753,7 @@ export interface TextBox2 {
  */
 export interface Headline2 {
   level: Level2;
+  styleAs?: Style2;
   align: Alignment2;
   content?: Text4;
   subheadline?: Subheadline2;
@@ -1860,6 +1883,7 @@ export interface Icon7 {
  */
 export interface Headline3 {
   level: Level3;
+  styleAs?: Style3;
   align: Alignment4;
   content?: Text6;
   subheadline?: Subheadline3;
@@ -2044,6 +2068,7 @@ export interface Icon9 {
  */
 export interface Headline4 {
   level: Level4;
+  styleAs?: Style4;
   align: Alignment5;
   content?: Text7;
   subheadline?: Subheadline4;

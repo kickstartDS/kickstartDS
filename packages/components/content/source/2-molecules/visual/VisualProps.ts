@@ -63,6 +63,10 @@ export type Alignment = 'left' | 'center' | 'right';
  */
 export type Text = string;
 /**
+ * Select the headline style to use
+ */
+export type Style = 'none' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
+/**
  * Text content for the optional subheadline
  */
 export type Subheadline = string;
@@ -226,6 +230,7 @@ export interface Headline {
   level: Level;
   align: Alignment;
   content?: Text;
+  styleAs?: Style;
   subheadline?: Subheadline;
   spaceAfter: BottomSpacing;
   pageHeader?: PageHeader;
