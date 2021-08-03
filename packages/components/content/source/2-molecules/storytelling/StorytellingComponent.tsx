@@ -106,8 +106,8 @@ const StorytellingMixin: FunctionComponent<
           <Headline
             level="p"
             styleAs="h2"
-            align={box.textAlign || 'left'}
             {...box.headline}
+            align={box.headline.align || box.textAlign || 'left'}
           />
         )}
         {box.text && (
