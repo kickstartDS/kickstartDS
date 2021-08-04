@@ -43,6 +43,7 @@
   --g-content-width-default: 62rem;
   --g-content-width-narrow: 46.5rem;
   --g-content-width-wide: 75rem;
+  --g-content-padding: var(--spacing-m);
 
   /* critical:start */
   --breakpoints: '#{breakpoint.breakpoints-to-json()}';

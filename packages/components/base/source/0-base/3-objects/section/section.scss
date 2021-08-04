@@ -19,7 +19,7 @@ $vars: meta.module-variables(section-vars);
 
   &__container {
     /* critical:start */
-    padding: 0 var(--spacing-m);
+    padding: 0 var(--g-content-padding);
     margin: auto;
     width: 100%;
     max-width: var(--g-content-width-default);
