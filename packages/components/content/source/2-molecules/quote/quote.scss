@@ -37,7 +37,7 @@ $vars: meta.module-variables(quote-vars);
 
   &__text {
     font: var(--c-quote_text--font, var(--font-copy-m));
-    margin-bottom: var(--c-quote_text--margin-bottom, var(--spacing-xs));
+    margin-bottom: var(--c-quote_text--margin-bottom, var(--spacing-m));
   }
 
   &__source {

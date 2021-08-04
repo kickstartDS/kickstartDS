@@ -39,11 +39,11 @@ $vars: meta.module-variables(headline-vars);
   }
 
   &--space-after-small {
-    padding-bottom: var(--spacing-s);
+    padding-bottom: calc(var(--spacing-xxl) / 2);
   }
 
   &--space-after-large {
-    padding-bottom: var(--spacing-l);
+    padding-bottom: var(--spacing-xxl);
   }
 
   > :first-child {
