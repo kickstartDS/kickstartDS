@@ -73,16 +73,15 @@
 }
 
 .c-teaser-box.image--spacing {
-  $image-spacing: 1.25rem;
-  padding: $image-spacing;
+  padding: var(--c-teaser--padding);
   padding-bottom: 0;
 
   .c-teaser__image {
     border-top-left-radius: calc(
-      var(--c-teaser--border-radius) - #{$image-spacing}
+      var(--c-teaser--border-radius) - var(--c-teaser--padding)
     );
     border-top-right-radius: calc(
-      var(--c-teaser--border-radius) - #{$image-spacing}
+      var(--c-teaser--border-radius) - var(--c-teaser--padding)
     );
   }
 

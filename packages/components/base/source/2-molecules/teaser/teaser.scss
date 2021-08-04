@@ -31,7 +31,7 @@ $vars: meta.module-variables(teaser-vars);
 
   &__body {
     display: flex;
-    padding: 1rem;
+    padding: var(--c-teaser--padding);
   }
 
   &__text {
