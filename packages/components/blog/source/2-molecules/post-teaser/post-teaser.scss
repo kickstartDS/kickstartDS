@@ -50,6 +50,7 @@ $vars: meta.module-variables(post-teaser-vars);
 
     > a {
       color: var(--c-post-teaser_headline--color);
+      font-weight: inherit;
     }
   }
 

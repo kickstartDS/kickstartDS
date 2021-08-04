@@ -1,6 +1,7 @@
 @use '../2-generic/polyfills/focus-visible' as *;
 @use '../2-generic/root/root' as *;
 @use '../2-generic/root/element-resets' as *;
+@use '../2-generic/link/link' as *;
 @use '../2-generic/media/image' as *;
 @use '../2-generic/media/video' as *;
 @use '../2-generic/kbd/kbd' as *;
