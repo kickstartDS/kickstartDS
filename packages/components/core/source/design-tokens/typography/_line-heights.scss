@@ -42,12 +42,10 @@ $xxl: (
       }
     }
   } @else {
-    @if $category == 'm' {
-      /*!
-      * @tokens Line Heights
-      * @presenter LineHeight
-      */
-    }
+    /*!
+    * @tokens Line Heights #{$category or xs}
+    * @presenter LineHeight
+    */
     --line-height-#{$name}: #{$value};
   }
 }
