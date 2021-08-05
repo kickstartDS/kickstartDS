@@ -9,6 +9,7 @@ module.exports = {
     postcss: false,
   },
   addons: [
+    'storybook-dark-mode',
     '@storybook/addon-essentials',
     '@storybook/addon-a11y',
     '@kickstartds/storybook-addon-component-tokens',
