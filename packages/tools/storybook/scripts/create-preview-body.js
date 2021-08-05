@@ -2,19 +2,17 @@ const path = require('path');
 const fs = require('fs-extra');
 const svgstore = require('svgstore');
 const fg = require('fast-glob');
+const del = require('del');
 const { root } = require('./utils');
 
 const createIconSprite = async () => {
-  const filePaths = await fg('legacy-instance/icons/*.svg', {
-    cwd: root,
-    absolute: true,
-  });
-  const files = await Promise.all(
-    filePaths.map(async (filePath) => [
-      `icon-${path.basename(filePath, '.svg')}`,
-      await fs.readFile(filePath),
-    ])
-  );
+  const [filePaths] = await Promise.all([
+    fg('legacy-instance/icons/*.svg', {
+      cwd: root,
+      absolute: true,
+    }),
+    del('.storybook/icons.html'),
+  ]);
   const sprite = svgstore({
     svgAttrs: {
       xmlns: 'http://www.w3.org/2000/svg',
@@ -24,7 +22,13 @@ const createIconSprite = async () => {
       width: '0',
     },
   });
-  files.forEach((file) => sprite.add(...file));
+  await Promise.all(
+    filePaths.map(async (filePath) => {
+      const file = await fs.readFile(filePath);
+      sprite.add(`icon-${path.basename(filePath, '.svg')}`, file);
+      return fs.appendFile('.storybook/icons.html', file);
+    })
+  );
   return sprite.toString({ inline: true });
 };
 

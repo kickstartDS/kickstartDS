@@ -6,8 +6,8 @@ import { unpackDecorator } from '../../../components/core/lib/storybook/helpers'
 
 import '../../../components/base/lib/global/base.js';
 import '../../../components/base/lib/global/base.css';
-import '../../../components/core/lib/design-tokens/tokens.css';
 import designTokens from '../../../components/core/lib/design-tokens/tokens.css';
+import icons from './icons.html?raw';
 
 const myActions = actions('radio');
 window.rm.radio.on('*', myActions.radio);
@@ -40,6 +40,10 @@ export const parameters = {
       {
         filename: '../../../components/core/lib/design-tokens/tokens.css',
         content: designTokens,
+      },
+      {
+        filename: './icons.svg',
+        content: icons,
       },
     ],
   },
