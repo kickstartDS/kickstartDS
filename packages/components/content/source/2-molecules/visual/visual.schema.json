@@ -115,18 +115,27 @@
         },
         "headline": {
           "title": "Headline",
-          "description": "Text box headline",
-          "type": "string",
-          "default": "Lorem Ipsum dolor",
-          "examples": [
-            "Sed repudiandae consequuntur",
-            "Impedit ipsum libero",
-            "Accusamus enim iure",
-            "Odio maxime quas",
-            "Quasi exercitationem ullam",
-            "Ut eaque iure"
+          "description": "Headline for the box",
+          "type": "object",
+          "allOf": [
+            {
+              "$ref": "http://frontend.ruhmesmeile.com/base/molecules/headline.schema.json"
+            }
           ],
-          "faker": "lorem.words"
+          "properties": {
+            "level": {
+              "default": "p"
+            },
+            "styleAs": {
+              "default": "h2"
+            },
+            "align": {
+              "default": "left"
+            },
+            "content": {
+              "default": "Lorem Ipsum dolor"
+            }
+          }
         },
         "text": {
           "title": "Text",
@@ -147,6 +156,9 @@
                   "description": "Toggles visibility of the link",
                   "type": "boolean",
                   "default": true
+                },
+                "variant": {
+                  "default": "outline-inverted"
                 }
               }
             },

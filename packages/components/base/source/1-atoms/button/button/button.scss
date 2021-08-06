@@ -11,6 +11,7 @@ $vars: meta.module-variables(button-vars);
 .c-button {
   /* critical:start */
   display: inline-flex;
+  align-items: center;
   justify-content: center;
   padding: var(--c-button--padding);
   border: var(--c-button--border-width) solid var(--c-button--border-color);
@@ -111,6 +112,7 @@ $vars: meta.module-variables(button-vars);
     /* critical:start */
     @include bourbon.size(var(--c-button--icon-size));
 
+    flex-shrink: 0;
     margin: 0 0.5em;
     /* critical:end */
 

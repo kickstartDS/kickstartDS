@@ -12,6 +12,13 @@
       "enum": ["h1", "h2", "h3", "h4", "h5", "p"],
       "default": "h2"
     },
+    "styleAs": {
+      "title": "Style",
+      "description": "Select the headline style to use",
+      "type": "string",
+      "enum": ["none", "h1", "h2", "h3", "h4", "h5", "p"],
+      "default": "none"
+    },
     "align": {
       "title": "Alignment",
       "description": "Choose an alignment for the headline",

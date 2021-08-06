@@ -5,8 +5,8 @@ const breakpointEvents = {
   change: 'core.breakpoint.change',
 };
 const removeQuotes = (string) =>
-  // removes backslashes and leading & trailing doublequotes
-  string.replace(/\\|^\s*"|"\s*$/g, '');
+  // removes backslashes and leading & trailing quotes
+  string.replace(/\\|^\s*['"]|['"]\s*$/g, '');
 
 const includeMediaExport = (() => {
   let breakpoints = {};

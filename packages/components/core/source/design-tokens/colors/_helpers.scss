@@ -1,29 +1,32 @@
-@use "sass:math";
-@use 'sass:color';
 @use 'sass:map';
+@use '../../core/color';
 
 $factors: (1, 2, 3, 4, 5, 6, 7, 8, 9);
 
-@function alpha($color) {
+@function alpha($name) {
   $color-map: ();
   @each $factor in $factors {
     $color-map: map.set(
       $color-map,
       #{$factor},
-      rgba($color, math.div($factor, 10))
+      color.alpha('--color-#{$name}', $factor)
     );
   }
   @return $color-map;
 }
 
-@function mix($color1, $color2) {
+@function mix($name1, $name2) {
   $color-map: ();
   @each $factor in $factors {
     $color-map: map.set(
       $color-map,
       #{$factor},
-      color.mix($color1, $color2, percentage(math.div($factor, 10)))
+      color.mix('--color-#{$name1}', '--color-#{$name2}', $factor)
     );
   }
   @return $color-map;
+}
+
+@function pack($name) {
+  @return color.pack('--color-#{$name}');
 }

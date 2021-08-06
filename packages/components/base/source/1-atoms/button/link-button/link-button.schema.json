@@ -4,28 +4,59 @@
   "title": "Link Button",
   "description": "link-button",
   "type": "object",
-  "allOf": [
-    {
-      "$ref": "http://frontend.ruhmesmeile.com/base/atoms/button.schema.json#/definitions/button"
+  "definitions": {
+    "href": {
+      "type": "string",
+      "title": "Button href?",
+      "description": "Link used for button",
+      "format": "url",
+      "default": "https://example.com"
     },
-    {
-      "type": "object",
-      "properties": {
-        "href": {
-          "type": "string",
-          "title": "Button href?",
-          "description": "Link used for button",
-          "default": "https://example.com"
-        },
-        "newTab": {
-          "type": "boolean",
-          "title": "Open link in new Tab",
-          "description": "Open link in new Tab",
-          "default": false
-        }
-      },
-      "required": ["href"],
-      "additionalProperties": false
+    "newTab": {
+      "type": "boolean",
+      "title": "Open link in new Tab",
+      "description": "Open link in new Tab",
+      "default": false
     }
-  ]
+  },
+  "properties": {
+    "label": {
+      "$ref": "http://frontend.ruhmesmeile.com/base/atoms/button.schema.json#/definitions/label"
+    },
+    "variant": {
+      "$ref": "http://frontend.ruhmesmeile.com/base/atoms/button.schema.json#/definitions/variant"
+    },
+    "size": {
+      "$ref": "http://frontend.ruhmesmeile.com/base/atoms/button.schema.json#/definitions/size"
+    },
+    "className": {
+      "$ref": "http://frontend.ruhmesmeile.com/base/atoms/button.schema.json#/definitions/className"
+    },
+    "icon": {
+      "$ref": "http://frontend.ruhmesmeile.com/base/atoms/button.schema.json#/definitions/icon"
+    },
+    "iconBefore": {
+      "$ref": "http://frontend.ruhmesmeile.com/base/atoms/button.schema.json#/definitions/iconBefore"
+    },
+    "iconAfter": {
+      "$ref": "http://frontend.ruhmesmeile.com/base/atoms/button.schema.json#/definitions/iconAfter"
+    },
+    "dataComponent": {
+      "$ref": "http://frontend.ruhmesmeile.com/base/atoms/button.schema.json#/definitions/dataComponent"
+    },
+    "fillAnimation": {
+      "$ref": "http://frontend.ruhmesmeile.com/base/atoms/button.schema.json#/definitions/fillAnimation"
+    },
+    "iconAnimation": {
+      "$ref": "http://frontend.ruhmesmeile.com/base/atoms/button.schema.json#/definitions/iconAnimation"
+    },
+    "href": {
+      "$ref": "#/definitions/href"
+    },
+    "newTab": {
+      "$ref": "#/definitions/newTab"
+    }
+  },
+  "required": ["label", "variant", "size", "href"],
+  "additionalProperties": false
 }

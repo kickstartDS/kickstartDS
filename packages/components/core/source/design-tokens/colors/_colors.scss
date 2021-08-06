@@ -1,66 +1,104 @@
 @use 'sass:meta';
-@use 'sass:color';
 @use 'sass:string';
 @use './helpers';
 
-$_primary: #333333 !default;
-$_white: #fff !default;
-$_black: color.mix(black, $_primary, 90%) !default;
+$primary-r: 51 !default;
+$primary-g: 51 !default;
+$primary-b: 51 !default;
 
-$brand--primary: $_primary !default;
-$brand--primary-alpha: helpers.alpha($brand--primary) !default;
-$brand--primary-lighter: helpers.mix($_white, $brand--primary) !default;
-$brand--primary-darker: helpers.mix($_black, $brand--primary) !default;
+$secondary-r: 153 !default;
+$secondary-g: 153 !default;
+$secondary-b: 153 !default;
 
-$brand--secondary: #999999 !default;
+$white-r: 255 !default;
+$white-g: 255 !default;
+$white-b: 255 !default;
 
-$shades--white: $_white !default;
-$shades--white-alpha: helpers.alpha($shades--white) !default;
+$black-r: calc(var(--color-primary-r) * 0.1) !default;
+$black-g: calc(var(--color-primary-g) * 0.1) !default;
+$black-b: calc(var(--color-primary-b) * 0.1) !default;
 
-$shades--black: $_black !default;
-$shades--black-alpha: helpers.alpha($shades--black) !default;
+$brand--primary: helpers.pack('primary') !default;
+$brand--secondary: helpers.pack('secondary') !default;
 
-$shades--grey: helpers.mix($shades--black, $shades--white) !default;
+$primary-alpha--primary-alpha: helpers.alpha('primary') !default;
+$primary-lighter--primary-lighter: helpers.mix('primary', 'white') !default;
+$primary-darker--primary-darker: helpers.mix('primary', 'black') !default;
+
+$shades-white--white: helpers.pack('white') !default;
+$shades-white--white-alpha: helpers.alpha('white') !default;
+
+$shades-black--black: helpers.pack('black') !default;
+$shades-black--black-alpha: helpers.alpha('black') !default;
+
+$shades--grey: helpers.mix('white', 'black') !default;
 
 $functional--info: #3ca8ff !default;
 $functional--success: #8dc63f !default;
 $functional--warning: #ffc103 !default;
 $functional--error: #e60201 !default;
 
-@mixin cp($name, $value, $category) {
+@mixin cp($name, $value) {
   @if meta.type-of($value) == 'map' {
     @each $modifier, $val in $value {
-      @include cp($name + '-' + $modifier, $val, $category);
+      @include cp($name + '-' + $modifier, $val);
     }
   } @else {
-    @if $category == 'brand' {
-      /*!
-       * @tokens Colors: Brand
-       * @presenter Color
-       */
-    } @else if $category == 'shades' {
-      /*!
-       * @tokens Colors: Shades
-       * @presenter Color
-       */
-    } @else if $category == 'functional' {
-      /*!
-       * @tokens Colors: Functional
-       * @presenter Color
-       */
-    } @else {
-      /*!
-       * @tokens Colors: Misc
-       * @presenter Color
-       */
-    }
     --color-#{$name}: #{$value};
   }
 }
 
 @mixin render($name, $value) {
   $i: string.index($name, '--');
-  $category: string.slice($name, 0, $i - 1);
-  $prop: string.slice($name, $i + 2, string.length($name));
-  @include cp($prop, $value, $category);
+  @if $i {
+    $category: string.slice($name, 0, $i - 1);
+    // @debug $name $category;
+    $prop: string.slice($name, $i + 2, string.length($name));
+    @if $category == 'brand' {
+      /*!
+         * @tokens Colors: Brand
+         * @presenter Color
+         */
+    } @else if $category == 'primary-alpha' {
+      /*!
+         * @tokens Colors: Primary Alpha
+         * @presenter Color
+         */
+    } @else if $category == 'primary-lighter' {
+      /*!
+         * @tokens Colors: Primary Lighter
+         * @presenter Color
+         */
+    } @else if $category == 'primary-darker' {
+      /*!
+         * @tokens Colors: Primary Darker
+         * @presenter Color
+         */
+    } @else if $category == 'shades-white' {
+      /*!
+         * @tokens Colors: Shades White
+         * @presenter Color
+         */
+    } @else if $category == 'shades-black' {
+      /*!
+         * @tokens Colors: Shades Black
+         * @presenter Color
+         */
+    } @else if $category == 'shades' {
+      /*!
+         * @tokens Colors: Shades
+         * @presenter Color
+         */
+    } @else if $category == 'functional' {
+      /*!
+        * @tokens Colors: Functional
+        * @presenter Color
+        */
+    } @else {
+      /*! @tokens Ignore */
+    }
+    @include cp($prop, $value);
+  } @else {
+    @include cp($name, $value);
+  }
 }

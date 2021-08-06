@@ -1,35 +1,29 @@
 @use 'sass:meta';
+@use 'sass:math';
+@use 'bourbon/core/bourbon';
 @use '../../core/breakpoint';
 
-$_xxs: 0.125rem !default;
-$_xs: 0.25rem !default;
-$_s: 0.5rem !default;
-$_m: 1rem !default;
-$_l: 1.5rem !default;
-$_xl: 2.5rem !default;
-
-@function _responsive($base) {
-  @return (xs: $base * 0.75, m: $base, l: $base * 1.25);
+@function _precision($number) {
+  @return math.div(math.round($number * 10000), 10000);
 }
 
-$xxs: _responsive($_xxs) !default;
-$xs: _responsive($_xs) !default;
-$s: (
-  xs: 0.5rem,
-  s: 1rem,
-  m: 2rem,
-) !default;
-$m: (
-  xs: 0.625rem,
-  s: 1.25rem,
-  m: 2.25rem,
-) !default;
-$l: (
-  xs: 2rem,
-  s: 3rem,
-  m: 4rem,
-) !default;
-$xl: _responsive($_xl) !default;
+@function _responsive($inc, $ratio: 1.414) {
+  $base: bourbon.modular-scale($inc, 0.5rem, 1.618);
+  @return (
+    xs: _precision($base),
+    s: _precision(bourbon.modular-scale(1, $base, $ratio)),
+    m: _precision(bourbon.modular-scale(2, $base, $ratio)),
+    xl: _precision(bourbon.modular-scale(3, $base, $ratio))
+  );
+}
+
+$xxs: _responsive(-3) !default;
+$xs: _responsive(-2) !default;
+$s: _responsive(-1) !default;
+$m: _responsive(0) !default;
+$l: _responsive(1) !default;
+$xl: _responsive(2) !default;
+$xxl: _responsive(3) !default;
 
 @mixin cp($name, $value, $category: null) {
   @if meta.type-of($value) == 'map' {
@@ -43,16 +37,10 @@ $xl: _responsive($_xl) !default;
       }
     }
   } @else {
-    @if $category == 'm' {
-      /*!
-      * @tokens Spacing
-      * @presenter Spacing
-      */
-    } @else {
-      /*!
-      * @tokens Ignore
-      */
-    }
+    /*!
+    * @tokens Spacing #{$category or xs}
+    * @presenter Spacing
+    */
     --spacing-#{$name}: #{$value};
   }
 }

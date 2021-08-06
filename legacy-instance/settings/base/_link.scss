@@ -1,8 +1,0 @@
-@use 'settings/base/colors';
-
-$link__text-decoration:                     underline !default;
-$link__color:                               colors.$color-black !default;
-
-$link__text-decoration-hover:               inherit !default;
-$link__color-hover:                         inherit !default;
-$link__background-color-hover:              colors.$color-black-10 !default;

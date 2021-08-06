@@ -3,7 +3,6 @@
 .iframe-ratio {
   &--apsect-ratio-calculated {
     @include aspect-ratio.aspect-ratio;
-    width: 100vw !important;
     max-width: 100%;
   }
 }
