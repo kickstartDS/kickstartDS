@@ -78,7 +78,9 @@ const getArgsShared = (initialSchema) => {
               const subcat =
                 cat &&
                 (subcategory ||
-                  (propSchema.type === 'object' && `${name}.${propName}`));
+                  ((propSchema.type === 'object' ||
+                    propSchema.type === 'array') &&
+                    `${name}.${propName}`));
               getArgTypes(
                 propSchema,
                 name ? `${name}.${propName}` : propName,
@@ -99,18 +101,20 @@ const getArgsShared = (initialSchema) => {
       case 'array':
         if (schema.items && schema.items.type) {
           const cat = category ?? name;
-          const count = schema?.default?.length ?? 3;
+          const count = defaultValue?.length ?? schema?.default?.length ?? 3;
           new Array(count).fill().forEach((_, index) => {
             const subcat =
               cat &&
               (subcategory ||
-                (schema.items.type === 'object' && `${name}.${index}`));
+                ((schema.items.type === 'object' ||
+                  schema.items.type === 'array') &&
+                  `${name}.${index}`));
             getArgTypes(
               schema.items,
               name ? `${name}.${index}` : index,
               cat,
               subcat,
-              schema?.default?.[index]
+              defaultValue?.[index] ?? schema?.default?.[index]
             );
           });
         } else {
