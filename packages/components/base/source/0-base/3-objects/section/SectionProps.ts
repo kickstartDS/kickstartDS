@@ -249,10 +249,6 @@ export type Text1 = string;
  */
 export type DisplayLink = boolean;
 /**
- * Text used on button
- */
-export type Label3 = string;
-/**
  * Choose one of the styles from the list
  */
 export type ButtonStyle2 =
@@ -262,6 +258,10 @@ export type ButtonStyle2 =
   | 'clear-inverted'
   | 'outline'
   | 'outline-inverted';
+/**
+ * Text used on button
+ */
+export type Label3 = string;
 /**
  * Choose a size between small, medium and large
  */
@@ -432,10 +432,6 @@ export type Text3 = string;
  */
 export type DisplayLink1 = boolean;
 /**
- * Text used on button
- */
-export type Label4 = string;
-/**
  * Choose one of the styles from the list
  */
 export type ButtonStyle3 =
@@ -445,6 +441,10 @@ export type ButtonStyle3 =
   | 'clear-inverted'
   | 'outline'
   | 'outline-inverted';
+/**
+ * Text used on button
+ */
+export type Label4 = string;
 /**
  * Choose a size between small, medium and large
  */
@@ -1538,8 +1538,8 @@ export interface Headline {
  */
 export interface Link {
   enabled?: DisplayLink;
-  label: Label3;
   variant: ButtonStyle2;
+  label: Label3;
   size: ButtonSize2;
   className?: AdditionalClasses2;
   icon?: Icon2;
@@ -1651,8 +1651,8 @@ export interface Headline1 {
  */
 export interface Link1 {
   enabled?: DisplayLink1;
-  label: Label4;
   variant: ButtonStyle3;
+  label: Label4;
   size: ButtonSize3;
   className?: AdditionalClasses4;
   icon?: Icon3;
