@@ -156,6 +156,9 @@
                   "description": "Toggles visibility of the link",
                   "type": "boolean",
                   "default": true
+                },
+                "variant": {
+                  "default": "outline-inverted"
                 }
               }
             },

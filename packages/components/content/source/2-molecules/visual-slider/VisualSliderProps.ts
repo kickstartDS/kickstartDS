@@ -91,10 +91,6 @@ export type Text1 = string;
  */
 export type DisplayLink = boolean;
 /**
- * Text used on button
- */
-export type Label = string;
-/**
  * Choose one of the styles from the list
  */
 export type ButtonStyle =
@@ -104,6 +100,10 @@ export type ButtonStyle =
   | 'clear-inverted'
   | 'outline'
   | 'outline-inverted';
+/**
+ * Text used on button
+ */
+export type Label = string;
 /**
  * Choose a size between small, medium and large
  */
@@ -258,8 +258,8 @@ export interface Headline {
  */
 export interface Link {
   enabled?: DisplayLink;
-  label: Label;
   variant: ButtonStyle;
+  label: Label;
   size: ButtonSize;
   className?: AdditionalClasses;
   icon?: Icon;
