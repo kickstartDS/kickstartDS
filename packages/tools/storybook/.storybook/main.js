@@ -11,8 +11,9 @@ module.exports = {
   addons: [
     'storybook-dark-mode',
     '@storybook/addon-essentials',
-    '@storybook/addon-a11y',
     '@kickstartds/storybook-addon-component-tokens',
+    '@whitespace/storybook-addon-html',
+    '@storybook/addon-a11y',
   ],
   core: {
     builder: 'storybook-builder-vite',
@@ -20,6 +21,7 @@ module.exports = {
   async viteFinal(config, { configType }) {
     config.esbuild = { jsxInject: `import React from 'react'` };
     config.base = '';
+    config.optimizeDeps?.include.push('react-dom/server');
     config.define = { 'process.env': process.env };
     return config;
   },
