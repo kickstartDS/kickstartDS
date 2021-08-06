@@ -12,7 +12,7 @@ $host: (
     color-secondary-b: var(--color-white-b),
     font: var(--font-ui-m),
     font-weight: var(--font-weight-regular),
-    icon-size: var(--line-height-m),
+    icon-size: 1.5em,
     padding: 0.4rem 1.3rem 0.35rem,
     border-radius: 3px,
     background-color: transparent,
@@ -66,12 +66,10 @@ $host: (
   '.c-button--small': (
     padding: 0.4rem 1rem 0.45rem,
     font: var(--font-ui-s),
-    icon-size: var(--line-height-s),
   ),
   '.c-button--large': (
     padding: 0.45rem 1.7rem 0.5rem,
     font: var(--font-ui-l),
-    icon-size: var(--line-height-l),
   ),
 ) !default;
 
