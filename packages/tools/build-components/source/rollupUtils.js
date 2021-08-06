@@ -21,15 +21,24 @@ module.exports = {
   },
   sharedBabelConfig: {
     babelrc: false,
+    assumptions: {
+      // https://babeljs.io/docs/en/assumptions
+      constantReexports: true,
+      constantSuper: true,
+      enumerableModuleMeta: true,
+      ignoreFunctionLength: true,
+      ignoreToPrimitiveHint: true,
+      mutableTemplateObject: true,
+      noClassCalls: true,
+      noDocumentAll: true,
+      noIncompleteNsImportDetection: true,
+      noNewArrows: true,
+      setComputedProperties: true,
+    },
     presets: [
       ['@babel/preset-env', { bugfixes: true }],
       ['@babel/preset-typescript'],
     ],
-    plugins: [
-      ['@babel/plugin-proposal-private-property-in-object', { loose: true }],
-      ['@babel/plugin-proposal-private-methods', { loose: true }],
-      ['@babel/plugin-proposal-class-properties', { loose: true }],
-      ['@babel/plugin-transform-runtime', { useESModules: true }],
-    ],
+    plugins: [['@babel/plugin-transform-runtime', { useESModules: true }]],
   },
 };

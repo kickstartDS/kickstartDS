@@ -46,10 +46,31 @@ $vars: meta.module-variables(headline-vars);
     padding-bottom: var(--spacing-l);
   }
 
-  > * {
+  > :first-child {
     /* critical:start */
-    margin-bottom: 0;
+    margin: 0;
+    font: var(--g-headline--font);
+    font-weight: var(--c-headline--font-weight);
+    color: var(--c-headline--color);
     /* critical:end */
+  }
+
+  &__h1 {
+    --g-headline--font: var(--font-display-xxl);
+  }
+
+  &__h2 {
+    --g-headline--font: var(--font-display-xl);
+  }
+
+  &__h3 {
+    --g-headline--font: var(--font-display-l);
+  }
+
+  &__h4,
+  &__h5,
+  &__p {
+    --g-headline--font: var(--font-display-m);
   }
 
   &__subheadline {

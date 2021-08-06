@@ -43,16 +43,10 @@ $xl: _responsive($_xl) !default;
       }
     }
   } @else {
-    @if $category == 'm' {
-      /*!
-      * @tokens Spacing
-      * @presenter Spacing
-      */
-    } @else {
-      /*!
-      * @tokens Ignore
-      */
-    }
+    /*!
+    * @tokens Spacing #{$category or xs}
+    * @presenter Spacing
+    */
     --spacing-#{$name}: #{$value};
   }
 }

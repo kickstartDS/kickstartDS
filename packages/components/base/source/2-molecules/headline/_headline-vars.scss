@@ -6,6 +6,8 @@ $host: (
       xs: 1rem,
       m: 2rem,
     ),
+    font-weight: var(--g-headline--font-weight),
+    color: var(--g-headline--color),
   ),
 ) !default;
 

@@ -55,13 +55,37 @@ export type GridLayer = boolean;
  */
 export type DisplayBox = boolean;
 /**
- * Text box headline
+ * Select the headline level to use, or p alternatively
  */
-export type Headline = string;
+export type Level = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
+/**
+ * Select the headline style to use
+ */
+export type Style = 'none' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
+/**
+ * Choose an alignment for the headline
+ */
+export type Alignment = 'left' | 'center' | 'right';
+/**
+ * Text content for the headline
+ */
+export type Text = string;
+/**
+ * Text content for the optional subheadline
+ */
+export type Subheadline = string;
+/**
+ * Add additional spacing to the bottom of the headline
+ */
+export type BottomSpacing = 'none' | 'small' | 'large';
+/**
+ * Set the headline as a page header, triggering special css treatment
+ */
+export type PageHeader = boolean;
 /**
  * Text box copy text
  */
-export type Text = string;
+export type Text1 = string;
 /**
  * Toggles visibility of the link
  */
@@ -209,12 +233,25 @@ export interface BackgroundVideo {
 export interface TextBox {
   enabled?: DisplayBox;
   headline?: Headline;
-  text?: Text;
+  text?: Text1;
   link?: Link;
   indent?: Indent;
   horizontal?: HorizontalOrientation;
   vertical?: VerticalOrientation;
   background?: StyleOfTheBox;
+}
+/**
+ * Headline for the box
+ */
+export interface Headline {
+  level: Level;
+  styleAs?: Style;
+  align: Alignment;
+  content?: Text;
+  subheadline?: Subheadline;
+  spaceAfter: BottomSpacing;
+  pageHeader?: PageHeader;
+  [k: string]: unknown;
 }
 /**
  * Text box link configuration

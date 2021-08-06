@@ -48,3 +48,14 @@
   --breakpoints: '#{breakpoint.breakpoints-to-json()}';
   /* critical:end */
 }
+
+// fix storybook design-token-addon
+@include breakpoint.media('≥s') {
+  /*! @tokens Ignore */
+}
+@include breakpoint.media('≥m') {
+  /*! @tokens Ignore */
+}
+@include breakpoint.media('≥l') {
+  /*! @tokens Ignore */
+}

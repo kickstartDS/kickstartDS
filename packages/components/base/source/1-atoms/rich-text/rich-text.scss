@@ -85,11 +85,6 @@ $vars: meta.module-variables(rich-text-vars);
     list-style: var(--c-rich-text_ol--style, decimal);
   }
 
-  a {
-    // TODO: color, bg, hover, active, focus, ...
-    text-decoration: var(--c-rich-text_a--decoration, underline);
-  }
-
   :first-child {
     margin-top: 0;
   }
