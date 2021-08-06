@@ -244,7 +244,7 @@ $vars: meta.module-variables(storytelling-vars);
       padding-left: 0;
 
       @include breakpoint.media('≥s') {
-        padding-right: var(--spacing-m);
+        padding-right: var(--c-storytelling--horizontal-padding);
       }
     }
 

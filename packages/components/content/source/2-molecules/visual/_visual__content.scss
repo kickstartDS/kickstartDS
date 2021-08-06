@@ -12,7 +12,7 @@
 
   @include breakpoint.media('≥s') {
     /* critical:start */
-    padding: var(--spacing-m);
+    padding: var(--g-content-padding);
     min-height: inherit; // ie fix
     /* critical:end */
   }
@@ -57,7 +57,7 @@
   &--inbox,
   &:only-child {
     /* critical:start */
-    padding: var(--spacing-m);
+    padding: var(--g-content-padding);
     /* critical:end */
   }
 

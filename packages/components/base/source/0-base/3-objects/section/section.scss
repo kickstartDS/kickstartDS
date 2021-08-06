@@ -11,15 +11,30 @@ $vars: meta.module-variables(section-vars);
   @include anchor.anchor-target;
 
   /* critical:start */
-  padding-top: var(--l-section--padding-top);
-  padding-bottom: var(--l-section--padding-bottom);
+  padding: var(--l-section--space) 0;
   background: var(--l-section--background);
   box-sizing: border-box;
   /* critical:end */
 
+  &--space-before-small {
+    padding-top: var(--l-section--space-small);
+  }
+
+  &--space-before-none {
+    padding-top: 0;
+  }
+
+  &--space-after-small {
+    padding-bottom: var(--l-section--space-small);
+  }
+
+  &--space-after-none {
+    padding-bottom: 0;
+  }
+
   &__container {
     /* critical:start */
-    padding: 0 var(--spacing-m);
+    padding: 0 var(--g-content-padding);
     margin: auto;
     width: 100%;
     max-width: var(--g-content-width-default);
