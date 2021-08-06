@@ -2,7 +2,7 @@ const { root } = require('../scripts/utils');
 
 module.exports = {
   stories: [
-    `${root}/packages/components/${process.env.KDS_MODULES}/lib/**/*.stories.@(js)`,
+    `${root}/packages/components/${process.env.KDS_MODULES}/lib/**/*.stories.@(js|mdx)`,
     `../tmp/**/*.story.@(mdx)`,
   ],
   features: {
@@ -20,6 +20,7 @@ module.exports = {
   async viteFinal(config, { configType }) {
     config.esbuild = { jsxInject: `import React from 'react'` };
     config.base = '';
+    config.define = { 'process.env': process.env };
     return config;
   },
 };
