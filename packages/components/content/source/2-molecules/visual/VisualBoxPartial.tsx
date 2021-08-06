@@ -10,7 +10,7 @@ import {
   renderTextFn,
   defaultRenderFn,
 } from '@kickstartds/core/lib/core';
-import { Headline } from '@kickstartds/base/source/2-molecules/headline/HeadlineComponent';
+import { Headline } from '@kickstartds/base/lib/headline';
 import { TextBox, Inbox } from './VisualProps';
 
 export interface RenderFunctions {
