@@ -1,14 +1,19 @@
 @use 'sass:meta';
+@use 'sass:math';
 @use 'bourbon/core/bourbon';
 @use '../../core/breakpoint';
 
-@function _responsive($inc, $ratio: 1.125) {
-  $base: bourbon.modular-scale($inc, 0.75rem, 1.618);
+@function _precision($number) {
+  @return math.div(math.round($number * 10000), 10000);
+}
+
+@function _responsive($inc, $ratio: 1.414) {
+  $base: bourbon.modular-scale($inc, 0.5rem, 1.618);
   @return (
-    xs: $base,
-    s: bourbon.modular-scale(1, $base, $ratio),
-    m: bourbon.modular-scale(2, $base, $ratio),
-    xl: bourbon.modular-scale(3, $base, $ratio)
+    xs: _precision($base),
+    s: _precision(bourbon.modular-scale(1, $base, $ratio)),
+    m: _precision(bourbon.modular-scale(2, $base, $ratio)),
+    xl: _precision(bourbon.modular-scale(3, $base, $ratio))
   );
 }
 
@@ -18,7 +23,7 @@ $s: _responsive(-1) !default;
 $m: _responsive(0) !default;
 $l: _responsive(1) !default;
 $xl: _responsive(2) !default;
-$xxl: _responsive(2, 1.333) !default;
+$xxl: _responsive(3) !default;
 
 @mixin cp($name, $value, $category: null) {
   @if meta.type-of($value) == 'map' {
