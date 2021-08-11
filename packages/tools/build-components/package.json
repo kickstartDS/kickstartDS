@@ -31,7 +31,7 @@
     "postcss": "^8.3.6",
     "postcss-combine-duplicated-selectors": "^10.0.3",
     "postcss-sort-media-queries": "^3.9.10",
-    "rollup": "^2.56.0",
+    "rollup": "^2.56.2",
     "rollup-plugin-import-resolver": "^1.2.0",
     "rollup-plugin-node-externals": "^2.2.0",
     "rollup-plugin-styles": "^3.14.1",
