@@ -38,7 +38,7 @@
     "@storybook/cli": "^6.3.7",
     "@storybook/core": "^6.3.7",
     "@storybook/react": "^6.3.7",
-    "@types/react": "^17.0.16",
+    "@types/react": "^17.0.17",
     "@types/react-dom": "^17.0.9",
     "@whitespace/storybook-addon-html": "git+https://github.com/lmestel/storybook-addon-html.git#v5.2.0",
     "chromatic": "^5.8.0",
