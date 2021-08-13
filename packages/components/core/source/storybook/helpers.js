@@ -1,180 +1,134 @@
 /* eslint-disable no-nested-ternary, no-console */
-// TODO: remove `getArgsShared` on next breaking change (see deprecation warning below, it is now part of the build pipeline)
-const getArgsShared = (properties = {}, group = 'general', subgroup) => {
-  console.warn(
-    'importing `getArgsShared` from `@kickstartds/core` is deprecated.\n`argTypes` and `args` are properties of the default export of every components story.\nEg.g `import linkButtonStory from "@kickstartds/base/lib/link-button/link-button.stories"; const { argTypes, args } = linkButtonStory;'
-  );
-
+const getArgsShared = (initialSchema) => {
   const argTypes = {};
   const defaultArgs = {};
 
-  Object.entries(properties).forEach(([propertyName, propertySchema]) => {
-    switch (propertySchema.type) {
+  const getArgTypes = (
+    schema,
+    name,
+    category,
+    subcategory,
+    defaultValue,
+    required
+  ) => {
+    const add = (typeProps) => {
+      argTypes[name] = {
+        name,
+        description: `**${schema.title}:**\n\n${schema.description}`,
+        type: {
+          required,
+          summary: schema.type,
+        },
+        table: {
+          category: category ?? 'general',
+          defaultValue: { summary: defaultValue ?? schema.default },
+          subcategory,
+        },
+        ...typeProps,
+      };
+      defaultArgs[name] = defaultValue ?? schema.default;
+    };
+
+    switch (schema.type) {
       case 'string':
-        argTypes[propertyName] = {
-          ...argTypes[propertyName],
+        add({
           options:
-            propertySchema.enum && propertySchema.enum.length > 0
-              ? propertySchema.enum
-              : undefined,
+            schema.enum && schema.enum.length > 0 ? schema.enum : undefined,
           control:
-            propertySchema.enum && propertySchema.enum.length > 0
+            schema.enum && schema.enum.length > 0
               ? {
-                  type:
-                    propertySchema.enum.length > 5 ? 'select' : 'inline-radio',
+                  type: schema.enum.length > 5 ? 'select' : 'inline-radio',
                 }
-              : propertySchema.format
-              ? propertySchema.format === 'color'
+              : schema.format
+              ? schema.format === 'color'
                 ? 'color'
-                : propertySchema.format === 'date'
+                : schema.format === 'date'
                 ? 'date'
                 : 'text'
               : 'text',
-          name: group === 'general' ? propertyName : `${group}.${propertyName}`,
-          description: `**${propertySchema.title}:**\n\n${propertySchema.description}`,
-          defaultValue: propertySchema.default,
-          table: {
-            category: group,
-            defaultValue: { summary: propertySchema.default },
-            subcategory: subgroup || undefined,
-          },
-        };
-
-        defaultArgs[propertyName] = propertySchema.default;
-
+        });
         break;
 
       case 'boolean':
-        argTypes[propertyName] = {
+        add({
           control: 'boolean',
-          name: group === 'general' ? propertyName : `${group}.${propertyName}`,
-          description: `**${propertySchema.title}:**\n\n${propertySchema.description}`,
-          defaultValue: propertySchema.default,
-          table: {
-            category: group,
-            defaultValue: { summary: propertySchema.default },
-            subcategory: subgroup || undefined,
-          },
-        };
-
-        defaultArgs[propertyName] = propertySchema.default;
-
-        break;
-
-      case 'object':
-        if (propertySchema.properties) {
-          const sharedArgs = getArgsShared(
-            propertySchema.properties,
-            group === 'general' ? propertyName : group,
-            group === 'general' ? '' : `${group}.${propertyName}`
-          );
-
-          Object.entries(sharedArgs.argTypes).forEach(([argName, argType]) => {
-            argTypes[`${propertyName}.${argName}`] = argType;
-          });
-
-          argTypes[propertyName] = {
-            table: { disable: true },
-            control: { disable: true },
-          };
-
-          Object.entries(sharedArgs.defaultArgs).forEach(([argName, arg]) => {
-            defaultArgs[`${propertyName}.${argName}`] = arg;
-          });
-        } else {
-          argTypes[propertyName] = {
-            control: 'object',
-            name:
-              group === 'general' ? propertyName : `${group}.${propertyName}`,
-            description: `**${propertySchema.title}:**\n\n${propertySchema.description}`,
-            defaultValue: propertySchema.default,
-            table: {
-              category: group,
-              defaultValue: { summary: JSON.stringify(propertySchema.default) },
-              subcategory: subgroup || undefined,
-            },
-          };
-        }
-
-        break;
-
-      case 'array':
-        if (propertySchema.items.properties) {
-          const sharedArgs = getArgsShared(
-            propertySchema.items.properties,
-            group === 'general' ? propertyName : group,
-            group === 'general' ? '' : `${group}.${propertyName}`
-          );
-
-          const count = 3;
-          [...Array(count)].forEach((_, index) => {
-            Object.entries(sharedArgs.argTypes).forEach(
-              ([argName, argType]) => {
-                argTypes[`${propertyName}[${index}].${argName}`] = argType;
-              }
-            );
-
-            Object.entries(sharedArgs.defaultArgs).forEach(([argName, arg]) => {
-              defaultArgs[`${propertyName}[${index}].${argName}`] = arg;
-            });
-          });
-
-          argTypes[propertyName] = {
-            table: { disable: true },
-            control: { disable: true },
-          };
-          // } else if (propertySchema.items.anyOf) {
-          //   propertySchema.items.anyOf.forEach((props, index) => {
-          //     const sharedArgs = getArgsShared(
-          //       props,
-          //       group === 'general' ? propertyName : group,
-          //       group === 'general' ? '' : `${group}.${propertyName}`
-          //     );
-          //     Object.entries(sharedArgs.argTypes).forEach(
-          //       ([argName, argType]) => {
-          //         argTypes[`${propertyName}[${index}].${argName}`] = argType;
-          //       }
-          //     );
-
-          //     Object.entries(sharedArgs.defaultArgs).forEach(([argName, arg]) => {
-          //       args[`${propertyName}[${index}].${argName}`] = arg;
-          //     });
-          //   });
-        }
-        defaultArgs[propertyName] = propertySchema.default;
-
+        });
         break;
 
       case 'integer':
       case 'number':
-        argTypes[propertyName] = {
+        add({
           control: {
             type:
-              typeof propertySchema.minimum === 'number' &&
-              typeof propertySchema.maximum === 'number'
+              typeof schema.minimum === 'number' &&
+              typeof schema.maximum === 'number'
                 ? 'range'
                 : 'number',
-            min: propertySchema.minimum,
-            max: propertySchema.maximum,
+            min: schema.minimum,
+            max: schema.maximum,
           },
-          name: group === 'general' ? propertyName : `${group}.${propertyName}`,
-          description: `**${propertySchema.title}:**\n\n${propertySchema.description}`,
-          defaultValue: propertySchema.default,
-          table: {
-            category: group,
-            defaultValue: { summary: propertySchema.default },
-            subcategory: subgroup || undefined,
-          },
-        };
+        });
+        break;
 
-        defaultArgs[propertyName] = propertySchema.default;
+      case 'object':
+        if (schema.properties) {
+          const cat = category ?? name;
+          Object.entries(schema.properties).forEach(
+            ([propName, propSchema]) => {
+              const subcat =
+                cat &&
+                (subcategory ||
+                  ((propSchema.type === 'object' ||
+                    propSchema.type === 'array') &&
+                    `${name}.${propName}`));
+              getArgTypes(
+                propSchema,
+                name ? `${name}.${propName}` : propName,
+                cat,
+                subcat,
+                defaultValue?.[propName] ?? schema.default,
+                schema.required?.includes(propName)
+              );
+            }
+          );
+        } else {
+          add({
+            control: 'object',
+          });
+        }
+        break;
 
+      case 'array':
+        if (schema.items && schema.items.type) {
+          const cat = category ?? name;
+          const count = defaultValue?.length ?? schema?.default?.length ?? 3;
+          new Array(count).fill().forEach((_, index) => {
+            const subcat =
+              cat &&
+              (subcategory ||
+                ((schema.items.type === 'object' ||
+                  schema.items.type === 'array') &&
+                  `${name}.${index}`));
+            getArgTypes(
+              schema.items,
+              name ? `${name}.${index}` : index,
+              cat,
+              subcat,
+              defaultValue?.[index] ?? schema?.default?.[index]
+            );
+          });
+        } else {
+          add({
+            control: 'object',
+          });
+        }
         break;
 
       default:
         break;
     }
-  });
+  };
+  getArgTypes(initialSchema);
 
   return { argTypes, defaultArgs };
 };
@@ -184,29 +138,12 @@ const unpack = (flatArgs) => {
 
   // eslint-disable-next-line no-restricted-syntax
   for (const [key, value] of Object.entries(flatArgs)) {
-    key.split('.').reduce(
-      // eslint-disable-next-line no-return-assign
-      (r, e, i, arr) => (r[e] = r[e] || (arr[i + 1] ? {} : value)),
-      args
-    );
-  }
-
-  // eslint-disable-next-line no-restricted-syntax
-  for (const [key, value] of Object.entries(args)) {
-    const bracePosition = key.indexOf('[');
-
-    if (bracePosition > -1) {
-      const arrayIndex = key.substring(bracePosition + 1, bracePosition + 2);
-      const arrayName = key.substring(0, bracePosition);
-
-      if (!args[arrayName] && !Array.isArray(args[arrayName])) {
-        args[arrayName] = [];
-      }
-
-      args[arrayName][arrayIndex] = value;
-
-      delete args[key];
-    }
+    key.split('.').reduce((prev, curr, i, arr) => {
+      prev[curr] =
+        prev[curr] ||
+        (arr[i + 1] != null ? (Number.isNaN(arr[i + 1]) ? {} : []) : value);
+      return prev[curr];
+    }, args);
   }
 
   return args;
@@ -220,7 +157,7 @@ const isObject = (obj) =>
 
 const pack = (obj) =>
   Object.entries(obj).reduce((prev, [key, value]) => {
-    if (isObject(value)) {
+    if (isObject(value) || Array.isArray(value)) {
       Object.entries(pack(value)).forEach(([key2, value2]) => {
         prev[`${key}.${key2}`] = value2;
       });

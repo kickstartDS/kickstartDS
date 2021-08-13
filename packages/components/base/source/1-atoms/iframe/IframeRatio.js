@@ -1,4 +1,4 @@
-import { Component } from '@kickstartds/core/lib/core';
+import { Component, define } from '@kickstartds/core/lib/core';
 
 export default class VideoIframe extends Component {
   static identifier = 'base.iframe-ratio';
@@ -11,7 +11,10 @@ export default class VideoIframe extends Component {
       element.style.paddingTop = `${
         (child.offsetHeight / child.offsetWidth) * 100
       }%`;
+      element.style.width = `${child.offsetWidth}px`;
       element.classList.add('iframe-ratio--apsect-ratio-calculated');
     }
   }
 }
+
+define(VideoIframe.identifier, VideoIframe);

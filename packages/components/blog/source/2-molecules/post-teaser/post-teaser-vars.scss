@@ -1,0 +1,18 @@
+$name-: 'c-post-teaser' !default;
+
+$date: (
+  '.c-post-teaser': (
+    font: var(--font-ui-xs),
+    font-weight: var(--font-weight-bold),
+    color: var(--color-black-alpha-5),
+  ),
+) !default;
+
+$headline: (
+  '.c-post-teaser': (
+    font: var(--font-display-l),
+    font-weight: var(--font-weight-bold),
+    color: var(--color-black),
+    color-hover: var(--color-black),
+  ),
+) !default;

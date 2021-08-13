@@ -3,8 +3,8 @@ $name-: 'l-section';
 $host: (
   '.l-section': (
     background: null,
-    padding-top: var(--spacing-l),
-    padding-bottom: var(--spacing-l),
+    space: var(--spacing-xxl),
+    space-small: calc(var(--l-section--space) / 2),
   ),
   '.l-section--accent': (
     background: var(--color-primary-alpha-2),
@@ -12,29 +12,17 @@ $host: (
   '.l-section--dark': (
     background: var(--color-black-alpha-7),
   ),
-  '.l-section--space-before-small': (
-    padding-top: var(--spacing-m),
-  ),
-  '.l-section--space-before-none': (
-    padding-top: 0,
-  ),
-  '.l-section--space-after-small': (
-    padding-bottom: var(--spacing-m),
-  ),
-  '.l-section--space-after-none': (
-    padding-bottom: 0,
-  ),
 ) !default;
 
 $container: (
   '.l-section__container': (
-    gutter: 1rem,
+    gutter: var(--spacing-m),
   ),
   '.l-section__container--gutter-large': (
-    gutter: 1.5rem,
+    gutter: var(--spacing-xl),
   ),
   '.l-section__container--gutter-small': (
-    gutter: 0.5rem,
+    gutter: var(--spacing-xs),
   ),
   '.l-section__container--gutter-none': (
     gutter: 0,

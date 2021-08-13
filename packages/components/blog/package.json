@@ -1,6 +1,6 @@
 {
   "name": "@kickstartds/blog",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "kickstartDS Blog Module",
   "author": "ruhmesmeile GmbH <mail@ruhmesmeile.com> (https://ruhmesmeile.com)",
   "homepage": "https://ruhmesmeile.com",
@@ -20,10 +20,11 @@
     "source/**/*-vars.scss"
   ],
   "dependencies": {
-    "@babel/runtime": "^7.13.17",
-    "@kickstartds/base": "^1.1.1",
-    "@kickstartds/core": "^1.1.1",
-    "date-fns": "^2.19.0"
+    "@babel/runtime": "^7.15.3",
+    "@kickstartds/base": "^1.2.0",
+    "@kickstartds/core": "^1.2.0",
+    "classnames": "^2.2.6",
+    "date-fns": "^2.23.0"
   },
   "peerDependencies": {
     "react": "^17.0.2"

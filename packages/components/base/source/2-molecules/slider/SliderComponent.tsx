@@ -1,13 +1,19 @@
-import { FunctionComponent, Children, ReactNode, HTMLAttributes } from 'react';
+import {
+  FunctionComponent,
+  Children,
+  ReactElement,
+  ReactNode,
+  HTMLAttributes,
+} from 'react';
 import classnames from 'classnames';
 import { SliderProps } from './SliderProps';
 import { SlideContext } from './SlideContext';
 import './slider.scss';
 import './lazySlider.js';
 
-type Slides = {
+type Slides = ReactElement<{
   preview?: ReactNode;
-}[];
+}>[];
 
 const slides = (children: ReactNode) => {
   const count = Children.count(children);
@@ -66,7 +72,9 @@ export const Slider: FunctionComponent<
                   data-glide-dir={`=${i}`}
                   key={`slide-${i}`}
                 >
-                  {slide.preview || <span className="c-slider__bullet"></span>}
+                  {slide.props.preview || (
+                    <span className="c-slider__bullet"></span>
+                  )}
                 </button>
               ))}
           </div>

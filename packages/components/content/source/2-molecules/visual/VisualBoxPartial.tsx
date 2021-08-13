@@ -10,6 +10,7 @@ import {
   renderTextFn,
   defaultRenderFn,
 } from '@kickstartds/core/lib/core';
+import { Headline } from '@kickstartds/base/lib/headline';
 import { TextBox, Inbox } from './VisualProps';
 
 export interface RenderFunctions {
@@ -51,7 +52,13 @@ export const VisualBoxPartial: FunctionComponent<IBox & RenderFunctions> = ({
       )}
     >
       {headline && (
-        <p className="c-visual__topic">{renderHeadline(headline)}</p>
+        <Headline
+          level="p"
+          styleAs="h2"
+          align="left"
+          {...headline}
+          renderContent={renderHeadline}
+        />
       )}
 
       {text && (

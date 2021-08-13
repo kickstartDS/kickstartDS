@@ -76,11 +76,15 @@ $vars: meta.module-variables(visual-vars);
     @include visual__box.visual-box;
   }
 
-  &__topic {
+  .c-headline {
     /* critical:start */
-    font: var(--c-visual_topic--font);
-    font-weight: var(--c-visual_topic--font-weight);
-    margin: var(--c-visual_topic--margin);
+    margin: 0;
+    max-width: none;
+    --c-headline--color: var(--c-visual_headline--color, inherit);
+
+    &__subheadline {
+      --c-headline_subheadline--color: inherit;
+    }
     /* critical:end */
   }
 

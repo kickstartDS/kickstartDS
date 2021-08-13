@@ -13,7 +13,7 @@ $vars: meta.module-variables(teaser-row-vars);
     margin: calc(var(--c-teaser-row_body--gutter) * -1);
 
     @include breakpoint.media('≥s') {
-      padding: 1rem;
+      padding: var(--c-teaser--padding);
     }
 
     > * {

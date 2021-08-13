@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://frontend.ruhmesmeile.com/blog/molecules/post-head.schema.json",
+  "title": "Post Head",
+  "description": "Post Head",
+  "type": "object",
+  "properties": {
+    "image": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "http://frontend.ruhmesmeile.com/base/atoms/picture.definitions.json"
+        }
+      ],
+      "properties": {
+        "src": {
+          "default": "https://picsum.photos/seed/kdsnewshead/900/380"
+        },
+        "width": {
+          "default": 900
+        },
+        "height": {
+          "default": 380
+        }
+      }
+    },
+    "imageAlignment": {
+      "title": "Alignment",
+      "type": "string",
+      "enum": ["left", "center", "right"],
+      "default": "center",
+      "description": "Choose an horizontal alignment for the image."
+    },
+    "date": {
+      "$ref": "http://frontend.ruhmesmeile.com/blog/molecules/news-item.definitions.json#/definitions/date"
+    },
+    "headline": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "http://frontend.ruhmesmeile.com/base/molecules/headline.schema.json"
+        }
+      ],
+      "properties": {
+        "align": {
+          "default": "left"
+        },
+        "content": {
+          "default": "Lorem ipsum dolor sit amet cons adipis elit "
+        },
+        "level": {
+          "default": "h1"
+        }
+      }
+    },
+    "categories": {
+      "$ref": "http://frontend.ruhmesmeile.com/blog/molecules/news-item.definitions.json#/definitions/categories"
+    }
+  }
+}

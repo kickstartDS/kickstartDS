@@ -1,3 +1,52 @@
+# v1.2.0 (Fri Aug 06 2021)
+
+#### 🚀 Enhancement
+
+- add headline to visual [#163](https://github.com/kickstartDS/kickstartDS/pull/163) ([@julrich](https://github.com/julrich) [@lmestel](https://github.com/lmestel))
+
+#### 🐛 Bug Fix
+
+- build(deps): bump @babel/runtime from 7.14.6 to 7.14.8 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- Merge branch 'master' into next ([@lmestel](https://github.com/lmestel))
+- Merge branch 'next' into feature/add-real-headline-to-visual ([@lmestel](https://github.com/lmestel))
+
+#### 📝 Documentation
+
+- storybook controls [#214](https://github.com/kickstartDS/kickstartDS/pull/214) ([@lmestel](https://github.com/lmestel))
+
+#### 🔩 Dependency Updates
+
+- build(deps): bump postcss from 8.3.5 to 8.3.6 [#222](https://github.com/kickstartDS/kickstartDS/pull/222) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump cssnano from 5.0.6 to 5.0.7 [#221](https://github.com/kickstartDS/kickstartDS/pull/221) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump vite from 2.4.2 to 2.4.3 [#217](https://github.com/kickstartDS/kickstartDS/pull/217) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump @babel/preset-env from 7.14.7 to 7.14.8 [#220](https://github.com/kickstartDS/kickstartDS/pull/220) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump @babel/runtime from 7.14.6 to 7.14.8 [#218](https://github.com/kickstartDS/kickstartDS/pull/218) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 3
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Jonas Ulrich ([@julrich](https://github.com/julrich))
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+
+---
+
+# v1.1.3 (Thu Jul 15 2021)
+
+#### 🐛 Bug Fix
+
+- fix(schema): add some missing properties for succesful validation [#196](https://github.com/kickstartDS/kickstartDS/pull/196) ([@julrich](https://github.com/julrich))
+- Merge branch 'next' into fix/more-schema-fixes ([@julrich](https://github.com/julrich))
+- fix(schema): add some missing properties for succesful validation ([@julrich](https://github.com/julrich))
+- merge latest fixes from master [#170](https://github.com/kickstartDS/kickstartDS/pull/170) ([@julrich](https://github.com/julrich) [@lmestel](https://github.com/lmestel))
+
+#### Authors: 3
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Jonas Ulrich ([@julrich](https://github.com/julrich))
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+
+---
+
 # v1.1.2 (Sun Jul 04 2021)
 
 #### 🐛 Bug Fix

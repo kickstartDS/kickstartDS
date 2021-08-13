@@ -8,25 +8,16 @@
   /* critical:start */
   width: 100%;
   max-width: var(--c-visual_box--max-width);
-  max-height: 100%;
   position: relative;
-  overflow: auto;
-  padding: 1.5rem var(--spacing-m);
+  padding: 1.5rem var(--g-content-padding);
   border: var(--c-visual_box--border);
-  border-radius: var(--c-visual_box--border-radius);
   background: var(--c-visual_box--background);
   color: var(--c-visual_box--color);
 
   .c-rich-text {
-    color: var(--c-visual_box--color);
+    --c-rich-text--color: var(--c-visual_box--color);
   }
   /* critical:end */
-
-  .c-visual__topic {
-    /* critical:start */
-    color: var(--c-visual_topic--color);
-    /* critical:end */
-  }
 
   a:not(.c-button) {
     /* critical:start */
@@ -37,6 +28,7 @@
   @include breakpoint.media('≥s') {
     /* critical:start */
     width: auto;
+    border-radius: var(--c-visual_box--border-radius);
     /* critical:end */
   }
 
@@ -44,6 +36,13 @@
     /* critical:start */
     padding-top: 3rem;
     padding-bottom: 3rem;
+    /* critical:end */
+  }
+
+  .c-visual__content--inbox &,
+  .c-visual__content:only-child & {
+    /* critical:start */
+    border-radius: var(--c-visual_box--border-radius);
     /* critical:end */
   }
 

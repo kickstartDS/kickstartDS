@@ -45,12 +45,10 @@ $xxl: (
       }
     }
   } @else {
-    @if $category == 'm' {
-      /*!
-      * @tokens Font Sizes
-      * @presenter FontSize
-      */
-    }
+    /*!
+    * @tokens Font Sizes #{$category or xs}
+    * @presenter FontSize
+    */
     --font-size-#{$name}: #{$value};
   }
 }
