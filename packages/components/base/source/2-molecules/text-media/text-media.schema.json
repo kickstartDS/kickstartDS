@@ -82,6 +82,9 @@
               },
               "full": {
                 "$ref": "#/definitions/full"
+              },
+              "caption": {
+                "$ref": "#/definitions/caption"
               }
             }
           },
@@ -94,6 +97,9 @@
               },
               "full": {
                 "$ref": "#/definitions/full"
+              },
+              "caption": {
+                "$ref": "#/definitions/caption"
               }
             }
           },
@@ -106,6 +112,9 @@
               },
               "full": {
                 "$ref": "#/definitions/full"
+              },
+              "caption": {
+                "$ref": "#/definitions/caption"
               }
             }
           }
@@ -129,6 +138,11 @@
       "description": "Display media item over full width",
       "type": "boolean",
       "default": false
+    },
+    "caption": {
+      "title": "Caption",
+      "description": "Caption",
+      "type": "string"
     }
   },
   "required": ["text", "mediaAlignment"],
