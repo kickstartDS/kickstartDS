@@ -6,6 +6,7 @@
 @use './typography/font-sizes';
 @use './typography/line-heights';
 @use './typography/font';
+@use '../core/breakpoint';
 
 :root {
   // Design Tokens
