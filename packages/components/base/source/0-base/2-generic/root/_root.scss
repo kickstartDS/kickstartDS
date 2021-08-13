@@ -1,4 +1,5 @@
-/* stylelint-disable plugin/selector-bem-pattern, selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+@use '@kickstartds/core/source/core/breakpoint';
 @use './normalize';
 
 /* critical:start */
@@ -11,6 +12,7 @@
 }
 
 html {
+  --breakpoints: '#{breakpoint.breakpoints-to-json()}';
   box-sizing: border-box;
   scroll-behavior: smooth;
 }

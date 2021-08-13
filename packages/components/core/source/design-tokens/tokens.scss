@@ -44,10 +44,6 @@
   --g-content-width-narrow: 46.5rem;
   --g-content-width-wide: 75rem;
   --g-content-padding: var(--spacing-m);
-
-  /* critical:start */
-  --breakpoints: '#{breakpoint.breakpoints-to-json()}';
-  /* critical:end */
 }
 
 // fix storybook design-token-addon
