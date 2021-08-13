@@ -19,6 +19,13 @@ export interface RenderFunctions {
 
 type TMedia = Omit<TextMediaProps, 'text' | 'mediaAlignment'>;
 
+const WithCaption = ({ caption, children }) => (
+  <figure>
+    {children}
+    {caption ? <figcaption>{caption}</figcaption> : ''}
+  </figure>
+);
+
 const Video = ({ iframe, src, title, width, height }: IVideo) =>
   iframe ? (
     <IframeRatio
@@ -49,9 +56,13 @@ const Media = ({ media }: TMedia) =>
           key={i}
         >
           {(m.video as IVideo)?.src ? (
-            <Video {...(m.video as IVideo)} />
+            <WithCaption caption={(m.video as IVideo).caption}>
+              <Video {...(m.video as IVideo)} />
+            </WithCaption>
           ) : (m.image as IPicture)?.src ? (
-            <Picture {...(m.image as IPicture)} />
+            <WithCaption caption={(m.image as IPicture).caption}>
+              <Picture {...(m.image as IPicture)} />
+            </WithCaption>
           ) : (m.lightboxImage as ILightboxImage)?.image ? (
             <LightboxLazyImage {...(m.lightboxImage as ILightboxImage)} />
           ) : (
