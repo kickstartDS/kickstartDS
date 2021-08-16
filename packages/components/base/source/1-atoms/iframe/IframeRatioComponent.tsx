@@ -7,6 +7,7 @@ type IframeRatioProps = {
   title?: string;
   width: number;
   height: number;
+  setParentWidth?: boolean;
 };
 
 export const IframeRatio: FunctionComponent<IframeRatioProps> = ({
@@ -14,8 +15,13 @@ export const IframeRatio: FunctionComponent<IframeRatioProps> = ({
   title,
   width,
   height,
+  setParentWidth,
 }) => (
-  <div className="iframe-ratio" data-component="base.iframe-ratio">
+  <div
+    className="iframe-ratio"
+    data-component="base.iframe-ratio"
+    data-auto-width={setParentWidth}
+  >
     <iframe
       allowFullScreen
       data-src={src}

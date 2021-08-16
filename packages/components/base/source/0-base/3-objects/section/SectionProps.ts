@@ -1093,9 +1093,9 @@ export type GalleryIdentifier = string;
  */
 export type ID1 = string;
 /**
- * Additional Image Class
+ * Additional Class
  */
-export type AdditionalImageClass = string;
+export type AdditionalClass8 = string;
 /**
  * Display media item over full width
  */
@@ -1144,7 +1144,7 @@ export type ButtonSize7 = 'small' | 'medium' | 'large';
 export type AdditionalClasses11 = string;
 export type IconIdentifier8 = string;
 export type AriaRole8 = string;
-export type AdditionalClass8 = string;
+export type AdditionalClass9 = string;
 /**
  * Display icon before the button text
  */
@@ -1299,7 +1299,7 @@ export type ButtonSize8 = 'small' | 'medium' | 'large';
 export type AdditionalClasses13 = string;
 export type IconIdentifier9 = string;
 export type AriaRole9 = string;
-export type AdditionalClass9 = string;
+export type AdditionalClass10 = string;
 /**
  * Display icon before the button text
  */
@@ -1973,7 +1973,7 @@ export interface LazyLightboxImage {
   hideCaption?: HideCaptionVisually;
   gallery?: GalleryIdentifier;
   id?: ID1;
-  class?: AdditionalImageClass;
+  className?: AdditionalClass8;
   [k: string]: unknown;
 }
 /**
@@ -2012,7 +2012,7 @@ export interface LinkButton3 {
 export interface Icon8 {
   icon?: IconIdentifier8;
   role?: AriaRole8;
-  className?: AdditionalClass8;
+  className?: AdditionalClass9;
   [k: string]: unknown;
 }
 /**
@@ -2075,7 +2075,7 @@ export interface LinkButton4 {
 export interface Icon9 {
   icon?: IconIdentifier9;
   role?: AriaRole9;
-  className?: AdditionalClass9;
+  className?: AdditionalClass10;
   [k: string]: unknown;
 }
 /**

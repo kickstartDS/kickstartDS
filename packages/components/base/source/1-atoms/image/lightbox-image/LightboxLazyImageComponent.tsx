@@ -10,7 +10,7 @@ export const LightboxLazyImage: FunctionComponent<LazyLightboxImageProps> = ({
   image,
   thumb,
   zoomIcon,
-  class: imgClass,
+  className,
   gallery,
   width,
   height,
@@ -18,37 +18,35 @@ export const LightboxLazyImage: FunctionComponent<LazyLightboxImageProps> = ({
   caption,
   hideCaption,
 }) => (
-  <>
-    <figure
-      className={classnames(
-        'lightbox-image',
-        { 'lightbox-image--with-zoom-icon': zoomIcon },
-        imgClass
-      )}
-      itemScope={!!id}
+  <figure
+    className={classnames(
+      'lightbox-image',
+      { 'lightbox-image--with-zoom-icon': zoomIcon },
+      className
+    )}
+    itemScope={!!id}
+  >
+    <Link
+      href={image}
+      data-gallery={gallery}
+      data-size-w={width}
+      data-size-h={height}
+      className="lightbox-image__link js-open-lightbox"
+      title="Bild vergrößern"
     >
-      <Link
-        href={image}
-        data-gallery={gallery}
-        data-size-w={width}
-        data-size-h={height}
-        className="lightbox-image__link js-open-lightbox"
-        title="Bild vergrößern"
-      >
-        <Picture
-          src={thumb}
-          className={classnames('lightbox-image__thumb', imgClass)}
-          itemProp="image"
-        />
-        {zoomIcon ? (
-          <div className="lightbox-image__zoom-icon">
-            <Icon icon="zoom" role="img" />
-          </div>
-        ) : (
-          ''
-        )}
-      </Link>
-      {caption ? <figcaption hidden={hideCaption}>{caption}</figcaption> : ''}
-    </figure>
-  </>
+      <Picture
+        src={thumb}
+        className={classnames('lightbox-image__thumb', className)}
+        itemProp="image"
+      />
+      {zoomIcon ? (
+        <div className="lightbox-image__zoom-icon">
+          <Icon icon="zoom" role="img" />
+        </div>
+      ) : (
+        ''
+      )}
+    </Link>
+    {caption ? <figcaption hidden={hideCaption}>{caption}</figcaption> : ''}
+  </figure>
 );
