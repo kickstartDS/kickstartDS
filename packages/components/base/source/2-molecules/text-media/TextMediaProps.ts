@@ -169,9 +169,9 @@ export type GalleryIdentifier = string;
  */
 export type ID = string;
 /**
- * Additional Image Class
+ * Additional Class
  */
-export type AdditionalImageClass = string;
+export type AdditionalClass = string;
 /**
  * Display media item over full width
  */
@@ -255,6 +255,6 @@ export interface LazyLightboxImage {
   hideCaption?: HideCaptionVisually;
   gallery?: GalleryIdentifier;
   id?: ID;
-  class?: AdditionalImageClass;
+  className?: AdditionalClass;
   [k: string]: unknown;
 }

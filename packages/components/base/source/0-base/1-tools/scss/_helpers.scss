@@ -103,25 +103,6 @@
   @return $string;
 }
 
-/// Detect IE Browsers
-
-@mixin browser($browser) {
-  // IE 11
-  @if $browser == 'ie11' {
-    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-      @content;
-    }
-  }
-  // EDGE
-  @else if $browser == 'edge' {
-    @supports (-ms-ime-align: auto) {
-      @content;
-    }
-  } @else {
-    @content;
-  }
-}
-
 @mixin icon-color($color) {
   fill: $color;
 }

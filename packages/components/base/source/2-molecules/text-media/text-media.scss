@@ -1,16 +1,29 @@
 @use '../../0-base/1-tools/scss/aspect-ratio';
-@use '../../0-base/1-tools/scss/helpers';
 @use '@kickstartds/core/source/core/breakpoint';
 @use 'bourbon/core/bourbon';
 
 .text-media {
   @include bourbon.clearfix;
+  $gallery-gutter: 1rem;
+
+  &--beside {
+    .text-media__text {
+      @include breakpoint.media('≥s') {
+        overflow: hidden;
+      }
+
+      @include breakpoint.media('print') {
+        overflow: visible;
+      }
+    }
+  }
 
   &__gallery {
     @include bourbon.clearfix;
     display: flex;
     flex-wrap: wrap;
-    margin: -1rem 0 0 -1rem;
+    align-items: flex-start;
+    margin: ($gallery-gutter * -1) 0 0 ($gallery-gutter * -1);
 
     // above/below left (default), center, right
     .text-media--above & {
@@ -60,54 +73,29 @@
   }
 
   &__media {
-    padding: 1rem 0 0 1rem;
-    max-width: 100%;
-
-    &--full {
-      &,
-      > * {
-        width: 100vw !important;
-      }
-    }
-  }
-
-  &--beside {
-    .text-media__text {
-      @include breakpoint.media('≥s') {
-        overflow: hidden;
-      }
-
-      @include breakpoint.media('print') {
-        overflow: visible;
-      }
-    }
-  }
-
-  figure {
     display: table;
     table-layout: fixed;
+    padding: $gallery-gutter 0 0 $gallery-gutter;
+    max-width: 100%;
+    box-sizing: content-box;
 
-    @include helpers.browser(ie11) {
-      display: block;
+    &--full {
+      // width: 100vw !important;
+      &,
+      > * {
+        width: 100% !important;
+      }
     }
 
     a {
       display: table-cell;
-
-      @include helpers.browser(ie11) {
-        display: block;
-      }
     }
+  }
 
-    figcaption {
-      table-layout: fixed;
-      display: table-caption;
-      caption-side: bottom;
-      text-align: left;
-
-      @include helpers.browser(ie11) {
-        display: block;
-      }
-    }
+  &__caption {
+    display: table-caption;
+    caption-side: bottom;
+    text-align: left;
+    padding-left: $gallery-gutter;
   }
 }
