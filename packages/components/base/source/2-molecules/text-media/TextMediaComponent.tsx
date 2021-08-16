@@ -91,7 +91,7 @@ export const TextMedia: FunctionComponent<
   TextMediaProps & RenderFunctions & HTMLAttributes<HTMLDivElement>
 > = ({
   text = '',
-  media,
+  media = [],
   mediaAlignment,
   renderText = defaultRenderFn,
   className,
