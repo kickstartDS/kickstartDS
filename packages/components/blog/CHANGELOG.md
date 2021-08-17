@@ -1,3 +1,27 @@
+# v1.3.0 (Tue Aug 17 2021)
+
+#### 🚀 Enhancement
+
+
+#### 🐛 Bug Fix
+
+- Merge branch 'next' into hotfix/breakpoints ([@lmestel](https://github.com/lmestel))
+- build(deps): bump @babel/runtime from 7.14.8 to 7.15.3 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- fix invalid schemas [#305](https://github.com/kickstartDS/kickstartDS/pull/305) ([@lmestel](https://github.com/lmestel))
+- fix: fix invalid schemas ([@lmestel](https://github.com/lmestel))
+
+#### 🔩 Dependency Updates
+
+- build(deps): bump @babel/runtime from 7.14.8 to 7.15.3 [#319](https://github.com/kickstartDS/kickstartDS/pull/319) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 3
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Jonas Ulrich ([@julrich](https://github.com/julrich))
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+
+---
+
 # v1.2.0 (Fri Aug 06 2021)
 
 #### 🚀 Enhancement

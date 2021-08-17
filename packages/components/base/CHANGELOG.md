@@ -1,3 +1,43 @@
+# v1.3.0 (Tue Aug 17 2021)
+
+#### 🚀 Enhancement
+
+- add scroll offset token [#328](https://github.com/kickstartDS/kickstartDS/pull/328) ([@lmestel](https://github.com/lmestel))
+- add caption to text-media images & videos [#326](https://github.com/kickstartDS/kickstartDS/pull/326) ([@lmestel](https://github.com/lmestel))
+
+#### 🐛 Bug Fix
+
+- fix text-media without media [#333](https://github.com/kickstartDS/kickstartDS/pull/333) ([@lmestel](https://github.com/lmestel))
+- fix: fix text-media without media ([@lmestel](https://github.com/lmestel))
+- fix text-media video size with caption [#332](https://github.com/kickstartDS/kickstartDS/pull/332) ([@lmestel](https://github.com/lmestel))
+- fix: fix text-media video size with caption ([@lmestel](https://github.com/lmestel))
+- build(deps): bump react-markdown from 5.0.3 to 7.0.0 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump @types/react from 17.0.17 to 17.0.18 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- move breakpoint css token to base.css [#327](https://github.com/kickstartDS/kickstartDS/pull/327) ([@lmestel](https://github.com/lmestel))
+- feat: add scroll offset token ([@lmestel](https://github.com/lmestel))
+- Merge branch 'next' into hotfix/breakpoints ([@lmestel](https://github.com/lmestel))
+- fix: move breakpoint css token to base.css ([@lmestel](https://github.com/lmestel))
+- feat: add optional caption to text-media images & videos ([@lmestel](https://github.com/lmestel))
+- build(deps): bump @babel/runtime from 7.14.8 to 7.15.3 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump @types/react from 17.0.16 to 17.0.17 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- fix invalid schemas [#305](https://github.com/kickstartDS/kickstartDS/pull/305) ([@lmestel](https://github.com/lmestel))
+- fix: fix invalid schemas ([@lmestel](https://github.com/lmestel))
+
+#### 🔩 Dependency Updates
+
+- build(deps): bump react-markdown from 5.0.3 to 7.0.0 [#331](https://github.com/kickstartDS/kickstartDS/pull/331) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump @types/react from 17.0.17 to 17.0.18 [#330](https://github.com/kickstartDS/kickstartDS/pull/330) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump @babel/runtime from 7.14.8 to 7.15.3 [#319](https://github.com/kickstartDS/kickstartDS/pull/319) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump @types/react from 17.0.16 to 17.0.17 [#318](https://github.com/kickstartDS/kickstartDS/pull/318) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 3
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Jonas Ulrich ([@julrich](https://github.com/julrich))
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+
+---
+
 # v1.2.0 (Fri Aug 06 2021)
 
 #### 🚀 Enhancement
