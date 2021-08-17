@@ -33,17 +33,17 @@
   "devDependencies": {
     "@babel/core": "^7.15.0",
     "@kickstartds/storybook-addon-component-tokens": "^0.1.4",
-    "@storybook/addon-a11y": "^6.3.6",
-    "@storybook/addon-essentials": "^6.3.6",
-    "@storybook/cli": "^6.3.6",
-    "@storybook/core": "^6.3.6",
-    "@storybook/react": "^6.3.6",
-    "@types/react": "^17.0.16",
+    "@storybook/addon-a11y": "^6.3.7",
+    "@storybook/addon-essentials": "^6.3.7",
+    "@storybook/cli": "^6.3.7",
+    "@storybook/core": "^6.3.7",
+    "@storybook/react": "^6.3.7",
+    "@types/react": "^17.0.18",
     "@types/react-dom": "^17.0.9",
     "@whitespace/storybook-addon-html": "git+https://github.com/lmestel/storybook-addon-html.git#v5.2.0",
     "chromatic": "^5.8.0",
     "storybook-builder-vite": "0.0.12",
     "storybook-dark-mode": "^1.0.8",
-    "vite": "^2.4.4"
+    "vite": "^2.5.0"
   }
 }

@@ -48,6 +48,10 @@ export type Height = number;
  */
 export type FullWidthMedia = boolean;
 /**
+ * Caption
+ */
+export type Caption = string;
+/**
  * Picture source
  */
 export type Source1 = string;
@@ -125,6 +129,10 @@ export type ClassAttribute = string;
  */
 export type FullWidthMedia1 = boolean;
 /**
+ * Caption
+ */
+export type Caption1 = string;
+/**
  * Thumbnail Source
  */
 export type ThumbnailSource = string;
@@ -147,7 +155,7 @@ export type HoverZoomIcon = boolean;
 /**
  * Caption
  */
-export type Caption = string;
+export type Caption2 = string;
 /**
  * Hide caption visually
  */
@@ -161,13 +169,17 @@ export type GalleryIdentifier = string;
  */
 export type ID = string;
 /**
- * Additional Image Class
+ * Additional Class
  */
-export type AdditionalImageClass = string;
+export type AdditionalClass = string;
 /**
  * Display media item over full width
  */
 export type FullWidthMedia2 = boolean;
+/**
+ * Caption
+ */
+export type Caption3 = string;
 /**
  * Collection of media items to display
  */
@@ -184,6 +196,7 @@ export interface TextMediaProps {
 export interface TextMediaVideo {
   video?: Video;
   full?: FullWidthMedia;
+  caption?: Caption;
   [k: string]: unknown;
 }
 /**
@@ -200,6 +213,7 @@ export interface Video {
 export interface TextMediaImage {
   image?: Picture;
   full?: FullWidthMedia1;
+  caption?: Caption1;
   [k: string]: unknown;
 }
 /**
@@ -225,6 +239,7 @@ export interface Picture {
 export interface TextMediaLazyImage {
   lightboxImage?: LazyLightboxImage;
   full?: FullWidthMedia2;
+  caption?: Caption3;
   [k: string]: unknown;
 }
 /**
@@ -236,10 +251,10 @@ export interface LazyLightboxImage {
   width?: Width2;
   height?: Height2;
   zoomIcon?: HoverZoomIcon;
-  caption?: Caption;
+  caption?: Caption2;
   hideCaption?: HideCaptionVisually;
   gallery?: GalleryIdentifier;
   id?: ID;
-  class?: AdditionalImageClass;
+  className?: AdditionalClass;
   [k: string]: unknown;
 }

@@ -7,9 +7,12 @@ import { IframeRatio } from '../../1-atoms/iframe';
 import { RichText, defaultRenderFn } from '../../1-atoms/rich-text';
 import {
   TextMediaProps,
-  Video as IVideo,
-  Picture as IPicture,
-  LazyLightboxImage as ILightboxImage,
+  TextMediaVideo as IVideo,
+  TextMediaImage as IImage,
+  TextMediaLazyImage as ILightboxImage,
+  Media as IMedia,
+  FullWidthMedia as TFullWidthMedia,
+  Caption as TCaption,
 } from './TextMediaProps';
 import './text-media.scss';
 
@@ -17,48 +20,70 @@ export interface RenderFunctions {
   renderText?: renderFn;
 }
 
-type TMedia = Omit<TextMediaProps, 'text' | 'mediaAlignment'>;
+const figureClassName = (full: TFullWidthMedia) =>
+  classnames('text-media__media', {
+    'text-media__media--full': full,
+  });
+const Figure: FunctionComponent<{
+  full?: TFullWidthMedia;
+  caption?: TCaption;
+}> = ({ full, caption, children }) => (
+  <figure className={figureClassName(full)}>
+    {children}
+    {caption ? (
+      <figcaption className="text-media__caption">{caption}</figcaption>
+    ) : null}
+  </figure>
+);
 
-const Video = ({ iframe, src, title, width, height }: IVideo) =>
-  iframe ? (
-    <IframeRatio
-      {...{
-        src,
-        title,
-        width,
-        height,
-      }}
-    />
-  ) : (
-    <>
-      <video controls className="lazyload" title={title} data-src={src}></video>
-      <noscript>
-        <video controls title={title} src={src}></video>
-      </noscript>
-    </>
-  );
+const Video: FunctionComponent<IVideo> = ({ full, caption, video }) => (
+  <Figure full={full} caption={caption}>
+    {video.iframe ? (
+      <IframeRatio {...video} setParentWidth={true} />
+    ) : (
+      <>
+        <video
+          controls
+          className="lazyload"
+          title={video.title}
+          data-src={video.src}
+        ></video>
+        <noscript>
+          <video controls title={video.title} src={video.src}></video>
+        </noscript>
+      </>
+    )}
+  </Figure>
+);
+const Image: FunctionComponent<IImage> = ({ full, caption, image }) => (
+  <Figure full={full} caption={caption}>
+    <Picture {...image} />
+  </Figure>
+);
+const LightboxImage: FunctionComponent<ILightboxImage> = ({
+  full,
+  caption,
+  lightboxImage,
+}) => (
+  <LightboxLazyImage
+    {...lightboxImage}
+    className={figureClassName(full)}
+    caption={lightboxImage.caption || caption}
+  />
+);
 
-const Media = ({ media }: TMedia) =>
-  media ? (
+const Media: FunctionComponent<{ media: IMedia }> = ({ media }) =>
+  media.length ? (
     <div className="text-media__gallery">
-      {media.map((m, i) => (
-        <div
-          className={classnames('text-media__media', {
-            'text-media__media--full': m.full,
-          })}
-          key={i}
-        >
-          {(m.video as IVideo)?.src ? (
-            <Video {...(m.video as IVideo)} />
-          ) : (m.image as IPicture)?.src ? (
-            <Picture {...(m.image as IPicture)} />
-          ) : (m.lightboxImage as ILightboxImage)?.image ? (
-            <LightboxLazyImage {...(m.lightboxImage as ILightboxImage)} />
-          ) : (
-            ''
-          )}
-        </div>
-      ))}
+      {media.map((m, i) =>
+        (m.video as IVideo)?.src ? (
+          <Video {...(m as IVideo)} key={i} />
+        ) : (m.image as IImage)?.src ? (
+          <Image {...(m as IImage)} key={i} />
+        ) : (m.lightboxImage as ILightboxImage)?.image ? (
+          <LightboxImage {...(m.lightboxImage as ILightboxImage)} key={i} />
+        ) : null
+      )}
     </div>
   ) : null;
 
@@ -66,7 +91,7 @@ export const TextMedia: FunctionComponent<
   TextMediaProps & RenderFunctions & HTMLAttributes<HTMLDivElement>
 > = ({
   text = '',
-  media,
+  media = [],
   mediaAlignment,
   renderText = defaultRenderFn,
   className,

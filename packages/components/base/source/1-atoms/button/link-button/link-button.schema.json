@@ -9,7 +9,7 @@
       "type": "string",
       "title": "Button href?",
       "description": "Link used for button",
-      "format": "url",
+      "format": "uri",
       "default": "https://example.com"
     },
     "newTab": {

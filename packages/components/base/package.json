@@ -20,7 +20,7 @@
     "source/**/*-vars.scss"
   ],
   "dependencies": {
-    "@babel/runtime": "^7.14.8",
+    "@babel/runtime": "^7.15.3",
     "@glidejs/glide": "git://github.com/glidejs/glide.git#master",
     "@kickstartds/core": "^1.2.0",
     "classnames": "^2.2.6",
@@ -32,12 +32,12 @@
     "objectFitPolyfill": "^2.3.0",
     "photoswipe": "^4.1.3",
     "pikaday": "^1.8.0",
-    "react-markdown": "^5.0.3",
+    "react-markdown": "^7.0.0",
     "simplebar": "^5.3.5",
     "stickybits": "^3.7.0"
   },
   "devDependencies": {
-    "@types/react": "^17.0.16",
+    "@types/react": "^17.0.18",
     "bourbon": "^7.0.0",
     "sass-yiq": "^1.0.0"
   },

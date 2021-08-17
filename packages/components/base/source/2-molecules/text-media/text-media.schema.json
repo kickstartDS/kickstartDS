@@ -82,6 +82,9 @@
               },
               "full": {
                 "$ref": "#/definitions/full"
+              },
+              "caption": {
+                "$ref": "#/definitions/caption"
               }
             }
           },
@@ -94,6 +97,9 @@
               },
               "full": {
                 "$ref": "#/definitions/full"
+              },
+              "caption": {
+                "$ref": "#/definitions/caption"
               }
             }
           },
@@ -106,6 +112,9 @@
               },
               "full": {
                 "$ref": "#/definitions/full"
+              },
+              "caption": {
+                "$ref": "#/definitions/caption"
               }
             }
           }
@@ -118,7 +127,8 @@
             "width": 300,
             "height": 300,
             "alt": "Square"
-          }
+          },
+          "caption": "Ut dolores quae sunt impedit et accusantium. Corrupti incidunt ullam reiciendis."
         }
       ]
     }
@@ -129,6 +139,11 @@
       "description": "Display media item over full width",
       "type": "boolean",
       "default": false
+    },
+    "caption": {
+      "title": "Caption",
+      "description": "Caption",
+      "type": "string"
     }
   },
   "required": ["text", "mediaAlignment"],

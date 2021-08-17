@@ -6,13 +6,17 @@ export default class VideoIframe extends Component {
   constructor(element) {
     super(element);
 
-    const child = element.firstElementChild;
-    if (child && child.tagName === 'IFRAME') {
-      element.style.paddingTop = `${
-        (child.offsetHeight / child.offsetWidth) * 100
-      }%`;
-      element.style.width = `${child.offsetWidth}px`;
+    const iframe = element.firstElementChild;
+    if (iframe && iframe.tagName === 'IFRAME') {
+      const height = iframe.height || iframe.offsetHeight;
+      const width = iframe.width || iframe.offsetWidth;
+      element.style.paddingTop = `${(height / width) * 100}%`;
+      element.style.width = `${width}px`;
       element.classList.add('iframe-ratio--apsect-ratio-calculated');
+
+      if (element.dataset.autoWidth) {
+        element.parentElement.style.width = `min(${width}px, 100%)`;
+      }
     }
   }
 }

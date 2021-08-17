@@ -13,6 +13,7 @@
       "default": "image-first"
     },
     "image": {
+      "type": "object",
       "allOf": [
         {
           "$ref": "http://frontend.ruhmesmeile.com/base/atoms/picture.definitions.json"

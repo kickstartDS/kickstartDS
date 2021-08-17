@@ -972,6 +972,10 @@ export type Height3 = number;
  */
 export type FullWidthMedia = boolean;
 /**
+ * Caption
+ */
+export type Caption = string;
+/**
  * Picture source
  */
 export type Source4 = string;
@@ -1049,6 +1053,10 @@ export type ClassAttribute1 = string;
  */
 export type FullWidthMedia1 = boolean;
 /**
+ * Caption
+ */
+export type Caption1 = string;
+/**
  * Thumbnail Source
  */
 export type ThumbnailSource = string;
@@ -1071,7 +1079,7 @@ export type HoverZoomIcon = boolean;
 /**
  * Caption
  */
-export type Caption = string;
+export type Caption2 = string;
 /**
  * Hide caption visually
  */
@@ -1085,13 +1093,17 @@ export type GalleryIdentifier = string;
  */
 export type ID1 = string;
 /**
- * Additional Image Class
+ * Additional Class
  */
-export type AdditionalImageClass = string;
+export type AdditionalClass8 = string;
 /**
  * Display media item over full width
  */
 export type FullWidthMedia2 = boolean;
+/**
+ * Caption
+ */
+export type Caption3 = string;
 /**
  * Collection of media items to display
  */
@@ -1132,7 +1144,7 @@ export type ButtonSize7 = 'small' | 'medium' | 'large';
 export type AdditionalClasses11 = string;
 export type IconIdentifier8 = string;
 export type AriaRole8 = string;
-export type AdditionalClass8 = string;
+export type AdditionalClass9 = string;
 /**
  * Display icon before the button text
  */
@@ -1287,7 +1299,7 @@ export type ButtonSize8 = 'small' | 'medium' | 'large';
 export type AdditionalClasses13 = string;
 export type IconIdentifier9 = string;
 export type AriaRole9 = string;
-export type AdditionalClass9 = string;
+export type AdditionalClass10 = string;
 /**
  * Display icon before the button text
  */
@@ -1902,6 +1914,7 @@ export interface TextMedia {
 export interface TextMediaVideo {
   video?: Video;
   full?: FullWidthMedia;
+  caption?: Caption;
   [k: string]: unknown;
 }
 /**
@@ -1918,6 +1931,7 @@ export interface Video {
 export interface TextMediaImage {
   image?: Picture1;
   full?: FullWidthMedia1;
+  caption?: Caption1;
   [k: string]: unknown;
 }
 /**
@@ -1943,6 +1957,7 @@ export interface Picture1 {
 export interface TextMediaLazyImage {
   lightboxImage?: LazyLightboxImage;
   full?: FullWidthMedia2;
+  caption?: Caption3;
   [k: string]: unknown;
 }
 /**
@@ -1954,11 +1969,11 @@ export interface LazyLightboxImage {
   width?: Width3;
   height?: Height5;
   zoomIcon?: HoverZoomIcon;
-  caption?: Caption;
+  caption?: Caption2;
   hideCaption?: HideCaptionVisually;
   gallery?: GalleryIdentifier;
   id?: ID1;
-  class?: AdditionalImageClass;
+  className?: AdditionalClass8;
   [k: string]: unknown;
 }
 /**
@@ -1997,7 +2012,7 @@ export interface LinkButton3 {
 export interface Icon8 {
   icon?: IconIdentifier8;
   role?: AriaRole8;
-  className?: AdditionalClass8;
+  className?: AdditionalClass9;
   [k: string]: unknown;
 }
 /**
@@ -2060,7 +2075,7 @@ export interface LinkButton4 {
 export interface Icon9 {
   icon?: IconIdentifier9;
   role?: AriaRole9;
-  className?: AdditionalClass9;
+  className?: AdditionalClass10;
   [k: string]: unknown;
 }
 /**

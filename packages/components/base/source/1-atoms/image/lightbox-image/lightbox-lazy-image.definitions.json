@@ -61,10 +61,10 @@
       "title": "ID",
       "description": "ID"
     },
-    "class": {
+    "className": {
       "type": "string",
-      "title": "Additional Image Class",
-      "description": "Additional Image Class"
+      "title": "Additional Class",
+      "description": "Additional Class"
     }
   }
 }

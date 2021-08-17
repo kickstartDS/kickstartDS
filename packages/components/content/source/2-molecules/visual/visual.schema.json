@@ -130,7 +130,7 @@
               "default": "h2"
             },
             "align": {
-              "default": "left"
+              "default": null
             },
             "content": {
               "default": "Lorem Ipsum dolor"
