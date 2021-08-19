@@ -20,6 +20,10 @@ export default class Lightbox extends Component {
       event.preventDefault();
       event.stopPropagation();
 
+      if (!link.hasAttribute('data-gallery')) {
+        link.setAttribute('data-gallery', Math.random());
+      }
+
       const galleryIdentifier = `[data-gallery="${link.getAttribute(
         'data-gallery'
       )}"]`;

@@ -69,6 +69,7 @@ const LightboxImage: FunctionComponent<ILightboxImage> = ({
     {...lightboxImage}
     className={figureClassName(full)}
     caption={lightboxImage.caption || caption}
+    captionClassName="text-media__caption"
   />
 );
 
@@ -81,7 +82,7 @@ const Media: FunctionComponent<{ media: IMedia }> = ({ media }) =>
         ) : (m.image as IImage)?.src ? (
           <Image {...(m as IImage)} key={i} />
         ) : (m.lightboxImage as ILightboxImage)?.image ? (
-          <LightboxImage {...(m.lightboxImage as ILightboxImage)} key={i} />
+          <LightboxImage {...(m as ILightboxImage)} key={i} />
         ) : null
       )}
     </div>

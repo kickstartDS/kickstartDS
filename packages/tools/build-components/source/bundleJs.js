@@ -54,6 +54,7 @@ const prepare = async (jsPaths) => {
         preventAssignment: false,
       }),
     ],
+    preserveEntrySignatures: 'allow-extension',
   };
   const outputOptions = {
     ...sharedOutputOptions,

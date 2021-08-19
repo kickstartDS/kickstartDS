@@ -15,7 +15,5 @@ $sidebar-zindex: 2950 !default;
 $sidebar-overlay-zindex: $sidebar-zindex - 1 !default;
 $skip_nav_zindex: $sidebar-zindex + 1 !default;
 
-$lightbox-overlay-zindex: 4500 !default;
-
 $search-overlay-zindex: 5000 !default;
 $search-suggestion-zindex: 5100 !default;

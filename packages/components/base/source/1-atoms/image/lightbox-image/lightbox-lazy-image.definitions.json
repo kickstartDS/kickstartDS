@@ -65,6 +65,11 @@
       "type": "string",
       "title": "Additional Class",
       "description": "Additional Class"
+    },
+    "captionClassName": {
+      "type": "string",
+      "title": "Additional Caption Class",
+      "description": "Additional Caption Class"
     }
   }
 }
