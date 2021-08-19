@@ -4,6 +4,7 @@ const svgstore = require('svgstore');
 const fg = require('fast-glob');
 const del = require('del');
 const { root } = require('./utils');
+const photoswipe = require('../resources/templates/photoswipe.html');
 
 const createIconSprite = async () => {
   const [filePaths] = await Promise.all([
@@ -33,6 +34,6 @@ const createIconSprite = async () => {
 };
 
 module.exports = async () => {
-  const body = await createIconSprite();
-  return fs.writeFile(`.storybook/preview-body.html`, body);
+  const iconSprite = await createIconSprite();
+  return fs.writeFile(`.storybook/preview-body.html`, iconSprite + photoswipe);
 };

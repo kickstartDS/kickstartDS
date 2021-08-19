@@ -1097,6 +1097,10 @@ export type ID1 = string;
  */
 export type AdditionalClass8 = string;
 /**
+ * Additional Caption Class
+ */
+export type AdditionalCaptionClass = string;
+/**
  * Display media item over full width
  */
 export type FullWidthMedia2 = boolean;
@@ -1974,6 +1978,7 @@ export interface LazyLightboxImage {
   gallery?: GalleryIdentifier;
   id?: ID1;
   className?: AdditionalClass8;
+  captionClassName?: AdditionalCaptionClass;
   [k: string]: unknown;
 }
 /**

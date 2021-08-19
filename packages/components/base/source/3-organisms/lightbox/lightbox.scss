@@ -1,0 +1,49 @@
+@use 'sass:meta';
+@use '@kickstartds/core/source/core/custom-properties';
+@use './lightbox-vars';
+@use 'photoswipe/src/css/main' with (
+  $pswp__show-hide-transition-duration: #{var(--pswp--show-hide-transition-duration)},
+  $pswp__controls-transition-duration: #{var(--pswp--controls-transition-duration)},
+  $pswp__background-color: #{var(--pswp--background-color)},
+  $pswp__placeholder-color: #{var(--pswp--placeholder-color)},
+  $pswp__box-sizing-border-box: true,
+  $pswp__root-z-index: #{var(--pswp--root-z-index)},
+  $pswp__error-text-color: #{var(--pswp--error-text-color)},
+  $pswp__include-minimal-style: true,
+);
+@use 'photoswipe/src/css/default-skin/default-skin' with (
+  $pswp__show-hide-transition-duration: #{var(--pswp--show-hide-transition-duration)},
+  $pswp__controls-transition-duration: #{var(--pswp--controls-transition-duration)},
+  $pswp__background-color: #{var(--pswp--background-color)},
+  $pswp__placeholder-color: #{var(--pswp--placeholder-color)},
+  $pswp__box-sizing-border-box: true,
+  $pswp__root-z-index: #{var(--pswp--root-z-index)},
+  $pswp__error-text-color: #{var(--pswp--error-text-color)},
+  $pswp__include-minimal-style: true,
+);
+
+$vars: meta.module-variables(lightbox-vars);
+@include custom-properties.styles($vars);
+
+.pswp {
+  font: var(--font-ui-xs);
+
+  &__share-modal {
+    z-index: calc(var(--pswp--root-z-index) + 100);
+  }
+
+  &__share-tooltip {
+    z-index: calc(var(--pswp--root-z-index) + 120);
+  }
+
+  &__ui {
+    z-index: calc(var(--pswp--root-z-index) + 50);
+  }
+
+  /* Always erve SVG sprite */
+  &__button,
+  &__button--arrow--left:before,
+  &__button--arrow--right:before {
+    background-image: var(--pswp--assets-path);
+  }
+}
