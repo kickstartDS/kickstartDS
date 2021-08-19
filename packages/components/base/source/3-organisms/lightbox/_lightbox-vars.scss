@@ -1,7 +1,7 @@
 $name-: 'pswp' !default;
 
 $host: (
-  '.pswp': (
+  ':root': (
     show-hide-transition-duration: 333ms,
     controls-transition-duration: 333ms,
     background-color: var(--color-black),
