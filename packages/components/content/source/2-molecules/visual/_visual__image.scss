@@ -29,9 +29,11 @@
 
   &,
   * {
-    /* critical:start */
-    min-height: inherit;
-    /* critical:end */
+    .c-visual--full & {
+      /* critical:start */
+      height: 100%;
+      /* critical:end */
+    }
   }
 
   img {
