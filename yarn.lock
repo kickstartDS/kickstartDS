@@ -10742,13 +10742,10 @@ json-buffer@3.0.0:
   resolved "https://registry.yarnpkg.com/json-buffer/-/json-buffer-3.0.0.tgz#5b1f397afc75d677bde8bcfc0e47e1f9a3d9a898"
   integrity sha1-Wx85evx11ne96Lz8Dkfh+aPZqJg=
 
-json-csv@^3.0.1:
-  version "3.0.6"
-  resolved "https://registry.yarnpkg.com/json-csv/-/json-csv-3.0.6.tgz#df59e7eaa44cf5247ac92f354020ff14e301f4bc"
-  integrity sha512-xPlIBu4khby1rQ8IBM9uWGYlicxALsjd1BByEUWPiBjdSj5EC2plaa+/0RL4bi3EYkSsLOwZPTpiBlowsG1BCw==
-  dependencies:
-    concat-stream "^2.0.0"
-    lodash "^4.17.21"
+json-csv@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/json-csv/-/json-csv-4.0.0.tgz#21769c997fe1fe727a0cafefef5beacbacc61965"
+  integrity sha512-W27K4f58aSq5gXHXD+LLvlNBEN1zlAukmODasU8Z3JuVoQkDlW8MDmR83z0nsU5i642NBTN56TpBSAiC/ruc7g==
 
 json-fixer@^1.5.1:
   version "1.6.12"
