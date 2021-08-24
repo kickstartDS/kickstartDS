@@ -1,3 +1,50 @@
+# (Tue Aug 17 2021)
+
+#### 🚀 Enhancement
+
+- `@kickstartds/base@1.3.0`, `@kickstartds/core@1.3.0`
+  - add scroll offset token [#328](https://github.com/kickstartDS/kickstartDS/pull/328) ([@lmestel](https://github.com/lmestel))
+- `@kickstartds/base@1.3.0`
+  - add caption to text-media images & videos [#326](https://github.com/kickstartDS/kickstartDS/pull/326) ([@lmestel](https://github.com/lmestel))
+
+#### 🐛 Bug Fix
+
+- `@kickstartds/base@1.3.0`
+  - fix text-media without media [#333](https://github.com/kickstartDS/kickstartDS/pull/333) ([@lmestel](https://github.com/lmestel))
+  - fix text-media video size with caption [#332](https://github.com/kickstartDS/kickstartDS/pull/332) ([@lmestel](https://github.com/lmestel))
+- `@kickstartds/content@1.3.0`
+  - inherit visual headline alignment from box alignment [#329](https://github.com/kickstartDS/kickstartDS/pull/329) ([@lmestel](https://github.com/lmestel))
+- `@kickstartds/base@1.3.0`, `@kickstartds/core@1.3.0`
+  - move breakpoint css token to base.css [#327](https://github.com/kickstartDS/kickstartDS/pull/327) ([@lmestel](https://github.com/lmestel))
+- `@kickstartds/base@1.3.0`, `@kickstartds/blog@1.3.0`
+  - fix invalid schemas [#305](https://github.com/kickstartDS/kickstartDS/pull/305) ([@lmestel](https://github.com/lmestel))
+
+#### 🔩 Dependency Updates
+
+- build(deps-dev): bump vite from 2.4.4 to 2.5.0 [#335](https://github.com/kickstartDS/kickstartDS/pull/335) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump auto from 10.30.0 to 10.31.0 [#324](https://github.com/kickstartDS/kickstartDS/pull/324) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump rollup from 2.56.0 to 2.56.2 [#317](https://github.com/kickstartDS/kickstartDS/pull/317) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump lint-staged from 11.1.1 to 11.1.2 [#308](https://github.com/kickstartDS/kickstartDS/pull/308) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump @storybook/core from 6.3.6 to 6.3.7 [#313](https://github.com/kickstartDS/kickstartDS/pull/313) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@lmestel](https://github.com/lmestel))
+- `@kickstartds/core@1.3.0`
+  - build(deps): bump sass from 1.37.5 to 1.38.0 [#334](https://github.com/kickstartDS/kickstartDS/pull/334) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+  - build(deps): bump esbuild from 0.12.19 to 0.12.20 [#322](https://github.com/kickstartDS/kickstartDS/pull/322) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+  - build(deps): bump esbuild from 0.12.18 to 0.12.19 [#309](https://github.com/kickstartDS/kickstartDS/pull/309) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- `@kickstartds/base@1.3.0`
+  - build(deps): bump react-markdown from 5.0.3 to 7.0.0 [#331](https://github.com/kickstartDS/kickstartDS/pull/331) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+  - build(deps-dev): bump @types/react from 17.0.17 to 17.0.18 [#330](https://github.com/kickstartDS/kickstartDS/pull/330) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+  - build(deps-dev): bump @types/react from 17.0.16 to 17.0.17 [#318](https://github.com/kickstartDS/kickstartDS/pull/318) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- `@kickstartds/base@1.3.0`, `@kickstartds/blog@1.3.0`, `@kickstartds/content@1.3.0`, `@kickstartds/core@1.3.0`, `@kickstartds/form@1.3.0`
+  - build(deps): bump @babel/runtime from 7.14.8 to 7.15.3 [#319](https://github.com/kickstartDS/kickstartDS/pull/319) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 3
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Jonas Ulrich ([@julrich](https://github.com/julrich))
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+
+---
+
 # (Fri Aug 06 2021)
 
 #### 🚀 Enhancement

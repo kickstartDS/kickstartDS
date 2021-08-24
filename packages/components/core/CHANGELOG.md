@@ -1,3 +1,40 @@
+# v1.3.0 (Tue Aug 17 2021)
+
+#### 🚀 Enhancement
+
+- add scroll offset token [#328](https://github.com/kickstartDS/kickstartDS/pull/328) ([@lmestel](https://github.com/lmestel))
+
+#### 🐛 Bug Fix
+
+- build(deps): bump sass from 1.37.5 to 1.38.0 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- move breakpoint css token to base.css [#327](https://github.com/kickstartDS/kickstartDS/pull/327) ([@lmestel](https://github.com/lmestel))
+- feat: add scroll offset token ([@lmestel](https://github.com/lmestel))
+- fix: fix previous merge ([@lmestel](https://github.com/lmestel))
+- Merge branch 'next' into hotfix/breakpoints ([@lmestel](https://github.com/lmestel))
+- fix: move breakpoint css token to base.css ([@lmestel](https://github.com/lmestel))
+- build(deps): bump esbuild from 0.12.19 to 0.12.20 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump @babel/runtime from 7.14.8 to 7.15.3 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump esbuild from 0.12.18 to 0.12.19 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### 🔩 Dependency Updates
+
+- build(deps-dev): bump vite from 2.4.4 to 2.5.0 [#335](https://github.com/kickstartDS/kickstartDS/pull/335) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump sass from 1.37.5 to 1.38.0 [#334](https://github.com/kickstartDS/kickstartDS/pull/334) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump auto from 10.30.0 to 10.31.0 [#324](https://github.com/kickstartDS/kickstartDS/pull/324) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump esbuild from 0.12.19 to 0.12.20 [#322](https://github.com/kickstartDS/kickstartDS/pull/322) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump @babel/runtime from 7.14.8 to 7.15.3 [#319](https://github.com/kickstartDS/kickstartDS/pull/319) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump @types/react from 17.0.16 to 17.0.17 [#318](https://github.com/kickstartDS/kickstartDS/pull/318) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump rollup from 2.56.0 to 2.56.2 [#317](https://github.com/kickstartDS/kickstartDS/pull/317) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump esbuild from 0.12.18 to 0.12.19 [#309](https://github.com/kickstartDS/kickstartDS/pull/309) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 3
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Jonas Ulrich ([@julrich](https://github.com/julrich))
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+
+---
+
 # v1.2.0 (Fri Aug 06 2021)
 
 #### 🚀 Enhancement
