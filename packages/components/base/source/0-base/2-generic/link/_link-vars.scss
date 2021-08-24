@@ -11,4 +11,7 @@ $host: (
     background-hover: var(--color-black-alpha-1),
     border-radius: 0,
   ),
+  'h1, h2, h3, h4, h5, h6': (
+    font-weight: var(--g-headline--font-weight),
+  ),
 ) !default;
