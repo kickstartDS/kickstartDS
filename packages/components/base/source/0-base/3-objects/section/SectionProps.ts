@@ -1364,6 +1364,10 @@ export type BottomSpacing4 = 'none' | 'small' | 'large';
  * Set the headline as a page header, triggering special css treatment
  */
 export type PageHeader4 = boolean;
+/**
+ * Add additional css classes that should be applied to the section
+ */
+export type AdditionalClass11 = string;
 
 export interface SectionProps {
   width?: 'full' | 'max' | 'wide' | 'default' | 'narrow';
@@ -1393,6 +1397,7 @@ export interface SectionProps {
   spaceBefore?: 'default' | 'small' | 'none';
   spaceAfter?: 'default' | 'small' | 'none';
   headline?: Headline4;
+  className?: AdditionalClass11;
   [k: string]: unknown;
 }
 export interface QuotesSlider {
