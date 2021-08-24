@@ -109,6 +109,11 @@
         },
         "headline": {
           "$ref": "http://frontend.ruhmesmeile.com/base/molecules/headline.schema.json"
+        },
+        "className": {
+          "type": "string",
+          "title": "Additional Class",
+          "description": "Add additional css classes that should be applied to the section"
         }
       }
     }
