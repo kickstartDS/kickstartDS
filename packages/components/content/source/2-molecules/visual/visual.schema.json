@@ -50,6 +50,13 @@
               "format": "image",
               "default": "https://picsum.photos/seed/kdsvisual/1920/810"
             },
+            "src": {
+              "title": "Optional source",
+              "description": "Override for img tag of picture element, if needed",
+              "type": "string",
+              "format": "image",
+              "default": "https://picsum.photos/seed/kdsvisual/640/270"
+            },
             "indent": {
               "title": "Image indent",
               "description": "Choose to indent the image horizontally on small screens",
