@@ -27,6 +27,10 @@ export type TabletImageSource = string;
  */
 export type DesktopImageSource = string;
 /**
+ * Override for img tag of picture element, if needed
+ */
+export type OptionalSource = string;
+/**
  * Choose to indent the image horizontally on small screens
  */
 export type ImageIndent = 'none' | 'left' | 'right';
@@ -214,6 +218,7 @@ export interface BackgroundImage {
   srcMobile: MobileImageSource;
   srcTablet: TabletImageSource;
   srcDesktop: DesktopImageSource;
+  src?: OptionalSource;
   indent?: ImageIndent;
   alt?: AltText;
   [k: string]: unknown;
