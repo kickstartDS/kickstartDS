@@ -34,7 +34,7 @@
     "@babel/core": "^7.15.4",
     "@kickstartds/storybook-addon-component-tokens": "^0.1.4",
     "@storybook/addon-a11y": "^6.3.8",
-    "@storybook/addon-essentials": "^6.3.7",
+    "@storybook/addon-essentials": "^6.3.8",
     "@storybook/cli": "^6.3.8",
     "@storybook/core": "^6.3.8",
     "@storybook/react": "^6.3.7",
