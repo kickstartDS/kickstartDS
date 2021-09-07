@@ -46,7 +46,7 @@ $vars: meta.module-variables(headline-vars);
     padding-bottom: var(--spacing-xxl);
   }
 
-  > :first-child {
+  &__headline {
     /* critical:start */
     margin: 0;
     font: var(--g-headline--font);
