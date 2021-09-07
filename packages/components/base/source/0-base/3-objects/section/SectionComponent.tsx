@@ -57,7 +57,7 @@ const SectionComponent: FunctionComponent<
     )}
     {...props}
   >
-    {headline && (
+    {headline && headline.content && (
       <Container width={width}>
         <Headline {...headline} />
       </Container>
