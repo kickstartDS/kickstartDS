@@ -1,5 +1,4 @@
 @use 'sass:meta';
-@use '@kickstartds/base/source/0-base/1-tools/scss/helpers';
 @use '@kickstartds/core/source/core/breakpoint';
 @use '@kickstartds/core/source/core/custom-properties';
 @use './quote-vars';
@@ -8,12 +7,21 @@ $vars: meta.module-variables(quote-vars);
 @include custom-properties.styles($vars);
 
 .c-quote {
-  display: flex;
   align-items: var(--c-quote--align);
+
+  @include breakpoint.media('≥s') {
+    display: flex;
+  }
 
   &__image-wrap {
     flex-shrink: 0;
     max-width: var(--c-quote_image--max-width);
+    text-align: center;
+    margin-bottom: 1rem;
+
+    @include breakpoint.media('≥s') {
+      margin-bottom: 0;
+    }
   }
 
   &__content {
