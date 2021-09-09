@@ -4,7 +4,6 @@
 
 .text-media {
   @include bourbon.clearfix;
-  $gallery-gutter: 1rem;
 
   &--beside {
     .text-media__text {
@@ -19,19 +18,18 @@
   }
 
   &__gallery {
-    @include bourbon.clearfix;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-    margin: ($gallery-gutter * -1) 0 0 ($gallery-gutter * -1);
+    gap: var(--spacing-m);
 
     // above/below left (default), center, right
     .text-media--above & {
-      padding-bottom: 1rem;
+      padding-bottom: var(--spacing-s);
     }
 
     .text-media--below & {
-      padding-top: 1rem;
+      padding-top: var(--spacing-s);
     }
 
     .text-media--center & {
@@ -44,10 +42,10 @@
 
     // intext left, right
     .text-media--intext & {
-      padding-bottom: 1rem;
+      padding-bottom: var(--spacing-s);
 
       @include breakpoint.media('≥s') {
-        padding-bottom: 0.5rem;
+        padding-bottom: var(--spacing-xs);
         max-width: 50%;
         min-width: 0;
       }
@@ -60,14 +58,14 @@
     .text-media--intext.text-media--left & {
       @include breakpoint.media('≥s') {
         float: left;
-        padding-right: 1.5rem;
+        padding-right: var(--spacing-m);
       }
     }
 
     .text-media--intext.text-media--right & {
       @include breakpoint.media('≥s') {
         float: right;
-        padding-left: 1.5rem;
+        padding-left: var(--spacing-m);
       }
     }
   }
@@ -75,12 +73,10 @@
   &__media {
     display: table;
     table-layout: fixed;
-    padding: $gallery-gutter 0 0 $gallery-gutter;
     max-width: 100%;
     box-sizing: content-box;
 
     &--full {
-      // width: 100vw !important;
       &,
       > * {
         width: 100% !important;
@@ -96,6 +92,5 @@
     display: table-caption;
     caption-side: bottom;
     text-align: left;
-    padding-left: $gallery-gutter;
   }
 }

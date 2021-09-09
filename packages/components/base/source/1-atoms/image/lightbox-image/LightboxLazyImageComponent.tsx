@@ -17,6 +17,7 @@ export const LightboxLazyImage: FunctionComponent<LazyLightboxImageProps> = ({
   id,
   caption,
   hideCaption,
+  captionClassName,
 }) => (
   <figure
     className={classnames(
@@ -47,6 +48,12 @@ export const LightboxLazyImage: FunctionComponent<LazyLightboxImageProps> = ({
         ''
       )}
     </Link>
-    {caption ? <figcaption hidden={hideCaption}>{caption}</figcaption> : ''}
+    {caption ? (
+      <figcaption className={captionClassName} hidden={hideCaption}>
+        {caption}
+      </figcaption>
+    ) : (
+      ''
+    )}
   </figure>
 );

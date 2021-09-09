@@ -40,17 +40,13 @@ $vars: meta.module-variables(post-teaser-vars);
   &__headline {
     --g-headline--font: var(--c-post-teaser_headline--font);
     --g-headline--font-weight: var(--c-post-teaser_headline--font-weight);
-    --g-headline--color: var(--c-post-teaser_headline--color-hover);
+    --g-link--color: var(--c-post-teaser_headline--color);
+    --g-link--color-hover: var(--c-post-teaser_headline--color-hover);
 
     margin-top: 0;
 
     .c-post-teaser--title-first & {
       margin-bottom: 0;
-    }
-
-    > a {
-      color: var(--c-post-teaser_headline--color);
-      font-weight: inherit;
     }
   }
 

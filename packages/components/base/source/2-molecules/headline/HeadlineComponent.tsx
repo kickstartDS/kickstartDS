@@ -43,6 +43,7 @@ const HeadlineComponent: FunctionComponent<
     >
       <TagName
         className={classnames(
+          'c-headline__headline',
           styleAs !== 'none' && styleAs !== level && `c-headline__${styleAs}`
         )}
       >

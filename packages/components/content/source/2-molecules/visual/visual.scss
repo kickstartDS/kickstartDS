@@ -37,6 +37,15 @@ $vars: meta.module-variables(visual-vars);
   &__media {
     /* critical:start */
     position: relative;
+
+    &,
+    * {
+      min-height: inherit;
+    }
+
+    .c-visual--full & {
+      flex-grow: 1;
+    }
     /* critical:end */
 
     @include breakpoint.media('≥s') {

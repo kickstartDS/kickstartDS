@@ -6,14 +6,13 @@
   display: flex;
   align-items: center;
   width: 100%;
-  flex-grow: 1; // = 100% height
   margin: auto;
   /* critical:end */
 
   @include breakpoint.media('≥s') {
     /* critical:start */
     padding: var(--g-content-padding);
-    min-height: inherit; // ie fix
+    flex-grow: 1; // = 100% height
     /* critical:end */
   }
 

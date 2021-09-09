@@ -54,6 +54,7 @@ const prepare = async (tsPaths) => {
         mode: ['inject', { prepend: true }],
         sass: sassOptions,
         plugins: postcssPlugins,
+        url: false,
         onImport(data, id) {
           cssAssets.add(id);
         },

@@ -45,6 +45,10 @@ export type ID = string;
  * Additional Class
  */
 export type AdditionalClass = string;
+/**
+ * Additional Caption Class
+ */
+export type AdditionalCaptionClass = string;
 
 /**
  * Lazy Lightbox Image
@@ -60,5 +64,6 @@ export interface LazyLightboxImageProps {
   gallery?: GalleryIdentifier;
   id?: ID;
   className?: AdditionalClass;
+  captionClassName?: AdditionalCaptionClass;
   [k: string]: unknown;
 }
