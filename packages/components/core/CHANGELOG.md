@@ -1,3 +1,44 @@
+# v1.4.0 (Thu Sep 09 2021)
+
+#### 🐛 Bug Fix
+
+- build(deps): bump @babel/runtime from 7.15.3 to 7.15.4 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump esbuild from 0.12.24 to 0.12.25 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- fix: optional src attribute for visual picture [#367](https://github.com/kickstartDS/kickstartDS/pull/367) ([@julrich](https://github.com/julrich))
+- build(deps): bump sass from 1.38.2 to 1.39.0 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump sass from 1.38.1 to 1.38.2 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump esbuild from 0.12.23 to 0.12.24 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump esbuild from 0.12.22 to 0.12.23 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- Merge branch 'master' into next ([@lmestel](https://github.com/lmestel))
+- build(deps): bump sass from 1.38.0 to 1.38.1 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump esbuild from 0.12.21 to 0.12.22 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- remove storytelling from critical styles [#338](https://github.com/kickstartDS/kickstartDS/pull/338) ([@lmestel](https://github.com/lmestel))
+- build(deps): bump esbuild from 0.12.20 to 0.12.21 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### 🔩 Dependency Updates
+
+- build(deps-dev): bump vite from 2.5.2 to 2.5.3 [#368](https://github.com/kickstartDS/kickstartDS/pull/368) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump autoprefixer from 10.3.3 to 10.3.4 [#372](https://github.com/kickstartDS/kickstartDS/pull/372) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump @babel/core from 7.15.0 to 7.15.4 [#370](https://github.com/kickstartDS/kickstartDS/pull/370) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump esbuild from 0.12.24 to 0.12.25 [#374](https://github.com/kickstartDS/kickstartDS/pull/374) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump sass from 1.38.2 to 1.39.0 [#369](https://github.com/kickstartDS/kickstartDS/pull/369) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump esbuild from 0.12.23 to 0.12.24 [#361](https://github.com/kickstartDS/kickstartDS/pull/361) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump sass from 1.38.1 to 1.38.2 [#362](https://github.com/kickstartDS/kickstartDS/pull/362) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump esbuild from 0.12.22 to 0.12.23 [#355](https://github.com/kickstartDS/kickstartDS/pull/355) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump sass from 1.38.0 to 1.38.1 [#349](https://github.com/kickstartDS/kickstartDS/pull/349) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump json-csv from 3.0.6 to 4.0.0 [#345](https://github.com/kickstartDS/kickstartDS/pull/345) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump autoprefixer from 10.3.1 to 10.3.2 [#346](https://github.com/kickstartDS/kickstartDS/pull/346) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump esbuild from 0.12.21 to 0.12.22 [#347](https://github.com/kickstartDS/kickstartDS/pull/347) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump esbuild from 0.12.20 to 0.12.21 [#340](https://github.com/kickstartDS/kickstartDS/pull/340) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 3
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Jonas Ulrich ([@julrich](https://github.com/julrich))
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+
+---
+
 # v1.3.0 (Tue Aug 17 2021)
 
 #### 🚀 Enhancement

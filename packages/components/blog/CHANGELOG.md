@@ -1,3 +1,30 @@
+# v1.4.0 (Thu Sep 09 2021)
+
+#### 🚀 Enhancement
+
+- add `className` property to section schema [#352](https://github.com/kickstartDS/kickstartDS/pull/352) ([@lmestel](https://github.com/lmestel))
+
+#### 🐛 Bug Fix
+
+- build(deps): bump @babel/runtime from 7.15.3 to 7.15.4 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- Merge branch 'master' into next ([@lmestel](https://github.com/lmestel))
+- fix link button fill animation [#351](https://github.com/kickstartDS/kickstartDS/pull/351) ([@lmestel](https://github.com/lmestel))
+- fix: fix post teaser headline style ([@lmestel](https://github.com/lmestel))
+
+#### 🔩 Dependency Updates
+
+- build(deps-dev): bump vite from 2.5.2 to 2.5.3 [#368](https://github.com/kickstartDS/kickstartDS/pull/368) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump autoprefixer from 10.3.3 to 10.3.4 [#372](https://github.com/kickstartDS/kickstartDS/pull/372) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump @babel/core from 7.15.0 to 7.15.4 [#370](https://github.com/kickstartDS/kickstartDS/pull/370) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 3
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Jonas Ulrich ([@julrich](https://github.com/julrich))
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+
+---
+
 # v1.3.0 (Tue Aug 17 2021)
 
 #### 🚀 Enhancement

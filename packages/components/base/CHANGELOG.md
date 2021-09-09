@@ -1,3 +1,53 @@
+# v1.4.0 (Thu Sep 09 2021)
+
+#### 🚀 Enhancement
+
+- add `className` property to section schema [#352](https://github.com/kickstartDS/kickstartDS/pull/352) ([@lmestel](https://github.com/lmestel))
+- add lightbox component [#341](https://github.com/kickstartDS/kickstartDS/pull/341) ([@lmestel](https://github.com/lmestel))
+
+#### 🐛 Bug Fix
+
+- don't render empty section headline [#385](https://github.com/kickstartDS/kickstartDS/pull/385) ([@lmestel](https://github.com/lmestel))
+- fix: don't render empty section headline ([@lmestel](https://github.com/lmestel))
+- place quote image above text on mobile [#384](https://github.com/kickstartDS/kickstartDS/pull/384) ([@lmestel](https://github.com/lmestel))
+- add class to headline [#383](https://github.com/kickstartDS/kickstartDS/pull/383) ([@lmestel](https://github.com/lmestel))
+- feat: add class to headline ([@lmestel](https://github.com/lmestel))
+- Merge branch 'next' into dependabot/npm_and_yarn/storybook/core-6.3.8 ([@lmestel](https://github.com/lmestel))
+- build(deps-dev): bump @types/react from 17.0.19 to 17.0.20 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump @babel/runtime from 7.15.3 to 7.15.4 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- fix: optional src attribute for visual picture [#367](https://github.com/kickstartDS/kickstartDS/pull/367) ([@julrich](https://github.com/julrich))
+- fix(visual): adds optional src attribute to visual picture ([@julrich](https://github.com/julrich))
+- build(deps): bump react-markdown from 7.0.0 to 7.0.1 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- Merge branch 'master' into next ([@lmestel](https://github.com/lmestel))
+- feat: add `className` property to section schema ([@lmestel](https://github.com/lmestel))
+- fix link button fill animation [#351](https://github.com/kickstartDS/kickstartDS/pull/351) ([@lmestel](https://github.com/lmestel))
+- fix: fix post teaser headline style ([@lmestel](https://github.com/lmestel))
+- fix: fix link button fill animation ([@lmestel](https://github.com/lmestel))
+- build(deps-dev): bump @types/react from 17.0.18 to 17.0.19 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- overwrite lightbox icon path [#342](https://github.com/kickstartDS/kickstartDS/pull/342) ([@lmestel](https://github.com/lmestel))
+- fix: overwrite lightbox icon path ([@lmestel](https://github.com/lmestel))
+- remove storytelling from critical styles [#338](https://github.com/kickstartDS/kickstartDS/pull/338) ([@lmestel](https://github.com/lmestel))
+- feat: add lightbox component ([@lmestel](https://github.com/lmestel))
+- fix text-media gallery spacing [#337](https://github.com/kickstartDS/kickstartDS/pull/337) ([@lmestel](https://github.com/lmestel))
+- fix: fix text-media gallery spacing ([@lmestel](https://github.com/lmestel))
+
+#### 🔩 Dependency Updates
+
+- build(deps-dev): bump @types/react from 17.0.19 to 17.0.20 [#376](https://github.com/kickstartDS/kickstartDS/pull/376) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump vite from 2.5.2 to 2.5.3 [#368](https://github.com/kickstartDS/kickstartDS/pull/368) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump autoprefixer from 10.3.3 to 10.3.4 [#372](https://github.com/kickstartDS/kickstartDS/pull/372) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump @babel/core from 7.15.0 to 7.15.4 [#370](https://github.com/kickstartDS/kickstartDS/pull/370) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump react-markdown from 7.0.0 to 7.0.1 [#357](https://github.com/kickstartDS/kickstartDS/pull/357) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump @types/react from 17.0.18 to 17.0.19 [#343](https://github.com/kickstartDS/kickstartDS/pull/343) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 3
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Jonas Ulrich ([@julrich](https://github.com/julrich))
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+
+---
+
 # v1.3.0 (Tue Aug 17 2021)
 
 #### 🚀 Enhancement
