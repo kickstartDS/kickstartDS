@@ -74,6 +74,10 @@ export type OpenLinkInNewTab = boolean;
  * Hides the link. The box as a whole keeps being clickable
  */
 export type HideLink = boolean;
+/**
+ * Additional css classes attached to the box
+ */
+export type Class = string;
 
 /**
  * Component to tease external content
@@ -83,6 +87,7 @@ export interface TeaserProps {
   text?: TextContent;
   darkStyle?: DarkVariant;
   link?: LinkButton;
+  className?: Class;
   [k: string]: unknown;
 }
 /**

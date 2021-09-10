@@ -45,6 +45,10 @@ export type InvalidMessage = string;
  * Help text that gives more context about what a user needs to input
  */
 export type HintMessage = string;
+/**
+ * Additional css classes attached to the textarea element
+ */
+export type Class = string;
 
 /**
  * Multiline text input, useful for cases where users have a sizable amount of text to enter.
@@ -60,5 +64,6 @@ export interface TextAreaProps {
   invalid?: Invalid;
   invalidMessage?: InvalidMessage;
   hint?: HintMessage;
+  className?: Class;
   [k: string]: unknown;
 }

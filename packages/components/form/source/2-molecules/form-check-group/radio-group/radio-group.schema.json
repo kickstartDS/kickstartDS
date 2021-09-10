@@ -37,6 +37,11 @@
         },
         "required": ["label"]
       }
+    },
+    "className": {
+      "title": "Class",
+      "description": "Additional css classes attached to the wrapping element",
+      "type": "string"
     }
   },
   "required": ["label"]

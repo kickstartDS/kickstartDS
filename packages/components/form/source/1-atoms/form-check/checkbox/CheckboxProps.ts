@@ -25,6 +25,10 @@ export type InvalidMessage = string;
  * Help text that gives more context about what a user needs to input
  */
 export type HintMessage = string;
+/**
+ * Additional css classes attached to the input element
+ */
+export type Class = string;
 
 /**
  * Checkboxes allow users to select multiple items from a list of individual items, or to mark one individual item as selected.
@@ -35,5 +39,6 @@ export interface CheckboxProps {
   invalid?: Invalid;
   invalidMessage?: InvalidMessage;
   hint?: HintMessage;
+  className?: Class;
   [k: string]: unknown;
 }

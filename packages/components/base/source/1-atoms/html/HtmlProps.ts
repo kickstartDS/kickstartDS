@@ -6,11 +6,16 @@
  */
 
 export type HTMLString = string;
+/**
+ * Add additional css classes that should be applied to the element
+ */
+export type AdditionalClasses = string;
 
 /**
  * Display raw HTML.
  */
 export interface HTMLProps {
   html?: HTMLString;
+  className?: AdditionalClasses;
   [k: string]: unknown;
 }

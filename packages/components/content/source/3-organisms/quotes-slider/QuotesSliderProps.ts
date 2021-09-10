@@ -21,9 +21,18 @@ export type Source = string;
  * Optionally display a date for the quote
  */
 export type Date = string;
+/**
+ * Additional css classes attached to the wrapping element
+ */
+export type Class = string;
+/**
+ * Additional css classes attached to the slider
+ */
+export type Class1 = string;
 
 export interface QuotesSliderProps {
   slides?: Quote[];
+  className?: Class1;
   [k: string]: unknown;
 }
 /**
@@ -34,5 +43,6 @@ export interface Quote {
   text: TextContent;
   source?: Source;
   date?: Date;
+  className?: Class;
   [k: string]: unknown;
 }

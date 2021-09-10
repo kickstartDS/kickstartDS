@@ -34,6 +34,10 @@ export type Disabled = boolean;
  */
 export type HintMessage = string;
 export type Options = Checkbox[];
+/**
+ * Additional css classes attached to the wrapping element
+ */
+export type Class = string;
 
 /**
  * A CheckboxGroup allows users to select one or more items from a list of choices.
@@ -44,6 +48,7 @@ export interface CheckboxGroupProps {
   invalid?: Invalid;
   invalidMessage?: InvalidMessage;
   options?: Options;
+  className?: Class;
   [k: string]: unknown;
 }
 /**

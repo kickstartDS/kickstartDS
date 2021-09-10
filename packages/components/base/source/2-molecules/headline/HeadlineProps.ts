@@ -33,6 +33,10 @@ export type BottomSpacing = 'none' | 'small' | 'large';
  * Set the headline as a page header, triggering special css treatment
  */
 export type PageHeader = boolean;
+/**
+ * Add additional css classes that should be applied to the headline
+ */
+export type AdditionalClasses = string;
 
 /**
  * Headline
@@ -45,5 +49,6 @@ export interface HeadlineProps {
   subheadline?: Subheadline;
   spaceAfter: BottomSpacing;
   pageHeader?: PageHeader;
+  className?: AdditionalClasses;
   [k: string]: unknown;
 }

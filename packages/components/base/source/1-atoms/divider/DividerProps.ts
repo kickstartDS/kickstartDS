@@ -9,11 +9,16 @@
  * Choose a variant for the divider
  */
 export type StyleOfTheDivider = 'default' | 'accent' | 'dark';
+/**
+ * Add additional css classes that should be applied to the divider
+ */
+export type AdditionalClasses = string;
 
 /**
  * Dividers bring clarity to a layout by grouping and dividing content in close proximity.
  */
 export interface DividerProps {
   variant?: StyleOfTheDivider;
+  className?: AdditionalClasses;
   [k: string]: unknown;
 }

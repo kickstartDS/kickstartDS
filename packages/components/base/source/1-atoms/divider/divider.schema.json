@@ -11,6 +11,11 @@
       "description": "Choose a variant for the divider",
       "enum": ["default", "accent", "dark"],
       "default": "default"
+    },
+    "className": {
+      "type": "string",
+      "title": "Additional Classes",
+      "description": "Add additional css classes that should be applied to the divider"
     }
   }
 }

@@ -29,6 +29,11 @@
       "title": "Removable",
       "default": false,
       "description": "Choose whether the element is removable or not"
+    },
+    "className": {
+      "type": "string",
+      "title": "Additional Classes",
+      "description": "Add additional css classes that should be applied to the label"
     }
   },
   "required": ["label", "size"],

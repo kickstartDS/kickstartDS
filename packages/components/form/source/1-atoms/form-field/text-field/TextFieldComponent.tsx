@@ -28,6 +28,7 @@ const TextFieldComponent: ForwardRefRenderFunction<
     invalidMessage,
     hint,
     icon,
+    className,
     ...props
   },
   ref
@@ -43,9 +44,13 @@ const TextFieldComponent: ForwardRefRenderFunction<
     <div className="c-form-field__field">
       {icon && <Icon icon={icon} aria-hidden="true" focusable="false" />}
       <input
-        className={classnames('c-form-field__input', {
-          'c-form-field__input--is-invalid': invalid,
-        })}
+        className={classnames(
+          'c-form-field__input',
+          {
+            'c-form-field__input--is-invalid': invalid,
+          },
+          className
+        )}
         type={type}
         ref={ref}
         {...props}

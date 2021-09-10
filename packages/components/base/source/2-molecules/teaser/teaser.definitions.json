@@ -44,6 +44,11 @@
               }
             }
           ]
+        },
+        "className": {
+          "title": "Class",
+          "description": "Additional css classes attached to the box",
+          "type": "string"
         }
       }
     }

@@ -9,6 +9,11 @@
       "items": {
         "$ref": "http://frontend.ruhmesmeile.com/content/molecules/quote.schema.json"
       }
+    },
+    "className": {
+      "title": "Class",
+      "description": "Additional css classes attached to the slider",
+      "type": "string"
     }
   }
 }
