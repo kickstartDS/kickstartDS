@@ -17,6 +17,11 @@
       "title": "Content of the collapsible",
       "description": "Include the text for the collapsible that should be visible after opening",
       "format": "markdown"
+    },
+    "className": {
+      "title": "Class",
+      "description": "Additional css classes attached to the wrapping element",
+      "type": "string"
     }
   },
   "required": ["summary", "text"],

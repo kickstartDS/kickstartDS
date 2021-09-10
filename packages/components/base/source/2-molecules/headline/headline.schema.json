@@ -49,6 +49,11 @@
       "description": "Set the headline as a page header, triggering special css treatment",
       "type": "boolean",
       "default": false
+    },
+    "className": {
+      "type": "string",
+      "title": "Additional Classes",
+      "description": "Add additional css classes that should be applied to the headline"
     }
   },
   "required": ["level", "align", "spaceAfter"]

@@ -188,6 +188,10 @@ export type Caption3 = string;
  * Collection of media items to display
  */
 export type Media = (TextMediaVideo | TextMediaImage | TextMediaLazyImage)[];
+/**
+ * Additional css classes attached to the wrapping element
+ */
+export type Class = string;
 
 /**
  * Component to display copy text, including media
@@ -196,6 +200,7 @@ export interface TextMediaProps {
   text: TextContent;
   mediaAlignment: MediaAlignment;
   media?: Media;
+  className?: Class;
 }
 export interface TextMediaVideo {
   video?: Video;

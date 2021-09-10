@@ -50,6 +50,11 @@
     },
     "hint": {
       "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/hint"
+    },
+    "className": {
+      "title": "Class",
+      "description": "Additional css classes attached to the select element",
+      "type": "string"
     }
   }
 }

@@ -73,6 +73,10 @@ export type ButtonHref = string;
  * Open link in new Tab
  */
 export type OpenLinkInNewTab = boolean;
+/**
+ * Additional css classes attached to the wrapping element
+ */
+export type Class = string;
 
 /**
  * Component to to increase a number up to a final value
@@ -83,6 +87,7 @@ export interface CountUpProps {
   topic?: Topic;
   text?: TextContent;
   link?: LinkButton;
+  className?: Class;
   [k: string]: unknown;
 }
 /**

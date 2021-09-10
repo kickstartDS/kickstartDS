@@ -61,6 +61,10 @@ export type InvalidMessage = string;
  * Help text that gives more context about what a user needs to input
  */
 export type HintMessage = string;
+/**
+ * Additional css classes attached to the input element
+ */
+export type Class = string;
 
 /**
  * TextFields are text inputs that allow users to input custom text entries with a keyboard.
@@ -78,5 +82,6 @@ export interface TextFieldProps {
   invalid?: Invalid;
   invalidMessage?: InvalidMessage;
   hint?: HintMessage;
+  className?: Class;
   [k: string]: unknown;
 }

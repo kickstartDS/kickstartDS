@@ -82,6 +82,10 @@ export type ButtonHref = string;
  * Open link in new Tab
  */
 export type OpenLinkInNewTab = boolean;
+/**
+ * Add additional css classes that should be applied to the content box
+ */
+export type AdditionalClasses1 = string;
 
 /**
  * Component to display content in a condensed, boxed form
@@ -93,6 +97,7 @@ export interface ContentBoxProps {
   topic?: Topic;
   text?: TextContent;
   link?: Link;
+  className?: AdditionalClasses1;
 }
 /**
  * Content box link configuration

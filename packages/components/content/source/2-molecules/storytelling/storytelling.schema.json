@@ -144,6 +144,11 @@
           "$ref": "http://frontend.ruhmesmeile.com/base/atoms/link-button.schema.json"
         }
       }
+    },
+    "className": {
+      "title": "Class",
+      "description": "Additional css classes attached to the wrapping element",
+      "type": "string"
     }
   },
   "required": ["image", "box"]

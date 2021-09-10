@@ -131,6 +131,11 @@
           "caption": "Ut dolores quae sunt impedit et accusantium. Corrupti incidunt ullam reiciendis."
         }
       ]
+    },
+    "className": {
+      "title": "Class",
+      "description": "Additional css classes attached to the wrapping element",
+      "type": "string"
     }
   },
   "definitions": {

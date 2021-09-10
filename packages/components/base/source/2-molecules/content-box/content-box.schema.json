@@ -58,6 +58,11 @@
           "$ref": "http://frontend.ruhmesmeile.com/base/atoms/link-button.schema.json"
         }
       ]
+    },
+    "className": {
+      "type": "string",
+      "title": "Additional Classes",
+      "description": "Add additional css classes that should be applied to the content box"
     }
   },
   "required": ["ratio", "alignement"],

@@ -31,6 +31,11 @@
       "default": "2021-03-29",
       "title": "Date",
       "description": "Optionally display a date for the quote"
+    },
+    "className": {
+      "title": "Class",
+      "description": "Additional css classes attached to the wrapping element",
+      "type": "string"
     }
   },
   "required": ["text"]

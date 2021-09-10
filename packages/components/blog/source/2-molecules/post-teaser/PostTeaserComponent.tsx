@@ -1,4 +1,9 @@
-import { createContext, useContext, FunctionComponent } from 'react';
+import {
+  createContext,
+  useContext,
+  FunctionComponent,
+  HTMLAttributes,
+} from 'react';
 import { format } from 'date-fns';
 import classnames from 'classnames';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
@@ -55,7 +60,7 @@ const PostTeaserHeader = ({
 );
 
 const PostTeaserComponent: FunctionComponent<
-  PostTeaserProps & PostTeaserRenderFunctions
+  PostTeaserProps & PostTeaserRenderFunctions & HTMLAttributes<HTMLDivElement>
 > = ({
   variant = 'image-first',
   image,
@@ -67,12 +72,19 @@ const PostTeaserComponent: FunctionComponent<
   index,
   renderTopic = defaultRenderFn,
   renderText = richTextDefaultRenderFn,
+  className,
+  ...props
 }) => (
   <article
-    className={classnames('c-post-teaser', {
-      'c-post-teaser--image-first': variant === 'image-first',
-      'c-post-teaser--title-first': variant === 'title-first',
-    })}
+    className={classnames(
+      'c-post-teaser',
+      {
+        'c-post-teaser--image-first': variant === 'image-first',
+        'c-post-teaser--title-first': variant === 'title-first',
+      },
+      className
+    )}
+    {...props}
   >
     {variant === 'title-first' && (
       <PostTeaserHeader

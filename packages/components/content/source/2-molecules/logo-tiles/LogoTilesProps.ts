@@ -79,12 +79,17 @@ export type Sources = {
  */
 export type ClassAttribute = string;
 export type Logos = Picture[];
+/**
+ * Additional css classes attached to the wrapping element
+ */
+export type Class = string;
 
 /**
  * Component to list logos or seals
  */
 export interface LogoTilesProps {
   logos?: Logos;
+  className?: Class;
   [k: string]: unknown;
 }
 /**

@@ -25,6 +25,10 @@ export type InvalidMessage = string;
  * Help text that gives more context about what a user needs to input
  */
 export type HintMessage = string;
+/**
+ * Additional css classes attached to the input element
+ */
+export type Class = string;
 
 /**
  * Radio buttons allow users to select a single option from a list of mutually exclusive options.
@@ -35,5 +39,6 @@ export interface RadioButtonProps {
   invalid?: Invalid;
   invalidMessage?: InvalidMessage;
   hint?: HintMessage;
+  className?: Class;
   [k: string]: unknown;
 }

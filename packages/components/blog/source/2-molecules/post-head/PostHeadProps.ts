@@ -115,6 +115,10 @@ export type BottomSpacing = 'none' | 'small' | 'large';
  */
 export type PageHeader = boolean;
 /**
+ * Add additional css classes that should be applied to the headline
+ */
+export type AdditionalClasses1 = string;
+/**
  * Text to display inside tag label
  */
 export type Label = string;
@@ -130,7 +134,15 @@ export type LinkTarget = string;
  * Choose whether the element is removable or not
  */
 export type Removable = boolean;
+/**
+ * Add additional css classes that should be applied to the label
+ */
+export type AdditionalClasses2 = string;
 export type Categories = TagLabel[];
+/**
+ * Additional css classes attached to the wrapping element
+ */
+export type Class = string;
 
 /**
  * Post Head
@@ -141,6 +153,7 @@ export interface PostHeadProps {
   date?: Date;
   headline?: Headline;
   categories?: Categories;
+  className?: Class;
   [k: string]: unknown;
 }
 /**
@@ -174,6 +187,7 @@ export interface Headline {
   subheadline?: Subheadline;
   spaceAfter: BottomSpacing;
   pageHeader?: PageHeader;
+  className?: AdditionalClasses1;
   [k: string]: unknown;
 }
 /**
@@ -184,4 +198,5 @@ export interface TagLabel {
   size: Size;
   link?: LinkTarget;
   removable?: Removable;
+  className?: AdditionalClasses2;
 }
