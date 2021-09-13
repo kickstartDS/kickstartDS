@@ -30,7 +30,7 @@
     "lodash": "^4.17.21",
     "postcss": "^8.3.6",
     "postcss-combine-duplicated-selectors": "^10.0.3",
-    "postcss-sort-media-queries": "^3.9.10",
+    "postcss-sort-media-queries": "^4.1.0",
     "rollup": "^2.56.3",
     "rollup-plugin-import-resolver": "^1.2.0",
     "rollup-plugin-node-externals": "^2.2.0",
