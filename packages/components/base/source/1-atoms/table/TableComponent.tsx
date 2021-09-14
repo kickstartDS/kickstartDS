@@ -1,10 +1,24 @@
-import { FunctionComponent, createContext, useContext } from 'react';
+import {
+  FunctionComponent,
+  createContext,
+  useContext,
+  HTMLAttributes,
+} from 'react';
 import classnames from 'classnames';
+import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
 import { TableProps } from './TableProps';
 import './table.scss';
 import './ResponsiveTable.js';
 
-const TableComponent: FunctionComponent<TableProps> = ({
+interface RenderFunctions {
+  renderHead?: renderFn;
+  renderCell?: renderFn;
+  renderCaption?: renderFn;
+}
+
+const TableComponent: FunctionComponent<
+  TableProps & RenderFunctions & HTMLAttributes<HTMLTableElement>
+> = ({
   caption,
   rows,
   colHead,
@@ -12,6 +26,9 @@ const TableComponent: FunctionComponent<TableProps> = ({
   responsive,
   variant,
   className,
+  renderHead = defaultRenderFn,
+  renderCell = defaultRenderFn,
+  renderCaption = defaultRenderFn,
   ...props
 }) => (
   <table
@@ -27,12 +44,12 @@ const TableComponent: FunctionComponent<TableProps> = ({
     {...props}
     data-component={responsive ? 'base.responsive-table' : null}
   >
-    {caption && <caption>{caption}</caption>}
+    {caption && <caption>{renderCaption(caption)}</caption>}
     {rowHead && (
       <thead>
         <tr>
           {rows?.shift().map((cell, index) => (
-            <th key={index}>{cell}</th>
+            <th key={index}>{renderHead(cell)}</th>
           ))}
         </tr>
       </thead>
@@ -42,9 +59,9 @@ const TableComponent: FunctionComponent<TableProps> = ({
         <tr key={rowIndex}>
           {row?.map((cell, cellIndex) =>
             colHead && cellIndex === 0 ? (
-              <th key={`${rowIndex}-${cellIndex}`}>{cell}</th>
+              <th key={`${rowIndex}-${cellIndex}`}>{renderHead(cell)}</th>
             ) : (
-              <td key={`${rowIndex}-${cellIndex}`}>{cell}</td>
+              <td key={`${rowIndex}-${cellIndex}`}>{renderCell(cell)}</td>
             )
           )}
         </tr>
