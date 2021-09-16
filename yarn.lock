@@ -157,13 +157,13 @@
     typescript-memoize "^1.0.0-alpha.3"
     url-join "^4.0.0"
 
-"@auto-it/first-time-contributor@^10.31.0":
-  version "10.31.0"
-  resolved "https://registry.yarnpkg.com/@auto-it/first-time-contributor/-/first-time-contributor-10.31.0.tgz#241c00377d5eee10ed6326ab3051c28ef83a2f51"
-  integrity sha512-3PWGvAwG12SeLU0VDFa/jRx83tGpSim4zTV5vB6o+pDXOpl8uADJqw7a1cgbuXlIxTJWh4ew+JxtEbkYbrmfeQ==
+"@auto-it/first-time-contributor@^10.32.0":
+  version "10.32.0"
+  resolved "https://registry.yarnpkg.com/@auto-it/first-time-contributor/-/first-time-contributor-10.32.0.tgz#1bf7902bca14f0571ba77c1e84878eb576dcd840"
+  integrity sha512-azni0YWAngwd3I05afuYpmzo0lnPBGsNiQSAamFc81TfSGofkumdkZkk83kci7CY5/pGj/mCoPnHPmKrgqtjNQ==
   dependencies:
-    "@auto-it/bot-list" "10.31.0"
-    "@auto-it/core" "10.31.0"
+    "@auto-it/bot-list" "10.32.0"
+    "@auto-it/core" "10.32.0"
     array.prototype.flatmap "^1.2.2"
     endent "^2.0.1"
     tslib "2.1.0"
@@ -4349,7 +4349,6 @@
 
 "@whitespace/storybook-addon-html@git+https://github.com/lmestel/storybook-addon-html.git#v5.3.0":
   version "5.3.0"
-  uid "7789c0c51d9608ad97d03ca05176f4717b813b6b"
   resolved "git+https://github.com/lmestel/storybook-addon-html.git#7789c0c51d9608ad97d03ca05176f4717b813b6b"
   dependencies:
     "@babel/generator" "^7.14.8"
