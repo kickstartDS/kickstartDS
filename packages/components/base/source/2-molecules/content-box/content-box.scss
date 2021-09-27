@@ -68,6 +68,10 @@ $vars: meta.module-variables(content-box-vars);
 
       .c-button {
         --c-button--font: var(--font-ui-xs);
+
+        &--large {
+          --c-button--font: var(--font-ui-s);
+        }
       }
     }
 
@@ -77,6 +81,14 @@ $vars: meta.module-variables(content-box-vars);
 
       .c-button {
         --c-button--font: var(--font-ui-s);
+
+        &--small {
+          --c-button--font: var(--font-ui-xs);
+        }
+
+        &--large {
+          --c-button--font: var(--font-ui-m);
+        }
       }
     }
 
@@ -86,6 +98,14 @@ $vars: meta.module-variables(content-box-vars);
 
       .c-button {
         --c-button--font: var(--font-ui-m);
+
+        &--small {
+          --c-button--font: var(--font-ui-s);
+        }
+
+        &--large {
+          --c-button--font: var(--font-ui-l);
+        }
       }
     }
   }
