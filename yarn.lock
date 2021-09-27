@@ -3437,30 +3437,10 @@
     "@storybook/core-client" "6.3.8"
     "@storybook/core-server" "6.3.8"
 
-"@storybook/csf-tools@6.3.8":
+"@storybook/csf-tools@6.3.8", "@storybook/csf-tools@^6.3.3":
   version "6.3.8"
   resolved "https://registry.yarnpkg.com/@storybook/csf-tools/-/csf-tools-6.3.8.tgz#bc51d2559d2cf1bf761d38a9a913a523d36a7551"
   integrity sha512-yY+xN+3TKoUNK0KVAhQNPC3Pf7J0gkmSTOhBwRaPjVKQ3Dy8RE+r/+h9v7rxdmWnl7thdt7tWsjaUdy5DPNLug==
-  dependencies:
-    "@babel/generator" "^7.12.11"
-    "@babel/parser" "^7.12.11"
-    "@babel/plugin-transform-react-jsx" "^7.12.12"
-    "@babel/preset-env" "^7.12.11"
-    "@babel/traverse" "^7.12.11"
-    "@babel/types" "^7.12.11"
-    "@mdx-js/mdx" "^1.6.22"
-    "@storybook/csf" "^0.0.1"
-    core-js "^3.8.2"
-    fs-extra "^9.0.1"
-    js-string-escape "^1.0.1"
-    lodash "^4.17.20"
-    prettier "~2.2.1"
-    regenerator-runtime "^0.13.7"
-
-"@storybook/csf-tools@^6.3.3":
-  version "6.3.6"
-  resolved "https://registry.yarnpkg.com/@storybook/csf-tools/-/csf-tools-6.3.6.tgz#603d9e832f946998b75ff8368fe862375d6cb52c"
-  integrity sha512-MQevelkEUVNCSjKMXLNc/G8q/BB5babPnSeI0IcJq4k+kLUSHtviimLNpPowMgGJBPx/y9VihH8N7vdJUWVj9w==
   dependencies:
     "@babel/generator" "^7.12.11"
     "@babel/parser" "^7.12.11"
@@ -16255,10 +16235,10 @@ storybook-addon-outline@^1.4.1:
     "@storybook/core-events" "^6.3.0"
     ts-dedent "^2.1.1"
 
-storybook-builder-vite@0.0.12:
-  version "0.0.12"
-  resolved "https://registry.yarnpkg.com/storybook-builder-vite/-/storybook-builder-vite-0.0.12.tgz#3da34063139b0406156af2184863790a54e34817"
-  integrity sha512-XVSCb/WVHn1qzhQBv0AKTFk3Ux12CBa3+/dIxXOYxqk5BBmkYJVViK+fTv0WdKRNQBlTsq56dxbhpmVKaQzmXg==
+storybook-builder-vite@0.0.13:
+  version "0.0.13"
+  resolved "https://registry.yarnpkg.com/storybook-builder-vite/-/storybook-builder-vite-0.0.13.tgz#44450e4ab06bcd08f114c73c2daa8a18f4915f2e"
+  integrity sha512-1X7r3v+yT4vJKnWYqx/i+ZbaRkEXwJS6iT/oOREQdgEAw1YneFLvecdrs5vSqTYCmBrXXgMpHQHAb3H3nDw1gw==
   dependencies:
     "@mdx-js/mdx" "^1.6.22"
     "@storybook/csf-tools" "^6.3.3"
