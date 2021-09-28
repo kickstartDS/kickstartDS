@@ -16289,10 +16289,10 @@ storybook-dark-mode@^1.0.8:
     fast-deep-equal "^3.0.0"
     memoizerific "^1.11.3"
 
-storybook-design-token@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/storybook-design-token/-/storybook-design-token-1.2.0.tgz#ce7e33c2b5209604e04e915651317465a51854bf"
-  integrity sha512-3ZUJYH8lw69nkZq5KMGbex4T+60R7kVCbO/uRTeQz60M5u1hz4Wt6v+6XC4Bq3yYiZ4yTUilEnYQgwVLPbSmLQ==
+storybook-design-token@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/storybook-design-token/-/storybook-design-token-1.2.2.tgz#02783e7df2d959ab74b7224a5bea6515f264c6b5"
+  integrity sha512-dMvRApKG5fQ8ty6ngX0RX9sSLxXk7BnpeXFgTkVMqMwqwY1pqm81lipBFVVLYL53b7ms/A4W7OBYn7uvpavj2w==
   dependencies:
     "@storybook/addons" "^6.3.4"
     "@storybook/components" "^6.3.4"
