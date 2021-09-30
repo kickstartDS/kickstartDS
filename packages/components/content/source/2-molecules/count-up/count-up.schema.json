@@ -37,7 +37,7 @@
               "title": "Display link",
               "description": "Toggles visibility of the link",
               "type": "boolean",
-              "default": false
+              "default": true
             }
           }
         },
