@@ -824,6 +824,10 @@ export type Topic = string;
  */
 export type TextContent2 = string;
 /**
+ * Toggles visibility of the link
+ */
+export type DisplayLink2 = boolean;
+/**
  * Text used on button
  */
 export type Label6 = string;
@@ -903,7 +907,7 @@ export type TextContent3 = string;
 /**
  * Toggles visibility of the link
  */
-export type DisplayLink2 = boolean;
+export type DisplayLink3 = boolean;
 /**
  * Text used on button
  */
@@ -1920,7 +1924,7 @@ export interface CountUp {
   icon?: Icon5;
   topic?: Topic;
   text?: TextContent2;
-  link?: LinkButton2;
+  link?: Link2;
   className?: Class7;
   [k: string]: unknown;
 }
@@ -1936,7 +1940,8 @@ export interface Icon5 {
 /**
  * link-button
  */
-export interface LinkButton2 {
+export interface Link2 {
+  enabled?: DisplayLink2;
   label: Label6;
   variant: ButtonStyle5;
   size: ButtonSize5;
@@ -1968,14 +1973,14 @@ export interface ContentBox {
   image?: ImageSource3;
   topic?: Topic1;
   text?: TextContent3;
-  link?: Link2;
+  link?: Link3;
   className?: AdditionalClasses14;
 }
 /**
  * Content box link configuration
  */
-export interface Link2 {
-  enabled?: DisplayLink2;
+export interface Link3 {
+  enabled?: DisplayLink3;
   label: Label7;
   variant: ButtonStyle6;
   size: ButtonSize6;
@@ -2094,7 +2099,7 @@ export interface TeaserBox {
   topic?: Topic2;
   text?: TextContent5;
   darkStyle?: DarkVariant;
-  link?: LinkButton3;
+  link?: LinkButton2;
   className?: Class9;
   image?: ImageSource4;
   ratio: ImageRatio1;
@@ -2103,7 +2108,7 @@ export interface TeaserBox {
 /**
  * link-button
  */
-export interface LinkButton3 {
+export interface LinkButton2 {
   label: Label8;
   variant: ButtonStyle7;
   size: ButtonSize7;
@@ -2162,13 +2167,13 @@ export interface TeaserRow {
   topic?: Topic3;
   text?: TextContent6;
   darkStyle?: DarkVariant1;
-  link?: LinkButton4;
+  link?: LinkButton3;
   className?: Class11;
 }
 /**
  * link-button
  */
-export interface LinkButton4 {
+export interface LinkButton3 {
   label: Label9;
   variant: ButtonStyle8;
   size: ButtonSize8;

@@ -28,7 +28,23 @@
       "default": "Consequuntur est quia atque eum ducimus. Consequatur fugiat hic eos perferendis. Libero unde omnis dolorem maxime occaecati sapiente distinctio. Consectetur non placeat dolorem est animi."
     },
     "link": {
-      "$ref": "http://frontend.ruhmesmeile.com/base/atoms/link-button.schema.json"
+      "title": "Link",
+      "type": "object",
+      "allOf": [
+        {
+          "properties": {
+            "enabled": {
+              "title": "Display link",
+              "description": "Toggles visibility of the link",
+              "type": "boolean",
+              "default": true
+            }
+          }
+        },
+        {
+          "$ref": "http://frontend.ruhmesmeile.com/base/atoms/link-button.schema.json"
+        }
+      ]
     },
     "className": {
       "title": "Class",

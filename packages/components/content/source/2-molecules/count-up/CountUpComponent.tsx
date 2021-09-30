@@ -65,7 +65,7 @@ const CountUpComponent: FunctionComponent<
       />
     )}
 
-    {link ? (
+    {link && link.enabled ? (
       <div className="c-count-up__link">
         <LinkButton {...link} renderLabel={renderLinkLabel} />
       </div>
