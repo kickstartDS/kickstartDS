@@ -21,6 +21,10 @@ export type Topic = string;
  */
 export type TextContent = string;
 /**
+ * Toggles visibility of the link
+ */
+export type DisplayLink = boolean;
+/**
  * Text used on button
  */
 export type Label = string;
@@ -86,7 +90,7 @@ export interface CountUpProps {
   icon?: Icon;
   topic?: Topic;
   text?: TextContent;
-  link?: LinkButton;
+  link?: Link;
   className?: Class;
   [k: string]: unknown;
 }
@@ -102,7 +106,8 @@ export interface Icon {
 /**
  * link-button
  */
-export interface LinkButton {
+export interface Link {
+  enabled?: DisplayLink;
   label: Label;
   variant: ButtonStyle;
   size: ButtonSize;
