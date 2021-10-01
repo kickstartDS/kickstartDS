@@ -50,7 +50,7 @@
     "@auto-it/all-contributors": "^10.32.1",
     "@auto-it/first-time-contributor": "^10.32.0",
     "@auto-it/npm": "^10.32.0",
-    "@auto-it/released": "^10.32.0",
+    "@auto-it/released": "^10.32.1",
     "@commitlint/cli": "^13.2.0",
     "@commitlint/config-conventional": "^13.2.0",
     "auto": "^10.32.1",
