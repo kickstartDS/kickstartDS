@@ -39,13 +39,13 @@
     call-me-maybe "^1.0.1"
     js-yaml "^4.1.0"
 
-"@auto-it/all-contributors@^10.32.0":
-  version "10.32.0"
-  resolved "https://registry.yarnpkg.com/@auto-it/all-contributors/-/all-contributors-10.32.0.tgz#2beb986ad2ff69dfe9a6a413d763cec6edfc462d"
-  integrity sha512-OtciP/QwvHxT+8bVyJXQZrFQmzYBuh3PnqhubgpgRflxvfWk5p2RhpA6N7r0Ohvj/o9YauVt8cMfTm1Cj15HJg==
+"@auto-it/all-contributors@^10.32.1":
+  version "10.32.1"
+  resolved "https://registry.yarnpkg.com/@auto-it/all-contributors/-/all-contributors-10.32.1.tgz#e8d8e461ed116180b3e258943f446f9d614137e2"
+  integrity sha512-CVanz/jpVDvsZX2OdJNkMsJAKtrlIfzRWQPIdxcXryzWp/Cn05kWCTLBel9iQyKjj1LeP2efpS7L/0r+u4XFaA==
   dependencies:
-    "@auto-it/bot-list" "10.32.0"
-    "@auto-it/core" "10.32.0"
+    "@auto-it/bot-list" "10.32.1"
+    "@auto-it/core" "10.32.1"
     "@octokit/rest" "^18.0.0"
     all-contributors-cli "6.19.0"
     anymatch "^3.1.1"
