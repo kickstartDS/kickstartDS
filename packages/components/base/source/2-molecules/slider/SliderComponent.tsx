@@ -71,6 +71,7 @@ export const Slider: FunctionComponent<
                   className="c-slider-nav__slide"
                   data-glide-dir={`=${i}`}
                   key={`slide-${i}`}
+                  title={`slide ${i + 1}`}
                 >
                   {slide.props.preview || (
                     <span className="c-slider__bullet"></span>
