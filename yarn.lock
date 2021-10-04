@@ -2846,7 +2846,7 @@
     ts-dedent "^2.0.0"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-essentials@^6.3.8":
+"@storybook/addon-essentials@^6.3.9":
   version "6.3.9"
   resolved "https://registry.yarnpkg.com/@storybook/addon-essentials/-/addon-essentials-6.3.9.tgz#c29109c87f33f309b8cbcc38e0730798db23a15d"
   integrity sha512-F5FP9eqSSX++Dh7n/jAxVbfKGSh58EDIj7YdDVlCvf0qc9wLscV3dMS0kEcx/pP7z293JA4ADnztITOVSzf+qQ==
@@ -3230,10 +3230,17 @@
     util-deprecate "^1.0.2"
     webpack "4"
 
-"@storybook/core-events@6.3.9", "@storybook/core-events@^6.3.0":
+"@storybook/core-events@6.3.9":
   version "6.3.9"
   resolved "https://registry.yarnpkg.com/@storybook/core-events/-/core-events-6.3.9.tgz#17127905a2d7773b6e02f15bfbddb1fd1b0bce75"
   integrity sha512-6ELOkroH0Oz7+OR1SqGMKAC1+ufituqSxDp08AyvrHPSYqK/db+P2kSCJBdqyUXTvt8lPvqlCOidkRhGrNB/+A==
+  dependencies:
+    core-js "^3.8.2"
+
+"@storybook/core-events@^6.3.0":
+  version "6.3.6"
+  resolved "https://registry.yarnpkg.com/@storybook/core-events/-/core-events-6.3.6.tgz#c4a09e2c703170995604d63e46e45adc3c9cd759"
+  integrity sha512-Ut1dz96bJ939oSn5t1ckPXd3WcFejK96Sb3+R/z23vEHUWGBFtygGyw8r/SX/WNDVzGmQU8c+mzJJTZwCBJz8A==
   dependencies:
     core-js "^3.8.2"
 
@@ -3285,10 +3292,30 @@
     "@storybook/core-client" "6.3.9"
     "@storybook/core-server" "6.3.9"
 
-"@storybook/csf-tools@6.3.9", "@storybook/csf-tools@^6.3.3":
+"@storybook/csf-tools@6.3.9":
   version "6.3.9"
   resolved "https://registry.yarnpkg.com/@storybook/csf-tools/-/csf-tools-6.3.9.tgz#3f47725bf4108fd08a2350c39cf4eb5755d96c12"
   integrity sha512-rgAcq/3x8HEIRJdEqw21YT6zDdvEoCUZOMS2XYISJstFZp3weK+PbQr5tsMefAoVjpsNCi9ypYSXMT6dxnNbPw==
+  dependencies:
+    "@babel/generator" "^7.12.11"
+    "@babel/parser" "^7.12.11"
+    "@babel/plugin-transform-react-jsx" "^7.12.12"
+    "@babel/preset-env" "^7.12.11"
+    "@babel/traverse" "^7.12.11"
+    "@babel/types" "^7.12.11"
+    "@mdx-js/mdx" "^1.6.22"
+    "@storybook/csf" "^0.0.1"
+    core-js "^3.8.2"
+    fs-extra "^9.0.1"
+    js-string-escape "^1.0.1"
+    lodash "^4.17.20"
+    prettier "~2.2.1"
+    regenerator-runtime "^0.13.7"
+
+"@storybook/csf-tools@^6.3.3":
+  version "6.3.6"
+  resolved "https://registry.yarnpkg.com/@storybook/csf-tools/-/csf-tools-6.3.6.tgz#603d9e832f946998b75ff8368fe862375d6cb52c"
+  integrity sha512-MQevelkEUVNCSjKMXLNc/G8q/BB5babPnSeI0IcJq4k+kLUSHtviimLNpPowMgGJBPx/y9VihH8N7vdJUWVj9w==
   dependencies:
     "@babel/generator" "^7.12.11"
     "@babel/parser" "^7.12.11"
