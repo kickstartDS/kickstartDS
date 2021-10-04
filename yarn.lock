@@ -2719,7 +2719,7 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.14.0.tgz#9fb3a3cf3132328151f353de4632e01e52102bea"
   integrity sha512-9NET910DNaIPngYnLLPeg+Ogzqsi9uM4mSboU5y6p8S5DzMTVEsJZrawi+BoDNUVBa2DhJqQYUFvMDfgU062LQ==
 
-"@storybook/addon-a11y@^6.3.8":
+"@storybook/addon-a11y@^6.3.9":
   version "6.3.9"
   resolved "https://registry.yarnpkg.com/@storybook/addon-a11y/-/addon-a11y-6.3.9.tgz#c703f7d1faeabf14f61e0cb993ae2512cd644374"
   integrity sha512-C93lZY9RdCYvtRimDIl7Es/QwfgTAfY6VZQcUupzVRwAAsf5Do2L+dcLpF7x8NRcDVnSIzfWLIllFiM7D9A/qg==
@@ -3230,17 +3230,10 @@
     util-deprecate "^1.0.2"
     webpack "4"
 
-"@storybook/core-events@6.3.9":
+"@storybook/core-events@6.3.9", "@storybook/core-events@^6.3.0":
   version "6.3.9"
   resolved "https://registry.yarnpkg.com/@storybook/core-events/-/core-events-6.3.9.tgz#17127905a2d7773b6e02f15bfbddb1fd1b0bce75"
   integrity sha512-6ELOkroH0Oz7+OR1SqGMKAC1+ufituqSxDp08AyvrHPSYqK/db+P2kSCJBdqyUXTvt8lPvqlCOidkRhGrNB/+A==
-  dependencies:
-    core-js "^3.8.2"
-
-"@storybook/core-events@^6.3.0":
-  version "6.3.6"
-  resolved "https://registry.yarnpkg.com/@storybook/core-events/-/core-events-6.3.6.tgz#c4a09e2c703170995604d63e46e45adc3c9cd759"
-  integrity sha512-Ut1dz96bJ939oSn5t1ckPXd3WcFejK96Sb3+R/z23vEHUWGBFtygGyw8r/SX/WNDVzGmQU8c+mzJJTZwCBJz8A==
   dependencies:
     core-js "^3.8.2"
 
