@@ -18,9 +18,9 @@ export type TextContent = string;
  */
 export type Source = string;
 /**
- * Optionally display a date for the quote
+ * Optionally display a byline for the quote's source
  */
-export type Date = string;
+export type SourceAddition = string;
 /**
  * Additional css classes attached to the wrapping element
  */
@@ -42,7 +42,7 @@ export interface Quote {
   image?: ImageSource;
   text: TextContent;
   source?: Source;
-  date?: Date;
+  byline?: SourceAddition;
   className?: Class;
   [k: string]: unknown;
 }

@@ -5,7 +5,6 @@ import {
   HTMLAttributes,
 } from 'react';
 import classnames from 'classnames';
-import { format } from 'date-fns';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
 import { Picture } from '@kickstartds/base/lib/picture';
 import {
@@ -14,9 +13,6 @@ import {
 } from '@kickstartds/base/lib/rich-text';
 import { QuoteProps } from './QuoteProps';
 import './quote.scss';
-
-const defaultDateRenderFn: renderFn = (t) =>
-  format(new Date(String(t)), 'dd.MM.yyyy');
 
 interface RenderFunctions {
   renderText?: renderFn;
@@ -30,10 +26,10 @@ const QuoteComponent: FunctionComponent<
   image,
   text,
   source,
-  date,
+  byline,
   renderText = richTextDefaultRenderFn,
   renderSource = defaultRenderFn,
-  renderDate = defaultDateRenderFn,
+  renderByline = defaultRenderFn,
   className,
   ...props
 }) => (
@@ -50,7 +46,7 @@ const QuoteComponent: FunctionComponent<
 
       {source && <div className="c-quote__source">{renderSource(source)}</div>}
 
-      {date && <div className="c-quote__date">{renderDate(date)}</div>}
+      {byline && <div className="c-quote__byline">{renderByline(byline)}</div>}
     </div>
   </div>
 );
