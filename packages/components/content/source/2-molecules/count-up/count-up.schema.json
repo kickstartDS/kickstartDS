@@ -50,6 +50,12 @@
       "title": "Class",
       "description": "Additional css classes attached to the wrapping element",
       "type": "string"
+    },
+    "expand": {
+      "title": "",
+      "description": "See https://github.com/aFarkas/lazysizes/blob/gh-pages/README.md#data-expand-attribute",
+      "type": "integer",
+      "default": -100
     }
   },
   "required": ["to"]

@@ -92,6 +92,10 @@ export interface CountUpProps {
   text?: TextContent;
   link?: Link;
   className?: Class;
+  /**
+   * See https://github.com/aFarkas/lazysizes/blob/gh-pages/README.md#data-expand-attribute
+   */
+  expand?: number;
   [k: string]: unknown;
 }
 /**
