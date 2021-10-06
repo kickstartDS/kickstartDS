@@ -17,7 +17,7 @@ import './quote.scss';
 interface RenderFunctions {
   renderText?: renderFn;
   renderSource?: renderFn;
-  renderDate?: renderFn;
+  renderByline?: renderFn;
 }
 
 const QuoteComponent: FunctionComponent<
