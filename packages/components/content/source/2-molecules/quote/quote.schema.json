@@ -25,12 +25,11 @@
       "title": "Source",
       "description": "Optionally display the source for the quote"
     },
-    "date": {
+    "byline": {
       "type": "string",
-      "format": "date",
-      "default": "2021-03-29",
-      "title": "Date",
-      "description": "Optionally display a date for the quote"
+      "default": "CEO",
+      "title": "Source Addition",
+      "description": "Optionally display a byline for the quote's source"
     },
     "className": {
       "title": "Class",

@@ -25,7 +25,6 @@
     "@kickstartds/core": "^1.4.0",
     "classnames": "^2.2.6",
     "countup.js": "^2.0.8",
-    "date-fns": "^2.24.0",
     "objectFitPolyfill": "^2.3.0"
   },
   "devDependencies": {
