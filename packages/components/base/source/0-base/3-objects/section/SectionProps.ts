@@ -1926,6 +1926,10 @@ export interface CountUp {
   text?: TextContent2;
   link?: Link2;
   className?: Class7;
+  /**
+   * See https://github.com/aFarkas/lazysizes/blob/gh-pages/README.md#data-expand-attribute
+   */
+  expand?: number;
   [k: string]: unknown;
 }
 /**

@@ -40,6 +40,7 @@ const CountUpComponent: FunctionComponent<
   renderText = richTextDefaultRenderFn,
   renderLinkLabel = defaultRenderFn,
   className,
+  expand,
   ...props
 }) => (
   <div className={classnames('c-count-up', className)} {...props}>
@@ -51,7 +52,11 @@ const CountUpComponent: FunctionComponent<
       ''
     )}
 
-    <div className="c-count-up__number" data-component="content.count-up">
+    <div
+      className="c-count-up__number"
+      data-component="content.count-up"
+      data-expand={expand || -100}
+    >
       {renderTo(to)}
     </div>
 
