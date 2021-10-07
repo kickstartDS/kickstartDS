@@ -31,9 +31,9 @@
     "yargs-parser": "^20.2.7"
   },
   "devDependencies": {
-    "@babel/core": "^7.15.5",
+    "@babel/core": "^7.15.8",
     "@kickstartds/storybook-addon-component-tokens": "^0.1.5",
-    "@storybook/addon-a11y": "6.3.8",
+    "@storybook/addon-a11y": "6.3.10",
     "@storybook/addon-essentials": "6.3.8",
     "@storybook/cli": "6.3.8",
     "@storybook/core": "6.3.8",
