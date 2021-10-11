@@ -1,0 +1,79 @@
+@use 'sass:meta';
+@use 'bourbon/core/bourbon';
+@use '@kickstartds/core/source/core/custom-properties';
+@use './combo-box-vars';
+
+$vars: meta.module-variables(combo-box-vars);
+@include custom-properties.styles($vars);
+
+.c-combo-box {
+  z-index: 1;
+
+  .visually-hidden {
+    @include bourbon.hide-visually;
+  }
+
+  input {
+    &::-webkit-calendar-picker-indicator {
+      display: none !important;
+    }
+
+    &[type='number'] {
+      -moz-appearance: textfield;
+
+      &::-webkit-inner-spin-button,
+      &::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    }
+  }
+
+  [role='listbox'] {
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    background: var(--c-combo-box_list--background);
+    border-radius: var(--c-combo-box_list--border-radius);
+    box-shadow: var(--c-combo-box_list--shadow);
+    margin: var(--c-combo-box_list--margin);
+    padding: var(--c-combo-box_list--padding);
+    overflow: auto;
+    max-height: var(--c-combo-box_list--max-height);
+    border: var(--c-form-field--border);
+    border-top: 0;
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    height: var(--c-combo-box_item--height);
+    padding: var(--c-combo-box_item--padding);
+    cursor: pointer;
+    color: var(--c-combo-box_item--color);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+
+    &:hover,
+    &[aria-selected='true'] {
+      color: var(--c-combo-box_item--color-hover);
+      background: var(--c-combo-box_item--background-hover);
+    }
+  }
+
+  mark {
+    background: var(--c-combo-box_mark--background);
+    color: var(--c-combo-box_mark--color);
+  }
+
+  .c-form-field__invalid-message,
+  .c-form-field__hint {
+    z-index: -2;
+  }
+}

@@ -1,0 +1,31 @@
+$name-: 'c-combo-box';
+
+$list: (
+  ':root': (
+    background: var(--color-white),
+    border-radius: 0 0 var(--c-form-field--border-radius)
+      var(--c-form-field--border-radius),
+    shadow: var(--c-form-field_focus--shadow)
+      var(--c-form-field_focus--border-color),
+    max-height: 15rem,
+    margin: calc(var(--c-form-field--border-radius) * -1) 0 0,
+    padding: var(--c-form-field--border-radius) 0 0,
+  ),
+) !default;
+
+$item: (
+  ':root': (
+    color: inherit,
+    color-hover: inherit,
+    background-hover: var(--color-primary-alpha-1),
+    height: 2.5rem,
+    padding: 0 1rem,
+  ),
+) !default;
+
+$mark: (
+  ':root': (
+    color: var(--color-white),
+    background: var(--color-primary),
+  ),
+) !default;
