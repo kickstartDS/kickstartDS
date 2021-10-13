@@ -52,6 +52,8 @@ export type InvalidMessage = string;
  * Help text that gives more context about what a user needs to input
  */
 export type HintMessage = string;
+export type AddAFilterInput = boolean;
+export type PlaceholderForEmptyFilterInput = string;
 /**
  * Additional css classes attached to the select element
  */
@@ -70,6 +72,8 @@ export interface SelectFieldProps {
   invalid?: Invalid;
   invalidMessage?: InvalidMessage;
   hint?: HintMessage;
+  filter?: AddAFilterInput;
+  filterPlaceholder?: PlaceholderForEmptyFilterInput;
   className?: Class;
   [k: string]: unknown;
 }

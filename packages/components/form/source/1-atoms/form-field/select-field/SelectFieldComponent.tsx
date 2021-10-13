@@ -10,6 +10,8 @@ import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
 import { Icon } from '@kickstartds/base/lib/icon';
 import { SelectFieldProps } from './SelectFieldProps';
 import '../form-field.scss';
+import './combo-box.scss';
+import './lazyComboBox.js';
 
 interface RenderFunctions {
   renderLabel?: renderFn;
@@ -27,12 +29,18 @@ const SelectFieldComponent: ForwardRefRenderFunction<
     invalidMessage,
     hint,
     options,
+    filter,
+    filterPlaceholder,
     className,
     ...props
   },
   ref
 ) => (
-  <label className="c-form-field">
+  <label
+    className={classnames('c-form-field', filter && 'c-combo-box lazyload')}
+    data-component={filter ? 'form.combo-box' : null}
+    data-filter-placeholder={filter ? filterPlaceholder : null}
+  >
     <span
       className={classnames('c-form-field__label', {
         'c-form-field__label--hidden': hideLabel,
@@ -41,7 +49,7 @@ const SelectFieldComponent: ForwardRefRenderFunction<
       {renderLabel(label)}
     </span>
     <div className="c-form-field__field">
-      <Icon icon="chevron-down" aria-hidden="true" focusable="false" />
+      <Icon icon="chevron-down" aria-hidden={true} focusable={false} />
       <select
         className={classnames(
           'c-form-field__input',

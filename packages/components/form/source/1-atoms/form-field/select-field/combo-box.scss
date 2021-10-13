@@ -13,20 +13,9 @@ $vars: meta.module-variables(combo-box-vars);
     @include bourbon.hide-visually;
   }
 
-  input {
-    &::-webkit-calendar-picker-indicator {
-      display: none !important;
-    }
-
-    &[type='number'] {
-      -moz-appearance: textfield;
-
-      &::-webkit-inner-spin-button,
-      &::-webkit-outer-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-      }
-    }
+  select {
+    position: absolute;
+    visibility: hidden;
   }
 
   [role='listbox'] {
@@ -72,8 +61,14 @@ $vars: meta.module-variables(combo-box-vars);
     color: var(--c-combo-box_mark--color);
   }
 
-  .c-form-field__invalid-message,
-  .c-form-field__hint {
-    z-index: -2;
+  .c-form-field {
+    &__input {
+      padding-right: calc(var(--c-form-field_icon--size) + 1rem);
+    }
+
+    &__invalid-message,
+    &__hint {
+      z-index: -2;
+    }
   }
 }

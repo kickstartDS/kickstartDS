@@ -37,7 +37,18 @@
           }
         },
         "required": ["label"]
-      }
+      },
+      "default": [
+        { "label": "Choose an option", "disabled": true, "selected": true },
+        { "label": "CSS" },
+        { "label": "JavaScript" },
+        { "label": "HTML" },
+        { "label": "SVG" },
+        { "label": "ARIA" },
+        { "label": "MathML" },
+        { "label": "SCSS" },
+        { "label": "React" }
+      ]
     },
     "hideLabel": {
       "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/hideLabel"
@@ -50,6 +61,16 @@
     },
     "hint": {
       "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/hint"
+    },
+    "filter": {
+      "title": "Add a filter input",
+      "type": "boolean",
+      "default": false
+    },
+    "filterPlaceholder": {
+      "title": "Placeholder for empty filter input",
+      "type": "string",
+      "default": "Choose an option"
     },
     "className": {
       "title": "Class",
