@@ -25,7 +25,7 @@
     "@kickstartds/core": "^1.4.0",
     "classnames": "^2.2.6",
     "css-element-queries": "^1.2.3",
-    "date-fns": "^2.24.0",
+    "date-fns": "^2.25.0",
     "focus-visible": "^5.0.2",
     "formbouncerjs": "^1.4.6",
     "lodash-es": "^4.17.21",
@@ -37,7 +37,7 @@
     "stickybits": "^3.7.0"
   },
   "devDependencies": {
-    "@types/react": "^17.0.27",
+    "@types/react": "^17.0.29",
     "bourbon": "^7.0.0",
     "sass-yiq": "^1.0.0"
   },
