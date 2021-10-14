@@ -28,7 +28,19 @@ export type Placeholder = string;
 /**
  * The type of input to render
  */
-export type Type = 'text' | 'search' | 'url' | 'tel' | 'email' | 'password';
+export type Type =
+  | 'date'
+  | 'datetime-local'
+  | 'email'
+  | 'month'
+  | 'number'
+  | 'password'
+  | 'search'
+  | 'tel'
+  | 'text'
+  | 'time'
+  | 'url'
+  | 'week';
 /**
  * Hints at the type of data that might be entered by the user while editing the element or its contents
  */

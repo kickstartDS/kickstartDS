@@ -24,7 +24,20 @@
       "title": "Type",
       "description": "The type of input to render",
       "type": "string",
-      "enum": ["text", "search", "url", "tel", "email", "password"],
+      "enum": [
+        "date",
+        "datetime-local",
+        "email",
+        "month",
+        "number",
+        "password",
+        "search",
+        "tel",
+        "text",
+        "time",
+        "url",
+        "week"
+      ],
       "default": "text"
     },
     "inputMode": {
