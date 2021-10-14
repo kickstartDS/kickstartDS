@@ -42,7 +42,7 @@
     "@types/react-dom": "^17.0.9",
     "@whitespace/storybook-addon-html": "git+https://github.com/lmestel/storybook-addon-html.git#v5.3.0",
     "chromatic": "^6.0.4",
-    "storybook-builder-vite": "0.0.12",
+    "storybook-builder-vite": "0.1.1",
     "storybook-dark-mode": "^1.0.8",
     "vite": "^2.6.7"
   }
