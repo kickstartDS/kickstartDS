@@ -15,22 +15,22 @@ release_branches_only: &release_branches_only
 
 aliases:
   - &save-cache-yarn
-    key: yarn-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
+    key: yarn-{{ .Environment.CACHE_VERSION }}-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
     paths:
       - .yarn-cache
   - &restore-cache-yarn
     keys:
-      - yarn-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
-      - yarn-{{ checksum "yarn.lock" }}
+      - yarn-{{ .Environment.CACHE_VERSION }}-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
+      - yarn-{{ .Environment.CACHE_VERSION }}-{{ checksum "yarn.lock" }}
       - yarn-
   - &save-cache-node
-    key: node-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
+    key: node-{{ .Environment.CACHE_VERSION }}-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
     paths:
       - node_modules
   - &restore-cache-node
     keys:
-      - node-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
-      - node-{{ checksum "yarn.lock" }}
+      - node-{{ .Environment.CACHE_VERSION }}-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
+      - node-{{ .Environment.CACHE_VERSION }}-{{ checksum "yarn.lock" }}
       - node-
   - &attach_workspace
     attach_workspace:
