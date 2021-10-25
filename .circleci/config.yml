@@ -22,7 +22,7 @@ aliases:
     keys:
       - yarn-{{ .Environment.CACHE_VERSION }}-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
       - yarn-{{ .Environment.CACHE_VERSION }}-{{ checksum "yarn.lock" }}
-      - yarn-{{ .Environment.CACHE_VERSION }}
+      - yarn-{{ .Environment.CACHE_VERSION }}-
   - &save-cache-node
     key: node-{{ .Environment.CACHE_VERSION }}-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
     paths:
@@ -31,7 +31,7 @@ aliases:
     keys:
       - node-{{ .Environment.CACHE_VERSION }}-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
       - node-{{ .Environment.CACHE_VERSION }}-{{ checksum "yarn.lock" }}
-      - node-{{ .Environment.CACHE_VERSION }}
+      - node-{{ .Environment.CACHE_VERSION }}-
   - &attach_workspace
     attach_workspace:
       at: /mnt/ramdisk
