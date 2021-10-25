@@ -22,7 +22,6 @@ aliases:
     keys:
       - yarn-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
       - yarn-{{ checksum "yarn.lock" }}
-      - yarn-
   - &save-cache-node
     key: node-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
     paths:
