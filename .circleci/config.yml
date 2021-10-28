@@ -15,23 +15,22 @@ release_branches_only: &release_branches_only
 
 aliases:
   - &save-cache-yarn
-    key: yarn-{{ .Environment.CACHE_VERSION }}-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
+    key: yarn-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
     paths:
       - .yarn-cache
   - &restore-cache-yarn
     keys:
-      - yarn-{{ .Environment.CACHE_VERSION }}-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
-      - yarn-{{ .Environment.CACHE_VERSION }}-{{ checksum "yarn.lock" }}
-      - yarn-{{ .Environment.CACHE_VERSION }}-
+      - yarn-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
+      - yarn-{{ checksum "yarn.lock" }}
   - &save-cache-node
-    key: node-{{ .Environment.CACHE_VERSION }}-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
+    key: node-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
     paths:
       - node_modules
   - &restore-cache-node
     keys:
-      - node-{{ .Environment.CACHE_VERSION }}-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
-      - node-{{ .Environment.CACHE_VERSION }}-{{ checksum "yarn.lock" }}
-      - node-{{ .Environment.CACHE_VERSION }}-
+      - node-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
+      - node-{{ checksum "yarn.lock" }}
+      - node-
   - &attach_workspace
     attach_workspace:
       at: /mnt/ramdisk
@@ -43,9 +42,6 @@ jobs:
       - checkout
       - restore_cache: *restore-cache-yarn
       - restore_cache: *restore-cache-node
-      - run:
-          name: Set Yarn Cache Directory
-          command: yarn config set cache-folder /mnt/ramdisk/.yarn-cache
       - run:
           name: Install Dependencies
           command: yarn install --frozen-lockfile --cache-folder /mnt/ramdisk/.yarn-cache
