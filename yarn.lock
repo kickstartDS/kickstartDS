@@ -5730,7 +5730,7 @@ chownr@^2.0.0:
   resolved "https://registry.yarnpkg.com/chownr/-/chownr-2.0.0.tgz#15bfbe53d2eab4cf70f18a8cd68ebe5b3cb1dece"
   integrity sha512-bIomtDF5KGpdogkLd9VspvFzk9KfpyyGlS8YFVZl7TGPBHL5snIOnxeshwVgPteQ9b4Eydl+pVbIyE1DcvCWgQ==
 
-chromatic@^6.0.4:
+chromatic@^6.0.5:
   version "6.0.5"
   resolved "https://registry.yarnpkg.com/chromatic/-/chromatic-6.0.5.tgz#fa5612bcf498ebb3dc6bbdd633b16ad9c53ed3d3"
   integrity sha512-jYoU9WOLX8hx6oRWYgr2aH1O46BpWMdBIZvON7SgUTxh9fFpsQqQ9dp2tvowwpsw/d73DGYnpX0+h/St78+kXg==
@@ -7709,7 +7709,7 @@ esbuild-windows-arm64@0.13.12:
   resolved "https://registry.yarnpkg.com/esbuild-windows-arm64/-/esbuild-windows-arm64-0.13.12.tgz#782c5a8bd6d717ea55aaafe648f9926ca36a4a88"
   integrity sha512-2tTv/BpYRIvuwHpp2M960nG7uvL+d78LFW/ikPItO+2GfK51CswIKSetSpDii+cjz8e9iSPgs+BU4o8nWICBwQ==
 
-esbuild@^0.13.2, esbuild@^0.13.9:
+esbuild@^0.13.12, esbuild@^0.13.2:
   version "0.13.12"
   resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.13.12.tgz#9cac641594bf03cf34145258c093d743ebbde7ca"
   integrity sha512-vTKKUt+yoz61U/BbrnmlG9XIjwpdIxmHB8DlPR0AAW6OdS+nBQBci6LUHU2q9WbBobMEIQxxDpKbkmOGYvxsow==
@@ -15967,7 +15967,7 @@ storybook-dark-mode@^1.0.8:
     fast-deep-equal "^3.0.0"
     memoizerific "^1.11.3"
 
-storybook-design-token@^1.2.3:
+storybook-design-token@^1.3.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/storybook-design-token/-/storybook-design-token-1.3.0.tgz#7d78bf875a5de6bce1d60d93f2b5976b168b8fde"
   integrity sha512-Yv6lV/zQomFRZzPY5I7hVjXEhNJC6D7y5MEU0+sZqQASz/VPJRNJ3XaT49GjulfWEJi9EXTgWt/CxHb9riKI/Q==
