@@ -31,7 +31,7 @@
     "yargs-parser": "^20.2.7"
   },
   "devDependencies": {
-    "@babel/core": "^7.15.8",
+    "@babel/core": "^7.16.0",
     "@kickstartds/storybook-addon-component-tokens": "^0.1.5",
     "@storybook/addon-a11y": "6.3.12",
     "@storybook/addon-essentials": "6.3.12",
@@ -44,6 +44,6 @@
     "chromatic": "^6.0.5",
     "storybook-builder-vite": "0.0.12",
     "storybook-dark-mode": "^1.0.8",
-    "vite": "^2.6.12"
+    "vite": "^2.6.13"
   }
 }
