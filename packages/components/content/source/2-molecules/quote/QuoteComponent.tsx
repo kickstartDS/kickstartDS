@@ -3,9 +3,9 @@ import {
   FunctionComponent,
   useContext,
   HTMLAttributes,
+  createElement,
 } from 'react';
 import classnames from 'classnames';
-import { format } from 'date-fns';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
 import { Picture } from '@kickstartds/base/lib/picture';
 import {
@@ -15,13 +15,10 @@ import {
 import { QuoteProps } from './QuoteProps';
 import './quote.scss';
 
-const defaultDateRenderFn: renderFn = (t) =>
-  format(new Date(String(t)), 'dd.MM.yyyy');
-
 interface RenderFunctions {
   renderText?: renderFn;
   renderSource?: renderFn;
-  renderDate?: renderFn;
+  renderByline?: renderFn;
 }
 
 const QuoteComponent: FunctionComponent<
@@ -30,10 +27,10 @@ const QuoteComponent: FunctionComponent<
   image,
   text,
   source,
-  date,
+  byline,
   renderText = richTextDefaultRenderFn,
   renderSource = defaultRenderFn,
-  renderDate = defaultDateRenderFn,
+  renderByline = defaultRenderFn,
   className,
   ...props
 }) => (
@@ -50,14 +47,12 @@ const QuoteComponent: FunctionComponent<
 
       {source && <div className="c-quote__source">{renderSource(source)}</div>}
 
-      {date && <div className="c-quote__date">{renderDate(date)}</div>}
+      {byline && <div className="c-quote__byline">{renderByline(byline)}</div>}
     </div>
   </div>
 );
 
 export const QuoteContextDefault = QuoteComponent;
 export const QuoteContext = createContext(QuoteContextDefault);
-export const Quote: typeof QuoteContextDefault = (props) => {
-  const Component = useContext(QuoteContext);
-  return <Component {...props} />;
-};
+export const Quote: typeof QuoteContextDefault = (props) =>
+  createElement(useContext(QuoteContext), props);

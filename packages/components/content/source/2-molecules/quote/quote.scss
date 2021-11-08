@@ -55,10 +55,10 @@ $vars: meta.module-variables(quote-vars);
     text-transform: var(--c-quote_source--text-transform);
   }
 
-  &__date {
-    font: var(--c-quote_date--font-style, normal)
-      var(--c-quote_date--font-weight, var(--font-weight-bold))
-      var(--c-quote_date--font, var(--font-ui-s));
-    text-transform: var(--c-quote_date--text-transform);
+  &__byline {
+    font: var(--c-quote_byline--font-style, normal)
+      var(--c-quote_byline--font-weight, var(--font-weight-bold))
+      var(--c-quote_byline--font, var(--font-ui-s));
+    text-transform: var(--c-quote_byline--text-transform);
   }
 }

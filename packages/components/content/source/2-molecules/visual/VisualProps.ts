@@ -83,6 +83,10 @@ export type BottomSpacing = 'none' | 'small' | 'large';
  */
 export type PageHeader = boolean;
 /**
+ * Add additional css classes that should be applied to the headline
+ */
+export type AdditionalClasses = string;
+/**
  * Text box copy text
  */
 export type Text1 = string;
@@ -111,7 +115,7 @@ export type ButtonSize = 'small' | 'medium' | 'large';
 /**
  * Add additional css classes that should be applied to the button
  */
-export type AdditionalClasses = string;
+export type AdditionalClasses1 = string;
 export type IconIdentifier = string;
 export type AriaRole = string;
 export type AdditionalClass = string;
@@ -171,7 +175,7 @@ export type Inbox = boolean;
  * Show skip button
  */
 export type SkipButton = boolean;
-export type AdditionalClasses1 = string;
+export type AdditionalClasses2 = string;
 
 /**
  * visual
@@ -184,7 +188,7 @@ export interface VisualProps {
   backgroundColor?: CustomBackgroundColor;
   inbox?: Inbox;
   skipButton?: SkipButton;
-  className?: AdditionalClasses1;
+  className?: AdditionalClasses2;
 }
 /**
  * Wrapper for all media types
@@ -239,6 +243,7 @@ export interface Headline {
   subheadline?: Subheadline;
   spaceAfter: BottomSpacing;
   pageHeader?: PageHeader;
+  className?: AdditionalClasses;
   [k: string]: unknown;
 }
 /**
@@ -249,7 +254,7 @@ export interface Link {
   variant: ButtonStyle;
   label: Label;
   size: ButtonSize;
-  className?: AdditionalClasses;
+  className?: AdditionalClasses1;
   icon?: Icon;
   iconBefore?: IconBeforeButton;
   iconAfter?: IconAfterButton;

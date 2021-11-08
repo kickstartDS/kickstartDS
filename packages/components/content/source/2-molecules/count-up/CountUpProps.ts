@@ -21,6 +21,10 @@ export type Topic = string;
  */
 export type TextContent = string;
 /**
+ * Toggles visibility of the link
+ */
+export type DisplayLink = boolean;
+/**
  * Text used on button
  */
 export type Label = string;
@@ -73,6 +77,10 @@ export type ButtonHref = string;
  * Open link in new Tab
  */
 export type OpenLinkInNewTab = boolean;
+/**
+ * Additional css classes attached to the wrapping element
+ */
+export type Class = string;
 
 /**
  * Component to to increase a number up to a final value
@@ -82,7 +90,12 @@ export interface CountUpProps {
   icon?: Icon;
   topic?: Topic;
   text?: TextContent;
-  link?: LinkButton;
+  link?: Link;
+  className?: Class;
+  /**
+   * See https://github.com/aFarkas/lazysizes/blob/gh-pages/README.md#data-expand-attribute
+   */
+  expand?: number;
   [k: string]: unknown;
 }
 /**
@@ -97,7 +110,8 @@ export interface Icon {
 /**
  * link-button
  */
-export interface LinkButton {
+export interface Link {
+  enabled?: DisplayLink;
   label: Label;
   variant: ButtonStyle;
   size: ButtonSize;

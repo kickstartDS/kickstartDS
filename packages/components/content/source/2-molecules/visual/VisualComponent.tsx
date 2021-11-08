@@ -3,6 +3,7 @@ import {
   createContext,
   useContext,
   HTMLAttributes,
+  createElement,
 } from 'react';
 import classnames from 'classnames';
 import { Icon } from '@kickstartds/base/lib/icon';
@@ -57,7 +58,5 @@ const VisualComponent: FunctionComponent<
 
 export const VisualContextDefault = VisualComponent;
 export const VisualContext = createContext(VisualContextDefault);
-export const Visual: typeof VisualContextDefault = (props) => {
-  const Component = useContext(VisualContext);
-  return <Component {...props} />;
-};
+export const Visual: typeof VisualContextDefault = (props) =>
+  createElement(useContext(VisualContext), props);

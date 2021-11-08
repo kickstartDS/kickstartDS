@@ -19,23 +19,23 @@
     "bundle/*.js"
   ],
   "dependencies": {
-    "@babel/runtime": "^7.15.4",
+    "@babel/runtime": "^7.16.0",
     "bourbon": "^7.0.0",
     "del": "^6.0.0",
     "dependency-graph": "^0.11.0",
-    "esbuild": "^0.12.25",
+    "esbuild": "^0.13.12",
     "fast-glob": "^3.2.7",
     "fs-extra": "^10.0.0",
     "htm": "^3.1.0",
     "lazysizes": "^5.3.2",
     "lodash-es": "^4.17.21",
     "pubsub-js": "^1.9.3",
-    "sass": "^1.39.0",
+    "sass": "^1.43.4",
     "vhtml": "^2.2.0"
   },
   "devDependencies": {
     "include-media": "^1.4.9",
-    "storybook-design-token": "^1.2.0"
+    "storybook-design-token": "^1.4.0"
   },
   "peerDependencies": {
     "react": "^17.0.2"

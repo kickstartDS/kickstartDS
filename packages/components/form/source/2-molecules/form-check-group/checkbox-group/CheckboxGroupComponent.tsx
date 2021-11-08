@@ -4,6 +4,7 @@ import {
   createContext,
   useContext,
   HTMLAttributes,
+  createElement,
 } from 'react';
 import classnames from 'classnames';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
@@ -50,8 +51,6 @@ const CheckboxGroupComponent: FunctionComponent<
 export const CheckboxGroupContextDefault = CheckboxGroupComponent;
 export const CheckboxGroupContext = createContext(CheckboxGroupContextDefault);
 export const CheckboxGroup: typeof CheckboxGroupContextDefault = forwardRef(
-  (props, ref) => {
-    const Component = useContext(CheckboxGroupContext);
-    return <Component {...props} ref={ref} />;
-  }
+  (props, ref) =>
+    createElement(useContext(CheckboxGroupContext), { ...props, ref })
 );

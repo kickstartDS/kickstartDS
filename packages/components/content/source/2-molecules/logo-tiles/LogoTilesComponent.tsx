@@ -3,6 +3,7 @@ import {
   FunctionComponent,
   useContext,
   HTMLAttributes,
+  createElement,
 } from 'react';
 import classnames from 'classnames';
 import { Picture } from '@kickstartds/base/lib/picture';
@@ -24,7 +25,5 @@ const LogoTilesComponent: FunctionComponent<
 
 export const LogoTilesContextDefault = LogoTilesComponent;
 export const LogoTilesContext = createContext(LogoTilesContextDefault);
-export const LogoTiles: typeof LogoTilesContextDefault = (props) => {
-  const Component = useContext(LogoTilesContext);
-  return <Component {...props} />;
-};
+export const LogoTiles: typeof LogoTilesContextDefault = (props) =>
+  createElement(useContext(LogoTilesContext), props);

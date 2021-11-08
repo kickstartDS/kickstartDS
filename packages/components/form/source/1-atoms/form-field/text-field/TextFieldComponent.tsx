@@ -4,6 +4,7 @@ import {
   createContext,
   useContext,
   HTMLAttributes,
+  createElement,
 } from 'react';
 import classnames from 'classnames';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
@@ -28,6 +29,7 @@ const TextFieldComponent: ForwardRefRenderFunction<
     invalidMessage,
     hint,
     icon,
+    className,
     ...props
   },
   ref
@@ -43,9 +45,13 @@ const TextFieldComponent: ForwardRefRenderFunction<
     <div className="c-form-field__field">
       {icon && <Icon icon={icon} aria-hidden="true" focusable="false" />}
       <input
-        className={classnames('c-form-field__input', {
-          'c-form-field__input--is-invalid': invalid,
-        })}
+        className={classnames(
+          'c-form-field__input',
+          {
+            'c-form-field__input--is-invalid': invalid,
+          },
+          className
+        )}
         type={type}
         ref={ref}
         {...props}
@@ -63,8 +69,5 @@ const TextFieldComponent: ForwardRefRenderFunction<
 export const TextFieldContextDefault = forwardRef(TextFieldComponent);
 export const TextFieldContext = createContext(TextFieldContextDefault);
 export const TextField: typeof TextFieldContextDefault = forwardRef(
-  (props, ref) => {
-    const Component = useContext(TextFieldContext);
-    return <Component {...props} ref={ref} />;
-  }
+  (props, ref) => createElement(useContext(TextFieldContext), { ...props, ref })
 );

@@ -1,4 +1,11 @@
-import { createContext, useContext, FunctionComponent } from 'react';
+import {
+  createContext,
+  useContext,
+  FunctionComponent,
+  HTMLAttributes,
+  createElement,
+} from 'react';
+import classNames from 'classnames';
 import { format } from 'date-fns';
 import { Headline } from '@kickstartds/base/lib/headline';
 import { Picture } from '@kickstartds/base/lib/picture';
@@ -6,14 +13,18 @@ import { TagLabelContainer } from '@kickstartds/base/lib/tag-label-container';
 import { PostHeadProps } from './PostHeadProps';
 import './post-head.scss';
 
-const PostHeadComponent: FunctionComponent<PostHeadProps> = ({
+const PostHeadComponent: FunctionComponent<
+  PostHeadProps & HTMLAttributes<HTMLDivElement>
+> = ({
   date,
   categories,
   headline,
   image,
   imageAlignment,
+  className,
+  ...props
 }) => (
-  <div className="c-post-head">
+  <div className={classNames('c-post-head', className)} {...props}>
     <div className="c-post-head__meta">
       {date && (
         <time
@@ -49,7 +60,5 @@ const PostHeadComponent: FunctionComponent<PostHeadProps> = ({
 
 export const PostHeadContextDefault = PostHeadComponent;
 export const PostHeadContext = createContext(PostHeadContextDefault);
-export const PostHead: typeof PostHeadContextDefault = (props) => {
-  const Component = useContext(PostHeadContext);
-  return <Component {...props} />;
-};
+export const PostHead: typeof PostHeadContextDefault = (props) =>
+  createElement(useContext(PostHeadContext), props);

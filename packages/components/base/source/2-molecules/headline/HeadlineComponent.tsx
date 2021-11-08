@@ -2,6 +2,7 @@ import {
   FunctionComponent,
   createContext,
   useContext,
+  createElement,
   HTMLAttributes,
 } from 'react';
 import classnames from 'classnames';
@@ -60,7 +61,5 @@ const HeadlineComponent: FunctionComponent<
 
 export const HeadlineContextDefault = HeadlineComponent;
 export const HeadlineContext = createContext(HeadlineContextDefault);
-export const Headline: typeof HeadlineContextDefault = (props) => {
-  const Component = useContext(HeadlineContext);
-  return <Component {...props} />;
-};
+export const Headline: typeof HeadlineContextDefault = (props) =>
+  createElement(useContext(HeadlineContext), props);

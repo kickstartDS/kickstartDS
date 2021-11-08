@@ -18,9 +18,13 @@ export type TextContent = string;
  */
 export type Source = string;
 /**
- * Optionally display a date for the quote
+ * Optionally display a byline for the quote's source
  */
-export type Date = string;
+export type SourceAddition = string;
+/**
+ * Additional css classes attached to the wrapping element
+ */
+export type Class = string;
 
 /**
  * Component to display a rich quote
@@ -29,6 +33,7 @@ export interface QuoteProps {
   image?: ImageSource;
   text: TextContent;
   source?: Source;
-  date?: Date;
+  byline?: SourceAddition;
+  className?: Class;
   [k: string]: unknown;
 }

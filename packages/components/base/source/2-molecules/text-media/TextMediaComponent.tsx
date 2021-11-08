@@ -1,4 +1,10 @@
-import { FunctionComponent, HTMLAttributes } from 'react';
+import {
+  FunctionComponent,
+  HTMLAttributes,
+  createContext,
+  useContext,
+  createElement,
+} from 'react';
 import classnames from 'classnames';
 import { renderFn } from '@kickstartds/core/lib/core';
 import { Picture } from '../../1-atoms/image/picture';
@@ -88,7 +94,7 @@ const Media: FunctionComponent<{ media: IMedia }> = ({ media }) =>
     </div>
   ) : null;
 
-export const TextMedia: FunctionComponent<
+export const TextMediaComponent: FunctionComponent<
   TextMediaProps & RenderFunctions & HTMLAttributes<HTMLDivElement>
 > = ({
   text = '',
@@ -137,3 +143,8 @@ export const TextMedia: FunctionComponent<
     )}
   </div>
 );
+
+export const TextMediaContextDefault = TextMediaComponent;
+export const TextMediaContext = createContext(TextMediaContextDefault);
+export const TextMedia: typeof TextMediaContextDefault = (props) =>
+  createElement(useContext(TextMediaContext), props);

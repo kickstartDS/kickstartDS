@@ -75,6 +75,10 @@ export type OpenLinkInNewTab = boolean;
  */
 export type HideLink = boolean;
 /**
+ * Additional css classes attached to the box
+ */
+export type Class = string;
+/**
  * Select an image to display inside the teaser box, at the top
  */
 export type ImageSource = string;
@@ -95,6 +99,7 @@ export interface TeaserBoxProps {
   text?: TextContent;
   darkStyle?: DarkVariant;
   link?: LinkButton;
+  className?: Class;
   image?: ImageSource;
   ratio: ImageRatio;
   imageSpacing?: ImageSpacing;

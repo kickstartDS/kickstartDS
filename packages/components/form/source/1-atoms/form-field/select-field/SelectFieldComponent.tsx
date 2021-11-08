@@ -4,6 +4,7 @@ import {
   createContext,
   useContext,
   HTMLAttributes,
+  createElement,
 } from 'react';
 import classnames from 'classnames';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
@@ -27,6 +28,7 @@ const SelectFieldComponent: ForwardRefRenderFunction<
     invalidMessage,
     hint,
     options,
+    className,
     ...props
   },
   ref
@@ -42,9 +44,13 @@ const SelectFieldComponent: ForwardRefRenderFunction<
     <div className="c-form-field__field">
       <Icon icon="chevron-down" aria-hidden="true" focusable="false" />
       <select
-        className={classnames('c-form-field__input', {
-          'c-form-field__input--is-invalid': invalid,
-        })}
+        className={classnames(
+          'c-form-field__input',
+          {
+            'c-form-field__input--is-invalid': invalid,
+          },
+          className
+        )}
         ref={ref}
         {...props}
       >
@@ -73,8 +79,6 @@ const SelectFieldComponent: ForwardRefRenderFunction<
 export const SelectFieldContextDefault = forwardRef(SelectFieldComponent);
 export const SelectFieldContext = createContext(SelectFieldContextDefault);
 export const SelectField: typeof SelectFieldContextDefault = forwardRef(
-  (props, ref) => {
-    const Component = useContext(SelectFieldContext);
-    return <Component {...props} ref={ref} />;
-  }
+  (props, ref) =>
+    createElement(useContext(SelectFieldContext), { ...props, ref })
 );

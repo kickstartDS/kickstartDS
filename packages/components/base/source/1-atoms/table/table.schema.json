@@ -63,6 +63,11 @@
       "type": "string",
       "enum": ["border", "zebra"],
       "default": "border"
+    },
+    "className": {
+      "type": "string",
+      "title": "Additional Classes",
+      "description": "Add additional css classes that should be applied to the table"
     }
   }
 }

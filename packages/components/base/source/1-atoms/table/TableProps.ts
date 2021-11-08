@@ -20,6 +20,10 @@ export type TableRows = string[][];
  */
 export type Responsive = boolean;
 export type TableVariant = 'border' | 'zebra';
+/**
+ * Add additional css classes that should be applied to the table
+ */
+export type AdditionalClasses = string;
 
 /**
  * Table
@@ -31,5 +35,6 @@ export interface TableProps {
   rows?: TableRows;
   responsive?: Responsive;
   variant?: TableVariant;
+  className?: AdditionalClasses;
   [k: string]: unknown;
 }

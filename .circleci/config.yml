@@ -22,7 +22,6 @@ aliases:
     keys:
       - yarn-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
       - yarn-{{ checksum "yarn.lock" }}
-      - yarn-
   - &save-cache-node
     key: node-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
     paths:
@@ -43,9 +42,6 @@ jobs:
       - checkout
       - restore_cache: *restore-cache-yarn
       - restore_cache: *restore-cache-node
-      - run:
-          name: Set Yarn Cache Directory
-          command: yarn config set cache-folder /mnt/ramdisk/.yarn-cache
       - run:
           name: Install Dependencies
           command: yarn install --frozen-lockfile --cache-folder /mnt/ramdisk/.yarn-cache

@@ -3,6 +3,7 @@ import {
   FunctionComponent,
   useContext,
   HTMLAttributes,
+  createElement,
 } from 'react';
 import classnames from 'classnames';
 import { Picture } from '@kickstartds/base/lib/picture';
@@ -62,7 +63,5 @@ const ContactComponent: FunctionComponent<
 
 export const ContactContextDefault = ContactComponent;
 export const ContactContext = createContext(ContactContextDefault);
-export const Contact: typeof ContactContextDefault = (props) => {
-  const Component = useContext(ContactContext);
-  return <Component {...props} />;
-};
+export const Contact: typeof ContactContextDefault = (props) =>
+  createElement(useContext(ContactContext), props);

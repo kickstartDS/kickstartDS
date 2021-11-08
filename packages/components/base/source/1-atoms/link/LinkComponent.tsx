@@ -5,6 +5,7 @@ import {
   createContext,
   useContext,
   Ref,
+  createElement,
 } from 'react';
 
 type LinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
@@ -22,7 +23,6 @@ const LinkComponent: ForwardRefRenderFunction<HTMLAnchorElement, LinkProps> = (
 
 export const LinkContextDefault = forwardRef(LinkComponent);
 export const LinkContext = createContext(LinkContextDefault);
-export const Link: typeof LinkContextDefault = forwardRef((props, ref) => {
-  const Compnent = useContext(LinkContext);
-  return <Compnent {...props} ref={ref} />;
-});
+export const Link: typeof LinkContextDefault = forwardRef((props, ref) =>
+  createElement(useContext(LinkContext), { ...props, ref })
+);

@@ -118,8 +118,16 @@ export type LinkTarget = string;
  * Choose whether the element is removable or not
  */
 export type Removable = boolean;
+/**
+ * Add additional css classes that should be applied to the label
+ */
+export type AdditionalClasses1 = string;
 export type Categories = TagLabel[];
 export type UniqueId = number;
+/**
+ * Additional css classes attached to the wrapping element
+ */
+export type Class = string;
 
 /**
  * Post Teaser
@@ -133,6 +141,7 @@ export interface PostTeaserProps {
   body?: Bodytext;
   categories?: Categories;
   index: UniqueId;
+  className?: Class;
   [k: string]: unknown;
 }
 /**
@@ -171,4 +180,5 @@ export interface TagLabel {
   size: Size;
   link?: LinkTarget;
   removable?: Removable;
+  className?: AdditionalClasses1;
 }

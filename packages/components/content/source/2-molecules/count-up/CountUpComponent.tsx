@@ -3,6 +3,7 @@ import {
   FunctionComponent,
   useContext,
   HTMLAttributes,
+  createElement,
 } from 'react';
 import classnames from 'classnames';
 import {
@@ -40,6 +41,7 @@ const CountUpComponent: FunctionComponent<
   renderText = richTextDefaultRenderFn,
   renderLinkLabel = defaultRenderFn,
   className,
+  expand,
   ...props
 }) => (
   <div className={classnames('c-count-up', className)} {...props}>
@@ -51,7 +53,11 @@ const CountUpComponent: FunctionComponent<
       ''
     )}
 
-    <div className="c-count-up__number" data-component="content.count-up">
+    <div
+      className="c-count-up__number"
+      data-component="content.count-up"
+      data-expand={expand || -100}
+    >
       {renderTo(to)}
     </div>
 
@@ -65,7 +71,7 @@ const CountUpComponent: FunctionComponent<
       />
     )}
 
-    {link ? (
+    {link && link.enabled ? (
       <div className="c-count-up__link">
         <LinkButton {...link} renderLabel={renderLinkLabel} />
       </div>
@@ -77,7 +83,5 @@ const CountUpComponent: FunctionComponent<
 
 export const CountUpContextDefault = CountUpComponent;
 export const CountUpContext = createContext(CountUpContextDefault);
-export const CountUp: typeof CountUpContextDefault = (props) => {
-  const Component = useContext(CountUpContext);
-  return <Component {...props} />;
-};
+export const CountUp: typeof CountUpContextDefault = (props) =>
+  createElement(useContext(CountUpContext), props);

@@ -18,9 +18,17 @@ export type TextContent = string;
  */
 export type Source = string;
 /**
- * Optionally display a date for the quote
+ * Optionally display a byline for the quote's source
  */
-export type Date = string;
+export type SourceAddition = string;
+/**
+ * Additional css classes attached to the wrapping element
+ */
+export type Class = string;
+/**
+ * Additional css classes attached to the slider
+ */
+export type Class1 = string;
 /**
  * Text used on button
  */
@@ -167,6 +175,10 @@ export type LinkTarget = string;
  * Choose whether the element is removable or not
  */
 export type Removable = boolean;
+/**
+ * Add additional css classes that should be applied to the label
+ */
+export type AdditionalClasses2 = string;
 export type Height = 'small' | 'default' | 'fullImage' | 'fullScreen';
 /**
  * Choose a media type between image, video and none
@@ -245,6 +257,10 @@ export type BottomSpacing = 'none' | 'small' | 'large';
  */
 export type PageHeader = boolean;
 /**
+ * Add additional css classes that should be applied to the headline
+ */
+export type AdditionalClasses3 = string;
+/**
  * Text box copy text
  */
 export type Text1 = string;
@@ -273,7 +289,7 @@ export type ButtonSize2 = 'small' | 'medium' | 'large';
 /**
  * Add additional css classes that should be applied to the button
  */
-export type AdditionalClasses2 = string;
+export type AdditionalClasses4 = string;
 export type IconIdentifier2 = string;
 export type AriaRole2 = string;
 export type AdditionalClass2 = string;
@@ -333,7 +349,7 @@ export type Inbox = boolean;
  * Show skip button
  */
 export type SkipButton = boolean;
-export type AdditionalClasses3 = string;
+export type AdditionalClasses5 = string;
 /**
  * Select an image to display inside the quote, to the left
  */
@@ -347,9 +363,13 @@ export type TextContent1 = string;
  */
 export type Source1 = string;
 /**
- * Optionally display a date for the quote
+ * Optionally display a byline for the quote's source
  */
-export type Date1 = string;
+export type SourceAddition1 = string;
+/**
+ * Additional css classes attached to the wrapping element
+ */
+export type Class2 = string;
 /**
  * Automatically move to next slide after 4 seconds without user interaction
  */
@@ -432,6 +452,10 @@ export type BottomSpacing1 = 'none' | 'small' | 'large';
  */
 export type PageHeader1 = boolean;
 /**
+ * Add additional css classes that should be applied to the headline
+ */
+export type AdditionalClasses6 = string;
+/**
  * Text box copy text
  */
 export type Text3 = string;
@@ -460,7 +484,7 @@ export type ButtonSize3 = 'small' | 'medium' | 'large';
 /**
  * Add additional css classes that should be applied to the button
  */
-export type AdditionalClasses4 = string;
+export type AdditionalClasses7 = string;
 export type IconIdentifier3 = string;
 export type AriaRole3 = string;
 export type AdditionalClass3 = string;
@@ -520,11 +544,15 @@ export type Inbox1 = boolean;
  * Show skip button
  */
 export type SkipButton1 = boolean;
-export type AdditionalClasses5 = string;
+export type AdditionalClasses8 = string;
 /**
  * preview label
  */
 export type SlidePreviewLabel = string;
+/**
+ * Additional css classes attached to the wrapping element
+ */
+export type Class3 = string;
 /**
  * Picture source
  */
@@ -548,7 +576,7 @@ export type Height2 = number;
 /**
  * Add additional css classes that should be applied to the button
  */
-export type AdditionalClasses6 = string;
+export type AdditionalClasses9 = string;
 /**
  * Add id attribute to the image
  */
@@ -609,6 +637,10 @@ export type Subtitle = string;
 export type PhoneNumber = string;
 export type EmailAddress = string;
 export type CopyText = string;
+/**
+ * Additional css classes attached to the wrapping element
+ */
+export type Class4 = string;
 /**
  * Background image for the whole element
  */
@@ -684,6 +716,10 @@ export type BottomSpacing2 = 'none' | 'small' | 'large';
  */
 export type PageHeader2 = boolean;
 /**
+ * Add additional css classes that should be applied to the headline
+ */
+export type AdditionalClasses10 = string;
+/**
  * Text content to display inside the element
  */
 export type Text5 = string;
@@ -724,7 +760,7 @@ export type ButtonSize4 = 'small' | 'medium' | 'large';
 /**
  * Add additional css classes that should be applied to the button
  */
-export type AdditionalClasses7 = string;
+export type AdditionalClasses11 = string;
 export type IconIdentifier4 = string;
 export type AriaRole4 = string;
 export type AdditionalClass4 = string;
@@ -757,6 +793,10 @@ export type ButtonHref3 = string;
  */
 export type OpenLinkInNewTab3 = boolean;
 /**
+ * Additional css classes attached to the wrapping element
+ */
+export type Class5 = string;
+/**
  * Include the text for the collapsible that should be visible before opening
  */
 export type SummaryTextForTheCollapsible = string;
@@ -764,6 +804,10 @@ export type SummaryTextForTheCollapsible = string;
  * Include the text for the collapsible that should be visible after opening
  */
 export type ContentOfTheCollapsible = string;
+/**
+ * Additional css classes attached to the wrapping element
+ */
+export type Class6 = string;
 /**
  * Final number to count to
  */
@@ -779,6 +823,10 @@ export type Topic = string;
  * Copy text for the element
  */
 export type TextContent2 = string;
+/**
+ * Toggles visibility of the link
+ */
+export type DisplayLink2 = boolean;
 /**
  * Text used on button
  */
@@ -800,7 +848,7 @@ export type ButtonSize5 = 'small' | 'medium' | 'large';
 /**
  * Add additional css classes that should be applied to the button
  */
-export type AdditionalClasses8 = string;
+export type AdditionalClasses12 = string;
 export type IconIdentifier6 = string;
 export type AriaRole6 = string;
 export type AdditionalClass6 = string;
@@ -833,6 +881,10 @@ export type ButtonHref4 = string;
  */
 export type OpenLinkInNewTab4 = boolean;
 /**
+ * Additional css classes attached to the wrapping element
+ */
+export type Class7 = string;
+/**
  * Choose one of the set ratios, all ratios except `none` stretch the image to 100% width
  */
 export type ImageRatio = 'none' | '4:3' | '16:9' | '1:1';
@@ -855,7 +907,7 @@ export type TextContent3 = string;
 /**
  * Toggles visibility of the link
  */
-export type DisplayLink2 = boolean;
+export type DisplayLink3 = boolean;
 /**
  * Text used on button
  */
@@ -877,7 +929,7 @@ export type ButtonSize6 = 'small' | 'medium' | 'large';
 /**
  * Add additional css classes that should be applied to the button
  */
-export type AdditionalClasses9 = string;
+export type AdditionalClasses13 = string;
 export type IconIdentifier7 = string;
 export type AriaRole7 = string;
 export type AdditionalClass7 = string;
@@ -910,6 +962,10 @@ export type ButtonHref5 = string;
  */
 export type OpenLinkInNewTab5 = boolean;
 /**
+ * Add additional css classes that should be applied to the content box
+ */
+export type AdditionalClasses14 = string;
+/**
  * Select the headline level to use, or p alternatively
  */
 export type Level3 = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
@@ -937,6 +993,10 @@ export type BottomSpacing3 = 'none' | 'small' | 'large';
  * Set the headline as a page header, triggering special css treatment
  */
 export type PageHeader3 = boolean;
+/**
+ * Add additional css classes that should be applied to the headline
+ */
+export type AdditionalClasses15 = string;
 /**
  * Copy text for the element
  */
@@ -1006,7 +1066,7 @@ export type Height4 = number;
 /**
  * Add additional css classes that should be applied to the button
  */
-export type AdditionalClasses10 = string;
+export type AdditionalClasses16 = string;
 /**
  * Add id attribute to the image
  */
@@ -1121,6 +1181,10 @@ export type Caption3 = string;
  */
 export type Media = (TextMediaVideo | TextMediaImage | TextMediaLazyImage)[];
 /**
+ * Additional css classes attached to the wrapping element
+ */
+export type Class8 = string;
+/**
  * Topic for the teaser box. Displayed before the text, in bold
  */
 export type Topic2 = string;
@@ -1153,7 +1217,7 @@ export type ButtonSize7 = 'small' | 'medium' | 'large';
 /**
  * Add additional css classes that should be applied to the button
  */
-export type AdditionalClasses11 = string;
+export type AdditionalClasses17 = string;
 export type IconIdentifier8 = string;
 export type AriaRole8 = string;
 export type AdditionalClass9 = string;
@@ -1190,6 +1254,10 @@ export type OpenLinkInNewTab6 = boolean;
  */
 export type HideLink = boolean;
 /**
+ * Additional css classes attached to the box
+ */
+export type Class9 = string;
+/**
  * Select an image to display inside the teaser box, at the top
  */
 export type ImageSource4 = string;
@@ -1224,7 +1292,7 @@ export type Height6 = number;
 /**
  * Add additional css classes that should be applied to the button
  */
-export type AdditionalClasses12 = string;
+export type AdditionalClasses18 = string;
 /**
  * Add id attribute to the image
  */
@@ -1276,6 +1344,10 @@ export type Sources2 = {
 export type ClassAttribute2 = string;
 export type Logos = Picture2[];
 /**
+ * Additional css classes attached to the wrapping element
+ */
+export type Class10 = string;
+/**
  * Topic for the teaser box. Displayed before the text, in bold
  */
 export type Topic3 = string;
@@ -1308,7 +1380,7 @@ export type ButtonSize8 = 'small' | 'medium' | 'large';
 /**
  * Add additional css classes that should be applied to the button
  */
-export type AdditionalClasses13 = string;
+export type AdditionalClasses19 = string;
 export type IconIdentifier9 = string;
 export type AriaRole9 = string;
 export type AdditionalClass10 = string;
@@ -1345,6 +1417,10 @@ export type OpenLinkInNewTab7 = boolean;
  */
 export type HideLink1 = boolean;
 /**
+ * Additional css classes attached to the box
+ */
+export type Class11 = string;
+/**
  * Select the headline level to use, or p alternatively
  */
 export type Level4 = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
@@ -1372,6 +1448,10 @@ export type BottomSpacing4 = 'none' | 'small' | 'large';
  * Set the headline as a page header, triggering special css treatment
  */
 export type PageHeader4 = boolean;
+/**
+ * Add additional css classes that should be applied to the headline
+ */
+export type AdditionalClasses20 = string;
 /**
  * Add additional css classes that should be applied to the section
  */
@@ -1410,6 +1490,7 @@ export interface SectionProps {
 }
 export interface QuotesSlider {
   slides?: Quote[];
+  className?: Class1;
   [k: string]: unknown;
 }
 /**
@@ -1419,7 +1500,8 @@ export interface Quote {
   image?: ImageSource;
   text: TextContent;
   source?: Source;
-  date?: Date;
+  byline?: SourceAddition;
+  className?: Class;
   [k: string]: unknown;
 }
 /**
@@ -1494,6 +1576,7 @@ export interface TagLabel {
   size: Size;
   link?: LinkTarget;
   removable?: Removable;
+  className?: AdditionalClasses2;
 }
 /**
  * visual
@@ -1506,7 +1589,7 @@ export interface Visual {
   backgroundColor?: CustomBackgroundColor;
   inbox?: Inbox;
   skipButton?: SkipButton;
-  className?: AdditionalClasses3;
+  className?: AdditionalClasses5;
 }
 /**
  * Wrapper for all media types
@@ -1561,6 +1644,7 @@ export interface Headline {
   subheadline?: Subheadline;
   spaceAfter: BottomSpacing;
   pageHeader?: PageHeader;
+  className?: AdditionalClasses3;
   [k: string]: unknown;
 }
 /**
@@ -1571,7 +1655,7 @@ export interface Link {
   variant: ButtonStyle2;
   label: Label3;
   size: ButtonSize2;
-  className?: AdditionalClasses2;
+  className?: AdditionalClasses4;
   icon?: Icon2;
   iconBefore?: IconBeforeButton2;
   iconAfter?: IconAfterButton2;
@@ -1597,7 +1681,8 @@ export interface Quote1 {
   image?: ImageSource1;
   text: TextContent1;
   source?: Source1;
-  date?: Date1;
+  byline?: SourceAddition1;
+  className?: Class2;
   [k: string]: unknown;
 }
 /**
@@ -1606,6 +1691,7 @@ export interface Quote1 {
 export interface VisualSlider {
   autoplay?: AutoPlay;
   slides: Visual1[];
+  className?: Class3;
   [k: string]: unknown;
 }
 /**
@@ -1619,7 +1705,7 @@ export interface Visual1 {
   backgroundColor?: CustomBackgroundColor1;
   inbox?: Inbox1;
   skipButton?: SkipButton1;
-  className?: AdditionalClasses5;
+  className?: AdditionalClasses8;
   label?: SlidePreviewLabel;
 }
 /**
@@ -1675,6 +1761,7 @@ export interface Headline1 {
   subheadline?: Subheadline1;
   spaceAfter: BottomSpacing1;
   pageHeader?: PageHeader1;
+  className?: AdditionalClasses6;
   [k: string]: unknown;
 }
 /**
@@ -1685,7 +1772,7 @@ export interface Link1 {
   variant: ButtonStyle3;
   label: Label4;
   size: ButtonSize3;
-  className?: AdditionalClasses4;
+  className?: AdditionalClasses7;
   icon?: Icon3;
   iconBefore?: IconBeforeButton3;
   iconAfter?: IconAfterButton3;
@@ -1714,6 +1801,7 @@ export interface Contact {
   phone?: PhoneNumber;
   email?: EmailAddress;
   copy?: CopyText;
+  className?: Class4;
   [k: string]: unknown;
 }
 /**
@@ -1725,7 +1813,7 @@ export interface Picture {
   alt?: AltText2;
   width?: Width;
   height?: Height2;
-  className?: AdditionalClasses6;
+  className?: AdditionalClasses9;
   id?: Id;
   itemProp?: ItempropAttribute;
   style?: StyleAttribute;
@@ -1745,6 +1833,7 @@ export interface Storytelling {
   full?: FullSizeImage;
   image: Image;
   box: TextBox2;
+  className?: Class5;
   [k: string]: unknown;
 }
 /**
@@ -1790,6 +1879,7 @@ export interface Headline2 {
   subheadline?: Subheadline2;
   spaceAfter: BottomSpacing2;
   pageHeader?: PageHeader2;
+  className?: AdditionalClasses10;
   [k: string]: unknown;
 }
 /**
@@ -1799,7 +1889,7 @@ export interface LinkButton1 {
   label: Label5;
   variant: ButtonStyle4;
   size: ButtonSize4;
-  className?: AdditionalClasses7;
+  className?: AdditionalClasses11;
   icon?: Icon4;
   iconBefore?: IconBeforeButton4;
   iconAfter?: IconAfterButton4;
@@ -1824,6 +1914,7 @@ export interface Icon4 {
 export interface CollapsibleBox {
   summary: SummaryTextForTheCollapsible;
   text: ContentOfTheCollapsible;
+  className?: Class6;
 }
 /**
  * Component to to increase a number up to a final value
@@ -1833,7 +1924,12 @@ export interface CountUp {
   icon?: Icon5;
   topic?: Topic;
   text?: TextContent2;
-  link?: LinkButton2;
+  link?: Link2;
+  className?: Class7;
+  /**
+   * See https://github.com/aFarkas/lazysizes/blob/gh-pages/README.md#data-expand-attribute
+   */
+  expand?: number;
   [k: string]: unknown;
 }
 /**
@@ -1848,11 +1944,12 @@ export interface Icon5 {
 /**
  * link-button
  */
-export interface LinkButton2 {
+export interface Link2 {
+  enabled?: DisplayLink2;
   label: Label6;
   variant: ButtonStyle5;
   size: ButtonSize5;
-  className?: AdditionalClasses8;
+  className?: AdditionalClasses12;
   icon?: Icon6;
   iconBefore?: IconBeforeButton5;
   iconAfter?: IconAfterButton5;
@@ -1880,17 +1977,18 @@ export interface ContentBox {
   image?: ImageSource3;
   topic?: Topic1;
   text?: TextContent3;
-  link?: Link2;
+  link?: Link3;
+  className?: AdditionalClasses14;
 }
 /**
  * Content box link configuration
  */
-export interface Link2 {
-  enabled?: DisplayLink2;
+export interface Link3 {
+  enabled?: DisplayLink3;
   label: Label7;
   variant: ButtonStyle6;
   size: ButtonSize6;
-  className?: AdditionalClasses9;
+  className?: AdditionalClasses13;
   icon?: Icon7;
   iconBefore?: IconBeforeButton6;
   iconAfter?: IconAfterButton6;
@@ -1920,6 +2018,7 @@ export interface Headline3 {
   subheadline?: Subheadline3;
   spaceAfter: BottomSpacing3;
   pageHeader?: PageHeader3;
+  className?: AdditionalClasses15;
   [k: string]: unknown;
 }
 /**
@@ -1929,6 +2028,7 @@ export interface TextMedia {
   text: TextContent4;
   mediaAlignment: MediaAlignment;
   media?: Media;
+  className?: Class8;
 }
 export interface TextMediaVideo {
   video?: Video;
@@ -1962,7 +2062,7 @@ export interface Picture1 {
   alt?: AltText3;
   width?: Width2;
   height?: Height4;
-  className?: AdditionalClasses10;
+  className?: AdditionalClasses16;
   id?: Id1;
   itemProp?: ItempropAttribute1;
   style?: StyleAttribute1;
@@ -2003,7 +2103,8 @@ export interface TeaserBox {
   topic?: Topic2;
   text?: TextContent5;
   darkStyle?: DarkVariant;
-  link?: LinkButton3;
+  link?: LinkButton2;
+  className?: Class9;
   image?: ImageSource4;
   ratio: ImageRatio1;
   imageSpacing?: ImageSpacing;
@@ -2011,11 +2112,11 @@ export interface TeaserBox {
 /**
  * link-button
  */
-export interface LinkButton3 {
+export interface LinkButton2 {
   label: Label8;
   variant: ButtonStyle7;
   size: ButtonSize7;
-  className?: AdditionalClasses11;
+  className?: AdditionalClasses17;
   icon?: Icon8;
   iconBefore?: IconBeforeButton7;
   iconAfter?: IconAfterButton7;
@@ -2040,6 +2141,7 @@ export interface Icon8 {
  */
 export interface LogoTiles {
   logos?: Logos;
+  className?: Class10;
   [k: string]: unknown;
 }
 /**
@@ -2051,7 +2153,7 @@ export interface Picture2 {
   alt?: AltText4;
   width?: Width4;
   height?: Height6;
-  className?: AdditionalClasses12;
+  className?: AdditionalClasses18;
   id?: Id2;
   itemProp?: ItempropAttribute2;
   style?: StyleAttribute2;
@@ -2069,16 +2171,17 @@ export interface TeaserRow {
   topic?: Topic3;
   text?: TextContent6;
   darkStyle?: DarkVariant1;
-  link?: LinkButton4;
+  link?: LinkButton3;
+  className?: Class11;
 }
 /**
  * link-button
  */
-export interface LinkButton4 {
+export interface LinkButton3 {
   label: Label9;
   variant: ButtonStyle8;
   size: ButtonSize8;
-  className?: AdditionalClasses13;
+  className?: AdditionalClasses19;
   icon?: Icon9;
   iconBefore?: IconBeforeButton8;
   iconAfter?: IconAfterButton8;
@@ -2109,5 +2212,6 @@ export interface Headline4 {
   subheadline?: Subheadline4;
   spaceAfter: BottomSpacing4;
   pageHeader?: PageHeader4;
+  className?: AdditionalClasses20;
   [k: string]: unknown;
 }

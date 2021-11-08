@@ -21,6 +21,10 @@ export type LinkTarget = string;
  * Choose whether the element is removable or not
  */
 export type Removable = boolean;
+/**
+ * Add additional css classes that should be applied to the label
+ */
+export type AdditionalClasses = string;
 
 /**
  * Component to render a pill / tag / label
@@ -30,4 +34,5 @@ export interface TagLabelProps {
   size: Size;
   link?: LinkTarget;
   removable?: Removable;
+  className?: AdditionalClasses;
 }

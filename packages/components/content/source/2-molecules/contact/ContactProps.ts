@@ -89,6 +89,10 @@ export type Subtitle = string;
 export type PhoneNumber = string;
 export type EmailAddress = string;
 export type CopyText = string;
+/**
+ * Additional css classes attached to the wrapping element
+ */
+export type Class = string;
 
 /**
  * Component to show contact information
@@ -100,6 +104,7 @@ export interface ContactProps {
   phone?: PhoneNumber;
   email?: EmailAddress;
   copy?: CopyText;
+  className?: Class;
   [k: string]: unknown;
 }
 /**

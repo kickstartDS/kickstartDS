@@ -8,6 +8,11 @@
     "html": {
       "title": "HTML string",
       "type": "string"
+    },
+    "className": {
+      "type": "string",
+      "title": "Additional Classes",
+      "description": "Add additional css classes that should be applied to the element"
     }
   }
 }

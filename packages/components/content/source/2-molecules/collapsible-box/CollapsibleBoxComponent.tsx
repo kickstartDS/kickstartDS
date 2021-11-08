@@ -3,6 +3,7 @@ import {
   FunctionComponent,
   useContext,
   HTMLAttributes,
+  createElement,
 } from 'react';
 import classnames from 'classnames';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
@@ -66,7 +67,5 @@ export const CollapsibleBoxContextDefault = CollapsibleBoxComponent;
 export const CollapsibleBoxContext = createContext(
   CollapsibleBoxContextDefault
 );
-export const CollapsibleBox: typeof CollapsibleBoxContextDefault = (props) => {
-  const Component = useContext(CollapsibleBoxContext);
-  return <Component {...props} />;
-};
+export const CollapsibleBox: typeof CollapsibleBoxContextDefault = (props) =>
+  createElement(useContext(CollapsibleBoxContext), props);

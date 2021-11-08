@@ -20,11 +20,11 @@
     "source/**/*-vars.scss"
   ],
   "dependencies": {
-    "@babel/runtime": "^7.15.4",
+    "@babel/runtime": "^7.16.0",
     "@kickstartds/base": "^1.4.0",
     "@kickstartds/core": "^1.4.0",
     "classnames": "^2.2.6",
-    "date-fns": "^2.23.0"
+    "date-fns": "^2.25.0"
   },
   "peerDependencies": {
     "react": "^17.0.2"

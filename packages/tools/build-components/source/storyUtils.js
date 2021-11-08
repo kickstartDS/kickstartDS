@@ -11,6 +11,8 @@ const getArgsShared = (initialSchema) => {
     defaultValue,
     required
   ) => {
+    if ('const' in schema) return;
+
     const add = (typeProps) => {
       argTypes[name] = {
         name,

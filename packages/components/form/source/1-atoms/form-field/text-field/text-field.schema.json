@@ -24,7 +24,20 @@
       "title": "Type",
       "description": "The type of input to render",
       "type": "string",
-      "enum": ["text", "search", "url", "tel", "email", "password"],
+      "enum": [
+        "date",
+        "datetime-local",
+        "email",
+        "month",
+        "number",
+        "password",
+        "search",
+        "tel",
+        "text",
+        "time",
+        "url",
+        "week"
+      ],
       "default": "text"
     },
     "inputMode": {
@@ -57,6 +70,11 @@
     },
     "hint": {
       "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/hint"
+    },
+    "className": {
+      "title": "Class",
+      "description": "Additional css classes attached to the input element",
+      "type": "string"
     }
   }
 }

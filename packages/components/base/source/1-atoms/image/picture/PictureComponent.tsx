@@ -6,6 +6,7 @@ import {
   createContext,
   Ref,
   useContext,
+  createElement,
 } from 'react';
 import classnames from 'classnames';
 import { PictureProps } from './PictureProps';
@@ -70,9 +71,6 @@ const PictureComponent: ForwardRefRenderFunction<
 
 export const PictureContextDefault = forwardRef(PictureComponent);
 export const PictureContext = createContext(PictureContextDefault);
-export const Picture: typeof PictureContextDefault = forwardRef(
-  (props, ref) => {
-    const Component = useContext(PictureContext);
-    return <Component {...props} ref={ref} />;
-  }
+export const Picture: typeof PictureContextDefault = forwardRef((props, ref) =>
+  createElement(useContext(PictureContext), { ...props, ref })
 );
