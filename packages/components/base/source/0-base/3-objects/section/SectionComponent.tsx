@@ -2,6 +2,7 @@ import {
   FunctionComponent,
   createContext,
   useContext,
+  createElement,
   HTMLAttributes,
 } from 'react';
 import classnames from 'classnames';
@@ -72,7 +73,5 @@ const SectionComponent: FunctionComponent<
 
 export const SectionContextDefault = SectionComponent;
 export const SectionContext = createContext(SectionContextDefault);
-export const Section: typeof SectionContextDefault = (props) => {
-  const Component = useContext(SectionContext);
-  return <Component {...props} />;
-};
+export const Section: typeof SectionContextDefault = (props) =>
+  createElement(useContext(SectionContext), props);

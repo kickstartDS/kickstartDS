@@ -3,6 +3,7 @@ import {
   FunctionComponent,
   useContext,
   HTMLAttributes,
+  createElement,
 } from 'react';
 import classnames from 'classnames';
 import { Picture } from '../../1-atoms/image/picture';
@@ -38,7 +39,5 @@ const TeaserBoxComponent: FunctionComponent<
 
 export const TeaserBoxContextDefault = TeaserBoxComponent;
 export const TeaserBoxContext = createContext(TeaserBoxContextDefault);
-export const TeaserBox: typeof TeaserBoxContextDefault = (props) => {
-  const Component = useContext(TeaserBoxContext);
-  return <Component {...props} />;
-};
+export const TeaserBox: typeof TeaserBoxContextDefault = (props) =>
+  createElement(useContext(TeaserBoxContext), props);

@@ -3,6 +3,7 @@ import {
   createContext,
   useContext,
   HTMLAttributes,
+  createElement,
 } from 'react';
 import classnames from 'classnames';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
@@ -49,7 +50,5 @@ const TagLabelComponent: FunctionComponent<
 
 export const TagLabelContextDefault = TagLabelComponent;
 export const TagLabelContext = createContext(TagLabelContextDefault);
-export const TagLabel: typeof TagLabelContextDefault = (props) => {
-  const Component = useContext(TagLabelContext);
-  return <Component {...props} />;
-};
+export const TagLabel: typeof TagLabelContextDefault = (props) =>
+  createElement(useContext(TagLabelContext), props);

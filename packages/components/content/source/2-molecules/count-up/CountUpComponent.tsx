@@ -3,6 +3,7 @@ import {
   FunctionComponent,
   useContext,
   HTMLAttributes,
+  createElement,
 } from 'react';
 import classnames from 'classnames';
 import {
@@ -82,7 +83,5 @@ const CountUpComponent: FunctionComponent<
 
 export const CountUpContextDefault = CountUpComponent;
 export const CountUpContext = createContext(CountUpContextDefault);
-export const CountUp: typeof CountUpContextDefault = (props) => {
-  const Component = useContext(CountUpContext);
-  return <Component {...props} />;
-};
+export const CountUp: typeof CountUpContextDefault = (props) =>
+  createElement(useContext(CountUpContext), props);

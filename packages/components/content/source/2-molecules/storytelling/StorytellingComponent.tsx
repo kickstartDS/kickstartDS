@@ -3,6 +3,7 @@ import {
   FunctionComponent,
   useContext,
   HTMLAttributes,
+  createElement,
 } from 'react';
 import classnames from 'classnames';
 import { renderFn } from '@kickstartds/core/lib/core';
@@ -138,7 +139,5 @@ const StorytellingComponent: FunctionComponent<
 
 export const StorytellingContextDefault = StorytellingComponent;
 export const StorytellingContext = createContext(StorytellingContextDefault);
-export const Storytelling: typeof StorytellingContextDefault = (props) => {
-  const Component = useContext(StorytellingContext);
-  return <Component {...props} />;
-};
+export const Storytelling: typeof StorytellingContextDefault = (props) =>
+  createElement(useContext(StorytellingContext), props);

@@ -3,6 +3,7 @@ import {
   FunctionComponent,
   useContext,
   HTMLAttributes,
+  createElement,
 } from 'react';
 import classnames from 'classnames';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
@@ -72,7 +73,5 @@ const ContentBoxComponent: FunctionComponent<
 
 export const ContentBoxContextDefault = ContentBoxComponent;
 export const ContentBoxContext = createContext(ContentBoxContextDefault);
-export const ContentBox: typeof ContentBoxContextDefault = (props) => {
-  const Component = useContext(ContentBoxContext);
-  return <Component {...props} />;
-};
+export const ContentBox: typeof ContentBoxContextDefault = (props) =>
+  createElement(useContext(ContentBoxContext), props);

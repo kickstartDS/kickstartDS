@@ -4,6 +4,7 @@ import {
   createContext,
   useContext,
   HTMLAttributes,
+  createElement,
 } from 'react';
 import classnames from 'classnames';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
@@ -53,7 +54,6 @@ export const RadioComponent: ForwardRefRenderFunction<
 
 export const RadioContextDefault = forwardRef(RadioComponent);
 export const RadioContext = createContext(RadioContextDefault);
-export const Radio: typeof RadioContextDefault = forwardRef((props, ref) => {
-  const Component = useContext(RadioContext);
-  return <Component {...props} ref={ref} />;
-});
+export const Radio: typeof RadioContextDefault = forwardRef((props, ref) =>
+  createElement(useContext(RadioContext), { ...props, ref })
+);

@@ -3,6 +3,7 @@ import {
   FunctionComponent,
   useContext,
   HTMLAttributes,
+  createElement,
 } from 'react';
 import classnames from 'classnames';
 import { TeaserRowProps } from './TeaserRowProps';
@@ -17,7 +18,5 @@ const TeaserRowComponent: FunctionComponent<
 
 export const TeaserRowContextDefault = TeaserRowComponent;
 export const TeaserRowContext = createContext(TeaserRowContextDefault);
-export const TeaserRow: typeof TeaserRowContextDefault = (props) => {
-  const Component = useContext(TeaserRowContext);
-  return <Component {...props} />;
-};
+export const TeaserRow: typeof TeaserRowContextDefault = (props) =>
+  createElement(useContext(TeaserRowContext), props);

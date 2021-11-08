@@ -1,4 +1,10 @@
-import { FunctionComponent, HTMLAttributes } from 'react';
+import {
+  FunctionComponent,
+  HTMLAttributes,
+  createContext,
+  useContext,
+  createElement,
+} from 'react';
 import classNames from 'classnames';
 import { TagLabel, TagLabelProps } from '../../1-atoms/tag-label';
 import './tag-label-container.scss';
@@ -7,7 +13,7 @@ interface TagLabelContainerProps {
   tagLabels: TagLabelProps[];
 }
 
-export const TagLabelContainer: FunctionComponent<
+export const TagLabelContainerComponent: FunctionComponent<
   TagLabelContainerProps & HTMLAttributes<HTMLDivElement>
 > = ({ tagLabels = [], className }) => (
   <div className={classNames('tag-label-container', className)}>
@@ -18,3 +24,11 @@ export const TagLabelContainer: FunctionComponent<
     ))}
   </div>
 );
+
+export const TagLabelContainerContextDefault = TagLabelContainerComponent;
+export const TagLabelContainerContext = createContext(
+  TagLabelContainerContextDefault
+);
+export const TagLabelContainer: typeof TagLabelContainerContextDefault = (
+  props
+) => createElement(useContext(TagLabelContainerContext), props);

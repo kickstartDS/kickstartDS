@@ -4,6 +4,7 @@ import {
   createContext,
   useContext,
   HTMLAttributes,
+  createElement,
 } from 'react';
 import classnames from 'classnames';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
@@ -78,8 +79,6 @@ const SelectFieldComponent: ForwardRefRenderFunction<
 export const SelectFieldContextDefault = forwardRef(SelectFieldComponent);
 export const SelectFieldContext = createContext(SelectFieldContextDefault);
 export const SelectField: typeof SelectFieldContextDefault = forwardRef(
-  (props, ref) => {
-    const Component = useContext(SelectFieldContext);
-    return <Component {...props} ref={ref} />;
-  }
+  (props, ref) =>
+    createElement(useContext(SelectFieldContext), { ...props, ref })
 );
