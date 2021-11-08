@@ -4,6 +4,7 @@ import {
   createContext,
   useContext,
   HTMLAttributes,
+  createElement,
 } from 'react';
 import classnames from 'classnames';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
@@ -54,8 +55,5 @@ const CheckboxComponent: ForwardRefRenderFunction<
 export const CheckboxContextDefault = forwardRef(CheckboxComponent);
 export const CheckboxContext = createContext(CheckboxContextDefault);
 export const Checkbox: typeof CheckboxContextDefault = forwardRef(
-  (props, ref) => {
-    const Component = useContext(CheckboxContext);
-    return <Component {...props} ref={ref} />;
-  }
+  (props, ref) => createElement(useContext(CheckboxContext), { ...props, ref })
 );

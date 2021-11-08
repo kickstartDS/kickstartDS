@@ -3,6 +3,7 @@ import {
   FunctionComponent,
   createContext,
   useContext,
+  createElement,
   HTMLAttributes,
 } from 'react';
 import { DividerProps } from './DividerProps';
@@ -23,7 +24,5 @@ const DividerComponent: FunctionComponent<
 
 export const DividerContextDefault = DividerComponent;
 export const DividerContext = createContext(DividerContextDefault);
-export const Divider: typeof DividerContextDefault = (props) => {
-  const Component = useContext(DividerContext);
-  return <Component {...props} />;
-};
+export const Divider: typeof DividerContextDefault = (props) =>
+  createElement(useContext(DividerContext), props);

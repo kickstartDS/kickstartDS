@@ -3,6 +3,7 @@ import {
   useContext,
   FunctionComponent,
   HTMLAttributes,
+  createElement,
 } from 'react';
 import { format } from 'date-fns';
 import classnames from 'classnames';
@@ -130,7 +131,5 @@ const PostTeaserComponent: FunctionComponent<
 
 export const PostTeaserContextDefault = PostTeaserComponent;
 export const PostTeaserContext = createContext(PostTeaserContextDefault);
-export const PostTeaser: typeof PostTeaserContextDefault = (props) => {
-  const Component = useContext(PostTeaserContext);
-  return <Component {...props} />;
-};
+export const PostTeaser: typeof PostTeaserContextDefault = (props) =>
+  createElement(useContext(PostTeaserContext), props);

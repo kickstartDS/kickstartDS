@@ -2,6 +2,7 @@ import {
   FunctionComponent,
   createContext,
   useContext,
+  createElement,
   HTMLAttributes,
 } from 'react';
 import ReactMarkdown from 'react-markdown';
@@ -28,7 +29,5 @@ const RichTextComponent: FunctionComponent<
 
 export const RichTextContextDefault = RichTextComponent;
 export const RichTextContext = createContext(RichTextContextDefault);
-export const RichText: typeof RichTextContextDefault = (props) => {
-  const Component = useContext(RichTextContext);
-  return <Component {...props} />;
-};
+export const RichText: typeof RichTextContextDefault = (props) =>
+  createElement(useContext(RichTextContext), props);

@@ -3,6 +3,7 @@ import {
   HTMLAttributes,
   createContext,
   useContext,
+  createElement,
 } from 'react';
 import classnames from 'classnames';
 import { renderFn } from '@kickstartds/core/lib/core';
@@ -145,7 +146,5 @@ export const TextMediaComponent: FunctionComponent<
 
 export const TextMediaContextDefault = TextMediaComponent;
 export const TextMediaContext = createContext(TextMediaContextDefault);
-export const TextMedia: typeof TextMediaContextDefault = (props) => {
-  const Component = useContext(TextMediaContext);
-  return <Component {...props} />;
-};
+export const TextMedia: typeof TextMediaContextDefault = (props) =>
+  createElement(useContext(TextMediaContext), props);

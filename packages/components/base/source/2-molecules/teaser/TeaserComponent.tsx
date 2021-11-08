@@ -3,6 +3,7 @@ import {
   HTMLAttributes,
   createContext,
   useContext,
+  createElement,
 } from 'react';
 import classnames from 'classnames';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
@@ -66,7 +67,5 @@ export const TeaserComponent: FunctionComponent<
 
 export const TeaserContextDefault = TeaserComponent;
 export const TeaserContext = createContext(TeaserContextDefault);
-export const Teaser: typeof TeaserContextDefault = (props) => {
-  const Component = useContext(TeaserContext);
-  return <Component {...props} />;
-};
+export const Teaser: typeof TeaserContextDefault = (props) =>
+  createElement(useContext(TeaserContext), props);

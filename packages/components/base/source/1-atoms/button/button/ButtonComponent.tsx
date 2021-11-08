@@ -3,6 +3,7 @@ import {
   forwardRef,
   createContext,
   useContext,
+  createElement,
   ButtonHTMLAttributes,
 } from 'react';
 import classnames from 'classnames';
@@ -63,7 +64,6 @@ const ButtonComponent: ForwardRefRenderFunction<
 
 export const ButtonContextDefault = forwardRef(ButtonComponent);
 export const ButtonContext = createContext(ButtonContextDefault);
-export const Button: typeof ButtonContextDefault = forwardRef((props, ref) => {
-  const Component = useContext(ButtonContext);
-  return <Component {...props} ref={ref} />;
-});
+export const Button: typeof ButtonContextDefault = forwardRef((props, ref) =>
+  createElement(useContext(ButtonContext), { ...props, ref })
+);

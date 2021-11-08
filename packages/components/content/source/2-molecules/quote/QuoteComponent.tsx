@@ -3,6 +3,7 @@ import {
   FunctionComponent,
   useContext,
   HTMLAttributes,
+  createElement,
 } from 'react';
 import classnames from 'classnames';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
@@ -53,7 +54,5 @@ const QuoteComponent: FunctionComponent<
 
 export const QuoteContextDefault = QuoteComponent;
 export const QuoteContext = createContext(QuoteContextDefault);
-export const Quote: typeof QuoteContextDefault = (props) => {
-  const Component = useContext(QuoteContext);
-  return <Component {...props} />;
-};
+export const Quote: typeof QuoteContextDefault = (props) =>
+  createElement(useContext(QuoteContext), props);

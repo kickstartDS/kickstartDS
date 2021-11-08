@@ -3,6 +3,7 @@ import {
   useContext,
   FunctionComponent,
   HTMLAttributes,
+  createElement,
 } from 'react';
 import classNames from 'classnames';
 import { format } from 'date-fns';
@@ -59,7 +60,5 @@ const PostHeadComponent: FunctionComponent<
 
 export const PostHeadContextDefault = PostHeadComponent;
 export const PostHeadContext = createContext(PostHeadContextDefault);
-export const PostHead: typeof PostHeadContextDefault = (props) => {
-  const Component = useContext(PostHeadContext);
-  return <Component {...props} />;
-};
+export const PostHead: typeof PostHeadContextDefault = (props) =>
+  createElement(useContext(PostHeadContext), props);

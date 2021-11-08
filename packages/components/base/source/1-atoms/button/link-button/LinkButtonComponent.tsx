@@ -3,6 +3,7 @@ import {
   forwardRef,
   createContext,
   useContext,
+  createElement,
   AnchorHTMLAttributes,
 } from 'react';
 import classnames from 'classnames';
@@ -73,8 +74,6 @@ const LinkButtonComponent: ForwardRefRenderFunction<
 export const LinkButtonContextDefault = forwardRef(LinkButtonComponent);
 export const LinkButtonContext = createContext(LinkButtonContextDefault);
 export const LinkButton: typeof LinkButtonContextDefault = forwardRef(
-  (props, ref) => {
-    const Component = useContext(LinkButtonContext);
-    return <Component {...props} ref={ref} />;
-  }
+  (props, ref) =>
+    createElement(useContext(LinkButtonContext), { ...props, ref })
 );

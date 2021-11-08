@@ -4,6 +4,7 @@ import {
   createContext,
   useContext,
   HTMLAttributes,
+  createElement,
 } from 'react';
 import classnames from 'classnames';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
@@ -50,8 +51,6 @@ const RadioGroupComponent: FunctionComponent<
 export const RadioGroupContextDefault = RadioGroupComponent;
 export const RadioGroupContext = createContext(RadioGroupContextDefault);
 export const RadioGroup: typeof RadioGroupContextDefault = forwardRef(
-  (props, ref) => {
-    const Component = useContext(RadioGroupContext);
-    return <Component {...props} ref={ref} />;
-  }
+  (props, ref) =>
+    createElement(useContext(RadioGroupContext), { ...props, ref })
 );

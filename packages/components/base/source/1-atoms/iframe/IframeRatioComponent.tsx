@@ -3,6 +3,7 @@ import {
   HTMLAttributes,
   createContext,
   useContext,
+  createElement,
 } from 'react';
 import classNames from 'classnames';
 import './iframe-ratio.scss';
@@ -38,7 +39,5 @@ export const IframeRatioComponent: FunctionComponent<
 
 export const IframeRatioContextDefault = IframeRatioComponent;
 export const IframeRatioContext = createContext(IframeRatioContextDefault);
-export const IframeRatio: typeof IframeRatioContextDefault = (props) => {
-  const Component = useContext(IframeRatioContext);
-  return <Component {...props} />;
-};
+export const IframeRatio: typeof IframeRatioContextDefault = (props) =>
+  createElement(useContext(IframeRatioContext), props);

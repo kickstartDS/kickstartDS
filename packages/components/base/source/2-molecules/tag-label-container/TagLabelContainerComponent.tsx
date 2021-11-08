@@ -3,6 +3,7 @@ import {
   HTMLAttributes,
   createContext,
   useContext,
+  createElement,
 } from 'react';
 import classNames from 'classnames';
 import { TagLabel, TagLabelProps } from '../../1-atoms/tag-label';
@@ -30,7 +31,4 @@ export const TagLabelContainerContext = createContext(
 );
 export const TagLabelContainer: typeof TagLabelContainerContextDefault = (
   props
-) => {
-  const Component = useContext(TagLabelContainerContext);
-  return <Component {...props} />;
-};
+) => createElement(useContext(TagLabelContainerContext), props);

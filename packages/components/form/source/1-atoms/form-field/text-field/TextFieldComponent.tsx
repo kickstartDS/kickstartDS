@@ -4,6 +4,7 @@ import {
   createContext,
   useContext,
   HTMLAttributes,
+  createElement,
 } from 'react';
 import classnames from 'classnames';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
@@ -68,8 +69,5 @@ const TextFieldComponent: ForwardRefRenderFunction<
 export const TextFieldContextDefault = forwardRef(TextFieldComponent);
 export const TextFieldContext = createContext(TextFieldContextDefault);
 export const TextField: typeof TextFieldContextDefault = forwardRef(
-  (props, ref) => {
-    const Component = useContext(TextFieldContext);
-    return <Component {...props} ref={ref} />;
-  }
+  (props, ref) => createElement(useContext(TextFieldContext), { ...props, ref })
 );

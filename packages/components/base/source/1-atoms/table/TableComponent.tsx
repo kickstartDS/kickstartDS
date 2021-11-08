@@ -3,6 +3,7 @@ import {
   createContext,
   useContext,
   HTMLAttributes,
+  createElement,
 } from 'react';
 import classnames from 'classnames';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
@@ -76,7 +77,5 @@ const TableComponent: FunctionComponent<
 
 export const TableContextDefault = TableComponent;
 export const TableContext = createContext(TableContextDefault);
-export const Table: typeof TableContextDefault = (props) => {
-  const Compnent = useContext(TableContext);
-  return <Compnent {...props} />;
-};
+export const Table: typeof TableContextDefault = (props) =>
+  createElement(useContext(TableContext), props);

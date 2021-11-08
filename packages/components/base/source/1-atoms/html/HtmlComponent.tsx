@@ -3,6 +3,7 @@ import {
   HTMLAttributes,
   createContext,
   useContext,
+  createElement,
 } from 'react';
 import classNames from 'classnames';
 import { HTMLProps } from './HtmlProps';
@@ -19,7 +20,5 @@ export const HtmlComponent: FunctionComponent<
 
 export const HtmlContextDefault = HtmlComponent;
 export const HtmlContext = createContext(HtmlContextDefault);
-export const Html: typeof HtmlContextDefault = (props) => {
-  const Component = useContext(HtmlContext);
-  return <Component {...props} />;
-};
+export const Html: typeof HtmlContextDefault = (props) =>
+  createElement(useContext(HtmlContext), props);
