@@ -1,3 +1,46 @@
+# v1.5.0 (Mon Nov 08 2021)
+
+#### 🚀 Enhancement
+
+- add context structure to more components [#567](https://github.com/kickstartDS/kickstartDS/pull/567) ([@lmestel](https://github.com/lmestel))
+- replace quote date with byline [#471](https://github.com/kickstartDS/kickstartDS/pull/471) ([@lmestel](https://github.com/lmestel))
+- add `expand` prop to count-up component [#470](https://github.com/kickstartDS/kickstartDS/pull/470) ([@lmestel](https://github.com/lmestel))
+- add `enabled` option for count-up link [#445](https://github.com/kickstartDS/kickstartDS/pull/445) ([@lmestel](https://github.com/lmestel))
+
+#### 🐛 Bug Fix
+
+- refactor: simplify context structure ([@lmestel](https://github.com/lmestel))
+- Merge branch 'next' into dependabot/npm_and_yarn/commitlint/cli-14.1.0 ([@lmestel](https://github.com/lmestel))
+- Merge branch 'next' into dependabot/npm_and_yarn/babel/core-7.16.0 ([@lmestel](https://github.com/lmestel))
+- build(deps): bump @babel/runtime from 7.15.4 to 7.16.0 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- test: fix quote's `renderByline` type ([@lmestel](https://github.com/lmestel))
+- feat: replace quote date with byline ([@lmestel](https://github.com/lmestel))
+- feat: add `expand` prop to count-up component ([@lmestel](https://github.com/lmestel))
+- fix: set count-up link enabled to true by default ([@lmestel](https://github.com/lmestel))
+- feat: add `enabled` option for count-up link ([@lmestel](https://github.com/lmestel))
+- build(deps): bump date-fns from 2.23.0 to 2.24.0 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- add `className` to any schema [#392](https://github.com/kickstartDS/kickstartDS/pull/392) ([@lmestel](https://github.com/lmestel))
+- feat: add `className` to any schema ([@lmestel](https://github.com/lmestel))
+
+#### 🔩 Dependency Updates
+
+- build(deps-dev): bump storybook-design-token from 1.3.0 to 1.4.0 [#563](https://github.com/kickstartDS/kickstartDS/pull/563) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump vite from 2.6.12 to 2.6.13 [#539](https://github.com/kickstartDS/kickstartDS/pull/539) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump @babel/core from 7.15.8 to 7.16.0 [#545](https://github.com/kickstartDS/kickstartDS/pull/545) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@lmestel](https://github.com/lmestel))
+- build(deps): bump esbuild from 0.13.3 to 0.13.4 [#467](https://github.com/kickstartDS/kickstartDS/pull/467) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump date-fns from 2.23.0 to 2.24.0 [#416](https://github.com/kickstartDS/kickstartDS/pull/416) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump @babel/preset-env from 7.15.4 to 7.15.6 [#390](https://github.com/kickstartDS/kickstartDS/pull/390) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump esbuild from 0.12.25 to 0.12.26 [#389](https://github.com/kickstartDS/kickstartDS/pull/389) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump sass from 1.39.0 to 1.39.2 [#388](https://github.com/kickstartDS/kickstartDS/pull/388) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump prettier from 2.3.2 to 2.4.0 [#391](https://github.com/kickstartDS/kickstartDS/pull/391) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+
+---
+
 # v1.4.0 (Thu Sep 09 2021)
 
 #### 🐛 Bug Fix

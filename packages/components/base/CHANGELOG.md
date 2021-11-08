@@ -1,3 +1,107 @@
+# v1.5.0 (Mon Nov 08 2021)
+
+#### 🚀 Enhancement
+
+- add context structure to more components [#567](https://github.com/kickstartDS/kickstartDS/pull/567) ([@lmestel](https://github.com/lmestel))
+- replace quote date with byline [#471](https://github.com/kickstartDS/kickstartDS/pull/471) ([@lmestel](https://github.com/lmestel))
+- add `expand` prop to count-up component [#470](https://github.com/kickstartDS/kickstartDS/pull/470) ([@lmestel](https://github.com/lmestel))
+- add `enabled` option for count-up link [#445](https://github.com/kickstartDS/kickstartDS/pull/445) ([@lmestel](https://github.com/lmestel))
+- add render functions to table [#402](https://github.com/kickstartDS/kickstartDS/pull/402) ([@lmestel](https://github.com/lmestel))
+
+#### 🐛 Bug Fix
+
+- refactor: simplify context structure ([@lmestel](https://github.com/lmestel))
+- feat: add context and provider structure to `Teaser` component ([@lmestel](https://github.com/lmestel))
+- feat: add context and provider structure to `TagLabelContainer` component ([@lmestel](https://github.com/lmestel))
+- feat: add context and provider structure to `Icon` component ([@lmestel](https://github.com/lmestel))
+- feat: add context and provider structure to `TextMedia` component ([@lmestel](https://github.com/lmestel))
+- feat: add context and provider structure to `iframe` component ([@lmestel](https://github.com/lmestel))
+- feat: add context and provider structure to `html` component ([@lmestel](https://github.com/lmestel))
+- build(deps-dev): bump @types/react from 17.0.33 to 17.0.34 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- remove background-image on lightbox arrow buttons [#553](https://github.com/kickstartDS/kickstartDS/pull/553) ([@lmestel](https://github.com/lmestel))
+- fix: remove background-image on lightbox arrow buttons ([@lmestel](https://github.com/lmestel))
+- Merge branch 'next' into dependabot/npm_and_yarn/commitlint/cli-14.1.0 ([@lmestel](https://github.com/lmestel))
+- Merge branch 'next' into dependabot/npm_and_yarn/babel/core-7.16.0 ([@lmestel](https://github.com/lmestel))
+- build(deps): bump @babel/runtime from 7.15.4 to 7.16.0 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- accept lightbox links without image [#537](https://github.com/kickstartDS/kickstartDS/pull/537) ([@lmestel](https://github.com/lmestel))
+- fix: accept lightbox links without image ([@lmestel](https://github.com/lmestel))
+- build(deps-dev): bump @types/react from 17.0.32 to 17.0.33 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- Merge branch 'next' into dependabot/npm_and_yarn/husky-7.0.4 ([@lmestel](https://github.com/lmestel))
+- build(deps): bump react-markdown from 7.0.1 to 7.1.0 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump @types/react from 17.0.29 to 17.0.32 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump @types/react from 17.0.27 to 17.0.29 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- Revert "build(deps-dev): bump @types/react from 17.0.27 to 17.0.29" ([@lmestel](https://github.com/lmestel))
+- Merge branch 'next' into dependabot/npm_and_yarn/storybook/core-6.3.10 ([@lmestel](https://github.com/lmestel))
+- build(deps): bump date-fns from 2.24.0 to 2.25.0 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- feat: replace quote date with byline ([@lmestel](https://github.com/lmestel))
+- feat: add `expand` prop to count-up component ([@lmestel](https://github.com/lmestel))
+- Merge branch 'dependabot/npm_and_yarn/storybook/core-6.3.9' of github.com:kickstartDS/kickstartDS into dependabot/npm_and_yarn/storybook/core-6.3.9 ([@lmestel](https://github.com/lmestel))
+- build(deps-dev): bump @types/react from 17.0.26 to 17.0.27 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- add title attribute to slider nav buttons [#456](https://github.com/kickstartDS/kickstartDS/pull/456) ([@lmestel](https://github.com/lmestel))
+- fix: add title to slider nav buttons ([@lmestel](https://github.com/lmestel))
+- build(deps-dev): bump @types/react from 17.0.25 to 17.0.26 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- feat: add `enabled` option for count-up link ([@lmestel](https://github.com/lmestel))
+- build(deps-dev): bump @types/react from 17.0.24 to 17.0.25 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- Merge branch 'next' into dependabot/npm_and_yarn/postcss-8.3.8 ([@lmestel](https://github.com/lmestel))
+- respect button size prop in content-& teaser-box [#437](https://github.com/kickstartDS/kickstartDS/pull/437) ([@lmestel](https://github.com/lmestel))
+- fix: respect button size prop in teaser-box ([@lmestel](https://github.com/lmestel))
+- fix: respect button size prop in content-box ([@lmestel](https://github.com/lmestel))
+- build(deps): bump simplebar from 5.3.5 to 5.3.6 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump @types/react from 17.0.22 to 17.0.24 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump @types/react from 17.0.21 to 17.0.22 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump date-fns from 2.23.0 to 2.24.0 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- fix table component rerender [#405](https://github.com/kickstartDS/kickstartDS/pull/405) ([@lmestel](https://github.com/lmestel))
+- fix: fix table component rerender ([@lmestel](https://github.com/lmestel))
+- build(deps-dev): bump @types/react from 17.0.20 to 17.0.21 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- feat: add render functions to table ([@lmestel](https://github.com/lmestel))
+- add `className` to any schema [#392](https://github.com/kickstartDS/kickstartDS/pull/392) ([@lmestel](https://github.com/lmestel))
+- feat: add `className` to any schema ([@lmestel](https://github.com/lmestel))
+
+#### 🏠 Internal
+
+- don't restore yarn cache if `yarn.lock` has changed [#525](https://github.com/kickstartDS/kickstartDS/pull/525) ([@lmestel](https://github.com/lmestel))
+
+#### 🔩 Dependency Updates
+
+- build(deps-dev): bump storybook-design-token from 1.3.0 to 1.4.0 [#563](https://github.com/kickstartDS/kickstartDS/pull/563) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump svgstore from 3.0.0-2 to 3.0.1 [#557](https://github.com/kickstartDS/kickstartDS/pull/557) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump @types/react from 17.0.33 to 17.0.34 [#558](https://github.com/kickstartDS/kickstartDS/pull/558) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump vite from 2.6.12 to 2.6.13 [#539](https://github.com/kickstartDS/kickstartDS/pull/539) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump @babel/core from 7.15.8 to 7.16.0 [#545](https://github.com/kickstartDS/kickstartDS/pull/545) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@lmestel](https://github.com/lmestel))
+- build(deps-dev): bump @types/react from 17.0.32 to 17.0.33 [#526](https://github.com/kickstartDS/kickstartDS/pull/526) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump react-markdown from 7.0.1 to 7.1.0 [#519](https://github.com/kickstartDS/kickstartDS/pull/519) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump rollup from 2.58.0 to 2.58.1 [#517](https://github.com/kickstartDS/kickstartDS/pull/517) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump @types/react from 17.0.29 to 17.0.32 [#515](https://github.com/kickstartDS/kickstartDS/pull/515) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump @types/react from 17.0.27 to 17.0.29 [#496](https://github.com/kickstartDS/kickstartDS/pull/496) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump @commitlint/cli from 13.2.0 to 13.2.1 [#482](https://github.com/kickstartDS/kickstartDS/pull/482) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump lint-staged from 11.2.0 to 11.2.3 [#483](https://github.com/kickstartDS/kickstartDS/pull/483) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump date-fns from 2.24.0 to 2.25.0 [#468](https://github.com/kickstartDS/kickstartDS/pull/468) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump esbuild from 0.13.3 to 0.13.4 [#467](https://github.com/kickstartDS/kickstartDS/pull/467) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump @types/react from 17.0.26 to 17.0.27 [#461](https://github.com/kickstartDS/kickstartDS/pull/461) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump @types/react from 17.0.25 to 17.0.26 [#454](https://github.com/kickstartDS/kickstartDS/pull/454) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump @types/react from 17.0.24 to 17.0.25 [#444](https://github.com/kickstartDS/kickstartDS/pull/444) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump storybook-design-token from 1.2.0 to 1.2.2 [#435](https://github.com/kickstartDS/kickstartDS/pull/435) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump rollup-plugin-ts from 1.4.6 to 1.4.7 [#433](https://github.com/kickstartDS/kickstartDS/pull/433) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump simplebar from 5.3.5 to 5.3.6 [#430](https://github.com/kickstartDS/kickstartDS/pull/430) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump vite from 2.5.8 to 2.5.10 [#418](https://github.com/kickstartDS/kickstartDS/pull/418) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump rollup-plugin-ts from 1.4.2 to 1.4.6 [#423](https://github.com/kickstartDS/kickstartDS/pull/423) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump @types/react from 17.0.22 to 17.0.24 [#421](https://github.com/kickstartDS/kickstartDS/pull/421) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump @types/react from 17.0.21 to 17.0.22 [#419](https://github.com/kickstartDS/kickstartDS/pull/419) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump date-fns from 2.23.0 to 2.24.0 [#416](https://github.com/kickstartDS/kickstartDS/pull/416) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump postcss-sort-media-queries from 3.11.12 to 4.1.0 [#397](https://github.com/kickstartDS/kickstartDS/pull/397) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump @types/react from 17.0.20 to 17.0.21 [#404](https://github.com/kickstartDS/kickstartDS/pull/404) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump @babel/preset-env from 7.15.4 to 7.15.6 [#390](https://github.com/kickstartDS/kickstartDS/pull/390) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump esbuild from 0.12.25 to 0.12.26 [#389](https://github.com/kickstartDS/kickstartDS/pull/389) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump sass from 1.39.0 to 1.39.2 [#388](https://github.com/kickstartDS/kickstartDS/pull/388) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump prettier from 2.3.2 to 2.4.0 [#391](https://github.com/kickstartDS/kickstartDS/pull/391) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+
+---
+
 # v1.4.0 (Thu Sep 09 2021)
 
 #### 🚀 Enhancement

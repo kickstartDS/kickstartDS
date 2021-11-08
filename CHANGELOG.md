@@ -1,3 +1,148 @@
+# (Mon Nov 08 2021)
+
+#### 🚀 Enhancement
+
+- unify login- & logout icons [#524](https://github.com/kickstartDS/kickstartDS/pull/524) ([@lmestel](https://github.com/lmestel))
+- `@kickstartds/base@1.5.0`, `@kickstartds/blog@1.5.0`, `@kickstartds/content@1.5.0`, `@kickstartds/form@1.5.0`
+  - add context structure to more components [#567](https://github.com/kickstartDS/kickstartDS/pull/567) ([@lmestel](https://github.com/lmestel))
+- `@kickstartds/core@1.5.0`
+  - don't create argType if schema property has `const` keyword [#560](https://github.com/kickstartDS/kickstartDS/pull/560) ([@lmestel](https://github.com/lmestel))
+- `@kickstartds/form@1.5.0`
+  - add input types [#498](https://github.com/kickstartDS/kickstartDS/pull/498) ([@lmestel](https://github.com/lmestel))
+- `@kickstartds/base@1.5.0`, `@kickstartds/content@1.5.0`
+  - replace quote date with byline [#471](https://github.com/kickstartDS/kickstartDS/pull/471) ([@lmestel](https://github.com/lmestel))
+  - add `expand` prop to count-up component [#470](https://github.com/kickstartDS/kickstartDS/pull/470) ([@lmestel](https://github.com/lmestel))
+  - add `enabled` option for count-up link [#445](https://github.com/kickstartDS/kickstartDS/pull/445) ([@lmestel](https://github.com/lmestel))
+- `@kickstartds/base@1.5.0`
+  - add render functions to table [#402](https://github.com/kickstartDS/kickstartDS/pull/402) ([@lmestel](https://github.com/lmestel))
+
+#### 🐛 Bug Fix
+
+- `@kickstartds/base@1.5.0`
+  - remove background-image on lightbox arrow buttons [#553](https://github.com/kickstartDS/kickstartDS/pull/553) ([@lmestel](https://github.com/lmestel))
+  - accept lightbox links without image [#537](https://github.com/kickstartDS/kickstartDS/pull/537) ([@lmestel](https://github.com/lmestel))
+  - add title attribute to slider nav buttons [#456](https://github.com/kickstartDS/kickstartDS/pull/456) ([@lmestel](https://github.com/lmestel))
+  - respect button size prop in content-& teaser-box [#437](https://github.com/kickstartDS/kickstartDS/pull/437) ([@lmestel](https://github.com/lmestel))
+  - fix table component rerender [#405](https://github.com/kickstartDS/kickstartDS/pull/405) ([@lmestel](https://github.com/lmestel))
+- `@kickstartds/base@1.5.0`, `@kickstartds/blog@1.5.0`, `@kickstartds/content@1.5.0`, `@kickstartds/core@1.5.0`, `@kickstartds/form@1.5.0`
+  - add `className` to any schema [#392](https://github.com/kickstartDS/kickstartDS/pull/392) ([@lmestel](https://github.com/lmestel))
+
+#### 🏠 Internal
+
+- don't restore yarn cache if `yarn.lock` has changed [#525](https://github.com/kickstartDS/kickstartDS/pull/525) ([@lmestel](https://github.com/lmestel))
+- release fix [#497](https://github.com/kickstartDS/kickstartDS/pull/497) ([@lmestel](https://github.com/lmestel) [@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### 🔩 Dependency Updates
+
+- build(deps): bump tar from 4.4.14 to 4.4.19 [#566](https://github.com/kickstartDS/kickstartDS/pull/566) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump tmpl from 1.0.4 to 1.0.5 [#565](https://github.com/kickstartDS/kickstartDS/pull/565) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump cssnano from 5.0.9 to 5.0.10 [#564](https://github.com/kickstartDS/kickstartDS/pull/564) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump svgstore from 3.0.0-2 to 3.0.1 [#557](https://github.com/kickstartDS/kickstartDS/pull/557) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump cssnano from 5.0.8 to 5.0.9 [#554](https://github.com/kickstartDS/kickstartDS/pull/554) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump @commitlint/cli from 13.2.1 to 14.1.0 [#552](https://github.com/kickstartDS/kickstartDS/pull/552) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@lmestel](https://github.com/lmestel))
+- build(deps-dev): bump vite from 2.6.12 to 2.6.13 [#539](https://github.com/kickstartDS/kickstartDS/pull/539) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump rollup from 2.58.3 to 2.59.0 [#548](https://github.com/kickstartDS/kickstartDS/pull/548) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump chromatic from 6.0.4 to 6.0.5 [#538](https://github.com/kickstartDS/kickstartDS/pull/538) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump autoprefixer from 10.3.7 to 10.4.0 [#541](https://github.com/kickstartDS/kickstartDS/pull/541) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump lint-staged from 11.2.4 to 11.2.6 [#535](https://github.com/kickstartDS/kickstartDS/pull/535) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump vite from 2.6.11 to 2.6.12 [#536](https://github.com/kickstartDS/kickstartDS/pull/536) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump auto from 10.32.1 to 10.32.2 [#530](https://github.com/kickstartDS/kickstartDS/pull/530) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump rollup from 2.58.1 to 2.58.3 [#527](https://github.com/kickstartDS/kickstartDS/pull/527) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump vite from 2.6.10 to 2.6.11 [#523](https://github.com/kickstartDS/kickstartDS/pull/523) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump husky from 7.0.2 to 7.0.4 [#518](https://github.com/kickstartDS/kickstartDS/pull/518) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@lmestel](https://github.com/lmestel))
+- build(deps): bump postcss from 8.3.9 to 8.3.11 [#520](https://github.com/kickstartDS/kickstartDS/pull/520) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump @types/react-dom from 17.0.9 to 17.0.10 [#522](https://github.com/kickstartDS/kickstartDS/pull/522) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump lint-staged from 11.2.3 to 11.2.4 [#516](https://github.com/kickstartDS/kickstartDS/pull/516) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump rollup from 2.58.0 to 2.58.1 [#517](https://github.com/kickstartDS/kickstartDS/pull/517) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump @storybook/core from 6.3.11 to 6.3.12 [#504](https://github.com/kickstartDS/kickstartDS/pull/504) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump chromatic from 6.0.2 to 6.0.4 [#499](https://github.com/kickstartDS/kickstartDS/pull/499) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump typescript from 4.4.3 to 4.4.4 [#494](https://github.com/kickstartDS/kickstartDS/pull/494) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump @commitlint/cli from 13.2.0 to 13.2.1 [#482](https://github.com/kickstartDS/kickstartDS/pull/482) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump vite from 2.6.5 to 2.6.7 [#486](https://github.com/kickstartDS/kickstartDS/pull/486) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump @storybook/core from 6.3.10 to 6.3.11 [#495](https://github.com/kickstartDS/kickstartDS/pull/495) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@lmestel](https://github.com/lmestel))
+- build(deps-dev): bump chromatic from 5.10.2 to 6.0.2 [#491](https://github.com/kickstartDS/kickstartDS/pull/491) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump vite from 2.6.3 to 2.6.5 [#480](https://github.com/kickstartDS/kickstartDS/pull/480) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump @storybook/core from 6.3.8 to 6.3.10 [#478](https://github.com/kickstartDS/kickstartDS/pull/478) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@lmestel](https://github.com/lmestel))
+- build(deps-dev): bump lint-staged from 11.2.0 to 11.2.3 [#483](https://github.com/kickstartDS/kickstartDS/pull/483) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump @babel/core from 7.15.5 to 7.15.8 [#474](https://github.com/kickstartDS/kickstartDS/pull/474) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump vite from 2.6.2 to 2.6.3 [#469](https://github.com/kickstartDS/kickstartDS/pull/469) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@lmestel](https://github.com/lmestel))
+- build(deps-dev): bump lint-staged from 11.1.2 to 11.2.0 [#465](https://github.com/kickstartDS/kickstartDS/pull/465) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump postcss from 8.3.8 to 8.3.9 [#466](https://github.com/kickstartDS/kickstartDS/pull/466) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump rollup from 2.57.0 to 2.58.0 [#455](https://github.com/kickstartDS/kickstartDS/pull/455) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump @kickstartds/storybook-addon-component-tokens from 0.1.4 to 0.1.5 [#450](https://github.com/kickstartDS/kickstartDS/pull/450) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump chromatic from 5.10.1 to 5.10.2 [#453](https://github.com/kickstartDS/kickstartDS/pull/453) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump auto from 10.32.0 to 10.32.1 [#452](https://github.com/kickstartDS/kickstartDS/pull/452) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump postcss from 8.3.7 to 8.3.8 [#436](https://github.com/kickstartDS/kickstartDS/pull/436) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@lmestel](https://github.com/lmestel))
+- build(deps): bump rollup-plugin-ts from 1.4.6 to 1.4.7 [#433](https://github.com/kickstartDS/kickstartDS/pull/433) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump @commitlint/cli from 13.1.0 to 13.2.0 [#439](https://github.com/kickstartDS/kickstartDS/pull/439) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump vite from 2.5.8 to 2.5.10 [#418](https://github.com/kickstartDS/kickstartDS/pull/418) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump autoprefixer from 10.3.4 to 10.3.5 [#425](https://github.com/kickstartDS/kickstartDS/pull/425) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump postcss from 8.3.6 to 8.3.7 [#426](https://github.com/kickstartDS/kickstartDS/pull/426) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump rollup from 2.56.3 to 2.57.0 [#424](https://github.com/kickstartDS/kickstartDS/pull/424) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump rollup-plugin-ts from 1.4.2 to 1.4.6 [#423](https://github.com/kickstartDS/kickstartDS/pull/423) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump chromatic from 5.10.0 to 5.10.1 [#422](https://github.com/kickstartDS/kickstartDS/pull/422) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump chromatic from 5.9.2 to 5.10.0 [#417](https://github.com/kickstartDS/kickstartDS/pull/417) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump vite from 2.5.6 to 2.5.8 [#415](https://github.com/kickstartDS/kickstartDS/pull/415) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump postcss-sort-media-queries from 3.11.12 to 4.1.0 [#397](https://github.com/kickstartDS/kickstartDS/pull/397) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump prettier from 2.4.0 to 2.4.1 [#412](https://github.com/kickstartDS/kickstartDS/pull/412) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump rollup-plugin-ts from 1.4.1 to 1.4.2 [#414](https://github.com/kickstartDS/kickstartDS/pull/414) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump auto from 10.31.0 to 10.32.0 [#406](https://github.com/kickstartDS/kickstartDS/pull/406) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump @whitespace/storybook-addon-html from v5.2.0 to v5.3.0 [#409](https://github.com/kickstartDS/kickstartDS/pull/409) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump typescript from 4.4.2 to 4.4.3 [#394](https://github.com/kickstartDS/kickstartDS/pull/394) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump json-schema-to-typescript from 10.1.4 to 10.1.5 [#396](https://github.com/kickstartDS/kickstartDS/pull/396) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump @babel/preset-env from 7.15.4 to 7.15.6 [#390](https://github.com/kickstartDS/kickstartDS/pull/390) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump prettier from 2.3.2 to 2.4.0 [#391](https://github.com/kickstartDS/kickstartDS/pull/391) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- `@kickstartds/core@1.5.0`
+  - build(deps-dev): bump storybook-design-token from 1.3.0 to 1.4.0 [#563](https://github.com/kickstartDS/kickstartDS/pull/563) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+  - build(deps-dev): bump storybook-design-token from 1.2.3 to 1.3.0 [#540](https://github.com/kickstartDS/kickstartDS/pull/540) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+  - build(deps): bump esbuild from 0.13.9 to 0.13.12 [#547](https://github.com/kickstartDS/kickstartDS/pull/547) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+  - build(deps): bump sass from 1.43.3 to 1.43.4 [#534](https://github.com/kickstartDS/kickstartDS/pull/534) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+  - build(deps): bump esbuild from 0.13.5 to 0.13.9 [#514](https://github.com/kickstartDS/kickstartDS/pull/514) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+  - build(deps): bump sass from 1.43.2 to 1.43.3 [#521](https://github.com/kickstartDS/kickstartDS/pull/521) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+  - build(deps): bump sass from 1.42.1 to 1.43.2 [#500](https://github.com/kickstartDS/kickstartDS/pull/500) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+  - build(deps): bump esbuild from 0.13.4 to 0.13.5 [#488](https://github.com/kickstartDS/kickstartDS/pull/488) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+  - build(deps): bump esbuild from 0.13.3 to 0.13.4 [#467](https://github.com/kickstartDS/kickstartDS/pull/467) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+  - build(deps-dev): bump @storybook/core from 6.3.8 to 6.3.9 [#458](https://github.com/kickstartDS/kickstartDS/pull/458) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@lmestel](https://github.com/lmestel))
+  - build(deps): bump esbuild from 0.13.2 to 0.13.3 [#441](https://github.com/kickstartDS/kickstartDS/pull/441) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+  - build(deps-dev): bump storybook-design-token from 1.2.0 to 1.2.2 [#435](https://github.com/kickstartDS/kickstartDS/pull/435) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+  - build(deps): bump esbuild from 0.13.1 to 0.13.2 [#429](https://github.com/kickstartDS/kickstartDS/pull/429) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+  - build(deps): bump sass from 1.42.0 to 1.42.1 [#428](https://github.com/kickstartDS/kickstartDS/pull/428) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+  - build(deps): bump esbuild from 0.12.28 to 0.13.1 [#427](https://github.com/kickstartDS/kickstartDS/pull/427) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+  - build(deps): bump sass from 1.41.1 to 1.42.0 [#420](https://github.com/kickstartDS/kickstartDS/pull/420) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+  - build(deps): bump sass from 1.41.0 to 1.41.1 [#413](https://github.com/kickstartDS/kickstartDS/pull/413) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+  - build(deps): bump sass from 1.40.0 to 1.41.0 [#403](https://github.com/kickstartDS/kickstartDS/pull/403) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+  - build(deps): bump sass from 1.39.2 to 1.40.0 [#400](https://github.com/kickstartDS/kickstartDS/pull/400) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+  - build(deps): bump esbuild from 0.12.27 to 0.12.28 [#399](https://github.com/kickstartDS/kickstartDS/pull/399) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+  - build(deps): bump esbuild from 0.12.26 to 0.12.27 [#395](https://github.com/kickstartDS/kickstartDS/pull/395) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+  - build(deps): bump esbuild from 0.12.25 to 0.12.26 [#389](https://github.com/kickstartDS/kickstartDS/pull/389) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+  - build(deps): bump sass from 1.39.0 to 1.39.2 [#388](https://github.com/kickstartDS/kickstartDS/pull/388) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- `@kickstartds/base@1.5.0`
+  - build(deps-dev): bump @types/react from 17.0.33 to 17.0.34 [#558](https://github.com/kickstartDS/kickstartDS/pull/558) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+  - build(deps-dev): bump @types/react from 17.0.32 to 17.0.33 [#526](https://github.com/kickstartDS/kickstartDS/pull/526) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+  - build(deps): bump react-markdown from 7.0.1 to 7.1.0 [#519](https://github.com/kickstartDS/kickstartDS/pull/519) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+  - build(deps-dev): bump @types/react from 17.0.29 to 17.0.32 [#515](https://github.com/kickstartDS/kickstartDS/pull/515) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+  - build(deps-dev): bump @types/react from 17.0.27 to 17.0.29 [#496](https://github.com/kickstartDS/kickstartDS/pull/496) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+  - build(deps-dev): bump @types/react from 17.0.26 to 17.0.27 [#461](https://github.com/kickstartDS/kickstartDS/pull/461) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+  - build(deps-dev): bump @types/react from 17.0.25 to 17.0.26 [#454](https://github.com/kickstartDS/kickstartDS/pull/454) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+  - build(deps-dev): bump @types/react from 17.0.24 to 17.0.25 [#444](https://github.com/kickstartDS/kickstartDS/pull/444) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+  - build(deps): bump simplebar from 5.3.5 to 5.3.6 [#430](https://github.com/kickstartDS/kickstartDS/pull/430) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+  - build(deps-dev): bump @types/react from 17.0.22 to 17.0.24 [#421](https://github.com/kickstartDS/kickstartDS/pull/421) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+  - build(deps-dev): bump @types/react from 17.0.21 to 17.0.22 [#419](https://github.com/kickstartDS/kickstartDS/pull/419) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+  - build(deps-dev): bump @types/react from 17.0.20 to 17.0.21 [#404](https://github.com/kickstartDS/kickstartDS/pull/404) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- `@kickstartds/base@1.5.0`, `@kickstartds/blog@1.5.0`, `@kickstartds/content@1.5.0`, `@kickstartds/core@1.5.0`, `@kickstartds/form@1.5.0`
+  - build(deps): bump @babel/core from 7.15.8 to 7.16.0 [#545](https://github.com/kickstartDS/kickstartDS/pull/545) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@lmestel](https://github.com/lmestel))
+- `@kickstartds/base@1.5.0`, `@kickstartds/blog@1.5.0`
+  - build(deps): bump date-fns from 2.24.0 to 2.25.0 [#468](https://github.com/kickstartDS/kickstartDS/pull/468) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- `@kickstartds/base@1.5.0`, `@kickstartds/blog@1.5.0`, `@kickstartds/content@1.5.0`
+  - build(deps): bump date-fns from 2.23.0 to 2.24.0 [#416](https://github.com/kickstartDS/kickstartDS/pull/416) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+
+---
+
 # (Thu Sep 09 2021)
 
 #### 🚀 Enhancement
