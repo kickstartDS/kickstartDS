@@ -1,0 +1,27 @@
+$name-: 'c-progress-bar';
+
+$host: (
+  '.c-progress-bar': (
+    background: var(--color-black-alpha-1),
+    border-radius: 4px,
+    border: 0,
+    height: 1rem,
+    box-shadow: none,
+  ),
+) !default;
+
+$value: (
+  '.c-progress-bar': (
+    background: var(--color-primary),
+    border-radius: var(--c-progress-bar--border-radius),
+    border: 0,
+    box-shadow: none,
+    width: 25%,
+  ),
+) !default;
+
+$indeterminate: (
+  '.c-progress-bar': (
+    animation: progress-bar-indeterminate 2s linear infinite,
+  ),
+) !default;

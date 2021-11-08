@@ -9,6 +9,7 @@ export * from './1-atoms/image/lightbox-image';
 export * from './1-atoms/image/picture';
 export * from './1-atoms/link';
 export * from './1-atoms/nav-toggle';
+export * from './1-atoms/progress-bar';
 export * from './1-atoms/rich-text';
 export * from './1-atoms/table';
 export * from './1-atoms/tag-label';
