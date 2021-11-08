@@ -72,7 +72,8 @@ $vars: meta.module-variables(form-field-vars);
         var(--c-form-field_focus--border-color);
     }
 
-    &--is-invalid {
+    &--is-invalid,
+    &--is-invalid ~ .awesomplete & {
       --c-form-field--color: var(--color-error);
       --c-form-field--border-color: var(--color-error);
       --c-form-field_hover--border-color: var(--color-error);
