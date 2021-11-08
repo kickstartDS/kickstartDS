@@ -1,4 +1,9 @@
-import { FunctionComponent, HTMLAttributes } from 'react';
+import {
+  FunctionComponent,
+  HTMLAttributes,
+  createContext,
+  useContext,
+} from 'react';
 import classNames from 'classnames';
 import './iframe-ratio.scss';
 import './IframeRatio.js';
@@ -11,7 +16,7 @@ type IframeRatioProps = {
   setParentWidth?: boolean;
 };
 
-export const IframeRatio: FunctionComponent<
+export const IframeRatioComponent: FunctionComponent<
   IframeRatioProps & HTMLAttributes<HTMLDivElement>
 > = ({ src, title, width, height, setParentWidth, className, ...props }) => (
   <div
@@ -30,3 +35,10 @@ export const IframeRatio: FunctionComponent<
     ></iframe>
   </div>
 );
+
+export const IframeRatioContextDefault = IframeRatioComponent;
+export const IframeRatioContext = createContext(IframeRatioContextDefault);
+export const IframeRatio: typeof IframeRatioContextDefault = (props) => {
+  const Component = useContext(IframeRatioContext);
+  return <Component {...props} />;
+};
