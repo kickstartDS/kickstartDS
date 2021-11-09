@@ -33,7 +33,7 @@
       "$ref": "http://frontend.ruhmesmeile.com/base/atoms/button.schema.json#/definitions/className"
     },
     "icon": {
-      "$ref": "http://frontend.ruhmesmeile.com/base/atoms/button.schema.json#/definitions/icon"
+      "$ref": "http://frontend.ruhmesmeile.com/base/atoms/icon.definitions.json"
     },
     "iconBefore": {
       "$ref": "http://frontend.ruhmesmeile.com/base/atoms/button.schema.json#/definitions/iconBefore"
