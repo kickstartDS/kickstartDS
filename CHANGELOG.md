@@ -1,3 +1,16 @@
+# (Tue Nov 09 2021)
+
+#### 🐛 Bug Fix
+
+- `@kickstartds/base@1.5.1`
+  - fix(icon): chained ref for link-button -> button -> icon [#573](https://github.com/kickstartDS/kickstartDS/pull/573) ([@julrich](https://github.com/julrich))
+
+#### Authors: 1
+
+- Jonas Ulrich ([@julrich](https://github.com/julrich))
+
+---
+
 # (Mon Nov 08 2021)
 
 #### 🚀 Enhancement
