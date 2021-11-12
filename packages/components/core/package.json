@@ -19,7 +19,7 @@
     "bundle/*.js"
   ],
   "dependencies": {
-    "@babel/runtime": "^7.16.0",
+    "@babel/runtime": "^7.16.3",
     "bourbon": "^7.0.0",
     "del": "^6.0.0",
     "dependency-graph": "^0.11.0",
