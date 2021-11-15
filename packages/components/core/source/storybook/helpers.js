@@ -141,9 +141,10 @@ const unpack = (flatArgs) => {
   // eslint-disable-next-line no-restricted-syntax
   for (const [key, value] of Object.entries(flatArgs)) {
     key.split('.').reduce((prev, curr, i, arr) => {
-      prev[curr] =
-        prev[curr] ||
-        (arr[i + 1] != null ? (Number.isNaN(arr[i + 1]) ? {} : []) : value);
+      if (prev[curr] == null) {
+        const next = arr[i + 1];
+        prev[curr] = next != null ? (Number.isNaN(+next) ? {} : []) : value;
+      }
       return prev[curr];
     }, args);
   }
