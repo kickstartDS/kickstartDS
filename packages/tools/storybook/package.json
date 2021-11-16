@@ -28,7 +28,7 @@
     "react-dom": "^17.0.1",
     "react-emoji-render": "^1.2.4",
     "svgstore": "^3.0.1",
-    "yargs-parser": "^20.2.7"
+    "yargs-parser": "^21.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
