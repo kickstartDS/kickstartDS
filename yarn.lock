@@ -17,13 +17,13 @@
     call-me-maybe "^1.0.1"
     js-yaml "^4.1.0"
 
-"@auto-it/all-contributors@^10.32.2":
-  version "10.32.2"
-  resolved "https://registry.yarnpkg.com/@auto-it/all-contributors/-/all-contributors-10.32.2.tgz#3a8be72cb6a4181dac402dcf7e498e1f315b941d"
-  integrity sha512-iIzsxFVRKnyxGAB9NNbux2JID2tn2qCQcsGzbyh9en0dWmcJTL52JTW8kEbK6HJAP2X6CTyiMTMv3HPDzWmUjQ==
+"@auto-it/all-contributors@^10.32.3":
+  version "10.32.3"
+  resolved "https://registry.yarnpkg.com/@auto-it/all-contributors/-/all-contributors-10.32.3.tgz#a556662bd23f750313185eaecb76f62df4ac73e3"
+  integrity sha512-OJ+/6WYX7l2ZqvppepafDF8oQuU83lsIfGraLYTYINxZtGIVcrAXQuQlXq0IcIzbxQwQEi9WOAfKQHpcmQ4j4g==
   dependencies:
-    "@auto-it/bot-list" "10.32.2"
-    "@auto-it/core" "10.32.2"
+    "@auto-it/bot-list" "10.32.3"
+    "@auto-it/core" "10.32.3"
     "@octokit/rest" "^18.0.0"
     all-contributors-cli "6.19.0"
     anymatch "^3.1.1"
@@ -40,12 +40,62 @@
   resolved "https://registry.yarnpkg.com/@auto-it/bot-list/-/bot-list-10.32.2.tgz#405b7f69af4fd789760ac6c45675ccb46be8d5b3"
   integrity sha512-nyZn6xKe8TEwt+5ARay0+9Z+96IpRLuey1LYyU4FzLqV8B7ekHsmX+WvQ9QhDpnwRX75/aTO9oH/uNCn7j8fJw==
 
+"@auto-it/bot-list@10.32.3":
+  version "10.32.3"
+  resolved "https://registry.yarnpkg.com/@auto-it/bot-list/-/bot-list-10.32.3.tgz#8f30d8b99318d3b8b4857281a06c4c45e507d50c"
+  integrity sha512-upBScyy/0m0eKdL7sq2z4SUELe0L8ye7Ybfxa3U7LHXWjZH0DJdKM4LY9Cz+Vj25A2ZWUO4sJPurXSfiECH6cw==
+
 "@auto-it/core@10.32.2":
   version "10.32.2"
   resolved "https://registry.yarnpkg.com/@auto-it/core/-/core-10.32.2.tgz#1f9f0da4d722574629066e80054d8a53a7b14259"
   integrity sha512-a0H9EjRKNaCpgGX+uITI/27OqnzqfHAcUxyJ/Vgy4/JyFkBR47n3MT7GwaN9qh9VxlkYFv82jiHwxIn8bNAOcw==
   dependencies:
     "@auto-it/bot-list" "10.32.2"
+    "@endemolshinegroup/cosmiconfig-typescript-loader" "^3.0.2"
+    "@octokit/plugin-enterprise-compatibility" "^1.2.2"
+    "@octokit/plugin-retry" "^3.0.1"
+    "@octokit/plugin-throttling" "^3.2.0"
+    "@octokit/rest" "^18.0.0"
+    await-to-js "^3.0.0"
+    chalk "^4.0.0"
+    cosmiconfig "7.0.0"
+    deepmerge "^4.0.0"
+    dotenv "^8.0.0"
+    endent "^2.0.1"
+    enquirer "^2.3.4"
+    env-ci "^5.0.1"
+    fast-glob "^3.1.1"
+    fp-ts "^2.5.3"
+    fromentries "^1.2.0"
+    gitlog "^4.0.3"
+    https-proxy-agent "^5.0.0"
+    import-cwd "^3.0.0"
+    import-from "^3.0.0"
+    io-ts "^2.1.2"
+    lodash.chunk "^4.2.0"
+    log-symbols "^4.0.0"
+    node-fetch "2.6.1"
+    parse-author "^2.0.0"
+    parse-github-url "1.0.2"
+    pretty-ms "^7.0.0"
+    requireg "^0.2.2"
+    semver "^7.0.0"
+    signale "^1.4.0"
+    tapable "^2.2.0"
+    terminal-link "^2.1.1"
+    tinycolor2 "^1.4.1"
+    ts-node "^9.1.1"
+    tslib "2.1.0"
+    type-fest "^0.21.1"
+    typescript-memoize "^1.0.0-alpha.3"
+    url-join "^4.0.0"
+
+"@auto-it/core@10.32.3":
+  version "10.32.3"
+  resolved "https://registry.yarnpkg.com/@auto-it/core/-/core-10.32.3.tgz#d358a755defaf682478defb64de8800693326cb2"
+  integrity sha512-A8A4RPLn+o2dWIW7MqPHGMlAMv44J6D2CO9/ozsxPxgE6vdgagGHdiqyT+UWLNwuVQpav554zw+F5aOhvgeuQg==
+  dependencies:
+    "@auto-it/bot-list" "10.32.3"
     "@endemolshinegroup/cosmiconfig-typescript-loader" "^3.0.2"
     "@octokit/plugin-enterprise-compatibility" "^1.2.2"
     "@octokit/plugin-retry" "^3.0.1"
@@ -6874,10 +6924,10 @@ dashdash@^1.12.0:
   dependencies:
     assert-plus "^1.0.0"
 
-date-fns@^2.25.0:
-  version "2.25.0"
-  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.25.0.tgz#8c5c8f1d958be3809a9a03f4b742eba894fc5680"
-  integrity sha512-ovYRFnTrbGPD4nqaEqescPEv1mNwvt+UTqI3Ay9SzNtey9NZnYu6E2qCcBBgJ6/2VF1zGGygpyTDITqpQQ5e+w==
+date-fns@^2.26.0:
+  version "2.26.0"
+  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.26.0.tgz#fa45305543c392c4f914e50775fd2a4461e60fbd"
+  integrity sha512-VQI812dRi3cusdY/fhoBKvc6l2W8BPWU1FNVnFH9Nttjx4AFBRzfSVb/Eyc7jBT6e9sg1XtAGsYpBQ6c/jygbg==
 
 dateformat@^3.0.0:
   version "3.0.3"
@@ -13840,10 +13890,10 @@ prepend-http@^2.0.0:
   resolved "https://registry.yarnpkg.com/prepend-http/-/prepend-http-2.0.0.tgz#e92434bfa5ea8c19f41cdfd401d741a3c819d897"
   integrity sha1-6SQ0v6XqjBn0HN/UAddBo8gZ2Jc=
 
-prettier@^2.2.0, prettier@^2.3.2, prettier@^2.4.1:
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.4.1.tgz#671e11c89c14a4cfc876ce564106c4a6726c9f5c"
-  integrity sha512-9fbDAXSBcc6Bs1mZrDYb3XKzDLm4EXXL9sC1LqKP5rZkT6KRr/rf9amVUcODVXgguK/isJz0d0hP72WeaKWsvA==
+prettier@^2.2.0, prettier@^2.3.2, prettier@^2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.5.0.tgz#a6370e2d4594e093270419d9cc47f7670488f893"
+  integrity sha512-FM/zAKgWTxj40rH03VxzIPdXmj39SwSjwG0heUcNFwI+EMZJnY93yAiKXM3dObIKAM5TA88werc8T/EwhB45eg==
 
 prettier@~2.2.1:
   version "2.2.1"
