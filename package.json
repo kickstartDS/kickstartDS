@@ -49,7 +49,7 @@
   "devDependencies": {
     "@auto-it/all-contributors": "^10.32.2",
     "@auto-it/first-time-contributor": "^10.32.2",
-    "@auto-it/npm": "^10.32.2",
+    "@auto-it/npm": "^10.32.3",
     "@auto-it/released": "^10.32.2",
     "@commitlint/cli": "^15.0.0",
     "@commitlint/config-conventional": "^15.0.0",
