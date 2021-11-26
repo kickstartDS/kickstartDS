@@ -1706,8 +1706,9 @@
     strip-json-comments "^3.1.1"
 
 "@glidejs/glide@git://github.com/glidejs/glide.git#master":
-  version "3.4.0"
-  resolved "git://github.com/glidejs/glide.git#e71f8bf2dc313a97ae0fc92a8dc9d1389a151562"
+  version "3.5.1"
+  uid "564b9f2a82ec61f5b31e656529d33c29328f909b"
+  resolved "git://github.com/glidejs/glide.git#564b9f2a82ec61f5b31e656529d33c29328f909b"
 
 "@humanwhocodes/config-array@^0.5.0":
   version "0.5.0"
