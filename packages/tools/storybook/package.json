@@ -35,7 +35,7 @@
     "@kickstartds/storybook-addon-component-tokens": "^0.1.5",
     "@storybook/addon-a11y": "6.3.12",
     "@storybook/addon-essentials": "6.3.12",
-    "@storybook/cli": "6.3.12",
+    "@storybook/cli": "6.4.0",
     "@storybook/core": "6.3.12",
     "@storybook/react": "6.3.12",
     "@types/react": "^17.0.37",
