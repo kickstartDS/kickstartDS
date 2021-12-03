@@ -1,9 +1,13 @@
 import {
-  FunctionComponent,
-  Children,
   ReactElement,
   ReactNode,
+  ForwardRefRenderFunction,
   HTMLAttributes,
+  Children,
+  forwardRef,
+  createElement,
+  createContext,
+  useContext,
 } from 'react';
 import classnames from 'classnames';
 import { SliderProps } from './SliderProps';
@@ -32,16 +36,20 @@ const slides = (children: ReactNode) => {
   ));
 };
 
-export const Slider: FunctionComponent<
+const SliderComponent: ForwardRefRenderFunction<
+  HTMLDivElement,
   SliderProps & HTMLAttributes<HTMLDivElement>
-> = ({
-  autoplay,
-  className,
-  component = 'base.slider',
-  arrows,
-  children,
-  ...props
-}) => (
+> = (
+  {
+    autoplay,
+    className,
+    component = 'base.slider',
+    arrows,
+    children,
+    ...props
+  },
+  ref
+) => (
   <div
     className={classnames(
       'c-slider',
@@ -50,6 +58,7 @@ export const Slider: FunctionComponent<
       className
     )}
     data-component={component}
+    ref={ref}
     {...props}
   >
     <div className="c-slider-main" data-slider-arrows={arrows}>
@@ -83,4 +92,10 @@ export const Slider: FunctionComponent<
       </div>
     </div>
   </div>
+);
+
+export const SliderContextDefault = forwardRef(SliderComponent);
+export const SliderContext = createContext(SliderContextDefault);
+export const Slider: typeof SliderContextDefault = forwardRef((props, ref) =>
+  createElement(useContext(SliderContext), { ...props, ref })
 );

@@ -1,22 +1,29 @@
 import {
-  createContext,
-  FunctionComponent,
-  useContext,
+  ForwardRefRenderFunction,
   HTMLAttributes,
+  forwardRef,
   createElement,
+  createContext,
+  useContext,
 } from 'react';
 import classnames from 'classnames';
 import { TeaserRowProps } from './TeaserRowProps';
 import './teaser-row.scss';
 import { Teaser, TeaserRenderFunctions } from '../teaser/TeaserComponent';
 
-const TeaserRowComponent: FunctionComponent<
+const TeaserRowComponent: ForwardRefRenderFunction<
+  HTMLDivElement,
   TeaserRowProps & TeaserRenderFunctions & HTMLAttributes<HTMLDivElement>
-> = ({ className, ...props }) => (
-  <Teaser className={classnames('c-teaser-row', className)} {...props} />
+> = ({ className, ...props }, ref) => (
+  <Teaser
+    className={classnames('c-teaser-row', className)}
+    ref={ref}
+    {...props}
+  />
 );
 
-export const TeaserRowContextDefault = TeaserRowComponent;
+export const TeaserRowContextDefault = forwardRef(TeaserRowComponent);
 export const TeaserRowContext = createContext(TeaserRowContextDefault);
-export const TeaserRow: typeof TeaserRowContextDefault = (props) =>
-  createElement(useContext(TeaserRowContext), props);
+export const TeaserRow: typeof TeaserRowContextDefault = forwardRef(
+  (props, ref) => createElement(useContext(TeaserRowContext), { ...props, ref })
+);

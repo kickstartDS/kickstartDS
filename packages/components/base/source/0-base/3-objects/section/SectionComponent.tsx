@@ -1,9 +1,11 @@
 import {
   FunctionComponent,
+  ForwardRefRenderFunction,
+  HTMLAttributes,
+  forwardRef,
+  createElement,
   createContext,
   useContext,
-  createElement,
-  HTMLAttributes,
 } from 'react';
 import classnames from 'classnames';
 import { Headline } from '../../../2-molecules/headline/HeadlineComponent';
@@ -30,20 +32,24 @@ const Container: FunctionComponent<SectionProps> = ({
   </div>
 );
 
-const SectionComponent: FunctionComponent<
+const SectionComponent: ForwardRefRenderFunction<
+  HTMLDivElement,
   SectionProps & HTMLAttributes<HTMLDivElement>
-> = ({
-  background,
-  spaceBefore,
-  spaceAfter,
-  headline,
-  width,
-  gutter,
-  mode,
-  className,
-  children,
-  ...props
-}) => (
+> = (
+  {
+    background,
+    spaceBefore,
+    spaceAfter,
+    headline,
+    width,
+    gutter,
+    mode,
+    className,
+    children,
+    ...props
+  },
+  ref
+) => (
   <div
     className={classnames(
       'l-section',
@@ -56,6 +62,7 @@ const SectionComponent: FunctionComponent<
         `l-section--space-after-${spaceAfter}`,
       className
     )}
+    ref={ref}
     {...props}
   >
     {headline && headline.content && (
@@ -71,7 +78,8 @@ const SectionComponent: FunctionComponent<
   </div>
 );
 
-export const SectionContextDefault = SectionComponent;
+export const SectionContextDefault = forwardRef(SectionComponent);
 export const SectionContext = createContext(SectionContextDefault);
-export const Section: typeof SectionContextDefault = (props) =>
-  createElement(useContext(SectionContext), props);
+export const Section: typeof SectionContextDefault = forwardRef((props, ref) =>
+  createElement(useContext(SectionContext), { ...props, ref })
+);

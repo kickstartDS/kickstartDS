@@ -1,9 +1,10 @@
 import {
-  FunctionComponent,
+  ForwardRefRenderFunction,
+  HTMLAttributes,
+  forwardRef,
+  createElement,
   createContext,
   useContext,
-  HTMLAttributes,
-  createElement,
 } from 'react';
 import classnames from 'classnames';
 import { Icon } from '@kickstartds/base/lib/icon';
@@ -16,19 +17,23 @@ import {
 import './visual.scss';
 import './Visual.js';
 
-const VisualComponent: FunctionComponent<
+const VisualComponent: ForwardRefRenderFunction<
+  HTMLDivElement,
   VisualProps & { box?: BoxRenderFunctions } & HTMLAttributes<HTMLDivElement>
-> = ({
-  media,
-  box,
-  overlay,
-  backgroundColor,
-  inbox,
-  height,
-  skipButton,
-  className,
-  ...props
-}) => (
+> = (
+  {
+    media,
+    box,
+    overlay,
+    backgroundColor,
+    inbox,
+    height,
+    skipButton,
+    className,
+    ...props
+  },
+  ref
+) => (
   <div
     data-component="visual"
     className={classnames(
@@ -41,6 +46,7 @@ const VisualComponent: FunctionComponent<
       className
     )}
     style={{ backgroundColor }}
+    ref={ref}
     {...props}
   >
     {media && <VisualMediaPartial {...{ ...media, inbox, overlay }} />}
@@ -56,7 +62,8 @@ const VisualComponent: FunctionComponent<
   </div>
 );
 
-export const VisualContextDefault = VisualComponent;
+export const VisualContextDefault = forwardRef(VisualComponent);
 export const VisualContext = createContext(VisualContextDefault);
-export const Visual: typeof VisualContextDefault = (props) =>
-  createElement(useContext(VisualContext), props);
+export const Visual: typeof VisualContextDefault = forwardRef((props, ref) =>
+  createElement(useContext(VisualContext), { ...props, ref })
+);
