@@ -1,46 +1,84 @@
-import { domLoaded } from '../core/domLoaded.js';
+import { inBrowser, domLoaded } from '../core/domLoaded.js';
 
-domLoaded(() => {
-  if (!('CSSContainerRule' in window)) {
-    const attribute = 'min-width';
-    const prop = '_cq';
-    const re =
-      /@container\s*\(min-width:\s*(?<breakpoint>.*)px\)\s*\{\s*(?<selector>.*)\s*\{\s*(?<css>.*;?)\s*\}/gm;
-    const styleElm = document.createElement('style');
-    styleElm.id = 'container-queries';
+if (inBrowser && !('CSSContainerRule' in window)) {
+  const attribute = 'min-width';
+  const prop = '_cq';
+  const containerRe =
+    /@container\s*\(min-width:\s*(?<breakpoint>.*)px\)\s*\{\s*(?<rules>(?:[^{]*\{[^}]*\})*)\s*\}/gm;
+  const ruleRe =
+    /\s*(?<containerSelector>[^{\s>+~]*)(?<childSelector>[^{]*)\{\s*(?<css>[^}]*)\s*\}/gm;
+  const styleElm = document.createElement('style');
+  styleElm.id = 'container-queries';
 
-    const RO = new ResizeObserver((entries) =>
-      entries.forEach((entry) => {
-        const elm = entry.target;
-        const matchingBreakpoints = elm[prop].filter(
-          (item: number) => item <= entry.contentRect.width
-        );
-        elm.setAttribute(attribute, matchingBreakpoints.join(' '));
-      })
-    );
+  const selectorsToObserve: Record<string, number[]> = {};
 
-    const parse = (rules: string) =>
-      [...rules.matchAll(re)].forEach((match) => {
-        const selector = match.groups.selector.trim();
-        const bp = Number(match.groups.breakpoint);
-        styleElm.innerHTML += `${selector}[${attribute}~="${bp}"]{${match.groups.css}}\n`;
+  const RO = new ResizeObserver((entries) =>
+    entries.forEach((entry) => {
+      const element = entry.target;
+      const matchingBreakpoints = element[prop].filter(
+        (item: number) => item <= entry.contentRect.width
+      );
+      element.setAttribute(attribute, matchingBreakpoints.join(' '));
+    })
+  );
 
-        document.querySelectorAll(selector).forEach((elm) => {
-          elm[prop] ??= [];
-          if (elm[prop].indexOf(bp) < 0) {
-            elm[prop].push(bp);
-          }
-          RO.observe(elm);
-        });
+  const observe = (element: Element, breakpoints: number[]) => {
+    element[prop] = breakpoints;
+    RO.observe(element);
+  };
+
+  const parseStyleSheet = (rules: string) =>
+    [...rules.matchAll(containerRe)].forEach((containerMatch) => {
+      const bp = Number(containerMatch.groups.breakpoint);
+      [...containerMatch.groups.rules.matchAll(ruleRe)].forEach((ruleMatch) => {
+        const { containerSelector, childSelector, css } = ruleMatch.groups;
+        styleElm.innerHTML += `${containerSelector}[${attribute}~="${bp}"]${childSelector}{${css}}\n`;
+
+        selectorsToObserve[containerSelector] ??= [];
+        if (selectorsToObserve[containerSelector].indexOf(bp) < 0) {
+          selectorsToObserve[containerSelector].push(bp);
+        }
+
+        document
+          .querySelectorAll(containerSelector)
+          .forEach((element) =>
+            observe(element, selectorsToObserve[containerSelector])
+          );
       });
+    });
 
+  domLoaded(() => {
     [...document.styleSheets].forEach((sheet) =>
       sheet.href
         ? fetch(sheet.href)
             .then((css) => css.text())
-            .then(parse)
-        : parse((sheet.ownerNode as Element).innerHTML)
+            .then(parseStyleSheet)
+        : parseStyleSheet((sheet.ownerNode as Element).innerHTML)
     );
+
+    new MutationObserver((records) => {
+      const selectors = Object.keys(selectorsToObserve);
+      records.forEach((record) =>
+        record.addedNodes.forEach((added) => {
+          if (added.nodeType === Node.ELEMENT_NODE) {
+            [
+              <Element>added,
+              ...(<Element>added).querySelectorAll(selectors.join()),
+            ].forEach((element) =>
+              selectors
+                .filter((selector) => element.matches(selector))
+                .forEach((containerSelector) =>
+                  observe(element, selectorsToObserve[containerSelector])
+                )
+            );
+          }
+        })
+      );
+    }).observe(document, {
+      childList: true,
+      subtree: true,
+    });
+
     document.head.appendChild(styleElm);
-  }
-});
+  });
+}
