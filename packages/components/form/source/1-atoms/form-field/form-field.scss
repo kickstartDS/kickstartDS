@@ -21,25 +21,6 @@ $vars: meta.module-variables(form-field-vars);
     }
   }
 
-  &__field {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-
-    .icon {
-      @include bourbon.size(var(--c-form-field_icon--size));
-      position: absolute;
-      right: 0;
-      bottom: calc((var(--line-height-m) - var(--c-form-field_icon--size)) / 2);
-      margin: $input-padding;
-      color: var(--c-form-field_icon--color);
-
-      + .c-form-field__input {
-        padding-right: calc(var(--c-form-field_icon--size) + 1rem);
-      }
-    }
-  }
-
   &__input {
     padding: $input-padding;
     border: var(--c-form-field--border);
@@ -77,6 +58,25 @@ $vars: meta.module-variables(form-field-vars);
       --c-form-field--border-color: var(--color-error);
       --c-form-field_hover--border-color: var(--color-error);
       --c-form-field_focus--border-color: var(--color-error);
+    }
+  }
+
+  &__field {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    .icon {
+      @include bourbon.size(var(--c-form-field_icon--size));
+      position: absolute;
+      right: 0;
+      bottom: calc((var(--line-height-m) - var(--c-form-field_icon--size)) / 2);
+      margin: $input-padding;
+      color: var(--c-form-field_icon--color);
+
+      + .c-form-field__input {
+        padding-right: calc(var(--c-form-field_icon--size) + 1rem);
+      }
     }
   }
 

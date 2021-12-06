@@ -1,3 +1,5 @@
+@use 'sass:list';
+
 $breakpoints: (
   xs: 25em,
   s: 40em,
@@ -23,7 +25,7 @@ $breakpoints: (
 
   @each $name, $value in $breakpoints {
     $breakpoint: '\\"#{$name}\\":\\"#{$value}\\"';
-    $breakpoints-json: append($breakpoints-json, $breakpoint, 'comma');
+    $breakpoints-json: list.append($breakpoints-json, $breakpoint, 'comma');
   }
 
   @return '{#{$breakpoints-json}}';

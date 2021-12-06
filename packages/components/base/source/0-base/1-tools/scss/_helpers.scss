@@ -1,3 +1,5 @@
+@use 'sass:string';
+@use 'sass:map';
 @use '@kickstartds/core/source/core/breakpoint';
 @use '../../0-settings/selector';
 @use 'settings/base/typo';
@@ -7,7 +9,6 @@
 @mixin clearlist {
   margin: 0;
   padding: 0;
-
   list-style: none;
 
   li {
@@ -21,7 +22,6 @@
 
 @mixin vertical-centerer() {
   transform: translateY(-50%);
-
   position: absolute;
   top: 50%;
 }
@@ -30,7 +30,6 @@
 
 @mixin horizontal-centerer() {
   transform: translateX(-50%);
-
   position: absolute;
   left: 50%;
 }
@@ -39,7 +38,6 @@
 
 @mixin vertical-and-horizontal-centerer() {
   transform: translate(-50%, -50%);
-
   position: absolute;
   top: 50%;
   left: 50%;
@@ -50,11 +48,8 @@
 @mixin type-reset() {
   margin: 0;
   padding: 0;
-
   font-size: 100%;
-
   border: 0;
-
   vertical-align: baseline;
 }
 
@@ -83,13 +78,12 @@
 
 // Replace `$search` with `$replace` in `$string`
 // Used on our SVG icon backgrounds for custom forms.
-//
 // @param {String} $string - Initial string
 // @param {String} $search - Substring to replace
 // @param {String} $replace ('') - New value
 // @return {String} - Updated string
 @function str-replace($string, $search, $replace: '') {
-  $index: str-index($string, $search);
+  $index: string.index($string, $search);
 
   @if $index {
     @return str-slice($string, 1, $index - 1) + $replace +
@@ -116,7 +110,7 @@
 }
 
 @function get-font-weight($weight) {
-  $has-key: map-has-key(typo.$font-sans-weights, $weight);
+  $has-key: map.has-key(typo.$font-sans-weights, $weight);
 
   @if $has-key {
     @return map-get(typo.$font-sans-weights, $weight);

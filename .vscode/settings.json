@@ -1,0 +1,6 @@
+{
+  "search.exclude": {
+    "**/.yarn": true
+  },
+  "stylelint.validate": ["css", "scss"]
+}

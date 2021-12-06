@@ -50,8 +50,8 @@ $vars: meta.module-variables(lightbox-vars);
 
   /* Always serve SVG sprite */
   &__button,
-  &__button--arrow--left:before,
-  &__button--arrow--right:before {
+  &__button--arrow--left::before,
+  &__button--arrow--right::before {
     background-image: var(--pswp--assets-path) !important;
   }
 

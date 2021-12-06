@@ -5,7 +5,7 @@
   position: relative;
 
   @if ($width and $height) {
-    padding-top: percentage(math.div($height, $width));
+    padding-top: math.percentage(math.div($height, $width));
   }
 
   > * {

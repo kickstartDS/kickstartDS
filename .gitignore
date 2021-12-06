@@ -85,7 +85,7 @@ GitHub.sublime-settings
 # https://raw.githubusercontent.com/github/gitignore/master/Global/VisualStudioCode.gitignore
 
 .vscode/*
-#!.vscode/settings.json
+!.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json

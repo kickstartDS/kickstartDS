@@ -87,9 +87,9 @@ $vars: meta.module-variables(visual-vars);
 
   .c-headline {
     /* critical:start */
+    --c-headline--color: var(--c-visual_headline--color, inherit);
     margin: 0;
     max-width: none;
-    --c-headline--color: var(--c-visual_headline--color, inherit);
 
     &__subheadline {
       --c-headline_subheadline--color: inherit;

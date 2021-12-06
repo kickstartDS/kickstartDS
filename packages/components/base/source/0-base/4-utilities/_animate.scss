@@ -21,7 +21,7 @@
 .animate {
   animation-fill-mode: both;
 
-  @media (print), (prefers-reduced-motion) {
+  @media print, (prefers-reduced-motion) {
     animation: unset !important;
     transition: none !important;
   }

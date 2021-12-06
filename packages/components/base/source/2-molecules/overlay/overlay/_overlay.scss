@@ -35,7 +35,6 @@
     border: 0;
     outline: 0;
     background: transparent;
-
     cursor: pointer;
 
     @include breakpoint.media('≥s') {
@@ -61,7 +60,7 @@
 
   &__inner {
     @include grid.outer-container;
-    @include sizes.global-padding();
+    @include sizes.global-padding;
 
     margin: 0 auto;
     display: flex;

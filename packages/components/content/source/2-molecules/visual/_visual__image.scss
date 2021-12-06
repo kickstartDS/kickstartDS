@@ -9,6 +9,14 @@
   @include bourbon.position(inherit, inherit);
   /* critical:end */
 
+  img {
+    /* critical:start */
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    /* critical:end */
+  }
+
   &--indent {
     &-left {
       img {
@@ -34,14 +42,6 @@
       height: 100%;
       /* critical:end */
     }
-  }
-
-  img {
-    /* critical:start */
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    /* critical:end */
   }
 
   @include helpers.no-print;
