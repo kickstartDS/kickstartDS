@@ -3,8 +3,10 @@ import { inBrowser, domLoaded } from '../core/domLoaded.js';
 if (inBrowser && !('CSSContainerRule' in window)) {
   const attribute = 'min-width';
   const prop = '_cq';
+  // @see https://regex101.com/r/VFT6dW/1
   const containerRe =
     /@container\s*\(min-width:\s*(?<breakpoint>\d*)px\)\s*\{(?<rules>(?:[^}{]+|\{(?:[^}{]+|\{[^}{]*\})*\})*)\}/gm;
+  // @see https://regex101.com/r/TsRNow/1
   const ruleRe =
     /\s*(?<containerSelector>[^{\s>+~]*)(?<childSelector>[^{]*)\{\s*(?<css>[^}]*)\s*\}/gm;
   const styleElm = document.createElement('style');
