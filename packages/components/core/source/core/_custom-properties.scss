@@ -5,7 +5,7 @@
 @mixin responsive-custom-property($name, $value, $critical) {
   @if meta.type-of($value) == 'map' {
     @each $bp, $val in $value {
-      @if $bp == 'xs' or $bp == null {
+      @if $bp == 'xs' or not $bp {
         @include responsive-custom-property($name, $val, $critical);
       } @else {
         @include breakpoint.media('≥#{$bp}') {
@@ -13,7 +13,7 @@
         }
       }
     }
-  } @else if $value != null {
+  } @else if $value {
     @if $critical {
       /* critical:start */
     }

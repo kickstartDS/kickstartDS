@@ -18,7 +18,7 @@ $grid__columns: 12;
     transparent,
     transparent $gutter,
     $color $gutter,
-    $color percentage(math.div(1, $grid__columns))
+    $color math.percentage(math.div(1, $grid__columns))
   );
 
   background-position-x: math.div($gutter, -2);
@@ -64,14 +64,14 @@ $grid__columns: 12;
 
 @mixin grid-cols-per-row($cols) {
   > * {
-    @include grid-cell(percentage(math.div(1, $cols)));
+    @include grid-cell(math.percentage(math.div(1, $cols)));
   }
 }
 
 /// column/cell mixins
 
 @mixin grid-columns($cols) {
-  @include grid-cell(percentage(math.div($cols, $grid__columns)));
+  @include grid-cell(math.percentage(math.div($cols, $grid__columns)));
 }
 
 @mixin grid-cell($width) {
@@ -82,7 +82,7 @@ $grid__columns: 12;
 }
 
 @mixin grid-push($cols) {
-  margin-left: percentage(math.div($cols, $grid__columns));
+  margin-left: math.percentage(math.div($cols, $grid__columns));
 }
 
 /// @see http://www.heydonworks.com/article/the-flexbox-holy-albatross
@@ -91,13 +91,15 @@ $grid__columns: 12;
 /// @param $min-width width of element when the parent's width is BIGGER than threshold
 
 @mixin grid-break-at($threshold, $max-width: 100%, $min-width: false) {
+  // stylelint-disable declaration-block-no-redundant-longhand-properties
   flex-grow: 1;
   flex-shrink: 1;
   flex-basis: calc((#{$threshold} - 100%) * 999);
+  // stylelint-enable
 
   @if $min-width {
     @if unitless($min-width) {
-      $min-width: percentage(math.div($min-width, $grid__columns));
+      $min-width: math.percentage(math.div($min-width, $grid__columns));
     }
 
     min-width: $min-width;
@@ -105,7 +107,7 @@ $grid__columns: 12;
 
   @if $max-width {
     @if unitless($max-width) {
-      $max-width: percentage(math.div($max-width, $grid__columns));
+      $max-width: math.percentage(math.div($max-width, $grid__columns));
     }
 
     @if $min-width and
