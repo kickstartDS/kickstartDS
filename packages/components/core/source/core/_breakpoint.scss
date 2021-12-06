@@ -7,7 +7,7 @@ $breakpoints: (
 );
 
 @forward 'include-media/dist/include-media' with (
-  $breakpoints: $breakpoints,
+  $breakpoints: $breakpoints
 );
 
 ///

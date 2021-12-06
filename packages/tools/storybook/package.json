@@ -28,7 +28,7 @@
     "react-dom": "^17.0.1",
     "react-emoji-render": "^1.2.4",
     "svgstore": "^3.0.1",
-    "yargs-parser": "^20.2.7"
+    "yargs-parser": "^21.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
@@ -38,12 +38,12 @@
     "@storybook/cli": "6.3.12",
     "@storybook/core": "6.3.12",
     "@storybook/react": "6.3.12",
-    "@types/react": "^17.0.34",
+    "@types/react": "^17.0.37",
     "@types/react-dom": "^17.0.11",
     "@whitespace/storybook-addon-html": "git+https://github.com/lmestel/storybook-addon-html.git#v5.3.0",
-    "chromatic": "^6.0.5",
+    "chromatic": "^6.0.6",
     "storybook-builder-vite": "0.0.12",
     "storybook-dark-mode": "^1.0.8",
-    "vite": "^2.6.13"
+    "vite": "^2.6.14"
   }
 }

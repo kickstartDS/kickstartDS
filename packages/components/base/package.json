@@ -1,6 +1,6 @@
 {
   "name": "@kickstartds/base",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "kickstartDS Base Module",
   "author": "ruhmesmeile GmbH <mail@ruhmesmeile.com> (https://ruhmesmeile.com)",
   "homepage": "https://ruhmesmeile.com",
@@ -20,11 +20,11 @@
     "source/**/*-vars.scss"
   ],
   "dependencies": {
-    "@babel/runtime": "^7.16.0",
+    "@babel/runtime": "^7.16.3",
     "@glidejs/glide": "git://github.com/glidejs/glide.git#master",
     "@kickstartds/core": "^1.5.0",
     "classnames": "^2.2.6",
-    "date-fns": "^2.25.0",
+    "date-fns": "^2.26.0",
     "focus-visible": "^5.0.2",
     "formbouncerjs": "^1.4.6",
     "lodash-es": "^4.17.21",
@@ -36,7 +36,7 @@
     "stickybits": "^3.7.0"
   },
   "devDependencies": {
-    "@types/react": "^17.0.34",
+    "@types/react": "^17.0.37",
     "bourbon": "^7.0.0",
     "sass-yiq": "^1.0.0"
   },
