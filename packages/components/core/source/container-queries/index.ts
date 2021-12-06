@@ -4,7 +4,7 @@ if (inBrowser && !('CSSContainerRule' in window)) {
   const attribute = 'min-width';
   const prop = '_cq';
   const containerRe =
-    /@container\s*\(min-width:\s*(?<breakpoint>.*)px\)\s*\{\s*(?<rules>(?:[^{]*\{[^}]*\})*)\s*\}/gm;
+    /@container\s*\(min-width:\s*(?<breakpoint>\d*)px\)\s*\{(?<rules>(?:[^}{]+|\{(?:[^}{]+|\{[^}{]*\})*\})*)\}/gm;
   const ruleRe =
     /\s*(?<containerSelector>[^{\s>+~]*)(?<childSelector>[^{]*)\{\s*(?<css>[^}]*)\s*\}/gm;
   const styleElm = document.createElement('style');
