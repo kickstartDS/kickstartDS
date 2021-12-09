@@ -1,9 +1,10 @@
 import {
-  FunctionComponent,
+  ForwardRefRenderFunction,
   HTMLAttributes,
+  forwardRef,
+  createElement,
   createContext,
   useContext,
-  createElement,
 } from 'react';
 import classNames from 'classnames';
 import { TagLabel, TagLabelProps } from '../../1-atoms/tag-label';
@@ -13,22 +14,30 @@ interface TagLabelContainerProps {
   tagLabels: TagLabelProps[];
 }
 
-export const TagLabelContainerComponent: FunctionComponent<
+export const TagLabelContainerComponent: ForwardRefRenderFunction<
+  HTMLDivElement,
   TagLabelContainerProps & HTMLAttributes<HTMLDivElement>
-> = ({ tagLabels = [], className }) => (
-  <div className={classNames('tag-label-container', className)}>
+> = ({ tagLabels = [], className, ...props }, ref) => (
+  <div
+    className={classNames('tag-label-container', className)}
+    {...props}
+    ref={ref}
+  >
     {tagLabels.map((tagLabel, i) => (
-      <div key={`tag-label-${i}`}>
+      <div key={i}>
         <TagLabel {...tagLabel} />
       </div>
     ))}
   </div>
 );
 
-export const TagLabelContainerContextDefault = TagLabelContainerComponent;
+export const TagLabelContainerContextDefault = forwardRef(
+  TagLabelContainerComponent
+);
 export const TagLabelContainerContext = createContext(
   TagLabelContainerContextDefault
 );
-export const TagLabelContainer: typeof TagLabelContainerContextDefault = (
-  props
-) => createElement(useContext(TagLabelContainerContext), props);
+export const TagLabelContainer: typeof TagLabelContainerContextDefault =
+  forwardRef((props, ref) =>
+    createElement(useContext(TagLabelContainerContext), { ...props, ref })
+  );

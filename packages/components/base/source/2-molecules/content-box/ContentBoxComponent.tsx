@@ -1,9 +1,10 @@
 import {
-  createContext,
-  FunctionComponent,
-  useContext,
+  ForwardRefRenderFunction,
   HTMLAttributes,
+  forwardRef,
   createElement,
+  createContext,
+  useContext,
 } from 'react';
 import classnames from 'classnames';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
@@ -22,20 +23,24 @@ interface RenderFunctions {
   renderText?: renderFn;
 }
 
-const ContentBoxComponent: FunctionComponent<
+const ContentBoxComponent: ForwardRefRenderFunction<
+  HTMLDivElement,
   ContentBoxProps & RenderFunctions & HTMLAttributes<HTMLDivElement>
-> = ({
-  image,
-  topic,
-  alignement,
-  text,
-  link,
-  ratio,
-  renderTopic = defaultRenderFn,
-  renderText = richTextDefaultRenderFn,
-  className,
-  ...props
-}) => (
+> = (
+  {
+    image,
+    topic,
+    alignement,
+    text,
+    link,
+    ratio,
+    renderTopic = defaultRenderFn,
+    renderText = richTextDefaultRenderFn,
+    className,
+    ...props
+  },
+  ref
+) => (
   <div
     className={classnames(
       'c-content-box',
@@ -44,6 +49,7 @@ const ContentBoxComponent: FunctionComponent<
         `c-content-box--align-${alignement}`,
       className
     )}
+    ref={ref}
     {...props}
   >
     {image && (
@@ -71,7 +77,9 @@ const ContentBoxComponent: FunctionComponent<
   </div>
 );
 
-export const ContentBoxContextDefault = ContentBoxComponent;
+export const ContentBoxContextDefault = forwardRef(ContentBoxComponent);
 export const ContentBoxContext = createContext(ContentBoxContextDefault);
-export const ContentBox: typeof ContentBoxContextDefault = (props) =>
-  createElement(useContext(ContentBoxContext), props);
+export const ContentBox: typeof ContentBoxContextDefault = forwardRef(
+  (props, ref) =>
+    createElement(useContext(ContentBoxContext), { ...props, ref })
+);

@@ -1,9 +1,11 @@
 import {
   FunctionComponent,
+  ForwardRefRenderFunction,
   HTMLAttributes,
+  forwardRef,
+  createElement,
   createContext,
   useContext,
-  createElement,
 } from 'react';
 import classnames from 'classnames';
 import { renderFn } from '@kickstartds/core/lib/core';
@@ -94,16 +96,20 @@ const Media: FunctionComponent<{ media: IMedia }> = ({ media }) =>
     </div>
   ) : null;
 
-export const TextMediaComponent: FunctionComponent<
+export const TextMediaComponent: ForwardRefRenderFunction<
+  HTMLDivElement,
   TextMediaProps & RenderFunctions & HTMLAttributes<HTMLDivElement>
-> = ({
-  text = '',
-  media = [],
-  mediaAlignment,
-  renderText = defaultRenderFn,
-  className,
-  ...props
-}) => (
+> = (
+  {
+    text = '',
+    media = [],
+    mediaAlignment,
+    renderText = defaultRenderFn,
+    className,
+    ...props
+  },
+  ref
+) => (
   <div
     className={classnames(
       'text-media',
@@ -120,6 +126,7 @@ export const TextMediaComponent: FunctionComponent<
       },
       className
     )}
+    ref={ref}
     {...props}
   >
     {mediaAlignment?.startsWith('below') ? (
@@ -144,7 +151,8 @@ export const TextMediaComponent: FunctionComponent<
   </div>
 );
 
-export const TextMediaContextDefault = TextMediaComponent;
+export const TextMediaContextDefault = forwardRef(TextMediaComponent);
 export const TextMediaContext = createContext(TextMediaContextDefault);
-export const TextMedia: typeof TextMediaContextDefault = (props) =>
-  createElement(useContext(TextMediaContext), props);
+export const TextMedia: typeof TextMediaContextDefault = forwardRef(
+  (props, ref) => createElement(useContext(TextMediaContext), { ...props, ref })
+);

@@ -1,9 +1,10 @@
 import {
-  FunctionComponent,
+  ForwardRefRenderFunction,
+  HTMLAttributes,
+  forwardRef,
+  createElement,
   createContext,
   useContext,
-  createElement,
-  HTMLAttributes,
 } from 'react';
 import ReactMarkdown from 'react-markdown';
 import classnames from 'classnames';
@@ -19,15 +20,17 @@ interface RichTextProps {
   renderText?: renderTextFn;
 }
 
-const RichTextComponent: FunctionComponent<
+const RichTextComponent: ForwardRefRenderFunction<
+  HTMLDivElement,
   RichTextProps & HTMLAttributes<HTMLDivElement>
-> = ({ text, renderText = defaultRenderFn, className, ...props }) => (
-  <div className={classnames('c-rich-text', className)} {...props}>
+> = ({ text, renderText = defaultRenderFn, className, ...props }, ref) => (
+  <div className={classnames('c-rich-text', className)} ref={ref} {...props}>
     {renderText(text)}
   </div>
 );
 
-export const RichTextContextDefault = RichTextComponent;
+export const RichTextContextDefault = forwardRef(RichTextComponent);
 export const RichTextContext = createContext(RichTextContextDefault);
-export const RichText: typeof RichTextContextDefault = (props) =>
-  createElement(useContext(RichTextContext), props);
+export const RichText: typeof RichTextContextDefault = forwardRef(
+  (props, ref) => createElement(useContext(RichTextContext), { ...props, ref })
+);

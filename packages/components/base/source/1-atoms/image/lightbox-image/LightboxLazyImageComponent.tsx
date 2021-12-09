@@ -1,4 +1,11 @@
-import { FunctionComponent } from 'react';
+import {
+  ForwardRefRenderFunction,
+  HTMLAttributes,
+  forwardRef,
+  createElement,
+  createContext,
+  useContext,
+} from 'react';
 import classnames from 'classnames';
 import { Icon } from '../../icon';
 import { Link } from '../../link';
@@ -6,19 +13,26 @@ import { Picture } from '../picture/PictureComponent';
 import { LazyLightboxImageProps } from './LightboxLazyImageProps';
 import './lightbox-image.scss';
 
-export const LightboxLazyImage: FunctionComponent<LazyLightboxImageProps> = ({
-  image,
-  thumb,
-  zoomIcon,
-  className,
-  gallery,
-  width,
-  height,
-  id,
-  caption,
-  hideCaption,
-  captionClassName,
-}) => (
+const LightboxLazyImageComponent: ForwardRefRenderFunction<
+  HTMLElement,
+  LazyLightboxImageProps
+> = (
+  {
+    image,
+    thumb,
+    zoomIcon,
+    className,
+    gallery,
+    width,
+    height,
+    id,
+    caption,
+    hideCaption,
+    captionClassName,
+    ...props
+  },
+  ref
+) => (
   <figure
     className={classnames(
       'lightbox-image',
@@ -26,6 +40,8 @@ export const LightboxLazyImage: FunctionComponent<LazyLightboxImageProps> = ({
       className
     )}
     itemScope={!!id}
+    ref={ref}
+    {...props}
   >
     <Link
       href={image}
@@ -57,3 +73,14 @@ export const LightboxLazyImage: FunctionComponent<LazyLightboxImageProps> = ({
     )}
   </figure>
 );
+
+export const LightboxLazyImageContextDefault = forwardRef(
+  LightboxLazyImageComponent
+);
+export const LightboxLazyImageContext = createContext(
+  LightboxLazyImageContextDefault
+);
+export const LightboxLazyImage: typeof LightboxLazyImageContextDefault =
+  forwardRef((props, ref) =>
+    createElement(useContext(LightboxLazyImageContext), { ...props, ref })
+  );
