@@ -17,12 +17,7 @@ const kdsModule = argv.module;
 const kdsModules = kdsModule ? `{${kdsModule},core}` : '*';
 process.env.KDS_MODULES = kdsModules;
 
-const storybookOptions = [
-  '--config-dir',
-  '.storybook',
-  '--static-dir',
-  '../../../legacy-instance',
-];
+const storybookOptions = ['--config-dir', '.storybook'];
 const storybookOptionsBuild = [
   ...storybookOptions,
   '--output-dir',
