@@ -19,4 +19,5 @@ const importer = (url) => {
 module.exports = {
   includePaths,
   importer,
+  quietDeps: true,
 };

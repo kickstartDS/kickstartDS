@@ -28,7 +28,12 @@ const importer = (url) => {
 const dependencies = {};
 
 const compile = async (file) => {
-  const { css, stats } = sass.renderSync({ file, includePaths, importer });
+  const { css, stats } = sass.renderSync({
+    file,
+    includePaths,
+    importer,
+    quietDeps: true,
+  });
   dependencies[path.relative(cwd, stats.entry)] = stats.includedFiles.reduce(
     (prev, curr) => {
       if (!curr.includes('/node_modules/')) {

@@ -4,12 +4,14 @@ import { actions } from '@storybook/addon-actions';
 import 'lazysizes/plugins/attrchange/ls.attrchange';
 import { unpackDecorator } from '../../../components/core/lib/storybook/helpers';
 
+import '../../../components/core/lib/design-tokens/tokens.css';
 import '../../../components/base/lib/global/base.js';
 import '../../../components/base/lib/global/base.css';
-import designTokens from '../../../components/core/lib/design-tokens/tokens.css';
 import '../../../components/base/lib/lightbox/lazyLightbox.js';
 import '../../../components/base/lib/lightbox/lightbox.css';
-import icons from './icons.html?raw';
+
+import designTokens from '!!raw-loader!../../../components/core/lib/design-tokens/tokens.css';
+import icons from '!!raw-loader!./icons.html';
 
 const myActions = actions('radio');
 window.rm.radio.on('*', myActions.radio);
