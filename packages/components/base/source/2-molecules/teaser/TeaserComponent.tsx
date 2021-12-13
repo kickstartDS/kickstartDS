@@ -1,9 +1,10 @@
 import {
-  FunctionComponent,
+  ForwardRefRenderFunction,
   HTMLAttributes,
+  forwardRef,
+  createElement,
   createContext,
   useContext,
-  createElement,
 } from 'react';
 import classnames from 'classnames';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
@@ -21,19 +22,23 @@ export interface TeaserRenderFunctions {
   renderText?: renderFn;
 }
 
-export const TeaserComponent: FunctionComponent<
+export const TeaserComponent: ForwardRefRenderFunction<
+  HTMLDivElement,
   TeaserProps & TeaserRenderFunctions & HTMLAttributes<HTMLDivElement>
-> = ({
-  topic,
-  text,
-  darkStyle,
-  link,
-  renderText = richTextDefaultRenderFn,
-  renderTopic = defaultRenderFn,
-  className,
-  children,
-  ...props
-}) => (
+> = (
+  {
+    topic,
+    text,
+    darkStyle,
+    link,
+    renderText = richTextDefaultRenderFn,
+    renderTopic = defaultRenderFn,
+    className,
+    children,
+    ...props
+  },
+  ref
+) => (
   <div
     className={classnames(
       'c-teaser',
@@ -43,6 +48,7 @@ export const TeaserComponent: FunctionComponent<
       className
     )}
     data-component="base.teaser"
+    ref={ref}
     {...props}
   >
     {children}
@@ -65,7 +71,8 @@ export const TeaserComponent: FunctionComponent<
   </div>
 );
 
-export const TeaserContextDefault = TeaserComponent;
+export const TeaserContextDefault = forwardRef(TeaserComponent);
 export const TeaserContext = createContext(TeaserContextDefault);
-export const Teaser: typeof TeaserContextDefault = (props) =>
-  createElement(useContext(TeaserContext), props);
+export const Teaser: typeof TeaserContextDefault = forwardRef((props, ref) =>
+  createElement(useContext(TeaserContext), { ...props, ref })
+);

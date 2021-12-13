@@ -1,9 +1,10 @@
 import {
-  FunctionComponent,
+  ForwardRefRenderFunction,
   HTMLAttributes,
+  forwardRef,
+  createElement,
   createContext,
   useContext,
-  createElement,
 } from 'react';
 import classNames from 'classnames';
 import './iframe-ratio.scss';
@@ -17,13 +18,18 @@ type IframeRatioProps = {
   setParentWidth?: boolean;
 };
 
-export const IframeRatioComponent: FunctionComponent<
+export const IframeRatioComponent: ForwardRefRenderFunction<
+  HTMLDivElement,
   IframeRatioProps & HTMLAttributes<HTMLDivElement>
-> = ({ src, title, width, height, setParentWidth, className, ...props }) => (
+> = (
+  { src, title, width, height, setParentWidth, className, ...props },
+  ref
+) => (
   <div
     className={classNames('iframe-ratio', className)}
     data-component="base.iframe-ratio"
     data-auto-width={setParentWidth}
+    ref={ref}
     {...props}
   >
     <iframe
@@ -37,7 +43,9 @@ export const IframeRatioComponent: FunctionComponent<
   </div>
 );
 
-export const IframeRatioContextDefault = IframeRatioComponent;
+export const IframeRatioContextDefault = forwardRef(IframeRatioComponent);
 export const IframeRatioContext = createContext(IframeRatioContextDefault);
-export const IframeRatio: typeof IframeRatioContextDefault = (props) =>
-  createElement(useContext(IframeRatioContext), props);
+export const IframeRatio: typeof IframeRatioContextDefault = forwardRef(
+  (props, ref) =>
+    createElement(useContext(IframeRatioContext), { ...props, ref })
+);

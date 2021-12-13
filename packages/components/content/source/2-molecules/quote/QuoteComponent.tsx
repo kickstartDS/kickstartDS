@@ -1,9 +1,10 @@
 import {
-  createContext,
-  FunctionComponent,
-  useContext,
+  ForwardRefRenderFunction,
   HTMLAttributes,
+  forwardRef,
   createElement,
+  createContext,
+  useContext,
 } from 'react';
 import classnames from 'classnames';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
@@ -21,20 +22,24 @@ interface RenderFunctions {
   renderByline?: renderFn;
 }
 
-const QuoteComponent: FunctionComponent<
+const QuoteComponent: ForwardRefRenderFunction<
+  HTMLDivElement,
   QuoteProps & RenderFunctions & HTMLAttributes<HTMLDivElement>
-> = ({
-  image,
-  text,
-  source,
-  byline,
-  renderText = richTextDefaultRenderFn,
-  renderSource = defaultRenderFn,
-  renderByline = defaultRenderFn,
-  className,
-  ...props
-}) => (
-  <div className={classnames('c-quote', className)} {...props}>
+> = (
+  {
+    image,
+    text,
+    source,
+    byline,
+    renderText = richTextDefaultRenderFn,
+    renderSource = defaultRenderFn,
+    renderByline = defaultRenderFn,
+    className,
+    ...props
+  },
+  ref
+) => (
+  <div className={classnames('c-quote', className)} ref={ref} {...props}>
     {image && (
       <div className="c-quote__image-wrap">
         <div className="c-quote__image">
@@ -52,7 +57,8 @@ const QuoteComponent: FunctionComponent<
   </div>
 );
 
-export const QuoteContextDefault = QuoteComponent;
+export const QuoteContextDefault = forwardRef(QuoteComponent);
 export const QuoteContext = createContext(QuoteContextDefault);
-export const Quote: typeof QuoteContextDefault = (props) =>
-  createElement(useContext(QuoteContext), props);
+export const Quote: typeof QuoteContextDefault = forwardRef((props, ref) =>
+  createElement(useContext(QuoteContext), { ...props, ref })
+);

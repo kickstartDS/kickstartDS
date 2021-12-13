@@ -1,9 +1,11 @@
 import {
+  FunctionComponent,
+  ForwardRefRenderFunction,
+  HTMLAttributes,
+  forwardRef,
+  createElement,
   createContext,
   useContext,
-  FunctionComponent,
-  HTMLAttributes,
-  createElement,
 } from 'react';
 import { format } from 'date-fns';
 import classnames from 'classnames';
@@ -24,14 +26,9 @@ interface PostTeaserRenderFunctions {
   renderText?: renderFn;
 }
 
-const PostTeaserHeader = ({
-  date,
-  categories,
-  index,
-  link,
-  renderTopic,
-  title,
-}) => (
+const PostTeaserHeader: FunctionComponent<
+  PostTeaserProps & PostTeaserRenderFunctions
+> = ({ date, categories, index, link, renderTopic, title }) => (
   <div className="c-post-teaser--header">
     <div className="c-post-teaser__meta">
       {date && (
@@ -60,22 +57,26 @@ const PostTeaserHeader = ({
   </div>
 );
 
-const PostTeaserComponent: FunctionComponent<
-  PostTeaserProps & PostTeaserRenderFunctions & HTMLAttributes<HTMLDivElement>
-> = ({
-  variant = 'image-first',
-  image,
-  date,
-  link,
-  title,
-  body,
-  categories = [],
-  index,
-  renderTopic = defaultRenderFn,
-  renderText = richTextDefaultRenderFn,
-  className,
-  ...props
-}) => (
+const PostTeaserComponent: ForwardRefRenderFunction<
+  HTMLElement,
+  PostTeaserProps & PostTeaserRenderFunctions & HTMLAttributes<HTMLElement>
+> = (
+  {
+    variant = 'image-first',
+    image,
+    date,
+    link,
+    title,
+    body,
+    categories = [],
+    index,
+    renderTopic = defaultRenderFn,
+    renderText = richTextDefaultRenderFn,
+    className,
+    ...props
+  },
+  ref
+) => (
   <article
     className={classnames(
       'c-post-teaser',
@@ -85,6 +86,7 @@ const PostTeaserComponent: FunctionComponent<
       },
       className
     )}
+    ref={ref}
     {...props}
   >
     {variant === 'title-first' && (
@@ -129,7 +131,9 @@ const PostTeaserComponent: FunctionComponent<
   </article>
 );
 
-export const PostTeaserContextDefault = PostTeaserComponent;
+export const PostTeaserContextDefault = forwardRef(PostTeaserComponent);
 export const PostTeaserContext = createContext(PostTeaserContextDefault);
-export const PostTeaser: typeof PostTeaserContextDefault = (props) =>
-  createElement(useContext(PostTeaserContext), props);
+export const PostTeaser: typeof PostTeaserContextDefault = forwardRef(
+  (props, ref) =>
+    createElement(useContext(PostTeaserContext), { ...props, ref })
+);
