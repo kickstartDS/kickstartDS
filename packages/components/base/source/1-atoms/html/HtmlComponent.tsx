@@ -1,24 +1,28 @@
 import {
-  FunctionComponent,
+  ForwardRefRenderFunction,
   HTMLAttributes,
+  forwardRef,
+  createElement,
   createContext,
   useContext,
-  createElement,
 } from 'react';
 import classNames from 'classnames';
 import { HTMLProps } from './HtmlProps';
 
-export const HtmlComponent: FunctionComponent<
+export const HtmlComponent: ForwardRefRenderFunction<
+  HTMLDivElement,
   HTMLProps & HTMLAttributes<HTMLDivElement>
-> = ({ html, className, ...props }) => (
+> = ({ html, className, ...props }, ref) => (
   <div
     className={classNames('c-html', className)}
     dangerouslySetInnerHTML={{ __html: html }}
+    ref={ref}
     {...props}
   />
 );
 
-export const HtmlContextDefault = HtmlComponent;
+export const HtmlContextDefault = forwardRef(HtmlComponent);
 export const HtmlContext = createContext(HtmlContextDefault);
-export const Html: typeof HtmlContextDefault = (props) =>
-  createElement(useContext(HtmlContext), props);
+export const Html: typeof HtmlContextDefault = forwardRef((props, ref) =>
+  createElement(useContext(HtmlContext), { ...props, ref })
+);

@@ -31,9 +31,8 @@
   &__actions {
     margin: -0.5rem;
     display: flex;
-    flex-wrap: wrap;
+    flex-flow: row-reverse wrap;
     justify-content: space-between;
-    flex-direction: row-reverse;
   }
 
   &__action {

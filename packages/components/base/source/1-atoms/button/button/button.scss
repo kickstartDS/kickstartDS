@@ -43,6 +43,11 @@ $vars: meta.module-variables(button-vars);
     text-decoration: none;
   }
 
+  &:disabled {
+    box-shadow: none;
+    opacity: 0.5;
+  }
+
   &:active:not(:disabled) {
     color: var(
       --c-button--color-active,
@@ -57,11 +62,6 @@ $vars: meta.module-variables(button-vars);
       var(--c-button--border-color-hover, var(--c-button--border-color))
     );
     transform: var(--c-button--transform-active);
-  }
-
-  &:disabled {
-    box-shadow: none;
-    opacity: 0.5;
   }
 
   &--fill-animation {
@@ -100,14 +100,6 @@ $vars: meta.module-variables(button-vars);
     }
   }
 
-  &--icon-animation {
-    &:hover {
-      .icon {
-        animation: hover-effect 0.6s;
-      }
-    }
-  }
-
   .icon {
     /* critical:start */
     @include bourbon.size(var(--c-button--icon-size));
@@ -126,6 +118,14 @@ $vars: meta.module-variables(button-vars);
       /* critical:start */
       margin-right: 0;
       /* critical:end */
+    }
+  }
+
+  &--icon-animation {
+    &:hover {
+      .icon {
+        animation: hover-effect 0.6s;
+      }
     }
   }
 }

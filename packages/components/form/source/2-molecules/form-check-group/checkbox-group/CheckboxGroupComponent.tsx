@@ -1,10 +1,10 @@
 import {
-  FunctionComponent,
+  ForwardRefRenderFunction,
+  HTMLAttributes,
   forwardRef,
+  createElement,
   createContext,
   useContext,
-  HTMLAttributes,
-  createElement,
 } from 'react';
 import classnames from 'classnames';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
@@ -16,22 +16,27 @@ interface RenderFunctions {
   renderLabel?: renderFn;
 }
 
-const CheckboxGroupComponent: FunctionComponent<
+const CheckboxGroupComponent: ForwardRefRenderFunction<
+  HTMLDivElement,
   CheckboxGroupProps & RenderFunctions & HTMLAttributes<HTMLDivElement>
-> = ({
-  label,
-  name,
-  renderLabel = defaultRenderFn,
-  invalid,
-  invalidMessage,
-  options,
-  className,
-  ...props
-}) => (
+> = (
+  {
+    label,
+    name,
+    renderLabel = defaultRenderFn,
+    invalid,
+    invalidMessage,
+    options,
+    className,
+    ...props
+  },
+  ref
+) => (
   <div
     className={classnames('c-form-check-group', className, {
       'c-form-check-group--is-invalid': invalid,
     })}
+    ref={ref}
     {...props}
   >
     <span className="c-form-check-group__label">{renderLabel(label)}</span>
@@ -48,7 +53,7 @@ const CheckboxGroupComponent: FunctionComponent<
   </div>
 );
 
-export const CheckboxGroupContextDefault = CheckboxGroupComponent;
+export const CheckboxGroupContextDefault = forwardRef(CheckboxGroupComponent);
 export const CheckboxGroupContext = createContext(CheckboxGroupContextDefault);
 export const CheckboxGroup: typeof CheckboxGroupContextDefault = forwardRef(
   (props, ref) =>

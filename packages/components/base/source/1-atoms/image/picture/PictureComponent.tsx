@@ -1,55 +1,56 @@
 import {
-  FunctionComponent,
+  ForwardRefExoticComponent,
+  ForwardedRef,
   ForwardRefRenderFunction,
-  forwardRef,
   HTMLAttributes,
-  createContext,
-  Ref,
-  useContext,
+  forwardRef,
   createElement,
+  createContext,
+  useContext,
 } from 'react';
 import classnames from 'classnames';
 import { PictureProps } from './PictureProps';
 
-type ImageProps = PictureProps &
-  HTMLAttributes<HTMLImageElement> & {
-    imgRef?: Ref<HTMLImageElement>;
-  };
-
-const Image: FunctionComponent<ImageProps> = ({
-  className,
-  src,
-  srcSet,
-  lazy = true,
-  objectFit,
-  imgRef,
-  noscript = true,
-  ...props
-}) => (
-  <>
-    <img
-      {...props}
-      className={classnames(className, { lazyload: lazy })}
-      src={!lazy ? src : undefined}
-      data-src={lazy ? src : undefined}
-      srcSet={!lazy ? srcSet : undefined}
-      data-srcset={lazy ? srcSet : undefined}
-      data-object-fit={objectFit !== 'none' ? objectFit : undefined}
-      ref={imgRef}
-    />
-    {lazy && noscript && (
-      <noscript>
-        <img {...props} src={src} srcSet={srcSet} className={className} />
-      </noscript>
-    )}
-  </>
+const Image: ForwardRefExoticComponent<
+  PictureProps & HTMLAttributes<HTMLImageElement>
+> = forwardRef(
+  (
+    {
+      className,
+      src,
+      srcSet,
+      lazy = true,
+      objectFit,
+      noscript = true,
+      ...props
+    },
+    ref: ForwardedRef<HTMLImageElement>
+  ) => (
+    <>
+      <img
+        {...props}
+        className={classnames(className, { lazyload: lazy })}
+        src={!lazy ? src : undefined}
+        data-src={lazy ? src : undefined}
+        srcSet={!lazy ? srcSet : undefined}
+        data-srcset={lazy ? srcSet : undefined}
+        data-object-fit={objectFit !== 'none' ? objectFit : undefined}
+        ref={ref}
+      />
+      {lazy && noscript && (
+        <noscript>
+          <img {...props} src={src} srcSet={srcSet} className={className} />
+        </noscript>
+      )}
+    </>
+  )
 );
 
 const PictureComponent: ForwardRefRenderFunction<
   HTMLImageElement,
   PictureProps & HTMLAttributes<HTMLImageElement>
 > = ({ sources = [], lazy = true, pictureClassName, ...props }, ref) => {
-  const fallbackImage = <Image {...props} lazy={lazy} imgRef={ref} />;
+  const fallbackImage = <Image {...props} lazy={lazy} ref={ref} />;
 
   return sources.length ? (
     <picture className={pictureClassName}>

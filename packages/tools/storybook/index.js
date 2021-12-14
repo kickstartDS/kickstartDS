@@ -17,12 +17,7 @@ const kdsModule = argv.module;
 const kdsModules = kdsModule ? `{${kdsModule},core}` : '*';
 process.env.KDS_MODULES = kdsModules;
 
-const storybookOptions = [
-  '--config-dir',
-  '.storybook',
-  '--static-dir',
-  '../../../legacy-instance',
-];
+const storybookOptions = ['--config-dir', '.storybook'];
 const storybookOptionsBuild = [
   ...storybookOptions,
   '--output-dir',
@@ -48,9 +43,11 @@ cleanup()
         return exec('start-storybook', storybookOptionsStart);
       }
 
-      // TODO add a way to debug when using Vite
       case 'debug': {
-        return exec('start-storybook', [...storybookOptionsStart]);
+        return exec('start-storybook', [
+          ...storybookOptionsStart,
+          '--debug-webpack',
+        ]);
       }
 
       default: {

@@ -50,8 +50,6 @@
       "args": [
         "--config-dir",
         "${workspaceRoot}/packages/tools/storybook/.storybook",
-        "--static-dir",
-        "legacy-instance",
         "--output-dir",
         "dist"
       ],

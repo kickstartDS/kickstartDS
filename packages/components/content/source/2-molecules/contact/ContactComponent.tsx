@@ -1,9 +1,10 @@
 import {
-  createContext,
-  FunctionComponent,
-  useContext,
+  ForwardRefRenderFunction,
   HTMLAttributes,
+  forwardRef,
   createElement,
+  createContext,
+  useContext,
 } from 'react';
 import classnames from 'classnames';
 import { Picture } from '@kickstartds/base/lib/picture';
@@ -13,10 +14,14 @@ import { Icon } from '@kickstartds/base/lib/icon';
 import { ContactProps } from './ContactProps';
 import './contact.scss';
 
-const ContactComponent: FunctionComponent<
+const ContactComponent: ForwardRefRenderFunction<
+  HTMLElement,
   ContactProps & HTMLAttributes<HTMLElement>
-> = ({ image, title, subtitle, phone, email, copy, className, ...props }) => (
-  <address className={classnames('c-contact', className)} {...props}>
+> = (
+  { image, title, subtitle, phone, email, copy, className, ...props },
+  ref
+) => (
+  <address className={classnames('c-contact', className)} ref={ref} {...props}>
     {image && image.src ? (
       <div className="c-contact__image">
         <Picture {...image} />
@@ -61,7 +66,8 @@ const ContactComponent: FunctionComponent<
   </address>
 );
 
-export const ContactContextDefault = ContactComponent;
+export const ContactContextDefault = forwardRef(ContactComponent);
 export const ContactContext = createContext(ContactContextDefault);
-export const Contact: typeof ContactContextDefault = (props) =>
-  createElement(useContext(ContactContext), props);
+export const Contact: typeof ContactContextDefault = forwardRef((props, ref) =>
+  createElement(useContext(ContactContext), { ...props, ref })
+);

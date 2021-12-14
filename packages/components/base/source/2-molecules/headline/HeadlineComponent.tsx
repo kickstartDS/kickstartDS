@@ -1,9 +1,10 @@
 import {
-  FunctionComponent,
+  ForwardRefRenderFunction,
+  HTMLAttributes,
+  forwardRef,
+  createElement,
   createContext,
   useContext,
-  createElement,
-  HTMLAttributes,
 } from 'react';
 import classnames from 'classnames';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
@@ -15,21 +16,25 @@ interface RenderFunctions {
   renderSubheadline?: renderFn;
 }
 
-const HeadlineComponent: FunctionComponent<
+const HeadlineComponent: ForwardRefRenderFunction<
+  HTMLElement,
   HeadlineProps & RenderFunctions & HTMLAttributes<HTMLElement>
-> = ({
-  content,
-  level = 'h2',
-  styleAs = 'none',
-  align = 'left',
-  pageHeader,
-  subheadline,
-  spaceAfter = 'none',
-  renderContent = defaultRenderFn,
-  renderSubheadline = defaultRenderFn,
-  className,
-  ...props
-}) => {
+> = (
+  {
+    content,
+    level = 'h2',
+    styleAs = 'none',
+    align = 'left',
+    pageHeader,
+    subheadline,
+    spaceAfter = 'none',
+    renderContent = defaultRenderFn,
+    renderSubheadline = defaultRenderFn,
+    className,
+    ...props
+  },
+  ref
+) => {
   const TagName = level as keyof JSX.IntrinsicElements;
   return (
     <header
@@ -40,6 +45,7 @@ const HeadlineComponent: FunctionComponent<
         { 'c-headline--page-header': pageHeader },
         className
       )}
+      ref={ref}
       {...props}
     >
       <TagName
@@ -59,7 +65,8 @@ const HeadlineComponent: FunctionComponent<
   );
 };
 
-export const HeadlineContextDefault = HeadlineComponent;
+export const HeadlineContextDefault = forwardRef(HeadlineComponent);
 export const HeadlineContext = createContext(HeadlineContextDefault);
-export const Headline: typeof HeadlineContextDefault = (props) =>
-  createElement(useContext(HeadlineContext), props);
+export const Headline: typeof HeadlineContextDefault = forwardRef(
+  (props, ref) => createElement(useContext(HeadlineContext), { ...props, ref })
+);

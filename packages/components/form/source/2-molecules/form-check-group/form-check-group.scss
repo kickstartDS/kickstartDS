@@ -16,8 +16,7 @@ $vars: meta.module-variables(form-check-group-vars);
 
   &__group {
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
+    flex-flow: column wrap;
     align-items: flex-start;
     margin: calc(var(--c-form-check-group--vertical-gutter) * -1)
       calc(var(--c-form-check-group--horizontal-gutter) * -1);

@@ -1,9 +1,10 @@
 import {
-  createContext,
-  FunctionComponent,
-  useContext,
+  ForwardRefRenderFunction,
   HTMLAttributes,
+  forwardRef,
   createElement,
+  createContext,
+  useContext,
 } from 'react';
 import classnames from 'classnames';
 import {
@@ -28,23 +29,27 @@ interface RenderFunctions {
   renderLinkLabel?: renderFn;
 }
 
-const CountUpComponent: FunctionComponent<
+const CountUpComponent: ForwardRefRenderFunction<
+  HTMLDivElement,
   CountUpProps & RenderFunctions & HTMLAttributes<HTMLDivElement>
-> = ({
-  icon,
-  to,
-  topic,
-  text,
-  link,
-  renderTo = defaultRenderFn,
-  renderTopic = defaultRenderFn,
-  renderText = richTextDefaultRenderFn,
-  renderLinkLabel = defaultRenderFn,
-  className,
-  expand,
-  ...props
-}) => (
-  <div className={classnames('c-count-up', className)} {...props}>
+> = (
+  {
+    icon,
+    to,
+    topic,
+    text,
+    link,
+    renderTo = defaultRenderFn,
+    renderTopic = defaultRenderFn,
+    renderText = richTextDefaultRenderFn,
+    renderLinkLabel = defaultRenderFn,
+    className,
+    expand,
+    ...props
+  },
+  ref
+) => (
+  <div className={classnames('c-count-up', className)} ref={ref} {...props}>
     {icon && icon.icon ? (
       <div className="c-count-up__icon">
         <Icon {...icon} />
@@ -81,7 +86,8 @@ const CountUpComponent: FunctionComponent<
   </div>
 );
 
-export const CountUpContextDefault = CountUpComponent;
+export const CountUpContextDefault = forwardRef(CountUpComponent);
 export const CountUpContext = createContext(CountUpContextDefault);
-export const CountUp: typeof CountUpContextDefault = (props) =>
-  createElement(useContext(CountUpContext), props);
+export const CountUp: typeof CountUpContextDefault = forwardRef((props, ref) =>
+  createElement(useContext(CountUpContext), { ...props, ref })
+);

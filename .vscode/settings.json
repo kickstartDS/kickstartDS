@@ -1,0 +1,20 @@
+{
+  "search.exclude": {
+    "**/.yarn": true
+  },
+  "stylelint.validate": ["css", "scss"],
+  "workbench.colorCustomizations": {
+    "sash.hoverBorder": "#097d9a",
+    "statusBar.background": "#06566a",
+    "statusBar.foreground": "#e7e7e7",
+    "statusBarItem.hoverBackground": "#097d9a",
+    "statusBarItem.remoteBackground": "#06566a",
+    "statusBarItem.remoteForeground": "#e7e7e7",
+    "tab.activeBorder": "#097d9a",
+    "titleBar.activeBackground": "#06566a",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveBackground": "#06566a99",
+    "titleBar.inactiveForeground": "#e7e7e799"
+  },
+  "peacock.color": "#06566a"
+}

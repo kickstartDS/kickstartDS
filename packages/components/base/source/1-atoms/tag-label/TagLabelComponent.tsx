@@ -1,9 +1,10 @@
 import {
-  FunctionComponent,
+  ForwardRefRenderFunction,
+  HTMLAttributes,
+  forwardRef,
+  createElement,
   createContext,
   useContext,
-  HTMLAttributes,
-  createElement,
 } from 'react';
 import classnames from 'classnames';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
@@ -17,20 +18,25 @@ interface RenderFunctions {
   renderLabel?: renderFn;
 }
 
-const TagLabelComponent: FunctionComponent<
+const TagLabelComponent: ForwardRefRenderFunction<
+  HTMLDivElement,
   TagLabelProps & RenderFunctions & HTMLAttributes<HTMLDivElement>
-> = ({
-  label,
-  size = 'm',
-  link,
-  removable,
-  renderLabel = defaultRenderFn,
-  className,
-  ...props
-}) => (
+> = (
+  {
+    label,
+    size = 'm',
+    link,
+    removable,
+    renderLabel = defaultRenderFn,
+    className,
+    ...props
+  },
+  ref
+) => (
   <div
     className={classnames('c-tag-label', `c-tag-label--${size}`, className)}
     data-component={removable ? 'base.tag-label' : null}
+    ref={ref}
     {...props}
   >
     {link ? (
@@ -48,7 +54,8 @@ const TagLabelComponent: FunctionComponent<
   </div>
 );
 
-export const TagLabelContextDefault = TagLabelComponent;
+export const TagLabelContextDefault = forwardRef(TagLabelComponent);
 export const TagLabelContext = createContext(TagLabelContextDefault);
-export const TagLabel: typeof TagLabelContextDefault = (props) =>
-  createElement(useContext(TagLabelContext), props);
+export const TagLabel: typeof TagLabelContextDefault = forwardRef(
+  (props, ref) => createElement(useContext(TagLabelContext), { ...props, ref })
+);

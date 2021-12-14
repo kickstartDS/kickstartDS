@@ -16,27 +16,6 @@
   padding: 0.75em 1em;
   transition: 0.3s;
 
-  [data-glide-el='controls[nav]'] .c-slider-nav__slide & {
-    min-width: 7rem;
-  }
-
-  .c-slider-nav__slide:hover &,
-  .c-slider-nav__slide:focus & {
-    background: var(--c-visual-slider_preview--background-hover);
-    color: var(--c-visual-slider_preview--color-hover);
-  }
-
-  .c-slider-nav__slide--active & {
-    background: var(--c-visual-slider_preview--background-active);
-    color: var(--c-visual-slider_preview--color-active);
-
-    .c-slider--autoplay &::after {
-      animation: slider-nav-autoplay $current-animation-duration linear;
-      animation-iteration-count: 1;
-      animation-fill-mode: forwards;
-    }
-  }
-
   .c-slider--autoplay & {
     position: relative;
 
@@ -51,5 +30,26 @@
       );
       content: '';
     }
+  }
+
+  .c-slider-nav__slide--active & {
+    background: var(--c-visual-slider_preview--background-active);
+    color: var(--c-visual-slider_preview--color-active);
+
+    .c-slider--autoplay &::after {
+      animation: slider-nav-autoplay $current-animation-duration linear;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+    }
+  }
+
+  .c-slider-nav__slide:hover &,
+  .c-slider-nav__slide:focus & {
+    background: var(--c-visual-slider_preview--background-hover);
+    color: var(--c-visual-slider_preview--color-hover);
+  }
+
+  [data-glide-el='controls[nav]'] .c-slider-nav__slide & {
+    min-width: 7rem;
   }
 }

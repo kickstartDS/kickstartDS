@@ -13,6 +13,7 @@
 
 html {
   --breakpoints: '#{breakpoint.breakpoints-to-json()}';
+
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
