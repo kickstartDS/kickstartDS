@@ -43,9 +43,11 @@ cleanup()
         return exec('start-storybook', storybookOptionsStart);
       }
 
-      // TODO add a way to debug when using Vite
       case 'debug': {
-        return exec('start-storybook', [...storybookOptionsStart]);
+        return exec('start-storybook', [
+          ...storybookOptionsStart,
+          '--debug-webpack',
+        ]);
       }
 
       default: {
