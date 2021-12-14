@@ -142,7 +142,7 @@
     tslib "2.1.0"
     url-join "^4.0.0"
 
-"@auto-it/npm@10.32.5", "@auto-it/npm@^10.32.3":
+"@auto-it/npm@10.32.5", "@auto-it/npm@^10.32.5":
   version "10.32.5"
   resolved "https://registry.yarnpkg.com/@auto-it/npm/-/npm-10.32.5.tgz#82f091d51c777acba7a4cf42e7d2252c4ec02247"
   integrity sha512-smcekJrZ9cWQvrNOyd+WdiMzz7ISpqfgfQAublAFHCP3dKdbSuegX4npzPwFMwjqO0Th+izDbtzTm7ULyKkWkw==
