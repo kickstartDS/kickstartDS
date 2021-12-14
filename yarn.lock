@@ -170,7 +170,7 @@
     parse-author "^2.0.0"
     parse-github-url "1.0.2"
 
-"@auto-it/released@10.32.5", "@auto-it/released@^10.32.3":
+"@auto-it/released@10.32.5", "@auto-it/released@^10.32.5":
   version "10.32.5"
   resolved "https://registry.yarnpkg.com/@auto-it/released/-/released-10.32.5.tgz#c8a51163f5bd9202ea7c464d2fed1a9f1b667bdf"
   integrity sha512-3PLjy2cK5h0Hcpm781X/5MhQspfXTG6pm2m8JH4QbRrbPdC1fCQpAoSZM3oDUCrElnHXL/VikLdtvLWazLPK/A==
@@ -5892,9 +5892,9 @@ chownr@^2.0.0:
   integrity sha512-bIomtDF5KGpdogkLd9VspvFzk9KfpyyGlS8YFVZl7TGPBHL5snIOnxeshwVgPteQ9b4Eydl+pVbIyE1DcvCWgQ==
 
 chromatic@^6.0.6:
-  version "6.0.6"
-  resolved "https://registry.yarnpkg.com/chromatic/-/chromatic-6.0.6.tgz#f0e6343c322ca6b838f61b1559f25ff0d4df7a8c"
-  integrity sha512-px0i8VDjCCMtAq8Oxo++tQb8/ADuE54Cy3VCAMpdYyT/4Vly8nmJbdxDx/YzJwhSD+w1uUurh18DA9AZQ/xW0A==
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/chromatic/-/chromatic-6.2.0.tgz#afa30a80b3ae6c397615445be68471004403621b"
+  integrity sha512-2RR4cpDXPsct1jvimixh02hcrfTYAj831Ngo9pLjXU8el4QFQm3jwDYqtsbNYH3CrDoWkeppR5oYPoTQGIazrg==
 
 chrome-trace-event@^1.0.2:
   version "1.0.3"
