@@ -1686,9 +1686,10 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@glidejs/glide@git://github.com/glidejs/glide.git#master":
-  version "3.4.0"
-  resolved "git://github.com/glidejs/glide.git#e71f8bf2dc313a97ae0fc92a8dc9d1389a151562"
+"@glidejs/glide@^3.5.2":
+  version "3.5.2"
+  resolved "https://registry.yarnpkg.com/@glidejs/glide/-/glide-3.5.2.tgz#7012c5920ecf202bbda44d8526fc979984b6dd54"
+  integrity sha512-7jGciNJ2bQ4eZLSNlSZ+VAyW63kALf420CvkEpK4lEsUfWJq9odqimci0YCiyNyMUFB+pWHwLYyNc57dijYsCg==
 
 "@humanwhocodes/config-array@^0.5.0":
   version "0.5.0"

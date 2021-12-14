@@ -21,7 +21,7 @@
   ],
   "dependencies": {
     "@babel/runtime": "^7.16.3",
-    "@glidejs/glide": "git://github.com/glidejs/glide.git#master",
+    "@glidejs/glide": "^3.5.2",
     "@kickstartds/core": "^1.5.0",
     "classnames": "^2.2.6",
     "css-element-queries": "^1.2.3",
