@@ -24,7 +24,6 @@
     "@glidejs/glide": "^3.5.2",
     "@kickstartds/core": "^1.5.0",
     "classnames": "^2.2.6",
-    "css-element-queries": "^1.2.3",
     "date-fns": "^2.27.0",
     "focus-visible": "^5.0.2",
     "formbouncerjs": "^1.4.6",

@@ -1,5 +1,7 @@
-.c-teaser {
-  .c-teaser-box &__image {
+.c-teaser-box {
+  contain: layout inline-size style;
+
+  .c-teaser__image {
     flex-grow: 0;
     flex-shrink: 0;
     width: 100%;
@@ -31,13 +33,13 @@
     }
   }
 
-  .c-teaser-box &__body {
+  .c-teaser__body {
     flex-direction: column;
     flex-grow: 1;
 
-    &[min-width~='0px'] {
+    @container (min-width: 0px) {
       --c-teaser_topic--font: var(--font-display-s);
-      --c-rich-text-font: var(--font-copy-xs);
+      --c-rich-text--font: var(--font-copy-xs);
 
       .c-button {
         --c-button--font: var(--font-ui-xs);
@@ -48,9 +50,9 @@
       }
     }
 
-    &[min-width~='200px'] {
+    @container (min-width: 200px) {
       --c-teaser_topic--font: var(--font-display-m);
-      --c-rich-text-font: var(--font-copy-s);
+      --c-rich-text--font: var(--font-copy-s);
 
       .c-button {
         --c-button--font: var(--font-ui-s);
@@ -65,9 +67,9 @@
       }
     }
 
-    &[min-width~='400px'] {
+    @container (min-width: 400px) {
       --c-teaser_topic--font: var(--font-display-l);
-      --c-rich-text-font: var(--font-copy-m);
+      --c-rich-text--font: var(--font-copy-m);
 
       .c-button {
         --c-button--font: var(--font-ui-m);
@@ -83,30 +85,30 @@
     }
   }
 
-  .c-teaser-box &__text {
+  .c-teaser__text {
     flex: 1 auto;
   }
 
-  .c-teaser-box &__link {
+  .c-teaser__link {
     margin-top: 1em;
   }
-}
 
-.c-teaser-box.image--spacing {
-  padding: var(--c-teaser--padding);
-  padding-bottom: 0;
+  &.image--spacing {
+    padding: var(--c-teaser--padding);
+    padding-bottom: 0;
 
-  .c-teaser__image {
-    border-top-left-radius: calc(
-      var(--c-teaser--border-radius) - var(--c-teaser--padding)
-    );
-    border-top-right-radius: calc(
-      var(--c-teaser--border-radius) - var(--c-teaser--padding)
-    );
-  }
+    .c-teaser__image {
+      border-top-left-radius: calc(
+        var(--c-teaser--border-radius) - var(--c-teaser--padding)
+      );
+      border-top-right-radius: calc(
+        var(--c-teaser--border-radius) - var(--c-teaser--padding)
+      );
+    }
 
-  .c-teaser__body {
-    padding-left: 0;
-    padding-right: 0;
+    .c-teaser__body {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 }
