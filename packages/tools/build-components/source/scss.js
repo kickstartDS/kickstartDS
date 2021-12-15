@@ -1,5 +1,6 @@
 const fs = require('fs-extra');
 const path = require('path');
+const { pathToFileURL } = require('url');
 const sass = require('sass');
 // const chokidar = require('chokidar');
 const postcss = require('postcss');
@@ -9,7 +10,7 @@ const log = require('./log');
 const { createTokens } = require('./customPropertyExtract');
 
 const cwd = process.cwd();
-const includePaths = [
+const loadPaths = [
   `${root}/packages/components`,
   `${root}/node_modules`,
   `${root}/legacy-instance`,
@@ -17,33 +18,34 @@ const includePaths = [
 
 const search = '@kickstartds/';
 const searchLength = search.length;
-const importer = (url) => {
-  if (url.indexOf(search) === 0) {
-    return {
-      file: url.slice(searchLength),
-    };
-  }
-};
+const importers = [
+  {
+    findFileUrl(url) {
+      if (url.indexOf(search) === 0) {
+        return pathToFileURL(
+          `${root}/packages/components/${url.slice(searchLength)}`
+        );
+      }
+    },
+  },
+];
 
 const dependencies = {};
 
 const compile = async (file) => {
-  const { css, stats } = sass.renderSync({
-    file,
-    includePaths,
-    importer,
+  const { css, loadedUrls } = sass.compile(file, {
+    loadPaths,
+    importers,
     quietDeps: true,
   });
-  dependencies[path.relative(cwd, stats.entry)] = stats.includedFiles.reduce(
-    (prev, curr) => {
-      if (!curr.includes('/node_modules/')) {
-        prev.push(path.relative(cwd, curr));
-      }
-      return prev;
-    },
-    []
-  );
-  const [, dir, base] = stats.entry.match(dirRe);
+
+  dependencies[path.relative(cwd, file)] = loadedUrls.reduce((prev, curr) => {
+    if (!curr.pathname.includes('/node_modules/')) {
+      prev.push(path.relative(cwd, curr.pathname));
+    }
+    return prev;
+  }, []);
+  const [, dir, base] = file.match(dirRe);
   const dest = `lib/${dir}/${base}.css`;
   const result = await postcss(postcssPlugins).process(css, {
     from: file,
