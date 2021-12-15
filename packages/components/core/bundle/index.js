@@ -22,7 +22,7 @@ const bundleJs = (entryPoints) =>
   });
 
 const bundleCss = async (file) => {
-  const { css } = sass.renderSync({ file, outputStyle: 'compressed' });
+  const { css } = sass.compile(file, { outputStyle: 'compressed' });
   await fs.outputFile(`${outdir}/index.css`, css);
 };
 
