@@ -54,7 +54,7 @@
     "@auto-it/npm": "^10.32.5",
     "@auto-it/released": "^10.32.5",
     "@commitlint/cli": "^16.0.1",
-    "@commitlint/config-conventional": "^15.0.0",
+    "@commitlint/config-conventional": "^16.0.0",
     "auto": "^10.32.5",
     "commitizen": "^4.2.4",
     "cz-conventional-changelog": "^3.3.0",
