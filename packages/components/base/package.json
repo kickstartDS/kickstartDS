@@ -31,12 +31,12 @@
     "objectFitPolyfill": "^2.3.0",
     "photoswipe": "^4.1.3",
     "pikaday": "^1.8.0",
-    "react-markdown": "^7.1.1",
+    "react-markdown": "^7.1.2",
     "simplebar": "^5.3.6",
     "stickybits": "^3.7.0"
   },
   "devDependencies": {
-    "@types/react": "^17.0.37",
+    "@types/react": "^17.0.38",
     "bourbon": "^7.0.0",
     "sass-yiq": "^1.0.0"
   },
