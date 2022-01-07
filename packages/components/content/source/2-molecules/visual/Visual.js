@@ -3,6 +3,16 @@ import { windowEvents } from '@kickstartds/core/lib/utils';
 import 'objectFitPolyfill/dist/objectFitPolyfill.basic.min';
 
 const identifier = 'visual';
+const scrollToSibling = (element) => {
+  if (element) {
+    if (element.nextElementSibling) {
+      element.nextElementSibling.scrollIntoView();
+    } else {
+      scrollToSibling(element.parentElement);
+    }
+  }
+};
+
 export default class Visual extends Component {
   static identifier = identifier;
 
@@ -28,19 +38,7 @@ export default class Visual extends Component {
   }
 
   onclick() {
-    // TODO: handle multiple intro-visuals
-    // this was the first approach,
-    // but additionally the scrolling header-height has to be substracted:
-    // const rect = this.element.getBoundingClientRect();
-    // const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    // const height = this.element.offsetHeight;
-    // window.scrollTo(0, rect.top + scrollTop + height /* - scolling heder height */);
-
-    if (this.element.nextElementSibling) {
-      this.element.nextElementSibling.scrollIntoView();
-    } else {
-      this.element.parentNode.nextElementSibling.scrollIntoView();
-    }
+    scrollToSibling(this.element);
   }
 
   playVideo() {
