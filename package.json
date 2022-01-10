@@ -40,12 +40,12 @@
     "@kickstartds/eslint-config": "^1.0.1",
     "@kickstartds/stylelint-config": "^2.0.0",
     "execa": "^5.1.1",
-    "fast-glob": "^3.2.7",
+    "fast-glob": "^3.2.10",
     "fs-extra": "^10.0.0",
     "json-csv": "^4.0.2",
     "license-checker": "^25.0.1",
     "postcss": "^8.4.5",
-    "postcss-scss": "^4.0.2",
+    "postcss-scss": "^4.0.3",
     "react": "^17.0.2"
   },
   "devDependencies": {
