@@ -20,7 +20,7 @@
   "dependencies": {
     "change-case": "^4.1.2",
     "del": "^6.0.0",
-    "fast-glob": "^3.2.7",
+    "fast-glob": "^3.2.10",
     "find-up": "^5.0.0",
     "fs-extra": "^10.0.0",
     "lazysizes": "^5.3.2",
