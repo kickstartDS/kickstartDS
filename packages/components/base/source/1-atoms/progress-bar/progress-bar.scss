@@ -1,0 +1,42 @@
+@use 'sass:meta';
+@use '@kickstartds/core/source/core/custom-properties';
+@use './progress-bar-vars';
+
+$vars: meta.module-variables(progress-bar-vars);
+@include custom-properties.styles($vars);
+
+.c-progress-bar {
+  position: relative;
+  overflow: hidden;
+  appearance: none;
+  background: var(--c-progress-bar--background);
+  border-radius: var(--c-progress-bar--border-radius);
+  box-shadow: var(--c-progress-bar--box-shadow);
+  height: var(--c-progress-bar--height);
+  border: var(--c-progress-bar--border);
+
+  &__value {
+    position: absolute;
+    height: 100%;
+    width: var(--c-progress-bar_value--width);
+    max-width: 100%;
+    background: var(--c-progress-bar_value--background);
+    border: var(--c-progress-bar_value--border);
+    border-radius: var(--c-progress-bar_value--border-radius);
+    box-shadow: var(--c-progress-bar_value--box-shadow);
+    transition: 0.3s;
+
+    .c-progress-bar--indeterminate & {
+      animation: var(--c-progress-bar_indeterminate--animation);
+    }
+  }
+
+  @keyframes progress-bar-indeterminate {
+    0% {
+      left: -10%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+}

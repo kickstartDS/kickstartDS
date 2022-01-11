@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://frontend.ruhmesmeile.com/base/atoms/progress-bar.schema.json",
+  "title": "Progress Bar",
+  "description": "Progress Bar",
+  "type": "object",
+  "properties": {
+    "value": {
+      "title": "Value",
+      "type": "number"
+    },
+    "max": {
+      "title": "Max",
+      "type": "number",
+      "default": 1
+    },
+    "indeterminate": {
+      "title": "Indeterminate",
+      "type": "boolean",
+      "default": false
+    },
+    "className": {
+      "type": "string",
+      "title": "Additional Classes",
+      "description": "Add additional css classes that should be applied to the progress bar"
+    }
+  }
+}
