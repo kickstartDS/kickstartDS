@@ -3403,17 +3403,17 @@
     ts-dedent "^2.0.0"
     util-deprecate "^1.0.2"
 
-"@storybook/cli@6.4.10":
-  version "6.4.10"
-  resolved "https://registry.yarnpkg.com/@storybook/cli/-/cli-6.4.10.tgz#dd749a787a9f1ffef41865941281c04379145242"
-  integrity sha512-w7jQwW446ZhMysW6mzsux47qesgv5k09fYjTKZKogdts9w9XtVfR+l0lu6gEYGksUPluAOg8JDwnAhNt6cFhhg==
+"@storybook/cli@6.4.12":
+  version "6.4.12"
+  resolved "https://registry.yarnpkg.com/@storybook/cli/-/cli-6.4.12.tgz#31512878e51eb40c63743f1b5dca9aa01c38d1f8"
+  integrity sha512-0sTep1o1Zs6NnSgdnrDlW6F5m35tgRzTbZgRfJwOEdkGbbQYeuQbOvsPenQd6dP47uE2P+cGJUPJ7BtJSLIdlQ==
   dependencies:
     "@babel/core" "^7.12.10"
     "@babel/preset-env" "^7.12.11"
-    "@storybook/codemod" "6.4.10"
-    "@storybook/core-common" "6.4.10"
-    "@storybook/csf-tools" "6.4.10"
-    "@storybook/node-logger" "6.4.10"
+    "@storybook/codemod" "6.4.12"
+    "@storybook/core-common" "6.4.12"
+    "@storybook/csf-tools" "6.4.12"
+    "@storybook/node-logger" "6.4.12"
     "@storybook/semver" "^7.3.2"
     boxen "^5.1.2"
     chalk "^4.1.0"
@@ -3513,16 +3513,16 @@
     core-js "^3.8.2"
     global "^4.4.0"
 
-"@storybook/codemod@6.4.10":
-  version "6.4.10"
-  resolved "https://registry.yarnpkg.com/@storybook/codemod/-/codemod-6.4.10.tgz#94c44412cfff44ade512a6698a72b25ca5795151"
-  integrity sha512-eTv51UnDpdsCf5IMIDWXVnY4sOdoYJPighxdcmYpQOZP1R5z2ObWVA1kl185AVumijabh7C+g9BxtQrKBm+sPQ==
+"@storybook/codemod@6.4.12":
+  version "6.4.12"
+  resolved "https://registry.yarnpkg.com/@storybook/codemod/-/codemod-6.4.12.tgz#75c7efbbd16b9a5bee20ed523962c313ba2a1090"
+  integrity sha512-ImsOCy/v+obvEY6Fnrd0wVYquoKAXZ880gOrvK8fEZBe7rLnBtOGYH1xAlGYnVBKwUtyQ8PYkup+46F86ybg0g==
   dependencies:
     "@babel/types" "^7.12.11"
     "@mdx-js/mdx" "^1.6.22"
     "@storybook/csf" "0.0.2--canary.87bc651.0"
-    "@storybook/csf-tools" "6.4.10"
-    "@storybook/node-logger" "6.4.10"
+    "@storybook/csf-tools" "6.4.12"
+    "@storybook/node-logger" "6.4.12"
     core-js "^3.8.2"
     cross-spawn "^7.0.3"
     globby "^11.0.2"
