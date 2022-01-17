@@ -21,7 +21,7 @@
     "custom-property-extract": "^1.2.1",
     "debug": "^4.3.3",
     "del": "^6.0.0",
-    "fast-glob": "^3.2.10",
+    "fast-glob": "^3.2.11",
     "find-up": "^5.0.0",
     "fs-extra": "^10.0.0",
     "json-schema-merge-allof": "^0.8.1",
