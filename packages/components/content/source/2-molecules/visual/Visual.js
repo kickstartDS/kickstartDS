@@ -1,5 +1,4 @@
 import { Component, define } from '@kickstartds/core/lib/core';
-import { windowEvents } from '@kickstartds/core/lib/utils';
 import 'objectFitPolyfill/dist/objectFitPolyfill.basic.min';
 
 const identifier = 'visual';
@@ -24,40 +23,31 @@ export default class Visual extends Component {
       this.continueBtn.addEventListener('click', this);
     }
 
-    this.video = element.querySelector('.c-visual__video');
-    if (this.video) {
-      // prevent multiple scroll listeners
-      if (!this.scrollToken) {
-        this.scrollToken = window.rm.radio.on(windowEvents.scroll, () =>
-          this.playVideo()
-        );
-      }
-      this.videoIsPlaying = false;
-      this.playVideo();
+    const video = element.querySelector('.c-visual__video');
+    if (video) {
+      let inViewport;
+      let videoIsPlaying;
+      const playVideo = () => {
+        if (inViewport) {
+          if (!videoIsPlaying) {
+            video.play();
+          }
+        } else if (videoIsPlaying) {
+          video.pause();
+        }
+        videoIsPlaying = inViewport;
+      };
+      const observer = new IntersectionObserver((entries) => {
+        inViewport = entries.reduce((_, entry) => entry.isIntersecting, false);
+        playVideo();
+      });
+      observer.observe(element);
+      playVideo();
     }
   }
 
   onclick() {
     scrollToSibling(this.element);
-  }
-
-  playVideo() {
-    if (this.isScrolledOutOfView) {
-      if (this.videoIsPlaying) {
-        this.video.pause();
-        this.videoIsPlaying = false;
-      }
-    } else if (!this.videoIsPlaying) {
-      this.video.play();
-      this.videoIsPlaying = true;
-    }
-  }
-
-  get isScrolledOutOfView() {
-    const docViewTop = window.pageYOffset;
-    const elemBottom = this.element.offsetHeight;
-
-    return docViewTop > elemBottom;
   }
 }
 
