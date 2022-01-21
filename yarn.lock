@@ -5751,10 +5751,10 @@ chownr@^2.0.0:
   resolved "https://registry.yarnpkg.com/chownr/-/chownr-2.0.0.tgz#15bfbe53d2eab4cf70f18a8cd68ebe5b3cb1dece"
   integrity sha512-bIomtDF5KGpdogkLd9VspvFzk9KfpyyGlS8YFVZl7TGPBHL5snIOnxeshwVgPteQ9b4Eydl+pVbIyE1DcvCWgQ==
 
-chromatic@^6.4.0:
-  version "6.4.0"
-  resolved "https://registry.yarnpkg.com/chromatic/-/chromatic-6.4.0.tgz#e27cfb18aa2717e6263cc9b5ca44f0ad3d8964fc"
-  integrity sha512-eJyWij9WHSyH84Crhm6WDiaBrRBIgK2W96EJmCDPG/2MYqNzVKcn6tOWW+94uT+CkASBGL77QN+MMCUnm46w+Q==
+chromatic@^6.4.1:
+  version "6.4.1"
+  resolved "https://registry.yarnpkg.com/chromatic/-/chromatic-6.4.1.tgz#fd8fad82282be030f4e4697dd992bbcbcbe75dc9"
+  integrity sha512-i3WLhIORS8vu9OStJwPQ487/MYZiXT7byU5c9we1Vvfus/w1Kwbj/2n11EozokomGEw5o3VAeiRrZkTCXM8xew==
 
 chrome-trace-event@^1.0.2:
   version "1.0.3"
@@ -14441,10 +14441,10 @@ rollup-plugin-ts@^2.0.5:
     ts-clone-node "^0.3.30"
     tslib "^2.3.1"
 
-rollup@^2.64.0:
-  version "2.64.0"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.64.0.tgz#f0f59774e21fbb56de438a37d06a2189632b207a"
-  integrity sha512-+c+lbw1lexBKSMb1yxGDVfJ+vchJH3qLbmavR+awDinTDA2C5Ug9u7lkOzj62SCu0PKUExsW36tpgW7Fmpn3yQ==
+rollup@^2.65.0:
+  version "2.65.0"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.65.0.tgz#936ed140ac28f87aff22c6ac950b3d0303fadc3b"
+  integrity sha512-ohZVYrhtVMTqqeqH26sngfMiyGDg6gCUReOsoflXvYpzUkDHp8sVG8F9FQxjs72OfnLWpXP2nNNqQ9I0vkRovA==
   optionalDependencies:
     fsevents "~2.3.2"
 
