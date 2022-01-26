@@ -33,7 +33,7 @@
   "devDependencies": {
     "@babel/core": "^7.16.12",
     "@kickstartds/storybook-addon-component-tokens": "^0.1.5",
-    "@storybook/addon-a11y": "6.4.13",
+    "@storybook/addon-a11y": "6.4.14",
     "@storybook/addon-essentials": "6.4.13",
     "@storybook/cli": "6.4.13",
     "@storybook/core": "6.4.13",
