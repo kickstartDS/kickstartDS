@@ -1,3 +1,4 @@
-html:not(.js) .lazyload {
+/* stylelint-disable-next-line selector-no-qualifying-type */
+html:not(.js) img.lazyload {
   display: none !important;
 }
