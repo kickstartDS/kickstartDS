@@ -60,22 +60,24 @@ if (inBrowser && !('CSSContainerRule' in window)) {
 
     new MutationObserver((records) => {
       const selectors = Object.keys(selectorsToObserve);
-      records.forEach((record) =>
-        record.addedNodes.forEach((added) => {
-          if (added.nodeType === Node.ELEMENT_NODE) {
-            [
-              <Element>added,
-              ...(<Element>added).querySelectorAll(selectors.join()),
-            ].forEach((element) =>
-              selectors
-                .filter((selector) => element.matches(selector))
-                .forEach((containerSelector) =>
-                  observe(element, selectorsToObserve[containerSelector])
-                )
-            );
-          }
-        })
-      );
+      if (selectors.length) {
+        records.forEach((record) =>
+          record.addedNodes.forEach((added) => {
+            if (added.nodeType === Node.ELEMENT_NODE) {
+              [
+                <Element>added,
+                ...(<Element>added).querySelectorAll(selectors.join()),
+              ].forEach((element) =>
+                selectors
+                  .filter((selector) => element.matches(selector))
+                  .forEach((containerSelector) =>
+                    observe(element, selectorsToObserve[containerSelector])
+                  )
+              );
+            }
+          })
+        );
+      }
     }).observe(document, {
       childList: true,
       subtree: true,
