@@ -17,7 +17,7 @@ module.exports = {
     dir: 'lib',
     format: 'es',
     chunkFileNames: '_shared/[name]-[hash].js',
-    plugins: [production && terser({ safari10: true })],
+    plugins: [production && terser({ safari10: true, keep_classnames: true })],
   },
   sharedBabelConfig: {
     babelrc: false,
