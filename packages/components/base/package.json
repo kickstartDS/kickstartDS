@@ -20,7 +20,7 @@
     "source/**/*-vars.scss"
   ],
   "dependencies": {
-    "@babel/runtime": "^7.16.7",
+    "@babel/runtime": "^7.17.0",
     "@glidejs/glide": "^3.5.2",
     "@kickstartds/core": "^1.5.0",
     "classnames": "^2.2.6",
