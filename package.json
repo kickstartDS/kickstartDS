@@ -49,13 +49,13 @@
     "react": "^17.0.2"
   },
   "devDependencies": {
-    "@auto-it/all-contributors": "^10.32.5",
-    "@auto-it/first-time-contributor": "^10.32.5",
-    "@auto-it/npm": "^10.32.5",
-    "@auto-it/released": "^10.32.5",
+    "@auto-it/all-contributors": "^10.32.6",
+    "@auto-it/first-time-contributor": "^10.32.6",
+    "@auto-it/npm": "^10.32.6",
+    "@auto-it/released": "^10.32.6",
     "@commitlint/cli": "^16.1.0",
     "@commitlint/config-conventional": "^16.0.0",
-    "auto": "^10.32.5",
+    "auto": "^10.32.6",
     "commitizen": "^4.2.4",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^7.32.0",
