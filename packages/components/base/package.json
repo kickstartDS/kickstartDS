@@ -36,7 +36,7 @@
     "stickybits": "^3.7.0"
   },
   "devDependencies": {
-    "@types/react": "^17.0.38",
+    "@types/react": "^17.0.39",
     "bourbon": "^7.0.0",
     "sass-yiq": "^1.0.0"
   },
