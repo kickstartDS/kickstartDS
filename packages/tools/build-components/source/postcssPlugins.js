@@ -18,6 +18,7 @@ const prod = [
             );
           },
         },
+        calc: false,
       },
     ],
   }),
