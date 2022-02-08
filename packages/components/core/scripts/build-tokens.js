@@ -1,3 +1,4 @@
+const path = require('path');
 // eslint-disable-next-line import/no-extraneous-dependencies
 const StyleDictionary = require('style-dictionary');
 const createDictionary = require('../design-tokens');
@@ -8,10 +9,10 @@ const config = {
       buildPath: 'source/design-tokens/',
     },
     jsx: {
-      buildPath: '../../../tools/storybook/.storybook/',
+      buildPath: path.join(__dirname, '../../../tools/storybook/.storybook/'),
     },
     storybook: {
-      buildPath: '../../../tools/storybook/.storybook/',
+      buildPath: path.join(__dirname, '../../../tools/storybook/.storybook/'),
     },
   },
 };
