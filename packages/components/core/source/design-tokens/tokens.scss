@@ -1,58 +1,71 @@
-@use 'sass:meta';
-@use './colors/colors';
-@use './spacing/spacing';
-@use './typography/font-weights';
-@use './typography/font-families';
-@use './typography/font-sizes';
-@use './typography/line-heights';
-@use './typography/font';
 @use '../core/breakpoint';
+@use './tokens.css';
+
+@mixin scale($base, $steps) {
+  $value: var(#{$base}-base);
+  @for $i from 0 to $steps {
+    $value: $value + ' * ' + var(#{$base}-ratio);
+  }
+  #{$base}: calc(#{$value});
+}
 
 :root {
-  // Design Tokens
-  @each $name, $value in meta.module-variables(colors) {
-    @include colors.render($name, $value);
+  @include breakpoint.media('≥s') {
+    // Spacing
+    @include scale(--spacing-xxs, 1);
+    @include scale(--spacing-xs, 1);
+    @include scale(--spacing-s, 1);
+    @include scale(--spacing-m, 1);
+    @include scale(--spacing-l, 1);
+    @include scale(--spacing-xl, 1);
+    @include scale(--spacing-xxl, 1);
+
+    // Font Size Display
+    @include scale(--font-size-display-s, 4);
+    @include scale(--font-size-display-m, 4);
+    @include scale(--font-size-display-l, 4);
+    @include scale(--font-size-display-xl, 4);
+    @include scale(--font-size-display-xxl, 4);
+
+    // Font Size Copy
+    @include scale(--font-size-copy-s, 4);
+    @include scale(--font-size-copy-m, 4);
+    @include scale(--font-size-copy-l, 4);
+
+    // Font Size UI
+    @include scale(--font-size-ui-s, 4);
+    @include scale(--font-size-ui-m, 4);
+    @include scale(--font-size-ui-l, 4);
+
+    // Font Size Mono
+    @include scale(--font-size-mono-s, 4);
+    @include scale(--font-size-mono-m, 4);
+    @include scale(--font-size-mono-l, 4);
   }
 
-  @each $name, $value in meta.module-variables(spacing) {
-    @include spacing.render($name, $value);
+  @include breakpoint.media('≥m') {
+    // Spacing
+    @include scale(--spacing-xxs, 2);
+    @include scale(--spacing-xs, 2);
+    @include scale(--spacing-s, 2);
+    @include scale(--spacing-m, 2);
+    @include scale(--spacing-l, 2);
+    @include scale(--spacing-xl, 2);
+    @include scale(--spacing-xxl, 2);
+
+    // Font Size Display
+    @include scale(--font-size-display-xl, 8);
+    @include scale(--font-size-display-xxl, 8);
   }
 
-  @each $name, $value in meta.module-variables(font-weights) {
-    @include font-weights.render($name, $value);
+  @include breakpoint.media('≥xl') {
+    // Spacing
+    @include scale(--spacing-xxs, 3);
+    @include scale(--spacing-xs, 3);
+    @include scale(--spacing-s, 3);
+    @include scale(--spacing-m, 3);
+    @include scale(--spacing-l, 3);
+    @include scale(--spacing-xl, 3);
+    @include scale(--spacing-xxl, 3);
   }
-
-  @each $name, $value in meta.module-variables(font-families) {
-    @include font-families.render($name, $value);
-  }
-
-  @each $name, $value in meta.module-variables(font-sizes) {
-    @include font-sizes.render($name, $value);
-  }
-
-  @each $name, $value in meta.module-variables(line-heights) {
-    @include line-heights.render($name, $value);
-  }
-
-  @include font.render;
-
-  // Global Tokens
-  /* stylelint-disable-next-line length-zero-no-unit */
-  --g-header-height: 0px;
-  --g-scroll-offset: var(--g-header-height);
-  --g-content-width-default: 62rem;
-  --g-content-width-narrow: 46.5rem;
-  --g-content-width-wide: 75rem;
-  --g-content-padding: var(--spacing-m);
-}
-
-// fix storybook design-token-addon
-@include breakpoint.media('≥s') {
-  /*! @tokens Ignore */
-}
-@include breakpoint.media('≥m') {
-  /*! @tokens Ignore */
-}
-@include breakpoint.media('≥l') {
-  /*! @tokens Ignore */
 }

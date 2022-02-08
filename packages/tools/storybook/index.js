@@ -3,7 +3,6 @@ const argv = require('yargs-parser')(process.argv.slice(2));
 const cleanup = require('./scripts/cleanup-stories');
 const createMarkdownStories = require('./scripts/create-stories-from-markdown');
 const createPreviewHead = require('./scripts/create-preview-head-from-assets');
-const createPreviewBody = require('./scripts/create-preview-body');
 
 const exec = (...args) =>
   new Promise((resolve, reject) => {
@@ -27,11 +26,7 @@ const storybookOptionsStart = [...storybookOptions, '--port', '3000'];
 
 cleanup()
   .then(() =>
-    Promise.all([
-      createMarkdownStories(kdsModules),
-      createPreviewHead(),
-      createPreviewBody(),
-    ])
+    Promise.all([createMarkdownStories(kdsModules), createPreviewHead()])
   )
   .then(() => {
     switch (task) {
