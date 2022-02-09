@@ -39,6 +39,7 @@
     "pubsub-js": "^1.9.4",
     "sass": "^1.49.7",
     "svgstore": "^3.0.1",
+    "tinycolor2": "^1.4.2",
     "vhtml": "^2.2.0"
   },
   "devDependencies": {

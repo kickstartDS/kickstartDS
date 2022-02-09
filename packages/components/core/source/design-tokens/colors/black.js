@@ -7,9 +7,7 @@ module.exports = {
     black: {
       r: {
         value: '0',
-        attributes: {
-          category: null,
-        },
+        attributes: { category: null },
       },
       g: {
         value: '0',
@@ -20,11 +18,14 @@ module.exports = {
         attributes: { category: null },
       },
       _: {
-        value:
-          'rgb({color.black.r.value},{color.black.g.value},{color.black.b.value})',
+        value: {
+          r: '{color.black.r.value}',
+          g: '{color.black.g.value}',
+          b: '{color.black.b.value}',
+        },
         token,
       },
-      ...alpha('black', token),
+      alpha: alpha('black', token),
     },
   },
 };

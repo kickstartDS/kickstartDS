@@ -9,11 +9,14 @@ module.exports = {
       g: { value: '255', attributes: { category: null } },
       b: { value: '255', attributes: { category: null } },
       _: {
-        value:
-          'rgb({color.white.r.value},{color.white.g.value},{color.white.b.value})',
+        value: {
+          r: '{color.white.r.value}',
+          g: '{color.white.g.value}',
+          b: '{color.white.b.value}',
+        },
         token,
       },
-      ...alpha('white', token),
+      alpha: alpha('white', token),
     },
   },
 };

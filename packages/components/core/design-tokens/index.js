@@ -1,4 +1,5 @@
 const path = require('path');
+const mixedColorTransform = require('./transforms/mixed-color');
 const storybookVariablesFormat = require('./formats/storybook/tokens');
 const storybookIconsFormat = require('./formats/storybook/icons');
 const htmlIconSpriteFormat = require('./formats/html/icon-sprite');
@@ -7,7 +8,23 @@ const iconParser = require('./parsers/icon');
 const { excludeIconsFilter, includeIconsFilter } = require('./filters');
 
 module.exports = function createDictionary(StyleDictionary) {
+  const cssTransforms = [
+    ...StyleDictionary.transformGroup.css,
+    mixedColorTransform.name,
+  ];
+  const scssTransforms = [
+    ...StyleDictionary.transformGroup.scss,
+    mixedColorTransform.name,
+  ];
+  const colorTransform = {
+    name: 'color/css',
+    ...StyleDictionary.transform['color/css'],
+    transitive: true,
+  };
+
   return StyleDictionary.registerParser(iconParser)
+    .registerTransform(mixedColorTransform)
+    .registerTransform(colorTransform)
     .registerFilter(excludeIconsFilter)
     .registerFilter(includeIconsFilter)
     .registerFormat(storybookVariablesFormat)
@@ -21,7 +38,7 @@ module.exports = function createDictionary(StyleDictionary) {
       ],
       platforms: {
         css: {
-          transformGroup: 'css',
+          transforms: cssTransforms,
           files: [
             {
               format: 'css/variables',
@@ -34,7 +51,7 @@ module.exports = function createDictionary(StyleDictionary) {
           ],
         },
         scss: {
-          transformGroup: 'scss',
+          transforms: scssTransforms,
           files: [
             {
               format: 'scss/variables',

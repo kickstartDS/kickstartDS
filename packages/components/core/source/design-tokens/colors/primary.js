@@ -7,13 +7,16 @@ module.exports = {
       g: { value: '51', attributes: { category: null } },
       b: { value: '51', attributes: { category: null } },
       _: {
-        value:
-          'rgb({color.primary.r.value},{color.primary.g.value},{color.primary.b.value})',
+        value: {
+          r: '{color.primary.r.value}',
+          g: '{color.primary.g.value}',
+          b: '{color.primary.b.value}',
+        },
         token: { category: 'Colors: Brand' },
       },
-      ...alpha('primary', { category: 'Colors: Primary Alpha' }),
-      ...lighter('primary', { category: 'Colors: Primary Lighter' }),
-      ...darker('primary', { category: 'Colors: Primary Darker' }),
+      alpha: alpha('primary', { category: 'Colors: Primary Alpha' }),
+      lighter: lighter('primary', { category: 'Colors: Primary Lighter' }),
+      darker: darker('primary', { category: 'Colors: Primary Darker' }),
     },
   },
 };
