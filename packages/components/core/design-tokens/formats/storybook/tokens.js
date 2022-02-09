@@ -8,11 +8,12 @@ const calc = require('postcss-calc');
 const { fileHeader, createPropertyFormatter } = formatHelpers;
 const presenterMap = {
   color: 'Color',
+  'mixed-color': 'Color',
   'font-family': 'FontFamily',
   'font-size': 'FontSize',
   'line-height': 'LineHeight',
   'font-weight': 'FontWeight',
-  size: 'Spacing',
+  spacing: 'Spacing',
 };
 
 module.exports = {

@@ -82,7 +82,7 @@ module.exports = function createDictionary(StyleDictionary) {
           ],
         },
         storybook: {
-          transformGroup: 'css',
+          transforms: cssTransforms,
           files: [
             {
               format: 'storybook/tokens',
