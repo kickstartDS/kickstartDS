@@ -4,7 +4,7 @@
 @use './teaser-row-vars';
 
 $vars: meta.module-variables(teaser-row-vars);
-@include custom-properties.styles($vars, true);
+@include custom-properties.styles($vars);
 
 .c-teaser {
   .c-teaser-row &__body {

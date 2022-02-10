@@ -4,9 +4,8 @@
 @use './link-vars';
 
 $vars: meta.module-variables(link-vars);
-@include custom-properties.styles($vars, true);
+@include custom-properties.styles($vars);
 
-/* critical:start */
 a:not(.c-button) {
   transition: 0.15s;
   font-weight: var(--g-link--font-weight);
@@ -22,4 +21,3 @@ a:not(.c-button) {
     background: var(--g-link--background-hover);
   }
 }
-/* critical:end */

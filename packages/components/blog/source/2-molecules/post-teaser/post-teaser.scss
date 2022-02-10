@@ -5,7 +5,7 @@
 @use './post-teaser-vars';
 
 $vars: meta.module-variables(post-teaser-vars);
-@include custom-properties.styles($vars, true);
+@include custom-properties.styles($vars);
 
 .c-post-teaser {
   --c-rich-text--font: var(--font-copy-s);

@@ -4,7 +4,7 @@
 @use './logo-tiles-vars';
 
 $vars: meta.module-variables(logo-tiles-vars);
-@include custom-properties.styles($vars, true);
+@include custom-properties.styles($vars);
 
 .c-logo-tiles {
   display: flex;

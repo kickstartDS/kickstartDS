@@ -4,9 +4,8 @@
 @use './headline-vars';
 
 $vars: meta.module-variables(headline-vars);
-@include custom-properties.styles($vars, true);
+@include custom-properties.styles($vars);
 
-/* critical:start */
 h1,
 h2,
 h3,
@@ -31,4 +30,3 @@ h6 {
     text-decoration: none !important;
   }
 }
-/* critical:end */

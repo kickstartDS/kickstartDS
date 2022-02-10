@@ -5,7 +5,7 @@
 @use './storytelling-vars';
 
 $vars: meta.module-variables(storytelling-vars);
-@include custom-properties.styles($vars, false);
+@include custom-properties.styles($vars);
 
 .c-storytelling {
   display: flex;

@@ -2,7 +2,6 @@
 @use '@kickstartds/core/source/core/breakpoint';
 @use './normalize';
 
-/* critical:start */
 * {
   &,
   &::before,
@@ -17,7 +16,6 @@ html {
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
-/* critical:end */
 
 body {
   &.overlay-open {
