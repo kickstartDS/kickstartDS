@@ -26,7 +26,6 @@ const Image: FunctionComponent<IMedia> = ({ image = {} }) => {
           <source data-srcset={srcMobile} />
           <Picture
             src={src || srcMobile}
-            objectFit="cover"
             noscript={false}
             alt={alt}
             itemProp="image"
@@ -40,7 +39,6 @@ const Image: FunctionComponent<IMedia> = ({ image = {} }) => {
           <Picture
             src={src || srcMobile}
             lazy={false}
-            objectFit="cover"
             alt={alt}
             itemProp="image"
           />

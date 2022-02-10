@@ -57,13 +57,6 @@
       "title": "`style` attribute",
       "description": "Define a style attribute for the picture"
     },
-    "objectFit": {
-      "title": "Object fit",
-      "description": "Select a value for the picture object fit",
-      "type": "string",
-      "enum": ["contain", "cover", "fill", "none", "scale-down"],
-      "default": "none"
-    },
     "noscript": {
       "title": "Noscript",
       "description": "Render noscript fallback",

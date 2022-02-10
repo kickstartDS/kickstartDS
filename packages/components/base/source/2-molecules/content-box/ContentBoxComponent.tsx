@@ -60,7 +60,7 @@ const ContentBoxComponent: ForwardRefRenderFunction<
           'c-content-box__image--square': ratio === '1:1',
         })}
       >
-        <Picture src={image} alt="" objectFit={true} />
+        <Picture src={image} alt="" />
       </div>
     )}
     <div className="c-content-box__body">
