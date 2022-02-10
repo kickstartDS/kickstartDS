@@ -574,10 +574,6 @@ export type ItempropAttribute = string;
  */
 export type StyleAttribute = string;
 /**
- * Select a value for the picture object fit
- */
-export type ObjectFit = 'contain' | 'cover' | 'fill' | 'none' | 'scale-down';
-/**
  * Render noscript fallback
  */
 export type Noscript = boolean;
@@ -1064,10 +1060,6 @@ export type ItempropAttribute1 = string;
  */
 export type StyleAttribute1 = string;
 /**
- * Select a value for the picture object fit
- */
-export type ObjectFit1 = 'contain' | 'cover' | 'fill' | 'none' | 'scale-down';
-/**
  * Render noscript fallback
  */
 export type Noscript1 = boolean;
@@ -1289,10 +1281,6 @@ export type ItempropAttribute2 = string;
  * Define a style attribute for the picture
  */
 export type StyleAttribute2 = string;
-/**
- * Select a value for the picture object fit
- */
-export type ObjectFit2 = 'contain' | 'cover' | 'fill' | 'none' | 'scale-down';
 /**
  * Render noscript fallback
  */
@@ -1790,7 +1778,6 @@ export interface Picture {
   id?: Id;
   itemProp?: ItempropAttribute;
   style?: StyleAttribute;
-  objectFit?: ObjectFit;
   noscript?: Noscript;
   lazy?: Lazy;
   sources?: Sources;
@@ -2039,7 +2026,6 @@ export interface Picture1 {
   id?: Id1;
   itemProp?: ItempropAttribute1;
   style?: StyleAttribute1;
-  objectFit?: ObjectFit1;
   noscript?: Noscript1;
   lazy?: Lazy1;
   sources?: Sources1;
@@ -2130,7 +2116,6 @@ export interface Picture2 {
   id?: Id2;
   itemProp?: ItempropAttribute2;
   style?: StyleAttribute2;
-  objectFit?: ObjectFit2;
   noscript?: Noscript2;
   lazy?: Lazy2;
   sources?: Sources2;

@@ -5,7 +5,7 @@
 @use './storytelling-vars';
 
 $vars: meta.module-variables(storytelling-vars);
-@include custom-properties.styles($vars, false);
+@include custom-properties.styles($vars);
 
 .c-storytelling {
   display: flex;
@@ -188,10 +188,6 @@ $vars: meta.module-variables(storytelling-vars);
         height: 100%;
         width: 100%;
       }
-    }
-
-    img {
-      flex: 0 0 auto; // ie fix
     }
   }
 

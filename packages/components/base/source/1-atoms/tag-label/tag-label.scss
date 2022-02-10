@@ -5,7 +5,7 @@
 @use './tag-label-vars';
 
 $vars: meta.module-variables(tag-label-vars);
-@include custom-properties.styles($vars, true);
+@include custom-properties.styles($vars);
 
 .c-tag-label {
   display: inline-flex;

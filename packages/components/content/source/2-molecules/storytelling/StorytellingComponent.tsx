@@ -75,14 +75,7 @@ const StorytellingMixin: FunctionComponent<
           `c-storytelling__image--${image.hAlign}`
       )}
     >
-      {image.source && (
-        <Picture
-          src={image.source}
-          alt=""
-          objectFit={image.ratio ? 'cover' : undefined}
-          lazy={lazy}
-        />
-      )}
+      {image.source && <Picture src={image.source} alt="" lazy={lazy} />}
     </div>
 
     <div

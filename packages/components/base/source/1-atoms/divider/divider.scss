@@ -3,7 +3,7 @@
 @use './divider-vars';
 
 $vars: meta.module-variables(divider-vars);
-@include custom-properties.styles($vars, true);
+@include custom-properties.styles($vars);
 
 .c-divider {
   border: 0;

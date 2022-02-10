@@ -2,11 +2,10 @@
 @use '@kickstartds/core/source/core/breakpoint';
 @use '@kickstartds/core/source/core/custom-properties';
 @use '@kickstartds/base/source/0-base/1-tools/scss/grid';
-@use '@kickstartds/base/source/0-base/1-tools/scss/helpers';
 @use './post-teaser-vars';
 
 $vars: meta.module-variables(post-teaser-vars);
-@include custom-properties.styles($vars, true);
+@include custom-properties.styles($vars);
 
 .c-post-teaser {
   --c-rich-text--font: var(--font-copy-s);

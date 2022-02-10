@@ -8,36 +8,28 @@ $grid__columns: 12;
   // margin-/padding-right is set to 0 to avoid horizontal scrollbars
   // @see https://www.rawkblog.com/2019/01/flexbox-gutters-negative-margins-solved/
 
-  /* critical:start */
   margin: math.div($gutter, -2) 0 math.div($gutter, -2) $gutter * -1;
-  /* critical:end */
 
   > * {
-    /* critical:start */
     padding: math.div($gutter, 2) 0 math.div($gutter, 2) $gutter;
-    /* critical:end */
   }
 }
 
 @mixin grid-container($gutter) {
-  /* critical:start */
   @include grid-gutter($gutter);
 
   display: flex;
   flex-wrap: wrap;
   min-width: 100%;
   box-sizing: border-box;
-  /* critical:end */
 
   > * {
-    /* critical:start */
     position: relative;
     // Prevent columns from becoming too narrow when at smaller grid tiers by
     // always setting `width: 100%;`. This works because we use `flex` values
     // later on to override this initial width.
     width: 100%;
     background-clip: content-box;
-    /* critical:end */
   }
 }
 
@@ -54,10 +46,8 @@ $grid__columns: 12;
 }
 
 @mixin grid-cell($width) {
-  /* critical:start */
   flex: 0 0 $width;
   max-width: $width;
-  /* critical:end */
 }
 
 /// @see http://www.heydonworks.com/article/the-flexbox-holy-albatross
