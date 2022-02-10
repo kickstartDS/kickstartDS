@@ -3,7 +3,7 @@
 @use './content-box-vars';
 
 $vars: meta.module-variables(content-box-vars);
-@include custom-properties.styles($vars, true);
+@include custom-properties.styles($vars);
 
 .c-content-box {
   margin-bottom: 2em;

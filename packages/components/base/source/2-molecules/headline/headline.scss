@@ -4,10 +4,9 @@
 @use './headline-vars';
 
 $vars: meta.module-variables(headline-vars);
-@include custom-properties.styles($vars, true);
+@include custom-properties.styles($vars);
 
 .c-headline {
-  /* critical:start */
   margin: 0 auto var(--c-headline--margin-bottom);
   text-align: center;
 
@@ -24,18 +23,13 @@ $vars: meta.module-variables(headline-vars);
   .l-section &:not(:first-child) {
     margin-top: calc(var(--c-headline--margin-bottom) * 1.5);
   }
-  /* critical:end */
 
   @include breakpoint.media('≥s') {
-    /* critical:start */
     max-width: 70%;
-    /* critical:end */
   }
 
   &--page-header {
-    /* critical:start */
     margin-bottom: 0 !important;
-    /* critical:end */
   }
 
   &--space-after-small {
@@ -47,12 +41,10 @@ $vars: meta.module-variables(headline-vars);
   }
 
   &__headline {
-    /* critical:start */
     margin: 0;
     font: var(--g-headline--font);
     font-weight: var(--c-headline--font-weight);
     color: var(--c-headline--color);
-    /* critical:end */
   }
 
   &__h1 {

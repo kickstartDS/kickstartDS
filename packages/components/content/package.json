@@ -20,12 +20,11 @@
     "source/**/*-vars.scss"
   ],
   "dependencies": {
-    "@babel/runtime": "^7.16.7",
+    "@babel/runtime": "^7.17.2",
     "@kickstartds/base": "^1.5.1",
     "@kickstartds/core": "^1.5.0",
     "classnames": "^2.2.6",
-    "countup.js": "^2.0.8",
-    "objectFitPolyfill": "^2.3.0"
+    "countup.js": "^2.0.8"
   },
   "devDependencies": {
     "bourbon": "^7.0.0"

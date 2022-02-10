@@ -4,7 +4,7 @@
 @use './logo-tiles-vars';
 
 $vars: meta.module-variables(logo-tiles-vars);
-@include custom-properties.styles($vars, true);
+@include custom-properties.styles($vars);
 
 .c-logo-tiles {
   display: flex;
@@ -25,7 +25,7 @@ $vars: meta.module-variables(logo-tiles-vars);
       (100% / var(--c-logo-tiles--cols)) - var(--c-logo-tiles--gutter)
     );
 
-    &::before {
+    &::after {
       content: '';
       display: block;
       padding-top: math.percentage(math.div(9, 16));
@@ -34,13 +34,8 @@ $vars: meta.module-variables(logo-tiles-vars);
 
   img {
     position: absolute;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
-
-    height: auto;
-    max-height: 100%;
-    width: auto;
-    max-width: 100%;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
   }
 }

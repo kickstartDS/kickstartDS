@@ -5,16 +5,14 @@
 @use './section-vars';
 
 $vars: meta.module-variables(section-vars);
-@include custom-properties.styles($vars, true);
+@include custom-properties.styles($vars);
 
 .l-section {
   @include anchor.anchor-target;
 
-  /* critical:start */
   padding: var(--l-section--space) 0;
   background: var(--l-section--background);
   box-sizing: border-box;
-  /* critical:end */
 
   &--space-before-small {
     padding-top: var(--l-section--space-small);
@@ -33,7 +31,6 @@ $vars: meta.module-variables(section-vars);
   }
 
   &__container {
-    /* critical:start */
     padding: 0 var(--g-content-padding);
     margin: auto;
     width: 100%;
@@ -49,37 +46,26 @@ $vars: meta.module-variables(section-vars);
     );
     // stylelint-enable scss/no-global-function-names
     grid-gap: var(--l-section_container--gutter);
-    /* critical:end */
 
     &--narrow {
-      /* critical:start */
       max-width: var(--g-content-width-narrow);
-      /* critical:end */
     }
 
     &--wide {
-      /* critical:start */
       max-width: var(--g-content-width-wide);
-      /* critical:end */
     }
 
     &--max {
       @include breakpoint.media('≥m') {
-        /* critical:start */
         max-width: 100%;
-        /* critical:end */
       }
     }
 
     &--full {
-      /* critical:start */
       padding: 0;
-      /* critical:end */
 
       @include breakpoint.media('≥m') {
-        /* critical:start */
         max-width: 100%;
-        /* critical:end */
       }
     }
   }

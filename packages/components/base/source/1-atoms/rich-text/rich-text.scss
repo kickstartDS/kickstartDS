@@ -4,7 +4,7 @@
 @use './rich-text-vars';
 
 $vars: meta.module-variables(rich-text-vars);
-@include custom-properties.styles($vars, true);
+@include custom-properties.styles($vars);
 
 .c-rich-text {
   font: var(--c-rich-text--font);

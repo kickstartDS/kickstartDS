@@ -1,5 +1,4 @@
 import { Component, define } from '@kickstartds/core/lib/core';
-import 'objectFitPolyfill/dist/objectFitPolyfill.basic.min';
 
 const identifier = 'visual';
 const scrollToSibling = (element) => {

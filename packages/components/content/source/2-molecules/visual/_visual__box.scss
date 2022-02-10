@@ -1,11 +1,9 @@
 @use '@kickstartds/base/source/0-base/1-tools/scss/grid';
 @use '@kickstartds/base/source/0-base/1-tools/scss/helpers';
-@use '@kickstartds/base/source/0-base/1-tools/scss/sizes';
 @use '@kickstartds/core/source/core/breakpoint';
 @use 'sass:meta';
 
 @mixin visual-box {
-  /* critical:start */
   width: 100%;
   max-width: var(--c-visual_box--max-width);
   position: relative;
@@ -17,51 +15,38 @@
   .c-rich-text {
     --c-rich-text--color: var(--c-visual_box--color);
   }
-  /* critical:end */
 
   a:not(.c-button) {
-    /* critical:start */
     color: inherit;
-    /* critical:end */
   }
 
   @include breakpoint.media('≥s') {
-    /* critical:start */
     width: auto;
     border-radius: var(--c-visual_box--border-radius);
-    /* critical:end */
   }
 
   @include breakpoint.media('≥xl') {
-    /* critical:start */
     padding-top: 3rem;
     padding-bottom: 3rem;
-    /* critical:end */
   }
 
   .c-visual__content--inbox &,
   .c-visual__content:only-child & {
-    /* critical:start */
     border-radius: var(--c-visual_box--border-radius);
-    /* critical:end */
   }
 
   &--transparent {
     .c-visual__content--inbox &,
     .c-visual__content:only-child & {
-      /* critical:start */
       background: none;
       padding: 0;
       border-radius: 0;
-      /* critical:end */
     }
 
     @include breakpoint.media('≥s') {
-      /* critical:start */
       background: none;
       padding: 0 !important;
       border-radius: 0;
-      /* critical:end */
     }
   }
 

@@ -1,7 +1,6 @@
 @use './helpers';
 @use 'sass:list';
 @use 'bourbon/core/bourbon';
-@use 'settings/base';
 
 @function value($prop, $fallback, $skip) {
   @return if(list.index($skip, $prop), null, $fallback);

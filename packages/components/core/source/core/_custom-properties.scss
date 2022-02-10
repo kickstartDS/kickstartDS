@@ -2,29 +2,23 @@
 @use 'sass:map';
 @use './breakpoint';
 
-@mixin responsive-custom-property($name, $value, $critical) {
+@mixin responsive-custom-property($name, $value) {
   @if meta.type-of($value) == 'map' {
     @each $bp, $val in $value {
       @if $bp == 'xs' or not $bp {
-        @include responsive-custom-property($name, $val, $critical);
+        @include responsive-custom-property($name, $val);
       } @else {
         @include breakpoint.media('≥#{$bp}') {
-          @include responsive-custom-property($name, $val, $critical);
+          @include responsive-custom-property($name, $val);
         }
       }
     }
   } @else if $value {
-    @if $critical {
-      /* critical:start */
-    }
     #{$name}: #{$value};
-    @if $critical {
-      /* critical:end */
-    }
   }
 }
 
-@mixin styles($map, $critical: false) {
+@mixin styles($map) {
   @if not map.has-key($map, 'name-') {
     @error '`name-`-property is requred.';
   }
@@ -38,11 +32,7 @@
     @each $selector, $properties in $rules {
       #{$selector} {
         @each $property, $value in $properties {
-          @include responsive-custom-property(
-            $prefix + $property,
-            $value,
-            $critical
-          );
+          @include responsive-custom-property($prefix + $property, $value);
         }
       }
     }

@@ -5,7 +5,7 @@
 @use './table-vars';
 
 $vars: meta.module-variables(table-vars);
-@include custom-properties.styles($vars, true);
+@include custom-properties.styles($vars);
 
 .c-table {
   width: 100%;

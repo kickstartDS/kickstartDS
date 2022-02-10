@@ -4,24 +4,6 @@ const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 
 const dev = [sortMediaQueries(), combineDuplicatedSelectors(), autoprefixer()];
-
-const prod = [
-  ...dev,
-  cssnano({
-    preset: [
-      'default',
-      {
-        discardComments: {
-          remove(comment) {
-            return !(
-              comment.indexOf('!') === 0 || comment.indexOf('critical:') === 0
-            );
-          },
-        },
-        calc: false,
-      },
-    ],
-  }),
-];
+const prod = [...dev, cssnano({ preset: ['default', { calc: false }] })];
 
 module.exports = process.env.NODE_ENV === 'production' ? prod : dev;

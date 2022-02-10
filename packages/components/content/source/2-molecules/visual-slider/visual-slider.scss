@@ -1,31 +1,26 @@
 @use 'sass:meta';
 @use '@kickstartds/core/source/core/breakpoint';
 @use '@kickstartds/core/source/core/custom-properties';
-@use '@kickstartds/base/source/0-base/0-settings/selector';
 @use 'bourbon/core/bourbon';
 
 @use './visual-slider-vars';
 @use './slide-preview/visual-slide-preview';
 
 $vars: meta.module-variables(visual-slider-vars);
-@include custom-properties.styles($vars, true);
+@include custom-properties.styles($vars);
 
 .c-visual-slider {
   // hide preview on small screens
   .c-visual-slide--preview {
     @include breakpoint.media('<s') {
-      /* critical:start */
       @include bourbon.hide-visually;
-      /* critical:end */
     }
   }
 
   // hide bullets on large screens
   .c-slider__bullet {
     @include breakpoint.media('≥s') {
-      /* critical:start */
       display: none;
-      /* critical:end */
     }
   }
 

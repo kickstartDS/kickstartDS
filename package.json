@@ -42,7 +42,7 @@
     "execa": "^5.1.1",
     "fast-glob": "^3.2.11",
     "fs-extra": "^10.0.0",
-    "json-csv": "^4.0.2",
+    "json-csv": "^4.0.3",
     "license-checker": "^25.0.1",
     "postcss": "^8.4.6",
     "postcss-scss": "^4.0.3",
@@ -65,7 +65,7 @@
     "lint-staged": "^12.3.3",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.5.1",
-    "stylelint": "^14.3.0"
+    "stylelint": "^14.4.0"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org",
