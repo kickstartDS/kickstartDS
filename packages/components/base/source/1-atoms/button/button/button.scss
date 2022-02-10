@@ -6,10 +6,9 @@
 @use './button-vars';
 
 $vars: meta.module-variables(button-vars);
-@include custom-properties.styles($vars, true);
+@include custom-properties.styles($vars);
 
 .c-button {
-  /* critical:start */
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -27,7 +26,6 @@ $vars: meta.module-variables(button-vars);
   text-decoration: none;
   color: var(--c-button--color);
   background-color: var(--c-button--background-color);
-  /* critical:end */
 
   &:hover,
   &:focus {
@@ -90,9 +88,7 @@ $vars: meta.module-variables(button-vars);
 
   &--clear,
   &--clear-inverted {
-    /* critical:start */
     padding-left: 0;
-    /* critical:end */
 
     &:focus,
     &:hover {
@@ -101,23 +97,17 @@ $vars: meta.module-variables(button-vars);
   }
 
   .icon {
-    /* critical:start */
     @include bourbon.size(var(--c-button--icon-size));
 
     flex-shrink: 0;
     margin: 0 0.5em;
-    /* critical:end */
 
     &:first-child {
-      /* critical:start */
       margin-left: 0;
-      /* critical:end */
     }
 
     &:last-child {
-      /* critical:start */
       margin-right: 0;
-      /* critical:end */
     }
   }
 

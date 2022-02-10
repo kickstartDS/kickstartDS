@@ -15,15 +15,7 @@ const Image: ForwardRefExoticComponent<
   PictureProps & HTMLAttributes<HTMLImageElement>
 > = forwardRef(
   (
-    {
-      className,
-      src,
-      srcSet,
-      lazy = true,
-      objectFit,
-      noscript = true,
-      ...props
-    },
+    { className, src, srcSet, lazy = true, noscript = true, ...props },
     ref: ForwardedRef<HTMLImageElement>
   ) => (
     <>
@@ -34,7 +26,6 @@ const Image: ForwardRefExoticComponent<
         data-src={lazy ? src : undefined}
         srcSet={!lazy ? srcSet : undefined}
         data-srcset={lazy ? srcSet : undefined}
-        data-object-fit={objectFit !== 'none' ? objectFit : undefined}
         ref={ref}
       />
       {lazy && noscript && (

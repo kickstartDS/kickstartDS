@@ -46,10 +46,6 @@ export type ItempropAttribute = string;
  */
 export type StyleAttribute = string;
 /**
- * Select a value for the picture object fit
- */
-export type ObjectFit = 'contain' | 'cover' | 'fill' | 'none' | 'scale-down';
-/**
  * Render noscript fallback
  */
 export type Noscript = boolean;
@@ -157,7 +153,6 @@ export interface Picture {
   id?: Id;
   itemProp?: ItempropAttribute;
   style?: StyleAttribute;
-  objectFit?: ObjectFit;
   noscript?: Noscript;
   lazy?: Lazy;
   sources?: Sources;

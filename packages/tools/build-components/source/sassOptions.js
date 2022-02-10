@@ -1,10 +1,6 @@
 const { root } = require('./utils');
 
-const includePaths = [
-  `${root}/packages/components`,
-  `${root}/node_modules`,
-  `${root}/legacy-instance`,
-];
+const includePaths = [`${root}/packages/components`, `${root}/node_modules`];
 
 const search = '@kickstartds/';
 const searchLength = search.length;

@@ -1,5 +1,4 @@
 @use 'bourbon/core/bourbon';
-@use 'settings/base';
 
 .lightbox-image {
   $hover-transition: 0.3s ease-out;
@@ -36,7 +35,7 @@
   &:hover,
   &:focus {
     .lightbox-image__thumb {
-      transform: scale(base.$gallery__hover-scale);
+      transform: scale(1.1);
     }
   }
 

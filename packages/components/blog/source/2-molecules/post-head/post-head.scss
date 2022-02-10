@@ -3,7 +3,7 @@
 @use './post-head-vars';
 
 $vars: meta.module-variables(post-head-vars);
-@include custom-properties.styles($vars, true);
+@include custom-properties.styles($vars);
 
 .c-post-head {
   &__meta {
