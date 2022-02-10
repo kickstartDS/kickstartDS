@@ -27,15 +27,16 @@ const prepare = async (jsPaths) => {
           extensions: ['.js', '.tsx'],
           babelHelpers: 'runtime',
           skipPreflightCheck: true,
+          presets: [
+            ['@babel/preset-react', { runtime: 'classic', pragma: 'html' }],
+          ],
           plugins: [
             [
-              'babel-plugin-transform-jsx-to-htm',
+              '@wordpress/babel-plugin-import-jsx-pragma',
               {
-                tag: 'html',
-                import: {
-                  module: '@kickstartds/core/lib/core',
-                  export: 'html',
-                },
+                scopeVariable: 'html',
+                source: 'vhtml',
+                isDefault: true,
               },
             ],
           ],
