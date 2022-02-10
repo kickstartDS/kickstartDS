@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://frontend.ruhmesmeile.com/base/atoms/link-button.schema.json",
+  "$id": "http://schema.kickstartds.com/base/link-button.schema.json",
   "title": "Link Button",
   "description": "link-button",
   "type": "object",
@@ -21,34 +21,34 @@
   },
   "properties": {
     "label": {
-      "$ref": "http://frontend.ruhmesmeile.com/base/atoms/button.schema.json#/definitions/label"
+      "$ref": "http://schema.kickstartds.com/base/button.schema.json#/definitions/label"
     },
     "variant": {
-      "$ref": "http://frontend.ruhmesmeile.com/base/atoms/button.schema.json#/definitions/variant"
+      "$ref": "http://schema.kickstartds.com/base/button.schema.json#/definitions/variant"
     },
     "size": {
-      "$ref": "http://frontend.ruhmesmeile.com/base/atoms/button.schema.json#/definitions/size"
+      "$ref": "http://schema.kickstartds.com/base/button.schema.json#/definitions/size"
     },
     "className": {
-      "$ref": "http://frontend.ruhmesmeile.com/base/atoms/button.schema.json#/definitions/className"
+      "$ref": "http://schema.kickstartds.com/base/button.schema.json#/definitions/className"
     },
     "icon": {
-      "$ref": "http://frontend.ruhmesmeile.com/base/atoms/icon.definitions.json"
+      "$ref": "http://schema.kickstartds.com/base/icon.definitions.json"
     },
     "iconBefore": {
-      "$ref": "http://frontend.ruhmesmeile.com/base/atoms/button.schema.json#/definitions/iconBefore"
+      "$ref": "http://schema.kickstartds.com/base/button.schema.json#/definitions/iconBefore"
     },
     "iconAfter": {
-      "$ref": "http://frontend.ruhmesmeile.com/base/atoms/button.schema.json#/definitions/iconAfter"
+      "$ref": "http://schema.kickstartds.com/base/button.schema.json#/definitions/iconAfter"
     },
     "dataComponent": {
-      "$ref": "http://frontend.ruhmesmeile.com/base/atoms/button.schema.json#/definitions/dataComponent"
+      "$ref": "http://schema.kickstartds.com/base/button.schema.json#/definitions/dataComponent"
     },
     "fillAnimation": {
-      "$ref": "http://frontend.ruhmesmeile.com/base/atoms/button.schema.json#/definitions/fillAnimation"
+      "$ref": "http://schema.kickstartds.com/base/button.schema.json#/definitions/fillAnimation"
     },
     "iconAnimation": {
-      "$ref": "http://frontend.ruhmesmeile.com/base/atoms/button.schema.json#/definitions/iconAnimation"
+      "$ref": "http://schema.kickstartds.com/base/button.schema.json#/definitions/iconAnimation"
     },
     "href": {
       "$ref": "#/definitions/href"

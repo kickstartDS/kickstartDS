@@ -1,39 +1,39 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://frontend.ruhmesmeile.com/form/atoms/text-area.schema.json",
+  "$id": "http://schema.kickstartds.com/form/text-area.schema.json",
   "title": "Text Area",
   "description": "Multiline text input, useful for cases where users have a sizable amount of text to enter.",
   "type": "object",
   "properties": {
     "label": {
-      "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/label"
+      "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/label"
     },
     "value": {
-      "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/value"
+      "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/value"
     },
     "name": {
-      "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/name"
+      "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/name"
     },
     "disabled": {
-      "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/disabled"
+      "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/disabled"
     },
     "placeholder": {
-      "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/placeholder"
+      "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/placeholder"
     },
     "hideLabel": {
-      "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/hideLabel"
+      "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/hideLabel"
     },
     "icon": {
-      "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/icon"
+      "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/icon"
     },
     "invalid": {
-      "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/invalid"
+      "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/invalid"
     },
     "invalidMessage": {
-      "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/invalidMessage"
+      "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/invalidMessage"
     },
     "hint": {
-      "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/hint"
+      "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/hint"
     },
     "className": {
       "title": "Class",

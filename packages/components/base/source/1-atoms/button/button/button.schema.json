@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://frontend.ruhmesmeile.com/base/atoms/button.schema.json",
+  "$id": "http://schema.kickstartds.com/base/button.schema.json",
   "title": "Button",
   "description": "Component to display links and call-to-actions",
   "type": "object",
@@ -38,7 +38,7 @@
       "description": "Add additional css classes that should be applied to the button"
     },
     "icon": {
-      "$ref": "http://frontend.ruhmesmeile.com/base/atoms/icon.definitions.json"
+      "$ref": "http://schema.kickstartds.com/base/icon.definitions.json"
     },
     "iconBefore": {
       "type": "boolean",

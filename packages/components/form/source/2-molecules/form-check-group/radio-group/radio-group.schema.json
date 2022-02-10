@@ -1,21 +1,21 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://frontend.ruhmesmeile.com/form/molecules/radio-group.schema.json",
+  "$id": "http://schema.kickstartds.com/form/radio-group.schema.json",
   "title": "Radio Group",
   "description": "A Radio Group allows users to select one item from a list of choices.",
   "type": "object",
   "properties": {
     "label": {
-      "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/label"
+      "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/label"
     },
     "name": {
-      "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/name"
+      "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/name"
     },
     "invalid": {
-      "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/invalid"
+      "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/invalid"
     },
     "invalidMessage": {
-      "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/invalidMessage"
+      "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/invalidMessage"
     },
     "options": {
       "title": "Options",
@@ -26,13 +26,13 @@
         "type": "object",
         "properties": {
           "label": {
-            "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/label"
+            "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/label"
           },
           "disabled": {
-            "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/disabled"
+            "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/disabled"
           },
           "hint": {
-            "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/hint"
+            "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/hint"
           }
         },
         "required": ["label"]

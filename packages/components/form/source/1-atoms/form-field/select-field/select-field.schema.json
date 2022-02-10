@@ -1,21 +1,21 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://frontend.ruhmesmeile.com/form/atoms/select-field.schema.json",
+  "$id": "http://schema.kickstartds.com/form/select-field.schema.json",
   "title": "Select Field",
   "description": "Input that allow users to select a single option from a list of mutually exclusive options.",
   "type": "object",
   "properties": {
     "label": {
-      "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/label"
+      "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/label"
     },
     "value": {
-      "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/value"
+      "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/value"
     },
     "name": {
-      "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/name"
+      "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/name"
     },
     "disabled": {
-      "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/disabled"
+      "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/disabled"
     },
     "options": {
       "title": "Options",
@@ -30,26 +30,26 @@
             "type": "string"
           },
           "selected": {
-            "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/selected"
+            "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/selected"
           },
           "disabled": {
-            "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/disabled"
+            "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/disabled"
           }
         },
         "required": ["label"]
       }
     },
     "hideLabel": {
-      "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/hideLabel"
+      "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/hideLabel"
     },
     "invalid": {
-      "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/invalid"
+      "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/invalid"
     },
     "invalidMessage": {
-      "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/invalidMessage"
+      "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/invalidMessage"
     },
     "hint": {
-      "$ref": "http://frontend.ruhmesmeile.com/form/atoms/input.definitions.json#/definitions/hint"
+      "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/hint"
     },
     "className": {
       "title": "Class",

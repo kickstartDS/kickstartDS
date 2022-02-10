@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://frontend.ruhmesmeile.com/content/molecules/logo-tiles.schema.json",
+  "$id": "http://schema.kickstartds.com/content/logo-tiles.schema.json",
   "title": "Logo Tiles",
   "description": "Component to list logos or seals",
   "type": "object",
@@ -9,7 +9,7 @@
       "title": "Logos",
       "type": "array",
       "items": {
-        "$ref": "http://frontend.ruhmesmeile.com/base/atoms/picture.definitions.json"
+        "$ref": "http://schema.kickstartds.com/base/picture.definitions.json"
       },
       "default": [
         {
