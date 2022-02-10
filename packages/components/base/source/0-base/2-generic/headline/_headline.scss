@@ -1,7 +1,6 @@
 @use 'sass:meta';
 @use '@kickstartds/core/source/core/breakpoint';
 @use '@kickstartds/core/source/core/custom-properties';
-@use 'settings/base';
 @use './headline-vars';
 
 $vars: meta.module-variables(headline-vars);

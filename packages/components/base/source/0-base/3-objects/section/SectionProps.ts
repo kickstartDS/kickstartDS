@@ -83,22 +83,6 @@ export type ButtonHref = string;
  */
 export type OpenLinkInNewTab = boolean;
 /**
- * Input id
- */
-export type ID = string;
-/**
- * Name
- */
-export type Name = string;
-/**
- * Toggle is checked
- */
-export type Checked = boolean;
-/**
- * Toggle is disabled
- */
-export type Disabled = boolean;
-/**
  * Text used on button
  */
 export type Label1 = string;
@@ -1159,7 +1143,7 @@ export type GalleryIdentifier = string;
 /**
  * ID
  */
-export type ID1 = string;
+export type ID = string;
 /**
  * Additional Class
  */
@@ -1464,7 +1448,6 @@ export interface SectionProps {
   content?: (
     | QuotesSlider
     | LinkButton
-    | ToggleSwitch
     | Button
     | TagLabel
     | Visual
@@ -1528,16 +1511,6 @@ export interface Icon {
   icon?: IconIdentifier;
   role?: AriaRole;
   className?: AdditionalClass;
-  [k: string]: unknown;
-}
-/**
- * Toggle Switch
- */
-export interface ToggleSwitch {
-  id: ID;
-  name: Name;
-  checked: Checked;
-  disabled: Disabled;
   [k: string]: unknown;
 }
 /**
@@ -2091,7 +2064,7 @@ export interface LazyLightboxImage {
   caption?: Caption2;
   hideCaption?: HideCaptionVisually;
   gallery?: GalleryIdentifier;
-  id?: ID1;
+  id?: ID;
   className?: AdditionalClass8;
   captionClassName?: AdditionalCaptionClass;
   [k: string]: unknown;

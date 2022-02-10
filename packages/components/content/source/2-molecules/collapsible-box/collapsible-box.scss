@@ -14,10 +14,6 @@ $vars: meta.module-variables(collapsible-box-vars);
 
     border-top: 1px solid var(--c-collapsible-box--border-color);
     border-bottom: 1px solid var(--c-collapsible-box--border-color);
-
-    // #{selector.$section--bg-1} & {
-    //   border-color: base.$color-black-15;
-    // }
   }
 
   & + & {

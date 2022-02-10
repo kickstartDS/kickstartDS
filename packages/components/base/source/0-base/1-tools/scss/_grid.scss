@@ -1,31 +1,10 @@
 @use 'sass:math';
-@use 'settings/global';
 
 $grid__columns: 12;
 
-@mixin outer-container() {
-  max-width: global.$grid__max-width;
-  margin: auto;
-  position: relative;
-  box-sizing: border-box;
-}
-
 /// container mixins
 
-@mixin grid-visual($gutter: global.$grid__gutter, $color: papayawhip) {
-  $gradient: (
-    to right,
-    transparent,
-    transparent $gutter,
-    $color $gutter,
-    $color math.percentage(math.div(1, $grid__columns))
-  );
-
-  background-position-x: math.div($gutter, -2);
-  background-image: repeating-linear-gradient($gradient);
-}
-
-@mixin grid-gutter($gutter: global.$grid__gutter) {
+@mixin grid-gutter($gutter) {
   // margin-/padding-right is set to 0 to avoid horizontal scrollbars
   // @see https://www.rawkblog.com/2019/01/flexbox-gutters-negative-margins-solved/
 
@@ -40,7 +19,7 @@ $grid__columns: 12;
   }
 }
 
-@mixin grid-container($gutter: global.$grid__gutter) {
+@mixin grid-container($gutter) {
   /* critical:start */
   @include grid-gutter($gutter);
 
@@ -79,10 +58,6 @@ $grid__columns: 12;
   flex: 0 0 $width;
   max-width: $width;
   /* critical:end */
-}
-
-@mixin grid-push($cols) {
-  margin-left: math.percentage(math.div($cols, $grid__columns));
 }
 
 /// @see http://www.heydonworks.com/article/the-flexbox-holy-albatross

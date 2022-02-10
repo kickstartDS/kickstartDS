@@ -1,6 +1,5 @@
 /* stylelint-disable no-descending-specificity */
 @use 'sass:meta';
-@use '@kickstartds/base/source/0-base/1-tools/scss/helpers';
 @use '@kickstartds/core/source/core/breakpoint';
 @use '@kickstartds/core/source/core/custom-properties';
 @use './storytelling-vars';
@@ -22,11 +21,6 @@ $vars: meta.module-variables(storytelling-vars);
   @include breakpoint.media('≥s') {
     flex-direction: row;
   }
-
-  // @include helpers.in-sidebar {
-  //   display: block;
-  //   padding: 1.5rem 1rem;
-  // }
 
   &--full {
     padding: 0;
@@ -199,10 +193,6 @@ $vars: meta.module-variables(storytelling-vars);
     img {
       flex: 0 0 auto; // ie fix
     }
-
-    // @include helpers.in-sidebar {
-    //   padding: 0 0 1rem !important;
-    // }
   }
 
   &__box {
@@ -253,10 +243,6 @@ $vars: meta.module-variables(storytelling-vars);
       padding-left: var(--c-storytelling--horizontal-padding);
       padding-right: var(--c-storytelling--horizontal-padding);
     }
-
-    // @include helpers.in-sidebar {
-    //   padding: 0 !important;
-    // }
 
     &__content {
       max-width: 36.85em;

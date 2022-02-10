@@ -1,7 +1,0 @@
-@use 'settings/base';
-
-@forward 'sass-yiq/src/sass/yiq' with (
-  $yiq-contrasted-dark-default: base.$yiq-contrasted-dark-default,
-  $yiq-contrasted-light-default: base.$yiq-contrasted-light-default,
-  $yiq-contrasted-threshold: base.$yiq-contrasted-threshold
-);
