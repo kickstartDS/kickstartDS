@@ -1,5 +1,5 @@
 const json = require('@rollup/plugin-json');
-const externals = require('rollup-plugin-node-externals');
+const { externals } = require('rollup-plugin-node-externals');
 const { terser } = require('rollup-plugin-terser');
 const importResolver = require('rollup-plugin-import-resolver');
 
@@ -8,7 +8,7 @@ const production = process.env.NODE_ENV === 'production';
 module.exports = {
   sharedInputPlugins: [
     json(),
-    externals({ deps: true }),
+    externals(),
     importResolver({
       extensions: ['.js', '.ts', '.tsx'],
     }),
