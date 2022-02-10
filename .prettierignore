@@ -4,6 +4,5 @@ tmp
 node_modules
 package-lock.json
 CHANGELOG.md
-legacy-instance/settings/**/*.scss
 packages/components/*/lib
 packages/tools/storybook/storybook-static

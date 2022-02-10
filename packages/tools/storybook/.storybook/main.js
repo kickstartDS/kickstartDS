@@ -13,7 +13,6 @@ module.exports = {
     );
     return [...list, ...stories, `../tmp/**/*.story.mdx`];
   },
-  staticDirs: [`${root}/legacy-instance`],
   addons: [
     'storybook-dark-mode',
     '@storybook/addon-essentials',
