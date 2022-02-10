@@ -38,6 +38,6 @@
     "storybook-design-token": "^1.4.0"
   },
   "peerDependencies": {
-    "react": "^17.0.2"
+    "react": "^17.0.2 || ^18.0.0-rc.0"
   }
 }

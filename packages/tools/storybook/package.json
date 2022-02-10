@@ -24,8 +24,8 @@
     "find-up": "^5.0.0",
     "fs-extra": "^10.0.0",
     "lazysizes": "^5.3.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.1",
+    "react": "^18.0.0-rc.0",
+    "react-dom": "^18.0.0-rc.0",
     "react-emoji-render": "^1.2.4",
     "svgstore": "^3.0.1",
     "yargs-parser": "^21.0.0"
