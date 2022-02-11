@@ -1,25 +1,16 @@
 const json = require('@rollup/plugin-json');
 const { externals } = require('rollup-plugin-node-externals');
-const { terser } = require('rollup-plugin-terser');
 const importResolver = require('rollup-plugin-import-resolver');
 
-const production = process.env.NODE_ENV === 'production';
-
 module.exports = {
-  sharedInputPlugins: [
+  plugins: [
     json(),
     externals(),
     importResolver({
       extensions: ['.js', '.ts', '.tsx'],
     }),
   ],
-  sharedOutputOptions: {
-    dir: 'lib',
-    format: 'es',
-    chunkFileNames: '_shared/[name]-[hash].js',
-    plugins: [production && terser({ safari10: true, keep_classnames: true })],
-  },
-  sharedBabelConfig: {
+  babelConfig: {
     babelrc: false,
     assumptions: {
       // https://babeljs.io/docs/en/assumptions
@@ -38,6 +29,7 @@ module.exports = {
     presets: [
       ['@babel/preset-env', { bugfixes: true }],
       ['@babel/preset-typescript'],
+      ['@babel/preset-react', { runtime: 'automatic' }],
     ],
     plugins: [['@babel/plugin-transform-runtime', { useESModules: true }]],
   },

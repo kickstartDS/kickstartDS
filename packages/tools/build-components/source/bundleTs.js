@@ -3,16 +3,14 @@ const rollup = require('rollup');
 const { babel } = require('@rollup/plugin-babel');
 const ts = require('rollup-plugin-ts');
 const styles = require('rollup-plugin-styles');
-const merge = require('lodash/merge');
+const { terser } = require('rollup-plugin-terser');
 const log = require('./log');
 const { dirRe, sourcePath } = require('./utils');
-const {
-  sharedInputPlugins,
-  sharedOutputOptions,
-  sharedBabelConfig,
-} = require('./rollupUtils');
+const { plugins, babelConfig } = require('./rollupUtils');
 const sassOptions = require('./sassOptions');
 const postcssPlugins = require('./postcssPlugins');
+
+const production = process.env.NODE_ENV === 'production';
 
 const assetPaths = (paths = []) =>
   paths.map((assetPath) => `${sourcePath}/${assetPath}`);
@@ -21,10 +19,6 @@ const externalRe = {
   js: /\.js$/,
   exclude: /(tslib|rollup-plugin-styles)/,
 };
-
-const babelConfig = merge({}, sharedBabelConfig, {
-  presets: [['@babel/preset-react', { runtime: 'automatic' }]],
-});
 
 const prepare = async (tsPaths) => {
   const assets = await fs
@@ -44,11 +38,13 @@ const prepare = async (tsPaths) => {
   );
   const inputOptions = {
     input,
-    external: (id) => {
-      if (externalRe.js.test(id)) return !externalRe.exclude.test(id);
+    external(id) {
+      if (externalRe.js.test(id)) {
+        return !externalRe.exclude.test(id);
+      }
     },
     plugins: [
-      ...sharedInputPlugins,
+      ...plugins,
       styles({
         config: false,
         mode: ['inject', { prepend: true }],
@@ -59,7 +55,7 @@ const prepare = async (tsPaths) => {
           cssAssets.add(id);
         },
       }),
-      process.env.NODE_ENV === 'production'
+      production
         ? ts({
             transpiler: 'babel',
             tsconfig: {
@@ -81,7 +77,10 @@ const prepare = async (tsPaths) => {
     ],
   };
   const outputOptions = {
-    ...sharedOutputOptions,
+    dir: 'lib',
+    format: 'es',
+    chunkFileNames: '_shared/[name]-[hash].js',
+    plugins: [production && terser({ safari10: true })],
     paths(id) {
       if (id.indexOf('/packages/components/') !== -1) {
         const [, dir, base, ext] = id.match(dirRe);

@@ -1,109 +1,70 @@
-const rollup = require('rollup');
-const { babel } = require('@rollup/plugin-babel');
-const replace = require('@rollup/plugin-replace');
-const merge = require('lodash/merge');
+const path = require('path');
+const esbuild = require('esbuild');
+const { external } = require('./esbuild-plugins/external');
+const { replace } = require('./esbuild-plugins/replace');
 const log = require('./log');
-const { dirRe } = require('./utils');
-const {
-  sharedInputPlugins,
-  sharedOutputOptions,
-  sharedBabelConfig,
-} = require('./rollupUtils');
+const { root, dirRe } = require('./utils');
 
-const prepare = async (jsPaths) => {
-  const input = Object.fromEntries(
+const production = process.env.NODE_ENV === 'production';
+const prepare = (jsPaths) => ({
+  entryPoints: Object.fromEntries(
     jsPaths.map((file) => {
       const [, dir, name] = file.match(dirRe);
       return [`${dir}/${name}`, file];
     })
-  );
-
-  const inputOptions = {
-    input,
-    plugins: [
-      ...sharedInputPlugins,
-      babel(
-        merge({}, sharedBabelConfig, {
-          extensions: ['.js', '.tsx'],
-          babelHelpers: 'runtime',
-          skipPreflightCheck: true,
-          presets: [
-            ['@babel/preset-react', { runtime: 'classic', pragma: 'html' }],
-          ],
-          plugins: [
-            [
-              '@wordpress/babel-plugin-import-jsx-pragma',
-              {
-                scopeVariable: 'html',
-                source: 'vhtml',
-                isDefault: true,
-              },
-            ],
-          ],
-        })
-      ),
-      replace({
-        exclude: '',
-        include: '**/*.tsx',
-        values: {
-          // unfortunately, vhtml doesn't handle all special JSX attributes, so they have to be replaced manually
-          // https://github.com/developit/vhtml/blob/master/src/vhtml.js#L7 vs https://reactjs.org/docs/dom-elements.html#all-supported-html-attributes
-          xmlnsXlink: '"xmlns:xlink"',
-          xlinkHref: '"xlink:href"',
-          tabIndex: 'tabindex',
-        },
-        preventAssignment: false,
-      }),
-    ],
-    preserveEntrySignatures: 'allow-extension',
-  };
-  const outputOptions = {
-    ...sharedOutputOptions,
-  };
-  return {
-    inputOptions,
-    outputOptions,
-  };
-};
+  ),
+  outdir: 'lib',
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  plugins: [
+    external,
+    replace({
+      include: /\.tsx$/,
+      values: {
+        // unfortunately, vhtml doesn't handle all special JSX attributes, so they have to be replaced manually
+        // https://github.com/developit/vhtml/blob/master/src/vhtml.js#L7 vs https://reactjs.org/docs/dom-elements.html#all-supported-html-attributes
+        xmlnsXlink: 'xmlns:xlink',
+        xlinkHref: 'xlink:href',
+        tabIndex: 'tabindex',
+      },
+    }),
+  ],
+  splitting: true,
+  chunkNames: '_shared/[name]-[hash]',
+  jsxFactory: 'vhtml',
+  inject: [
+    path.join(
+      root,
+      'packages/components/base/source/0-base/1-tools/js/vhtml-shim.js'
+    ),
+  ],
+  metafile: true,
+  minify: production,
+});
 
 const bundleJs = async (jsPaths) => {
+  if (!jsPaths.length) return {};
   log('starting js bundle');
-  if (!jsPaths.length) return { output: [] };
-  const { inputOptions, outputOptions } = await prepare(jsPaths);
-  const bundle = await rollup.rollup(inputOptions);
-  const { output } = await bundle.write(outputOptions);
-  await bundle.close();
+  const options = prepare(jsPaths);
+  const output = await esbuild.build(options);
   log('finished js bundle');
-  return { output };
+  return output.metafile.outputs;
 };
 
 const watchJs = async (jsPaths) => {
-  if (!jsPaths.length) return { output: [] };
-  const { inputOptions, outputOptions } = await prepare(jsPaths);
-  const watcher = rollup.watch({
-    ...inputOptions,
-    output: [outputOptions],
+  if (!jsPaths.length) return {};
+  log('starting js bundle');
+  const options = prepare(jsPaths);
+  await esbuild.build({
+    ...options,
+    watch: {
+      onRebuild(error) {
+        if (!error) log('finished js bundle');
+      },
+    },
   });
-  watcher.on('event', ({ result, code, error }) => {
-    if (result) {
-      result.close();
-    }
-
-    // eslint-disable-next-line default-case
-    switch (code) {
-      case 'START':
-        log('starting js bundle');
-        break;
-
-      case 'END':
-        log('finished js bundle');
-        break;
-
-      case 'ERROR':
-        console.error(error);
-        break;
-    }
-  });
+  log('finished js bundle');
 };
 
 module.exports = { bundleJs, watchJs };

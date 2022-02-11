@@ -24,6 +24,14 @@ const exportsFromRollupOutput = (output) =>
     return prev;
   }, new Map());
 
+const exportsFromEsbuildOutput = (output) =>
+  Object.entries(output).reduce((prev, [fileName, { exports }]) => {
+    if (!/^lib\/_shared\//.test(fileName)) {
+      prev.set(fileName.replace(/^lib\//, ''), exports);
+    }
+    return prev;
+  }, new Map());
+
 const getTsPaths = async () => {
   const tsPaths = (await fg('source/*/**/index.ts')).sort();
   await createIndex(tsPaths);
@@ -35,7 +43,7 @@ const buildBundle = async () => {
   try {
     const tsPaths = await getTsPaths();
     const { output: tsOutput, cssAssets, jsAssets } = await bundleTs(tsPaths);
-    const [{ output: jsOutput }, cssExports] = await Promise.all([
+    const [jsOutput, cssExports] = await Promise.all([
       bundleJs([...jsAssets]),
       scss([...cssAssets]),
     ]);
@@ -43,7 +51,7 @@ const buildBundle = async () => {
     const exports = [
       ...cssExports,
       ...exportsFromRollupOutput(tsOutput),
-      ...exportsFromRollupOutput(jsOutput),
+      ...exportsFromEsbuildOutput(jsOutput),
     ].sort();
     await fs.writeJSON('lib/exports.json', Object.fromEntries(exports), {
       spaces: 2,
