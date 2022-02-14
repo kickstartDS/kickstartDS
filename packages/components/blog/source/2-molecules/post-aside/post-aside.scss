@@ -58,10 +58,6 @@ $vars: meta.module-variables(post-aside-vars);
     display: inline-block;
     padding: var(--c-post-aside_share-bar--padding);
 
-    &:first-child {
-      padding-left: 0;
-    }
-
     .icon {
       height: var(--c-post-aside_share-bar--icon-size);
       width: var(--c-post-aside_share-bar--icon-size);

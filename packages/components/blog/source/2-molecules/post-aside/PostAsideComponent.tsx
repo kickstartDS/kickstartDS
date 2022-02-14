@@ -32,8 +32,8 @@ const Author: FunctionComponent<AuthorPros> = ({ headline, ...props }) => (
 
 const Meta: FunctionComponent<MetaProps> = ({ items = [] }) => (
   <div className="c-post-aside__meta">
-    {items.map(({ icon, text }: MetaItemProps) => (
-      <span className="c-post-aside__meta-item">
+    {items.map(({ icon, text }: MetaItemProps, i) => (
+      <span className="c-post-aside__meta-item" key={i}>
         <Icon icon={icon} />
         {text}
       </span>
@@ -59,12 +59,12 @@ const ShareBar: FunctionComponent<ShareBarProps> = ({
   links = [],
   headline,
   headlineLevel,
-  className,
-  ...props
 }) => (
-  <div className={classNames('c-post-aside__share-bar', className)} {...props}>
+  <div className="c-post-aside__share-bar">
     <Headline content={headline} level={headlineLevel} />
-    {links.length ? links.map((link) => <ShareBarLink {...link} />) : ''}
+    {links.length
+      ? links.map((link, i) => <ShareBarLink {...link} key={i} />)
+      : ''}
   </div>
 );
 
