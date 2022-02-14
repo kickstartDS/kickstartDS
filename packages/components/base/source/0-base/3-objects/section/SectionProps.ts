@@ -614,8 +614,10 @@ export type Title = string;
  * Position, profession, department, location, etc.
  */
 export type Subtitle = string;
-export type PhoneNumber = string;
-export type EmailAddress = string;
+/**
+ * Open link in new Tab
+ */
+export type OpenLinkInNewTab3 = boolean;
 export type CopyText = string;
 /**
  * Additional css classes attached to the wrapping element
@@ -771,7 +773,7 @@ export type ButtonHref3 = string;
 /**
  * Open link in new Tab
  */
-export type OpenLinkInNewTab3 = boolean;
+export type OpenLinkInNewTab4 = boolean;
 /**
  * Additional css classes attached to the wrapping element
  */
@@ -859,7 +861,7 @@ export type ButtonHref4 = string;
 /**
  * Open link in new Tab
  */
-export type OpenLinkInNewTab4 = boolean;
+export type OpenLinkInNewTab5 = boolean;
 /**
  * Additional css classes attached to the wrapping element
  */
@@ -940,7 +942,7 @@ export type ButtonHref5 = string;
 /**
  * Open link in new Tab
  */
-export type OpenLinkInNewTab5 = boolean;
+export type OpenLinkInNewTab6 = boolean;
 /**
  * Add additional css classes that should be applied to the content box
  */
@@ -1224,7 +1226,7 @@ export type ButtonHref6 = string;
 /**
  * Open link in new Tab
  */
-export type OpenLinkInNewTab6 = boolean;
+export type OpenLinkInNewTab7 = boolean;
 /**
  * Hides the link. The box as a whole keeps being clickable
  */
@@ -1383,7 +1385,7 @@ export type ButtonHref7 = string;
 /**
  * Open link in new Tab
  */
-export type OpenLinkInNewTab7 = boolean;
+export type OpenLinkInNewTab8 = boolean;
 /**
  * Hides the link. The box as a whole keeps being clickable
  */
@@ -1759,8 +1761,17 @@ export interface Contact {
   image?: Picture;
   title?: Title;
   subtitle?: Subtitle;
-  phone?: PhoneNumber;
-  email?: EmailAddress;
+  links?:
+    | []
+    | [
+        {
+          icon?: string;
+          label?: string;
+          href?: string;
+          newTab?: OpenLinkInNewTab3;
+          [k: string]: unknown;
+        }
+      ];
   copy?: CopyText;
   className?: Class4;
   [k: string]: unknown;
@@ -1857,7 +1868,7 @@ export interface LinkButton1 {
   fillAnimation?: FillAnimation4;
   iconAnimation?: IconAnimation4;
   href: ButtonHref3;
-  newTab?: OpenLinkInNewTab3;
+  newTab?: OpenLinkInNewTab4;
 }
 /**
  * Icon
@@ -1917,7 +1928,7 @@ export interface Link2 {
   fillAnimation?: FillAnimation5;
   iconAnimation?: IconAnimation5;
   href: ButtonHref4;
-  newTab?: OpenLinkInNewTab4;
+  newTab?: OpenLinkInNewTab5;
 }
 /**
  * Icon
@@ -1956,7 +1967,7 @@ export interface Link3 {
   fillAnimation?: FillAnimation6;
   iconAnimation?: IconAnimation6;
   href: ButtonHref5;
-  newTab?: OpenLinkInNewTab5;
+  newTab?: OpenLinkInNewTab6;
 }
 /**
  * Icon
@@ -2083,7 +2094,7 @@ export interface LinkButton2 {
   fillAnimation?: FillAnimation7;
   iconAnimation?: IconAnimation7;
   href: ButtonHref6;
-  newTab?: OpenLinkInNewTab6;
+  newTab?: OpenLinkInNewTab7;
   hidden?: HideLink;
 }
 /**
@@ -2147,7 +2158,7 @@ export interface LinkButton3 {
   fillAnimation?: FillAnimation8;
   iconAnimation?: IconAnimation8;
   href: ButtonHref7;
-  newTab?: OpenLinkInNewTab7;
+  newTab?: OpenLinkInNewTab8;
   hidden?: HideLink1;
 }
 /**
