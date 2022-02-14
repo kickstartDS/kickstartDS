@@ -22,6 +22,7 @@
   "dependencies": {
     "@babel/runtime": "^7.17.2",
     "@kickstartds/base": "^1.5.1",
+    "@kickstartds/content": "^1.5.1",
     "@kickstartds/core": "^1.5.0",
     "classnames": "^2.2.6",
     "date-fns": "^2.28.0"

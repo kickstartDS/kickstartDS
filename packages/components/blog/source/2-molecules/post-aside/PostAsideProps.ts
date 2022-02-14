@@ -104,6 +104,10 @@ export type Text1 = string;
  */
 export type Level = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
 /**
+ * Open link in new Tab
+ */
+export type OpenLinkInNewTab1 = boolean;
+/**
  * Additional css classes attached to the wrapping element
  */
 export type Class1 = string;
@@ -112,28 +116,16 @@ export type Class1 = string;
  * Post Aside
  */
 export interface PostAsideProps {
-  author?: Contact;
-  shareBar?: {
-    headline?: Text1;
-    headlineLevel?: Level;
-    links?:
-      | []
-      | [
-          {
-            href?: string;
-            icon?: string;
-            [k: string]: unknown;
-          }
-        ];
-    [k: string]: unknown;
-  };
+  author?: Author;
+  meta?: Meta;
+  shareBar?: ShareBar;
   className?: Class1;
   [k: string]: unknown;
 }
 /**
  * Component to show contact information
  */
-export interface Contact {
+export interface Author {
   image?: Picture;
   title?: Title;
   subtitle?: Subtitle;
@@ -170,5 +162,27 @@ export interface Picture {
   lazy?: Lazy;
   sources?: Sources;
   pictureClassName?: ClassAttribute;
+  [k: string]: unknown;
+}
+export interface Meta {
+  items?: [] | [MetaItem];
+  [k: string]: unknown;
+}
+export interface MetaItem {
+  icon?: string;
+  text?: string;
+  [k: string]: unknown;
+}
+export interface ShareBar {
+  headline?: Text1;
+  headlineLevel?: Level;
+  links?: [] | [ShareLink];
+  [k: string]: unknown;
+}
+export interface ShareLink {
+  href?: string;
+  icon?: string;
+  title?: string;
+  newTab?: OpenLinkInNewTab1;
   [k: string]: unknown;
 }

@@ -1,0 +1,70 @@
+@use 'sass:meta';
+@use '@kickstartds/core/source/core/custom-properties';
+@use './post-aside-vars';
+
+$vars: meta.module-variables(post-aside-vars);
+@include custom-properties.styles($vars);
+
+.c-post-aside {
+  display: flex;
+  flex-direction: column;
+  gap: var(--c-post-aside--gap);
+
+  &__author {
+    .c-headline {
+      --c-headline--margin-bottom: var(--c-post-aside_author--headline-spacing);
+    }
+
+    .c-contact {
+      > * {
+        flex-basis: auto;
+        flex-grow: 0;
+      }
+
+      &__image {
+        text-align: start;
+      }
+    }
+  }
+
+  &__meta {
+    display: flex;
+    align-items: center;
+    gap: var(--c-post-aside_meta--gap);
+    flex-wrap: wrap;
+
+    &-item {
+      font: var(--c-post-aside_meta-item--font);
+      color: var(--c-post-aside_meta-item--color);
+
+      display: flex;
+      align-items: center;
+    }
+
+    .icon {
+      height: var(--c-post-aside_meta-item--icon-size);
+      width: var(--c-post-aside_meta-item--icon-size);
+      margin-right: var(--c-post-aside_meta-item--icon-spacing);
+    }
+  }
+
+  &__share-bar {
+    .c-headline {
+      --c-headline--margin-bottom: 0;
+    }
+  }
+
+  &__share-link {
+    display: inline-block;
+    padding: var(--c-post-aside_share-bar--padding);
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    .icon {
+      height: var(--c-post-aside_share-bar--icon-size);
+      width: var(--c-post-aside_share-bar--icon-size);
+    }
+  }
+}
