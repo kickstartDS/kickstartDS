@@ -42,8 +42,8 @@ const ContactComponent: ForwardRefRenderFunction<
       )}
       {links.length ? (
         <ul className="c-contact__links">
-          {links.map(({ icon, href, label, newTab }) => (
-            <li>
+          {links.map(({ icon, href, label, newTab }, i) => (
+            <li key={i}>
               <Icon icon={icon} />
               <Link
                 className="c-contact__link"
