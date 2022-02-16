@@ -1751,6 +1751,18 @@
   resolved "https://registry.yarnpkg.com/@istanbuljs/schema/-/schema-0.1.3.tgz#e45e384e4b8ec16bce2fd903af78450f6bf7ec98"
   integrity sha512-ZXRY4jNvVgSVQ8DL3LTcakaAtXwTVUxE81hslsyD2AtoXW/wVob10HkOJ1X/pAlcI7D+2YoZKg5do8G/w6RYgA==
 
+"@iwsio/json-csv-core@^0.2.6":
+  version "0.2.8"
+  resolved "https://registry.yarnpkg.com/@iwsio/json-csv-core/-/json-csv-core-0.2.8.tgz#cc53c0e77cb46a7255204a2431082f2a8416be50"
+  integrity sha512-BooWfLT11dMiAbN9Froj8rjLD2ths9swqTDcvcy7kbgSUbsfcIT/C20bUh1EpoTVa5xkLHEL+mnWqsR2GMRxEg==
+
+"@iwsio/json-csv-node@^5.0.3":
+  version "5.0.3"
+  resolved "https://registry.yarnpkg.com/@iwsio/json-csv-node/-/json-csv-node-5.0.3.tgz#6987a92642b442bbc156d2636002ccab11aef17d"
+  integrity sha512-LSJ0rVvDH+HJofg6NcqgUFakQH0Xlv8hjNi90nsEPswvJ0Q3SPSWkHkQynTshUSTZ+O5HdNVsFPRXIEZk3XEkw==
+  dependencies:
+    "@iwsio/json-csv-core" "^0.2.6"
+
 "@jest/transform@^26.6.2":
   version "26.6.2"
   resolved "https://registry.yarnpkg.com/@jest/transform/-/transform-26.6.2.tgz#5ac57c5fa1ad17b2aae83e73e45813894dcf2e4b"
@@ -10366,11 +10378,6 @@ json-buffer@3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/json-buffer/-/json-buffer-3.0.0.tgz#5b1f397afc75d677bde8bcfc0e47e1f9a3d9a898"
   integrity sha1-Wx85evx11ne96Lz8Dkfh+aPZqJg=
-
-json-csv@^4.0.5:
-  version "4.0.5"
-  resolved "https://registry.yarnpkg.com/json-csv/-/json-csv-4.0.5.tgz#22d01b4e572823679bc628aa65d75b44c70f0c9f"
-  integrity sha512-7zz2D2bhxRcGH7q4UITcfgX1faTrV+2LpdBnUKh9jvB/vbQt6zt1yhyAf56gG8dPjXDTs9hBU5Aow/VVRK2HfA==
 
 json-fixer@^1.5.1:
   version "1.6.12"
