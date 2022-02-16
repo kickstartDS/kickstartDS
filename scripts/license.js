@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const glob = require('fast-glob');
 const checker = require('license-checker');
-const jsoncsv = require('json-csv');
+const { toCsvStream } = require('@iwsio/json-csv-node');
 const execa = require('execa');
 
 const { log } = console;
@@ -77,7 +77,7 @@ async function install(dir) {
 
   await new Promise((resolve, reject) => {
     readable
-      .pipe(jsoncsv.stream(csvOptions))
+      .pipe(toCsvStream(csvOptions))
       .pipe(out)
       .on('finish', () => log(`Finished 💾 write licenses.csv`))
       .on('finish', resolve)

@@ -42,7 +42,7 @@
     "execa": "^5.1.1",
     "fast-glob": "^3.2.11",
     "fs-extra": "^10.0.0",
-    "json-csv": "^4.0.3",
+    "@iwsio/json-csv-node": "^5.0.3",
     "license-checker": "^25.0.1",
     "postcss": "^8.4.6",
     "postcss-scss": "^4.0.3",
