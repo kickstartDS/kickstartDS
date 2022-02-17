@@ -1716,10 +1716,10 @@
   resolved "https://registry.yarnpkg.com/@iwsio/json-csv-core/-/json-csv-core-0.2.8.tgz#cc53c0e77cb46a7255204a2431082f2a8416be50"
   integrity sha512-BooWfLT11dMiAbN9Froj8rjLD2ths9swqTDcvcy7kbgSUbsfcIT/C20bUh1EpoTVa5xkLHEL+mnWqsR2GMRxEg==
 
-"@iwsio/json-csv-node@^5.0.3":
-  version "5.0.3"
-  resolved "https://registry.yarnpkg.com/@iwsio/json-csv-node/-/json-csv-node-5.0.3.tgz#6987a92642b442bbc156d2636002ccab11aef17d"
-  integrity sha512-LSJ0rVvDH+HJofg6NcqgUFakQH0Xlv8hjNi90nsEPswvJ0Q3SPSWkHkQynTshUSTZ+O5HdNVsFPRXIEZk3XEkw==
+"@iwsio/json-csv-node@^5.0.4":
+  version "5.0.4"
+  resolved "https://registry.yarnpkg.com/@iwsio/json-csv-node/-/json-csv-node-5.0.4.tgz#e90a38dba27e0c1d816eae595510083db009b81e"
+  integrity sha512-LINO4/h1Zf5l4wZ6wHoAVOMitbVqMZFgV6bXwkS98td0RK6P/Cup/MuQsoskGY9SQka9cZTqqN60gm04jyUyJA==
   dependencies:
     "@iwsio/json-csv-core" "^0.2.6"
 
