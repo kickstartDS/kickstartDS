@@ -22,29 +22,27 @@
     },
     "links": {
       "type": "array",
-      "items": [
-        {
-          "type": "object",
-          "properties": {
-            "icon": {
-              "type": "string"
-            },
-            "label": {
-              "type": "string"
-            },
-            "href": {
-              "type": "string",
-              "format": "uri"
-            },
-            "newTab": {
-              "type": "boolean",
-              "title": "Open link in new Tab",
-              "description": "Open link in new Tab",
-              "default": false
-            }
+      "items": {
+        "type": "object",
+        "properties": {
+          "icon": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "href": {
+            "type": "string",
+            "format": "uri"
+          },
+          "newTab": {
+            "type": "boolean",
+            "title": "Open link in new Tab",
+            "description": "Open link in new Tab",
+            "default": false
           }
         }
-      ],
+      },
       "default": [
         {
           "icon": "phone",
