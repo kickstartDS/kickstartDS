@@ -129,17 +129,13 @@ export interface Author {
   image?: Picture;
   title?: Title;
   subtitle?: Subtitle;
-  links?:
-    | []
-    | [
-        {
-          icon?: string;
-          label?: string;
-          href?: string;
-          newTab?: OpenLinkInNewTab;
-          [k: string]: unknown;
-        }
-      ];
+  links?: {
+    icon?: string;
+    label?: string;
+    href?: string;
+    newTab?: OpenLinkInNewTab;
+    [k: string]: unknown;
+  }[];
   copy?: CopyText;
   className?: Class;
   headline?: Text;
@@ -165,7 +161,7 @@ export interface Picture {
   [k: string]: unknown;
 }
 export interface Meta {
-  items?: [] | [MetaItem];
+  items?: MetaItem[];
   [k: string]: unknown;
 }
 export interface MetaItem {
@@ -176,7 +172,7 @@ export interface MetaItem {
 export interface ShareBar {
   headline?: Text1;
   headlineLevel?: Level;
-  links?: [] | [ShareLink];
+  links?: ShareLink[];
   [k: string]: unknown;
 }
 export interface ShareLink {
