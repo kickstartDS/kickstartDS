@@ -1761,17 +1761,13 @@ export interface Contact {
   image?: Picture;
   title?: Title;
   subtitle?: Subtitle;
-  links?:
-    | []
-    | [
-        {
-          icon?: string;
-          label?: string;
-          href?: string;
-          newTab?: OpenLinkInNewTab3;
-          [k: string]: unknown;
-        }
-      ];
+  links?: {
+    icon?: string;
+    label?: string;
+    href?: string;
+    newTab?: OpenLinkInNewTab3;
+    [k: string]: unknown;
+  }[];
   copy?: CopyText;
   className?: Class4;
   [k: string]: unknown;

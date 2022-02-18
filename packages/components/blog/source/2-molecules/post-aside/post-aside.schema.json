@@ -13,10 +13,17 @@
           "$ref": "http://frontend.ruhmesmeile.com/content/molecules/contact.schema.json"
         },
         {
+          "type": "object",
           "properties": {
             "headline": {
-              "$ref": "http://frontend.ruhmesmeile.com/base/molecules/headline.schema.json#/properties/content",
-              "default": "Published by"
+              "allOf": [
+                {
+                  "$ref": "http://frontend.ruhmesmeile.com/base/molecules/headline.schema.json#/properties/content"
+                },
+                {
+                  "default": "Published by"
+                }
+              ]
             }
           }
         }
@@ -28,20 +35,18 @@
       "properties": {
         "items": {
           "type": "array",
-          "items": [
-            {
-              "title": "Meta Item",
-              "type": "object",
-              "properties": {
-                "icon": {
-                  "type": "string"
-                },
-                "text": {
-                  "type": "string"
-                }
+          "items": {
+            "title": "Meta Item",
+            "type": "object",
+            "properties": {
+              "icon": {
+                "type": "string"
+              },
+              "text": {
+                "type": "string"
               }
             }
-          ],
+          },
           "default": [
             {
               "icon": "date",
@@ -60,39 +65,49 @@
       "type": "object",
       "properties": {
         "headline": {
-          "$ref": "http://frontend.ruhmesmeile.com/base/molecules/headline.schema.json#/properties/content",
-          "default": "Share this article"
+          "allOf": [
+            {
+              "$ref": "http://frontend.ruhmesmeile.com/base/molecules/headline.schema.json#/properties/content"
+            },
+            {
+              "default": "Share this article"
+            }
+          ]
         },
         "headlineLevel": {
-          "$ref": "http://frontend.ruhmesmeile.com/base/molecules/headline.schema.json#/properties/level",
-          "default": "h3"
+          "allOf": [
+            {
+              "$ref": "http://frontend.ruhmesmeile.com/base/molecules/headline.schema.json#/properties/level"
+            },
+            {
+              "default": "h3"
+            }
+          ]
         },
         "links": {
           "type": "array",
-          "items": [
-            {
-              "title": "Share Link",
-              "type": "object",
-              "properties": {
-                "href": {
-                  "type": "string",
-                  "format": "uri"
-                },
-                "icon": {
-                  "type": "string"
-                },
-                "title": {
-                  "type": "string"
-                },
-                "newTab": {
-                  "type": "boolean",
-                  "title": "Open link in new Tab",
-                  "description": "Open link in new Tab",
-                  "default": false
-                }
+          "items": {
+            "title": "Share Link",
+            "type": "object",
+            "properties": {
+              "href": {
+                "type": "string",
+                "format": "uri"
+              },
+              "icon": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "newTab": {
+                "type": "boolean",
+                "title": "Open link in new Tab",
+                "description": "Open link in new Tab",
+                "default": false
               }
             }
-          ],
+          },
           "default": [
             {
               "icon": "twitter",

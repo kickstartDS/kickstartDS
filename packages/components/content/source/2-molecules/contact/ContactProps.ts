@@ -99,17 +99,13 @@ export interface ContactProps {
   image?: Picture;
   title?: Title;
   subtitle?: Subtitle;
-  links?:
-    | []
-    | [
-        {
-          icon?: string;
-          label?: string;
-          href?: string;
-          newTab?: OpenLinkInNewTab;
-          [k: string]: unknown;
-        }
-      ];
+  links?: {
+    icon?: string;
+    label?: string;
+    href?: string;
+    newTab?: OpenLinkInNewTab;
+    [k: string]: unknown;
+  }[];
   copy?: CopyText;
   className?: Class;
   [k: string]: unknown;
