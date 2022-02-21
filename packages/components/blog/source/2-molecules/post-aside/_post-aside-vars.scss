@@ -1,0 +1,36 @@
+$name-: 'c-post-aside' !default;
+
+$host: (
+  '.c-post-aside': (
+    gap: var(--spacing-m),
+  ),
+) !default;
+
+$author: (
+  '.c-post-aside': (
+    headline-spacing: var(--spacing-s),
+  ),
+) !default;
+
+$meta: (
+  '.c-post-aside': (
+    gap: var(--spacing-m),
+  ),
+) !default;
+
+$meta-item: (
+  '.c-post-aside': (
+    font: var(--font-ui-s),
+    color: var(--color-grey-7),
+    icon-size: 1.25em,
+    icon-spacing: var(--spacing-xs),
+  ),
+) !default;
+
+$share-bar: (
+  '.c-post-aside': (
+    headline-spacing: 0,
+    padding: 0.5rem,
+    icon-size: 1.5rem,
+  ),
+) !default;
