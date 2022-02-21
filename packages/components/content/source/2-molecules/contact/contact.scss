@@ -9,7 +9,7 @@ $vars: meta.module-variables(contact-vars);
 .c-contact {
   display: flex;
   flex-wrap: wrap;
-  margin: calc(var(--c-contact--gutter) * -1);
+  margin: calc(-1 * var(--c-contact--gutter));
 
   > * {
     margin: var(--c-contact--gutter);

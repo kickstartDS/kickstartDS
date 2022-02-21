@@ -66,7 +66,7 @@ $vars: meta.module-variables(storytelling-vars);
       align-items: flex-start;
 
       img {
-        margin-top: calc(var(--c-storytelling--vertical-padding) * -1);
+        margin-top: calc(-1 * var(--c-storytelling--vertical-padding));
 
         @include breakpoint.media('<s') {
           .c-storytelling--order-mobile-image-last & {
@@ -85,11 +85,11 @@ $vars: meta.module-variables(storytelling-vars);
 
       img {
         .c-storytelling--order-mobile-image-last & {
-          margin-bottom: calc(var(--c-storytelling--vertical-padding) * -1);
+          margin-bottom: calc(-1 * var(--c-storytelling--vertical-padding));
         }
 
         @include breakpoint.media('≥s') {
-          margin-bottom: calc(var(--c-storytelling--vertical-padding) * -1);
+          margin-bottom: calc(-1 * var(--c-storytelling--vertical-padding));
         }
       }
     }
@@ -102,7 +102,7 @@ $vars: meta.module-variables(storytelling-vars);
       justify-content: flex-start;
 
       img {
-        margin-left: calc(var(--c-storytelling--horizontal-padding) * -1);
+        margin-left: calc(-1 * var(--c-storytelling--horizontal-padding));
       }
     }
 
@@ -114,7 +114,7 @@ $vars: meta.module-variables(storytelling-vars);
       justify-content: flex-end;
 
       img {
-        margin-right: calc(var(--c-storytelling--horizontal-padding) * -1);
+        margin-right: calc(-1 * var(--c-storytelling--horizontal-padding));
       }
     }
 
