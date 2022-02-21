@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://frontend.ruhmesmeile.com/base/molecules/text-media.schema.json",
+  "$id": "http://schema.kickstartds.com/base/text-media.schema.json",
   "title": "Text Media",
   "description": "Component to display copy text, including media",
   "type": "object",
@@ -93,7 +93,7 @@
             "title": "TextMediaImage",
             "properties": {
               "image": {
-                "$ref": "http://frontend.ruhmesmeile.com/base/atoms/picture.definitions.json"
+                "$ref": "http://schema.kickstartds.com/base/picture.definitions.json"
               },
               "full": {
                 "$ref": "#/definitions/full"
@@ -108,7 +108,7 @@
             "title": "TextMediaLazyImage",
             "properties": {
               "lightboxImage": {
-                "$ref": "http://frontend.ruhmesmeile.com/base/atoms/lightbox-lazy-image.definitions.json"
+                "$ref": "http://schema.kickstartds.com/base/lightbox-lazy-image.definitions.json"
               },
               "full": {
                 "$ref": "#/definitions/full"

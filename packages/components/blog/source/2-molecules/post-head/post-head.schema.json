@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://frontend.ruhmesmeile.com/blog/molecules/post-head.schema.json",
+  "$id": "http://schema.kickstartds.com/blog/post-head.schema.json",
   "title": "Post Head",
   "description": "Post Head",
   "type": "object",
@@ -9,7 +9,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "http://frontend.ruhmesmeile.com/base/atoms/picture.definitions.json"
+          "$ref": "http://schema.kickstartds.com/base/picture.definitions.json"
         }
       ],
       "properties": {
@@ -32,13 +32,13 @@
       "description": "Choose an horizontal alignment for the image."
     },
     "date": {
-      "$ref": "http://frontend.ruhmesmeile.com/blog/molecules/news-item.definitions.json#/definitions/date"
+      "$ref": "http://schema.kickstartds.com/blog/news-item.definitions.json#/definitions/date"
     },
     "headline": {
       "type": "object",
       "allOf": [
         {
-          "$ref": "http://frontend.ruhmesmeile.com/base/molecules/headline.schema.json"
+          "$ref": "http://schema.kickstartds.com/base/headline.schema.json"
         }
       ],
       "properties": {
@@ -54,7 +54,7 @@
       }
     },
     "categories": {
-      "$ref": "http://frontend.ruhmesmeile.com/blog/molecules/news-item.definitions.json#/definitions/categories"
+      "$ref": "http://schema.kickstartds.com/blog/news-item.definitions.json#/definitions/categories"
     },
     "className": {
       "title": "Class",

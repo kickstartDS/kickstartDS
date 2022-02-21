@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://frontend.ruhmesmeile.com/blog/molecules/post-aside.schema.json",
+  "$id": "http://schema.kickstartds.com/blog/post-aside.schema.json",
   "title": "Post Aside",
   "description": "Post Aside",
   "type": "object",
@@ -10,7 +10,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "http://frontend.ruhmesmeile.com/content/molecules/contact.schema.json"
+          "$ref": "http://schema.kickstartds.com/content/contact.schema.json"
         },
         {
           "type": "object",
@@ -18,7 +18,7 @@
             "headline": {
               "allOf": [
                 {
-                  "$ref": "http://frontend.ruhmesmeile.com/base/molecules/headline.schema.json#/properties/content"
+                  "$ref": "http://schema.kickstartds.com/base/headline.schema.json#/properties/content"
                 },
                 {
                   "default": "Published by"
@@ -67,7 +67,7 @@
         "headline": {
           "allOf": [
             {
-              "$ref": "http://frontend.ruhmesmeile.com/base/molecules/headline.schema.json#/properties/content"
+              "$ref": "http://schema.kickstartds.com/base/headline.schema.json#/properties/content"
             },
             {
               "default": "Share this article"
@@ -77,7 +77,7 @@
         "headlineLevel": {
           "allOf": [
             {
-              "$ref": "http://frontend.ruhmesmeile.com/base/molecules/headline.schema.json#/properties/level"
+              "$ref": "http://schema.kickstartds.com/base/headline.schema.json#/properties/level"
             },
             {
               "default": "h3"
