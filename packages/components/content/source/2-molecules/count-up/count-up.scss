@@ -42,7 +42,7 @@ $vars: meta.module-variables(count-up-vars);
   }
 
   &__text {
-    font: var(--c-count-up_text--font);
+    font: var(--c-count-up_text--font, var(--c-rich-text--font));
   }
 
   &__link {

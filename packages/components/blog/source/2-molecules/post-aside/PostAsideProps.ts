@@ -91,11 +91,41 @@ export type CopyText = string;
  * Additional css classes attached to the wrapping element
  */
 export type Class = string;
+/**
+ * Text content for the headline
+ */
+export type Text = string;
+/**
+ * Text content for the headline
+ */
+export type Text1 = string;
+/**
+ * Select the headline level to use, or p alternatively
+ */
+export type Level = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
+/**
+ * Open link in new Tab
+ */
+export type OpenLinkInNewTab1 = boolean;
+/**
+ * Additional css classes attached to the wrapping element
+ */
+export type Class1 = string;
 
+/**
+ * Post Aside
+ */
+export interface PostAsideProps {
+  author?: Author;
+  meta?: Meta;
+  shareBar?: ShareBar;
+  className?: Class1;
+  [k: string]: unknown;
+}
 /**
  * Component to show contact information
  */
-export interface ContactProps {
+export interface Author {
   image?: Picture;
   title?: Title;
   subtitle?: Subtitle;
@@ -108,6 +138,7 @@ export interface ContactProps {
   }[];
   copy?: CopyText;
   className?: Class;
+  headline?: Text;
   [k: string]: unknown;
 }
 /**
@@ -127,5 +158,27 @@ export interface Picture {
   lazy?: Lazy;
   sources?: Sources;
   pictureClassName?: ClassAttribute;
+  [k: string]: unknown;
+}
+export interface Meta {
+  items?: MetaItem[];
+  [k: string]: unknown;
+}
+export interface MetaItem {
+  icon?: string;
+  text?: string;
+  [k: string]: unknown;
+}
+export interface ShareBar {
+  headline?: Text1;
+  headlineLevel?: Level;
+  links?: ShareLink[];
+  [k: string]: unknown;
+}
+export interface ShareLink {
+  href?: string;
+  icon?: string;
+  title?: string;
+  newTab?: OpenLinkInNewTab1;
   [k: string]: unknown;
 }

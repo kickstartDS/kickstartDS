@@ -18,8 +18,8 @@ $vars: meta.module-variables(form-check-group-vars);
     display: flex;
     flex-flow: column wrap;
     align-items: flex-start;
-    margin: calc(var(--c-form-check-group--vertical-gutter) * -1)
-      calc(var(--c-form-check-group--horizontal-gutter) * -1);
+    margin: calc(-1 * var(--c-form-check-group--vertical-gutter))
+      calc(-1 * var(--c-form-check-group--horizontal-gutter));
 
     > * {
       margin: var(--c-form-check-group--vertical-gutter)

@@ -2,7 +2,7 @@ const fg = require('fast-glob');
 const fs = require('fs-extra');
 const { bundleTs, watchTs } = require('./bundleTs');
 const { bundleJs, watchJs } = require('./bundleJs');
-const scss = require('./scss');
+const { compileScss, watchScss } = require('./scss');
 
 const createIndex = (tsPaths) => {
   const indexContent = tsPaths.reduce(
@@ -37,7 +37,7 @@ const buildBundle = async () => {
     const { output: tsOutput, cssAssets, jsAssets } = await bundleTs(tsPaths);
     const [{ output: jsOutput }, cssExports] = await Promise.all([
       bundleJs([...jsAssets]),
-      scss([...cssAssets]),
+      compileScss([...cssAssets]),
     ]);
 
     const exports = [
@@ -58,7 +58,9 @@ const watchBundle = async () => {
   const tsPaths = await getTsPaths();
   const { cssAssets, jsAssets } = await watchTs(tsPaths);
   watchJs([...jsAssets]);
+  watchScss([...cssAssets]);
 };
+
 module.exports = {
   buildBundle,
   watchBundle,

@@ -2,8 +2,6 @@ const fs = require('fs-extra');
 const rollup = require('rollup');
 const { babel } = require('@rollup/plugin-babel');
 const ts = require('rollup-plugin-ts');
-const styles = require('rollup-plugin-styles');
-const merge = require('lodash/merge');
 const log = require('./log');
 const { dirRe, sourcePath } = require('./utils');
 const {
@@ -11,18 +9,16 @@ const {
   sharedOutputOptions,
   sharedBabelConfig,
 } = require('./rollupUtils');
-const sassOptions = require('./sassOptions');
-const postcssPlugins = require('./postcssPlugins');
 
 const assetPaths = (paths = []) =>
   paths.map((assetPath) => `${sourcePath}/${assetPath}`);
 
 const externalRe = {
-  js: /\.js$/,
-  exclude: /(tslib|rollup-plugin-styles)/,
+  internal: /\.(js|scss)$/,
+  external: /tslib/,
 };
 
-const babelConfig = merge({}, sharedBabelConfig, {
+const babelConfig = sharedBabelConfig({
   presets: [['@babel/preset-react', { runtime: 'automatic' }]],
 });
 
@@ -45,20 +41,10 @@ const prepare = async (tsPaths) => {
   const inputOptions = {
     input,
     external: (id) => {
-      if (externalRe.js.test(id)) return !externalRe.exclude.test(id);
+      if (externalRe.internal.test(id)) return !externalRe.external.test(id);
     },
     plugins: [
       ...sharedInputPlugins,
-      styles({
-        config: false,
-        mode: ['inject', { prepend: true }],
-        sass: sassOptions,
-        plugins: postcssPlugins,
-        url: false,
-        onImport(data, id) {
-          cssAssets.add(id);
-        },
-      }),
       process.env.NODE_ENV === 'production'
         ? ts({
             transpiler: 'babel',
@@ -88,6 +74,10 @@ const prepare = async (tsPaths) => {
         if (ext === 'js') {
           jsAssets.add(id);
           return `${dir}/${base}.${ext}`;
+        }
+        if (ext === 'scss') {
+          cssAssets.add(id);
+          return `${dir}/${base}.css`;
         }
       }
       return id;
