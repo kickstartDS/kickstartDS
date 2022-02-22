@@ -1,7 +1,10 @@
 {
   "name": "kickstartds",
   "private": true,
-  "repository": "kickstartDS/kickstartDS",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kickstartDS/kickstartDS.git"
+  },
   "workspaces": [
     "packages/components/*",
     "packages/tools/*"

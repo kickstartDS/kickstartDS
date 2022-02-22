@@ -3,6 +3,11 @@
   "version": "1.5.1",
   "description": "kickstartDS Content Module",
   "homepage": "https://ruhmesmeile.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kickstartDS/kickstartDS.git",
+    "directory": "packages/components/content"
+  },
   "license": "SEE LICENSE IN LICENSE",
   "author": "ruhmesmeile GmbH <mail@ruhmesmeile.com> (https://ruhmesmeile.com)",
   "main": "./lib/index.js",
