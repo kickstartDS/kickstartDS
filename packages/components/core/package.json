@@ -2,22 +2,30 @@
   "name": "@kickstartds/core",
   "version": "1.5.0",
   "description": "kickstartDS Core Module",
-  "author": "ruhmesmeile GmbH <mail@ruhmesmeile.com> (https://ruhmesmeile.com)",
   "homepage": "https://ruhmesmeile.com",
+  "bugs": {
+    "url": "https://github.com/kickstartDS/kickstartDS/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kickstartDS/kickstartDS.git",
+    "directory": "packages/components/core"
+  },
   "license": "SEE LICENSE IN LICENSE",
+  "author": "ruhmesmeile GmbH <mail@ruhmesmeile.com> (https://ruhmesmeile.com)",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
-  "scripts": {
-    "build": "node ../../tools/build-components/source",
-    "watch": "node ../../tools/build-components/source --watch",
-    "schema": "node ../../tools/build-components/source --schema"
-  },
   "files": [
     "lib",
     "source/core/*.scss",
     "source/design-tokens/**/*.scss",
     "bundle/*.js"
   ],
+  "scripts": {
+    "build": "node ../../tools/build-components/source",
+    "schema": "node ../../tools/build-components/source --schema",
+    "watch": "node ../../tools/build-components/source --watch"
+  },
   "dependencies": {
     "@babel/runtime": "^7.17.2",
     "bourbon": "^7.0.0",

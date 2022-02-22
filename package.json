@@ -1,7 +1,10 @@
 {
   "name": "kickstartds",
   "private": true,
-  "repository": "kickstartDS/kickstartDS",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kickstartDS/kickstartDS.git"
+  },
   "workspaces": [
     "packages/components/*",
     "packages/tools/*"
@@ -36,13 +39,22 @@
     "watch": "lerna run --parallel --no-prefix watch",
     "watch-tokens": "sass --watch --load-path=node_modules packages/components/core/source/design-tokens/tokens.scss packages/components/core/lib/design-tokens/tokens.css"
   },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,md,json,scss}": "prettier --write"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    },
+    "unsafe-perm": true
+  },
   "dependencies": {
+    "@iwsio/json-csv-node": "^5.0.4",
     "@kickstartds/eslint-config": "^1.0.2",
     "@kickstartds/stylelint-config": "^2.0.1",
     "execa": "^5.1.1",
     "fast-glob": "^3.2.11",
     "fs-extra": "^10.0.0",
-    "@iwsio/json-csv-node": "^5.0.4",
     "license-checker": "^25.0.1",
     "postcss": "^8.4.6",
     "postcss-scss": "^4.0.3",
@@ -68,16 +80,7 @@
     "stylelint": "^14.5.1"
   },
   "publishConfig": {
-    "registry": "https://registry.npmjs.org",
-    "access": "public"
-  },
-  "config": {
-    "commitizen": {
-      "path": "node_modules/cz-conventional-changelog"
-    },
-    "unsafe-perm": true
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx,md,json,scss}": "prettier --write"
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
   }
 }
