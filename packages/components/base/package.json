@@ -2,23 +2,20 @@
   "name": "@kickstartds/base",
   "version": "1.5.1",
   "description": "kickstartDS Base Module",
-  "author": "ruhmesmeile GmbH <mail@ruhmesmeile.com> (https://ruhmesmeile.com)",
   "homepage": "https://ruhmesmeile.com",
-  "storybook": {
-    "url": "https://master--60832aa30a8f94002193547c.chromatic.com"
-  },
   "license": "SEE LICENSE IN LICENSE",
+  "author": "ruhmesmeile GmbH <mail@ruhmesmeile.com> (https://ruhmesmeile.com)",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
-  "scripts": {
-    "build": "node ../../tools/build-components/source",
-    "watch": "node ../../tools/build-components/source --watch",
-    "schema": "node ../../tools/build-components/source --schema"
-  },
   "files": [
     "lib",
     "source/**/*-vars.scss"
   ],
+  "scripts": {
+    "build": "node ../../tools/build-components/source",
+    "schema": "node ../../tools/build-components/source --schema",
+    "watch": "node ../../tools/build-components/source --watch"
+  },
   "dependencies": {
     "@babel/runtime": "^7.17.2",
     "@glidejs/glide": "^3.5.2",
@@ -38,5 +35,8 @@
   },
   "peerDependencies": {
     "react": "^17.0.2"
+  },
+  "storybook": {
+    "url": "https://master--60832aa30a8f94002193547c.chromatic.com"
   }
 }

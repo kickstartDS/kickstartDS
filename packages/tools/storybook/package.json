@@ -4,18 +4,18 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "run-chromatic": "chromatic --skip '@(renovate/**|dependabot/**)' --exit-zero-on-changes --exit-once-uploaded --project-token $CHROMATIC_PROJECT_TOKEN",
     "chromatic": "yarn run run-chromatic --build-script-name 'storybook:build'",
     "chromatic-base": "yarn run run-chromatic --build-script-name 'storybook-base:build'",
     "chromatic-blog": "yarn run run-chromatic --build-script-name 'storybook-blog:build'",
     "chromatic-content": "yarn run run-chromatic --build-script-name 'storybook-content:build'",
     "chromatic-form": "yarn run run-chromatic --build-script-name 'storybook-form:build'",
+    "run-chromatic": "chromatic --skip '@(renovate/**|dependabot/**)' --exit-zero-on-changes --exit-once-uploaded --project-token $CHROMATIC_PROJECT_TOKEN",
     "storybook": "node index.js",
-    "storybook:build": "node index.js build",
     "storybook-base:build": "node index.js build --module=base",
     "storybook-blog:build": "node index.js build --module=blog",
     "storybook-content:build": "node index.js build --module=content",
-    "storybook-form:build": "node index.js build --module=form"
+    "storybook-form:build": "node index.js build --module=form",
+    "storybook:build": "node index.js build"
   },
   "dependencies": {
     "change-case": "^4.1.2",
