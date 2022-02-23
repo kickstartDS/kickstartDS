@@ -18,10 +18,10 @@
             "headline": {
               "allOf": [
                 {
-                  "$ref": "http://frontend.ruhmesmeile.com/base/molecules/headline.schema.json#/properties/content"
+                  "default": "Published by"
                 },
                 {
-                  "default": "Published by"
+                  "$ref": "http://frontend.ruhmesmeile.com/base/molecules/headline.schema.json#/properties/content"
                 }
               ]
             }
@@ -67,20 +67,20 @@
         "headline": {
           "allOf": [
             {
-              "$ref": "http://frontend.ruhmesmeile.com/base/molecules/headline.schema.json#/properties/content"
+              "default": "Share this article"
             },
             {
-              "default": "Share this article"
+              "$ref": "http://frontend.ruhmesmeile.com/base/molecules/headline.schema.json#/properties/content"
             }
           ]
         },
         "headlineLevel": {
           "allOf": [
             {
-              "$ref": "http://frontend.ruhmesmeile.com/base/molecules/headline.schema.json#/properties/level"
+              "default": "h3"
             },
             {
-              "default": "h3"
+              "$ref": "http://frontend.ruhmesmeile.com/base/molecules/headline.schema.json#/properties/level"
             }
           ]
         },
