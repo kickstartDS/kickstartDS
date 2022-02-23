@@ -5254,10 +5254,10 @@ bottleneck@^2.15.3:
   resolved "https://registry.yarnpkg.com/bottleneck/-/bottleneck-2.19.5.tgz#5df0b90f59fd47656ebe63c78a98419205cadd91"
   integrity sha512-VHiNCbI1lKdl44tGrhNfU3lup0Tj/ZBMJB5/2ZbNXRCPuRCO7ed2mgcK4r17y+KB2EfuYuRaVlwNbAeaWGSpbw==
 
-bourbon@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/bourbon/-/bourbon-7.0.0.tgz#42c0b691e99cb1f7616aad2a11b17ab88bbc4918"
-  integrity sha512-49kyBY+4gwnEvnez8H0TzFjfNZpUVdCmmS873S9nQ6YUuh2+qesbOh8lA+9gAuWlqtYlF+/3Etxm/13RhceOrg==
+bourbon@^7.2.0:
+  version "7.2.0"
+  resolved "https://registry.yarnpkg.com/bourbon/-/bourbon-7.2.0.tgz#32bc40fd368383e4b7b82bb832c34c67584282bd"
+  integrity sha512-Zx/lY/YzMkSyFC7yYPp9QcI2OCWnUHQdSrXvRtfnaUGT/edKNh44mVPYkP7QEyk6yQOLCJottsuTnidqKcpbNg==
 
 boxen@^5.0.0, boxen@^5.1.2:
   version "5.1.2"
