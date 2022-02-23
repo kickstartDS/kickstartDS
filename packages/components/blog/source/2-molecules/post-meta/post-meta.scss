@@ -17,7 +17,7 @@ $vars: meta.module-variables(post-meta-vars);
 
     gap: var(--c-post-meta_item--gap);
     font: var(--c-post-meta_item--font);
-    color: var(--c-post-meta-item--color);
+    color: var(--c-post-meta_item--color);
 
     &--author {
       gap: var(--c-post-meta_author--gap);
