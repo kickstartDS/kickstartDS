@@ -23,7 +23,7 @@
     "del": "^6.0.0",
     "fast-glob": "^3.2.11",
     "find-up": "^5.0.0",
-    "fs-extra": "^10.0.0",
+    "fs-extra": "^10.0.1",
     "json-schema-merge-allof": "^0.8.1",
     "json-schema-ref-parser": "^9.0.7",
     "json-schema-to-typescript": "^10.1.5",
