@@ -1,0 +1,41 @@
+@use 'sass:meta';
+@use '@kickstartds/core/source/core/custom-properties';
+@use './post-meta-vars';
+
+$vars: meta.module-variables(post-meta-vars);
+@include custom-properties.styles($vars);
+
+.c-post-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--c-post-meta--gap);
+  flex-wrap: wrap;
+
+  &__item {
+    display: flex;
+    align-items: center;
+
+    gap: var(--c-post-meta_item--gap);
+    font: var(--c-post-meta_item--font);
+    color: var(--c-post-meta-item--color);
+
+    &--author {
+      gap: var(--c-post-meta_author--gap);
+      font: var(--c-post-meta_author--font);
+      color: var(--c-post-meta_author--color);
+      font-weight: var(--c-post-meta_author--font-weight);
+    }
+  }
+
+  &__avatar {
+    height: var(--c-post-meta_author--avatar-size);
+    width: var(--c-post-meta_author--avatar-size);
+    border-radius: var(--c-post-meta_author--avatar-border-radius);
+    object-fit: cover;
+  }
+
+  .icon {
+    height: var(--c-post-meta_item--icon-size);
+    width: var(--c-post-meta_item--icon-size);
+  }
+}

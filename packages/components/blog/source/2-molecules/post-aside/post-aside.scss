@@ -11,10 +11,6 @@ $vars: meta.module-variables(post-aside-vars);
   gap: var(--c-post-aside--gap);
 
   &__author {
-    .c-headline {
-      --c-headline--margin-bottom: var(--c-post-aside_author--headline-spacing);
-    }
-
     .c-contact {
       > * {
         flex-basis: auto;
@@ -24,43 +20,6 @@ $vars: meta.module-variables(post-aside-vars);
       &__image {
         text-align: start;
       }
-    }
-  }
-
-  &__meta {
-    display: flex;
-    align-items: center;
-    gap: var(--c-post-aside_meta--gap);
-    flex-wrap: wrap;
-
-    &-item {
-      font: var(--c-post-aside_meta-item--font);
-      color: var(--c-post-aside_meta-item--color);
-
-      display: flex;
-      align-items: center;
-    }
-
-    .icon {
-      height: var(--c-post-aside_meta-item--icon-size);
-      width: var(--c-post-aside_meta-item--icon-size);
-      margin-right: var(--c-post-aside_meta-item--icon-spacing);
-    }
-  }
-
-  &__share-bar {
-    .c-headline {
-      --c-headline--margin-bottom: 0;
-    }
-  }
-
-  &__share-link {
-    display: inline-block;
-    padding: var(--c-post-aside_share-bar--padding);
-
-    .icon {
-      height: var(--c-post-aside_share-bar--icon-size);
-      width: var(--c-post-aside_share-bar--icon-size);
     }
   }
 }

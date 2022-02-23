@@ -96,13 +96,110 @@ export type Class = string;
  */
 export type Text = string;
 /**
+ * Picture source
+ */
+export type Source1 = string;
+/**
+ * Use a srcSet to display picture
+ */
+export type PictureSourceset2 = string;
+/**
+ * Alt text to display for picture
+ */
+export type AltText1 = string;
+/**
+ * Width of the picture
+ */
+export type Width1 = number;
+/**
+ * Height of the picture
+ */
+export type Height1 = number;
+/**
+ * Add additional css classes that should be applied to the button
+ */
+export type AdditionalClasses1 = string;
+/**
+ * Add id attribute to the image
+ */
+export type Id1 = string;
+/**
+ * Define an itemprop attribute for the picture
+ */
+export type ItempropAttribute1 = string;
+/**
+ * Define a style attribute for the picture
+ */
+export type StyleAttribute1 = string;
+/**
+ * Render noscript fallback
+ */
+export type Noscript1 = boolean;
+/**
+ * Load the picture lazily
+ */
+export type Lazy1 = boolean;
+/**
+ * Use a srcSet to display picture
+ */
+export type PictureSourceset3 = string;
+/**
+ * TODO MEDIA DESCRIPTION
+ */
+export type TODOMEDIATITLE1 = string;
+/**
+ * TODO TYPE DESCRIPTION
+ */
+export type TODOTYPETITLE1 = string;
+/**
+ * Additional sources. This will result in a `picture`-Element
+ */
+export type Sources1 = {
+  srcSet?: PictureSourceset3;
+  media?: TODOMEDIATITLE1;
+  type?: TODOTYPETITLE1;
+  [k: string]: unknown;
+}[];
+/**
+ * Set additional class(es) to the picture
+ */
+export type ClassAttribute1 = string;
+/**
+ * Additional css classes attached to the wrapping element
+ */
+export type Class1 = string;
+/**
  * Text content for the headline
  */
 export type Text1 = string;
 /**
+ * Choose an alignment for the headline
+ */
+export type Alignment = 'left' | 'center' | 'right';
+/**
  * Select the headline level to use, or p alternatively
  */
 export type Level = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
+/**
+ * Select the headline style to use
+ */
+export type Style = 'none' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
+/**
+ * Text content for the optional subheadline
+ */
+export type Subheadline = string;
+/**
+ * Add additional spacing to the bottom of the headline
+ */
+export type BottomSpacing = 'none' | 'small' | 'large';
+/**
+ * Set the headline as a page header, triggering special css treatment
+ */
+export type PageHeader = boolean;
+/**
+ * Add additional css classes that should be applied to the headline
+ */
+export type AdditionalClasses2 = string;
 /**
  * Open link in new Tab
  */
@@ -110,16 +207,20 @@ export type OpenLinkInNewTab1 = boolean;
 /**
  * Additional css classes attached to the wrapping element
  */
-export type Class1 = string;
+export type Class2 = string;
+/**
+ * Additional css classes attached to the wrapping element
+ */
+export type Class3 = string;
 
 /**
  * Post Aside
  */
 export interface PostAsideProps {
   author?: Author;
-  meta?: Meta;
-  shareBar?: ShareBar;
-  className?: Class1;
+  meta?: PostMeta;
+  shareBar?: PostShareBar;
+  className?: Class3;
   [k: string]: unknown;
 }
 /**
@@ -160,8 +261,36 @@ export interface Picture {
   pictureClassName?: ClassAttribute;
   [k: string]: unknown;
 }
-export interface Meta {
+/**
+ * Post Meta
+ */
+export interface PostMeta {
+  author?: {
+    name?: string;
+    image?: Picture1;
+    [k: string]: unknown;
+  };
   items?: MetaItem[];
+  className?: Class1;
+  [k: string]: unknown;
+}
+/**
+ * Base component to display a picture
+ */
+export interface Picture1 {
+  src?: Source1;
+  srcSet?: PictureSourceset2;
+  alt?: AltText1;
+  width?: Width1;
+  height?: Height1;
+  className?: AdditionalClasses1;
+  id?: Id1;
+  itemProp?: ItempropAttribute1;
+  style?: StyleAttribute1;
+  noscript?: Noscript1;
+  lazy?: Lazy1;
+  sources?: Sources1;
+  pictureClassName?: ClassAttribute1;
   [k: string]: unknown;
 }
 export interface MetaItem {
@@ -169,10 +298,27 @@ export interface MetaItem {
   text?: string;
   [k: string]: unknown;
 }
-export interface ShareBar {
-  headline?: Text1;
-  headlineLevel?: Level;
+/**
+ * Post Share Bar
+ */
+export interface PostShareBar {
+  headline?: Headline;
   links?: ShareLink[];
+  className?: Class2;
+  [k: string]: unknown;
+}
+/**
+ * Headline
+ */
+export interface Headline {
+  content?: Text1;
+  align: Alignment;
+  level: Level;
+  styleAs?: Style;
+  subheadline?: Subheadline;
+  spaceAfter: BottomSpacing;
+  pageHeader?: PageHeader;
+  className?: AdditionalClasses2;
   [k: string]: unknown;
 }
 export interface ShareLink {
