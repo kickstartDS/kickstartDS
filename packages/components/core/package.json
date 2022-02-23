@@ -33,7 +33,7 @@
     "dependency-graph": "^0.11.0",
     "esbuild": "^0.14.23",
     "fast-glob": "^3.2.11",
-    "fs-extra": "^10.0.0",
+    "fs-extra": "^10.0.1",
     "lazysizes": "^5.3.2",
     "lodash-es": "^4.17.21",
     "pubsub-js": "^1.9.4",
