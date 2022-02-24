@@ -2,23 +2,28 @@
   "name": "@kickstartds/content",
   "version": "1.5.1",
   "description": "kickstartDS Content Module",
-  "author": "ruhmesmeile GmbH <mail@ruhmesmeile.com> (https://ruhmesmeile.com)",
   "homepage": "https://ruhmesmeile.com",
-  "storybook": {
-    "url": "https://master--608332fa9164bb0021bc5f97.chromatic.com"
+  "bugs": {
+    "url": "https://github.com/kickstartDS/kickstartDS/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kickstartDS/kickstartDS.git",
+    "directory": "packages/components/content"
   },
   "license": "SEE LICENSE IN LICENSE",
+  "author": "ruhmesmeile GmbH <mail@ruhmesmeile.com> (https://ruhmesmeile.com)",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
-  "scripts": {
-    "build": "node ../../tools/build-components/source",
-    "watch": "node ../../tools/build-components/source --watch",
-    "schema": "node ../../tools/build-components/source --schema"
-  },
   "files": [
     "lib",
     "source/**/*-vars.scss"
   ],
+  "scripts": {
+    "build": "node ../../tools/build-components/source",
+    "schema": "node ../../tools/build-components/source --schema",
+    "watch": "node ../../tools/build-components/source --watch"
+  },
   "dependencies": {
     "@babel/runtime": "^7.17.2",
     "@kickstartds/base": "^1.5.1",
@@ -31,5 +36,8 @@
   },
   "peerDependencies": {
     "react": "^17.0.2"
+  },
+  "storybook": {
+    "url": "https://master--608332fa9164bb0021bc5f97.chromatic.com"
   }
 }
