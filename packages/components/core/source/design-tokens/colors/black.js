@@ -5,24 +5,8 @@ const token = { category: 'Colors: Shades Black' };
 module.exports = {
   color: {
     black: {
-      r: {
-        value: '0',
-        attributes: { category: null },
-      },
-      g: {
-        value: '0',
-        attributes: { category: null },
-      },
-      b: {
-        value: '0',
-        attributes: { category: null },
-      },
       _: {
-        value: {
-          r: '{color.black.r.value}',
-          g: '{color.black.g.value}',
-          b: '{color.black.b.value}',
-        },
+        value: '#000',
         token,
       },
       alpha: alpha('black', token),

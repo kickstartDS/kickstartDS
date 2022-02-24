@@ -23,7 +23,7 @@ $border: (
 
 $zebra: (
   '.c-table': (
-    background-odd: var(--color-black-alpha-1),
+    background-odd: var(--ks-background-color-accent),
     background-even: transparent,
   ),
 ) !default;

@@ -25,13 +25,9 @@ module.exports = {
       scale.map((i) => [
         i,
         {
-          value: {
-            r: `{color.${color}.r.value}`,
-            g: `{color.${color}.g.value}`,
-            b: `{color.${color}.b.value}`,
-            a: precision(i / 10),
-          },
+          value: [`{color.${color}._.value}`, precision(i / 10)],
           token,
+          attributes: { category: 'alpha-color' },
         },
       ])
     );

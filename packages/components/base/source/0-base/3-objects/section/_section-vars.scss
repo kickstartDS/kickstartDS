@@ -2,15 +2,15 @@ $name-: 'l-section';
 
 $host: (
   '.l-section': (
-    background: null,
+    background: var(--ks-background-color-default),
     space: var(--spacing-xxl),
     space-small: calc(var(--l-section--space) / 2),
   ),
   '.l-section--accent': (
-    background: var(--color-primary-alpha-2),
+    background: var(--ks-background-color-accent),
   ),
   '.l-section--dark': (
-    background: var(--color-black-alpha-7),
+    background: var(--ks-background-color-default-inverted),
   ),
 ) !default;
 

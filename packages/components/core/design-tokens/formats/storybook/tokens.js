@@ -9,6 +9,7 @@ const { fileHeader, createPropertyFormatter } = formatHelpers;
 const presenterMap = {
   color: 'Color',
   'mixed-color': 'Color',
+  'alpha-color': 'Color',
   'font-family': 'FontFamily',
   'font-size': 'FontSize',
   'line-height': 'LineHeight',

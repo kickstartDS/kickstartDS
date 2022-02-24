@@ -2,7 +2,7 @@ $name-: 'g-headline' !default;
 
 $host: (
   ':root': (
-    color: var(--color-black),
+    color: var(--ks-text-color-default),
     font: var(--font-display-m),
     font-weight: var(--font-weight-bold),
     text-transform: null,

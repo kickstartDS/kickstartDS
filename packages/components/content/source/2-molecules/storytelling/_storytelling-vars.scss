@@ -3,7 +3,7 @@ $name-: 'c-storytelling' !default;
 $host: (
   '.c-storytelling': (
     background-color: null,
-    color: var(--color-black),
+    color: var(--ks-text-color-default),
     vertical-padding: var(--spacing-xl),
     horizontal-padding: var(--spacing-m),
   ),

@@ -75,7 +75,9 @@ $vars: meta.module-variables(form-field-vars);
       @include bourbon.size(var(--c-form-field_icon--size));
       position: absolute;
       right: 0;
-      bottom: calc((var(--line-height-m) - var(--c-form-field_icon--size)) / 2);
+      bottom: calc(
+        (calc(var(--line-height-ui) * 1em) - var(--c-form-field_icon--size)) / 2
+      );
       margin: $input-padding;
       color: var(--c-form-field_icon--color);
 

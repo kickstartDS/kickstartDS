@@ -5,7 +5,8 @@ $arrow: (
     size: 2.5rem,
     offset: -1.5,
     color: var(--color-primary),
-    background-hover: var(--color-black-alpha-1),
+    background: var(--ks-background-color-interface-interactive),
+    background-hover: var(--ks-background-color-interface-interactive-hover),
   ),
   '.l-section__container--max .c-slider, .l-section__container--full .c-slider':
   (
@@ -19,7 +20,8 @@ $bullet: (
     margin: 0.25rem 0.5rem,
     outline-color: var(--color-black-alpha-2),
     outline-color-active: var(--color-primary),
-    background-active: var(--color-primary),
-    background-hover: var(--color-black-alpha-1),
+    background: var(--ks-background-color-interface-interactive),
+    background-active: var(--ks-background-color-interface-interactive-current),
+    background-hover: var(--ks-background-color-interface-interactive-hover),
   ),
 ) !default;

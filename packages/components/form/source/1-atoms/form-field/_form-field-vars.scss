@@ -5,9 +5,10 @@ $host: (
     border: 1px solid,
     border-color: var(--color-grey-2),
     border-radius: 3px,
-    background: var(--color-white),
-    background-disabled: var(--color-black-alpha-1),
-    color: var(--color-black),
+    background: var(--ks-background-color-interface-interactive),
+    background-disabled:
+      var(--ks-background-color-interface-interactive-disabled),
+    color: var(--ks-text-color-interface-interactive),
   ),
 ) !default;
 
@@ -26,7 +27,7 @@ $focus: (
 
 $icon: (
   ':root': (
-    size: calc(var(--line-height-m) * 0.75),
+    size: calc(var(--line-height-ui) * 0.75em),
     color: var(--color-black-alpha-7),
   ),
 ) !default;

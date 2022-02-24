@@ -2,11 +2,11 @@ $name-: 'c-tag-label';
 
 $host: (
   '.c-tag-label': (
-    background-color: var(--color-black-alpha-1),
-    background-color-hover: var(--color-black-alpha-2),
+    background-color: var(--ks-background-color-interface),
+    background-color-hover: var(--ks-background-color-interface-hover),
     border: null,
-    color: var(--color-black-alpha-8),
-    color-hover: var(--color-black),
+    color: var(--ks-text-color-interface),
+    color-hover: var(--ks-text-color-interface-hover),
   ),
   '.c-tag-label--s': (
     font: var(--font-ui-xs),

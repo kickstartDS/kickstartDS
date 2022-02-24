@@ -4,64 +4,73 @@ $name-: 'c-button';
 
 $host: (
   '.c-button': (
-    color-primary-r: var(--color-primary-r),
-    color-primary-g: var(--color-primary-g),
-    color-primary-b: var(--color-primary-b),
-    color-secondary-r: var(--color-white-r),
-    color-secondary-g: var(--color-white-g),
-    color-secondary-b: var(--color-white-b),
+    color-primary: var(--color-primary),
+    color-secondary: var(--color-white),
     font: var(--font-ui-m),
     font-weight: var(--font-weight-regular),
     icon-size: 1.5em,
     padding: 0.4rem 1.3rem 0.35rem,
     border-radius: 3px,
+    border-color: var(--c-button--color),
     background-color: transparent,
     transform-active: scale(0.95),
   ),
   '.c-button--clear': (
-    color: color.pack('--c-button--color-primary'),
-    color-hover: color.mix('--c-button--color-primary', '--color-black', 1),
-    color-active: color.mix('--c-button--color-primary', '--color-black', 2),
-    background-color-hover: color.alpha('--c-button--color-primary', 1),
-    background-color-active: color.alpha('--c-button--color-primary', 2),
+    color: var(--ks-text-color-primary-interactive),
+    color-hover: var(--ks-text-color-primary-interactive-hover),
+    color-active: var(--ks-text-color-primary-interactive-hover),
+    background-color: var(--ks-background-color-clear-interactive),
+    background-color-hover: var(--ks-background-color-clear-interactive-hover),
+    background-color-active: var(--ks-background-color-clear-interactive-active),
   ),
   '.c-button--clear-inverted': (
-    color: color.pack('--c-button--color-secondary'),
-    background-color-hover: color.alpha('--c-button--color-secondary', 2),
-    background-color-active: color.alpha('--c-button--color-secondary', 3),
+    color: var(--ks-text-color-primary-inverted-interactive),
+    color-hover: var(--ks-text-color-primary-inverted-interactive-hover),
+    color-active: var(--ks-text-color-primary-inverted-interactive-hover),
+    background-color: var(--ks-background-color-clear-inverted-interactive),
+    background-color-hover:
+      var(--ks-background-color-clear-inverted-interactive-hover),
+    background-color-active:
+      var(--ks-background-color-clear-inverted-interactive-active),
   ),
   '.c-button--solid': (
-    color: color.pack('--c-button--color-secondary'),
-    background-color: color.pack('--c-button--color-primary'),
-    background-color-hover:
-      color.mix('--c-button--color-primary', '--color-white', 2),
+    color: var(--ks-text-color-primary-inverted-interactive),
+    color-hover: var(--ks-text-color-primary-inverted-interactive-hover),
+    color-active: var(--ks-text-color-primary-inverted-interactive-hover),
+    background-color: var(--ks-background-color-primary-interactive),
+    background-color-hover: var(--ks-background-color-primary-interactive-hover),
     background-color-active:
-      color.mix('--c-button--color-primary', '--color-white', 3),
+      var(--ks-background-color-primary-interactive-active),
   ),
   '.c-button--solid-inverted': (
-    color: color.mix('--c-button--color-primary', '--color-black', 1),
-    color-hover: color.mix('--c-button--color-primary', '--color-black', 2),
-    background-color: color.pack('--c-button--color-secondary'),
+    color: var(--ks-text-color-primary-interactive),
+    color-hover: var(--ks-text-color-primary-interactive-hover),
+    color-active: var(--ks-text-color-primary-interactive-hover),
+    background-color: var(--ks-background-color-primary-inverted-interactive),
     background-color-hover:
-      color.mix('--c-button--color-primary', '--color-white', 9),
+      var(--ks-background-color-primary-inverted-interactive-hover),
     background-color-active:
-      color.mix('--c-button--color-primary', '--color-white', 8),
+      var(--ks-background-color-primary-inverted-interactive-active),
   ),
   '.c-button--outline': (
     border-width: 1px,
-    color: color.pack('--c-button--color-primary'),
-    border-color: color.pack('--c-button--color-primary'),
-    color-hover: color.mix('--c-button--color-primary', '--color-black', 1),
-    color-active: color.mix('--c-button--color-primary', '--color-black', 2),
-    background-color-hover: color.alpha('--c-button--color-primary', 1),
-    background-color-active: color.alpha('--c-button--color-primary', 2),
+    color: var(--ks-text-color-primary-interactive),
+    color-hover: var(--ks-text-color-primary-interactive-hover),
+    color-active: var(--ks-text-color-primary-interactive-hover),
+    background-color: var(--ks-background-color-clear-interactive),
+    background-color-hover: var(--ks-background-color-clear-interactive-hover),
+    background-color-active: var(--ks-background-color-clear-interactive-active),
   ),
   '.c-button--outline-inverted': (
     border-width: 1px,
-    color: color.pack('--c-button--color-secondary'),
-    border-color: var(--c-button--color),
-    background-color-hover: color.alpha('--c-button--color-secondary', 2),
-    background-color-active: color.alpha('--c-button--color-secondary', 3),
+    color: var(--ks-text-color-primary-inverted-interactive),
+    color-hover: var(--ks-text-color-primary-inverted-interactive-hover),
+    color-active: var(--ks-text-color-primary-inverted-interactive-hover),
+    background-color: var(--ks-background-color-clear-inverted-interactive),
+    background-color-hover:
+      var(--ks-background-color-clear-inverted-interactive-hover),
+    background-color-active:
+      var(--ks-background-color-clear-inverted-interactive-active),
   ),
   '.c-button--small': (
     padding: 0.4rem 1rem 0.45rem,
@@ -78,21 +87,21 @@ $fill-animation: (
     background-color-hover: var(--c-button--color),
   ),
   '.c-button--clear': (
-    color-hover: color.pack('--c-button--color-secondary'),
+    color-hover: var(--c-button--color-secondary),
   ),
   '.c-button--clear-inverted': (
-    color-hover: color.pack('--c-button--color-primary'),
+    color-hover: var(--c-button--color-primary),
   ),
   '.c-button--solid': (
-    color-hover: color.pack('--c-button--color-primary'),
+    color-hover: var(--c-button--color-primary),
   ),
   '.c-button--solid-inverted': (
-    color-hover: color.pack('--c-button--color-secondary'),
+    color-hover: var(--c-button--color-secondary),
   ),
   '.c-button--outline': (
-    color-hover: color.pack('--c-button--color-secondary'),
+    color-hover: var(--c-button--color-secondary),
   ),
   '.c-button--outline-inverted': (
-    color-hover: color.pack('--c-button--color-primary'),
+    color-hover: var(--c-button--color-primary),
   ),
 ) !default;

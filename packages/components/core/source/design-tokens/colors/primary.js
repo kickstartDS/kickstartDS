@@ -3,15 +3,10 @@ const { alpha, lighter, darker } = require('../../token-helper/color');
 module.exports = {
   color: {
     primary: {
-      r: { value: '51', attributes: { category: null } },
-      g: { value: '51', attributes: { category: null } },
-      b: { value: '51', attributes: { category: null } },
       _: {
-        value: {
-          r: '{color.primary.r.value}',
-          g: '{color.primary.g.value}',
-          b: '{color.primary.b.value}',
-        },
+        value: '#333',
+        // value: "#1971c2", // blue
+        // value: "#ae3ec9", // grape
         token: { category: 'Colors: Brand' },
       },
       alpha: alpha('primary', { category: 'Colors: Primary Alpha' }),

@@ -1,5 +1,6 @@
 const path = require('path');
 const mixedColorTransform = require('./transforms/mixed-color');
+const alphaColorTransform = require('./transforms/alpha-color');
 const storybookVariablesFormat = require('./formats/storybook/tokens');
 const storybookIconsFormat = require('./formats/storybook/icons');
 const htmlIconSpriteFormat = require('./formats/html/icon-sprite');
@@ -11,10 +12,12 @@ module.exports = function createDictionary(StyleDictionary) {
   const cssTransforms = [
     ...StyleDictionary.transformGroup.css,
     mixedColorTransform.name,
+    alphaColorTransform.name,
   ];
   const scssTransforms = [
     ...StyleDictionary.transformGroup.scss,
     mixedColorTransform.name,
+    alphaColorTransform.name,
   ];
   const colorTransform = {
     name: 'color/css',
@@ -24,6 +27,7 @@ module.exports = function createDictionary(StyleDictionary) {
 
   return StyleDictionary.registerParser(iconParser)
     .registerTransform(mixedColorTransform)
+    .registerTransform(alphaColorTransform)
     .registerTransform(colorTransform)
     .registerFilter(excludeIconsFilter)
     .registerFilter(includeIconsFilter)
