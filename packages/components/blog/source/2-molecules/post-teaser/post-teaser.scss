@@ -21,7 +21,7 @@ $vars: meta.module-variables(post-teaser-vars);
 
     display: flex;
     flex-flow: row-reverse wrap;
-    justify-content: flex-end;
+    align-items: flex-start;
     gap: var(--c-post-teaser--gap);
 
     &:hover {
