@@ -56,7 +56,7 @@
     "fast-glob": "^3.2.11",
     "fs-extra": "^10.0.1",
     "license-checker": "^25.0.1",
-    "postcss": "^8.4.6",
+    "postcss": "^8.4.7",
     "postcss-scss": "^4.0.3",
     "react": "^17.0.2"
   },
