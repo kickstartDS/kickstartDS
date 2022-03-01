@@ -6,10 +6,6 @@
  */
 
 /**
- * Choose one of the styles from the list
- */
-export type TeaserStyle = 'image-first' | 'title-first';
-/**
  * Picture source
  */
 export type Source = string;
@@ -79,9 +75,78 @@ export type Sources = {
  */
 export type ClassAttribute = string;
 /**
- * Date for news item
+ * Picture source
  */
-export type Date = string;
+export type Source1 = string;
+/**
+ * Use a srcSet to display picture
+ */
+export type PictureSourceset2 = string;
+/**
+ * Alt text to display for picture
+ */
+export type AltText1 = string;
+/**
+ * Width of the picture
+ */
+export type Width1 = number;
+/**
+ * Height of the picture
+ */
+export type Height1 = number;
+/**
+ * Add additional css classes that should be applied to the button
+ */
+export type AdditionalClasses1 = string;
+/**
+ * Add id attribute to the image
+ */
+export type Id1 = string;
+/**
+ * Define an itemprop attribute for the picture
+ */
+export type ItempropAttribute1 = string;
+/**
+ * Define a style attribute for the picture
+ */
+export type StyleAttribute1 = string;
+/**
+ * Render noscript fallback
+ */
+export type Noscript1 = boolean;
+/**
+ * Load the picture lazily
+ */
+export type Lazy1 = boolean;
+/**
+ * Use a srcSet to display picture
+ */
+export type PictureSourceset3 = string;
+/**
+ * TODO MEDIA DESCRIPTION
+ */
+export type TODOMEDIATITLE1 = string;
+/**
+ * TODO TYPE DESCRIPTION
+ */
+export type TODOTYPETITLE1 = string;
+/**
+ * Additional sources. This will result in a `picture`-Element
+ */
+export type Sources1 = {
+  srcSet?: PictureSourceset3;
+  media?: TODOMEDIATITLE1;
+  type?: TODOTYPETITLE1;
+  [k: string]: unknown;
+}[];
+/**
+ * Set additional class(es) to the picture
+ */
+export type ClassAttribute1 = string;
+/**
+ * Additional css classes attached to the wrapping element
+ */
+export type Class = string;
 /**
  * Link used for button
  */
@@ -117,27 +182,24 @@ export type Removable = boolean;
 /**
  * Add additional css classes that should be applied to the label
  */
-export type AdditionalClasses1 = string;
+export type AdditionalClasses2 = string;
 export type Categories = TagLabel[];
-export type UniqueId = number;
 /**
  * Additional css classes attached to the wrapping element
  */
-export type Class = string;
+export type Class1 = string;
 
 /**
  * Post Teaser
  */
 export interface PostTeaserProps {
-  variant?: TeaserStyle;
   image?: Picture;
-  date?: Date;
+  meta?: PostMeta;
   link: Link;
   title?: Title;
   body?: Bodytext;
   categories?: Categories;
-  index: UniqueId;
-  className?: Class;
+  className?: Class1;
   [k: string]: unknown;
 }
 /**
@@ -160,6 +222,43 @@ export interface Picture {
   [k: string]: unknown;
 }
 /**
+ * Post Meta
+ */
+export interface PostMeta {
+  author?: {
+    name?: string;
+    image?: Picture1;
+    [k: string]: unknown;
+  };
+  items?: MetaItem[];
+  className?: Class;
+  [k: string]: unknown;
+}
+/**
+ * Base component to display a picture
+ */
+export interface Picture1 {
+  src?: Source1;
+  srcSet?: PictureSourceset2;
+  alt?: AltText1;
+  width?: Width1;
+  height?: Height1;
+  className?: AdditionalClasses1;
+  id?: Id1;
+  itemProp?: ItempropAttribute1;
+  style?: StyleAttribute1;
+  noscript?: Noscript1;
+  lazy?: Lazy1;
+  sources?: Sources1;
+  pictureClassName?: ClassAttribute1;
+  [k: string]: unknown;
+}
+export interface MetaItem {
+  icon?: string;
+  text?: string;
+  [k: string]: unknown;
+}
+/**
  * Link for news item
  */
 export interface Link {
@@ -175,5 +274,5 @@ export interface TagLabel {
   size: Size;
   link?: LinkTarget;
   removable?: Removable;
-  className?: AdditionalClasses1;
+  className?: AdditionalClasses2;
 }

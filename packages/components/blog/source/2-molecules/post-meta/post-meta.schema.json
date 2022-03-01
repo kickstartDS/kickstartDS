@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://frontend.ruhmesmeile.com/blog/molecules/post-meta.schema.json",
+  "title": "Post Meta",
+  "description": "Post Meta",
+  "type": "object",
+  "properties": {
+    "author": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "default": "Max Mütze"
+        },
+        "image": {
+          "$ref": "http://frontend.ruhmesmeile.com/base/atoms/picture.definitions.json"
+        }
+      }
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "title": "Meta Item",
+        "type": "object",
+        "properties": {
+          "icon": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          }
+        }
+      },
+      "default": [
+        {
+          "icon": "date",
+          "text": "14.02.2022"
+        },
+        {
+          "icon": "time",
+          "text": "5 min read"
+        }
+      ]
+    },
+    "className": {
+      "title": "Class",
+      "description": "Additional css classes attached to the wrapping element",
+      "type": "string"
+    }
+  }
+}

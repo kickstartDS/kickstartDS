@@ -5,34 +5,29 @@
   "description": "Post Teaser",
   "type": "object",
   "properties": {
-    "variant": {
-      "type": "string",
-      "title": "Teaser Style",
-      "description": "Choose one of the styles from the list",
-      "enum": ["image-first", "title-first"],
-      "default": "image-first"
-    },
     "image": {
       "type": "object",
       "allOf": [
         {
+          "properties": {
+            "src": {
+              "default": "https://picsum.photos/seed/kdsnewslatest/900/380"
+            },
+            "width": {
+              "default": 900
+            },
+            "height": {
+              "default": 380
+            }
+          }
+        },
+        {
           "$ref": "http://frontend.ruhmesmeile.com/base/atoms/picture.definitions.json"
         }
-      ],
-      "properties": {
-        "src": {
-          "default": "https://picsum.photos/seed/kdsnewslatest/900/380"
-        },
-        "width": {
-          "default": 900
-        },
-        "height": {
-          "default": 380
-        }
-      }
+      ]
     },
-    "date": {
-      "$ref": "http://frontend.ruhmesmeile.com/blog/molecules/news-item.definitions.json#/definitions/date"
+    "meta": {
+      "$ref": "http://frontend.ruhmesmeile.com/blog/molecules/post-meta.schema.json"
     },
     "link": {
       "$ref": "http://frontend.ruhmesmeile.com/blog/molecules/news-item.definitions.json#/definitions/link"
@@ -45,10 +40,6 @@
     },
     "categories": {
       "$ref": "http://frontend.ruhmesmeile.com/blog/molecules/news-item.definitions.json#/definitions/categories"
-    },
-    "index": {
-      "type": "integer",
-      "title": "Unique id"
     },
     "className": {
       "title": "Class",
