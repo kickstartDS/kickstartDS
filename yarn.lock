@@ -149,7 +149,7 @@
     tslib "2.1.0"
     url-join "^4.0.0"
 
-"@auto-it/npm@10.34.1", "@auto-it/npm@^10.32.6":
+"@auto-it/npm@10.34.1", "@auto-it/npm@^10.34.1":
   version "10.34.1"
   resolved "https://registry.yarnpkg.com/@auto-it/npm/-/npm-10.34.1.tgz#bd8edf21a13ac7dbcd4914b0c4b3827f9aa54d01"
   integrity sha512-b31SNNRUJS0HYkR/GQFSUcbnHHnelQmLs4rdHvlFWbPhAIXVnpBRNns7PeZJOdScUeI0dhUT3k9op+/x7RNX/w==
@@ -177,13 +177,25 @@
     parse-author "^2.0.0"
     parse-github-url "1.0.2"
 
-"@auto-it/released@10.34.1", "@auto-it/released@^10.32.6":
+"@auto-it/released@10.34.1":
   version "10.34.1"
   resolved "https://registry.yarnpkg.com/@auto-it/released/-/released-10.34.1.tgz#2df60c2dffec9fa1c4ba19122226f0d2b42f096c"
   integrity sha512-d/fM77Kx4CSLMWJZb7ce0rOkbym2L9JRuXagRF8JSM+RwEUPf17JRjQ+3S9Jsfdm5r5fYn91yVsCgolMmzaiVQ==
   dependencies:
     "@auto-it/bot-list" "10.34.1"
     "@auto-it/core" "10.34.1"
+    deepmerge "^4.0.0"
+    fp-ts "^2.5.3"
+    io-ts "^2.1.2"
+    tslib "2.1.0"
+
+"@auto-it/released@^10.32.6":
+  version "10.32.6"
+  resolved "https://registry.yarnpkg.com/@auto-it/released/-/released-10.32.6.tgz#eb80e77ef9bc90d6cfe7cbee2d21155fa9dc523b"
+  integrity sha512-SIcc+Ie/OGyCg9VtSIOhFAQouCxcI9CI0dNay9kLbKD3qOrt+W156zI/1n8LGeoH+e02AI5hTFHQCbw7TUq3tw==
+  dependencies:
+    "@auto-it/bot-list" "10.32.6"
+    "@auto-it/core" "10.32.6"
     deepmerge "^4.0.0"
     fp-ts "^2.5.3"
     io-ts "^2.1.2"
@@ -6792,7 +6804,7 @@ cssnano-utils@^3.1.0:
   resolved "https://registry.yarnpkg.com/cssnano-utils/-/cssnano-utils-3.1.0.tgz#95684d08c91511edfc70d2636338ca37ef3a6861"
   integrity sha512-JQNR19/YZhz4psLX/rQ9M83e3z2Wf/HdJbryzte4a3NSuafyp9w/I4U+hx5C2S9g41qlstH7DEWnZaaj83OuEA==
 
-cssnano@^5.0.15, cssnano@^5.1.2:
+cssnano@^5.0.15, cssnano@^5.0.17:
   version "5.1.2"
   resolved "https://registry.yarnpkg.com/cssnano/-/cssnano-5.1.2.tgz#5e06a2aab7170fa5a6c4d90085c9e86546d4f7db"
   integrity sha512-zzQSTSLl5FGHhFSNHpUwDrIFYuwzL5d5f0quow5j97rR4GeJ4atuQ7e6qX7+UkrzU6xAzvqztKQYCdVngDTVGw==
