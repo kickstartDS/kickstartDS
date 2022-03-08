@@ -24,10 +24,11 @@
     "design-tokens/**/*.js"
   ],
   "scripts": {
-    "build": "yarn build-tokens && node ../../tools/build-components/source",
+    "build": "node ../../tools/build-components/source && yarn build-tokens",
     "build-tokens": "node scripts/build-tokens.js",
     "schema": "node ../../tools/build-components/source --schema",
-    "watch": "yarn build-tokens && node ../../tools/build-components/source --watch"
+    "watch": "concurrently -r yarn:watch-tokens \"node ../../tools/build-components/source --watch\"",
+    "watch-tokens": "chokidar \"source/design-tokens/fallback.ks-tokens.json\" -c \"yarn build-tokens\""
   },
   "dependencies": {
     "@babel/runtime": "^7.17.2",
@@ -49,6 +50,8 @@
     "tinycolor2": "^1.4.2"
   },
   "devDependencies": {
+    "chokidar-cli": "^3.0.0",
+    "concurrently": "^7.0.0",
     "include-media": "^1.4.9",
     "storybook-design-token": "^1.4.0",
     "style-dictionary": "^3.1.1"
