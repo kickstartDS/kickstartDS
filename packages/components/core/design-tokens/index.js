@@ -3,6 +3,7 @@ const storybookVariablesFormat = require('./formats/storybook/tokens');
 const storybookIconsFormat = require('./formats/storybook/icons');
 const htmlIconSpriteFormat = require('./formats/html/icon-sprite');
 const jsxIconSpriteFormat = require('./formats/jsx/icon-sprite');
+const cssKdsVariablesFormat = require('./formats/css/kds-variables');
 const iconParser = require('./parsers/icon');
 const ksTokensParser = require('./parsers/ks-tokens');
 const { excludeIconsFilter, includeIconsFilter } = require('./filters');
@@ -16,6 +17,7 @@ module.exports = function createDictionary(StyleDictionary) {
     .registerFormat(htmlIconSpriteFormat)
     .registerFormat(storybookIconsFormat)
     .registerFormat(jsxIconSpriteFormat)
+    .registerFormat(cssKdsVariablesFormat)
     .extend({
       include: [
         path.join(__dirname, '../source/design-tokens/fallback.ks-tokens.json'),
@@ -26,7 +28,7 @@ module.exports = function createDictionary(StyleDictionary) {
           transformGroup: 'css',
           files: [
             {
-              format: 'css/variables',
+              format: 'css/kds-variables',
               destination: 'tokens.css',
               options: {
                 outputReferences: true,
