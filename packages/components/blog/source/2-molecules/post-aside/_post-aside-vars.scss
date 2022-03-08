@@ -2,28 +2,28 @@ $name-: 'c-post-aside' !default;
 
 $host: (
   '.c-post-aside': (
-    gap: var(--spacing-m),
+    gap: var(--ks-spacing-m),
   ),
 ) !default;
 
 $author: (
   '.c-post-aside': (
-    headline-spacing: var(--spacing-s),
+    headline-spacing: var(--ks-spacing-s),
   ),
 ) !default;
 
 $meta: (
   '.c-post-aside': (
-    gap: var(--spacing-m),
+    gap: var(--ks-spacing-m),
   ),
 ) !default;
 
 $meta-item: (
   '.c-post-aside': (
-    font: var(--font-ui-s),
+    font: var(--ks-font-ui-s),
     color: var(--color-grey-7),
     icon-size: 1.25em,
-    icon-spacing: var(--spacing-xs),
+    icon-spacing: var(--ks-spacing-xs),
   ),
 ) !default;
 

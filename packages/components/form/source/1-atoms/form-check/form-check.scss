@@ -33,7 +33,7 @@ $vars: meta.module-variables(form-check-vars);
     border-color: var(--c-form-check_box--border-color);
     border-radius: var(--c-form-check_box--border-radius);
     margin-top: calc(
-      (calc(var(--line-height-ui) * 1em) - var(--c-form-check_box--size)) / 2
+      (calc(var(--ks-line-height-ui) * 1em) - var(--c-form-check_box--size)) / 2
     );
     background: var(--c-form-check_box--background);
     transition: 0.2s;

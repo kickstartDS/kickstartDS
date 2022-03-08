@@ -17,8 +17,8 @@ $icon: (
 $number: (
   '.c-count-up': (
     margin: 0 0 0.5em,
-    font: var(--font-ui-xl),
-    font-weight: var(--font-weight-bold),
+    font: var(--ks-font-ui-xl),
+    font-weight: var(--ks-font-weight-bold),
     color: var(--ks-text-color-default),
   ),
 ) !default;
@@ -26,8 +26,8 @@ $number: (
 $topic: (
   '.c-count-up': (
     margin: 0 0 0.5em,
-    font: var(--font-display-l),
-    font-weight: var(--font-weight-bold),
+    font: var(--ks-font-display-l),
+    font-weight: var(--ks-font-weight-bold),
     color: var(--ks-text-color-default),
   ),
 ) !default;

@@ -4,9 +4,9 @@ module.exports = {
       width: {
         narrow: { value: '46.5rem' },
         default: { value: '62rem' },
-        default: { value: '75rem' },
+        wide: { value: '75rem' },
       },
-      padding: { value: '{spacing.m._.value}' },
+      padding: { value: '{ks.spacing.m._.value}' },
     },
   },
 };

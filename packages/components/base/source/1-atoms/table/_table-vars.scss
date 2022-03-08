@@ -2,16 +2,16 @@ $name-: 'c-table';
 
 $host: (
   '.c-table': (
-    font: var(--font-copy-s),
-    font-weight: var(--font-weight-regular),
+    font: var(--ks-font-copy-s),
+    font-weight: var(--ks-font-weight-regular),
     cell-padding: 0.5rem 1.5rem 0.5rem 0.25rem,
   ),
 ) !default;
 
 $header: (
   '.c-table': (
-    font: var(--font-display-s),
-    font-weight: var(--font-weight-bold),
+    font: var(--ks-font-display-s),
+    font-weight: var(--ks-font-weight-bold),
   ),
 ) !default;
 
@@ -30,7 +30,7 @@ $zebra: (
 
 $caption: (
   '.c-table': (
-    font: var(--font-ui-xs),
+    font: var(--ks-font-ui-xs),
     font-weight: null,
     font-style: italic,
   ),

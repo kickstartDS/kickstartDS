@@ -21,15 +21,15 @@
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-    gap: var(--spacing-m);
+    gap: var(--ks-spacing-m);
 
     // above/below left (default), center, right
     .text-media--above & {
-      padding-bottom: var(--spacing-s);
+      padding-bottom: var(--ks-spacing-s);
     }
 
     .text-media--below & {
-      padding-top: var(--spacing-s);
+      padding-top: var(--ks-spacing-s);
     }
 
     .text-media--center & {
@@ -42,10 +42,10 @@
 
     // intext left, right
     .text-media--intext & {
-      padding-bottom: var(--spacing-s);
+      padding-bottom: var(--ks-spacing-s);
 
       @include breakpoint.media('≥s') {
-        padding-bottom: var(--spacing-xs);
+        padding-bottom: var(--ks-spacing-xs);
         max-width: 50%;
         min-width: 0;
       }
@@ -58,14 +58,14 @@
     .text-media--intext.text-media--left & {
       @include breakpoint.media('≥s') {
         float: left;
-        padding-right: var(--spacing-m);
+        padding-right: var(--ks-spacing-m);
       }
     }
 
     .text-media--intext.text-media--right & {
       @include breakpoint.media('≥s') {
         float: right;
-        padding-left: var(--spacing-m);
+        padding-left: var(--ks-spacing-m);
       }
     }
   }

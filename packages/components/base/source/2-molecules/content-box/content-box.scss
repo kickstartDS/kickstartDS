@@ -64,48 +64,48 @@ $vars: meta.module-variables(content-box-vars);
     flex: 1 auto;
 
     @container (min-width: 0px) {
-      --c-content-box_topic--font: var(--font-display-s);
-      --c-rich-text--font: var(--font-copy-xs);
+      --c-content-box_topic--font: var(--ks-font-display-s);
+      --c-rich-text--font: var(--ks-font-copy-xs);
 
       .c-button {
-        --c-button--font: var(--font-ui-xs);
+        --c-button--font: var(--ks-font-ui-xs);
 
         &--large {
-          --c-button--font: var(--font-ui-s);
+          --c-button--font: var(--ks-font-ui-s);
         }
       }
     }
 
     @container (min-width: 200px) {
-      --c-content-box_topic--font: var(--font-display-m);
-      --c-rich-text--font: var(--font-copy-s);
+      --c-content-box_topic--font: var(--ks-font-display-m);
+      --c-rich-text--font: var(--ks-font-copy-s);
 
       .c-button {
-        --c-button--font: var(--font-ui-s);
+        --c-button--font: var(--ks-font-ui-s);
 
         &--small {
-          --c-button--font: var(--font-ui-xs);
+          --c-button--font: var(--ks-font-ui-xs);
         }
 
         &--large {
-          --c-button--font: var(--font-ui-m);
+          --c-button--font: var(--ks-font-ui-m);
         }
       }
     }
 
     @container (min-width: 400px) {
-      --c-content-box_topic--font: var(--font-display-l);
-      --c-rich-text--font: var(--font-copy-m);
+      --c-content-box_topic--font: var(--ks-font-display-l);
+      --c-rich-text--font: var(--ks-font-copy-m);
 
       .c-button {
-        --c-button--font: var(--font-ui-m);
+        --c-button--font: var(--ks-font-ui-m);
 
         &--small {
-          --c-button--font: var(--font-ui-s);
+          --c-button--font: var(--ks-font-ui-s);
         }
 
         &--large {
-          --c-button--font: var(--font-ui-l);
+          --c-button--font: var(--ks-font-ui-l);
         }
       }
     }

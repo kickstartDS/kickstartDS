@@ -3,7 +3,7 @@ $name-: 'l-section';
 $host: (
   '.l-section': (
     background: var(--ks-background-color-default),
-    space: var(--spacing-xxl),
+    space: var(--ks-spacing-xxl),
     space-small: calc(var(--l-section--space) / 2),
   ),
   '.l-section--accent': (
@@ -16,13 +16,13 @@ $host: (
 
 $container: (
   '.l-section__container': (
-    gutter: var(--spacing-m),
+    gutter: var(--ks-spacing-m),
   ),
   '.l-section__container--gutter-large': (
-    gutter: var(--spacing-xl),
+    gutter: var(--ks-spacing-xl),
   ),
   '.l-section__container--gutter-small': (
-    gutter: var(--spacing-xs),
+    gutter: var(--ks-spacing-xs),
   ),
   '.l-section__container--gutter-none': (
     gutter: 0,

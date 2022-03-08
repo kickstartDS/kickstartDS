@@ -34,5 +34,5 @@ $vars: meta.module-variables(lightbox-vars);
 @include custom-properties.styles($vars);
 
 .pswp {
-  font: var(--font-ui-xs);
+  font: var(--ks-font-ui-xs);
 }

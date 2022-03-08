@@ -1,34 +1,15 @@
 const path = require('path');
-const mixedColorTransform = require('./transforms/mixed-color');
-const alphaColorTransform = require('./transforms/alpha-color');
 const storybookVariablesFormat = require('./formats/storybook/tokens');
 const storybookIconsFormat = require('./formats/storybook/icons');
 const htmlIconSpriteFormat = require('./formats/html/icon-sprite');
 const jsxIconSpriteFormat = require('./formats/jsx/icon-sprite');
 const iconParser = require('./parsers/icon');
+const ksTokensParser = require('./parsers/ks-tokens');
 const { excludeIconsFilter, includeIconsFilter } = require('./filters');
 
 module.exports = function createDictionary(StyleDictionary) {
-  const cssTransforms = [
-    ...StyleDictionary.transformGroup.css,
-    mixedColorTransform.name,
-    alphaColorTransform.name,
-  ];
-  const scssTransforms = [
-    ...StyleDictionary.transformGroup.scss,
-    mixedColorTransform.name,
-    alphaColorTransform.name,
-  ];
-  const colorTransform = {
-    name: 'color/css',
-    ...StyleDictionary.transform['color/css'],
-    transitive: true,
-  };
-
   return StyleDictionary.registerParser(iconParser)
-    .registerTransform(mixedColorTransform)
-    .registerTransform(alphaColorTransform)
-    .registerTransform(colorTransform)
+    .registerParser(ksTokensParser)
     .registerFilter(excludeIconsFilter)
     .registerFilter(includeIconsFilter)
     .registerFormat(storybookVariablesFormat)
@@ -37,12 +18,12 @@ module.exports = function createDictionary(StyleDictionary) {
     .registerFormat(jsxIconSpriteFormat)
     .extend({
       include: [
-        path.join(__dirname, '../source/design-tokens/**/*.js'),
+        path.join(__dirname, '../source/design-tokens/fallback.ks-tokens.json'),
         path.join(__dirname, '../source/design-tokens/icons/*.svg'),
       ],
       platforms: {
         css: {
-          transforms: cssTransforms,
+          transformGroup: 'css',
           files: [
             {
               format: 'css/variables',
@@ -55,11 +36,11 @@ module.exports = function createDictionary(StyleDictionary) {
           ],
         },
         scss: {
-          transforms: scssTransforms,
+          transformGroup: 'scss',
           files: [
             {
-              format: 'scss/variables',
-              destination: '_tokens.scss',
+              format: 'scss/map-deep',
+              destination: '_token-map.scss',
               options: {
                 outputReferences: true,
               },
@@ -86,7 +67,7 @@ module.exports = function createDictionary(StyleDictionary) {
           ],
         },
         storybook: {
-          transforms: cssTransforms,
+          transformGroup: 'css',
           files: [
             {
               format: 'storybook/tokens',

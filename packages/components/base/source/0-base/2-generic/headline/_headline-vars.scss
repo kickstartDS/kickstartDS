@@ -3,8 +3,8 @@ $name-: 'g-headline' !default;
 $host: (
   ':root': (
     color: var(--ks-text-color-default),
-    font: var(--font-display-m),
-    font-weight: var(--font-weight-bold),
+    font: var(--ks-font-display-m),
+    font-weight: var(--ks-font-weight-bold),
     text-transform: null,
     margin: (
       xs: 0.75em 0 0.5em,
@@ -12,12 +12,12 @@ $host: (
     ),
   ),
   'h1': (
-    font: var(--font-display-xxl),
+    font: var(--ks-font-display-xxl),
   ),
   'h2': (
-    font: var(--font-display-xl),
+    font: var(--ks-font-display-xl),
   ),
   'h3': (
-    font: var(--font-display-l),
+    font: var(--ks-font-display-l),
   ),
 ) !default;

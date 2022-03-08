@@ -6,7 +6,7 @@ $vars: meta.module-variables(form-check-group-vars);
 @include custom-properties.styles($vars);
 
 .c-form-check-group {
-  font: var(--font-ui-s);
+  font: var(--ks-font-ui-s);
 
   &__label {
     display: inline-block;

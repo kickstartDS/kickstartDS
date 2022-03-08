@@ -2,16 +2,16 @@ $name-: 'c-post-head' !default;
 
 $date: (
   '.c-post-head': (
-    font: var(--font-ui-xs),
-    font-weight: var(--font-weight-bold),
+    font: var(--ks-font-ui-xs),
+    font-weight: var(--ks-font-weight-bold),
     color: var(--color-black-alpha-5),
   ),
 ) !default;
 
 $headline: (
   '.c-post-head': (
-    font: var(--font-display-l),
-    font-weight: var(--font-weight-bold),
+    font: var(--ks-font-display-l),
+    font-weight: var(--ks-font-weight-bold),
     color: var(--color-black),
     color-hover: var(--color-black),
   ),

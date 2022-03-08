@@ -1,71 +1,40 @@
+// stylelint-disable
+@use 'sass:map';
+@use 'sass:string';
 @use '../core/breakpoint';
 @use './tokens.css';
-
-@mixin scale($base, $steps) {
-  $value: var(#{$base}-base);
-  @for $i from 0 to $steps {
-    $value: $value + ' * ' + var(#{$base}-ratio);
-  }
-  #{$base}: calc(#{$value});
-}
+@use './token-map' as *;
 
 :root {
-  @include breakpoint.media('≥s') {
-    // Spacing
-    @include scale(--spacing-xxs, 1);
-    @include scale(--spacing-xs, 1);
-    @include scale(--spacing-s, 1);
-    @include scale(--spacing-m, 1);
-    @include scale(--spacing-l, 1);
-    @include scale(--spacing-xl, 1);
-    @include scale(--spacing-xxl, 1);
+  @each $family, $sizes in map.get($tokens, 'ks', 'font-size') {
+    @each $bp in map.keys(map.get($sizes, 'bp-factor')) {
+      @include breakpoint.media('≥#{$bp}') {
+        --ks-font-size-#{$family}-bp-factor: var(
+          --ks-font-size-#{$family}-bp-factor-#{$bp}
+        );
+      }
+    }
 
-    // Font Size Display
-    @include scale(--font-size-display-s, 4);
-    @include scale(--font-size-display-m, 4);
-    @include scale(--font-size-display-l, 4);
-    @include scale(--font-size-display-xl, 4);
-    @include scale(--font-size-display-xxl, 4);
+    @each $base in map.keys(map.remove($sizes, 'bp-factor')) {
+      $separatorIndex: string.index($base, '-');
+      $size: string.slice($base, 1, $separatorIndex - 1);
 
-    // Font Size Copy
-    @include scale(--font-size-copy-s, 4);
-    @include scale(--font-size-copy-m, 4);
-    @include scale(--font-size-copy-l, 4);
+      --ks-font-size-#{$family}-#{$size}: calc(
+        var(--ks-font-size-#{$family}-#{$size}-base) *
+          var(--ks-font-size-#{$family}-bp-factor, 1)
+      );
 
-    // Font Size UI
-    @include scale(--font-size-ui-s, 4);
-    @include scale(--font-size-ui-m, 4);
-    @include scale(--font-size-ui-l, 4);
-
-    // Font Size Mono
-    @include scale(--font-size-mono-s, 4);
-    @include scale(--font-size-mono-m, 4);
-    @include scale(--font-size-mono-l, 4);
+      --ks-font-#{$family}-#{$size}: var(--ks-font-size-#{$family}-#{$size}) /
+        var(--ks-line-height-#{$family}-#{$size})
+        var(--ks-font-family-#{$family});
+    }
   }
 
-  @include breakpoint.media('≥m') {
-    // Spacing
-    @include scale(--spacing-xxs, 2);
-    @include scale(--spacing-xs, 2);
-    @include scale(--spacing-s, 2);
-    @include scale(--spacing-m, 2);
-    @include scale(--spacing-l, 2);
-    @include scale(--spacing-xl, 2);
-    @include scale(--spacing-xxl, 2);
-
-    // Font Size Display
-    @include scale(--font-size-display-xl, 8);
-    @include scale(--font-size-display-xxl, 8);
-  }
-
-  @include breakpoint.media('≥xl') {
-    // Spacing
-    @include scale(--spacing-xxs, 3);
-    @include scale(--spacing-xs, 3);
-    @include scale(--spacing-s, 3);
-    @include scale(--spacing-m, 3);
-    @include scale(--spacing-l, 3);
-    @include scale(--spacing-xl, 3);
-    @include scale(--spacing-xxl, 3);
+  @each $scale, $breakpoints in map.get($tokens, 'ks', 'spacing') {
+    @each $bp in map.keys(map.get($breakpoints, 'bp')) {
+      @include breakpoint.media('≥#{$bp}') {
+        --ks-spacing-#{$scale}: var(--ks-spacing-#{$scale}-bp-#{$bp});
+      }
+    }
   }
 }

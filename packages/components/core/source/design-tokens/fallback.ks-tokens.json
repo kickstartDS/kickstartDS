@@ -1,0 +1,125 @@
+{
+  "color": {
+    "primary": "#333",
+    "background": "#fff",
+    "foreground": "#000",
+    "link": "#1c7ed6"
+  },
+  "font": {
+    "display": {
+      "family": "Garamond, Baskerville, 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif",
+      "size": {
+        "s": [14, 1.714],
+        "m": [16, 1.75],
+        "l": [18, 1.778],
+        "xl": [24, 1.5],
+        "xxl": [30, 1.333]
+      },
+      "bp-factor": {
+        "s": 1.167,
+        "m": 1.333
+      }
+    },
+    "copy": {
+      "family": "'Helvetica Neue', Helvetica, Arial, sans-serif",
+      "size": {
+        "s": [14, 1.714],
+        "m": [16, 1.75],
+        "l": [18, 1.778]
+      },
+      "bp-factor": {
+        "s": 1,
+        "m": 1.125
+      }
+    },
+    "ui": {
+      "family": "system-ui, -apple-system, BlinkMacSystemFont, 'Avenir Next', 'Avenir', 'Segoe UI', 'Lucida Grande', 'Helvetica Neue', 'Helvetica', 'Fira Sans', 'Roboto', 'Noto', 'Droid Sans', 'Cantarell', 'Oxygen', 'Ubuntu', 'Franklin Gothic Medium', 'Century Gothic', 'Liberation Sans', sans-serif",
+      "size": {
+        "xs": [12, 1.333],
+        "s": [14, 1.714],
+        "m": [16, 1.75],
+        "l": [18, 1.778]
+      },
+      "bp-factor": {
+        "s": 1,
+        "m": 1.125
+      }
+    },
+    "mono": {
+      "family": "ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace",
+      "size": {
+        "s": [14, 1.714],
+        "m": [16, 1.75],
+        "l": [18, 1.778]
+      },
+      "bp-factor": {
+        "s": 1,
+        "m": 1.125
+      }
+    }
+  },
+  "font-weight": {
+    "light": 300,
+    "regular": 400,
+    "semi-bold": 600,
+    "bold": 700
+  },
+  "spacing": {
+    "xxs": {
+      "base": 2,
+      "bp": {
+        "s": 3,
+        "m": 4,
+        "xl": 5
+      }
+    },
+    "xs": {
+      "base": 3,
+      "bp": {
+        "s": 4,
+        "m": 6,
+        "xl": 9
+      }
+    },
+    "s": {
+      "base": 5,
+      "bp": {
+        "s": 7,
+        "m": 10,
+        "xl": 14
+      }
+    },
+    "m": {
+      "base": 8,
+      "bp": {
+        "s": 11,
+        "m": 16,
+        "xl": 23
+      }
+    },
+    "l": {
+      "base": 13,
+      "bp": {
+        "s": 18,
+        "m": 26,
+        "xl": 37
+      }
+    },
+    "xl": {
+      "base": 21,
+      "bp": {
+        "s": 30,
+        "m": 42,
+        "xl": 59
+      }
+    },
+    "xxl": {
+      "base": 34,
+      "bp": {
+        "s": 48,
+        "m": 68,
+        "xl": 59
+      }
+    }
+  }
+}

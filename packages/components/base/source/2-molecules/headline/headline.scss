@@ -33,11 +33,11 @@ $vars: meta.module-variables(headline-vars);
   }
 
   &--space-after-small {
-    padding-bottom: calc(var(--spacing-xxl) / 2);
+    padding-bottom: calc(var(--ks-spacing-xxl) / 2);
   }
 
   &--space-after-large {
-    padding-bottom: var(--spacing-xxl);
+    padding-bottom: var(--ks-spacing-xxl);
   }
 
   &__headline {
@@ -48,21 +48,21 @@ $vars: meta.module-variables(headline-vars);
   }
 
   &__h1 {
-    --g-headline--font: var(--font-display-xxl);
+    --g-headline--font: var(--ks-font-display-xxl);
   }
 
   &__h2 {
-    --g-headline--font: var(--font-display-xl);
+    --g-headline--font: var(--ks-font-display-xl);
   }
 
   &__h3 {
-    --g-headline--font: var(--font-display-l);
+    --g-headline--font: var(--ks-font-display-l);
   }
 
   &__h4,
   &__h5,
   &__p {
-    --g-headline--font: var(--font-display-m);
+    --g-headline--font: var(--ks-font-display-m);
   }
 
   &__subheadline {

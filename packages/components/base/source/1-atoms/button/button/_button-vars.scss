@@ -6,8 +6,8 @@ $host: (
   '.c-button': (
     color-primary: var(--color-primary),
     color-secondary: var(--color-white),
-    font: var(--font-ui-m),
-    font-weight: var(--font-weight-regular),
+    font: var(--ks-font-ui-m),
+    font-weight: var(--ks-font-weight-regular),
     icon-size: 1.5em,
     padding: 0.4rem 1.3rem 0.35rem,
     border-radius: 3px,
@@ -74,11 +74,11 @@ $host: (
   ),
   '.c-button--small': (
     padding: 0.4rem 1rem 0.45rem,
-    font: var(--font-ui-s),
+    font: var(--ks-font-ui-s),
   ),
   '.c-button--large': (
     padding: 0.45rem 1.7rem 0.5rem,
-    font: var(--font-ui-l),
+    font: var(--ks-font-ui-l),
   ),
 ) !default;
 

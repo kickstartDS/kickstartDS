@@ -2,11 +2,11 @@ $name-: 'c-rich-text';
 
 $host: (
   ':root': (
-    font: var(--font-copy-m),
-    vertical-spacing: var(--spacing-m),
+    font: var(--ks-font-copy-m),
+    vertical-spacing: var(--ks-spacing-m),
     horizontal-spacing: 1em,
     color: var(--ks-text-color-default),
-    font-weight: var(--font-weight-regular),
+    font-weight: var(--ks-font-weight-regular),
   ),
 ) !default;
 
