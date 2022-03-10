@@ -1,6 +1,12 @@
 $name-: 'l-section';
 
 $host: (
+  ':root': (
+    content-width-narrow: 46.5rem,
+    content-width-default: 62rem,
+    content-width-wide: 75rem,
+    content-padding: var(--ks-spacing-m),
+  ),
   '.l-section': (
     background: var(--ks-background-color-default),
     space: var(--ks-spacing-xxl),

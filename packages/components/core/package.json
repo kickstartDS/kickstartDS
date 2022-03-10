@@ -54,10 +54,10 @@
     "concurrently": "^7.0.0",
     "include-media": "^1.4.9",
     "storybook-design-token": "^1.4.0",
-    "style-dictionary": "^3.1.1"
+    "style-dictionary": "^3.7.0"
   },
   "peerDependencies": {
     "react": "^17.0.2",
-    "style-dictionary": "^3"
+    "style-dictionary": "^3.7.0"
   }
 }

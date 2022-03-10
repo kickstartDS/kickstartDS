@@ -2,14 +2,6 @@
 
 const { format } = require('style-dictionary');
 
-const mediaQueries = [
-  ['xs', '25em'],
-  ['s', '40em'],
-  ['m', '60em'],
-  ['l', '64em'],
-  ['xl', '75em'],
-];
-
 const createResponsiveRules = {
   'font-size': (fontSizes) =>
     Object.entries(fontSizes).reduce((prev, [family, sizes]) => {
@@ -33,15 +25,23 @@ const createResponsiveRules = {
     }, {}),
 
   spacing: (spacings) =>
-    Object.entries(spacings).reduce((prev, [scale, { bp: breakpoints }]) => {
-      Object.keys(breakpoints).forEach((bp) => {
-        prev[bp] ??= [];
-        prev[bp].push(
-          `--ks-spacing-${scale}: var(--ks-spacing-${scale}-bp-${bp});`
+    Object.entries(spacings).reduce(
+      (prev, [scale, { 'bp-factor': bpFactors }]) => {
+        prev._ ??= [];
+        prev._.push(
+          `--ks-spacing-${scale}: calc(var(--ks-spacing-${scale}-base) * var(--ks-spacing-${scale}-bp-factor, 1));`
         );
-      });
-      return prev;
-    }, {}),
+
+        Object.keys(bpFactors).forEach((bp) => {
+          prev[bp] ??= [];
+          prev[bp].push(
+            `--ks-spacing-${scale}-bp-factor: var(--ks-spacing-${scale}-bp-factor-${bp});`
+          );
+        });
+        return prev;
+      },
+      {}
+    ),
 };
 
 module.exports = {
@@ -49,13 +49,16 @@ module.exports = {
   formatter({ dictionary, options, file }) {
     const { selector = ':root' } = options;
     const { tokens } = dictionary;
+    const breakpoints = Object.entries(tokens.ks.breakpoint).map(
+      ([key, { value }]) => [key, value]
+    );
     const writeRules = (lines = []) =>
       lines.length ? `${selector} {\n  ${lines.join('\n  ')}\n}` : '';
 
     let result = format['css/variables']({ dictionary, options, file });
 
-    const responsiveRules = mediaQueries.reduce(
-      (prev, [mediaQuery]) => ({ ...prev, [mediaQuery]: [] }),
+    const responsiveRules = breakpoints.reduce(
+      (prev, [key]) => ({ ...prev, [key]: [] }),
       {}
     );
 
@@ -67,7 +70,7 @@ module.exports = {
       );
     }
 
-    for (const [mediaQuery, breakpoint] of mediaQueries) {
+    for (const [mediaQuery, breakpoint] of breakpoints) {
       if (responsiveRules[mediaQuery]?.length) {
         result += `\n@media (min-width: ${breakpoint}) {\n${writeRules(
           responsiveRules[mediaQuery]

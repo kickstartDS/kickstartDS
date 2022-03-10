@@ -9,31 +9,28 @@ const attributes = { category: 'size' };
 
 const scales = ['xxs', 'xs', 's', 'm', 'l', 'xl', 'xxl'];
 const baseIndex = scales.indexOf('m');
-const breakpoints = ['s', 'm', 'xl'];
 
-module.exports = ({ spacing }) => {
+module.exports = ({ spacing, breakpoints }) => {
+  const breakpointKeys = Object.keys(breakpoints);
   const { base, 'scale-ratio': scaleRatio, 'bp-ratio': bpRatio } = spacing;
   const scaleMs = modularScale(base, scaleRatio);
   return {
     spacing: Object.fromEntries(
       scales.map((scale, index) => {
         const value = scaleMs(index - baseIndex);
-        const breakpointMs = modularScale(value, bpRatio);
+        const breakpointMs = modularScale(1, bpRatio);
         return [
           scale,
           {
-            _: {
+            base: {
               value: rem(value),
               attributes,
               token: { category: 'Spacing', presenter: 'Spacing' },
             },
-            bp: Object.fromEntries(
-              breakpoints.map((breakpoint, bpIndex) => [
+            'bp-factor': Object.fromEntries(
+              breakpointKeys.map((breakpoint, bpIndex) => [
                 breakpoint,
-                {
-                  value: rem(breakpointMs(bpIndex + 1)),
-                  attributes,
-                },
+                { value: breakpointMs(bpIndex + 1) },
               ])
             ),
           },

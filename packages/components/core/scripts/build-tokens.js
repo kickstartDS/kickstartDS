@@ -3,7 +3,6 @@ const StyleDictionary = require('style-dictionary');
 const createDictionary = require('../design-tokens');
 
 const config = {
-  source: [path.join(__dirname, '../source/design-tokens/**/*.js')],
   platforms: {
     css: {
       buildPath: 'lib/design-tokens/',

@@ -68,5 +68,11 @@
     "base": 8,
     "scale-ratio": 1.414,
     "bp-ratio": 1.618
+  },
+  "breakpoints": {
+    "s": 576,
+    "m": 768,
+    "l": 992,
+    "xl": 1200
   }
 }

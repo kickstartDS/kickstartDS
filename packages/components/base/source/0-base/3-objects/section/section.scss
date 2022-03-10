@@ -31,10 +31,10 @@ $vars: meta.module-variables(section-vars);
   }
 
   &__container {
-    padding: 0 var(--g-content-padding);
+    padding: 0 var(--l-section--content-padding);
     margin: auto;
     width: 100%;
-    max-width: var(--g-content-width-default);
+    max-width: var(--l-section--content-width-default);
     display: grid;
     // stylelint-disable scss/no-global-function-names
     grid-template-columns: repeat(
@@ -48,11 +48,11 @@ $vars: meta.module-variables(section-vars);
     grid-gap: var(--l-section_container--gutter);
 
     &--narrow {
-      max-width: var(--g-content-width-narrow);
+      max-width: var(--l-section--content-width-narrow);
     }
 
     &--wide {
-      max-width: var(--g-content-width-wide);
+      max-width: var(--l-section--content-width-wide);
     }
 
     &--max {

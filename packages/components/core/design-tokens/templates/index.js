@@ -2,6 +2,7 @@ const backgroundColor = require('./background-color');
 const textColor = require('./text-color');
 const typo = require('./typo');
 const spacing = require('./spacing');
+const breakpoints = require('./breakpoints');
 
 module.exports = (data) => ({
   ks: {
@@ -9,5 +10,6 @@ module.exports = (data) => ({
     ...textColor(data),
     ...typo(data),
     ...spacing(data),
+    ...breakpoints(data),
   },
 });
