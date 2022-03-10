@@ -4,8 +4,8 @@ const textColorPrimary = require('./primary');
 
 module.exports = (data) => ({
   'text-color': {
-    default: textColorDefault(data),
-    interface: textColorInterface(data),
-    primary: textColorPrimary(data),
+    ...textColorDefault(data),
+    ...textColorInterface(data),
+    ...textColorPrimary(data),
   },
 });

@@ -1,4 +1,5 @@
 const Color = require('tinycolor2');
+
 const token = (value) => ({
   value: Color(value).toRgb(),
   attributes: { category: 'color' },
@@ -6,8 +7,10 @@ const token = (value) => ({
 });
 
 module.exports = ({ color }) => ({
-  _: token(Color(color.foreground).setAlpha(0.8)),
-  interactive: {
-    _: token(color.foreground),
+  interface: {
+    _: token(Color(color.foreground).setAlpha(0.8)),
+    interactive: {
+      _: token(color.foreground),
+    },
   },
 });

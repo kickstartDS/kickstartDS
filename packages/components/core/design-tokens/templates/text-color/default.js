@@ -7,12 +7,14 @@ const token = (value) => ({
 });
 
 module.exports = ({ color }) => ({
-  _: token(color.foreground),
-  interactive: {
-    _: token(color.link),
-    hover: token(color.link),
-    active: token(color.link),
-    visited: token(color.link),
+  default: {
+    _: token(color.foreground),
+    interactive: {
+      _: token(color.link),
+      hover: token(color.link),
+      active: token(color.link),
+      visited: token(color.link),
+    },
+    inverted: token(color.background),
   },
-  inverted: token(color.background),
 });

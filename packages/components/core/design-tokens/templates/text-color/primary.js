@@ -7,19 +7,21 @@ const token = (value) => ({
 });
 
 module.exports = ({ color }) => ({
-  _: token(color.primary),
-  inverted: {
-    _: token(color.background),
-    interactive: {
-      _: token(color.background),
-      hover: token(color.background),
-      active: token(color.background),
-    },
-  },
-  interactive: {
+  primray: {
     _: token(color.primary),
-    hover: token(color.primary),
-    active: token(color.primary),
-    visited: token(color.primary),
+    inverted: {
+      _: token(color.background),
+      interactive: {
+        _: token(color.background),
+        hover: token(color.background),
+        active: token(color.background),
+      },
+    },
+    interactive: {
+      _: token(color.primary),
+      hover: token(color.primary),
+      active: token(color.primary),
+      visited: token(color.primary),
+    },
   },
 });
