@@ -1,6 +1,6 @@
 const path = require('path');
 const StyleDictionary = require('style-dictionary');
-const createDictionary = require('../design-tokens');
+const kdsConfig = require('../design-tokens');
 
 const config = {
   platforms: {
@@ -16,7 +16,7 @@ const config = {
   },
 };
 
-createDictionary(StyleDictionary)
+StyleDictionary.extend(kdsConfig())
   .extend(config)
   .buildPlatform('css')
   .buildPlatform('jsx')

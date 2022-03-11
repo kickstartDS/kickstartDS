@@ -13,6 +13,6 @@ const includeIconsFilter = {
 };
 
 module.exports = {
-  excludeIconsFilter,
-  includeIconsFilter,
+  [excludeIconsFilter.name]: excludeIconsFilter.matcher,
+  [includeIconsFilter.name]: includeIconsFilter.matcher,
 };
