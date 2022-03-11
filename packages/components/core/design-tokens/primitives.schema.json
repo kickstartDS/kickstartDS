@@ -91,24 +91,13 @@
           "title": "Font Family",
           "type": "string"
         },
-        "size": {
-          "title": "Font Sizes",
-          "type": "object",
-          "additionalProperties": {
-            "type": "array",
-            "items": [
-              {
-                "title": "Font Size",
-                "type": "number"
-              },
-              {
-                "title": "Line Height",
-                "type": "number"
-              }
-            ],
-            "minItems": 2,
-            "maxItems": 2
-          }
+        "font-size": {
+          "title": "Font Size",
+          "type": "number"
+        },
+        "line-height": {
+          "title": "Line Height",
+          "type": "number"
         },
         "bp-factor": {
           "type": "object",

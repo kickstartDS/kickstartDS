@@ -8,13 +8,9 @@
   "font": {
     "display": {
       "family": "Garamond, Baskerville, 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif",
-      "size": {
-        "s": [14, 1.714],
-        "m": [16, 1.75],
-        "l": [18, 1.778],
-        "xl": [24, 1.5],
-        "xxl": [30, 1.333]
-      },
+      "font-size": 16,
+      "line-height": 1.75,
+      "scale-ratio": 1.225,
       "bp-factor": {
         "s": 1.167,
         "m": 1.333
@@ -22,11 +18,9 @@
     },
     "copy": {
       "family": "'Helvetica Neue', Helvetica, Arial, sans-serif",
-      "size": {
-        "s": [14, 1.714],
-        "m": [16, 1.75],
-        "l": [18, 1.778]
-      },
+      "font-size": 16,
+      "line-height": 1.75,
+      "scale-ratio": 1.225,
       "bp-factor": {
         "s": 1,
         "m": 1.125
@@ -34,12 +28,9 @@
     },
     "ui": {
       "family": "system-ui, -apple-system, BlinkMacSystemFont, 'Avenir Next', 'Avenir', 'Segoe UI', 'Lucida Grande', 'Helvetica Neue', 'Helvetica', 'Fira Sans', 'Roboto', 'Noto', 'Droid Sans', 'Cantarell', 'Oxygen', 'Ubuntu', 'Franklin Gothic Medium', 'Century Gothic', 'Liberation Sans', sans-serif",
-      "size": {
-        "xs": [12, 1.333],
-        "s": [14, 1.714],
-        "m": [16, 1.75],
-        "l": [18, 1.778]
-      },
+      "font-size": 16,
+      "line-height": 1.75,
+      "scale-ratio": 1.225,
       "bp-factor": {
         "s": 1,
         "m": 1.125
@@ -47,11 +38,9 @@
     },
     "mono": {
       "family": "ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace",
-      "size": {
-        "s": [14, 1.714],
-        "m": [16, 1.75],
-        "l": [18, 1.778]
-      },
+      "font-size": 16,
+      "line-height": 1.75,
+      "scale-ratio": 1.225,
       "bp-factor": {
         "s": 1,
         "m": 1.125
