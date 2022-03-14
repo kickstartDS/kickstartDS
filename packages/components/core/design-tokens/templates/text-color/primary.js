@@ -7,7 +7,7 @@ const token = (value) => ({
 });
 
 module.exports = ({ color }) => ({
-  primray: {
+  primary: {
     _: token(color.primary),
     inverted: {
       _: token(color.background),
