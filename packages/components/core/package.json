@@ -21,7 +21,7 @@
     "source/design-tokens/**/*.js",
     "source/design-tokens/**/*.svg",
     "bundle/*.js",
-    "design-tokens/**/*.js"
+    "design-tokens"
   ],
   "scripts": {
     "build": "node ../../tools/build-components/source && yarn build-tokens",
