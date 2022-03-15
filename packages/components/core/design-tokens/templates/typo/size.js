@@ -1,4 +1,4 @@
-const { modularScale } = require('../_helper');
+const { modularScale, round } = require('../_helper');
 
 const scales = ['xxs', 'xs', 's', 'm', 'l', 'xl', 'xxl'];
 const baseIndex = scales.indexOf('m');
@@ -26,7 +26,7 @@ module.exports = ({ font }) =>
           scales.map((scale, index) => [
             `${scale}-base`,
             {
-              value: `${fontSizeMs(index - baseIndex) / 16}rem`,
+              value: `${round(fontSizeMs(index - baseIndex) / 16)}rem`,
               attributes: { category: 'size' },
               token: {
                 category: `Font Sizes: ${family}`,

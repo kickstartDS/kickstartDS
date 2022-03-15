@@ -1,6 +1,16 @@
 /* eslint-disable no-restricted-syntax */
+const process = require('process');
+const { formatHelpers } = require('style-dictionary');
+const postcss = require('postcss');
+const colormin = require('postcss-colormin');
+const normalizeWhitespace = require('postcss-normalize-whitespace');
 
-const { format } = require('style-dictionary');
+const { fileHeader, createPropertyFormatter } = formatHelpers;
+
+const postcssPlugins = [colormin];
+if (process.env.NODE_ENV === 'production') {
+  postcssPlugins.push(normalizeWhitespace);
+}
 
 const createResponsiveRules = {
   'font-size': (fontSizes) =>
@@ -44,40 +54,60 @@ const createResponsiveRules = {
     ),
 };
 
+const indent = (level) => new Array(level + 1).join('  ');
+
 module.exports = {
   name: 'css/kds-variables',
   formatter({ dictionary, options, file }) {
-    const { selector = ':root' } = options;
-    const { tokens } = dictionary;
+    const { selector = ':root', outputReferences = true } = options;
+    const { tokens, allTokens } = dictionary;
+
     const breakpoints = Object.entries(tokens.ks.breakpoint).map(
       ([key, { value }]) => [key, value]
     );
-    const writeRules = (lines = []) =>
-      lines.length ? `${selector} {\n  ${lines.join('\n  ')}\n}` : '';
+    const writeRules = (lines = [], level = 0) =>
+      lines.length
+        ? `${indent(level) + selector} {\n${lines
+            .filter(Boolean)
+            // .sort()
+            .map((str) => indent(level + 1) + str.trim())
+            .join('\n')}\n${indent(level)}}`
+        : '';
 
-    let result = format['css/variables']({ dictionary, options, file });
-
+    const rootRules = allTokens.map(
+      createPropertyFormatter({
+        outputReferences,
+        dictionary,
+        format: 'css',
+      })
+    );
     const responsiveRules = breakpoints.reduce(
       (prev, [key]) => ({ ...prev, [key]: [] }),
       {}
     );
 
     for (const [key, fn] of Object.entries(createResponsiveRules)) {
-      const { _, ...responsive } = fn(tokens.ks[key]);
-      result += writeRules(_);
+      const { _: root, ...responsive } = fn(tokens.ks[key]);
+      rootRules.push(...root);
       Object.entries(responsive).forEach(([mediaQuery, rules]) =>
         responsiveRules[mediaQuery].push(...rules)
       );
     }
 
-    for (const [mediaQuery, breakpoint] of breakpoints) {
-      if (responsiveRules[mediaQuery]?.length) {
-        result += `\n@media (min-width: ${breakpoint}) {\n${writeRules(
-          responsiveRules[mediaQuery]
-        )}\n}`;
-      }
-    }
+    const result = breakpoints.reduce(
+      (prev, [mediaQuery, breakpoint]) =>
+        responsiveRules[mediaQuery]?.length
+          ? `${prev}\n@media (min-width: ${breakpoint}) {\n${writeRules(
+              responsiveRules[mediaQuery],
+              1
+            )}\n}`
+          : prev,
+      writeRules(rootRules)
+    );
 
-    return result;
+    return (
+      (process.env.NODE_ENV !== 'production' ? fileHeader({ file }) : '') +
+      postcss(postcssPlugins).process(result).css
+    );
   },
 };

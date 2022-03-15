@@ -1,9 +1,4 @@
-const { modularScale } = require('../_helper');
-
-const rem = (number) => {
-  const factor = 10 ** 4;
-  return Math.round((number / 16) * factor) / factor;
-};
+const { round, modularScale } = require('../_helper');
 
 const attributes = { category: 'size' };
 
@@ -14,28 +9,25 @@ module.exports = ({ spacing, breakpoints }) => {
   const breakpointKeys = Object.keys(breakpoints);
   const { base, 'scale-ratio': scaleRatio, 'bp-ratio': bpRatio } = spacing;
   const scaleMs = modularScale(base, scaleRatio);
+  const breakpointMs = modularScale(1, bpRatio);
   return {
     spacing: Object.fromEntries(
-      scales.map((scale, index) => {
-        const value = scaleMs(index - baseIndex);
-        const breakpointMs = modularScale(1, bpRatio);
-        return [
-          scale,
-          {
-            base: {
-              value: rem(value),
-              attributes,
-              token: { category: 'Spacing', presenter: 'Spacing' },
-            },
-            'bp-factor': Object.fromEntries(
-              breakpointKeys.map((breakpoint, bpIndex) => [
-                breakpoint,
-                { value: breakpointMs(bpIndex + 1) },
-              ])
-            ),
+      scales.map((scale, index) => [
+        scale,
+        {
+          base: {
+            value: round(scaleMs(index - baseIndex) / 16),
+            attributes,
+            token: { category: 'Spacing', presenter: 'Spacing' },
           },
-        ];
-      })
+          'bp-factor': Object.fromEntries(
+            breakpointKeys.map((breakpoint, bpIndex) => [
+              breakpoint,
+              { value: round(breakpointMs(bpIndex + 1)) },
+            ])
+          ),
+        },
+      ])
     ),
   };
 };

@@ -1,13 +1,10 @@
-const em = (number) => {
-  const factor = 10 ** 4;
-  return Math.round((number / 16) * factor) / factor;
-};
+const { round } = require('../_helper');
 
 module.exports = ({ breakpoints }) => ({
   breakpoint: Object.entries(breakpoints).reduce(
     (prev, [key, px]) => ({
       ...prev,
-      [key]: { value: `${em(px)}em`, private: true },
+      [key]: { value: `${round(px / 16)}em`, private: true },
     }),
     {}
   ),
