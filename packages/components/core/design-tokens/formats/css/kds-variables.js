@@ -4,10 +4,11 @@ const { formatHelpers } = require('style-dictionary');
 const postcss = require('postcss');
 const colormin = require('postcss-colormin');
 const normalizeWhitespace = require('postcss-normalize-whitespace');
+const sortMediaQueries = require('postcss-sort-media-queries');
 
 const { fileHeader, createPropertyFormatter } = formatHelpers;
 
-const postcssPlugins = [colormin];
+const postcssPlugins = [colormin, sortMediaQueries()];
 if (process.env.NODE_ENV === 'production') {
   postcssPlugins.push(normalizeWhitespace);
 }

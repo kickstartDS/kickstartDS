@@ -12,8 +12,8 @@
       "line-height": 1.75,
       "scale-ratio": 1.225,
       "bp-factor": {
-        "s": 1.167,
-        "m": 1.333
+        "phone": 1.167,
+        "tablet": 1.333
       }
     },
     "copy": {
@@ -22,8 +22,7 @@
       "line-height": 1.75,
       "scale-ratio": 1.225,
       "bp-factor": {
-        "s": 1,
-        "m": 1.125
+        "tablet": 1.125
       }
     },
     "ui": {
@@ -32,8 +31,7 @@
       "line-height": 1.75,
       "scale-ratio": 1.225,
       "bp-factor": {
-        "s": 1,
-        "m": 1.125
+        "tablet": 1.125
       }
     },
     "mono": {
@@ -42,8 +40,7 @@
       "line-height": 1.75,
       "scale-ratio": 1.225,
       "bp-factor": {
-        "s": 1,
-        "m": 1.125
+        "tablet": 1.125
       }
     }
   },
@@ -59,9 +56,9 @@
     "bp-ratio": 1.618
   },
   "breakpoints": {
-    "s": 576,
-    "m": 768,
-    "l": 992,
-    "xl": 1200
+    "phone": 576,
+    "tablet": 768,
+    "laptop": 992,
+    "desktop": 1200
   }
 }
