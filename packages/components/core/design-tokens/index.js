@@ -17,7 +17,7 @@ const createTokens = (primitives) => {
 };
 
 const writeTokens = (primitives, path) =>
-  writeFile(path, createTokens(primitives));
+  writeFile(path, JSON.stringify(createTokens(primitives), null, 2));
 
 module.exports = {
   config,
