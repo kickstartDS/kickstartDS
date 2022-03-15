@@ -3,6 +3,7 @@ const textColor = require('./text-color');
 const typo = require('./typo');
 const spacing = require('./spacing');
 const breakpoints = require('./breakpoints');
+const deprecated = require('./deprecated');
 
 module.exports = (data) => ({
   ks: {
@@ -12,4 +13,5 @@ module.exports = (data) => ({
     ...spacing(data),
     ...breakpoints(data),
   },
+  ...deprecated(data),
 });
