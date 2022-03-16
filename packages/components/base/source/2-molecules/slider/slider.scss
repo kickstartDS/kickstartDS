@@ -1,5 +1,4 @@
 @use 'sass:meta';
-@use '@kickstartds/core/source/core/breakpoint';
 @use '@kickstartds/core/source/core/custom-properties';
 @use './slider-vars';
 
@@ -24,7 +23,7 @@ $vars: meta.module-variables(slider-vars);
 }
 
 .c-slider-nav {
-  @include breakpoint.media('print') {
+  @media print {
     display: none;
   }
 

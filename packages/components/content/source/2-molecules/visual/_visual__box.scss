@@ -50,7 +50,7 @@
     }
   }
 
-  @include breakpoint.media('print') {
+  @media print {
     background-color: transparent;
     border: 2px solid var(--color-grey-3);
     margin: 1cm 0;

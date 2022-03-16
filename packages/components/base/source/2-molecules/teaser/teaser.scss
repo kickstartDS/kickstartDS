@@ -1,6 +1,5 @@
 @use 'sass:meta';
 @use '@kickstartds/core/source/core/custom-properties';
-@use '@kickstartds/core/source/core/breakpoint';
 @use './teaser-vars';
 
 $vars: meta.module-variables(teaser-vars);

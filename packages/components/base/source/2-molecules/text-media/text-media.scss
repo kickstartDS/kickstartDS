@@ -11,7 +11,7 @@
         overflow: hidden;
       }
 
-      @include breakpoint.media('print') {
+      @media print {
         overflow: visible;
       }
     }
@@ -50,7 +50,7 @@
         min-width: 0;
       }
 
-      @include breakpoint.media('print') {
+      @media print {
         width: 30%;
       }
     }
