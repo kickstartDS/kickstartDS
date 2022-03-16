@@ -16,7 +16,6 @@ import { LinkButton } from '../../1-atoms/button/link-button';
 import { Picture } from '../../1-atoms/image/picture';
 import { ContentBoxProps } from './ContentBoxProps';
 import './content-box.scss';
-import './ContentBox.js';
 
 interface RenderFunctions {
   renderTopic?: renderFn;
