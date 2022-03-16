@@ -1,4 +1,4 @@
-export * from './container-queries';
+export * from './container';
 export * from './core';
 export * from './design-tokens';
 export * from './react';
