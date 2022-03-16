@@ -8,7 +8,6 @@ $vars: meta.module-variables(content-box-vars);
 .c-content-box {
   margin-bottom: 2em;
   box-sizing: border-box;
-  contain: layout inline-size style;
 
   &--align-center {
     text-align: center;
@@ -62,53 +61,6 @@ $vars: meta.module-variables(content-box-vars);
     flex-direction: column;
     align-items: stretch;
     flex: 1 auto;
-
-    @container (min-width: 0px) {
-      --c-content-box_topic--font: var(--font-display-s);
-      --c-rich-text--font: var(--font-copy-xs);
-
-      .c-button {
-        --c-button--font: var(--font-ui-xs);
-
-        &--large {
-          --c-button--font: var(--font-ui-s);
-        }
-      }
-    }
-
-    @container (min-width: 200px) {
-      --c-content-box_topic--font: var(--font-display-m);
-      --c-rich-text--font: var(--font-copy-s);
-
-      .c-button {
-        --c-button--font: var(--font-ui-s);
-
-        &--small {
-          --c-button--font: var(--font-ui-xs);
-        }
-
-        &--large {
-          --c-button--font: var(--font-ui-m);
-        }
-      }
-    }
-
-    @container (min-width: 400px) {
-      --c-content-box_topic--font: var(--font-display-l);
-      --c-rich-text--font: var(--font-copy-m);
-
-      .c-button {
-        --c-button--font: var(--font-ui-m);
-
-        &--small {
-          --c-button--font: var(--font-ui-s);
-        }
-
-        &--large {
-          --c-button--font: var(--font-ui-l);
-        }
-      }
-    }
   }
 
   &__topic {

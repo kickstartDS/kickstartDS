@@ -1,6 +1,4 @@
 .c-teaser-box {
-  contain: layout inline-size style;
-
   .c-teaser__image {
     flex-grow: 0;
     flex-shrink: 0;
@@ -36,53 +34,6 @@
   .c-teaser__body {
     flex-direction: column;
     flex-grow: 1;
-
-    @container (min-width: 0px) {
-      --c-teaser_topic--font: var(--font-display-s);
-      --c-rich-text--font: var(--font-copy-xs);
-
-      .c-button {
-        --c-button--font: var(--font-ui-xs);
-
-        &--large {
-          --c-button--font: var(--font-ui-s);
-        }
-      }
-    }
-
-    @container (min-width: 200px) {
-      --c-teaser_topic--font: var(--font-display-m);
-      --c-rich-text--font: var(--font-copy-s);
-
-      .c-button {
-        --c-button--font: var(--font-ui-s);
-
-        &--small {
-          --c-button--font: var(--font-ui-xs);
-        }
-
-        &--large {
-          --c-button--font: var(--font-ui-m);
-        }
-      }
-    }
-
-    @container (min-width: 400px) {
-      --c-teaser_topic--font: var(--font-display-l);
-      --c-rich-text--font: var(--font-copy-m);
-
-      .c-button {
-        --c-button--font: var(--font-ui-m);
-
-        &--small {
-          --c-button--font: var(--font-ui-s);
-        }
-
-        &--large {
-          --c-button--font: var(--font-ui-l);
-        }
-      }
-    }
   }
 
   .c-teaser__text {
