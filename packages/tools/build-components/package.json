@@ -28,7 +28,7 @@
     "json-schema-ref-parser": "^9.0.7",
     "json-schema-to-typescript": "^10.1.5",
     "lodash": "^4.17.21",
-    "postcss": "^8.4.8",
+    "postcss": "^8.4.12",
     "postcss-combine-duplicated-selectors": "^10.0.3",
     "postcss-sort-container-queries": "https://github.com/lmestel/postcss-sort-container-queries",
     "postcss-sort-media-queries": "^4.2.1",
