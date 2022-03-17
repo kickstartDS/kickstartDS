@@ -13,7 +13,7 @@ if (process.env.NODE_ENV === 'production') {
   postcssPlugins.push(normalizeWhitespace);
 }
 
-const createResponsiveRules = {
+const additionalRules = {
   'font-size': (fontSizes) =>
     Object.entries(fontSizes).reduce((prev, [family, sizes]) => {
       const { 'bp-factor': bpFactors, ...bases } = sizes;
@@ -53,6 +53,17 @@ const createResponsiveRules = {
       },
       {}
     ),
+
+  breakpoint: (breakpoints) => ({
+    _: [
+      `--ks-breakpoints: '${JSON.stringify(
+        Object.entries(breakpoints).reduce(
+          (prev, [key, { value }]) => ({ ...prev, [key]: value }),
+          {}
+        )
+      )}';`,
+    ],
+  }),
 };
 
 const indent = (level) => new Array(level + 1).join('  ');
@@ -75,19 +86,21 @@ module.exports = {
             .join('\n')}\n${indent(level)}}`
         : '';
 
-    const rootRules = allTokens.map(
-      createPropertyFormatter({
-        outputReferences,
-        dictionary,
-        format: 'css',
-      })
-    );
+    const rootRules = allTokens
+      .filter((token) => !token.private)
+      .map(
+        createPropertyFormatter({
+          outputReferences,
+          dictionary,
+          format: 'css',
+        })
+      );
     const responsiveRules = breakpoints.reduce(
       (prev, [key]) => ({ ...prev, [key]: [] }),
       {}
     );
 
-    for (const [key, fn] of Object.entries(createResponsiveRules)) {
+    for (const [key, fn] of Object.entries(additionalRules)) {
       const { _: root, ...responsive } = fn(tokens.ks[key]);
       rootRules.push(...root);
       Object.entries(responsive).forEach(([mediaQuery, rules]) =>
