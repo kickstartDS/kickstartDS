@@ -13216,6 +13216,12 @@ postcss-selector-parser@^6.0.0, postcss-selector-parser@^6.0.2, postcss-selector
     cssesc "^3.0.0"
     util-deprecate "^1.0.2"
 
+"postcss-sort-container-queries@https://github.com/lmestel/postcss-sort-container-queries":
+  version "1.0.0"
+  resolved "https://github.com/lmestel/postcss-sort-container-queries#6e5415ef4d26de8975f6fa15b78d72a0a3420655"
+  dependencies:
+    sort-css-media-queries "2.0.4"
+
 postcss-sort-media-queries@^4.2.1:
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/postcss-sort-media-queries/-/postcss-sort-media-queries-4.2.1.tgz#a99bae69ef1098ee3b64a5fa94d258ec240d0355"
