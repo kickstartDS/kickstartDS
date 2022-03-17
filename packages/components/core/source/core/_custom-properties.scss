@@ -1,15 +1,22 @@
 @use 'sass:meta';
 @use 'sass:map';
+@use 'sass:string';
 @use './breakpoint';
 
-@mixin responsive-custom-property($name, $value) {
+@mixin responsive-custom-property($name, $value, $container-name: null) {
   @if meta.type-of($value) == 'map' {
     @each $bp, $val in $value {
       @if $bp == 'xs' or not $bp {
         @include responsive-custom-property($name, $val);
       } @else {
-        @include breakpoint.media('≥#{$bp}') {
-          @include responsive-custom-property($name, $val);
+        @if meta.type-of($bp) == 'string' {
+          @include breakpoint.media('≥#{$bp}') {
+            @include responsive-custom-property($name, $val);
+          }
+        } @else {
+          @container #{string.unquote($container-name)} size(min-width: #{$bp}px) {
+            @include responsive-custom-property($name, $val);
+          }
         }
       }
     }
@@ -23,7 +30,9 @@
     @error '`name-`-property is requred.';
   }
   $name: map.get($map, 'name-');
+  $container-name: map.get($map, 'container-name-');
   $map: map.remove($map, 'name-');
+  $map: map.remove($map, 'container-name-');
 
   @each $key, $rules in $map {
     $group: if($key == 'host', null, '_#{$key}');
@@ -32,7 +41,11 @@
     @each $selector, $properties in $rules {
       #{$selector} {
         @each $property, $value in $properties {
-          @include responsive-custom-property($prefix + $property, $value);
+          @include responsive-custom-property(
+            $prefix + $property,
+            $value,
+            $container-name
+          );
         }
       }
     }

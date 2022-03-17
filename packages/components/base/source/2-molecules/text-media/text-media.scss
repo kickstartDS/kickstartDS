@@ -1,15 +1,14 @@
-@use '../../0-base/1-tools/scss/aspect-ratio';
-@use '@kickstartds/core/source/core/breakpoint';
 @use 'bourbon/core/bourbon';
+@use '@kickstartds/core/source/container/container-name';
+
+@include container-name.name('text-media');
 
 .text-media {
   @include bourbon.clearfix;
 
   &--beside {
     .text-media__text {
-      @include breakpoint.media('≥s') {
-        overflow: hidden;
-      }
+      overflow: hidden;
 
       @media print {
         overflow: visible;
@@ -44,7 +43,7 @@
     .text-media--intext & {
       padding-bottom: var(--spacing-s);
 
-      @include breakpoint.media('≥s') {
+      @container text-media size(min-width: 600px) {
         padding-bottom: var(--spacing-xs);
         max-width: 50%;
         min-width: 0;
@@ -56,14 +55,14 @@
     }
 
     .text-media--intext.text-media--left & {
-      @include breakpoint.media('≥s') {
+      @container text-media size(min-width: 600px) {
         float: left;
         padding-right: var(--spacing-m);
       }
     }
 
     .text-media--intext.text-media--right & {
-      @include breakpoint.media('≥s') {
+      @container text-media size(min-width: 600px) {
         float: right;
         padding-left: var(--spacing-m);
       }

@@ -1,10 +1,11 @@
 @use 'sass:meta';
-@use '@kickstartds/core/source/core/breakpoint';
+@use '@kickstartds/core/source/container/container-name';
 @use '@kickstartds/core/source/core/custom-properties';
 @use './headline-vars';
 
 $vars: meta.module-variables(headline-vars);
 @include custom-properties.styles($vars);
+@include container-name.name('headline');
 
 .c-headline {
   margin: 0 auto var(--c-headline--margin-bottom);
@@ -24,7 +25,7 @@ $vars: meta.module-variables(headline-vars);
     margin-top: calc(var(--c-headline--margin-bottom) * 1.5);
   }
 
-  @include breakpoint.media('≥s') {
+  @container headline size(min-width: 640px) {
     max-width: 70%;
   }
 

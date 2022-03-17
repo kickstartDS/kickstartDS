@@ -2,12 +2,11 @@ import {
   ForwardRefRenderFunction,
   HTMLAttributes,
   forwardRef,
-  createElement,
   createContext,
-  useContext,
 } from 'react';
 import classnames from 'classnames';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
+import { withContainer } from '@kickstartds/core/lib/container';
 import { TableProps } from './TableProps';
 import './table.scss';
 import './ResponsiveTable.js';
@@ -83,6 +82,4 @@ const TableComponent: ForwardRefRenderFunction<
 
 export const TableContextDefault = forwardRef(TableComponent);
 export const TableContext = createContext(TableContextDefault);
-export const Table: typeof TableContextDefault = forwardRef((props, ref) =>
-  createElement(useContext(TableContext), { ...props, ref })
-);
+export const Table = withContainer('table', TableContext);

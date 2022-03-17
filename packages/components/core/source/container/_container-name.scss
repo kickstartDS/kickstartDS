@@ -1,0 +1,11 @@
+@use 'sass:string';
+
+@mixin name($name) {
+  @at-root {
+    .l-container--#{$name} {
+      /* stylelint-disable-next-line property-no-unknown */
+      container-name: string.unquote($name);
+      @content;
+    }
+  }
+}

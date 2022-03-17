@@ -1,10 +1,11 @@
 $name-: 'c-headline' !default;
+$container-name-: 'headline' !default;
 
 $host: (
   '.c-headline': (
     margin-bottom: (
       xs: 1rem,
-      m: 2rem,
+      960: 2rem,
     ),
     font-weight: var(--g-headline--font-weight),
     color: var(--g-headline--color),
