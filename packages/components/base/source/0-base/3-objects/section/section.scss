@@ -1,6 +1,5 @@
 @use 'sass:meta';
 @use '@kickstartds/core/source/core/custom-properties';
-@use '@kickstartds/core/source/core/breakpoint';
 @use '../../1-tools/scss/anchor';
 @use './section-vars';
 
@@ -36,7 +35,6 @@ $vars: meta.module-variables(section-vars);
     width: 100%;
     max-width: var(--g-content-width-default);
     display: grid;
-    // stylelint-disable scss/no-global-function-names
     grid-template-columns: repeat(
       var(--l-section_col--repeat),
       minmax(
@@ -44,7 +42,6 @@ $vars: meta.module-variables(section-vars);
         var(--l-section_col--max-width)
       )
     );
-    // stylelint-enable scss/no-global-function-names
     grid-gap: var(--l-section_container--gutter);
 
     &--narrow {
@@ -56,17 +53,12 @@ $vars: meta.module-variables(section-vars);
     }
 
     &--max {
-      @include breakpoint.media('≥m') {
-        max-width: 100%;
-      }
+      max-width: 100%;
     }
 
     &--full {
       padding: 0;
-
-      @include breakpoint.media('≥m') {
-        max-width: 100%;
-      }
+      max-width: 100%;
     }
   }
 }
