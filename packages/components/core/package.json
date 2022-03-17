@@ -32,7 +32,7 @@
     "classnames": "^2.2.6",
     "del": "^6.0.0",
     "dependency-graph": "^0.11.0",
-    "esbuild": "^0.14.25",
+    "esbuild": "^0.14.27",
     "fast-glob": "^3.2.11",
     "fs-extra": "^10.0.1",
     "lazysizes": "^5.3.2",
