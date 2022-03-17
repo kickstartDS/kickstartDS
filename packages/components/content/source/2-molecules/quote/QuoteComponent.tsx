@@ -2,11 +2,10 @@ import {
   ForwardRefRenderFunction,
   HTMLAttributes,
   forwardRef,
-  createElement,
   createContext,
-  useContext,
 } from 'react';
 import classnames from 'classnames';
+import { withContainer } from '@kickstartds/core/lib/container';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
 import { Picture } from '@kickstartds/base/lib/picture';
 import {
@@ -41,10 +40,8 @@ const QuoteComponent: ForwardRefRenderFunction<
 ) => (
   <div className={classnames('c-quote', className)} ref={ref} {...props}>
     {image && (
-      <div className="c-quote__image-wrap">
-        <div className="c-quote__image">
-          <Picture src={image} />
-        </div>
+      <div className="c-quote__image">
+        <Picture src={image} />
       </div>
     )}
     <div className="c-quote__content">
@@ -59,6 +56,4 @@ const QuoteComponent: ForwardRefRenderFunction<
 
 export const QuoteContextDefault = forwardRef(QuoteComponent);
 export const QuoteContext = createContext(QuoteContextDefault);
-export const Quote: typeof QuoteContextDefault = forwardRef((props, ref) =>
-  createElement(useContext(QuoteContext), { ...props, ref })
-);
+export const Quote = withContainer('quote', QuoteContext);

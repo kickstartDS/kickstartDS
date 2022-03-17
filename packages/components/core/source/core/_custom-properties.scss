@@ -6,7 +6,7 @@
 @mixin responsive-custom-property($name, $value, $container-name: null) {
   @if meta.type-of($value) == 'map' {
     @each $bp, $val in $value {
-      @if $bp == 'xs' or not $bp {
+      @if $bp == 'xs' or $bp == 0 or not $bp {
         @include responsive-custom-property($name, $val);
       } @else {
         @if meta.type-of($bp) == 'string' {
@@ -14,6 +14,9 @@
             @include responsive-custom-property($name, $val);
           }
         } @else {
+          @if not $container-name {
+            @error '`container-name-`-property is requred for #{$name}.';
+          }
           @container #{string.unquote($container-name)} size(min-width: #{$bp}px) {
             @include responsive-custom-property($name, $val);
           }

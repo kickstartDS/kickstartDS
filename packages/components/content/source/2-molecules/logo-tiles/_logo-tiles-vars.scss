@@ -1,14 +1,15 @@
 $name-: 'c-logo-tiles';
+$container-name-: 'logo-tiles';
 
 $host: (
   '.c-logo-tiles': (
     gutter: (
-      xs: 1rem,
-      s: 2rem,
+      0: 1rem,
+      640: 2rem,
     ),
     cols: (
-      xs: 3,
-      s: 4,
+      0: 3,
+      640: 4,
     ),
   ),
 ) !default;

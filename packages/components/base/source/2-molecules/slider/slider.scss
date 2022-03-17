@@ -1,5 +1,6 @@
 @use 'sass:meta';
 @use '@kickstartds/core/source/core/custom-properties';
+@use '@kickstartds/core/source/container/container-name';
 @use './slider-vars';
 
 @use './glide.core';
@@ -8,6 +9,7 @@
 
 $vars: meta.module-variables(slider-vars);
 @include custom-properties.styles($vars);
+@include container-name.name('slider');
 
 .c-slider-main {
   .c-slider {

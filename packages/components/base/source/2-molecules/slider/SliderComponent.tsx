@@ -5,11 +5,10 @@ import {
   HTMLAttributes,
   Children,
   forwardRef,
-  createElement,
   createContext,
-  useContext,
 } from 'react';
 import classnames from 'classnames';
+import { withContainer } from '@kickstartds/core/lib/container';
 import { SliderProps } from './SliderProps';
 import { SlideContext } from './SlideContext';
 import './slider.scss';
@@ -68,7 +67,7 @@ const SliderComponent: ForwardRefRenderFunction<
         </div>
       </div>
 
-      <div className="c-slider-nav">
+      <div className="c-slider-nav" data-slider-arrows="none">
         <div className="c-slider__track">
           <div
             className="c-slider__slides c-slider-nav__slides"
@@ -96,6 +95,4 @@ const SliderComponent: ForwardRefRenderFunction<
 
 export const SliderContextDefault = forwardRef(SliderComponent);
 export const SliderContext = createContext(SliderContextDefault);
-export const Slider: typeof SliderContextDefault = forwardRef((props, ref) =>
-  createElement(useContext(SliderContext), { ...props, ref })
-);
+export const Slider = withContainer('slider', SliderContext);
