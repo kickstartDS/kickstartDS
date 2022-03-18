@@ -32,7 +32,7 @@ export const Default = Template.bind({});
 `;
 
 const createStory = (schema, dest) => {
-  const [, moduleDir, fileName] = schema.$id.match(/^.*\/(.+)\/.*\/(.*)$/);
+  const [, moduleDir, fileName] = schema.$id.match(/^.*\/(.+)\/(.*)$/);
   const [componentName, type] = fileName.split('.');
   if (type === 'schema' && schema.properties) {
     return Promise.all([

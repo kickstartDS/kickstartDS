@@ -36,7 +36,10 @@ $vars: meta.module-variables(quote-vars);
         calc(var(--c-quote_content--padding-left) / 2)
       );
       content: var(--c-quote_icon--content, '\201D');
-      font-family: var(--c-quote_icon--font-family, var(--font-family-display));
+      font-family: var(
+        --c-quote_icon--font-family,
+        var(--ks-font-family-display)
+      );
       font-size: var(--c-quote_icon--font-size);
       line-height: 1;
       color: var(--c-quote_icon--color, var(--color-primary));
@@ -45,21 +48,21 @@ $vars: meta.module-variables(quote-vars);
   }
 
   &__text {
-    font: var(--c-quote_text--font, var(--font-copy-m));
-    margin-bottom: var(--c-quote_text--margin-bottom, var(--spacing-m));
+    font: var(--c-quote_text--font, var(--ks-font-copy-m));
+    margin-bottom: var(--c-quote_text--margin-bottom, var(--ks-spacing-m));
   }
 
   &__source {
     font: var(--c-quote_source--font-style, normal)
-      var(--c-quote_source--font-weight, var(--font-weight-bold))
-      var(--c-quote_source--font, var(--font-ui-s));
+      var(--c-quote_source--font-weight, var(--ks-font-weight-bold))
+      var(--c-quote_source--font, var(--ks-font-ui-s));
     text-transform: var(--c-quote_source--text-transform);
   }
 
   &__byline {
     font: var(--c-quote_byline--font-style, normal)
-      var(--c-quote_byline--font-weight, var(--font-weight-bold))
-      var(--c-quote_byline--font, var(--font-ui-s));
+      var(--c-quote_byline--font-weight, var(--ks-font-weight-bold))
+      var(--c-quote_byline--font, var(--ks-font-ui-s));
     text-transform: var(--c-quote_byline--text-transform);
   }
 }

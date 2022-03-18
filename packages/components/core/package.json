@@ -18,16 +18,21 @@
   "files": [
     "lib",
     "source/core/*.scss",
-    "source/design-tokens/**/*.scss",
-    "bundle/*.js"
+    "source/design-tokens/**/*.js",
+    "source/design-tokens/**/*.svg",
+    "bundle/*.js",
+    "design-tokens"
   ],
   "scripts": {
-    "build": "node ../../tools/build-components/source",
+    "build": "node ../../tools/build-components/source && yarn build-tokens",
+    "build-tokens": "node scripts/build-tokens.js",
     "schema": "node ../../tools/build-components/source --schema",
-    "watch": "node ../../tools/build-components/source --watch"
+    "watch": "concurrently -r yarn:watch-tokens \"node ../../tools/build-components/source --watch\"",
+    "watch-tokens": "chokidar \"source/design-tokens/fallback.ks-tokens.json\" -c \"yarn build-tokens\""
   },
   "dependencies": {
     "@babel/runtime": "^7.17.2",
+    "ajv": "^8.10.0",
     "bourbon": "^7.2.0",
     "classnames": "^2.2.6",
     "del": "^6.0.0",
@@ -35,16 +40,29 @@
     "esbuild": "^0.14.27",
     "fast-glob": "^3.2.11",
     "fs-extra": "^10.0.1",
+    "htmltojsx": "^0.3.0",
     "lazysizes": "^5.3.2",
+    "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",
+    "node-html-parser": "^5.2.0",
+    "postcss": "^8.4.6",
+    "postcss-calc": "^8.2.4",
+    "postcss-colormin": "^5.3.0",
+    "postcss-normalize-whitespace": "^5.1.1",
+    "postcss-sort-media-queries": "^4.2.1",
     "pubsub-js": "^1.9.4",
-    "sass": "^1.49.9"
+    "sass": "^1.49.9",
+    "svgstore": "^3.0.1",
+    "tinycolor2": "^1.4.2"
   },
   "devDependencies": {
-    "include-media": "^1.4.9",
-    "storybook-design-token": "^1.4.0"
+    "chokidar-cli": "^3.0.0",
+    "concurrently": "^7.0.0",
+    "storybook-design-token": "^1.4.0",
+    "style-dictionary": "^3.7.0"
   },
   "peerDependencies": {
-    "react": "^17.0.2"
+    "react": "^17.0.2",
+    "style-dictionary": "^3.7.0"
   }
 }

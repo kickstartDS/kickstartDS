@@ -10,6 +10,6 @@ const dev = [
   combineDuplicatedSelectors(),
   autoprefixer(),
 ];
-const prod = [...dev, cssnano({ preset: 'default' })];
+const prod = [...dev, cssnano({ preset: ['default', { calc: false }] })];
 
 module.exports = process.env.NODE_ENV === 'production' ? prod : dev;

@@ -14,8 +14,8 @@ $host: (
 $subheadline: (
   '.c-headline__subheadline': (
     margin: 0.5em 0 0,
-    font: var(--font-copy-m),
-    font-weight: var(--font-weight-regular),
+    font: var(--ks-font-copy-m),
+    font-weight: var(--ks-font-weight-regular),
     color: var(--c-rich-text_headline--color),
   ),
 ) !default;

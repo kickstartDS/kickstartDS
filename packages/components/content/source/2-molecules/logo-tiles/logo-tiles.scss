@@ -13,9 +13,9 @@ $vars: meta.module-variables(logo-tiles-vars);
   justify-content: center;
   flex-wrap: wrap;
   list-style: none;
-  margin: calc(var(--c-logo-tiles--gutter) / -2) 0
-    calc(var(--c-logo-tiles--gutter) / -2)
-    calc(var(--c-logo-tiles--gutter) * -1);
+  margin: calc(-0.5 * var(--c-logo-tiles--gutter)) 0
+    calc(-0.5 * var(--c-logo-tiles--gutter))
+    calc(-1 * var(--c-logo-tiles--gutter));
   padding: 0;
 
   &__col {

@@ -20,6 +20,7 @@
   top: 50%;
   transform: translate(0, -50%);
   color: var(--c-slider_arrow--color);
+  background-color: var(--c-slider_arrow--background);
   user-select: none;
   border-radius: 3px;
   z-index: 100;

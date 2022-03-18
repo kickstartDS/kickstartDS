@@ -2,9 +2,9 @@ $name-: 'c-content-box' !default;
 
 $topic: (
   '.c-content-box': (
-    font-xs: var(--font-display-s),
-    font-s: var(--font-display-m),
-    font-m: var(--font-display-l),
+    font-xs: var(--ks-font-display-s),
+    font-s: var(--ks-font-display-m),
+    font-m: var(--ks-font-display-l),
     font: var(--c-content-box_topic--font-m),
     font-weight: var(--c-rich-text_headline--font-weight),
     color: null,

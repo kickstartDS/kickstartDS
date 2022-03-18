@@ -6,7 +6,7 @@ $vars: meta.module-variables(post-teaser-vars);
 @include custom-properties.styles($vars);
 
 .c-post-teaser {
-  --c-rich-text--font: var(--font-copy-s);
+  --c-rich-text--font: var(--ks-font-copy-s);
 
   display: flex;
   flex-direction: column;

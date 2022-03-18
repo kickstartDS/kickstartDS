@@ -2,9 +2,9 @@ $name-: 'c-teaser' !default;
 
 $host: (
   '.c-teaser': (
-    font: var(--font-copy-m),
-    color: var(--color-black),
-    background: var(--color-white),
+    font: var(--ks-font-copy-m),
+    color: var(--ks-text-color-default),
+    background: var(--ks-background-color-primary-inverted-tbd),
     border: 1px solid var(--color-grey-1),
     border-radius: null,
     shadow: null,
@@ -16,8 +16,8 @@ $host: (
     padding: 1rem,
   ),
   '.c-teaser--style-dark': (
-    color: var(--color-white),
-    background: var(--color-primary),
+    color: var(--ks-text-color-default-inverted),
+    background: var(--ks-background-color-primary-tbd),
     border: null,
     shadow: null,
     shadow-hover: (

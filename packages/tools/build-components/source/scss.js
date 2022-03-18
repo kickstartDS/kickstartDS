@@ -2,7 +2,7 @@ const fs = require('fs-extra');
 const path = require('path');
 const { pathToFileURL } = require('url');
 const sass = require('sass');
-// const chokidar = require('chokidar');
+const chokidar = require('chokidar');
 const postcss = require('postcss');
 const { root, dirRe } = require('./utils');
 const postcssPlugins = require('./postcssPlugins');
@@ -37,7 +37,7 @@ const compile = async (file) => {
 
   dependencies[path.relative(cwd, file)] = loadedUrls.reduce((prev, curr) => {
     if (!curr.pathname.includes('/node_modules/')) {
-      prev.push(path.relative(cwd, curr.pathname));
+      prev.push(path.relative(cwd, decodeURI(curr.pathname)));
     }
     return prev;
   }, []);
@@ -54,32 +54,33 @@ const compile = async (file) => {
   return `${dir}/${base}.css`;
 };
 
-module.exports = async function (scssPaths, watch) {
+const compileScss = async (scssPaths) => {
   log('starting scss transform');
   const outFiles = await Promise.all(scssPaths.map(compile));
   log('finished scss transform');
-  // const [, , param] = process.argv;
-  // if (watch || param === '--watch') {
-  //   chokidar
-  //     .watch('source/*/**/*.scss', { ignoreInitial: true })
-  //     .on('all', (event, file) => {
-  //       console.log(`ℹ︎ ${event}: ${file}`);
-  //       const keys = Object.keys(dependencies);
-  //       if (keys.includes(file)) {
-  //         delete dependencies[file];
-  //         if (!event.startsWith('unlink')) {
-  //           compile(file);
-  //         }
-  //       } else if (!path.basename(file, '.scss').startsWith('_')) {
-  //         compile(file);
-  //       } else {
-  //         Object.entries(dependencies).forEach(([entry, deps]) => {
-  //           if (deps.includes(file)) {
-  //             compile(entry);
-  //           }
-  //         });
-  //       }
-  //     });
-  // }
   return outFiles.map((f) => [f, []]);
 };
+
+const watchScss = async (scssPaths) => {
+  await compileScss(scssPaths);
+  chokidar
+    .watch('source/*/**/*.scss', { ignoreInitial: true })
+    .on('all', (event, file) => {
+      log(`ℹ︎ ${event}: ${file}`);
+      const entryFiles = Object.keys(dependencies);
+      if (entryFiles.includes(file)) {
+        delete dependencies[file];
+        if (!event.startsWith('unlink')) {
+          compile(file);
+        }
+      } else {
+        entryFiles.forEach((entry) => {
+          if (dependencies[entry].includes(file)) {
+            compile(entry);
+          }
+        });
+      }
+    });
+};
+
+module.exports = { compileScss, watchScss };

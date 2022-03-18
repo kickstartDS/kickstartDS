@@ -2,7 +2,7 @@ $name-: 'c-post-teaser' !default;
 
 $host: (
   '.c-post-teaser': (
-    gap: var(--spacing-m),
-    color: var(--color-black),
+    gap: var(--ks-spacing-m),
+    color: var(--ks-text-color-default),
   ),
 ) !default;

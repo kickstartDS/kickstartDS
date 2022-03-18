@@ -2,19 +2,19 @@ $name-: 'c-rich-text';
 
 $host: (
   ':root': (
-    font: var(--font-copy-m),
-    vertical-spacing: var(--spacing-m),
+    font: var(--ks-font-copy-m),
+    vertical-spacing: var(--ks-spacing-m),
     horizontal-spacing: 1em,
-    color: var(--color-black),
-    font-weight: var(--font-weight-regular),
+    color: var(--ks-text-color-default),
+    font-weight: var(--ks-font-weight-regular),
   ),
 ) !default;
 
 $headline: (
   ':root': (
-    color: var(--color-black),
-    font: var(--font-display-m),
-    font-weight: var(--font-weight-bold),
+    color: var(--ks-text-color-default),
+    font: var(--ks-font-display-m),
+    font-weight: var(--ks-font-weight-bold),
     text-transform: null,
     margin: (
       0: 0.75em 0 0.5em,
@@ -22,13 +22,13 @@ $headline: (
     ),
   ),
   'h1': (
-    font: var(--font-display-xxl),
+    font: var(--ks-font-display-xxl),
   ),
   'h2': (
-    font: var(--font-display-xl),
+    font: var(--ks-font-display-xl),
   ),
   'h3': (
-    font: var(--font-display-l),
+    font: var(--ks-font-display-l),
   ),
 ) !default;
 

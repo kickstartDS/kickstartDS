@@ -1,20 +1,20 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://frontend.ruhmesmeile.com/content/molecules/visual-slider.schema.json",
+  "$id": "http://schema.kickstartds.com/content/visual-slider.schema.json",
   "title": "Visual Slider",
   "description": "Visual Slider",
   "type": "object",
   "required": ["slides"],
   "properties": {
     "autoplay": {
-      "$ref": "http://frontend.ruhmesmeile.com/base/molecules/slider.schema.json#/definitions/autoplay"
+      "$ref": "http://schema.kickstartds.com/base/slider.schema.json#/definitions/autoplay"
     },
     "slides": {
       "type": "array",
       "items": {
         "allOf": [
           {
-            "$ref": "http://frontend.ruhmesmeile.com/content/molecules/visual.schema.json"
+            "$ref": "http://schema.kickstartds.com/content/visual.schema.json"
           },
           {
             "type": "object",

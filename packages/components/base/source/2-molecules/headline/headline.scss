@@ -34,11 +34,11 @@ $vars: meta.module-variables(headline-vars);
   }
 
   &--space-after-small {
-    padding-bottom: calc(var(--spacing-xxl) / 2);
+    padding-bottom: calc(var(--ks-spacing-xxl) / 2);
   }
 
   &--space-after-large {
-    padding-bottom: var(--spacing-xxl);
+    padding-bottom: var(--ks-spacing-xxl);
   }
 
   &__headline {
@@ -49,21 +49,21 @@ $vars: meta.module-variables(headline-vars);
   }
 
   &__h1 {
-    --c-rich-text_headline--font: var(--font-display-xxl);
+    --c-rich-text_headline--font: var(--ks-font-display-xxl);
   }
 
   &__h2 {
-    --c-rich-text_headline--font: var(--font-display-xl);
+    --c-rich-text_headline--font: var(--ks-font-display-xl);
   }
 
   &__h3 {
-    --c-rich-text_headline--font: var(--font-display-l);
+    --c-rich-text_headline--font: var(--ks-font-display-l);
   }
 
   &__h4,
   &__h5,
   &__p {
-    --c-rich-text_headline--font: var(--font-display-m);
+    --c-rich-text_headline--font: var(--ks-font-display-m);
   }
 
   &__subheadline {

@@ -31,7 +31,7 @@ $vars: meta.module-variables(form-field-vars);
     width: 100%;
     background-color: var(--c-form-field--background);
     color: var(--c-form-field--color);
-    font: var(--font-ui-m);
+    font: var(--ks-font-ui-m);
     transition: 0.2s;
     resize: vertical;
 
@@ -75,7 +75,10 @@ $vars: meta.module-variables(form-field-vars);
       @include bourbon.size(var(--c-form-field_icon--size));
       position: absolute;
       right: 0;
-      bottom: calc((var(--line-height-m) - var(--c-form-field_icon--size)) / 2);
+      bottom: calc(
+        (calc(var(--ks-line-height-ui) * 1em) - var(--c-form-field_icon--size)) /
+          2
+      );
       margin: $input-padding;
       color: var(--c-form-field_icon--color);
 
@@ -86,7 +89,7 @@ $vars: meta.module-variables(form-field-vars);
   }
 
   &__invalid-message {
-    margin: calc(var(--c-form-field--border-radius) * -1) 0 0;
+    margin: calc(-1 * var(--c-form-field--border-radius)) 0 0;
     padding: var(--c-form-field--border-radius) 0.5rem 0.125rem;
     color: var(--color-white);
     background: var(--color-error);

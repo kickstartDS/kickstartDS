@@ -61,6 +61,7 @@ jobs:
           root: .
           paths:
             - packages/components
+            - packages/tools/storybook/.storybook
 
   chromatic:
     <<: *defaults

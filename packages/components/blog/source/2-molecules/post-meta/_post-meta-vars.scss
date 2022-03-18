@@ -9,7 +9,7 @@ $host: (
 $item: (
   '.c-post-meta': (
     gap: var(--spacing-xs),
-    font: var(--font-ui-s),
+    font: var(--ks-font-ui-s),
     color: var(--color-grey-6),
     icon-size: 1.2em,
   ),
@@ -20,7 +20,7 @@ $author: (
     gap: var(--c-post-meta_item--gap),
     font: var(--c-post-meta_item--font),
     color: var(--c-post-meta_item--color),
-    font-weight: var(--font-weight-bold),
+    font-weight: var(--ks-font-weight-bold),
     avatar-size: 1.5em,
     avatar-border-radius: 50%,
   ),
