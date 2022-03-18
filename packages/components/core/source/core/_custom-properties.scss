@@ -1,25 +1,18 @@
 @use 'sass:meta';
 @use 'sass:map';
 @use 'sass:string';
-@use './breakpoint';
 
 @mixin responsive-custom-property($name, $value, $container-name: null) {
   @if meta.type-of($value) == 'map' {
     @each $bp, $val in $value {
-      @if $bp == 'xs' or $bp == 0 or not $bp {
+      @if $bp == 0 {
         @include responsive-custom-property($name, $val);
       } @else {
-        @if meta.type-of($bp) == 'string' {
-          @include breakpoint.media('≥#{$bp}') {
-            @include responsive-custom-property($name, $val);
-          }
-        } @else {
-          @if not $container-name {
-            @error '`container-name-`-property is requred for #{$name}.';
-          }
-          @container #{string.unquote($container-name)} size(min-width: #{$bp}px) {
-            @include responsive-custom-property($name, $val);
-          }
+        @if not $container-name {
+          @error '`container-name-`-property is requred for #{$name}.';
+        }
+        @container #{string.unquote($container-name)} size(min-width: #{$bp}px) {
+          @include responsive-custom-property($name, $val);
         }
       }
     }

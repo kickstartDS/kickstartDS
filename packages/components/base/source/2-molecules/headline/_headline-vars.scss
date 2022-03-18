@@ -7,8 +7,8 @@ $host: (
       0: 1rem,
       960: 2rem,
     ),
-    font-weight: var(--g-headline--font-weight),
-    color: var(--g-headline--color),
+    font-weight: var(--c-rich-text_headline--font-weight),
+    color: var(--c-rich-text_headline--color),
   ),
 ) !default;
 
@@ -17,6 +17,6 @@ $subheadline: (
     margin: 0.5em 0 0,
     font: var(--font-copy-m),
     font-weight: var(--font-weight-regular),
-    color: var(--g-headline--color),
+    color: var(--c-rich-text_headline--color),
   ),
 ) !default;

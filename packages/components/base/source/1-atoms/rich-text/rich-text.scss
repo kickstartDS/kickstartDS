@@ -1,10 +1,12 @@
 /* stylelint-disable no-descending-specificity */
 @use 'sass:meta';
 @use '@kickstartds/core/source/core/custom-properties';
+@use '@kickstartds/core/source/container/container-name';
 @use './rich-text-vars';
 
 $vars: meta.module-variables(rich-text-vars);
 @include custom-properties.styles($vars);
+@include container-name.name('rich-text');
 
 .c-rich-text {
   font: var(--c-rich-text--font);
@@ -18,6 +20,27 @@ $vars: meta.module-variables(rich-text-vars);
 
     &-right {
       text-align: right;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font: var(--c-rich-text_headline--font);
+    font-weight: var(--c-rich-text_headline--font-weight);
+    text-transform: var(--c-rich-text_headline--text-transform);
+    color: var(--c-rich-text_headline--color);
+    margin: var(--c-rich-text_headline--margin);
+
+    @media print {
+      page-break-after: avoid;
+    }
+
+    a {
+      text-decoration: none !important;
     }
   }
 

@@ -2,12 +2,11 @@ import {
   ForwardRefRenderFunction,
   HTMLAttributes,
   forwardRef,
-  createElement,
   createContext,
-  useContext,
 } from 'react';
 import ReactMarkdown from 'react-markdown';
 import classnames from 'classnames';
+import { withContainer } from '@kickstartds/core/lib/container';
 import { renderTextFn } from '@kickstartds/core/lib/core';
 import './rich-text.scss';
 
@@ -31,6 +30,4 @@ const RichTextComponent: ForwardRefRenderFunction<
 
 export const RichTextContextDefault = forwardRef(RichTextComponent);
 export const RichTextContext = createContext(RichTextContextDefault);
-export const RichText: typeof RichTextContextDefault = forwardRef(
-  (props, ref) => createElement(useContext(RichTextContext), { ...props, ref })
-);
+export const RichText = withContainer('rich-text', RichTextContext);
