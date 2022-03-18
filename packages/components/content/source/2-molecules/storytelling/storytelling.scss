@@ -1,12 +1,12 @@
 /* stylelint-disable no-descending-specificity */
 @use 'sass:meta';
-@use '@kickstartds/core/source/container/container-name';
 @use '@kickstartds/core/source/core/custom-properties';
+@use './container';
 @use './storytelling-vars';
 
 $vars: meta.module-variables(storytelling-vars);
 @include custom-properties.styles($vars);
-@include container-name.name('storytelling');
+@include container.wrapper;
 
 .c-storytelling {
   display: flex;
@@ -19,7 +19,7 @@ $vars: meta.module-variables(storytelling-vars);
   padding: var(--c-storytelling--vertical-padding)
     var(--c-storytelling--horizontal-padding);
 
-  @container storytelling size(min-width: 640px) {
+  @include container.size('≥' 640px) {
     flex-direction: row;
   }
 
@@ -42,7 +42,7 @@ $vars: meta.module-variables(storytelling-vars);
       margin-bottom: 0;
     }
 
-    @container storytelling size(min-width: 640px) {
+    @include container.size('≥' 640px) {
       padding-right: var(--c-storytelling--horizontal-padding);
       margin-bottom: 0;
 
@@ -51,7 +51,7 @@ $vars: meta.module-variables(storytelling-vars);
       }
     }
 
-    @container storytelling size(min-width: 960px) {
+    @include container.size('≥' 960px) {
       // margin-bottom: 0;
 
       .c-storytelling--full & {
@@ -69,7 +69,7 @@ $vars: meta.module-variables(storytelling-vars);
       img {
         margin-top: calc(var(--c-storytelling--vertical-padding) * -1);
 
-        @container storytelling size(max-width: 639px) {
+        @include container.size('<' 640px) {
           .c-storytelling--order-mobile-image-last & {
             margin-top: 0;
           }
@@ -89,7 +89,7 @@ $vars: meta.module-variables(storytelling-vars);
           margin-bottom: calc(var(--c-storytelling--vertical-padding) * -1);
         }
 
-        @container storytelling size(min-width: 640px) {
+        @include container.size('≥' 640px) {
           margin-bottom: calc(var(--c-storytelling--vertical-padding) * -1);
         }
       }
@@ -120,7 +120,7 @@ $vars: meta.module-variables(storytelling-vars);
     }
 
     .c-storytelling--order-mobile-image-last & {
-      @container storytelling size(max-width: 639px) {
+      @include container.size('<' 640px) {
         order: 2;
         margin-bottom: 0;
         margin-top: 1rem;
@@ -128,7 +128,7 @@ $vars: meta.module-variables(storytelling-vars);
     }
 
     .c-storytelling--order-desktop-image-last & {
-      @container storytelling size(min-width: 640px) {
+      @include container.size('≥' 640px) {
         order: 2;
         padding-right: 0;
         padding-left: var(--c-storytelling--horizontal-padding);
@@ -139,11 +139,11 @@ $vars: meta.module-variables(storytelling-vars);
     .c-storytelling--full.c-storytelling--order-desktop-image-last & {
       padding: 0;
 
-      @container storytelling size(min-width: 640px) {
+      @include container.size('≥' 640px) {
         padding: 0;
       }
 
-      @container storytelling size(min-width: 960px) {
+      @include container.size('≥' 960px) {
         padding: 0;
       }
     }
@@ -199,7 +199,7 @@ $vars: meta.module-variables(storytelling-vars);
     justify-content: center;
     align-items: center;
 
-    @container storytelling size(min-width: 640px) {
+    @include container.size('≥' 640px) {
       padding-left: var(--c-storytelling--horizontal-padding);
     }
 
@@ -218,7 +218,7 @@ $vars: meta.module-variables(storytelling-vars);
     &--right {
       justify-content: flex-start;
 
-      @container storytelling size(min-width: 640px) {
+      @include container.size('≥' 640px) {
         justify-content: flex-end;
       }
     }
@@ -231,7 +231,7 @@ $vars: meta.module-variables(storytelling-vars);
     .c-storytelling--order-desktop-image-last & {
       padding-left: 0;
 
-      @container storytelling size(min-width: 640px) {
+      @include container.size('≥' 640px) {
         padding-right: var(--c-storytelling--horizontal-padding);
       }
     }

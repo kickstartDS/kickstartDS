@@ -1,11 +1,11 @@
 @use 'sass:meta';
-@use '@kickstartds/core/source/container/container-name';
 @use '@kickstartds/core/source/core/custom-properties';
+@use './container';
 @use './headline-vars';
 
 $vars: meta.module-variables(headline-vars);
-@include custom-properties.styles($vars);
-@include container-name.name('headline');
+@include custom-properties.styles($vars, container.$name);
+@include container.wrapper;
 
 .c-headline {
   margin: 0 auto var(--c-headline--margin-bottom);
@@ -25,7 +25,7 @@ $vars: meta.module-variables(headline-vars);
     margin-top: calc(var(--c-headline--margin-bottom) * 1.5);
   }
 
-  @container headline size(min-width: 640px) {
+  @include container.size('≥' 640px) {
     max-width: 70%;
   }
 

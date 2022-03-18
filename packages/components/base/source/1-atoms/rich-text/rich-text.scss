@@ -1,12 +1,12 @@
 /* stylelint-disable no-descending-specificity */
 @use 'sass:meta';
 @use '@kickstartds/core/source/core/custom-properties';
-@use '@kickstartds/core/source/container/container-name';
+@use './container';
 @use './rich-text-vars';
 
 $vars: meta.module-variables(rich-text-vars);
-@include custom-properties.styles($vars);
-@include container-name.name('rich-text');
+@include custom-properties.styles($vars, container.$name);
+@include container.wrapper;
 
 .c-rich-text {
   font: var(--c-rich-text--font);

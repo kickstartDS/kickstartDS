@@ -1,4 +1,5 @@
 @use 'bourbon/core/bourbon';
+@use './container';
 
 @mixin visual-content {
   display: flex;
@@ -6,7 +7,7 @@
   width: 100%;
   margin: auto;
 
-  @container visual size(min-width: 640px) {
+  @include container.size('≥' 640px) {
     padding: var(--g-content-padding);
     flex-grow: 1; // = 100% height
   }
@@ -42,7 +43,7 @@
   }
 
   .c-visual--no-crop & {
-    @container visual size(min-width: 640px) {
+    @include container.size('≥' 640px) {
       @include bourbon.position(absolute, 0);
     }
   }

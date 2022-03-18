@@ -1,3 +1,5 @@
+@use './container';
+
 @mixin visual-box {
   width: 100%;
   max-width: var(--c-visual_box--max-width);
@@ -15,12 +17,12 @@
     color: inherit;
   }
 
-  @container visual size(min-width: 640px) {
+  @include container.size('≥' 640px) {
     width: auto;
     border-radius: var(--c-visual_box--border-radius);
   }
 
-  @container visual size(min-width: 1200px) {
+  @include container.size('≥' 1200px) {
     padding-top: 3rem;
     padding-bottom: 3rem;
   }
@@ -38,7 +40,7 @@
       border-radius: 0;
     }
 
-    @container visual size(min-width: 640px) {
+    @include container.size('≥' 640px) {
       background: none;
       padding: 0 !important;
       border-radius: 0;

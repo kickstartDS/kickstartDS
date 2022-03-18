@@ -1,12 +1,12 @@
 @use 'sass:meta';
 @use 'sass:math';
-@use '@kickstartds/core/source/container/container-name';
 @use '@kickstartds/core/source/core/custom-properties';
+@use './container';
 @use './logo-tiles-vars';
 
 $vars: meta.module-variables(logo-tiles-vars);
-@include custom-properties.styles($vars);
-@include container-name.name('logo-tiles');
+@include custom-properties.styles($vars, container.$name);
+@include container.wrapper;
 
 .c-logo-tiles {
   display: flex;

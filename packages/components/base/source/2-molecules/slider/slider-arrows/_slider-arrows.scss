@@ -1,11 +1,12 @@
 @use 'bourbon/core/bourbon';
+@use '../container';
 
 .c-slider__arrows {
   display: none;
   opacity: 0;
   transition: 0.3s;
 
-  @container slider size(min-width: 960px) {
+  @include container.size('≥' 960px) {
     display: block;
   }
 

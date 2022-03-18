@@ -1,7 +1,7 @@
 @use 'bourbon/core/bourbon';
-@use '@kickstartds/core/source/container/container-name';
+@use './container';
 
-@include container-name.name('text-media');
+@include container.wrapper;
 
 .text-media {
   @include bourbon.clearfix;
@@ -43,7 +43,7 @@
     .text-media--intext & {
       padding-bottom: var(--spacing-s);
 
-      @container text-media size(min-width: 600px) {
+      @include container.size('≥' 600px) {
         padding-bottom: var(--spacing-xs);
         max-width: 50%;
         min-width: 0;
@@ -55,14 +55,14 @@
     }
 
     .text-media--intext.text-media--left & {
-      @container text-media size(min-width: 600px) {
+      @include container.size('≥' 600px) {
         float: left;
         padding-right: var(--spacing-m);
       }
     }
 
     .text-media--intext.text-media--right & {
-      @container text-media size(min-width: 600px) {
+      @include container.size('≥' 600px) {
         float: right;
         padding-left: var(--spacing-m);
       }

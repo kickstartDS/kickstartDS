@@ -1,13 +1,13 @@
 @use 'sass:meta';
 @use 'bourbon/core/bourbon';
 @use '@kickstartds/base/source/0-base/1-tools/scss/details-reset';
-@use '@kickstartds/core/source/container/container-name';
 @use '@kickstartds/core/source/core/custom-properties';
+@use './container';
 @use './collapsible-box-vars';
 
 $vars: meta.module-variables(collapsible-box-vars);
-@include custom-properties.styles($vars);
-@include container-name.name('collapsible-box');
+@include custom-properties.styles($vars, container.$name);
+@include container.wrapper;
 
 .c-collapsible-box {
   details {
@@ -37,7 +37,7 @@ $vars: meta.module-variables(collapsible-box-vars);
     &__text {
       flex: 1;
 
-      @container collapsible-box size(min-width: 640px) {
+      @include container.size('≥' 640px) {
         padding-right: 1em;
       }
     }

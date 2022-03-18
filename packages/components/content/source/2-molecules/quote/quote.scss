@@ -1,16 +1,16 @@
 @use 'sass:meta';
-@use '@kickstartds/core/source/container/container-name';
 @use '@kickstartds/core/source/core/custom-properties';
+@use './container';
 @use './quote-vars';
 
 $vars: meta.module-variables(quote-vars);
-@include custom-properties.styles($vars);
-@include container-name.name('quote');
+@include custom-properties.styles($vars, container.$name);
+@include container.wrapper;
 
 .c-quote {
   align-items: var(--c-quote--align);
 
-  @container quote size(min-width: 640px) {
+  @include container.size('≥' 640px) {
     display: flex;
   }
 
@@ -20,7 +20,7 @@ $vars: meta.module-variables(quote-vars);
     text-align: center;
     margin-bottom: 1rem;
 
-    @container quote size(min-width: 640px) {
+    @include container.size('≥' 640px) {
       margin-bottom: 0;
     }
   }

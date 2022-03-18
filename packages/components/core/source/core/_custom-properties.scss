@@ -21,14 +21,12 @@
   }
 }
 
-@mixin styles($map) {
+@mixin styles($map, $container-name: null) {
   @if not map.has-key($map, 'name-') {
     @error '`name-`-property is requred.';
   }
   $name: map.get($map, 'name-');
-  $container-name: map.get($map, 'container-name-');
   $map: map.remove($map, 'name-');
-  $map: map.remove($map, 'container-name-');
 
   @each $key, $rules in $map {
     $group: if($key == 'host', null, '_#{$key}');
