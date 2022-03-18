@@ -1,5 +1,4 @@
 @use 'bourbon/core/bourbon';
-@use '@kickstartds/core/source/core/breakpoint';
 
 @mixin visual-content {
   display: flex;
@@ -7,7 +6,7 @@
   width: 100%;
   margin: auto;
 
-  @include breakpoint.media('≥s') {
+  @container visual size(min-width: 640px) {
     padding: var(--g-content-padding);
     flex-grow: 1; // = 100% height
   }
@@ -43,7 +42,7 @@
   }
 
   .c-visual--no-crop & {
-    @include breakpoint.media('≥s') {
+    @container visual size(min-width: 640px) {
       @include bourbon.position(absolute, 0);
     }
   }

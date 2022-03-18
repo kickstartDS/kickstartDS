@@ -1,7 +1,3 @@
-@use '@kickstartds/base/source/0-base/1-tools/scss/helpers';
-@use '@kickstartds/core/source/core/breakpoint';
-@use 'sass:meta';
-
 @mixin visual-box {
   width: 100%;
   max-width: var(--c-visual_box--max-width);
@@ -19,12 +15,12 @@
     color: inherit;
   }
 
-  @include breakpoint.media('≥s') {
+  @container visual size(min-width: 640px) {
     width: auto;
     border-radius: var(--c-visual_box--border-radius);
   }
 
-  @include breakpoint.media('≥xl') {
+  @container visual size(min-width: 1200px) {
     padding-top: 3rem;
     padding-bottom: 3rem;
   }
@@ -42,7 +38,7 @@
       border-radius: 0;
     }
 
-    @include breakpoint.media('≥s') {
+    @container visual size(min-width: 640px) {
       background: none;
       padding: 0 !important;
       border-radius: 0;

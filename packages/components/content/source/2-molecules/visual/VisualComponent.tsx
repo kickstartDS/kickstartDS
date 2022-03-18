@@ -2,11 +2,10 @@ import {
   ForwardRefRenderFunction,
   HTMLAttributes,
   forwardRef,
-  createElement,
   createContext,
-  useContext,
 } from 'react';
 import classnames from 'classnames';
+import { withContainer } from '@kickstartds/core/lib/container';
 import { Icon } from '@kickstartds/base/lib/icon';
 import { VisualProps } from './VisualProps';
 import { VisualMediaPartial } from './VisualMediaPartial';
@@ -64,6 +63,4 @@ const VisualComponent: ForwardRefRenderFunction<
 
 export const VisualContextDefault = forwardRef(VisualComponent);
 export const VisualContext = createContext(VisualContextDefault);
-export const Visual: typeof VisualContextDefault = forwardRef((props, ref) =>
-  createElement(useContext(VisualContext), { ...props, ref })
-);
+export const Visual = withContainer('visual', VisualContext);
