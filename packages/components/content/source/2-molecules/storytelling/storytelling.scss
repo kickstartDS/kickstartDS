@@ -1,11 +1,12 @@
 /* stylelint-disable no-descending-specificity */
 @use 'sass:meta';
-@use '@kickstartds/core/source/core/breakpoint';
+@use '@kickstartds/core/source/container/container-name';
 @use '@kickstartds/core/source/core/custom-properties';
 @use './storytelling-vars';
 
 $vars: meta.module-variables(storytelling-vars);
 @include custom-properties.styles($vars);
+@include container-name.name('storytelling');
 
 .c-storytelling {
   display: flex;
@@ -18,7 +19,7 @@ $vars: meta.module-variables(storytelling-vars);
   padding: var(--c-storytelling--vertical-padding)
     var(--c-storytelling--horizontal-padding);
 
-  @include breakpoint.media('≥s') {
+  @container storytelling size(min-width: 640px) {
     flex-direction: row;
   }
 
@@ -41,7 +42,7 @@ $vars: meta.module-variables(storytelling-vars);
       margin-bottom: 0;
     }
 
-    @include breakpoint.media('≥s') {
+    @container storytelling size(min-width: 640px) {
       padding-right: var(--c-storytelling--horizontal-padding);
       margin-bottom: 0;
 
@@ -50,7 +51,7 @@ $vars: meta.module-variables(storytelling-vars);
       }
     }
 
-    @include breakpoint.media('≥m') {
+    @container storytelling size(min-width: 960px) {
       // margin-bottom: 0;
 
       .c-storytelling--full & {
@@ -68,7 +69,7 @@ $vars: meta.module-variables(storytelling-vars);
       img {
         margin-top: calc(var(--c-storytelling--vertical-padding) * -1);
 
-        @include breakpoint.media('<s') {
+        @container storytelling size(max-width: 639px) {
           .c-storytelling--order-mobile-image-last & {
             margin-top: 0;
           }
@@ -88,7 +89,7 @@ $vars: meta.module-variables(storytelling-vars);
           margin-bottom: calc(var(--c-storytelling--vertical-padding) * -1);
         }
 
-        @include breakpoint.media('≥s') {
+        @container storytelling size(min-width: 640px) {
           margin-bottom: calc(var(--c-storytelling--vertical-padding) * -1);
         }
       }
@@ -119,7 +120,7 @@ $vars: meta.module-variables(storytelling-vars);
     }
 
     .c-storytelling--order-mobile-image-last & {
-      @include breakpoint.media('<s') {
+      @container storytelling size(max-width: 639px) {
         order: 2;
         margin-bottom: 0;
         margin-top: 1rem;
@@ -127,7 +128,7 @@ $vars: meta.module-variables(storytelling-vars);
     }
 
     .c-storytelling--order-desktop-image-last & {
-      @include breakpoint.media('≥s') {
+      @container storytelling size(min-width: 640px) {
         order: 2;
         padding-right: 0;
         padding-left: var(--c-storytelling--horizontal-padding);
@@ -138,11 +139,11 @@ $vars: meta.module-variables(storytelling-vars);
     .c-storytelling--full.c-storytelling--order-desktop-image-last & {
       padding: 0;
 
-      @include breakpoint.media('≥s') {
+      @container storytelling size(min-width: 640px) {
         padding: 0;
       }
 
-      @include breakpoint.media('≥m') {
+      @container storytelling size(min-width: 960px) {
         padding: 0;
       }
     }
@@ -198,7 +199,7 @@ $vars: meta.module-variables(storytelling-vars);
     justify-content: center;
     align-items: center;
 
-    @include breakpoint.media('≥s') {
+    @container storytelling size(min-width: 640px) {
       padding-left: var(--c-storytelling--horizontal-padding);
     }
 
@@ -217,7 +218,7 @@ $vars: meta.module-variables(storytelling-vars);
     &--right {
       justify-content: flex-start;
 
-      @include breakpoint.media('≥s') {
+      @container storytelling size(min-width: 640px) {
         justify-content: flex-end;
       }
     }
@@ -230,7 +231,7 @@ $vars: meta.module-variables(storytelling-vars);
     .c-storytelling--order-desktop-image-last & {
       padding-left: 0;
 
-      @include breakpoint.media('≥s') {
+      @container storytelling size(min-width: 640px) {
         padding-right: var(--c-storytelling--horizontal-padding);
       }
     }

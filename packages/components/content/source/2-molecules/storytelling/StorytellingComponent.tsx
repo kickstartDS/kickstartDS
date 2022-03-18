@@ -3,11 +3,10 @@ import {
   ForwardRefRenderFunction,
   HTMLAttributes,
   forwardRef,
-  createElement,
   createContext,
-  useContext,
 } from 'react';
 import classnames from 'classnames';
+import { withContainer } from '@kickstartds/core/lib/container';
 import { renderFn } from '@kickstartds/core/lib/core';
 import { Headline } from '@kickstartds/base/lib/headline';
 import { LinkButton } from '@kickstartds/base/lib/link-button';
@@ -123,19 +122,16 @@ const StorytellingComponent: ForwardRefRenderFunction<
   HTMLDivElement,
   StorytellingProps & HTMLAttributes<HTMLDivElement>
 > = (props, ref) => (
-  <div className="c-storytelling__wrapper">
+  <>
     <StorytellingMixin {...props} ref={ref} lazy={true} />
     {props.backgroundImage && (
       <noscript>
         <StorytellingMixin {...props} lazy={false} />
       </noscript>
     )}
-  </div>
+  </>
 );
 
 export const StorytellingContextDefault = forwardRef(StorytellingComponent);
 export const StorytellingContext = createContext(StorytellingContextDefault);
-export const Storytelling: typeof StorytellingContextDefault = forwardRef(
-  (props, ref) =>
-    createElement(useContext(StorytellingContext), { ...props, ref })
-);
+export const Storytelling = withContainer('storytelling', StorytellingContext);
