@@ -27,7 +27,7 @@ $focus: (
 
 $icon: (
   ':root': (
-    size: calc(var(--ks-line-height-ui) * 0.75em),
+    size: calc(var(--ks-line-height-ui-m) * 0.75em),
     color: var(--color-black-alpha-7),
   ),
 ) !default;
