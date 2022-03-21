@@ -52,8 +52,8 @@
   },
   "spacing": {
     "base": 8,
-    "scale-ratio": 1.414,
-    "bp-ratio": 1.618
+    "scale-ratio": 1.618,
+    "bp-ratio": 1.414
   },
   "breakpoints": {
     "phone": 576,
