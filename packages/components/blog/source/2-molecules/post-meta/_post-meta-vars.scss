@@ -2,13 +2,13 @@ $name-: 'c-post-meta' !default;
 
 $host: (
   '.c-post-meta': (
-    gap: var(--spacing-m),
+    gap: var(--ks-spacing-m),
   ),
 ) !default;
 
 $item: (
   '.c-post-meta': (
-    gap: var(--spacing-xs),
+    gap: var(--ks-spacing-xs),
     font: var(--ks-font-ui-s),
     color: var(--color-grey-6),
     icon-size: 1.2em,
