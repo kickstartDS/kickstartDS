@@ -177,7 +177,7 @@
     parse-author "^2.0.0"
     parse-github-url "1.0.2"
 
-"@auto-it/released@10.36.5", "@auto-it/released@^10.34.1":
+"@auto-it/released@10.36.5", "@auto-it/released@^10.36.5":
   version "10.36.5"
   resolved "https://registry.yarnpkg.com/@auto-it/released/-/released-10.36.5.tgz#61dd553047b03fb4d0c41bdb6c14862cf1660a7c"
   integrity sha512-dbSxtnjSlPVy1D/BBZw2DW3aSVVvujebS32zaiPzy6gsvvkwlzavpm1iuG5jfmdo5Ai490CGcIePMWbhZ7lqXA==
