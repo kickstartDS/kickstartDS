@@ -18,14 +18,14 @@ module.exports = ({ color }) => ({
         _: token(Color(color.background).setAlpha(0.8)),
       },
       interactive: {
-        _: token(color.white),
-        hover: token(Color.mix(color.white, color.primary, 10)),
-        active: token(Color.mix(color.white, color.primary, 20)),
+        _: token(color.background),
+        hover: token(Color.mix(color.background, color.primary, 10)),
+        active: token(Color.mix(color.background, color.primary, 20)),
       },
     },
     tbd: {
       _: token(Color(color.primary).setAlpha(0.8)),
-      interactive: token(color.white),
+      interactive: token(color.background),
     },
   },
 });
