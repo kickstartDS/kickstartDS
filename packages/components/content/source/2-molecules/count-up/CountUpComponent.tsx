@@ -17,7 +17,7 @@ import {
   RichText,
   defaultRenderFn as richTextDefaultRenderFn,
 } from '@kickstartds/base/lib/rich-text';
-import { LinkButton } from '@kickstartds/base/lib/link-button';
+import { Button } from '@kickstartds/base/lib/button';
 import { CountUpProps } from './CountUpProps';
 import './count-up.scss';
 import './CountUp.js';
@@ -78,7 +78,7 @@ const CountUpComponent: ForwardRefRenderFunction<
 
     {link && link.enabled ? (
       <div className="c-count-up__link">
-        <LinkButton {...link} renderLabel={renderLinkLabel} />
+        <Button {...link} renderLabel={renderLinkLabel} />
       </div>
     ) : (
       ''

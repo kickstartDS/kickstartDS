@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react';
 import classnames from 'classnames';
-import { LinkButton } from '@kickstartds/base/lib/link-button';
+import { Button } from '@kickstartds/base/lib/button';
 import {
   RichText,
   defaultRenderFn as richTextDefaultRenderFn,
@@ -71,7 +71,7 @@ export const VisualBoxPartial: FunctionComponent<IBox & RenderFunctions> = ({
 
       {link && link.enabled && (
         <div className="c-visual__link">
-          <LinkButton {...{ ...link, enabled: undefined }} />
+          <Button {...{ ...link, enabled: undefined }} />
         </div>
       )}
     </div>

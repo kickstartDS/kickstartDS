@@ -12,7 +12,7 @@ import {
   RichText,
   defaultRenderFn as richTextDefaultRenderFn,
 } from '../../1-atoms/rich-text';
-import { LinkButton } from '../../1-atoms/button/link-button';
+import { Button } from '../../1-atoms/button';
 import { Picture } from '../../1-atoms/image/picture';
 import { ContentBoxProps } from './ContentBoxProps';
 import './content-box.scss';
@@ -69,7 +69,7 @@ const ContentBoxComponent: ForwardRefRenderFunction<
       </div>
       {link && link.enabled && (
         <div className="c-content-box__link">
-          <LinkButton {...{ ...link, enabled: undefined }} />
+          <Button {...{ ...link, enabled: undefined }} />
         </div>
       )}
     </div>

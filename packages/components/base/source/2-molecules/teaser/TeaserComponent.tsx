@@ -12,7 +12,7 @@ import {
   RichText,
   defaultRenderFn as richTextDefaultRenderFn,
 } from '../../1-atoms/rich-text';
-import { LinkButton } from '../../1-atoms/button/link-button';
+import { Button } from '../../1-atoms/button';
 import { TeaserProps } from './TeaserProps';
 import './teaser.scss';
 import './Teaser.js';
@@ -62,7 +62,7 @@ export const TeaserComponent: ForwardRefRenderFunction<
       </div>
       {link?.label ? (
         <div className="c-teaser__link" hidden={link.hidden}>
-          <LinkButton {...link} />
+          <Button {...link} />
         </div>
       ) : (
         ''

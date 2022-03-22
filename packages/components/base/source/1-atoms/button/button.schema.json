@@ -4,7 +4,7 @@
   "title": "Button",
   "description": "Component to display links and call-to-actions",
   "type": "object",
-  "definitions": {
+  "properties": {
     "label": {
       "type": "string",
       "title": "Label",
@@ -31,6 +31,13 @@
       "default": "medium",
       "title": "Button Size",
       "description": "Choose a size between small, medium and large"
+    },
+    "href": {
+      "type": "string",
+      "title": "Button href?",
+      "description": "Link used for button",
+      "format": "uri",
+      "default": "https://example.com"
     },
     "className": {
       "type": "string",
@@ -69,44 +76,6 @@
       "title": "Icon Animation",
       "description": "Add icon animation on hover"
     },
-    "button": {
-      "type": "object",
-      "properties": {},
-      "required": ["label", "variant", "size"],
-      "additionalProperties": false
-    }
-  },
-  "properties": {
-    "label": {
-      "$ref": "#/definitions/label"
-    },
-    "variant": {
-      "$ref": "#/definitions/variant"
-    },
-    "size": {
-      "$ref": "#/definitions/size"
-    },
-    "className": {
-      "$ref": "#/definitions/className"
-    },
-    "icon": {
-      "$ref": "#/definitions/icon"
-    },
-    "iconBefore": {
-      "$ref": "#/definitions/iconBefore"
-    },
-    "iconAfter": {
-      "$ref": "#/definitions/iconAfter"
-    },
-    "dataComponent": {
-      "$ref": "#/definitions/dataComponent"
-    },
-    "fillAnimation": {
-      "$ref": "#/definitions/fillAnimation"
-    },
-    "iconAnimation": {
-      "$ref": "#/definitions/iconAnimation"
-    },
     "type": {
       "type": "string",
       "enum": ["button", "submit", "reset"],
@@ -129,6 +98,12 @@
       "default": false,
       "title": "`disabled` attribute",
       "description": "Set the disabled attribute for the button"
+    },
+    "newTab": {
+      "type": "boolean",
+      "title": "Open link in new Tab",
+      "description": "Open link in new Tab",
+      "default": false
     }
   },
   "required": ["label", "variant", "size"],

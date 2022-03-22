@@ -1,7 +1,7 @@
 @use 'sass:meta';
 @use 'bourbon/core/bourbon';
 @use '@kickstartds/core/source/core/custom-properties';
-@use '../../../0-base/1-tools/scss/button';
+@use '../../0-base/1-tools/scss/button';
 @use './button-vars';
 
 $vars: meta.module-variables(button-vars);
@@ -40,12 +40,14 @@ $vars: meta.module-variables(button-vars);
     text-decoration: none;
   }
 
-  &:disabled {
+  &:disabled,
+  &--disabled {
     box-shadow: none;
     opacity: 0.5;
   }
 
-  &:active:not(:disabled) {
+  &:active:not(:disabled),
+  &:active:not(.c-button--disabled) {
     color: var(
       --c-button--color-active,
       var(--c-button--color-hover, var(--c-button--color))
