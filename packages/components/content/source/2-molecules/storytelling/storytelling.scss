@@ -198,6 +198,10 @@ $vars: meta.module-variables(storytelling-vars);
     justify-content: center;
     align-items: center;
 
+    &:only-child {
+      --c-storytelling--horizontal-padding: 0;
+    }
+
     @include breakpoint.media('≥s') {
       padding-left: var(--c-storytelling--horizontal-padding);
     }
