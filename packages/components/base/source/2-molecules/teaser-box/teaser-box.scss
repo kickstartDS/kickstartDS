@@ -1,5 +1,7 @@
 .c-teaser-box {
   contain: layout inline-size style;
+  display: flex;
+  flex-direction: column;
 
   .c-teaser__image {
     flex-grow: 0;
