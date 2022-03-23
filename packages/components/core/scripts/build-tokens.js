@@ -4,6 +4,7 @@ const { config, createTokens } = require('../design-tokens');
 
 StyleDictionary.extend(config)
   .extend({
+    source: [path.join(__dirname, '../source/design-tokens/icons/*.svg')],
     tokens: createTokens(),
     platforms: {
       css: {

@@ -1,10 +1,8 @@
-const path = require('path');
 const filter = require('./filters');
 const format = require('./formats');
 const parsers = require('./parsers');
 
 module.exports = {
-  include: [path.join(__dirname, '../source/design-tokens/icons/*.svg')],
   filter,
   format,
   parsers,

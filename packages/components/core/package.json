@@ -18,8 +18,7 @@
   "files": [
     "lib",
     "source/core/*.scss",
-    "source/design-tokens/**/*.js",
-    "source/design-tokens/**/*.svg",
+    "source/design-tokens/icons/*.svg",
     "bundle/*.js",
     "design-tokens"
   ],
