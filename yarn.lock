@@ -4383,10 +4383,10 @@
     prettier "^2.3.2"
     react-syntax-highlighter "^15.4.4"
 
-"@wordpress/babel-plugin-import-jsx-pragma@^3.1.1":
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/@wordpress/babel-plugin-import-jsx-pragma/-/babel-plugin-import-jsx-pragma-3.1.1.tgz#f2d127526f92d7cbdfc51ec0f25cea9203c5efb7"
-  integrity sha512-0gopMgFMVBtJiYTwsxq4ERhbeHV2iI11fHt52fguBr8eS7h61ufp3uZy0aapdh8vQh80S2v1rgdYJwAWb73r1w==
+"@wordpress/babel-plugin-import-jsx-pragma@^3.1.2":
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/@wordpress/babel-plugin-import-jsx-pragma/-/babel-plugin-import-jsx-pragma-3.1.2.tgz#71596ae30b390ddb23680147011a26dce11f88e1"
+  integrity sha512-oMJnM3cJlu1hQMO4XmTFDhNPclj0cLRIeV5Y6uIF/9oNhhSfaMFu+ty0B4zBYodqwes/vbndwRg4j2q2bhG/Dg==
 
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"
