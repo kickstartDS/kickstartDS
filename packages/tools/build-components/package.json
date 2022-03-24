@@ -22,7 +22,7 @@
     "debug": "^4.3.4",
     "del": "^6.0.0",
     "fast-glob": "^3.2.11",
-    "find-up": "^5.0.0",
+    "find-up": "^6.3.0",
     "fs-extra": "^10.0.1",
     "json-schema-merge-allof": "^0.8.1",
     "json-schema-ref-parser": "^9.0.7",
