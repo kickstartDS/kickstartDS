@@ -52,7 +52,7 @@
     "@iwsio/json-csv-node": "^5.0.4",
     "@kickstartds/eslint-config": "^1.0.2",
     "@kickstartds/stylelint-config": "^2.0.1",
-    "execa": "^5.1.1",
+    "execa": "^6.1.0",
     "fast-glob": "^3.2.11",
     "fs-extra": "^10.0.1",
     "license-checker": "^25.0.1",
