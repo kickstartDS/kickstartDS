@@ -30,6 +30,8 @@
     "watch-tokens": "chokidar \"source/design-tokens/fallback.ks-tokens.json\" -c \"yarn build-tokens\""
   },
   "dependencies": {
+    "@babel/core": "^7.17.8",
+    "@babel/preset-react": "^7.16.7",
     "@babel/runtime": "^7.17.2",
     "ajv": "^8.10.0",
     "bourbon": "^7.2.0",

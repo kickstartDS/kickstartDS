@@ -46,7 +46,7 @@ module.exports = {
       files: [
         {
           format: 'jsx/icon-sprite',
-          destination: 'IconSprite.jsx',
+          destination: 'IconSprite.js',
           filter: 'includeIcons',
         },
       ],
