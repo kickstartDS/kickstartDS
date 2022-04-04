@@ -3418,17 +3418,17 @@
     ts-dedent "^2.0.0"
     util-deprecate "^1.0.2"
 
-"@storybook/cli@6.4.19":
-  version "6.4.19"
-  resolved "https://registry.yarnpkg.com/@storybook/cli/-/cli-6.4.19.tgz#393091415762280800b7dcc7c533ab2633641a9a"
-  integrity sha512-4UStCbSI9x4RChHsSAGuzBr/hinmijQMQEuUuVVN7xfhaQC4dDTyPCki8fJ4aBBzjYwoHFHz8lQGAnGLpVSpYQ==
+"@storybook/cli@6.4.20":
+  version "6.4.20"
+  resolved "https://registry.yarnpkg.com/@storybook/cli/-/cli-6.4.20.tgz#87f9a4d5ca0e65e5f305cc81d28cf70c9d082c36"
+  integrity sha512-EtzY7AZSWrWA33hQJUZq+QH9in9std1pxoI6qcItxldJg2cnycy3WMJewPGBK8/A+6yEyZrTtYmJpPBOakXSdw==
   dependencies:
     "@babel/core" "^7.12.10"
     "@babel/preset-env" "^7.12.11"
-    "@storybook/codemod" "6.4.19"
-    "@storybook/core-common" "6.4.19"
-    "@storybook/csf-tools" "6.4.19"
-    "@storybook/node-logger" "6.4.19"
+    "@storybook/codemod" "6.4.20"
+    "@storybook/core-common" "6.4.20"
+    "@storybook/csf-tools" "6.4.20"
+    "@storybook/node-logger" "6.4.20"
     "@storybook/semver" "^7.3.2"
     boxen "^5.1.2"
     chalk "^4.1.0"
@@ -3528,16 +3528,16 @@
     core-js "^3.8.2"
     global "^4.4.0"
 
-"@storybook/codemod@6.4.19":
-  version "6.4.19"
-  resolved "https://registry.yarnpkg.com/@storybook/codemod/-/codemod-6.4.19.tgz#f85f3c0e33b8c37533bc230c85bb53f944e3eaba"
-  integrity sha512-av7ZuA8TR63iueGRO31Dxk9TWcXVNKHRm0VoiHfzhuC0kO2jHfkxQrT2KwR9QsmEfFbsAn1NHNNlCP0QK3VbqA==
+"@storybook/codemod@6.4.20":
+  version "6.4.20"
+  resolved "https://registry.yarnpkg.com/@storybook/codemod/-/codemod-6.4.20.tgz#345f63c966da854fc517369ff961d42517d2be6a"
+  integrity sha512-ZNnt0BwV+c+yM4HLO31R1QeWWDUmwwEbvMUfQcjQWk/C8+NSIOtgMkBgnNDyUagT1eZ3QgU9EdzjyAZWrFJajQ==
   dependencies:
     "@babel/types" "^7.12.11"
     "@mdx-js/mdx" "^1.6.22"
     "@storybook/csf" "0.0.2--canary.87bc651.0"
-    "@storybook/csf-tools" "6.4.19"
-    "@storybook/node-logger" "6.4.19"
+    "@storybook/csf-tools" "6.4.20"
+    "@storybook/node-logger" "6.4.20"
     core-js "^3.8.2"
     cross-spawn "^7.0.3"
     globby "^11.0.2"
@@ -15198,7 +15198,7 @@ sass-yiq@^1.0.0:
   resolved "https://registry.yarnpkg.com/sass-yiq/-/sass-yiq-1.0.0.tgz#efae1d63db96d96d6fea71a82970bc749f624682"
   integrity sha1-764dY9uW2W1v6nGoKXC8dJ9iRoI=
 
-sass@^1.49.11:
+sass@^1.49.10:
   version "1.49.11"
   resolved "https://registry.yarnpkg.com/sass/-/sass-1.49.11.tgz#1ffeb77faeed8b806a2a1e021d7c9fd3fc322cb7"
   integrity sha512-wvS/geXgHUGs6A/4ud5BFIWKO1nKd7wYIGimDk4q4GFkJicILActpv9ueMT4eRGSsp1BdKHuw1WwAHXbhsJELQ==
