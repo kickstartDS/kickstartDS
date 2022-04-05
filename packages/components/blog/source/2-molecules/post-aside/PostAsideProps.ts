@@ -10,14 +10,6 @@
  */
 export type Source = string;
 /**
- * Width of the picture
- */
-export type Width = number;
-/**
- * Height of the picture
- */
-export type Height = number;
-/**
  * Use a srcSet to display picture
  */
 export type PictureSourceset = string;
@@ -25,6 +17,14 @@ export type PictureSourceset = string;
  * Alt text to display for picture
  */
 export type AltText = string;
+/**
+ * Width of the picture
+ */
+export type Width = number;
+/**
+ * Height of the picture
+ */
+export type Height = number;
 /**
  * Add additional css classes that should be applied to the button
  */
@@ -74,6 +74,27 @@ export type Sources = {
  * Set additional class(es) to the picture
  */
 export type ClassAttribute = string;
+/**
+ * Name, company name, etc.
+ */
+export type Title = string;
+/**
+ * Position, profession, department, location, etc.
+ */
+export type Subtitle = string;
+/**
+ * Open link in new Tab
+ */
+export type OpenLinkInNewTab = boolean;
+export type CopyText = string;
+/**
+ * Additional css classes attached to the wrapping element
+ */
+export type Class = string;
+/**
+ * Text content for the headline
+ */
+export type Text = string;
 /**
  * Picture source
  */
@@ -146,60 +167,79 @@ export type ClassAttribute1 = string;
 /**
  * Additional css classes attached to the wrapping element
  */
-export type Class = string;
+export type Class1 = string;
 /**
- * Link used for button
+ * Text content for the headline
  */
-export type ButtonHref = string;
+export type Text1 = string;
 /**
- * Text used on button
+ * Choose an alignment for the headline
  */
-export type Label = string;
+export type Alignment = 'left' | 'center' | 'right';
 /**
- * Title for news item
+ * Select the headline level to use, or p alternatively
  */
-export type Title = string;
+export type Level = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
 /**
- * Bodytext for news item
+ * Select the headline style to use
  */
-export type Bodytext = string;
+export type Style = 'none' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
 /**
- * Text to display inside tag label
+ * Text content for the optional subheadline
  */
-export type Label1 = string;
+export type Subheadline = string;
 /**
- * Choose a size to scale the tag label up or down
+ * Add additional spacing to the bottom of the headline
  */
-export type Size = 's' | 'm' | 'l';
+export type BottomSpacing = 'none' | 'small' | 'large';
 /**
- * Set optional href to link the tag
+ * Set the headline as a page header, triggering special css treatment
  */
-export type LinkTarget = string;
+export type PageHeader = boolean;
 /**
- * Choose whether the element is removable or not
- */
-export type Removable = boolean;
-/**
- * Add additional css classes that should be applied to the label
+ * Add additional css classes that should be applied to the headline
  */
 export type AdditionalClasses2 = string;
-export type Categories = TagLabel[];
+/**
+ * Open link in new Tab
+ */
+export type OpenLinkInNewTab1 = boolean;
 /**
  * Additional css classes attached to the wrapping element
  */
-export type Class1 = string;
+export type Class2 = string;
+/**
+ * Additional css classes attached to the wrapping element
+ */
+export type Class3 = string;
 
 /**
- * Post Teaser
+ * Post Aside
  */
-export interface PostTeaserProps {
-  image?: Picture;
+export interface PostAsideProps {
+  author?: Author;
   meta?: PostMeta;
-  link: Link;
+  shareBar?: PostShareBar;
+  className?: Class3;
+  [k: string]: unknown;
+}
+/**
+ * Component to show contact information
+ */
+export interface Author {
+  image?: Picture;
   title?: Title;
-  body?: Bodytext;
-  categories?: Categories;
-  className?: Class1;
+  subtitle?: Subtitle;
+  links?: {
+    icon?: string;
+    label?: string;
+    href?: string;
+    newTab?: OpenLinkInNewTab;
+    [k: string]: unknown;
+  }[];
+  copy?: CopyText;
+  className?: Class;
+  headline?: Text;
   [k: string]: unknown;
 }
 /**
@@ -207,10 +247,10 @@ export interface PostTeaserProps {
  */
 export interface Picture {
   src?: Source;
-  width?: Width;
-  height?: Height;
   srcSet?: PictureSourceset;
   alt?: AltText;
+  width?: Width;
+  height?: Height;
   className?: AdditionalClasses;
   id?: Id;
   itemProp?: ItempropAttribute;
@@ -231,7 +271,7 @@ export interface PostMeta {
     [k: string]: unknown;
   };
   items?: MetaItem[];
-  className?: Class;
+  className?: Class1;
   [k: string]: unknown;
 }
 /**
@@ -259,20 +299,32 @@ export interface MetaItem {
   [k: string]: unknown;
 }
 /**
- * Link for news item
+ * Post Share Bar
  */
-export interface Link {
-  href: ButtonHref;
-  label: Label;
+export interface PostShareBar {
+  headline?: Headline;
+  links?: ShareLink[];
+  className?: Class2;
   [k: string]: unknown;
 }
 /**
- * Component to render a pill / tag / label
+ * Headline
  */
-export interface TagLabel {
-  label: Label1;
-  size: Size;
-  link?: LinkTarget;
-  removable?: Removable;
+export interface Headline {
+  content?: Text1;
+  align: Alignment;
+  level: Level;
+  styleAs?: Style;
+  subheadline?: Subheadline;
+  spaceAfter: BottomSpacing;
+  pageHeader?: PageHeader;
   className?: AdditionalClasses2;
+  [k: string]: unknown;
+}
+export interface ShareLink {
+  href?: string;
+  icon?: string;
+  title?: string;
+  newTab?: OpenLinkInNewTab1;
+  [k: string]: unknown;
 }

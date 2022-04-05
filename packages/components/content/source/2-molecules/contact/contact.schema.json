@@ -20,16 +20,41 @@
       "type": "string",
       "default": "Geschäftsführer"
     },
-    "phone": {
-      "title": "Phone number",
-      "type": "string",
-      "default": "0228 / 688 966 20"
-    },
-    "email": {
-      "title": "Email address",
-      "type": "string",
-      "format": "email",
-      "default": "mail@example.com"
+    "links": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "icon": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "href": {
+            "type": "string",
+            "format": "uri"
+          },
+          "newTab": {
+            "type": "boolean",
+            "title": "Open link in new Tab",
+            "description": "Open link in new Tab",
+            "default": false
+          }
+        }
+      },
+      "default": [
+        {
+          "icon": "phone",
+          "label": "0228 / 688 966 20",
+          "href": "tel:+4922868896620"
+        },
+        {
+          "icon": "email",
+          "label": "mail@example.com",
+          "href": "mailto:mail@example.com"
+        }
+      ]
     },
     "copy": {
       "title": "Copy text",

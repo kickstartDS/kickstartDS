@@ -1,7 +1,6 @@
 @use 'sass:meta';
 @use '@kickstartds/core/source/core/breakpoint';
 @use '@kickstartds/core/source/core/custom-properties';
-@use '@kickstartds/base/source/0-base/1-tools/scss/grid';
 @use './post-teaser-vars';
 
 $vars: meta.module-variables(post-teaser-vars);
@@ -10,16 +9,30 @@ $vars: meta.module-variables(post-teaser-vars);
 .c-post-teaser {
   --c-rich-text--font: var(--font-copy-s);
 
-  @include grid.grid-container(1em);
-  @include breakpoint.media('print') {
-    page-break-inside: avoid;
+  display: flex;
+  flex-direction: column;
+  gap: var(--c-post-teaser--gap);
+
+  .c-teaser {
+    --c-teaser--padding: 0;
+    --c-teaser--border: 0;
+    --c-teaser--shadow-hover: none;
+    --c-teaser--color: var(--c-post-teaser--color);
+
+    display: flex;
+    flex-flow: row-reverse wrap;
+    align-items: flex-start;
+    gap: var(--c-post-teaser--gap);
+
+    &:hover {
+      .c-rich-text > :not(.c-post-meta) {
+        text-decoration: underline;
+      }
+    }
   }
 
-  &__date {
-    font: var(--c-post-teaser_date--font);
-    font-weight: var(--c-post-teaser_date--font-weight);
-    color: var(--c-post-teaser_date--color);
-    padding-right: 1rem;
+  @include breakpoint.media('print') {
+    page-break-inside: avoid;
   }
 
   &__meta {
@@ -28,45 +41,35 @@ $vars: meta.module-variables(post-teaser-vars);
     margin-bottom: 0.5rem;
   }
 
+  &__image,
+  .c-teaser__body {
+    flex: 1 1 calc((500px - 100%) * 999);
+    max-width: 100%;
+  }
+
   &__image {
-    @include grid.grid-break-at(500px, 12, 4.5);
-  }
+    min-width: calc(37.5% - var(--c-post-teaser--gap));
+    position: relative;
 
-  &__body {
-    @include grid.grid-break-at(500px, 12, 7.5);
-  }
+    &::after {
+      padding-bottom: 56.25%;
+      content: '';
+      display: block;
+    }
 
-  &__headline {
-    --g-headline--font: var(--c-post-teaser_headline--font);
-    --g-headline--font-weight: var(--c-post-teaser_headline--font-weight);
-    --g-link--color: var(--c-post-teaser_headline--color);
-    --g-link--color-hover: var(--c-post-teaser_headline--color-hover);
-
-    margin-top: 0;
-
-    .c-post-teaser--title-first & {
-      margin-bottom: 0;
+    img {
+      position: absolute;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
     }
   }
 
-  &__more {
-    margin-top: 1em;
+  .c-teaser__body {
+    min-width: calc(62.5% - var(--c-post-teaser--gap));
   }
 
-  .tag-label-container {
-    min-width: 0%;
-    margin: -0.15rem;
-
-    > * {
-      padding: 0.15rem;
-    }
-
-    @include breakpoint.media('≥s') {
-      margin: -0.25rem;
-
-      > * {
-        padding: 0.25rem;
-      }
-    }
+  .c-post-meta {
+    margin: var(--c-post-teaser--gap) 0;
   }
 }

@@ -75,38 +75,20 @@ export type Sources = {
  */
 export type ClassAttribute = string;
 /**
- * Name, company name, etc.
- */
-export type Title = string;
-/**
- * Position, profession, department, location, etc.
- */
-export type Subtitle = string;
-/**
- * Open link in new Tab
- */
-export type OpenLinkInNewTab = boolean;
-export type CopyText = string;
-/**
  * Additional css classes attached to the wrapping element
  */
 export type Class = string;
 
 /**
- * Component to show contact information
+ * Post Meta
  */
-export interface ContactProps {
-  image?: Picture;
-  title?: Title;
-  subtitle?: Subtitle;
-  links?: {
-    icon?: string;
-    label?: string;
-    href?: string;
-    newTab?: OpenLinkInNewTab;
+export interface PostMetaProps {
+  author?: {
+    name?: string;
+    image?: Picture;
     [k: string]: unknown;
-  }[];
-  copy?: CopyText;
+  };
+  items?: MetaItem[];
   className?: Class;
   [k: string]: unknown;
 }
@@ -127,5 +109,10 @@ export interface Picture {
   lazy?: Lazy;
   sources?: Sources;
   pictureClassName?: ClassAttribute;
+  [k: string]: unknown;
+}
+export interface MetaItem {
+  icon?: string;
+  text?: string;
   [k: string]: unknown;
 }

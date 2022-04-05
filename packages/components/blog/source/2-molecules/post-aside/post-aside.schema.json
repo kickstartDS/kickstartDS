@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://frontend.ruhmesmeile.com/blog/molecules/post-aside.schema.json",
+  "title": "Post Aside",
+  "description": "Post Aside",
+  "type": "object",
+  "properties": {
+    "author": {
+      "title": "Author",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "http://frontend.ruhmesmeile.com/content/molecules/contact.schema.json"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "headline": {
+              "allOf": [
+                {
+                  "default": "Published by"
+                },
+                {
+                  "$ref": "http://frontend.ruhmesmeile.com/base/molecules/headline.schema.json#/properties/content"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "meta": {
+      "$ref": "http://frontend.ruhmesmeile.com/blog/molecules/post-meta.schema.json"
+    },
+    "shareBar": {
+      "$ref": "http://frontend.ruhmesmeile.com/blog/molecules/post-share-bar.schema.json"
+    },
+    "className": {
+      "title": "Class",
+      "description": "Additional css classes attached to the wrapping element",
+      "type": "string"
+    }
+  }
+}

@@ -2,25 +2,30 @@
   "name": "@kickstartds/base",
   "version": "1.5.1",
   "description": "kickstartDS Base Module",
-  "author": "ruhmesmeile GmbH <mail@ruhmesmeile.com> (https://ruhmesmeile.com)",
   "homepage": "https://ruhmesmeile.com",
-  "storybook": {
-    "url": "https://master--60832aa30a8f94002193547c.chromatic.com"
+  "bugs": {
+    "url": "https://github.com/kickstartDS/kickstartDS/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kickstartDS/kickstartDS.git",
+    "directory": "packages/components/base"
   },
   "license": "SEE LICENSE IN LICENSE",
+  "author": "ruhmesmeile GmbH <mail@ruhmesmeile.com> (https://ruhmesmeile.com)",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
-  "scripts": {
-    "build": "node ../../tools/build-components/source",
-    "watch": "node ../../tools/build-components/source --watch",
-    "schema": "node ../../tools/build-components/source --schema"
-  },
   "files": [
     "lib",
     "source/**/*-vars.scss"
   ],
+  "scripts": {
+    "build": "node ../../tools/build-components/source",
+    "schema": "node ../../tools/build-components/source --schema",
+    "watch": "node ../../tools/build-components/source --watch"
+  },
   "dependencies": {
-    "@babel/runtime": "^7.17.2",
+    "@babel/runtime": "^7.17.8",
     "@glidejs/glide": "^3.5.2",
     "@kickstartds/core": "^1.5.0",
     "classnames": "^2.2.6",
@@ -28,14 +33,18 @@
     "focus-visible": "^5.0.2",
     "lodash-es": "^4.17.21",
     "photoswipe": "^4.1.3",
-    "react-markdown": "^8.0.0"
+    "react-markdown": "^8.0.2",
+    "vhtml": "^2.2.0"
   },
   "devDependencies": {
-    "@types/react": "^17.0.39",
-    "bourbon": "^7.0.0",
+    "@types/react": "^17.0.43",
+    "bourbon": "^7.2.0",
     "sass-yiq": "^1.0.0"
   },
   "peerDependencies": {
-    "react": "^17.0.2 || ^18.0.0-rc.0"
+    "react": "^17.0.2 || ^18.0.0"
+  },
+  "storybook": {
+    "url": "https://master--60832aa30a8f94002193547c.chromatic.com"
   }
 }

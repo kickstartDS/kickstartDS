@@ -3,7 +3,6 @@ const rollup = require('rollup');
 const { babel } = require('@rollup/plugin-babel');
 const ts = require('rollup-plugin-ts');
 const styles = require('rollup-plugin-styles');
-const merge = require('lodash/merge');
 const log = require('./log');
 const { dirRe, sourcePath } = require('./utils');
 const {
@@ -22,7 +21,7 @@ const externalRe = {
   exclude: /(tslib|rollup-plugin-styles)/,
 };
 
-const babelConfig = merge({}, sharedBabelConfig, {
+const babelConfig = sharedBabelConfig({
   presets: [['@babel/preset-react', { runtime: 'automatic' }]],
 });
 
@@ -69,6 +68,9 @@ const prepare = async (tsPaths) => {
               declaration: true,
               target: 'ES6',
               moduleResolution: 'node',
+              allowJs: true,
+              lib: ['dom', 'dom.iterable', 'es2020'],
+              downlevelIteration: true,
             },
             babelConfig,
           })

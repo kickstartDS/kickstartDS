@@ -11,6 +11,7 @@ import { Picture } from '@kickstartds/base/lib/picture';
 import { Headline } from '@kickstartds/base/lib/headline';
 import { RichText } from '@kickstartds/base/lib/rich-text';
 import { Icon } from '@kickstartds/base/lib/icon';
+import { Link } from '@kickstartds/base/lib/link';
 import { ContactProps } from './ContactProps';
 import './contact.scss';
 
@@ -18,7 +19,7 @@ const ContactComponent: ForwardRefRenderFunction<
   HTMLElement,
   ContactProps & HTMLAttributes<HTMLElement>
 > = (
-  { image, title, subtitle, phone, email, copy, className, ...props },
+  { image, title, subtitle, links = [], copy, className, ...props },
   ref
 ) => (
   <address className={classnames('c-contact', className)} ref={ref} {...props}>
@@ -39,24 +40,20 @@ const ContactComponent: ForwardRefRenderFunction<
           spaceAfter="none"
         />
       )}
-      {phone || email ? (
+      {links.length ? (
         <ul className="c-contact__links">
-          {phone && (
-            <li>
-              <Icon icon="phone" />
-              <a className="c-contact__link" href={`tel:${phone}`}>
-                {phone}
-              </a>
+          {links.map(({ icon, href, label, newTab }, i) => (
+            <li key={i}>
+              <Icon icon={icon} />
+              <Link
+                className="c-contact__link"
+                href={href}
+                {...(newTab ? { target: '_blank', rel: 'noopener' } : {})}
+              >
+                {label}
+              </Link>
             </li>
-          )}
-          {email && (
-            <li>
-              <Icon icon="email" />
-              <a className="c-contact__link" href={`mailto:${email}`}>
-                {email}
-              </a>
-            </li>
-          )}
+          ))}
         </ul>
       ) : (
         ''
