@@ -1,11 +1,4 @@
-import {
-  ForwardRefRenderFunction,
-  HTMLAttributes,
-  forwardRef,
-  createElement,
-  createContext,
-  useContext,
-} from 'react';
+import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
 import { Icon } from '@kickstartds/base/lib/icon';
@@ -13,18 +6,16 @@ import {
   RichText,
   defaultRenderFn as richTextDefaultRenderFn,
 } from '@kickstartds/base/lib/rich-text';
-import { CollapsibleBoxProps } from './CollapsibleBoxProps';
-import './collapsible-box.scss';
-import './lazyCollapsibleBox.js';
+import { type CollapsibleBoxProps as CollapsibleBoxSchemaProps } from './CollapsibleBoxProps';
 
-export interface RenderFunctions {
+export type CollapsibleBoxProps = CollapsibleBoxSchemaProps & {
   renderText?: renderFn;
   renderSummary?: renderFn;
-}
+};
 
-const CollapsibleBoxComponent: ForwardRefRenderFunction<
+export const CollapsibleBoxComponent: ForwardRefRenderFunction<
   HTMLDivElement,
-  CollapsibleBoxProps & RenderFunctions & HTMLAttributes<HTMLDivElement>
+  CollapsibleBoxProps & HTMLAttributes<HTMLDivElement>
 > = (
   {
     summary,
@@ -67,13 +58,4 @@ const CollapsibleBoxComponent: ForwardRefRenderFunction<
       </div>
     </details>
   </div>
-);
-
-export const CollapsibleBoxContextDefault = forwardRef(CollapsibleBoxComponent);
-export const CollapsibleBoxContext = createContext(
-  CollapsibleBoxContextDefault
-);
-export const CollapsibleBox: typeof CollapsibleBoxContextDefault = forwardRef(
-  (props, ref) =>
-    createElement(useContext(CollapsibleBoxContext), { ...props, ref })
 );

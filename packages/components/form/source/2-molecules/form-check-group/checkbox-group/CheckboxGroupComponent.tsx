@@ -1,24 +1,16 @@
-import {
-  ForwardRefRenderFunction,
-  HTMLAttributes,
-  forwardRef,
-  createElement,
-  createContext,
-  useContext,
-} from 'react';
+import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
-import { Checkbox } from '../../../1-atoms/form-check/checkbox/CheckboxComponent';
-import { CheckboxGroupProps } from './CheckboxGroupProps';
-import '../form-check-group.scss';
+import { Checkbox } from '../../../1-atoms/form-check/checkbox';
+import { type CheckboxGroupProps as CheckboxGroupSchemaProps } from './CheckboxGroupProps';
 
-interface RenderFunctions {
+export type CheckboxGroupProps = CheckboxGroupSchemaProps & {
   renderLabel?: renderFn;
-}
+};
 
-const CheckboxGroupComponent: ForwardRefRenderFunction<
+export const CheckboxGroupComponent: ForwardRefRenderFunction<
   HTMLDivElement,
-  CheckboxGroupProps & RenderFunctions & HTMLAttributes<HTMLDivElement>
+  CheckboxGroupProps & HTMLAttributes<HTMLDivElement>
 > = (
   {
     label,
@@ -51,11 +43,4 @@ const CheckboxGroupComponent: ForwardRefRenderFunction<
       )}
     </div>
   </div>
-);
-
-export const CheckboxGroupContextDefault = forwardRef(CheckboxGroupComponent);
-export const CheckboxGroupContext = createContext(CheckboxGroupContextDefault);
-export const CheckboxGroup: typeof CheckboxGroupContextDefault = forwardRef(
-  (props, ref) =>
-    createElement(useContext(CheckboxGroupContext), { ...props, ref })
 );

@@ -1,17 +1,11 @@
-import {
-  ForwardRefRenderFunction,
-  ButtonHTMLAttributes,
-  forwardRef,
-  createElement,
-  createContext,
-  useContext,
-} from 'react';
+import { ForwardRefRenderFunction, ButtonHTMLAttributes } from 'react';
 import classnames from 'classnames';
 import { Icon } from '../../icon';
-import { ButtonProps } from './ButtonProps';
-import './button.scss';
+import { type ButtonProps } from './ButtonProps';
 
-const ButtonComponent: ForwardRefRenderFunction<
+export { ButtonProps };
+
+export const ButtonComponent: ForwardRefRenderFunction<
   HTMLButtonElement,
   ButtonProps & ButtonHTMLAttributes<HTMLButtonElement>
 > = (
@@ -60,10 +54,4 @@ const ButtonComponent: ForwardRefRenderFunction<
       ''
     )}
   </button>
-);
-
-export const ButtonContextDefault = forwardRef(ButtonComponent);
-export const ButtonContext = createContext(ButtonContextDefault);
-export const Button: typeof ButtonContextDefault = forwardRef((props, ref) =>
-  createElement(useContext(ButtonContext), { ...props, ref })
 );

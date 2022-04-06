@@ -1,25 +1,17 @@
-import {
-  ForwardRefRenderFunction,
-  AnchorHTMLAttributes,
-  forwardRef,
-  createElement,
-  createContext,
-  useContext,
-} from 'react';
+import { ForwardRefRenderFunction, AnchorHTMLAttributes } from 'react';
 import classnames from 'classnames';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
 import { Icon } from '../../icon';
 import { Link } from '../../link';
-import { LinkButtonProps } from './LinkButtonProps';
-import '../button/button.scss';
+import { type LinkButtonProps as LinkButtonSchemaProps } from './LinkButtonProps';
 
-interface RenderFunctions {
+export type LinkButtonProps = LinkButtonSchemaProps & {
   renderLabel?: renderFn;
-}
+};
 
-const LinkButtonComponent: ForwardRefRenderFunction<
+export const LinkButtonComponent: ForwardRefRenderFunction<
   HTMLAnchorElement,
-  LinkButtonProps & RenderFunctions & AnchorHTMLAttributes<HTMLAnchorElement>
+  LinkButtonProps & AnchorHTMLAttributes<HTMLAnchorElement>
 > = (
   {
     label,
@@ -69,11 +61,4 @@ const LinkButtonComponent: ForwardRefRenderFunction<
       ''
     )}
   </Link>
-);
-
-export const LinkButtonContextDefault = forwardRef(LinkButtonComponent);
-export const LinkButtonContext = createContext(LinkButtonContextDefault);
-export const LinkButton: typeof LinkButtonContextDefault = forwardRef(
-  (props, ref) =>
-    createElement(useContext(LinkButtonContext), { ...props, ref })
 );

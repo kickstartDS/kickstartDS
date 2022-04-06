@@ -1,26 +1,17 @@
-import {
-  ForwardRefRenderFunction,
-  HTMLAttributes,
-  forwardRef,
-  createElement,
-  createContext,
-  useContext,
-} from 'react';
+import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
-import { TableProps } from './TableProps';
-import './table.scss';
-import './ResponsiveTable.js';
+import { type TableProps as TableSchemaProps } from './TableProps';
 
-interface RenderFunctions {
+export type TableProps = TableSchemaProps & {
   renderHead?: renderFn;
   renderCell?: renderFn;
   renderCaption?: renderFn;
-}
+};
 
-const TableComponent: ForwardRefRenderFunction<
+export const TableComponent: ForwardRefRenderFunction<
   HTMLTableElement,
-  TableProps & RenderFunctions & HTMLAttributes<HTMLTableElement>
+  TableProps & HTMLAttributes<HTMLTableElement>
 > = (
   {
     caption,
@@ -80,9 +71,3 @@ const TableComponent: ForwardRefRenderFunction<
     </table>
   );
 };
-
-export const TableContextDefault = forwardRef(TableComponent);
-export const TableContext = createContext(TableContextDefault);
-export const Table: typeof TableContextDefault = forwardRef((props, ref) =>
-  createElement(useContext(TableContext), { ...props, ref })
-);
