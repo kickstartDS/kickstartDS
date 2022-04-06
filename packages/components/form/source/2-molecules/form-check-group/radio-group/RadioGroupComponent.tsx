@@ -3,7 +3,6 @@ import classnames from 'classnames';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
 import { Radio } from '../../../1-atoms/form-check/radio';
 import { RadioGroupProps as RadioGroupSchemaProps } from './RadioGroupProps';
-import '../form-check-group.scss';
 
 export type RadioGroupProps = RadioGroupSchemaProps & {
   renderLabel?: renderFn;
