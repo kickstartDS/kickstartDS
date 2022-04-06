@@ -19,8 +19,10 @@ interface RenderFunctions {
 }
 
 const ButtonComponent: ForwardRefRenderFunction<
-  HTMLButtonElement,
-  ButtonProps & RenderFunctions & HTMLAttributes<HTMLButtonElement>
+  HTMLButtonElement | HTMLAnchorElement,
+  ButtonProps &
+    RenderFunctions &
+    HTMLAttributes<HTMLButtonElement | HTMLAnchorElement>
 > = (
   {
     label,
