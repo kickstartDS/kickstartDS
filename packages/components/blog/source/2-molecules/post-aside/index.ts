@@ -1,5 +1,5 @@
 import { forwardRef, createElement, createContext, useContext } from 'react';
-import { PostAsideComponent, PostAsideProps } from './PostAsideComponent';
+import { PostAsideComponent, type PostAsideProps } from './PostAsideComponent';
 import './post-aside.scss';
 
 export const PostAsideContextDefault = forwardRef(PostAsideComponent);

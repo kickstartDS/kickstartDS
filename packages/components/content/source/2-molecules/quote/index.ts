@@ -1,5 +1,5 @@
 import { forwardRef, createElement, createContext, useContext } from 'react';
-import { QuoteComponent, QuoteProps } from './QuoteComponent';
+import { QuoteComponent, type QuoteProps } from './QuoteComponent';
 import './quote.scss';
 
 export { QuoteProps };

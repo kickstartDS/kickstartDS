@@ -1,5 +1,5 @@
 import { forwardRef, createElement, createContext, useContext } from 'react';
-import { VisualComponent, VisualProps } from './VisualComponent';
+import { VisualComponent, type VisualProps } from './VisualComponent';
 import './visual.scss';
 import './Visual.js';
 

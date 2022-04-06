@@ -12,7 +12,7 @@ import {
   defaultRenderFn as richTextDefaultRenderFn,
 } from '@kickstartds/base/lib/rich-text';
 import { Picture } from '@kickstartds/base/lib/picture';
-import { StorytellingProps } from './StorytellingProps';
+import { type StorytellingProps } from './StorytellingProps';
 
 interface ILazy {
   lazy: boolean;

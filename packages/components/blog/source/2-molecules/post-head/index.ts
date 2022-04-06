@@ -1,5 +1,5 @@
 import { forwardRef, createElement, createContext, useContext } from 'react';
-import { PostHeadComponent, PostHeadProps } from './PostHeadComponent';
+import { PostHeadComponent, type PostHeadProps } from './PostHeadComponent';
 import './post-head.scss';
 
 export { PostHeadProps };

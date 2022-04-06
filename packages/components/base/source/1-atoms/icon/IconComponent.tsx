@@ -1,8 +1,8 @@
 import { ForwardRefRenderFunction, SVGAttributes } from 'react';
 import classNames from 'classnames';
-import { IconProps } from './IconProps';
+import { type IconProps } from './IconProps';
 
-export type { IconProps };
+export { IconProps };
 export const IconComponent: ForwardRefRenderFunction<
   SVGSVGElement,
   IconProps & SVGAttributes<SVGElement>

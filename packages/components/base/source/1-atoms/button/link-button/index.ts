@@ -1,5 +1,8 @@
 import { forwardRef, createElement, createContext, useContext } from 'react';
-import { LinkButtonComponent, LinkButtonProps } from './LinkButtonComponent';
+import {
+  LinkButtonComponent,
+  type LinkButtonProps,
+} from './LinkButtonComponent';
 import '../button/button.scss';
 
 export { LinkButtonProps };

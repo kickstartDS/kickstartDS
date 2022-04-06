@@ -1,5 +1,5 @@
 import { forwardRef, createElement, createContext, useContext } from 'react';
-import { TextFieldComponent, TextFieldProps } from './TextFieldComponent';
+import { TextFieldComponent, type TextFieldProps } from './TextFieldComponent';
 import '../form-field.scss';
 
 export { TextFieldProps };

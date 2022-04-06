@@ -1,5 +1,5 @@
 import { forwardRef, createElement, createContext, useContext } from 'react';
-import { LightBoxComponent, LightBoxProps } from './LightBoxComponent';
+import { LightBoxComponent, type LightBoxProps } from './LightBoxComponent';
 import './lazyLightbox.js';
 import './lightbox.scss';
 

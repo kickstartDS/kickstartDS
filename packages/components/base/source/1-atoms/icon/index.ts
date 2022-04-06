@@ -1,5 +1,5 @@
 import { forwardRef, createElement, createContext, useContext } from 'react';
-import { IconComponent, IconProps } from './IconComponent';
+import { IconComponent, type IconProps } from './IconComponent';
 import './icon.scss';
 
 export { IconProps };

@@ -1,5 +1,8 @@
 import { forwardRef, createElement, createContext, useContext } from 'react';
-import { SelectFieldComponent, SelectFieldProps } from './SelectFieldComponent';
+import {
+  SelectFieldComponent,
+  type SelectFieldProps,
+} from './SelectFieldComponent';
 import '../form-field.scss';
 
 export { SelectFieldProps };

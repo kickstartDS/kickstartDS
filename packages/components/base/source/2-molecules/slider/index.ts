@@ -1,5 +1,5 @@
 import { forwardRef, createElement, createContext, useContext } from 'react';
-import { SliderComponent, SliderProps } from './SliderComponent';
+import { SliderComponent, type SliderProps } from './SliderComponent';
 import './slider.scss';
 import './lazySlider.js';
 

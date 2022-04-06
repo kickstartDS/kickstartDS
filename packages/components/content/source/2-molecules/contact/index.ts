@@ -1,5 +1,5 @@
 import { forwardRef, createElement, createContext, useContext } from 'react';
-import { ContactComponent, ContactProps } from './ContactComponent';
+import { ContactComponent, type ContactProps } from './ContactComponent';
 import './contact.scss';
 
 export { ContactProps };

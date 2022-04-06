@@ -1,5 +1,5 @@
 import { forwardRef, createElement, createContext, useContext } from 'react';
-import { ButtonComponent, ButtonProps } from './ButtonComponent';
+import { ButtonComponent, type ButtonProps } from './ButtonComponent';
 import './button.scss';
 
 export const ButtonContextDefault = forwardRef(ButtonComponent);

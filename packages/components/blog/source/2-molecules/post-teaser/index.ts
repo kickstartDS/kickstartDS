@@ -1,5 +1,8 @@
 import { forwardRef, createElement, createContext, useContext } from 'react';
-import { PostTeaserComponent, PostTeaserProps } from './PostTeaserComponent';
+import {
+  PostTeaserComponent,
+  type PostTeaserProps,
+} from './PostTeaserComponent';
 import './post-teaser.scss';
 
 export { PostTeaserProps };

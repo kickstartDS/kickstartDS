@@ -1,7 +1,7 @@
 import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
-import { TableProps as TableSchemaProps } from './TableProps';
+import { type TableProps as TableSchemaProps } from './TableProps';
 
 export type TableProps = TableSchemaProps & {
   renderHead?: renderFn;

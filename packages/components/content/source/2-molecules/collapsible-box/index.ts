@@ -1,7 +1,7 @@
 import { forwardRef, createElement, createContext, useContext } from 'react';
 import {
   CollapsibleBoxComponent,
-  CollapsibleBoxProps,
+  type CollapsibleBoxProps,
 } from './CollapsibleBoxComponent';
 import './collapsible-box.scss';
 import './lazyCollapsibleBox.js';

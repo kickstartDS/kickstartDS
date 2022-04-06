@@ -2,7 +2,7 @@ import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classNames from 'classnames';
 import { Slider } from '@kickstartds/base/lib/slider';
 import { Visual } from '../visual';
-import { VisualSliderProps } from './VisualSliderProps';
+import { type VisualSliderProps } from './VisualSliderProps';
 
 export { VisualSliderProps };
 export const VisualSliderComponent: ForwardRefRenderFunction<

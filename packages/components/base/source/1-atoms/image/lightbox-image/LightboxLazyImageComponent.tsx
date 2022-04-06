@@ -3,7 +3,7 @@ import classnames from 'classnames';
 import { Icon } from '../../icon';
 import { Link } from '../../link';
 import { Picture } from '../picture';
-import { LazyLightboxImageProps as LightboxLazyImageProps } from './LightboxLazyImageProps';
+import { type LazyLightboxImageProps as LightboxLazyImageProps } from './LightboxLazyImageProps';
 
 export { LightboxLazyImageProps };
 export const LightboxLazyImageComponent: ForwardRefRenderFunction<

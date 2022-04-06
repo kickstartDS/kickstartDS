@@ -1,5 +1,5 @@
 import { forwardRef, createElement, createContext, useContext } from 'react';
-import { LogoTilesComponent, LogoTilesProps } from './LogoTilesComponent';
+import { LogoTilesComponent, type LogoTilesProps } from './LogoTilesComponent';
 import './logo-tiles.scss';
 
 export { LogoTilesProps };

@@ -1,7 +1,7 @@
 import { forwardRef, createElement, createContext, useContext } from 'react';
 import {
   QuotesSliderComponent,
-  QuotesSliderProps,
+  type QuotesSliderProps,
 } from './QuotesSliderComponent';
 import './QuotesSlider.js';
 

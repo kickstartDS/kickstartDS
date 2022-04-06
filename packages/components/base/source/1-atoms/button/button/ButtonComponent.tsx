@@ -1,7 +1,7 @@
 import { ForwardRefRenderFunction, ButtonHTMLAttributes } from 'react';
 import classnames from 'classnames';
 import { Icon } from '../../icon';
-import { ButtonProps } from './ButtonProps';
+import { type ButtonProps } from './ButtonProps';
 
 export { ButtonProps };
 

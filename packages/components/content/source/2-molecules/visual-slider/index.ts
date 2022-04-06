@@ -1,7 +1,7 @@
 import { forwardRef, createElement, createContext, useContext } from 'react';
 import {
   VisualSliderComponent,
-  VisualSliderProps,
+  type VisualSliderProps,
 } from './VisualSliderComponent';
 import './visual-slider.scss';
 

@@ -5,7 +5,7 @@ import {
 } from 'react';
 import classnames from 'classnames';
 import { Headline } from '../../../2-molecules/headline';
-import { SectionProps } from './SectionProps';
+import { type SectionProps } from './SectionProps';
 
 const SectionContainer: FunctionComponent<SectionProps> = ({
   width,

@@ -11,7 +11,7 @@ import {
   defaultRenderFn as richTextDefaultRenderFn,
 } from '@kickstartds/base/lib/rich-text';
 import { LinkButton } from '@kickstartds/base/lib/link-button';
-import { CountUpProps as CountUpSchemaProps } from './CountUpProps';
+import { type CountUpProps as CountUpSchemaProps } from './CountUpProps';
 
 export type CountUpProps = CountUpSchemaProps & {
   renderTo?: renderFn;

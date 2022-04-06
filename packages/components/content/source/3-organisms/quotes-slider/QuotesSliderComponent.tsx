@@ -2,7 +2,7 @@ import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
 import { Slider } from '@kickstartds/base/lib/slider';
 import { Quote } from '../../2-molecules/quote';
-import { QuotesSliderProps } from './QuotesSliderProps';
+import { type QuotesSliderProps } from './QuotesSliderProps';
 
 export { QuotesSliderProps };
 export const QuotesSliderComponent: ForwardRefRenderFunction<

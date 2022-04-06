@@ -1,7 +1,7 @@
 import { forwardRef, createElement, createContext, useContext } from 'react';
 import {
   RichTextComponent,
-  RichTextProps,
+  type RichTextProps,
   defaultRenderFn,
 } from './RichTextComponent';
 import './rich-text.scss';

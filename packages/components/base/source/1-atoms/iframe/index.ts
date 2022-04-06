@@ -1,5 +1,8 @@
 import { forwardRef, createElement, createContext, useContext } from 'react';
-import { IframeRatioComponent, IframeRatioProps } from './IframeRatioComponent';
+import {
+  IframeRatioComponent,
+  type IframeRatioProps,
+} from './IframeRatioComponent';
 import './iframe-ratio.scss';
 import './IframeRatio.js';
 

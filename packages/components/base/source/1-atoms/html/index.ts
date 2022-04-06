@@ -1,5 +1,5 @@
 import { forwardRef, createElement, createContext, useContext } from 'react';
-import { HtmlComponent, HTMLProps } from './HtmlComponent';
+import { HtmlComponent, type HTMLProps } from './HtmlComponent';
 
 export { HTMLProps };
 export const HtmlContextDefault = forwardRef(HtmlComponent);

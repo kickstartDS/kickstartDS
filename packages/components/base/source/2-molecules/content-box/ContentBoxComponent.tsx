@@ -7,7 +7,7 @@ import {
 } from '../../1-atoms/rich-text';
 import { LinkButton } from '../../1-atoms/button/link-button';
 import { Picture } from '../../1-atoms/image/picture';
-import { ContentBoxProps as ContentBoxSchemaProps } from './ContentBoxProps';
+import { type ContentBoxProps as ContentBoxSchemaProps } from './ContentBoxProps';
 
 export type ContentBoxProps = ContentBoxSchemaProps & {
   renderTopic?: renderFn;

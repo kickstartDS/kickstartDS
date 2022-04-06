@@ -1,5 +1,5 @@
 import { forwardRef, createElement, createContext, useContext } from 'react';
-import { TextMediaComponent, TextMediaProps } from './TextMediaComponent';
+import { TextMediaComponent, type TextMediaProps } from './TextMediaComponent';
 import './text-media.scss';
 
 export { TextMediaProps };

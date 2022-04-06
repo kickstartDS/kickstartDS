@@ -5,7 +5,7 @@ import { Headline } from '@kickstartds/base/lib/headline';
 import { RichText } from '@kickstartds/base/lib/rich-text';
 import { Icon } from '@kickstartds/base/lib/icon';
 import { Link } from '@kickstartds/base/lib/link';
-import { ContactProps } from './ContactProps';
+import { type ContactProps } from './ContactProps';
 
 export { ContactProps };
 export const ContactComponent: ForwardRefRenderFunction<

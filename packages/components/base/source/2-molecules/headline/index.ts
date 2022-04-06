@@ -1,5 +1,5 @@
 import { forwardRef, createElement, createContext, useContext } from 'react';
-import { HeadlineComponent, HeadlineProps } from './HeadlineComponent';
+import { HeadlineComponent, type HeadlineProps } from './HeadlineComponent';
 import './headline.scss';
 
 export { HeadlineProps };

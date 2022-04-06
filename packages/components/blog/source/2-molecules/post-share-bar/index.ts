@@ -1,7 +1,7 @@
 import { forwardRef, createElement, createContext, useContext } from 'react';
 import {
   PostShareBarComponent,
-  PostShareBarProps,
+  type PostShareBarProps,
 } from './PostShareBarComponent';
 import './post-share-bar.scss';
 

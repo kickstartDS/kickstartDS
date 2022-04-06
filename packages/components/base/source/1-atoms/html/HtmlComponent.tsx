@@ -1,6 +1,6 @@
 import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classNames from 'classnames';
-import { HTMLProps } from './HtmlProps';
+import { type HTMLProps } from './HtmlProps';
 
 export { HTMLProps };
 export const HtmlComponent: ForwardRefRenderFunction<

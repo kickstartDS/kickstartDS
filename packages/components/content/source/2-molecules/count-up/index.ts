@@ -1,5 +1,5 @@
 import { forwardRef, createElement, createContext, useContext } from 'react';
-import { CountUpComponent, CountUpProps } from './CountUpComponent';
+import { CountUpComponent, type CountUpProps } from './CountUpComponent';
 import './count-up.scss';
 import './CountUp.js';
 

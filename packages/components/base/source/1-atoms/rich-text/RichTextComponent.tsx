@@ -3,7 +3,7 @@ import ReactMarkdown from 'react-markdown';
 import classnames from 'classnames';
 import { renderTextFn } from '@kickstartds/core/lib/core';
 
-export const defaultRenderFn: renderTextFn = (t) => (
+export const defaultRenderFn: renderTextFn = (t: string) => (
   <ReactMarkdown children={t} />
 );
 

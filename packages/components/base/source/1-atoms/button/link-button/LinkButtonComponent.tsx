@@ -3,7 +3,7 @@ import classnames from 'classnames';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
 import { Icon } from '../../icon';
 import { Link } from '../../link';
-import { LinkButtonProps as LinkButtonSchemaProps } from './LinkButtonProps';
+import { type LinkButtonProps as LinkButtonSchemaProps } from './LinkButtonProps';
 
 export type LinkButtonProps = LinkButtonSchemaProps & {
   renderLabel?: renderFn;

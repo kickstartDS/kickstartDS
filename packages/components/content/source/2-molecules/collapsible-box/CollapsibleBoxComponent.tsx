@@ -6,7 +6,7 @@ import {
   RichText,
   defaultRenderFn as richTextDefaultRenderFn,
 } from '@kickstartds/base/lib/rich-text';
-import { CollapsibleBoxProps as CollapsibleBoxSchemaProps } from './CollapsibleBoxProps';
+import { type CollapsibleBoxProps as CollapsibleBoxSchemaProps } from './CollapsibleBoxProps';
 
 export type CollapsibleBoxProps = CollapsibleBoxSchemaProps & {
   renderText?: renderFn;

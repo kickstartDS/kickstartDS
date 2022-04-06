@@ -1,5 +1,5 @@
 import { forwardRef, createElement, createContext, useContext } from 'react';
-import { SectionComponent, SectionProps } from './SectionComponent';
+import { SectionComponent, type SectionProps } from './SectionComponent';
 import './section.scss';
 
 export const SectionContextDefault = forwardRef(SectionComponent);

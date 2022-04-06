@@ -1,7 +1,7 @@
 import { forwardRef, createElement, createContext, useContext } from 'react';
 import {
   StorytellingComponent,
-  StorytellingProps,
+  type StorytellingProps,
 } from './StorytellingComponent';
 import './storytelling.scss';
 

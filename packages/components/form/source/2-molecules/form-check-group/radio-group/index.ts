@@ -1,5 +1,8 @@
 import { forwardRef, createElement, createContext, useContext } from 'react';
-import { RadioGroupComponent, RadioGroupProps } from './RadioGroupComponent';
+import {
+  RadioGroupComponent,
+  type RadioGroupProps,
+} from './RadioGroupComponent';
 import '../form-check-group.scss';
 
 export { RadioGroupProps };

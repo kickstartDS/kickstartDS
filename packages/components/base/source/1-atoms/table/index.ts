@@ -1,5 +1,5 @@
 import { forwardRef, createElement, createContext, useContext } from 'react';
-import { TableComponent, TableProps } from './TableComponent';
+import { TableComponent, type TableProps } from './TableComponent';
 import './table.scss';
 import './ResponsiveTable.js';
 

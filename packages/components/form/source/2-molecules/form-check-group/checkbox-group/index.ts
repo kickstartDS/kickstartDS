@@ -1,7 +1,7 @@
 import { forwardRef, createElement, createContext, useContext } from 'react';
 import {
   CheckboxGroupComponent,
-  CheckboxGroupProps,
+  type CheckboxGroupProps,
 } from './CheckboxGroupComponent';
 import '../form-check-group.scss';
 

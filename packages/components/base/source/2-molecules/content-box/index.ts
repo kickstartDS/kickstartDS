@@ -1,5 +1,8 @@
 import { forwardRef, createElement, createContext, useContext } from 'react';
-import { ContentBoxComponent, ContentBoxProps } from './ContentBoxComponent';
+import {
+  ContentBoxComponent,
+  type ContentBoxProps,
+} from './ContentBoxComponent';
 import './content-box.scss';
 import './ContentBox.js';
 

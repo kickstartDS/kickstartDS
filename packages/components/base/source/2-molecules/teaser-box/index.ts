@@ -1,5 +1,5 @@
 import { forwardRef, createElement, createContext, useContext } from 'react';
-import { TeaserBoxComponent, TeaserBoxProps } from './TeaserBoxComponent';
+import { TeaserBoxComponent, type TeaserBoxProps } from './TeaserBoxComponent';
 import './teaser-box.scss';
 
 export { TeaserBoxProps };

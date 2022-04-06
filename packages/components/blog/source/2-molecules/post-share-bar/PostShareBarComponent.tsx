@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { Headline } from '@kickstartds/base/lib/headline';
 import { Link } from '@kickstartds/base/lib/link';
 import { Icon } from '@kickstartds/base/lib/icon';
-import { PostShareBarProps } from './PostShareBarProps';
+import { type PostShareBarProps } from './PostShareBarProps';
 
 export { PostShareBarProps };
 export const PostShareBarComponent: ForwardRefRenderFunction<

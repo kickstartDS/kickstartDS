@@ -1,5 +1,5 @@
 import { forwardRef, createElement, createContext, useContext } from 'react';
-import { RadioComponent, RadioButtonProps } from './RadioComponent';
+import { RadioComponent, type RadioButtonProps } from './RadioComponent';
 import '../form-check.scss';
 
 export { RadioButtonProps };

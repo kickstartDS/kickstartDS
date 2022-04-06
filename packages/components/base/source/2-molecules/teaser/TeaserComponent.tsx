@@ -6,7 +6,7 @@ import {
   defaultRenderFn as richTextDefaultRenderFn,
 } from '../../1-atoms/rich-text';
 import { LinkButton } from '../../1-atoms/button/link-button';
-import { TeaserProps as TeaserSchemaProps } from './TeaserProps';
+import { type TeaserProps as TeaserSchemaProps } from './TeaserProps';
 
 export type TeaserProps = TeaserSchemaProps & {
   renderTopic?: renderFn;
