@@ -1,23 +1,15 @@
-import {
-  ForwardRefRenderFunction,
-  HTMLAttributes,
-  forwardRef,
-  createElement,
-  createContext,
-  useContext,
-} from 'react';
+import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
-import { RadioButtonProps } from './RadioProps';
-import '../form-check.scss';
+import { RadioButtonProps as RadioButtonSchemaProps } from './RadioProps';
 
-interface RenderFunctions {
+export type RadioButtonProps = RadioButtonSchemaProps & {
   renderLabel?: renderFn;
-}
+};
 
 export const RadioComponent: ForwardRefRenderFunction<
   HTMLInputElement,
-  RadioButtonProps & RenderFunctions & HTMLAttributes<HTMLInputElement>
+  RadioButtonProps & HTMLAttributes<HTMLInputElement>
 > = (
   {
     label,
@@ -50,10 +42,4 @@ export const RadioComponent: ForwardRefRenderFunction<
 
     {hint && <p className="c-form-check__hint">{hint}</p>}
   </label>
-);
-
-export const RadioContextDefault = forwardRef(RadioComponent);
-export const RadioContext = createContext(RadioContextDefault);
-export const Radio: typeof RadioContextDefault = forwardRef((props, ref) =>
-  createElement(useContext(RadioContext), { ...props, ref })
 );

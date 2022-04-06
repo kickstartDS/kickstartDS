@@ -1,18 +1,11 @@
-import {
-  ForwardRefRenderFunction,
-  HTMLAttributes,
-  forwardRef,
-  createElement,
-  createContext,
-  useContext,
-} from 'react';
+import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classNames from 'classnames';
 import { Slider } from '@kickstartds/base/lib/slider';
-import { Visual } from '../visual/VisualComponent';
+import { Visual } from '../visual';
 import { VisualSliderProps } from './VisualSliderProps';
-import './visual-slider.scss';
 
-const VisualSliderComponent: ForwardRefRenderFunction<
+export { VisualSliderProps };
+export const VisualSliderComponent: ForwardRefRenderFunction<
   HTMLDivElement,
   VisualSliderProps & HTMLAttributes<HTMLDivElement>
 > = ({ slides, className, ...props }, ref) => (
@@ -36,11 +29,4 @@ const VisualSliderComponent: ForwardRefRenderFunction<
       />
     ))}
   </Slider>
-);
-
-export const VisualSliderContextDefault = forwardRef(VisualSliderComponent);
-export const VisualSliderContext = createContext(VisualSliderContextDefault);
-export const VisualSlider: typeof VisualSliderContextDefault = forwardRef(
-  (props, ref) =>
-    createElement(useContext(VisualSliderContext), { ...props, ref })
 );

@@ -2,10 +2,6 @@ import {
   FunctionComponent,
   ForwardRefRenderFunction,
   HTMLAttributes,
-  forwardRef,
-  createElement,
-  createContext,
-  useContext,
 } from 'react';
 import classnames from 'classnames';
 import { renderFn } from '@kickstartds/core/lib/core';
@@ -17,7 +13,6 @@ import {
 } from '@kickstartds/base/lib/rich-text';
 import { Picture } from '@kickstartds/base/lib/picture';
 import { StorytellingProps } from './StorytellingProps';
-import './storytelling.scss';
 
 interface ILazy {
   lazy: boolean;
@@ -123,7 +118,8 @@ const StorytellingMixin: FunctionComponent<
   </div>
 );
 
-const StorytellingComponent: ForwardRefRenderFunction<
+export { StorytellingProps };
+export const StorytellingComponent: ForwardRefRenderFunction<
   HTMLDivElement,
   StorytellingProps & HTMLAttributes<HTMLDivElement>
 > = (props, ref) => (
@@ -135,11 +131,4 @@ const StorytellingComponent: ForwardRefRenderFunction<
       </noscript>
     )}
   </div>
-);
-
-export const StorytellingContextDefault = forwardRef(StorytellingComponent);
-export const StorytellingContext = createContext(StorytellingContextDefault);
-export const Storytelling: typeof StorytellingContextDefault = forwardRef(
-  (props, ref) =>
-    createElement(useContext(StorytellingContext), { ...props, ref })
 );

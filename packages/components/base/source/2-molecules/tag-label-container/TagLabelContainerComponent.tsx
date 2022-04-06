@@ -1,18 +1,10 @@
-import {
-  ForwardRefRenderFunction,
-  HTMLAttributes,
-  forwardRef,
-  createElement,
-  createContext,
-  useContext,
-} from 'react';
+import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classNames from 'classnames';
 import { TagLabel, TagLabelProps } from '../../1-atoms/tag-label';
-import './tag-label-container.scss';
 
-interface TagLabelContainerProps {
+export type TagLabelContainerProps = {
   tagLabels: TagLabelProps[];
-}
+};
 
 export const TagLabelContainerComponent: ForwardRefRenderFunction<
   HTMLDivElement,
@@ -30,14 +22,3 @@ export const TagLabelContainerComponent: ForwardRefRenderFunction<
     ))}
   </div>
 );
-
-export const TagLabelContainerContextDefault = forwardRef(
-  TagLabelContainerComponent
-);
-export const TagLabelContainerContext = createContext(
-  TagLabelContainerContextDefault
-);
-export const TagLabelContainer: typeof TagLabelContainerContextDefault =
-  forwardRef((props, ref) =>
-    createElement(useContext(TagLabelContainerContext), { ...props, ref })
-  );

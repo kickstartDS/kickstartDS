@@ -1,11 +1,4 @@
-import {
-  ForwardRefRenderFunction,
-  HTMLAttributes,
-  forwardRef,
-  createElement,
-  createContext,
-  useContext,
-} from 'react';
+import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
 import {
   renderFn,
@@ -18,20 +11,18 @@ import {
   defaultRenderFn as richTextDefaultRenderFn,
 } from '@kickstartds/base/lib/rich-text';
 import { LinkButton } from '@kickstartds/base/lib/link-button';
-import { CountUpProps } from './CountUpProps';
-import './count-up.scss';
-import './CountUp.js';
+import { CountUpProps as CountUpSchemaProps } from './CountUpProps';
 
-interface RenderFunctions {
+export type CountUpProps = CountUpSchemaProps & {
   renderTo?: renderFn;
   renderTopic?: renderFn;
   renderText?: renderTextFn;
   renderLinkLabel?: renderFn;
-}
+};
 
-const CountUpComponent: ForwardRefRenderFunction<
+export const CountUpComponent: ForwardRefRenderFunction<
   HTMLDivElement,
-  CountUpProps & RenderFunctions & HTMLAttributes<HTMLDivElement>
+  CountUpProps & HTMLAttributes<HTMLDivElement>
 > = (
   {
     icon,
@@ -84,10 +75,4 @@ const CountUpComponent: ForwardRefRenderFunction<
       ''
     )}
   </div>
-);
-
-export const CountUpContextDefault = forwardRef(CountUpComponent);
-export const CountUpContext = createContext(CountUpContextDefault);
-export const CountUp: typeof CountUpContextDefault = forwardRef((props, ref) =>
-  createElement(useContext(CountUpContext), { ...props, ref })
 );

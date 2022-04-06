@@ -1,11 +1,4 @@
-import {
-  ForwardRefRenderFunction,
-  HTMLAttributes,
-  forwardRef,
-  createElement,
-  createContext,
-  useContext,
-} from 'react';
+import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
 import { Picture } from '@kickstartds/base/lib/picture';
@@ -13,18 +6,17 @@ import {
   RichText,
   defaultRenderFn as richTextDefaultRenderFn,
 } from '@kickstartds/base/lib/rich-text';
-import { QuoteProps } from './QuoteProps';
-import './quote.scss';
+import { QuoteProps as QuoteSchemaProps } from './QuoteProps';
 
-interface RenderFunctions {
+export type QuoteProps = QuoteSchemaProps & {
   renderText?: renderFn;
   renderSource?: renderFn;
   renderByline?: renderFn;
-}
+};
 
-const QuoteComponent: ForwardRefRenderFunction<
+export const QuoteComponent: ForwardRefRenderFunction<
   HTMLDivElement,
-  QuoteProps & RenderFunctions & HTMLAttributes<HTMLDivElement>
+  QuoteProps & HTMLAttributes<HTMLDivElement>
 > = (
   {
     image,
@@ -55,10 +47,4 @@ const QuoteComponent: ForwardRefRenderFunction<
       {byline && <div className="c-quote__byline">{renderByline(byline)}</div>}
     </div>
   </div>
-);
-
-export const QuoteContextDefault = forwardRef(QuoteComponent);
-export const QuoteContext = createContext(QuoteContextDefault);
-export const Quote: typeof QuoteContextDefault = forwardRef((props, ref) =>
-  createElement(useContext(QuoteContext), { ...props, ref })
 );

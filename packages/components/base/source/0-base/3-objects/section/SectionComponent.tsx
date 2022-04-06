@@ -2,17 +2,12 @@ import {
   FunctionComponent,
   ForwardRefRenderFunction,
   HTMLAttributes,
-  forwardRef,
-  createElement,
-  createContext,
-  useContext,
 } from 'react';
 import classnames from 'classnames';
-import { Headline } from '../../../2-molecules/headline/HeadlineComponent';
+import { Headline } from '../../../2-molecules/headline';
 import { SectionProps } from './SectionProps';
-import './section.scss';
 
-const Container: FunctionComponent<SectionProps> = ({
+const SectionContainer: FunctionComponent<SectionProps> = ({
   width,
   gutter,
   mode,
@@ -32,7 +27,9 @@ const Container: FunctionComponent<SectionProps> = ({
   </div>
 );
 
-const SectionComponent: ForwardRefRenderFunction<
+export { SectionProps };
+
+export const SectionComponent: ForwardRefRenderFunction<
   HTMLDivElement,
   SectionProps & HTMLAttributes<HTMLDivElement>
 > = (
@@ -66,20 +63,14 @@ const SectionComponent: ForwardRefRenderFunction<
     {...props}
   >
     {headline && headline.content && (
-      <Container width={width}>
+      <SectionContainer width={width}>
         <Headline {...headline} />
-      </Container>
+      </SectionContainer>
     )}
     {children && (
-      <Container width={width} gutter={gutter} mode={mode}>
+      <SectionContainer width={width} gutter={gutter} mode={mode}>
         {children}
-      </Container>
+      </SectionContainer>
     )}
   </div>
-);
-
-export const SectionContextDefault = forwardRef(SectionComponent);
-export const SectionContext = createContext(SectionContextDefault);
-export const Section: typeof SectionContextDefault = forwardRef((props, ref) =>
-  createElement(useContext(SectionContext), { ...props, ref })
 );

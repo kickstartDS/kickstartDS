@@ -1,20 +1,13 @@
-import {
-  ForwardRefRenderFunction,
-  HTMLAttributes,
-  forwardRef,
-  createElement,
-  createContext,
-  useContext,
-} from 'react';
+import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classNames from 'classnames';
 import { format } from 'date-fns';
 import { Headline } from '@kickstartds/base/lib/headline';
 import { Picture } from '@kickstartds/base/lib/picture';
 import { TagLabelContainer } from '@kickstartds/base/lib/tag-label-container';
 import { PostHeadProps } from './PostHeadProps';
-import './post-head.scss';
 
-const PostHeadComponent: ForwardRefRenderFunction<
+export { PostHeadProps };
+export const PostHeadComponent: ForwardRefRenderFunction<
   HTMLDivElement,
   PostHeadProps & HTMLAttributes<HTMLDivElement>
 > = (
@@ -53,10 +46,4 @@ const PostHeadComponent: ForwardRefRenderFunction<
       </div>
     )}
   </div>
-);
-
-export const PostHeadContextDefault = forwardRef(PostHeadComponent);
-export const PostHeadContext = createContext(PostHeadContextDefault);
-export const PostHead: typeof PostHeadContextDefault = forwardRef(
-  (props, ref) => createElement(useContext(PostHeadContext), { ...props, ref })
 );

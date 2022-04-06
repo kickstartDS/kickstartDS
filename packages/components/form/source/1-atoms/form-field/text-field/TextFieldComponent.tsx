@@ -1,24 +1,16 @@
-import {
-  ForwardRefRenderFunction,
-  HTMLAttributes,
-  forwardRef,
-  createElement,
-  createContext,
-  useContext,
-} from 'react';
+import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
 import { Icon } from '@kickstartds/base/lib/icon';
-import { TextFieldProps } from './TextFieldProps';
-import '../form-field.scss';
+import { TextFieldProps as TextFieldSchemaProps } from './TextFieldProps';
 
-interface RenderFunctions {
+export type TextFieldProps = TextFieldSchemaProps & {
   renderLabel?: renderFn;
-}
+};
 
-const TextFieldComponent: ForwardRefRenderFunction<
+export const TextFieldComponent: ForwardRefRenderFunction<
   HTMLInputElement,
-  TextFieldProps & RenderFunctions & HTMLAttributes<HTMLInputElement>
+  TextFieldProps & HTMLAttributes<HTMLInputElement>
 > = (
   {
     type = 'text',
@@ -64,10 +56,4 @@ const TextFieldComponent: ForwardRefRenderFunction<
 
     {hint && <p className="c-form-field__hint">{hint}</p>}
   </label>
-);
-
-export const TextFieldContextDefault = forwardRef(TextFieldComponent);
-export const TextFieldContext = createContext(TextFieldContextDefault);
-export const TextField: typeof TextFieldContextDefault = forwardRef(
-  (props, ref) => createElement(useContext(TextFieldContext), { ...props, ref })
 );

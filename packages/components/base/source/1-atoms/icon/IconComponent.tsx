@@ -1,9 +1,21 @@
-import { forwardRef, createElement, createContext, useContext } from 'react';
-import './icon.scss';
-import { Icon as IconComponent } from './PureIconComponent';
+import { ForwardRefRenderFunction, SVGAttributes } from 'react';
+import classNames from 'classnames';
+import { IconProps } from './IconProps';
 
-export const IconContextDefault = forwardRef(IconComponent);
-export const IconContext = createContext(IconContextDefault);
-export const Icon: typeof IconContextDefault = forwardRef((props, ref) =>
-  createElement(useContext(IconContext), { ...props, ref })
+export type { IconProps };
+export const IconComponent: ForwardRefRenderFunction<
+  SVGSVGElement,
+  IconProps & SVGAttributes<SVGElement>
+> = ({ icon, className, role, ...props }, ref) => (
+  <svg
+    className={classNames('icon', className)}
+    role={role}
+    ref={ref}
+    {...props}
+  >
+    <use
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+      xlinkHref={icon ? `#icon-${icon}` : ''}
+    ></use>
+  </svg>
 );
