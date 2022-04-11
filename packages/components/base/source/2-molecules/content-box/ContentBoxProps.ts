@@ -36,13 +36,7 @@ export type Label = string;
 /**
  * Choose one of the styles from the list
  */
-export type ButtonStyle =
-  | 'solid'
-  | 'solid-inverted'
-  | 'clear'
-  | 'clear-inverted'
-  | 'outline'
-  | 'outline-inverted';
+export type ButtonStyle = 'solid' | 'clear' | 'outline';
 /**
  * Choose a size between small, medium and large
  */
@@ -82,6 +76,7 @@ export type ButtonHref = string;
  * Open link in new Tab
  */
 export type OpenLinkInNewTab = boolean;
+export type Inverted = boolean;
 /**
  * Add additional css classes that should be applied to the content box
  */
@@ -116,6 +111,7 @@ export interface Link {
   iconAnimation?: IconAnimation;
   href: ButtonHref;
   newTab?: OpenLinkInNewTab;
+  inverted?: Inverted;
 }
 /**
  * Icon

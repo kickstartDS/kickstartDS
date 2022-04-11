@@ -1,7 +1,7 @@
 $name-: 'c-rich-text';
 
 $host: (
-  ':root': (
+  ':root, [ks-inverted]': (
     font: var(--ks-font-copy-m),
     vertical-spacing: var(--ks-spacing-m),
     horizontal-spacing: 1em,
@@ -11,7 +11,7 @@ $host: (
 ) !default;
 
 $headline: (
-  ':root': (
+  ':root, [ks-inverted]': (
     color: var(--ks-text-color-default),
     font: var(--ks-font-display-m),
     font-weight: var(--ks-font-weight-bold),
@@ -33,7 +33,7 @@ $headline: (
 ) !default;
 
 $code: (
-  ':root': (
+  ':root, [ks-inverted]': (
     background: null,
     border-radius: null,
   ),

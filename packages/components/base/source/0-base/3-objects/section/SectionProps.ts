@@ -36,13 +36,7 @@ export type Label = string;
 /**
  * Choose one of the styles from the list
  */
-export type ButtonStyle =
-  | 'solid'
-  | 'solid-inverted'
-  | 'clear'
-  | 'clear-inverted'
-  | 'outline'
-  | 'outline-inverted';
+export type ButtonStyle = 'solid' | 'clear' | 'outline';
 /**
  * Choose a size between small, medium and large
  */
@@ -82,6 +76,7 @@ export type ButtonHref = string;
  * Open link in new Tab
  */
 export type OpenLinkInNewTab = boolean;
+export type Inverted = boolean;
 /**
  * Text used on button
  */
@@ -89,13 +84,8 @@ export type Label1 = string;
 /**
  * Choose one of the styles from the list
  */
-export type ButtonStyle1 =
-  | 'solid'
-  | 'solid-inverted'
-  | 'clear'
-  | 'clear-inverted'
-  | 'outline'
-  | 'outline-inverted';
+export type ButtonStyle1 = 'solid' | 'clear' | 'outline';
+export type Inverted1 = boolean;
 /**
  * Choose a size between small, medium and large
  */
@@ -255,13 +245,7 @@ export type DisplayLink = boolean;
 /**
  * Choose one of the styles from the list
  */
-export type ButtonStyle2 =
-  | 'solid'
-  | 'solid-inverted'
-  | 'clear'
-  | 'clear-inverted'
-  | 'outline'
-  | 'outline-inverted';
+export type ButtonStyle2 = 'solid' | 'clear' | 'outline';
 /**
  * Text used on button
  */
@@ -305,6 +289,7 @@ export type ButtonHref1 = string;
  * Open link in new Tab
  */
 export type OpenLinkInNewTab1 = boolean;
+export type Inverted2 = boolean;
 /**
  * The text box is aligned inside the content grid
  */
@@ -320,7 +305,8 @@ export type VerticalOrientation = 'top' | 'center' | 'bottom';
 /**
  * Choose a style for the box
  */
-export type StyleOfTheBox = 'default' | 'light' | 'transparent';
+export type StyleOfTheBox = 'solid' | 'transparent';
+export type Inverted3 = boolean;
 /**
  * Custom css background color
  */
@@ -450,13 +436,7 @@ export type DisplayLink1 = boolean;
 /**
  * Choose one of the styles from the list
  */
-export type ButtonStyle3 =
-  | 'solid'
-  | 'solid-inverted'
-  | 'clear'
-  | 'clear-inverted'
-  | 'outline'
-  | 'outline-inverted';
+export type ButtonStyle3 = 'solid' | 'clear' | 'outline';
 /**
  * Text used on button
  */
@@ -500,6 +480,7 @@ export type ButtonHref2 = string;
  * Open link in new Tab
  */
 export type OpenLinkInNewTab2 = boolean;
+export type Inverted4 = boolean;
 /**
  * The text box is aligned inside the content grid
  */
@@ -515,7 +496,8 @@ export type VerticalOrientation1 = 'top' | 'center' | 'bottom';
 /**
  * Choose a style for the box
  */
-export type StyleOfTheBox1 = 'default' | 'light' | 'transparent';
+export type StyleOfTheBox1 = 'solid' | 'transparent';
+export type Inverted5 = boolean;
 /**
  * Custom css background color
  */
@@ -728,13 +710,7 @@ export type Label5 = string;
 /**
  * Choose one of the styles from the list
  */
-export type ButtonStyle4 =
-  | 'solid'
-  | 'solid-inverted'
-  | 'clear'
-  | 'clear-inverted'
-  | 'outline'
-  | 'outline-inverted';
+export type ButtonStyle4 = 'solid' | 'clear' | 'outline';
 /**
  * Choose a size between small, medium and large
  */
@@ -774,6 +750,7 @@ export type ButtonHref3 = string;
  * Open link in new Tab
  */
 export type OpenLinkInNewTab4 = boolean;
+export type Inverted6 = boolean;
 /**
  * Additional css classes attached to the wrapping element
  */
@@ -816,13 +793,7 @@ export type Label6 = string;
 /**
  * Choose one of the styles from the list
  */
-export type ButtonStyle5 =
-  | 'solid'
-  | 'solid-inverted'
-  | 'clear'
-  | 'clear-inverted'
-  | 'outline'
-  | 'outline-inverted';
+export type ButtonStyle5 = 'solid' | 'clear' | 'outline';
 /**
  * Choose a size between small, medium and large
  */
@@ -862,6 +833,7 @@ export type ButtonHref4 = string;
  * Open link in new Tab
  */
 export type OpenLinkInNewTab5 = boolean;
+export type Inverted7 = boolean;
 /**
  * Additional css classes attached to the wrapping element
  */
@@ -897,13 +869,7 @@ export type Label7 = string;
 /**
  * Choose one of the styles from the list
  */
-export type ButtonStyle6 =
-  | 'solid'
-  | 'solid-inverted'
-  | 'clear'
-  | 'clear-inverted'
-  | 'outline'
-  | 'outline-inverted';
+export type ButtonStyle6 = 'solid' | 'clear' | 'outline';
 /**
  * Choose a size between small, medium and large
  */
@@ -943,6 +909,7 @@ export type ButtonHref5 = string;
  * Open link in new Tab
  */
 export type OpenLinkInNewTab6 = boolean;
+export type Inverted8 = boolean;
 /**
  * Add additional css classes that should be applied to the content box
  */
@@ -1170,10 +1137,7 @@ export type Topic2 = string;
  * Text for the teaser box
  */
 export type TextContent5 = string;
-/**
- * Optionally use this to apply a dark variant to the box
- */
-export type DarkVariant = boolean;
+export type Inverted9 = boolean;
 /**
  * Text used on button
  */
@@ -1181,13 +1145,7 @@ export type Label8 = string;
 /**
  * Choose one of the styles from the list
  */
-export type ButtonStyle7 =
-  | 'solid'
-  | 'solid-inverted'
-  | 'clear'
-  | 'clear-inverted'
-  | 'outline'
-  | 'outline-inverted';
+export type ButtonStyle7 = 'solid' | 'clear' | 'outline';
 /**
  * Choose a size between small, medium and large
  */
@@ -1227,6 +1185,7 @@ export type ButtonHref6 = string;
  * Open link in new Tab
  */
 export type OpenLinkInNewTab7 = boolean;
+export type Inverted10 = boolean;
 /**
  * Hides the link. The box as a whole keeps being clickable
  */
@@ -1329,10 +1288,7 @@ export type Topic3 = string;
  * Text for the teaser box
  */
 export type TextContent6 = string;
-/**
- * Optionally use this to apply a dark variant to the box
- */
-export type DarkVariant1 = boolean;
+export type Inverted11 = boolean;
 /**
  * Text used on button
  */
@@ -1340,13 +1296,7 @@ export type Label9 = string;
 /**
  * Choose one of the styles from the list
  */
-export type ButtonStyle8 =
-  | 'solid'
-  | 'solid-inverted'
-  | 'clear'
-  | 'clear-inverted'
-  | 'outline'
-  | 'outline-inverted';
+export type ButtonStyle8 = 'solid' | 'clear' | 'outline';
 /**
  * Choose a size between small, medium and large
  */
@@ -1386,6 +1336,7 @@ export type ButtonHref7 = string;
  * Open link in new Tab
  */
 export type OpenLinkInNewTab8 = boolean;
+export type Inverted12 = boolean;
 /**
  * Hides the link. The box as a whole keeps being clickable
  */
@@ -1493,6 +1444,7 @@ export interface LinkButton {
   iconAnimation?: IconAnimation;
   href: ButtonHref;
   newTab?: OpenLinkInNewTab;
+  inverted?: Inverted;
 }
 /**
  * Icon
@@ -1509,6 +1461,7 @@ export interface Icon {
 export interface Button {
   label: Label1;
   variant: ButtonStyle1;
+  inverted?: Inverted1;
   size: ButtonSize1;
   className?: AdditionalClasses1;
   icon?: Icon1;
@@ -1595,6 +1548,7 @@ export interface TextBox {
   horizontal?: HorizontalOrientation;
   vertical?: VerticalOrientation;
   background?: StyleOfTheBox;
+  inverted?: Inverted3;
 }
 /**
  * Headline for the box
@@ -1627,6 +1581,7 @@ export interface Link {
   iconAnimation?: IconAnimation2;
   href: ButtonHref1;
   newTab?: OpenLinkInNewTab1;
+  inverted?: Inverted2;
 }
 /**
  * Icon
@@ -1712,6 +1667,7 @@ export interface TextBox1 {
   horizontal?: HorizontalOrientation1;
   vertical?: VerticalOrientation1;
   background?: StyleOfTheBox1;
+  inverted?: Inverted5;
 }
 /**
  * Headline for the box
@@ -1744,6 +1700,7 @@ export interface Link1 {
   iconAnimation?: IconAnimation3;
   href: ButtonHref2;
   newTab?: OpenLinkInNewTab2;
+  inverted?: Inverted4;
 }
 /**
  * Icon
@@ -1865,6 +1822,7 @@ export interface LinkButton1 {
   iconAnimation?: IconAnimation4;
   href: ButtonHref3;
   newTab?: OpenLinkInNewTab4;
+  inverted?: Inverted6;
 }
 /**
  * Icon
@@ -1925,6 +1883,7 @@ export interface Link2 {
   iconAnimation?: IconAnimation5;
   href: ButtonHref4;
   newTab?: OpenLinkInNewTab5;
+  inverted?: Inverted7;
 }
 /**
  * Icon
@@ -1964,6 +1923,7 @@ export interface Link3 {
   iconAnimation?: IconAnimation6;
   href: ButtonHref5;
   newTab?: OpenLinkInNewTab6;
+  inverted?: Inverted8;
 }
 /**
  * Icon
@@ -2068,7 +2028,7 @@ export interface LazyLightboxImage {
 export interface TeaserBox {
   topic?: Topic2;
   text?: TextContent5;
-  darkStyle?: DarkVariant;
+  inverted?: Inverted9;
   link?: LinkButton2;
   className?: Class9;
   image?: ImageSource4;
@@ -2091,6 +2051,7 @@ export interface LinkButton2 {
   iconAnimation?: IconAnimation7;
   href: ButtonHref6;
   newTab?: OpenLinkInNewTab7;
+  inverted?: Inverted10;
   hidden?: HideLink;
 }
 /**
@@ -2135,7 +2096,7 @@ export interface Picture2 {
 export interface TeaserRow {
   topic?: Topic3;
   text?: TextContent6;
-  darkStyle?: DarkVariant1;
+  inverted?: Inverted11;
   link?: LinkButton3;
   className?: Class11;
 }
@@ -2155,6 +2116,7 @@ export interface LinkButton3 {
   iconAnimation?: IconAnimation8;
   href: ButtonHref7;
   newTab?: OpenLinkInNewTab8;
+  inverted?: Inverted12;
   hidden?: HideLink1;
 }
 /**

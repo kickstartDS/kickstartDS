@@ -1,7 +1,7 @@
 $name-: 'g-topic' !default;
 
 $host: (
-  ':root': (
+  ':root, [ks-inverted]': (
     color: var(--ks-text-color-default),
     font: var(--ks-font-display-l),
     font-weight: var(--ks-font-weight-bold),
