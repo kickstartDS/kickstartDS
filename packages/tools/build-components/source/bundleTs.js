@@ -68,6 +68,9 @@ const prepare = async (tsPaths) => {
               declaration: true,
               target: 'ES6',
               moduleResolution: 'node',
+              allowJs: true,
+              lib: ['dom', 'dom.iterable', 'es2020'],
+              downlevelIteration: true,
             },
             babelConfig,
           })

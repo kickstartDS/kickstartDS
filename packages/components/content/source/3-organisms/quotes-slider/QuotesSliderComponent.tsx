@@ -1,18 +1,11 @@
-import {
-  ForwardRefRenderFunction,
-  HTMLAttributes,
-  forwardRef,
-  createElement,
-  createContext,
-  useContext,
-} from 'react';
+import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
 import { Slider } from '@kickstartds/base/lib/slider';
-import { Quote } from '../../2-molecules/quote/QuoteComponent';
-import { QuotesSliderProps } from './QuotesSliderProps';
-import './QuotesSlider.js';
+import { Quote } from '../../2-molecules/quote';
+import { type QuotesSliderProps } from './QuotesSliderProps';
 
-const QuotesSliderComponent: ForwardRefRenderFunction<
+export { QuotesSliderProps };
+export const QuotesSliderComponent: ForwardRefRenderFunction<
   HTMLDivElement,
   QuotesSliderProps & HTMLAttributes<HTMLDivElement>
 > = ({ slides, className, ...props }, ref) => (
@@ -28,11 +21,4 @@ const QuotesSliderComponent: ForwardRefRenderFunction<
       <Quote {...slide} key={i} />
     ))}
   </Slider>
-);
-
-export const QuotesSliderContextDefault = forwardRef(QuotesSliderComponent);
-export const QuotesSliderContext = createContext(QuotesSliderContextDefault);
-export const QuotesSlider: typeof QuotesSliderContextDefault = forwardRef(
-  (props, ref) =>
-    createElement(useContext(QuotesSliderContext), { ...props, ref })
 );

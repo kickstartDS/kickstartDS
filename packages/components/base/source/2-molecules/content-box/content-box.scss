@@ -9,6 +9,8 @@ $vars: meta.module-variables(content-box-vars);
   margin-bottom: 2em;
   box-sizing: border-box;
   contain: layout inline-size style;
+  display: flex;
+  flex-direction: column;
 
   &--align-center {
     text-align: center;
