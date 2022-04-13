@@ -80,7 +80,19 @@
     "background": {
       "type": "string",
       "enum": ["default", "accent", "dark"],
-      "default": "default"
+      "default": "default",
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": ["default", "accent", "dark", "dark-accent"],
+          "default": "default"
+        },
+        {
+          "type": "string",
+          "enum": ["default", "accent", "dark"],
+          "default": "default"
+        }
+      ]
     },
     "spaceBefore": {
       "type": "string",
