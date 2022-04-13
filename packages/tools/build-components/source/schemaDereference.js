@@ -9,14 +9,23 @@ const { schemaResolver } = require(`${root}/scripts/schemaResolver`);
 
 const mergeAnyOfEnums = (schema) => {
   traverse(schema, {
-    cb: (subSchema) => {
+    cb: (subSchema, pointer, rootSchema) => {
+      const propertyName = pointer.split('/').pop();
+
       if (
-        subSchema.type === 'string' &&
-        subSchema.enum &&
         subSchema.anyOf &&
         subSchema.anyOf.length === 2 &&
-        subSchema.anyOf.every((anyOf) => anyOf.type === 'string' && anyOf.enum)
+        subSchema.anyOf.every(
+          (anyOf) => anyOf.type === 'string' && anyOf.enum
+        ) &&
+        rootSchema.allOf &&
+        rootSchema.allOf.length === 2 &&
+        rootSchema.allOf.some(
+          (allOf) => allOf.properties[propertyName]?.type === 'string'
+        )
       ) {
+        subSchema.type = subSchema.anyOf[0].type;
+        subSchema.default = subSchema.anyOf[0].default;
         subSchema.enum = subSchema.anyOf.reduce((enumValues, anyOf) => {
           anyOf.enum.forEach((value) => {
             if (!enumValues.includes(value)) enumValues.push(value);
@@ -25,6 +34,11 @@ const mergeAnyOfEnums = (schema) => {
           return enumValues;
         }, []);
 
+        delete rootSchema.allOf[
+          rootSchema.allOf.findIndex(
+            (allOf) => allOf.properties[propertyName]?.type === 'string'
+          )
+        ].properties[propertyName];
         delete subSchema.anyOf;
       }
     },
@@ -43,11 +57,10 @@ const schemaLoader = async (refParser, schemaPath) =>
 
 const dereference = async (schemaPath) => {
   const schema = await schemaLoader(new $RefParser(), schemaPath);
-  mergeAnyOfEnums(schema);
-
   return merge(schema, { ignoreAdditionalProperties: true });
 };
 
 module.exports = {
   dereference,
+  mergeAnyOfEnums,
 };
