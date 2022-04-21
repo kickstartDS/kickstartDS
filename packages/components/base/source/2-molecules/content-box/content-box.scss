@@ -1,9 +1,11 @@
 @use 'sass:meta';
 @use '@kickstartds/core/source/core/custom-properties';
 @use './content-box-vars';
+@use './container';
 
 $vars: meta.module-variables(content-box-vars);
 @include custom-properties.styles($vars);
+@include container.wrapper('content-box');
 
 .c-content-box {
   margin-bottom: 2em;
