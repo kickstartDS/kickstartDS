@@ -9,14 +9,18 @@ $unit-intervals: (
   'px': 1,
   // 'em': 0.01,
   // 'rem': 0.1,
-  // '': 0,,,,
+  // '': 0,,,,,
 ) !default;
 
-@mixin wrapper {
+@mixin wrapper($localName: $name) {
+  @if not $localName {
+    @error '$localName undefined';
+  }
+
   @at-root {
-    .l-container--#{$name} {
+    .l-container--#{$localName} {
       /* stylelint-disable-next-line property-no-unknown */
-      container-name: string.unquote($name);
+      container-name: string.unquote($localName);
       @content;
     }
   }
