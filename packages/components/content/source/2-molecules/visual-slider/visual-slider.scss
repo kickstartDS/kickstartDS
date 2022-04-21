@@ -12,14 +12,14 @@ $vars: meta.module-variables(visual-slider-vars);
 .c-visual-slider {
   // hide preview on small screens
   .c-visual-slide--preview {
-    @include container.size('<' 639px) {
+    @include container.size('<', 639px) {
       @include bourbon.hide-visually;
     }
   }
 
   // hide bullets on large screens
   .c-slider__bullet {
-    @include container.size('≥' 640px) {
+    @include container.size('≥', 640px) {
       display: none;
     }
   }
@@ -27,7 +27,7 @@ $vars: meta.module-variables(visual-slider-vars);
   .c-slider-nav {
     margin-top: 0.5em;
 
-    @include container.size('≥' 640px) {
+    @include container.size('≥', 640px) {
       margin-top: 0;
       border-bottom: 1px solid var(--c-visual-slider_nav--border-bottom-color);
     }

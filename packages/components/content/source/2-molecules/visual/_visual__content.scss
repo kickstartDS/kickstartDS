@@ -7,7 +7,7 @@
   width: 100%;
   margin: auto;
 
-  @include container.size('≥' 640px) {
+  @include container.size('≥', 640px) {
     padding: var(--l-section--content-padding);
     flex-grow: 1; // = 100% height
   }
@@ -43,7 +43,7 @@
   }
 
   .c-visual--no-crop & {
-    @include container.size('≥' 640px) {
+    @include container.size('≥', 640px) {
       @include bourbon.position(absolute, 0);
     }
   }

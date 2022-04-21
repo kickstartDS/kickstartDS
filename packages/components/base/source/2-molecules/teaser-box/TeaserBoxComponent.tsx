@@ -2,10 +2,9 @@ import {
   ForwardRefRenderFunction,
   HTMLAttributes,
   forwardRef,
-  createElement,
   createContext,
-  useContext,
 } from 'react';
+import { withContainer } from '@kickstartds/core/lib/container';
 import classnames from 'classnames';
 import { Picture } from '../../1-atoms/image/picture';
 import { TeaserBoxProps } from './TeaserBoxProps';
@@ -42,6 +41,4 @@ const TeaserBoxComponent: ForwardRefRenderFunction<
 
 export const TeaserBoxContextDefault = forwardRef(TeaserBoxComponent);
 export const TeaserBoxContext = createContext(TeaserBoxContextDefault);
-export const TeaserBox: typeof TeaserBoxContextDefault = forwardRef(
-  (props, ref) => createElement(useContext(TeaserBoxContext), { ...props, ref })
-);
+export const TeaserBox = withContainer('teaser-box', TeaserBoxContext);

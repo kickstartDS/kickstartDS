@@ -63,7 +63,7 @@ $vars: meta.module-variables(table-vars);
   }
 
   &--responsive {
-    @include container.size('<' 450px) {
+    @include container.size('<', 450px) {
       thead {
         display: none;
       }
