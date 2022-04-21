@@ -1,3 +1,6 @@
+@use './container';
+@include container.wrapper('teaser-box');
+
 .c-teaser-box {
   .c-teaser__image {
     flex-grow: 0;
