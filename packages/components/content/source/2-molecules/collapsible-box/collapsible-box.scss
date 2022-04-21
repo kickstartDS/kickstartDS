@@ -37,7 +37,7 @@ $vars: meta.module-variables(collapsible-box-vars);
     &__text {
       flex: 1;
 
-      @include container.size('≥' 640px) {
+      @include container.size('≥', 640px) {
         padding-right: 1em;
       }
     }

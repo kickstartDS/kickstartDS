@@ -6,7 +6,7 @@
   opacity: 0;
   transition: 0.3s;
 
-  @include container.size('≥' 960px) {
+  @include container.size('≥', 960px) {
     display: block;
   }
 
