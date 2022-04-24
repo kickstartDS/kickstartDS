@@ -151,5 +151,5 @@
       "type": "string"
     }
   },
-  "required": ["image", "box"]
+  "required": ["box"]
 }

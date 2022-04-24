@@ -12,18 +12,16 @@ import {
   RichText,
   defaultRenderFn as richTextDefaultRenderFn,
 } from '@kickstartds/base/lib/rich-text';
-import { CollapsibleBoxProps } from './CollapsibleBoxProps';
-import './collapsible-box.scss';
-import './lazyCollapsibleBox.js';
+import { type CollapsibleBoxProps as CollapsibleBoxSchemaProps } from './CollapsibleBoxProps';
 
-export interface RenderFunctions {
+export type CollapsibleBoxProps = CollapsibleBoxSchemaProps & {
   renderText?: renderFn;
   renderSummary?: renderFn;
-}
+};
 
-const CollapsibleBoxComponent: ForwardRefRenderFunction<
+export const CollapsibleBoxComponent: ForwardRefRenderFunction<
   HTMLDivElement,
-  CollapsibleBoxProps & RenderFunctions & HTMLAttributes<HTMLDivElement>
+  CollapsibleBoxProps & HTMLAttributes<HTMLDivElement>
 > = (
   {
     summary,

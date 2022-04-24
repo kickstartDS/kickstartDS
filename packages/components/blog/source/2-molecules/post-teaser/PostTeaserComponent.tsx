@@ -1,24 +1,17 @@
-import {
-  ForwardRefRenderFunction,
-  HTMLAttributes,
-  forwardRef,
-  createElement,
-  createContext,
-  useContext,
-} from 'react';
+import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
-import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
+import { defaultRenderFn } from '@kickstartds/core/lib/core';
 import { TagLabelContainer } from '@kickstartds/base/lib/tag-label-container';
-import { Teaser, TeaserRenderFunctions } from '@kickstartds/base/lib/teaser';
+import { Teaser, TeaserProps } from '@kickstartds/base/lib/teaser';
 import { Picture } from '@kickstartds/base/lib/picture';
 import { defaultRenderFn as richTextDefaultRenderFn } from '@kickstartds/base/lib/rich-text';
 import { PostMeta } from '../post-meta';
-import { PostTeaserProps } from './PostTeaserProps';
-import './post-teaser.scss';
+import { type PostTeaserProps as PostTeaserSchemaProps } from './PostTeaserProps';
 
-const PostTeaserComponent: ForwardRefRenderFunction<
+export type PostTeaserProps = PostTeaserSchemaProps & TeaserProps;
+export const PostTeaserComponent: ForwardRefRenderFunction<
   HTMLElement,
-  PostTeaserProps & TeaserRenderFunctions & HTMLAttributes<HTMLElement>
+  PostTeaserProps & HTMLAttributes<HTMLElement>
 > = (
   {
     image,
@@ -66,11 +59,4 @@ const PostTeaserComponent: ForwardRefRenderFunction<
       )}
     </Teaser>
   </article>
-);
-
-export const PostTeaserContextDefault = forwardRef(PostTeaserComponent);
-export const PostTeaserContext = createContext(PostTeaserContextDefault);
-export const PostTeaser: typeof PostTeaserContextDefault = forwardRef(
-  (props, ref) =>
-    createElement(useContext(PostTeaserContext), { ...props, ref })
 );

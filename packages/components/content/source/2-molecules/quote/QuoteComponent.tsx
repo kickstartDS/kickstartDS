@@ -12,18 +12,17 @@ import {
   RichText,
   defaultRenderFn as richTextDefaultRenderFn,
 } from '@kickstartds/base/lib/rich-text';
-import { QuoteProps } from './QuoteProps';
-import './quote.scss';
+import { type QuoteProps as QuoteSchemaProps } from './QuoteProps';
 
-interface RenderFunctions {
+export type QuoteProps = QuoteSchemaProps & {
   renderText?: renderFn;
   renderSource?: renderFn;
   renderByline?: renderFn;
-}
+};
 
-const QuoteComponent: ForwardRefRenderFunction<
+export const QuoteComponent: ForwardRefRenderFunction<
   HTMLDivElement,
-  QuoteProps & RenderFunctions & HTMLAttributes<HTMLDivElement>
+  QuoteProps & HTMLAttributes<HTMLDivElement>
 > = (
   {
     image,

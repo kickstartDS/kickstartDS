@@ -7,13 +7,14 @@ import {
 import { withContainer } from '@kickstartds/core/lib/container';
 import classnames from 'classnames';
 import { Picture } from '../../1-atoms/image/picture';
-import { TeaserBoxProps } from './TeaserBoxProps';
-import { Teaser, TeaserRenderFunctions } from '../teaser/TeaserComponent';
-import './teaser-box.scss';
+import { TeaserBoxProps as TeaserBoxSchemaProps } from './TeaserBoxProps';
+import { Teaser, type TeaserProps } from '../teaser';
 
-const TeaserBoxComponent: ForwardRefRenderFunction<
+export type TeaserBoxProps = TeaserBoxSchemaProps & TeaserProps;
+
+export const TeaserBoxComponent: ForwardRefRenderFunction<
   HTMLDivElement,
-  TeaserBoxProps & TeaserRenderFunctions & HTMLAttributes<HTMLDivElement>
+  TeaserBoxProps & HTMLAttributes<HTMLDivElement>
 > = ({ image, ratio, imageSpacing, className, ...props }, ref) => (
   <Teaser
     className={classnames(

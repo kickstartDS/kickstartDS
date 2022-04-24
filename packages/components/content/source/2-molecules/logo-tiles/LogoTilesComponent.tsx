@@ -7,10 +7,10 @@ import {
 import classnames from 'classnames';
 import { withContainer } from '@kickstartds/core/lib/container';
 import { Picture } from '@kickstartds/base/lib/picture';
-import { LogoTilesProps } from './LogoTilesProps';
-import './logo-tiles.scss';
+import { type LogoTilesProps } from './LogoTilesProps';
 
-const LogoTilesComponent: ForwardRefRenderFunction<
+export { LogoTilesProps };
+export const LogoTilesComponent: ForwardRefRenderFunction<
   HTMLUListElement,
   LogoTilesProps & HTMLAttributes<HTMLUListElement>
 > = ({ logos, className, ...props }, ref) => (

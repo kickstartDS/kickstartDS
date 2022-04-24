@@ -1,17 +1,9 @@
-import {
-  ForwardRefRenderFunction,
-  HTMLAttributes,
-  forwardRef,
-  createElement,
-  createContext,
-  useContext,
-} from 'react';
-import './lazyLightbox.js';
-import './lightbox.scss';
+import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 
-const LightBoxComponent: ForwardRefRenderFunction<
+export type LightBoxProps = unknown;
+export const LightBoxComponent: ForwardRefRenderFunction<
   HTMLDivElement,
-  HTMLAttributes<HTMLDivElement>
+  LightBoxProps & HTMLAttributes<HTMLDivElement>
 > = (props, ref) => (
   // Root element of PhotoSwipe. Must have className pswp.
   <div
@@ -93,10 +85,4 @@ const LightBoxComponent: ForwardRefRenderFunction<
       </div>
     </div>
   </div>
-);
-
-export const LightBoxContextDefault = forwardRef(LightBoxComponent);
-export const LightBoxContext = createContext(LightBoxContextDefault);
-export const LightBox: typeof LightBoxContextDefault = forwardRef(
-  (props, ref) => createElement(useContext(LightBoxContext), { ...props, ref })
 );

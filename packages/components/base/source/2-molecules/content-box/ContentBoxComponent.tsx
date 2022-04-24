@@ -13,17 +13,16 @@ import {
 } from '../../1-atoms/rich-text';
 import { LinkButton } from '../../1-atoms/button/link-button';
 import { Picture } from '../../1-atoms/image/picture';
-import { ContentBoxProps } from './ContentBoxProps';
-import './content-box.scss';
+import { type ContentBoxProps as ContentBoxSchemaProps } from './ContentBoxProps';
 
-interface RenderFunctions {
+export type ContentBoxProps = ContentBoxSchemaProps & {
   renderTopic?: renderFn;
   renderText?: renderFn;
-}
+};
 
-const ContentBoxComponent: ForwardRefRenderFunction<
+export const ContentBoxComponent: ForwardRefRenderFunction<
   HTMLDivElement,
-  ContentBoxProps & RenderFunctions & HTMLAttributes<HTMLDivElement>
+  ContentBoxProps & HTMLAttributes<HTMLDivElement>
 > = (
   {
     image,

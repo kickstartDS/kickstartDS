@@ -199,6 +199,10 @@ $vars: meta.module-variables(storytelling-vars);
     justify-content: center;
     align-items: center;
 
+    &:only-child {
+      --c-storytelling--horizontal-padding: 0;
+    }
+
     @include container.size('≥', 640px) {
       padding-left: var(--c-storytelling--horizontal-padding);
     }

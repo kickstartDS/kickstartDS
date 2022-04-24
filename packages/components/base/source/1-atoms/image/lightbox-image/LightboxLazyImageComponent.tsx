@@ -1,21 +1,14 @@
-import {
-  ForwardRefRenderFunction,
-  HTMLAttributes,
-  forwardRef,
-  createElement,
-  createContext,
-  useContext,
-} from 'react';
+import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
 import { Icon } from '../../icon';
 import { Link } from '../../link';
-import { Picture } from '../picture/PictureComponent';
-import { LazyLightboxImageProps } from './LightboxLazyImageProps';
-import './lightbox-image.scss';
+import { Picture } from '../picture';
+import { type LazyLightboxImageProps as LightboxLazyImageProps } from './LightboxLazyImageProps';
 
-const LightboxLazyImageComponent: ForwardRefRenderFunction<
+export { LightboxLazyImageProps };
+export const LightboxLazyImageComponent: ForwardRefRenderFunction<
   HTMLElement,
-  LazyLightboxImageProps
+  LightboxLazyImageProps & HTMLAttributes<HTMLElement>
 > = (
   {
     image,
@@ -73,14 +66,3 @@ const LightboxLazyImageComponent: ForwardRefRenderFunction<
     )}
   </figure>
 );
-
-export const LightboxLazyImageContextDefault = forwardRef(
-  LightboxLazyImageComponent
-);
-export const LightboxLazyImageContext = createContext(
-  LightboxLazyImageContextDefault
-);
-export const LightboxLazyImage: typeof LightboxLazyImageContextDefault =
-  forwardRef((props, ref) =>
-    createElement(useContext(LightboxLazyImageContext), { ...props, ref })
-  );

@@ -7,17 +7,16 @@ import {
 import classnames from 'classnames';
 import { withContainer } from '@kickstartds/core/lib/container';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
-import { HeadlineProps } from './HeadlineProps';
-import './headline.scss';
+import { type HeadlineProps as HeadlineSchemaProps } from './HeadlineProps';
 
-interface RenderFunctions {
+export type HeadlineProps = HeadlineSchemaProps & {
   renderContent?: renderFn;
   renderSubheadline?: renderFn;
-}
+};
 
-const HeadlineComponent: ForwardRefRenderFunction<
+export const HeadlineComponent: ForwardRefRenderFunction<
   HTMLElement,
-  HeadlineProps & RenderFunctions & HTMLAttributes<HTMLElement>
+  HeadlineProps & HTMLAttributes<HTMLElement>
 > = (
   {
     content,

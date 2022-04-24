@@ -9,10 +9,8 @@ import {
 } from 'react';
 import classnames from 'classnames';
 import { withContainer } from '@kickstartds/core/lib/container';
-import { SliderProps } from './SliderProps';
+import { type SliderProps } from './SliderProps';
 import { SlideContext } from './SlideContext';
-import './slider.scss';
-import './lazySlider.js';
 
 type Slides = ReactElement<{
   preview?: ReactNode;
@@ -35,7 +33,9 @@ const slides = (children: ReactNode) => {
   ));
 };
 
-const SliderComponent: ForwardRefRenderFunction<
+export { SliderProps };
+
+export const SliderComponent: ForwardRefRenderFunction<
   HTMLDivElement,
   SliderProps & HTMLAttributes<HTMLDivElement>
 > = (

@@ -1,26 +1,17 @@
-import {
-  ForwardRefRenderFunction,
-  HTMLAttributes,
-  forwardRef,
-  createElement,
-  createContext,
-  useContext,
-} from 'react';
+import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
 import { Icon } from '../icon';
 import { Link } from '../link';
-import { TagLabelProps } from './TagLabelProps';
-import './tag-label.scss';
-import './TagLabel.js';
+import { TagLabelProps as TagLabelSchemaProps } from './TagLabelProps';
 
-interface RenderFunctions {
+export type TagLabelProps = TagLabelSchemaProps & {
   renderLabel?: renderFn;
-}
+};
 
-const TagLabelComponent: ForwardRefRenderFunction<
+export const TagLabelComponent: ForwardRefRenderFunction<
   HTMLDivElement,
-  TagLabelProps & RenderFunctions & HTMLAttributes<HTMLDivElement>
+  TagLabelProps & HTMLAttributes<HTMLDivElement>
 > = (
   {
     label,
@@ -52,10 +43,4 @@ const TagLabelComponent: ForwardRefRenderFunction<
       </button>
     )}
   </div>
-);
-
-export const TagLabelContextDefault = forwardRef(TagLabelComponent);
-export const TagLabelContext = createContext(TagLabelContextDefault);
-export const TagLabel: typeof TagLabelContextDefault = forwardRef(
-  (props, ref) => createElement(useContext(TagLabelContext), { ...props, ref })
 );

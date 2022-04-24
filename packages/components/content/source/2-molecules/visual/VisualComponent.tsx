@@ -7,18 +7,17 @@ import {
 import classnames from 'classnames';
 import { withContainer } from '@kickstartds/core/lib/container';
 import { Icon } from '@kickstartds/base/lib/icon';
-import { VisualProps } from './VisualProps';
+import { type VisualProps as VisualSchemaProps } from './VisualProps';
 import { VisualMediaPartial } from './VisualMediaPartial';
 import {
   RenderFunctions as BoxRenderFunctions,
   VisualBoxPartial,
 } from './VisualBoxPartial';
-import './visual.scss';
-import './Visual.js';
 
-const VisualComponent: ForwardRefRenderFunction<
+export type VisualProps = VisualSchemaProps & { box?: BoxRenderFunctions };
+export const VisualComponent: ForwardRefRenderFunction<
   HTMLDivElement,
-  VisualProps & { box?: BoxRenderFunctions } & HTMLAttributes<HTMLDivElement>
+  VisualProps & HTMLAttributes<HTMLDivElement>
 > = (
   {
     media,
