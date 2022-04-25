@@ -4,12 +4,11 @@ import {
   ForwardRefRenderFunction,
   HTMLAttributes,
   forwardRef,
-  createElement,
-  createContext,
-  useContext,
 } from 'react';
 import classnames from 'classnames';
-import { PictureProps } from './PictureProps';
+import { type PictureProps } from './PictureProps';
+
+export { PictureProps };
 
 const Image: ForwardRefExoticComponent<
   PictureProps & HTMLAttributes<HTMLImageElement>
@@ -37,7 +36,7 @@ const Image: ForwardRefExoticComponent<
   )
 );
 
-const PictureComponent: ForwardRefRenderFunction<
+export const PictureComponent: ForwardRefRenderFunction<
   HTMLImageElement,
   PictureProps & HTMLAttributes<HTMLImageElement>
 > = ({ sources = [], lazy = true, pictureClassName, ...props }, ref) => {
@@ -60,9 +59,3 @@ const PictureComponent: ForwardRefRenderFunction<
     fallbackImage
   );
 };
-
-export const PictureContextDefault = forwardRef(PictureComponent);
-export const PictureContext = createContext(PictureContextDefault);
-export const Picture: typeof PictureContextDefault = forwardRef((props, ref) =>
-  createElement(useContext(PictureContext), { ...props, ref })
-);

@@ -1,21 +1,14 @@
-import {
-  ForwardRefRenderFunction,
-  HTMLAttributes,
-  forwardRef,
-  createElement,
-  createContext,
-  useContext,
-} from 'react';
+import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
 import { Picture } from '@kickstartds/base/lib/picture';
 import { Headline } from '@kickstartds/base/lib/headline';
 import { RichText } from '@kickstartds/base/lib/rich-text';
 import { Icon } from '@kickstartds/base/lib/icon';
 import { Link } from '@kickstartds/base/lib/link';
-import { ContactProps } from './ContactProps';
-import './contact.scss';
+import { type ContactProps } from './ContactProps';
 
-const ContactComponent: ForwardRefRenderFunction<
+export { ContactProps };
+export const ContactComponent: ForwardRefRenderFunction<
   HTMLElement,
   ContactProps & HTMLAttributes<HTMLElement>
 > = (
@@ -61,10 +54,4 @@ const ContactComponent: ForwardRefRenderFunction<
       {copy && <RichText text={copy} className="c-contact__copy" />}
     </div>
   </address>
-);
-
-export const ContactContextDefault = forwardRef(ContactComponent);
-export const ContactContext = createContext(ContactContextDefault);
-export const Contact: typeof ContactContextDefault = forwardRef((props, ref) =>
-  createElement(useContext(ContactContext), { ...props, ref })
 );

@@ -2,11 +2,8 @@ import {
   FunctionComponent,
   ForwardRefRenderFunction,
   HTMLAttributes,
-  forwardRef,
-  createContext,
 } from 'react';
 import classnames from 'classnames';
-import { withContainer } from '@kickstartds/core/lib/container';
 import { renderFn } from '@kickstartds/core/lib/core';
 import { Headline } from '@kickstartds/base/lib/headline';
 import { LinkButton } from '@kickstartds/base/lib/link-button';
@@ -15,8 +12,7 @@ import {
   defaultRenderFn as richTextDefaultRenderFn,
 } from '@kickstartds/base/lib/rich-text';
 import { Picture } from '@kickstartds/base/lib/picture';
-import { StorytellingProps } from './StorytellingProps';
-import './storytelling.scss';
+import { type StorytellingProps } from './StorytellingProps';
 
 interface ILazy {
   lazy: boolean;
@@ -42,16 +38,18 @@ const StorytellingMixin: FunctionComponent<
   <div
     className={classnames(
       'c-storytelling',
-      {
+      image && {
         'c-storytelling--order-mobile-image-last':
           image.order && image.order.mobileImageLast,
         'c-storytelling--order-desktop-image-last':
           image.order && image.order.desktopImageLast,
-        'c-storytelling--full': full,
         'c-storytelling--four-to-three': image.ratio === '4:3',
         'c-storytelling--three-to-two': image.ratio === '3:2',
         'c-storytelling--sixteen-to-nine': image.ratio === '16:9',
         'c-storytelling--square': image.ratio === '1:1',
+      },
+      {
+        'c-storytelling--full': full,
         lazyload: lazy && backgroundImage,
       },
       className
@@ -63,19 +61,21 @@ const StorytellingMixin: FunctionComponent<
     data-bg={(lazy && backgroundImage) || null}
     {...props}
   >
-    <div
-      className={classnames(
-        'c-storytelling__image',
-        image.vAlign &&
-          image.vAlign !== 'center' &&
-          `c-storytelling__image--${image.vAlign}`,
-        image.hAlign &&
-          image.hAlign !== 'center' &&
-          `c-storytelling__image--${image.hAlign}`
-      )}
-    >
-      {image.source && <Picture src={image.source} alt="" lazy={lazy} />}
-    </div>
+    {image?.source && (
+      <div
+        className={classnames(
+          'c-storytelling__image',
+          image.vAlign &&
+            image.vAlign !== 'center' &&
+            `c-storytelling__image--${image.vAlign}`,
+          image.hAlign &&
+            image.hAlign !== 'center' &&
+            `c-storytelling__image--${image.hAlign}`
+        )}
+      >
+        <Picture src={image.source} alt="" lazy={lazy} />
+      </div>
+    )}
 
     <div
       className={classnames(
@@ -118,7 +118,8 @@ const StorytellingMixin: FunctionComponent<
   </div>
 );
 
-const StorytellingComponent: ForwardRefRenderFunction<
+export { StorytellingProps };
+export const StorytellingComponent: ForwardRefRenderFunction<
   HTMLDivElement,
   StorytellingProps & HTMLAttributes<HTMLDivElement>
 > = (props, ref) => (
@@ -131,7 +132,3 @@ const StorytellingComponent: ForwardRefRenderFunction<
     )}
   </>
 );
-
-export const StorytellingContextDefault = forwardRef(StorytellingComponent);
-export const StorytellingContext = createContext(StorytellingContextDefault);
-export const Storytelling = withContainer('storytelling', StorytellingContext);

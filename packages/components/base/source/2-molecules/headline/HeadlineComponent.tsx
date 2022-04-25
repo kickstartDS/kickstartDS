@@ -1,23 +1,16 @@
-import {
-  ForwardRefRenderFunction,
-  HTMLAttributes,
-  forwardRef,
-  createContext,
-} from 'react';
+import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
-import { withContainer } from '@kickstartds/core/lib/container';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
-import { HeadlineProps } from './HeadlineProps';
-import './headline.scss';
+import { type HeadlineProps as HeadlineSchemaProps } from './HeadlineProps';
 
-interface RenderFunctions {
+export type HeadlineProps = HeadlineSchemaProps & {
   renderContent?: renderFn;
   renderSubheadline?: renderFn;
-}
+};
 
-const HeadlineComponent: ForwardRefRenderFunction<
+export const HeadlineComponent: ForwardRefRenderFunction<
   HTMLElement,
-  HeadlineProps & RenderFunctions & HTMLAttributes<HTMLElement>
+  HeadlineProps & HTMLAttributes<HTMLElement>
 > = (
   {
     content,
@@ -63,7 +56,3 @@ const HeadlineComponent: ForwardRefRenderFunction<
     </header>
   );
 };
-
-export const HeadlineContextDefault = forwardRef(HeadlineComponent);
-export const HeadlineContext = createContext(HeadlineContextDefault);
-export const Headline = withContainer('headline', HeadlineContext);

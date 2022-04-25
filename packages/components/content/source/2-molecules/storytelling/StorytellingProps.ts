@@ -168,7 +168,7 @@ export interface StorytellingProps {
   backgroundImage?: BackgroundImage;
   backgroundColor?: BackgroundColor;
   full?: FullSizeImage;
-  image: Image;
+  image?: Image;
   box: TextBox;
   className?: Class;
   [k: string]: unknown;

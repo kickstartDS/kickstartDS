@@ -1,24 +1,16 @@
-import {
-  ForwardRefRenderFunction,
-  HTMLAttributes,
-  forwardRef,
-  createElement,
-  createContext,
-  useContext,
-} from 'react';
+import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
 import { Icon } from '@kickstartds/base/lib/icon';
-import { SelectFieldProps } from './SelectFieldProps';
-import '../form-field.scss';
+import { type SelectFieldProps as SelectFieldSchemaProps } from './SelectFieldProps';
 
-interface RenderFunctions {
+export type SelectFieldProps = SelectFieldSchemaProps & {
   renderLabel?: renderFn;
-}
+};
 
-const SelectFieldComponent: ForwardRefRenderFunction<
+export const SelectFieldComponent: ForwardRefRenderFunction<
   HTMLSelectElement,
-  SelectFieldProps & RenderFunctions & HTMLAttributes<HTMLSelectElement>
+  SelectFieldProps & HTMLAttributes<HTMLSelectElement>
 > = (
   {
     label,
@@ -74,11 +66,4 @@ const SelectFieldComponent: ForwardRefRenderFunction<
 
     {hint && <p className="c-form-field__hint">{hint}</p>}
   </label>
-);
-
-export const SelectFieldContextDefault = forwardRef(SelectFieldComponent);
-export const SelectFieldContext = createContext(SelectFieldContextDefault);
-export const SelectField: typeof SelectFieldContextDefault = forwardRef(
-  (props, ref) =>
-    createElement(useContext(SelectFieldContext), { ...props, ref })
 );

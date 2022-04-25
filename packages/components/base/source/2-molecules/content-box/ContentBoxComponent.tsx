@@ -1,10 +1,4 @@
-import {
-  ForwardRefRenderFunction,
-  HTMLAttributes,
-  forwardRef,
-  createContext,
-} from 'react';
-import { withContainer } from '@kickstartds/core/lib/container';
+import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
 import {
@@ -13,17 +7,16 @@ import {
 } from '../../1-atoms/rich-text';
 import { LinkButton } from '../../1-atoms/button/link-button';
 import { Picture } from '../../1-atoms/image/picture';
-import { ContentBoxProps } from './ContentBoxProps';
-import './content-box.scss';
+import { type ContentBoxProps as ContentBoxSchemaProps } from './ContentBoxProps';
 
-interface RenderFunctions {
+export type ContentBoxProps = ContentBoxSchemaProps & {
   renderTopic?: renderFn;
   renderText?: renderFn;
-}
+};
 
-const ContentBoxComponent: ForwardRefRenderFunction<
+export const ContentBoxComponent: ForwardRefRenderFunction<
   HTMLDivElement,
-  ContentBoxProps & RenderFunctions & HTMLAttributes<HTMLDivElement>
+  ContentBoxProps & HTMLAttributes<HTMLDivElement>
 > = (
   {
     image,
@@ -74,7 +67,3 @@ const ContentBoxComponent: ForwardRefRenderFunction<
     </div>
   </div>
 );
-
-export const ContentBoxContextDefault = forwardRef(ContentBoxComponent);
-export const ContentBoxContext = createContext(ContentBoxContextDefault);
-export const ContentBox = withContainer('content-box', ContentBoxContext);

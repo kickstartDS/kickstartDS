@@ -2,18 +2,15 @@ import {
   FunctionComponent,
   ForwardRefRenderFunction,
   HTMLAttributes,
-  forwardRef,
-  createContext,
 } from 'react';
 import classnames from 'classnames';
-import { withContainer } from '@kickstartds/core/lib/container';
 import { renderFn } from '@kickstartds/core/lib/core';
 import { Picture } from '../../1-atoms/image/picture';
 import { LightboxLazyImage } from '../../1-atoms/image/lightbox-image';
 import { IframeRatio } from '../../1-atoms/iframe';
 import { RichText, defaultRenderFn } from '../../1-atoms/rich-text';
 import {
-  TextMediaProps,
+  TextMediaProps as TextMediaSchemaProps,
   TextMediaVideo as IVideo,
   TextMediaImage as IImage,
   TextMediaLazyImage as ILightboxImage,
@@ -21,11 +18,12 @@ import {
   FullWidthMedia as TFullWidthMedia,
   Caption as TCaption,
 } from './TextMediaProps';
-import './text-media.scss';
 
 export interface RenderFunctions {
   renderText?: renderFn;
 }
+
+export type TextMediaProps = TextMediaSchemaProps & RenderFunctions;
 
 const figureClassName = (full: TFullWidthMedia) =>
   classnames('text-media__media', {
@@ -97,7 +95,7 @@ const Media: FunctionComponent<{ media: IMedia }> = ({ media }) =>
 
 export const TextMediaComponent: ForwardRefRenderFunction<
   HTMLDivElement,
-  TextMediaProps & RenderFunctions & HTMLAttributes<HTMLDivElement>
+  TextMediaProps & HTMLAttributes<HTMLDivElement>
 > = (
   {
     text = '',
@@ -149,7 +147,3 @@ export const TextMediaComponent: ForwardRefRenderFunction<
     )}
   </div>
 );
-
-export const TextMediaContextDefault = forwardRef(TextMediaComponent);
-export const TextMediaContext = createContext(TextMediaContextDefault);
-export const TextMedia = withContainer('text-media', TextMediaContext);

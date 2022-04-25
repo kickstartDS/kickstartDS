@@ -1,16 +1,7 @@
-import {
-  ForwardRefRenderFunction,
-  HTMLAttributes,
-  forwardRef,
-  createElement,
-  createContext,
-  useContext,
-} from 'react';
+import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classNames from 'classnames';
-import './iframe-ratio.scss';
-import './IframeRatio.js';
 
-type IframeRatioProps = {
+export type IframeRatioProps = {
   src: string;
   title?: string;
   width: number;
@@ -41,11 +32,4 @@ export const IframeRatioComponent: ForwardRefRenderFunction<
       height={height}
     ></iframe>
   </div>
-);
-
-export const IframeRatioContextDefault = forwardRef(IframeRatioComponent);
-export const IframeRatioContext = createContext(IframeRatioContextDefault);
-export const IframeRatio: typeof IframeRatioContextDefault = forwardRef(
-  (props, ref) =>
-    createElement(useContext(IframeRatioContext), { ...props, ref })
 );

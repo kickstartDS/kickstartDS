@@ -4,7 +4,7 @@
   "private": true,
   "main": "source/index.js",
   "dependencies": {
-    "@babel/core": "^7.17.5",
+    "@babel/core": "^7.17.8",
     "@babel/plugin-transform-runtime": "^7.17.0",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
@@ -12,14 +12,14 @@
     "@rollup/plugin-babel": "^5.3.1",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-replace": "^4.0.0",
-    "@wordpress/babel-plugin-import-jsx-pragma": "^3.1.1",
-    "autoprefixer": "^10.4.3",
+    "@wordpress/babel-plugin-import-jsx-pragma": "^3.1.2",
+    "autoprefixer": "^10.4.4",
     "builtin-modules": "^3.2.0",
     "change-case": "^4.1.2",
     "chokidar": "^3.5.3",
-    "cssnano": "^5.1.4",
+    "cssnano": "^5.1.7",
     "custom-property-extract": "^1.2.1",
-    "debug": "^4.3.3",
+    "debug": "^4.3.4",
     "del": "^6.0.0",
     "fast-glob": "^3.2.11",
     "find-up": "^5.0.0",
@@ -27,8 +27,9 @@
     "json-schema-merge-allof": "^0.8.1",
     "json-schema-ref-parser": "^9.0.7",
     "json-schema-to-typescript": "^10.1.5",
+    "json-schema-traverse": "^1.0.0",
     "lodash": "^4.17.21",
-    "postcss": "^8.4.8",
+    "postcss": "^8.4.12",
     "postcss-combine-duplicated-selectors": "^10.0.3",
     "postcss-sort-container-queries": "https://github.com/lmestel/postcss-sort-container-queries",
     "postcss-sort-media-queries": "^4.2.1",
@@ -37,7 +38,7 @@
     "rollup-plugin-node-externals": "^4.0.0",
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-ts": "^2.0.5",
-    "sass": "^1.49.9",
-    "typescript": "^4.6.2"
+    "sass": "^1.50.0",
+    "typescript": "^4.6.3"
   }
 }

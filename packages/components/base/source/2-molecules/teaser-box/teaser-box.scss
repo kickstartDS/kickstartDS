@@ -2,6 +2,10 @@
 @include container.wrapper('teaser-box');
 
 .c-teaser-box {
+  contain: layout inline-size style;
+  display: flex;
+  flex-direction: column;
+
   .c-teaser__image {
     flex-grow: 0;
     flex-shrink: 0;

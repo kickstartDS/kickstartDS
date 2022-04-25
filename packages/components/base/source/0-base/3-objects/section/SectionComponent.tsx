@@ -2,14 +2,10 @@ import {
   FunctionComponent,
   ForwardRefRenderFunction,
   HTMLAttributes,
-  forwardRef,
-  createContext,
 } from 'react';
-import { withContainer } from '@kickstartds/core/lib/container';
 import classnames from 'classnames';
-import { Headline } from '../../../2-molecules/headline/HeadlineComponent';
-import { SectionProps } from './SectionProps';
-import './section.scss';
+import { Headline } from '../../../2-molecules/headline';
+import { type SectionProps } from './SectionProps';
 
 const SectionContainer: FunctionComponent<SectionProps> = ({
   width,
@@ -31,7 +27,9 @@ const SectionContainer: FunctionComponent<SectionProps> = ({
   </div>
 );
 
-const SectionComponent: ForwardRefRenderFunction<
+export { SectionProps };
+
+export const SectionComponent: ForwardRefRenderFunction<
   HTMLDivElement,
   SectionProps & HTMLAttributes<HTMLDivElement>
 > = (
@@ -76,7 +74,3 @@ const SectionComponent: ForwardRefRenderFunction<
     )}
   </div>
 );
-
-export const SectionContextDefault = forwardRef(SectionComponent);
-export const SectionContext = createContext(SectionContextDefault);
-export const Section = withContainer('section', SectionContext);
