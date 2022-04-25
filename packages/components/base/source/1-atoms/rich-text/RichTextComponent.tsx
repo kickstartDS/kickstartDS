@@ -1,12 +1,6 @@
-import {
-  ForwardRefRenderFunction,
-  HTMLAttributes,
-  forwardRef,
-  createContext,
-} from 'react';
+import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import ReactMarkdown from 'react-markdown';
 import classnames from 'classnames';
-import { withContainer } from '@kickstartds/core/lib/container';
 import { renderTextFn } from '@kickstartds/core/lib/core';
 
 export const defaultRenderFn: renderTextFn = (t: string) => (
@@ -26,7 +20,3 @@ export const RichTextComponent: ForwardRefRenderFunction<
     {renderText(text)}
   </div>
 );
-
-export const RichTextContextDefault = forwardRef(RichTextComponent);
-export const RichTextContext = createContext(RichTextContextDefault);
-export const RichText = withContainer('rich-text', RichTextContext);

@@ -1,11 +1,5 @@
-import {
-  ForwardRefRenderFunction,
-  HTMLAttributes,
-  forwardRef,
-  createContext,
-} from 'react';
+import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
-import { withContainer } from '@kickstartds/core/lib/container';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
 import { Icon } from '@kickstartds/base/lib/icon';
 import {
@@ -64,13 +58,4 @@ export const CollapsibleBoxComponent: ForwardRefRenderFunction<
       </div>
     </details>
   </div>
-);
-
-export const CollapsibleBoxContextDefault = forwardRef(CollapsibleBoxComponent);
-export const CollapsibleBoxContext = createContext(
-  CollapsibleBoxContextDefault
-);
-export const CollapsibleBox = withContainer(
-  'collapsible-box',
-  CollapsibleBoxContext
 );

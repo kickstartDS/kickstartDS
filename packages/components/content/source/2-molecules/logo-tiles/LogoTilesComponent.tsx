@@ -1,11 +1,5 @@
-import {
-  ForwardRefRenderFunction,
-  HTMLAttributes,
-  forwardRef,
-  createContext,
-} from 'react';
+import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
-import { withContainer } from '@kickstartds/core/lib/container';
 import { Picture } from '@kickstartds/base/lib/picture';
 import { type LogoTilesProps } from './LogoTilesProps';
 
@@ -23,7 +17,3 @@ export const LogoTilesComponent: ForwardRefRenderFunction<
       ))}
   </ul>
 );
-
-export const LogoTilesContextDefault = forwardRef(LogoTilesComponent);
-export const LogoTilesContext = createContext(LogoTilesContextDefault);
-export const LogoTiles = withContainer('logo-tiles', LogoTilesContext);

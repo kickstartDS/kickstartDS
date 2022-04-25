@@ -1,4 +1,5 @@
-import { forwardRef, createElement, createContext, useContext } from 'react';
+import { forwardRef, createContext } from 'react';
+import { withContainer } from '@kickstartds/core/lib/container';
 import {
   StorytellingComponent,
   type StorytellingProps,
@@ -8,7 +9,4 @@ import './storytelling.scss';
 export { StorytellingProps };
 export const StorytellingContextDefault = forwardRef(StorytellingComponent);
 export const StorytellingContext = createContext(StorytellingContextDefault);
-export const Storytelling: typeof StorytellingContextDefault = forwardRef(
-  (props, ref) =>
-    createElement(useContext(StorytellingContext), { ...props, ref })
-);
+export const Storytelling = withContainer('storytelling', StorytellingContext);

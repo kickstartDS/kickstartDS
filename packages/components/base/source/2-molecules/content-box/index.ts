@@ -1,4 +1,5 @@
-import { forwardRef, createElement, createContext, useContext } from 'react';
+import { forwardRef, createContext } from 'react';
+import { withContainer } from '@kickstartds/core/lib/container';
 import {
   ContentBoxComponent,
   type ContentBoxProps,
@@ -8,7 +9,4 @@ import './content-box.scss';
 export { ContentBoxProps };
 export const ContentBoxContextDefault = forwardRef(ContentBoxComponent);
 export const ContentBoxContext = createContext(ContentBoxContextDefault);
-export const ContentBox: typeof ContentBoxContextDefault = forwardRef(
-  (props, ref) =>
-    createElement(useContext(ContentBoxContext), { ...props, ref })
-);
+export const ContentBox = withContainer('content-box', ContentBoxContext);

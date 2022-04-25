@@ -1,10 +1,4 @@
-import {
-  ForwardRefRenderFunction,
-  HTMLAttributes,
-  forwardRef,
-  createContext,
-} from 'react';
-import { withContainer } from '@kickstartds/core/lib/container';
+import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
 import {
@@ -73,7 +67,3 @@ export const ContentBoxComponent: ForwardRefRenderFunction<
     </div>
   </div>
 );
-
-export const ContentBoxContextDefault = forwardRef(ContentBoxComponent);
-export const ContentBoxContext = createContext(ContentBoxContextDefault);
-export const ContentBox = withContainer('content-box', ContentBoxContext);

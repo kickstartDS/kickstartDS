@@ -1,10 +1,9 @@
-import { forwardRef, createElement, createContext, useContext } from 'react';
+import { forwardRef, createContext } from 'react';
+import { withContainer } from '@kickstartds/core/lib/container';
 import { HeadlineComponent, type HeadlineProps } from './HeadlineComponent';
 import './headline.scss';
 
 export { HeadlineProps };
 export const HeadlineContextDefault = forwardRef(HeadlineComponent);
 export const HeadlineContext = createContext(HeadlineContextDefault);
-export const Headline: typeof HeadlineContextDefault = forwardRef(
-  (props, ref) => createElement(useContext(HeadlineContext), { ...props, ref })
-);
+export const Headline = withContainer('headline', HeadlineContext);

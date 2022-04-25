@@ -4,11 +4,8 @@ import {
   ForwardRefRenderFunction,
   HTMLAttributes,
   Children,
-  forwardRef,
-  createContext,
 } from 'react';
 import classnames from 'classnames';
-import { withContainer } from '@kickstartds/core/lib/container';
 import { type SliderProps } from './SliderProps';
 import { SlideContext } from './SlideContext';
 
@@ -92,7 +89,3 @@ export const SliderComponent: ForwardRefRenderFunction<
     </div>
   </div>
 );
-
-export const SliderContextDefault = forwardRef(SliderComponent);
-export const SliderContext = createContext(SliderContextDefault);
-export const Slider = withContainer('slider', SliderContext);

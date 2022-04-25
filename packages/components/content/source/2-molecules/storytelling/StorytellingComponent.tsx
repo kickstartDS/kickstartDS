@@ -2,11 +2,8 @@ import {
   FunctionComponent,
   ForwardRefRenderFunction,
   HTMLAttributes,
-  forwardRef,
-  createContext,
 } from 'react';
 import classnames from 'classnames';
-import { withContainer } from '@kickstartds/core/lib/container';
 import { renderFn } from '@kickstartds/core/lib/core';
 import { Headline } from '@kickstartds/base/lib/headline';
 import { LinkButton } from '@kickstartds/base/lib/link-button';
@@ -135,7 +132,3 @@ export const StorytellingComponent: ForwardRefRenderFunction<
     )}
   </>
 );
-
-export const StorytellingContextDefault = forwardRef(StorytellingComponent);
-export const StorytellingContext = createContext(StorytellingContextDefault);
-export const Storytelling = withContainer('storytelling', StorytellingContext);

@@ -1,11 +1,5 @@
-import {
-  ForwardRefRenderFunction,
-  HTMLAttributes,
-  forwardRef,
-  createContext,
-} from 'react';
+import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
-import { withContainer } from '@kickstartds/core/lib/container';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
 import { Picture } from '@kickstartds/base/lib/picture';
 import {
@@ -52,7 +46,3 @@ export const QuoteComponent: ForwardRefRenderFunction<
     </div>
   </div>
 );
-
-export const QuoteContextDefault = forwardRef(QuoteComponent);
-export const QuoteContext = createContext(QuoteContextDefault);
-export const Quote = withContainer('quote', QuoteContext);

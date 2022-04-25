@@ -2,10 +2,7 @@ import {
   FunctionComponent,
   ForwardRefRenderFunction,
   HTMLAttributes,
-  forwardRef,
-  createContext,
 } from 'react';
-import { withContainer } from '@kickstartds/core/lib/container';
 import classnames from 'classnames';
 import { Headline } from '../../../2-molecules/headline';
 import { type SectionProps } from './SectionProps';
@@ -77,7 +74,3 @@ export const SectionComponent: ForwardRefRenderFunction<
     )}
   </div>
 );
-
-export const SectionContextDefault = forwardRef(SectionComponent);
-export const SectionContext = createContext(SectionContextDefault);
-export const Section = withContainer('section', SectionContext);

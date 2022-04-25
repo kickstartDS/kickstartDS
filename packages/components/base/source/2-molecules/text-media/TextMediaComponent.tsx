@@ -2,11 +2,8 @@ import {
   FunctionComponent,
   ForwardRefRenderFunction,
   HTMLAttributes,
-  forwardRef,
-  createContext,
 } from 'react';
 import classnames from 'classnames';
-import { withContainer } from '@kickstartds/core/lib/container';
 import { renderFn } from '@kickstartds/core/lib/core';
 import { Picture } from '../../1-atoms/image/picture';
 import { LightboxLazyImage } from '../../1-atoms/image/lightbox-image';
@@ -150,7 +147,3 @@ export const TextMediaComponent: ForwardRefRenderFunction<
     )}
   </div>
 );
-
-export const TextMediaContextDefault = forwardRef(TextMediaComponent);
-export const TextMediaContext = createContext(TextMediaContextDefault);
-export const TextMedia = withContainer('text-media', TextMediaContext);

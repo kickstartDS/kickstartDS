@@ -1,4 +1,5 @@
-import { forwardRef, createElement, createContext, useContext } from 'react';
+import { forwardRef, createContext } from 'react';
+import { withContainer } from '@kickstartds/core/lib/container';
 import {
   CollapsibleBoxComponent,
   type CollapsibleBoxProps,
@@ -11,7 +12,7 @@ export const CollapsibleBoxContextDefault = forwardRef(CollapsibleBoxComponent);
 export const CollapsibleBoxContext = createContext(
   CollapsibleBoxContextDefault
 );
-export const CollapsibleBox: typeof CollapsibleBoxContextDefault = forwardRef(
-  (props, ref) =>
-    createElement(useContext(CollapsibleBoxContext), { ...props, ref })
+export const CollapsibleBox = withContainer(
+  'collapsible-box',
+  CollapsibleBoxContext
 );
