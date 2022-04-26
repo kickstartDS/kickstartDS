@@ -37,7 +37,7 @@
     "rollup-plugin-node-externals": "^4.0.0",
     "rollup-plugin-styles": "^4.0.0",
     "rollup-plugin-terser": "^7.0.2",
-    "rollup-plugin-ts": "^2.0.5",
+    "rollup-plugin-ts": "^2.0.7",
     "sass": "^1.50.1",
     "typescript": "^4.6.3"
   }
