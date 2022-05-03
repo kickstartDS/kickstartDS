@@ -57,7 +57,7 @@
     "fs-extra": "^10.1.0",
     "license-checker": "^25.0.1",
     "postcss": "^8.4.12",
-    "postcss-scss": "^4.0.3",
+    "postcss-scss": "^4.0.4",
     "react": "^17.0.2"
   },
   "devDependencies": {
