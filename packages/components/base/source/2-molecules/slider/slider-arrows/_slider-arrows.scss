@@ -22,7 +22,7 @@
   color: var(--c-slider_arrow--color);
   background-color: var(--c-slider_arrow--background);
   user-select: none;
-  border-radius: 3px;
+  border-radius: var(--ks-border-radius-control);
   z-index: 100;
   transition: inherit;
 

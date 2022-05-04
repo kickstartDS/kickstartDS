@@ -4,6 +4,9 @@ const typo = require('./typo');
 const spacing = require('./spacing');
 const breakpoints = require('./breakpoints');
 const deprecated = require('./deprecated');
+const border = require('./border');
+const boxShadow = require('./box-shadow');
+const transition = require('./transition');
 
 module.exports = (data) => ({
   ks: {
@@ -12,6 +15,9 @@ module.exports = (data) => ({
     ...typo(data),
     ...spacing(data),
     ...breakpoints(data),
+    ...border(data),
+    ...boxShadow(data),
+    ...transition(data),
   },
   ...deprecated(data),
 });

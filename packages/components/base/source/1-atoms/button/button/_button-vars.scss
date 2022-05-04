@@ -8,7 +8,7 @@ $host: (
     font-weight: var(--ks-font-weight-regular),
     icon-size: 1.5em,
     padding: 0.4rem 1.3rem 0.35rem,
-    border-radius: 3px,
+    border-radius: var(--ks-border-radius-control),
     border-color: var(--c-button--color),
     background-color: transparent,
     transform-active: scale(0.95),

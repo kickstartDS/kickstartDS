@@ -3,8 +3,8 @@ kbd {
   display: inline-block;
   margin: 0 0.1em;
   padding: 0.1em 0.5em 0;
-  border: 1px solid var(--color-grey-2);
-  border-radius: 3px;
+  border: var(--ks-border-width-default) solid var(--color-grey-2);
+  border-radius: var(--ks-border-radius-control);
   box-shadow: 0 1px 0 var(--color-black-alpha-2);
   vertical-align: 0.1em;
   white-space: nowrap;

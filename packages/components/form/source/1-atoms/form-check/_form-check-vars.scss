@@ -3,15 +3,15 @@ $name-: 'c-form-check';
 $box: (
   '.c-form-check': (
     size: 1rem,
-    border: 1px solid,
+    border: var(--ks-border-width-default) solid,
     border-color: var(--color-primary-alpha-8),
     background: var(--ks-background-color-interface-interactive),
   ),
   '.c-form-check--checkbox': (
-    border-radius: 3px,
+    border-radius: var(--ks-border-radius-control),
   ),
   '.c-form-check--radio': (
-    border-radius: 50%,
+    border-radius: var(--ks-border-radius-circle),
   ),
 ) !default;
 
