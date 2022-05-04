@@ -49,7 +49,7 @@
     "unsafe-perm": true
   },
   "dependencies": {
-    "@iwsio/json-csv-node": "^5.0.4",
+    "@iwsio/json-csv-node": "^5.0.7",
     "@kickstartds/eslint-config": "^1.0.2",
     "@kickstartds/stylelint-config": "^2.0.1",
     "execa": "^5.1.1",
