@@ -11,23 +11,25 @@ module.exports = ({ spacing, breakpoints }) => {
   const scaleMs = modularScale(base, scaleRatio);
   const breakpointMs = modularScale(1, bpRatio);
   return {
-    spacing: Object.fromEntries(
-      scales.map((scale, index) => [
-        scale,
-        {
-          base: {
-            value: round(scaleMs(index - baseIndex) / 16),
-            attributes,
-            token: { category: 'Spacing', presenter: 'Spacing' },
+    ks: {
+      spacing: Object.fromEntries(
+        scales.map((scale, index) => [
+          scale,
+          {
+            base: {
+              value: round(scaleMs(index - baseIndex) / 16),
+              attributes,
+              token: { category: 'Spacing', presenter: 'Spacing' },
+            },
+            'bp-factor': Object.fromEntries(
+              breakpointKeys.map((breakpoint, bpIndex) => [
+                breakpoint,
+                { value: round(breakpointMs(bpIndex + 1)) },
+              ])
+            ),
           },
-          'bp-factor': Object.fromEntries(
-            breakpointKeys.map((breakpoint, bpIndex) => [
-              breakpoint,
-              { value: round(breakpointMs(bpIndex + 1)) },
-            ])
-          ),
-        },
-      ])
-    ),
+        ])
+      ),
+    },
   };
 };

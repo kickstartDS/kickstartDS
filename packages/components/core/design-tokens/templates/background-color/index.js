@@ -5,11 +5,13 @@ const backgroundColorInterface = require('./interface');
 const backgroundColorPrimary = require('./primary');
 
 module.exports = (data) => ({
-  'background-color': {
-    ...backgroundColorAccent(data),
-    ...backgroundColorClear(data),
-    ...backgroundColorDefault(data),
-    ...backgroundColorInterface(data),
-    ...backgroundColorPrimary(data),
+  ks: {
+    'background-color': {
+      ...backgroundColorAccent(data),
+      ...backgroundColorClear(data),
+      ...backgroundColorDefault(data),
+      ...backgroundColorInterface(data),
+      ...backgroundColorPrimary(data),
+    },
   },
 });
