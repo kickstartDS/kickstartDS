@@ -35,10 +35,25 @@ const additionalRules = {
       return prev;
     }, {}),
 
-  spacing: (spacings) =>
-    Object.entries(spacings).reduce(
+  spacing: (spacings) => {
+    const spacingScale = Object.keys(spacings);
+    const trimmedSpacingScale = spacingScale.slice(1, -1);
+    const concepts = trimmedSpacingScale.reduce(
+      (prev, scale, index) => [
+        ...prev,
+        `--ks-spacing-stack-${scale}: var(--ks-spacing-${scale});`,
+        `--ks-spacing-inline-${scale}: var(--ks-spacing-${scale});`,
+        `--ks-spacing-inset-${scale}: var(--ks-spacing-${scale});`,
+        `--ks-spacing-inset-squish-${scale}: var(--ks-spacing-${spacingScale[index]}) var(--ks-spacing-${scale});`,
+        `--ks-spacing-inset-strech-${scale}: var(--ks-spacing-${
+          spacingScale[index + 2]
+        }) var(--ks-spacing-${scale});`,
+      ],
+      []
+    );
+
+    return Object.entries(spacings).reduce(
       (prev, [scale, { 'bp-factor': bpFactors }]) => {
-        prev._ ??= [];
         prev._.push(
           `--ks-spacing-${scale}: calc(var(--ks-spacing-${scale}-base) * var(--ks-spacing-${scale}-bp-factor, 1));`
         );
@@ -51,8 +66,9 @@ const additionalRules = {
         });
         return prev;
       },
-      {}
-    ),
+      { _: concepts }
+    );
+  },
 
   breakpoint: (breakpoints) => ({
     _: [
