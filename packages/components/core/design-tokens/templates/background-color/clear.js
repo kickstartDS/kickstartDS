@@ -1,7 +1,7 @@
 const Color = require('tinycolor2');
 
 const token = (value) => ({
-  value: Color(value).toRgb(),
+  value: typeof value === 'string' ? value : Color(value).toRgb(),
   attributes: { category: 'color' },
   token: { category: 'Colors: Background Clear', presenter: 'Color' },
 });
@@ -10,15 +10,15 @@ module.exports = ({ color }) => ({
   clear: {
     interactive: {
       _: token(Color(color.background).setAlpha(0)),
-      hover: token(Color(color.primary).setAlpha(0.1)),
-      active: token(Color(color.primary).setAlpha(0.2)),
+      hover: token('{ks.color.primary.alpha.2}'),
+      active: token('{ks.color.primary.alpha.3}'),
     },
     // TBD do we need clear inverted? maybe for the hover- & active-states (?)
     inverted: {
       interactive: {
         _: token(Color(color.background).setAlpha(0)),
-        hover: token(Color(color.primary).setAlpha(0.2)),
-        active: token(Color(color.primary).setAlpha(0.3)),
+        hover: token('{ks.color.primary.alpha.3}'),
+        active: token('{ks.color.primary.alpha.4}'),
       },
     },
   },

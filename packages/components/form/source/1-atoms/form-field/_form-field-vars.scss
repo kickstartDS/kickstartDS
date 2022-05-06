@@ -20,7 +20,7 @@ $hover: (
 
 $focus: (
   ':root': (
-    border-color: var(--color-primary),
+    border-color: var(--ks-color-primary),
     shadow: 0 0 4px -1px,
   ),
 ) !default;

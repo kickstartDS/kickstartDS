@@ -10,6 +10,7 @@ const backgroundColorTemplate = require('./templates/background-color');
 const borderTemplate = require('./templates/border');
 const boxShadowTemplate = require('./templates/box-shadow');
 const breakpointsTemplate = require('./templates/breakpoints');
+const colorTemplate = require('./templates/color');
 const spacingTemplate = require('./templates/spacing');
 const textColorTemplate = require('./templates/text-color');
 const transitionTemplate = require('./templates/transition');
@@ -21,6 +22,7 @@ const templates = [
   ['border', borderTemplate],
   ['box-shadow', boxShadowTemplate],
   ['breakpoints', breakpointsTemplate],
+  ['color', colorTemplate],
   ['spacing', spacingTemplate],
   ['text-color', textColorTemplate],
   ['transition', transitionTemplate],

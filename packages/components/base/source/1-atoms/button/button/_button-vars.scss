@@ -2,7 +2,7 @@ $name-: 'c-button';
 
 $host: (
   '.c-button': (
-    color-primary: var(--color-primary),
+    color-primary: var(--ks-color-primary),
     color-secondary: var(--color-white),
     font: var(--ks-font-ui-m),
     font-weight: var(--ks-font-weight-regular),
@@ -88,10 +88,10 @@ $fill-animation: (
     color-hover: var(--c-button--color-secondary),
   ),
   '.c-button--clear-inverted': (
-    color-hover: var(--c-button--color-primary),
+    color-hover: var(--c-button--ks-color-primary),
   ),
   '.c-button--solid': (
-    color-hover: var(--c-button--color-primary),
+    color-hover: var(--c-button--ks-color-primary),
   ),
   '.c-button--solid-inverted': (
     color-hover: var(--c-button--color-secondary),
@@ -100,6 +100,6 @@ $fill-animation: (
     color-hover: var(--c-button--color-secondary),
   ),
   '.c-button--outline-inverted': (
-    color-hover: var(--c-button--color-primary),
+    color-hover: var(--c-button--ks-color-primary),
   ),
 ) !default;

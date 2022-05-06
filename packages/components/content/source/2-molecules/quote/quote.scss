@@ -42,7 +42,7 @@ $vars: meta.module-variables(quote-vars);
       );
       font-size: var(--c-quote_icon--font-size);
       line-height: 1;
-      color: var(--c-quote_icon--color, var(--color-primary));
+      color: var(--c-quote_icon--color, var(--ks-color-primary));
       transform: var(--c-quote_icon--transform, translateX(-50%));
     }
   }

@@ -4,7 +4,7 @@ $box: (
   '.c-form-check': (
     size: 1rem,
     border: var(--ks-border-width-default) solid,
-    border-color: var(--color-primary-alpha-8),
+    border-color: var(--ks-color-primary-alpha-8),
     background: var(--ks-background-color-interface-interactive),
   ),
   '.c-form-check--checkbox': (
@@ -17,21 +17,21 @@ $box: (
 
 $box-hover: (
   '.c-form-check': (
-    border-color: var(--color-primary-alpha-9),
+    border-color: var(--ks-color-primary-alpha-9),
   ),
 ) !default;
 
 $box-focus: (
   '.c-form-check': (
-    border-color: var(--color-primary),
+    border-color: var(--ks-color-primary),
     shadow: 0 0 4px 0,
   ),
 ) !default;
 
 $box-checked: (
   '.c-form-check': (
-    background: var(--color-primary),
-    border-color: var(--color-primary),
+    background: var(--ks-color-primary),
+    border-color: var(--ks-color-primary),
   ),
 ) !default;
 

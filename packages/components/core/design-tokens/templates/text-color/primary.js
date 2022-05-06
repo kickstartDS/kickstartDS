@@ -1,14 +1,14 @@
 const Color = require('tinycolor2');
 
 const token = (value) => ({
-  value: Color(value).toRgb(),
+  value: typeof value === 'string' ? value : Color(value).toRgb(),
   attributes: { category: 'color' },
   token: { category: 'Colors: Text Primary', presenter: 'Color' },
 });
 
 module.exports = ({ color }) => ({
   primary: {
-    _: token(color.primary),
+    _: token('{ks.color.primary._}'),
     inverted: {
       _: token(color.background),
       interactive: {
@@ -18,10 +18,10 @@ module.exports = ({ color }) => ({
       },
     },
     interactive: {
-      _: token(color.primary),
-      hover: token(color.primary),
-      active: token(color.primary),
-      visited: token(color.primary),
+      _: token('{ks.color.primary._}'),
+      hover: token('{ks.color.primary._}'),
+      active: token('{ks.color.primary._}'),
+      visited: token('{ks.color.primary._}'),
     },
   },
 });

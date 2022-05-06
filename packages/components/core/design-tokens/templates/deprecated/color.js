@@ -7,14 +7,6 @@ const token = (value) => ({
 
 module.exports = ({ color }) => ({
   color: {
-    primary: {
-      _: token(color.primary),
-      alpha: {
-        1: token(Color(color.primary).setAlpha(0.1)),
-        8: token(Color(color.primary).setAlpha(0.8)),
-        9: token(Color(color.primary).setAlpha(0.9)),
-      },
-    },
     black: {
       _: token(color.foreground),
       alpha: {
