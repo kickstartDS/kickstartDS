@@ -55,6 +55,10 @@
     "scale-ratio": 1.618,
     "bp-ratio": 1.414
   },
+  "border-radius": "2px",
+  "box-shadow": {
+    "blur": "2.75px"
+  },
   "breakpoints": {
     "phone": 576,
     "tablet": 768,

@@ -76,6 +76,19 @@
         }
       }
     },
+    "border-radius": {
+      "title": "Border Radius",
+      "type": "string"
+    },
+    "box-shadow": {
+      "title": "Box Shadow",
+      "type": "object",
+      "properties": {
+        "blur": {
+          "type": "string"
+        }
+      }
+    },
     "breakpoints": {
       "type": "object",
       "additionalProperties": {
@@ -83,6 +96,7 @@
       }
     }
   },
+  "additionalProperties": false,
   "definitions": {
     "font": {
       "type": "object",

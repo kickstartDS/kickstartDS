@@ -1,10 +1,13 @@
 const Color = require('tinycolor2');
+const { parseLength } = require('../_helper');
 
 const categories = ['control', 'card', 'surface'];
 
-module.exports = ({ color }) => {
+module.exports = ({ color, 'box-shadow': boxShadow }) => {
   const shadowColor = Color(color.foreground).toRgb();
   const rgb = `${shadowColor.r},${shadowColor.g},${shadowColor.b}`;
+  const [blurNumber, blurUnit] = parseLength(boxShadow.blur);
+
   return {
     ks: {
       'box-shadow': {
@@ -36,16 +39,38 @@ module.exports = ({ color }) => {
           ])
         ),
         control: {
-          _: { value: '0 1px 3px {ks.box-shadow.color.control._}' },
-          hover: { value: '0 1px 6px {ks.box-shadow.color.control.hover}' },
+          _: {
+            value: `0 1px ${blurNumber}${blurUnit} {ks.box-shadow.color.control._}`,
+          },
+          hover: {
+            value: `0 1px ${
+              blurNumber * 2
+            }${blurUnit} {ks.box-shadow.color.control.hover}`,
+          },
         },
         card: {
-          _: { value: '0 1px 5px {ks.box-shadow.color.card._}' },
-          hover: { value: '0 1px 10px {ks.box-shadow.color.card.hover}' },
+          _: {
+            value: `0 1px ${
+              blurNumber * 2
+            }${blurUnit} {ks.box-shadow.color.card._}`,
+          },
+          hover: {
+            value: `0 1px ${
+              blurNumber * 4
+            }${blurUnit} {ks.box-shadow.color.card.hover}`,
+          },
         },
         surface: {
-          _: { value: '0 1px 10px {ks.box-shadow.color.surface._}' },
-          hover: { value: '0 1px 20px {ks.box-shadow.color.surface.hover}' },
+          _: {
+            value: `0 1px ${
+              blurNumber * 4
+            }${blurUnit} {ks.box-shadow.color.surface._}`,
+          },
+          hover: {
+            value: `0 1px ${
+              blurNumber * 8
+            }${blurUnit} {ks.box-shadow.color.surface.hover}`,
+          },
         },
       },
     },
