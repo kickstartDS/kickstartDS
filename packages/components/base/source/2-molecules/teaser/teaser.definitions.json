@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "http://schema.kickstartds.com/base/teaser.definitions.json",
   "title": "Teaser",
-  "description": "Component to tease external content",
+  "description": "Definitions for components to tease external content",
   "type": "object",
   "definitions": {
     "teaser": {
