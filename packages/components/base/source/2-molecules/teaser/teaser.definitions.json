@@ -52,10 +52,5 @@
         }
       }
     }
-  },
-  "allOf": [
-    {
-      "$ref": "#/definitions/teaser"
-    }
-  ]
+  }
 }
