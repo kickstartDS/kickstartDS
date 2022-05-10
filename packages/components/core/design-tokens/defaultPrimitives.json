@@ -1,6 +1,7 @@
 {
   "color": {
     "primary": "#333",
+    "primary-inverted": "#fff",
     "background": "#fff",
     "foreground": "#000",
     "link": "#1c7ed6"

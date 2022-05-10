@@ -10,11 +10,11 @@ module.exports = ({ color }) => ({
   primary: {
     _: token('{ks.color.primary._}'),
     inverted: {
-      _: token(color.background),
+      _: token('{ks.color.primary-inverted._}'),
       interactive: {
-        _: token(color.background),
-        hover: token(color.background),
-        active: token(color.background),
+        _: token('{ks.color.primary-inverted._}'),
+        hover: token('{ks.color.primary-inverted._}'),
+        active: token('{ks.color.primary-inverted._}'),
       },
     },
     interactive: {

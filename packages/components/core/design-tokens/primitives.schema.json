@@ -11,6 +11,10 @@
           "title": "Primary Color",
           "type": "string"
         },
+        "primary-inverted": {
+          "title": "Primary Inverted Color",
+          "type": "string"
+        },
         "background": {
           "title": "Background Color",
           "type": "string"
@@ -23,7 +27,8 @@
           "title": "Link Color",
           "type": "string"
         }
-      }
+      },
+      "additionalProperties": false
     },
     "font": {
       "title": "Typography",
@@ -41,7 +46,8 @@
         "mono": {
           "$ref": "#/definitions/font"
         }
-      }
+      },
+      "additionalProperties": false
     },
     "font-weight": {
       "title": "Font Weights",
@@ -59,7 +65,8 @@
         "bold": {
           "type": "integer"
         }
-      }
+      },
+      "additionalProperties": false
     },
     "spacing": {
       "title": "Spacings",
@@ -74,7 +81,8 @@
         "bp-ratio": {
           "type": "number"
         }
-      }
+      },
+      "additionalProperties": false
     },
     "border-radius": {
       "title": "Border Radius",
@@ -87,7 +95,8 @@
         "blur": {
           "type": "string"
         }
-      }
+      },
+      "additionalProperties": false
     },
     "breakpoints": {
       "type": "object",

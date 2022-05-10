@@ -1,3 +1,5 @@
+const { Bezier } = require('bezier-js');
+
 const modularScale = (base, ratio) => (step) => ratio ** step * base;
 
 const factor = 10 ** 4;
@@ -9,4 +11,15 @@ const parseLength = (value) => {
   return [Number(number), unit];
 };
 
-module.exports = { modularScale, round, parseLength };
+const b = new Bezier(
+  { x: 0, y: 0 },
+  { x: 1, y: 0.1 },
+  { x: 0, y: 0.9 },
+  { x: 1, y: 1 }
+);
+const alphaScale = (steps) => {
+  const lut = b.getLUT(steps + 1);
+  return lut.map(({ y }) => Math.round(y * 100) / 100);
+};
+
+module.exports = { modularScale, round, parseLength, alphaScale };

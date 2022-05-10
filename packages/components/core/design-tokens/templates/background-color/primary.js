@@ -15,17 +15,17 @@ module.exports = ({ color }) => ({
     },
     inverted: {
       tbd: {
-        _: token(Color(color.background).setAlpha(0.8)),
+        _: token(Color(color['primary-inverted']).setAlpha(0.8)),
       },
       interactive: {
-        _: token(color.background),
-        hover: token(Color.mix(color.background, color.primary, 10)),
-        active: token(Color.mix(color.background, color.primary, 20)),
+        _: token(color['primary-inverted']),
+        hover: token(Color.mix(color['primary-inverted'], color.primary, 10)),
+        active: token(Color.mix(color['primary-inverted'], color.primary, 20)),
       },
     },
     tbd: {
       _: token(Color(color.primary).setAlpha(0.8)),
-      interactive: token(color.background),
+      interactive: token(color['primary-inverted']),
     },
   },
 });
