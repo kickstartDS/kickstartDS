@@ -93,24 +93,68 @@ module.exports = {
     const breakpoints = Object.entries(tokens.ks.breakpoint).map(
       ([key, { value }]) => [key, value]
     );
-    const writeRules = (lines = [], level = 0) =>
+    const writeRules = (lines = [], level = 0, customSelector = selector) =>
       lines.length
-        ? `${indent(level) + selector} {\n${lines
+        ? `${indent(level) + customSelector} {\n${lines
             .filter(Boolean)
-            // .sort()
             .map((str) => indent(level + 1) + str.trim())
-            .join('\n')}\n${indent(level)}}`
+            .join('\n')}\n${indent(level)}}\n`
         : '';
 
-    const rootRules = allTokens
+    const propertyFormatter = createPropertyFormatter({
+      outputReferences,
+      dictionary,
+      format: 'css',
+    });
+
+    const colorTokens = new Map();
+    const otherRules = [];
+    allTokens
       .filter((token) => !token.private)
-      .map(
-        createPropertyFormatter({
-          outputReferences,
-          dictionary,
-          format: 'css',
-        })
-      );
+      .forEach((token) => {
+        if (token.attributes.category === 'color') {
+          colorTokens.set(token.name, token);
+        } else {
+          otherRules.push(propertyFormatter(token));
+        }
+      });
+
+    const colorDefaultRules = new Map();
+    const colorInvertedRules = [];
+    colorTokens.forEach((token) => {
+      if (!colorDefaultRules.has(token.name)) {
+        colorDefaultRules.set(token.name, `--${token.name}: ${token.value};`);
+      }
+
+      if (token.path.indexOf('inverted') >= 0) {
+        const defaultName = token.name.replace('-inverted', '');
+        const defaultToken = colorTokens.get(defaultName);
+        if (defaultToken) {
+          const invertedName = token.name;
+          const invertedValue = token.value;
+          const defaultValue = defaultToken.value;
+          colorDefaultRules
+            .set(
+              `${defaultName}-base`,
+              `--${defaultName}-base: ${defaultValue};`
+            )
+            .set(
+              `${invertedName}-base`,
+              `--${invertedName}-base: ${invertedValue};`
+            )
+            .set(defaultName, `--${defaultName}: var(--${defaultName}-base);`)
+            .set(
+              invertedName,
+              `--${invertedName}: var(--${invertedName}-base);`
+            );
+          colorInvertedRules.push(
+            `--${defaultName}: var(--${invertedName}-base);`,
+            `--${invertedName}: var(--${defaultName}-base);`
+          );
+        }
+      }
+    });
+
     const responsiveRules = breakpoints.reduce(
       (prev, [key]) => ({ ...prev, [key]: [] }),
       {}
@@ -118,7 +162,7 @@ module.exports = {
 
     for (const [key, fn] of Object.entries(additionalRules)) {
       const { _: root, ...responsive } = fn(tokens.ks[key]);
-      rootRules.push(...root);
+      otherRules.push(...root);
       Object.entries(responsive).forEach(([mediaQuery, rules]) =>
         responsiveRules[mediaQuery].push(...rules)
       );
@@ -132,7 +176,13 @@ module.exports = {
               1
             )}\n}`
           : prev,
-      writeRules(rootRules)
+      writeRules(
+        [...colorDefaultRules.values()],
+        0,
+        `${selector}, [ks-inverted=false]`
+      ) +
+        writeRules(colorInvertedRules, 0, '[ks-inverted=true]') +
+        writeRules(otherRules)
     );
 
     return (

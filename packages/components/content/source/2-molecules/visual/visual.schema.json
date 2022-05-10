@@ -165,7 +165,7 @@
                   "default": true
                 },
                 "variant": {
-                  "default": "outline-inverted"
+                  "default": "outline"
                 }
               }
             },
@@ -198,8 +198,13 @@
           "title": "Style of the box",
           "description": "Choose a style for the box",
           "type": "string",
-          "enum": ["default", "light", "transparent"],
-          "default": "default"
+          "enum": ["solid", "transparent"],
+          "default": "solid"
+        },
+        "inverted": {
+          "type": "boolean",
+          "title": "Inverted",
+          "default": false
         }
       },
       "additionalProperties": false

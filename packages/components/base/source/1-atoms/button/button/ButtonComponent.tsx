@@ -13,6 +13,7 @@ export const ButtonComponent: ForwardRefRenderFunction<
     label,
     type = 'button',
     variant = 'solid',
+    inverted,
     size,
     className,
     fillAnimation,
@@ -38,6 +39,7 @@ export const ButtonComponent: ForwardRefRenderFunction<
       },
       className
     )}
+    ks-inverted={inverted?.toString()}
     data-component={dataComponent}
     ref={ref}
     {...props}

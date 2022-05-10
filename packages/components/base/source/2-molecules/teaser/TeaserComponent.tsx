@@ -20,7 +20,7 @@ export const TeaserComponent: ForwardRefRenderFunction<
   {
     topic,
     text,
-    darkStyle,
+    inverted,
     link,
     renderText = richTextDefaultRenderFn,
     renderTopic = defaultRenderFn,
@@ -31,15 +31,10 @@ export const TeaserComponent: ForwardRefRenderFunction<
   ref
 ) => (
   <div
-    className={classnames(
-      'c-teaser',
-      {
-        'c-teaser--style-dark': darkStyle,
-      },
-      className
-    )}
+    className={classnames('c-teaser', className)}
     data-component="base.teaser"
     ref={ref}
+    ks-inverted={inverted?.toString()}
     {...props}
   >
     {children}

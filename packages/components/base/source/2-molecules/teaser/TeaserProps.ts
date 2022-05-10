@@ -13,10 +13,7 @@ export type Topic = string;
  * Text for the teaser box
  */
 export type TextContent = string;
-/**
- * Optionally use this to apply a dark variant to the box
- */
-export type DarkVariant = boolean;
+export type Inverted = boolean;
 /**
  * Text used on button
  */
@@ -24,13 +21,7 @@ export type Label = string;
 /**
  * Choose one of the styles from the list
  */
-export type ButtonStyle =
-  | 'solid'
-  | 'solid-inverted'
-  | 'clear'
-  | 'clear-inverted'
-  | 'outline'
-  | 'outline-inverted';
+export type ButtonStyle = 'solid' | 'clear' | 'outline';
 /**
  * Choose a size between small, medium and large
  */
@@ -70,6 +61,7 @@ export type ButtonHref = string;
  * Open link in new Tab
  */
 export type OpenLinkInNewTab = boolean;
+export type Inverted1 = boolean;
 /**
  * Hides the link. The box as a whole keeps being clickable
  */
@@ -85,7 +77,7 @@ export type Class = string;
 export interface TeaserProps {
   topic?: Topic;
   text?: TextContent;
-  darkStyle?: DarkVariant;
+  inverted?: Inverted;
   link?: LinkButton;
   className?: Class;
   [k: string]: unknown;
@@ -106,6 +98,7 @@ export interface LinkButton {
   iconAnimation?: IconAnimation;
   href: ButtonHref;
   newTab?: OpenLinkInNewTab;
+  inverted?: Inverted1;
   hidden?: HideLink;
 }
 /**

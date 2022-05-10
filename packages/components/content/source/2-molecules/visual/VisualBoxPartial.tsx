@@ -27,10 +27,11 @@ export const VisualBoxPartial: FunctionComponent<IBox & RenderFunctions> = ({
   indent,
   horizontal,
   vertical,
-  background,
+  background = 'solid',
   headline,
   text,
   link,
+  inverted = false,
   renderHeadline = defaultRenderFn,
   renderText = richTextDefaultRenderFn,
 }) => (
@@ -44,6 +45,7 @@ export const VisualBoxPartial: FunctionComponent<IBox & RenderFunctions> = ({
         'c-visual__content--indent': indent,
       }
     )}
+    ks-inverted={inverted?.toString()}
   >
     <div
       className={classnames(
@@ -71,7 +73,13 @@ export const VisualBoxPartial: FunctionComponent<IBox & RenderFunctions> = ({
 
       {link && link.enabled && (
         <div className="c-visual__link">
-          <LinkButton {...{ ...link, enabled: undefined }} />
+          <LinkButton
+            {...{
+              ...link,
+              enabled: undefined,
+              inverted: link.inverted ?? !inverted,
+            }}
+          />
         </div>
       )}
     </div>

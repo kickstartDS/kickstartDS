@@ -1,6 +1,7 @@
 import '@storybook/react';
-import { createElement, Fragment } from 'react';
+import { createElement, Fragment, useEffect, useMemo } from 'react';
 import { actions } from '@storybook/addon-actions';
+import { useDarkMode } from 'storybook-dark-mode';
 // @see https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/attrchange
 import 'lazysizes/plugins/attrchange/ls.attrchange';
 import { unpackDecorator } from '../../../components/core/lib/storybook/helpers';
@@ -18,6 +19,29 @@ import icons from '!!raw-loader!./icons.html';
 
 const myActions = actions('radio');
 window.rm.radio.on('*', myActions.radio);
+
+const InvertedDecorator = (Story, context) => {
+  const darkMode = useDarkMode();
+  const bgValues = useMemo(
+    () =>
+      Object.fromEntries(
+        context.parameters.backgrounds.values.map(({ name, value }) => [
+          value,
+          name,
+        ])
+      ),
+    context.parameters.backgrounds.values
+  );
+  const background =
+    bgValues[context.globals.backgrounds?.value] ??
+    (darkMode ? 'dark' : 'light');
+
+  useEffect(
+    () => document.body.setAttribute('ks-inverted', background === 'dark'),
+    [background]
+  );
+  return createElement(Story);
+};
 
 const PageDecorator = (Story) =>
   createElement(Fragment, null, [
@@ -62,4 +86,4 @@ export const parameters = {
     ],
   },
 };
-export const decorators = [unpackDecorator, PageDecorator];
+export const decorators = [unpackDecorator, InvertedDecorator, PageDecorator];

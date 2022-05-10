@@ -26,6 +26,7 @@ export const LinkButtonComponent: ForwardRefRenderFunction<
     icon,
     iconBefore,
     iconAfter,
+    inverted,
     renderLabel = defaultRenderFn,
     ...props
   },
@@ -47,6 +48,7 @@ export const LinkButtonComponent: ForwardRefRenderFunction<
     data-component={dataComponent}
     {...(newTab ? { target: '_blank', rel: 'noopener' } : {})}
     ref={ref}
+    ks-inverted={inverted?.toString()}
     {...props}
   >
     {label ? (

@@ -55,6 +55,10 @@
     },
     "newTab": {
       "$ref": "#/definitions/newTab"
+    },
+    "inverted": {
+      "type": "boolean",
+      "title": "Inverted"
     }
   },
   "required": ["label", "variant", "size", "href"],
