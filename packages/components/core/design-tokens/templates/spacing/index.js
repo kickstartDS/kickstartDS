@@ -20,11 +20,11 @@ module.exports = ({ spacing, breakpoints }) => {
             {
               _: {
                 value: `{ks.spacing.${scale}.base}`,
-                attributes,
                 token: { category: 'Spacing', presenter: 'Spacing' },
               },
               base: {
                 value: round(scaleMs(index - baseIndex) / 16).toString(),
+                attributes,
               },
               'bp-factor': Object.fromEntries(
                 breakpointKeys.map((breakpoint, bpIndex) => [
