@@ -13,6 +13,8 @@ if (process.env.NODE_ENV === 'production') {
   postcssPlugins.push(normalizeWhitespace);
 }
 
+const getCssProperty = (rule) => rule.trim().split(':', 1)[0];
+
 const additionalRules = {
   'font-size': (fontSizes) =>
     Object.entries(fontSizes).reduce((prev, [family, sizes]) => {
@@ -35,40 +37,26 @@ const additionalRules = {
       return prev;
     }, {}),
 
-  spacing: (spacings) => {
-    const spacingScale = Object.keys(spacings);
-    const trimmedSpacingScale = spacingScale.slice(1, -1);
-    const concepts = trimmedSpacingScale.reduce(
-      (prev, scale, index) => [
-        ...prev,
-        `--ks-spacing-stack-${scale}: var(--ks-spacing-${scale});`,
-        `--ks-spacing-inline-${scale}: var(--ks-spacing-${scale});`,
-        `--ks-spacing-inset-${scale}: var(--ks-spacing-${scale});`,
-        `--ks-spacing-inset-squish-${scale}: var(--ks-spacing-${spacingScale[index]}) var(--ks-spacing-${scale});`,
-        `--ks-spacing-inset-strech-${scale}: var(--ks-spacing-${
-          spacingScale[index + 2]
-        }) var(--ks-spacing-${scale});`,
-      ],
-      []
-    );
-
-    return Object.entries(spacings).reduce(
+  spacing: (spacings) =>
+    Object.entries(spacings).reduce(
       (prev, [scale, { 'bp-factor': bpFactors }]) => {
+        prev._ ??= [];
         prev._.push(
           `--ks-spacing-${scale}: calc(var(--ks-spacing-${scale}-base) * var(--ks-spacing-${scale}-bp-factor, 1));`
         );
 
-        Object.keys(bpFactors).forEach((bp) => {
-          prev[bp] ??= [];
-          prev[bp].push(
-            `--ks-spacing-${scale}-bp-factor: var(--ks-spacing-${scale}-bp-factor-${bp});`
-          );
-        });
+        if (bpFactors) {
+          Object.keys(bpFactors).forEach((bp) => {
+            prev[bp] ??= [];
+            prev[bp].push(
+              `--ks-spacing-${scale}-bp-factor: var(--ks-spacing-${scale}-bp-factor-${bp});`
+            );
+          });
+        }
         return prev;
       },
-      { _: concepts }
-    );
-  },
+      {}
+    ),
 
   breakpoint: (breakpoints) => ({
     _: [
@@ -108,14 +96,15 @@ module.exports = {
     });
 
     const colorTokens = new Map();
-    const otherRules = [];
+    const otherRules = new Map();
     allTokens
       .filter((token) => !token.private)
       .forEach((token) => {
         if (token.attributes.category === 'color') {
           colorTokens.set(token.name, token);
         } else {
-          otherRules.push(propertyFormatter(token));
+          const rule = propertyFormatter(token);
+          otherRules.set(getCssProperty(rule), rule);
         }
       });
 
@@ -162,7 +151,7 @@ module.exports = {
 
     for (const [key, fn] of Object.entries(additionalRules)) {
       const { _: root, ...responsive } = fn(tokens.ks[key]);
-      otherRules.push(...root);
+      root.forEach((rule) => otherRules.set(getCssProperty(rule), rule));
       Object.entries(responsive).forEach(([mediaQuery, rules]) =>
         responsiveRules[mediaQuery].push(...rules)
       );
@@ -182,7 +171,7 @@ module.exports = {
         `${selector}, [ks-inverted=false]`
       ) +
         writeRules(colorInvertedRules, 0, '[ks-inverted=true]') +
-        writeRules(otherRules)
+        writeRules([...otherRules.values()])
     );
 
     return (
