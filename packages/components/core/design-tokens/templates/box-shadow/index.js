@@ -1,6 +1,7 @@
 const Color = require('tinycolor2');
 const { parseLength } = require('../_helper');
 
+const token = { category: 'Box Shadow', presenter: 'Shadow' };
 const categories = ['control', 'card', 'surface'];
 
 module.exports = ({ color, 'box-shadow': boxShadow }) => {
@@ -41,6 +42,7 @@ module.exports = ({ color, 'box-shadow': boxShadow }) => {
         control: {
           _: {
             value: `0 1px ${blurNumber}${blurUnit} {ks.box-shadow.color.control._}`,
+            token,
           },
           hover: {
             value: `0 1px ${
@@ -53,6 +55,7 @@ module.exports = ({ color, 'box-shadow': boxShadow }) => {
             value: `0 1px ${
               blurNumber * 2
             }${blurUnit} {ks.box-shadow.color.card._}`,
+            token,
           },
           hover: {
             value: `0 1px ${
@@ -65,6 +68,7 @@ module.exports = ({ color, 'box-shadow': boxShadow }) => {
             value: `0 1px ${
               blurNumber * 4
             }${blurUnit} {ks.box-shadow.color.surface._}`,
+            token,
           },
           hover: {
             value: `0 1px ${
