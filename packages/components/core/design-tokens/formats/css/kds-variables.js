@@ -115,7 +115,7 @@ module.exports = {
         colorDefaultRules.set(token.name, `--${token.name}: ${token.value};`);
       }
 
-      if (token.path.indexOf('inverted') >= 0) {
+      if (token.name.indexOf('-inverted') >= 0) {
         const defaultName = token.name.replace('-inverted', '');
         const defaultToken = colorTokens.get(defaultName);
         if (defaultToken) {

@@ -7,8 +7,6 @@ const token = (value) => ({
 });
 
 module.exports = ({ color }) => ({
-  default: {
-    _: token(color.background),
-    inverted: token(Color(color.foreground).setAlpha(0.7)),
-  },
+  default: token(color.background),
+  'default-inverted': token(Color(color.foreground).setAlpha(0.7)),
 });

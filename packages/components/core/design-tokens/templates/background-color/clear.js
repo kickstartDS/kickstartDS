@@ -13,13 +13,12 @@ module.exports = ({ color }) => ({
       hover: token('{ks.color.primary.alpha.2}'),
       active: token('{ks.color.primary.alpha.3}'),
     },
-    // TBD do we need clear inverted? maybe for the hover- & active-states (?)
-    inverted: {
-      interactive: {
-        _: token(Color(color.background).setAlpha(0)),
-        hover: token('{ks.color.primary.alpha.3}'),
-        active: token('{ks.color.primary.alpha.4}'),
-      },
+  },
+  'clear-inverted': {
+    interactive: {
+      _: token(Color(color.background).setAlpha(0)),
+      hover: token('{ks.color.primary.alpha.3}'),
+      active: token('{ks.color.primary.alpha.4}'),
     },
   },
 });

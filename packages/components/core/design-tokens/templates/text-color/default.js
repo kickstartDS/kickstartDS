@@ -15,6 +15,6 @@ module.exports = ({ color }) => ({
       active: token(color.link),
       visited: token(color.link),
     },
-    inverted: token(color.background),
   },
+  'default-inverted': token(color.background),
 });

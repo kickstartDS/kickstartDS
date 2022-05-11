@@ -12,6 +12,8 @@ module.exports = ({ color }) => ({
     interactive: {
       _: token(Color(color.foreground).setAlpha(0)),
       disabled: token(Color(color.foreground).setAlpha(0.1)),
+      hover: token(Color(color.foreground).setAlpha(0.1)),
+      active: token(Color(color.foreground).setAlpha(0.1)),
     },
   },
 });
