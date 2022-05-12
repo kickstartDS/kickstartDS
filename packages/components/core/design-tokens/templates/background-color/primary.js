@@ -18,8 +18,8 @@ module.exports = ({ color }) => ({
   'primary-inverted': {
     interactive: {
       _: token(color['primary-inverted']),
-      hover: token(Color.mix(color['primary-inverted'], color.primary, 10)),
-      active: token(Color.mix(color['primary-inverted'], color.primary, 20)),
+      hover: token(Color.mix(color['primary-inverted'], color.foreground, 10)),
+      active: token(Color.mix(color['primary-inverted'], color.foreground, 20)),
     },
     translucent: token('{ks.color.primary-inverted.alpha.8}'),
   },
