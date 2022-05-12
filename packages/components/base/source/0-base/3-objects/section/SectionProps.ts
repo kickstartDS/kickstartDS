@@ -1345,6 +1345,7 @@ export type HideLink1 = boolean;
  * Additional css classes attached to the box
  */
 export type Class11 = string;
+export type Inverted13 = boolean;
 /**
  * Select the headline level to use, or p alternatively
  */
@@ -1405,7 +1406,8 @@ export interface SectionProps {
     | LogoTiles
     | TeaserRow
   )[];
-  background?: 'default' | 'accent' | 'dark';
+  background?: 'default' | 'accent';
+  inverted?: Inverted13;
   spaceBefore?: 'default' | 'small' | 'none';
   spaceAfter?: 'default' | 'small' | 'none';
   headline?: Headline4;

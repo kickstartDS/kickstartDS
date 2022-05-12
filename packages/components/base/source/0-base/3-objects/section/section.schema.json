@@ -79,8 +79,12 @@
     },
     "background": {
       "type": "string",
-      "enum": ["default", "accent", "dark"],
+      "enum": ["default", "accent"],
       "default": "default"
+    },
+    "inverted": {
+      "type": "boolean",
+      "title": "Inverted"
     },
     "spaceBefore": {
       "type": "string",
