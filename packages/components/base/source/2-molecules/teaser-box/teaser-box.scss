@@ -1,5 +1,8 @@
 @use './container';
-@include container.wrapper('teaser-box');
+
+@include container.wrapper('teaser-box') {
+  display: flex;
+}
 
 .c-teaser-box {
   contain: layout inline-size style;

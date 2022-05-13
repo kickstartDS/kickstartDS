@@ -5,7 +5,9 @@
 
 $vars: meta.module-variables(content-box-vars);
 @include custom-properties.styles($vars);
-@include container.wrapper('content-box');
+@include container.wrapper('content-box') {
+  display: flex;
+}
 
 .c-content-box {
   margin-bottom: 2em;
