@@ -1,27 +1,24 @@
-const Color = require('tinycolor2');
-
 const token = (value) => ({
-  value: typeof value === 'string' ? value : Color(value).toRgb(),
+  value,
   attributes: { category: 'color' },
   token: { category: 'Colors: Text Primary', presenter: 'Color' },
 });
 
-module.exports = ({ color }) => ({
+module.exports = () => ({
   primary: {
-    _: token('{ks.color.primary._}'),
+    base: token('{ks.color.primary.base}'),
     interactive: {
-      _: token('{ks.color.primary._}'),
-      hover: token('{ks.color.primary._}'),
-      active: token('{ks.color.primary._}'),
-      visited: token('{ks.color.primary._}'),
+      base: token('{ks.color.primary.base}'),
+      hover: { base: token('{ks.color.primary.base}') },
+      active: { base: token('{ks.color.primary.base}') },
     },
   },
   'primary-inverted': {
-    _: token('{ks.color.primary-inverted._}'),
+    base: token('{ks.color.primary-inverted.base}'),
     interactive: {
-      _: token('{ks.color.primary-inverted._}'),
-      hover: token('{ks.color.primary-inverted._}'),
-      active: token('{ks.color.primary-inverted._}'),
+      base: token('{ks.color.primary-inverted.base}'),
+      hover: { base: token('{ks.color.primary-inverted.base}') },
+      active: { base: token('{ks.color.primary-inverted.base}') },
     },
   },
 });

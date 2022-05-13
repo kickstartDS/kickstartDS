@@ -13,7 +13,7 @@ if (process.env.NODE_ENV === 'production') {
   postcssPlugins.push(normalizeWhitespace);
 }
 
-const getCssProperty = (rule) => rule.trim().split(':', 1)[0];
+const getCssProperty = (rule) => rule.split(':', 1)[0];
 
 const additionalRules = {
   'font-size': (fontSizes) =>
@@ -93,54 +93,40 @@ module.exports = {
       outputReferences,
       dictionary,
       format: 'css',
+      formatting: {
+        indentation: '',
+      },
     });
 
-    const colorTokens = new Map();
+    const colorBaseTokens = [];
     const otherRules = new Map();
     allTokens
       .filter((token) => !token.private)
       .forEach((token) => {
-        if (token.attributes.category === 'color') {
-          colorTokens.set(token.name, token);
-        } else {
-          const rule = propertyFormatter(token);
-          otherRules.set(getCssProperty(rule), rule);
+        if (
+          token.attributes.category === 'color' &&
+          token.path[token.path.length - 1] === 'base'
+        ) {
+          colorBaseTokens.push(token);
         }
+        const rule = propertyFormatter(token);
+        otherRules.set(getCssProperty(rule), rule);
       });
 
-    const colorDefaultRules = new Map();
+    const colorDefaultRules = [];
     const colorInvertedRules = [];
-    colorTokens.forEach((token) => {
-      if (!colorDefaultRules.has(token.name)) {
-        colorDefaultRules.set(token.name, `--${token.name}: ${token.value};`);
-      }
+    colorBaseTokens.forEach((token) => {
+      const name = token.name.replace('-base', '');
+      colorDefaultRules.push(`--${name}: var(--${token.name});`);
 
       if (token.name.indexOf('-inverted') >= 0) {
-        const defaultName = token.name.replace('-inverted', '');
-        const defaultToken = colorTokens.get(defaultName);
-        if (defaultToken) {
-          const invertedName = token.name;
-          const invertedValue = token.value;
-          const defaultValue = defaultToken.value;
-          colorDefaultRules
-            .set(
-              `${defaultName}-base`,
-              `--${defaultName}-base: ${defaultValue};`
-            )
-            .set(
-              `${invertedName}-base`,
-              `--${invertedName}-base: ${invertedValue};`
-            )
-            .set(defaultName, `--${defaultName}: var(--${defaultName}-base);`)
-            .set(
-              invertedName,
-              `--${invertedName}: var(--${invertedName}-base);`
-            );
-          colorInvertedRules.push(
-            `--${defaultName}: var(--${invertedName}-base);`,
-            `--${invertedName}: var(--${defaultName}-base);`
-          );
-        }
+        const defaultName = name.replace('-inverted', '');
+        const invertedName = name;
+
+        colorInvertedRules.push(
+          `--${defaultName}: var(--${invertedName}-base);`,
+          `--${invertedName}: var(--${defaultName}-base);`
+        );
       }
     });
 
@@ -157,22 +143,20 @@ module.exports = {
       );
     }
 
-    const result = breakpoints.reduce(
-      (prev, [mediaQuery, breakpoint]) =>
-        responsiveRules[mediaQuery]?.length
-          ? `${prev}\n@media (min-width: ${breakpoint}) {\n${writeRules(
-              responsiveRules[mediaQuery],
-              1
-            )}\n}`
-          : prev,
-      writeRules(
-        [...colorDefaultRules.values()],
-        0,
-        `${selector}, [ks-inverted=false]`
-      ) +
-        writeRules(colorInvertedRules, 0, '[ks-inverted=true]') +
-        writeRules([...otherRules.values()])
-    );
+    const result =
+      writeRules([...otherRules.values()]) +
+      writeRules(colorDefaultRules, 0, `${selector}, [ks-inverted=false]`) +
+      writeRules(colorInvertedRules, 0, '[ks-inverted=true]') +
+      breakpoints.reduce(
+        (prev, [mediaQuery, breakpoint]) =>
+          responsiveRules[mediaQuery]?.length
+            ? `${prev}\n@media (min-width: ${breakpoint}) {\n${writeRules(
+                responsiveRules[mediaQuery],
+                1
+              )}\n}`
+            : prev,
+        ''
+      );
 
     return (
       (process.env.NODE_ENV !== 'production' ? fileHeader({ file }) : '') +

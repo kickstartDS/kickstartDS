@@ -1,16 +1,20 @@
-const Color = require('tinycolor2');
-
 const token = (value) => ({
-  value: Color(value).toRgb(),
+  value,
   attributes: { category: 'color' },
   token: { category: 'Colors: Text Interface', presenter: 'Color' },
 });
 
-module.exports = ({ color }) => ({
+module.exports = () => ({
   interface: {
-    _: token(Color(color.foreground).setAlpha(0.8)),
+    base: token('{ks.color.fg.alpha.8.base}'),
     interactive: {
-      _: token(color.foreground),
+      base: token('{ks.color.fg.base}'),
+    },
+  },
+  'interface-inverted': {
+    base: token('{ks.color.fg-inverted.alpha.8.base}'),
+    interactive: {
+      base: token('{ks.color.fg-inverted.base}'),
     },
   },
 });

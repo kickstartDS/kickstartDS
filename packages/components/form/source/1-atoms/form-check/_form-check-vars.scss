@@ -1,7 +1,7 @@
 $name-: 'c-form-check';
 
 $box: (
-  '.c-form-check': (
+  ':root, [ks-inverted]': (
     size: 1rem,
     border: var(--ks-border-width-default) solid,
     border-color: var(--ks-color-primary-alpha-8),
@@ -16,28 +16,28 @@ $box: (
 ) !default;
 
 $box-hover: (
-  '.c-form-check': (
+  ':root, [ks-inverted]': (
     border-color: var(--ks-color-primary-alpha-9),
   ),
 ) !default;
 
 $box-focus: (
-  '.c-form-check': (
+  ':root, [ks-inverted]': (
     border-color: var(--ks-color-primary),
     shadow: 0 0 4px 0,
   ),
 ) !default;
 
 $box-checked: (
-  '.c-form-check': (
+  ':root, [ks-inverted]': (
     background: var(--ks-color-primary),
     border-color: var(--ks-color-primary),
   ),
 ) !default;
 
 $checkmark: (
-  '.c-form-check': (
-    color: var(--color-white),
+  ':root, [ks-inverted]': (
+    color: var(--ks-color-primary-inverted),
   ),
   '.c-form-check--checkbox': (
     width: 2px,

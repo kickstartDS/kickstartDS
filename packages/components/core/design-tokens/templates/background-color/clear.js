@@ -9,16 +9,16 @@ const token = (value) => ({
 module.exports = ({ color }) => ({
   clear: {
     interactive: {
-      _: token(Color(color.background).setAlpha(0)),
-      hover: token('{ks.color.primary.alpha.2}'),
-      active: token('{ks.color.primary.alpha.3}'),
+      base: token(Color(color.primary).setAlpha(0)),
+      hover: { base: token('{ks.color.primary.alpha.2.base}') },
+      active: { base: token('{ks.color.primary.alpha.3.base}') },
     },
   },
   'clear-inverted': {
     interactive: {
-      _: token(Color(color.background).setAlpha(0)),
-      hover: token('{ks.color.primary.alpha.3}'),
-      active: token('{ks.color.primary.alpha.4}'),
+      base: token(Color(color['primary-inverted']).setAlpha(0)),
+      hover: { base: token('{ks.color.primary-inverted.alpha.3.base}') },
+      active: { base: token('{ks.color.primary-inverted.alpha.4.base}') },
     },
   },
 });

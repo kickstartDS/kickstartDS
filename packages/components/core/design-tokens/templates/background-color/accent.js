@@ -7,10 +7,14 @@ const token = (value) => ({
 });
 
 module.exports = ({ color }) => ({
-  accent: token(Color.mix(color.primary, color.background, 90).desaturate(25)),
-  'accent-inverted': token(
-    Color.mix(color['primary-inverted'], color.foreground, 80)
-      .desaturate(25)
-      .setAlpha(0.7)
-  ),
+  accent: {
+    base: token(Color.mix(color.primary, color.background, 90).desaturate(25)),
+  },
+  'accent-inverted': {
+    base: token(
+      Color.mix(color['primary-inverted'], color.foreground, 80)
+        .desaturate(25)
+        .setAlpha(0.7)
+    ),
+  },
 });

@@ -1,12 +1,10 @@
-const Color = require('tinycolor2');
-
 const token = (value) => ({
-  value: Color(value).toRgb(),
+  value,
   attributes: { category: 'color' },
   token: { category: 'Colors: Background Default', presenter: 'Color' },
 });
 
-module.exports = ({ color }) => ({
-  default: token(color.background),
-  'default-inverted': token(Color(color.foreground).setAlpha(0.7)),
+module.exports = () => ({
+  default: { base: token('{ks.color.fg-inverted.base}') },
+  'default-inverted': { base: token('{ks.color.fg.alpha.7.base}') },
 });

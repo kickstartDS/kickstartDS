@@ -9,7 +9,7 @@
       "title": "Style of the divider",
       "type": "string",
       "description": "Choose a variant for the divider",
-      "enum": ["default", "accent", "dark"],
+      "enum": ["default", "accent"],
       "default": "default"
     },
     "className": {

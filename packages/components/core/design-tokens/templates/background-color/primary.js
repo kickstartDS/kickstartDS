@@ -1,26 +1,24 @@
-const Color = require('tinycolor2');
-
 const token = (value) => ({
-  value: typeof value === 'string' ? value : Color(value).toRgb(),
+  value,
   attributes: { category: 'color' },
   token: { category: 'Colors: Background Primary', presenter: 'Color' },
 });
 
-module.exports = ({ color }) => ({
+module.exports = () => ({
   primary: {
     interactive: {
-      _: token(color.primary),
-      hover: token(Color.mix(color.primary, color.background, 20)),
-      active: token(Color.mix(color.primary, color.background, 30)),
+      base: token('{ks.color.primary.base}'),
+      hover: { base: token('{ks.color.primary.to-bg.2.base}') },
+      active: { base: token('{ks.color.primary.to-bg.3.base}') },
     },
-    translucent: token('{ks.color.primary.alpha.8}'),
+    translucent: { base: token('{ks.color.primary.alpha.8.base}') },
   },
   'primary-inverted': {
     interactive: {
-      _: token(color['primary-inverted']),
-      hover: token(Color.mix(color['primary-inverted'], color.foreground, 10)),
-      active: token(Color.mix(color['primary-inverted'], color.foreground, 20)),
+      base: token('{ks.color.primary-inverted.base}'),
+      hover: { base: token('{ks.color.primary-inverted.to-bg.2.base}') },
+      active: { base: token('{ks.color.primary-inverted.to-bg.3.base}') },
     },
-    translucent: token('{ks.color.primary-inverted.alpha.8}'),
+    translucent: { base: token('{ks.color.primary-inverted.alpha.8.base}') },
   },
 });
