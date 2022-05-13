@@ -8,7 +8,7 @@ const sortMediaQueries = require('postcss-sort-media-queries');
 
 const { fileHeader, createPropertyFormatter } = formatHelpers;
 
-const postcssPlugins = [colormin, sortMediaQueries()];
+const postcssPlugins = [colormin({ transparent: false }), sortMediaQueries()];
 if (process.env.NODE_ENV === 'production') {
   postcssPlugins.push(normalizeWhitespace);
 }

@@ -1,20 +1,14 @@
-const Color = require('tinycolor2');
-
 const token = (value) => ({
-  value: Color(value).toRgb(),
+  value,
   attributes: { category: 'color' },
   token: { category: 'Colors: Background Accent', presenter: 'Color' },
 });
 
-module.exports = ({ color }) => ({
+module.exports = () => ({
   accent: {
-    base: token(Color.mix(color.primary, color.background, 90).desaturate(25)),
+    base: token('{ks.color.fg.alpha.2.base}'),
   },
   'accent-inverted': {
-    base: token(
-      Color.mix(color['primary-inverted'], color.foreground, 80)
-        .desaturate(25)
-        .setAlpha(0.7)
-    ),
+    base: token('{ks.color.fg-inverted.alpha.2.base}'),
   },
 });
