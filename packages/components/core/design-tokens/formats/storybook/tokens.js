@@ -6,16 +6,6 @@ const postcss = require('postcss');
 const calc = require('postcss-calc');
 
 const { fileHeader, createPropertyFormatter } = formatHelpers;
-const presenterMap = {
-  color: 'Color',
-  'mixed-color': 'Color',
-  'alpha-color': 'Color',
-  'font-family': 'FontFamily',
-  'font-size': 'FontSize',
-  'line-height': 'LineHeight',
-  'font-weight': 'FontWeight',
-  spacing: 'Spacing',
-};
 
 module.exports = {
   name: 'storybook/tokens',
@@ -34,12 +24,11 @@ module.exports = {
       `${selector} {\n` +
       allTokens
         .map((prop) => {
-          const { token, attributes } = prop;
+          const { token } = prop;
           if (token?.category) {
-            const presenter =
-              token.presenter || presenterMap[attributes?.category];
+            prop.name = prop.name.replace(/-base$/, '');
             return (
-              `  /**\n   * @tokens ${token.category}\n   * @presenter ${presenter}\n   */\n` +
+              `  /**\n   * @tokens ${token.category}\n   * @presenter ${token.presenter}\n   */\n` +
               defaultCssFormater(prop)
             );
           }
