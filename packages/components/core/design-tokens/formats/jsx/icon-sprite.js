@@ -10,7 +10,9 @@ module.exports = {
     return babel.transformSync(
       `export default () => (${converter.convert(html)})`,
       {
-        presets: [['@babel/preset-react', { runtime: 'automatic' }]],
+        presets: [
+          [require.resolve('@babel/preset-react'), { runtime: 'automatic' }],
+        ],
       }
     ).code;
   },
