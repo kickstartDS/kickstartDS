@@ -4,7 +4,8 @@
     "primary-inverted": "#fff",
     "background": "#fff",
     "foreground": "#000",
-    "link": "#1c7ed6"
+    "link": "#1c7ed6",
+    "link-inverted": "#a5d8ff"
   },
   "font": {
     "display": {

@@ -6,6 +6,7 @@ const token = (value) => ({
 
 module.exports = () => ({
   clear: {
+    base: token('{ks.color.transparent}'),
     interactive: {
       base: token('{ks.color.transparent}'),
       hover: { base: token('{ks.color.primary.alpha.2.base}') },
@@ -13,6 +14,7 @@ module.exports = () => ({
     },
   },
   'clear-inverted': {
+    base: token('{ks.color.transparent}'),
     interactive: {
       base: token('{ks.color.transparent}'),
       hover: { base: token('{ks.color.primary-inverted.alpha.3.base}') },

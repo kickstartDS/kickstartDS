@@ -10,11 +10,19 @@ module.exports = ({ color }) => ({
   default: {
     base: token('{ks.color.fg.base}'),
     interactive: {
-      _: token(color.link),
-      hover: token(color.link),
-      active: token(color.link),
-      visited: token(color.link),
+      base: token(color.link),
+      hover: { base: token(color.link) },
+      active: { base: token(color.link) },
+      visited: { base: token(color.link) },
     },
   },
-  'default-inverted': { base: token('{ks.color.fg-inverted.base}') },
+  'default-inverted': {
+    base: token('{ks.color.fg-inverted.base}'),
+    interactive: {
+      base: token(color['link-inverted']),
+      hover: { base: token(color['link-inverted']) },
+      active: { base: token(color['link-inverted']) },
+      visited: { base: token(color['link-inverted']) },
+    },
+  },
 });
