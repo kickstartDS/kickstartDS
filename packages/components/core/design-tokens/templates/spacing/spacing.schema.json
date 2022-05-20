@@ -1,0 +1,169 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "token": {
+      "type": "object",
+      "properties": {
+        "value": {},
+        "attributes": {
+          "type": "object",
+          "properties": {
+            "category": {
+              "type": "string"
+            }
+          }
+        },
+        "token": {
+          "type": "object",
+          "properties": {
+            "category": {
+              "type": "string"
+            },
+            "presenter": {
+              "type": "string"
+            }
+          },
+          "required": ["category", "presenter"]
+        }
+      },
+      "required": ["value"]
+    },
+    "string-token": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/token"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "string"
+            }
+          }
+        }
+      ]
+    },
+    "scale": {
+      "type": "object",
+      "properties": {
+        "_": {
+          "$ref": "#/definitions/string-token"
+        },
+        "base": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/string-token"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "attributes": {
+                  "type": "object",
+                  "properties": {
+                    "category": {
+                      "const": "size"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "bp-factor": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/string-token"
+          }
+        }
+      },
+      "additionalProperties": false,
+      "required": ["_", "base", "bp-factor"]
+    },
+    "computed": {
+      "type": "object",
+      "properties": {
+        "xs:": {
+          "$ref": "#/definitions/string-token"
+        },
+        "s": {
+          "$ref": "#/definitions/string-token"
+        },
+        "m": {
+          "$ref": "#/definitions/string-token"
+        },
+        "l": {
+          "$ref": "#/definitions/string-token"
+        },
+        "xl": {
+          "$ref": "#/definitions/string-token"
+        }
+      }
+    }
+  },
+  "type": "object",
+  "properties": {
+    "ks": {
+      "type": "object",
+      "properties": {
+        "spacing": {
+          "type": "object",
+          "properties": {
+            "xxs": {
+              "$ref": "#/definitions/scale"
+            },
+            "xs": {
+              "$ref": "#/definitions/scale"
+            },
+            "s": {
+              "$ref": "#/definitions/scale"
+            },
+            "m": {
+              "$ref": "#/definitions/scale"
+            },
+            "l": {
+              "$ref": "#/definitions/scale"
+            },
+            "xl": {
+              "$ref": "#/definitions/scale"
+            },
+            "xxl": {
+              "$ref": "#/definitions/scale"
+            },
+            "stack": {
+              "$ref": "#/definitions/computed"
+            },
+            "inline": {
+              "$ref": "#/definitions/computed"
+            },
+            "inset": {
+              "$ref": "#/definitions/computed"
+            },
+            "inset-squish": {
+              "$ref": "#/definitions/computed"
+            },
+            "inset-strech": {
+              "$ref": "#/definitions/computed"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "xxs",
+            "xs",
+            "s",
+            "m",
+            "l",
+            "xl",
+            "xxl",
+            "stack",
+            "inline",
+            "inset",
+            "inset-squish",
+            "inset-strech"
+          ]
+        }
+      },
+      "required": ["spacing"]
+    }
+  },
+  "required": ["ks"]
+}

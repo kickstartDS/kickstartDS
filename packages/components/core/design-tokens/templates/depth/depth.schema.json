@@ -1,0 +1,67 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "token": {
+      "type": "object",
+      "properties": {
+        "value": {},
+        "attributes": {
+          "type": "object",
+          "properties": {
+            "category": {
+              "type": "string"
+            }
+          }
+        },
+        "token": {
+          "type": "object",
+          "properties": {
+            "category": {
+              "type": "string"
+            },
+            "presenter": {
+              "type": "string"
+            }
+          },
+          "required": ["category", "presenter"]
+        }
+      },
+      "required": ["value"]
+    },
+    "depth-token": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/token"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "string"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "type": "object",
+  "properties": {
+    "ks": {
+      "type": "object",
+      "properties": {
+        "depth": {
+          "type": "object",
+          "properties": {
+            "modal": {
+              "$ref": "#/definitions/depth-token"
+            }
+          },
+          "additionalProperties": false,
+          "required": ["modal"]
+        }
+      },
+      "required": ["depth"]
+    }
+  },
+  "required": ["ks"]
+}

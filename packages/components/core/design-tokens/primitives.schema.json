@@ -26,6 +26,10 @@
         "link": {
           "title": "Link Color",
           "type": "string"
+        },
+        "link-inverted": {
+          "title": "Link Inverted Color",
+          "type": "string"
         }
       },
       "additionalProperties": false

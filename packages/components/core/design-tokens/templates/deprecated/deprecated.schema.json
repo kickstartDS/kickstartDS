@@ -1,0 +1,110 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "token": {
+      "type": "object",
+      "properties": {
+        "value": {},
+        "attributes": {
+          "type": "object",
+          "properties": {
+            "category": {
+              "type": "string"
+            }
+          }
+        },
+        "token": {
+          "type": "object",
+          "properties": {
+            "category": {
+              "type": "string"
+            },
+            "presenter": {
+              "type": "string"
+            }
+          },
+          "required": ["category", "presenter"]
+        }
+      },
+      "required": ["value", "attributes"]
+    },
+    "deprecated-token": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/token"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "attributes": {
+              "type": "object",
+              "properties": {
+                "deprecated": {
+                  "const": true
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "color-token": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/deprecated-token"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "value": {
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "object",
+                  "additionalProperties": { "type": "number" }
+                }
+              ]
+            },
+            "attributes": {
+              "type": "object",
+              "properties": {
+                "category": {
+                  "const": "color"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "type": "object",
+  "properties": {
+    "color": {
+      "type": "object",
+      "properties": {
+        "white": {
+          "$ref": "#/definitions/color-token"
+        },
+        "error": {
+          "$ref": "#/definitions/color-token"
+        }
+      },
+      "required": ["white", "error"]
+    },
+    "g": {
+      "type": "object",
+      "properties": {
+        "header-height": {
+          "$ref": "#/definitions/deprecated-token"
+        },
+        "scroll-offset": {
+          "$ref": "#/definitions/deprecated-token"
+        }
+      }
+    }
+  },
+  "required": ["color", "g"]
+}

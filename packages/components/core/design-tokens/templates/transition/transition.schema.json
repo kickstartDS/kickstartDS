@@ -1,0 +1,114 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "token": {
+      "type": "object",
+      "properties": {
+        "value": {},
+        "attributes": {
+          "type": "object",
+          "properties": {
+            "category": {
+              "type": "string"
+            }
+          }
+        },
+        "token": {
+          "type": "object",
+          "properties": {
+            "category": {
+              "type": "string"
+            },
+            "presenter": {
+              "type": "string"
+            }
+          },
+          "required": ["category", "presenter"]
+        }
+      },
+      "required": ["value"]
+    },
+    "string-token": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/token"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "string"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "type": "object",
+  "properties": {
+    "ks": {
+      "type": "object",
+      "properties": {
+        "duration": {
+          "type": "object",
+          "properties": {
+            "immediate": {
+              "$ref": "#/definitions/string-token"
+            },
+            "fast": {
+              "$ref": "#/definitions/string-token"
+            },
+            "medium": {
+              "$ref": "#/definitions/string-token"
+            },
+            "slow": {
+              "$ref": "#/definitions/string-token"
+            }
+          },
+          "additionalProperties": false,
+          "required": ["immediate", "fast", "medium", "slow"]
+        },
+        "timing-function": {
+          "type": "object",
+          "properties": {
+            "bounce": {
+              "$ref": "#/definitions/string-token"
+            },
+            "ease-out": {
+              "$ref": "#/definitions/string-token"
+            },
+            "ease-in": {
+              "$ref": "#/definitions/string-token"
+            },
+            "ease-in-out": {
+              "$ref": "#/definitions/string-token"
+            },
+            "linear": {
+              "$ref": "#/definitions/string-token"
+            }
+          },
+          "additionalProperties": false,
+          "required": ["bounce", "ease-out", "ease-in", "ease-in-out", "linear"]
+        },
+        "transition": {
+          "type": "object",
+          "properties": {
+            "collapse": {
+              "$ref": "#/definitions/string-token"
+            },
+            "hover": {
+              "$ref": "#/definitions/string-token"
+            },
+            "fade": {
+              "$ref": "#/definitions/string-token"
+            }
+          },
+          "additionalProperties": false,
+          "required": ["collapse", "hover", "fade"]
+        }
+      },
+      "required": ["duration", "timing-function", "transition"]
+    }
+  },
+  "required": ["ks"]
+}

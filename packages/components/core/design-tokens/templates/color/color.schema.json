@@ -1,0 +1,135 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "token": {
+      "type": "object",
+      "properties": {
+        "value": {},
+        "attributes": {
+          "type": "object",
+          "properties": {
+            "category": {
+              "type": "string"
+            }
+          },
+          "required": ["category"]
+        },
+        "token": {
+          "type": "object",
+          "properties": {
+            "category": {
+              "type": "string"
+            },
+            "presenter": {
+              "type": "string"
+            }
+          },
+          "required": ["category", "presenter"]
+        }
+      },
+      "required": ["value", "attributes"]
+    },
+    "color-token": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/token"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "value": {
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "object",
+                  "additionalProperties": { "type": "number" }
+                }
+              ]
+            },
+            "attributes": {
+              "type": "object",
+              "properties": {
+                "category": {
+                  "const": "color"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "base": {
+      "type": "object",
+      "properties": {
+        "base": {
+          "$ref": "#/definitions/color-token"
+        }
+      }
+    },
+    "scale": {
+      "type": "object",
+      "patternProperties": {
+        "^[1-9]$": {
+          "$ref": "#/definitions/base"
+        }
+      },
+      "additionalProperties": false
+    },
+    "scales": {
+      "type": "object",
+      "properties": {
+        "base": {
+          "$ref": "#/definitions/base"
+        },
+        "alpha": {
+          "$ref": "#/definitions/scale"
+        },
+        "to-bg": {
+          "$ref": "#/definitions/scale"
+        }
+      },
+      "additionalProperties": false,
+      "required": ["base", "alpha", "to-bg"]
+    }
+  },
+  "type": "object",
+  "properties": {
+    "ks": {
+      "type": "object",
+      "properties": {
+        "color": {
+          "type": "object",
+          "properties": {
+            "primary": {
+              "$ref": "#/definitions/scales"
+            },
+            "primary-inverted": {
+              "$ref": "#/definitions/scales"
+            },
+            "fg": {
+              "$ref": "#/definitions/scales"
+            },
+            "fg-inverted": {
+              "$ref": "#/definitions/scales"
+            },
+            "transparent": {
+              "$ref": "#/definitions/color-token"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "primary",
+            "primary-inverted",
+            "fg",
+            "fg-inverted",
+            "transparent"
+          ]
+        }
+      },
+      "required": ["color"]
+    }
+  },
+  "required": ["ks"]
+}
