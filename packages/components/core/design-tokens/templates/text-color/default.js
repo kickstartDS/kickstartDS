@@ -6,23 +6,23 @@ const token = (value) => ({
   token: { category: 'Colors: Text Default', presenter: 'Color' },
 });
 
-module.exports = ({ color }) => ({
+module.exports = () => ({
   default: {
     base: token('{ks.color.fg.base}'),
     interactive: {
-      base: token(color.link),
-      hover: { base: token(color.link) },
-      active: { base: token(color.link) },
-      visited: { base: token(color.link) },
+      base: token('{ks.color.link.base}'),
+      hover: { base: token('{ks.color.link.base}') },
+      active: { base: token('{ks.color.link.base}') },
+      visited: { base: token('{ks.color.link.base}') },
     },
   },
   'default-inverted': {
     base: token('{ks.color.fg-inverted.base}'),
     interactive: {
-      base: token(color['link-inverted']),
-      hover: { base: token(color['link-inverted']) },
-      active: { base: token(color['link-inverted']) },
-      visited: { base: token(color['link-inverted']) },
+      base: token('{ks.color.link-inverted.base}'),
+      hover: { base: token('{ks.color.link-inverted.base}') },
+      active: { base: token('{ks.color.link-inverted.base}') },
+      visited: { base: token('{ks.color.link-inverted.base}') },
     },
   },
 });

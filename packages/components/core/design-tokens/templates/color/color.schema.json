@@ -114,8 +114,14 @@
             "fg-inverted": {
               "$ref": "#/definitions/scales"
             },
+            "link": {
+              "$ref": "#/definitions/base"
+            },
+            "link-inverted": {
+              "$ref": "#/definitions/base"
+            },
             "transparent": {
-              "$ref": "#/definitions/color-token"
+              "$ref": "#/definitions/base"
             }
           },
           "additionalProperties": false,
@@ -124,6 +130,8 @@
             "primary-inverted",
             "fg",
             "fg-inverted",
+            "link",
+            "link-inverted",
             "transparent"
           ]
         }
