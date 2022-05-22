@@ -139,12 +139,21 @@
               "type": "object",
               "properties": {
                 "base": {
-                  "$ref": "#/definitions/base"
+                  "$ref": "#/definitions/color-token"
                 },
                 "interactive": {
                   "type": "object",
                   "properties": {
                     "base": {
+                      "$ref": "#/definitions/color-token"
+                    },
+                    "hover": {
+                      "$ref": "#/definitions/base"
+                    },
+                    "active": {
+                      "$ref": "#/definitions/base"
+                    },
+                    "visited": {
                       "$ref": "#/definitions/base"
                     }
                   },
@@ -166,6 +175,15 @@
                   "properties": {
                     "base": {
                       "$ref": "#/definitions/base"
+                    },
+                    "hover": {
+                      "$ref": "#/definitions/base"
+                    },
+                    "active": {
+                      "$ref": "#/definitions/base"
+                    },
+                    "visited": {
+                      "$ref": "#/definitions/base"
                     }
                   },
                   "additionalProperties": false,
@@ -179,33 +197,22 @@
               "type": "object",
               "properties": {
                 "base": {
-                  "$ref": "#/definitions/base"
+                  "$ref": "#/definitions/color-token"
                 },
                 "interactive": {
                   "type": "object",
                   "properties": {
                     "base": {
-                      "$ref": "#/definitions/base"
+                      "$ref": "#/definitions/color-token"
                     },
                     "hover": {
-                      "type": "object",
-                      "properties": {
-                        "base": {
-                          "$ref": "#/definitions/base"
-                        }
-                      },
-                      "additionalProperties": false,
-                      "required": ["base"]
+                      "$ref": "#/definitions/base"
                     },
                     "active": {
-                      "type": "object",
-                      "properties": {
-                        "base": {
-                          "$ref": "#/definitions/base"
-                        }
-                      },
-                      "additionalProperties": false,
-                      "required": ["base"]
+                      "$ref": "#/definitions/base"
+                    },
+                    "visited": {
+                      "$ref": "#/definitions/base"
                     }
                   },
                   "additionalProperties": false,
@@ -219,33 +226,22 @@
               "type": "object",
               "properties": {
                 "base": {
-                  "$ref": "#/definitions/base"
+                  "$ref": "#/definitions/color-token"
                 },
                 "interactive": {
                   "type": "object",
                   "properties": {
                     "base": {
-                      "$ref": "#/definitions/base"
+                      "$ref": "#/definitions/color-token"
                     },
                     "hover": {
-                      "type": "object",
-                      "properties": {
-                        "base": {
-                          "$ref": "#/definitions/base"
-                        }
-                      },
-                      "additionalProperties": false,
-                      "required": ["base"]
+                      "$ref": "#/definitions/base"
                     },
                     "active": {
-                      "type": "object",
-                      "properties": {
-                        "base": {
-                          "$ref": "#/definitions/base"
-                        }
-                      },
-                      "additionalProperties": false,
-                      "required": ["base"]
+                      "$ref": "#/definitions/base"
+                    },
+                    "visited": {
+                      "$ref": "#/definitions/base"
                     }
                   },
                   "additionalProperties": false,
