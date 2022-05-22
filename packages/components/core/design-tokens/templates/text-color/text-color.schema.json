@@ -149,7 +149,7 @@
                     }
                   },
                   "additionalProperties": false,
-                  "required": ["base"]
+                  "required": ["base", "hover", "active", "visited"]
                 }
               },
               "additionalProperties": false,
@@ -169,7 +169,7 @@
                     }
                   },
                   "additionalProperties": false,
-                  "required": ["base"]
+                  "required": ["base", "hover", "active", "visited"]
                 }
               },
               "additionalProperties": false,
@@ -209,7 +209,7 @@
                     }
                   },
                   "additionalProperties": false,
-                  "required": ["base", "hover", "active"]
+                  "required": ["base", "hover", "active", "visited"]
                 }
               },
               "additionalProperties": false,
@@ -249,7 +249,7 @@
                     }
                   },
                   "additionalProperties": false,
-                  "required": ["base", "hover", "active"]
+                  "required": ["base", "hover", "active", "visited"]
                 }
               },
               "additionalProperties": false,
