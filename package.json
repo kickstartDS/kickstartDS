@@ -67,7 +67,7 @@
     "@auto-it/released": "^10.36.5",
     "@commitlint/cli": "^16.2.3",
     "@commitlint/config-conventional": "^17.0.0",
-    "auto": "^10.36.5",
+    "auto": "^10.37.0",
     "commitizen": "^4.2.4",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^7.32.0",
