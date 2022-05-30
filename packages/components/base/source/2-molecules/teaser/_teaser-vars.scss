@@ -1,7 +1,7 @@
 $name-: 'c-teaser' !default;
 
 $host: (
-  ':root, [ks-inverted]': (
+  ':root, [ks-theme]': (
     font: var(--ks-font-copy-m),
     color: var(--ks-text-color-default),
     background: var(--ks-background-color-primary-inverted-translucent),
@@ -27,7 +27,7 @@ $host: (
 ) !default;
 
 $text: (
-  ':root': (
+  ':root, [ks-theme]': (
     spacing: 0.5rem,
   ),
 ) !default;

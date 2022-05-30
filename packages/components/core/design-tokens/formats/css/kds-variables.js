@@ -144,8 +144,12 @@ module.exports = {
     }
 
     const result =
-      writeRules([...otherRules.values()]) +
-      writeRules(colorDefaultRules, 0, `${selector}, [ks-inverted=false]`) +
+      writeRules([...otherRules.values()], 0, `${selector}, [ks-theme]`) +
+      writeRules(
+        colorDefaultRules,
+        0,
+        `${selector}, [ks-theme], [ks-inverted=false]`
+      ) +
       writeRules(colorInvertedRules, 0, '[ks-inverted=true]') +
       breakpoints.reduce(
         (prev, [mediaQuery, breakpoint]) =>
