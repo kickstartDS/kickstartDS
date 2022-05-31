@@ -1865,10 +1865,10 @@
     eslint-plugin-import "^2.25.4"
     find-up "^5.0.0"
 
-"@kickstartds/storybook-addon-component-tokens@^0.1.5":
-  version "0.1.5"
-  resolved "https://registry.yarnpkg.com/@kickstartds/storybook-addon-component-tokens/-/storybook-addon-component-tokens-0.1.5.tgz#0669c7c41ed56a0f294cd2ab366914b47d2e11be"
-  integrity sha512-jiA2+LiWMzi+5AVLLNPH6D9bh5lstYXVhEyfRKDSGjeHEbZazaO0r2uXMkFNhA0tLJ3wc7iTsOKHcFiShC3dyA==
+"@kickstartds/storybook-addon-component-tokens@^0.1.6":
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/@kickstartds/storybook-addon-component-tokens/-/storybook-addon-component-tokens-0.1.6.tgz#612864503743cf684ca30429d3f55a0f7710dd97"
+  integrity sha512-pqk4aX7aPK0a62WQGB3ukpNYrhTyXBM4fSShtd/bOuJPJLQV80Q+goAo7p0hfwklSKZlOgAoAdTuhsDqhfygiQ==
 
 "@kickstartds/stylelint-config@^2.0.1":
   version "2.0.1"
