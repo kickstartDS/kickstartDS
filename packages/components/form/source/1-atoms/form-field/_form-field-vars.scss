@@ -1,7 +1,7 @@
 $name-: 'c-form-field';
 
 $host: (
-  ':root, [ks-theme]': (
+  ':root, [ks-theme], [ks-inverted]': (
     border: var(--ks-border-width-default) solid,
     border-color: var(--ks-color-fg-to-bg-6),
     border-radius: var(--ks-border-radius-control),
@@ -13,20 +13,20 @@ $host: (
 ) !default;
 
 $hover: (
-  ':root, [ks-theme]': (
+  ':root, [ks-theme], [ks-inverted]': (
     border-color: var(--ks-color-fg-to-bg-5),
   ),
 ) !default;
 
 $focus: (
-  ':root, [ks-theme]': (
+  ':root, [ks-theme], [ks-inverted]': (
     border-color: var(--ks-color-primary),
     shadow: 0 0 4px -1px,
   ),
 ) !default;
 
 $icon: (
-  ':root, [ks-theme]': (
+  ':root, [ks-theme], [ks-inverted]': (
     size: calc(var(--ks-line-height-ui-m) * 0.75em),
     color: var(--ks-color-fg-alpha-7),
   ),

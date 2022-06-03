@@ -1,7 +1,7 @@
 $name-: 'pswp' !default;
 
 $host: (
-  ':root, [ks-theme]': (
+  ':root, [ks-theme], [ks-inverted]': (
     show-hide-transition-duration: 333ms,
     controls-transition-duration: 333ms,
     background-color: var(--ks-color-fg),
