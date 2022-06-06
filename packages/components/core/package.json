@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "include-media": "^1.4.9",
-    "storybook-design-token": "^1.4.0"
+    "storybook-design-token": "^2.3.0"
   },
   "peerDependencies": {
     "react": "^17.0.2"
