@@ -20,7 +20,8 @@
     "source/core/*.scss",
     "source/design-tokens/icons/*.svg",
     "bundle/*.js",
-    "design-tokens"
+    "design-tokens",
+    "cms"
   ],
   "scripts": {
     "build": "node ../../tools/build-components/source && yarn build-tokens",
