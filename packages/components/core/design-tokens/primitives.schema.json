@@ -1,5 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/tokens/primitives.schema.json",
   "title": "kickstartDS Design Token Primitives",
   "type": "object",
   "properties": {
