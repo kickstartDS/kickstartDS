@@ -42,7 +42,8 @@
     "fs-extra": "^10.0.1",
     "lazysizes": "^5.3.2",
     "lodash": "^4.17.21",
-    "lodash-es": "^4.17.21"
+    "lodash-es": "^4.17.21",
+    "pubsub-js": "^1.9.4"
   },
   "devDependencies": {
     "@kickstartds/style-dictionary": "^1.5.0",
