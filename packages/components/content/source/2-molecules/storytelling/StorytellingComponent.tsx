@@ -32,6 +32,7 @@ const StorytellingMixin: FunctionComponent<
   backgroundColor,
   backgroundImage,
   renderText = richTextDefaultRenderFn,
+  inverted,
   className,
   ...props
 }) => (
@@ -59,6 +60,7 @@ const StorytellingMixin: FunctionComponent<
       backgroundImage: lazy ? undefined : `url(${backgroundImage})`,
     }}
     data-bg={(lazy && backgroundImage) || null}
+    ks-inverted={inverted?.toString()}
     {...props}
   >
     {image?.source && (
