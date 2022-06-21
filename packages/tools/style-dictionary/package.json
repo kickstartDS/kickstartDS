@@ -1,0 +1,36 @@
+{
+  "name": "@kickstartds/style-dictionary",
+  "version": "1.5.0",
+  "description": "kickstartDS Style Dictionary Config",
+  "homepage": "https://ruhmesmeile.com",
+  "bugs": {
+    "url": "https://github.com/kickstartDS/kickstartDS/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kickstartDS/kickstartDS.git",
+    "directory": "packages/tools/style-dictionary"
+  },
+  "license": "SEE LICENSE IN LICENSE",
+  "author": "ruhmesmeile GmbH <mail@ruhmesmeile.com> (https://ruhmesmeile.com)",
+  "main": "./index.js",
+  "dependencies": {
+    "ajv": "^8.10.0",
+    "bezier-js": "^6.1.0",
+    "htmltojsx": "^0.3.0",
+    "node-html-parser": "^5.2.0",
+    "postcss": "^8.4.6",
+    "postcss-calc": "^8.2.4",
+    "postcss-colormin": "^5.3.0",
+    "postcss-normalize-whitespace": "^5.1.1",
+    "postcss-sort-media-queries": "^4.2.1",
+    "pubsub-js": "^1.9.4",
+    "sass": "^1.50.0",
+    "style-dictionary": "^3.7.0",
+    "svgstore": "^3.0.1",
+    "tinycolor2": "^1.4.2"
+  },
+  "peerDependencies": {
+    "style-dictionary": "^3.7.0"
+  }
+}

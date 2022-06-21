@@ -20,7 +20,6 @@
     "source/core/*.scss",
     "source/design-tokens/icons/*.svg",
     "bundle/*.js",
-    "design-tokens",
     "cms"
   ],
   "scripts": {
@@ -34,8 +33,6 @@
     "@babel/core": "^7.17.8",
     "@babel/preset-react": "^7.16.7",
     "@babel/runtime": "^7.17.8",
-    "ajv": "^8.10.0",
-    "bezier-js": "^6.1.0",
     "bourbon": "^7.2.0",
     "classnames": "^2.2.6",
     "del": "^6.0.0",
@@ -43,29 +40,18 @@
     "esbuild": "^0.14.36",
     "fast-glob": "^3.2.11",
     "fs-extra": "^10.0.1",
-    "htmltojsx": "^0.3.0",
     "lazysizes": "^5.3.2",
     "lodash": "^4.17.21",
-    "lodash-es": "^4.17.21",
-    "node-html-parser": "^5.2.0",
-    "postcss": "^8.4.6",
-    "postcss-calc": "^8.2.4",
-    "postcss-colormin": "^5.3.0",
-    "postcss-normalize-whitespace": "^5.1.1",
-    "postcss-sort-media-queries": "^4.2.1",
-    "pubsub-js": "^1.9.4",
-    "sass": "^1.50.0",
-    "svgstore": "^3.0.1",
-    "tinycolor2": "^1.4.2"
+    "lodash-es": "^4.17.21"
   },
   "devDependencies": {
+    "@kickstartds/style-dictionary": "^1.5.0",
     "chokidar-cli": "^3.0.0",
     "concurrently": "^7.0.0",
     "storybook-design-token": "^1.4.0",
     "style-dictionary": "^3.7.0"
   },
   "peerDependencies": {
-    "react": "^17.0.2",
-    "style-dictionary": "^3.7.0"
+    "react": "^17.0.2"
   }
 }
