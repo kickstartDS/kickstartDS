@@ -121,28 +121,34 @@
           "default": true
         },
         "headline": {
-          "title": "Headline",
-          "description": "Headline for the box",
-          "type": "object",
           "allOf": [
+            {
+              "title": "Headline",
+              "description": "Headline for the box",
+              "type": "object",
+              "properties": {
+                "level": {
+                  "type": "string",
+                  "default": "p"
+                },
+                "styleAs": {
+                  "type": "string",
+                  "default": "h2"
+                },
+                "align": {
+                  "type": "string",
+                  "default": null
+                },
+                "content": {
+                  "type": "string",
+                  "default": "Lorem Ipsum dolor"
+                }
+              }
+            },
             {
               "$ref": "http://schema.kickstartds.com/base/headline.schema.json"
             }
-          ],
-          "properties": {
-            "level": {
-              "default": "p"
-            },
-            "styleAs": {
-              "default": "h2"
-            },
-            "align": {
-              "default": null
-            },
-            "content": {
-              "default": "Lorem Ipsum dolor"
-            }
-          }
+          ]
         },
         "text": {
           "title": "Text",
