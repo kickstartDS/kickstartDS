@@ -155,7 +155,6 @@ export type Inverted = boolean;
  * Additional css classes attached to the wrapping element
  */
 export type Class = string;
-export type Inverted1 = boolean;
 
 /**
  * Component to present rich combinations of text and media, best used sequentially
@@ -167,7 +166,6 @@ export interface StorytellingProps {
   image?: Image;
   box: TextBox;
   className?: Class;
-  inverted?: Inverted1;
   [k: string]: unknown;
 }
 /**

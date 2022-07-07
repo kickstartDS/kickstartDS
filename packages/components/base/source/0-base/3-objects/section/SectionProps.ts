@@ -755,7 +755,6 @@ export type Inverted6 = boolean;
  * Additional css classes attached to the wrapping element
  */
 export type Class5 = string;
-export type Inverted7 = boolean;
 /**
  * Include the text for the collapsible that should be visible before opening
  */
@@ -834,7 +833,7 @@ export type ButtonHref4 = string;
  * Open link in new Tab
  */
 export type OpenLinkInNewTab5 = boolean;
-export type Inverted8 = boolean;
+export type Inverted7 = boolean;
 /**
  * Additional css classes attached to the wrapping element
  */
@@ -910,7 +909,7 @@ export type ButtonHref5 = string;
  * Open link in new Tab
  */
 export type OpenLinkInNewTab6 = boolean;
-export type Inverted9 = boolean;
+export type Inverted8 = boolean;
 /**
  * Add additional css classes that should be applied to the content box
  */
@@ -1138,7 +1137,7 @@ export type Topic2 = string;
  * Text for the teaser box
  */
 export type TextContent5 = string;
-export type Inverted10 = boolean;
+export type Inverted9 = boolean;
 /**
  * Text used on button
  */
@@ -1186,7 +1185,7 @@ export type ButtonHref6 = string;
  * Open link in new Tab
  */
 export type OpenLinkInNewTab7 = boolean;
-export type Inverted11 = boolean;
+export type Inverted10 = boolean;
 /**
  * Hides the link. The box as a whole keeps being clickable
  */
@@ -1289,7 +1288,7 @@ export type Topic3 = string;
  * Text for the teaser box
  */
 export type TextContent6 = string;
-export type Inverted12 = boolean;
+export type Inverted11 = boolean;
 /**
  * Text used on button
  */
@@ -1337,7 +1336,7 @@ export type ButtonHref7 = string;
  * Open link in new Tab
  */
 export type OpenLinkInNewTab8 = boolean;
-export type Inverted13 = boolean;
+export type Inverted12 = boolean;
 /**
  * Hides the link. The box as a whole keeps being clickable
  */
@@ -1346,7 +1345,7 @@ export type HideLink1 = boolean;
  * Additional css classes attached to the box
  */
 export type Class11 = string;
-export type Inverted14 = boolean;
+export type Inverted13 = boolean;
 /**
  * Select the headline level to use, or p alternatively
  */
@@ -1408,7 +1407,7 @@ export interface SectionProps {
     | TeaserRow
   )[];
   background?: 'default' | 'accent';
-  inverted?: Inverted14;
+  inverted?: Inverted13;
   spaceBefore?: 'default' | 'small' | 'none';
   spaceAfter?: 'default' | 'small' | 'none';
   headline?: Headline4;
@@ -1761,7 +1760,6 @@ export interface Storytelling {
   image?: Image;
   box: TextBox2;
   className?: Class5;
-  inverted?: Inverted7;
   [k: string]: unknown;
 }
 /**
@@ -1887,7 +1885,7 @@ export interface Link2 {
   iconAnimation?: IconAnimation5;
   href: ButtonHref4;
   newTab?: OpenLinkInNewTab5;
-  inverted?: Inverted8;
+  inverted?: Inverted7;
 }
 /**
  * Icon
@@ -1927,7 +1925,7 @@ export interface Link3 {
   iconAnimation?: IconAnimation6;
   href: ButtonHref5;
   newTab?: OpenLinkInNewTab6;
-  inverted?: Inverted9;
+  inverted?: Inverted8;
 }
 /**
  * Icon
@@ -2032,7 +2030,7 @@ export interface LazyLightboxImage {
 export interface TeaserBox {
   topic?: Topic2;
   text?: TextContent5;
-  inverted?: Inverted10;
+  inverted?: Inverted9;
   link?: LinkButton2;
   className?: Class9;
   image?: ImageSource4;
@@ -2055,7 +2053,7 @@ export interface LinkButton2 {
   iconAnimation?: IconAnimation7;
   href: ButtonHref6;
   newTab?: OpenLinkInNewTab7;
-  inverted?: Inverted11;
+  inverted?: Inverted10;
   hidden?: HideLink;
 }
 /**
@@ -2100,7 +2098,7 @@ export interface Picture2 {
 export interface TeaserRow {
   topic?: Topic3;
   text?: TextContent6;
-  inverted?: Inverted12;
+  inverted?: Inverted11;
   link?: LinkButton3;
   className?: Class11;
 }
@@ -2120,7 +2118,7 @@ export interface LinkButton3 {
   iconAnimation?: IconAnimation8;
   href: ButtonHref7;
   newTab?: OpenLinkInNewTab8;
-  inverted?: Inverted13;
+  inverted?: Inverted12;
   hidden?: HideLink1;
 }
 /**
