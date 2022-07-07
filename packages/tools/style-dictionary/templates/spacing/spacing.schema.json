@@ -142,7 +142,7 @@
             "inset-squish": {
               "$ref": "#/definitions/computed"
             },
-            "inset-strech": {
+            "inset-stretch": {
               "$ref": "#/definitions/computed"
             }
           },
@@ -159,7 +159,7 @@
             "inline",
             "inset",
             "inset-squish",
-            "inset-strech"
+            "inset-stretch"
           ]
         }
       },

@@ -61,7 +61,7 @@ module.exports = ({ spacing, breakpoints }) => {
             },
           ])
         ),
-        'inset-strech': Object.fromEntries(
+        'inset-stretch': Object.fromEntries(
           trimmedScales.map((scale, index) => [
             scale,
             {
