@@ -155,6 +155,10 @@
       "title": "Class",
       "description": "Additional css classes attached to the wrapping element",
       "type": "string"
+    },
+    "inverted": {
+      "type": "boolean",
+      "title": "Inverted"
     }
   },
   "required": ["box"]
