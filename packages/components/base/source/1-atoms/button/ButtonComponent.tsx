@@ -17,6 +17,7 @@ export const ButtonComponent: ForwardRefRenderFunction<
     label,
     type = 'button',
     variant = 'solid',
+    inverted,
     size,
     href,
     newTab,
@@ -51,6 +52,7 @@ export const ButtonComponent: ForwardRefRenderFunction<
         },
         className
       )}
+      ks-inverted={inverted?.toString()}
       data-component={dataComponent}
       {...(isLink && newTab ? { target: '_blank', rel: 'noopener' } : {})}
       ref={ref}
