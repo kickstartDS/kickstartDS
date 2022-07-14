@@ -25,7 +25,7 @@ $vars: meta.module-variables(headline-vars);
     margin-top: calc(var(--c-headline--margin-bottom) * 1.5);
   }
 
-  @include container.size('≥' 640px) {
+  @include container.size('≥', 640px) {
     max-width: 70%;
   }
 

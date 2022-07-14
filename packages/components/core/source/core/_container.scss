@@ -9,18 +9,18 @@ $unit-intervals: (
   'px': 1,
   // 'em': 0.01,
   // 'rem': 0.1,
-  // '': 0,,,
+  // '': 0,,,,,,
 ) !default;
 
-@if not $name {
-  @error '$name has to be configured (See https://sass-lang.com/documentation/at-rules/use#configuration)';
-}
+@mixin wrapper($localName: $name) {
+  @if not $localName {
+    @error '$localName undefined';
+  }
 
-@mixin wrapper {
   @at-root {
-    .l-container--#{$name} {
+    .l-container--#{$localName} {
       /* stylelint-disable-next-line property-no-unknown */
-      container-name: string.unquote($name);
+      container-name: string.unquote($localName);
       @content;
     }
   }
@@ -50,12 +50,16 @@ $unit-intervals: (
   @return $value;
 }
 
-@mixin size($expression) {
-  $operator: get-operator(list.nth($expression, 1));
-  $value: get-value(list.nth($expression, 2), $operator);
+@mixin size($operator, $value, $localName: $name) {
+  @if not $localName {
+    @error '$localName undefined';
+  }
+
+  $operator: get-operator($operator);
+  $value: get-value($value, $operator);
   $prefix: if(list.index(('<', '<=', '≤'), $operator), 'max', 'min');
 
-  @container #{$name} size(#{string.unquote('#{$prefix}-width: #{$value}')}) {
+  @container #{$localName} size(#{string.unquote('#{$prefix}-width: #{$value}')}) {
     @content;
   }
 }

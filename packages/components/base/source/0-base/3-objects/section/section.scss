@@ -2,9 +2,11 @@
 @use '@kickstartds/core/source/core/custom-properties';
 @use '../../1-tools/scss/anchor';
 @use './section-vars';
+@use './container';
 
 $vars: meta.module-variables(section-vars);
 @include custom-properties.styles($vars);
+@include container.wrapper('section');
 
 .l-section {
   @include anchor.anchor-target;

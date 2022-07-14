@@ -6,23 +6,28 @@
   "type": "object",
   "properties": {
     "image": {
-      "type": "object",
       "allOf": [
+        {
+          "type": "object",
+          "properties": {
+            "src": {
+              "type": "string",
+              "default": "https://picsum.photos/seed/kdsnewshead/900/380"
+            },
+            "width": {
+              "type": "integer",
+              "default": 900
+            },
+            "height": {
+              "type": "integer",
+              "default": 380
+            }
+          }
+        },
         {
           "$ref": "http://schema.kickstartds.com/base/picture.definitions.json"
         }
-      ],
-      "properties": {
-        "src": {
-          "default": "https://picsum.photos/seed/kdsnewshead/900/380"
-        },
-        "width": {
-          "default": 900
-        },
-        "height": {
-          "default": 380
-        }
-      }
+      ]
     },
     "imageAlignment": {
       "title": "Alignment",
@@ -35,23 +40,28 @@
       "$ref": "http://schema.kickstartds.com/blog/news-item.definitions.json#/definitions/date"
     },
     "headline": {
-      "type": "object",
       "allOf": [
+        {
+          "type": "object",
+          "properties": {
+            "align": {
+              "type": "string",
+              "default": "left"
+            },
+            "content": {
+              "type": "string",
+              "default": "Lorem ipsum dolor sit amet cons adipis elit "
+            },
+            "level": {
+              "type": "string",
+              "default": "h1"
+            }
+          }
+        },
         {
           "$ref": "http://schema.kickstartds.com/base/headline.schema.json"
         }
-      ],
-      "properties": {
-        "align": {
-          "default": "left"
-        },
-        "content": {
-          "default": "Lorem ipsum dolor sit amet cons adipis elit "
-        },
-        "level": {
-          "default": "h1"
-        }
-      }
+      ]
     },
     "categories": {
       "$ref": "http://schema.kickstartds.com/blog/news-item.definitions.json#/definitions/categories"

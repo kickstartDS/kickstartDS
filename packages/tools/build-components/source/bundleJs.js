@@ -22,7 +22,7 @@ const prepare = async (jsPaths) => {
       ...sharedInputPlugins,
       babel(
         sharedBabelConfig({
-          extensions: ['.js', '.tsx'],
+          extensions: ['.js', '.tsx', '.ts'],
           babelHelpers: 'runtime',
           skipPreflightCheck: true,
           presets: [

@@ -1,11 +1,4 @@
-import {
-  ForwardRefRenderFunction,
-  HTMLAttributes,
-  forwardRef,
-  createElement,
-  createContext,
-  useContext,
-} from 'react';
+import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
 import {
@@ -13,23 +6,21 @@ import {
   defaultRenderFn as richTextDefaultRenderFn,
 } from '../../1-atoms/rich-text';
 import { Button } from '../../1-atoms/button';
-import { TeaserProps } from './TeaserProps';
-import './teaser.scss';
-import './Teaser.js';
+import { type TeaserProps as TeaserSchemaProps } from './TeaserProps';
 
-export interface TeaserRenderFunctions {
+export type TeaserProps = TeaserSchemaProps & {
   renderTopic?: renderFn;
   renderText?: renderFn;
-}
+};
 
 export const TeaserComponent: ForwardRefRenderFunction<
   HTMLDivElement,
-  TeaserProps & TeaserRenderFunctions & HTMLAttributes<HTMLDivElement>
+  TeaserProps & HTMLAttributes<HTMLDivElement>
 > = (
   {
     topic,
     text,
-    darkStyle,
+    inverted,
     link,
     renderText = richTextDefaultRenderFn,
     renderTopic = defaultRenderFn,
@@ -40,15 +31,10 @@ export const TeaserComponent: ForwardRefRenderFunction<
   ref
 ) => (
   <div
-    className={classnames(
-      'c-teaser',
-      {
-        'c-teaser--style-dark': darkStyle,
-      },
-      className
-    )}
+    className={classnames('c-teaser', className)}
     data-component="base.teaser"
     ref={ref}
+    ks-inverted={inverted?.toString()}
     {...props}
   >
     {children}
@@ -69,10 +55,4 @@ export const TeaserComponent: ForwardRefRenderFunction<
       )}
     </div>
   </div>
-);
-
-export const TeaserContextDefault = forwardRef(TeaserComponent);
-export const TeaserContext = createContext(TeaserContextDefault);
-export const Teaser: typeof TeaserContextDefault = forwardRef((props, ref) =>
-  createElement(useContext(TeaserContext), { ...props, ref })
 );

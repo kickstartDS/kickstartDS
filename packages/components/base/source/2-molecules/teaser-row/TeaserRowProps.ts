@@ -13,10 +13,7 @@ export type Topic = string;
  * Text for the teaser box
  */
 export type TextContent = string;
-/**
- * Optionally use this to apply a dark variant to the box
- */
-export type DarkVariant = boolean;
+export type Inverted = boolean;
 /**
  * Text used on button
  */
@@ -24,13 +21,8 @@ export type Label = string;
 /**
  * Choose one of the styles from the list
  */
-export type ButtonStyle =
-  | 'solid'
-  | 'solid-inverted'
-  | 'clear'
-  | 'clear-inverted'
-  | 'outline'
-  | 'outline-inverted';
+export type ButtonStyle = 'solid' | 'clear' | 'outline';
+export type Inverted1 = boolean;
 /**
  * Choose a size between small, medium and large
  */
@@ -101,7 +93,7 @@ export type Class = string;
 export interface TeaserRowProps {
   topic?: Topic;
   text?: TextContent;
-  darkStyle?: DarkVariant;
+  inverted?: Inverted;
   link?: Button;
   className?: Class;
 }
@@ -111,6 +103,7 @@ export interface TeaserRowProps {
 export interface Button {
   label: Label;
   variant: ButtonStyle;
+  inverted?: Inverted1;
   size: ButtonSize;
   href?: ButtonHref;
   className?: AdditionalClasses;

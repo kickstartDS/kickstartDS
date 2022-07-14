@@ -1,5 +1,5 @@
 .storybook/*.html
 .storybook/*.css
-.storybook/*.jsx
+.storybook/IconSprite.js
 tmp
 storybook-static

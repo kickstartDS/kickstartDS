@@ -110,13 +110,8 @@ export type Label = string;
 /**
  * Choose one of the styles from the list
  */
-export type ButtonStyle =
-  | 'solid'
-  | 'solid-inverted'
-  | 'clear'
-  | 'clear-inverted'
-  | 'outline'
-  | 'outline-inverted';
+export type ButtonStyle = 'solid' | 'clear' | 'outline';
+export type Inverted = boolean;
 /**
  * Choose a size between small, medium and large
  */
@@ -176,6 +171,7 @@ export type OpenLinkInNewTab = boolean;
  * Additional css classes attached to the wrapping element
  */
 export type Class = string;
+export type Inverted1 = boolean;
 
 /**
  * Component to present rich combinations of text and media, best used sequentially
@@ -184,9 +180,10 @@ export interface StorytellingProps {
   backgroundImage?: BackgroundImage;
   backgroundColor?: BackgroundColor;
   full?: FullSizeImage;
-  image: Image;
+  image?: Image;
   box: TextBox;
   className?: Class;
+  inverted?: Inverted1;
   [k: string]: unknown;
 }
 /**
@@ -241,6 +238,7 @@ export interface Headline {
 export interface Button {
   label: Label;
   variant: ButtonStyle;
+  inverted?: Inverted;
   size: ButtonSize;
   href?: ButtonHref;
   className?: AdditionalClasses1;

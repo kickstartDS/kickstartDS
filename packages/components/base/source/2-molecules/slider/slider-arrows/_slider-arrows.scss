@@ -6,7 +6,7 @@
   opacity: 0;
   transition: 0.3s;
 
-  @include container.size('≥' 960px) {
+  @include container.size('≥', 960px) {
     display: block;
   }
 
@@ -22,7 +22,7 @@
   color: var(--c-slider_arrow--color);
   background-color: var(--c-slider_arrow--background);
   user-select: none;
-  border-radius: 3px;
+  border-radius: var(--ks-border-radius-control);
   z-index: 100;
   transition: inherit;
 

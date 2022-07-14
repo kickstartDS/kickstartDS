@@ -10,7 +10,7 @@ $vars: meta.module-variables(quote-vars);
 .c-quote {
   align-items: var(--c-quote--align);
 
-  @include container.size('≥' 640px) {
+  @include container.size('≥', 640px) {
     display: flex;
   }
 
@@ -20,7 +20,7 @@ $vars: meta.module-variables(quote-vars);
     text-align: center;
     margin-bottom: 1rem;
 
-    @include container.size('≥' 640px) {
+    @include container.size('≥', 640px) {
       margin-bottom: 0;
     }
   }
@@ -42,7 +42,7 @@ $vars: meta.module-variables(quote-vars);
       );
       font-size: var(--c-quote_icon--font-size);
       line-height: 1;
-      color: var(--c-quote_icon--color, var(--color-primary));
+      color: var(--c-quote_icon--color, var(--ks-color-primary));
       transform: var(--c-quote_icon--transform, translateX(-50%));
     }
   }

@@ -1,19 +1,12 @@
-import {
-  ForwardRefRenderFunction,
-  HTMLAttributes,
-  forwardRef,
-  createElement,
-  createContext,
-  useContext,
-} from 'react';
+import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classNames from 'classnames';
 import { Headline } from '@kickstartds/base/lib/headline';
 import { Link } from '@kickstartds/base/lib/link';
 import { Icon } from '@kickstartds/base/lib/icon';
-import { PostShareBarProps } from './PostShareBarProps';
-import './post-share-bar.scss';
+import { type PostShareBarProps } from './PostShareBarProps';
 
-const PostShareBarComponent: ForwardRefRenderFunction<
+export { PostShareBarProps };
+export const PostShareBarComponent: ForwardRefRenderFunction<
   HTMLDivElement,
   PostShareBarProps & HTMLAttributes<HTMLDivElement>
 > = ({ headline = {}, links, className, ...props }, ref) => {
@@ -40,10 +33,3 @@ const PostShareBarComponent: ForwardRefRenderFunction<
     </div>
   );
 };
-
-export const PostShareBarContextDefault = forwardRef(PostShareBarComponent);
-export const PostShareBarContext = createContext(PostShareBarContextDefault);
-export const PostShareBar: typeof PostShareBarContextDefault = forwardRef(
-  (props, ref) =>
-    createElement(useContext(PostShareBarContext), { ...props, ref })
-);

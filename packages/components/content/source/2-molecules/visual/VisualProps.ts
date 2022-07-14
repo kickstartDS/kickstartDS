@@ -97,17 +97,12 @@ export type DisplayLink = boolean;
 /**
  * Choose one of the styles from the list
  */
-export type ButtonStyle =
-  | 'solid'
-  | 'solid-inverted'
-  | 'clear'
-  | 'clear-inverted'
-  | 'outline'
-  | 'outline-inverted';
+export type ButtonStyle = 'solid' | 'clear' | 'outline';
 /**
  * Text used on button
  */
 export type Label = string;
+export type Inverted = boolean;
 /**
  * Choose a size between small, medium and large
  */
@@ -178,7 +173,8 @@ export type VerticalOrientation = 'top' | 'center' | 'bottom';
 /**
  * Choose a style for the box
  */
-export type StyleOfTheBox = 'default' | 'light' | 'transparent';
+export type StyleOfTheBox = 'solid' | 'transparent';
+export type Inverted1 = boolean;
 /**
  * Custom css background color
  */
@@ -247,6 +243,7 @@ export interface TextBox {
   horizontal?: HorizontalOrientation;
   vertical?: VerticalOrientation;
   background?: StyleOfTheBox;
+  inverted?: Inverted1;
 }
 /**
  * Headline for the box
@@ -269,6 +266,7 @@ export interface Link {
   enabled?: DisplayLink;
   variant: ButtonStyle;
   label: Label;
+  inverted?: Inverted;
   size: ButtonSize;
   href?: ButtonHref;
   className?: AdditionalClasses1;

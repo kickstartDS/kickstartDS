@@ -1,11 +1,11 @@
 $name-: 'c-teaser' !default;
 
 $host: (
-  '.c-teaser': (
+  ':root, [ks-theme], [ks-inverted]': (
     font: var(--ks-font-copy-m),
     color: var(--ks-text-color-default),
-    background: var(--ks-background-color-primary-inverted-tbd),
-    border: 1px solid var(--color-grey-1),
+    background: var(--ks-background-color-primary-inverted-translucent),
+    border: var(--ks-border-width-default) solid var(--ks-color-fg-to-bg-9),
     border-radius: null,
     shadow: null,
     shadow-hover: (
@@ -15,9 +15,7 @@ $host: (
     ),
     padding: 1rem,
   ),
-  '.c-teaser--style-dark': (
-    color: var(--ks-text-color-default-inverted),
-    background: var(--ks-background-color-primary-tbd),
+  '[ks-inverted=true]': (
     border: null,
     shadow: null,
     shadow-hover: (
@@ -29,7 +27,7 @@ $host: (
 ) !default;
 
 $text: (
-  '.c-teaser': (
+  ':root, [ks-theme], [ks-inverted]': (
     spacing: 0.5rem,
   ),
 ) !default;

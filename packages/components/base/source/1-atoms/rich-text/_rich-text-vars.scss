@@ -1,7 +1,7 @@
 $name-: 'c-rich-text';
 
 $host: (
-  ':root': (
+  ':root, [ks-theme], [ks-inverted]': (
     font: var(--ks-font-copy-m),
     vertical-spacing: var(--ks-spacing-m),
     horizontal-spacing: 1em,
@@ -11,7 +11,7 @@ $host: (
 ) !default;
 
 $headline: (
-  ':root': (
+  ':root, [ks-theme], [ks-inverted]': (
     color: var(--ks-text-color-default),
     font: var(--ks-font-display-m),
     font-weight: var(--ks-font-weight-bold),
@@ -33,33 +33,33 @@ $headline: (
 ) !default;
 
 $code: (
-  ':root': (
+  ':root, [ks-theme], [ks-inverted]': (
     background: null,
     border-radius: null,
   ),
 ) !default;
 
 $blockquote: (
-  ':root': (
+  ':root, [ks-theme], [ks-inverted]': (
     border-left: null,
     font-style: null,
   ),
 ) !default;
 
 $hr: (
-  ':root': (
+  ':root, [ks-theme], [ks-inverted]': (
     border: null,
   ),
 ) !default;
 
 $ul: (
-  ':root': (
+  ':root, [ks-theme], [ks-inverted]': (
     style: null,
   ),
 ) !default;
 
 $ol: (
-  ':root': (
+  ':root, [ks-theme], [ks-inverted]': (
     style: null,
   ),
 ) !default;

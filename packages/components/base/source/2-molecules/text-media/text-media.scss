@@ -43,7 +43,7 @@
     .text-media--intext & {
       padding-bottom: var(--ks-spacing-s);
 
-      @include container.size('≥' 600px) {
+      @include container.size('≥', 600px) {
         padding-bottom: var(--ks-spacing-xs);
         max-width: 50%;
         min-width: 0;
@@ -55,14 +55,14 @@
     }
 
     .text-media--intext.text-media--left & {
-      @include container.size('≥' 600px) {
+      @include container.size('≥', 600px) {
         float: left;
         padding-right: var(--ks-spacing-m);
       }
     }
 
     .text-media--intext.text-media--right & {
-      @include container.size('≥' 600px) {
+      @include container.size('≥', 600px) {
         float: right;
         padding-left: var(--ks-spacing-m);
       }

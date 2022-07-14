@@ -1,19 +1,7 @@
-import {
-  ForwardRefRenderFunction,
-  AnchorHTMLAttributes,
-  forwardRef,
-  createElement,
-  createContext,
-  useContext,
-} from 'react';
+import { ForwardRefRenderFunction, AnchorHTMLAttributes } from 'react';
 
-const LinkComponent: ForwardRefRenderFunction<
+export type LinkProps = unknown;
+export const LinkComponent: ForwardRefRenderFunction<
   HTMLAnchorElement,
-  AnchorHTMLAttributes<HTMLAnchorElement>
+  LinkProps & AnchorHTMLAttributes<HTMLAnchorElement>
 > = (props, ref) => <a ref={ref} {...props} />;
-
-export const LinkContextDefault = forwardRef(LinkComponent);
-export const LinkContext = createContext(LinkContextDefault);
-export const Link: typeof LinkContextDefault = forwardRef((props, ref) =>
-  createElement(useContext(LinkContext), { ...props, ref })
-);

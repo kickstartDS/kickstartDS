@@ -41,7 +41,7 @@ $vars: meta.module-variables(visual-vars);
       flex-grow: 1;
     }
 
-    @include container.size('≥' 640px) {
+    @include container.size('≥', 640px) {
       @include bourbon.position(absolute, 0);
 
       .c-visual--no-crop & {

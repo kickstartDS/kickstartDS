@@ -4,7 +4,7 @@ $arrow: (
   '.c-slider': (
     size: 2.5rem,
     offset: -1.5,
-    color: var(--color-primary),
+    color: var(--ks-color-primary),
     background: var(--ks-background-color-interface-interactive),
     background-hover: var(--ks-background-color-interface-interactive-hover),
   ),
@@ -18,8 +18,8 @@ $bullet: (
   '.c-slider': (
     size: 0.8rem,
     margin: 0.25rem 0.5rem,
-    outline-color: var(--color-black-alpha-2),
-    outline-color-active: var(--color-primary),
+    outline-color: var(--ks-color-fg-alpha-2),
+    outline-color-active: var(--ks-color-primary),
     background: var(--ks-background-color-interface-interactive),
     background-active: var(--ks-background-color-interface-interactive-current),
     background-hover: var(--ks-background-color-interface-interactive-hover),

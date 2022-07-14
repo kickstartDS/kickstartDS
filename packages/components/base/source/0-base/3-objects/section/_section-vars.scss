@@ -1,22 +1,17 @@
 $name-: 'l-section';
 
 $host: (
-  ':root': (
+  ':root, [ks-theme], [ks-inverted]': (
     content-width-narrow: 46.5rem,
     content-width-default: 62rem,
     content-width-wide: 75rem,
     content-padding: var(--ks-spacing-m),
-  ),
-  '.l-section': (
     background: var(--ks-background-color-default),
     space: var(--ks-spacing-xxl),
     space-small: calc(var(--l-section--space) / 2),
   ),
   '.l-section--accent': (
     background: var(--ks-background-color-accent),
-  ),
-  '.l-section--dark': (
-    background: var(--ks-background-color-default-inverted),
   ),
 ) !default;
 

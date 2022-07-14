@@ -19,7 +19,7 @@ $vars: meta.module-variables(tag-label-vars);
 
   @media print {
     background-color: transparent;
-    border: 1px solid;
+    border: var(--ks-border-width-default) solid;
   }
 
   &__content {

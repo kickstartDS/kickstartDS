@@ -2,13 +2,13 @@ $name-: 'c-button';
 
 $host: (
   '.c-button': (
-    color-primary: var(--color-primary),
-    color-secondary: var(--color-white),
+    color-primary: var(--ks-color-primary),
+    color-secondary: var(--ks-color-primary-inverted),
     font: var(--ks-font-ui-m),
     font-weight: var(--ks-font-weight-regular),
     icon-size: 1.5em,
     padding: 0.4rem 1.3rem 0.35rem,
-    border-radius: 3px,
+    border-radius: var(--ks-border-radius-control),
     border-color: var(--c-button--color),
     background-color: transparent,
     transform-active: scale(0.95),
@@ -21,16 +21,6 @@ $host: (
     background-color-hover: var(--ks-background-color-clear-interactive-hover),
     background-color-active: var(--ks-background-color-clear-interactive-active),
   ),
-  '.c-button--clear-inverted': (
-    color: var(--ks-text-color-primary-inverted-interactive),
-    color-hover: var(--ks-text-color-primary-inverted-interactive-hover),
-    color-active: var(--ks-text-color-primary-inverted-interactive-hover),
-    background-color: var(--ks-background-color-clear-inverted-interactive),
-    background-color-hover:
-      var(--ks-background-color-clear-inverted-interactive-hover),
-    background-color-active:
-      var(--ks-background-color-clear-inverted-interactive-active),
-  ),
   '.c-button--solid': (
     color: var(--ks-text-color-primary-inverted-interactive),
     color-hover: var(--ks-text-color-primary-inverted-interactive-hover),
@@ -40,16 +30,6 @@ $host: (
     background-color-active:
       var(--ks-background-color-primary-interactive-active),
   ),
-  '.c-button--solid-inverted': (
-    color: var(--ks-text-color-primary-interactive),
-    color-hover: var(--ks-text-color-primary-interactive-hover),
-    color-active: var(--ks-text-color-primary-interactive-hover),
-    background-color: var(--ks-background-color-primary-inverted-interactive),
-    background-color-hover:
-      var(--ks-background-color-primary-inverted-interactive-hover),
-    background-color-active:
-      var(--ks-background-color-primary-inverted-interactive-active),
-  ),
   '.c-button--outline': (
     border-width: 1px,
     color: var(--ks-text-color-primary-interactive),
@@ -58,17 +38,6 @@ $host: (
     background-color: var(--ks-background-color-clear-interactive),
     background-color-hover: var(--ks-background-color-clear-interactive-hover),
     background-color-active: var(--ks-background-color-clear-interactive-active),
-  ),
-  '.c-button--outline-inverted': (
-    border-width: 1px,
-    color: var(--ks-text-color-primary-inverted-interactive),
-    color-hover: var(--ks-text-color-primary-inverted-interactive-hover),
-    color-active: var(--ks-text-color-primary-inverted-interactive-hover),
-    background-color: var(--ks-background-color-clear-inverted-interactive),
-    background-color-hover:
-      var(--ks-background-color-clear-inverted-interactive-hover),
-    background-color-active:
-      var(--ks-background-color-clear-inverted-interactive-active),
   ),
   '.c-button--small': (
     padding: 0.4rem 1rem 0.45rem,

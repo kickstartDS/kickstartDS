@@ -17,12 +17,12 @@
     color: inherit;
   }
 
-  @include container.size('≥' 640px) {
+  @include container.size('≥', 640px) {
     width: auto;
     border-radius: var(--c-visual_box--border-radius);
   }
 
-  @include container.size('≥' 1200px) {
+  @include container.size('≥', 1200px) {
     padding-top: 3rem;
     padding-bottom: 3rem;
   }
@@ -40,7 +40,7 @@
       border-radius: 0;
     }
 
-    @include container.size('≥' 640px) {
+    @include container.size('≥', 640px) {
       background: none;
       padding: 0 !important;
       border-radius: 0;
@@ -49,7 +49,7 @@
 
   @media print {
     background-color: transparent;
-    border: 2px solid var(--color-grey-3);
+    border: 2px solid var(--ks-color-fg-to-bg-7);
     margin: 1cm 0;
     width: auto;
 

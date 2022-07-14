@@ -36,13 +36,8 @@ export type Label = string;
 /**
  * Choose one of the styles from the list
  */
-export type ButtonStyle =
-  | 'solid'
-  | 'solid-inverted'
-  | 'clear'
-  | 'clear-inverted'
-  | 'outline'
-  | 'outline-inverted';
+export type ButtonStyle = 'solid' | 'clear' | 'outline';
+export type Inverted = boolean;
 /**
  * Choose a size between small, medium and large
  */
@@ -210,17 +205,12 @@ export type DisplayLink = boolean;
 /**
  * Choose one of the styles from the list
  */
-export type ButtonStyle1 =
-  | 'solid'
-  | 'solid-inverted'
-  | 'clear'
-  | 'clear-inverted'
-  | 'outline'
-  | 'outline-inverted';
+export type ButtonStyle1 = 'solid' | 'clear' | 'outline';
 /**
  * Text used on button
  */
 export type Label2 = string;
+export type Inverted1 = boolean;
 /**
  * Choose a size between small, medium and large
  */
@@ -291,7 +281,8 @@ export type VerticalOrientation = 'top' | 'center' | 'bottom';
 /**
  * Choose a style for the box
  */
-export type StyleOfTheBox = 'default' | 'light' | 'transparent';
+export type StyleOfTheBox = 'solid' | 'transparent';
+export type Inverted2 = boolean;
 /**
  * Custom css background color
  */
@@ -421,17 +412,12 @@ export type DisplayLink1 = boolean;
 /**
  * Choose one of the styles from the list
  */
-export type ButtonStyle2 =
-  | 'solid'
-  | 'solid-inverted'
-  | 'clear'
-  | 'clear-inverted'
-  | 'outline'
-  | 'outline-inverted';
+export type ButtonStyle2 = 'solid' | 'clear' | 'outline';
 /**
  * Text used on button
  */
 export type Label3 = string;
+export type Inverted3 = boolean;
 /**
  * Choose a size between small, medium and large
  */
@@ -502,7 +488,8 @@ export type VerticalOrientation1 = 'top' | 'center' | 'bottom';
 /**
  * Choose a style for the box
  */
-export type StyleOfTheBox1 = 'default' | 'light' | 'transparent';
+export type StyleOfTheBox1 = 'solid' | 'transparent';
+export type Inverted4 = boolean;
 /**
  * Custom css background color
  */
@@ -715,13 +702,8 @@ export type Label4 = string;
 /**
  * Choose one of the styles from the list
  */
-export type ButtonStyle3 =
-  | 'solid'
-  | 'solid-inverted'
-  | 'clear'
-  | 'clear-inverted'
-  | 'outline'
-  | 'outline-inverted';
+export type ButtonStyle3 = 'solid' | 'clear' | 'outline';
+export type Inverted5 = boolean;
 /**
  * Choose a size between small, medium and large
  */
@@ -781,6 +763,7 @@ export type OpenLinkInNewTab4 = boolean;
  * Additional css classes attached to the wrapping element
  */
 export type Class5 = string;
+export type Inverted6 = boolean;
 /**
  * Include the text for the collapsible that should be visible before opening
  */
@@ -819,13 +802,8 @@ export type Label5 = string;
 /**
  * Choose one of the styles from the list
  */
-export type ButtonStyle4 =
-  | 'solid'
-  | 'solid-inverted'
-  | 'clear'
-  | 'clear-inverted'
-  | 'outline'
-  | 'outline-inverted';
+export type ButtonStyle4 = 'solid' | 'clear' | 'outline';
+export type Inverted7 = boolean;
 /**
  * Choose a size between small, medium and large
  */
@@ -916,13 +894,8 @@ export type Label6 = string;
 /**
  * Choose one of the styles from the list
  */
-export type ButtonStyle5 =
-  | 'solid'
-  | 'solid-inverted'
-  | 'clear'
-  | 'clear-inverted'
-  | 'outline'
-  | 'outline-inverted';
+export type ButtonStyle5 = 'solid' | 'clear' | 'outline';
+export type Inverted8 = boolean;
 /**
  * Choose a size between small, medium and large
  */
@@ -1205,10 +1178,7 @@ export type Topic2 = string;
  * Text for the teaser box
  */
 export type TextContent5 = string;
-/**
- * Optionally use this to apply a dark variant to the box
- */
-export type DarkVariant = boolean;
+export type Inverted9 = boolean;
 /**
  * Text used on button
  */
@@ -1216,13 +1186,8 @@ export type Label7 = string;
 /**
  * Choose one of the styles from the list
  */
-export type ButtonStyle6 =
-  | 'solid'
-  | 'solid-inverted'
-  | 'clear'
-  | 'clear-inverted'
-  | 'outline'
-  | 'outline-inverted';
+export type ButtonStyle6 = 'solid' | 'clear' | 'outline';
+export type Inverted10 = boolean;
 /**
  * Choose a size between small, medium and large
  */
@@ -1380,10 +1345,7 @@ export type Topic3 = string;
  * Text for the teaser box
  */
 export type TextContent6 = string;
-/**
- * Optionally use this to apply a dark variant to the box
- */
-export type DarkVariant1 = boolean;
+export type Inverted11 = boolean;
 /**
  * Text used on button
  */
@@ -1391,13 +1353,8 @@ export type Label8 = string;
 /**
  * Choose one of the styles from the list
  */
-export type ButtonStyle7 =
-  | 'solid'
-  | 'solid-inverted'
-  | 'clear'
-  | 'clear-inverted'
-  | 'outline'
-  | 'outline-inverted';
+export type ButtonStyle7 = 'solid' | 'clear' | 'outline';
+export type Inverted12 = boolean;
 /**
  * Choose a size between small, medium and large
  */
@@ -1461,6 +1418,7 @@ export type HideLink1 = boolean;
  * Additional css classes attached to the box
  */
 export type Class11 = string;
+export type Inverted13 = boolean;
 /**
  * Select the headline level to use, or p alternatively
  */
@@ -1520,7 +1478,8 @@ export interface SectionProps {
     | LogoTiles
     | TeaserRow
   )[];
-  background?: 'default' | 'accent' | 'dark';
+  background?: 'default' | 'accent';
+  inverted?: Inverted13;
   spaceBefore?: 'default' | 'small' | 'none';
   spaceAfter?: 'default' | 'small' | 'none';
   headline?: Headline4;
@@ -1549,6 +1508,7 @@ export interface Quote {
 export interface Button {
   label: Label;
   variant: ButtonStyle;
+  inverted?: Inverted;
   size: ButtonSize;
   href?: ButtonHref;
   className?: AdditionalClasses;
@@ -1637,6 +1597,7 @@ export interface TextBox {
   horizontal?: HorizontalOrientation;
   vertical?: VerticalOrientation;
   background?: StyleOfTheBox;
+  inverted?: Inverted2;
 }
 /**
  * Headline for the box
@@ -1659,6 +1620,7 @@ export interface Link {
   enabled?: DisplayLink;
   variant: ButtonStyle1;
   label: Label2;
+  inverted?: Inverted1;
   size: ButtonSize1;
   href?: ButtonHref1;
   className?: AdditionalClasses3;
@@ -1758,6 +1720,7 @@ export interface TextBox1 {
   horizontal?: HorizontalOrientation1;
   vertical?: VerticalOrientation1;
   background?: StyleOfTheBox1;
+  inverted?: Inverted4;
 }
 /**
  * Headline for the box
@@ -1780,6 +1743,7 @@ export interface Link1 {
   enabled?: DisplayLink1;
   variant: ButtonStyle2;
   label: Label3;
+  inverted?: Inverted3;
   size: ButtonSize2;
   href?: ButtonHref2;
   className?: AdditionalClasses6;
@@ -1848,9 +1812,10 @@ export interface Storytelling {
   backgroundImage?: BackgroundImage2;
   backgroundColor?: BackgroundColor;
   full?: FullSizeImage;
-  image: Image;
+  image?: Image;
   box: TextBox2;
   className?: Class5;
+  inverted?: Inverted6;
   [k: string]: unknown;
 }
 /**
@@ -1905,6 +1870,7 @@ export interface Headline2 {
 export interface Button1 {
   label: Label4;
   variant: ButtonStyle3;
+  inverted?: Inverted5;
   size: ButtonSize3;
   href?: ButtonHref3;
   className?: AdditionalClasses10;
@@ -1969,6 +1935,7 @@ export interface Link2 {
   enabled?: DisplayLink2;
   label: Label5;
   variant: ButtonStyle4;
+  inverted?: Inverted7;
   size: ButtonSize4;
   href?: ButtonHref4;
   className?: AdditionalClasses11;
@@ -2012,6 +1979,7 @@ export interface Link3 {
   enabled?: DisplayLink3;
   label: Label6;
   variant: ButtonStyle5;
+  inverted?: Inverted8;
   size: ButtonSize5;
   href?: ButtonHref5;
   className?: AdditionalClasses12;
@@ -2130,7 +2098,7 @@ export interface LazyLightboxImage {
 export interface TeaserBox {
   topic?: Topic2;
   text?: TextContent5;
-  darkStyle?: DarkVariant;
+  inverted?: Inverted9;
   link?: Button2;
   className?: Class9;
   image?: ImageSource4;
@@ -2143,6 +2111,7 @@ export interface TeaserBox {
 export interface Button2 {
   label: Label7;
   variant: ButtonStyle6;
+  inverted?: Inverted10;
   size: ButtonSize6;
   href?: ButtonHref6;
   className?: AdditionalClasses16;
@@ -2201,7 +2170,7 @@ export interface Picture2 {
 export interface TeaserRow {
   topic?: Topic3;
   text?: TextContent6;
-  darkStyle?: DarkVariant1;
+  inverted?: Inverted11;
   link?: Button3;
   className?: Class11;
 }
@@ -2211,6 +2180,7 @@ export interface TeaserRow {
 export interface Button3 {
   label: Label8;
   variant: ButtonStyle7;
+  inverted?: Inverted12;
   size: ButtonSize7;
   href?: ButtonHref7;
   className?: AdditionalClasses18;

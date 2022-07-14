@@ -1,10 +1,13 @@
+/* eslint-disable import/no-extraneous-dependencies */
 const path = require('path');
 const StyleDictionary = require('style-dictionary');
-const { config, createTokens } = require('../design-tokens');
+const merge = require('lodash/merge');
+const { config, createTokens } = require('@kickstartds/style-dictionary');
 
 StyleDictionary.extend(config)
   .extend({
-    tokens: createTokens(),
+    source: [path.join(__dirname, '../source/design-tokens/icons/*.svg')],
+    tokens: merge(...createTokens().map(([, tokens]) => tokens)),
     platforms: {
       css: {
         buildPath: 'lib/design-tokens/',

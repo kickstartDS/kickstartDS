@@ -13,17 +13,14 @@
     },
     "variant": {
       "type": "string",
-      "enum": [
-        "solid",
-        "solid-inverted",
-        "clear",
-        "clear-inverted",
-        "outline",
-        "outline-inverted"
-      ],
+      "enum": ["solid", "clear", "outline"],
       "title": "Button Style",
       "description": "Choose one of the styles from the list",
       "default": "solid"
+    },
+    "inverted": {
+      "type": "boolean",
+      "title": "Inverted"
     },
     "size": {
       "type": "string",

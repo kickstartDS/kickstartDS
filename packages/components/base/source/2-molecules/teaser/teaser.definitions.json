@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "http://schema.kickstartds.com/base/teaser.definitions.json",
   "title": "Teaser",
-  "description": "Component to tease external content",
+  "description": "Definitions for components to tease external content",
   "type": "object",
   "definitions": {
     "teaser": {
@@ -21,11 +21,9 @@
           "description": "Text for the teaser box",
           "format": "markdown"
         },
-        "darkStyle": {
+        "inverted": {
           "type": "boolean",
-          "default": false,
-          "title": "Dark variant",
-          "description": "Optionally use this to apply a dark variant to the box"
+          "title": "Inverted"
         },
         "link": {
           "type": "object",
@@ -52,10 +50,5 @@
         }
       }
     }
-  },
-  "allOf": [
-    {
-      "$ref": "#/definitions/teaser"
-    }
-  ]
+  }
 }

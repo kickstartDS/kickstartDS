@@ -1,24 +1,16 @@
-import {
-  ForwardRefRenderFunction,
-  HTMLAttributes,
-  forwardRef,
-  createElement,
-  createContext,
-  useContext,
-} from 'react';
+import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
-import { Radio } from '../../../1-atoms/form-check/radio/RadioComponent';
-import { RadioGroupProps } from './RadioGroupProps';
-import '../form-check-group.scss';
+import { Radio } from '../../../1-atoms/form-check/radio';
+import { type RadioGroupProps as RadioGroupSchemaProps } from './RadioGroupProps';
 
-interface RenderFunctions {
+export type RadioGroupProps = RadioGroupSchemaProps & {
   renderLabel?: renderFn;
-}
+};
 
-const RadioGroupComponent: ForwardRefRenderFunction<
+export const RadioGroupComponent: ForwardRefRenderFunction<
   HTMLDivElement,
-  RadioGroupProps & RenderFunctions & HTMLAttributes<HTMLDivElement>
+  RadioGroupProps & HTMLAttributes<HTMLDivElement>
 > = (
   {
     label,
@@ -51,11 +43,4 @@ const RadioGroupComponent: ForwardRefRenderFunction<
       )}
     </div>
   </div>
-);
-
-export const RadioGroupContextDefault = forwardRef(RadioGroupComponent);
-export const RadioGroupContext = createContext(RadioGroupContextDefault);
-export const RadioGroup: typeof RadioGroupContextDefault = forwardRef(
-  (props, ref) =>
-    createElement(useContext(RadioGroupContext), { ...props, ref })
 );

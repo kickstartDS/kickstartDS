@@ -1,13 +1,20 @@
 @use 'sass:meta';
 @use '@kickstartds/core/source/core/custom-properties';
 @use './content-box-vars';
+@use './container';
 
 $vars: meta.module-variables(content-box-vars);
 @include custom-properties.styles($vars);
+@include container.wrapper('content-box') {
+  display: flex;
+}
 
 .c-content-box {
   margin-bottom: 2em;
   box-sizing: border-box;
+  contain: layout inline-size style;
+  display: flex;
+  flex-direction: column;
 
   &--align-center {
     text-align: center;

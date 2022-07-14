@@ -1,1 +1,10 @@
-export * from './PostHeadComponent';
+import { forwardRef, createElement, createContext, useContext } from 'react';
+import { PostHeadComponent, type PostHeadProps } from './PostHeadComponent';
+import './post-head.scss';
+
+export { PostHeadProps };
+export const PostHeadContextDefault = forwardRef(PostHeadComponent);
+export const PostHeadContext = createContext(PostHeadContextDefault);
+export const PostHead: typeof PostHeadContextDefault = forwardRef(
+  (props, ref) => createElement(useContext(PostHeadContext), { ...props, ref })
+);

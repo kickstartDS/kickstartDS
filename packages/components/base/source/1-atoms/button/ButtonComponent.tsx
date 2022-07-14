@@ -1,28 +1,17 @@
-import {
-  ForwardRefRenderFunction,
-  HTMLAttributes,
-  ElementType,
-  forwardRef,
-  createElement,
-  createContext,
-  useContext,
-} from 'react';
+import { ForwardRefRenderFunction, HTMLAttributes, ElementType } from 'react';
 import classnames from 'classnames';
 import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
 import { Link } from '../link';
 import { Icon } from '../icon';
-import { ButtonProps } from './ButtonProps';
-import './button.scss';
+import { type ButtonProps as ButtonSchemaProps } from './ButtonProps';
 
-interface RenderFunctions {
+export type ButtonProps = ButtonSchemaProps & {
   renderLabel?: renderFn;
-}
+};
 
-const ButtonComponent: ForwardRefRenderFunction<
+export const ButtonComponent: ForwardRefRenderFunction<
   HTMLButtonElement | HTMLAnchorElement,
-  ButtonProps &
-    RenderFunctions &
-    HTMLAttributes<HTMLButtonElement | HTMLAnchorElement>
+  ButtonProps & HTMLAttributes<HTMLButtonElement | HTMLAnchorElement>
 > = (
   {
     label,
@@ -81,9 +70,3 @@ const ButtonComponent: ForwardRefRenderFunction<
     </Tag>
   );
 };
-
-export const ButtonContextDefault = forwardRef(ButtonComponent);
-export const ButtonContext = createContext(ButtonContextDefault);
-export const Button: typeof ButtonContextDefault = forwardRef((props, ref) =>
-  createElement(useContext(ButtonContext), { ...props, ref })
-);

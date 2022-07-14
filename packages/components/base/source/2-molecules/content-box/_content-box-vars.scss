@@ -7,7 +7,7 @@ $topic: (
     font-m: var(--ks-font-display-l),
     font: var(--c-content-box_topic--font-m),
     font-weight: var(--c-rich-text_headline--font-weight),
-    color: null,
+    color: var(--c-rich-text_headline--color),
     margin: null,
   ),
 ) !default;

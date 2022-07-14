@@ -2,114 +2,104 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "http://schema.kickstartds.com/base/section.schema.json",
   "title": "Section",
-  "definitions": {
-    "container": {
-      "type": "object",
-      "properties": {
-        "width": {
-          "type": "string",
-          "enum": ["full", "max", "wide", "default", "narrow"],
-          "default": "default"
-        },
-        "gutter": {
-          "type": "string",
-          "enum": ["large", "default", "small", "none"],
-          "default": "default"
-        },
-        "mode": {
-          "type": "string",
-          "enum": ["default", "tile", "list"],
-          "default": "default"
-        },
-        "content": {
-          "type": "array",
-          "items": {
-            "anyOf": [
-              {
-                "$ref": "http://schema.kickstartds.com/content/quotes-slider.schema.json"
-              },
-              {
-                "$ref": "http://schema.kickstartds.com/base/button.schema.json"
-              },
-              {
-                "$ref": "http://schema.kickstartds.com/base/tag-label.schema.json"
-              },
-              {
-                "$ref": "http://schema.kickstartds.com/content/visual.schema.json"
-              },
-              {
-                "$ref": "http://schema.kickstartds.com/content/quote.schema.json"
-              },
-              {
-                "$ref": "http://schema.kickstartds.com/content/visual-slider.schema.json"
-              },
-              {
-                "$ref": "http://schema.kickstartds.com/content/contact.schema.json"
-              },
-              {
-                "$ref": "http://schema.kickstartds.com/content/storytelling.schema.json"
-              },
-              {
-                "$ref": "http://schema.kickstartds.com/content/collapsible-box.schema.json"
-              },
-              {
-                "$ref": "http://schema.kickstartds.com/content/count-up.schema.json"
-              },
-              {
-                "$ref": "http://schema.kickstartds.com/base/content-box.schema.json"
-              },
-              {
-                "$ref": "http://schema.kickstartds.com/base/headline.schema.json"
-              },
-              {
-                "$ref": "http://schema.kickstartds.com/base/text-media.schema.json"
-              },
-              {
-                "$ref": "http://schema.kickstartds.com/base/teaser-box.schema.json"
-              },
-              {
-                "$ref": "http://schema.kickstartds.com/content/logo-tiles.schema.json"
-              },
-              {
-                "$ref": "http://schema.kickstartds.com/base/teaser-row.schema.json"
-              }
-            ]
-          }
-        }
-      }
-    }
-  },
-  "allOf": [
-    {
-      "$ref": "#/definitions/container"
+  "type": "object",
+  "properties": {
+    "width": {
+      "type": "string",
+      "enum": ["full", "max", "wide", "default", "narrow"],
+      "default": "default"
     },
-    {
-      "type": "object",
-      "properties": {
-        "background": {
-          "type": "string",
-          "enum": ["default", "accent", "dark"],
-          "default": "default"
-        },
-        "spaceBefore": {
-          "type": "string",
-          "enum": ["default", "small", "none"],
-          "default": "default"
-        },
-        "spaceAfter": {
-          "type": "string",
-          "enum": ["default", "small", "none"],
-          "default": "default"
-        },
-        "headline": {
-          "$ref": "http://schema.kickstartds.com/base/headline.schema.json"
-        },
-        "className": {
-          "type": "string",
-          "title": "Additional Class",
-          "description": "Add additional css classes that should be applied to the section"
-        }
+    "gutter": {
+      "type": "string",
+      "enum": ["large", "default", "small", "none"],
+      "default": "default"
+    },
+    "mode": {
+      "type": "string",
+      "enum": ["default", "tile", "list"],
+      "default": "default"
+    },
+    "content": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "http://schema.kickstartds.com/content/quotes-slider.schema.json"
+          },
+          {
+            "$ref": "http://schema.kickstartds.com/base/button.schema.json"
+          },
+          {
+            "$ref": "http://schema.kickstartds.com/base/tag-label.schema.json"
+          },
+          {
+            "$ref": "http://schema.kickstartds.com/content/visual.schema.json"
+          },
+          {
+            "$ref": "http://schema.kickstartds.com/content/quote.schema.json"
+          },
+          {
+            "$ref": "http://schema.kickstartds.com/content/visual-slider.schema.json"
+          },
+          {
+            "$ref": "http://schema.kickstartds.com/content/contact.schema.json"
+          },
+          {
+            "$ref": "http://schema.kickstartds.com/content/storytelling.schema.json"
+          },
+          {
+            "$ref": "http://schema.kickstartds.com/content/collapsible-box.schema.json"
+          },
+          {
+            "$ref": "http://schema.kickstartds.com/content/count-up.schema.json"
+          },
+          {
+            "$ref": "http://schema.kickstartds.com/base/content-box.schema.json"
+          },
+          {
+            "$ref": "http://schema.kickstartds.com/base/headline.schema.json"
+          },
+          {
+            "$ref": "http://schema.kickstartds.com/base/text-media.schema.json"
+          },
+          {
+            "$ref": "http://schema.kickstartds.com/base/teaser-box.schema.json"
+          },
+          {
+            "$ref": "http://schema.kickstartds.com/content/logo-tiles.schema.json"
+          },
+          {
+            "$ref": "http://schema.kickstartds.com/base/teaser-row.schema.json"
+          }
+        ]
       }
+    },
+    "background": {
+      "type": "string",
+      "enum": ["default", "accent"],
+      "default": "default"
+    },
+    "inverted": {
+      "type": "boolean",
+      "title": "Inverted"
+    },
+    "spaceBefore": {
+      "type": "string",
+      "enum": ["default", "small", "none"],
+      "default": "default"
+    },
+    "spaceAfter": {
+      "type": "string",
+      "enum": ["default", "small", "none"],
+      "default": "default"
+    },
+    "headline": {
+      "$ref": "http://schema.kickstartds.com/base/headline.schema.json"
+    },
+    "className": {
+      "type": "string",
+      "title": "Additional Class",
+      "description": "Add additional css classes that should be applied to the section"
     }
-  ]
+  }
 }

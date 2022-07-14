@@ -7,7 +7,13 @@
 
 $vars: meta.module-variables(collapsible-box-vars);
 @include custom-properties.styles($vars, container.$name);
-@include container.wrapper;
+@include container.wrapper {
+  & + & {
+    details {
+      border-top: 0;
+    }
+  }
+}
 
 .c-collapsible-box {
   details {
@@ -15,12 +21,6 @@ $vars: meta.module-variables(collapsible-box-vars);
 
     border-top: 1px solid var(--c-collapsible-box--border-color);
     border-bottom: 1px solid var(--c-collapsible-box--border-color);
-  }
-
-  & + & {
-    details {
-      border-top: 0;
-    }
   }
 
   &__header {
@@ -37,7 +37,7 @@ $vars: meta.module-variables(collapsible-box-vars);
     &__text {
       flex: 1;
 
-      @include container.size('≥' 640px) {
+      @include container.size('≥', 640px) {
         padding-right: 1em;
       }
     }

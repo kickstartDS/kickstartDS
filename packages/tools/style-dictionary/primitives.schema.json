@@ -1,0 +1,140 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/tokens/primitives.schema.json",
+  "title": "kickstartDS Design Token Primitives",
+  "type": "object",
+  "properties": {
+    "color": {
+      "title": "Colors",
+      "type": "object",
+      "properties": {
+        "primary": {
+          "title": "Primary Color",
+          "type": "string"
+        },
+        "primary-inverted": {
+          "title": "Primary Inverted Color",
+          "type": "string"
+        },
+        "background": {
+          "title": "Background Color",
+          "type": "string"
+        },
+        "foreground": {
+          "title": "Foreground Color",
+          "type": "string"
+        },
+        "link": {
+          "title": "Link Color",
+          "type": "string"
+        },
+        "link-inverted": {
+          "title": "Link Inverted Color",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "font": {
+      "title": "Typography",
+      "type": "object",
+      "properties": {
+        "display": {
+          "$ref": "#/definitions/font"
+        },
+        "copy": {
+          "$ref": "#/definitions/font"
+        },
+        "ui": {
+          "$ref": "#/definitions/font"
+        },
+        "mono": {
+          "$ref": "#/definitions/font"
+        }
+      },
+      "additionalProperties": false
+    },
+    "font-weight": {
+      "title": "Font Weights",
+      "type": "object",
+      "properties": {
+        "light": {
+          "type": "integer"
+        },
+        "regular": {
+          "type": "integer"
+        },
+        "semi-bold": {
+          "type": "integer"
+        },
+        "bold": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "spacing": {
+      "title": "Spacings",
+      "type": "object",
+      "properties": {
+        "base": {
+          "type": "integer"
+        },
+        "scale-ratio": {
+          "type": "number"
+        },
+        "bp-ratio": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "border-radius": {
+      "title": "Border Radius",
+      "type": "string"
+    },
+    "box-shadow": {
+      "title": "Box Shadow",
+      "type": "object",
+      "properties": {
+        "blur": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "breakpoints": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "integer"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "definitions": {
+    "font": {
+      "type": "object",
+      "properties": {
+        "family": {
+          "title": "Font Family",
+          "type": "string"
+        },
+        "font-size": {
+          "title": "Font Size",
+          "type": "number"
+        },
+        "line-height": {
+          "title": "Line Height",
+          "type": "number"
+        },
+        "bp-factor": {
+          "type": "object",
+          "additionalProperties": {
+            "title": "Breakpoint Factor",
+            "type": "number"
+          }
+        }
+      }
+    }
+  }
+}
