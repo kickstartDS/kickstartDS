@@ -1,16 +1,16 @@
 import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
-import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
+import { defaultRenderFn } from '@kickstartds/core/lib/core';
 import {
   RichText,
   defaultRenderFn as richTextDefaultRenderFn,
 } from '../../1-atoms/rich-text';
-import { LinkButton } from '../../1-atoms/button/link-button';
+import { Button } from '../../1-atoms/button';
 import { type TeaserProps as TeaserSchemaProps } from './TeaserProps';
 
 export type TeaserProps = TeaserSchemaProps & {
-  renderTopic?: renderFn;
-  renderText?: renderFn;
+  renderTopic?: typeof defaultRenderFn;
+  renderText?: typeof defaultRenderFn;
 };
 
 export const TeaserComponent: ForwardRefRenderFunction<
@@ -48,7 +48,7 @@ export const TeaserComponent: ForwardRefRenderFunction<
       </div>
       {link?.label ? (
         <div className="c-teaser__link" hidden={link.hidden}>
-          <LinkButton {...link} />
+          <Button {...link} />
         </div>
       ) : (
         ''

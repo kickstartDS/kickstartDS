@@ -1,6 +1,6 @@
 import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
-import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
+import { defaultRenderFn } from '@kickstartds/core/lib/core';
 import { Icon } from '@kickstartds/base/lib/icon';
 import {
   RichText,
@@ -9,8 +9,8 @@ import {
 import { type CollapsibleBoxProps as CollapsibleBoxSchemaProps } from './CollapsibleBoxProps';
 
 export type CollapsibleBoxProps = CollapsibleBoxSchemaProps & {
-  renderText?: renderFn;
-  renderSummary?: renderFn;
+  renderText?: typeof richTextDefaultRenderFn;
+  renderSummary?: typeof defaultRenderFn;
 };
 
 export const CollapsibleBoxComponent: ForwardRefRenderFunction<

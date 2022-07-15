@@ -4,9 +4,8 @@ import {
   HTMLAttributes,
 } from 'react';
 import classnames from 'classnames';
-import { renderFn } from '@kickstartds/core/lib/core';
 import { Headline } from '@kickstartds/base/lib/headline';
-import { LinkButton } from '@kickstartds/base/lib/link-button';
+import { Button } from '@kickstartds/base/lib/button';
 import {
   RichText,
   defaultRenderFn as richTextDefaultRenderFn,
@@ -19,7 +18,7 @@ interface ILazy {
 }
 
 interface RenderFunctions {
-  renderText?: renderFn;
+  renderText?: typeof richTextDefaultRenderFn;
 }
 
 const StorytellingMixin: FunctionComponent<
@@ -114,7 +113,7 @@ const StorytellingMixin: FunctionComponent<
             className="c-storytelling__text"
           />
         )}
-        {box.link && <LinkButton {...box.link} />}
+        {box.link && <Button {...box.link} />}
       </div>
     </div>
   </div>

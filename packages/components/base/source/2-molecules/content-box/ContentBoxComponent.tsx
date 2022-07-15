@@ -1,17 +1,17 @@
 import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
-import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
+import { defaultRenderFn } from '@kickstartds/core/lib/core';
 import {
   RichText,
   defaultRenderFn as richTextDefaultRenderFn,
 } from '../../1-atoms/rich-text';
-import { LinkButton } from '../../1-atoms/button/link-button';
+import { Button } from '../../1-atoms/button';
 import { Picture } from '../../1-atoms/image/picture';
 import { type ContentBoxProps as ContentBoxSchemaProps } from './ContentBoxProps';
 
 export type ContentBoxProps = ContentBoxSchemaProps & {
-  renderTopic?: renderFn;
-  renderText?: renderFn;
+  renderTopic?: typeof defaultRenderFn;
+  renderText?: typeof richTextDefaultRenderFn;
 };
 
 export const ContentBoxComponent: ForwardRefRenderFunction<
@@ -61,7 +61,7 @@ export const ContentBoxComponent: ForwardRefRenderFunction<
       </div>
       {link && link.enabled && (
         <div className="c-content-box__link">
-          <LinkButton {...{ ...link, enabled: undefined }} />
+          <Button {...{ ...link, enabled: undefined }} />
         </div>
       )}
     </div>

@@ -1,23 +1,19 @@
 import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
-import {
-  renderFn,
-  renderTextFn,
-  defaultRenderFn,
-} from '@kickstartds/core/lib/core';
+import { defaultRenderFn } from '@kickstartds/core/lib/core';
 import { Icon } from '@kickstartds/base/lib/icon';
 import {
   RichText,
   defaultRenderFn as richTextDefaultRenderFn,
 } from '@kickstartds/base/lib/rich-text';
-import { LinkButton } from '@kickstartds/base/lib/link-button';
+import { Button } from '@kickstartds/base/lib/button';
 import { type CountUpProps as CountUpSchemaProps } from './CountUpProps';
 
 export type CountUpProps = CountUpSchemaProps & {
-  renderTo?: renderFn;
-  renderTopic?: renderFn;
-  renderText?: renderTextFn;
-  renderLinkLabel?: renderFn;
+  renderTo?: typeof defaultRenderFn;
+  renderTopic?: typeof defaultRenderFn;
+  renderText?: typeof richTextDefaultRenderFn;
+  renderLinkLabel?: typeof defaultRenderFn;
 };
 
 export const CountUpComponent: ForwardRefRenderFunction<
@@ -69,7 +65,7 @@ export const CountUpComponent: ForwardRefRenderFunction<
 
     {link && link.enabled ? (
       <div className="c-count-up__link">
-        <LinkButton {...link} renderLabel={renderLinkLabel} />
+        <Button {...link} renderLabel={renderLinkLabel} />
       </div>
     ) : (
       ''

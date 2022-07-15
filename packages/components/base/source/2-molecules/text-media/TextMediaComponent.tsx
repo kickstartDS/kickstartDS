@@ -4,7 +4,6 @@ import {
   HTMLAttributes,
 } from 'react';
 import classnames from 'classnames';
-import { renderFn } from '@kickstartds/core/lib/core';
 import { Picture } from '../../1-atoms/image/picture';
 import { LightboxLazyImage } from '../../1-atoms/image/lightbox-image';
 import { IframeRatio } from '../../1-atoms/iframe';
@@ -20,7 +19,7 @@ import {
 } from './TextMediaProps';
 
 export interface RenderFunctions {
-  renderText?: renderFn;
+  renderText?: typeof defaultRenderFn;
 }
 
 export type TextMediaProps = TextMediaSchemaProps & RenderFunctions;

@@ -27,6 +27,10 @@ export type ButtonStyle = 'solid' | 'clear' | 'outline';
  */
 export type ButtonSize = 'small' | 'medium' | 'large';
 /**
+ * Link used for button
+ */
+export type ButtonHref = string;
+/**
  * Add additional css classes that should be applied to the button
  */
 export type AdditionalClasses = string;
@@ -54,9 +58,21 @@ export type FillAnimation = boolean;
  */
 export type IconAnimation = boolean;
 /**
- * Link used for button
+ * Select the type attribute for the button
  */
-export type ButtonHref = string;
+export type TypeAttribute = 'button' | 'submit' | 'reset';
+/**
+ * Define a value attribute for the button
+ */
+export type ValueAttribute = string;
+/**
+ * Define a name attribute for the button
+ */
+export type NameAttribute = string;
+/**
+ * Set the disabled attribute for the button
+ */
+export type DisabledAttribute = boolean;
 /**
  * Open link in new Tab
  */
@@ -78,17 +94,18 @@ export interface TeaserProps {
   topic?: Topic;
   text?: TextContent;
   inverted?: Inverted;
-  link?: LinkButton;
+  link?: Button;
   className?: Class;
   [k: string]: unknown;
 }
 /**
- * link-button
+ * Component to display links and call-to-actions
  */
-export interface LinkButton {
+export interface Button {
   label: Label;
   variant: ButtonStyle;
   size: ButtonSize;
+  href?: ButtonHref;
   className?: AdditionalClasses;
   icon?: Icon;
   iconBefore?: IconBeforeButton;
@@ -96,7 +113,10 @@ export interface LinkButton {
   dataComponent?: DataComponentAttribute;
   fillAnimation?: FillAnimation;
   iconAnimation?: IconAnimation;
-  href: ButtonHref;
+  type?: TypeAttribute;
+  value?: ValueAttribute;
+  name?: NameAttribute;
+  disabled?: DisabledAttribute;
   newTab?: OpenLinkInNewTab;
   inverted?: Inverted1;
   hidden?: HideLink;

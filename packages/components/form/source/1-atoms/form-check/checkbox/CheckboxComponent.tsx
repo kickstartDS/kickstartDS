@@ -1,10 +1,10 @@
 import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
-import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
+import { defaultRenderFn } from '@kickstartds/core/lib/core';
 import { type CheckboxProps as CheckboxSchemaProps } from './CheckboxProps';
 
 export type CheckboxProps = CheckboxSchemaProps & {
-  renderLabel?: renderFn;
+  renderLabel?: typeof defaultRenderFn;
 };
 
 export const CheckboxComponent: ForwardRefRenderFunction<

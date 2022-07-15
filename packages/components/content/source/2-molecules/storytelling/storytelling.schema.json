@@ -147,7 +147,7 @@
           "default": "center"
         },
         "link": {
-          "$ref": "http://schema.kickstartds.com/base/link-button.schema.json"
+          "$ref": "http://schema.kickstartds.com/base/button.schema.json"
         }
       }
     },

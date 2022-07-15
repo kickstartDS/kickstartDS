@@ -1,15 +1,14 @@
-import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
+import { ForwardRefRenderFunction, HTMLAttributes, ReactNode } from 'react';
 import ReactMarkdown from 'react-markdown';
 import classnames from 'classnames';
-import { renderTextFn } from '@kickstartds/core/lib/core';
 
-export const defaultRenderFn: renderTextFn = (t: string) => (
+export const defaultRenderFn = (t: string): ReactNode => (
   <ReactMarkdown children={t} />
 );
 
 export type RichTextProps = {
   text: string;
-  renderText?: renderTextFn;
+  renderText?: typeof defaultRenderFn;
 };
 
 export const RichTextComponent: ForwardRefRenderFunction<
