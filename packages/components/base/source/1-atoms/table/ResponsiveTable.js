@@ -6,21 +6,16 @@ export default class ResponsiveTable extends Component {
   constructor(element) {
     super(element);
 
-    this.table = this.element.querySelector('table');
-    this.hasHead = !!this.table.querySelector('thead');
-    this.headers = [...this.table.querySelectorAll('th')];
-    this.cells = this.table.querySelectorAll('tbody td');
+    if (element.querySelector('thead')) {
+      const headers = [...element.querySelectorAll('th')];
+      const thValues = headers.map((header) => header.textContent);
+      const cells = element.querySelectorAll('tbody td');
 
-    this.init();
-  }
-
-  init() {
-    if (this.hasHead) {
-      const thValues = this.headers.map((header) => header.textContent);
-
-      this.cells.forEach((cell, index) => {
+      cells.forEach((cell, index) => {
         cell.setAttribute('data-th', thValues[index % thValues.length]);
       });
     }
   }
 }
+
+define(ResponsiveTable.identifier, ResponsiveTable);

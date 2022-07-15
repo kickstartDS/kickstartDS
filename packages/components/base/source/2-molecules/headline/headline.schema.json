@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://frontend.ruhmesmeile.com/base/molecules/headline.schema.json",
+  "$id": "http://schema.kickstartds.com/base/headline.schema.json",
   "title": "Headline",
   "description": "Headline",
   "type": "object",
@@ -11,6 +11,13 @@
       "type": "string",
       "enum": ["h1", "h2", "h3", "h4", "h5", "p"],
       "default": "h2"
+    },
+    "styleAs": {
+      "title": "Style",
+      "description": "Select the headline style to use",
+      "type": "string",
+      "enum": ["none", "h1", "h2", "h3", "h4", "h5", "p"],
+      "default": "none"
     },
     "align": {
       "title": "Alignment",
@@ -42,6 +49,11 @@
       "description": "Set the headline as a page header, triggering special css treatment",
       "type": "boolean",
       "default": false
+    },
+    "className": {
+      "type": "string",
+      "title": "Additional Classes",
+      "description": "Add additional css classes that should be applied to the headline"
     }
   },
   "required": ["level", "align", "spaceAfter"]

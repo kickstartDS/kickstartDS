@@ -56,6 +56,10 @@ export type DesktopImageAfterText = boolean;
  */
 export type Level = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
 /**
+ * Select the headline style to use
+ */
+export type Style = 'none' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
+/**
  * Choose an alignment for the headline
  */
 export type Alignment = 'left' | 'center' | 'right';
@@ -75,6 +79,10 @@ export type BottomSpacing = 'none' | 'small' | 'large';
  * Set the headline as a page header, triggering special css treatment
  */
 export type PageHeader = boolean;
+/**
+ * Add additional css classes that should be applied to the headline
+ */
+export type AdditionalClasses = string;
 /**
  * Text content to display inside the element
  */
@@ -102,21 +110,20 @@ export type Label = string;
 /**
  * Choose one of the styles from the list
  */
-export type ButtonStyle =
-  | 'solid'
-  | 'solid-inverted'
-  | 'clear'
-  | 'clear-inverted'
-  | 'outline'
-  | 'outline-inverted';
+export type ButtonStyle = 'solid' | 'clear' | 'outline';
+export type Inverted = boolean;
 /**
  * Choose a size between small, medium and large
  */
 export type ButtonSize = 'small' | 'medium' | 'large';
 /**
+ * Link used for button
+ */
+export type ButtonHref = string;
+/**
  * Add additional css classes that should be applied to the button
  */
-export type AdditionalClasses = string;
+export type AdditionalClasses1 = string;
 export type IconIdentifier = string;
 export type AriaRole = string;
 export type AdditionalClass = string;
@@ -141,13 +148,30 @@ export type FillAnimation = boolean;
  */
 export type IconAnimation = boolean;
 /**
- * Link used for button
+ * Select the type attribute for the button
  */
-export type ButtonHref = string;
+export type TypeAttribute = 'button' | 'submit' | 'reset';
+/**
+ * Define a value attribute for the button
+ */
+export type ValueAttribute = string;
+/**
+ * Define a name attribute for the button
+ */
+export type NameAttribute = string;
+/**
+ * Set the disabled attribute for the button
+ */
+export type DisabledAttribute = boolean;
 /**
  * Open link in new Tab
  */
 export type OpenLinkInNewTab = boolean;
+/**
+ * Additional css classes attached to the wrapping element
+ */
+export type Class = string;
+export type Inverted1 = boolean;
 
 /**
  * Component to present rich combinations of text and media, best used sequentially
@@ -156,8 +180,10 @@ export interface StorytellingProps {
   backgroundImage?: BackgroundImage;
   backgroundColor?: BackgroundColor;
   full?: FullSizeImage;
-  image: Image;
+  image?: Image;
   box: TextBox;
+  className?: Class;
+  inverted?: Inverted1;
   [k: string]: unknown;
 }
 /**
@@ -189,36 +215,43 @@ export interface TextBox {
   textColor?: TextColor;
   vAlign?: BoxVerticalAlignment;
   hAlign?: BoxHorizontalAlignment;
-  link?: LinkButton;
+  link?: Button;
   [k: string]: unknown;
 }
 /**
- * Headline
+ * Headline for the box
  */
 export interface Headline {
   level: Level;
+  styleAs?: Style;
   align: Alignment;
   content?: Text;
   subheadline?: Subheadline;
   spaceAfter: BottomSpacing;
   pageHeader?: PageHeader;
+  className?: AdditionalClasses;
   [k: string]: unknown;
 }
 /**
- * link-button
+ * Component to display links and call-to-actions
  */
-export interface LinkButton {
+export interface Button {
   label: Label;
   variant: ButtonStyle;
+  inverted?: Inverted;
   size: ButtonSize;
-  className?: AdditionalClasses;
+  href?: ButtonHref;
+  className?: AdditionalClasses1;
   icon?: Icon;
   iconBefore?: IconBeforeButton;
   iconAfter?: IconAfterButton;
   dataComponent?: DataComponentAttribute;
   fillAnimation?: FillAnimation;
   iconAnimation?: IconAnimation;
-  href: ButtonHref;
+  type?: TypeAttribute;
+  value?: ValueAttribute;
+  name?: NameAttribute;
+  disabled?: DisabledAttribute;
   newTab?: OpenLinkInNewTab;
 }
 /**

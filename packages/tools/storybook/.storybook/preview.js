@@ -1,15 +1,54 @@
 import '@storybook/react';
+import { createElement, Fragment, useEffect, useMemo } from 'react';
 import { actions } from '@storybook/addon-actions';
+import { useDarkMode } from 'storybook-dark-mode';
 // @see https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/attrchange
 import 'lazysizes/plugins/attrchange/ls.attrchange';
-import { unpackDecorator } from '../../../components/core/storybook/helpers';
+import { unpackDecorator } from '../../../components/core/lib/storybook/helpers';
+import IconSprite from './IconSprite';
+import { LightBox } from '../../../components/base/lib/lightbox';
 
-import '../../../components/base/global/base.js';
-import '../../../components/base/global/base.css';
-import '../../../components/core/design-tokens/tokens.css';
+import '../../../components/core/lib/design-tokens/tokens.css';
+import '../../../components/base/lib/global/base.js';
+import '../../../components/base/lib/global/base.css';
+import '../../../components/base/lib/lightbox/lazyLightbox.js';
+import '../../../components/base/lib/lightbox/lightbox.css';
+
+import designTokens from '!!raw-loader!./tokens.css';
+import icons from '!!raw-loader!./icons.html';
 
 const myActions = actions('radio');
 window.rm.radio.on('*', myActions.radio);
+
+const InvertedDecorator = (Story, context) => {
+  const darkMode = useDarkMode();
+  const bgValues = useMemo(
+    () =>
+      Object.fromEntries(
+        context.parameters.backgrounds.values.map(({ name, value }) => [
+          value,
+          name,
+        ])
+      ),
+    context.parameters.backgrounds.values
+  );
+  const background =
+    bgValues[context.globals.backgrounds?.value] ??
+    (darkMode ? 'dark' : 'light');
+
+  useEffect(
+    () => document.body.setAttribute('ks-inverted', background === 'dark'),
+    [background]
+  );
+  return createElement(Story);
+};
+
+const PageDecorator = (Story) =>
+  createElement(Fragment, null, [
+    createElement(IconSprite, { key: 'IconSprite' }),
+    createElement(Story, { key: 'Story' }),
+    createElement(LightBox, { key: 'LightBox' }),
+  ]);
 
 export const parameters = {
   options: {
@@ -20,6 +59,10 @@ export const parameters = {
         }
       }
 
+      if (a[0].includes('design-tokens-')) {
+        return -1;
+      }
+
       if (a[0].includes('-changelog-')) {
         return b - a;
       }
@@ -27,9 +70,20 @@ export const parameters = {
       // alphabetically
       return a[1].kind === b[1].kind
         ? 0
-        : a[1].id.localeCompare(b[1].id, 'de', { numeric: true });
+        : a[1].id.localeCompare(b[1].id, 'en', { numeric: true });
     },
   },
+  designToken: {
+    files: [
+      {
+        filename: './tokens.css',
+        content: designTokens,
+      },
+      {
+        filename: './icons.svg',
+        content: icons,
+      },
+    ],
+  },
 };
-
-export const decorators = [unpackDecorator];
+export const decorators = [unpackDecorator, InvertedDecorator, PageDecorator];

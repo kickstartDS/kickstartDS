@@ -2,7 +2,7 @@ version: 2.1
 
 defaults: &defaults
   docker:
-    - image: circleci/node:14.17
+    - image: cimg/node:16.14
   working_directory: /mnt/ramdisk
   resource_class: medium+
 
@@ -22,7 +22,6 @@ aliases:
     keys:
       - yarn-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
       - yarn-{{ checksum "yarn.lock" }}
-      - yarn-
   - &save-cache-node
     key: node-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
     paths:
@@ -44,9 +43,6 @@ jobs:
       - restore_cache: *restore-cache-yarn
       - restore_cache: *restore-cache-node
       - run:
-          name: Set Yarn Cache Directory
-          command: yarn config set cache-folder /mnt/ramdisk/.yarn-cache
-      - run:
           name: Install Dependencies
           command: yarn install --frozen-lockfile --cache-folder /mnt/ramdisk/.yarn-cache
       - save_cache: *save-cache-yarn
@@ -65,6 +61,7 @@ jobs:
           root: .
           paths:
             - packages/components
+            - packages/tools/storybook/.storybook
 
   chromatic:
     <<: *defaults

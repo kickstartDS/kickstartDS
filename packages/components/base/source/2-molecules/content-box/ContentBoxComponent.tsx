@@ -1,40 +1,37 @@
-import {
-  createContext,
-  FunctionComponent,
-  useContext,
-  HTMLAttributes,
-} from 'react';
+import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
-import { renderFn, defaultRenderFn } from '@kickstartds/core/core';
+import { defaultRenderFn } from '@kickstartds/core/core';
 import {
   RichText,
   defaultRenderFn as richTextDefaultRenderFn,
 } from '../../1-atoms/rich-text';
-import { LinkButton } from '../../1-atoms/button/link-button';
+import { Button } from '../../1-atoms/button';
 import { Picture } from '../../1-atoms/image/picture';
-import { ContentBoxProps } from './ContentBoxProps';
-import './content-box.scss';
-import './ContentBox.js';
+import { type ContentBoxProps as ContentBoxSchemaProps } from './ContentBoxProps';
 
-interface RenderFunctions {
-  renderTopic?: renderFn;
-  renderText?: renderFn;
-}
+export type ContentBoxProps = ContentBoxSchemaProps & {
+  renderTopic?: typeof defaultRenderFn;
+  renderText?: typeof richTextDefaultRenderFn;
+};
 
-const ContentBoxComponent: FunctionComponent<
-  ContentBoxProps & RenderFunctions & HTMLAttributes<HTMLDivElement>
-> = ({
-  image,
-  topic,
-  alignement,
-  text,
-  link,
-  ratio,
-  renderTopic = defaultRenderFn,
-  renderText = richTextDefaultRenderFn,
-  className,
-  ...props
-}) => (
+export const ContentBoxComponent: ForwardRefRenderFunction<
+  HTMLDivElement,
+  ContentBoxProps & HTMLAttributes<HTMLDivElement>
+> = (
+  {
+    image,
+    topic,
+    alignement,
+    text,
+    link,
+    ratio,
+    renderTopic = defaultRenderFn,
+    renderText = richTextDefaultRenderFn,
+    className,
+    ...props
+  },
+  ref
+) => (
   <div
     className={classnames(
       'c-content-box',
@@ -43,6 +40,7 @@ const ContentBoxComponent: FunctionComponent<
         `c-content-box--align-${alignement}`,
       className
     )}
+    ref={ref}
     {...props}
   >
     {image && (
@@ -53,7 +51,7 @@ const ContentBoxComponent: FunctionComponent<
           'c-content-box__image--square': ratio === '1:1',
         })}
       >
-        <Picture src={image} alt="" objectFit={true} />
+        <Picture src={image} alt="" />
       </div>
     )}
     <div className="c-content-box__body">
@@ -63,16 +61,9 @@ const ContentBoxComponent: FunctionComponent<
       </div>
       {link && link.enabled && (
         <div className="c-content-box__link">
-          <LinkButton {...{ ...link, enabled: undefined }} />
+          <Button {...{ ...link, enabled: undefined }} />
         </div>
       )}
     </div>
   </div>
 );
-
-export const ContentBoxContextDefault = ContentBoxComponent;
-export const ContentBoxContext = createContext(ContentBoxContextDefault);
-export const ContentBox: typeof ContentBoxContextDefault = (props) => {
-  const Component = useContext(ContentBoxContext);
-  return <Component {...props} />;
-};

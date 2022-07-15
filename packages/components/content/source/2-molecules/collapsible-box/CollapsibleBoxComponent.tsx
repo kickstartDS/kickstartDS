@@ -1,39 +1,37 @@
-import {
-  createContext,
-  FunctionComponent,
-  useContext,
-  HTMLAttributes,
-} from 'react';
+import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
-import { renderFn, defaultRenderFn } from '@kickstartds/core/core';
+import { defaultRenderFn } from '@kickstartds/core/core';
 import { Icon } from '@kickstartds/base/icon';
 import {
   RichText,
   defaultRenderFn as richTextDefaultRenderFn,
 } from '@kickstartds/base/rich-text';
-import { CollapsibleBoxProps } from './CollapsibleBoxProps';
-import './collapsible-box.scss';
-import './lazyCollapsibleBox.js';
+import { type CollapsibleBoxProps as CollapsibleBoxSchemaProps } from './CollapsibleBoxProps';
 
-export interface RenderFunctions {
-  renderText?: renderFn;
-  renderSummary?: renderFn;
-}
+export type CollapsibleBoxProps = CollapsibleBoxSchemaProps & {
+  renderText?: typeof richTextDefaultRenderFn;
+  renderSummary?: typeof defaultRenderFn;
+};
 
-const CollapsibleBoxComponent: FunctionComponent<
-  CollapsibleBoxProps & RenderFunctions & HTMLAttributes<HTMLDivElement>
-> = ({
-  summary,
-  renderSummary = defaultRenderFn,
-  text,
-  renderText = richTextDefaultRenderFn,
-  children,
-  className,
-  ...props
-}) => (
+export const CollapsibleBoxComponent: ForwardRefRenderFunction<
+  HTMLDivElement,
+  CollapsibleBoxProps & HTMLAttributes<HTMLDivElement>
+> = (
+  {
+    summary,
+    renderSummary = defaultRenderFn,
+    text,
+    renderText = richTextDefaultRenderFn,
+    children,
+    className,
+    ...props
+  },
+  ref
+) => (
   <div
     className={classnames('c-collapsible-box lazyload', className)}
     data-component="content.collapsible-box"
+    ref={ref}
     {...props}
   >
     <details>
@@ -61,12 +59,3 @@ const CollapsibleBoxComponent: FunctionComponent<
     </details>
   </div>
 );
-
-export const CollapsibleBoxContextDefault = CollapsibleBoxComponent;
-export const CollapsibleBoxContext = createContext(
-  CollapsibleBoxContextDefault
-);
-export const CollapsibleBox: typeof CollapsibleBoxContextDefault = (props) => {
-  const Component = useContext(CollapsibleBoxContext);
-  return <Component {...props} />;
-};

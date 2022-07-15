@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://frontend.ruhmesmeile.com/content/molecules/collapsible-box.schema.json",
+  "$id": "http://schema.kickstartds.com/content/collapsible-box.schema.json",
   "title": "Collapsible Box",
   "description": "Component to conditionally show additional info",
   "type": "object",
@@ -17,6 +17,11 @@
       "title": "Content of the collapsible",
       "description": "Include the text for the collapsible that should be visible after opening",
       "format": "markdown"
+    },
+    "className": {
+      "title": "Class",
+      "description": "Additional css classes attached to the wrapping element",
+      "type": "string"
     }
   },
   "required": ["summary", "text"],

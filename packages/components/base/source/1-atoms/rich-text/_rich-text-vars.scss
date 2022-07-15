@@ -1,49 +1,65 @@
 $name-: 'c-rich-text';
 
 $host: (
-  ':root': (
-    font: var(--font-copy-m),
-    vertical-spacing: calc(var(--spacing-m) / 2),
+  ':root, [ks-theme], [ks-inverted]': (
+    font: var(--ks-font-copy-m),
+    vertical-spacing: var(--ks-spacing-m),
     horizontal-spacing: 1em,
-    color: var(--color-black),
-    font-weight: var(--font-weight-regular),
+    color: var(--ks-text-color-default),
+    font-weight: var(--ks-font-weight-regular),
+  ),
+) !default;
+
+$headline: (
+  ':root, [ks-theme], [ks-inverted]': (
+    color: var(--ks-text-color-default),
+    font: var(--ks-font-display-m),
+    font-weight: var(--ks-font-weight-bold),
+    text-transform: null,
+    margin: (
+      0: 0.75em 0 0.5em,
+      640: 1.5em 0 1em,
+    ),
+  ),
+  'h1': (
+    font: var(--ks-font-display-xxl),
+  ),
+  'h2': (
+    font: var(--ks-font-display-xl),
+  ),
+  'h3': (
+    font: var(--ks-font-display-l),
   ),
 ) !default;
 
 $code: (
-  ':root': (
+  ':root, [ks-theme], [ks-inverted]': (
     background: null,
     border-radius: null,
   ),
 ) !default;
 
 $blockquote: (
-  ':root': (
+  ':root, [ks-theme], [ks-inverted]': (
     border-left: null,
     font-style: null,
   ),
 ) !default;
 
 $hr: (
-  ':root': (
+  ':root, [ks-theme], [ks-inverted]': (
     border: null,
   ),
 ) !default;
 
 $ul: (
-  ':root': (
+  ':root, [ks-theme], [ks-inverted]': (
     style: null,
   ),
 ) !default;
 
 $ol: (
-  ':root': (
+  ':root, [ks-theme], [ks-inverted]': (
     style: null,
-  ),
-) !default;
-
-$a: (
-  ':root': (
-    decoration: null,
   ),
 ) !default;

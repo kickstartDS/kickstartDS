@@ -1,34 +1,21 @@
-import {
-  FunctionComponent,
-  createContext,
-  useContext,
-  HTMLAttributes,
-} from 'react';
+import { ForwardRefRenderFunction, HTMLAttributes, ReactNode } from 'react';
 import ReactMarkdown from 'react-markdown';
 import classnames from 'classnames';
-import { renderTextFn } from '@kickstartds/core/core';
-import './rich-text.scss';
 
-export const defaultRenderFn: renderTextFn = (t) => (
+export const defaultRenderFn = (t: string): ReactNode => (
   <ReactMarkdown children={t} />
 );
 
-interface RichTextProps {
+export type RichTextProps = {
   text: string;
-  renderText?: renderTextFn;
-}
+  renderText?: typeof defaultRenderFn;
+};
 
-const RichTextComponent: FunctionComponent<
+export const RichTextComponent: ForwardRefRenderFunction<
+  HTMLDivElement,
   RichTextProps & HTMLAttributes<HTMLDivElement>
-> = ({ text, renderText = defaultRenderFn, className, ...props }) => (
-  <div className={classnames('c-rich-text', className)} {...props}>
+> = ({ text, renderText = defaultRenderFn, className, ...props }, ref) => (
+  <div className={classnames('c-rich-text', className)} ref={ref} {...props}>
     {renderText(text)}
   </div>
 );
-
-export const RichTextContextDefault = RichTextComponent;
-export const RichTextContext = createContext(RichTextContextDefault);
-export const RichText: typeof RichTextContextDefault = (props) => {
-  const Component = useContext(RichTextContext);
-  return <Component {...props} />;
-};

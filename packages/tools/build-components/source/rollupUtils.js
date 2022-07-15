@@ -1,14 +1,20 @@
 const json = require('@rollup/plugin-json');
-const externals = require('rollup-plugin-node-externals');
+const { externals } = require('rollup-plugin-node-externals');
 const { terser } = require('rollup-plugin-terser');
 const importResolver = require('rollup-plugin-import-resolver');
+const mergeWith = require('lodash/mergeWith');
 
 const production = process.env.NODE_ENV === 'production';
+function customizer(objValue, srcValue) {
+  if (Array.isArray(objValue)) {
+    return objValue.concat(srcValue);
+  }
+}
 
 module.exports = {
   sharedInputPlugins: [
     json(),
-    externals({ deps: true }),
+    externals(),
     importResolver({
       extensions: ['.js', '.ts', '.tsx'],
     }),
@@ -17,19 +23,33 @@ module.exports = {
     dir: 'lib',
     format: 'es',
     chunkFileNames: '_shared/[name]-[hash].js',
-    plugins: [production && terser({ safari10: true })],
+    plugins: [production && terser({ safari10: true, keep_classnames: true })],
   },
-  sharedBabelConfig: {
-    babelrc: false,
-    presets: [
-      ['@babel/preset-env', { bugfixes: true }],
-      ['@babel/preset-typescript'],
-    ],
-    plugins: [
-      ['@babel/plugin-proposal-private-property-in-object', { loose: true }],
-      ['@babel/plugin-proposal-private-methods', { loose: true }],
-      ['@babel/plugin-proposal-class-properties', { loose: true }],
-      ['@babel/plugin-transform-runtime', { useESModules: true }],
-    ],
-  },
+  sharedBabelConfig: (config = {}) =>
+    mergeWith(
+      {
+        babelrc: false,
+        assumptions: {
+          // https://babeljs.io/docs/en/assumptions
+          constantReexports: true,
+          constantSuper: true,
+          enumerableModuleMeta: true,
+          ignoreFunctionLength: true,
+          ignoreToPrimitiveHint: true,
+          mutableTemplateObject: true,
+          noClassCalls: true,
+          noDocumentAll: true,
+          noIncompleteNsImportDetection: true,
+          noNewArrows: true,
+          setComputedProperties: true,
+        },
+        presets: [
+          ['@babel/preset-env', { bugfixes: true }],
+          ['@babel/preset-typescript'],
+        ],
+        plugins: [['@babel/plugin-transform-runtime', { useESModules: true }]],
+      },
+      config,
+      customizer
+    ),
 };

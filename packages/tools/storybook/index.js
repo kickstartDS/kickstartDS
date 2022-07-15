@@ -3,7 +3,6 @@ const argv = require('yargs-parser')(process.argv.slice(2));
 const cleanup = require('./scripts/cleanup-stories');
 const createMarkdownStories = require('./scripts/create-stories-from-markdown');
 const createPreviewHead = require('./scripts/create-preview-head-from-assets');
-const createPreviewBody = require('./scripts/create-preview-body');
 
 const exec = (...args) =>
   new Promise((resolve, reject) => {
@@ -17,12 +16,7 @@ const kdsModule = argv.module;
 const kdsModules = kdsModule ? `{${kdsModule},core}` : '*';
 process.env.KDS_MODULES = kdsModules;
 
-const storybookOptions = [
-  '--config-dir',
-  '.storybook',
-  '--static-dir',
-  '../../../legacy-instance',
-];
+const storybookOptions = ['--config-dir', '.storybook'];
 const storybookOptionsBuild = [
   ...storybookOptions,
   '--output-dir',
@@ -32,11 +26,7 @@ const storybookOptionsStart = [...storybookOptions, '--port', '3000'];
 
 cleanup()
   .then(() =>
-    Promise.all([
-      createMarkdownStories(kdsModules),
-      createPreviewHead(),
-      createPreviewBody(),
-    ])
+    Promise.all([createMarkdownStories(kdsModules), createPreviewHead()])
   )
   .then(() => {
     switch (task) {
@@ -48,9 +38,11 @@ cleanup()
         return exec('start-storybook', storybookOptionsStart);
       }
 
-      // TODO add a way to debug when using Vite
       case 'debug': {
-        return exec('start-storybook', [...storybookOptionsStart]);
+        return exec('start-storybook', [
+          ...storybookOptionsStart,
+          '--debug-webpack',
+        ]);
       }
 
       default: {

@@ -1,23 +1,16 @@
-import {
-  ForwardRefRenderFunction,
-  forwardRef,
-  createContext,
-  useContext,
-  HTMLAttributes,
-} from 'react';
+import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
-import { renderFn, defaultRenderFn } from '@kickstartds/core/core';
+import { defaultRenderFn } from '@kickstartds/core/core';
 import { Icon } from '@kickstartds/base/icon';
-import { TextAreaProps } from './TextAreaProps';
-import '../form-field.scss';
+import { type TextAreaProps as TextAreaSchemaProps } from './TextAreaProps';
 
-interface RenderFunctions {
-  renderLabel?: renderFn;
-}
+export type TextAreaProps = TextAreaSchemaProps & {
+  renderLabel?: typeof defaultRenderFn;
+};
 
-const TextAreaComponent: ForwardRefRenderFunction<
+export const TextAreaComponent: ForwardRefRenderFunction<
   HTMLTextAreaElement,
-  TextAreaProps & RenderFunctions & HTMLAttributes<HTMLTextAreaElement>
+  TextAreaProps & HTMLAttributes<HTMLTextAreaElement>
 > = (
   {
     value,
@@ -28,6 +21,7 @@ const TextAreaComponent: ForwardRefRenderFunction<
     invalid,
     invalidMessage,
     hint,
+    className,
     ...props
   },
   ref
@@ -43,9 +37,13 @@ const TextAreaComponent: ForwardRefRenderFunction<
     <div className="c-form-field__field">
       {icon && <Icon icon={icon} aria-hidden="true" focusable="false" />}
       <textarea
-        className={classnames('c-form-field__input', {
-          'c-form-field__input--is-invalid': invalid,
-        })}
+        className={classnames(
+          'c-form-field__input',
+          {
+            'c-form-field__input--is-invalid': invalid,
+          },
+          className
+        )}
         ref={ref}
         {...props}
       >
@@ -59,13 +57,4 @@ const TextAreaComponent: ForwardRefRenderFunction<
 
     {hint && <p className="c-form-field__hint">{hint}</p>}
   </label>
-);
-
-export const TextAreaContextDefault = forwardRef(TextAreaComponent);
-export const TextAreaContext = createContext(TextAreaContextDefault);
-export const TextArea: typeof TextAreaContextDefault = forwardRef(
-  (props, ref) => {
-    const Component = useContext(TextAreaContext);
-    return <Component {...props} ref={ref} />;
-  }
 );

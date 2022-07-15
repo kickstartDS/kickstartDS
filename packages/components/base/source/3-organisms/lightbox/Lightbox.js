@@ -20,6 +20,10 @@ export default class Lightbox extends Component {
       event.preventDefault();
       event.stopPropagation();
 
+      if (!link.hasAttribute('data-gallery')) {
+        link.setAttribute('data-gallery', Math.random());
+      }
+
       const galleryIdentifier = `[data-gallery="${link.getAttribute(
         'data-gallery'
       )}"]`;
@@ -36,10 +40,11 @@ export default class Lightbox extends Component {
       const startIndex = galleryImages.indexOf(link);
       const items = galleryImages.map((imageWrapper) => {
         const caption = imageWrapper.nextElementSibling;
+        const img = imageWrapper.querySelector('img');
 
         return {
           src: imageWrapper.getAttribute('href'),
-          msrc: imageWrapper.querySelector('img').getAttribute('src'),
+          msrc: img && img.getAttribute('src'),
           w: imageWrapper.dataset.sizeW,
           h: imageWrapper.dataset.sizeH,
           title: caption ? caption.textContent : '',

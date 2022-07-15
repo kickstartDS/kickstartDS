@@ -1,12 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://frontend.ruhmesmeile.com/base/molecules/teaser-box.schema.json",
+  "$id": "http://schema.kickstartds.com/base/teaser-box.schema.json",
   "title": "Teaser Box",
   "description": "Component to tease external content",
   "type": "object",
   "allOf": [
     {
-      "$ref": "http://frontend.ruhmesmeile.com/base/molecules/teaser.definitions.json#/definitions/teaser"
+      "$ref": "http://schema.kickstartds.com/base/teaser.definitions.json#/definitions/teaser"
     },
     {
       "type": "object",

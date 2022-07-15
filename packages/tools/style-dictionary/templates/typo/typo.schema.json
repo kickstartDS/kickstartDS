@@ -1,0 +1,195 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/tokens/typo.schema.json",
+  "definitions": {
+    "token": {
+      "type": "object",
+      "properties": {
+        "value": {},
+        "attributes": {
+          "type": "object",
+          "properties": {
+            "category": {
+              "type": "string"
+            }
+          }
+        },
+        "token": {
+          "type": "object",
+          "properties": {
+            "category": {
+              "type": "string"
+            },
+            "presenter": {
+              "type": "string"
+            }
+          },
+          "required": ["category", "presenter"]
+        }
+      },
+      "required": ["value"]
+    },
+    "string-token": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/token"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "string"
+            }
+          }
+        }
+      ]
+    },
+    "font-size-tokens": {
+      "type": "object",
+      "properties": {
+        "bp-factor": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/token"
+          }
+        }
+      },
+      "patternProperties": {
+        "^.+-base$": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/string-token"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "attributes": {
+                  "type": "object",
+                  "properties": {
+                    "category": {
+                      "const": "size"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "line-height-tokens": {
+      "type": "object",
+      "properties": {
+        "xxs": {
+          "$ref": "#/definitions/token"
+        },
+        "xs": {
+          "$ref": "#/definitions/token"
+        },
+        "s": {
+          "$ref": "#/definitions/token"
+        },
+        "m": {
+          "$ref": "#/definitions/token"
+        },
+        "l": {
+          "$ref": "#/definitions/token"
+        },
+        "xl": {
+          "$ref": "#/definitions/token"
+        },
+        "xxl": {
+          "$ref": "#/definitions/token"
+        }
+      },
+      "additionalProperties": false,
+      "required": ["xxs", "xs", "s", "m", "l", "xl", "xxl"]
+    }
+  },
+  "type": "object",
+  "properties": {
+    "ks": {
+      "type": "object",
+      "properties": {
+        "font-family": {
+          "type": "object",
+          "properties": {
+            "display": {
+              "$ref": "#/definitions/string-token"
+            },
+            "copy": {
+              "$ref": "#/definitions/string-token"
+            },
+            "ui": {
+              "$ref": "#/definitions/string-token"
+            },
+            "mono": {
+              "$ref": "#/definitions/string-token"
+            }
+          },
+          "additionalProperties": false,
+          "required": ["display", "copy", "ui", "mono"]
+        },
+        "font-weight": {
+          "type": "object",
+          "properties": {
+            "light": {
+              "$ref": "#/definitions/token"
+            },
+            "regular": {
+              "$ref": "#/definitions/token"
+            },
+            "semi-bold": {
+              "$ref": "#/definitions/token"
+            },
+            "bold": {
+              "$ref": "#/definitions/token"
+            }
+          },
+          "additionalProperties": false,
+          "required": ["light", "regular", "semi-bold", "bold"]
+        },
+        "font-size": {
+          "type": "object",
+          "properties": {
+            "display": {
+              "$ref": "#/definitions/font-size-tokens"
+            },
+            "copy": {
+              "$ref": "#/definitions/font-size-tokens"
+            },
+            "ui": {
+              "$ref": "#/definitions/font-size-tokens"
+            },
+            "mono": {
+              "$ref": "#/definitions/font-size-tokens"
+            }
+          },
+          "additionalProperties": false,
+          "required": ["display", "copy", "ui", "mono"]
+        },
+        "line-height": {
+          "type": "object",
+          "properties": {
+            "display": {
+              "$ref": "#/definitions/line-height-tokens"
+            },
+            "copy": {
+              "$ref": "#/definitions/line-height-tokens"
+            },
+            "ui": {
+              "$ref": "#/definitions/line-height-tokens"
+            },
+            "mono": {
+              "$ref": "#/definitions/line-height-tokens"
+            }
+          },
+          "additionalProperties": false,
+          "required": ["display", "copy", "ui", "mono"]
+        }
+      },
+      "required": ["font-family", "font-weight", "font-size", "line-height"]
+    }
+  },
+  "required": ["ks"]
+}

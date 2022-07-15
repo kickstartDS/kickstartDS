@@ -1,27 +1,24 @@
 import {
-  createContext,
   FunctionComponent,
-  useContext,
+  ForwardRefRenderFunction,
   HTMLAttributes,
 } from 'react';
 import classnames from 'classnames';
-import { renderFn } from '@kickstartds/core/core';
 import { Headline } from '@kickstartds/base/headline';
-import { LinkButton } from '@kickstartds/base/link-button';
+import { Button } from '@kickstartds/base/button';
 import {
   RichText,
   defaultRenderFn as richTextDefaultRenderFn,
 } from '@kickstartds/base/rich-text';
 import { Picture } from '@kickstartds/base/picture';
-import { StorytellingProps } from './StorytellingProps';
-import './storytelling.scss';
+import { type StorytellingProps } from './StorytellingProps';
 
 interface ILazy {
   lazy: boolean;
 }
 
 interface RenderFunctions {
-  renderText?: renderFn;
+  renderText?: typeof richTextDefaultRenderFn;
 }
 
 const StorytellingMixin: FunctionComponent<
@@ -34,22 +31,25 @@ const StorytellingMixin: FunctionComponent<
   backgroundColor,
   backgroundImage,
   renderText = richTextDefaultRenderFn,
+  inverted,
   className,
   ...props
 }) => (
   <div
     className={classnames(
       'c-storytelling',
-      {
+      image && {
         'c-storytelling--order-mobile-image-last':
           image.order && image.order.mobileImageLast,
         'c-storytelling--order-desktop-image-last':
           image.order && image.order.desktopImageLast,
-        'c-storytelling--full': full,
         'c-storytelling--four-to-three': image.ratio === '4:3',
         'c-storytelling--three-to-two': image.ratio === '3:2',
         'c-storytelling--sixteen-to-nine': image.ratio === '16:9',
         'c-storytelling--square': image.ratio === '1:1',
+      },
+      {
+        'c-storytelling--full': full,
         lazyload: lazy && backgroundImage,
       },
       className
@@ -59,28 +59,24 @@ const StorytellingMixin: FunctionComponent<
       backgroundImage: lazy ? undefined : `url(${backgroundImage})`,
     }}
     data-bg={(lazy && backgroundImage) || null}
+    ks-inverted={inverted?.toString()}
     {...props}
   >
-    <div
-      className={classnames(
-        'c-storytelling__image',
-        image.vAlign &&
-          image.vAlign !== 'center' &&
-          `c-storytelling__image--${image.vAlign}`,
-        image.hAlign &&
-          image.hAlign !== 'center' &&
-          `c-storytelling__image--${image.hAlign}`
-      )}
-    >
-      {image.source && (
-        <Picture
-          src={image.source}
-          alt=""
-          objectFit={image.ratio ? 'cover' : undefined}
-          lazy={lazy}
-        />
-      )}
-    </div>
+    {image?.source && (
+      <div
+        className={classnames(
+          'c-storytelling__image',
+          image.vAlign &&
+            image.vAlign !== 'center' &&
+            `c-storytelling__image--${image.vAlign}`,
+          image.hAlign &&
+            image.hAlign !== 'center' &&
+            `c-storytelling__image--${image.hAlign}`
+        )}
+      >
+        <Picture src={image.source} alt="" lazy={lazy} />
+      </div>
+    )}
 
     <div
       className={classnames(
@@ -102,7 +98,14 @@ const StorytellingMixin: FunctionComponent<
         )}
         style={{ color: box.textColor }}
       >
-        {box.headline && <Headline {...box.headline} />}
+        {box.headline && (
+          <Headline
+            level="p"
+            styleAs="h2"
+            {...box.headline}
+            align={box.headline.align || box.textAlign || 'left'}
+          />
+        )}
         {box.text && (
           <RichText
             text={box.text}
@@ -110,28 +113,23 @@ const StorytellingMixin: FunctionComponent<
             className="c-storytelling__text"
           />
         )}
-        {box.link && <LinkButton {...box.link} />}
+        {box.link && <Button {...box.link} />}
       </div>
     </div>
   </div>
 );
 
-const StorytellingComponent: FunctionComponent<
+export { StorytellingProps };
+export const StorytellingComponent: ForwardRefRenderFunction<
+  HTMLDivElement,
   StorytellingProps & HTMLAttributes<HTMLDivElement>
-> = (props) => (
-  <div className="c-storytelling__wrapper">
-    <StorytellingMixin {...props} lazy={true} />
+> = (props, ref) => (
+  <>
+    <StorytellingMixin {...props} ref={ref} lazy={true} />
     {props.backgroundImage && (
       <noscript>
         <StorytellingMixin {...props} lazy={false} />
       </noscript>
     )}
-  </div>
+  </>
 );
-
-export const StorytellingContextDefault = StorytellingComponent;
-export const StorytellingContext = createContext(StorytellingContextDefault);
-export const Storytelling: typeof StorytellingContextDefault = (props) => {
-  const Component = useContext(StorytellingContext);
-  return <Component {...props} />;
-};

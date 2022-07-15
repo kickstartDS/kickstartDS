@@ -1,7 +1,6 @@
-/* stylelint-disable plugin/selector-bem-pattern, selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
 @use './normalize';
 
-/* critical:start */
 * {
   &,
   &::before,
@@ -14,7 +13,6 @@ html {
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
-/* critical:end */
 
 body {
   &.overlay-open {

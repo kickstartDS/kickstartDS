@@ -1,3 +1,172 @@
+# v1.5.0 (Mon Nov 08 2021)
+
+#### 🚀 Enhancement
+
+- add context structure to more components [#567](https://github.com/kickstartDS/kickstartDS/pull/567) ([@lmestel](https://github.com/lmestel))
+- replace quote date with byline [#471](https://github.com/kickstartDS/kickstartDS/pull/471) ([@lmestel](https://github.com/lmestel))
+- add `expand` prop to count-up component [#470](https://github.com/kickstartDS/kickstartDS/pull/470) ([@lmestel](https://github.com/lmestel))
+- add `enabled` option for count-up link [#445](https://github.com/kickstartDS/kickstartDS/pull/445) ([@lmestel](https://github.com/lmestel))
+
+#### 🐛 Bug Fix
+
+- refactor: simplify context structure ([@lmestel](https://github.com/lmestel))
+- Merge branch 'next' into dependabot/npm_and_yarn/commitlint/cli-14.1.0 ([@lmestel](https://github.com/lmestel))
+- Merge branch 'next' into dependabot/npm_and_yarn/babel/core-7.16.0 ([@lmestel](https://github.com/lmestel))
+- build(deps): bump @babel/runtime from 7.15.4 to 7.16.0 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- test: fix quote's `renderByline` type ([@lmestel](https://github.com/lmestel))
+- feat: replace quote date with byline ([@lmestel](https://github.com/lmestel))
+- feat: add `expand` prop to count-up component ([@lmestel](https://github.com/lmestel))
+- fix: set count-up link enabled to true by default ([@lmestel](https://github.com/lmestel))
+- feat: add `enabled` option for count-up link ([@lmestel](https://github.com/lmestel))
+- build(deps): bump date-fns from 2.23.0 to 2.24.0 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- add `className` to any schema [#392](https://github.com/kickstartDS/kickstartDS/pull/392) ([@lmestel](https://github.com/lmestel))
+- feat: add `className` to any schema ([@lmestel](https://github.com/lmestel))
+
+#### 🔩 Dependency Updates
+
+- build(deps-dev): bump storybook-design-token from 1.3.0 to 1.4.0 [#563](https://github.com/kickstartDS/kickstartDS/pull/563) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump vite from 2.6.12 to 2.6.13 [#539](https://github.com/kickstartDS/kickstartDS/pull/539) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump @babel/core from 7.15.8 to 7.16.0 [#545](https://github.com/kickstartDS/kickstartDS/pull/545) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@lmestel](https://github.com/lmestel))
+- build(deps): bump esbuild from 0.13.3 to 0.13.4 [#467](https://github.com/kickstartDS/kickstartDS/pull/467) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump date-fns from 2.23.0 to 2.24.0 [#416](https://github.com/kickstartDS/kickstartDS/pull/416) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump @babel/preset-env from 7.15.4 to 7.15.6 [#390](https://github.com/kickstartDS/kickstartDS/pull/390) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump esbuild from 0.12.25 to 0.12.26 [#389](https://github.com/kickstartDS/kickstartDS/pull/389) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump sass from 1.39.0 to 1.39.2 [#388](https://github.com/kickstartDS/kickstartDS/pull/388) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump prettier from 2.3.2 to 2.4.0 [#391](https://github.com/kickstartDS/kickstartDS/pull/391) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+
+---
+
+# v1.4.0 (Thu Sep 09 2021)
+
+#### 🐛 Bug Fix
+
+- don't render empty section headline [#385](https://github.com/kickstartDS/kickstartDS/pull/385) ([@lmestel](https://github.com/lmestel))
+- place quote image above text on mobile [#384](https://github.com/kickstartDS/kickstartDS/pull/384) ([@lmestel](https://github.com/lmestel))
+- fix: place quote image above text on mobile ([@lmestel](https://github.com/lmestel))
+- build(deps): bump @babel/runtime from 7.15.3 to 7.15.4 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- fix: optional src attribute for visual picture [#367](https://github.com/kickstartDS/kickstartDS/pull/367) ([@julrich](https://github.com/julrich))
+- fix(visual): adds optional src attribute to visual picture ([@julrich](https://github.com/julrich))
+- Merge branch 'master' into next ([@lmestel](https://github.com/lmestel))
+- fix mobile visual height [#344](https://github.com/kickstartDS/kickstartDS/pull/344) ([@lmestel](https://github.com/lmestel))
+- fix: fix mobile visual height ([@lmestel](https://github.com/lmestel))
+- remove storytelling from critical styles [#338](https://github.com/kickstartDS/kickstartDS/pull/338) ([@lmestel](https://github.com/lmestel))
+- fix: remove storytelling from critical styles ([@lmestel](https://github.com/lmestel))
+
+#### 🔩 Dependency Updates
+
+- build(deps-dev): bump vite from 2.5.2 to 2.5.3 [#368](https://github.com/kickstartDS/kickstartDS/pull/368) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump autoprefixer from 10.3.3 to 10.3.4 [#372](https://github.com/kickstartDS/kickstartDS/pull/372) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump @babel/core from 7.15.0 to 7.15.4 [#370](https://github.com/kickstartDS/kickstartDS/pull/370) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 3
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Jonas Ulrich ([@julrich](https://github.com/julrich))
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+
+---
+
+# v1.3.0 (Tue Aug 17 2021)
+
+#### 🚀 Enhancement
+
+
+#### 🐛 Bug Fix
+
+- inherit visual headline alignment from box alignment [#329](https://github.com/kickstartDS/kickstartDS/pull/329) ([@lmestel](https://github.com/lmestel))
+- fix: inherit visual headline alignment from box ([@lmestel](https://github.com/lmestel))
+- Merge branch 'next' into hotfix/breakpoints ([@lmestel](https://github.com/lmestel))
+- build(deps): bump @babel/runtime from 7.14.8 to 7.15.3 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### 🔩 Dependency Updates
+
+- build(deps): bump @babel/runtime from 7.14.8 to 7.15.3 [#319](https://github.com/kickstartDS/kickstartDS/pull/319) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 3
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Jonas Ulrich ([@julrich](https://github.com/julrich))
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+
+---
+
+# v1.2.0 (Fri Aug 06 2021)
+
+#### 🚀 Enhancement
+
+- adjust spacing tokens [#283](https://github.com/kickstartDS/kickstartDS/pull/283) ([@lmestel](https://github.com/lmestel))
+- add table component [#279](https://github.com/kickstartDS/kickstartDS/pull/279) ([@lmestel](https://github.com/lmestel))
+- add `styleAs` prop to headline [#280](https://github.com/kickstartDS/kickstartDS/pull/280) ([@lmestel](https://github.com/lmestel))
+- add blog-teaser & blog-head [#224](https://github.com/kickstartDS/kickstartDS/pull/224) ([@lmestel](https://github.com/lmestel))
+- add headline to visual [#163](https://github.com/kickstartDS/kickstartDS/pull/163) ([@julrich](https://github.com/julrich) [@lmestel](https://github.com/lmestel))
+
+#### 🐛 Bug Fix
+
+- adjust spacing tokens [#300](https://github.com/kickstartDS/kickstartDS/pull/300) ([@lmestel](https://github.com/lmestel))
+- set icon button size relative to font-size [#286](https://github.com/kickstartDS/kickstartDS/pull/286) ([@lmestel](https://github.com/lmestel))
+- Merge branch 'next' into docs/html-addon ([@lmestel](https://github.com/lmestel))
+- set default button variant in visual to `outline-inverted` [#299](https://github.com/kickstartDS/kickstartDS/pull/299) ([@lmestel](https://github.com/lmestel))
+- fix(visual): set default button variant to `outline-inverted` ([@lmestel](https://github.com/lmestel))
+- fix headline import [#298](https://github.com/kickstartDS/kickstartDS/pull/298) ([@lmestel](https://github.com/lmestel))
+- fix(visual): fix headline import ([@lmestel](https://github.com/lmestel))
+- feat: calculate default spacing with modular scale ([@lmestel](https://github.com/lmestel))
+- feat: add token for content padding ([@lmestel](https://github.com/lmestel))
+- fix: fix storytelling headline align fallback ([@lmestel](https://github.com/lmestel))
+- fix: add fallback for storytelling headline align ([@lmestel](https://github.com/lmestel))
+- fix: fix storytelling headline style ([@lmestel](https://github.com/lmestel))
+- fix: fix visual headline style ([@lmestel](https://github.com/lmestel))
+- feat: add `styleAs` prop to headline ([@lmestel](https://github.com/lmestel))
+- fix(visual): fix headline styles ([@lmestel](https://github.com/lmestel))
+- feat(visual): style headline by modifing headline tokens ([@lmestel](https://github.com/lmestel))
+- Hotfix/visual [#265](https://github.com/kickstartDS/kickstartDS/pull/265) ([@lmestel](https://github.com/lmestel))
+- fix(visual): show overflow in visual box ([@lmestel](https://github.com/lmestel))
+- fix(visual): remove mobile visual box border radius ([@lmestel](https://github.com/lmestel))
+- build(deps): bump countup.js from 2.0.7 to 2.0.8 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- fix visual content size with full size image [#260](https://github.com/kickstartDS/kickstartDS/pull/260) ([@lmestel](https://github.com/lmestel))
+- fix: fix visual content size with full size image ([@lmestel](https://github.com/lmestel))
+- fix: bring back visual slider nav [#257](https://github.com/kickstartDS/kickstartDS/pull/257) ([@lmestel](https://github.com/lmestel))
+- fix: bring back visual slider nav ([@lmestel](https://github.com/lmestel))
+- Merge branch 'next' into feature/blog ([@lmestel](https://github.com/lmestel))
+- build(deps): bump date-fns from 2.22.1 to 2.23.0 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump @babel/runtime from 7.14.6 to 7.14.8 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- Merge branch 'master' into next ([@lmestel](https://github.com/lmestel))
+- fix(schema): add missing props on visual headline ([@julrich](https://github.com/julrich))
+- fix(visual): bring back headline render function ([@lmestel](https://github.com/lmestel))
+- docs(visual): adjust visual box headline defaults ([@lmestel](https://github.com/lmestel))
+- Merge branch 'next' into feature/add-real-headline-to-visual ([@lmestel](https://github.com/lmestel))
+- feat(visual): add headline to visual, still needs some work ([@julrich](https://github.com/julrich))
+
+#### 📝 Documentation
+
+- add storybook-addon-html addon [#246](https://github.com/kickstartDS/kickstartDS/pull/246) ([@lmestel](https://github.com/lmestel))
+- storybook controls [#214](https://github.com/kickstartDS/kickstartDS/pull/214) ([@lmestel](https://github.com/lmestel))
+
+#### 🔩 Dependency Updates
+
+- build(deps): bump esbuild from 0.12.17 to 0.12.18 [#297](https://github.com/kickstartDS/kickstartDS/pull/297) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump rollup from 2.55.1 to 2.56.0 [#295](https://github.com/kickstartDS/kickstartDS/pull/295) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump countup.js from 2.0.7 to 2.0.8 [#262](https://github.com/kickstartDS/kickstartDS/pull/262) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump lint-staged from 11.0.1 to 11.1.0 [#234](https://github.com/kickstartDS/kickstartDS/pull/234) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump date-fns from 2.22.1 to 2.23.0 [#235](https://github.com/kickstartDS/kickstartDS/pull/235) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump postcss from 8.3.5 to 8.3.6 [#222](https://github.com/kickstartDS/kickstartDS/pull/222) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump cssnano from 5.0.6 to 5.0.7 [#221](https://github.com/kickstartDS/kickstartDS/pull/221) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump vite from 2.4.2 to 2.4.3 [#217](https://github.com/kickstartDS/kickstartDS/pull/217) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump @babel/preset-env from 7.14.7 to 7.14.8 [#220](https://github.com/kickstartDS/kickstartDS/pull/220) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump @babel/runtime from 7.14.6 to 7.14.8 [#218](https://github.com/kickstartDS/kickstartDS/pull/218) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 3
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Jonas Ulrich ([@julrich](https://github.com/julrich))
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+
+---
+
 # v1.1.2 (Thu Jul 15 2021)
 
 #### 🐛 Bug Fix

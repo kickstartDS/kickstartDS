@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://frontend.ruhmesmeile.com/base/molecules/content-box.schema.json",
+  "$id": "http://schema.kickstartds.com/base/content-box.schema.json",
   "title": "Content Box",
   "description": "Component to display content in a condensed, boxed form",
   "type": "object",
@@ -55,9 +55,14 @@
           }
         },
         {
-          "$ref": "http://frontend.ruhmesmeile.com/base/atoms/link-button.schema.json"
+          "$ref": "http://schema.kickstartds.com/base/button.schema.json"
         }
       ]
+    },
+    "className": {
+      "type": "string",
+      "title": "Additional Classes",
+      "description": "Add additional css classes that should be applied to the content box"
     }
   },
   "required": ["ratio", "alignement"],

@@ -1,7 +1,7 @@
 @use 'sass:meta';
 @use 'bourbon/core/bourbon';
-@use '@kickstartds/core/source/core/breakpoint';
 @use '@kickstartds/core/source/core/custom-properties';
+@use './container';
 
 @use './visual__image';
 @use './visual__content';
@@ -9,50 +9,48 @@
 @use './visual-vars';
 
 $vars: meta.module-variables(visual-vars);
-@include custom-properties.styles($vars, true);
+@include custom-properties.styles($vars, container.$name);
+@include container.wrapper;
 
 .c-visual {
-  /* critical:start */
   display: flex;
   flex-direction: column;
   position: relative;
   background: var(--c-visual--background);
   z-index: 1;
   min-height: var(--c-visual--min-height);
-  /* critical:end */
 
   &--full {
-    /* critical:start */
     min-height: 0 !important;
     height: calc(100vh - var(--g-header-height));
-    /* critical:end */
   }
 
   &--no-crop {
-    /* critical:start */
     min-height: 0 !important;
-    /* critical:end */
   }
 
   &__media {
-    /* critical:start */
     position: relative;
-    /* critical:end */
 
-    @include breakpoint.media('≥s') {
-      /* critical:start */
+    &,
+    * {
+      min-height: inherit;
+    }
+
+    .c-visual--full & {
+      flex-grow: 1;
+    }
+
+    @include container.size('≥', 640px) {
       @include bourbon.position(absolute, 0);
 
       .c-visual--no-crop & {
         position: static;
       }
-      /* critical:end */
     }
 
     &--inbox {
-      /* critical:start */
       @include bourbon.position(absolute, 0);
-      /* critical:end */
     }
   }
 
@@ -61,11 +59,9 @@ $vars: meta.module-variables(visual-vars);
   }
 
   &__video {
-    /* critical:start */
     @include bourbon.position(inherit, inherit);
     height: 100%;
     object-fit: cover;
-    /* critical:end */
   }
 
   &__content {
@@ -76,55 +72,45 @@ $vars: meta.module-variables(visual-vars);
     @include visual__box.visual-box;
   }
 
-  &__topic {
-    /* critical:start */
-    font: var(--c-visual_topic--font);
-    font-weight: var(--c-visual_topic--font-weight);
-    margin: var(--c-visual_topic--margin);
-    /* critical:end */
+  .c-headline {
+    --c-headline--color: var(--c-visual_headline--color, inherit);
+    margin: 0;
+    max-width: none;
+
+    &__subheadline {
+      --c-headline_subheadline--color: inherit;
+    }
   }
 
   &__text {
-    /* critical:start */
     font: var(--c-visual_text--font);
     font-weight: var(--c-visual_text--font-weight);
     margin: var(--c-visual_text--margin);
-    /* critical:end */
 
     p {
-      /* critical:start */
       font-size: inherit;
       line-height: inherit;
-      /* critical:end */
 
       &:last-child {
-        /* critical:start */
         margin-bottom: 0;
-        /* critical:end */
       }
     }
   }
 
   &__link {
-    /* critical:start */
     margin-top: 1.5em;
-    /* critical:end */
   }
 
   &__continue {
-    /* critical:start */
     position: relative;
     text-align: center;
     margin-top: auto;
-    /* critical:end */
   }
 
   &__continue-btn {
-    /* critical:start */
     color: white;
     transition: transform 0.3s;
     transform: translate(0, -10px);
-    /* critical:end */
 
     &:hover,
     &:focus {
@@ -132,9 +118,7 @@ $vars: meta.module-variables(visual-vars);
     }
 
     .icon {
-      /* critical:start */
       @include bourbon.size(3.5rem);
-      /* critical:end */
     }
   }
 

@@ -48,6 +48,10 @@ export type Height = number;
  */
 export type FullWidthMedia = boolean;
 /**
+ * Caption
+ */
+export type Caption = string;
+/**
  * Picture source
  */
 export type Source1 = string;
@@ -83,10 +87,6 @@ export type ItempropAttribute = string;
  * Define a style attribute for the picture
  */
 export type StyleAttribute = string;
-/**
- * Select a value for the picture object fit
- */
-export type ObjectFit = 'contain' | 'cover' | 'fill' | 'none' | 'scale-down';
 /**
  * Render noscript fallback
  */
@@ -125,6 +125,10 @@ export type ClassAttribute = string;
  */
 export type FullWidthMedia1 = boolean;
 /**
+ * Caption
+ */
+export type Caption1 = string;
+/**
  * Thumbnail Source
  */
 export type ThumbnailSource = string;
@@ -147,7 +151,7 @@ export type HoverZoomIcon = boolean;
 /**
  * Caption
  */
-export type Caption = string;
+export type Caption2 = string;
 /**
  * Hide caption visually
  */
@@ -161,17 +165,29 @@ export type GalleryIdentifier = string;
  */
 export type ID = string;
 /**
- * Additional Image Class
+ * Additional Class
  */
-export type AdditionalImageClass = string;
+export type AdditionalClass = string;
+/**
+ * Additional Caption Class
+ */
+export type AdditionalCaptionClass = string;
 /**
  * Display media item over full width
  */
 export type FullWidthMedia2 = boolean;
 /**
+ * Caption
+ */
+export type Caption3 = string;
+/**
  * Collection of media items to display
  */
 export type Media = (TextMediaVideo | TextMediaImage | TextMediaLazyImage)[];
+/**
+ * Additional css classes attached to the wrapping element
+ */
+export type Class = string;
 
 /**
  * Component to display copy text, including media
@@ -180,10 +196,12 @@ export interface TextMediaProps {
   text: TextContent;
   mediaAlignment: MediaAlignment;
   media?: Media;
+  className?: Class;
 }
 export interface TextMediaVideo {
   video?: Video;
   full?: FullWidthMedia;
+  caption?: Caption;
   [k: string]: unknown;
 }
 /**
@@ -200,6 +218,7 @@ export interface Video {
 export interface TextMediaImage {
   image?: Picture;
   full?: FullWidthMedia1;
+  caption?: Caption1;
   [k: string]: unknown;
 }
 /**
@@ -215,7 +234,6 @@ export interface Picture {
   id?: Id;
   itemProp?: ItempropAttribute;
   style?: StyleAttribute;
-  objectFit?: ObjectFit;
   noscript?: Noscript;
   lazy?: Lazy;
   sources?: Sources;
@@ -225,6 +243,7 @@ export interface Picture {
 export interface TextMediaLazyImage {
   lightboxImage?: LazyLightboxImage;
   full?: FullWidthMedia2;
+  caption?: Caption3;
   [k: string]: unknown;
 }
 /**
@@ -236,10 +255,11 @@ export interface LazyLightboxImage {
   width?: Width2;
   height?: Height2;
   zoomIcon?: HoverZoomIcon;
-  caption?: Caption;
+  caption?: Caption2;
   hideCaption?: HideCaptionVisually;
   gallery?: GalleryIdentifier;
   id?: ID;
-  class?: AdditionalImageClass;
+  className?: AdditionalClass;
+  captionClassName?: AdditionalCaptionClass;
   [k: string]: unknown;
 }

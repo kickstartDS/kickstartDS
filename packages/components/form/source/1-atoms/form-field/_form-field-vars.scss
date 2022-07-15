@@ -1,32 +1,33 @@
 $name-: 'c-form-field';
 
 $host: (
-  ':root': (
-    border: 1px solid,
-    border-color: var(--color-grey-2),
-    border-radius: 3px,
-    background: var(--color-white),
-    background-disabled: var(--color-black-alpha-1),
-    color: var(--color-black),
+  ':root, [ks-theme], [ks-inverted]': (
+    border: var(--ks-border-width-default) solid,
+    border-color: var(--ks-color-fg-to-bg-6),
+    border-radius: var(--ks-border-radius-control),
+    background: var(--ks-background-color-interface-interactive),
+    background-disabled:
+      var(--ks-background-color-interface-interactive-disabled),
+    color: var(--ks-text-color-interface-interactive),
   ),
 ) !default;
 
 $hover: (
-  ':root': (
-    border-color: var(--color-grey-3),
+  ':root, [ks-theme], [ks-inverted]': (
+    border-color: var(--ks-color-fg-to-bg-5),
   ),
 ) !default;
 
 $focus: (
-  ':root': (
-    border-color: var(--color-primary),
+  ':root, [ks-theme], [ks-inverted]': (
+    border-color: var(--ks-color-primary),
     shadow: 0 0 4px -1px,
   ),
 ) !default;
 
 $icon: (
-  ':root': (
-    size: calc(var(--line-height-m) * 0.75),
-    color: var(--color-black-alpha-7),
+  ':root, [ks-theme], [ks-inverted]': (
+    size: calc(var(--ks-line-height-ui-m) * 0.75em),
+    color: var(--ks-color-fg-alpha-7),
   ),
 ) !default;

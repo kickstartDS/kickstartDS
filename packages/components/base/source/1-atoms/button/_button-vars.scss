@@ -1,0 +1,74 @@
+$name-: 'c-button';
+
+$host: (
+  '.c-button': (
+    color-primary: var(--ks-color-primary),
+    color-secondary: var(--ks-color-primary-inverted),
+    font: var(--ks-font-ui-m),
+    font-weight: var(--ks-font-weight-regular),
+    icon-size: 1.5em,
+    padding: 0.4rem 1.3rem 0.35rem,
+    border-radius: var(--ks-border-radius-control),
+    border-color: var(--c-button--color),
+    background-color: transparent,
+    transform-active: scale(0.95),
+  ),
+  '.c-button--clear': (
+    color: var(--ks-text-color-primary-interactive),
+    color-hover: var(--ks-text-color-primary-interactive-hover),
+    color-active: var(--ks-text-color-primary-interactive-hover),
+    background-color: var(--ks-background-color-clear-interactive),
+    background-color-hover: var(--ks-background-color-clear-interactive-hover),
+    background-color-active: var(--ks-background-color-clear-interactive-active),
+  ),
+  '.c-button--solid': (
+    color: var(--ks-text-color-primary-inverted-interactive),
+    color-hover: var(--ks-text-color-primary-inverted-interactive-hover),
+    color-active: var(--ks-text-color-primary-inverted-interactive-hover),
+    background-color: var(--ks-background-color-primary-interactive),
+    background-color-hover: var(--ks-background-color-primary-interactive-hover),
+    background-color-active:
+      var(--ks-background-color-primary-interactive-active),
+  ),
+  '.c-button--outline': (
+    border-width: 1px,
+    color: var(--ks-text-color-primary-interactive),
+    color-hover: var(--ks-text-color-primary-interactive-hover),
+    color-active: var(--ks-text-color-primary-interactive-hover),
+    background-color: var(--ks-background-color-clear-interactive),
+    background-color-hover: var(--ks-background-color-clear-interactive-hover),
+    background-color-active: var(--ks-background-color-clear-interactive-active),
+  ),
+  '.c-button--small': (
+    padding: 0.4rem 1rem 0.45rem,
+    font: var(--ks-font-ui-s),
+  ),
+  '.c-button--large': (
+    padding: 0.45rem 1.7rem 0.5rem,
+    font: var(--ks-font-ui-l),
+  ),
+) !default;
+
+$fill-animation: (
+  '.c-button': (
+    background-color-hover: var(--c-button--color),
+  ),
+  '.c-button--clear': (
+    color-hover: var(--c-button--color-secondary),
+  ),
+  '.c-button--clear-inverted': (
+    color-hover: var(--c-button--color-primary),
+  ),
+  '.c-button--solid': (
+    color-hover: var(--c-button--color-primary),
+  ),
+  '.c-button--solid-inverted': (
+    color-hover: var(--c-button--color-secondary),
+  ),
+  '.c-button--outline': (
+    color-hover: var(--c-button--color-secondary),
+  ),
+  '.c-button--outline-inverted': (
+    color-hover: var(--c-button--color-primary),
+  ),
+) !default;

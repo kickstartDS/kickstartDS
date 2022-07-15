@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/base/table.schema.json",
+  "title": "Table",
+  "description": "Table",
+  "type": "object",
+  "properties": {
+    "caption": {
+      "title": "Caption",
+      "type": "string"
+    },
+    "colHead": {
+      "title": "Column Head",
+      "description": "First colum is head",
+      "type": "boolean",
+      "default": false
+    },
+    "rowHead": {
+      "title": "Row Head",
+      "description": "First row is head",
+      "type": "boolean",
+      "default": false
+    },
+    "rows": {
+      "title": "Table rows",
+      "type": "array",
+      "items": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "default": [
+        [
+          "Qui assumenda dolorum",
+          "Unde consequatur ea",
+          "Expedita eos",
+          "Sed ducimus"
+        ],
+        ["Sed et tempore", "Ut aud", "Reiciendis", "Explicabo ipsam"],
+        [
+          "Dolore culpa",
+          "Consectetur",
+          "Consectetur voluptatem",
+          "Nesciunt non rerum"
+        ],
+        [
+          "Placeat libero ratione",
+          "Laboriosam a expedita",
+          "Dolor",
+          "Omnis et cumque"
+        ]
+      ]
+    },
+    "responsive": {
+      "title": "Responsive",
+      "description": "Stack table on small screens",
+      "type": "boolean",
+      "default": false
+    },
+    "variant": {
+      "title": "Table variant",
+      "type": "string",
+      "enum": ["border", "zebra"],
+      "default": "border"
+    },
+    "className": {
+      "type": "string",
+      "title": "Additional Classes",
+      "description": "Add additional css classes that should be applied to the table"
+    }
+  }
+}

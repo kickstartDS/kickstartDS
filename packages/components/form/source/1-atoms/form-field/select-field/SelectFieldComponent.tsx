@@ -1,23 +1,16 @@
-import {
-  ForwardRefRenderFunction,
-  forwardRef,
-  createContext,
-  useContext,
-  HTMLAttributes,
-} from 'react';
+import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
-import { renderFn, defaultRenderFn } from '@kickstartds/core/core';
+import { defaultRenderFn } from '@kickstartds/core/core';
 import { Icon } from '@kickstartds/base/icon';
-import { SelectFieldProps } from './SelectFieldProps';
-import '../form-field.scss';
+import { type SelectFieldProps as SelectFieldSchemaProps } from './SelectFieldProps';
 
-interface RenderFunctions {
-  renderLabel?: renderFn;
-}
+export type SelectFieldProps = SelectFieldSchemaProps & {
+  renderLabel?: typeof defaultRenderFn;
+};
 
-const SelectFieldComponent: ForwardRefRenderFunction<
+export const SelectFieldComponent: ForwardRefRenderFunction<
   HTMLSelectElement,
-  SelectFieldProps & RenderFunctions & HTMLAttributes<HTMLSelectElement>
+  SelectFieldProps & HTMLAttributes<HTMLSelectElement>
 > = (
   {
     label,
@@ -27,6 +20,7 @@ const SelectFieldComponent: ForwardRefRenderFunction<
     invalidMessage,
     hint,
     options,
+    className,
     ...props
   },
   ref
@@ -42,9 +36,13 @@ const SelectFieldComponent: ForwardRefRenderFunction<
     <div className="c-form-field__field">
       <Icon icon="chevron-down" aria-hidden="true" focusable="false" />
       <select
-        className={classnames('c-form-field__input', {
-          'c-form-field__input--is-invalid': invalid,
-        })}
+        className={classnames(
+          'c-form-field__input',
+          {
+            'c-form-field__input--is-invalid': invalid,
+          },
+          className
+        )}
         ref={ref}
         {...props}
       >
@@ -68,13 +66,4 @@ const SelectFieldComponent: ForwardRefRenderFunction<
 
     {hint && <p className="c-form-field__hint">{hint}</p>}
   </label>
-);
-
-export const SelectFieldContextDefault = forwardRef(SelectFieldComponent);
-export const SelectFieldContext = createContext(SelectFieldContextDefault);
-export const SelectField: typeof SelectFieldContextDefault = forwardRef(
-  (props, ref) => {
-    const Component = useContext(SelectFieldContext);
-    return <Component {...props} ref={ref} />;
-  }
 );

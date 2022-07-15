@@ -1,6 +1,5 @@
 import { Component, define } from '@kickstartds/core/component';
 import linkedArea from '../../0-base/1-tools/js/linkedArea';
-import '../../0-base/4-utilities/elementQueries';
 
 const identifier = 'base.teaser';
 export default class Teaser extends Component {

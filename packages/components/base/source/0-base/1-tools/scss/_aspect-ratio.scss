@@ -1,11 +1,11 @@
-@use "sass:math";
+@use 'sass:math';
 
 @mixin aspect-ratio($width: false, $height: false) {
   display: block;
   position: relative;
 
   @if ($width and $height) {
-    padding-top: percentage(math.div($height, $width));
+    padding-top: math.percentage(math.div($height, $width));
   }
 
   > * {

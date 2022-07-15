@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://frontend.ruhmesmeile.com/base/molecules/text-media.schema.json",
+  "$id": "http://schema.kickstartds.com/base/text-media.schema.json",
   "title": "Text Media",
   "description": "Component to display copy text, including media",
   "type": "object",
@@ -82,6 +82,9 @@
               },
               "full": {
                 "$ref": "#/definitions/full"
+              },
+              "caption": {
+                "$ref": "#/definitions/caption"
               }
             }
           },
@@ -90,10 +93,13 @@
             "title": "TextMediaImage",
             "properties": {
               "image": {
-                "$ref": "http://frontend.ruhmesmeile.com/base/atoms/picture.definitions.json"
+                "$ref": "http://schema.kickstartds.com/base/picture.definitions.json"
               },
               "full": {
                 "$ref": "#/definitions/full"
+              },
+              "caption": {
+                "$ref": "#/definitions/caption"
               }
             }
           },
@@ -102,10 +108,13 @@
             "title": "TextMediaLazyImage",
             "properties": {
               "lightboxImage": {
-                "$ref": "http://frontend.ruhmesmeile.com/base/atoms/lightbox-lazy-image.definitions.json"
+                "$ref": "http://schema.kickstartds.com/base/lightbox-lazy-image.definitions.json"
               },
               "full": {
                 "$ref": "#/definitions/full"
+              },
+              "caption": {
+                "$ref": "#/definitions/caption"
               }
             }
           }
@@ -118,9 +127,15 @@
             "width": 300,
             "height": 300,
             "alt": "Square"
-          }
+          },
+          "caption": "Ut dolores quae sunt impedit et accusantium. Corrupti incidunt ullam reiciendis."
         }
       ]
+    },
+    "className": {
+      "title": "Class",
+      "description": "Additional css classes attached to the wrapping element",
+      "type": "string"
     }
   },
   "definitions": {
@@ -129,6 +144,11 @@
       "description": "Display media item over full width",
       "type": "boolean",
       "default": false
+    },
+    "caption": {
+      "title": "Caption",
+      "description": "Caption",
+      "type": "string"
     }
   },
   "required": ["text", "mediaAlignment"],

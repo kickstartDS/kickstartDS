@@ -1,7 +1,6 @@
 const rollup = require('rollup');
 const { babel } = require('@rollup/plugin-babel');
 const replace = require('@rollup/plugin-replace');
-const merge = require('lodash/merge');
 const log = require('./log');
 const { dirRe } = require('./utils');
 const {
@@ -17,25 +16,25 @@ const prepare = async (jsPaths) => {
       return [`${dir}/${name}`, file];
     })
   );
-
   const inputOptions = {
     input,
     plugins: [
       ...sharedInputPlugins,
       babel(
-        merge({}, sharedBabelConfig, {
-          extensions: ['.js', '.tsx'],
+        sharedBabelConfig({
+          extensions: ['.js', '.tsx', '.ts'],
           babelHelpers: 'runtime',
           skipPreflightCheck: true,
+          presets: [
+            ['@babel/preset-react', { runtime: 'classic', pragma: 'html' }],
+          ],
           plugins: [
             [
-              'babel-plugin-transform-jsx-to-htm',
+              '@wordpress/babel-plugin-import-jsx-pragma',
               {
-                tag: 'html',
-                import: {
-                  module: '@kickstartds/core/core',
-                  export: 'html',
-                },
+                scopeVariable: 'html',
+                source: 'vhtml',
+                isDefault: true,
               },
             ],
           ],
@@ -54,6 +53,7 @@ const prepare = async (jsPaths) => {
         preventAssignment: false,
       }),
     ],
+    preserveEntrySignatures: 'allow-extension',
   };
   const outputOptions = {
     ...sharedOutputOptions,
@@ -65,8 +65,8 @@ const prepare = async (jsPaths) => {
 };
 
 const bundleJs = async (jsPaths) => {
-  log('starting js bundle');
   if (!jsPaths.length) return { output: [] };
+  log('starting js bundle');
   const { inputOptions, outputOptions } = await prepare(jsPaths);
   const bundle = await rollup.rollup(inputOptions);
   const { output } = await bundle.write(outputOptions);

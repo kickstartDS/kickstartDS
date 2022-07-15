@@ -27,6 +27,10 @@ export type TabletImageSource = string;
  */
 export type DesktopImageSource = string;
 /**
+ * Override for img tag of picture element, if needed
+ */
+export type OptionalSource = string;
+/**
  * Choose to indent the image horizontally on small screens
  */
 export type ImageIndent = 'none' | 'left' | 'right';
@@ -55,39 +59,66 @@ export type GridLayer = boolean;
  */
 export type DisplayBox = boolean;
 /**
- * Text box headline
+ * Select the headline level to use, or p alternatively
  */
-export type Headline = string;
+export type Level = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
+/**
+ * Select the headline style to use
+ */
+export type Style = 'none' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
+/**
+ * Choose an alignment for the headline
+ */
+export type Alignment = 'left' | 'center' | 'right';
+/**
+ * Text content for the headline
+ */
+export type Text = string;
+/**
+ * Text content for the optional subheadline
+ */
+export type Subheadline = string;
+/**
+ * Add additional spacing to the bottom of the headline
+ */
+export type BottomSpacing = 'none' | 'small' | 'large';
+/**
+ * Set the headline as a page header, triggering special css treatment
+ */
+export type PageHeader = boolean;
+/**
+ * Add additional css classes that should be applied to the headline
+ */
+export type AdditionalClasses = string;
 /**
  * Text box copy text
  */
-export type Text = string;
+export type Text1 = string;
 /**
  * Toggles visibility of the link
  */
 export type DisplayLink = boolean;
 /**
+ * Choose one of the styles from the list
+ */
+export type ButtonStyle = 'solid' | 'clear' | 'outline';
+/**
  * Text used on button
  */
 export type Label = string;
-/**
- * Choose one of the styles from the list
- */
-export type ButtonStyle =
-  | 'solid'
-  | 'solid-inverted'
-  | 'clear'
-  | 'clear-inverted'
-  | 'outline'
-  | 'outline-inverted';
+export type Inverted = boolean;
 /**
  * Choose a size between small, medium and large
  */
 export type ButtonSize = 'small' | 'medium' | 'large';
 /**
+ * Link used for button
+ */
+export type ButtonHref = string;
+/**
  * Add additional css classes that should be applied to the button
  */
-export type AdditionalClasses = string;
+export type AdditionalClasses1 = string;
 export type IconIdentifier = string;
 export type AriaRole = string;
 export type AdditionalClass = string;
@@ -112,9 +143,21 @@ export type FillAnimation = boolean;
  */
 export type IconAnimation = boolean;
 /**
- * Link used for button
+ * Select the type attribute for the button
  */
-export type ButtonHref = string;
+export type TypeAttribute = 'button' | 'submit' | 'reset';
+/**
+ * Define a value attribute for the button
+ */
+export type ValueAttribute = string;
+/**
+ * Define a name attribute for the button
+ */
+export type NameAttribute = string;
+/**
+ * Set the disabled attribute for the button
+ */
+export type DisabledAttribute = boolean;
 /**
  * Open link in new Tab
  */
@@ -134,7 +177,8 @@ export type VerticalOrientation = 'top' | 'center' | 'bottom';
 /**
  * Choose a style for the box
  */
-export type StyleOfTheBox = 'default' | 'light' | 'transparent';
+export type StyleOfTheBox = 'solid' | 'transparent';
+export type Inverted1 = boolean;
 /**
  * Custom css background color
  */
@@ -147,11 +191,15 @@ export type Inbox = boolean;
  * Show skip button
  */
 export type SkipButton = boolean;
-export type AdditionalClasses1 = string;
+export type AdditionalClasses2 = string;
 /**
  * preview label
  */
 export type SlidePreviewLabel = string;
+/**
+ * Additional css classes attached to the wrapping element
+ */
+export type Class = string;
 
 /**
  * Visual Slider
@@ -159,6 +207,7 @@ export type SlidePreviewLabel = string;
 export interface VisualSliderProps {
   autoplay?: AutoPlay;
   slides: Visual[];
+  className?: Class;
   [k: string]: unknown;
 }
 /**
@@ -172,7 +221,7 @@ export interface Visual {
   backgroundColor?: CustomBackgroundColor;
   inbox?: Inbox;
   skipButton?: SkipButton;
-  className?: AdditionalClasses1;
+  className?: AdditionalClasses2;
   label?: SlidePreviewLabel;
 }
 /**
@@ -190,6 +239,7 @@ export interface BackgroundImage {
   srcMobile: MobileImageSource;
   srcTablet: TabletImageSource;
   srcDesktop: DesktopImageSource;
+  src?: OptionalSource;
   indent?: ImageIndent;
   alt?: AltText;
   [k: string]: unknown;
@@ -209,29 +259,49 @@ export interface BackgroundVideo {
 export interface TextBox {
   enabled?: DisplayBox;
   headline?: Headline;
-  text?: Text;
+  text?: Text1;
   link?: Link;
   indent?: Indent;
   horizontal?: HorizontalOrientation;
   vertical?: VerticalOrientation;
   background?: StyleOfTheBox;
+  inverted?: Inverted1;
+}
+/**
+ * Headline for the box
+ */
+export interface Headline {
+  level: Level;
+  styleAs?: Style;
+  align: Alignment;
+  content?: Text;
+  subheadline?: Subheadline;
+  spaceAfter: BottomSpacing;
+  pageHeader?: PageHeader;
+  className?: AdditionalClasses;
+  [k: string]: unknown;
 }
 /**
  * Text box link configuration
  */
 export interface Link {
   enabled?: DisplayLink;
-  label: Label;
   variant: ButtonStyle;
+  label: Label;
+  inverted?: Inverted;
   size: ButtonSize;
-  className?: AdditionalClasses;
+  href?: ButtonHref;
+  className?: AdditionalClasses1;
   icon?: Icon;
   iconBefore?: IconBeforeButton;
   iconAfter?: IconAfterButton;
   dataComponent?: DataComponentAttribute;
   fillAnimation?: FillAnimation;
   iconAnimation?: IconAnimation;
-  href: ButtonHref;
+  type?: TypeAttribute;
+  value?: ValueAttribute;
+  name?: NameAttribute;
+  disabled?: DisabledAttribute;
   newTab?: OpenLinkInNewTab;
 }
 /**

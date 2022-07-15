@@ -42,10 +42,6 @@ export type ItempropAttribute = string;
  */
 export type StyleAttribute = string;
 /**
- * Select a value for the picture object fit
- */
-export type ObjectFit = 'contain' | 'cover' | 'fill' | 'none' | 'scale-down';
-/**
  * Render noscript fallback
  */
 export type Noscript = boolean;
@@ -79,12 +75,17 @@ export type Sources = {
  */
 export type ClassAttribute = string;
 export type Logos = Picture[];
+/**
+ * Additional css classes attached to the wrapping element
+ */
+export type Class = string;
 
 /**
  * Component to list logos or seals
  */
 export interface LogoTilesProps {
   logos?: Logos;
+  className?: Class;
   [k: string]: unknown;
 }
 /**
@@ -100,7 +101,6 @@ export interface Picture {
   id?: Id;
   itemProp?: ItempropAttribute;
   style?: StyleAttribute;
-  objectFit?: ObjectFit;
   noscript?: Noscript;
   lazy?: Lazy;
   sources?: Sources;

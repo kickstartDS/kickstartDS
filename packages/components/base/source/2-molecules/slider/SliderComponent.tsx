@@ -1,15 +1,13 @@
 import {
-  FunctionComponent,
-  Children,
   ReactElement,
   ReactNode,
+  ForwardRefRenderFunction,
   HTMLAttributes,
+  Children,
 } from 'react';
 import classnames from 'classnames';
-import { SliderProps } from './SliderProps';
+import { type SliderProps } from './SliderProps';
 import { SlideContext } from './SlideContext';
-import './slider.scss';
-import './lazySlider.js';
 
 type Slides = ReactElement<{
   preview?: ReactNode;
@@ -32,16 +30,22 @@ const slides = (children: ReactNode) => {
   ));
 };
 
-export const Slider: FunctionComponent<
+export { SliderProps };
+
+export const SliderComponent: ForwardRefRenderFunction<
+  HTMLDivElement,
   SliderProps & HTMLAttributes<HTMLDivElement>
-> = ({
-  autoplay,
-  className,
-  component = 'base.slider',
-  arrows,
-  children,
-  ...props
-}) => (
+> = (
+  {
+    autoplay,
+    className,
+    component = 'base.slider',
+    arrows,
+    children,
+    ...props
+  },
+  ref
+) => (
   <div
     className={classnames(
       'c-slider',
@@ -50,6 +54,7 @@ export const Slider: FunctionComponent<
       className
     )}
     data-component={component}
+    ref={ref}
     {...props}
   >
     <div className="c-slider-main" data-slider-arrows={arrows}>
@@ -59,7 +64,7 @@ export const Slider: FunctionComponent<
         </div>
       </div>
 
-      <div className="c-slider-nav">
+      <div className="c-slider-nav" data-slider-arrows="none">
         <div className="c-slider__track">
           <div
             className="c-slider__slides c-slider-nav__slides"
@@ -71,6 +76,7 @@ export const Slider: FunctionComponent<
                   className="c-slider-nav__slide"
                   data-glide-dir={`=${i}`}
                   key={`slide-${i}`}
+                  title={`slide ${i + 1}`}
                 >
                   {slide.props.preview || (
                     <span className="c-slider__bullet"></span>

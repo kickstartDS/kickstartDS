@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://frontend.ruhmesmeile.com/content/molecules/visual.schema.json",
+  "$id": "http://schema.kickstartds.com/content/visual.schema.json",
   "title": "Visual",
   "description": "visual",
   "type": "object",
@@ -49,6 +49,13 @@
               "type": "string",
               "format": "image",
               "default": "https://picsum.photos/seed/kdsvisual/1920/810"
+            },
+            "src": {
+              "title": "Optional source",
+              "description": "Override for img tag of picture element, if needed",
+              "type": "string",
+              "format": "image",
+              "default": "https://picsum.photos/seed/kdsvisual/640/270"
             },
             "indent": {
               "title": "Image indent",
@@ -114,19 +121,34 @@
           "default": true
         },
         "headline": {
-          "title": "Headline",
-          "description": "Text box headline",
-          "type": "string",
-          "default": "Lorem Ipsum dolor",
-          "examples": [
-            "Sed repudiandae consequuntur",
-            "Impedit ipsum libero",
-            "Accusamus enim iure",
-            "Odio maxime quas",
-            "Quasi exercitationem ullam",
-            "Ut eaque iure"
-          ],
-          "faker": "lorem.words"
+          "allOf": [
+            {
+              "title": "Headline",
+              "description": "Headline for the box",
+              "type": "object",
+              "properties": {
+                "level": {
+                  "type": "string",
+                  "default": "p"
+                },
+                "styleAs": {
+                  "type": "string",
+                  "default": "h2"
+                },
+                "align": {
+                  "type": "string",
+                  "default": null
+                },
+                "content": {
+                  "type": "string",
+                  "default": "Lorem Ipsum dolor"
+                }
+              }
+            },
+            {
+              "$ref": "http://schema.kickstartds.com/base/headline.schema.json"
+            }
+          ]
         },
         "text": {
           "title": "Text",
@@ -147,11 +169,14 @@
                   "description": "Toggles visibility of the link",
                   "type": "boolean",
                   "default": true
+                },
+                "variant": {
+                  "default": "outline"
                 }
               }
             },
             {
-              "$ref": "http://frontend.ruhmesmeile.com/base/atoms/link-button.schema.json"
+              "$ref": "http://schema.kickstartds.com/base/button.schema.json"
             }
           ]
         },
@@ -179,8 +204,13 @@
           "title": "Style of the box",
           "description": "Choose a style for the box",
           "type": "string",
-          "enum": ["default", "light", "transparent"],
-          "default": "default"
+          "enum": ["solid", "transparent"],
+          "default": "solid"
+        },
+        "inverted": {
+          "type": "boolean",
+          "title": "Inverted",
+          "default": false
         }
       },
       "additionalProperties": false

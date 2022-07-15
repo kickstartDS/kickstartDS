@@ -1,33 +1,32 @@
-import {
-  FunctionComponent,
-  createContext,
-  useContext,
-  HTMLAttributes,
-} from 'react';
+import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
-import { renderFn, defaultRenderFn } from '@kickstartds/core/core';
-import { HeadlineProps } from './HeadlineProps';
-import './headline.scss';
+import { defaultRenderFn } from '@kickstartds/core/core';
+import { type HeadlineProps as HeadlineSchemaProps } from './HeadlineProps';
 
-interface RenderFunctions {
-  renderContent?: renderFn;
-  renderSubheadline?: renderFn;
-}
+export type HeadlineProps = HeadlineSchemaProps & {
+  renderContent?: typeof defaultRenderFn;
+  renderSubheadline?: typeof defaultRenderFn;
+};
 
-const HeadlineComponent: FunctionComponent<
-  HeadlineProps & RenderFunctions & HTMLAttributes<HTMLElement>
-> = ({
-  content,
-  level = 'h2',
-  align = 'left',
-  pageHeader,
-  subheadline,
-  spaceAfter = 'none',
-  renderContent = defaultRenderFn,
-  renderSubheadline = defaultRenderFn,
-  className,
-  ...props
-}) => {
+export const HeadlineComponent: ForwardRefRenderFunction<
+  HTMLElement,
+  HeadlineProps & HTMLAttributes<HTMLElement>
+> = (
+  {
+    content,
+    level = 'h2',
+    styleAs = 'none',
+    align = 'left',
+    pageHeader,
+    subheadline,
+    spaceAfter = 'none',
+    renderContent = defaultRenderFn,
+    renderSubheadline = defaultRenderFn,
+    className,
+    ...props
+  },
+  ref
+) => {
   const TagName = level as keyof JSX.IntrinsicElements;
   return (
     <header
@@ -38,9 +37,17 @@ const HeadlineComponent: FunctionComponent<
         { 'c-headline--page-header': pageHeader },
         className
       )}
+      ref={ref}
       {...props}
     >
-      <TagName>{renderContent(content)}</TagName>
+      <TagName
+        className={classnames(
+          'c-headline__headline',
+          styleAs !== 'none' && styleAs !== level && `c-headline__${styleAs}`
+        )}
+      >
+        {renderContent(content)}
+      </TagName>
       {subheadline && (
         <p className="c-headline__subheadline">
           {renderSubheadline(subheadline)}
@@ -48,11 +55,4 @@ const HeadlineComponent: FunctionComponent<
       )}
     </header>
   );
-};
-
-export const HeadlineContextDefault = HeadlineComponent;
-export const HeadlineContext = createContext(HeadlineContextDefault);
-export const Headline: typeof HeadlineContextDefault = (props) => {
-  const Component = useContext(HeadlineContext);
-  return <Component {...props} />;
 };

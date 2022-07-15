@@ -1,11 +1,10 @@
 @use 'sass:meta';
 @use 'bourbon/core/bourbon';
-@use '@kickstartds/core/source/core/breakpoint';
 @use '@kickstartds/core/source/core/custom-properties';
 @use './tag-label-vars';
 
 $vars: meta.module-variables(tag-label-vars);
-@include custom-properties.styles($vars, true);
+@include custom-properties.styles($vars);
 
 .c-tag-label {
   display: inline-flex;
@@ -18,9 +17,9 @@ $vars: meta.module-variables(tag-label-vars);
   font-weight: var(--c-tag-label--font-weight);
   border-radius: var(--c-tag-label--border-radius);
 
-  @include breakpoint.media('print') {
+  @media print {
     background-color: transparent;
-    border: 1px solid;
+    border: var(--ks-border-width-default) solid;
   }
 
   &__content {

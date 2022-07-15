@@ -1,48 +1,40 @@
-import {
-  createContext,
-  FunctionComponent,
-  useContext,
-  HTMLAttributes,
-} from 'react';
+import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
-import { format } from 'date-fns';
-import { renderFn, defaultRenderFn } from '@kickstartds/core/core';
+import { defaultRenderFn } from '@kickstartds/core/core';
 import { Picture } from '@kickstartds/base/picture';
 import {
   RichText,
   defaultRenderFn as richTextDefaultRenderFn,
 } from '@kickstartds/base/rich-text';
-import { QuoteProps } from './QuoteProps';
-import './quote.scss';
+import { type QuoteProps as QuoteSchemaProps } from './QuoteProps';
 
-const defaultDateRenderFn: renderFn = (t) =>
-  format(new Date(String(t)), 'dd.MM.yyyy');
+export type QuoteProps = QuoteSchemaProps & {
+  renderText?: typeof richTextDefaultRenderFn;
+  renderSource?: typeof defaultRenderFn;
+  renderByline?: typeof defaultRenderFn;
+};
 
-interface RenderFunctions {
-  renderText?: renderFn;
-  renderSource?: renderFn;
-  renderDate?: renderFn;
-}
-
-const QuoteComponent: FunctionComponent<
-  QuoteProps & RenderFunctions & HTMLAttributes<HTMLDivElement>
-> = ({
-  image,
-  text,
-  source,
-  date,
-  renderText = richTextDefaultRenderFn,
-  renderSource = defaultRenderFn,
-  renderDate = defaultDateRenderFn,
-  className,
-  ...props
-}) => (
-  <div className={classnames('c-quote', className)} {...props}>
+export const QuoteComponent: ForwardRefRenderFunction<
+  HTMLDivElement,
+  QuoteProps & HTMLAttributes<HTMLDivElement>
+> = (
+  {
+    image,
+    text,
+    source,
+    byline,
+    renderText = richTextDefaultRenderFn,
+    renderSource = defaultRenderFn,
+    renderByline = defaultRenderFn,
+    className,
+    ...props
+  },
+  ref
+) => (
+  <div className={classnames('c-quote', className)} ref={ref} {...props}>
     {image && (
-      <div className="c-quote__image-wrap">
-        <div className="c-quote__image">
-          <Picture src={image} />
-        </div>
+      <div className="c-quote__image">
+        <Picture src={image} />
       </div>
     )}
     <div className="c-quote__content">
@@ -50,14 +42,7 @@ const QuoteComponent: FunctionComponent<
 
       {source && <div className="c-quote__source">{renderSource(source)}</div>}
 
-      {date && <div className="c-quote__date">{renderDate(date)}</div>}
+      {byline && <div className="c-quote__byline">{renderByline(byline)}</div>}
     </div>
   </div>
 );
-
-export const QuoteContextDefault = QuoteComponent;
-export const QuoteContext = createContext(QuoteContextDefault);
-export const Quote: typeof QuoteContextDefault = (props) => {
-  const Component = useContext(QuoteContext);
-  return <Component {...props} />;
-};

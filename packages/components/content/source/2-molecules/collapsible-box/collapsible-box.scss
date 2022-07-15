@@ -1,12 +1,19 @@
 @use 'sass:meta';
 @use 'bourbon/core/bourbon';
 @use '@kickstartds/base/source/0-base/1-tools/scss/details-reset';
-@use '@kickstartds/core/source/core/breakpoint';
 @use '@kickstartds/core/source/core/custom-properties';
+@use './container';
 @use './collapsible-box-vars';
 
 $vars: meta.module-variables(collapsible-box-vars);
-@include custom-properties.styles($vars);
+@include custom-properties.styles($vars, container.$name);
+@include container.wrapper {
+  & + & {
+    details {
+      border-top: 0;
+    }
+  }
+}
 
 .c-collapsible-box {
   details {
@@ -14,16 +21,6 @@ $vars: meta.module-variables(collapsible-box-vars);
 
     border-top: 1px solid var(--c-collapsible-box--border-color);
     border-bottom: 1px solid var(--c-collapsible-box--border-color);
-
-    // #{selector.$section--bg-1} & {
-    //   border-color: base.$color-black-15;
-    // }
-  }
-
-  & + & {
-    details {
-      border-top: 0;
-    }
   }
 
   &__header {
@@ -40,7 +37,7 @@ $vars: meta.module-variables(collapsible-box-vars);
     &__text {
       flex: 1;
 
-      @include breakpoint.media('≥s') {
+      @include container.size('≥', 640px) {
         padding-right: 1em;
       }
     }

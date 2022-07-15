@@ -1,29 +1,19 @@
+import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classNames from 'classnames';
-import {
-  FunctionComponent,
-  createContext,
-  useContext,
-  HTMLAttributes,
-} from 'react';
-import { DividerProps } from './DividerProps';
-import './divider.scss';
+import { type DividerProps } from './DividerProps';
 
-const DividerComponent: FunctionComponent<
+export { DividerProps };
+export const DividerComponent: ForwardRefRenderFunction<
+  HTMLHRElement,
   DividerProps & HTMLAttributes<HTMLHRElement>
-> = ({ variant, className, ...props }) => (
+> = ({ variant, className, ...props }, ref) => (
   <hr
     className={classNames(
       'c-divider',
       variant && variant !== 'default' && `c-divider--${variant}`,
       className
     )}
+    ref={ref}
     {...props}
   />
 );
-
-export const DividerContextDefault = DividerComponent;
-export const DividerContext = createContext(DividerContextDefault);
-export const Divider: typeof DividerContextDefault = (props) => {
-  const Component = useContext(DividerContext);
-  return <Component {...props} />;
-};

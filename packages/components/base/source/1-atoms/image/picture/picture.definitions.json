@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://frontend.ruhmesmeile.com/base/atoms/picture.definitions.json",
+  "$id": "http://schema.kickstartds.com/base/picture.definitions.json",
   "title": "Picture",
   "description": "Base component to display a picture",
   "type": "object",
@@ -56,13 +56,6 @@
       "type": "string",
       "title": "`style` attribute",
       "description": "Define a style attribute for the picture"
-    },
-    "objectFit": {
-      "title": "Object fit",
-      "description": "Select a value for the picture object fit",
-      "type": "string",
-      "enum": ["contain", "cover", "fill", "none", "scale-down"],
-      "default": "none"
     },
     "noscript": {
       "title": "Noscript",

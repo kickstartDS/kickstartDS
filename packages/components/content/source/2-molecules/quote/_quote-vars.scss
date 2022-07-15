@@ -3,8 +3,8 @@ $name-: 'c-quote';
 $host: (
   '.c-quote': (
     align: (
-      xs: normal,
-      m: center,
+      0: normal,
+      960: center,
     ),
   ),
 ) !default;
@@ -12,8 +12,8 @@ $host: (
 $image: (
   '.c-quote': (
     max-width: (
-      xs: 20%,
-      m: 30%,
+      640: 20%,
+      960: 30%,
     ),
   ),
 ) !default;
@@ -21,8 +21,8 @@ $image: (
 $content: (
   '.c-quote': (
     padding-left: (
-      xs: 2rem,
-      m: 4rem,
+      0: 2rem,
+      960: 4rem,
     ),
   ),
 ) !default;
@@ -31,8 +31,8 @@ $icon: (
   '.c-quote': (
     font-family: null,
     font-size: (
-      xs: 2.5rem,
-      m: 4rem,
+      0: 2.5rem,
+      960: 4rem,
     ),
     content: null,
     color: null,
@@ -56,7 +56,7 @@ $source: (
   ),
 ) !default;
 
-$date: (
+$byline: (
   '.c-quote': (
     font-style: null,
     font-weight: null,

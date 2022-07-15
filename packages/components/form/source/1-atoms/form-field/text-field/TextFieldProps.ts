@@ -28,7 +28,19 @@ export type Placeholder = string;
 /**
  * The type of input to render
  */
-export type Type = 'text' | 'search' | 'url' | 'tel' | 'email' | 'password';
+export type Type =
+  | 'date'
+  | 'datetime-local'
+  | 'email'
+  | 'month'
+  | 'number'
+  | 'password'
+  | 'search'
+  | 'tel'
+  | 'text'
+  | 'time'
+  | 'url'
+  | 'week';
 /**
  * Hints at the type of data that might be entered by the user while editing the element or its contents
  */
@@ -61,6 +73,10 @@ export type InvalidMessage = string;
  * Help text that gives more context about what a user needs to input
  */
 export type HintMessage = string;
+/**
+ * Additional css classes attached to the input element
+ */
+export type Class = string;
 
 /**
  * TextFields are text inputs that allow users to input custom text entries with a keyboard.
@@ -78,5 +94,6 @@ export interface TextFieldProps {
   invalid?: Invalid;
   invalidMessage?: InvalidMessage;
   hint?: HintMessage;
+  className?: Class;
   [k: string]: unknown;
 }

@@ -1,18 +1,20 @@
-import { FunctionComponent, HTMLAttributes } from 'react';
+import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
 import { Slider } from '@kickstartds/base/slider';
-import { Quote } from '../../2-molecules/quote/QuoteComponent';
-import { QuotesSliderProps } from './QuotesSliderProps';
-import './QuotesSlider.js';
+import { Quote } from '../../2-molecules/quote';
+import { type QuotesSliderProps } from './QuotesSliderProps';
 
-export const QuotesSlider: FunctionComponent<
+export { QuotesSliderProps };
+export const QuotesSliderComponent: ForwardRefRenderFunction<
+  HTMLDivElement,
   QuotesSliderProps & HTMLAttributes<HTMLDivElement>
-> = ({ slides, className, ...props }) => (
+> = ({ slides, className, ...props }, ref) => (
   <Slider
     autoplay={false}
     component="quotes.quotes-slider"
     arrows="outer"
     className={classnames('quotes-slider', className)}
+    ref={ref}
     {...props}
   >
     {slides?.map((slide, i) => (

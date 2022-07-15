@@ -42,10 +42,6 @@ export type ItempropAttribute = string;
  */
 export type StyleAttribute = string;
 /**
- * Select a value for the picture object fit
- */
-export type ObjectFit = 'contain' | 'cover' | 'fill' | 'none' | 'scale-down';
-/**
  * Render noscript fallback
  */
 export type Noscript = boolean;
@@ -86,9 +82,15 @@ export type Title = string;
  * Position, profession, department, location, etc.
  */
 export type Subtitle = string;
-export type PhoneNumber = string;
-export type EmailAddress = string;
+/**
+ * Open link in new Tab
+ */
+export type OpenLinkInNewTab = boolean;
 export type CopyText = string;
+/**
+ * Additional css classes attached to the wrapping element
+ */
+export type Class = string;
 
 /**
  * Component to show contact information
@@ -97,9 +99,15 @@ export interface ContactProps {
   image?: Picture;
   title?: Title;
   subtitle?: Subtitle;
-  phone?: PhoneNumber;
-  email?: EmailAddress;
+  links?: {
+    icon?: string;
+    label?: string;
+    href?: string;
+    newTab?: OpenLinkInNewTab;
+    [k: string]: unknown;
+  }[];
   copy?: CopyText;
+  className?: Class;
   [k: string]: unknown;
 }
 /**
@@ -115,7 +123,6 @@ export interface Picture {
   id?: Id;
   itemProp?: ItempropAttribute;
   style?: StyleAttribute;
-  objectFit?: ObjectFit;
   noscript?: Noscript;
   lazy?: Lazy;
   sources?: Sources;

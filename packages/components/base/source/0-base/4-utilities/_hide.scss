@@ -1,4 +1,3 @@
-@use '@kickstartds/core/source/core/breakpoint';
 @use 'bourbon/core/bourbon';
 
 // Hide only visually, but have it available for screen readers
@@ -13,7 +12,7 @@
 }
 
 .no-print {
-  @include breakpoint.media('print') {
+  @media print {
     display: none;
   }
 }

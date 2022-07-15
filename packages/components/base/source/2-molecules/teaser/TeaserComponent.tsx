@@ -1,42 +1,40 @@
-import { FunctionComponent, HTMLAttributes } from 'react';
+import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
-import { renderFn, defaultRenderFn } from '@kickstartds/core/core';
+import { defaultRenderFn } from '@kickstartds/core/core';
 import {
   RichText,
   defaultRenderFn as richTextDefaultRenderFn,
 } from '../../1-atoms/rich-text';
-import { LinkButton } from '../../1-atoms/button/link-button';
-import { TeaserProps } from './TeaserProps';
-import './teaser.scss';
-import './Teaser.js';
+import { Button } from '../../1-atoms/button';
+import { type TeaserProps as TeaserSchemaProps } from './TeaserProps';
 
-export interface TeaserRenderFunctions {
-  renderTopic?: renderFn;
-  renderText?: renderFn;
-}
+export type TeaserProps = TeaserSchemaProps & {
+  renderTopic?: typeof defaultRenderFn;
+  renderText?: typeof defaultRenderFn;
+};
 
-export const Teaser: FunctionComponent<
-  TeaserProps & TeaserRenderFunctions & HTMLAttributes<HTMLDivElement>
-> = ({
-  topic,
-  text,
-  darkStyle,
-  link,
-  renderText = richTextDefaultRenderFn,
-  renderTopic = defaultRenderFn,
-  className,
-  children,
-  ...props
-}) => (
+export const TeaserComponent: ForwardRefRenderFunction<
+  HTMLDivElement,
+  TeaserProps & HTMLAttributes<HTMLDivElement>
+> = (
+  {
+    topic,
+    text,
+    inverted,
+    link,
+    renderText = richTextDefaultRenderFn,
+    renderTopic = defaultRenderFn,
+    className,
+    children,
+    ...props
+  },
+  ref
+) => (
   <div
-    className={classnames(
-      'c-teaser',
-      {
-        'c-teaser--style-dark': darkStyle,
-      },
-      className
-    )}
+    className={classnames('c-teaser', className)}
     data-component="base.teaser"
+    ref={ref}
+    ks-inverted={inverted?.toString()}
     {...props}
   >
     {children}
@@ -50,7 +48,7 @@ export const Teaser: FunctionComponent<
       </div>
       {link?.label ? (
         <div className="c-teaser__link" hidden={link.hidden}>
-          <LinkButton {...link} />
+          <Button {...link} />
         </div>
       ) : (
         ''

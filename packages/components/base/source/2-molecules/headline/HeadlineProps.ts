@@ -10,6 +10,10 @@
  */
 export type Level = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
 /**
+ * Select the headline style to use
+ */
+export type Style = 'none' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
+/**
  * Choose an alignment for the headline
  */
 export type Alignment = 'left' | 'center' | 'right';
@@ -29,16 +33,22 @@ export type BottomSpacing = 'none' | 'small' | 'large';
  * Set the headline as a page header, triggering special css treatment
  */
 export type PageHeader = boolean;
+/**
+ * Add additional css classes that should be applied to the headline
+ */
+export type AdditionalClasses = string;
 
 /**
  * Headline
  */
 export interface HeadlineProps {
   level: Level;
+  styleAs?: Style;
   align: Alignment;
   content?: Text;
   subheadline?: Subheadline;
   spaceAfter: BottomSpacing;
   pageHeader?: PageHeader;
+  className?: AdditionalClasses;
   [k: string]: unknown;
 }

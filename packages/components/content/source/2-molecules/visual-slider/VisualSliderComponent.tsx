@@ -1,16 +1,18 @@
-import { FunctionComponent, HTMLAttributes } from 'react';
-import classnames from 'classnames';
+import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
+import classNames from 'classnames';
 import { Slider } from '@kickstartds/base/slider';
-import { Visual } from '../visual/VisualComponent';
-import { VisualSliderProps } from './VisualSliderProps';
-import './visual-slider.scss';
+import { Visual } from '../visual';
+import { type VisualSliderProps } from './VisualSliderProps';
 
-export const VisualSlider: FunctionComponent<
+export { VisualSliderProps };
+export const VisualSliderComponent: ForwardRefRenderFunction<
+  HTMLDivElement,
   VisualSliderProps & HTMLAttributes<HTMLDivElement>
-> = ({ slides, className, ...props }) => (
+> = ({ slides, className, ...props }, ref) => (
   <Slider
     autoplay={false}
-    className={classnames('c-visual-slider', className)}
+    className={classNames('c-visual-slider', className)}
+    ref={ref}
     {...props}
   >
     {slides?.map((slide, i) => (

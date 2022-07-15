@@ -5,6 +5,7 @@ process.env.DEBUG_COLORS =
 const del = require('del');
 const { buildBundle, watchBundle } = require('./bundle');
 const { buildSchema, watchSchema } = require('./schema');
+const { copy } = require('./copy');
 
 (async () => {
   const [, , param] = process.argv;
@@ -19,7 +20,8 @@ const { buildSchema, watchSchema } = require('./schema');
     default: {
       await del('lib');
       await buildSchema();
-      return buildBundle();
+      await buildBundle();
+      return copy();
     }
   }
 })();

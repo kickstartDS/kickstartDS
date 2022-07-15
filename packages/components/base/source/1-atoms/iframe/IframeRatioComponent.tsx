@@ -1,21 +1,28 @@
-import { FunctionComponent } from 'react';
-import './iframe-ratio.scss';
-import './IframeRatio.js';
+import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
+import classNames from 'classnames';
 
-type IframeRatioProps = {
+export type IframeRatioProps = {
   src: string;
   title?: string;
   width: number;
   height: number;
+  setParentWidth?: boolean;
 };
 
-export const IframeRatio: FunctionComponent<IframeRatioProps> = ({
-  src,
-  title,
-  width,
-  height,
-}) => (
-  <div className="iframe-ratio" data-component="base.iframe-ratio">
+export const IframeRatioComponent: ForwardRefRenderFunction<
+  HTMLDivElement,
+  IframeRatioProps & HTMLAttributes<HTMLDivElement>
+> = (
+  { src, title, width, height, setParentWidth, className, ...props },
+  ref
+) => (
+  <div
+    className={classNames('iframe-ratio', className)}
+    data-component="base.iframe-ratio"
+    data-auto-width={setParentWidth}
+    ref={ref}
+    {...props}
+  >
     <iframe
       allowFullScreen
       data-src={src}

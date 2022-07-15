@@ -1,8 +1,6 @@
 img {
-  /* critical:start */
   max-width: 100%;
   height: auto;
-  /* critical:end */
   margin-bottom: 0;
   vertical-align: top;
 }
@@ -18,7 +16,6 @@ figure {
 caption,
 figcaption {
   padding-top: 0.35em;
-
-  font: var(--font-ui-xs);
+  font: var(--ks-font-ui-xs);
   font-style: italic;
 }

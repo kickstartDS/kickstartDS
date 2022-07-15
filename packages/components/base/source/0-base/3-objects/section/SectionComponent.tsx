@@ -1,15 +1,13 @@
 import {
   FunctionComponent,
-  createContext,
-  useContext,
+  ForwardRefRenderFunction,
   HTMLAttributes,
 } from 'react';
 import classnames from 'classnames';
-import { Headline } from '../../../2-molecules/headline/HeadlineComponent';
-import { SectionProps } from './SectionProps';
-import './section.scss';
+import { Headline } from '../../../2-molecules/headline';
+import { type SectionProps } from './SectionProps';
 
-const Container: FunctionComponent<SectionProps> = ({
+const SectionContainer: FunctionComponent<SectionProps> = ({
   width,
   gutter,
   mode,
@@ -29,20 +27,27 @@ const Container: FunctionComponent<SectionProps> = ({
   </div>
 );
 
-const SectionComponent: FunctionComponent<
+export { SectionProps };
+
+export const SectionComponent: ForwardRefRenderFunction<
+  HTMLDivElement,
   SectionProps & HTMLAttributes<HTMLDivElement>
-> = ({
-  background,
-  spaceBefore,
-  spaceAfter,
-  headline,
-  width,
-  gutter,
-  mode,
-  className,
-  children,
-  ...props
-}) => (
+> = (
+  {
+    background,
+    inverted,
+    spaceBefore,
+    spaceAfter,
+    headline,
+    width,
+    gutter,
+    mode,
+    className,
+    children,
+    ...props
+  },
+  ref
+) => (
   <div
     className={classnames(
       'l-section',
@@ -55,24 +60,19 @@ const SectionComponent: FunctionComponent<
         `l-section--space-after-${spaceAfter}`,
       className
     )}
+    ks-inverted={inverted?.toString()}
+    ref={ref}
     {...props}
   >
-    {headline && (
-      <Container width={width}>
+    {headline && headline.content && (
+      <SectionContainer width={width}>
         <Headline {...headline} />
-      </Container>
+      </SectionContainer>
     )}
     {children && (
-      <Container width={width} gutter={gutter} mode={mode}>
+      <SectionContainer width={width} gutter={gutter} mode={mode}>
         {children}
-      </Container>
+      </SectionContainer>
     )}
   </div>
 );
-
-export const SectionContextDefault = SectionComponent;
-export const SectionContext = createContext(SectionContextDefault);
-export const Section: typeof SectionContextDefault = (props) => {
-  const Component = useContext(SectionContext);
-  return <Component {...props} />;
-};

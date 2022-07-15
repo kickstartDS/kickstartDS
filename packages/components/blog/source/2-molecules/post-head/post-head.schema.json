@@ -1,0 +1,75 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/blog/post-head.schema.json",
+  "title": "Post Head",
+  "description": "Post Head",
+  "type": "object",
+  "properties": {
+    "image": {
+      "allOf": [
+        {
+          "type": "object",
+          "properties": {
+            "src": {
+              "type": "string",
+              "default": "https://picsum.photos/seed/kdsnewshead/900/380"
+            },
+            "width": {
+              "type": "integer",
+              "default": 900
+            },
+            "height": {
+              "type": "integer",
+              "default": 380
+            }
+          }
+        },
+        {
+          "$ref": "http://schema.kickstartds.com/base/picture.definitions.json"
+        }
+      ]
+    },
+    "imageAlignment": {
+      "title": "Alignment",
+      "type": "string",
+      "enum": ["left", "center", "right"],
+      "default": "center",
+      "description": "Choose an horizontal alignment for the image."
+    },
+    "date": {
+      "$ref": "http://schema.kickstartds.com/blog/news-item.definitions.json#/definitions/date"
+    },
+    "headline": {
+      "allOf": [
+        {
+          "type": "object",
+          "properties": {
+            "align": {
+              "type": "string",
+              "default": "left"
+            },
+            "content": {
+              "type": "string",
+              "default": "Lorem ipsum dolor sit amet cons adipis elit "
+            },
+            "level": {
+              "type": "string",
+              "default": "h1"
+            }
+          }
+        },
+        {
+          "$ref": "http://schema.kickstartds.com/base/headline.schema.json"
+        }
+      ]
+    },
+    "categories": {
+      "$ref": "http://schema.kickstartds.com/blog/news-item.definitions.json#/definitions/categories"
+    },
+    "className": {
+      "title": "Class",
+      "description": "Additional css classes attached to the wrapping element",
+      "type": "string"
+    }
+  }
+}

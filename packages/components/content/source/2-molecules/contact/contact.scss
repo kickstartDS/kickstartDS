@@ -4,12 +4,12 @@
 @use './contact-vars';
 
 $vars: meta.module-variables(contact-vars);
-@include custom-properties.styles($vars, true);
+@include custom-properties.styles($vars);
 
 .c-contact {
   display: flex;
   flex-wrap: wrap;
-  margin: calc(var(--c-contact--gutter) * -1);
+  margin: calc(-1 * var(--c-contact--gutter));
 
   > * {
     margin: var(--c-contact--gutter);
@@ -22,7 +22,7 @@ $vars: meta.module-variables(contact-vars);
   }
 
   &__links {
-    font: var(--font-ui-s);
+    font: var(--ks-font-ui-s);
     list-style: none;
     padding: 0;
     margin: 0;
@@ -48,7 +48,7 @@ $vars: meta.module-variables(contact-vars);
 
     &__subheadline {
       --c-headline_subheadline--margin: 0;
-      --c-headline_subheadline--color: var(--color-black-alpha-7);
+      --c-headline_subheadline--color: var(--ks-color-fg-alpha-7);
     }
   }
 }

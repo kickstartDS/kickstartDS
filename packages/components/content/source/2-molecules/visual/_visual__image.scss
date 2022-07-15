@@ -1,45 +1,35 @@
 @use 'bourbon/core/bourbon';
 @use '@kickstartds/base/source/0-base/1-tools/scss/helpers';
-@use '@kickstartds/core/source/core/breakpoint';
-@use 'sass:meta';
 
 @mixin visual-image {
-  /* critical:start */
   display: block;
   @include bourbon.position(inherit, inherit);
-  /* critical:end */
+
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
 
   &--indent {
     &-left {
       img {
-        /* critical:start */
         object-position: var(--c-visual_image--indent-left) 50%;
-        /* critical:end */
       }
     }
 
     &-right {
       img {
-        /* critical:start */
         object-position: var(--c-visual_image--indent-right) 50%;
-        /* critical:end */
       }
     }
   }
 
   &,
   * {
-    /* critical:start */
-    min-height: inherit;
-    /* critical:end */
-  }
-
-  img {
-    /* critical:start */
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    /* critical:end */
+    .c-visual--full & {
+      height: 100%;
+    }
   }
 
   @include helpers.no-print;

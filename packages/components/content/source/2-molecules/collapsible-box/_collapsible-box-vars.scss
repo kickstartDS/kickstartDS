@@ -2,16 +2,16 @@ $name-: 'c-collapsible-box';
 
 $host: (
   '.c-collapsible-box': (
-    border-color: var(--color-black-alpha-1),
+    border-color: var(--ks-color-fg-alpha-1),
   ),
 ) !default;
 
 $header: (
   '.c-collapsible-box': (
-    font: var(--font-copy-m),
+    font: var(--ks-font-copy-m),
     padding: (
-      xs: 1em 0,
-      s: 1em,
+      0: 1em 0,
+      640: 1em,
     ),
   ),
 ) !default;
@@ -19,8 +19,8 @@ $header: (
 $icon: (
   '.c-collapsible-box': (
     size: (
-      xs: 1.65em,
-      s: 1.85em,
+      0: 1.65em,
+      640: 1.85em,
     ),
     transform-open: rotate(-180deg),
   ),
@@ -29,8 +29,8 @@ $icon: (
 $content: (
   '.c-collapsible-box': (
     padding: (
-      xs: 1em 0,
-      s: 1em 4em 1em 1em,
+      0: 1em 0,
+      640: 1em 4em 1em 1em,
     ),
   ),
 ) !default;

@@ -1,24 +1,34 @@
-@use '../../0-base/1-tools/scss/aspect-ratio';
-@use '../../0-base/1-tools/scss/helpers';
-@use '@kickstartds/core/source/core/breakpoint';
 @use 'bourbon/core/bourbon';
+@use './container';
+
+@include container.wrapper;
 
 .text-media {
   @include bourbon.clearfix;
 
+  &--beside {
+    .text-media__text {
+      overflow: hidden;
+
+      @media print {
+        overflow: visible;
+      }
+    }
+  }
+
   &__gallery {
-    @include bourbon.clearfix;
     display: flex;
     flex-wrap: wrap;
-    margin: -1rem 0 0 -1rem;
+    align-items: flex-start;
+    gap: var(--ks-spacing-m);
 
     // above/below left (default), center, right
     .text-media--above & {
-      padding-bottom: 1rem;
+      padding-bottom: var(--ks-spacing-s);
     }
 
     .text-media--below & {
-      padding-top: 1rem;
+      padding-top: var(--ks-spacing-s);
     }
 
     .text-media--center & {
@@ -31,83 +41,55 @@
 
     // intext left, right
     .text-media--intext & {
-      padding-bottom: 1rem;
+      padding-bottom: var(--ks-spacing-s);
 
-      @include breakpoint.media('≥s') {
-        padding-bottom: 0.5rem;
+      @include container.size('≥', 600px) {
+        padding-bottom: var(--ks-spacing-xs);
         max-width: 50%;
         min-width: 0;
       }
 
-      @include breakpoint.media('print') {
+      @media print {
         width: 30%;
       }
     }
 
     .text-media--intext.text-media--left & {
-      @include breakpoint.media('≥s') {
+      @include container.size('≥', 600px) {
         float: left;
-        padding-right: 1.5rem;
+        padding-right: var(--ks-spacing-m);
       }
     }
 
     .text-media--intext.text-media--right & {
-      @include breakpoint.media('≥s') {
+      @include container.size('≥', 600px) {
         float: right;
-        padding-left: 1.5rem;
+        padding-left: var(--ks-spacing-m);
       }
     }
   }
 
   &__media {
-    padding: 1rem 0 0 1rem;
+    display: table;
+    table-layout: fixed;
     max-width: 100%;
+    box-sizing: content-box;
 
     &--full {
       &,
       > * {
-        width: 100vw !important;
+        width: 100% !important;
       }
-    }
-  }
-
-  &--beside {
-    .text-media__text {
-      @include breakpoint.media('≥s') {
-        overflow: hidden;
-      }
-
-      @include breakpoint.media('print') {
-        overflow: visible;
-      }
-    }
-  }
-
-  figure {
-    display: table;
-    table-layout: fixed;
-
-    @include helpers.browser(ie11) {
-      display: block;
     }
 
     a {
       display: table-cell;
-
-      @include helpers.browser(ie11) {
-        display: block;
-      }
     }
+  }
 
-    figcaption {
-      table-layout: fixed;
-      display: table-caption;
-      caption-side: bottom;
-      text-align: left;
-
-      @include helpers.browser(ie11) {
-        display: block;
-      }
-    }
+  &__caption {
+    display: table-caption;
+    caption-side: bottom;
+    text-align: left;
   }
 }

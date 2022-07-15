@@ -1,10 +1,9 @@
 @use 'sass:meta';
 @use '@kickstartds/core/source/core/custom-properties';
-@use '@kickstartds/core/source/core/breakpoint';
 @use './teaser-vars';
 
 $vars: meta.module-variables(teaser-vars);
-@include custom-properties.styles($vars, true);
+@include custom-properties.styles($vars);
 
 .c-teaser {
   box-sizing: border-box;
@@ -31,7 +30,7 @@ $vars: meta.module-variables(teaser-vars);
 
   &__body {
     display: flex;
-    padding: 1rem;
+    padding: var(--c-teaser--padding);
   }
 
   &__text {

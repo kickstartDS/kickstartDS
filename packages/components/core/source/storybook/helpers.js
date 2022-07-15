@@ -11,6 +11,8 @@ const getArgsShared = (initialSchema) => {
     defaultValue,
     required
   ) => {
+    if ('const' in schema) return;
+
     const add = (typeProps) => {
       argTypes[name] = {
         name,
@@ -78,7 +80,9 @@ const getArgsShared = (initialSchema) => {
               const subcat =
                 cat &&
                 (subcategory ||
-                  (propSchema.type === 'object' && `${name}.${propName}`));
+                  ((propSchema.type === 'object' ||
+                    propSchema.type === 'array') &&
+                    `${name}.${propName}`));
               getArgTypes(
                 propSchema,
                 name ? `${name}.${propName}` : propName,
@@ -99,18 +103,20 @@ const getArgsShared = (initialSchema) => {
       case 'array':
         if (schema.items && schema.items.type) {
           const cat = category ?? name;
-          const count = schema?.default?.length ?? 3;
+          const count = defaultValue?.length ?? schema?.default?.length ?? 3;
           new Array(count).fill().forEach((_, index) => {
             const subcat =
               cat &&
               (subcategory ||
-                (schema.items.type === 'object' && `${name}.${index}`));
+                ((schema.items.type === 'object' ||
+                  schema.items.type === 'array') &&
+                  `${name}.${index}`));
             getArgTypes(
               schema.items,
               name ? `${name}.${index}` : index,
               cat,
               subcat,
-              schema?.default?.[index]
+              defaultValue?.[index] ?? schema?.default?.[index]
             );
           });
         } else {
@@ -135,9 +141,10 @@ const unpack = (flatArgs) => {
   // eslint-disable-next-line no-restricted-syntax
   for (const [key, value] of Object.entries(flatArgs)) {
     key.split('.').reduce((prev, curr, i, arr) => {
-      prev[curr] =
-        prev[curr] ||
-        (arr[i + 1] != null ? (Number.isNaN(arr[i + 1]) ? {} : []) : value);
+      if (prev[curr] == null) {
+        const next = arr[i + 1];
+        prev[curr] = next != null ? (Number.isNaN(+next) ? {} : []) : value;
+      }
       return prev[curr];
     }, args);
   }

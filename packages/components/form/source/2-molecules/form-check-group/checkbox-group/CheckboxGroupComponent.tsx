@@ -1,36 +1,34 @@
-import {
-  FunctionComponent,
-  forwardRef,
-  createContext,
-  useContext,
-  HTMLAttributes,
-} from 'react';
+import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
-import { renderFn, defaultRenderFn } from '@kickstartds/core/core';
-import { Checkbox } from '../../../1-atoms/form-check/checkbox/CheckboxComponent';
-import { CheckboxGroupProps } from './CheckboxGroupProps';
-import '../form-check-group.scss';
+import { defaultRenderFn } from '@kickstartds/core/core';
+import { Checkbox } from '../../../1-atoms/form-check/checkbox';
+import { type CheckboxGroupProps as CheckboxGroupSchemaProps } from './CheckboxGroupProps';
 
-interface RenderFunctions {
-  renderLabel?: renderFn;
-}
+export type CheckboxGroupProps = CheckboxGroupSchemaProps & {
+  renderLabel?: typeof defaultRenderFn;
+};
 
-const CheckboxGroupComponent: FunctionComponent<
-  CheckboxGroupProps & RenderFunctions & HTMLAttributes<HTMLDivElement>
-> = ({
-  label,
-  name,
-  renderLabel = defaultRenderFn,
-  invalid,
-  invalidMessage,
-  options,
-  className,
-  ...props
-}) => (
+export const CheckboxGroupComponent: ForwardRefRenderFunction<
+  HTMLDivElement,
+  CheckboxGroupProps & HTMLAttributes<HTMLDivElement>
+> = (
+  {
+    label,
+    name,
+    renderLabel = defaultRenderFn,
+    invalid,
+    invalidMessage,
+    options,
+    className,
+    ...props
+  },
+  ref
+) => (
   <div
     className={classnames('c-form-check-group', className, {
       'c-form-check-group--is-invalid': invalid,
     })}
+    ref={ref}
     {...props}
   >
     <span className="c-form-check-group__label">{renderLabel(label)}</span>
@@ -45,13 +43,4 @@ const CheckboxGroupComponent: FunctionComponent<
       )}
     </div>
   </div>
-);
-
-export const CheckboxGroupContextDefault = CheckboxGroupComponent;
-export const CheckboxGroupContext = createContext(CheckboxGroupContextDefault);
-export const CheckboxGroup: typeof CheckboxGroupContextDefault = forwardRef(
-  (props, ref) => {
-    const Component = useContext(CheckboxGroupContext);
-    return <Component {...props} ref={ref} />;
-  }
 );

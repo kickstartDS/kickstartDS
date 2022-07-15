@@ -1,22 +1,15 @@
-import {
-  ForwardRefRenderFunction,
-  forwardRef,
-  createContext,
-  useContext,
-  HTMLAttributes,
-} from 'react';
+import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
-import { renderFn, defaultRenderFn } from '@kickstartds/core/core';
-import { CheckboxProps } from './CheckboxProps';
-import '../form-check.scss';
+import { defaultRenderFn } from '@kickstartds/core/core';
+import { type CheckboxProps as CheckboxSchemaProps } from './CheckboxProps';
 
-interface RenderFunctions {
-  renderLabel?: renderFn;
-}
+export type CheckboxProps = CheckboxSchemaProps & {
+  renderLabel?: typeof defaultRenderFn;
+};
 
-const CheckboxComponent: ForwardRefRenderFunction<
+export const CheckboxComponent: ForwardRefRenderFunction<
   HTMLInputElement,
-  CheckboxProps & RenderFunctions & HTMLAttributes<HTMLInputElement>
+  CheckboxProps & HTMLAttributes<HTMLInputElement>
 > = (
   {
     label,
@@ -49,13 +42,4 @@ const CheckboxComponent: ForwardRefRenderFunction<
 
     {hint && <p className="c-form-check__hint">{hint}</p>}
   </label>
-);
-
-export const CheckboxContextDefault = forwardRef(CheckboxComponent);
-export const CheckboxContext = createContext(CheckboxContextDefault);
-export const Checkbox: typeof CheckboxContextDefault = forwardRef(
-  (props, ref) => {
-    const Component = useContext(CheckboxContext);
-    return <Component {...props} ref={ref} />;
-  }
 );

@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://frontend.ruhmesmeile.com/base/atoms/divider.schema.json",
+  "$id": "http://schema.kickstartds.com/base/divider.schema.json",
   "title": "Divider",
   "description": "Dividers bring clarity to a layout by grouping and dividing content in close proximity.",
   "type": "object",
@@ -9,8 +9,13 @@
       "title": "Style of the divider",
       "type": "string",
       "description": "Choose a variant for the divider",
-      "enum": ["default", "accent", "dark"],
+      "enum": ["default", "accent"],
       "default": "default"
+    },
+    "className": {
+      "type": "string",
+      "title": "Additional Classes",
+      "description": "Add additional css classes that should be applied to the divider"
     }
   }
 }

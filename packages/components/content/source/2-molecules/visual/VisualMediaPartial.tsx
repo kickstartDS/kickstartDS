@@ -10,7 +10,7 @@ interface IMedia extends MediaWrapper {
 }
 
 const Image: FunctionComponent<IMedia> = ({ image = {} }) => {
-  const { srcMobile, srcTablet, srcDesktop, indent, alt } = image;
+  const { srcMobile, srcTablet, srcDesktop, indent, alt, src } = image;
   const slide = useContext(SlideContext);
   return (
     <picture
@@ -25,8 +25,7 @@ const Image: FunctionComponent<IMedia> = ({ image = {} }) => {
           <source media="(min-width: 600px)" data-srcset={srcTablet} />
           <source data-srcset={srcMobile} />
           <Picture
-            src={srcMobile}
-            objectFit="cover"
+            src={src || srcMobile}
             noscript={false}
             alt={alt}
             itemProp="image"
@@ -38,9 +37,8 @@ const Image: FunctionComponent<IMedia> = ({ image = {} }) => {
           <source media="(min-width: 600px)" srcSet={srcTablet} />
           <source srcSet={srcMobile} />
           <Picture
-            src={srcMobile}
+            src={src || srcMobile}
             lazy={false}
-            objectFit="cover"
             alt={alt}
             itemProp="image"
           />

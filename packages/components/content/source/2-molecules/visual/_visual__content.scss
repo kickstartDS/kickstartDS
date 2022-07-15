@@ -1,71 +1,50 @@
 @use 'bourbon/core/bourbon';
-@use '@kickstartds/core/source/core/breakpoint';
+@use './container';
 
 @mixin visual-content {
-  /* critical:start */
   display: flex;
   align-items: center;
   width: 100%;
-  flex-grow: 1; // = 100% height
   margin: auto;
-  /* critical:end */
 
-  @include breakpoint.media('≥s') {
-    /* critical:start */
-    padding: var(--spacing-m);
-    min-height: inherit; // ie fix
-    /* critical:end */
+  @include container.size('≥', 640px) {
+    padding: var(--l-section--content-padding);
+    flex-grow: 1; // = 100% height
   }
 
   &--center {
-    /* critical:start */
     justify-content: center;
     text-align: center;
-    /* critical:end */
   }
 
   &--left {
-    /* critical:start */
     justify-content: flex-start;
-    /* critical:end */
   }
 
   &--right {
-    /* critical:start */
     justify-content: flex-end;
-    /* critical:end */
   }
 
   &--top {
-    /* critical:start */
     align-items: flex-start;
-    /* critical:end */
   }
 
   &--bottom {
-    /* critical:start */
     align-items: flex-end;
-    /* critical:end */
   }
 
   &--indent {
-    /* critical:start */
-    max-width: var(--g-content-width-default);
-    /* critical:end */
+    max-width: var(--l-section--content-width-default);
   }
 
   &--inbox,
   &:only-child {
-    /* critical:start */
-    padding: var(--spacing-m);
-    /* critical:end */
+    padding: var(--l-section--content-padding);
   }
 
   .c-visual--no-crop & {
-    @include breakpoint.media('≥s') {
-      /* critical:start */
+    @include container.size('≥', 640px) {
       @include bourbon.position(absolute, 0);
-      /* critical:end */
     }
   }
 }

@@ -1,19 +1,22 @@
-import { FunctionComponent } from 'react';
+import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
+import classNames from 'classnames';
 import { TagLabel, TagLabelProps } from '../../1-atoms/tag-label';
-import './tag-label-container.scss';
 
-interface TagLabelContainerProps {
+export type TagLabelContainerProps = {
   tagLabels: TagLabelProps[];
-}
+};
 
-export const TagLabelContainer: FunctionComponent<TagLabelContainerProps> = ({
-  tagLabels = [],
-}) => (
-  <div className="tag-label-container">
+export const TagLabelContainerComponent: ForwardRefRenderFunction<
+  HTMLDivElement,
+  TagLabelContainerProps & HTMLAttributes<HTMLDivElement>
+> = ({ tagLabels = [], className, ...props }, ref) => (
+  <div
+    className={classNames('tag-label-container', className)}
+    {...props}
+    ref={ref}
+  >
     {tagLabels.map((tagLabel, i) => (
-      <div key={`tag-label-${i}`}>
-        <TagLabel {...tagLabel} />
-      </div>
+      <TagLabel {...tagLabel} key={i} />
     ))}
   </div>
 );

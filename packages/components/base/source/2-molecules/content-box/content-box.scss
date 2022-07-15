@@ -1,13 +1,20 @@
 @use 'sass:meta';
 @use '@kickstartds/core/source/core/custom-properties';
 @use './content-box-vars';
+@use './container';
 
 $vars: meta.module-variables(content-box-vars);
-@include custom-properties.styles($vars, true);
+@include custom-properties.styles($vars);
+@include container.wrapper('content-box') {
+  display: flex;
+}
 
 .c-content-box {
   margin-bottom: 2em;
   box-sizing: border-box;
+  contain: layout inline-size style;
+  display: flex;
+  flex-direction: column;
 
   &--align-center {
     text-align: center;
@@ -61,33 +68,6 @@ $vars: meta.module-variables(content-box-vars);
     flex-direction: column;
     align-items: stretch;
     flex: 1 auto;
-
-    &[min-width~='0px'] {
-      --c-content-box_topic--font: var(--font-display-s);
-      --c-rich-text-font: var(--font-copy-xs);
-
-      .c-button {
-        --c-button--font: var(--font-ui-xs);
-      }
-    }
-
-    &[min-width~='200px'] {
-      --c-content-box_topic--font: var(--font-display-m);
-      --c-rich-text-font: var(--font-copy-s);
-
-      .c-button {
-        --c-button--font: var(--font-ui-s);
-      }
-    }
-
-    &[min-width~='400px'] {
-      --c-content-box_topic--font: var(--font-display-l);
-      --c-rich-text-font: var(--font-copy-m);
-
-      .c-button {
-        --c-button--font: var(--font-ui-m);
-      }
-    }
   }
 
   &__topic {

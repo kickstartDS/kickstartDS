@@ -1,21 +1,21 @@
-import {
-  createContext,
-  FunctionComponent,
-  useContext,
-  HTMLAttributes,
-} from 'react';
+import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
 import { Picture } from '@kickstartds/base/picture';
 import { Headline } from '@kickstartds/base/headline';
 import { RichText } from '@kickstartds/base/rich-text';
 import { Icon } from '@kickstartds/base/icon';
-import { ContactProps } from './ContactProps';
-import './contact.scss';
+import { Link } from '@kickstartds/base/link';
+import { type ContactProps } from './ContactProps';
 
-const ContactComponent: FunctionComponent<
+export { ContactProps };
+export const ContactComponent: ForwardRefRenderFunction<
+  HTMLElement,
   ContactProps & HTMLAttributes<HTMLElement>
-> = ({ image, title, subtitle, phone, email, copy, className, ...props }) => (
-  <address className={classnames('c-contact', className)} {...props}>
+> = (
+  { image, title, subtitle, links = [], copy, className, ...props },
+  ref
+) => (
+  <address className={classnames('c-contact', className)} ref={ref} {...props}>
     {image && image.src ? (
       <div className="c-contact__image">
         <Picture {...image} />
@@ -33,24 +33,20 @@ const ContactComponent: FunctionComponent<
           spaceAfter="none"
         />
       )}
-      {phone || email ? (
+      {links.length ? (
         <ul className="c-contact__links">
-          {phone && (
-            <li>
-              <Icon icon="phone" />
-              <a className="c-contact__link" href={`tel:${phone}`}>
-                {phone}
-              </a>
+          {links.map(({ icon, href, label, newTab }, i) => (
+            <li key={i}>
+              <Icon icon={icon} />
+              <Link
+                className="c-contact__link"
+                href={href}
+                {...(newTab ? { target: '_blank', rel: 'noopener' } : {})}
+              >
+                {label}
+              </Link>
             </li>
-          )}
-          {email && (
-            <li>
-              <Icon icon="email" />
-              <a className="c-contact__link" href={`mailto:${email}`}>
-                {email}
-              </a>
-            </li>
-          )}
+          ))}
         </ul>
       ) : (
         ''
@@ -59,10 +55,3 @@ const ContactComponent: FunctionComponent<
     </div>
   </address>
 );
-
-export const ContactContextDefault = ContactComponent;
-export const ContactContext = createContext(ContactContextDefault);
-export const Contact: typeof ContactContextDefault = (props) => {
-  const Component = useContext(ContactContext);
-  return <Component {...props} />;
-};

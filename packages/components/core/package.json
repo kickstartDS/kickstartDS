@@ -1,18 +1,27 @@
 {
   "name": "@kickstartds/core",
-  "version": "1.1.2",
+  "version": "1.5.0",
   "description": "kickstartDS Core Module",
-  "author": "ruhmesmeile GmbH <mail@ruhmesmeile.com> (https://ruhmesmeile.com)",
   "homepage": "https://ruhmesmeile.com",
+  "bugs": {
+    "url": "https://github.com/kickstartDS/kickstartDS/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kickstartDS/kickstartDS.git",
+    "directory": "packages/components/core"
+  },
   "license": "SEE LICENSE IN LICENSE",
+  "author": "ruhmesmeile GmbH <mail@ruhmesmeile.com> (https://ruhmesmeile.com)",
   "type": "module",
   "exports": {
     "./package.json": "./package.json",
     "./bundle": "./bundle/index.js",
     "./source/*": "./source/*",
     ".": "./lib/index.js",
-    "./*": "./lib/*"
+    "./*": "./lib/*/index.js"
   },
+  "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "typesVersions": {
     "*": {
@@ -22,34 +31,41 @@
       ]
     }
   },
-  "scripts": {
-    "build": "node ../../tools/build-components/source",
-    "watch": "node ../../tools/build-components/source --watch",
-    "schema": "node ../../tools/build-components/source --schema"
-  },
   "files": [
     "lib",
     "source/core/*.scss",
-    "source/design-tokens/**/*.scss",
-    "bundle/*.js"
+    "source/design-tokens/icons/*.svg",
+    "bundle/*.js",
+    "cms"
   ],
+  "scripts": {
+    "build": "node ../../tools/build-components/source && yarn build-tokens",
+    "build-tokens": "node scripts/build-tokens.js",
+    "schema": "node ../../tools/build-components/source --schema",
+    "watch": "concurrently -r yarn:watch-tokens \"node ../../tools/build-components/source --watch\"",
+    "watch-tokens": "chokidar \"source/design-tokens/fallback.ks-tokens.json\" -c \"yarn build-tokens\""
+  },
   "dependencies": {
-    "@babel/runtime": "^7.14.8",
-    "bourbon": "^7.0.0",
+    "@babel/runtime": "^7.17.8",
+    "bourbon": "^7.2.0",
+    "classnames": "^2.2.6",
     "del": "^6.0.0",
     "dependency-graph": "^0.11.0",
-    "esbuild": "^0.12.17",
-    "fast-glob": "^3.2.7",
-    "fs-extra": "^10.0.0",
-    "htm": "^3.1.0",
+    "esbuild": "^0.14.36",
+    "fast-glob": "^3.2.11",
+    "fs-extra": "^10.0.1",
     "lazysizes": "^5.3.2",
+    "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",
-    "pubsub-js": "^1.9.3",
-    "sass": "^1.36.0",
-    "vhtml": "^2.2.0"
+    "pubsub-js": "^1.9.4",
+    "sass": "^1.50.0"
   },
   "devDependencies": {
-    "include-media": "^1.4.9"
+    "@kickstartds/style-dictionary": "^1.5.0",
+    "chokidar-cli": "^3.0.0",
+    "concurrently": "^7.0.0",
+    "storybook-design-token": "^1.4.0",
+    "style-dictionary": "^3.7.0"
   },
   "peerDependencies": {
     "react": "^17.0.2"

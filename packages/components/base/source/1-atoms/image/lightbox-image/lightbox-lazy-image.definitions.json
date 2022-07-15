@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://frontend.ruhmesmeile.com/base/atoms/lightbox-lazy-image.definitions.json",
+  "$id": "http://schema.kickstartds.com/base/lightbox-lazy-image.definitions.json",
   "title": "Lazy Lightbox Image",
   "description": "Lazy Lightbox Image",
   "type": "object",
@@ -61,10 +61,15 @@
       "title": "ID",
       "description": "ID"
     },
-    "class": {
+    "className": {
       "type": "string",
-      "title": "Additional Image Class",
-      "description": "Additional Image Class"
+      "title": "Additional Class",
+      "description": "Additional Class"
+    },
+    "captionClassName": {
+      "type": "string",
+      "title": "Additional Caption Class",
+      "description": "Additional Caption Class"
     }
   }
 }

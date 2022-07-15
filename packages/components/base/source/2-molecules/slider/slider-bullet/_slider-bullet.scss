@@ -4,11 +4,13 @@
   @include bourbon.size(var(--c-slider_bullet--size));
 
   align-self: center;
-  border-radius: 50%;
-  border: 1px solid var(--c-slider_bullet--outline-color);
+  border-radius: var(--ks-border-radius-circle);
+  border: var(--ks-border-width-default) solid
+    var(--c-slider_bullet--outline-color);
   transition: inherit;
   margin: var(--c-slider_bullet--margin);
   display: inline-block;
+  background: var(--c-slider_bullet--background);
 
   .c-slider-nav__slide--active & {
     border-color: var(--c-slider_bullet--outline-color-active);

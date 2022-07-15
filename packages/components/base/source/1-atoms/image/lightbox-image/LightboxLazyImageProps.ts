@@ -42,9 +42,13 @@ export type GalleryIdentifier = string;
  */
 export type ID = string;
 /**
- * Additional Image Class
+ * Additional Class
  */
-export type AdditionalImageClass = string;
+export type AdditionalClass = string;
+/**
+ * Additional Caption Class
+ */
+export type AdditionalCaptionClass = string;
 
 /**
  * Lazy Lightbox Image
@@ -59,6 +63,7 @@ export interface LazyLightboxImageProps {
   hideCaption?: HideCaptionVisually;
   gallery?: GalleryIdentifier;
   id?: ID;
-  class?: AdditionalImageClass;
+  className?: AdditionalClass;
+  captionClassName?: AdditionalCaptionClass;
   [k: string]: unknown;
 }

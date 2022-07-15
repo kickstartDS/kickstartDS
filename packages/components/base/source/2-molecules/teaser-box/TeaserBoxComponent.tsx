@@ -1,18 +1,15 @@
-import {
-  createContext,
-  FunctionComponent,
-  useContext,
-  HTMLAttributes,
-} from 'react';
+import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
 import { Picture } from '../../1-atoms/image/picture';
-import { TeaserBoxProps } from './TeaserBoxProps';
-import { Teaser, TeaserRenderFunctions } from '../teaser/TeaserComponent';
-import './teaser-box.scss';
+import { TeaserBoxProps as TeaserBoxSchemaProps } from './TeaserBoxProps';
+import { Teaser, type TeaserProps } from '../teaser';
 
-const TeaserBoxComponent: FunctionComponent<
-  TeaserBoxProps & TeaserRenderFunctions & HTMLAttributes<HTMLDivElement>
-> = ({ image, ratio, imageSpacing, className, ...props }) => (
+export type TeaserBoxProps = TeaserBoxSchemaProps & TeaserProps;
+
+export const TeaserBoxComponent: ForwardRefRenderFunction<
+  HTMLDivElement,
+  TeaserBoxProps & HTMLAttributes<HTMLDivElement>
+> = ({ image, ratio, imageSpacing, className, ...props }, ref) => (
   <Teaser
     className={classnames(
       'c-teaser-box',
@@ -20,6 +17,7 @@ const TeaserBoxComponent: FunctionComponent<
       className
     )}
     data-component="base.teaser"
+    ref={ref}
     {...props}
   >
     {image && (
@@ -35,10 +33,3 @@ const TeaserBoxComponent: FunctionComponent<
     )}
   </Teaser>
 );
-
-export const TeaserBoxContextDefault = TeaserBoxComponent;
-export const TeaserBoxContext = createContext(TeaserBoxContextDefault);
-export const TeaserBox: typeof TeaserBoxContextDefault = (props) => {
-  const Component = useContext(TeaserBoxContext);
-  return <Component {...props} />;
-};

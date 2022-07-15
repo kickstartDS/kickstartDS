@@ -1,0 +1,65 @@
+@use 'sass:string';
+@use 'sass:list';
+@use 'sass:meta';
+@use 'sass:map';
+@use 'sass:math';
+
+$name: null !default;
+$unit-intervals: (
+  'px': 1,
+  // 'em': 0.01,
+  // 'rem': 0.1,
+  // '': 0,,,,,,,
+) !default;
+
+@mixin wrapper($localName: $name) {
+  @if not $localName {
+    @error '$localName undefined';
+  }
+
+  @at-root {
+    .l-container--#{$localName} {
+      /* stylelint-disable-next-line property-no-unknown */
+      container-name: string.unquote($localName);
+      @content;
+    }
+  }
+}
+
+@function get-operator($operator) {
+  @if not list.index(('>=', '>', '<=', '<', '≥', '≤'), $operator) {
+    @error 'Unsupported operator #{$operator}';
+  }
+
+  @return $operator;
+}
+
+@function get-value($value, $operator) {
+  $interval: map.get($unit-intervals, math.unit($value));
+
+  @if not $interval {
+    @error 'Unsupported unit `#{math.unit($value)}`.';
+  }
+
+  @if $operator == '>' {
+    $value: $value + $interval;
+  } @else if $operator == '<' {
+    $value: $value - $interval;
+  }
+
+  @return $value;
+}
+
+@mixin size($operator, $value, $localName: $name) {
+  @if not $localName {
+    @error '$localName undefined';
+  }
+
+  $operator: get-operator($operator);
+  $value: get-value($value, $operator);
+  $prefix: if(list.index(('<', '<=', '≤'), $operator), 'max', 'min');
+
+  @container #{$localName} size(#{string.unquote('#{$prefix}-width: #{$value}')}) {
+    @content;
+  }
+}

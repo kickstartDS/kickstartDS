@@ -1,20 +1,24 @@
-import { breakpointEvents } from '@kickstartds/core/utils';
-
 export default function (Glide, Components) {
   const ArrowPosition = {
     arrows: [],
 
     mount() {
-      const arrowsWrapper = Components.Controls.items[1];
+      const arrowsWrapper =
+        Components.Html.root.querySelector('.c-slider__arrows');
       if (arrowsWrapper) {
-        this.arrows = [...arrowsWrapper.querySelectorAll('.slider__arrow')];
+        this.arrows = [...arrowsWrapper.querySelectorAll('.c-slider__arrow')];
 
         if (this.arrows.length) {
+          this.RO = new ResizeObserver(() => this.setArrowsPosition());
+          this.RO.observe(Components.Html.root);
           requestAnimationFrame(() => this.setArrowsPosition());
-          window.rm.radio.on(breakpointEvents.change, () =>
-            this.setArrowsPosition()
-          );
         }
+      }
+    },
+
+    destroy() {
+      if (this.RO) {
+        this.RO.unobserve(Components.Html.root);
       }
     },
 

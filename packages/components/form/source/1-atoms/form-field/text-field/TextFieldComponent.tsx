@@ -1,23 +1,16 @@
-import {
-  ForwardRefRenderFunction,
-  forwardRef,
-  createContext,
-  useContext,
-  HTMLAttributes,
-} from 'react';
+import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
-import { renderFn, defaultRenderFn } from '@kickstartds/core/core';
+import { defaultRenderFn } from '@kickstartds/core/core';
 import { Icon } from '@kickstartds/base/icon';
-import { TextFieldProps } from './TextFieldProps';
-import '../form-field.scss';
+import { type TextFieldProps as TextFieldSchemaProps } from './TextFieldProps';
 
-interface RenderFunctions {
-  renderLabel?: renderFn;
-}
+export type TextFieldProps = TextFieldSchemaProps & {
+  renderLabel?: typeof defaultRenderFn;
+};
 
-const TextFieldComponent: ForwardRefRenderFunction<
+export const TextFieldComponent: ForwardRefRenderFunction<
   HTMLInputElement,
-  TextFieldProps & RenderFunctions & HTMLAttributes<HTMLInputElement>
+  TextFieldProps & HTMLAttributes<HTMLInputElement>
 > = (
   {
     type = 'text',
@@ -28,6 +21,7 @@ const TextFieldComponent: ForwardRefRenderFunction<
     invalidMessage,
     hint,
     icon,
+    className,
     ...props
   },
   ref
@@ -43,9 +37,13 @@ const TextFieldComponent: ForwardRefRenderFunction<
     <div className="c-form-field__field">
       {icon && <Icon icon={icon} aria-hidden="true" focusable="false" />}
       <input
-        className={classnames('c-form-field__input', {
-          'c-form-field__input--is-invalid': invalid,
-        })}
+        className={classnames(
+          'c-form-field__input',
+          {
+            'c-form-field__input--is-invalid': invalid,
+          },
+          className
+        )}
         type={type}
         ref={ref}
         {...props}
@@ -58,13 +56,4 @@ const TextFieldComponent: ForwardRefRenderFunction<
 
     {hint && <p className="c-form-field__hint">{hint}</p>}
   </label>
-);
-
-export const TextFieldContextDefault = forwardRef(TextFieldComponent);
-export const TextFieldContext = createContext(TextFieldContextDefault);
-export const TextField: typeof TextFieldContextDefault = forwardRef(
-  (props, ref) => {
-    const Component = useContext(TextFieldContext);
-    return <Component {...props} ref={ref} />;
-  }
 );

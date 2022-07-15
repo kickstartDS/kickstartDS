@@ -1,36 +1,34 @@
-import {
-  FunctionComponent,
-  forwardRef,
-  createContext,
-  useContext,
-  HTMLAttributes,
-} from 'react';
+import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
-import { renderFn, defaultRenderFn } from '@kickstartds/core/core';
-import { Radio } from '../../../1-atoms/form-check/radio/RadioComponent';
-import { RadioGroupProps } from './RadioGroupProps';
-import '../form-check-group.scss';
+import { defaultRenderFn } from '@kickstartds/core/core';
+import { Radio } from '../../../1-atoms/form-check/radio';
+import { type RadioGroupProps as RadioGroupSchemaProps } from './RadioGroupProps';
 
-interface RenderFunctions {
-  renderLabel?: renderFn;
-}
+export type RadioGroupProps = RadioGroupSchemaProps & {
+  renderLabel?: typeof defaultRenderFn;
+};
 
-const RadioGroupComponent: FunctionComponent<
-  RadioGroupProps & RenderFunctions & HTMLAttributes<HTMLDivElement>
-> = ({
-  label,
-  name,
-  renderLabel = defaultRenderFn,
-  invalid,
-  invalidMessage,
-  options,
-  className,
-  ...props
-}) => (
+export const RadioGroupComponent: ForwardRefRenderFunction<
+  HTMLDivElement,
+  RadioGroupProps & HTMLAttributes<HTMLDivElement>
+> = (
+  {
+    label,
+    name,
+    renderLabel = defaultRenderFn,
+    invalid,
+    invalidMessage,
+    options,
+    className,
+    ...props
+  },
+  ref
+) => (
   <div
     className={classnames('c-form-check-group', className, {
       'c-form-check-group--is-invalid': invalid,
     })}
+    ref={ref}
     {...props}
   >
     <span className="c-form-check-group__label">{renderLabel(label)}</span>
@@ -45,13 +43,4 @@ const RadioGroupComponent: FunctionComponent<
       )}
     </div>
   </div>
-);
-
-export const RadioGroupContextDefault = RadioGroupComponent;
-export const RadioGroupContext = createContext(RadioGroupContextDefault);
-export const RadioGroup: typeof RadioGroupContextDefault = forwardRef(
-  (props, ref) => {
-    const Component = useContext(RadioGroupContext);
-    return <Component {...props} ref={ref} />;
-  }
 );

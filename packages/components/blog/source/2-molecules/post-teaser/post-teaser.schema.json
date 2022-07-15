@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/blog/post-teaser.schema.json",
+  "title": "Post Teaser",
+  "description": "Post Teaser",
+  "type": "object",
+  "properties": {
+    "image": {
+      "type": "object",
+      "allOf": [
+        {
+          "properties": {
+            "src": {
+              "default": "https://picsum.photos/seed/kdsnewslatest/900/380"
+            },
+            "width": {
+              "default": 900
+            },
+            "height": {
+              "default": 380
+            }
+          }
+        },
+        {
+          "$ref": "http://schema.kickstartds.com/base/picture.definitions.json"
+        }
+      ]
+    },
+    "meta": {
+      "$ref": "http://schema.kickstartds.com/blog/post-meta.schema.json"
+    },
+    "link": {
+      "$ref": "http://schema.kickstartds.com/blog/news-item.definitions.json#/definitions/link"
+    },
+    "title": {
+      "$ref": "http://schema.kickstartds.com/blog/news-item.definitions.json#/definitions/title"
+    },
+    "body": {
+      "$ref": "http://schema.kickstartds.com/blog/news-item.definitions.json#/definitions/body"
+    },
+    "categories": {
+      "$ref": "http://schema.kickstartds.com/blog/news-item.definitions.json#/definitions/categories"
+    },
+    "className": {
+      "title": "Class",
+      "description": "Additional css classes attached to the wrapping element",
+      "type": "string"
+    }
+  },
+  "required": ["index", "link"]
+}
