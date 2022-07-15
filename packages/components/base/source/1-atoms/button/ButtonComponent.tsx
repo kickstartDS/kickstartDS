@@ -1,12 +1,12 @@
 import { ForwardRefRenderFunction, HTMLAttributes, ElementType } from 'react';
 import classnames from 'classnames';
-import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
+import { defaultRenderFn } from '@kickstartds/core/lib/core';
 import { Link } from '../link';
 import { Icon } from '../icon';
 import { type ButtonProps as ButtonSchemaProps } from './ButtonProps';
 
 export type ButtonProps = ButtonSchemaProps & {
-  renderLabel?: renderFn;
+  renderLabel?: typeof defaultRenderFn;
 };
 
 export const ButtonComponent: ForwardRefRenderFunction<

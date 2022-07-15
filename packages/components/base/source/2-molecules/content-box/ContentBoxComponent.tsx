@@ -1,6 +1,6 @@
 import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
-import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
+import { defaultRenderFn } from '@kickstartds/core/lib/core';
 import {
   RichText,
   defaultRenderFn as richTextDefaultRenderFn,
@@ -10,8 +10,8 @@ import { Picture } from '../../1-atoms/image/picture';
 import { type ContentBoxProps as ContentBoxSchemaProps } from './ContentBoxProps';
 
 export type ContentBoxProps = ContentBoxSchemaProps & {
-  renderTopic?: renderFn;
-  renderText?: renderFn;
+  renderTopic?: typeof defaultRenderFn;
+  renderText?: typeof richTextDefaultRenderFn;
 };
 
 export const ContentBoxComponent: ForwardRefRenderFunction<

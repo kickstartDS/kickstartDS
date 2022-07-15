@@ -4,7 +4,6 @@ import {
   HTMLAttributes,
 } from 'react';
 import classnames from 'classnames';
-import { renderFn } from '@kickstartds/core/lib/core';
 import { Headline } from '@kickstartds/base/lib/headline';
 import { Button } from '@kickstartds/base/lib/button';
 import {
@@ -19,7 +18,7 @@ interface ILazy {
 }
 
 interface RenderFunctions {
-  renderText?: renderFn;
+  renderText?: typeof richTextDefaultRenderFn;
 }
 
 const StorytellingMixin: FunctionComponent<

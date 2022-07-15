@@ -5,17 +5,13 @@ import {
   RichText,
   defaultRenderFn as richTextDefaultRenderFn,
 } from '@kickstartds/base/lib/rich-text';
-import {
-  renderFn,
-  renderTextFn,
-  defaultRenderFn,
-} from '@kickstartds/core/lib/core';
+import { defaultRenderFn } from '@kickstartds/core/lib/core';
 import { Headline } from '@kickstartds/base/lib/headline';
 import { TextBox, Inbox } from './VisualProps';
 
 export interface RenderFunctions {
-  renderHeadline?: renderFn;
-  renderText?: renderTextFn;
+  renderHeadline?: typeof defaultRenderFn;
+  renderText?: typeof richTextDefaultRenderFn;
 }
 
 interface IBox extends TextBox {

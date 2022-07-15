@@ -1,11 +1,11 @@
 import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
-import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
+import { defaultRenderFn } from '@kickstartds/core/lib/core';
 import { type HeadlineProps as HeadlineSchemaProps } from './HeadlineProps';
 
 export type HeadlineProps = HeadlineSchemaProps & {
-  renderContent?: renderFn;
-  renderSubheadline?: renderFn;
+  renderContent?: typeof defaultRenderFn;
+  renderSubheadline?: typeof defaultRenderFn;
 };
 
 export const HeadlineComponent: ForwardRefRenderFunction<

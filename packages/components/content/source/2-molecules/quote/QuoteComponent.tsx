@@ -1,6 +1,6 @@
 import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
-import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
+import { defaultRenderFn } from '@kickstartds/core/lib/core';
 import { Picture } from '@kickstartds/base/lib/picture';
 import {
   RichText,
@@ -9,9 +9,9 @@ import {
 import { type QuoteProps as QuoteSchemaProps } from './QuoteProps';
 
 export type QuoteProps = QuoteSchemaProps & {
-  renderText?: renderFn;
-  renderSource?: renderFn;
-  renderByline?: renderFn;
+  renderText?: typeof richTextDefaultRenderFn;
+  renderSource?: typeof defaultRenderFn;
+  renderByline?: typeof defaultRenderFn;
 };
 
 export const QuoteComponent: ForwardRefRenderFunction<

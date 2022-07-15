@@ -1,10 +1,10 @@
 import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
-import { renderFn, defaultRenderFn } from '@kickstartds/core/lib/core';
+import { defaultRenderFn } from '@kickstartds/core/lib/core';
 import { type RadioButtonProps as RadioButtonSchemaProps } from './RadioProps';
 
 export type RadioButtonProps = RadioButtonSchemaProps & {
-  renderLabel?: renderFn;
+  renderLabel?: typeof defaultRenderFn;
 };
 
 export const RadioComponent: ForwardRefRenderFunction<
