@@ -45,8 +45,10 @@ const config = {
         blog: false,
         theme: {
           customCss: [
-            require.resolve('@kickstartds/core/lib/design-tokens/tokens.css'),
-            require.resolve('@kickstartds/base/lib/global/base.css'),
+            require.resolve(
+              '../../components/core/lib/design-tokens/tokens.css'
+            ),
+            require.resolve('../../components/base/lib/global/base.css'),
             require.resolve('@code-hike/mdx/styles.css'),
             require.resolve('./src/css/ks-tokens.css'),
             require.resolve('./src/css/mapping.css'),
