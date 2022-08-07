@@ -1,41 +1,85 @@
 import React from 'react';
 import clsx from 'clsx';
+
 import styles from './styles.module.css';
+import Link from '@docusaurus/Link';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
+    title: 'The basics',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Learn about design token, component and recipe use in{' '}
+        <strong>kickstartDS</strong>. These building blocks lay the foundation
+        for a thorough understanding of more complex topics.
       </>
     ),
+    link: '/docs/basics',
   },
   {
-    title: 'Focus on What Matters',
+    title: 'How to use',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Dive into the different ways <strong>kickstartDS</strong> components can
+        be leveraged to speed up prototyping, implementation and integration of
+        frontend code.
       </>
     ),
+    link: '/docs/usage',
   },
   {
-    title: 'Powered by React',
+    title: 'Guides & Examples',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Look up examples for inspiration, or faster ramp up, when developing. Or
+        follow our short guides on focussed problems and their solution inside{' '}
+        <strong>kickstartDS</strong>.
       </>
     ),
+    link: '/docs/guides',
+  },
+  {
+    title: 'Concepts & Architecture',
+    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    description: (
+      <>
+        Take a look behind the curtain: in-depth articles about the architecture
+        of <strong>kickstartDS</strong>; which concepts are used, and what's the
+        rationale for doing so.
+      </>
+    ),
+    link: '/docs/concepts',
+  },
+  {
+    title: 'Feedback & FAQ',
+    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    description: (
+      <>
+        Read through our FAQs, answering the most common questions. ... or get
+        in contact with us on Twitter, Discord, Website Chat or via Email,
+        otherwise.
+      </>
+    ),
+    link: '/docs/feedback',
+  },
+  {
+    title: 'Roadmap & Contributions',
+    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    description: (
+      <>
+        Everything about our process of development, next releases, and how you
+        could get involved. We're super excited about contributions, so please
+        don't be shy!
+      </>
+    ),
+    link: '/docs/roadmap',
   },
 ];
 
-function Feature({ Svg, title, description }) {
+function Feature({ Svg, title, description, link }) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
@@ -44,6 +88,9 @@ function Feature({ Svg, title, description }) {
       <div className="text--center padding-horiz--md">
         <h3>{title}</h3>
         <p>{description}</p>
+        <Link className="button button--lg" to={link}>
+          Learn more
+        </Link>
       </div>
     </div>
   );
