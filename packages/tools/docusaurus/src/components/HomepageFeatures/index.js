@@ -6,7 +6,7 @@ import Link from '@docusaurus/Link';
 
 const FeatureList = [
   {
-    title: 'The basics',
+    title: 'Basics',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
@@ -15,10 +15,10 @@ const FeatureList = [
         for a thorough understanding of more complex topics.
       </>
     ),
-    link: '/docs/basics',
+    link: '/docs/basics/',
   },
   {
-    title: 'How to use',
+    title: 'Integration',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
@@ -27,10 +27,10 @@ const FeatureList = [
         frontend code.
       </>
     ),
-    link: '/docs/usage',
+    link: '/docs/integration',
   },
   {
-    title: 'Guides & Examples',
+    title: 'Guides',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
@@ -42,7 +42,7 @@ const FeatureList = [
     link: '/docs/guides',
   },
   {
-    title: 'Concepts & Architecture',
+    title: 'Concepts',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
@@ -54,19 +54,19 @@ const FeatureList = [
     link: '/docs/concepts',
   },
   {
-    title: 'Feedback & FAQ',
+    title: 'Feedback',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
         Read through our FAQs, answering the most common questions. ... or get
-        in contact with us on Twitter, Discord, Website Chat or via Email,
-        otherwise.
+        in contact with us for support on Twitter, Discord, Website Chat or via
+        Email.
       </>
     ),
     link: '/docs/feedback',
   },
   {
-    title: 'Roadmap & Contributions',
+    title: 'Roadmap',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
