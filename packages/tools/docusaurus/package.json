@@ -17,6 +17,7 @@
     "@code-hike/mdx": "^0.7.2",
     "@docusaurus/core": "2.0.1",
     "@docusaurus/preset-classic": "2.0.1",
+    "@kickstartds/content": "^1.5.1",
     "@mdx-js/react": "2",
     "clsx": "^1.2.1",
     "docusaurus-theme-mdx-v2": "^0.1.2",

@@ -4,7 +4,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
-// import { Visual } from '@kickstartds/content/lib/visual';
+import { Visual } from '@kickstartds/content/lib/visual';
 
 import styles from './index.module.css';
 
@@ -12,7 +12,7 @@ function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
   return (
     <>
-      {/* <Visual
+      <Visual
         className="c-visual--welcome"
         box={{
           background: 'transparent',
@@ -53,7 +53,7 @@ function HomepageHeader() {
           },
           mode: 'image',
         }}
-      /> */}
+      />
 
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
