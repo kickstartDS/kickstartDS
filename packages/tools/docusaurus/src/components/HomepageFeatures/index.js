@@ -15,7 +15,7 @@ const FeatureList = [
         for a thorough understanding of more complex topics.
       </>
     ),
-    link: '/docs/basics/',
+    link: '/docs/basics',
   },
   {
     title: 'Integration',
@@ -71,7 +71,7 @@ const FeatureList = [
     description: (
       <>
         Everything about our process of development, next releases, and how you
-        could get involved. We're super excited about contributions, so please
+        can get involved. We're super excited about contributions, so please
         don't be shy!
       </>
     ),
