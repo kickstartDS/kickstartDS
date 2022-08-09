@@ -10,7 +10,7 @@
     "packages/tools/*"
   ],
   "scripts": {
-    "build": "lerna run --stream --no-prefix build",
+    "build": "lerna run --stream --no-prefix --scope @kickstartds/* build",
     "build:prod": "NODE_ENV=production yarn run build",
     "copy-env-file": "[ ! -f .env ] && cp .env-example .env || true",
     "chromatic": "yarn workspace @kickstartds-internal/storybook chromatic",
