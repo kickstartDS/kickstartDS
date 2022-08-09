@@ -13,8 +13,8 @@ function HomepageHeader() {
   return (
     <>
       <Visual
-        className="c-visual--welcome"
         box={{
+          inverted: 'false',
           background: 'transparent',
           enabled: true,
           headline: {
@@ -29,21 +29,21 @@ function HomepageHeader() {
             enabled: false,
             fillAnimation: false,
             href: 'https://example.com',
-            iconAfter: true,
+            iconAfter: false,
             iconAnimation: false,
             iconBefore: false,
             icon: {
               icon: 'chevron-right',
             },
-            label: 'Show ',
+            label: 'Learn how to migrate to 2.0.0 - 5min ⏱️',
             newTab: false,
             size: 'medium',
             variant: 'solid',
           },
           text: "Explore our frontend first framework, and all of its comprehensive components backing our landing page, our Wordpress blog and the glossary. Take a deeper look at our design and component tokens, interact with the Storybook controls, or preview some sample pages we've assembled.",
-          vertical: 'top',
+          vertical: 'center',
         }}
-        height="small"
+        // height="small"
         media={{
           image: {
             indent: 'none',
@@ -54,8 +54,42 @@ function HomepageHeader() {
           mode: 'image',
         }}
       />
+      <Visual
+        backgroundColor="var(--ks-background-color-primary)"
+        box={{
+          inverted: true,
+          background: 'transparent',
+          enabled: true,
+          headline: {
+            level: 'h3',
+            styleAs: 'h3',
+            content: 'kickstartDS docs',
+            subheadline: '... easy like squeeeeezing a lemon',
+          },
+          horizontal: 'center',
+          indent: false,
+          link: {
+            inverted: 'true',
+            enabled: true,
+            fillAnimation: false,
+            href: 'https://example.com',
+            iconAfter: false,
+            iconAnimation: false,
+            iconBefore: false,
+            icon: {
+              icon: 'chevron-right',
+            },
+            label: 'Learn how to migrate to 2.0.0 - 5min ⏱️',
+            newTab: false,
+            size: 'medium',
+            variant: 'solid',
+          },
+          vertical: 'center',
+        }}
+        height="small"
+      />
 
-      <header className={clsx('hero hero--primary', styles.heroBanner)}>
+      {/* <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
           <h1 className="hero__title">{siteConfig.title}</h1>
           <p className="hero__subtitle">{siteConfig.tagline}</p>
@@ -68,7 +102,7 @@ function HomepageHeader() {
             </Link>
           </div>
         </div>
-      </header>
+      </header> */}
     </>
   );
 }

@@ -1,0 +1,11 @@
+header.c-headline.c-headline--align-center {
+  margin: auto;
+}
+
+header.c-headline .c-headline__subheadline {
+  --c-headline_subheadline--font-weight: var(--ifm-font-weight-semibold);
+}
+
+p.c-headline__subheadline {
+  --c-headline_subheadline--color: var(--ks-color-primary);
+}

@@ -51,8 +51,11 @@ const config = {
             require.resolve('../../components/base/lib/global/base.css'),
             require.resolve('@code-hike/mdx/styles.css'),
             require.resolve('./src/css/ks-tokens.css'),
-            require.resolve('./src/css/mapping.css'),
+            require.resolve('./src/css/visual.css'),
+            require.resolve('./src/css/button.css'),
+            require.resolve('./src/css/headline.css'),
             require.resolve('./src/css/custom.css'),
+            require.resolve('./src/css/mapping.css'),
           ],
         },
       }),
@@ -122,7 +125,6 @@ const config = {
         ],
       },
       footer: {
-        style: 'dark',
         links: [
           {
             title: 'Docs',

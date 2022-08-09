@@ -5,6 +5,21 @@
  * work well for content-centric websites.
  */
 
-.button.button--secondary {
-  color: var(--ks-color-primary-inverted);
+:root {
+  --l-section--content-padding: var(--ifm-global-spacing);
+}
+
+a:not(.c-button) {
+  color: var(--ifm-link-color);
+  background: unset;
+}
+
+.navbar__item.navbar__link,
+a.footer__link-item {
+  font-weight: var(--ifm-font-weight-semibold);
+  text-decoration: none;
+}
+
+a.footer__link-item {
+  color: var(--ifm-font-color-base);
 }

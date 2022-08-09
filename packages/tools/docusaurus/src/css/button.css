@@ -1,0 +1,3 @@
+button.button--primary:not(.button--outline) {
+  --ifm-button-color: var(--ifm-color-primary-inverse);
+}

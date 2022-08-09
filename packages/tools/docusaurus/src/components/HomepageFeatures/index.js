@@ -88,9 +88,7 @@ function Feature({ Svg, title, description, link }) {
       <div className="text--center padding-horiz--md">
         <h3>{title}</h3>
         <p>{description}</p>
-        <Link className="button button--lg" to={link}>
-          Learn more
-        </Link>
+        <Link to={link}>Learn more</Link>
       </div>
     </div>
   );

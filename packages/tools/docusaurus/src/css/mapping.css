@@ -22,15 +22,22 @@
   --ifm-contrast-background-dark-value: 70%;
   --ifm-contrast-foreground-dark-value: 90%;
 
-  --ifm-color-primary: var(--ks-color-primary-to-bg-3);
-  --ifm-color-secondary: #ebedf0;
+  --ifm-color-primary: var(--ks-color-primary);
+  --ifm-color-primary-inverse: var(--ks-color-primary-inverted);
+  --ifm-color-secondary: var(--ks-color-fg-to-bg-8);
   --ifm-color-success: #00a400;
   --ifm-color-info: #54c7ec;
   --ifm-color-warning: #ffba00;
   --ifm-color-danger: #fa383e;
-  --ifm-color-primary-dark: var(--ks-color-primary-to-bg-2);
-  --ifm-color-primary-darker: var(--ks-color-primary-to-bg-1);
-  --ifm-color-primary-darkest: var(--ks-color-primary);
+  --ifm-color-primary-dark: var(
+    --ks-background-color-primary-interactive-hover
+  );
+  --ifm-color-primary-darker: var(
+    --ks-background-color-primary-interactive-active
+  );
+  --ifm-color-primary-darkest: var(
+    --ks-background-color-primary-interactive-disabled
+  );
   --ifm-color-primary-light: var(--ks-color-primary-to-bg-4);
   --ifm-color-primary-lighter: var(--ks-color-primary-to-bg-5);
   --ifm-color-primary-lightest: var(--ks-color-primary-to-bg-6);
@@ -38,9 +45,9 @@
   --ifm-color-primary-contrast-foreground: var(
     --ks-border-color-default-inverted
   );
-  --ifm-color-secondary-dark: rgb(212, 213, 216);
-  --ifm-color-secondary-darker: rgb(200, 201, 204);
-  --ifm-color-secondary-darkest: rgb(164, 166, 168);
+  --ifm-color-secondary-dark: var(--ks-color-fg-to-bg-7);
+  --ifm-color-secondary-darker: var(--ks-color-fg-to-bg-6);
+  --ifm-color-secondary-darkest: var(--ks-color-fg-to-bg-5);
   --ifm-color-secondary-light: rgb(238, 240, 242);
   --ifm-color-secondary-lighter: rgb(241, 242, 245);
   --ifm-color-secondary-lightest: rgb(245, 246, 248);
@@ -109,7 +116,7 @@
   /* Base. */
   --ifm-color-content: var(--ks-text-color-default);
   --ifm-color-content-inverse: var(--ks-text-color-default-inverted);
-  --ifm-color-content-secondary: #525860;
+  --ifm-color-content-secondary: var(--ks-text-color-interface);
 
   --ifm-background-color: var(
     --ks-background-color-default
@@ -133,7 +140,7 @@
   --ifm-font-weight-bold: var(--ks-font-weight-bold);
 
   --ifm-font-weight-base: var(--ifm-font-weight-normal);
-  --ifm-line-height-base: 1.65;
+  --ifm-line-height-base: var(--ks-line-height-copy-m);
 
   /* Spacing. */
   --ifm-global-spacing: var(--ks-spacing-m);
@@ -143,7 +150,7 @@
   /* Transitions. */
   --ifm-transition-fast: var(--ks-duration-fast);
   --ifm-transition-slow: var(--ks-duration-slow);
-  --ifm-transition-timing-default: var(--ks-timing-function-bounce);
+  --ifm-transition-timing-default: var(--ks-timing-function-linear);
 
   /* Shadows. */
   --ifm-global-shadow-lw: var(--ks-box-shadow-control);
@@ -167,7 +174,7 @@
   --ifm-pre-color: inherit;
   --ifm-pre-line-height: 1.45;
   --ifm-pre-padding: 1rem;
-  --ifm-heading-color: inherit;
+  --ifm-heading-color: var(--ifm-color-black);
   --ifm-heading-margin-top: 0;
   --ifm-heading-margin-bottom: var(--ifm-spacing-vertical);
   --ifm-heading-font-family: var(--ifm-font-family-base);
@@ -204,9 +211,9 @@
   --ifm-table-cell-color: inherit;
   /* Links. */
   --ifm-link-color: var(--ifm-color-primary);
-  --ifm-link-decoration: none;
+  --ifm-link-decoration: var(--g-link--text-decoration);
   --ifm-link-hover-color: var(--ifm-link-color);
-  --ifm-link-hover-decoration: underline;
+  --ifm-link-hover-decoration: var(--g-link--text-decoration-hover);
 
   /* Paragraphs. */
   --ifm-paragraph-margin-bottom: var(--ifm-leading);
@@ -337,14 +344,24 @@
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
-  --ifm-color-primary: var(--ks-color-primary-inverted-to-bg-3);
-  --ifm-color-primary-dark: var(--ks-color-primary-inverted-to-bg-2);
-  --ifm-color-primary-darker: var(--ks-color-primary-inverted-to-bg-1);
-  --ifm-color-primary-darkest: var(--ks-color-primary-inverted);
+[data-theme='dark'],
+[ks-inverted='true'] {
+  --ifm-color-primary: var(--ks-color-primary-inverted-base);
+  --ifm-link-color: var(--ks-color-primary-to-bg-4);
+  --ifm-heading-color: var(--ifm-color-white);
+  --ifm-color-primary-dark: var(
+    --ks-background-color-primary-inverted-interactive-hover
+  );
+  --ifm-color-primary-darker: var(
+    --ks-background-color-primary-inverted-interactive-active
+  );
+  --ifm-color-primary-darkest: var(
+    --ks-background-color-primary-inverted-interactive-disabled
+  );
   --ifm-color-primary-light: var(--ks-color-primary-inverted-to-bg-4);
   --ifm-color-primary-lighter: var(--ks-color-primary-inverted-to-bg-5);
   --ifm-color-primary-lightest: var(--ks-color-primary-inverted-to-bg-6);
-
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-color-content-inverse: var(--ifm-color-gray-900);
+  --ifm-color-primary-inverse: var(--ks-color-primary-base);
 }
