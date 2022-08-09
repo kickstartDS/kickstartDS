@@ -81,10 +81,10 @@ jobs:
       - *attach_workspace
       - run:
           name: Build docs
-          command: yarn run docusaurus-build
+          command: yarn run docusaurus-build --out-dir=../../../docs
       - run:
           name: Compress docs folder
-          command: tar -czf docs.tar.gz packages/tools/docusaurus/build
+          command: tar -czf docs.tar.gz docs
       - store_artifacts:
           path: docs.tar.gz
       - run:
