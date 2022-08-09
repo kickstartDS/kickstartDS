@@ -7,7 +7,7 @@ import Link from '@docusaurus/Link';
 const FeatureList = [
   {
     title: 'Basics',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    Svg: require('@site/static/img/basics.svg').default,
     description: (
       <>
         Learn about design token, component and recipe use in{' '}
@@ -19,7 +19,7 @@ const FeatureList = [
   },
   {
     title: 'Integration',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    Svg: require('@site/static/img/integration.svg').default,
     description: (
       <>
         Dive into the different ways <strong>kickstartDS</strong> components can
@@ -31,7 +31,7 @@ const FeatureList = [
   },
   {
     title: 'Guides',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    Svg: require('@site/static/img/guides.svg').default,
     description: (
       <>
         Look up examples for inspiration, or faster ramp up, when developing. Or
@@ -55,7 +55,7 @@ const FeatureList = [
   },
   {
     title: 'Feedback',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    Svg: require('@site/static/img/feedback.svg').default,
     description: (
       <>
         Read through our FAQs, answering the most common questions. ... or get
@@ -67,7 +67,7 @@ const FeatureList = [
   },
   {
     title: 'Roadmap',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    Svg: require('@site/static/img/roadmap.svg').default,
     description: (
       <>
         Everything about our process of development, next releases, and how you

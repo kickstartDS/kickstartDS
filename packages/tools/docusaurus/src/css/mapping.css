@@ -144,8 +144,8 @@
 
   /* Spacing. */
   --ifm-global-spacing: var(--ks-spacing-m);
-  --ifm-spacing-vertical: var(--ks-spacing-stack-m);
-  --ifm-spacing-horizontal: var(--ks-spacing-inline-m);
+  --ifm-spacing-vertical: var(--ks-spacing-stack-s);
+  --ifm-spacing-horizontal: var(--ks-spacing-inline-s);
 
   /* Transitions. */
   --ifm-transition-fast: var(--ks-duration-fast);
