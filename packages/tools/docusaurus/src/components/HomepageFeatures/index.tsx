@@ -1,29 +1,32 @@
 import React from 'react';
-import clsx from 'clsx';
 
 import { TeaserBox } from '@kickstartds/base/lib/teaser-box';
 import { Section } from '@kickstartds/base/lib/section';
-// import {
-//   PictureContextDefault,
-//   PictureContext,
-// } from '@kickstartds/base/lib/picture';
+import {
+  PictureContextDefault,
+  PictureContext,
+} from '@kickstartds/base/lib/picture';
 
 import styles from './styles.module.css';
 import Link from '@docusaurus/Link';
 
-// const Wrapper = (props) => {
-//   console.log('wrapper', props);
-//   <>
-//     {props.children.map((Child) => (
-//       <Child />
-//     ))}
-//   </>;
-// };
+const PictureWrapper = (props) => {
+  if (typeof props.src === 'function') {
+    const Image = props.src;
 
-// const PictureProvider = (props) => {
-//   console.log(props);
-//   return <PictureContext.Provider value={Wrapper} />;
-// };
+    return (
+      <div className="c-teaser__image">
+        <Image />
+      </div>
+    );
+  }
+
+  return <PictureContextDefault {...props} />;
+};
+
+const PictureProvider = (props) => (
+  <PictureContext.Provider value={PictureWrapper} {...props} />
+);
 
 const FeatureList = [
   {
@@ -74,27 +77,21 @@ const FeatureList = [
 
 export default function HomepageFeatures() {
   return (
-    // <PictureProvider>
-    <Section>
-      {FeatureList.map((props, idx) => {
-        const { title, Svg, description, link } = props;
-
-        return (
+    <PictureProvider>
+      <Section>
+        {FeatureList.map(({ title, Svg, description, link }, idx) => (
           <TeaserBox
             key={idx}
             topic={title}
-            image={{
-              svg: Svg,
-            }}
+            image={Svg}
             text={description}
             link={{
               label: 'learn more',
               href: link,
             }}
           />
-        );
-      })}
-    </Section>
-    // </PictureProvider>
+        ))}
+      </Section>
+    </PictureProvider>
   );
 }
