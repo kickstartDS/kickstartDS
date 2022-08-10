@@ -52,7 +52,7 @@ const FeatureList = [
   },
   {
     title: 'Concepts',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    Svg: require('@site/static/img/concepts.svg').default,
     description:
       "Take a look behind the curtain: in-depth articles about the architecture of **kickstartDS**; which concepts are used, and what's the rationale for doing so.",
     link: '/docs/concepts',
@@ -78,7 +78,7 @@ const FeatureList = [
 export default function HomepageFeatures() {
   return (
     <PictureProvider>
-      <Section>
+      <Section width="wide">
         {FeatureList.map(({ title, Svg, description, link }, idx) => (
           <TeaserBox
             key={idx}
