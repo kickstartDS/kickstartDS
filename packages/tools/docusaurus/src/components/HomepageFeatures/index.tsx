@@ -81,6 +81,7 @@ export default function HomepageFeatures() {
       <Section width="wide">
         {FeatureList.map(({ title, Svg, description, link }, idx) => (
           <TeaserBox
+            imageSpacing
             key={idx}
             topic={title}
             image={Svg}
