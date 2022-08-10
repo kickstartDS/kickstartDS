@@ -1,0 +1,11 @@
+.c-teaser.c-teaser-box {
+  --c-teaser--background: var(--ifm-background-color);
+  --c-teaser--color: var(--ifm-font-color);
+  --c-teaser--shadow-hover: none;
+  border-width: var(--ks-border-width-emphasized);
+  border-color: var(--ks-border-color-interface-interactive);
+}
+
+.c-teaser-box:hover {
+  border-color: var(--ks-border-color-interface-interactive-hover);
+}

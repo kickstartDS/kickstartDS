@@ -38,8 +38,8 @@
   --ifm-color-primary-darkest: var(
     --ks-background-color-primary-interactive-disabled
   );
-  --ifm-color-primary-light: var(--ks-color-primary-to-bg-4);
-  --ifm-color-primary-lighter: var(--ks-color-primary-to-bg-5);
+  --ifm-color-primary-light: var(--ks-color-primary-to-bg-2);
+  --ifm-color-primary-lighter: var(--ks-color-primary-to-bg-4);
   --ifm-color-primary-lightest: var(--ks-color-primary-to-bg-6);
   --ifm-color-primary-contrast-background: var(--ks-color-primary-inverted);
   --ifm-color-primary-contrast-foreground: var(
@@ -121,7 +121,7 @@
   --ifm-background-color: var(
     --ks-background-color-default
   ); /* Body's background. */
-  --ifm-background-surface-color: var(--ks-background-color-default);
+  --ifm-background-surface-color: var(--ks-background-color-accent);
   --ifm-global-border-width: var(--ks-border-width-default);
   --ifm-global-radius: var(--ks-border-radius-surface);
 
@@ -265,10 +265,10 @@
   --ifm-breadcrumb-separator-filter: none;
   --ifm-breadcrumb-separator-size: 0.5rem;
   --ifm-breadcrumb-separator-size-multiplier: 1.25;
-  --ifm-button-background-color: inherit;
+  --ifm-button-background-color: var(--ifm-color-primary);
   --ifm-button-border-color: var(--ifm-button-background-color);
   --ifm-button-border-width: var(--ifm-global-border-width);
-  --ifm-button-color: var(--ifm-font-color-base-inverse);
+  --ifm-button-color: var(--ks-color-primary-inverted);
   --ifm-button-font-weight: var(--ifm-font-weight-bold);
   --ifm-button-padding-horizontal: 1.5rem;
   --ifm-button-padding-vertical: 0.375rem;
@@ -314,7 +314,7 @@
   --ifm-navbar-item-padding-horizontal: 0.75rem;
   --ifm-navbar-item-padding-vertical: 0.25rem;
   --ifm-navbar-link-color: var(--ifm-font-color-base);
-  --ifm-navbar-link-hover-color: var(--ifm-color-primary);
+  --ifm-navbar-link-hover-color: var(--ifm-link-color-hover);
   --ifm-navbar-link-active-color: var(--ifm-link-color);
   --ifm-navbar-padding-horizontal: var(--ifm-spacing-horizontal);
   --ifm-navbar-padding-vertical: calc(var(--ifm-spacing-vertical) * 0.5);
@@ -344,10 +344,10 @@
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'],
-[ks-inverted='true'] {
+[data-theme='dark'] {
   --ifm-color-primary: var(--ks-color-primary-inverted-base);
-  --ifm-link-color: var(--ks-color-primary-to-bg-4);
+  --ifm-link-color: var(--ks-color-primary-to-bg-7);
+  --ifm-link-color-hover: white;
   --ifm-heading-color: var(--ifm-color-white);
   --ifm-color-primary-dark: var(
     --ks-background-color-primary-inverted-interactive-hover
@@ -363,5 +363,6 @@
   --ifm-color-primary-lightest: var(--ks-color-primary-inverted-to-bg-6);
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
   --ifm-color-content-inverse: var(--ifm-color-gray-900);
-  --ifm-color-primary-inverse: var(--ks-color-primary-base);
+
+  --ks-color-primary-inverted: var(--ks-color-primary-base);
 }

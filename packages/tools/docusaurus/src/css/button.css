@@ -1,3 +1,5 @@
-button.button--primary:not(.button--outline) {
-  --ifm-button-color: var(--ifm-color-primary-inverse);
+a.c-button.c-button--solid {
+  --c-button--color: var(--ifm-button-color);
+  --c-button--background-color: var(--ifm-button-background-color);
+  --c-button--background-color-hover: var(--ifm-color-primary-light);
 }

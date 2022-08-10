@@ -25,25 +25,9 @@ function HomepageHeader() {
           },
           horizontal: 'center',
           indent: false,
-          link: {
-            enabled: false,
-            fillAnimation: false,
-            href: 'https://example.com',
-            iconAfter: false,
-            iconAnimation: false,
-            iconBefore: false,
-            icon: {
-              icon: 'chevron-right',
-            },
-            label: 'Learn how to migrate to 2.0.0 - 5min ⏱️',
-            newTab: false,
-            size: 'medium',
-            variant: 'solid',
-          },
           text: "Explore our frontend first framework, and all of its comprehensive components backing our landing page, our Wordpress blog and the glossary. Take a deeper look at our design and component tokens, interact with the Storybook controls, or preview some sample pages we've assembled.",
           vertical: 'center',
         }}
-        // height="small"
         media={{
           image: {
             indent: 'none',
@@ -55,9 +39,8 @@ function HomepageHeader() {
         }}
       />
       <Visual
-        backgroundColor="var(--ks-background-color-primary)"
+        backgroundColor="var(--ifm-background-surface-color)"
         box={{
-          inverted: true,
           background: 'transparent',
           enabled: true,
           headline: {
@@ -69,7 +52,7 @@ function HomepageHeader() {
           horizontal: 'center',
           indent: false,
           link: {
-            inverted: 'true',
+            inverted: 'false',
             enabled: true,
             fillAnimation: false,
             href: 'https://example.com',
