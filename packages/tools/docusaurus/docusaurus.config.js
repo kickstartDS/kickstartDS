@@ -48,7 +48,6 @@ const config = {
             require.resolve(
               '../../components/core/lib/design-tokens/tokens.css'
             ),
-            require.resolve('../../components/base/lib/global/base.css'),
             require.resolve('@code-hike/mdx/styles.css'),
             require.resolve('./src/css/ks-tokens.css'),
             require.resolve('./src/css/visual.css'),
