@@ -7,6 +7,7 @@ $vars: meta.module-variables(content-box-vars);
 @include custom-properties.styles($vars);
 @include container.wrapper('content-box') {
   display: flex;
+  flex-direction: column;
 }
 
 .c-content-box {
@@ -15,6 +16,7 @@ $vars: meta.module-variables(content-box-vars);
   contain: layout inline-size style;
   display: flex;
   flex-direction: column;
+  flex: 1;
 
   &--align-center {
     text-align: center;
