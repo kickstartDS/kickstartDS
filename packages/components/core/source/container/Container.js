@@ -17,11 +17,11 @@ if (inBrowser && !('CSSContainerRule' in window)) {
   const containers = {};
 
   const parseStyleSheet = (rawRules) =>
-    [...rawRules.matchAll(containerRe)].forEach((containerMatch) => {
+    Array.from(rawRules.matchAll(containerRe)).forEach((containerMatch) => {
       const { name, breakpoint, rules, range } = containerMatch.groups;
       const containerSelector = `.l-container${name ? `--${name}` : ''}`;
       const bp = Number(breakpoint);
-      [...rules.matchAll(ruleRe)].forEach((ruleMatch) => {
+      Array.from(rules.matchAll(ruleRe)).forEach((ruleMatch) => {
         const { selector, css } = ruleMatch.groups;
         const containedSelector = selector
           .split(',')
@@ -67,8 +67,8 @@ if (inBrowser && !('CSSContainerRule' in window)) {
       );
 
       if (containerSelector) {
-        element[minProp] = [...containers[containerSelector].min];
-        element[maxProp] = [...containers[containerSelector].max];
+        element[minProp] = Array.from(containers[containerSelector].min);
+        element[maxProp] = Array.from(containers[containerSelector].max);
         RO.observe(element);
       }
     }
@@ -76,7 +76,7 @@ if (inBrowser && !('CSSContainerRule' in window)) {
 
   domLoaded(() => {
     Promise.all(
-      [...document.styleSheets].map((sheet) =>
+      Array.from(document.styleSheets).map((sheet) =>
         sheet.href
           ? fetch(sheet.href)
               .then((css) => css.text())
