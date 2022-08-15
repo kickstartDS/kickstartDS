@@ -9,7 +9,7 @@ $unit-intervals: (
   'px': 1,
   // 'em': 0.01,
   // 'rem': 0.1,
-  // '': 0,,,,,,
+  // '': 0,,,,,,,
 ) !default;
 
 @mixin wrapper($localName: $name) {
@@ -59,7 +59,7 @@ $unit-intervals: (
   $value: get-value($value, $operator);
   $prefix: if(list.index(('<', '<=', '≤'), $operator), 'max', 'min');
 
-  @container #{$localName} size(#{string.unquote('#{$prefix}-width: #{$value}')}) {
+  @container #{$localName} (#{string.unquote('#{$prefix}-width: #{$value}')}) {
     @content;
   }
 }
