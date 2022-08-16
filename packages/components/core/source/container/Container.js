@@ -6,9 +6,9 @@ if (inBrowser && !('CSSContainerRule' in window)) {
   const rangeAttribute = { min: 'min-width', max: 'max-width' };
   const minProp = '_cq-min';
   const maxProp = '_cq-max';
-  // @see https://regex101.com/r/VFT6dW/5
+  // @see https://regex101.com/r/dVEbYv/1
   const containerRe =
-    /@container (?<name>\S+) size\((?<range>min|max)-width:\s*(?<breakpoint>\d*)px\)\s*\{(?<rules>(?:[^}{]+|\{(?:[^}{]+|\{[^}{]*\})*\})*)\}/gm;
+    /@container (?<name>\S+) \((?<range>min|max)-width:\s*(?<breakpoint>\d*)px\)\s*\{(?<rules>(?:[^}{]+|\{(?:[^}{]+|\{[^}{]*\})*\})*)\}/gm;
   // @see https://regex101.com/r/TsRNow/2
   const ruleRe = /\s*(?<selector>[^{]*)\{\s*(?<css>[^}]*)\s*\}/gm;
   const styleElm = document.createElement('style');
