@@ -11,7 +11,7 @@
         @if not $container-name {
           @error '`container-name-`-property is requred for #{$name}.';
         }
-        @container #{string.unquote($container-name)} size(min-width: #{$bp}px) {
+        @container #{string.unquote($container-name)} (min-width: #{$bp}px) {
           @include responsive-custom-property($name, $val);
         }
       }

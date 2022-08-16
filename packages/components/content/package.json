@@ -41,11 +41,11 @@
     "watch": "node ../../tools/build-components/source --watch"
   },
   "dependencies": {
-    "@babel/runtime": "^7.17.8",
+    "@babel/runtime": "^7.17.9",
     "@kickstartds/base": "^1.5.1",
     "@kickstartds/core": "^1.5.0",
     "classnames": "^2.2.6",
-    "countup.js": "^2.1.0"
+    "countup.js": "^2.3.2"
   },
   "devDependencies": {
     "bourbon": "^7.2.0"
