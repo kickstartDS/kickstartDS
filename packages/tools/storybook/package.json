@@ -22,7 +22,7 @@
     "del": "^6.0.0",
     "fast-glob": "^3.2.11",
     "find-up": "^5.0.0",
-    "fs-extra": "^10.0.1",
+    "fs-extra": "^10.1.0",
     "lazysizes": "^5.3.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.1",
@@ -30,17 +30,17 @@
     "yargs-parser": "^21.0.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.8",
-    "@kickstartds/storybook-addon-component-tokens": "^0.1.5",
-    "@storybook/addon-a11y": "6.4.21",
-    "@storybook/addon-essentials": "6.4.21",
-    "@storybook/cli": "6.4.21",
-    "@storybook/core": "6.4.21",
-    "@storybook/react": "6.4.21",
+    "@babel/core": "^7.18.5",
+    "@kickstartds/storybook-addon-component-tokens": "^0.1.6",
+    "@storybook/addon-a11y": "6.5.10",
+    "@storybook/addon-essentials": "6.5.10",
+    "@storybook/cli": "6.5.10",
+    "@storybook/core": "6.5.10",
+    "@storybook/react": "6.5.10",
     "@types/react": "^17.0.43",
     "@types/react-dom": "^17.0.14",
     "@whitespace/storybook-addon-html": "git+https://github.com/lmestel/storybook-addon-html.git#v5.3.0",
-    "chromatic": "^6.5.4",
-    "storybook-dark-mode": "^1.0.9"
+    "chromatic": "^6.5.6",
+    "storybook-dark-mode": "^1.1.0"
   }
 }
