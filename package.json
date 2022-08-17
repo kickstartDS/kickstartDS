@@ -21,7 +21,7 @@
     "dereference": "node scripts/schemaDereference.js",
     "eslint": "eslint \"**/*.{js,jsx,ts,tsx}\"",
     "find-licenses": "node ./scripts/license.js",
-    "format": "prettier --write .",
+    "format": "prettier --cache --write .",
     "git-config": "git config --local include.path ../.gitconfig",
     "husky-commit-msg": "commitlint -E GIT_PARAMS",
     "husky-pre-commit": "yarn run schema && git add packages/*/*/source/**/*Props.ts && lint-staged",
@@ -40,7 +40,7 @@
     "watch-tokens": "sass --watch --load-path=node_modules packages/components/core/source/design-tokens/tokens.scss packages/components/core/lib/design-tokens/tokens.css"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,md,json,scss}": "prettier --write"
+    "*.{js,jsx,ts,tsx,md,json,scss}": "prettier --cache --write"
   },
   "config": {
     "commitizen": {
