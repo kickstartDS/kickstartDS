@@ -14,7 +14,7 @@
     "@rollup/plugin-replace": "^4.0.0",
     "@wordpress/babel-plugin-import-jsx-pragma": "^3.2.0",
     "autoprefixer": "^10.4.8",
-    "builtin-modules": "^3.2.0",
+    "builtin-modules": "^3.3.0",
     "change-case": "^4.1.2",
     "chokidar": "^3.5.3",
     "cssnano": "^5.1.13",
