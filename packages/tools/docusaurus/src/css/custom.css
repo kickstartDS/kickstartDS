@@ -23,3 +23,8 @@ a.footer__link-item {
 a.footer__link-item {
   color: var(--ifm-font-color-base);
 }
+
+.announcementBar_---------node_modules-\@docusaurus-theme-classic-lib-theme-AnnouncementBar-styles-module {
+  /* color: var(--ks-color-primary-inverted-base) !important; */
+  background-color: var(--ifm-color-primary) !important;
+}

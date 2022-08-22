@@ -5,6 +5,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import { Visual } from '@kickstartds/content/lib/visual';
+import { Section } from '@kickstartds/base/lib/section';
 
 import styles from './index.module.css';
 
@@ -12,32 +13,34 @@ function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
   return (
     <>
-      <Visual
-        box={{
-          inverted: 'false',
-          background: 'transparent',
-          enabled: true,
-          headline: {
-            level: 'h1',
-            styleAs: 'h1',
-            content: 'Welcome 👋',
-            subheadline: 'Get started with the kickstartDS Design System!',
-          },
-          horizontal: 'center',
-          indent: false,
-          text: "Explore our frontend first framework, and all of its comprehensive components backing our landing page, our Wordpress blog and the glossary. Take a deeper look at our design and component tokens, interact with the Storybook controls, or preview some sample pages we've assembled.",
-          vertical: 'center',
-        }}
-        media={{
-          image: {
-            indent: 'none',
-            srcDesktop: 'img/banner/welcome-centered.svg',
-            srcTablet: 'img/banner/welcome-centered.svg',
-            srcMobile: 'img/banner/welcome-centered-m.svg',
-          },
-          mode: 'image',
-        }}
-      />
+      <Section spaceBefore="small" spaceAfter="small">
+        <Visual
+          box={{
+            inverted: 'false',
+            background: 'transparent',
+            enabled: true,
+            headline: {
+              level: 'h1',
+              styleAs: 'h1',
+              content: 'Welcome 👋',
+              subheadline: 'Get started with the kickstartDS Design System!',
+            },
+            horizontal: 'center',
+            indent: false,
+            text: "Explore our frontend first framework, and all of its comprehensive components backing our landing page, our Wordpress blog and the glossary. Take a deeper look at our design and component tokens, interact with the Storybook controls, or preview some sample pages we've assembled.",
+            vertical: 'center',
+          }}
+          media={{
+            image: {
+              indent: 'none',
+              srcDesktop: 'img/banner/welcome-centered.svg',
+              srcTablet: 'img/banner/welcome-centered.svg',
+              srcMobile: 'img/banner/welcome-centered-m.svg',
+            },
+            mode: 'image',
+          }}
+        />
+      </Section>
       <Visual
         backgroundColor="var(--ifm-background-surface-color)"
         box={{

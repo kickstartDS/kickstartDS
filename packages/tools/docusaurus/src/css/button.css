@@ -1,3 +1,7 @@
+a.c-button {
+  --c-button--font-weight: var(--ifm-font-weight-semibold);
+}
+
 a.c-button.c-button--solid {
   --c-button--color: var(--ifm-button-color);
   --c-button--background-color: var(--ifm-button-background-color);

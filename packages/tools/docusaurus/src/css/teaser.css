@@ -6,6 +6,10 @@
   border-color: var(--ks-border-color-interface-interactive);
 }
 
+.c-teaser .c-teaser__topic {
+  font-weight: var(--ifm-font-weight-bold);
+}
+
 .c-teaser-box:hover {
   border-color: var(--ks-border-color-interface-interactive-hover);
 }
