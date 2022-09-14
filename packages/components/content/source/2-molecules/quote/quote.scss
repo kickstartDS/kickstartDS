@@ -26,6 +26,7 @@ $vars: meta.module-variables(quote-vars);
   }
 
   &__content {
+    flex: 1;
     position: relative;
     padding-left: var(--c-quote_content--padding-left);
 

@@ -247,7 +247,7 @@ $vars: meta.module-variables(storytelling-vars);
 
     &__content {
       max-width: 36.85em;
-      width: auto;
+      flex: 1;
 
       &--center {
         text-align: center;

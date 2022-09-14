@@ -70,6 +70,12 @@ $vars: meta.module-variables(visual-vars);
 
   &__box {
     @include visual__box.visual-box;
+
+    // disable container inside box,
+    // so the box can get its width from its content
+    .l-container {
+      container-type: unset;
+    }
   }
 
   .c-headline {
