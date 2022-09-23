@@ -1,10 +1,11 @@
 @use 'sass:meta';
-@use '@kickstartds/core/source/core/breakpoint';
 @use '@kickstartds/core/source/core/custom-properties';
+@use './container';
 @use './headline-vars';
 
 $vars: meta.module-variables(headline-vars);
-@include custom-properties.styles($vars);
+@include custom-properties.styles($vars, container.$name);
+@include container.wrapper;
 
 .c-headline {
   margin: 0 auto var(--c-headline--margin-bottom);
@@ -24,7 +25,7 @@ $vars: meta.module-variables(headline-vars);
     margin-top: calc(var(--c-headline--margin-bottom) * 1.5);
   }
 
-  @include breakpoint.media('≥s') {
+  @include container.size('≥', 640px) {
     max-width: 70%;
   }
 
@@ -33,36 +34,36 @@ $vars: meta.module-variables(headline-vars);
   }
 
   &--space-after-small {
-    padding-bottom: calc(var(--spacing-xxl) / 2);
+    padding-bottom: calc(var(--ks-spacing-xxl) / 2);
   }
 
   &--space-after-large {
-    padding-bottom: var(--spacing-xxl);
+    padding-bottom: var(--ks-spacing-xxl);
   }
 
   &__headline {
     margin: 0;
-    font: var(--g-headline--font);
+    font: var(--c-rich-text_headline--font);
     font-weight: var(--c-headline--font-weight);
     color: var(--c-headline--color);
   }
 
   &__h1 {
-    --g-headline--font: var(--font-display-xxl);
+    --c-rich-text_headline--font: var(--ks-font-display-xxl);
   }
 
   &__h2 {
-    --g-headline--font: var(--font-display-xl);
+    --c-rich-text_headline--font: var(--ks-font-display-xl);
   }
 
   &__h3 {
-    --g-headline--font: var(--font-display-l);
+    --c-rich-text_headline--font: var(--ks-font-display-l);
   }
 
   &__h4,
   &__h5,
   &__p {
-    --g-headline--font: var(--font-display-m);
+    --c-rich-text_headline--font: var(--ks-font-display-m);
   }
 
   &__subheadline {

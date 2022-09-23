@@ -1,13 +1,10 @@
-@use '@kickstartds/base/source/0-base/1-tools/scss/grid';
-@use '@kickstartds/base/source/0-base/1-tools/scss/helpers';
-@use '@kickstartds/core/source/core/breakpoint';
-@use 'sass:meta';
+@use './container';
 
 @mixin visual-box {
   width: 100%;
   max-width: var(--c-visual_box--max-width);
   position: relative;
-  padding: 1.5rem var(--g-content-padding);
+  padding: 1.5rem var(--l-section--content-padding);
   border: var(--c-visual_box--border);
   background: var(--c-visual_box--background);
   color: var(--c-visual_box--color);
@@ -20,12 +17,12 @@
     color: inherit;
   }
 
-  @include breakpoint.media('≥s') {
+  @include container.size('≥', 640px) {
     width: auto;
     border-radius: var(--c-visual_box--border-radius);
   }
 
-  @include breakpoint.media('≥xl') {
+  @include container.size('≥', 1200px) {
     padding-top: 3rem;
     padding-bottom: 3rem;
   }
@@ -43,22 +40,22 @@
       border-radius: 0;
     }
 
-    @include breakpoint.media('≥s') {
+    @include container.size('≥', 640px) {
       background: none;
       padding: 0 !important;
       border-radius: 0;
     }
   }
 
-  @include breakpoint.media('print') {
+  @media print {
     background-color: transparent;
-    border: 2px solid var(--color-grey-3);
+    border: 2px solid var(--ks-color-fg-to-bg-7);
     margin: 1cm 0;
     width: auto;
 
     &,
     a {
-      color: var(--color-black);
+      color: var(--ks-text-color-default);
     }
   }
 }

@@ -1,7 +1,7 @@
 @use 'sass:meta';
 @use 'bourbon/core/bourbon';
-@use '@kickstartds/core/source/core/breakpoint';
 @use '@kickstartds/core/source/core/custom-properties';
+@use './container';
 
 @use './visual__image';
 @use './visual__content';
@@ -9,7 +9,8 @@
 @use './visual-vars';
 
 $vars: meta.module-variables(visual-vars);
-@include custom-properties.styles($vars);
+@include custom-properties.styles($vars, container.$name);
+@include container.wrapper;
 
 .c-visual {
   display: flex;
@@ -40,7 +41,7 @@ $vars: meta.module-variables(visual-vars);
       flex-grow: 1;
     }
 
-    @include breakpoint.media('≥s') {
+    @include container.size('≥', 640px) {
       @include bourbon.position(absolute, 0);
 
       .c-visual--no-crop & {
@@ -69,6 +70,12 @@ $vars: meta.module-variables(visual-vars);
 
   &__box {
     @include visual__box.visual-box;
+
+    // disable container inside box,
+    // so the box can get its width from its content
+    .l-container {
+      container-type: unset;
+    }
   }
 
   .c-headline {

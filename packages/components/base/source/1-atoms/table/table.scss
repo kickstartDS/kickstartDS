@@ -1,11 +1,12 @@
 /* stylelint-disable no-descending-specificity */
 @use 'sass:meta';
 @use '@kickstartds/core/source/core/custom-properties';
-@use '@kickstartds/core/source/core/breakpoint';
+@use './container';
 @use './table-vars';
 
 $vars: meta.module-variables(table-vars);
 @include custom-properties.styles($vars);
+@include container.wrapper;
 
 .c-table {
   width: 100%;
@@ -62,7 +63,7 @@ $vars: meta.module-variables(table-vars);
   }
 
   &--responsive {
-    @include breakpoint.media('<s') {
+    @include container.size('<', 450px) {
       thead {
         display: none;
       }

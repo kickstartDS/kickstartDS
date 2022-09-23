@@ -1,11 +1,12 @@
 @use 'sass:meta';
 @use '@kickstartds/core/source/core/custom-properties';
-@use '@kickstartds/core/source/core/breakpoint';
 @use '../../1-tools/scss/anchor';
 @use './section-vars';
+@use './container';
 
 $vars: meta.module-variables(section-vars);
 @include custom-properties.styles($vars);
+@include container.wrapper('section');
 
 .l-section {
   @include anchor.anchor-target;
@@ -31,12 +32,11 @@ $vars: meta.module-variables(section-vars);
   }
 
   &__container {
-    padding: 0 var(--g-content-padding);
+    padding: 0 var(--l-section--content-padding);
     margin: auto;
     width: 100%;
-    max-width: var(--g-content-width-default);
+    max-width: var(--l-section--content-width-default);
     display: grid;
-    // stylelint-disable scss/no-global-function-names
     grid-template-columns: repeat(
       var(--l-section_col--repeat),
       minmax(
@@ -44,29 +44,23 @@ $vars: meta.module-variables(section-vars);
         var(--l-section_col--max-width)
       )
     );
-    // stylelint-enable scss/no-global-function-names
     grid-gap: var(--l-section_container--gutter);
 
     &--narrow {
-      max-width: var(--g-content-width-narrow);
+      max-width: var(--l-section--content-width-narrow);
     }
 
     &--wide {
-      max-width: var(--g-content-width-wide);
+      max-width: var(--l-section--content-width-wide);
     }
 
     &--max {
-      @include breakpoint.media('≥m') {
-        max-width: 100%;
-      }
+      max-width: 100%;
     }
 
     &--full {
       padding: 0;
-
-      @include breakpoint.media('≥m') {
-        max-width: 100%;
-      }
+      max-width: 100%;
     }
   }
 }

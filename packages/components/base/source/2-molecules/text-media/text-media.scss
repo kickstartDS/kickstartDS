@@ -1,17 +1,16 @@
-@use '../../0-base/1-tools/scss/aspect-ratio';
-@use '@kickstartds/core/source/core/breakpoint';
 @use 'bourbon/core/bourbon';
+@use './container';
+
+@include container.wrapper;
 
 .text-media {
   @include bourbon.clearfix;
 
   &--beside {
     .text-media__text {
-      @include breakpoint.media('≥s') {
-        overflow: hidden;
-      }
+      overflow: hidden;
 
-      @include breakpoint.media('print') {
+      @media print {
         overflow: visible;
       }
     }
@@ -21,15 +20,15 @@
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-    gap: var(--spacing-m);
+    gap: var(--ks-spacing-m);
 
     // above/below left (default), center, right
     .text-media--above & {
-      padding-bottom: var(--spacing-s);
+      padding-bottom: var(--ks-spacing-s);
     }
 
     .text-media--below & {
-      padding-top: var(--spacing-s);
+      padding-top: var(--ks-spacing-s);
     }
 
     .text-media--center & {
@@ -42,30 +41,30 @@
 
     // intext left, right
     .text-media--intext & {
-      padding-bottom: var(--spacing-s);
+      padding-bottom: var(--ks-spacing-s);
 
-      @include breakpoint.media('≥s') {
-        padding-bottom: var(--spacing-xs);
+      @include container.size('≥', 600px) {
+        padding-bottom: var(--ks-spacing-xs);
         max-width: 50%;
         min-width: 0;
       }
 
-      @include breakpoint.media('print') {
+      @media print {
         width: 30%;
       }
     }
 
     .text-media--intext.text-media--left & {
-      @include breakpoint.media('≥s') {
+      @include container.size('≥', 600px) {
         float: left;
-        padding-right: var(--spacing-m);
+        padding-right: var(--ks-spacing-m);
       }
     }
 
     .text-media--intext.text-media--right & {
-      @include breakpoint.media('≥s') {
+      @include container.size('≥', 600px) {
         float: right;
-        padding-left: var(--spacing-m);
+        padding-left: var(--ks-spacing-m);
       }
     }
   }
@@ -92,5 +91,6 @@
     display: table-caption;
     caption-side: bottom;
     text-align: left;
+    color: var(--ks-text-color-default);
   }
 }

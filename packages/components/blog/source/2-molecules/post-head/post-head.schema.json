@@ -1,28 +1,33 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://frontend.ruhmesmeile.com/blog/molecules/post-head.schema.json",
+  "$id": "http://schema.kickstartds.com/blog/post-head.schema.json",
   "title": "Post Head",
   "description": "Post Head",
   "type": "object",
   "properties": {
     "image": {
-      "type": "object",
       "allOf": [
         {
-          "$ref": "http://frontend.ruhmesmeile.com/base/atoms/picture.definitions.json"
-        }
-      ],
-      "properties": {
-        "src": {
-          "default": "https://picsum.photos/seed/kdsnewshead/900/380"
+          "type": "object",
+          "properties": {
+            "src": {
+              "type": "string",
+              "default": "https://picsum.photos/seed/kdsnewshead/900/380"
+            },
+            "width": {
+              "type": "integer",
+              "default": 900
+            },
+            "height": {
+              "type": "integer",
+              "default": 380
+            }
+          }
         },
-        "width": {
-          "default": 900
-        },
-        "height": {
-          "default": 380
+        {
+          "$ref": "http://schema.kickstartds.com/base/picture.definitions.json"
         }
-      }
+      ]
     },
     "imageAlignment": {
       "title": "Alignment",
@@ -32,29 +37,34 @@
       "description": "Choose an horizontal alignment for the image."
     },
     "date": {
-      "$ref": "http://frontend.ruhmesmeile.com/blog/molecules/news-item.definitions.json#/definitions/date"
+      "$ref": "http://schema.kickstartds.com/blog/news-item.definitions.json#/definitions/date"
     },
     "headline": {
-      "type": "object",
       "allOf": [
         {
-          "$ref": "http://frontend.ruhmesmeile.com/base/molecules/headline.schema.json"
-        }
-      ],
-      "properties": {
-        "align": {
-          "default": "left"
+          "type": "object",
+          "properties": {
+            "align": {
+              "type": "string",
+              "default": "left"
+            },
+            "content": {
+              "type": "string",
+              "default": "Lorem ipsum dolor sit amet cons adipis elit "
+            },
+            "level": {
+              "type": "string",
+              "default": "h1"
+            }
+          }
         },
-        "content": {
-          "default": "Lorem ipsum dolor sit amet cons adipis elit "
-        },
-        "level": {
-          "default": "h1"
+        {
+          "$ref": "http://schema.kickstartds.com/base/headline.schema.json"
         }
-      }
+      ]
     },
     "categories": {
-      "$ref": "http://frontend.ruhmesmeile.com/blog/molecules/news-item.definitions.json#/definitions/categories"
+      "$ref": "http://schema.kickstartds.com/blog/news-item.definitions.json#/definitions/categories"
     },
     "className": {
       "title": "Class",

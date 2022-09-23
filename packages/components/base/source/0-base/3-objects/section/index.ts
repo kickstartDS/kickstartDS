@@ -1,10 +1,9 @@
-import { forwardRef, createElement, createContext, useContext } from 'react';
+import { forwardRef, createContext } from 'react';
+import { withContainer } from '@kickstartds/core/lib/container';
 import { SectionComponent, type SectionProps } from './SectionComponent';
 import './section.scss';
 
 export const SectionContextDefault = forwardRef(SectionComponent);
 export const SectionContext = createContext(SectionContextDefault);
-export const Section: typeof SectionContextDefault = forwardRef((props, ref) =>
-  createElement(useContext(SectionContext), { ...props, ref })
-);
+export const Section = withContainer('section', SectionContext);
 export { SectionProps };

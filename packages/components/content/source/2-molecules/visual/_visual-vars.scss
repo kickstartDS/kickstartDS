@@ -4,18 +4,18 @@ $host: (
   '.c-visual': (
     background: null,
     min-height: (
-      xs: 18rem,
-      s: 21rem,
-      m: 31.5rem,
-      l: 35rem,
+      0: 18rem,
+      640: 21rem,
+      960: 31.5rem,
+      1024: 35rem,
     ),
   ),
   '.c-visual--small': (
     min-height: (
-      xs: 13.35rem,
-      s: 13.2rem,
-      m: 15.8rem,
-      l: 20rem,
+      0: 13.35rem,
+      640: 13.2rem,
+      960: 15.8rem,
+      1024: 20rem,
     ),
   ),
 ) !default;
@@ -23,12 +23,12 @@ $host: (
 $image: (
   '.c-visual': (
     indent-left: (
-      xs: 20%,
-      s: 50%,
+      0: 20%,
+      640: 50%,
     ),
     indent-right: (
-      xs: 70%,
-      s: 50%,
+      0: 70%,
+      640: 50%,
     ),
   ),
 ) !default;
@@ -45,17 +45,13 @@ $box: (
   '.c-visual__box': (
     border: null,
     border-radius: null,
-    color: var(--color-white),
-    background: var(--color-primary-alpha-8),
+    color: var(--ks-text-color-primary-inverted),
+    background: var(--ks-background-color-primary-translucent),
     max-width: (
-      xs: var(--g-content-width-default),
-      s: 50%,
-      xl: 40rem,
+      0: var(--l-section--content-width-default),
+      640: 50%,
+      1200: 40rem,
     ),
-  ),
-  '.c-visual__box--light': (
-    color: var(--color-primary),
-    background: var(--color-white-alpha-9),
   ),
 ) !default;
 
@@ -70,8 +66,8 @@ $headline: (
 
 $text: (
   '.c-visual__box': (
-    font: var(--font-copy-m),
-    font-weight: var(--font-weight-regular),
+    font: var(--ks-font-copy-m),
+    font-weight: var(--ks-font-weight-regular),
     margin: 1.2em 0 0,
   ),
 ) !default;

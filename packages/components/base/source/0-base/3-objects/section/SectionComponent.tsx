@@ -35,6 +35,7 @@ export const SectionComponent: ForwardRefRenderFunction<
 > = (
   {
     background,
+    inverted,
     spaceBefore,
     spaceAfter,
     headline,
@@ -59,6 +60,7 @@ export const SectionComponent: ForwardRefRenderFunction<
         `l-section--space-after-${spaceAfter}`,
       className
     )}
+    ks-inverted={inverted?.toString()}
     ref={ref}
     {...props}
   >

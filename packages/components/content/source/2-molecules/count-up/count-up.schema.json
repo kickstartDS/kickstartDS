@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://frontend.ruhmesmeile.com/content/molecules/count-up.schema.json",
+  "$id": "http://schema.kickstartds.com/content/count-up.schema.json",
   "title": "Count Up",
   "description": "Component to to increase a number up to a final value",
   "type": "object",
@@ -12,7 +12,7 @@
       "default": 1200
     },
     "icon": {
-      "$ref": "http://frontend.ruhmesmeile.com/base/atoms/icon.definitions.json"
+      "$ref": "http://schema.kickstartds.com/base/icon.definitions.json"
     },
     "topic": {
       "title": "Topic",
@@ -42,7 +42,7 @@
           }
         },
         {
-          "$ref": "http://frontend.ruhmesmeile.com/base/atoms/link-button.schema.json"
+          "$ref": "http://schema.kickstartds.com/base/button.schema.json"
         }
       ]
     },

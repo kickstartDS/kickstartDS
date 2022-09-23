@@ -65,8 +65,8 @@ const prepare = async (jsPaths) => {
 };
 
 const bundleJs = async (jsPaths) => {
-  log('starting js bundle');
   if (!jsPaths.length) return { output: [] };
+  log('starting js bundle');
   const { inputOptions, outputOptions } = await prepare(jsPaths);
   const bundle = await rollup.rollup(inputOptions);
   const { output } = await bundle.write(outputOptions);

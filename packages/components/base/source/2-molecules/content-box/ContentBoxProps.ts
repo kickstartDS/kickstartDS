@@ -36,17 +36,16 @@ export type Label = string;
 /**
  * Choose one of the styles from the list
  */
-export type ButtonStyle =
-  | 'solid'
-  | 'solid-inverted'
-  | 'clear'
-  | 'clear-inverted'
-  | 'outline'
-  | 'outline-inverted';
+export type ButtonStyle = 'solid' | 'clear' | 'outline';
+export type Inverted = boolean;
 /**
  * Choose a size between small, medium and large
  */
 export type ButtonSize = 'small' | 'medium' | 'large';
+/**
+ * Link used for button
+ */
+export type ButtonHref = string;
 /**
  * Add additional css classes that should be applied to the button
  */
@@ -75,9 +74,21 @@ export type FillAnimation = boolean;
  */
 export type IconAnimation = boolean;
 /**
- * Link used for button
+ * Select the type attribute for the button
  */
-export type ButtonHref = string;
+export type TypeAttribute = 'button' | 'submit' | 'reset';
+/**
+ * Define a value attribute for the button
+ */
+export type ValueAttribute = string;
+/**
+ * Define a name attribute for the button
+ */
+export type NameAttribute = string;
+/**
+ * Set the disabled attribute for the button
+ */
+export type DisabledAttribute = boolean;
 /**
  * Open link in new Tab
  */
@@ -106,7 +117,9 @@ export interface Link {
   enabled?: DisplayLink;
   label: Label;
   variant: ButtonStyle;
+  inverted?: Inverted;
   size: ButtonSize;
+  href?: ButtonHref;
   className?: AdditionalClasses;
   icon?: Icon;
   iconBefore?: IconBeforeButton;
@@ -114,7 +127,10 @@ export interface Link {
   dataComponent?: DataComponentAttribute;
   fillAnimation?: FillAnimation;
   iconAnimation?: IconAnimation;
-  href: ButtonHref;
+  type?: TypeAttribute;
+  value?: ValueAttribute;
+  name?: NameAttribute;
+  disabled?: DisabledAttribute;
   newTab?: OpenLinkInNewTab;
 }
 /**

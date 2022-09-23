@@ -2,15 +2,15 @@ $name-: 'c-post-meta' !default;
 
 $host: (
   '.c-post-meta': (
-    gap: var(--spacing-m),
+    gap: var(--ks-spacing-m),
   ),
 ) !default;
 
 $item: (
   '.c-post-meta': (
-    gap: var(--spacing-xs),
-    font: var(--font-ui-s),
-    color: var(--color-grey-6),
+    gap: var(--ks-spacing-xs),
+    font: var(--ks-font-ui-s),
+    color: var(--ks-text-color-interface),
     icon-size: 1.2em,
   ),
 ) !default;
@@ -20,8 +20,8 @@ $author: (
     gap: var(--c-post-meta_item--gap),
     font: var(--c-post-meta_item--font),
     color: var(--c-post-meta_item--color),
-    font-weight: var(--font-weight-bold),
+    font-weight: var(--ks-font-weight-bold),
     avatar-size: 1.5em,
-    avatar-border-radius: 50%,
+    avatar-border-radius: var(--ks-border-radius-circle),
   ),
 ) !default;

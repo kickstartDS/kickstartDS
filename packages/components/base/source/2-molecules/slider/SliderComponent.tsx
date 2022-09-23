@@ -64,7 +64,7 @@ export const SliderComponent: ForwardRefRenderFunction<
         </div>
       </div>
 
-      <div className="c-slider-nav">
+      <div className="c-slider-nav" data-slider-arrows="none">
         <div className="c-slider__track">
           <div
             className="c-slider__slides c-slider-nav__slides"

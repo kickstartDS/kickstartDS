@@ -4,9 +4,8 @@ import {
   HTMLAttributes,
 } from 'react';
 import classnames from 'classnames';
-import { renderFn } from '@kickstartds/core/lib/core';
 import { Headline } from '@kickstartds/base/lib/headline';
-import { LinkButton } from '@kickstartds/base/lib/link-button';
+import { Button } from '@kickstartds/base/lib/button';
 import {
   RichText,
   defaultRenderFn as richTextDefaultRenderFn,
@@ -19,7 +18,7 @@ interface ILazy {
 }
 
 interface RenderFunctions {
-  renderText?: renderFn;
+  renderText?: typeof richTextDefaultRenderFn;
 }
 
 const StorytellingMixin: FunctionComponent<
@@ -32,6 +31,7 @@ const StorytellingMixin: FunctionComponent<
   backgroundColor,
   backgroundImage,
   renderText = richTextDefaultRenderFn,
+  inverted,
   className,
   ...props
 }) => (
@@ -59,6 +59,7 @@ const StorytellingMixin: FunctionComponent<
       backgroundImage: lazy ? undefined : `url(${backgroundImage})`,
     }}
     data-bg={(lazy && backgroundImage) || null}
+    ks-inverted={inverted?.toString()}
     {...props}
   >
     {image?.source && (
@@ -112,7 +113,7 @@ const StorytellingMixin: FunctionComponent<
             className="c-storytelling__text"
           />
         )}
-        {box.link && <LinkButton {...box.link} />}
+        {box.link && <Button {...box.link} />}
       </div>
     </div>
   </div>
@@ -123,12 +124,12 @@ export const StorytellingComponent: ForwardRefRenderFunction<
   HTMLDivElement,
   StorytellingProps & HTMLAttributes<HTMLDivElement>
 > = (props, ref) => (
-  <div className="c-storytelling__wrapper">
+  <>
     <StorytellingMixin {...props} ref={ref} lazy={true} />
     {props.backgroundImage && (
       <noscript>
         <StorytellingMixin {...props} lazy={false} />
       </noscript>
     )}
-  </div>
+  </>
 );

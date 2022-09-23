@@ -8,7 +8,7 @@
 /**
  * Choose a variant for the divider
  */
-export type StyleOfTheDivider = 'default' | 'accent' | 'dark';
+export type StyleOfTheDivider = 'default' | 'accent';
 /**
  * Add additional css classes that should be applied to the divider
  */

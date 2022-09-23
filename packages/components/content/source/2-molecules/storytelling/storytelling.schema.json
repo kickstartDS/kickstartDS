@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://frontend.ruhmesmeile.com/content/molecules/storytelling.schema.json",
+  "$id": "http://schema.kickstartds.com/content/storytelling.schema.json",
   "title": "Storytelling",
   "description": "Component to present rich combinations of text and media, best used sequentially",
   "type": "object",
@@ -83,28 +83,34 @@
       "description": "Text content to display",
       "properties": {
         "headline": {
-          "title": "Headline",
-          "description": "Headline for the box",
-          "type": "object",
           "allOf": [
             {
-              "$ref": "http://frontend.ruhmesmeile.com/base/molecules/headline.schema.json"
+              "title": "Headline",
+              "description": "Headline for the box",
+              "type": "object",
+              "properties": {
+                "level": {
+                  "type": "string",
+                  "default": "p"
+                },
+                "styleAs": {
+                  "type": "string",
+                  "default": "h2"
+                },
+                "align": {
+                  "type": "string",
+                  "default": null
+                },
+                "content": {
+                  "type": "string",
+                  "default": "Lorem Ipsum dolor"
+                }
+              }
+            },
+            {
+              "$ref": "http://schema.kickstartds.com/base/headline.schema.json"
             }
-          ],
-          "properties": {
-            "level": {
-              "default": "p"
-            },
-            "styleAs": {
-              "default": "h2"
-            },
-            "align": {
-              "default": null
-            },
-            "content": {
-              "default": "Lorem Ipsum dolor"
-            }
-          }
+          ]
         },
         "text": {
           "type": "string",
@@ -141,7 +147,7 @@
           "default": "center"
         },
         "link": {
-          "$ref": "http://frontend.ruhmesmeile.com/base/atoms/link-button.schema.json"
+          "$ref": "http://schema.kickstartds.com/base/button.schema.json"
         }
       }
     },
@@ -149,6 +155,10 @@
       "title": "Class",
       "description": "Additional css classes attached to the wrapping element",
       "type": "string"
+    },
+    "inverted": {
+      "type": "boolean",
+      "title": "Inverted"
     }
   },
   "required": ["box"]

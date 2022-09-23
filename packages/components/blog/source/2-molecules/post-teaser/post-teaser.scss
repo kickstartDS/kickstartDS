@@ -1,5 +1,4 @@
 @use 'sass:meta';
-@use '@kickstartds/core/source/core/breakpoint';
 @use '@kickstartds/core/source/core/custom-properties';
 @use './post-teaser-vars';
 
@@ -7,7 +6,7 @@ $vars: meta.module-variables(post-teaser-vars);
 @include custom-properties.styles($vars);
 
 .c-post-teaser {
-  --c-rich-text--font: var(--font-copy-s);
+  --c-rich-text--font: var(--ks-font-copy-s);
 
   display: flex;
   flex-direction: column;
@@ -31,7 +30,7 @@ $vars: meta.module-variables(post-teaser-vars);
     }
   }
 
-  @include breakpoint.media('print') {
+  @media print {
     page-break-inside: avoid;
   }
 

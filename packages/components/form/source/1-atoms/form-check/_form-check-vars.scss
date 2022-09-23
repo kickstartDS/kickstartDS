@@ -1,43 +1,43 @@
 $name-: 'c-form-check';
 
 $box: (
-  '.c-form-check': (
+  ':root, [ks-theme], [ks-inverted]': (
     size: 1rem,
-    border: 1px solid,
-    border-color: var(--color-primary-alpha-8),
-    background: var(--color-white),
+    border: var(--ks-border-width-default) solid,
+    border-color: var(--ks-color-primary-alpha-8),
+    background: var(--ks-background-color-interface-interactive),
   ),
   '.c-form-check--checkbox': (
-    border-radius: 3px,
+    border-radius: var(--ks-border-radius-control),
   ),
   '.c-form-check--radio': (
-    border-radius: 50%,
+    border-radius: var(--ks-border-radius-circle),
   ),
 ) !default;
 
 $box-hover: (
-  '.c-form-check': (
-    border-color: var(--color-primary-alpha-9),
+  ':root, [ks-theme], [ks-inverted]': (
+    border-color: var(--ks-color-primary-alpha-9),
   ),
 ) !default;
 
 $box-focus: (
-  '.c-form-check': (
-    border-color: var(--color-primary),
+  ':root, [ks-theme], [ks-inverted]': (
+    border-color: var(--ks-color-primary),
     shadow: 0 0 4px 0,
   ),
 ) !default;
 
 $box-checked: (
-  '.c-form-check': (
-    background: var(--color-primary),
-    border-color: var(--color-primary),
+  ':root, [ks-theme], [ks-inverted]': (
+    background: var(--ks-color-primary),
+    border-color: var(--ks-color-primary),
   ),
 ) !default;
 
 $checkmark: (
-  '.c-form-check': (
-    color: var(--color-white),
+  ':root, [ks-theme], [ks-inverted]': (
+    color: var(--ks-color-primary-inverted),
   ),
   '.c-form-check--checkbox': (
     width: 2px,

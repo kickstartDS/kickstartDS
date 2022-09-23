@@ -1,21 +1,17 @@
 import { FunctionComponent } from 'react';
 import classnames from 'classnames';
-import { LinkButton } from '@kickstartds/base/lib/link-button';
+import { Button } from '@kickstartds/base/lib/button';
 import {
   RichText,
   defaultRenderFn as richTextDefaultRenderFn,
 } from '@kickstartds/base/lib/rich-text';
-import {
-  renderFn,
-  renderTextFn,
-  defaultRenderFn,
-} from '@kickstartds/core/lib/core';
+import { defaultRenderFn } from '@kickstartds/core/lib/core';
 import { Headline } from '@kickstartds/base/lib/headline';
 import { TextBox, Inbox } from './VisualProps';
 
 export interface RenderFunctions {
-  renderHeadline?: renderFn;
-  renderText?: renderTextFn;
+  renderHeadline?: typeof defaultRenderFn;
+  renderText?: typeof richTextDefaultRenderFn;
 }
 
 interface IBox extends TextBox {
@@ -27,10 +23,11 @@ export const VisualBoxPartial: FunctionComponent<IBox & RenderFunctions> = ({
   indent,
   horizontal,
   vertical,
-  background,
+  background = 'solid',
   headline,
   text,
   link,
+  inverted = false,
   renderHeadline = defaultRenderFn,
   renderText = richTextDefaultRenderFn,
 }) => (
@@ -44,6 +41,7 @@ export const VisualBoxPartial: FunctionComponent<IBox & RenderFunctions> = ({
         'c-visual__content--indent': indent,
       }
     )}
+    ks-inverted={inverted?.toString()}
   >
     <div
       className={classnames(
@@ -71,7 +69,13 @@ export const VisualBoxPartial: FunctionComponent<IBox & RenderFunctions> = ({
 
       {link && link.enabled && (
         <div className="c-visual__link">
-          <LinkButton {...{ ...link, enabled: undefined }} />
+          <Button
+            {...{
+              ...link,
+              enabled: undefined,
+              inverted: link.inverted ?? !inverted,
+            }}
+          />
         </div>
       )}
     </div>

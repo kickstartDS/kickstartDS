@@ -17,6 +17,7 @@
   "types": "./lib/index.d.ts",
   "files": [
     "lib",
+    "source/**/_container.scss",
     "source/**/*-vars.scss"
   ],
   "scripts": {

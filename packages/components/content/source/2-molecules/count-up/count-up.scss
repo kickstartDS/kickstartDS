@@ -1,6 +1,5 @@
 @use 'sass:meta';
 @use '@kickstartds/core/source/core/custom-properties';
-@use '@kickstartds/core/source/core/breakpoint';
 @use './count-up-vars';
 
 $vars: meta.module-variables(count-up-vars);
@@ -42,7 +41,7 @@ $vars: meta.module-variables(count-up-vars);
   }
 
   &__text {
-    font: var(--c-count-up_text--font);
+    font: var(--c-count-up_text--font, var(--c-rich-text--font));
   }
 
   &__link {

@@ -1,0 +1,281 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/tokens/background-color.schema.json",
+  "definitions": {
+    "token": {
+      "type": "object",
+      "properties": {
+        "value": {},
+        "attributes": {
+          "type": "object",
+          "properties": {
+            "category": {
+              "type": "string"
+            }
+          },
+          "required": ["category"]
+        },
+        "token": {
+          "type": "object",
+          "properties": {
+            "category": {
+              "type": "string"
+            },
+            "presenter": {
+              "type": "string"
+            }
+          },
+          "required": ["category", "presenter"]
+        }
+      },
+      "required": ["value", "attributes"]
+    },
+    "color-token": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/token"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "value": {
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "object",
+                  "additionalProperties": { "type": "number" }
+                }
+              ]
+            },
+            "attributes": {
+              "type": "object",
+              "properties": {
+                "category": {
+                  "const": "color"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "base": {
+      "type": "object",
+      "properties": {
+        "base": {
+          "$ref": "#/definitions/color-token"
+        }
+      }
+    }
+  },
+  "type": "object",
+  "properties": {
+    "ks": {
+      "type": "object",
+      "properties": {
+        "background-color": {
+          "type": "object",
+          "properties": {
+            "accent": {
+              "$ref": "#/definitions/base"
+            },
+            "accent-inverted": {
+              "$ref": "#/definitions/base"
+            },
+            "clear": {
+              "type": "object",
+              "properties": {
+                "base": {
+                  "$ref": "#/definitions/color-token"
+                },
+                "interactive": {
+                  "type": "object",
+                  "properties": {
+                    "base": {
+                      "$ref": "#/definitions/color-token"
+                    },
+                    "hover": {
+                      "$ref": "#/definitions/base"
+                    },
+                    "active": {
+                      "$ref": "#/definitions/base"
+                    }
+                  },
+                  "additionalProperties": false,
+                  "required": ["base", "hover", "active"]
+                }
+              },
+              "additionalProperties": false,
+              "required": ["base", "interactive"]
+            },
+            "clear-inverted": {
+              "type": "object",
+              "properties": {
+                "base": {
+                  "$ref": "#/definitions/color-token"
+                },
+                "interactive": {
+                  "type": "object",
+                  "properties": {
+                    "base": {
+                      "$ref": "#/definitions/color-token"
+                    },
+                    "hover": {
+                      "$ref": "#/definitions/base"
+                    },
+                    "active": {
+                      "$ref": "#/definitions/base"
+                    }
+                  },
+                  "additionalProperties": false,
+                  "required": ["base", "hover", "active"]
+                }
+              },
+              "additionalProperties": false,
+              "required": ["base", "interactive"]
+            },
+            "default": {
+              "$ref": "#/definitions/base"
+            },
+            "default-inverted": {
+              "$ref": "#/definitions/base"
+            },
+            "interface": {
+              "type": "object",
+              "properties": {
+                "base": {
+                  "$ref": "#/definitions/color-token"
+                },
+                "interactive": {
+                  "type": "object",
+                  "properties": {
+                    "base": {
+                      "$ref": "#/definitions/color-token"
+                    },
+                    "disabled": {
+                      "$ref": "#/definitions/base"
+                    },
+                    "hover": {
+                      "$ref": "#/definitions/base"
+                    },
+                    "active": {
+                      "$ref": "#/definitions/base"
+                    }
+                  },
+                  "additionalProperties": false,
+                  "required": ["base", "disabled", "hover", "active"]
+                }
+              },
+              "additionalProperties": false,
+              "required": ["base", "interactive"]
+            },
+            "interface-inverted": {
+              "type": "object",
+              "properties": {
+                "base": {
+                  "$ref": "#/definitions/color-token"
+                },
+                "interactive": {
+                  "type": "object",
+                  "properties": {
+                    "base": {
+                      "$ref": "#/definitions/color-token"
+                    },
+                    "disabled": {
+                      "$ref": "#/definitions/base"
+                    },
+                    "hover": {
+                      "$ref": "#/definitions/base"
+                    },
+                    "active": {
+                      "$ref": "#/definitions/base"
+                    }
+                  },
+                  "additionalProperties": false,
+                  "required": ["base", "disabled", "hover", "active"]
+                }
+              },
+              "additionalProperties": false,
+              "required": ["base", "interactive"]
+            },
+            "primary": {
+              "type": "object",
+              "properties": {
+                "base": {
+                  "$ref": "#/definitions/color-token"
+                },
+                "interactive": {
+                  "type": "object",
+                  "properties": {
+                    "base": {
+                      "$ref": "#/definitions/color-token"
+                    },
+                    "hover": {
+                      "$ref": "#/definitions/base"
+                    },
+                    "active": {
+                      "$ref": "#/definitions/base"
+                    }
+                  },
+                  "additionalProperties": false,
+                  "required": ["base", "hover", "active"]
+                },
+                "translucent": {
+                  "$ref": "#/definitions/base"
+                }
+              },
+              "additionalProperties": false,
+              "required": ["base", "interactive", "translucent"]
+            },
+            "primary-inverted": {
+              "type": "object",
+              "properties": {
+                "base": {
+                  "$ref": "#/definitions/color-token"
+                },
+                "interactive": {
+                  "type": "object",
+                  "properties": {
+                    "base": {
+                      "$ref": "#/definitions/color-token"
+                    },
+                    "hover": {
+                      "$ref": "#/definitions/base"
+                    },
+                    "active": {
+                      "$ref": "#/definitions/base"
+                    }
+                  },
+                  "additionalProperties": false,
+                  "required": ["base", "hover", "active"]
+                },
+                "translucent": {
+                  "$ref": "#/definitions/base"
+                }
+              },
+              "additionalProperties": false,
+              "required": ["base", "interactive", "translucent"]
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "accent",
+            "accent-inverted",
+            "clear",
+            "clear-inverted",
+            "default",
+            "default-inverted",
+            "interface",
+            "interface-inverted",
+            "primary",
+            "primary-inverted"
+          ]
+        }
+      },
+      "required": ["background-color"]
+    }
+  },
+  "required": ["ks"]
+}

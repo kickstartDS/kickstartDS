@@ -16,9 +16,7 @@ export const TagLabelContainerComponent: ForwardRefRenderFunction<
     ref={ref}
   >
     {tagLabels.map((tagLabel, i) => (
-      <div key={i}>
-        <TagLabel {...tagLabel} />
-      </div>
+      <TagLabel {...tagLabel} key={i} />
     ))}
   </div>
 );
