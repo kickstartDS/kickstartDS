@@ -1,0 +1,103 @@
+@use 'sass:meta';
+@use 'bourbon/core/bourbon';
+@use '@kickstartds/core/source/core/custom-properties';
+@use '../input-field';
+@use './form-field-vars';
+
+$vars: meta.module-variables(form-field-vars);
+@include custom-properties.styles($vars);
+
+.c-form-field {
+  $input-padding: 0.4rem 0.75rem 0.35rem;
+
+  @include input-field.wrapper;
+  flex-direction: column;
+
+  &__label {
+    padding: 0.25rem 0;
+
+    &--hidden {
+      @include bourbon.hide-visually;
+    }
+  }
+
+  &__input {
+    padding: $input-padding;
+    border: var(--c-form-field--border);
+    border-color: var(--c-form-field--border-color);
+    border-radius: var(--c-form-field--border-radius);
+    outline: 0;
+    appearance: none;
+    width: 100%;
+    background-color: var(--c-form-field--background);
+    color: var(--c-form-field--color);
+    font: var(--ks-font-ui-m);
+    transition: 0.2s;
+    resize: vertical;
+
+    &:disabled {
+      background-color: var(--c-form-field--background-disabled);
+      opacity: 0.6;
+    }
+
+    &:hover {
+      border-color: var(--c-form-field_hover--border-color);
+    }
+
+    &:focus {
+      border-color: var(--c-form-field_focus--border-color);
+    }
+
+    &:focus-visible {
+      box-shadow: var(--c-form-field_focus--shadow)
+        var(--c-form-field_focus--border-color);
+    }
+
+    &.focus-visible {
+      box-shadow: var(--c-form-field_focus--shadow)
+        var(--c-form-field_focus--border-color);
+    }
+
+    &--is-invalid {
+      --c-form-field--color: var(--color-error);
+      --c-form-field--border-color: var(--color-error);
+      --c-form-field_hover--border-color: var(--color-error);
+      --c-form-field_focus--border-color: var(--color-error);
+    }
+  }
+
+  &__field {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    .icon {
+      @include bourbon.size(var(--c-form-field_icon--size));
+      position: absolute;
+      right: 0;
+      bottom: calc(
+        var(--ks-line-height-ui-m) * 1em - var(--c-form-field_icon--size)
+      );
+      margin: $input-padding;
+      color: var(--c-form-field_icon--color);
+
+      + .c-form-field__input {
+        padding-right: calc(var(--c-form-field_icon--size) + 1rem);
+      }
+    }
+  }
+
+  &__invalid-message {
+    margin: calc(-1 * var(--c-form-field--border-radius)) 0 0;
+    padding: var(--c-form-field--border-radius) 0.5rem 0.125rem;
+    color: var(--color-white);
+    background: var(--color-error);
+    border-bottom-left-radius: var(--c-form-field--border-radius);
+    border-bottom-right-radius: var(--c-form-field--border-radius);
+  }
+
+  &__hint {
+    margin: 0.25rem 0 0;
+    color: var(--ks-color-fg-alpha-7);
+  }
+}

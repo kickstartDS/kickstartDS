@@ -39,27 +39,6 @@ Releases are mangaged by [Auto](https://intuit.github.io/auto/index).
 
 All modules are placed in the _pacakges/components_ directory. They are individual npm packages mangaged by [yarn workspaces](https://classic.yarnpkg.com/en/docs/workspaces).
 
-### File Structure
-
-The file structure of each module is a mix of [atomic design](http://bradfrost.com/blog/post/atomic-web-design/) and [ITCSS](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/):
-
-- **package.json**
-- **README.md**
-- **source**
-  - **0-base**
-    - **0-settings** – This is where all module settings are located. Here you will define colors, font sizes, font families, etc.
-    - **1-tools** – Here you define mixins, functions & helpers.
-    - **2-generic** – Normalize, resets, vertical rhythm & box-sizing definitions would live here.
-    - **3-objects** – Style agnostic objects like the media-object, grid systems, etc. (ideally prefixed with `o-`)
-    - **4-utilities** – Helper classes which override everyting stated before. (ideally prefixed with `u-`)
-  - **1-atoms** – Basic unclassed HTML elements and everything that cannot be made smaller.
-  - **2-molecules** – Combinations of atoms, components with disctint functionality.
-  - **3-organisms** – Combinations of atoms & molecules; sections of your interface.
-  - **4-templates** – Consist mostly of groups of organisms stitched together to form pages.
-  - **5-pages** – Specific instances of templates.
-
-All directories under **source** are optional.
-
 ### Install npm dependencies
 
 Don't install module dependencies manually, let yarn do the job!

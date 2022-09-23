@@ -1,0 +1,35 @@
+@use 'sass:meta';
+@use '@kickstartds/core/source/core/custom-properties';
+@use 'bourbon/core/bourbon';
+@use '@kickstartds/base/source/slider/container';
+
+@use './visual-slider-vars';
+@use './slide-preview/visual-slide-preview';
+
+$vars: meta.module-variables(visual-slider-vars);
+@include custom-properties.styles($vars);
+
+.c-visual-slider {
+  // hide preview on small screens
+  .c-visual-slide--preview {
+    @include container.size('<', 639px) {
+      @include bourbon.hide-visually;
+    }
+  }
+
+  // hide bullets on large screens
+  .c-slider__bullet {
+    @include container.size('≥', 640px) {
+      display: none;
+    }
+  }
+
+  .c-slider-nav {
+    margin-top: 0.5em;
+
+    @include container.size('≥', 640px) {
+      margin-top: 0;
+      border-bottom: 1px solid var(--c-visual-slider_nav--border-bottom-color);
+    }
+  }
+}

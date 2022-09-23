@@ -1,0 +1,117 @@
+@use 'sass:meta';
+@use 'bourbon/core/bourbon';
+@use '@kickstartds/core/source/core/custom-properties';
+@use '../input-field';
+@use './form-check-vars';
+
+$vars: meta.module-variables(form-check-vars);
+@include custom-properties.styles($vars);
+
+.c-form-check {
+  @include input-field.wrapper($width: null);
+  flex-direction: column;
+  align-items: flex-start;
+
+  &__field {
+    position: relative;
+    display: flex;
+  }
+
+  &__input {
+    @include bourbon.hide-visually;
+
+    &:disabled ~ * {
+      opacity: 0.6;
+    }
+  }
+
+  &__box {
+    @include bourbon.size(var(--c-form-check_box--size));
+    position: relative;
+    flex: 0 0 var(--c-form-check_box--size);
+    border: var(--c-form-check_box--border);
+    border-color: var(--c-form-check_box--border-color);
+    border-radius: var(--c-form-check_box--border-radius);
+    margin-top: calc(
+      (calc(var(--ks-line-height-ui-s) * 1em) - var(--c-form-check_box--size)) /
+        2
+    );
+    background: var(--c-form-check_box--background);
+    transition: 0.2s;
+
+    :hover > & {
+      border-color: var(--c-form-check_box-hover--border-color);
+    }
+
+    :focus ~ & {
+      border-color: var(--c-form-check_box-focus--border-color);
+    }
+
+    :focus-visible ~ & {
+      box-shadow: var(--c-form-check_box-focus--shadow)
+        var(--c-form-check_box-focus--border-color);
+    }
+
+    .focus-visible ~ & {
+      box-shadow: var(--c-form-check_box-focus--shadow)
+        var(--c-form-check_box-focus--border-color);
+    }
+
+    :checked ~ & {
+      background: var(--c-form-check_box-checked--background);
+      border-color: var(--c-form-check_box-checked--border-color);
+    }
+
+    &::after {
+      position: absolute;
+      content: '';
+      display: block;
+
+      [type='checkbox']:checked ~ & {
+        transform: translate(-50%, -50%) rotate(45deg);
+        top: calc(50% - var(--c-form-check_checkmark--width));
+        left: 50%;
+        width: 0.4em;
+        height: 0.7em;
+        border: solid var(--c-form-check_checkmark--color);
+        border-width: 0 var(--c-form-check_checkmark--width)
+          var(--c-form-check_checkmark--width) 0;
+      }
+
+      [type='radio']:checked ~ & {
+        @include bourbon.size(var(--c-form-check_checkmark--size));
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        background: var(--c-form-check_checkmark--color);
+        border-radius: 50%;
+      }
+    }
+
+    .c-form-check-group--is-invalid &,
+    .c-form-check__input--is-invalid ~ & {
+      --c-form-check_box--border-color: var(--color-error);
+      --c-form-check_box-hover--border-color: var(--color-error);
+      --c-form-check_box-checked--border-color: var(--color-error);
+      --c-form-check_box-checked--background: var(--color-error);
+      --c-form-check_box-focus--border-color: var(--color-error);
+    }
+  }
+
+  &__label {
+    margin-left: 0.5rem;
+  }
+
+  &__invalid-message {
+    margin: 0.25rem 0 0;
+    padding: 0 0.5rem 0.125rem;
+    color: var(--color-white);
+    background: var(--color-error);
+    border-radius: var(--c-form-field--border-radius);
+  }
+
+  &__hint {
+    margin: 0.25rem 0 0;
+    color: var(--ks-color-fg-alpha-7);
+  }
+}
