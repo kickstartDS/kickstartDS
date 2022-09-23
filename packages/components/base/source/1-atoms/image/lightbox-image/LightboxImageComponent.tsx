@@ -3,12 +3,12 @@ import classnames from 'classnames';
 import { Icon } from '../../icon';
 import { Link } from '../../link';
 import { Picture } from '../picture';
-import { type LazyLightboxImageProps as LightboxLazyImageProps } from './LightboxLazyImageProps';
+import { type LightboxImageProps } from './LightboxImageProps';
 
-export { LightboxLazyImageProps };
-export const LightboxLazyImageComponent: ForwardRefRenderFunction<
+export { LightboxImageProps };
+export const LightboxImageComponent: ForwardRefRenderFunction<
   HTMLElement,
-  LightboxLazyImageProps & HTMLAttributes<HTMLElement>
+  LightboxImageProps & HTMLAttributes<HTMLElement>
 > = (
   {
     image,
@@ -22,6 +22,7 @@ export const LightboxLazyImageComponent: ForwardRefRenderFunction<
     caption,
     hideCaption,
     captionClassName,
+    alt,
     ...props
   },
   ref
@@ -33,6 +34,7 @@ export const LightboxLazyImageComponent: ForwardRefRenderFunction<
       className
     )}
     itemScope={!!id}
+    data-component="base.lightbox-image"
     ref={ref}
     {...props}
   >
@@ -48,6 +50,7 @@ export const LightboxLazyImageComponent: ForwardRefRenderFunction<
         src={thumb}
         className={classnames('lightbox-image__thumb', className)}
         itemProp="image"
+        alt={alt}
       />
       {zoomIcon ? (
         <div className="lightbox-image__zoom-icon">

@@ -108,7 +108,7 @@
             "title": "TextMediaLazyImage",
             "properties": {
               "lightboxImage": {
-                "$ref": "http://schema.kickstartds.com/base/lightbox-lazy-image.definitions.json"
+                "$ref": "http://schema.kickstartds.com/base/lightbox-image.definitions.json"
               },
               "full": {
                 "$ref": "#/definitions/full"
@@ -126,9 +126,19 @@
             "src": "https://picsum.photos/seed/kdstextmedia/300/300",
             "width": 300,
             "height": 300,
-            "alt": "Square"
+            "alt": "Lake"
           },
           "caption": "Ut dolores quae sunt impedit et accusantium. Corrupti incidunt ullam reiciendis."
+        },
+        {
+          "lightboxImage": {
+            "image": "https://picsum.photos/seed/kdstextmedia1/1200/900",
+            "thumb": "https://picsum.photos/seed/kdstextmedia1/400/300",
+            "width": 1200,
+            "height": 900,
+            "alt": "Winter"
+          },
+          "caption": "Oti incidunt ullam reiciendis."
         }
       ]
     },

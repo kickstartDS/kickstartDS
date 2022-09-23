@@ -1,18 +1,15 @@
 import { forwardRef, createContext, createElement, useContext } from 'react';
 import {
-  LightboxLazyImageComponent,
-  type LightboxLazyImageProps,
-} from './LightboxLazyImageComponent';
+  LightboxImageComponent,
+  type LightboxImageProps,
+} from './LightboxImageComponent';
 import './lightbox-image.scss';
+import './lazyLightboxImage.js';
 
-export { LightboxLazyImageProps };
-export const LightboxLazyImageContextDefault = forwardRef(
-  LightboxLazyImageComponent
+export { LightboxImageProps };
+export const LightboxImageContextDefault = forwardRef(LightboxImageComponent);
+export const LightboxImageContext = createContext(LightboxImageContextDefault);
+export const LightboxImage: typeof LightboxImageContextDefault = forwardRef(
+  (props, ref) =>
+    createElement(useContext(LightboxImageContext), { ...props, ref })
 );
-export const LightboxLazyImageContext = createContext(
-  LightboxLazyImageContextDefault
-);
-export const LightboxLazyImage: typeof LightboxLazyImageContextDefault =
-  forwardRef((props, ref) =>
-    createElement(useContext(LightboxLazyImageContext), { ...props, ref })
-  );

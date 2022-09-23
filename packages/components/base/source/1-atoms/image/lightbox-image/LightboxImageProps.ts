@@ -51,9 +51,9 @@ export type AdditionalClass = string;
 export type AdditionalCaptionClass = string;
 
 /**
- * Lazy Lightbox Image
+ * Lightbox Image
  */
-export interface LazyLightboxImageProps {
+export interface LightboxImageProps {
   thumb?: ThumbnailSource;
   image?: LightboxImageSource;
   width?: Width;
