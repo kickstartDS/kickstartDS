@@ -241,15 +241,15 @@ export interface Picture {
   [k: string]: unknown;
 }
 export interface TextMediaLazyImage {
-  lightboxImage?: LazyLightboxImage;
+  lightboxImage?: LightboxImage;
   full?: FullWidthMedia2;
   caption?: Caption3;
   [k: string]: unknown;
 }
 /**
- * Lazy Lightbox Image
+ * Lightbox Image
  */
-export interface LazyLightboxImage {
+export interface LightboxImage {
   thumb?: ThumbnailSource;
   image?: LightboxImageSource;
   width?: Width2;

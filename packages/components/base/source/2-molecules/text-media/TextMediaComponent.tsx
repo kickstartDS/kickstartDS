@@ -5,7 +5,7 @@ import {
 } from 'react';
 import classnames from 'classnames';
 import { Picture } from '../../1-atoms/image/picture';
-import { LightboxLazyImage } from '../../1-atoms/image/lightbox-image';
+import { LightboxImage } from '../../1-atoms/image/lightbox-image';
 import { IframeRatio } from '../../1-atoms/iframe';
 import { RichText, defaultRenderFn } from '../../1-atoms/rich-text';
 import {
@@ -40,7 +40,7 @@ const Figure: FunctionComponent<{
   </figure>
 );
 
-const Video: FunctionComponent<IVideo> = ({ full, caption, video }) => (
+const MediaVideo: FunctionComponent<IVideo> = ({ full, caption, video }) => (
   <Figure full={full} caption={caption}>
     {video.iframe ? (
       <IframeRatio {...video} setParentWidth={true} />
@@ -59,17 +59,17 @@ const Video: FunctionComponent<IVideo> = ({ full, caption, video }) => (
     )}
   </Figure>
 );
-const Image: FunctionComponent<IImage> = ({ full, caption, image }) => (
+const MediaImage: FunctionComponent<IImage> = ({ full, caption, image }) => (
   <Figure full={full} caption={caption}>
     <Picture {...image} />
   </Figure>
 );
-const LightboxImage: FunctionComponent<ILightboxImage> = ({
+const MediaLightboxImage: FunctionComponent<ILightboxImage> = ({
   full,
   caption,
   lightboxImage,
 }) => (
-  <LightboxLazyImage
+  <LightboxImage
     {...lightboxImage}
     className={figureClassName(full)}
     caption={lightboxImage.caption || caption}
@@ -82,11 +82,11 @@ const Media: FunctionComponent<{ media: IMedia }> = ({ media }) =>
     <div className="text-media__gallery">
       {media.map((m, i) =>
         (m.video as IVideo)?.src ? (
-          <Video {...(m as IVideo)} key={i} />
+          <MediaVideo {...(m as IVideo)} key={i} />
         ) : (m.image as IImage)?.src ? (
-          <Image {...(m as IImage)} key={i} />
+          <MediaImage {...(m as IImage)} key={i} />
         ) : (m.lightboxImage as ILightboxImage)?.image ? (
-          <LightboxImage {...(m as ILightboxImage)} key={i} />
+          <MediaLightboxImage {...(m as ILightboxImage)} key={i} />
         ) : null
       )}
     </div>

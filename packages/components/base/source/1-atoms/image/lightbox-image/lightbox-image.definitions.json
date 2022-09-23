@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.kickstartds.com/base/lightbox-lazy-image.definitions.json",
-  "title": "Lazy Lightbox Image",
-  "description": "Lazy Lightbox Image",
+  "$id": "http://schema.kickstartds.com/base/lightbox-image.definitions.json",
+  "title": "Lightbox Image",
+  "description": "Lightbox Image",
   "type": "object",
   "properties": {
     "thumb": {

@@ -18,4 +18,3 @@ export * from './2-molecules/teaser-box';
 export * from './2-molecules/teaser-row';
 export * from './2-molecules/teaser';
 export * from './2-molecules/text-media';
-export * from './3-organisms/lightbox';
