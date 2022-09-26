@@ -39,7 +39,7 @@ export const SliderComponent: ForwardRefRenderFunction<
   {
     autoplay,
     className,
-    component = 'base.slider',
+    component = 'content.slider',
     arrows,
     children,
     ...props

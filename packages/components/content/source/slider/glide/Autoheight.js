@@ -1,11 +1,12 @@
 import { lazyChildrenLoaded } from '@kickstartds/core/lib/core';
-import forceRepaint from '../forceRepaint';
 
 export default function (Glide, Components, Events) {
   const Autoheight = {
     mount() {
       // repaint to force firefox to recalculate image dimensions (e.g. in product slider)
-      forceRepaint();
+      document.body.style.display = 'none';
+      document.body.style.display = '';
+
       this.set();
     },
 

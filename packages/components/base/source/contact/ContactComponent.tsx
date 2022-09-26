@@ -1,10 +1,10 @@
 import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
-import { Picture } from '@kickstartds/base/lib/picture';
-import { Headline } from '@kickstartds/base/lib/headline';
-import { RichText } from '@kickstartds/base/lib/rich-text';
-import { Icon } from '@kickstartds/base/lib/icon';
-import { Link } from '@kickstartds/base/lib/link';
+import { Picture } from '../image/picture';
+import { Headline } from '../headline';
+import { RichText } from '../rich-text';
+import { Icon } from '../icon';
+import { Link } from '../link';
 import { type ContactProps } from './ContactProps';
 
 export { ContactProps };

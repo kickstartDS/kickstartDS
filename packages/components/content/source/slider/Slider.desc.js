@@ -1,4 +1,4 @@
-export const identifier = 'base.slider';
+export const identifier = 'content.slider';
 
 export const actions = {
   go: `${identifier}.go`,

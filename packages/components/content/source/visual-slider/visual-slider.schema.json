@@ -7,7 +7,7 @@
   "required": ["slides"],
   "properties": {
     "autoplay": {
-      "$ref": "http://schema.kickstartds.com/base/slider.schema.json#/definitions/autoplay"
+      "$ref": "http://schema.kickstartds.com/content/slider.schema.json#/definitions/autoplay"
     },
     "slides": {
       "type": "array",

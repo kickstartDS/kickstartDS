@@ -42,13 +42,13 @@
             "$ref": "http://schema.kickstartds.com/content/visual-slider.schema.json"
           },
           {
-            "$ref": "http://schema.kickstartds.com/content/contact.schema.json"
+            "$ref": "http://schema.kickstartds.com/base/contact.schema.json"
           },
           {
             "$ref": "http://schema.kickstartds.com/content/storytelling.schema.json"
           },
           {
-            "$ref": "http://schema.kickstartds.com/content/collapsible-box.schema.json"
+            "$ref": "http://schema.kickstartds.com/base/collapsible-box.schema.json"
           },
           {
             "$ref": "http://schema.kickstartds.com/content/count-up.schema.json"

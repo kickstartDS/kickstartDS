@@ -10,7 +10,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "http://schema.kickstartds.com/content/contact.schema.json"
+          "$ref": "http://schema.kickstartds.com/base/contact.schema.json"
         },
         {
           "type": "object",

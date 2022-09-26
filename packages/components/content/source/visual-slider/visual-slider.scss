@@ -1,7 +1,7 @@
 @use 'sass:meta';
 @use '@kickstartds/core/source/core/custom-properties';
 @use 'bourbon/core/bourbon';
-@use '@kickstartds/base/source/slider/container';
+@use '../slider/container';
 
 @use './visual-slider-vars';
 @use './slide-preview/visual-slide-preview';

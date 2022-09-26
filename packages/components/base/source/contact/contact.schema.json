@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.kickstartds.com/content/contact.schema.json",
+  "$id": "http://schema.kickstartds.com/base/contact.schema.json",
   "title": "Contact",
   "description": "Component to show contact information",
   "type": "object",

@@ -1,11 +1,11 @@
 import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
 import { defaultRenderFn } from '@kickstartds/core/lib/core';
-import { Icon } from '@kickstartds/base/lib/icon';
+import { Icon } from '../icon';
 import {
   RichText,
   defaultRenderFn as richTextDefaultRenderFn,
-} from '@kickstartds/base/lib/rich-text';
+} from '../rich-text';
 import { type CollapsibleBoxProps as CollapsibleBoxSchemaProps } from './CollapsibleBoxProps';
 
 export type CollapsibleBoxProps = CollapsibleBoxSchemaProps & {
@@ -30,7 +30,7 @@ export const CollapsibleBoxComponent: ForwardRefRenderFunction<
 ) => (
   <div
     className={classnames('c-collapsible-box lazyload', className)}
-    data-component="content.collapsible-box"
+    data-component="base.collapsible-box"
     ref={ref}
     {...props}
   >

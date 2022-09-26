@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.kickstartds.com/content/collapsible-box.schema.json",
+  "$id": "http://schema.kickstartds.com/base/collapsible-box.schema.json",
   "title": "Collapsible Box",
   "description": "Component to conditionally show additional info",
   "type": "object",

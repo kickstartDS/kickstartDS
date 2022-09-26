@@ -1,6 +1,5 @@
 import PhotoSwipe from 'photoswipe/dist/photoswipe.esm';
 import { Component } from '@kickstartds/core/lib/core';
-import { actions as sliderActions } from '../../slider/Slider.desc';
 import { identifier } from './LightboxImage.desc';
 
 export default class LightboxImage extends Component {
@@ -75,7 +74,7 @@ export default class LightboxImage extends Component {
     lightbox.on('destroy', () => {
       if (sliderElement) {
         // go to slide where the image was last seen in PhotoSwipe
-        window.rm.radio.emit(sliderActions.go, {
+        window.rm.radio.emit('content.slider.go', {
           element: sliderElement,
           args: [`=${lightbox.currIndex}`],
         });

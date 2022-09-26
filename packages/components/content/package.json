@@ -27,10 +27,12 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.19.0",
+    "@glidejs/glide": "^3.5.2",
     "@kickstartds/base": "^1.5.1",
     "@kickstartds/core": "^1.5.0",
     "classnames": "^2.2.6",
-    "countup.js": "^2.3.2"
+    "countup.js": "^2.3.2",
+    "lodash-es": "^4.17.21"
   },
   "devDependencies": {
     "bourbon": "^7.2.0"

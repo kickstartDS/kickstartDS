@@ -8,8 +8,8 @@ const createIndex = (tsPaths) => {
   const indexContent = tsPaths.reduce(
     (prev, fileName) =>
       `${prev}export * from '${fileName.replace(
-        /^(source)(\/.*)(\/index\.ts)$/,
-        '.$2'
+        /^source(\/.*)\.tsx?$/,
+        '.$1'
       )}';\n`,
     ''
   );
@@ -19,13 +19,13 @@ const createIndex = (tsPaths) => {
 const exportsFromRollupOutput = (output) =>
   output.reduce((prev, { isEntry, fileName, exports }) => {
     if (isEntry) {
-      prev.set(fileName.replace('/index.js', ''), exports);
+      prev.set(fileName.replace(/(\.js)$/, ''), exports);
     }
     return prev;
   }, new Map());
 
 const getTsPaths = async () => {
-  const tsPaths = (await fg('source/*/**/index.ts')).sort();
+  const tsPaths = (await fg('source/*/**/{index.ts,*Component.tsx}')).sort();
   await createIndex(tsPaths);
   tsPaths.push('source/index.ts');
   return tsPaths;

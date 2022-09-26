@@ -2,10 +2,9 @@ import merge from 'lodash-es/merge';
 import { Component } from '@kickstartds/core/lib/core';
 import { windowEvents } from '@kickstartds/core/lib/utils';
 import Keyboard from '@glidejs/glide/src/components/keyboard';
-import Glide from '../helpers/glide/Glide';
-import Click from '../helpers/glide/Click';
-import Autoheight from '../helpers/glide/Autoheight';
-import { render } from '../helpers/render';
+import Glide from './glide/Glide';
+import Click from './glide/Click';
+import Autoheight from './glide/Autoheight';
 import { SliderArrows as sliderArrowsTemplate } from './slider-arrows/SliderArrowsComponent.tsx';
 import { identifier, actions } from './Slider.desc';
 
@@ -77,6 +76,15 @@ const NAV_SLIDER_OPTIONS = {
       peek: 0,
     },
   },
+};
+
+const parser = new DOMParser();
+
+const render = (htmlString, root) => {
+  const doc = parser.parseFromString(htmlString, 'text/html');
+  return Array.from(doc.body.children).map((element) =>
+    root.appendChild(element)
+  );
 };
 
 const arrowsHtml = sliderArrowsTemplate();

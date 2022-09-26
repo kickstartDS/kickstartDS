@@ -1,6 +1,6 @@
 import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classNames from 'classnames';
-import { Slider } from '@kickstartds/base/lib/slider';
+import { Slider } from '../slider';
 import { Visual } from '../visual';
 import { type VisualSliderProps } from './VisualSliderProps';
 

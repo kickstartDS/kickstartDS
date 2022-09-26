@@ -5,7 +5,7 @@ import {
 } from 'react';
 import { Headline } from '@kickstartds/base/lib/headline';
 import { Divider } from '@kickstartds/base/lib/divider';
-import { Contact } from '@kickstartds/content/lib/contact';
+import { Contact } from '@kickstartds/base/lib/contact';
 import classNames from 'classnames';
 import { PostShareBar } from '../post-share-bar';
 import { PostMeta } from '../post-meta';

@@ -1,7 +1,7 @@
 import { define } from '@kickstartds/core/lib/core';
-import { lazySlider } from '@kickstartds/base/lib/slider/lazySlider';
+import { lazySlider } from '../slider/lazySlider';
 
-const identifier = 'quotes.quotes-slider';
+const identifier = 'content.quotes-slider';
 
 const lazyQuotesSlider = () =>
   lazySlider().then(

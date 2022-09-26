@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react';
-import { IconComponent } from '../../icon/IconComponent';
+import { IconComponent as Icon } from '@kickstartds/base/lib/icon/IconComponent';
 
 export const SliderArrows: FunctionComponent = () => (
   <div className="c-slider__arrows" data-glide-el="controls">
@@ -9,7 +9,7 @@ export const SliderArrows: FunctionComponent = () => (
       tabIndex={-1}
       title="previous slide"
     >
-      <IconComponent icon="chevron-left" />
+      <Icon icon="chevron-left" />
     </button>
     <button
       className="c-slider__arrow c-slider__arrow--next"
@@ -17,7 +17,7 @@ export const SliderArrows: FunctionComponent = () => (
       tabIndex={-1}
       title="next slide"
     >
-      <IconComponent icon="chevron-right" />
+      <Icon icon="chevron-right" />
     </button>
   </div>
 );

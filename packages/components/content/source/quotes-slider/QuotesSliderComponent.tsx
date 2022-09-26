@@ -1,6 +1,6 @@
 import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
-import { Slider } from '@kickstartds/base/lib/slider';
+import { Slider } from '../slider';
 import { Quote } from '../quote';
 import { type QuotesSliderProps } from './QuotesSliderProps';
 
@@ -11,7 +11,7 @@ export const QuotesSliderComponent: ForwardRefRenderFunction<
 > = ({ slides, className, ...props }, ref) => (
   <Slider
     autoplay={false}
-    component="quotes.quotes-slider"
+    component="content.quotes-slider"
     arrows="outer"
     className={classnames('quotes-slider', className)}
     ref={ref}

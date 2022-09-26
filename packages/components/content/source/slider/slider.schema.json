@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.kickstartds.com/base/slider.schema.json",
+  "$id": "http://schema.kickstartds.com/content/slider.schema.json",
   "title": "Slider",
   "description": "Slider",
   "definitions": {
@@ -19,7 +19,7 @@
       "title": "Component",
       "description": "Optional custom component identifier",
       "type": "string",
-      "default": "base.slider"
+      "default": "content.slider"
     },
     "arrows": {
       "title": "Arrows",
