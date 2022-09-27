@@ -14357,12 +14357,10 @@ rollup-plugin-import-resolver@^1.2.0:
   resolved "https://registry.yarnpkg.com/rollup-plugin-import-resolver/-/rollup-plugin-import-resolver-1.2.1.tgz#164c9f7c8a721cacbfea32a664b69f2e60d843b2"
   integrity sha512-os0KQ0rvlnUYvuUxWShM+NdBJX/4ujtF2uLl/lUki7JDMKCcsS6BArY5OPqS846QeceIQ59ycfk7tIXdoZ9t2w==
 
-rollup-plugin-node-externals@^4.1.1:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-node-externals/-/rollup-plugin-node-externals-4.1.1.tgz#81d90eea6f99831a90206df1f0531fdcfc360d7c"
-  integrity sha512-hiGCMTKHVoueaTmtcUv1KR0/dlNBuI9GYzHUlSHQbMd7T7yomYdXCFnBisoBqdZYy61EGAIfz8AvJaWWBho3Pg==
-  dependencies:
-    find-up "^5.0.0"
+rollup-plugin-node-externals@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-node-externals/-/rollup-plugin-node-externals-5.0.0.tgz#cc58d5f06f1a90a095356a071cf04acefbb5b582"
+  integrity sha512-7QlqsY5k0gifL50L3PHVTjYA4ma8lM6+f+ayMeEJ475rNCUDzpY0qVrb7AsndGEiVRCNN4UwhBmRnrlP/NjuFw==
 
 rollup-plugin-styles@^4.0.0:
   version "4.0.0"
