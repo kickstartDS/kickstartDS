@@ -13222,12 +13222,12 @@ postcss-selector-parser@^6.0.0, postcss-selector-parser@^6.0.10, postcss-selecto
     cssesc "^3.0.0"
     util-deprecate "^1.0.2"
 
-postcss-sort-media-queries@^4.2.1:
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/postcss-sort-media-queries/-/postcss-sort-media-queries-4.2.1.tgz#a99bae69ef1098ee3b64a5fa94d258ec240d0355"
-  integrity sha512-9VYekQalFZ3sdgcTjXMa0dDjsfBVHXlraYJEMiOJ/2iMmI2JGCMavP16z3kWOaRu8NSaJCTgVpB/IVpH5yT9YQ==
+postcss-sort-media-queries@^4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/postcss-sort-media-queries/-/postcss-sort-media-queries-4.3.0.tgz#f48a77d6ce379e86676fc3f140cf1b10a06f6051"
+  integrity sha512-jAl8gJM2DvuIJiI9sL1CuiHtKM4s5aEIomkU8G3LFvbP+p8i7Sz8VV63uieTgoewGqKbi+hxBTiOKJlB35upCg==
   dependencies:
-    sort-css-media-queries "2.0.4"
+    sort-css-media-queries "2.1.0"
 
 postcss-sorting@^7.0.1:
   version "7.0.1"
@@ -14877,10 +14877,10 @@ socks@^2.6.2:
     ip "^2.0.0"
     smart-buffer "^4.2.0"
 
-sort-css-media-queries@2.0.4:
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/sort-css-media-queries/-/sort-css-media-queries-2.0.4.tgz#b2badfa519cb4a938acbc6d3aaa913d4949dc908"
-  integrity sha512-PAIsEK/XupCQwitjv7XxoMvYhT7EAfyzI3hsy/MyDgTvc+Ft55ctdkctJLOy6cQejaIC+zjpUL4djFVm2ivOOw==
+sort-css-media-queries@2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/sort-css-media-queries/-/sort-css-media-queries-2.1.0.tgz#7c85e06f79826baabb232f5560e9745d7a78c4ce"
+  integrity sha512-IeWvo8NkNiY2vVYdPa27MCQiR0MN0M80johAYFVxWWXQ44KU84WNxjslwBHmc/7ZL2ccwkM7/e6S5aiKZXm7jA==
 
 sort-keys@^2.0.0:
   version "2.0.0"
