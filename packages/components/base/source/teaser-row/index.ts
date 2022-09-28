@@ -1,10 +1,9 @@
-import { forwardRef, createElement, createContext, useContext } from 'react';
+import { forwardRef, createContext } from 'react';
+import { withContainer } from '@kickstartds/core/lib/container';
 import { TeaserRowComponent, type TeaserRowProps } from './TeaserRowComponent';
 import './teaser-row.scss';
 
 export { TeaserRowProps };
 export const TeaserRowContextDefault = forwardRef(TeaserRowComponent);
 export const TeaserRowContext = createContext(TeaserRowContextDefault);
-export const TeaserRow: typeof TeaserRowContextDefault = forwardRef(
-  (props, ref) => createElement(useContext(TeaserRowContext), { ...props, ref })
-);
+export const TeaserRow = withContainer('teaser-row', TeaserRowContext);
