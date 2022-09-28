@@ -20,6 +20,7 @@ export const SelectFieldComponent: ForwardRefRenderFunction<
     invalidMessage,
     hint,
     options,
+    icon = 'chevron-down',
     className,
     ...props
   },
@@ -34,7 +35,7 @@ export const SelectFieldComponent: ForwardRefRenderFunction<
       {renderLabel(label)}
     </span>
     <div className="c-form-field__field">
-      <Icon icon="chevron-down" aria-hidden="true" focusable="false" />
+      <Icon icon={icon} aria-hidden="true" focusable="false" />
       <select
         className={classnames(
           'c-form-field__input',

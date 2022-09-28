@@ -52,6 +52,7 @@ export type InvalidMessage = string;
  * Help text that gives more context about what a user needs to input
  */
 export type HintMessage = string;
+export type IconIdentifier = string;
 /**
  * Additional css classes attached to the select element
  */
@@ -70,6 +71,7 @@ export interface SelectFieldProps {
   invalid?: Invalid;
   invalidMessage?: InvalidMessage;
   hint?: HintMessage;
+  icon?: IconIdentifier;
   className?: Class;
   [k: string]: unknown;
 }
