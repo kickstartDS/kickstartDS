@@ -23,7 +23,18 @@ module.exports = {
     dir: 'lib',
     format: 'es',
     chunkFileNames: '_shared/[name]-[hash].js',
-    plugins: [production && terser({ safari10: true, keep_classnames: true })],
+    plugins: [
+      production &&
+        terser({
+          safari10: true,
+          keep_classnames: true,
+          module: true,
+          compress: {
+            // quickfix to work around a swc bug: https://github.com/swc-project/swc/issues/5608
+            join_vars: false,
+          },
+        }),
+    ],
   },
   sharedBabelConfig: (config = {}) =>
     mergeWith(

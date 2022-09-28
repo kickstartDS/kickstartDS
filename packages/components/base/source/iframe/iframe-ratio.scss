@@ -1,0 +1,8 @@
+@use '../helpers/aspect-ratio';
+
+.iframe-ratio {
+  &--apsect-ratio-calculated {
+    @include aspect-ratio.aspect-ratio;
+    max-width: 100%;
+  }
+}

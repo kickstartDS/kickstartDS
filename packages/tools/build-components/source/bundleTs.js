@@ -34,8 +34,8 @@ const prepare = async (tsPaths) => {
       if (file === 'source/index.ts') {
         return ['index', file];
       }
-      const [, dir] = file.match(dirRe);
-      return [`${dir}/index`, file];
+      const [, dir, basename] = file.match(dirRe);
+      return [`${dir}/${basename}`, file];
     })
   );
   const inputOptions = {

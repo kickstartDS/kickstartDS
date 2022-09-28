@@ -1,8 +1,0 @@
-@use '../../0-base/1-tools/scss/aspect-ratio';
-
-.iframe-ratio {
-  &--apsect-ratio-calculated {
-    @include aspect-ratio.aspect-ratio;
-    max-width: 100%;
-  }
-}
