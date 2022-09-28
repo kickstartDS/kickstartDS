@@ -6,6 +6,7 @@ import { type TextFieldProps as TextFieldSchemaProps } from './TextFieldProps';
 
 export type TextFieldProps = TextFieldSchemaProps & {
   renderLabel?: typeof defaultRenderFn;
+  labelProps?: HTMLAttributes<HTMLLabelElement>;
 };
 
 export const TextFieldComponent: ForwardRefRenderFunction<
@@ -17,6 +18,7 @@ export const TextFieldComponent: ForwardRefRenderFunction<
     label,
     hideLabel,
     renderLabel = defaultRenderFn,
+    labelProps = {},
     invalid,
     invalidMessage,
     hint,
@@ -25,35 +27,41 @@ export const TextFieldComponent: ForwardRefRenderFunction<
     ...props
   },
   ref
-) => (
-  <label className="c-form-field">
-    <span
-      className={classnames('c-form-field__label', {
-        'c-form-field__label--hidden': hideLabel,
-      })}
+) => {
+  const { className: labelClassName, ...otherLabelProps } = labelProps;
+  return (
+    <label
+      className={classnames('c-form-field', labelClassName)}
+      {...otherLabelProps}
     >
-      {renderLabel(label)}
-    </span>
-    <div className="c-form-field__field">
-      {icon && <Icon icon={icon} aria-hidden="true" focusable="false" />}
-      <input
-        className={classnames(
-          'c-form-field__input',
-          {
-            'c-form-field__input--is-invalid': invalid,
-          },
-          className
-        )}
-        type={type}
-        ref={ref}
-        {...props}
-      />
-    </div>
+      <span
+        className={classnames('c-form-field__label', {
+          'c-form-field__label--hidden': hideLabel,
+        })}
+      >
+        {renderLabel(label)}
+      </span>
+      <div className="c-form-field__field">
+        {icon && <Icon icon={icon} aria-hidden="true" focusable="false" />}
+        <input
+          className={classnames(
+            'c-form-field__input',
+            {
+              'c-form-field__input--is-invalid': invalid,
+            },
+            className
+          )}
+          type={type}
+          ref={ref}
+          {...props}
+        />
+      </div>
 
-    {invalid && invalidMessage && (
-      <p className="c-form-field__invalid-message">{invalidMessage}</p>
-    )}
+      {invalid && invalidMessage && (
+        <p className="c-form-field__invalid-message">{invalidMessage}</p>
+      )}
 
-    {hint && <p className="c-form-field__hint">{hint}</p>}
-  </label>
-);
+      {hint && <p className="c-form-field__hint">{hint}</p>}
+    </label>
+  );
+};
