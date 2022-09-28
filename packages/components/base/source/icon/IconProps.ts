@@ -13,7 +13,7 @@ export type AdditionalClass = string;
  * Icon
  */
 export interface IconProps {
-  icon?: IconIdentifier;
+  icon: IconIdentifier;
   role?: AriaRole;
   className?: AdditionalClass;
   [k: string]: unknown;
