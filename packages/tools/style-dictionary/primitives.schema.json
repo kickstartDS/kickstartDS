@@ -47,7 +47,7 @@
         "copy": {
           "$ref": "#/definitions/font"
         },
-        "ui": {
+        "interface": {
           "$ref": "#/definitions/font"
         },
         "mono": {
