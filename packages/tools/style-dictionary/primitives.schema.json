@@ -33,7 +33,9 @@
           "type": "string"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": {
+        "type": "string"
+      }
     },
     "font": {
       "title": "Typography",

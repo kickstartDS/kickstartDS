@@ -125,7 +125,9 @@
               "$ref": "#/definitions/base"
             }
           },
-          "additionalProperties": false,
+          "additionalProperties": {
+            "$ref": "#/definitions/scales"
+          },
           "required": [
             "primary",
             "primary-inverted",
