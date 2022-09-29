@@ -25,7 +25,6 @@ export const ButtonComponent: ForwardRefRenderFunction<
     fillAnimation,
     iconAnimation,
     dataComponent,
-    icon,
     iconBefore,
     iconAfter,
     renderLabel = defaultRenderFn,
@@ -58,17 +57,9 @@ export const ButtonComponent: ForwardRefRenderFunction<
       ref={ref}
       {...props}
     >
-      {label ? (
-        <>
-          {icon && iconBefore && <Icon {...icon} />}
-          <span>{renderLabel(label)}</span>
-          {icon && iconAfter && <Icon {...icon} />}
-        </>
-      ) : icon ? (
-        <Icon {...icon} />
-      ) : (
-        ''
-      )}
+      {iconBefore?.icon && <Icon {...iconBefore} />}
+      {label && <span>{renderLabel(label)}</span>}
+      {iconAfter?.icon && <Icon {...iconAfter} />}
     </Tag>
   );
 };

@@ -6,6 +6,7 @@ import { type SelectFieldProps as SelectFieldSchemaProps } from './SelectFieldPr
 
 export type SelectFieldProps = SelectFieldSchemaProps & {
   renderLabel?: typeof defaultRenderFn;
+  labelProps?: HTMLAttributes<HTMLLabelElement>;
 };
 
 export const SelectFieldComponent: ForwardRefRenderFunction<
@@ -16,54 +17,62 @@ export const SelectFieldComponent: ForwardRefRenderFunction<
     label,
     hideLabel,
     renderLabel = defaultRenderFn,
+    labelProps = {},
     invalid,
     invalidMessage,
     hint,
     options,
+    icon = 'chevron-down',
     className,
     ...props
   },
   ref
-) => (
-  <label className="c-form-field">
-    <span
-      className={classnames('c-form-field__label', {
-        'c-form-field__label--hidden': hideLabel,
-      })}
+) => {
+  const { className: labelClassName, ...otherLabelProps } = labelProps;
+  return (
+    <label
+      className={classnames('c-form-field', labelClassName)}
+      {...otherLabelProps}
     >
-      {renderLabel(label)}
-    </span>
-    <div className="c-form-field__field">
-      <Icon icon="chevron-down" aria-hidden="true" focusable="false" />
-      <select
-        className={classnames(
-          'c-form-field__input',
-          {
-            'c-form-field__input--is-invalid': invalid,
-          },
-          className
-        )}
-        ref={ref}
-        {...props}
+      <span
+        className={classnames('c-form-field__label', {
+          'c-form-field__label--hidden': hideLabel,
+        })}
       >
-        {options &&
-          options.map((option, i) => (
-            <option
-              key={`option-${i}`}
-              value={option.value}
-              selected={option.selected}
-              disabled={option.disabled}
-            >
-              {option.label}
-            </option>
-          ))}
-      </select>
-    </div>
+        {renderLabel(label)}
+      </span>
+      <div className="c-form-field__field">
+        <Icon icon={icon} aria-hidden="true" focusable="false" />
+        <select
+          className={classnames(
+            'c-form-field__input',
+            {
+              'c-form-field__input--is-invalid': invalid,
+            },
+            className
+          )}
+          ref={ref}
+          {...props}
+        >
+          {options &&
+            options.map((option, i) => (
+              <option
+                key={`option-${i}`}
+                value={option.value}
+                selected={option.selected}
+                disabled={option.disabled}
+              >
+                {option.label}
+              </option>
+            ))}
+        </select>
+      </div>
 
-    {invalid && invalidMessage && (
-      <p className="c-form-field__invalid-message">{invalidMessage}</p>
-    )}
+      {invalid && invalidMessage && (
+        <p className="c-form-field__invalid-message">{invalidMessage}</p>
+      )}
 
-    {hint && <p className="c-form-field__hint">{hint}</p>}
-  </label>
-);
+      {hint && <p className="c-form-field__hint">{hint}</p>}
+    </label>
+  );
+};

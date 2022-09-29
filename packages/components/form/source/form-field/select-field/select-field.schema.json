@@ -51,6 +51,17 @@
     "hint": {
       "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/hint"
     },
+    "icon": {
+      "allOf": [
+        {
+          "type": "string",
+          "default": "chevron-down"
+        },
+        {
+          "$ref": "http://schema.kickstartds.com/base/icon.definitions.json#/properties/icon"
+        }
+      ]
+    },
     "className": {
       "title": "Class",
       "description": "Additional css classes attached to the select element",

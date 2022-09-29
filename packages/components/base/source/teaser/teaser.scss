@@ -14,6 +14,7 @@ $vars: meta.module-variables(teaser-vars);
   box-shadow: var(--c-teaser--shadow);
   overflow: hidden;
   font: var(--c-teaser--font);
+  width: 100%;
 
   .c-rich-text {
     color: var(--c-teaser--color);

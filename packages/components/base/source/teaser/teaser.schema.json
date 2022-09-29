@@ -1,0 +1,7 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/base/teaser.schema.json",
+  "title": "Teaser",
+  "description": "Component to tease external content",
+  "$ref": "http://schema.kickstartds.com/base/teaser.definitions.json#/definitions/teaser"
+}

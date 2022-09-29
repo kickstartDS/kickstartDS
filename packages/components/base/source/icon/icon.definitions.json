@@ -17,5 +17,6 @@
       "type": "string",
       "title": "additional class"
     }
-  }
+  },
+  "required": ["icon"]
 }
