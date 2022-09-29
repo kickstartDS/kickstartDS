@@ -53,14 +53,9 @@ export type AdditionalClasses = string;
 export type IconIdentifier = string;
 export type AriaRole = string;
 export type AdditionalClass = string;
-/**
- * Display icon before the button text
- */
-export type IconBeforeButton = boolean;
-/**
- * Display icon after the button text
- */
-export type IconAfterButton = boolean;
+export type IconIdentifier1 = string;
+export type AriaRole1 = string;
+export type AdditionalClass1 = string;
 /**
  * Overwrite the data-component to use for rendering
  */
@@ -223,17 +218,12 @@ export type ButtonHref1 = string;
  * Add additional css classes that should be applied to the button
  */
 export type AdditionalClasses3 = string;
-export type IconIdentifier1 = string;
-export type AriaRole1 = string;
-export type AdditionalClass1 = string;
-/**
- * Display icon before the button text
- */
-export type IconBeforeButton1 = boolean;
-/**
- * Display icon after the button text
- */
-export type IconAfterButton1 = boolean;
+export type IconIdentifier2 = string;
+export type AriaRole2 = string;
+export type AdditionalClass2 = string;
+export type IconIdentifier3 = string;
+export type AriaRole3 = string;
+export type AdditionalClass3 = string;
 /**
  * Overwrite the data-component to use for rendering
  */
@@ -430,17 +420,12 @@ export type ButtonHref2 = string;
  * Add additional css classes that should be applied to the button
  */
 export type AdditionalClasses6 = string;
-export type IconIdentifier2 = string;
-export type AriaRole2 = string;
-export type AdditionalClass2 = string;
-/**
- * Display icon before the button text
- */
-export type IconBeforeButton2 = boolean;
-/**
- * Display icon after the button text
- */
-export type IconAfterButton2 = boolean;
+export type IconIdentifier4 = string;
+export type AriaRole4 = string;
+export type AdditionalClass4 = string;
+export type IconIdentifier5 = string;
+export type AriaRole5 = string;
+export type AdditionalClass5 = string;
 /**
  * Overwrite the data-component to use for rendering
  */
@@ -716,17 +701,12 @@ export type ButtonHref3 = string;
  * Add additional css classes that should be applied to the button
  */
 export type AdditionalClasses10 = string;
-export type IconIdentifier3 = string;
-export type AriaRole3 = string;
-export type AdditionalClass3 = string;
-/**
- * Display icon before the button text
- */
-export type IconBeforeButton3 = boolean;
-/**
- * Display icon after the button text
- */
-export type IconAfterButton3 = boolean;
+export type IconIdentifier6 = string;
+export type AriaRole6 = string;
+export type AdditionalClass6 = string;
+export type IconIdentifier7 = string;
+export type AriaRole7 = string;
+export type AdditionalClass7 = string;
 /**
  * Overwrite the data-component to use for rendering
  */
@@ -780,9 +760,9 @@ export type Class6 = string;
  * Final number to count to
  */
 export type Number = number;
-export type IconIdentifier4 = string;
-export type AriaRole4 = string;
-export type AdditionalClass4 = string;
+export type IconIdentifier8 = string;
+export type AriaRole8 = string;
+export type AdditionalClass8 = string;
 /**
  * Topic for the count-up box. Displayed before the text, in bold
  */
@@ -816,17 +796,12 @@ export type ButtonHref4 = string;
  * Add additional css classes that should be applied to the button
  */
 export type AdditionalClasses11 = string;
-export type IconIdentifier5 = string;
-export type AriaRole5 = string;
-export type AdditionalClass5 = string;
-/**
- * Display icon before the button text
- */
-export type IconBeforeButton4 = boolean;
-/**
- * Display icon after the button text
- */
-export type IconAfterButton4 = boolean;
+export type IconIdentifier9 = string;
+export type AriaRole9 = string;
+export type AdditionalClass9 = string;
+export type IconIdentifier10 = string;
+export type AriaRole10 = string;
+export type AdditionalClass10 = string;
 /**
  * Overwrite the data-component to use for rendering
  */
@@ -908,17 +883,12 @@ export type ButtonHref5 = string;
  * Add additional css classes that should be applied to the button
  */
 export type AdditionalClasses12 = string;
-export type IconIdentifier6 = string;
-export type AriaRole6 = string;
-export type AdditionalClass6 = string;
-/**
- * Display icon before the button text
- */
-export type IconBeforeButton5 = boolean;
-/**
- * Display icon after the button text
- */
-export type IconAfterButton5 = boolean;
+export type IconIdentifier11 = string;
+export type AriaRole11 = string;
+export type AdditionalClass11 = string;
+export type IconIdentifier12 = string;
+export type AriaRole12 = string;
+export type AdditionalClass12 = string;
 /**
  * Overwrite the data-component to use for rendering
  */
@@ -1149,7 +1119,7 @@ export type ID = string;
 /**
  * Additional Class
  */
-export type AdditionalClass7 = string;
+export type AdditionalClass13 = string;
 /**
  * Additional Caption Class
  */
@@ -1200,17 +1170,12 @@ export type ButtonHref6 = string;
  * Add additional css classes that should be applied to the button
  */
 export type AdditionalClasses16 = string;
-export type IconIdentifier7 = string;
-export type AriaRole7 = string;
-export type AdditionalClass8 = string;
-/**
- * Display icon before the button text
- */
-export type IconBeforeButton6 = boolean;
-/**
- * Display icon after the button text
- */
-export type IconAfterButton6 = boolean;
+export type IconIdentifier13 = string;
+export type AriaRole13 = string;
+export type AdditionalClass14 = string;
+export type IconIdentifier14 = string;
+export type AriaRole14 = string;
+export type AdditionalClass15 = string;
 /**
  * Overwrite the data-component to use for rendering
  */
@@ -1367,17 +1332,12 @@ export type ButtonHref7 = string;
  * Add additional css classes that should be applied to the button
  */
 export type AdditionalClasses18 = string;
-export type IconIdentifier8 = string;
-export type AriaRole8 = string;
-export type AdditionalClass9 = string;
-/**
- * Display icon before the button text
- */
-export type IconBeforeButton7 = boolean;
-/**
- * Display icon after the button text
- */
-export type IconAfterButton7 = boolean;
+export type IconIdentifier15 = string;
+export type AriaRole15 = string;
+export type AdditionalClass16 = string;
+export type IconIdentifier16 = string;
+export type AriaRole16 = string;
+export type AdditionalClass17 = string;
 /**
  * Overwrite the data-component to use for rendering
  */
@@ -1454,7 +1414,7 @@ export type AdditionalClasses19 = string;
 /**
  * Add additional css classes that should be applied to the section
  */
-export type AdditionalClass10 = string;
+export type AdditionalClass18 = string;
 
 export interface SectionProps {
   width?: 'full' | 'max' | 'wide' | 'default' | 'narrow';
@@ -1483,7 +1443,7 @@ export interface SectionProps {
   spaceBefore?: 'default' | 'small' | 'none';
   spaceAfter?: 'default' | 'small' | 'none';
   headline?: Headline4;
-  className?: AdditionalClass10;
+  className?: AdditionalClass18;
   [k: string]: unknown;
 }
 export interface QuotesSlider {
@@ -1512,7 +1472,6 @@ export interface Button {
   size: ButtonSize;
   href?: ButtonHref;
   className?: AdditionalClasses;
-  icon?: Icon;
   iconBefore?: IconBeforeButton;
   iconAfter?: IconAfterButton;
   dataComponent?: DataComponentAttribute;
@@ -1525,12 +1484,21 @@ export interface Button {
   newTab?: OpenLinkInNewTab;
 }
 /**
- * Icon
+ * Icon identifier for icon before the button text
  */
-export interface Icon {
-  icon?: IconIdentifier;
+export interface IconBeforeButton {
+  icon: IconIdentifier;
   role?: AriaRole;
   className?: AdditionalClass;
+  [k: string]: unknown;
+}
+/**
+ * Icon identifier for icon after the button text
+ */
+export interface IconAfterButton {
+  icon: IconIdentifier1;
+  role?: AriaRole1;
+  className?: AdditionalClass1;
   [k: string]: unknown;
 }
 /**
@@ -1624,7 +1592,6 @@ export interface Link {
   size: ButtonSize1;
   href?: ButtonHref1;
   className?: AdditionalClasses3;
-  icon?: Icon1;
   iconBefore?: IconBeforeButton1;
   iconAfter?: IconAfterButton1;
   dataComponent?: DataComponentAttribute1;
@@ -1637,12 +1604,21 @@ export interface Link {
   newTab?: OpenLinkInNewTab1;
 }
 /**
- * Icon
+ * Icon identifier for icon before the button text
  */
-export interface Icon1 {
-  icon?: IconIdentifier1;
-  role?: AriaRole1;
-  className?: AdditionalClass1;
+export interface IconBeforeButton1 {
+  icon: IconIdentifier2;
+  role?: AriaRole2;
+  className?: AdditionalClass2;
+  [k: string]: unknown;
+}
+/**
+ * Icon identifier for icon after the button text
+ */
+export interface IconAfterButton1 {
+  icon: IconIdentifier3;
+  role?: AriaRole3;
+  className?: AdditionalClass3;
   [k: string]: unknown;
 }
 /**
@@ -1747,7 +1723,6 @@ export interface Link1 {
   size: ButtonSize2;
   href?: ButtonHref2;
   className?: AdditionalClasses6;
-  icon?: Icon2;
   iconBefore?: IconBeforeButton2;
   iconAfter?: IconAfterButton2;
   dataComponent?: DataComponentAttribute2;
@@ -1760,12 +1735,21 @@ export interface Link1 {
   newTab?: OpenLinkInNewTab2;
 }
 /**
- * Icon
+ * Icon identifier for icon before the button text
  */
-export interface Icon2 {
-  icon?: IconIdentifier2;
-  role?: AriaRole2;
-  className?: AdditionalClass2;
+export interface IconBeforeButton2 {
+  icon: IconIdentifier4;
+  role?: AriaRole4;
+  className?: AdditionalClass4;
+  [k: string]: unknown;
+}
+/**
+ * Icon identifier for icon after the button text
+ */
+export interface IconAfterButton2 {
+  icon: IconIdentifier5;
+  role?: AriaRole5;
+  className?: AdditionalClass5;
   [k: string]: unknown;
 }
 /**
@@ -1874,7 +1858,6 @@ export interface Button1 {
   size: ButtonSize3;
   href?: ButtonHref3;
   className?: AdditionalClasses10;
-  icon?: Icon3;
   iconBefore?: IconBeforeButton3;
   iconAfter?: IconAfterButton3;
   dataComponent?: DataComponentAttribute3;
@@ -1887,12 +1870,21 @@ export interface Button1 {
   newTab?: OpenLinkInNewTab4;
 }
 /**
- * Icon
+ * Icon identifier for icon before the button text
  */
-export interface Icon3 {
-  icon?: IconIdentifier3;
-  role?: AriaRole3;
-  className?: AdditionalClass3;
+export interface IconBeforeButton3 {
+  icon: IconIdentifier6;
+  role?: AriaRole6;
+  className?: AdditionalClass6;
+  [k: string]: unknown;
+}
+/**
+ * Icon identifier for icon after the button text
+ */
+export interface IconAfterButton3 {
+  icon: IconIdentifier7;
+  role?: AriaRole7;
+  className?: AdditionalClass7;
   [k: string]: unknown;
 }
 /**
@@ -1908,7 +1900,7 @@ export interface CollapsibleBox {
  */
 export interface CountUp {
   to: Number;
-  icon?: Icon4;
+  icon?: Icon;
   topic?: Topic;
   text?: TextContent2;
   link?: Link2;
@@ -1922,10 +1914,10 @@ export interface CountUp {
 /**
  * Icon
  */
-export interface Icon4 {
-  icon?: IconIdentifier4;
-  role?: AriaRole4;
-  className?: AdditionalClass4;
+export interface Icon {
+  icon: IconIdentifier8;
+  role?: AriaRole8;
+  className?: AdditionalClass8;
   [k: string]: unknown;
 }
 /**
@@ -1939,7 +1931,6 @@ export interface Link2 {
   size: ButtonSize4;
   href?: ButtonHref4;
   className?: AdditionalClasses11;
-  icon?: Icon5;
   iconBefore?: IconBeforeButton4;
   iconAfter?: IconAfterButton4;
   dataComponent?: DataComponentAttribute4;
@@ -1952,12 +1943,21 @@ export interface Link2 {
   newTab?: OpenLinkInNewTab5;
 }
 /**
- * Icon
+ * Icon identifier for icon before the button text
  */
-export interface Icon5 {
-  icon?: IconIdentifier5;
-  role?: AriaRole5;
-  className?: AdditionalClass5;
+export interface IconBeforeButton4 {
+  icon: IconIdentifier9;
+  role?: AriaRole9;
+  className?: AdditionalClass9;
+  [k: string]: unknown;
+}
+/**
+ * Icon identifier for icon after the button text
+ */
+export interface IconAfterButton4 {
+  icon: IconIdentifier10;
+  role?: AriaRole10;
+  className?: AdditionalClass10;
   [k: string]: unknown;
 }
 /**
@@ -1983,7 +1983,6 @@ export interface Link3 {
   size: ButtonSize5;
   href?: ButtonHref5;
   className?: AdditionalClasses12;
-  icon?: Icon6;
   iconBefore?: IconBeforeButton5;
   iconAfter?: IconAfterButton5;
   dataComponent?: DataComponentAttribute5;
@@ -1996,12 +1995,21 @@ export interface Link3 {
   newTab?: OpenLinkInNewTab6;
 }
 /**
- * Icon
+ * Icon identifier for icon before the button text
  */
-export interface Icon6 {
-  icon?: IconIdentifier6;
-  role?: AriaRole6;
-  className?: AdditionalClass6;
+export interface IconBeforeButton5 {
+  icon: IconIdentifier11;
+  role?: AriaRole11;
+  className?: AdditionalClass11;
+  [k: string]: unknown;
+}
+/**
+ * Icon identifier for icon after the button text
+ */
+export interface IconAfterButton5 {
+  icon: IconIdentifier12;
+  role?: AriaRole12;
+  className?: AdditionalClass12;
   [k: string]: unknown;
 }
 /**
@@ -2088,7 +2096,7 @@ export interface LightboxImage {
   hideCaption?: HideCaptionVisually;
   gallery?: GalleryIdentifier;
   id?: ID;
-  className?: AdditionalClass7;
+  className?: AdditionalClass13;
   captionClassName?: AdditionalCaptionClass;
   [k: string]: unknown;
 }
@@ -2115,7 +2123,6 @@ export interface Button2 {
   size: ButtonSize6;
   href?: ButtonHref6;
   className?: AdditionalClasses16;
-  icon?: Icon7;
   iconBefore?: IconBeforeButton6;
   iconAfter?: IconAfterButton6;
   dataComponent?: DataComponentAttribute6;
@@ -2129,12 +2136,21 @@ export interface Button2 {
   hidden?: HideLink;
 }
 /**
- * Icon
+ * Icon identifier for icon before the button text
  */
-export interface Icon7 {
-  icon?: IconIdentifier7;
-  role?: AriaRole7;
-  className?: AdditionalClass8;
+export interface IconBeforeButton6 {
+  icon: IconIdentifier13;
+  role?: AriaRole13;
+  className?: AdditionalClass14;
+  [k: string]: unknown;
+}
+/**
+ * Icon identifier for icon after the button text
+ */
+export interface IconAfterButton6 {
+  icon: IconIdentifier14;
+  role?: AriaRole14;
+  className?: AdditionalClass15;
   [k: string]: unknown;
 }
 /**
@@ -2184,7 +2200,6 @@ export interface Button3 {
   size: ButtonSize7;
   href?: ButtonHref7;
   className?: AdditionalClasses18;
-  icon?: Icon8;
   iconBefore?: IconBeforeButton7;
   iconAfter?: IconAfterButton7;
   dataComponent?: DataComponentAttribute7;
@@ -2198,12 +2213,21 @@ export interface Button3 {
   hidden?: HideLink1;
 }
 /**
- * Icon
+ * Icon identifier for icon before the button text
  */
-export interface Icon8 {
-  icon?: IconIdentifier8;
-  role?: AriaRole8;
-  className?: AdditionalClass9;
+export interface IconBeforeButton7 {
+  icon: IconIdentifier15;
+  role?: AriaRole15;
+  className?: AdditionalClass16;
+  [k: string]: unknown;
+}
+/**
+ * Icon identifier for icon after the button text
+ */
+export interface IconAfterButton7 {
+  icon: IconIdentifier16;
+  role?: AriaRole16;
+  className?: AdditionalClass17;
   [k: string]: unknown;
 }
 /**

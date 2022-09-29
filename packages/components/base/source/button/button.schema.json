@@ -41,20 +41,27 @@
       "title": "Additional Classes",
       "description": "Add additional css classes that should be applied to the button"
     },
-    "icon": {
-      "$ref": "http://schema.kickstartds.com/base/icon.definitions.json"
-    },
     "iconBefore": {
-      "type": "boolean",
-      "title": "Icon before button",
-      "description": "Display icon before the button text",
-      "default": false
+      "allOf": [
+        {
+          "title": "Icon before button",
+          "description": "Icon identifier for icon before the button text"
+        },
+        {
+          "$ref": "http://schema.kickstartds.com/base/icon.definitions.json"
+        }
+      ]
     },
     "iconAfter": {
-      "type": "boolean",
-      "title": "Icon after button",
-      "description": "Display icon after the button text",
-      "default": false
+      "allOf": [
+        {
+          "title": "Icon after button",
+          "description": "Icon identifier for icon after the button text"
+        },
+        {
+          "$ref": "http://schema.kickstartds.com/base/icon.definitions.json"
+        }
+      ]
     },
     "dataComponent": {
       "type": "string",

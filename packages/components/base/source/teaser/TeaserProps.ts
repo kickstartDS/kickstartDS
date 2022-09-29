@@ -22,6 +22,7 @@ export type Label = string;
  * Choose one of the styles from the list
  */
 export type ButtonStyle = 'solid' | 'clear' | 'outline';
+export type Inverted1 = boolean;
 /**
  * Choose a size between small, medium and large
  */
@@ -37,14 +38,9 @@ export type AdditionalClasses = string;
 export type IconIdentifier = string;
 export type AriaRole = string;
 export type AdditionalClass = string;
-/**
- * Display icon before the button text
- */
-export type IconBeforeButton = boolean;
-/**
- * Display icon after the button text
- */
-export type IconAfterButton = boolean;
+export type IconIdentifier1 = string;
+export type AriaRole1 = string;
+export type AdditionalClass1 = string;
 /**
  * Overwrite the data-component to use for rendering
  */
@@ -77,7 +73,6 @@ export type DisabledAttribute = boolean;
  * Open link in new Tab
  */
 export type OpenLinkInNewTab = boolean;
-export type Inverted1 = boolean;
 /**
  * Hides the link. The box as a whole keeps being clickable
  */
@@ -104,10 +99,10 @@ export interface TeaserProps {
 export interface Button {
   label: Label;
   variant: ButtonStyle;
+  inverted?: Inverted1;
   size: ButtonSize;
   href?: ButtonHref;
   className?: AdditionalClasses;
-  icon?: Icon;
   iconBefore?: IconBeforeButton;
   iconAfter?: IconAfterButton;
   dataComponent?: DataComponentAttribute;
@@ -118,15 +113,23 @@ export interface Button {
   name?: NameAttribute;
   disabled?: DisabledAttribute;
   newTab?: OpenLinkInNewTab;
-  inverted?: Inverted1;
   hidden?: HideLink;
 }
 /**
- * Icon
+ * Icon identifier for icon before the button text
  */
-export interface Icon {
-  icon?: IconIdentifier;
+export interface IconBeforeButton {
+  icon: IconIdentifier;
   role?: AriaRole;
   className?: AdditionalClass;
+  [k: string]: unknown;
+}
+/**
+ * Icon identifier for icon after the button text
+ */
+export interface IconAfterButton {
+  icon: IconIdentifier1;
+  role?: AriaRole1;
+  className?: AdditionalClass1;
   [k: string]: unknown;
 }
