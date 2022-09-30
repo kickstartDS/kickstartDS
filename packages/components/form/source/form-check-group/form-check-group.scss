@@ -7,6 +7,7 @@ $vars: meta.module-variables(form-check-group-vars);
 
 .c-form-check-group {
   font: var(--ks-font-interface-s);
+  color: var(--ks-text-color-default);
 
   &__label {
     display: inline-block;

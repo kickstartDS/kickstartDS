@@ -17,7 +17,8 @@ $header: (
 
 $border: (
   '.c-table': (
-    border: var(--ks-border-width-default) solid var(--ks-color-fg-alpha-1),
+    border: var(--ks-border-width-default) solid
+      var(--ks-border-color-interface),
   ),
 ) !default;
 

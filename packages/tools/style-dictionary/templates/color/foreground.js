@@ -1,3 +1,3 @@
 const colorScale = require('./colorScale');
 
-module.exports = colorScale('fg');
+module.exports = colorScale('fg', 'foreground', 'background');
