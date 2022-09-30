@@ -59,10 +59,10 @@ $vars: meta.module-variables(form-field-vars);
     }
 
     &--is-invalid {
-      --c-form-field--color: var(--color-error);
-      --c-form-field--border-color: var(--color-error);
-      --c-form-field_hover--border-color: var(--color-error);
-      --c-form-field_focus--border-color: var(--color-error);
+      --c-form-field--color: var(--ks-color-negative);
+      --c-form-field--border-color: var(--ks-color-negative);
+      --c-form-field_hover--border-color: var(--ks-color-negative);
+      --c-form-field_focus--border-color: var(--ks-color-negative);
     }
   }
 
@@ -90,8 +90,8 @@ $vars: meta.module-variables(form-field-vars);
   &__invalid-message {
     margin: calc(-1 * var(--c-form-field--border-radius)) 0 0;
     padding: var(--c-form-field--border-radius) 0.5rem 0.125rem;
-    color: var(--color-white);
-    background: var(--color-error);
+    color: var(--ks-text-color-default-inverted);
+    background: var(--ks-color-negative);
     border-bottom-left-radius: var(--c-form-field--border-radius);
     border-bottom-right-radius: var(--c-form-field--border-radius);
   }

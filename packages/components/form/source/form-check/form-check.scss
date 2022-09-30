@@ -92,11 +92,11 @@ $vars: meta.module-variables(form-check-vars);
 
     .c-form-check-group--is-invalid &,
     .c-form-check__input--is-invalid ~ & {
-      --c-form-check_box--border-color: var(--color-error);
-      --c-form-check_box-hover--border-color: var(--color-error);
-      --c-form-check_box-checked--border-color: var(--color-error);
-      --c-form-check_box-checked--background: var(--color-error);
-      --c-form-check_box-focus--border-color: var(--color-error);
+      --c-form-check_box--border-color: var(--ks-color-negative);
+      --c-form-check_box-hover--border-color: var(--ks-color-negative);
+      --c-form-check_box-checked--border-color: var(--ks-color-negative);
+      --c-form-check_box-checked--background: var(--ks-color-negative);
+      --c-form-check_box-focus--border-color: var(--ks-color-negative);
     }
   }
 
@@ -107,8 +107,8 @@ $vars: meta.module-variables(form-check-vars);
   &__invalid-message {
     margin: 0.25rem 0 0;
     padding: 0 0.5rem 0.125rem;
-    color: var(--color-white);
-    background: var(--color-error);
+    color: var(--ks-text-color-default-inverted);
+    background: var(--ks-color-negative);
     border-radius: var(--c-form-field--border-radius);
   }
 

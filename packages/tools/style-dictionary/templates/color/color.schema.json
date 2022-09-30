@@ -123,6 +123,30 @@
             },
             "transparent": {
               "$ref": "#/definitions/base"
+            },
+            "positive": {
+              "$ref": "#/definitions/scales"
+            },
+            "positive-inverted": {
+              "$ref": "#/definitions/scales"
+            },
+            "informative": {
+              "$ref": "#/definitions/scales"
+            },
+            "informative-inverted": {
+              "$ref": "#/definitions/scales"
+            },
+            "notice": {
+              "$ref": "#/definitions/scales"
+            },
+            "notice-inverted": {
+              "$ref": "#/definitions/scales"
+            },
+            "negative": {
+              "$ref": "#/definitions/scales"
+            },
+            "negative-inverted": {
+              "$ref": "#/definitions/scales"
             }
           },
           "additionalProperties": {
