@@ -31,7 +31,7 @@ $vars: meta.module-variables(form-field-vars);
     width: 100%;
     background-color: var(--c-form-field--background);
     color: var(--c-form-field--color);
-    font: var(--ks-font-ui-m);
+    font: var(--ks-font-interface-m);
     transition: 0.2s;
     resize: vertical;
 
@@ -76,7 +76,7 @@ $vars: meta.module-variables(form-field-vars);
       position: absolute;
       right: 0;
       bottom: calc(
-        var(--ks-line-height-ui-m) * 1em - var(--c-form-field_icon--size)
+        var(--ks-line-height-interface-m) * 1em - var(--c-form-field_icon--size)
       );
       margin: $input-padding;
       color: var(--c-form-field_icon--color);

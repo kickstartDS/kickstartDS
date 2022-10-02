@@ -1,5 +1,6 @@
 @mixin wrapper($width: 100%) {
   display: inline-flex;
-  font: var(--ks-font-ui-s);
+  font: var(--ks-font-interface-s);
+  color: var(--ks-color-fg);
   width: $width;
 }

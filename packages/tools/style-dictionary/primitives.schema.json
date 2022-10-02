@@ -33,7 +33,9 @@
           "type": "string"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": {
+        "type": "string"
+      }
     },
     "font": {
       "title": "Typography",
@@ -45,7 +47,7 @@
         "copy": {
           "$ref": "#/definitions/font"
         },
-        "ui": {
+        "interface": {
           "$ref": "#/definitions/font"
         },
         "mono": {

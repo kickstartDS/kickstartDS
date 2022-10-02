@@ -22,4 +22,13 @@ const alphaScale = (steps) => {
   return lut.map(({ y }) => Math.round(y * 100) / 100);
 };
 
-module.exports = { modularScale, round, parseLength, alphaScale };
+const capitalizeFirstLetter = (string) =>
+  string.charAt(0).toUpperCase() + string.slice(1);
+
+module.exports = {
+  modularScale,
+  round,
+  parseLength,
+  alphaScale,
+  capitalizeFirstLetter,
+};

@@ -56,14 +56,14 @@ $vars: meta.module-variables(quote-vars);
   &__source {
     font: var(--c-quote_source--font-style, normal)
       var(--c-quote_source--font-weight, var(--ks-font-weight-bold))
-      var(--c-quote_source--font, var(--ks-font-ui-s));
+      var(--c-quote_source--font, var(--ks-font-interface-s));
     text-transform: var(--c-quote_source--text-transform);
   }
 
   &__byline {
     font: var(--c-quote_byline--font-style, normal)
       var(--c-quote_byline--font-weight, var(--ks-font-weight-bold))
-      var(--c-quote_byline--font, var(--ks-font-ui-s));
+      var(--c-quote_byline--font, var(--ks-font-interface-s));
     text-transform: var(--c-quote_byline--text-transform);
   }
 }
