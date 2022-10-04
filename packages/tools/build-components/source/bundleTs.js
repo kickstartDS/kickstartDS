@@ -3,7 +3,7 @@ const rollup = require('rollup');
 const { babel } = require('@rollup/plugin-babel');
 const ts = require('rollup-plugin-ts');
 const log = require('./log');
-const { dirRe, sourcePath } = require('./utils');
+const { root, dirRe, sourcePath } = require('./utils');
 const {
   sharedInputPlugins,
   sharedOutputOptions,
@@ -58,6 +58,9 @@ const prepare = async (tsPaths) => {
               allowJs: true,
               lib: ['dom', 'dom.iterable', 'es2020'],
               downlevelIteration: true,
+              paths: {
+                react: [`${root}/node_modules/@types/react`],
+              },
             },
             babelConfig,
           })
