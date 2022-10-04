@@ -1,7 +1,7 @@
 const token = (value) => ({
   value,
   attributes: { category: 'color' },
-  token: { category: 'Colors: Background Primary', presenter: 'Color' },
+  token: { category: 'Colors: Border Primary', presenter: 'Color' },
 });
 
 module.exports = () => ({

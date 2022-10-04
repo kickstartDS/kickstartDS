@@ -2,6 +2,7 @@ const primary = require('./primary');
 const foreground = require('./foreground');
 const link = require('./link');
 const transparent = require('./transparent');
+const semantic = require('./semantic');
 const colorScale = require('./colorScale');
 
 const knownColorKeys = [
@@ -11,6 +12,16 @@ const knownColorKeys = [
   'foreground',
   'link',
   'link-inverted',
+  'positive',
+  'positive-inverted',
+  'positive',
+  'positive-inverted',
+  'informative',
+  'informative-inverted',
+  'notice',
+  'notice-inverted',
+  'negative',
+  'negative-inverted',
 ];
 
 module.exports = (data) => {
@@ -27,6 +38,7 @@ module.exports = (data) => {
         ...foreground(data),
         ...link(data),
         ...transparent(data),
+        ...semantic(data),
         ...additional,
       },
     },

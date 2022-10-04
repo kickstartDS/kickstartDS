@@ -4,7 +4,7 @@ const { alphaScale, capitalizeFirstLetter } = require('../_helper');
 const indices = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 const scale = alphaScale(indices.length);
 
-module.exports = (name) => {
+module.exports = (key, name = key, nameInverted = `${name}-inverted`) => {
   const token = (value) => ({
     value: value.toRgb(),
     attributes: { category: 'color' },
@@ -15,7 +15,7 @@ module.exports = (name) => {
   });
 
   return ({ color }) => ({
-    [name]: {
+    [key]: {
       base: token(Color(color[name])),
       alpha: Object.fromEntries(
         indices.map((index) => [
@@ -34,15 +34,13 @@ module.exports = (name) => {
         ])
       ),
     },
-    [`${name}-inverted`]: {
-      base: token(Color(color[`${name}-inverted`])),
+    [`${key}-inverted`]: {
+      base: token(Color(color[nameInverted])),
       alpha: Object.fromEntries(
         indices.map((index) => [
           index.toString(),
           {
-            base: token(
-              Color(color[`${name}-inverted`]).setAlpha(scale[index])
-            ),
+            base: token(Color(color[nameInverted]).setAlpha(scale[index])),
           },
         ])
       ),
@@ -52,7 +50,7 @@ module.exports = (name) => {
           {
             base: token(
               Color.mix(
-                color[`${name}-inverted`],
+                color[nameInverted],
                 color.foreground,
                 scale[index] * 100
               )

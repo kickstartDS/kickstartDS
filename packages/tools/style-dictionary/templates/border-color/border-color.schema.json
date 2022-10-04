@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.kickstartds.com/tokens/background-color.schema.json",
+  "$id": "http://schema.kickstartds.com/tokens/border-color.schema.json",
   "definitions": {
     "token": {
       "type": "object",
@@ -75,7 +75,7 @@
     "ks": {
       "type": "object",
       "properties": {
-        "background-color": {
+        "border-color": {
           "type": "object",
           "properties": {
             "accent": {
@@ -304,7 +304,7 @@
           ]
         }
       },
-      "required": ["background-color"]
+      "required": ["border-color"]
     }
   },
   "required": ["ks"]
