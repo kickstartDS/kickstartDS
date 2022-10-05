@@ -14,7 +14,7 @@ _TODO_: Add expressive visualization of **what** kickstartDS is
 
 Get started building your own Design System by installing **kickstartDS** into your project, or by following our [Create your first Design System](https://todo) tutorial, to learn about the main concepts involved.
 
-<Section spaceBefore="none" spaceAfter="none" width="full">
+<Section ks-theme="docs" spaceBefore="none" spaceAfter="none" width="full">
   <TeaserBox
     link={{
       size: 'small',

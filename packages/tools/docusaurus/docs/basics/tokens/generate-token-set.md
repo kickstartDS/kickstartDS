@@ -10,10 +10,10 @@ You apply basic corporate design elements to the design system.
 
 - Color Palette
 - Spacing Scales
-- font-size scales
-- font-families
-- font-weights
-- breakpoints
+- Font-size scales
+- Font-families
+- Font-weights
+- Breakpoints
 
 ## Color Palette
 

@@ -13,7 +13,7 @@ But as with all software that's meant to last, some more heavy changes will even
 
 ## Current migration guides
 
-<Section spaceBefore="none" spaceAfter="none" width="full">
+<Section ks-theme="docs" spaceBefore="none" spaceAfter="none" width="full">
   <TeaserBox
     link={{
       size: 'small',

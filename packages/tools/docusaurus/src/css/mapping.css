@@ -196,13 +196,13 @@
   --ifm-list-margin: 1rem;
   --ifm-list-item-margin: 0.25rem;
   --ifm-list-paragraph-margin: 1rem;
-  --ifm-table-cell-padding: 0.75rem;
+  --ifm-table-cell-padding: 0.75rem 0.5rem;
 
   --ifm-table-background: transparent;
-  --ifm-table-stripe-background: rgba(0, 0, 0, 0.03);
+  --ifm-table-stripe-background: transparent;
 
   --ifm-table-border-width: 1px;
-  --ifm-table-border-color: var(--ifm-color-emphasis-300);
+  --ifm-table-border-color: var(--ks-border-color-accent-base);
 
   --ifm-table-head-background: inherit;
   --ifm-table-head-color: inherit;
@@ -212,7 +212,7 @@
   /* Links. */
   --ifm-link-color: var(--ifm-color-primary);
   --ifm-link-decoration: var(--g-link--text-decoration);
-  --ifm-link-hover-color: var(--ifm-link-color);
+  --ifm-link-color-hover: var(--ifm-link-color);
   --ifm-link-hover-decoration: var(--g-link--text-decoration-hover);
 
   /* Paragraphs. */
@@ -282,7 +282,7 @@
   --ifm-card-border-radius: calc(var(--ifm-global-radius) * 2);
   --ifm-card-horizontal-spacing: var(--ifm-global-spacing);
   --ifm-card-vertical-spacing: var(--ifm-global-spacing);
-  --ifm-toc-border-color: var(--ifm-color-emphasis-300);
+  --ifm-toc-border-color: var(--ks-border-color-accent-base);
   --ifm-toc-link-color: var(--ifm-color-content-secondary);
   --ifm-toc-padding-vertical: 0.5rem;
   --ifm-toc-padding-horizontal: 0.5rem;
@@ -301,7 +301,7 @@
   --ifm-footer-logo-max-width: min(30rem, 90vw);
   --ifm-hero-background-color: var(--ifm-background-surface-color);
   --ifm-hero-text-color: var(--ifm-color-emphasis-800);
-  --ifm-menu-color: var(--ifm-color-emphasis-700);
+  --ifm-menu-color: var(--ks-text-color-primary);
   --ifm-menu-color-active: var(--ifm-color-primary);
   --ifm-menu-color-background-active: var(--ifm-hover-overlay);
   --ifm-menu-color-background-hover: var(--ifm-hover-overlay);
@@ -332,7 +332,9 @@
   --ifm-pagination-padding-horizontal: calc(var(--ifm-spacing-horizontal) * 1);
   --ifm-pagination-padding-vertical: calc(var(--ifm-spacing-vertical) * 0.25);
   --ifm-pagination-nav-border-radius: var(--ifm-global-radius);
-  --ifm-pagination-nav-color-hover: var(--ifm-color-primary);
+  --ifm-pagination-nav-color-hover: var(
+    --ks-border-color-interface-interactive-hover
+  );
   --ifm-pills-color-active: var(--ifm-color-primary);
   --ifm-pills-color-background-active: var(--ifm-hover-overlay);
   --ifm-pills-spacing: 0.125rem;

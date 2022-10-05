@@ -78,7 +78,7 @@ const FeatureList = [
 export default function HomepageFeatures() {
   return (
     <PictureProvider>
-      <Section width="wide">
+      <Section ks-theme="docs" width="max">
         {FeatureList.map(({ title, Svg, description, link }, idx) => (
           <TeaserBox
             imageSpacing

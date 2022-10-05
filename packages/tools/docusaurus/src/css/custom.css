@@ -28,3 +28,44 @@ a.footer__link-item {
   /* color: var(--ks-color-primary-inverted-base) !important; */
   background-color: var(--ifm-color-primary) !important;
 }
+
+code {
+  border: none;
+}
+
+:root [ks-theme='docs'] {
+  --ks-spacing-xxs-bp-factor: 1;
+  --ks-spacing-xs-bp-factor: 1;
+  --ks-spacing-s-bp-factor: 1;
+  --ks-spacing-m-bp-factor: 1;
+  --ks-spacing-l-bp-factor: 1;
+  --ks-spacing-xl-bp-factor: 1;
+  --ks-spacing-xxl-bp-factor: 1;
+
+  --ks-font-size-display-bp-factor: 1;
+  --ks-font-size-copy-bp-factor: 1;
+  --ks-font-size-ui-bp-factor: 1;
+
+  --ks-font-display-xxs: var(--ks-font-ui-xxs);
+  --ks-font-display-xs: var(--ks-font-ui-xs);
+  --ks-font-display-s: var(--ks-font-ui-s);
+  --ks-font-display-m: var(--ks-font-ui-m);
+  --ks-font-display-l: var(--ks-font-ui-l);
+  --ks-font-display-xl: var(--ks-font-ui-xl);
+  --ks-font-display-xxl: var(--ks-font-ui-xxl);
+
+  --ks-font-copy-xxs: 0.45rem;
+  --ks-font-copy-xs: 0.5rem;
+  --ks-font-copy-s: 0.65rem;
+  --ks-font-copy-m: 0.75rem;
+  --ks-font-copy-l: 0.85rem;
+  --ks-font-copy-xl: 1rem;
+  --ks-font-copy-xxl: 1.25rem;
+
+  --ks-border-width-default: 1px;
+  --ks-border-width-emphasized: 1px;
+}
+
+:root [ks-theme='docs'] .l-section__container {
+  --l-section_col--min-width: 15rem;
+}

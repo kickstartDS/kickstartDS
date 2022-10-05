@@ -1,0 +1,31 @@
+table td,
+table th {
+  border-left: transparent;
+  border-right: transparent;
+}
+
+table th,
+table tr {
+  border: 0 !important;
+  text-align: left;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+table * {
+  font-size: 13px;
+}
+
+table code {
+  font-size: 12px;
+  border: none;
+  background: none;
+}
+
+.split-table {
+  display: flex;
+  gap: var(--ks-spacing-m-base);
+  flex-wrap: wrap;
+}
