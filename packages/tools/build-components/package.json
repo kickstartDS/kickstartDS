@@ -12,7 +12,7 @@
     "@rollup/plugin-babel": "^5.3.1",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-replace": "^4.0.0",
-    "@wordpress/babel-plugin-import-jsx-pragma": "^4.1.0",
+    "@wordpress/babel-plugin-import-jsx-pragma": "^4.2.0",
     "autoprefixer": "^10.4.12",
     "builtin-modules": "^3.3.0",
     "change-case": "^4.1.2",
