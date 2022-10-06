@@ -37,7 +37,16 @@ const config = {
         docs: {
           routeBasePath: '/',
           // path: '../../components/core/docs',
-          beforeDefaultRemarkPlugins: [[remarkCodeHike, { theme }]],
+          beforeDefaultRemarkPlugins: [
+            [
+              remarkCodeHike,
+              {
+                theme,
+                lineNumbers: true,
+                showCopyButton: true,
+              },
+            ],
+          ],
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
             'https://github.com/kickstartDS/kickstartDS/tree/main/packages/components/core/docs/',
