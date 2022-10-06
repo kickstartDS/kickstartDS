@@ -61,23 +61,6 @@ Color-tokens whith a dedicated application.
 | `clear`      | Elements featuring transparency                                         |
 | `interface`  | Signals user interactability                                            |
 
-|                                                            | Token                             |
-| ---------------------------------------------------------- | --------------------------------- |
-| <div className="color-preview background-primary"></div>   | `--ks-background-color-primary`   |
-| <div className="color-preview background-primary"></div>   | `--ks-border-color-primary`       |
-| <div className="color-preview background-primary"></div>   | `--ks-text-color-primary`         |
-| <div className="color-preview background-accent"></div>    | `--ks-background-color-accent`    |
-| <div className="color-preview background-accent"></div>    | `--ks-border-color-accent`        |
-| <div className="color-preview background-accent"></div>    | `--ks-text-color-accent`          |
-| <div className="color-preview background-default"></div>   | `--ks-background-color-default`   |
-| <div className="color-preview background-default"></div>   | `--ks-border-color-default`       |
-| <div className="color-preview color-fg"></div>             | `--ks-text-color-default`         |
-| <div className="color-preview background-clear"></div>     | `--ks-background-color-clear`     |
-| <div className="color-preview background-clear"></div>     | `--ks-border-color-clear`         |
-| <div className="color-preview background-interface"></div> | `--ks-background-color-interface` |
-| <div className="color-preview background-interface"></div> | `--ks-border-color-interface`     |
-| <div className="color-preview background-interface"></div> | `--ks-text-color-interface`       |
-
 ### Semantic color types
 
 Semantic colors are categorised into **background-color**, **border-color** & **text-color**.
@@ -141,9 +124,9 @@ Applies to primary-, interface- & clear-tokens
 
 Applies to primary-tokens
 
-|                                                              | Token                                       | Application             |
-| ------------------------------------------------------------ | ------------------------------------------- | ----------------------- |
-| <div className="color-preview background-translucent"></div> | `--ks-background-color-primary-translucent` | Signals interactability |
+|                                                              | Token                                       |
+| ------------------------------------------------------------ | ------------------------------------------- |
+| <div className="color-preview background-translucent"></div> | `--ks-background-color-primary-translucent` |
 
 ```json title="background-color.json"
 "translucent": {
