@@ -7,7 +7,7 @@ import { TeaserBox } from "@kickstartds/base/lib/teaser-box";
 
 # Token
 
-## What are tokens?
+## What are token?
 
 **Tokens** are the smallest building blocks of a design system. Based on the values they store, they are usually used across multiple tools and platforms to ensure consistence and matching brand identity. Because tokens are described abstraction, the defined values can change without disturbing the designer or developer experience.
 
