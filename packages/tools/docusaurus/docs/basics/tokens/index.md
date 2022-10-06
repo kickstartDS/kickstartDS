@@ -5,21 +5,26 @@ sidebar_position: 3
 import { Section } from "@kickstartds/base/lib/section";
 import { TeaserBox } from "@kickstartds/base/lib/teaser-box";
 
-# Design & Component Token
+# Token
 
 ## What are tokens?
 
-**Design tokens** are the smallest building blocks of a design system. Based on the values they store, e.g. color, typography, spacing, animation, etc., they are usually used across designs, code, tools, and platforms to ensure consistence and matching brand identity.
+**Tokens** are the smallest building blocks of a design system. Based on the values they store, they are usually used across multiple tools and platforms to ensure consistence and matching brand identity. Because tokens are described abstraction, the defined values can change without disturbing the designer or developer experience.
+
+> The single source of truth to name and store a design decision, distributed so teams can use it across design tools and coding languages.  
+> _-W3C Design Tokens Community Group_
+
+**kickstartDS** differentiates between Design and Component token. Whereas described above Design Token store values e.g. color, typography, spacing, animation, etc., Component Tokens represent the properties and values that are contained in a component, e.g. container, label text, icons, and states.
 
 <Section spaceBefore="none" spaceAfter="none" width="full">
   <TeaserBox
     link={{
       size: 'small',
-      href: '/docs/basics/tokens/generate-token-set',
-      label: "How to generate a token set?",
+      href: '/docs/basics/tokens/design-token',
+      label: "Explore Design token",
       variant: "outline",
     }}
-    text="Text todo"
+    text="encode your main brand identity, including colors, fonts and typography. "
     topic="Design tokens"
   />
   <TeaserBox
@@ -29,12 +34,12 @@ import { TeaserBox } from "@kickstartds/base/lib/teaser-box";
       label: "Why do I need these?",
       variant: "outline",
     }}
-    text="Text todo"
+    text="TODO"
     topic="Component tokens"
   />
 </Section>
 
-## Tokens primitives
+## Core token
 
 ```json title="token-primitives.json"
   "color": {
@@ -47,10 +52,10 @@ import { TeaserBox } from "@kickstartds/base/lib/teaser-box";
   },
 ```
 
-## Semantic tokens
+## Semantic token
 
 ```json title="token-primitives.json"
-  EXMAMPLES
+  TODO
 ```
 
-## Inverted display
+### Inverted display
