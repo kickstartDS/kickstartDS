@@ -104,7 +104,7 @@ You'll probably want to have `Git` support installed on your system, too. This i
 Next to your locally installed `Git` client, most of the time you'll interact with a hosted repository.  
 This might live on popular SaaS hosting providers such as Github, Gitlab or Bitbucket, on privately hosted providers, based on those, or a variety of other flavours... up to completely local repositories just used for personal use.
 
-**kickstartDS** is hosted on `Github`, but where your Desgin System repository is hosted depends on your own setup.  
+**kickstartDS** is hosted on `Github`, but where your Design System repository is hosted depends on your own setup.  
 You can find our repository here: [github.com/kickstartDS/kickstartDS](https://github.com/kickstartDS/kickstartDS)
 
 Popular configuration guides include:
