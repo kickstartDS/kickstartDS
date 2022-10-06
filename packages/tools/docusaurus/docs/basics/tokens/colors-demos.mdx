@@ -4,7 +4,7 @@ sidebar_position: 2
 
 import { TokenTable } from 'storybook-design-token/dist/components/TokenTable';
 
-# Color TokenTable
+# Colors Demos
 
 ## Primary
 
@@ -156,6 +156,8 @@ Primary color mixed with the foreground color
 
 ## Usage in Buttons
 
+Short example demonstrating how color tokens apply to Buttons:
+
 <CH.Spotlight preset="https://codesandbox.io/s/cool-pine-d8qr18" start={1}>
 
 ```css src/styles.css
@@ -178,7 +180,7 @@ Primary color mixed with the foreground color
 
 ---
 
-### Lorem
+### Default Button
 
 <TokenTable
   showValueColumn={false}
@@ -187,8 +189,8 @@ Primary color mixed with the foreground color
       tokens: [
         {
           presenter: 'Color',
-          name: '--ks-color-bg',
-          value: 'var(--ks-color-bg)',
+          name: '--ks-color-fg',
+          value: 'var(--ks-color-primary-inverted)',
           sourceType: 'CSS',
         },
       ],
@@ -204,7 +206,23 @@ Lorem ipsum dolor sit amet, consectetur adipiscing something about points, sed d
 
 ---
 
-### Ipsum
+### Fuchsia Button
+
+<TokenTable
+  showValueColumn={false}
+  categories={[
+    {
+      tokens: [
+        {
+          presenter: 'Color',
+          name: '--ks-color-fg',
+          value: 'fuchsia',
+          sourceType: 'CSS',
+        },
+      ],
+    },
+  ]}
+/>
 
 Velit euismod in pellentesque massa placerat. Mi bibendum neque egestas congue quisque egestas diam in arcu. Nisi lacus sed viverra tellus in.
 
@@ -226,11 +244,27 @@ Velit euismod in pellentesque massa placerat. Mi bibendum neque egestas congue q
 
 ---
 
-### Dolor sit
+### Green Button
+
+<TokenTable
+  showValueColumn={false}
+  categories={[
+    {
+      tokens: [
+        {
+          presenter: 'Color',
+          name: '--ks-color-fg',
+          value: 'green',
+          sourceType: 'CSS',
+        },
+      ],
+    },
+  ]}
+/>
 
 Id aliquet risus feugiat in ante metus dictum at tempor. Sed blandit libero volutpat sed cras. Sed odio morbi quis commodo odio aenean sed adipiscing. Velit euismod in pellentesque massa placerat. Mi bibendum neque egestas congue quisque egestas diam in arcu.
 
-```css src/styles.css
+```css src/styles.css focus=12
 :root,
 [ks-theme] {
   --ks-color-primary: var(--ks-color-primary);
@@ -242,19 +276,33 @@ Id aliquet risus feugiat in ante metus dictum at tempor. Sed blandit libero volu
   --ks-border-color-primary-interactive-hover: var(
     --ks-border-color-primary-interactive-hover
   );
-  --ks-text-color-primary-inverted-interactive: var(
-    --ks-text-color-primary-inverted-interactive-base
-  );
+  --ks-text-color-primary-inverted-interactive: green;
 }
 ```
 
 ---
 
-### Amet
+### Orange Button
+
+<TokenTable
+  showValueColumn={false}
+  categories={[
+    {
+      tokens: [
+        {
+          presenter: 'Color',
+          name: '--ks-color-fg',
+          value: 'orange',
+          sourceType: 'CSS',
+        },
+      ],
+    },
+  ]}
+/>
 
 Velit euismod in pellentesque massa placerat. Mi bibendum neque egestas congue quisque egestas diam in arcu. Nisi lacus sed viverra tellus in. Venenatis cras sed felis eget velit. Consectetur libero id faucibus nisl tincidunt.
 
-```css src/styles.css
+```css src/styles.css focus=12
 :root,
 [ks-theme] {
   --ks-color-primary: var(--ks-color-primary);
@@ -266,9 +314,7 @@ Velit euismod in pellentesque massa placerat. Mi bibendum neque egestas congue q
   --ks-border-color-primary-interactive-hover: var(
     --ks-border-color-primary-interactive-hover
   );
-  --ks-text-color-primary-inverted-interactive: var(
-    --ks-text-color-primary-inverted-interactive-base
-  );
+  --ks-text-color-primary-inverted-interactive: orange;
 }
 ```
 
