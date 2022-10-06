@@ -5,11 +5,11 @@ sidebar_position: 3
 import { Section } from "@kickstartds/base/lib/section";
 import { TeaserBox } from "@kickstartds/base/lib/teaser-box";
 
-# Design & Component Token
+# Token
 
-## What are tokens?
+## What are token?
 
-**Design tokens** are the smallest building blocks of a design system. Based on the values they store, e.g. color, typography, spacing, animation, etc., they are usually used across designs, code, tools, and platforms to ensure consistence and matching brand identity.
+**Design token** are the smallest building blocks of a design system. Based on the values they store, e.g. color, typography, spacing, animation, etc., they are usually used across designs, code, tools, and platforms to ensure consistence and matching brand identity.
 
 <Section spaceBefore="none" spaceAfter="none" width="full">
   <TeaserBox
