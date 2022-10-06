@@ -29,17 +29,17 @@ These are the base colors. They are referenced in semantic colors and shouldnt b
   <div>
     `--ks-spacing-inset-m`
     <div className="spacing spacing-inset"></div>
-    An even padding spacing
+    Even padding
   </div>
   <div>
     `--ks-spacing-inset-squish-m`
     <div className="spacing spacing-inset-squish"></div>
-    Reduces top and bottom padding by 50%, resulting in a vertically condensed visual display
+    Reduced top and bottom padding, resulting in a vertically condensed visual display
   </div>
   <div>
     `--ks-spacing-inset-stretch-m`
     <div className="spacing spacing-inset-stretch"></div>
-    Increases top and bottom padding by 50%, resulting in a vertically expanded visual display
+    Increased top and bottom padding, resulting in a vertically expanded visual display
   </div>
   <div>
     `--ks-spacing-stack-m`
