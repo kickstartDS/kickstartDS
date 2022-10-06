@@ -1,0 +1,275 @@
+---
+sidebar_position: 2
+---
+
+import { TokenTable } from 'storybook-design-token/dist/components/TokenTable';
+
+# Color TokenTable
+
+## Primary
+
+```
+--ks-color-primary
+```
+
+###### Example
+
+<TokenTable
+  showValueColumn={false}
+  categories={[
+    {
+      tokens: [
+        {
+          presenter: 'Color',
+          name: '--ks-color-primary',
+          value: 'var(--ks-color-primary)',
+          sourceType: 'CSS',
+        },
+      ],
+    },
+  ]}
+/>
+
+### To background
+
+Primary color mixed with the background color
+
+```
+--ks-color-primary-to-bg-[1..9]
+```
+
+###### Example
+
+<TokenTable
+  showValueColumn={false}
+  categories={[
+    {
+      tokens: [1,2,3,4,5,6,7,8,9].map((scale) => ({
+          presenter: 'Color',
+          name: `--ks-color-primary-to-bg-${scale}`,
+          value: `var(--ks-color-primary-to-bg-${scale})`,
+          sourceType: 'CSS',
+
+      }))
+    },
+
+]}
+/>
+
+### To foreground
+
+Primary color mixed with the foreground color
+
+```
+--ks-color-primary-to-fg-[1..9]
+```
+
+###### Example
+
+<TokenTable
+  showValueColumn={false}
+  categories={[
+    {
+      tokens: [1,2,3,4,5,6,7,8,9].map((scale) => ({
+          presenter: 'Color',
+          name: `--ks-color-primary-to-fg-${scale}`,
+          value: `var(--ks-color-primary-to-fg-${scale})`,
+          sourceType: 'CSS',
+
+      }))
+    },
+
+]}
+/>
+
+### Alpha
+
+```
+--ks-color-primary-alpha-[1..9]
+```
+
+###### Example
+
+<TokenTable
+  showValueColumn={false}
+  categories={[
+    {
+      tokens: [1,2,3,4,5,6,7,8,9].map((scale) => ({
+          presenter: 'Color',
+          name: `--ks-color-primary-alpha-${scale}`,
+          value: `var(--ks-color-primary-alpha-${scale})`,
+          sourceType: 'CSS',
+
+      }))
+    },
+
+]}
+/>
+
+## Foreground
+
+```
+--ks-color-fg
+```
+
+###### Example
+
+<TokenTable
+  showValueColumn={false}
+  categories={[
+    {
+      tokens: [
+        {
+          presenter: 'Color',
+          name: '--ks-color-fg',
+          value: 'var(--ks-color-fg)',
+          sourceType: 'CSS',
+        },
+      ],
+    },
+  ]}
+/>
+
+## Background
+
+```
+--ks-color-bg
+```
+
+###### Example
+
+<TokenTable
+  showValueColumn={false}
+  categories={[
+    {
+      tokens: [
+        {
+          presenter: 'Color',
+          name: '--ks-color-bg',
+          value: 'var(--ks-color-bg)',
+          sourceType: 'CSS',
+        },
+      ],
+    },
+  ]}
+/>
+
+## Usage in Buttons
+
+<CH.Spotlight preset="https://codesandbox.io/s/cool-pine-d8qr18" start={1}>
+
+```css src/styles.css
+:root,
+[ks-theme] {
+  --ks-color-primary: var(--ks-color-primary);
+  --ks-color-primary-inverted: var(--ks-color-primary-inverted);
+  --ks-border-color-primary-interactive: var(
+    --ks-border-color-primary-interactive
+  );
+  --ks-color-primary-inverted: var(--ks-color-primary-inverted);
+  --ks-border-color-primary-interactive-hover: var(
+    --ks-border-color-primary-interactive-hover
+  );
+  --ks-text-color-primary-inverted-interactive: var(
+    --ks-text-color-primary-inverted-interactive-base
+  );
+}
+```
+
+---
+
+### Lorem
+
+<TokenTable
+  showValueColumn={false}
+  categories={[
+    {
+      tokens: [
+        {
+          presenter: 'Color',
+          name: '--ks-color-bg',
+          value: 'var(--ks-color-bg)',
+          sourceType: 'CSS',
+        },
+      ],
+    },
+  ]}
+/>
+
+Lorem ipsum dolor sit amet, consectetur adipiscing something about points, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+```css src/styles.css
+
+```
+
+---
+
+### Ipsum
+
+Velit euismod in pellentesque massa placerat. Mi bibendum neque egestas congue quisque egestas diam in arcu. Nisi lacus sed viverra tellus in.
+
+```css src/styles.css focus=12
+:root,
+[ks-theme] {
+  --ks-color-primary: var(--ks-color-primary);
+  --ks-color-primary-inverted: var(--ks-color-primary-inverted);
+  --ks-border-color-primary-interactive: var(
+    --ks-border-color-primary-interactive
+  );
+  --ks-color-primary-inverted: var(--ks-color-primary-inverted);
+  --ks-border-color-primary-interactive-hover: var(
+    --ks-border-color-primary-interactive-hover
+  );
+  --ks-text-color-primary-inverted-interactive: fuchsia;
+}
+```
+
+---
+
+### Dolor sit
+
+Id aliquet risus feugiat in ante metus dictum at tempor. Sed blandit libero volutpat sed cras. Sed odio morbi quis commodo odio aenean sed adipiscing. Velit euismod in pellentesque massa placerat. Mi bibendum neque egestas congue quisque egestas diam in arcu.
+
+```css src/styles.css
+:root,
+[ks-theme] {
+  --ks-color-primary: var(--ks-color-primary);
+  --ks-color-primary-inverted: var(--ks-color-primary-inverted);
+  --ks-border-color-primary-interactive: var(
+    --ks-border-color-primary-interactive
+  );
+  --ks-color-primary-inverted: var(--ks-color-primary-inverted);
+  --ks-border-color-primary-interactive-hover: var(
+    --ks-border-color-primary-interactive-hover
+  );
+  --ks-text-color-primary-inverted-interactive: var(
+    --ks-text-color-primary-inverted-interactive-base
+  );
+}
+```
+
+---
+
+### Amet
+
+Velit euismod in pellentesque massa placerat. Mi bibendum neque egestas congue quisque egestas diam in arcu. Nisi lacus sed viverra tellus in. Venenatis cras sed felis eget velit. Consectetur libero id faucibus nisl tincidunt.
+
+```css src/styles.css
+:root,
+[ks-theme] {
+  --ks-color-primary: var(--ks-color-primary);
+  --ks-color-primary-inverted: var(--ks-color-primary-inverted);
+  --ks-border-color-primary-interactive: var(
+    --ks-border-color-primary-interactive
+  );
+  --ks-color-primary-inverted: var(--ks-color-primary-inverted);
+  --ks-border-color-primary-interactive-hover: var(
+    --ks-border-color-primary-interactive-hover
+  );
+  --ks-text-color-primary-inverted-interactive: var(
+    --ks-text-color-primary-inverted-interactive-base
+  );
+}
+```
+
+</CH.Spotlight>
