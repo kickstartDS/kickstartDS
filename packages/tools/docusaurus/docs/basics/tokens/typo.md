@@ -4,7 +4,9 @@ sidebar_position: 3
 
 # Typo
 
-## Font Families
+## Core Token
+
+### Font Families
 
 | Token                      | Preview                                                   |
 | -------------------------- | --------------------------------------------------------- |
@@ -13,9 +15,15 @@ sidebar_position: 3
 | `--ks-font-family-ui`      | <div className="font-preview interface">Lorem Ipsum</div> |
 | `--ks-font-family-mono`    | <div className="font-preview mono">Lorem Ipsum</div>      |
 
-## Font Size
+```css title="token.css"
+:root {
+  --ks-font-family-copy: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol';
+}
+```
 
-Dependent on font-family
+### Font Size
 
 | Token                     | Preview                                                  |
 | ------------------------- | -------------------------------------------------------- |
@@ -27,9 +35,15 @@ Dependent on font-family
 | `--ks-font-size-copy-xl`  | <div className="font-preview copy-xl">Lorem Ipsum</div>  |
 | `--ks-font-size-copy-xxl` | <div className="font-preview copy-xxl">Lorem Ipsum</div> |
 
-## Line Height
+```css title="token.css"
+:root {
+  --ks-font-size-copy-m: calc(
+    var(--ks-font-size-copy-m-base) * var(--ks-font-size-copy-bp-factor, 1)
+  );
+}
+```
 
-Dependent on font-family
+### Line Height
 
 | Token                            | Preview                                                                                                                                       |
 | -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -41,7 +55,15 @@ Dependent on font-family
 | `--ks-font-line-height-copy-xl`  | <div className="font-preview line-height-copy-xl">Lorem ipsum</div> <div className="font-preview line-height-copy-xl"> dolor sit amet</div>   |
 | `--ks-font-line-height-copy-xxl` | <div className="font-preview line-height-copy-xxl">Lorem ipsum</div> <div className="font-preview line-height-copy-xxl"> dolor sit amet</div> |
 
-## Semantic Fonts
+```css title="token.css"
+:root {
+  --ks-line-height-copy-m: 1.5;
+}
+```
+
+## Semantic token
+
+### Font package
 
 The combination of font-size, font-family and line-height.
 
@@ -52,6 +74,14 @@ The combination of font-size, font-family and line-height.
 | `--ks-font-ui-m`      | User interface | <div className="font-preview font-interface">Lorem Ipsum</div> |
 | `--ks-font-mono-m`    | Code Snippets  | <div className="font-preview font-mono">Lorem Ipsum</div>      |
 
+```css title="token.css"
+:root {
+  --ks-font-copy-m: var(--ks-font-size-copy-m) / var(--ks-line-height-copy-m) var(
+      --ks-font-family-copy
+    );
+}
+```
+
 ## Font Weight
 
 | Token                        | Preview                                                   |
@@ -60,3 +90,9 @@ The combination of font-size, font-family and line-height.
 | `--ks-font-weight-regular`   | <div className="font-preview regular">Lorem Ipsum</div>   |
 | `--ks-font-weight-semi-bold` | <div className="font-preview semi-bold">Lorem Ipsum</div> |
 | `--ks-font-weight-bold`      | <div className="font-preview bold">Lorem Ipsum</div>      |
+
+```css title="token.css"
+:root {
+  --ks-font-weight-regular: 400;
+}
+```

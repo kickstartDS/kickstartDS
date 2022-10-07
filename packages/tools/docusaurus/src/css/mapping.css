@@ -347,7 +347,19 @@
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
+  --ifm-background-color: var(
+    --ks-background-color-default-inverted
+  ) !important;
+  --ks-background-color-default-inverted: #083d4a;
+  --ifm-color-content: var(--ks-text-color-default-inverted) !important;
+  --ifm-heading-color: var(--ks-text-color-primary-inverted) !important;
   --ifm-color-primary: var(--ks-color-primary-inverted-base);
+  --ifm-toc-border-color: var(--ks-color-fg-inverted-alpha-2) !important;
+
+  --ks-border-color-interface-interactive: var(--ks-border-color-interface-inverted-interactive-base) !important;
+
+  --ifm-background-surface-color: #0b4857 !important;
+
   --ifm-link-color: var(--ks-color-primary-to-bg-7);
   --ifm-link-color-hover: white;
   --ifm-heading-color: var(--ifm-color-white);

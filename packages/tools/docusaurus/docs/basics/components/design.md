@@ -6,4 +6,4 @@ sidebar_position: 2
 
 ## Table of contents:
 
-- Component Tokens
+- Component Token
