@@ -5,14 +5,14 @@ import { useDarkMode } from 'storybook-dark-mode';
 // @see https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/attrchange
 import 'lazysizes/plugins/attrchange/ls.attrchange';
 import { unpackDecorator } from '../../../components/core/lib/storybook/helpers';
-import IconSprite from './IconSprite';
+import IconSprite from '../tmp-tokens/IconSprite';
 
 import '../../../components/core/lib/design-tokens/tokens.css';
 import '../../../components/base/lib/global/base.js';
 import '../../../components/base/lib/global/base.css';
 
-import designTokens from '!!raw-loader!./tokens.css';
-import icons from '!!raw-loader!./icons.html';
+import designTokens from '!!raw-loader!../tmp-tokens/tokens.css';
+import icons from '!!raw-loader!../tmp-tokens/icons.html';
 
 const myActions = actions('radio');
 window.rm.radio.on('*', myActions.radio);
