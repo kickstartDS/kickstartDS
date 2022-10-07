@@ -20,35 +20,47 @@ These are the base colors. They are referenced in semantic colors and shouldnt b
 
 ## Semantic spacing
 
-|                                                          |         |
-| -------------------------------------------------------- | ------- |
-| <div className="color-preview color-primary"></div>      | Spacing |
-| <div className="color-preview background-default"></div> | Content |
+<div className="spacing-legacy">
+<div >
+ <div className="color-preview color-primary"></div>
+ Spacing 
+</div>
+<div>
+ <div className="color-preview background-default"></div>
+ Content
+</div>
+</div>
 
 <div className="spacing-preview-grid">
   <div>
-    `--ks-spacing-inset-m`
+    `--ks-spacing-inset-m`  
     <div className="spacing spacing-inset"></div>
-    Even padding
+    Even padding.
   </div>
   <div>
-    `--ks-spacing-inset-squish-m`
+    `--ks-spacing-inset-squish-m`  
     <div className="spacing spacing-inset-squish"></div>
-    Reduced top and bottom padding, resulting in a vertically condensed visual display
+    Reduced top and bottom padding, resulting in a vertically condensed visual display.
   </div>
   <div>
-    `--ks-spacing-inset-stretch-m`
+    `--ks-spacing-inset-stretch-m`  
     <div className="spacing spacing-inset-stretch"></div>
-    Increased top and bottom padding, resulting in a vertically expanded visual display
+    Increased top and bottom padding, resulting in a vertically expanded visual display.
   </div>
   <div>
-    `--ks-spacing-stack-m`
+    `--ks-spacing-stack-m`  
     <div className="spacing spacing-stack"></div>
-    Vertical gap between two elements
+    Vertical gap between two elements.
   </div>
   <div>
-    `--ks-spacing-inline-m`
+    `--ks-spacing-inline-m`  
     <div className="spacing spacing-inline"></div>
-    Horizontal gap between two elements
+    Horizontal gap between two elements.
   </div>
 </div>
+
+## Figma
+
+See the following `Page` in our `Figma` tokens file for a visual representation:
+
+<iframe width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FH7F4P2fsDgEkIcc7U1alk1%2FkickstartDS-Design-Tokens%3Fnode-id%3D1%253A9" allowfullscreen></iframe>

@@ -14,7 +14,7 @@ _TODO_: Add expressive visualization of **what** kickstartDS is
 
 Get started building your own Design System by installing **kickstartDS** into your project, or by following our [Create your first Design System](https://todo) tutorial, to learn about the main concepts involved.
 
-<Section ks-theme="docs" spaceBefore="none" spaceAfter="none" width="full">
+<Section ks-theme="docs" spaceBefore="none" spaceAfter="small" width="full">
   <TeaserBox
     link={{
       size: 'small',
@@ -81,7 +81,7 @@ And if needed, we can give you pointers for your content!
 
 ### Great components as the baseline
 
-Make the most out of your frontend interfaces by unifying their core – utilizing component and design tokens, component APIs and props and a shared core as a baseline to unlock effiency when implementing new applications of your Design System.
+Make the most out of your frontend interfaces by unifying their core – utilizing component and design Token, component APIs and props and a shared core as a baseline to unlock effiency when implementing new applications of your Design System.
 
 **kickstartDS** aims to be the foundation for your Design System, built with reusable components and tools itself, guided by clear standards, that can be adopted and assembled together, to create your products: fast, flexible, responsive, accessible and best of all: you can plug it onto every digital touch point you own!
 
@@ -121,7 +121,7 @@ Use our auto-generated GraphQL APIs (based on your component API), including ful
 
 ## kickstartDS CLI
 
-The **kickstartDS** CLI, or Command Line Interface, is a tool to quickly scaffold **kickstartDS** components, generate and convert Design Tokens and provides a number of helpful commands to **kickstartDS** developers. In addition to installing and updating **kickstartDS** versions, you can generate your initial, expansive & semantic token set from a reduced, branding-orientend JSON input, or convert your Style Dictionary-based token set into different output formats... for example the CSS Properties used and referenced in component tokens.
+The **kickstartDS** CLI, or Command Line Interface, is a tool to quickly scaffold **kickstartDS** components, generate and convert Design Token and provides a number of helpful commands to **kickstartDS** developers. In addition to installing and updating **kickstartDS** versions, you can generate your initial, expansive & semantic Token set from a reduced, branding-orientend JSON input, or convert your Style Dictionary-based Token set into different output formats... for example the CSS Properties used and referenced in component Token.
 
 [Learn more](cli/index.md) about our CLI.
 
@@ -129,13 +129,13 @@ The **kickstartDS** CLI, or Command Line Interface, is a tool to quickly scaffol
 
 We currently support integrating with Figma through our official Design Token library:
 
-<iframe width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FH7F4P2fsDgEkIcc7U1alk1%2FkickstartDS-Design-Tokens%3Fnode-id%3D0%253A1" allowfullscreen></iframe>
+<iframe width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FH7F4P2fsDgEkIcc7U1alk1%2FkickstartDS-Design-token%3Fnode-id%3D0%253A1" allowfullscreen></iframe>
 
-The template includes all our token categories (colors, spacings, typography, borders, durations, opacities and shadows), and for all of those token categories there are pre-defined base scales and semantic tokens based on those base scales. All ready to use, but customizable by just re-defining relationships.
+The template includes all our Token categories (colors, spacings, typography, borders, durations, opacities and shadows), and for all of those Token categories there are pre-defined base scales and semantic Token based on those base scales. All ready to use, but customizable by just re-defining relationships.
 
-You can just copy that file and enter your own Design Tokens (as defined in your Style Dictionary) to have a Figma file to hand around to your designers, enabling them to use the same, semantic structure underlying your real components and interfaces. It also serves as a great illustration of your Design Tokens.
+You can just copy that file and enter your own Design Token (as defined in your Style Dictionary) to have a Figma file to hand around to your designers, enabling them to use the same, semantic structure underlying your real components and interfaces. It also serves as a great illustration of your Design Token.
 
-Learn more about our [token structure](../basics/tokens/index.md), and how to leverage it for yourself.
+Learn more about our [token structure](../basics/token/index.md), and how to leverage it for yourself.
 
 We're currently working on an automatic sync option native to **kickstartDS**, which should work in both directions (Figma -> Style Dictionary, Style Dictionary -> Figma) and thus enable true synchronization in shared workflows.
 

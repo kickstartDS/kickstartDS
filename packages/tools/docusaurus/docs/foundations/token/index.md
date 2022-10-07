@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 2
 ---
 
 import { Section } from "@kickstartds/base/lib/section";
@@ -7,16 +7,16 @@ import { TeaserBox } from "@kickstartds/base/lib/teaser-box";
 
 # Token
 
-## What are token?
+## What are Token?
 
-**Token** are the smallest building blocks of a design system. Based on the values they store, they are usually used across multiple tools and platforms to ensure consistence and matching brand identity. Because token are described abstraction, the defined values can change without disturbing the designer or developer experience.
+**Token** are the smallest building blocks of a design system. Based on the values they store, they are usually used across multiple tools and platforms to ensure consistence and matching brand identity. Because Token are described abstraction, the defined values can change without disturbing the designer or developer experience.
 
 > The single source of truth to name and store a design decision, distributed so teams can use it across design tools and coding languages.  
-> _-W3C Design Tokens Community Group_
+> _-W3C Design Token Community Group_
 
-**kickstartDS** differentiates between Design and Component token. Whereas described above Design Token store values e.g. color, typography, spacing, animation, etc., Component Token represent the properties and values that are contained in a component, e.g. container, label text, icons, and states.
+**kickstartDS** differentiates between Design and Component Token. Whereas described above Design Token store values e.g. color, typography, spacing, animation, etc., Component Token represent the properties and values that are contained in a component, e.g. container, label text, icons, and states.
 
-<Section spaceBefore="none" spaceAfter="none" width="full">
+<Section ks-theme="docs" spaceBefore="none" spaceAfter="small" width="full">
   <TeaserBox
     link={{
       size: 'small',
@@ -25,7 +25,7 @@ import { TeaserBox } from "@kickstartds/base/lib/teaser-box";
       variant: "outline",
     }}
     text="encode your main brand identity, including colors, fonts and typography. "
-    topic="Design tokens"
+    topic="Design Token"
   />
   <TeaserBox
     link={{
@@ -35,7 +35,7 @@ import { TeaserBox } from "@kickstartds/base/lib/teaser-box";
       variant: "outline",
     }}
     text="TODO"
-    topic="Component token"
+    topic="Component Token"
   />
 </Section>
 
@@ -52,10 +52,10 @@ import { TeaserBox } from "@kickstartds/base/lib/teaser-box";
   },
 ```
 
-## Semantic token
+## Semantic Token
 
 ```json title="token-primitives.json"
-  TODO
+TODO
 ```
 
 ### Inverted display
