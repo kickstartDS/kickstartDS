@@ -8,22 +8,22 @@ sidebar_position: 2
 
 ### 1. Start a project
 
-#### Create new repository
+#### Either: create new repository
 
-#### Add to existing repository
+#### Or: add to existing repository
 
 ### 2. Design Application
 
-#### Branding with a Token set
+#### Apply branding
 
-#### Fine tuning the token set
+#### Fine tune the design
 
 ### 3. Component Selection
 
-#### Establishing components
+#### Establish structure
 
-#### Mapping components
+#### Map components
 
 ### 4. Configure Storybook
 
-### 5. Publishing your Design System
+### 5. Publish your Design System
