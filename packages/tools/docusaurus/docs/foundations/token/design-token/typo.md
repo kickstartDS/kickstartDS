@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# Typo
+# Typography
 
 ## Core Token
 
@@ -96,3 +96,9 @@ The combination of font-size, font-family and line-height.
   --ks-font-weight-regular: 400;
 }
 ```
+
+## Figma
+
+See the following `Page` in our `Figma` tokens file for a visual representation:
+
+<iframe width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FH7F4P2fsDgEkIcc7U1alk1%2FkickstartDS-Design-Tokens%3Fnode-id%3D1%253A11" allowfullscreen></iframe>

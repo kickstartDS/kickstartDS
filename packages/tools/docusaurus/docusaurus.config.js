@@ -98,9 +98,9 @@ const config = {
           },
           {
             type: 'doc',
-            docId: 'basics/index',
+            docId: 'foundations/index',
             position: 'left',
-            label: 'Basics',
+            label: 'Foundations',
           },
           {
             type: 'doc',
