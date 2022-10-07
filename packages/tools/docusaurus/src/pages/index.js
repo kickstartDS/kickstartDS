@@ -27,7 +27,7 @@ function HomepageHeader() {
             },
             horizontal: 'center',
             indent: false,
-            text: "Explore our frontend first framework, and all of its comprehensive components backing our landing page, our Wordpress blog and the glossary. Take a deeper look at our design and component tokens, interact with the Storybook controls, or preview some sample pages we've assembled.",
+            text: "Explore our frontend first framework, and all of its comprehensive components backing our landing page, our Wordpress blog and the glossary. Take a deeper look at our design and component token, interact with the Storybook controls, or preview some sample pages we've assembled.",
             vertical: 'center',
           }}
           media={{

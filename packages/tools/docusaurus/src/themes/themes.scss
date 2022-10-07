@@ -9,7 +9,7 @@
   --ks-spacing-xxl-bp-factor: 1;
 }
 
-// Custom Tokens for docs Elements
+// Custom token for docs Elements
 @mixin ks-theme-docs {
   --ks-font-display-xxs: var(--ks-font-ui-xxs);
   --ks-font-display-xs: var(--ks-font-ui-xs);

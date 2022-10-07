@@ -4,7 +4,9 @@ sidebar_position: 2
 
 # Color
 
-## Color palette
+## Core token
+
+### Color palette
 
 These are the base colors. They are referenced in semantic colors and shouldnt be applied directly.
 
@@ -49,9 +51,9 @@ These are the base colors. They are referenced in semantic colors and shouldnt b
 
 </div>
 
-## Semantic colors
+## Semantic token
 
-Color-tokens whith a dedicated application.
+Color-token whith a dedicated application.
 
 | Token suffix | Application                                                             |
 | ------------ | ----------------------------------------------------------------------- |
@@ -61,7 +63,7 @@ Color-tokens whith a dedicated application.
 | `clear`      | Elements featuring transparency                                         |
 | `interface`  | Signals user interactability                                            |
 
-### Semantic color types
+### Color types
 
 Semantic colors are categorised into **background-color**, **border-color** & **text-color**.
 
@@ -71,9 +73,9 @@ Semantic colors are categorised into **background-color**, **border-color** & **
 | <div className="color-preview background-accent"></div>  | `text-color`       | Highlights elements that are hierarchically second to primary elements. |
 | <div className="color-preview background-default"></div> | `border-color`     | The default background-color. Used on page the background.              |
 
-### Interactive atribute
+### Interactive concept
 
-Applies to primary-, interface- & clear-tokens
+Applies to primary-, interface- & clear-token
 
 |                                                                 | Token                                              | Application                      |
 | --------------------------------------------------------------- | -------------------------------------------------- | -------------------------------- |
@@ -122,7 +124,7 @@ Applies to primary-, interface- & clear-tokens
 
 ### Translucent atribute
 
-Applies to primary-tokens
+Applies to primary-token
 
 |                                                              | Token                                       |
 | ------------------------------------------------------------ | ------------------------------------------- |

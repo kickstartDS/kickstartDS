@@ -67,6 +67,7 @@ const config = {
             require.resolve('./src/css/section.css'),
             require.resolve('./src/css/teaser.css'),
             require.resolve('./src/css/table.css'),
+            require.resolve('./src/css/theme.css'),
             require.resolve('./src/css/headline.css'),
             require.resolve('./src/css/custom.css'),
             require.resolve('./src/css/mapping.css'),
