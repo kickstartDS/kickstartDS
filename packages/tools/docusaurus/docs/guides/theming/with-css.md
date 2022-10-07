@@ -2,4 +2,4 @@
 sidebar_position: 3
 ---
 
-# Token
+# Usage with custom CSS
