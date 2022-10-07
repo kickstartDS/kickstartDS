@@ -6,7 +6,7 @@ sidebar_position: 1
 
 Design tokens are the smallest building blocks, the core pieces of a design system. Design tokens in kickstartDS are stored in a JSON format and can be transformed to be used on any platform.
 
-## Core Tokens
+## Core Token
 
 ```json title="token-primitives.json"
   "color": {
