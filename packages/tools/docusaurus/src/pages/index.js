@@ -55,7 +55,6 @@ function HomepageHeader() {
           horizontal: 'center',
           indent: false,
           link: {
-            inverted: 'false',
             enabled: true,
             fillAnimation: false,
             href: 'https://example.com',

@@ -210,10 +210,10 @@
 
   --ifm-table-cell-color: inherit;
   /* Links. */
-  --ifm-link-color: var(--ifm-color-primary);
+  --ifm-link-color: var(--ks-color-primary);
   --ifm-link-decoration: var(--g-link--text-decoration);
   --ifm-link-color-hover: var(--ifm-link-color);
-  --ifm-link-hover-decoration: var(--g-link--text-decoration-hover);
+  --ifm-link-hover-decoration: underline;
 
   /* Paragraphs. */
   --ifm-paragraph-margin-bottom: var(--ifm-leading);
@@ -301,7 +301,7 @@
   --ifm-footer-logo-max-width: min(30rem, 90vw);
   --ifm-hero-background-color: var(--ifm-background-surface-color);
   --ifm-hero-text-color: var(--ifm-color-emphasis-800);
-  --ifm-menu-color: var(--ks-text-color-primary);
+  --ifm-menu-color: var(--ifm-link-color);
   --ifm-menu-color-active: var(--ifm-color-primary);
   --ifm-menu-color-background-active: var(--ifm-hover-overlay);
   --ifm-menu-color-background-hover: var(--ifm-hover-overlay);
@@ -346,22 +346,45 @@
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
+[data-theme='dark'],
+[data-theme='dark'] [ks-theme] {
   --ifm-background-color: var(
     --ks-background-color-default-inverted
   ) !important;
   --ks-background-color-default-inverted: #083d4a;
-  --ifm-color-content: var(--ks-text-color-default-inverted) !important;
+  --ifm-color-content: var(--ks-color-fg-inverted-alpha-7) !important;
   --ifm-heading-color: var(--ks-text-color-primary-inverted) !important;
   --ifm-color-primary: var(--ks-color-primary-inverted-base);
   --ifm-toc-border-color: var(--ks-color-fg-inverted-alpha-2) !important;
 
-  --ks-border-color-interface-interactive: var(--ks-border-color-interface-inverted-interactive-base) !important;
+  --ks-text-color-primary: var(--ks-text-color-primary-inverted);
+
+  --ks-border-color-interface-interactive: var(
+    --ks-border-color-interface-inverted-interactive-base
+  );
+  --ks-border-color-interface-inverted-interactive-base: var(
+    --ks-color-fg-inverted-alpha-3
+  );
+
+  --ks-border-color-interface-interactive-hover: var(
+    --ks-border-color-interface-inverted-interactive-hover-base
+  );
+  --ks-border-color-interface-inverted-interactive-hover-base: var(
+    --ks-color-fg-inverted-alpha-5
+  );
+
+  --ks-background-color-primary-interactive-active: var(--ks-background-color-primary-inverted-interactive-active-base);
+
+  --ks-text-color-primary-interactive: var(--ks-text-color-primary-inverted-interactive-base);
+  --ks-text-color-primary-interactive-hover: var(--ks-text-color-primary-inverted-interactive-hover-base);
+  --ks-text-color-primary-interactive-active: var(--ks-text-color-primary-inverted-interactive-active-base);
+
+  --ks-text-color-primary-inverted-interactive-hover: var(--ks-text-color-primary-interactive-hover-base);
 
   --ifm-background-surface-color: #0b4857 !important;
 
-  --ifm-link-color: var(--ks-color-primary-to-bg-7);
-  --ifm-link-color-hover: white;
+  --c-button--background-color-hover: #fbffcc !important;
+
   --ifm-heading-color: var(--ifm-color-white);
   --ifm-color-primary-dark: var(
     --ks-background-color-primary-inverted-interactive-hover
@@ -372,11 +395,19 @@
   --ifm-color-primary-darkest: var(
     --ks-background-color-primary-inverted-interactive-disabled
   );
-  --ifm-color-primary-light: var(--ks-color-primary-inverted-to-bg-4);
-  --ifm-color-primary-lighter: var(--ks-color-primary-inverted-to-bg-5);
-  --ifm-color-primary-lightest: var(--ks-color-primary-inverted-to-bg-6);
+  --ifm-color-primary-light: #fbffcc;
+  --ifm-color-primary-lighter: #fbffcc;
+  --ifm-color-primary-lightest: #fbffcc;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
   --ifm-color-content-inverse: var(--ifm-color-gray-900);
 
   --ks-color-primary-inverted: var(--ks-color-primary-base);
+
+  --ifm-menu-color-active: var(--ifm-color-primary);
+  --ifm-menu-color-background-active: var(--ifm-hover-overlay);
+  --ifm-menu-color-background-hover: var(--ifm-hover-overlay);
+
+  /* Links. */
+  --ifm-link-color: var(--ks-color-fg-inverted);
+  --ifm-link-decoration: var(--g-link--text-decoration);
 }
