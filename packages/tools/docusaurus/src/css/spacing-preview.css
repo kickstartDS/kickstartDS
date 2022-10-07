@@ -1,5 +1,5 @@
 .spacing-preview {
-  height: 20px;
+  height: 1.75rem;
   background-color: var(--ifm-color-primary);
 }
 
@@ -95,4 +95,17 @@
 .spacing-preview-grid p {
   text-align: left;
   margin-top: auto;
+}
+
+.spacing-legacy {
+  display: flex;
+  gap: var(--ks-spacing-inline-s);
+  margin-bottom: var(--ifm-leading);
+}
+
+.spacing-legacy * {
+  display: flex;
+  gap: var(--ks-spacing-inline-xs);
+  align-items: center;
+  margin: 0;
 }

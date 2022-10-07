@@ -16,7 +16,7 @@ import { TeaserBox } from "@kickstartds/base/lib/teaser-box";
 
 **kickstartDS** differentiates between Design and Component token. Whereas described above Design Token store values e.g. color, typography, spacing, animation, etc., Component Tokens represent the properties and values that are contained in a component, e.g. container, label text, icons, and states.
 
-<Section spaceBefore="none" spaceAfter="none" width="full">
+<Section ks-theme="docs" spaceBefore="none" spaceAfter="small" width="full">
   <TeaserBox
     link={{
       size: 'small',
@@ -55,7 +55,7 @@ import { TeaserBox } from "@kickstartds/base/lib/teaser-box";
 ## Semantic token
 
 ```json title="token-primitives.json"
-  TODO
+TODO
 ```
 
 ### Inverted display

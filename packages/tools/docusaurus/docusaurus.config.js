@@ -62,6 +62,7 @@ const config = {
             require.resolve('./src/css/visual.css'),
             require.resolve('./src/css/button.css'),
             require.resolve('./src/css/color-preview.css'),
+            require.resolve('./src/css/font-preview.css'),
             require.resolve('./src/css/spacing-preview.css'),
             require.resolve('./src/css/section.css'),
             require.resolve('./src/css/teaser.css'),
