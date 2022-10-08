@@ -4,6 +4,8 @@ sidebar_position: 3
 
 # Typography
 
+Typography is one of the main ways you surface content in products. We care about good defaults to provide you a clear hierarchy and contrasting styles in your typography scale.
+
 ## Core Token
 
 ### Font Families
