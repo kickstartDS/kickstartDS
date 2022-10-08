@@ -15,6 +15,8 @@ This also serves as an example on how repurposing an existing component can look
 
 This also means that, for this example, we'll get by without any additional styling needed. We'll live off of everything already set in place by our existing Design Token and component structure.
 
+## Overview
+
 More concretely: what we're building up to in this example... and for the sake of imagination, assume this was what your designer cooked up:
 
 <iframe
@@ -23,12 +25,18 @@ More concretely: what we're building up to in this example... and for the sake o
   height="375"
 ></iframe>
 
+This will be done in 3 simple steps:
+
+1. Create component structure
+2. Find matching component
+3. Map properties
+
 ## Requirements
 
 This guide assumes that you already have a working Design System, that is based on **kickstartDS**, running.<br/>
 If that's not the case, follow our guide [Create your Design System](../../create.md).
 
-## Component Definition
+## 1. Component Definition
 
 ### Purpose
 
@@ -72,7 +80,7 @@ This would leave us with the following properties (API) for our new component. R
 
 While directly helping us get a better grasp on our new component, these will also be used to write our `JSON Schema` later!
 
-## Component Mapping
+## 2. Component Mapping
 
 Next we want to search for components that could be of use in assembling this new one. This might be a single, big component that more or less directly fits our use case, or alternatively a combination of components that could serve as the basis by combining them.
 
@@ -359,7 +367,7 @@ export default function App() {
 
 With our small API in place, and this rough sketch for the markup in mind, we can start actually implementing our component!
 
-## Component Creation
+## 3. Component Creation
 
 We like to colocate components. This means to have all its files next to each other in the same folder; the template (`.jsx` / `.tsx`), potential CSS / SASS (`.css` / `.scss`), JavaScript (`.js` / `.ts`), our JSON Schema component definition (`.schema.json`), and so on.
 
