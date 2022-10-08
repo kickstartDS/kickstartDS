@@ -36,7 +36,6 @@ const config = {
       ({
         docs: {
           routeBasePath: '/',
-          // path: '../../components/core/docs',
           beforeDefaultRemarkPlugins: [
             [
               remarkCodeHike,
