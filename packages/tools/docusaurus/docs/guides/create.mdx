@@ -253,12 +253,39 @@ This will also give us the opportunity to set up `Storybook`, and get a first vi
 
 ### Fine tune the design
 
-## 3. Component Selection
+## 3. Configure Storybook
+
+## 4. Component Selection
+
+This should be accompagnied by Guides following our `Design System Initiative`:<br/>
+https://www.kickstartds.com/services/
+
+Should also include prominent call out to that `services` page, to advertise our agency services around this!
+
+This will result in a bunch of components that need to be added. Those can be put into different categories, and for each category we will need a Guide outlining that way of adding a component:
+
+- `JSON Schema`
+  - **Repurpose existing component**: write new `JSON Schema`, and mainly use one component as the basis... re-wiring properties. All definitions are written manually & explicitly
+  - **Repurpose existing components**: build upon last guide, combine multiple components in building the new one. Rest stays the same.
+  - **Reference existing component**: write new `JSON Schema`, and mainly use one component as the basis... still re-wiring properties, but also using stuff like `$ref` and `allOf` in the schema. Definitions get re-used as much as possible
+  - **Reference existing components**: again, build upon last guide, combine multiple components.
+  - **Layering existing component**: show how to layer simple components, like a `Button`, for use in your own Design System. Should show referencing and explicit case of property definition. Explain naming convention for layering!
+  - **Overwriting existing component**: show how to overwrite existing property definitions, for example to define a different default
+  - **Extending existing component**: show how to extend a component
+- `React` template
+  - **Customize markup**: Show how you can replace the markup of specific components
+  - **Customize markup through `Render Props`**: Show how you can replace behaviour through `Render Props` in certain spots
+  - **Switch components with `Context`/`Provider`**: Show how you can select which component to render through the use of `Context`s and `Provider`s, even on a per element basis
+
+All these guides need to include sections on:
+
+- `JSON Schema`
+- `React` template
+
+Orthogonal to that, we will also need Guides on additional styling / theming / branding for a bunch of scenarios. Those are not included above, yet.
 
 ### Establish structure
 
 ### Map components
-
-## 4. Configure Storybook
 
 ## 5. Publish your Design System
