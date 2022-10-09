@@ -35,61 +35,19 @@ $ git init
 > Initialized empty Git repository in ~/projects/my-design-system/.git/
 ```
 
-Next we'll make it a valid `npm` package, too:
-
-```bash
-$ npm init
-
-> About to write to ~/projects/my-design-system/package.json:
-> ...
-```
-
-<CH.Section>
-
-Enter the prompted information, and you'll end up with a `package.json` describing your freshly made `npm` package. Use `dist/index.js` for the [entry point](focus://5), this is where our bundled code will live. The rest is pretty much up to your liking! It should look roughly like this:
-
-```json package.json mark=5[12:24]
-{
-  "name": "@my/design-system",
-  "version": "1.0.0",
-  "description": "Design System for all @MY needs",
-  "main": "dist/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Jonas Ulrich",
-  "license": "MIT"
-}
-```
-
 <Admonition type="tip" title="Working with the terminal">
   If any of the commands related to `git` or `npm` / `node` fail for you, or you need help working with the terminal, have a look at our `Getting Started` [page about Environment configuration](../intro/environment/index.md).
 
 Additionally you might not use `nvm` for `Node` version management. Just skip those sections, and ensure the correct version for your project is installed and active!
 
 </Admonition>
-</CH.Section>
 
 <CH.Section>
-Next we'll add a `.nvmrc` file specifying the use of `Node` `16.14` for this project (this is the version **kickstartDS** currently works off of) to our project root:
+Then we'll add a `.nvmrc` file specifying the use of `Node` `16.14` for this project (this is the version **kickstartDS** currently works off of) to our project root:
 
 <CH.Code>
 ```bash .nvmrc
 16.14
-```
-
-```json package.json
-{
-  "name": "@my/design-system",
-  "version": "1.0.0",
-  "description": "Design System for all @MY needs",
-  "main": "dist/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Jonas Ulrich",
-  "license": "MIT"
-}
 ```
 
 </CH.Code>
@@ -104,6 +62,42 @@ $ nvm use
 > Found '~/projects/my-design-system/.nvmrc' with version <16.14>
 > Now using node v16.14.2 (npm v8.19.2)
 ```
+
+Finally we'll make it a valid `npm` package, too:
+
+```bash
+$ npm init
+
+> About to write to ~/projects/my-design-system/package.json:
+> ...
+```
+
+<CH.Section>
+
+Enter the prompted information, and you'll end up with a `package.json` describing your freshly made `npm` package. Use `dist/index.js` for the [entry point](focus://5), this is where our bundled code will live. The rest is pretty much up to your liking! It should look roughly like this:
+
+<CH.Code>
+```json package.json mark=5[12:24]
+{
+  "name": "@my/design-system",
+  "version": "1.0.0",
+  "description": "Design System for all @MY needs",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jonas Ulrich",
+  "license": "MIT"
+}
+```
+
+```bash .nvmrc
+16.14
+```
+
+</CH.Code>
+
+</CH.Section>
 
 With this you can continue with `Add to existing project`. From here on out the steps will be the same.<br/>
 You'll just find that, in comparison to having an existing project, you'll probably not find any of the steps to be optional!
