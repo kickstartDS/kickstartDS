@@ -10,6 +10,8 @@ import Admonition from 'react-admonitions';
 
 5 steps to a successful Design System!
 
+TODO add link to video version on YouTube
+
 ## 1. Start your Design System
 
 Setting up your own Design System can be done in one of two ways:
@@ -44,7 +46,7 @@ $ npm init
 
 <CH.Section>
 
-Enter the prompted information, and you'll end up with `package.json` describing your freshly made `npm` package. Use `dist/index.js` for the [entry point](focus://5), this is where our bundled code will live. The rest is pretty much up to your liking! It should look roughly like this:
+Enter the prompted information, and you'll end up with a `package.json` describing your freshly made `npm` package. Use `dist/index.js` for the [entry point](focus://5), this is where our bundled code will live. The rest is pretty much up to your liking! It should look roughly like this:
 
 ```json package.json mark=5[12:24]
 {
@@ -121,34 +123,86 @@ _For example_: if you were using `npm`, and you'd encounter the following comman
 
 </Admonition>
 
-#### Adding `React`
+#### Dependencies
+
+First of all we need to add some dependencies to our project:
+
+<CH.Scrollycoding>
+##### Start with existing `package.json`
+
+If you're adding to an existing project, just imagine the same lines being added to your existing `package.json`.<br/>
+We'll pretend to start fresh:
+
+<CH.Code>
+```json package.json
+{
+  "name": "@my/design-system",
+  "version": "1.0.0",
+  "description": "Design System for all @MY needs",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jonas Ulrich",
+  "license": "MIT"
+}
+```
+</CH.Code>
+
+---
+
+##### Add `React`
+
+<CH.Code>
+```json package.json focus=11:14
+{
+  "name": "@my/design-system",
+  "version": "1.0.0",
+  "description": "Design System for all @MY needs",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jonas Ulrich",
+  "license": "MIT",
+  "dependencies": {
+    "react": "17",
+    "react-dom": "17"
+  }
+}
+```
+</CH.Code>
 
 If your project was not using `React` before, you should add a compatible version (**kickstartDS** currently uses `React 17`) of it now:
 
 ```bash
 $ yarn add react@17 react-dom@17
-
-> yarn add v1.22.18
-> info No lockfile found.
-> [1/4] Resolving packages...
-> [2/4] Fetching packages...
-> [3/4] Linking dependencies...
-> [4/4] Building fresh packages...
->
-> success Saved lockfile.
-> success Saved 4 new dependencies.
-> info Direct dependencies
-> ├─ react-dom@17.0.2
-> └─ react@17.0.2
-> info All dependencies
-> ├─ js-tokens@4.0.0
-> ├─ react-dom@17.0.2
-> ├─ react@17.0.2
-> └─ scheduler@0.20.2
-> Done in 1.03s.
 ```
 
-#### Adding `kickstartDS`
+---
+
+##### Add `kickstartDS`
+
+<CH.Code>
+```json package.json focus=12
+{
+  "name": "@my/design-system",
+  "version": "1.0.0",
+  "description": "Design System for all @MY needs",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jonas Ulrich",
+  "license": "MIT",
+  "dependencies": {
+    "@kickstartds/base": "2.0.0-canary.922.4865.0",
+    "react": "17",
+    "react-dom": "17"
+  }
+}
+```
+</CH.Code>
 
 Next we'll add the `kickstartDS` dependencies themselves. We start out by adding our `base` module (`@kickstartds/base`), which contains all of the base components, to get started:
 
@@ -158,7 +212,9 @@ $ yarn add @kickstartds/base@2.0.0-canary.922.4865.0
 
 Learn more about the different modules **kickstartDS** has to offer in our [overview here](#). TODO link to overview of modules here
 
-This will leave us with the following files for now:
+</CH.Scrollycoding>
+
+This will leave us with the following files for now, at least if you've started fresh:
 
 <CH.Section>
 <CH.Code>
@@ -188,7 +244,8 @@ This will leave us with the following files for now:
 </CH.Code>
 </CH.Section>
 
-We'll continue by applying our branding to **kickstartDS**, which result in a bunch of token JSON files being added. This will also give us the opportunity to set up `Storybook`, and get a first visual representation of our Design System in the browser!
+We'll continue by applying our branding to **kickstartDS**, which will result in a bunch of token files (`JSON`) being added.<br/>
+This will also give us the opportunity to set up `Storybook`, and get a first visual representation of our Design System in the browser!
 
 ## 2. Design Application
 
