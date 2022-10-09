@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-import Admonition from 'react-admonitions'
+import Admonition from 'react-admonitions';
 
 # Environment
 
