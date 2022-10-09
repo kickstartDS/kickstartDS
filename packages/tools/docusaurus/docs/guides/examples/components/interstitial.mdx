@@ -854,6 +854,10 @@ Play around with your new component directly in a `Code Sandbox` below:<br/>
   sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 ></iframe>
 
+## Technical debt
+
+We've added a wholly new component, for which you take on full responsibility. On the other side, only changes you'll want to make yourself should necessitate change anyway. Changes to the structure, and how it maps to the underlying component, fall on you. The only other thing you'll have to watch out for are `Breaking Changes` (TODO link page describing releases / `Breaking Changes`), which may include changes to the component your basing off of. In that case, follow the `CHANGELOG.md` for that components `module` (e.g. module `content` for the `Storytelling` component) closely, to adopt any necessary changes.
+
 ## Open TODOs
 
 - TODO: link general descriptions for following steps in Guides > Components > Create
