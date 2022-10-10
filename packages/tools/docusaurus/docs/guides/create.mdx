@@ -20,19 +20,18 @@ The main steps will go as follows:
 4. [Add Components](#4-add-components)
 5. [Publish your Design System](#5-publish-your-design-system)
 
-As said, the resulting Design System will obviously not be finished by the end of this guide, but you'll have everything set up to start on the real work. We'll add links along the way, when it makes sense, calling out concepts in play or processes to use to find and refine your own personalized use (stuff like choosing an initial component set for your Design System).
+As said previously, the resulting Design System will obviously not be finished by the end of this guide, but you'll have everything set up to start on the real work. We'll add links along the way, when it makes sense, calling out concepts in play or processes to use to find and refine your own personalized use (stuff like choosing an initial component set for your Design System).
 
-TODO add link to video version on YouTube
-TODO add link to starter to shortcut guide
+TODO add link to video version on YouTube<br/>
+TODO add link to starter to shortcut guide<br/>
+TODO add CLI
 
 ## 1. Start your Design System
 
 Setting up your own Design System can be done in one of two ways:
 
-1. [Creating a new project](#create-new-project) for your Design System to live in, or
-2. [adding everything to an existing project](#add-to-existing-project)
-
-TODO add CLI link
+1. By [creating a new project](#create-new-project) for your Design System to live in, or
+2. by [adding everything to an existing project](#add-to-existing-project)
 
 ### Create new project
 
@@ -256,9 +255,892 @@ This will also give us the opportunity to set up `Storybook`, and get a first vi
 
 ## 2. Design Application
 
+Applying your branding and corporate design to **kickstartDS** is itself done in roughly two steps:
+
+1. Use a reduced set of Branding Token to generate your initial Design Token set
+2. Fine tune the resulting Design Token set to closely fit your corporate identity
+
 ### Apply branding
 
+We start by creating a new file: `token-primitives.json` at our project root:
+
+```bash
+$ touch token-primitives.json
+```
+
+This will hold all of our `Branding Token`. Those are used to initialize you first Design Token set, and especially ease first-time setup.<br/>
+Get the most up-to-date version of its content [from here](https://github.com/kickstartDS/kickstartDS/blob/feature/style-dictionary-container-queries/packages/tools/style-dictionary/defaultPrimitives.json), and paste it into the file you just created:
+
+<CH.Section>
+<CH.Code>
+```json token-primitives.json
+{
+  "color": {
+    "primary": "#333",
+    "primary-inverted": "#fff",
+    "background": "#fff",
+    "foreground": "#000",
+    "link": "#1c7ed6",
+    "link-inverted": "#a5d8ff",
+    "positive": "#66a80f",/zoo
+    "positive-inverted": "#94d82d",
+    "informative": "#1a78cc",
+    "informative-inverted": "#4dabf7",
+    "notice": "#fab005",
+    "notice-inverted": "#f59f00",
+    "negative": "#e03131",
+    "negative-inverted": "#fa5c5c"
+  },
+  "font": {
+    "display": {
+      "family": "Garamond, Baskerville, 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif",
+      "font-size": 16,
+      "line-height": 1.75,
+      "scale-ratio": 1.225,
+      "bp-factor": {
+        "phone": 1.167,
+        "tablet": 1.333
+      }
+    },
+    "copy": {
+      "family": "'Helvetica Neue', Helvetica, Arial, sans-serif",
+      "font-size": 16,
+      "line-height": 1.75,
+      "scale-ratio": 1.225,
+      "bp-factor": {
+        "tablet": 1.125
+      }
+    },
+    "interface": {
+      "family": "system-ui, -apple-system, BlinkMacSystemFont, 'Avenir Next', 'Avenir', 'Segoe UI', 'Lucida Grande', 'Helvetica Neue', 'Helvetica', 'Fira Sans', 'Roboto', 'Noto', 'Droid Sans', 'Cantarell', 'Oxygen', 'Ubuntu', 'Franklin Gothic Medium', 'Century Gothic', 'Liberation Sans', sans-serif",
+      "font-size": 16,
+      "line-height": 1.75,
+      "scale-ratio": 1.225,
+      "bp-factor": {
+        "tablet": 1.125
+      }
+    },
+    "mono": {
+      "family": "ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace",
+      "font-size": 16,
+      "line-height": 1.75,
+      "scale-ratio": 1.225,
+      "bp-factor": {
+        "tablet": 1.125
+      }
+    }
+  },
+  "font-weight": {
+    "light": 300,
+    "regular": 400,
+    "semi-bold": 600,
+    "bold": 700
+  },
+  "spacing": {
+    "base": 8,
+    "scale-ratio": 1.618,
+    "bp-ratio": 1.414
+  },
+  "border-radius": "2px",
+  "box-shadow": {
+    "blur": "2.75px"
+  },
+  "breakpoints": {
+    "phone": 576,
+    "tablet": 768,
+    "laptop": 992,
+    "desktop": 1200
+  }
+}
+```
+
+```json package.json
+{
+  "name": "@my/design-system",
+  "version": "1.0.0",
+  "description": "Design System for all @MY needs",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jonas Ulrich",
+  "license": "MIT",
+  "dependencies": {
+    "@kickstartds/base": "2.0.0-canary.922.4865.0",
+    "react": "17",
+    "react-dom": "17"
+  }
+}
+```
+
+```bash .nvmrc
+16.14
+```
+
+</CH.Code>
+</CH.Section>
+
+<Admonition type="tip" title="Use a current version">
+  Be sure to actually copy the file linked above, entering the values yourself.
+  This way you'll be sure not to miss any recently updated token in your set up,
+  in case this guide gets outdated!
+</Admonition>
+
+For a more in-depth overview of this process, have a look at our [Generate Token Set guide](theming/generate-token-set.md) or the [concepts page about `Branding Token`](../concepts/token/branding-token.md), detailing all values in use.<br/>
+
+But to get a first feel for working with the file, and to add some flavour to our Design System, we'll change some select values around. And feel free to replace everything with values that seem more appropriate for you, or that fit your particular brand (maybe even because you opted to follow the more detailed guide above). If you're wondering which values we selected for this guide... we're mostly matching our own brand for this guide:
+
+| Name                   | Value                                                                                                                                           |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| `primary`              | `#05566a`                                                                                                                                       |
+| `primary-inverted`     | `#ecff00`                                                                                                                                       |
+| `background`           | `#fff`                                                                                                                                          |
+| `foreground`           | `#050505`                                                                                                                                       |
+| `link`                 | `#5D5DD5`                                                                                                                                       |
+| `link-inverted`        | `#C6C6FF`                                                                                                                                       |
+| `informative`          | `#05566a`                                                                                                                                       |
+| `informative-inverted` | `#ecff00`                                                                                                                                       |
+| `font-family`          | `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'` |
+| `scale-ratio`          | `1.35`                                                                                                                                          |
+| `bp-ratio`             | `1.15`                                                                                                                                          |
+
+<CH.Scrollycoding>
+##### Start with copied `token-primitives.json`
+
+This is the file you've copied before, we'll start updating it piecemeal to show off common ways of design application.
+
+<CH.Code>
+```json token-primitives.json
+{
+  "color": {
+    "primary": "#333",
+    "primary-inverted": "#fff",
+    "background": "#fff",
+    "foreground": "#000",
+    "link": "#1c7ed6",
+    "link-inverted": "#a5d8ff",
+    "positive": "#66a80f",/zoo
+    "positive-inverted": "#94d82d",
+    "informative": "#1a78cc",
+    "informative-inverted": "#4dabf7",
+    "notice": "#fab005",
+    "notice-inverted": "#f59f00",
+    "negative": "#e03131",
+    "negative-inverted": "#fa5c5c"
+  },
+  "font": {
+    "display": {
+      "family": "Garamond, Baskerville, 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif",
+      "font-size": 16,
+      "line-height": 1.75,
+      "scale-ratio": 1.225,
+      "bp-factor": {
+        "phone": 1.167,
+        "tablet": 1.333
+      }
+    },
+    "copy": {
+      "family": "'Helvetica Neue', Helvetica, Arial, sans-serif",
+      "font-size": 16,
+      "line-height": 1.75,
+      "scale-ratio": 1.225,
+      "bp-factor": {
+        "tablet": 1.125
+      }
+    },
+    "interface": {
+      "family": "system-ui, -apple-system, BlinkMacSystemFont, 'Avenir Next', 'Avenir', 'Segoe UI', 'Lucida Grande', 'Helvetica Neue', 'Helvetica', 'Fira Sans', 'Roboto', 'Noto', 'Droid Sans', 'Cantarell', 'Oxygen', 'Ubuntu', 'Franklin Gothic Medium', 'Century Gothic', 'Liberation Sans', sans-serif",
+      "font-size": 16,
+      "line-height": 1.75,
+      "scale-ratio": 1.225,
+      "bp-factor": {
+        "tablet": 1.125
+      }
+    },
+    "mono": {
+      "family": "ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace",
+      "font-size": 16,
+      "line-height": 1.75,
+      "scale-ratio": 1.225,
+      "bp-factor": {
+        "tablet": 1.125
+      }
+    }
+  },
+  "font-weight": {
+    "light": 300,
+    "regular": 400,
+    "semi-bold": 600,
+    "bold": 700
+  },
+  "spacing": {
+    "base": 8,
+    "scale-ratio": 1.618,
+    "bp-ratio": 1.414
+  },
+  "border-radius": "2px",
+  "box-shadow": {
+    "blur": "2.75px"
+  },
+  "breakpoints": {
+    "phone": 576,
+    "tablet": 768,
+    "laptop": 992,
+    "desktop": 1200
+  }
+}
+```
+
+```json package.json
+{
+  "name": "@my/design-system",
+  "version": "1.0.0",
+  "description": "Design System for all @MY needs",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jonas Ulrich",
+  "license": "MIT",
+  "dependencies": {
+    "@kickstartds/base": "2.0.0-canary.922.4865.0",
+    "react": "17",
+    "react-dom": "17"
+  }
+}
+```
+
+```bash .nvmrc
+16.14
+```
+
+</CH.Code>
+
+---
+
+##### Customize `primary` color
+
+Most brands have such a `primary` color as part of their corporate design guidelines. This will be used to highlight elements, and give them more importance.
+
+Next to `primary` itself, we'll also define its counter part `primary-inverted` as `#ecff00` (`#fff` / `white` works for most uses otherwise, read about the finer [details here](#) TODO add link).
+
+<CH.Code>
+```json token-primitives.json focus=2:4
+{
+  "color": {
+    "primary": "#05566a",
+    "primary-inverted": "#ecff00",
+    "background": "#fff",
+    "foreground": "#000",
+    "link": "#1c7ed6",
+    "link-inverted": "#a5d8ff",
+    "positive": "#66a80f",/zoo
+    "positive-inverted": "#94d82d",
+    "informative": "#1a78cc",
+    "informative-inverted": "#4dabf7",
+    "notice": "#fab005",
+    "notice-inverted": "#f59f00",
+    "negative": "#e03131",
+    "negative-inverted": "#fa5c5c"
+  },
+  "font": {
+    "display": {
+      "family": "Garamond, Baskerville, 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif",
+      "font-size": 16,
+      "line-height": 1.75,
+      "scale-ratio": 1.225,
+      "bp-factor": {
+        "phone": 1.167,
+        "tablet": 1.333
+      }
+    },
+    "copy": {
+      "family": "'Helvetica Neue', Helvetica, Arial, sans-serif",
+      "font-size": 16,
+      "line-height": 1.75,
+      "scale-ratio": 1.225,
+      "bp-factor": {
+        "tablet": 1.125
+      }
+    },
+    "interface": {
+      "family": "system-ui, -apple-system, BlinkMacSystemFont, 'Avenir Next', 'Avenir', 'Segoe UI', 'Lucida Grande', 'Helvetica Neue', 'Helvetica', 'Fira Sans', 'Roboto', 'Noto', 'Droid Sans', 'Cantarell', 'Oxygen', 'Ubuntu', 'Franklin Gothic Medium', 'Century Gothic', 'Liberation Sans', sans-serif",
+      "font-size": 16,
+      "line-height": 1.75,
+      "scale-ratio": 1.225,
+      "bp-factor": {
+        "tablet": 1.125
+      }
+    },
+    "mono": {
+      "family": "ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace",
+      "font-size": 16,
+      "line-height": 1.75,
+      "scale-ratio": 1.225,
+      "bp-factor": {
+        "tablet": 1.125
+      }
+    }
+  },
+  "font-weight": {
+    "light": 300,
+    "regular": 400,
+    "semi-bold": 600,
+    "bold": 700
+  },
+  "spacing": {
+    "base": 8,
+    "scale-ratio": 1.618,
+    "bp-ratio": 1.414
+  },
+  "border-radius": "2px",
+  "box-shadow": {
+    "blur": "2.75px"
+  },
+  "breakpoints": {
+    "phone": 576,
+    "tablet": 768,
+    "laptop": 992,
+    "desktop": 1200
+  }
+}
+```
+
+```json package.json
+
+```
+
+```bash .nvmrc
+
+```
+
+</CH.Code>
+
+---
+
+##### Customize `foreground` and `link` colors
+
+For this guide we'll have just change the `foreground` color, but this will influence how elements and text are rendered in components. So it is quite an influential choice.
+
+Additionally we'll define some slightly different colors for our `link` and `link-inverted` (they always come in pairs!), to make it unique.
+
+<CH.Code>
+```json token-primitives.json focus=2:4,6:8
+{
+  "color": {
+    "primary": "#05566a",
+    "primary-inverted": "#ecff00",
+    "background": "#fff",
+    "foreground": "#050505",
+    "link": "#5D5DD5",
+    "link-inverted": "#C6C6FF",
+    "positive": "#66a80f",
+    "positive-inverted": "#94d82d",
+    "informative": "#1a78cc",
+    "informative-inverted": "#4dabf7",
+    "notice": "#fab005",
+    "notice-inverted": "#f59f00",
+    "negative": "#e03131",
+    "negative-inverted": "#fa5c5c"
+  },
+  "font": {
+    "display": {
+      "family": "Garamond, Baskerville, 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif",
+      "font-size": 16,
+      "line-height": 1.75,
+      "scale-ratio": 1.225,
+      "bp-factor": {
+        "phone": 1.167,
+        "tablet": 1.333
+      }
+    },
+    "copy": {
+      "family": "'Helvetica Neue', Helvetica, Arial, sans-serif",
+      "font-size": 16,
+      "line-height": 1.75,
+      "scale-ratio": 1.225,
+      "bp-factor": {
+        "tablet": 1.125
+      }
+    },
+    "interface": {
+      "family": "system-ui, -apple-system, BlinkMacSystemFont, 'Avenir Next', 'Avenir', 'Segoe UI', 'Lucida Grande', 'Helvetica Neue', 'Helvetica', 'Fira Sans', 'Roboto', 'Noto', 'Droid Sans', 'Cantarell', 'Oxygen', 'Ubuntu', 'Franklin Gothic Medium', 'Century Gothic', 'Liberation Sans', sans-serif",
+      "font-size": 16,
+      "line-height": 1.75,
+      "scale-ratio": 1.225,
+      "bp-factor": {
+        "tablet": 1.125
+      }
+    },
+    "mono": {
+      "family": "ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace",
+      "font-size": 16,
+      "line-height": 1.75,
+      "scale-ratio": 1.225,
+      "bp-factor": {
+        "tablet": 1.125
+      }
+    }
+  },
+  "font-weight": {
+    "light": 300,
+    "regular": 400,
+    "semi-bold": 600,
+    "bold": 700
+  },
+  "spacing": {
+    "base": 8,
+    "scale-ratio": 1.618,
+    "bp-ratio": 1.414
+  },
+  "border-radius": "2px",
+  "box-shadow": {
+    "blur": "2.75px"
+  },
+  "breakpoints": {
+    "phone": 576,
+    "tablet": 768,
+    "laptop": 992,
+    "desktop": 1200
+  }
+}
+```
+
+```json package.json
+
+```
+
+```bash .nvmrc
+
+```
+
+</CH.Code>
+
+---
+
+##### Customize tonal colors
+
+There are a bunch of tokens that, for lack of a better explanation, relate to the tone of voice the element using it should have. Most commonly this would be something like a notice shown to the user (which might be successful = positive, neutral = informative, etc).
+
+Because it seems to fit our branding, and doesn't interfere with user expectations otherwise, we'll change `informative` (and you guessed it, `informative-inverted`) to our `primary` color.
+
+<CH.Code>
+```json token-primitives.json focus=2:4,6:8,11:12
+{
+  "color": {
+    "primary": "#05566a",
+    "primary-inverted": "#ecff00",
+    "background": "#fff",
+    "foreground": "#050505",
+    "link": "#5D5DD5",
+    "link-inverted": "#C6C6FF",
+    "positive": "#66a80f",
+    "positive-inverted": "#94d82d",
+    "informative": "#05566a",
+    "informative-inverted": "#ecff00",
+    "notice": "#fab005",
+    "notice-inverted": "#f59f00",
+    "negative": "#e03131",
+    "negative-inverted": "#fa5c5c"
+  },
+  "font": {
+    "display": {
+      "family": "Garamond, Baskerville, 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif",
+      "font-size": 16,
+      "line-height": 1.75,
+      "scale-ratio": 1.225,
+      "bp-factor": {
+        "phone": 1.167,
+        "tablet": 1.333
+      }
+    },
+    "copy": {
+      "family": "'Helvetica Neue', Helvetica, Arial, sans-serif",
+      "font-size": 16,
+      "line-height": 1.75,
+      "scale-ratio": 1.225,
+      "bp-factor": {
+        "tablet": 1.125
+      }
+    },
+    "interface": {
+      "family": "system-ui, -apple-system, BlinkMacSystemFont, 'Avenir Next', 'Avenir', 'Segoe UI', 'Lucida Grande', 'Helvetica Neue', 'Helvetica', 'Fira Sans', 'Roboto', 'Noto', 'Droid Sans', 'Cantarell', 'Oxygen', 'Ubuntu', 'Franklin Gothic Medium', 'Century Gothic', 'Liberation Sans', sans-serif",
+      "font-size": 16,
+      "line-height": 1.75,
+      "scale-ratio": 1.225,
+      "bp-factor": {
+        "tablet": 1.125
+      }
+    },
+    "mono": {
+      "family": "ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace",
+      "font-size": 16,
+      "line-height": 1.75,
+      "scale-ratio": 1.225,
+      "bp-factor": {
+        "tablet": 1.125
+      }
+    }
+  },
+  "font-weight": {
+    "light": 300,
+    "regular": 400,
+    "semi-bold": 600,
+    "bold": 700
+  },
+  "spacing": {
+    "base": 8,
+    "scale-ratio": 1.618,
+    "bp-ratio": 1.414
+  },
+  "border-radius": "2px",
+  "box-shadow": {
+    "blur": "2.75px"
+  },
+  "breakpoints": {
+    "phone": 576,
+    "tablet": 768,
+    "laptop": 992,
+    "desktop": 1200
+  }
+}
+```
+
+```json package.json
+
+```
+
+```bash .nvmrc
+
+```
+
+</CH.Code>
+
+---
+
+##### Add a fitting font
+
+In this guide we'll opt for a native system font stack for our `display` and `copy` fonts. We'll leave `interface` and `mono` and all size values untouched for now. If you have other requirements (for example a self-hosted font, or one by Google Fonts) have a look at our [Fonts guide](#) TODO create and link guide.
+
+<CH.Code>
+```json token-primitives.json focus=18:20,29:30
+{
+  "color": {
+    "primary": "#05566a",
+    "primary-inverted": "#ecff00",
+    "background": "#fff",
+    "foreground": "#050505",
+    "link": "#5D5DD5",
+    "link-inverted": "#C6C6FF",
+    "positive": "#66a80f",
+    "positive-inverted": "#94d82d",
+    "informative": "#05566a",
+    "informative-inverted": "#ecff00",
+    "notice": "#fab005",
+    "notice-inverted": "#f59f00",
+    "negative": "#e03131",
+    "negative-inverted": "#fa5c5c"
+  },
+  "font": {
+    "display": {
+      "family": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+      "font-size": 16,
+      "line-height": 1.75,
+      "scale-ratio": 1.225,
+      "bp-factor": {
+        "phone": 1.167,
+        "tablet": 1.333
+      }
+    },
+    "copy": {
+      "family": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+      "font-size": 16,
+      "line-height": 1.75,
+      "scale-ratio": 1.225,
+      "bp-factor": {
+        "tablet": 1.125
+      }
+    },
+    "interface": {
+      "family": "system-ui, -apple-system, BlinkMacSystemFont, 'Avenir Next', 'Avenir', 'Segoe UI', 'Lucida Grande', 'Helvetica Neue', 'Helvetica', 'Fira Sans', 'Roboto', 'Noto', 'Droid Sans', 'Cantarell', 'Oxygen', 'Ubuntu', 'Franklin Gothic Medium', 'Century Gothic', 'Liberation Sans', sans-serif",
+      "font-size": 16,
+      "line-height": 1.75,
+      "scale-ratio": 1.225,
+      "bp-factor": {
+        "tablet": 1.125
+      }
+    },
+    "mono": {
+      "family": "ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace",
+      "font-size": 16,
+      "line-height": 1.75,
+      "scale-ratio": 1.225,
+      "bp-factor": {
+        "tablet": 1.125
+      }
+    }
+  },
+  "font-weight": {
+    "light": 300,
+    "regular": 400,
+    "semi-bold": 600,
+    "bold": 700
+  },
+  "spacing": {
+    "base": 8,
+    "scale-ratio": 1.618,
+    "bp-ratio": 1.414
+  },
+  "border-radius": "2px",
+  "box-shadow": {
+    "blur": "2.75px"
+  },
+  "breakpoints": {
+    "phone": 576,
+    "tablet": 768,
+    "laptop": 992,
+    "desktop": 1200
+  }
+}
+```
+
+```json package.json
+
+```
+
+```bash .nvmrc
+
+```
+
+</CH.Code>
+
+---
+
+##### Adjust spacing behaviour
+
+As we have a pretty dense layout in mind, we reduce `spacing` > `scale-ratio` and `bp-ratio` a bit. This will result in spacing in general scaling a bit less.
+
+We keep the general spacing of `8px`, though. We'll also leave the rest of the values untouched as they'll work just fine for this guide!
+
+<CH.Code>
+```json token-primitives.json focus=63,65:66
+{
+  "color": {
+    "primary": "#05566a",
+    "primary-inverted": "#ecff00",
+    "background": "#fff",
+    "foreground": "#050505",
+    "link": "#5D5DD5",
+    "link-inverted": "#C6C6FF",
+    "positive": "#66a80f",
+    "positive-inverted": "#94d82d",
+    "informative": "#05566a",
+    "informative-inverted": "#ecff00",
+    "notice": "#fab005",
+    "notice-inverted": "#f59f00",
+    "negative": "#e03131",
+    "negative-inverted": "#fa5c5c"
+  },
+  "font": {
+    "display": {
+      "family": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+      "font-size": 16,
+      "line-height": 1.75,
+      "scale-ratio": 1.225,
+      "bp-factor": {
+        "phone": 1.167,
+        "tablet": 1.333
+      }
+    },
+    "copy": {
+      "family": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+      "font-size": 16,
+      "line-height": 1.75,
+      "scale-ratio": 1.225,
+      "bp-factor": {
+        "tablet": 1.125
+      }
+    },
+    "interface": {
+      "family": "system-ui, -apple-system, BlinkMacSystemFont, 'Avenir Next', 'Avenir', 'Segoe UI', 'Lucida Grande', 'Helvetica Neue', 'Helvetica', 'Fira Sans', 'Roboto', 'Noto', 'Droid Sans', 'Cantarell', 'Oxygen', 'Ubuntu', 'Franklin Gothic Medium', 'Century Gothic', 'Liberation Sans', sans-serif",
+      "font-size": 16,
+      "line-height": 1.75,
+      "scale-ratio": 1.225,
+      "bp-factor": {
+        "tablet": 1.125
+      }
+    },
+    "mono": {
+      "family": "ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace",
+      "font-size": 16,
+      "line-height": 1.75,
+      "scale-ratio": 1.225,
+      "bp-factor": {
+        "tablet": 1.125
+      }
+    }
+  },
+  "font-weight": {
+    "light": 300,
+    "regular": 400,
+    "semi-bold": 600,
+    "bold": 700
+  },
+  "spacing": {
+    "base": 8,
+    "scale-ratio": 1.35,
+    "bp-ratio": 1.15
+  },
+  "border-radius": "2px",
+  "box-shadow": {
+    "blur": "2.75px"
+  },
+  "breakpoints": {
+    "phone": 576,
+    "tablet": 768,
+    "laptop": 992,
+    "desktop": 1200
+  }
+}
+```
+
+```json package.json
+
+```
+
+```bash .nvmrc
+
+```
+
+</CH.Code>
+
+</CH.Scrollycoding>
+
+Now that we have a slightly modified, up-to-date version of our Branding Token in place, we can start hooking everything up.
+
+First, add the `kickstartDS CLI` to your project:
+
+```bash
+$ yarn add kickstartds
+```
+
+Read more about our CLI [here](#) TODO add link
+
+Then add the following two lines to your `package.json` scripts block:
+
+<CH.Code>
+```json package.json focus=6:8,13,15
+{
+  "name": "@my/design-system",
+  "version": "1.0.0",
+  "description": "Design System for all @MY needs",
+  "main": "dist/index.js",
+  "scripts": {
+    "init-tokens": "kickstartDS tokens init --cleanup --rc-only",
+    "build-tokens": "kickstartDS tokens compile --cleanup --rc-only",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jonas Ulrich",
+  "license": "MIT",
+  "dependencies": {
+    "@kickstartds/base": "2.0.0-canary.922.4865.0",
+    "kickstartds": "^0.2.29",
+    "react": "17",
+    "react-dom": "17"
+  }
+}
+```
+
+```json token-primitives.json
+{
+  "color": {
+    "primary": "#05566a",
+    "primary-inverted": "#ecff00",
+    "background": "#fff",
+    "foreground": "#050505",
+    "link": "#5D5DD5",
+    "link-inverted": "#C6C6FF",
+    "positive": "#66a80f",
+    "positive-inverted": "#94d82d",
+    "informative": "#05566a",
+    "informative-inverted": "#ecff00",
+    "notice": "#fab005",
+    "notice-inverted": "#f59f00",
+    "negative": "#e03131",
+    "negative-inverted": "#fa5c5c"
+  },
+  "font": {
+    "display": {
+      "family": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+      "font-size": 16,
+      "line-height": 1.75,
+      "scale-ratio": 1.225,
+      "bp-factor": {
+        "phone": 1.167,
+        "tablet": 1.333
+      }
+    },
+    "copy": {
+      "family": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+      "font-size": 16,
+      "line-height": 1.75,
+      "scale-ratio": 1.225,
+      "bp-factor": {
+        "tablet": 1.125
+      }
+    },
+    "interface": {
+      "family": "system-ui, -apple-system, BlinkMacSystemFont, 'Avenir Next', 'Avenir', 'Segoe UI', 'Lucida Grande', 'Helvetica Neue', 'Helvetica', 'Fira Sans', 'Roboto', 'Noto', 'Droid Sans', 'Cantarell', 'Oxygen', 'Ubuntu', 'Franklin Gothic Medium', 'Century Gothic', 'Liberation Sans', sans-serif",
+      "font-size": 16,
+      "line-height": 1.75,
+      "scale-ratio": 1.225,
+      "bp-factor": {
+        "tablet": 1.125
+      }
+    },
+    "mono": {
+      "family": "ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace",
+      "font-size": 16,
+      "line-height": 1.75,
+      "scale-ratio": 1.225,
+      "bp-factor": {
+        "tablet": 1.125
+      }
+    }
+  },
+  "font-weight": {
+    "light": 300,
+    "regular": 400,
+    "semi-bold": 600,
+    "bold": 700
+  },
+  "spacing": {
+    "base": 8,
+    "scale-ratio": 1.35,
+    "bp-ratio": 1.15
+  },
+  "border-radius": "2px",
+  "box-shadow": {
+    "blur": "2.75px"
+  },
+  "breakpoints": {
+    "phone": 576,
+    "tablet": 768,
+    "laptop": 992,
+    "desktop": 1200
+  }
+}
+```
+
+```bash .nvmrc
+16.14
+```
+
+</CH.Code>
+
 ### Fine tune the design
+
+TODO TBD(??)
 
 ## 3. Configure Storybook
 
