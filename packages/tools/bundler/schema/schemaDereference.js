@@ -3,7 +3,7 @@ const $RefParser = require('json-schema-ref-parser');
 const merge = require('json-schema-merge-allof');
 const traverse = require('json-schema-traverse');
 
-const { root } = require('./utils');
+const { root } = require('../utils/utils');
 
 const { schemaResolver } = require(`${root}/scripts/schemaResolver`);
 

@@ -3,7 +3,7 @@ const path = require('path');
 const fs = require('fs-extra');
 const { compile } = require('json-schema-to-typescript');
 const { pascalCase } = require('change-case');
-const { root } = require('./utils');
+const { root } = require('../utils/utils');
 
 const style = require(`${root}/.prettierrc`);
 

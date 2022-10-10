@@ -1,8 +1,8 @@
 const rollup = require('rollup');
 const { babel } = require('@rollup/plugin-babel');
 const replace = require('@rollup/plugin-replace');
-const log = require('./log');
-const { dirRe } = require('./utils');
+const log = require('../utils/log');
+const { dirRe } = require('../utils/utils');
 const {
   sharedInputPlugins,
   sharedOutputOptions,

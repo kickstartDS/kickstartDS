@@ -2,8 +2,8 @@ const fs = require('fs-extra');
 const rollup = require('rollup');
 const { babel } = require('@rollup/plugin-babel');
 const ts = require('rollup-plugin-ts');
-const log = require('./log');
-const { dirRe, sourcePath } = require('./utils');
+const log = require('../utils/log');
+const { dirRe, sourcePath } = require('../utils/utils');
 const {
   sharedInputPlugins,
   sharedOutputOptions,
