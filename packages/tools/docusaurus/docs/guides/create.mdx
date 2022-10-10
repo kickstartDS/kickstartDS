@@ -25,6 +25,7 @@ As said previously, the resulting Design System will obviously not be finished b
 TODO add link to video version on YouTube<br/>
 TODO add link to starter to shortcut guide<br/>
 TODO add CLI
+TODO add `.gitignore`, add hints about making a commit at important points
 
 ## 1. Start your Design System
 
@@ -262,6 +263,8 @@ Applying your branding and corporate design to **kickstartDS** is itself done in
 
 ### Apply branding
 
+#### Initialization
+
 We start by creating a new file: `token-primitives.json` at our project root:
 
 ```bash
@@ -386,6 +389,8 @@ Get the most up-to-date version of its content [from here](https://github.com/ki
   in case this guide gets outdated!
 </Admonition>
 
+#### Select Branding Token
+
 For a more in-depth overview of this process, have a look at our [Generate Token Set guide](theming/generate-token-set.md) or the [concepts page about `Branding Token`](../concepts/token/branding-token.md), detailing all values in use.<br/>
 
 But to get a first feel for working with the file, and to add some flavour to our Design System, we'll change some select values around. And feel free to replace everything with values that seem more appropriate for you, or that fit your particular brand (maybe even because you opted to follow the more detailed guide above). If you're wondering which values we selected for this guide... we're mostly matching our own brand for this guide:
@@ -403,6 +408,10 @@ But to get a first feel for working with the file, and to add some flavour to ou
 | `font-family`          | `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'` |
 | `scale-ratio`          | `1.35`                                                                                                                                          |
 | `bp-ratio`             | `1.15`                                                                                                                                          |
+
+#### Apply Branding Token
+
+So let's get into it:
 
 <CH.Scrollycoding>
 ##### Start with copied `token-primitives.json`
@@ -1018,6 +1027,8 @@ We keep the general spacing of `8px`, though. We'll also leave the rest of the v
 
 Now that we have a slightly modified, up-to-date version of our Branding Token in place, we can start hooking everything up.
 
+#### Integration
+
 First, add the `kickstartDS CLI` to your project:
 
 ```bash
@@ -1137,6 +1148,21 @@ Then add the following two lines to your `package.json` scripts block:
 ```
 
 </CH.Code>
+
+#### Generate your first Design Token set
+
+Generate your first full set of Design Token by calling:
+
+```bash
+$ yarn init-tokens
+```
+
+This uses your `token-primitives.json` as an input, and generates a folder `tokens` for you. That folder holds `JSON` files defining your Design Token by category:
+
+- Category 1
+- Category 2
+
+TODO: describe this is more of a first-time / one-time use of thing
 
 ### Fine tune the design
 
