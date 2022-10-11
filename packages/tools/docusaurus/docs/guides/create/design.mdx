@@ -6,6 +6,8 @@ import Admonition from 'react-admonitions';
 
 # 2. Design Application
 
+## Overview
+
 Applying your branding and corporate design to **kickstartDS** is itself done in roughly two steps:
 
 1. Use a reduced set of Branding Token to generate your initial Design Token set
@@ -813,7 +815,7 @@ We keep the general spacing of `8px`, though. We'll also leave the rest of the v
 
 Now that we have a slightly modified, up-to-date version of our Branding Token in place, we can start hooking everything up.
 
-### `kickstartDS` Integration
+## `kickstartDS` Integration
 
 First, add the `kickstartDS CLI` to your project:
 
@@ -948,7 +950,49 @@ Generate your first full set of Design Token by calling:
 $ yarn init-tokens
 ```
 
-This uses your `branding-token.json` as an input, and generates a folder `tokens` for you. That folder holds `JSON` files defining your Design Token by category:
+Your output should look roughly like this:
+
+```
+yarn run v1.22.18
+$ kickstartDS tokens init --cleanup --rc-only .txt
+  _    _      _        _             _   ____  ____
+ | | _(_) ___| | _____| |_ __ _ _ __| |_|  _ \/ ___|
+ | |/ / |/ __| |/ / __| __/ _` | '__| __| | | \___ \
+ |   <| | (__|   <\__ \ || (_| | |  | |_| |_| |___) |
+ |_|\_\_|\___|_|\_\___/\__\__,_|_|   \__|____/|____/
+
+______________/\\\\\\\\\__/\\\______________/\\\\\\\\\\\_______
+ ___________/\\\////////__\/\\\_____________\/////\\\///________
+  _________/\\\/___________\/\\\_________________\/\\\___________
+   ________/\\\_____________\/\\\_________________\/\\\___________
+    _______\/\\\_____________\/\\\_________________\/\\\___________
+     _______\//\\\____________\/\\\_________________\/\\\___________
+      ________\///\\\__________\/\\\_________________\/\\\___________
+       __/\\\____\////\\\\\\\\\_\/\\\\\\\\\\\\\\\__/\\\\\\\\\\\__/\\\_
+        _\///________\/////////__\///////////////__\///////////__\///__
+
+Version: 0.2.32
+For more information visit:
+https://www.kickstartDS.com/cli
+
+Starting...
+[kickstartDS: general] info: welcome to the kickstartDS CLI
+[kickstartDS: tokens/init] starting: init command with init variable init-task
+[1/1] [init: check] info: checking prerequesites before starting
+[1/1] [init: check] info: prerequesites met, starting
+[init: cleanup] info: cleaning up temp dir /tmp/tokens-init-init-task before starting command
+[init: cleanup] info: finished cleaning up temp dir /tmp/tokens-init-init-task before starting command
+[1/1] [init: init] info: running the init subtask
+[info] generating your token set from primitives tokens file /tmp/tokens-init-init-task/token-primitives.json
+[info] successfully generated primitives tokens and wrote them to folder /tmp/tokens-init-init-task/tokens
+[1/1] [init: init] info: finished running the init subtask successfully
+[kickstartDS: tokens/init] finished: init command with init variable init-task
+Done in 1.29s.
+
+
+```
+
+It uses your `branding-token.json` as an input, and generates a folder `tokens` for you. That folder holds `JSON` files defining your Design Token by category:
 
 ```bash
 $ tree tokens
@@ -1309,7 +1353,7 @@ module.exports = StyleDictionary.extend(config).extend({
 
 #### Platforms
 
-To test that our integration works as expected we'll add the `css` platform for now, which will result in our Design Token being converted to CSS Custom Properties, as `src/token/token.css`.
+To test that our integration works as expected, we'll add the `css` platform for now, which will result in our Design Token being converted to CSS Custom Properties, as `src/token/tokens.css`.
 
 <CH.Code>
 
@@ -1366,7 +1410,7 @@ With all of that in place, for the first time compile your Design Token set into
 $ yarn build-tokens
 ```
 
-If everything worked as expected, you should end up with a long `src/token/token.css` file and the following output on your terminal:
+If everything worked as expected, you should end up with a long `src/token/tokens.css` file and the following output on your terminal:
 
 ```
 yarn run v1.22.18
@@ -1418,7 +1462,6 @@ There are valid arguments to make for both sides, so you should just follow what
 
 </Admonition>
 
-
 ### Fine tune the design
 
 Once the Design Token are generated, the Design System will already have the broad look & feel of your Corporate Design!
@@ -1427,7 +1470,7 @@ This can be done by configuring the various `.json` files found within the `toke
 
 <CH.Scrollycoding>
 
-#### `background-color.json`
+#### Adjustments in `background-color.json`
 
 Common adjutments are made in the `background-color.json` file.
 Note that the same can be applied to `text-color.json` and `border-color.json`.
@@ -1902,7 +1945,7 @@ Note that the same can be applied to `text-color.json` and `border-color.json`.
 
 ---
 
-`hover/active`
+#### Set `hover` / `active`
 
 We are going to be adjusting various states of `primary`, as they are entireley dependant on the selected color.
 What might initially work on certain colors might not work at all on others.
@@ -2377,7 +2420,7 @@ What might initially work on certain colors might not work at all on others.
 
 ---
 
-#### `typo.json`
+#### Adjustments in `typo.json`
 
 The `typo.json` often needs touching up as there are a lot of variying factors, such as the line-heights and font-sizes.
 
@@ -2860,7 +2903,7 @@ The `typo.json` often needs touching up as there are a lot of variying factors, 
 
 ---
 
-`bp-factor`
+#### Set `bp-factor`
 
 We want to go real big with our desktop font-size, however to have a more nuanced scaling of the font-size we need additional breakpoint-factors.
 
@@ -3834,8 +3877,154 @@ If you have a hugley variying font size it makes sense to adjust the line-height
 
 ## Result
 
-TODO This will leave us with the following files for now, at least if you've started afresh:
+So for the second step this will leave us with the following files overall:
+
+<CH.Section>
+<CH.Code>
+
+```json package.json
+{
+  "name": "@my/design-system",
+  "version": "1.0.0",
+  "description": "Design System for all @MY needs",
+  "main": "dist/index.js",
+  "scripts": {
+    "init-tokens": "kickstartDS tokens init --cleanup --rc-only",
+    "build-tokens": "kickstartDS tokens compile --cleanup --rc-only",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jonas Ulrich",
+  "license": "MIT",
+  "dependencies": {
+    "@kickstartds/base": "2.0.0-canary.922.4908.0",
+    "kickstartds": "0.2.32",
+    "react": "17",
+    "react-dom": "17"
+  }
+}
+```
+
+```js sd.config.cjs
+const path = require('path');
+const StyleDictionary = require('style-dictionary');
+const { config } = require('@kickstartds/style-dictionary');
+
+module.exports = StyleDictionary.extend(config).extend({
+  source: [
+    'tokens/**/*.json',
+    path.join(
+      path.dirname(require.resolve('@kickstartds/core/package.json')),
+      'source/design-tokens/icons/*.svg'
+    ),
+  ],
+  platforms: {
+    css: {
+      buildPath: 'src/token/',
+    },
+  },
+});
+```
+
+```json branding-token.json
+{
+  "color": {
+    "primary": "#05566a",
+    "primary-inverted": "#ecff00",
+    "background": "#fff",
+    "foreground": "#050505",
+    "link": "#5D5DD5",
+    "link-inverted": "#C6C6FF",
+    "positive": "#66a80f",
+    "positive-inverted": "#94d82d",
+    "informative": "#05566a",
+    "informative-inverted": "#ecff00",
+    "notice": "#fab005",
+    "notice-inverted": "#f59f00",
+    "negative": "#e03131",
+    "negative-inverted": "#fa5c5c"
+  },
+  "font": {
+    "display": {
+      "family": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+      "font-size": 16,
+      "line-height": 1.75,
+      "scale-ratio": 1.225,
+      "bp-factor": {
+        "phone": 1.167,
+        "tablet": 1.333
+      }
+    },
+    "copy": {
+      "family": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+      "font-size": 16,
+      "line-height": 1.75,
+      "scale-ratio": 1.225,
+      "bp-factor": {
+        "tablet": 1.125
+      }
+    },
+    "interface": {
+      "family": "system-ui, -apple-system, BlinkMacSystemFont, 'Avenir Next', 'Avenir', 'Segoe UI', 'Lucida Grande', 'Helvetica Neue', 'Helvetica', 'Fira Sans', 'Roboto', 'Noto', 'Droid Sans', 'Cantarell', 'Oxygen', 'Ubuntu', 'Franklin Gothic Medium', 'Century Gothic', 'Liberation Sans', sans-serif",
+      "font-size": 16,
+      "line-height": 1.75,
+      "scale-ratio": 1.225,
+      "bp-factor": {
+        "tablet": 1.125
+      }
+    },
+    "mono": {
+      "family": "ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace",
+      "font-size": 16,
+      "line-height": 1.75,
+      "scale-ratio": 1.225,
+      "bp-factor": {
+        "tablet": 1.125
+      }
+    }
+  },
+  "font-weight": {
+    "light": 300,
+    "regular": 400,
+    "semi-bold": 600,
+    "bold": 700
+  },
+  "spacing": {
+    "base": 8,
+    "scale-ratio": 1.35,
+    "bp-ratio": 1.15
+  },
+  "border-radius": "2px",
+  "box-shadow": {
+    "blur": "2.75px"
+  },
+  "breakpoints": {
+    "phone": 576,
+    "tablet": 768,
+    "laptop": 992,
+    "desktop": 1200
+  }
+}
+```
+
+```bash .nvmrc
+16.14
+```
+
+```bash .gitignore
+node_modules
+```
+
+</CH.Code>
+</CH.Section>
+
+Not included here are generated files, have a look at the Code Sandbox for the complete result for this step.
 
 ## Next Step
 
-TODO add description
+In the next step we'll set up `Storybook`. This connects nicely, as we'll add the `Storybook` integration for Design Token there, to make them viewable in the browser. We'll also make preparations for the step after, where we'll add components.
+
+TODO add Commit reminder
+
+## Code Sandbox
+
+TODO add Code Sandbox with result of step

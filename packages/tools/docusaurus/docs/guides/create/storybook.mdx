@@ -6,4 +6,437 @@ import Admonition from 'react-admonitions';
 
 # 3. Configure Storybook
 
+## Overview
+
 TODO there should be a page detailing `Storybook`, and our usage of it, somewhere. Probably `Integrations`... write and link it
+
+## Install `Storybook`
+
+We start by initializing `Storybook` using their CLI. We call it with `npx`, which runs the command (`storybook`) without actually installing the dependency. And as we won't be using their included examples, we just remove them immediately:
+
+```bash
+npx storybook init
+rm -rf src/stories
+```
+
+## Configure `Storybook`
+
+### Install addons
+
+Now add all the addons that will be utilized:
+
+```bash
+$ yarn add @whitespace/storybook-addon-html storybook-design-token @kickstartds/storybook-addon-component-tokens @kickstartds/storybook-addon-jsonschema
+```
+
+Let's have another look at our `package.json` now, it's starting to grow already:
+
+<CH.Spotlight>
+<CH.Code>
+```json package.json
+{
+  "name": "@my/design-system",
+  "version": "1.0.0",
+  "description": "Design System for all @MY needs",
+  "main": "dist/index.js",
+  "scripts": {
+    "init-tokens": "kickstartDS tokens init --cleanup --rc-only",
+    "build-tokens": "kickstartDS tokens compile --cleanup --rc-only",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "author": "Jonas Ulrich",
+  "license": "MIT",
+  "dependencies": {
+    "@kickstartds/base": "2.0.0-canary.922.4908.0",
+    "@kickstartds/storybook-addon-component-tokens": "^0.1.6",
+    "@kickstartds/storybook-addon-jsonschema": "^1.0.5",
+    "@whitespace/storybook-addon-html": "^5.0.0",
+    "kickstartds": "0.2.32",
+    "react": "17",
+    "react-dom": "17",
+    "storybook-design-token": "^2.7.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "@storybook/addon-actions": "^6.5.12",
+    "@storybook/addon-essentials": "^6.5.12",
+    "@storybook/addon-interactions": "^6.5.12",
+    "@storybook/addon-links": "^6.5.12",
+    "@storybook/builder-webpack4": "^6.5.12",
+    "@storybook/manager-webpack4": "^6.5.12",
+    "@storybook/react": "^6.5.12",
+    "@storybook/testing-library": "^0.0.13",
+    "babel-loader": "^8.2.5"
+  }
+}
+
+````
+</CH.Code>
+
+---
+
+#### `Storybook` dependencies
+
+Those are the dependencies added through using `npx storybook init`. They ensure `Storybook` itself can be built for development and production.
+
+<CH.Code>
+```json package.json focus=25:36
+{
+  "name": "@my/design-system",
+  "version": "1.0.0",
+  "description": "Design System for all @MY needs",
+  "main": "dist/index.js",
+  "scripts": {
+    "init-tokens": "kickstartDS tokens init --cleanup --rc-only",
+    "build-tokens": "kickstartDS tokens compile --cleanup --rc-only",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "author": "Jonas Ulrich",
+  "license": "MIT",
+  "dependencies": {
+    "@kickstartds/base": "2.0.0-canary.922.4908.0",
+    "@kickstartds/storybook-addon-component-tokens": "^0.1.6",
+    "@kickstartds/storybook-addon-jsonschema": "^1.0.5",
+    "@whitespace/storybook-addon-html": "^5.0.0",
+    "kickstartds": "0.2.32",
+    "react": "17",
+    "react-dom": "17",
+    "storybook-design-token": "^2.7.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "@storybook/addon-actions": "^6.5.12",
+    "@storybook/addon-essentials": "^6.5.12",
+    "@storybook/addon-interactions": "^6.5.12",
+    "@storybook/addon-links": "^6.5.12",
+    "@storybook/builder-webpack4": "^6.5.12",
+    "@storybook/manager-webpack4": "^6.5.12",
+    "@storybook/react": "^6.5.12",
+    "@storybook/testing-library": "^0.0.13",
+    "babel-loader": "^8.2.5"
+  }
+}
+````
+
+</CH.Code>
+
+---
+
+#### New `scripts` entries
+
+Next to the dependencies, two `scripts` entries were added by the `Storybook` init:
+
+1. `storybook`: to start your `Storybook` in development / watch module
+2. `build-storybook`: to build a production ready, deployable version of your `Storybook`
+
+<CH.Code>
+```json package.json focus=10:11
+{
+  "name": "@my/design-system",
+  "version": "1.0.0",
+  "description": "Design System for all @MY needs",
+  "main": "dist/index.js",
+  "scripts": {
+    "init-tokens": "kickstartDS tokens init --cleanup --rc-only",
+    "build-tokens": "kickstartDS tokens compile --cleanup --rc-only",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "author": "Jonas Ulrich",
+  "license": "MIT",
+  "dependencies": {
+    "@kickstartds/base": "2.0.0-canary.922.4908.0",
+    "@kickstartds/storybook-addon-component-tokens": "^0.1.6",
+    "@kickstartds/storybook-addon-jsonschema": "^1.0.5",
+    "@whitespace/storybook-addon-html": "^5.0.0",
+    "kickstartds": "0.2.32",
+    "react": "17",
+    "react-dom": "17",
+    "storybook-design-token": "^2.7.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "@storybook/addon-actions": "^6.5.12",
+    "@storybook/addon-essentials": "^6.5.12",
+    "@storybook/addon-interactions": "^6.5.12",
+    "@storybook/addon-links": "^6.5.12",
+    "@storybook/builder-webpack4": "^6.5.12",
+    "@storybook/manager-webpack4": "^6.5.12",
+    "@storybook/react": "^6.5.12",
+    "@storybook/testing-library": "^0.0.13",
+    "babel-loader": "^8.2.5"
+  }
+}
+
+````
+
+</CH.Code>
+
+---
+
+#### HTML rendering addon
+
+We use [`@whitespace/storybook-addon-html`](https://storybook.js.org/addons/@whitespace/storybook-addon-html) to add a tab to every component Canvas sidebar, where you can copy the currently configured component as a plain HTML component.
+
+<CH.Code>
+```json package.json focus=19
+{
+  "name": "@my/design-system",
+  "version": "1.0.0",
+  "description": "Design System for all @MY needs",
+  "main": "dist/index.js",
+  "scripts": {
+    "init-tokens": "kickstartDS tokens init --cleanup --rc-only",
+    "build-tokens": "kickstartDS tokens compile --cleanup --rc-only",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "author": "Jonas Ulrich",
+  "license": "MIT",
+  "dependencies": {
+    "@kickstartds/base": "2.0.0-canary.922.4908.0",
+    "@kickstartds/storybook-addon-component-tokens": "^0.1.6",
+    "@kickstartds/storybook-addon-jsonschema": "^1.0.5",
+    "@whitespace/storybook-addon-html": "^5.0.0",
+    "kickstartds": "0.2.32",
+    "react": "17",
+    "react-dom": "17",
+    "storybook-design-token": "^2.7.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "@storybook/addon-actions": "^6.5.12",
+    "@storybook/addon-essentials": "^6.5.12",
+    "@storybook/addon-interactions": "^6.5.12",
+    "@storybook/addon-links": "^6.5.12",
+    "@storybook/builder-webpack4": "^6.5.12",
+    "@storybook/manager-webpack4": "^6.5.12",
+    "@storybook/react": "^6.5.12",
+    "@storybook/testing-library": "^0.0.13",
+    "babel-loader": "^8.2.5"
+  }
+}
+
+````
+
+</CH.Code>
+
+---
+
+#### Design Token addon
+
+For Design Token documentation we use [`storybook-design-token`](https://storybook.js.org/addons/storybook-design-token/). Mainly for its `DesignTokenDocBlock` component, which helps rendering the pages we'll create to display our Design Token set.
+
+<CH.Code>
+```json package.json focus=23
+{
+  "name": "@my/design-system",
+  "version": "1.0.0",
+  "description": "Design System for all @MY needs",
+  "main": "dist/index.js",
+  "scripts": {
+    "init-tokens": "kickstartDS tokens init --cleanup --rc-only",
+    "build-tokens": "kickstartDS tokens compile --cleanup --rc-only",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "author": "Jonas Ulrich",
+  "license": "MIT",
+  "dependencies": {
+    "@kickstartds/base": "2.0.0-canary.922.4908.0",
+    "@kickstartds/storybook-addon-component-tokens": "^0.1.6",
+    "@kickstartds/storybook-addon-jsonschema": "^1.0.5",
+    "@whitespace/storybook-addon-html": "^5.0.0",
+    "kickstartds": "0.2.32",
+    "react": "17",
+    "react-dom": "17",
+    "storybook-design-token": "^2.7.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "@storybook/addon-actions": "^6.5.12",
+    "@storybook/addon-essentials": "^6.5.12",
+    "@storybook/addon-interactions": "^6.5.12",
+    "@storybook/addon-links": "^6.5.12",
+    "@storybook/builder-webpack4": "^6.5.12",
+    "@storybook/manager-webpack4": "^6.5.12",
+    "@storybook/react": "^6.5.12",
+    "@storybook/testing-library": "^0.0.13",
+    "babel-loader": "^8.2.5"
+  }
+}
+
+````
+
+</CH.Code>
+
+---
+
+#### `JSON Schema` addon
+
+We use our own [`@kickstartds/storybook-addon-jsonschema`](https://storybook.js.org/addons/@kickstartds/storybook-addon-jsonschema) to display our component structure / API in a Canvas tab, alongside the component.
+
+TODO link integration page
+
+<CH.Code>
+```json package.json focus=18
+{
+  "name": "@my/design-system",
+  "version": "1.0.0",
+  "description": "Design System for all @MY needs",
+  "main": "dist/index.js",
+  "scripts": {
+    "init-tokens": "kickstartDS tokens init --cleanup --rc-only",
+    "build-tokens": "kickstartDS tokens compile --cleanup --rc-only",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "author": "Jonas Ulrich",
+  "license": "MIT",
+  "dependencies": {
+    "@kickstartds/base": "2.0.0-canary.922.4908.0",
+    "@kickstartds/storybook-addon-component-tokens": "^0.1.6",
+    "@kickstartds/storybook-addon-jsonschema": "^1.0.5",
+    "@whitespace/storybook-addon-html": "^5.0.0",
+    "kickstartds": "0.2.32",
+    "react": "17",
+    "react-dom": "17",
+    "storybook-design-token": "^2.7.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "@storybook/addon-actions": "^6.5.12",
+    "@storybook/addon-essentials": "^6.5.12",
+    "@storybook/addon-interactions": "^6.5.12",
+    "@storybook/addon-links": "^6.5.12",
+    "@storybook/builder-webpack4": "^6.5.12",
+    "@storybook/manager-webpack4": "^6.5.12",
+    "@storybook/react": "^6.5.12",
+    "@storybook/testing-library": "^0.0.13",
+    "babel-loader": "^8.2.5"
+  }
+}
+
+````
+
+</CH.Code>
+
+---
+
+#### `Component Token` addon
+
+For this we use another Canvas and tab based addon we've written ourselves, to visualize your Component Token: [`@kickstartds/storybook-addon-component-token`](https://storybook.js.org/addons/@kickstartds/storybook-addon-component-tokens/). Especially helps discovering the token layering applied to a component.
+
+TODO link integration page
+
+<CH.Code>
+```json package.json focus=17
+{
+  "name": "@my/design-system",
+  "version": "1.0.0",
+  "description": "Design System for all @MY needs",
+  "main": "dist/index.js",
+  "scripts": {
+    "init-tokens": "kickstartDS tokens init --cleanup --rc-only",
+    "build-tokens": "kickstartDS tokens compile --cleanup --rc-only",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "author": "Jonas Ulrich",
+  "license": "MIT",
+  "dependencies": {
+    "@kickstartds/base": "2.0.0-canary.922.4908.0",
+    "@kickstartds/storybook-addon-component-tokens": "^0.1.6",
+    "@kickstartds/storybook-addon-jsonschema": "^1.0.5",
+    "@whitespace/storybook-addon-html": "^5.0.0",
+    "kickstartds": "0.2.32",
+    "react": "17",
+    "react-dom": "17",
+    "storybook-design-token": "^2.7.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "@storybook/addon-actions": "^6.5.12",
+    "@storybook/addon-essentials": "^6.5.12",
+    "@storybook/addon-interactions": "^6.5.12",
+    "@storybook/addon-links": "^6.5.12",
+    "@storybook/builder-webpack4": "^6.5.12",
+    "@storybook/manager-webpack4": "^6.5.12",
+    "@storybook/react": "^6.5.12",
+    "@storybook/testing-library": "^0.0.13",
+    "babel-loader": "^8.2.5"
+  }
+}
+
+````
+
+</CH.Code>
+</CH.Spotlight>
+
+### Configure addons
+
+TODO describe
+
+### Design Token integration
+
+TODO describe
+
+### Add theming
+
+## Result
+
+This will leave us with the following files for now, at least if you've started afresh:
+
+<CH.Section>
+<CH.Code>
+
+```json package.json
+{
+  "name": "@my/design-system",
+  "version": "1.0.0",
+  "description": "Design System for all @MY needs",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jonas Ulrich",
+  "license": "MIT",
+  "dependencies": {
+    "@kickstartds/base": "2.0.0-canary.922.4908.0",
+    "react": "17",
+    "react-dom": "17"
+  }
+}
+```
+
+```bash .nvmrc
+16.14
+```
+
+```bash .gitignore
+node_modules
+```
+
+</CH.Code>
+</CH.Section>
+
+## Next Step
+
+We'll continue by applying our branding to **kickstartDS**, which will result in a bunch of token files (`JSON`) being added to the project.<br/>
+This will also give us the opportunity to set up `Storybook`, and get a first visual representation of our Design System in the browser!
+
+TODO add Commit reminder
+
+## Code Sandbox
+
+TODO add Code Sandbox with result of step
+````
