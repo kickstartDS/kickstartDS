@@ -1418,9 +1418,2419 @@ There are valid arguments to make for both sides, so you should just follow what
 
 </Admonition>
 
-## Fine tune the design
 
-TODO TBD(??)
+### Fine tune the design
+
+Once the Design Token are generated, the Design System will already have the broad look & feel of your Corporate Design!
+However you probably still have to tweak it a little to make it match up perfecly with your CD requirements.
+This can be done by configuring the various `.json` files found within the `tokens` folder.
+
+<CH.Scrollycoding>
+
+#### `background-color.json`
+
+Common adjutments are made in the `background-color.json` file.
+Note that the same can be applied to `text-color.json` and `border-color.json`.
+
+<CH.Code>
+```json background-color.json focus=327:361
+{
+  "ks": {
+    "background-color": {
+      "accent": {
+        "base": {
+          "value": "{ks.color.fg.alpha.2.base}",
+          "attributes": {
+            "category": "color"
+          },
+          "token": {
+            "category": "Colors: Background Accent",
+            "presenter": "Color"
+          }
+        }
+      },
+      "accent-inverted": {
+        "base": {
+          "value": "{ks.color.fg-inverted.alpha.2.base}",
+          "attributes": {
+            "category": "color"
+          },
+          "token": {
+            "category": "Colors: Background Accent",
+            "presenter": "Color"
+          }
+        }
+      },
+      "clear": {
+        "base": {
+          "value": "{ks.color.transparent.base}",
+          "attributes": {
+            "category": "color"
+          },
+          "token": {
+            "category": "Colors: Background Clear",
+            "presenter": "Color"
+          }
+        },
+        "interactive": {
+          "base": {
+            "value": "{ks.color.transparent.base}",
+            "attributes": {
+              "category": "color"
+            },
+            "token": {
+              "category": "Colors: Background Clear",
+              "presenter": "Color"
+            }
+          },
+          "hover": {
+            "base": {
+              "value": "{ks.color.primary.alpha.2.base}",
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Background Clear",
+                "presenter": "Color"
+              }
+            }
+          },
+          "active": {
+            "base": {
+              "value": "{ks.color.primary.alpha.3.base}",
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Background Clear",
+                "presenter": "Color"
+              }
+            }
+          },
+          "selected": {
+            "base": {
+              "value": "{ks.color.primary.alpha.4.base}",
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Background Clear",
+                "presenter": "Color"
+              }
+            }
+          }
+        }
+      },
+      "clear-inverted": {
+        "base": {
+          "value": "{ks.color.transparent.base}",
+          "attributes": {
+            "category": "color"
+          },
+          "token": {
+            "category": "Colors: Background Clear",
+            "presenter": "Color"
+          }
+        },
+        "interactive": {
+          "base": {
+            "value": "{ks.color.transparent.base}",
+            "attributes": {
+              "category": "color"
+            },
+            "token": {
+              "category": "Colors: Background Clear",
+              "presenter": "Color"
+            }
+          },
+          "hover": {
+            "base": {
+              "value": "{ks.color.primary-inverted.alpha.3.base}",
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Background Clear",
+                "presenter": "Color"
+              }
+            }
+          },
+          "active": {
+            "base": {
+              "value": "{ks.color.primary-inverted.alpha.4.base}",
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Background Clear",
+                "presenter": "Color"
+              }
+            }
+          },
+          "selected": {
+            "base": {
+              "value": "{ks.color.primary-inverted.alpha.5.base}",
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Background Clear",
+                "presenter": "Color"
+              }
+            }
+          }
+        }
+      },
+      "default": {
+        "base": {
+          "value": "{ks.color.fg-inverted.base}",
+          "attributes": {
+            "category": "color"
+          },
+          "token": {
+            "category": "Colors: Background Default",
+            "presenter": "Color"
+          }
+        }
+      },
+      "default-inverted": {
+        "base": {
+          "value": "{ks.color.fg.alpha.7.base}",
+          "attributes": {
+            "category": "color"
+          },
+          "token": {
+            "category": "Colors: Background Default",
+            "presenter": "Color"
+          }
+        }
+      },
+      "interface": {
+        "base": {
+          "value": "{ks.color.fg.alpha.1.base}",
+          "attributes": {
+            "category": "color"
+          },
+          "token": {
+            "category": "Colors: Background Interface",
+            "presenter": "Color"
+          }
+        },
+        "interactive": {
+          "base": {
+            "value": "{ks.color.transparent.base}",
+            "attributes": {
+              "category": "color"
+            },
+            "token": {
+              "category": "Colors: Background Interface",
+              "presenter": "Color"
+            }
+          },
+          "disabled": {
+            "base": {
+              "value": "{ks.color.fg.alpha.1.base}",
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Background Interface",
+                "presenter": "Color"
+              }
+            }
+          },
+          "hover": {
+            "base": {
+              "value": "{ks.color.fg.alpha.1.base}",
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Background Interface",
+                "presenter": "Color"
+              }
+            }
+          },
+          "active": {
+            "base": {
+              "value": "{ks.color.fg.alpha.1.base}",
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Background Interface",
+                "presenter": "Color"
+              }
+            }
+          },
+          "selected": {
+            "base": {
+              "value": "{ks.color.primary.base}",
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Background Interface",
+                "presenter": "Color"
+              }
+            }
+          }
+        }
+      },
+      "interface-inverted": {
+        "base": {
+          "value": "{ks.color.fg-inverted.alpha.1.base}",
+          "attributes": {
+            "category": "color"
+          },
+          "token": {
+            "category": "Colors: Background Interface",
+            "presenter": "Color"
+          }
+        },
+        "interactive": {
+          "base": {
+            "value": "{ks.color.transparent.base}",
+            "attributes": {
+              "category": "color"
+            },
+            "token": {
+              "category": "Colors: Background Interface",
+              "presenter": "Color"
+            }
+          },
+          "disabled": {
+            "base": {
+              "value": "{ks.color.fg-inverted.alpha.1.base}",
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Background Interface",
+                "presenter": "Color"
+              }
+            }
+          },
+          "hover": {
+            "base": {
+              "value": "{ks.color.fg-inverted.alpha.1.base}",
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Background Interface",
+                "presenter": "Color"
+              }
+            }
+          },
+          "active": {
+            "base": {
+              "value": "{ks.color.fg-inverted.alpha.1.base}",
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Background Interface",
+                "presenter": "Color"
+              }
+            }
+          },
+          "selected": {
+            "base": {
+              "value": "{ks.color.primary-inverted.base}",
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Background Interface",
+                "presenter": "Color"
+              }
+            }
+          }
+        }
+      },
+      "primary": {
+        "base": {
+          "value": "{ks.color.primary.base}",
+          "attributes": {
+            "category": "color"
+          },
+          "token": {
+            "category": "Colors: Background Primary",
+            "presenter": "Color"
+          }
+        },
+        "interactive": {
+          "base": {
+            "value": "{ks.color.primary.base}",
+            "attributes": {
+              "category": "color"
+            },
+            "token": {
+              "category": "Colors: Background Primary",
+              "presenter": "Color"
+            }
+          },
+          "hover": {
+            "base": {
+              "value": "{ks.color.primary.to-bg.2.base}",
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Background Primary",
+                "presenter": "Color"
+              }
+            }
+          },
+          "active": {
+            "base": {
+              "value": "{ks.color.primary.to-bg.3.base}",
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Background Primary",
+                "presenter": "Color"
+              }
+            }
+          },
+          "selected": {
+            "base": {
+              "value": "{ks.color.primary.base}",
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Background Primary",
+                "presenter": "Color"
+              }
+            }
+          }
+        },
+        "translucent": {
+          "base": {
+            "value": "{ks.color.primary.alpha.8.base}",
+            "attributes": {
+              "category": "color"
+            },
+            "token": {
+              "category": "Colors: Background Primary",
+              "presenter": "Color"
+            }
+          }
+        }
+      },
+      "primary-inverted": {
+        "base": {
+          "value": "{ks.color.primary-inverted.base}",
+          "attributes": {
+            "category": "color"
+          },
+          "token": {
+            "category": "Colors: Background Primary",
+            "presenter": "Color"
+          }
+        },
+        "interactive": {
+          "base": {
+            "value": "{ks.color.primary-inverted.base}",
+            "attributes": {
+              "category": "color"
+            },
+            "token": {
+              "category": "Colors: Background Primary",
+              "presenter": "Color"
+            }
+          },
+          "hover": {
+            "base": {
+              "value": "{ks.color.primary-inverted.to-bg.2.base}",
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Background Primary",
+                "presenter": "Color"
+              }
+            }
+          },
+          "active": {
+            "base": {
+              "value": "{ks.color.primary-inverted.to-bg.3.base}",
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Background Primary",
+                "presenter": "Color"
+              }
+            }
+          },
+          "selected": {
+            "base": {
+              "value": "{ks.color.primary-inverted.base}",
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Background Primary",
+                "presenter": "Color"
+              }
+            }
+          }
+        },
+        "translucent": {
+          "base": {
+            "value": "{ks.color.primary-inverted.alpha.8.base}",
+            "attributes": {
+              "category": "color"
+            },
+            "token": {
+              "category": "Colors: Background Primary",
+              "presenter": "Color"
+            }
+          }
+        }
+      }
+    }
+  }
+}
+````
+
+</CH.Code>
+
+---
+
+`hover/active`
+
+We are going to be adjusting various states of `primary`, as they are entireley dependant on the selected color.
+What might initially work on certain colors might not work at all on others.
+
+<CH.Code>
+```json background-color.json focus=327:361
+{
+  "ks": {
+    "background-color": {
+      "accent": {
+        "base": {
+          "value": "{ks.color.fg.alpha.2.base}",
+          "attributes": {
+            "category": "color"
+          },
+          "token": {
+            "category": "Colors: Background Accent",
+            "presenter": "Color"
+          }
+        }
+      },
+      "accent-inverted": {
+        "base": {
+          "value": "{ks.color.fg-inverted.alpha.2.base}",
+          "attributes": {
+            "category": "color"
+          },
+          "token": {
+            "category": "Colors: Background Accent",
+            "presenter": "Color"
+          }
+        }
+      },
+      "clear": {
+        "base": {
+          "value": "{ks.color.transparent.base}",
+          "attributes": {
+            "category": "color"
+          },
+          "token": {
+            "category": "Colors: Background Clear",
+            "presenter": "Color"
+          }
+        },
+        "interactive": {
+          "base": {
+            "value": "{ks.color.transparent.base}",
+            "attributes": {
+              "category": "color"
+            },
+            "token": {
+              "category": "Colors: Background Clear",
+              "presenter": "Color"
+            }
+          },
+          "hover": {
+            "base": {
+              "value": "{ks.color.primary.alpha.2.base}",
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Background Clear",
+                "presenter": "Color"
+              }
+            }
+          },
+          "active": {
+            "base": {
+              "value": "{ks.color.primary.alpha.3.base}",
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Background Clear",
+                "presenter": "Color"
+              }
+            }
+          },
+          "selected": {
+            "base": {
+              "value": "{ks.color.primary.alpha.4.base}",
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Background Clear",
+                "presenter": "Color"
+              }
+            }
+          }
+        }
+      },
+      "clear-inverted": {
+        "base": {
+          "value": "{ks.color.transparent.base}",
+          "attributes": {
+            "category": "color"
+          },
+          "token": {
+            "category": "Colors: Background Clear",
+            "presenter": "Color"
+          }
+        },
+        "interactive": {
+          "base": {
+            "value": "{ks.color.transparent.base}",
+            "attributes": {
+              "category": "color"
+            },
+            "token": {
+              "category": "Colors: Background Clear",
+              "presenter": "Color"
+            }
+          },
+          "hover": {
+            "base": {
+              "value": "{ks.color.primary-inverted.alpha.3.base}",
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Background Clear",
+                "presenter": "Color"
+              }
+            }
+          },
+          "active": {
+            "base": {
+              "value": "{ks.color.primary-inverted.alpha.4.base}",
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Background Clear",
+                "presenter": "Color"
+              }
+            }
+          },
+          "selected": {
+            "base": {
+              "value": "{ks.color.primary-inverted.alpha.5.base}",
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Background Clear",
+                "presenter": "Color"
+              }
+            }
+          }
+        }
+      },
+      "default": {
+        "base": {
+          "value": "{ks.color.fg-inverted.base}",
+          "attributes": {
+            "category": "color"
+          },
+          "token": {
+            "category": "Colors: Background Default",
+            "presenter": "Color"
+          }
+        }
+      },
+      "default-inverted": {
+        "base": {
+          "value": "{ks.color.fg.alpha.7.base}",
+          "attributes": {
+            "category": "color"
+          },
+          "token": {
+            "category": "Colors: Background Default",
+            "presenter": "Color"
+          }
+        }
+      },
+      "interface": {
+        "base": {
+          "value": "{ks.color.fg.alpha.1.base}",
+          "attributes": {
+            "category": "color"
+          },
+          "token": {
+            "category": "Colors: Background Interface",
+            "presenter": "Color"
+          }
+        },
+        "interactive": {
+          "base": {
+            "value": "{ks.color.transparent.base}",
+            "attributes": {
+              "category": "color"
+            },
+            "token": {
+              "category": "Colors: Background Interface",
+              "presenter": "Color"
+            }
+          },
+          "disabled": {
+            "base": {
+              "value": "{ks.color.fg.alpha.1.base}",
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Background Interface",
+                "presenter": "Color"
+              }
+            }
+          },
+          "hover": {
+            "base": {
+              "value": "{ks.color.fg.alpha.1.base}",
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Background Interface",
+                "presenter": "Color"
+              }
+            }
+          },
+          "active": {
+            "base": {
+              "value": "{ks.color.fg.alpha.1.base}",
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Background Interface",
+                "presenter": "Color"
+              }
+            }
+          },
+          "selected": {
+            "base": {
+              "value": "{ks.color.primary.base}",
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Background Interface",
+                "presenter": "Color"
+              }
+            }
+          }
+        }
+      },
+      "interface-inverted": {
+        "base": {
+          "value": "{ks.color.fg-inverted.alpha.1.base}",
+          "attributes": {
+            "category": "color"
+          },
+          "token": {
+            "category": "Colors: Background Interface",
+            "presenter": "Color"
+          }
+        },
+        "interactive": {
+          "base": {
+            "value": "{ks.color.transparent.base}",
+            "attributes": {
+              "category": "color"
+            },
+            "token": {
+              "category": "Colors: Background Interface",
+              "presenter": "Color"
+            }
+          },
+          "disabled": {
+            "base": {
+              "value": "{ks.color.fg-inverted.alpha.1.base}",
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Background Interface",
+                "presenter": "Color"
+              }
+            }
+          },
+          "hover": {
+            "base": {
+              "value": "{ks.color.fg-inverted.alpha.1.base}",
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Background Interface",
+                "presenter": "Color"
+              }
+            }
+          },
+          "active": {
+            "base": {
+              "value": "{ks.color.fg-inverted.alpha.1.base}",
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Background Interface",
+                "presenter": "Color"
+              }
+            }
+          },
+          "selected": {
+            "base": {
+              "value": "{ks.color.primary-inverted.base}",
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Background Interface",
+                "presenter": "Color"
+              }
+            }
+          }
+        }
+      },
+      "primary": {
+        "base": {
+          "value": "{ks.color.primary.base}",
+          "attributes": {
+            "category": "color"
+          },
+          "token": {
+            "category": "Colors: Background Primary",
+            "presenter": "Color"
+          }
+        },
+        "interactive": {
+          "base": {
+            "value": "{ks.color.primary.base}",
+            "attributes": {
+              "category": "color"
+            },
+            "token": {
+              "category": "Colors: Background Primary",
+              "presenter": "Color"
+            }
+          },
+          "hover": {
+            "base": {
+              "value": "{ks.color.primary.to-bg.4.base}",
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Background Primary",
+                "presenter": "Color"
+              }
+            }
+          },
+          "active": {
+            "base": {
+              "value": "{ks.color.primary.to-bg.6.base}",
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Background Primary",
+                "presenter": "Color"
+              }
+            }
+          },
+          "selected": {
+            "base": {
+              "value": "{ks.color.secondary.base}",
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Background Primary",
+                "presenter": "Color"
+              }
+            }
+          }
+        },
+        "translucent": {
+          "base": {
+            "value": "{ks.color.primary.alpha.8.base}",
+            "attributes": {
+              "category": "color"
+            },
+            "token": {
+              "category": "Colors: Background Primary",
+              "presenter": "Color"
+            }
+          }
+        }
+      },
+      "primary-inverted": {
+        "base": {
+          "value": "{ks.color.primary-inverted.base}",
+          "attributes": {
+            "category": "color"
+          },
+          "token": {
+            "category": "Colors: Background Primary",
+            "presenter": "Color"
+          }
+        },
+        "interactive": {
+          "base": {
+            "value": "{ks.color.primary-inverted.base}",
+            "attributes": {
+              "category": "color"
+            },
+            "token": {
+              "category": "Colors: Background Primary",
+              "presenter": "Color"
+            }
+          },
+          "hover": {
+            "base": {
+              "value": "{ks.color.primary-inverted.to-bg.2.base}",
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Background Primary",
+                "presenter": "Color"
+              }
+            }
+          },
+          "active": {
+            "base": {
+              "value": "{ks.color.primary-inverted.to-bg.3.base}",
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Background Primary",
+                "presenter": "Color"
+              }
+            }
+          },
+          "selected": {
+            "base": {
+              "value": "{ks.color.primary-inverted.base}",
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Background Primary",
+                "presenter": "Color"
+              }
+            }
+          }
+        },
+        "translucent": {
+          "base": {
+            "value": "{ks.color.primary-inverted.alpha.8.base}",
+            "attributes": {
+              "category": "color"
+            },
+            "token": {
+              "category": "Colors: Background Primary",
+              "presenter": "Color"
+            }
+          }
+        }
+      }
+    }
+  }
+}
+````
+
+</CH.Code>
+
+---
+
+#### `typo.json`
+
+The `typo.json` often needs touching up as there are a lot of variying factors, such as the line-heights and font-sizes.
+
+<CH.Code>
+```json typo.json
+{
+  "ks": {
+    "font-family": {
+      "display": {
+        "value": "Garamond, Baskerville, 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif",
+        "token": {
+          "category": "Font Families",
+          "presenter": "FontFamily"
+        }
+      },
+      "copy": {
+        "value": "'Helvetica Neue', Helvetica, Arial, sans-serif",
+        "token": {
+          "category": "Font Families",
+          "presenter": "FontFamily"
+        }
+      },
+      "interface": {
+        "value": "system-ui, -apple-system, BlinkMacSystemFont, 'Avenir Next', 'Avenir', 'Segoe UI', 'Lucida Grande', 'Helvetica Neue', 'Helvetica', 'Fira Sans', 'Roboto', 'Noto', 'Droid Sans', 'Cantarell', 'Oxygen', 'Ubuntu', 'Franklin Gothic Medium', 'Century Gothic', 'Liberation Sans', sans-serif",
+        "token": {
+          "category": "Font Families",
+          "presenter": "FontFamily"
+        }
+      },
+      "mono": {
+        "value": "ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace",
+        "token": {
+          "category": "Font Families",
+          "presenter": "FontFamily"
+        }
+      }
+    },
+    "font-weight": {
+      "light": {
+        "value": 300,
+        "token": {
+          "category": "Font Weights",
+          "presenter": "FontWeight"
+        }
+      },
+      "regular": {
+        "value": 400,
+        "token": {
+          "category": "Font Weights",
+          "presenter": "FontWeight"
+        }
+      },
+      "semi-bold": {
+        "value": 600,
+        "token": {
+          "category": "Font Weights",
+          "presenter": "FontWeight"
+        }
+      },
+      "bold": {
+        "value": 700,
+        "token": {
+          "category": "Font Weights",
+          "presenter": "FontWeight"
+        }
+      }
+    },
+    "font-size": {
+      "display": {
+        "bp-factor": {
+          "phone": {
+            "value": 1.167
+          },
+          "tablet": {
+            "value": 1.333
+          }
+        },
+        "xxs-base": {
+          "value": "0.544rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: display",
+            "presenter": "FontSize"
+          }
+        },
+        "xs-base": {
+          "value": "0.6664rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: display",
+            "presenter": "FontSize"
+          }
+        },
+        "s-base": {
+          "value": "0.8163rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: display",
+            "presenter": "FontSize"
+          }
+        },
+        "m-base": {
+          "value": "1rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: display",
+            "presenter": "FontSize"
+          }
+        },
+        "l-base": {
+          "value": "1.225rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: display",
+            "presenter": "FontSize"
+          }
+        },
+        "xl-base": {
+          "value": "1.5006rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: display",
+            "presenter": "FontSize"
+          }
+        },
+        "xxl-base": {
+          "value": "1.8383rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: display",
+            "presenter": "FontSize"
+          }
+        }
+      },
+      "copy": {
+        "bp-factor": {
+          "tablet": {
+            "value": 1.125
+          }
+        },
+        "xxs-base": {
+          "value": "0.544rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: copy",
+            "presenter": "FontSize"
+          }
+        },
+        "xs-base": {
+          "value": "0.6664rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: copy",
+            "presenter": "FontSize"
+          }
+        },
+        "s-base": {
+          "value": "0.8163rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: copy",
+            "presenter": "FontSize"
+          }
+        },
+        "m-base": {
+          "value": "1rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: copy",
+            "presenter": "FontSize"
+          }
+        },
+        "l-base": {
+          "value": "1.225rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: copy",
+            "presenter": "FontSize"
+          }
+        },
+        "xl-base": {
+          "value": "1.5006rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: copy",
+            "presenter": "FontSize"
+          }
+        },
+        "xxl-base": {
+          "value": "1.8383rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: copy",
+            "presenter": "FontSize"
+          }
+        }
+      },
+      "interface": {
+        "bp-factor": {
+          "tablet": {
+            "value": 1.125
+          }
+        },
+        "xxs-base": {
+          "value": "0.544rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: interface",
+            "presenter": "FontSize"
+          }
+        },
+        "xs-base": {
+          "value": "0.6664rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: interface",
+            "presenter": "FontSize"
+          }
+        },
+        "s-base": {
+          "value": "0.8163rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: interface",
+            "presenter": "FontSize"
+          }
+        },
+        "m-base": {
+          "value": "1rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: interface",
+            "presenter": "FontSize"
+          }
+        },
+        "l-base": {
+          "value": "1.225rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: interface",
+            "presenter": "FontSize"
+          }
+        },
+        "xl-base": {
+          "value": "1.5006rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: interface",
+            "presenter": "FontSize"
+          }
+        },
+        "xxl-base": {
+          "value": "1.8383rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: interface",
+            "presenter": "FontSize"
+          }
+        }
+      },
+      "mono": {
+        "bp-factor": {
+          "tablet": {
+            "value": 1.125
+          }
+        },
+        "xxs-base": {
+          "value": "0.544rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: mono",
+            "presenter": "FontSize"
+          }
+        },
+        "xs-base": {
+          "value": "0.6664rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: mono",
+            "presenter": "FontSize"
+          }
+        },
+        "s-base": {
+          "value": "0.8163rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: mono",
+            "presenter": "FontSize"
+          }
+        },
+        "m-base": {
+          "value": "1rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: mono",
+            "presenter": "FontSize"
+          }
+        },
+        "l-base": {
+          "value": "1.225rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: mono",
+            "presenter": "FontSize"
+          }
+        },
+        "xl-base": {
+          "value": "1.5006rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: mono",
+            "presenter": "FontSize"
+          }
+        },
+        "xxl-base": {
+          "value": "1.8383rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: mono",
+            "presenter": "FontSize"
+          }
+        }
+      }
+    },
+    "line-height": {
+      "display": {
+        "xxs": {
+          "value": 1.75
+        },
+        "xs": {
+          "value": 1.75
+        },
+        "s": {
+          "value": 1.75
+        },
+        "m": {
+          "value": 1.75
+        },
+        "l": {
+          "value": 1.75
+        },
+        "xl": {
+          "value": 1.75
+        },
+        "xxl": {
+          "value": 1.75
+        }
+      },
+      "copy": {
+        "xxs": {
+          "value": 1.75
+        },
+        "xs": {
+          "value": 1.75
+        },
+        "s": {
+          "value": 1.75
+        },
+        "m": {
+          "value": 1.75
+        },
+        "l": {
+          "value": 1.75
+        },
+        "xl": {
+          "value": 1.75
+        },
+        "xxl": {
+          "value": 1.75
+        }
+      },
+      "interface": {
+        "xxs": {
+          "value": 1.75
+        },
+        "xs": {
+          "value": 1.75
+        },
+        "s": {
+          "value": 1.75
+        },
+        "m": {
+          "value": 1.75
+        },
+        "l": {
+          "value": 1.75
+        },
+        "xl": {
+          "value": 1.75
+        },
+        "xxl": {
+          "value": 1.75
+        }
+      },
+      "mono": {
+        "xxs": {
+          "value": 1.75
+        },
+        "xs": {
+          "value": 1.75
+        },
+        "s": {
+          "value": 1.75
+        },
+        "m": {
+          "value": 1.75
+        },
+        "l": {
+          "value": 1.75
+        },
+        "xl": {
+          "value": 1.75
+        },
+        "xxl": {
+          "value": 1.75
+        }
+      }
+    }
+  }
+}
+````
+
+</CH.Code>
+
+---
+
+`bp-factor`
+
+We want to go real big with our desktop font-size, however to have a more nuanced scaling of the font-size we need additional breakpoint-factors.
+
+<CH.Code>
+```json typo.json focus=65:75
+{
+  "ks": {
+    "font-family": {
+      "display": {
+        "value": "Garamond, Baskerville, 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif",
+        "token": {
+          "category": "Font Families",
+          "presenter": "FontFamily"
+        }
+      },
+      "copy": {
+        "value": "'Helvetica Neue', Helvetica, Arial, sans-serif",
+        "token": {
+          "category": "Font Families",
+          "presenter": "FontFamily"
+        }
+      },
+      "interface": {
+        "value": "system-ui, -apple-system, BlinkMacSystemFont, 'Avenir Next', 'Avenir', 'Segoe UI', 'Lucida Grande', 'Helvetica Neue', 'Helvetica', 'Fira Sans', 'Roboto', 'Noto', 'Droid Sans', 'Cantarell', 'Oxygen', 'Ubuntu', 'Franklin Gothic Medium', 'Century Gothic', 'Liberation Sans', sans-serif",
+        "token": {
+          "category": "Font Families",
+          "presenter": "FontFamily"
+        }
+      },
+      "mono": {
+        "value": "ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace",
+        "token": {
+          "category": "Font Families",
+          "presenter": "FontFamily"
+        }
+      }
+    },
+    "font-weight": {
+      "light": {
+        "value": 300,
+        "token": {
+          "category": "Font Weights",
+          "presenter": "FontWeight"
+        }
+      },
+      "regular": {
+        "value": 400,
+        "token": {
+          "category": "Font Weights",
+          "presenter": "FontWeight"
+        }
+      },
+      "semi-bold": {
+        "value": 600,
+        "token": {
+          "category": "Font Weights",
+          "presenter": "FontWeight"
+        }
+      },
+      "bold": {
+        "value": 700,
+        "token": {
+          "category": "Font Weights",
+          "presenter": "FontWeight"
+        }
+      }
+    },
+    "font-size": {
+      "display": {
+        "bp-factor": {
+          "phone": {
+            "value": 1
+          },
+          "tablet": {
+            "value": 1.5
+          },
+          "laptop": {
+            "value": 1.75
+          }
+        },
+        "xxs-base": {
+          "value": "0.544rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: display",
+            "presenter": "FontSize"
+          }
+        },
+        "xs-base": {
+          "value": "0.6664rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: display",
+            "presenter": "FontSize"
+          }
+        },
+        "s-base": {
+          "value": "0.8163rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: display",
+            "presenter": "FontSize"
+          }
+        },
+        "m-base": {
+          "value": "1rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: display",
+            "presenter": "FontSize"
+          }
+        },
+        "l-base": {
+          "value": "1.225rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: display",
+            "presenter": "FontSize"
+          }
+        },
+        "xl-base": {
+          "value": "1.5006rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: display",
+            "presenter": "FontSize"
+          }
+        },
+        "xxl-base": {
+          "value": "1.8383rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: display",
+            "presenter": "FontSize"
+          }
+        }
+      },
+      "copy": {
+        "bp-factor": {
+          "tablet": {
+            "value": 1.125
+          }
+        },
+        "xxs-base": {
+          "value": "0.544rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: copy",
+            "presenter": "FontSize"
+          }
+        },
+        "xs-base": {
+          "value": "0.6664rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: copy",
+            "presenter": "FontSize"
+          }
+        },
+        "s-base": {
+          "value": "0.8163rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: copy",
+            "presenter": "FontSize"
+          }
+        },
+        "m-base": {
+          "value": "1rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: copy",
+            "presenter": "FontSize"
+          }
+        },
+        "l-base": {
+          "value": "1.225rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: copy",
+            "presenter": "FontSize"
+          }
+        },
+        "xl-base": {
+          "value": "1.5006rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: copy",
+            "presenter": "FontSize"
+          }
+        },
+        "xxl-base": {
+          "value": "1.8383rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: copy",
+            "presenter": "FontSize"
+          }
+        }
+      },
+      "interface": {
+        "bp-factor": {
+          "tablet": {
+            "value": 1.125
+          }
+        },
+        "xxs-base": {
+          "value": "0.544rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: interface",
+            "presenter": "FontSize"
+          }
+        },
+        "xs-base": {
+          "value": "0.6664rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: interface",
+            "presenter": "FontSize"
+          }
+        },
+        "s-base": {
+          "value": "0.8163rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: interface",
+            "presenter": "FontSize"
+          }
+        },
+        "m-base": {
+          "value": "1rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: interface",
+            "presenter": "FontSize"
+          }
+        },
+        "l-base": {
+          "value": "1.225rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: interface",
+            "presenter": "FontSize"
+          }
+        },
+        "xl-base": {
+          "value": "1.5006rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: interface",
+            "presenter": "FontSize"
+          }
+        },
+        "xxl-base": {
+          "value": "1.8383rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: interface",
+            "presenter": "FontSize"
+          }
+        }
+      },
+      "mono": {
+        "bp-factor": {
+          "tablet": {
+            "value": 1.125
+          }
+        },
+        "xxs-base": {
+          "value": "0.544rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: mono",
+            "presenter": "FontSize"
+          }
+        },
+        "xs-base": {
+          "value": "0.6664rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: mono",
+            "presenter": "FontSize"
+          }
+        },
+        "s-base": {
+          "value": "0.8163rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: mono",
+            "presenter": "FontSize"
+          }
+        },
+        "m-base": {
+          "value": "1rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: mono",
+            "presenter": "FontSize"
+          }
+        },
+        "l-base": {
+          "value": "1.225rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: mono",
+            "presenter": "FontSize"
+          }
+        },
+        "xl-base": {
+          "value": "1.5006rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: mono",
+            "presenter": "FontSize"
+          }
+        },
+        "xxl-base": {
+          "value": "1.8383rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: mono",
+            "presenter": "FontSize"
+          }
+        }
+      }
+    },
+    "line-height": {
+      "display": {
+        "xxs": {
+          "value": 1.75
+        },
+        "xs": {
+          "value": 1.75
+        },
+        "s": {
+          "value": 1.75
+        },
+        "m": {
+          "value": 1.75
+        },
+        "l": {
+          "value": 1.75
+        },
+        "xl": {
+          "value": 1.75
+        },
+        "xxl": {
+          "value": 1.75
+        }
+      },
+      "copy": {
+        "xxs": {
+          "value": 1.75
+        },
+        "xs": {
+          "value": 1.75
+        },
+        "s": {
+          "value": 1.75
+        },
+        "m": {
+          "value": 1.75
+        },
+        "l": {
+          "value": 1.75
+        },
+        "xl": {
+          "value": 1.75
+        },
+        "xxl": {
+          "value": 1.75
+        }
+      },
+      "interface": {
+        "xxs": {
+          "value": 1.75
+        },
+        "xs": {
+          "value": 1.75
+        },
+        "s": {
+          "value": 1.75
+        },
+        "m": {
+          "value": 1.75
+        },
+        "l": {
+          "value": 1.75
+        },
+        "xl": {
+          "value": 1.75
+        },
+        "xxl": {
+          "value": 1.75
+        }
+      },
+      "mono": {
+        "xxs": {
+          "value": 1.75
+        },
+        "xs": {
+          "value": 1.75
+        },
+        "s": {
+          "value": 1.75
+        },
+        "m": {
+          "value": 1.75
+        },
+        "l": {
+          "value": 1.75
+        },
+        "xl": {
+          "value": 1.75
+        },
+        "xxl": {
+          "value": 1.75
+        }
+      }
+    }
+  }
+}
+````
+
+</CH.Code>
+
+---
+
+`line-height`
+
+If you have a hugley variying font size it makes sense to adjust the line-height.
+
+<CH.Code>
+```json typo.json focus=377:402
+{
+  "ks": {
+    "font-family": {
+      "display": {
+        "value": "Garamond, Baskerville, 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif",
+        "token": {
+          "category": "Font Families",
+          "presenter": "FontFamily"
+        }
+      },
+      "copy": {
+        "value": "'Helvetica Neue', Helvetica, Arial, sans-serif",
+        "token": {
+          "category": "Font Families",
+          "presenter": "FontFamily"
+        }
+      },
+      "interface": {
+        "value": "system-ui, -apple-system, BlinkMacSystemFont, 'Avenir Next', 'Avenir', 'Segoe UI', 'Lucida Grande', 'Helvetica Neue', 'Helvetica', 'Fira Sans', 'Roboto', 'Noto', 'Droid Sans', 'Cantarell', 'Oxygen', 'Ubuntu', 'Franklin Gothic Medium', 'Century Gothic', 'Liberation Sans', sans-serif",
+        "token": {
+          "category": "Font Families",
+          "presenter": "FontFamily"
+        }
+      },
+      "mono": {
+        "value": "ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace",
+        "token": {
+          "category": "Font Families",
+          "presenter": "FontFamily"
+        }
+      }
+    },
+    "font-weight": {
+      "light": {
+        "value": 300,
+        "token": {
+          "category": "Font Weights",
+          "presenter": "FontWeight"
+        }
+      },
+      "regular": {
+        "value": 400,
+        "token": {
+          "category": "Font Weights",
+          "presenter": "FontWeight"
+        }
+      },
+      "semi-bold": {
+        "value": 600,
+        "token": {
+          "category": "Font Weights",
+          "presenter": "FontWeight"
+        }
+      },
+      "bold": {
+        "value": 700,
+        "token": {
+          "category": "Font Weights",
+          "presenter": "FontWeight"
+        }
+      }
+    },
+    "font-size": {
+      "display": {
+        "bp-factor": {
+          "phone": {
+            "value": 1
+          },
+          "tablet": {
+            "value": 1.5
+          },
+          "laptop": {
+            "value": 1.75
+          }
+        },
+        "xxs-base": {
+          "value": "0.544rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: display",
+            "presenter": "FontSize"
+          }
+        },
+        "xs-base": {
+          "value": "0.6664rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: display",
+            "presenter": "FontSize"
+          }
+        },
+        "s-base": {
+          "value": "0.8163rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: display",
+            "presenter": "FontSize"
+          }
+        },
+        "m-base": {
+          "value": "1rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: display",
+            "presenter": "FontSize"
+          }
+        },
+        "l-base": {
+          "value": "1.225rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: display",
+            "presenter": "FontSize"
+          }
+        },
+        "xl-base": {
+          "value": "1.5006rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: display",
+            "presenter": "FontSize"
+          }
+        },
+        "xxl-base": {
+          "value": "1.8383rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: display",
+            "presenter": "FontSize"
+          }
+        }
+      },
+      "copy": {
+        "bp-factor": {
+          "tablet": {
+            "value": 1.125
+          }
+        },
+        "xxs-base": {
+          "value": "0.544rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: copy",
+            "presenter": "FontSize"
+          }
+        },
+        "xs-base": {
+          "value": "0.6664rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: copy",
+            "presenter": "FontSize"
+          }
+        },
+        "s-base": {
+          "value": "0.8163rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: copy",
+            "presenter": "FontSize"
+          }
+        },
+        "m-base": {
+          "value": "1rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: copy",
+            "presenter": "FontSize"
+          }
+        },
+        "l-base": {
+          "value": "1.225rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: copy",
+            "presenter": "FontSize"
+          }
+        },
+        "xl-base": {
+          "value": "1.5006rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: copy",
+            "presenter": "FontSize"
+          }
+        },
+        "xxl-base": {
+          "value": "1.8383rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: copy",
+            "presenter": "FontSize"
+          }
+        }
+      },
+      "interface": {
+        "bp-factor": {
+          "tablet": {
+            "value": 1.125
+          }
+        },
+        "xxs-base": {
+          "value": "0.544rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: interface",
+            "presenter": "FontSize"
+          }
+        },
+        "xs-base": {
+          "value": "0.6664rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: interface",
+            "presenter": "FontSize"
+          }
+        },
+        "s-base": {
+          "value": "0.8163rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: interface",
+            "presenter": "FontSize"
+          }
+        },
+        "m-base": {
+          "value": "1rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: interface",
+            "presenter": "FontSize"
+          }
+        },
+        "l-base": {
+          "value": "1.225rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: interface",
+            "presenter": "FontSize"
+          }
+        },
+        "xl-base": {
+          "value": "1.5006rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: interface",
+            "presenter": "FontSize"
+          }
+        },
+        "xxl-base": {
+          "value": "1.8383rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: interface",
+            "presenter": "FontSize"
+          }
+        }
+      },
+      "mono": {
+        "bp-factor": {
+          "tablet": {
+            "value": 1.125
+          }
+        },
+        "xxs-base": {
+          "value": "0.544rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: mono",
+            "presenter": "FontSize"
+          }
+        },
+        "xs-base": {
+          "value": "0.6664rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: mono",
+            "presenter": "FontSize"
+          }
+        },
+        "s-base": {
+          "value": "0.8163rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: mono",
+            "presenter": "FontSize"
+          }
+        },
+        "m-base": {
+          "value": "1rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: mono",
+            "presenter": "FontSize"
+          }
+        },
+        "l-base": {
+          "value": "1.225rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: mono",
+            "presenter": "FontSize"
+          }
+        },
+        "xl-base": {
+          "value": "1.5006rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: mono",
+            "presenter": "FontSize"
+          }
+        },
+        "xxl-base": {
+          "value": "1.8383rem",
+          "attributes": {
+            "category": "size"
+          },
+          "token": {
+            "category": "Font Sizes: mono",
+            "presenter": "FontSize"
+          }
+        }
+      }
+    },
+    "line-height": {
+      "display": {
+        "xxs": {
+          "value": 1.45
+        },
+        "xs": {
+          "value": 1.50
+        },
+        "s": {
+          "value": 1.55
+        },
+        "m": {
+          "value": 1.60
+        },
+        "l": {
+          "value": 1.65
+        },
+        "xl": {
+          "value": 1.70
+        },
+        "xxl": {
+          "value": 1.75
+        }
+      },
+      "copy": {
+        "xxs": {
+          "value": 1.75
+        },
+        "xs": {
+          "value": 1.75
+        },
+        "s": {
+          "value": 1.75
+        },
+        "m": {
+          "value": 1.75
+        },
+        "l": {
+          "value": 1.75
+        },
+        "xl": {
+          "value": 1.75
+        },
+        "xxl": {
+          "value": 1.75
+        }
+      },
+      "interface": {
+        "xxs": {
+          "value": 1.75
+        },
+        "xs": {
+          "value": 1.75
+        },
+        "s": {
+          "value": 1.75
+        },
+        "m": {
+          "value": 1.75
+        },
+        "l": {
+          "value": 1.75
+        },
+        "xl": {
+          "value": 1.75
+        },
+        "xxl": {
+          "value": 1.75
+        }
+      },
+      "mono": {
+        "xxs": {
+          "value": 1.75
+        },
+        "xs": {
+          "value": 1.75
+        },
+        "s": {
+          "value": 1.75
+        },
+        "m": {
+          "value": 1.75
+        },
+        "l": {
+          "value": 1.75
+        },
+        "xl": {
+          "value": 1.75
+        },
+        "xxl": {
+          "value": 1.75
+        }
+      }
+    }
+  }
+}
+````
+
+</CH.Code>
+
+</CH.Scrollycoding>
 
 ## Result
 

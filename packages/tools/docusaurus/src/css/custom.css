@@ -7,6 +7,7 @@
 
 :root {
   --l-section--content-padding: var(--ifm-global-spacing);
+  --ch-scrollycoding-sticker-width: 60%;
 }
 
 .navbar__item.navbar__link,
@@ -47,4 +48,14 @@ code {
 
 .ch-code-scroll-parent {
   font-size: 12px;
+}
+
+.markdown p a,
+.markdown li a {
+  text-decoration: underline;
+}
+
+.markdown p a:hover,
+.markdown li a:hover {
+  text-decoration: none;
 }
