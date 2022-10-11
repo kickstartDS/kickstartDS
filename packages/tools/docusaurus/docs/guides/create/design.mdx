@@ -4,295 +4,16 @@ sidebar_position: 2
 
 import Admonition from 'react-admonitions';
 
-# Create your Design System
-
-## Overview
-
-In this guide we'll get your first Design System, based on **kickstartDS** of course, off the ground in just 5 rather simple steps!
-
-You could say that this is **the** main guide for **kickstartDS**, as it branches out into a bunch of sub guides in the process. Hopefully giving you a well-rounded overview over everything offered and possible in the end. While also creating the draft for your first Design System in the process!
-
-The main steps will go as follows:
-
-1. [Start your Design System](#1-start-your-design-system)
-2. [Design Application](#2-design-application)
-3. [Configure Storybook](#3-configure-storybook)
-4. [Add Components](#4-add-components)
-5. [Publish your Design System](#5-publish-your-design-system)
-
-As said previously, the resulting Design System will obviously not be finished by the end of this guide, but you'll have everything set up to start on the real work. We'll add links along the way, when it makes sense, calling out concepts in play or processes to use to find and refine your own personalized use (stuff like choosing an initial component set for your Design System).
-
-TODO add link to video version on YouTube<br/>
-TODO add link to starter to shortcut guide<br/>
-TODO add CLI
-TODO add `.gitignore`, add hints about making a commit at important points
-
-## 1. Start your Design System
-
-Setting up your own Design System can be done in one of two ways:
-
-1. By [creating a new project](#create-new-project) for your Design System to live in, or
-2. by [adding everything to an existing project](#add-to-existing-project)
-
-### Create new project
-
-Start in a fresh directory inside your terminal. This should be the directory all your Design System code will live in, and that will also be pushed to a Git host, later on. It shouldn't include a `.git` folder, yet! We'll use `~/projects/my-design-system` here, with `~` denoting the users' home directory.
-
-First, let's create a `Git` repository:
-
-```bash
-$ mkdir -p ~/projects/my-design-system
-$ cd ~/projects/my-design-system
-$ git init
-
-> Initialized empty Git repository in ~/projects/my-design-system/.git/
-```
-
-<Admonition type="tip" title="Working with the terminal">
-  If any of the commands related to `git` or `npm` / `node` fail for you, or you need help working with the terminal, have a look at our `Getting Started` [page about Environment configuration](../intro/environment/index.md).
-
-Additionally you might not use `nvm` for `Node` version management. Just skip those sections, and ensure the correct version for your project is installed and active!
-
-</Admonition>
-
-Next we'll add a `.gitignore` file to the repository, that will be built up through the following sections to exclude generated code files:
-
-```bash
-$ touch .gitignore
-```
-
-Add the `node_modules` folder to it for now:
-
-```bash .gitignore
-node_modules
-```
-
-<CH.Section>
-Then we'll add a `.nvmrc` file specifying the use of `Node` `16.14` for this project (this is the version **kickstartDS** currently works off of) to our project root:
-
-<CH.Code>
-```bash .nvmrc
-16.14
-```
-
-</CH.Code>
-
-</CH.Section>
-
-Call `nvm use` right after, to activate the correct `Node` and `npm` versions:
-
-```bash
-$ nvm use
-
-> Found '~/projects/my-design-system/.nvmrc' with version <16.14>
-> Now using node v16.14.2 (npm v8.19.2)
-```
-
-Finally we'll make it a valid `npm` package, too:
-
-```bash
-$ npm init
-
-> About to write to ~/projects/my-design-system/package.json:
-> ...
-```
-
-<CH.Section>
-
-Enter the prompted information, and you'll end up with a `package.json` describing your freshly made `npm` package. Use `dist/index.js` for the [entry point](focus://5), this is where our bundled code will live. The rest is pretty much up to your liking! It should look roughly like this:
-
-<CH.Code>
-```json package.json mark=5[12:24]
-{
-  "name": "@my/design-system",
-  "version": "1.0.0",
-  "description": "Design System for all @MY needs",
-  "main": "dist/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Jonas Ulrich",
-  "license": "MIT"
-}
-```
-
-```bash .nvmrc
-16.14
-```
-
-```bash .gitignore
-node_modules
-```
-
-</CH.Code>
-
-</CH.Section>
-
-With this you can continue with `Add to existing project`. From here on out the steps will be the same.<br/>
-You'll just find that, in comparison to having an existing project, you'll probably not find any of the steps to be optional!
-
-### Add to existing project
-
-In your terminal, switch to the project that you want to add **kickstartDS** to first. We'll be adding some dependencies, some glue code and configuration to hook everything up.
-
-Some of the following steps might be optional for your personal setup, so feel free to skip them.<br/>
-For example: you might already have `React` installed in your project, so you wouldn't have to complete that part of the setup!
-
-<Admonition type="tip" title="`npm` vs `yarn` vs ...">
-  In this guide we'll be using `yarn` as our package manager of choice. Feel free to use your preferred solution instead.<br/>
-  For more details see our [page about Environment configuration](../intro/environment/index.md).
-
-_For example_: if you were using `npm`, and you'd encounter the following command to run `yarn add react@17 react-dom@17`... just replace `yarn` with `npm` and run `npm add react@17 react-dom@17` instead.
-
-</Admonition>
-
-#### Dependencies
-
-First of all we need to add some dependencies to our project:
-
-<CH.Scrollycoding>
-##### Start with existing `package.json`
-
-If you're adding to an existing project, just imagine the same lines being added to your existing `package.json`.<br/>
-We'll pretend to start fresh:
-
-<CH.Code>
-```json package.json
-{
-  "name": "@my/design-system",
-  "version": "1.0.0",
-  "description": "Design System for all @MY needs",
-  "main": "dist/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Jonas Ulrich",
-  "license": "MIT"
-}
-```
-
-```bash .nvmrc
-16.14
-```
-
-```bash .gitignore
-node_modules
-```
-
-</CH.Code>
-
----
-
-##### Add `React`
-
-<CH.Code>
-```json package.json focus=11:14
-{
-  "name": "@my/design-system",
-  "version": "1.0.0",
-  "description": "Design System for all @MY needs",
-  "main": "dist/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Jonas Ulrich",
-  "license": "MIT",
-  "dependencies": {
-    "react": "17",
-    "react-dom": "17"
-  }
-}
-```
-</CH.Code>
-
-If your project was not using `React` before, you should add a compatible version (**kickstartDS** currently uses `React 17`) of it now:
-
-```bash
-$ yarn add react@17 react-dom@17
-```
-
----
-
-##### Add `kickstartDS`
-
-<CH.Code>
-```json package.json focus=12
-{
-  "name": "@my/design-system",
-  "version": "1.0.0",
-  "description": "Design System for all @MY needs",
-  "main": "dist/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Jonas Ulrich",
-  "license": "MIT",
-  "dependencies": {
-    "@kickstartds/base": "2.0.0-canary.922.4908.0",
-    "react": "17",
-    "react-dom": "17"
-  }
-}
-```
-</CH.Code>
-
-Next we'll add the `kickstartDS` dependencies themselves. We start out by adding our `base` module (`@kickstartds/base`), which contains all of the base components, to get started:
-
-```bash
-$ yarn add @kickstartds/base@2.0.0-canary.922.4908.0
-```
-
-Learn more about the different modules **kickstartDS** has to offer in our [overview here](#). TODO link to overview of modules here
-
-</CH.Scrollycoding>
-
-This will leave us with the following files for now, at least if you've started afresh:
-
-<CH.Section>
-<CH.Code>
-```json package.json
-{
-  "name": "@my/design-system",
-  "version": "1.0.0",
-  "description": "Design System for all @MY needs",
-  "main": "dist/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Jonas Ulrich",
-  "license": "MIT",
-  "dependencies": {
-    "@kickstartds/base": "2.0.0-canary.922.4908.0",
-    "react": "17",
-    "react-dom": "17"
-  }
-}
-```
-
-```bash .nvmrc
-16.14
-```
-
-```bash .gitignore
-node_modules
-```
-
-</CH.Code>
-</CH.Section>
-
-We'll continue by applying our branding to **kickstartDS**, which will result in a bunch of token files (`JSON`) being added to the project.<br/>
-This will also give us the opportunity to set up `Storybook`, and get a first visual representation of our Design System in the browser!
-
-## 2. Design Application
+# 2. Design Application
 
 Applying your branding and corporate design to **kickstartDS** is itself done in roughly two steps:
 
 1. Use a reduced set of Branding Token to generate your initial Design Token set
 2. Fine tune the resulting Design Token set to closely fit your corporate identity
 
-### Apply branding
+## Apply branding
 
-#### Initialization
+### Initialization
 
 We start by creating a new file: `branding-token.json` at our project root:
 
@@ -305,6 +26,7 @@ Get the most up-to-date version of its content [from here](https://github.com/ki
 
 <CH.Section>
 <CH.Code>
+
 ```json branding-token.json
 {
   "color": {
@@ -314,7 +36,7 @@ Get the most up-to-date version of its content [from here](https://github.com/ki
     "foreground": "#000",
     "link": "#1c7ed6",
     "link-inverted": "#a5d8ff",
-    "positive": "#66a80f",/zoo
+    "positive": "#66a80f",
     "positive-inverted": "#94d82d",
     "informative": "#1a78cc",
     "informative-inverted": "#4dabf7",
@@ -422,9 +144,9 @@ node_modules
   in case this guide gets outdated!
 </Admonition>
 
-#### Select Branding Token
+### Select Branding Token
 
-For a more in-depth overview of this process, have a look at our [Generate Token Set guide](theming/generate-token-set.md) or the [concepts page about `Branding Token`](../concepts/token/branding-token.md), detailing all values in use.<br/>
+For a more in-depth overview of this process, have a look at our [Generate Token Set guide](../theming/generate-token-set.md) or the [concepts page about `Branding Token`](../../concepts/token/branding-token.md), detailing all values in use.<br/>
 
 But to get a first feel for working with the file, and to add some flavour to our Design System, we'll change some select values around. And feel free to replace everything with values that seem more appropriate for you, or that fit your particular brand (maybe even because you opted to follow the more detailed guide above). If you're wondering which values we selected for this guide... we're mostly matching our own brand for this guide:
 
@@ -442,16 +164,18 @@ But to get a first feel for working with the file, and to add some flavour to ou
 | `scale-ratio`          | `1.35`                                                                                                                                          |
 | `bp-ratio`             | `1.15`                                                                                                                                          |
 
-#### Apply Branding Token
+### Apply Branding Token
 
 So let's get into it:
 
 <CH.Scrollycoding>
-##### Start with copied `branding-token.json`
+
+#### Start with copied `branding-token.json`
 
 This is the file you've copied before, we'll start updating it piecemeal to show off common ways of design application.
 
 <CH.Code>
+
 ```json branding-token.json
 {
   "color": {
@@ -564,13 +288,14 @@ node_modules
 
 ---
 
-##### Customize `primary` color
+#### Customize `primary` color
 
 Most brands have such a `primary` color as part of their corporate design guidelines. This will be used to highlight elements, and give them more importance.
 
 Next to `primary` itself, we'll also define its counter part `primary-inverted` as `#ecff00` (`#fff` / `white` works for most uses otherwise, read about the finer [details here](#) TODO add link).
 
 <CH.Code>
+
 ```json branding-token.json focus=2:4
 {
   "color": {
@@ -668,13 +393,14 @@ Next to `primary` itself, we'll also define its counter part `primary-inverted` 
 
 ---
 
-##### Customize `foreground` and `link` colors
+#### Customize `foreground` and `link` colors
 
 For this guide we'll have just change the `foreground` color, but this will influence how elements and text are rendered in components. So it is quite an influential choice.
 
 Additionally we'll define some slightly different colors for our `link` and `link-inverted` (they always come in pairs!), to make it unique.
 
 <CH.Code>
+
 ```json branding-token.json focus=2:4,6:8
 {
   "color": {
@@ -772,13 +498,14 @@ Additionally we'll define some slightly different colors for our `link` and `lin
 
 ---
 
-##### Customize tonal colors
+#### Customize tonal colors
 
 There are a bunch of tokens that, for lack of a better explanation, relate to the tone of voice the element using it should have. Most commonly this would be something like a notice shown to the user (which might be successful = positive, neutral = informative, etc).
 
 Because it seems to fit our branding, and doesn't interfere with user expectations otherwise, we'll change `informative` (and you guessed it, `informative-inverted`) to our `primary` color.
 
 <CH.Code>
+
 ```json branding-token.json focus=2:4,6:8,11:12
 {
   "color": {
@@ -876,11 +603,12 @@ Because it seems to fit our branding, and doesn't interfere with user expectatio
 
 ---
 
-##### Add a fitting font
+#### Add a fitting font
 
 In this guide we'll opt for a native system font stack for our `display` and `copy` fonts. We'll leave `interface` and `mono` and all size values untouched for now. If you have other requirements (for example a self-hosted font, or one by Google Fonts) have a look at our [Fonts guide](#) TODO create and link guide.
 
 <CH.Code>
+
 ```json branding-token.json focus=18:20,29:30
 {
   "color": {
@@ -978,13 +706,14 @@ In this guide we'll opt for a native system font stack for our `display` and `co
 
 ---
 
-##### Adjust spacing behaviour
+#### Adjust spacing behaviour
 
 As we have a pretty dense layout in mind, we reduce `spacing` > `scale-ratio` and `bp-ratio` a bit. This will result in spacing in general scaling a bit less.
 
 We keep the general spacing of `8px`, though. We'll also leave the rest of the values untouched as they'll work just fine for this guide!
 
 <CH.Code>
+
 ```json branding-token.json focus=63,65:66
 {
   "color": {
@@ -1084,7 +813,7 @@ We keep the general spacing of `8px`, though. We'll also leave the rest of the v
 
 Now that we have a slightly modified, up-to-date version of our Branding Token in place, we can start hooking everything up.
 
-#### Integration
+### `kickstartDS` Integration
 
 First, add the `kickstartDS CLI` to your project:
 
@@ -1097,6 +826,7 @@ Read more about our CLI [here](#) TODO add link
 Then add the following two lines to your `package.json` scripts block:
 
 <CH.Code>
+
 ```json package.json focus=6:8,13,15
 {
   "name": "@my/design-system",
@@ -1112,7 +842,7 @@ Then add the following two lines to your `package.json` scripts block:
   "license": "MIT",
   "dependencies": {
     "@kickstartds/base": "2.0.0-canary.922.4908.0",
-    "kickstartds": "0.2.31",
+    "kickstartds": "0.2.32",
     "react": "17",
     "react-dom": "17"
   }
@@ -1210,7 +940,7 @@ node_modules
 
 </CH.Code>
 
-#### Generate your first Design Token set
+### Generate first Design Token set
 
 Generate your first full set of Design Token by calling:
 
@@ -1220,56 +950,59 @@ $ yarn init-tokens
 
 This uses your `branding-token.json` as an input, and generates a folder `tokens` for you. That folder holds `JSON` files defining your Design Token by category:
 
-- Category 1
-- Category 2
+```bash
+$ tree tokens
 
-TODO: describe this is more of a first-time / one-time use of thing
+> tokens
+> ├── background-color.json
+> ├── border-color.json
+> ├── border.json
+> ├── box-shadow.json
+> ├── breakpoints.json
+> ├── color.json
+> ├── deprecated.json
+> ├── depth.json
+> ├── spacing.json
+> ├── text-color.json
+> ├── transition.json
+> └── typo.json
+>
+> 0 directories, 12 files
+```
 
-#### Compile Design tokens
+You'll only use this mechanism when first setting up your tokens. It's meant to specifically ease this workflow. Running it again will overwrite changes you manually did to your Design Token set, which is probably not intended!
 
-Finally, to test the integration works as expected, we'll want to create one additional file: `sd.config.js`. As the name may imply, this is further configuration for our Design Tokens (more specifically the Style Dictionary that gets used under the hood) to convert them into different outputs:
+### Compile Design Token
 
+Finally, to test the integration works as expected, we'll first want to create one additional file: `sd.config.js`. As the name may imply, this is further configuration for our Design Token, to convert them into different outputs (more specifically the Style Dictionary that gets used under the hood):
+
+This is based on `Style Dictionary`, so generally follows [their configuration scheme](https://amzn.github.io/style-dictionary/#/config?id=using-configuration-files).
+
+Let's details some lines:
+
+<CH.Spotlight>
 <CH.Code>
+
 ```js sd.config.cjs
 const path = require('path');
-const StyleDictionary = require("style-dictionary");
-const { config } = require("@kickstartds/core/design-tokens");
+const StyleDictionary = require('style-dictionary');
+const { config } = require('@kickstartds/style-dictionary');
 
 module.exports = StyleDictionary.extend(config).extend({
-source: [
-"tokens/**/*.json",
-path.join(path.dirname(require.resolve('@kickstartds/core/package.json')), 'source/design-tokens/icons/*.svg')
-],
-platforms: {
-css: {
-buildPath: 'src/'
-},
-scss: {
-buildPath: 'src/'
-},
-html: {
-buildPath: 'src/'
-},
-jsx: {
-buildPath: '.storybook/'
-},
-storybook: {
-buildPath: '.storybook/'
-},
-js: {
-transforms: ["attribute/cti", "name/cti/pascal", "size/rem", "color/css"],
-buildPath: ".storybook/",
-files: [
-{
-destination: "tokens.js",
-format: "javascript/es6",
-},
-],
-},
-},
+  source: [
+    'tokens/**/*.json',
+    path.join(
+      path.dirname(require.resolve('@kickstartds/core/package.json')),
+      'source/design-tokens/icons/*.svg'
+    ),
+  ],
+  platforms: {
+    css: {
+      buildPath: 'src/token/',
+    },
+  },
 });
-
-````
+```
 
 ```json package.json
 {
@@ -1286,12 +1019,12 @@ format: "javascript/es6",
   "license": "MIT",
   "dependencies": {
     "@kickstartds/base": "2.0.0-canary.922.4908.0",
-    "kickstartds": "0.2.31",
+    "kickstartds": "0.2.32",
     "react": "17",
     "react-dom": "17"
   }
 }
-````
+```
 
 ```json branding-token.json
 {
@@ -1384,77 +1117,315 @@ node_modules
 
 </CH.Code>
 
+---
+
+#### Import dependencies
+
+Import `style-dictionary` to use their native `StyleDictionary.extend`, and get our pre-made, **kickstartDS** compatible, configuration from `@kickstartds/style-dictionary`.
+
+<CH.Code>
+
+```js sd.config.cjs focus=2:3
+const path = require('path');
+const StyleDictionary = require('style-dictionary');
+const { config } = require('@kickstartds/style-dictionary');
+
+module.exports = StyleDictionary.extend(config).extend({
+  source: [
+    'tokens/**/*.json',
+    path.join(
+      path.dirname(require.resolve('@kickstartds/core/package.json')),
+      'source/design-tokens/icons/*.svg'
+    ),
+  ],
+  platforms: {
+    css: {
+      buildPath: 'src/token/',
+    },
+  },
+});
+```
+
+```json package.json
+
+```
+
+```json branding-token.json
+
+```
+
+```bash .nvmrc
+
+```
+
+```bash .gitignore
+
+```
+
+</CH.Code>
+
+---
+
+#### Extend configuration
+
+Our pre-made configuration gets extended by our local project setup. That way we can reuse stuff for easier configuration, if needed.
+
+<CH.Code>
+
+```js sd.config.cjs focus=5
+const path = require('path');
+const StyleDictionary = require('style-dictionary');
+const { config } = require('@kickstartds/style-dictionary');
+
+module.exports = StyleDictionary.extend(config).extend({
+  source: [
+    'tokens/**/*.json',
+    path.join(
+      path.dirname(require.resolve('@kickstartds/core/package.json')),
+      'source/design-tokens/icons/*.svg'
+    ),
+  ],
+  platforms: {
+    css: {
+      buildPath: 'src/token/',
+    },
+  },
+});
+```
+
+```json package.json
+
+```
+
+```json branding-token.json
+
+```
+
+```bash .nvmrc
+
+```
+
+```bash .gitignore
+
+```
+
+</CH.Code>
+
+---
+
+#### Design Token location
+
+We configure the default Design Token location, which is `tokens` as a glob `tokens/**/*.json`...
+
+<CH.Code>
+
+```js sd.config.cjs focus=6:7
+const path = require('path');
+const StyleDictionary = require('style-dictionary');
+const { config } = require('@kickstartds/style-dictionary');
+
+module.exports = StyleDictionary.extend(config).extend({
+  source: [
+    'tokens/**/*.json',
+    path.join(
+      path.dirname(require.resolve('@kickstartds/core/package.json')),
+      'source/design-tokens/icons/*.svg'
+    ),
+  ],
+  platforms: {
+    css: {
+      buildPath: 'src/token/',
+    },
+  },
+});
+```
+
+```json package.json
+
+```
+
+```json branding-token.json
+
+```
+
+```bash .nvmrc
+
+```
+
+```bash .gitignore
+
+```
+
+</CH.Code>
+
+---
+
+#### Default SVG icons
+
+... and tell `Style Dictionary` where to look for our default icons. These are used by **kickstartDS** components, and need to be present in different formats later on (depending on the use case).
+
+<CH.Code>
+
+```js sd.config.cjs focus=6:12
+const path = require('path');
+const StyleDictionary = require('style-dictionary');
+const { config } = require('@kickstartds/style-dictionary');
+
+module.exports = StyleDictionary.extend(config).extend({
+  source: [
+    'tokens/**/*.json',
+    path.join(
+      path.dirname(require.resolve('@kickstartds/core/package.json')),
+      'source/design-tokens/icons/*.svg'
+    ),
+  ],
+  platforms: {
+    css: {
+      buildPath: 'src/token/',
+    },
+  },
+});
+```
+
+```json package.json
+
+```
+
+```json branding-token.json
+
+```
+
+```bash .nvmrc
+
+```
+
+```bash .gitignore
+
+```
+
+</CH.Code>
+
+---
+
+#### Platforms
+
+To test that our integration works as expected we'll add the `css` platform for now, which will result in our Design Token being converted to CSS Custom Properties, as `src/token/token.css`.
+
+<CH.Code>
+
+```js sd.config.cjs focus=13:17
+const path = require('path');
+const StyleDictionary = require('style-dictionary');
+const { config } = require('@kickstartds/style-dictionary');
+
+module.exports = StyleDictionary.extend(config).extend({
+  source: [
+    'tokens/**/*.json',
+    path.join(
+      path.dirname(require.resolve('@kickstartds/core/package.json')),
+      'source/design-tokens/icons/*.svg'
+    ),
+  ],
+  platforms: {
+    css: {
+      buildPath: 'src/token/',
+    },
+  },
+});
+```
+
+```json package.json
+
+```
+
+```json branding-token.json
+
+```
+
+```bash .nvmrc
+
+```
+
+```bash .gitignore
+
+```
+
+</CH.Code>
+</CH.Spotlight>
+
 <Admonition type="tip" title="Using correct file extension">
   It's important to actually use `cjs` as the file extension here. TODO we
   should add an actual explanation here!
 </Admonition>
 
-We basically use the configuration provided by... TODO how does correct, current `sd.config.cjs` look like? Shouldn't it be `@kickstartds/style-dictionary`?
-TODO add description which paths are configured here
-TODO can Storybook / any task be actively stopped from running by extension? return `false`?
+You can build your Design Token set into different outputs using `Style Dictionary` and **kickstartDS**. So far we've mainly configured how token are ingested, but we'll build on our single test platform `css` in the process of this guide. Adding integrations for Storybook, the use in **kickstartDS** components, and so on! By re-using our pre-made configurations we only have to define a `buildPath` to activate a platform. Optionally you can define file names with `files`, too (read more in our [concepts page about Style Dictionary](#) TODO add link).
 
-<br />
-Read more about [our usage of it](#) TODO add link or [how you can benefit](#) TODO
-add link.
+With all of that in place, for the first time compile your Design Token set into CSS Custom Properties now:
 
-### Fine tune the design
+```bash
+$ yarn build-tokens
+```
+
+If everything worked as expected, you should end up with a long `src/token/token.css` file and the following output on your terminal:
+
+```
+yarn run v1.22.18
+$ kickstartDS tokens compile --cleanup --rc-only
+  _    _      _        _             _   ____  ____
+ | | _(_) ___| | _____| |_ __ _ _ __| |_|  _ \/ ___|
+ | |/ / |/ __| |/ / __| __/ _` | '__| __| | | \___ \
+ |   <| | (__|   <\__ \ || (_| | |  | |_| |_| |___) |
+ |_|\_\_|\___|_|\_\___/\__\__,_|_|   \__|____/|____/
+
+______________/\\\\\\\\\__/\\\______________/\\\\\\\\\\\_______
+ ___________/\\\////////__\/\\\_____________\/////\\\///________
+  _________/\\\/___________\/\\\_________________\/\\\___________
+   ________/\\\_____________\/\\\_________________\/\\\___________
+    _______\/\\\_____________\/\\\_________________\/\\\___________
+     _______\//\\\____________\/\\\_________________\/\\\___________
+      ________\///\\\__________\/\\\_________________\/\\\___________
+       __/\\\____\////\\\\\\\\\_\/\\\\\\\\\\\\\\\__/\\\\\\\\\\\__/\\\_
+        _\///________\/////////__\///////////////__\///////////__\///__
+
+Version: 0.2.32
+For more information visit:
+https://www.kickstartDS.com/cli
+
+Starting...
+[kickstartDS: general] [info]: welcome to the kickstartDS CLI
+[kickstartDS: tokens/compile] starting: compile command with compile variable compile-task
+[1/1] [compile: check] [info]: checking prerequesites before starting
+[1/1] [compile: check] [info]: prerequesites met, starting
+[compile: cleanup] [info]: cleaning up temp dir /tmp/tokens-compile-compile-task before starting command
+[compile: cleanup] [info]: finished cleaning up temp dir /tmp/tokens-compile-compile-task before starting command
+[1/1] [compile: compile] [info]: running the compile subtask
+[1/1] [compile: compile] [info]: getting Style Dictionary from token files
+[1/1] [compile: compile] [info]: compiling Style Dictionary to needed CSS and assets
+
+css
+✔︎ src/token/tokens.css
+[1/1] [compile: compile] [info]: copying generated CSS and assets to local folder
+[1/1] [compile: compile] [info]: finished running the compile subtask successfully
+[kickstartDS: tokens/compile] finished: compile command with compile variable compile-task
+Done in 1.06s.
+
+```
+
+<Admonition type="tip" title="To commit, or not to commit...">
+  It's up to personal / team preference if the generated `token.css` file should be added to your repository... or your `.gitignore`.
+
+There are valid arguments to make for both sides, so you should just follow what feels right for you!
+
+</Admonition>
+
+## Fine tune the design
 
 TODO TBD(??)
 
-## 3. Configure Storybook
+## Result
 
-TODO there should be a page detailing `Storybook`, and our usage of it, somewhere. Probably `Integrations`... write and link it
+TODO This will leave us with the following files for now, at least if you've started afresh:
 
-## 4. Add Components
+## Next Step
 
-Now we'll get to the meat of it... adding your first set of components. Which ones you'll utimately need, and subsequentially build, can vary wildly based on your Design System needs. We'll add some exemplary ones now, to illustrate the main ways we offer to do this:
-
-- Component Workflow 1
-- Component Workflow 2
-- Component Workflow 3
-
-Feel free to change these examplary components being implemented around to something you'll actually need, if you happen to have something in mind already.<br/>
-We'll try adding some components that are commonly needed, so it should be a good starting point either way!
-
-If you want to take a deeper dive on finding your first component set right now, jump over to our Guides around the `Design System Initiative`, and come back to this point later!
-
-TODO This should be linked to Guides following our `Design System Initiative`:<br/>
-https://www.kickstartds.com/services/
-
-Should also include prominent call out to that `services` page, to advertise our agency services around this!
-
-This will result in a bunch of components that need to be added. Those can be put into different categories, and for each category we will need a Guide outlining that way of adding a component:
-
-- `JSON Schema`
-  - **Repurpose existing component**: write new `JSON Schema`, and mainly use one component as the basis... re-wiring properties. All definitions are written manually & explicitly
-  - **Repurpose existing components**: build upon last guide, combine multiple components in building the new one. Rest stays the same.
-  - **Reference existing component**: write new `JSON Schema`, and mainly use one component as the basis... still re-wiring properties, but also using stuff like `$ref` and `allOf` in the schema. Definitions get re-used as much as possible
-  - **Reference existing components**: again, build upon last guide, combine multiple components.
-  - **Layering existing component**: show how to layer simple components, like a `Button`, for use in your own Design System. Should show referencing and explicit case of property definition. Explain naming convention for layering!
-  - **Overwriting existing component**: show how to overwrite existing property definitions, for example to define a different default
-  - **Extending existing component**: show how to extend a component
-- `React` template
-  - **Customize markup**: Show how you can replace the markup of specific components
-  - **Customize markup through `Render Props`**: Show how you can replace behaviour through `Render Props` in certain spots
-  - **Switch components with `Context`/`Provider`**: Show how you can select which component to render through the use of `Context`s and `Provider`s, even on a per element basis
-
-All these guides need to include sections on:
-
-- `JSON Schema`
-- `React` template
-
-Orthogonal to that, we will also need Guides on additional styling / theming / branding for a bunch of scenarios. Those are not included above, yet.
-
-### Establish structure
-
-### Implementation
-
-#### Component implementation workflow 1
-
-#### Component implementation workflow 2
-
-#### Component implementation workflow 3
-
-#### Fine tuning `Component Token`
-
-## 5. Publish your Design System
+TODO add description

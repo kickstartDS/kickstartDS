@@ -1,0 +1,276 @@
+---
+sidebar_position: 1
+---
+
+import Admonition from 'react-admonitions';
+
+# 1. Start your Design System
+
+## Overview
+
+Setting up your own Design System can be done in one of two ways:
+
+1. By [creating a new project](#create-new-project) for your Design System to live in, or
+2. by [adding everything to an existing project](#add-to-existing-project)
+
+## Create new project
+
+Start in a fresh directory inside your terminal. This should be the directory all your Design System code will live in, and that will also be pushed to a Git host, later on. It shouldn't include a `.git` folder, yet! We'll use `~/projects/my-design-system` here, with `~` denoting the users' home directory.
+
+First, let's create a `Git` repository:
+
+```bash
+$ mkdir -p ~/projects/my-design-system
+$ cd ~/projects/my-design-system
+$ git init
+
+> Initialized empty Git repository in ~/projects/my-design-system/.git/
+```
+
+<Admonition type="tip" title="Working with the terminal">
+  If any of the commands related to `git` or `npm` / `node` fail for you, or you need help working with the terminal, have a look at our `Getting Started` [page about Environment configuration](../../intro/environment/index.md).
+
+Additionally you might not use `nvm` for `Node` version management. Just skip those sections, and ensure the correct version for your project is installed and active!
+
+</Admonition>
+
+Next we'll add a `.gitignore` file to the repository, that will be built up through the following sections to exclude generated code files:
+
+```bash
+$ touch .gitignore
+```
+
+Add the `node_modules` folder to it for now:
+
+```bash .gitignore
+node_modules
+```
+
+<CH.Section>
+Then we'll add a `.nvmrc` file specifying the use of `Node` `16.14` for this project (this is the version **kickstartDS** currently works off of) to our project root:
+
+<CH.Code>
+
+```bash .nvmrc
+16.14
+```
+
+</CH.Code>
+
+</CH.Section>
+
+Call `nvm use` right after, to activate the correct `Node` and `npm` versions:
+
+```bash
+$ nvm use
+
+> Found '~/projects/my-design-system/.nvmrc' with version <16.14>
+> Now using node v16.14.2 (npm v8.19.2)
+```
+
+Finally we'll make it a valid `npm` package, too:
+
+```bash
+$ npm init
+
+> About to write to ~/projects/my-design-system/package.json:
+> ...
+```
+
+<CH.Section>
+
+Enter the prompted information, and you'll end up with a `package.json` describing your freshly made `npm` package. Use `dist/index.js` for the [entry point](focus://5), this is where our bundled code will live. The rest is pretty much up to your liking! It should look roughly like this:
+
+<CH.Code>
+
+```json package.json mark=5[12:24]
+{
+  "name": "@my/design-system",
+  "version": "1.0.0",
+  "description": "Design System for all @MY needs",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jonas Ulrich",
+  "license": "MIT"
+}
+```
+
+```bash .nvmrc
+16.14
+```
+
+```bash .gitignore
+node_modules
+```
+
+</CH.Code>
+
+</CH.Section>
+
+With this you can continue with `Add to existing project`. From here on out the steps will be the same.<br/>
+You'll just find that, in comparison to having an existing project, you'll probably not find any of the steps to be optional!
+
+## Add to existing project
+
+In your terminal, switch to the project that you want to add **kickstartDS** to first. We'll be adding some dependencies, some glue code and configuration to hook everything up.
+
+Some of the following steps might be optional for your personal setup, so feel free to skip them.<br/>
+For example: you might already have `React` installed in your project, so you wouldn't have to complete that part of the setup!
+
+<Admonition type="tip" title="`npm` vs `yarn` vs ...">
+  In this guide we'll be using `yarn` as our package manager of choice. Feel free to use your preferred solution instead.<br/>
+  For more details see our [page about Environment configuration](../../intro/environment/index.md).
+
+_For example_: if you were using `npm`, and you'd encounter the following command to run `yarn add react@17 react-dom@17`... just replace `yarn` with `npm` and run `npm add react@17 react-dom@17` instead.
+
+</Admonition>
+
+### Dependencies
+
+First of all we need to add some dependencies to our project:
+
+<CH.Scrollycoding>
+
+#### Start with existing `package.json`
+
+If you're adding to an existing project, just imagine the same lines being added to your existing `package.json`.<br/>
+We'll pretend to start fresh:
+
+<CH.Code>
+
+```json package.json
+{
+  "name": "@my/design-system",
+  "version": "1.0.0",
+  "description": "Design System for all @MY needs",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jonas Ulrich",
+  "license": "MIT"
+}
+```
+
+```bash .nvmrc
+16.14
+```
+
+```bash .gitignore
+node_modules
+```
+
+</CH.Code>
+
+---
+
+#### Add `React`
+
+<CH.Code>
+
+```json package.json focus=11:14
+{
+  "name": "@my/design-system",
+  "version": "1.0.0",
+  "description": "Design System for all @MY needs",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jonas Ulrich",
+  "license": "MIT",
+  "dependencies": {
+    "react": "17",
+    "react-dom": "17"
+  }
+}
+```
+
+</CH.Code>
+
+If your project was not using `React` before, you should add a compatible version (**kickstartDS** currently uses `React 17`) of it now:
+
+```bash
+$ yarn add react@17 react-dom@17
+```
+
+---
+
+#### Add `kickstartDS`
+
+<CH.Code>
+
+```json package.json focus=12
+{
+  "name": "@my/design-system",
+  "version": "1.0.0",
+  "description": "Design System for all @MY needs",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jonas Ulrich",
+  "license": "MIT",
+  "dependencies": {
+    "@kickstartds/base": "2.0.0-canary.922.4908.0",
+    "react": "17",
+    "react-dom": "17"
+  }
+}
+```
+
+</CH.Code>
+
+Next we'll add the `kickstartDS` dependencies themselves. We start out by adding our `base` module (`@kickstartds/base`), which contains all of the base components, to get started:
+
+```bash
+$ yarn add @kickstartds/base@2.0.0-canary.922.4908.0
+```
+
+Learn more about the different modules **kickstartDS** has to offer in our [overview here](#). TODO link to overview of modules here
+
+</CH.Scrollycoding>
+
+## Result
+
+This will leave us with the following files for now, at least if you've started afresh:
+
+<CH.Section>
+<CH.Code>
+
+```json package.json
+{
+  "name": "@my/design-system",
+  "version": "1.0.0",
+  "description": "Design System for all @MY needs",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jonas Ulrich",
+  "license": "MIT",
+  "dependencies": {
+    "@kickstartds/base": "2.0.0-canary.922.4908.0",
+    "react": "17",
+    "react-dom": "17"
+  }
+}
+```
+
+```bash .nvmrc
+16.14
+```
+
+```bash .gitignore
+node_modules
+```
+
+</CH.Code>
+</CH.Section>
+
+## Next Step
+
+We'll continue by applying our branding to **kickstartDS**, which will result in a bunch of token files (`JSON`) being added to the project.<br/>
+This will also give us the opportunity to set up `Storybook`, and get a first visual representation of our Design System in the browser!
