@@ -21,7 +21,6 @@ a.footer__link-item {
 }
 
 .announcementBar_---------node_modules-\@docusaurus-theme-classic-lib-theme-AnnouncementBar-styles-module {
-  /* color: var(--ks-color-primary-inverted-base) !important; */
   background-color: var(--ifm-color-primary) !important;
 }
 
@@ -35,7 +34,10 @@ a.footer__link-item {
 }
 
 code {
-  border: none;
+  border: 0;
+  color: var(--ifm-code-color);
+  font-weight: 600;
+  vertical-align: baseline;
 }
 
 .navbar__link--active {
@@ -58,4 +60,17 @@ code {
 .markdown p a:hover,
 .markdown li a:hover {
   text-decoration: none;
+}
+
+.toggleButton_---------node_modules-\@docusaurus-theme-classic-lib-theme-ColorModeToggle-styles-module:hover {
+  background: var(--ks-background-color-interface-interactive-hover) !important;
+}
+
+.c-teaser.js-linked,
+.pagination-nav__link {
+  transition: box-shadow, border-color var(--ks-duration-fast) !important;
+}
+
+.ch-code-scroll-content > div {
+  transform: translateX(0px) translateY(19px) scale(1) !important;
 }

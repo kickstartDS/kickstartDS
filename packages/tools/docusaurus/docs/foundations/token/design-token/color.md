@@ -1,27 +1,76 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 ---
 
 # Color
 
-## Core token
+## Core Token
+
+The token can be found in `color.json`.
 
 ### Color palette
 
-These are the base colors. They are referenced in semantic colors and shouldnt be applied directly.
-
-|                                                         | Token                    | Application                                            |
+|                                                         | Token                    | Description                                            |
 | ------------------------------------------------------- | ------------------------ | ------------------------------------------------------ |
 | <div className="color-preview color-primary"></div>     | `--ks-color-primary`     | High priority elements                                 |
 | <div className="color-preview color-fg"></div>          | `--ks-color-fg`          | Default foreground color, most prevelant in copy text. |
 | <div className="color-preview color-link"></div>        | `--ks-color-link`        | Hyperlink color                                        |
 | <div className="color-preview color-transparent"></div> | `--ks-color-transparent` | Elements featuring transparency                        |
 
+<CH.Section>
+<CH.Code>
+
+```json color.json
+{
+  "ks": {
+    "color": {
+      "primary": {
+        "base": {
+          "value": {
+            "r": 51,
+            "g": 51,
+            "b": 51,
+            "a": 1
+          },
+          "attributes": {
+            "category": "color"
+          },
+          "token": {
+            "category": "Colors: Primary",
+            "presenter": "Color"
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+```css tokens.css
+:root,
+[ks-theme] {
+  --ks-color-primary-base: #05566a;
+}
+
+:root,
+[ks-theme],
+[ks-inverted='false'] {
+  --ks-color-primary: var(--ks-color-primary-base);
+}
+
+[ks-inverted='true'] {
+  --ks-color-primary: var(--ks-color-primary-inverted-base);
+}
+```
+
+</CH.Code>
+</CH.Section>
+
 ### Color scales
 
-`--ks-color-primary` and `--ks-color-fg` have native scales.  
-`alpha` is a transparency scale.  
-`to-bg` is a scale that mixes in the background-color (`--ks-color-fg-inverted`).
+kickstartDS generates color scales based on your Core Token.  
+`to-bg` mixes in `--ks-background-color-default` (by default defined as `--ks-color-fg-inverted`).  
+`alpha` adds transparency.
 
 <div className="split-table">
 
@@ -51,99 +100,355 @@ These are the base colors. They are referenced in semantic colors and shouldnt b
 
 </div>
 
-## Semantic token
+<CH.Section>
+<CH.Code rows={30}>
 
-Color-token whith a dedicated application.
-
-| Token suffix | Application                                                             |
-| ------------ | ----------------------------------------------------------------------- |
-| `primary`    | Highlights elements. The most prevalent color of the design system.     |
-| `accent`     | Highlights elements that are hierarchically second to primary elements. |
-| `default`    | The default color of elements. Used as a fallback.                      |
-| `clear`      | Elements featuring transparency                                         |
-| `interface`  | Signals user interactability                                            |
-
-### Color types
-
-Semantic colors are categorised into **background-color**, **border-color** & **text-color**.
-
-|                                                          | Token type         | Application                                                             |
-| -------------------------------------------------------- | ------------------ | ----------------------------------------------------------------------- |
-| <div className="color-preview background-primary"></div> | `background-color` | Highlights elements. The most prevalent color of the design system.     |
-| <div className="color-preview background-accent"></div>  | `text-color`       | Highlights elements that are hierarchically second to primary elements. |
-| <div className="color-preview background-default"></div> | `border-color`     | The default background-color. Used on page the background.              |
-
-### Interactive concept
-
-Applies to primary-, interface- & clear-token
-
-|                                                                 | Token                                              | Application                      |
-| --------------------------------------------------------------- | -------------------------------------------------- | -------------------------------- |
-| <div className="color-preview background-primary"></div>        | `--ks-background-color-primary-interactive`        | Signals interactability          |
-| <div className="color-preview background-primary-hover"></div>  | `--ks-background-color-primary-interactive-hover`  | State of the element on hover    |
-| <div className="color-preview background-primary-active"></div> | `--ks-background-color-primary-interactive-active` | State of the element when active |
-
-```json title="background-color.json"
-"interactive": {
-  "base": {
-    "value": "{ks.color.primary.base}",
-    "attributes": {
-      "category": "color"
-    },
-    "token": {
-      "category": "Colors: Background Primary",
-      "presenter": "Color"
-    }
-  },
-  "hover": {
-    "base": {
-      "value": "{ks.color.primary.to-bg.2.base}",
-      "attributes": {
-        "category": "color"
-      },
-      "token": {
-        "category": "Colors: Background Primary",
-        "presenter": "Color"
+```json color.json
+{
+  "ks": {
+    "color": {
+      "primary": {
+        "alpha": {
+          "1": {
+            "base": {
+              "value": {
+                "r": 51,
+                "g": 51,
+                "b": 51,
+                "a": 0.05
+              },
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Primary",
+                "presenter": "Color"
+              }
+            }
+          },
+          "2": {
+            "base": {
+              "value": {
+                "r": 51,
+                "g": 51,
+                "b": 51,
+                "a": 0.13
+              },
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Primary",
+                "presenter": "Color"
+              }
+            }
+          },
+          "3": {
+            "base": {
+              "value": {
+                "r": 51,
+                "g": 51,
+                "b": 51,
+                "a": 0.24
+              },
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Primary",
+                "presenter": "Color"
+              }
+            }
+          },
+          "4": {
+            "base": {
+              "value": {
+                "r": 51,
+                "g": 51,
+                "b": 51,
+                "a": 0.37
+              },
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Primary",
+                "presenter": "Color"
+              }
+            }
+          },
+          "5": {
+            "base": {
+              "value": {
+                "r": 51,
+                "g": 51,
+                "b": 51,
+                "a": 0.5
+              },
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Primary",
+                "presenter": "Color"
+              }
+            }
+          },
+          "6": {
+            "base": {
+              "value": {
+                "r": 51,
+                "g": 51,
+                "b": 51,
+                "a": 0.63
+              },
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Primary",
+                "presenter": "Color"
+              }
+            }
+          },
+          "7": {
+            "base": {
+              "value": {
+                "r": 51,
+                "g": 51,
+                "b": 51,
+                "a": 0.76
+              },
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Primary",
+                "presenter": "Color"
+              }
+            }
+          },
+          "8": {
+            "base": {
+              "value": {
+                "r": 51,
+                "g": 51,
+                "b": 51,
+                "a": 0.87
+              },
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Primary",
+                "presenter": "Color"
+              }
+            }
+          },
+          "9": {
+            "base": {
+              "value": {
+                "r": 51,
+                "g": 51,
+                "b": 51,
+                "a": 0.95
+              },
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Primary",
+                "presenter": "Color"
+              }
+            }
+          }
+        }
       }
-    }
-  },
-  "active": {
-    "base": {
-      "value": "{ks.color.primary.to-bg.4.base}",
-      "attributes": {
-        "category": "color"
-      },
-      "token": {
-        "category": "Colors: Background Primary",
-        "presenter": "Color"
-      }
-    }
-  }
-},
-```
-
-### Translucent atribute
-
-Applies to primary-token
-
-|                                                              | Token                                       |
-| ------------------------------------------------------------ | ------------------------------------------- |
-| <div className="color-preview background-translucent"></div> | `--ks-background-color-primary-translucent` |
-
-```json title="background-color.json"
-"translucent": {
-  "base": {
-    "value": "{ks.color.primary.alpha.8.base}",
-    "attributes": {
-      "category": "color"
-    },
-    "token": {
-      "category": "Colors: Background Primary",
-      "presenter": "Color"
     }
   }
 }
 ```
+
+```css token.css
+:root,
+[ks-theme] {
+  --ks-color-primary-alpha-1-base: rgba(5, 86, 106, 0.05);
+  --ks-color-primary-alpha-2-base: rgba(5, 86, 106, 0.13);
+  --ks-color-primary-alpha-3-base: rgba(5, 86, 106, 0.24);
+  --ks-color-primary-alpha-4-base: rgba(5, 86, 106, 0.37);
+  --ks-color-primary-alpha-5-base: rgba(5, 86, 106, 0.5);
+  --ks-color-primary-alpha-6-base: rgba(5, 86, 106, 0.63);
+  --ks-color-primary-alpha-7-base: rgba(5, 86, 106, 0.76);
+  --ks-color-primary-alpha-8-base: rgba(5, 86, 106, 0.87);
+  --ks-color-primary-alpha-9-base: rgba(5, 86, 106, 0.95);
+}
+
+:root,
+[ks-theme],
+[ks-inverted='false'] {
+  --ks-color-primary-alpha-1: var(--ks-color-primary-alpha-1-base);
+  --ks-color-primary-alpha-2: var(--ks-color-primary-alpha-2-base);
+  --ks-color-primary-alpha-3: var(--ks-color-primary-alpha-3-base);
+  --ks-color-primary-alpha-4: var(--ks-color-primary-alpha-4-base);
+  --ks-color-primary-alpha-5: var(--ks-color-primary-alpha-5-base);
+  --ks-color-primary-alpha-6: var(--ks-color-primary-alpha-6-base);
+  --ks-color-primary-alpha-7: var(--ks-color-primary-alpha-7-base);
+  --ks-color-primary-alpha-8: var(--ks-color-primary-alpha-8-base);
+  --ks-color-primary-alpha-9: var(--ks-color-primary-alpha-9-base);
+}
+
+:root,
+[ks-inverted='true'] {
+  --ks-color-primary-alpha-1: var(--ks-color-primary-inverted-alpha-1-base);
+  --ks-color-primary-alpha-2: var(--ks-color-primary-inverted-alpha-2-base);
+  --ks-color-primary-alpha-3: var(--ks-color-primary-inverted-alpha-3-base);
+  --ks-color-primary-alpha-4: var(--ks-color-primary-inverted-alpha-4-base);
+  --ks-color-primary-alpha-5: var(--ks-color-primary-inverted-alpha-5-base);
+  --ks-color-primary-alpha-6: var(--ks-color-primary-inverted-alpha-6-base);
+  --ks-color-primary-alpha-7: var(--ks-color-primary-inverted-alpha-7-base);
+  --ks-color-primary-alpha-8: var(--ks-color-primary-inverted-alpha-8-base);
+  --ks-color-primary-alpha-9: var(--ks-color-primary-inverted-alpha-9-base);
+}
+```
+
+</CH.Code>
+</CH.Section>
+
+## Semantic Token
+
+### Color variants
+
+| Variant     | Description                                                             |
+| ----------- | ----------------------------------------------------------------------- |
+| `primary`   | Highlights elements. The most prevalent color of the design system.     |
+| `accent`    | Highlights elements that are hierarchically second to primary elements. |
+| `default`   | The default color of elements. Used as a fallback.                      |
+| `clear`     | Elements featuring transparency                                         |
+| `interface` | Signals user interactability                                            |
+
+### Color categories
+
+| Category           | Description                                                             |
+| ------------------ | ----------------------------------------------------------------------- |
+| `background-color` | Highlights elements. The most prevalent color of the design system.     |
+| `text-color`       | Highlights elements that are hierarchically second to primary elements. |
+| `border-color`     | The default background-color. Used on page the background.              |
+
+### Color concepts
+
+`interactive` applies to `primary`, `interface` & `clear` variants.  
+`translucent` applies to `primary` variant.
+
+| Concept              | Description                      |
+| -------------------- | -------------------------------- |
+| `interactive`        | Signals interactability          |
+| `interactive-hover`  | State of the element on hover    |
+| `interactive-active` | State of the element when active |
+| `translucent`        | Element has some form of opacity |
+
+<CH.Section>
+<CH.Code rows={30}>
+
+```json background-color.json
+{
+  "ks": {
+    "background-color": {
+      "primary": {
+        "interactive": {
+          "base": {
+            "value": "{ks.color.primary.base}",
+            "attributes": {
+              "category": "color"
+            },
+            "token": {
+              "category": "Colors: Background Primary",
+              "presenter": "Color"
+            }
+          },
+          "hover": {
+            "base": {
+              "value": "{ks.color.primary.to-bg.2.base}",
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Background Primary",
+                "presenter": "Color"
+              }
+            }
+          },
+          "active": {
+            "base": {
+              "value": "{ks.color.primary.to-bg.3.base}",
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Background Primary",
+                "presenter": "Color"
+              }
+            }
+          },
+          "selected": {
+            "base": {
+              "value": "{ks.color.primary.base}",
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Background Primary",
+                "presenter": "Color"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+```css tokens.css
+:root,
+[ks-theme] {
+  --ks-background-color-primary-interactive-base: var(--ks-color-primary-base);
+  --ks-background-color-primary-interactive-hover-base: var(
+    --ks-color-primary-to-bg-2-base
+  );
+  --ks-background-color-primary-interactive-active-base: var(
+    --ks-color-primary-to-bg-4-base
+  );
+}
+
+:root,
+[ks-theme],
+[ks-inverted='false'] {
+  --ks-background-color-primary-interactive: var(
+    --ks-background-color-primary-interactive-base
+  );
+  --ks-background-color-primary-interactive-hover: var(
+    --ks-background-color-primary-interactive-hover-base
+  );
+  --ks-background-color-primary-interactive-active: var(
+    --ks-background-color-primary-interactive-active-base
+  );
+}
+
+[ks-inverted='true'] {
+  --ks-background-color-primary-interactive: var(
+    --ks-background-color-primary-inverted-interactive-base
+  );
+  --ks-background-color-primary-interactive-hover: var(
+    --ks-background-color-primary-inverted-interactive-hover-base
+  );
+  --ks-background-color-primary-interactive-active: var(
+    --ks-background-color-primary-inverted-interactive-active-base
+  );
+}
+```
+
+</CH.Code>
+</CH.Section>
 
 ## Figma
 

@@ -113,3 +113,22 @@
   background-color: var(--ks-background-color-clear);
   border: 1px solid var(--ks-border-color-interface-interactive);
 }
+
+.color-control {
+  background-color: var(--ks-box-shadow-color-control);
+}
+.color-control-hover {
+  background-color: var(--ks-box-shadow-color-control-hover);
+}
+.color-card {
+  background-color: var(--ks-box-shadow-color-card);
+}
+.color-card-hover {
+  background-color: var(--ks-box-shadow-color-card-hover);
+}
+.color-surface {
+  background-color: var(--ks-box-shadow-color-surface);
+}
+.color-surface-hover {
+  background-color: var(--ks-box-shadow-color-surface-hover);
+}

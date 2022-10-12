@@ -1,10 +1,11 @@
 ---
-sidebar_position: 3
+sidebar_position: 2
 ---
 
 # Typography
 
-Typography is one of the main ways you surface content in products. We care about good defaults to provide you a clear hierarchy and contrasting styles in your typography scale.
+Typography is one of the main ways you surface content in products. We care about good defaults to provide you a clear hierarchy and contrasting styles in your typography scale.  
+The Token can be found in `typo.json`.
 
 ## Core Token
 
@@ -17,7 +18,7 @@ Typography is one of the main ways you surface content in products. We care abou
 | `--ks-font-family-ui`      | <div className="font-preview interface">Lorem Ipsum</div> |
 | `--ks-font-family-mono`    | <div className="font-preview mono">Lorem Ipsum</div>      |
 
-```css title="token.css"
+```css token.css
 :root {
   --ks-font-family-copy: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
@@ -37,7 +38,7 @@ Typography is one of the main ways you surface content in products. We care abou
 | `--ks-font-size-copy-xl`  | <div className="font-preview copy-xl">Lorem Ipsum</div>  |
 | `--ks-font-size-copy-xxl` | <div className="font-preview copy-xxl">Lorem Ipsum</div> |
 
-```css title="token.css"
+```css token.css
 :root {
   --ks-font-size-copy-m: calc(
     var(--ks-font-size-copy-m-base) * var(--ks-font-size-copy-bp-factor, 1)
@@ -57,17 +58,17 @@ Typography is one of the main ways you surface content in products. We care abou
 | `--ks-font-line-height-copy-xl`  | <div className="font-preview line-height-copy-xl">Lorem ipsum</div> <div className="font-preview line-height-copy-xl"> dolor sit amet</div>   |
 | `--ks-font-line-height-copy-xxl` | <div className="font-preview line-height-copy-xxl">Lorem ipsum</div> <div className="font-preview line-height-copy-xxl"> dolor sit amet</div> |
 
-```css title="token.css"
+```css token.css
 :root {
   --ks-line-height-copy-m: 1.5;
 }
 ```
 
-## Semantic token
+## Semantic Token
 
 ### Font package
 
-The combination of font-size, font-family and line-height.
+A combination of font-size, font-family and line-height.
 
 | Token                 | Application    | Preview                                                        |
 | --------------------- | -------------- | -------------------------------------------------------------- |
@@ -76,7 +77,7 @@ The combination of font-size, font-family and line-height.
 | `--ks-font-ui-m`      | User interface | <div className="font-preview font-interface">Lorem Ipsum</div> |
 | `--ks-font-mono-m`    | Code Snippets  | <div className="font-preview font-mono">Lorem Ipsum</div>      |
 
-```css title="token.css"
+```css token.css
 :root {
   --ks-font-copy-m: var(--ks-font-size-copy-m) / var(--ks-line-height-copy-m) var(
       --ks-font-family-copy
@@ -93,7 +94,7 @@ The combination of font-size, font-family and line-height.
 | `--ks-font-weight-semi-bold` | <div className="font-preview semi-bold">Lorem Ipsum</div> |
 | `--ks-font-weight-bold`      | <div className="font-preview bold">Lorem Ipsum</div>      |
 
-```css title="token.css"
+```css token.css
 :root {
   --ks-font-weight-regular: 400;
 }

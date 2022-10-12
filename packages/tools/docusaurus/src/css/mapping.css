@@ -1,5 +1,7 @@
 /* All Docusaurus variables */
-:root {
+:root,
+[ks-theme],
+[ks-inverted] {
   --ifm-color-scheme: light;
 
   /* Colors. */
@@ -163,11 +165,12 @@
   --ifm-z-index-overlay: 400;
   --ifm-container-width: 1140px;
   --ifm-container-width-xl: 1320px;
-  --ifm-code-background: rgb(246, 247, 248);
+  --ifm-code-background: none;
   --ifm-code-border-radius: var(--ifm-global-radius);
-  --ifm-code-font-size: 90%;
-  --ifm-code-padding-horizontal: 0.1rem;
-  --ifm-code-padding-vertical: 0.1rem;
+  --ifm-code-color: rgba(0, 0, 0, 0.8);
+  --ifm-code-font-size: 95%;
+  --ifm-code-padding-horizontal: 0;
+  --ifm-code-padding-vertical: 0;
 
   --ifm-pre-background: var(--ifm-code-background);
   --ifm-pre-border-radius: var(--ifm-code-border-radius);
@@ -202,7 +205,7 @@
   --ifm-table-stripe-background: transparent;
 
   --ifm-table-border-width: 1px;
-  --ifm-table-border-color: var(--ks-border-color-accent-base);
+  --ifm-table-border-color: var(--ifm-toc-border-color);
 
   --ifm-table-head-background: inherit;
   --ifm-table-head-color: inherit;
@@ -282,7 +285,7 @@
   --ifm-card-border-radius: calc(var(--ifm-global-radius) * 2);
   --ifm-card-horizontal-spacing: var(--ifm-global-spacing);
   --ifm-card-vertical-spacing: var(--ifm-global-spacing);
-  --ifm-toc-border-color: var(--ks-border-color-accent-base);
+  --ifm-toc-border-color: var(--ks-border-color-accent);
   --ifm-toc-link-color: var(--ifm-color-content-secondary);
   --ifm-toc-padding-vertical: 0.5rem;
   --ifm-toc-padding-horizontal: 0.5rem;
@@ -343,71 +346,59 @@
   --ifm-tabs-color-active-border: var(--ifm-tabs-color-active);
   --ifm-tabs-padding-horizontal: 1rem;
   --ifm-tabs-padding-vertical: 1rem;
+
+  /* ks theme adjustments */
+  --ks-border-color-interface-interactive: var(--ks-color-primary-alpha-3);
+  --ks-border-color-interface-interactive-hover: var(
+    --ks-color-primary-alpha-8
+  );
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'],
 [data-theme='dark'] [ks-theme] {
-  --ifm-background-color: var(
-    --ks-background-color-default-inverted
-  ) !important;
-  --ks-background-color-default-inverted: #083d4a;
-  --ifm-color-content: var(--ks-color-fg-inverted-alpha-7) !important;
-  --ifm-heading-color: var(--ks-text-color-primary-inverted) !important;
-  --ifm-color-primary: var(--ks-color-primary-inverted-base);
-  --ifm-toc-border-color: var(--ks-color-fg-inverted-alpha-2) !important;
-
-  --ks-text-color-primary: var(--ks-text-color-primary-inverted);
-
-  --ks-border-color-interface-interactive: var(
-    --ks-border-color-interface-inverted-interactive-base
-  );
-  --ks-border-color-interface-inverted-interactive-base: var(
-    --ks-color-fg-inverted-alpha-3
-  );
-
-  --ks-border-color-interface-interactive-hover: var(
-    --ks-border-color-interface-inverted-interactive-hover-base
-  );
-  --ks-border-color-interface-inverted-interactive-hover-base: var(
-    --ks-color-fg-inverted-alpha-5
-  );
-
-  --ks-background-color-primary-interactive-active: var(--ks-background-color-primary-inverted-interactive-active-base);
-
-  --ks-text-color-primary-interactive: var(--ks-text-color-primary-inverted-interactive-base);
-  --ks-text-color-primary-interactive-hover: var(--ks-text-color-primary-inverted-interactive-hover-base);
-  --ks-text-color-primary-interactive-active: var(--ks-text-color-primary-inverted-interactive-active-base);
-
-  --ks-text-color-primary-inverted-interactive-hover: var(--ks-text-color-primary-interactive-hover-base);
-
+  --ifm-background-color: var(--ks-background-color-default) !important;
   --ifm-background-surface-color: #0b4857 !important;
 
-  --c-button--background-color-hover: #fbffcc !important;
+  --ifm-color-content: var(--ks-color-fg-alpha-7) !important;
+  --ifm-heading-color: var(--ks-text-color-primary) !important;
+  --ifm-color-primary: var(--ks-color-primary);
+  --ifm-toc-border-color: var(--ks-color-fg-alpha-2) !important;
+
+  --ifm-code-color: white;
+  --ifm-code-background: none !important;
+
+  --ifm-table-stripe-background: transparent !important;
 
   --ifm-heading-color: var(--ifm-color-white);
+
   --ifm-color-primary-dark: var(
-    --ks-background-color-primary-inverted-interactive-hover
+    --ks-background-color-primary-interactive-hover
   );
   --ifm-color-primary-darker: var(
-    --ks-background-color-primary-inverted-interactive-active
+    --ks-background-color-primary-interactive-active
   );
   --ifm-color-primary-darkest: var(
-    --ks-background-color-primary-inverted-interactive-disabled
+    --ks-background-color-primary-interactive-disabled
   );
   --ifm-color-primary-light: #fbffcc;
   --ifm-color-primary-lighter: #fbffcc;
   --ifm-color-primary-lightest: #fbffcc;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
   --ifm-color-content-inverse: var(--ifm-color-gray-900);
-
-  --ks-color-primary-inverted: var(--ks-color-primary-base);
 
   --ifm-menu-color-active: var(--ifm-color-primary);
   --ifm-menu-color-background-active: var(--ifm-hover-overlay);
   --ifm-menu-color-background-hover: var(--ifm-hover-overlay);
 
   /* Links. */
-  --ifm-link-color: var(--ks-color-fg-inverted);
+  --ifm-link-color: var(--ks-color-fg);
   --ifm-link-decoration: var(--g-link--text-decoration);
+
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  /* ks theme adjustments */
+  --ks-border-color-interface-interactive: var(--ks-color-fg-alpha-3);
+  --ks-border-color-interface-interactive-hover: var(--ks-color-fg-alpha-8);
+  --ks-background-color-default: #083d4a;
+  --ks-background-color-primary: var(--ks-color-primary-alpha-8);
 }

@@ -4,9 +4,9 @@ sidebar_position: 3
 
 # Spacing
 
-## Spacing scale
+The token can be found in `spacing.json`.
 
-These are the base colors. They are referenced in semantic colors and shouldnt be applied directly.
+## Core Token
 
 | Spacing                                             | Token              |
 | --------------------------------------------------- | ------------------ |
@@ -18,7 +18,7 @@ These are the base colors. They are referenced in semantic colors and shouldnt b
 | <div className="spacing-preview spacing-xl"></div>  | `--ks-spacing-xl`  |
 | <div className="spacing-preview spacing-xxl"></div> | `--ks-spacing-xxl` |
 
-## Semantic spacing
+## Semantic Token
 
 <div className="spacing-legacy">
 <div >
@@ -33,26 +33,31 @@ These are the base colors. They are referenced in semantic colors and shouldnt b
 
 <div className="spacing-preview-grid">
   <div>
+    #### Inset
     `--ks-spacing-inset-m`  
     <div className="spacing spacing-inset"></div>
     Even padding.
   </div>
   <div>
+  #### Inset Squish
     `--ks-spacing-inset-squish-m`  
     <div className="spacing spacing-inset-squish"></div>
     Reduced top and bottom padding, resulting in a vertically condensed visual display.
   </div>
   <div>
+  #### Inset Stretch
     `--ks-spacing-inset-stretch-m`  
     <div className="spacing spacing-inset-stretch"></div>
     Increased top and bottom padding, resulting in a vertically expanded visual display.
   </div>
   <div>
+    #### Stack
     `--ks-spacing-stack-m`  
     <div className="spacing spacing-stack"></div>
     Vertical gap between two elements.
   </div>
   <div>
+      #### Inline
     `--ks-spacing-inline-m`  
     <div className="spacing spacing-inline"></div>
     Horizontal gap between two elements.
