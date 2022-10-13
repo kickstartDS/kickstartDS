@@ -5,7 +5,15 @@
     "background": "#fff",
     "foreground": "#000",
     "link": "#1c7ed6",
-    "link-inverted": "#a5d8ff"
+    "link-inverted": "#a5d8ff",
+    "positive": "#66a80f",
+    "positive-inverted": "#94d82d",
+    "informative": "#1a78cc",
+    "informative-inverted": "#4dabf7",
+    "notice": "#fab005",
+    "notice-inverted": "#f59f00",
+    "negative": "#e03131",
+    "negative-inverted": "#fa5c5c"
   },
   "font": {
     "display": {
@@ -27,7 +35,7 @@
         "tablet": 1.125
       }
     },
-    "ui": {
+    "interface": {
       "family": "system-ui, -apple-system, BlinkMacSystemFont, 'Avenir Next', 'Avenir', 'Segoe UI', 'Lucida Grande', 'Helvetica Neue', 'Helvetica', 'Fira Sans', 'Roboto', 'Noto', 'Droid Sans', 'Cantarell', 'Oxygen', 'Ubuntu', 'Franklin Gothic Medium', 'Century Gothic', 'Liberation Sans', sans-serif",
       "font-size": 16,
       "line-height": 1.75,

@@ -1,0 +1,71 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/form/select-field.schema.json",
+  "title": "Select Field",
+  "description": "Input that allow users to select a single option from a list of mutually exclusive options.",
+  "type": "object",
+  "properties": {
+    "label": {
+      "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/label"
+    },
+    "value": {
+      "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/value"
+    },
+    "name": {
+      "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/name"
+    },
+    "disabled": {
+      "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/disabled"
+    },
+    "options": {
+      "title": "Options",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "selected": {
+            "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/selected"
+          },
+          "disabled": {
+            "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/disabled"
+          }
+        },
+        "required": ["label"]
+      }
+    },
+    "hideLabel": {
+      "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/hideLabel"
+    },
+    "invalid": {
+      "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/invalid"
+    },
+    "invalidMessage": {
+      "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/invalidMessage"
+    },
+    "hint": {
+      "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/hint"
+    },
+    "icon": {
+      "allOf": [
+        {
+          "type": "string",
+          "default": "chevron-down"
+        },
+        {
+          "$ref": "http://schema.kickstartds.com/base/icon.definitions.json#/properties/icon"
+        }
+      ]
+    },
+    "className": {
+      "title": "Class",
+      "description": "Additional css classes attached to the select element",
+      "type": "string"
+    }
+  }
+}

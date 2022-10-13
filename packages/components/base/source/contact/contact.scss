@@ -1,0 +1,54 @@
+@use 'sass:meta';
+@use 'sass:math';
+@use '@kickstartds/core/source/core/custom-properties';
+@use './contact-vars';
+
+$vars: meta.module-variables(contact-vars);
+@include custom-properties.styles($vars);
+
+.c-contact {
+  display: flex;
+  flex-wrap: wrap;
+  margin: calc(-1 * var(--c-contact--gutter));
+
+  > * {
+    margin: var(--c-contact--gutter);
+    flex-basis: calc((var(--c-contact--wrap-threshold) - 100%) * 999);
+    flex-grow: 1;
+  }
+
+  &__image {
+    text-align: center;
+  }
+
+  &__links {
+    font: var(--ks-font-interface-s);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    .icon {
+      width: 1.5rem;
+      height: 1.5rem;
+      margin-right: 0.5rem;
+    }
+  }
+
+  &__link {
+    margin-bottom: 0.5rem;
+    display: inline-block;
+  }
+
+  &__copy {
+    margin-top: 1rem;
+  }
+
+  .c-headline {
+    --c-headline--margin-bottom: 1rem;
+
+    &__subheadline {
+      --c-headline_subheadline--margin: 0;
+      --c-headline_subheadline--color: var(--ks-color-fg-alpha-7);
+    }
+  }
+}

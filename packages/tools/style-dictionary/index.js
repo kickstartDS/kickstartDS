@@ -8,6 +8,8 @@ const config = require('./config');
 
 const backgroundColorTemplate = require('./templates/background-color');
 const backgroundColorSchema = require('./templates/background-color/background-color.schema.json');
+const borderColorTemplate = require('./templates/border-color');
+const borderColorSchema = require('./templates/border-color/border-color.schema.json');
 const borderTemplate = require('./templates/border');
 const borderSchema = require('./templates/border/border.schema.json');
 const boxShadowTemplate = require('./templates/box-shadow');
@@ -31,6 +33,7 @@ const deprecatedSchema = require('./templates/deprecated/deprecated.schema.json'
 
 const templates = [
   ['background-color', backgroundColorTemplate, backgroundColorSchema],
+  ['border-color', borderColorTemplate, borderColorSchema],
   ['border', borderTemplate, borderSchema],
   ['box-shadow', boxShadowTemplate, boxShadowSchema],
   ['breakpoints', breakpointsTemplate, breakpointsSchema],

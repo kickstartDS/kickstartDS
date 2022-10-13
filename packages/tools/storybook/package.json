@@ -18,6 +18,8 @@
     "storybook:build": "node index.js build"
   },
   "dependencies": {
+    "@kickstartds/core": "^1.5.0",
+    "@kickstartds/style-dictionary": "^1.5.0",
     "change-case": "^4.1.2",
     "del": "^6.0.0",
     "fast-glob": "^3.2.11",
@@ -27,20 +29,22 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.1",
     "react-emoji-render": "^1.2.4",
-    "yargs-parser": "^21.0.1"
+    "yargs-parser": "^21.1.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.18.5",
+    "@babel/core": "^7.19.1",
     "@kickstartds/storybook-addon-component-tokens": "^0.1.6",
-    "@storybook/addon-a11y": "6.5.10",
-    "@storybook/addon-essentials": "6.5.10",
-    "@storybook/cli": "6.5.10",
-    "@storybook/core": "6.5.10",
-    "@storybook/react": "6.5.10",
+    "@storybook/addon-a11y": "6.5.12",
+    "@storybook/addon-essentials": "6.5.12",
+    "@storybook/cli": "6.5.12",
+    "@storybook/core": "6.5.12",
+    "@storybook/react": "6.5.12",
     "@types/react": "^17.0.43",
     "@types/react-dom": "^17.0.14",
-    "@whitespace/storybook-addon-html": "git+https://github.com/lmestel/storybook-addon-html.git#v5.3.0",
-    "chromatic": "^6.5.6",
-    "storybook-dark-mode": "^1.1.0"
+    "@whitespace/storybook-addon-html": "git+https://github.com/lmestel/storybook-addon-html.git#v5.3.1",
+    "chromatic": "^6.10.0",
+    "lodash": "^4.17.21",
+    "storybook-dark-mode": "^1.1.2",
+    "style-dictionary": "^3.7.1"
   }
 }

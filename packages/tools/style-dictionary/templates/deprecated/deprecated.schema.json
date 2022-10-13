@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "http://schema.kickstartds.com/tokens/deprecated.schema.json",
   "definitions": {
-    "token": {
+    "deprecated-token": {
       "type": "object",
       "properties": {
         "value": {},
@@ -11,6 +11,9 @@
           "properties": {
             "category": {
               "type": "string"
+            },
+            "deprecated": {
+              "const": true
             }
           }
         },
@@ -28,73 +31,10 @@
         }
       },
       "required": ["value", "attributes"]
-    },
-    "deprecated-token": {
-      "allOf": [
-        {
-          "$ref": "#/definitions/token"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "attributes": {
-              "type": "object",
-              "properties": {
-                "deprecated": {
-                  "const": true
-                }
-              }
-            }
-          }
-        }
-      ]
-    },
-    "color-token": {
-      "allOf": [
-        {
-          "$ref": "#/definitions/deprecated-token"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "value": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "object",
-                  "additionalProperties": { "type": "number" }
-                }
-              ]
-            },
-            "attributes": {
-              "type": "object",
-              "properties": {
-                "category": {
-                  "const": "color"
-                }
-              }
-            }
-          }
-        }
-      ]
     }
   },
   "type": "object",
   "properties": {
-    "color": {
-      "type": "object",
-      "properties": {
-        "white": {
-          "$ref": "#/definitions/color-token"
-        },
-        "error": {
-          "$ref": "#/definitions/color-token"
-        }
-      },
-      "required": ["white", "error"]
-    },
     "g": {
       "type": "object",
       "properties": {
@@ -107,5 +47,5 @@
       }
     }
   },
-  "required": ["color", "g"]
+  "required": ["g"]
 }

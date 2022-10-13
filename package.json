@@ -21,7 +21,7 @@
     "dereference": "node scripts/schemaDereference.js",
     "eslint": "eslint \"**/*.{js,jsx,ts,tsx}\"",
     "find-licenses": "node ./scripts/license.js",
-    "format": "prettier --write .",
+    "format": "prettier --cache --write .",
     "git-config": "git config --local include.path ../.gitconfig",
     "husky-commit-msg": "commitlint -E GIT_PARAMS",
     "husky-pre-commit": "yarn run schema && git add packages/*/*/source/**/*Props.ts && lint-staged",
@@ -40,7 +40,7 @@
     "watch-tokens": "sass --watch --load-path=node_modules packages/components/core/source/design-tokens/tokens.scss packages/components/core/design-tokens/tokens.css"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,md,json,scss}": "prettier --write"
+    "*.{js,jsx,ts,tsx,md,json,scss}": "prettier --cache --write"
   },
   "config": {
     "commitizen": {
@@ -61,22 +61,22 @@
     "react": "^17.0.2"
   },
   "devDependencies": {
-    "@auto-it/all-contributors": "^10.37.1",
-    "@auto-it/first-time-contributor": "^10.37.1",
-    "@auto-it/npm": "^10.37.1",
-    "@auto-it/released": "^10.37.1",
+    "@auto-it/all-contributors": "^10.37.6",
+    "@auto-it/first-time-contributor": "^10.37.6",
+    "@auto-it/npm": "^10.37.6",
+    "@auto-it/released": "^10.37.6",
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
-    "auto": "^10.37.1",
-    "commitizen": "^4.2.4",
+    "auto": "^10.37.6",
+    "commitizen": "^4.2.5",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^7.32.0",
     "husky": "^8.0.1",
-    "lerna": "^5.4.2",
+    "lerna": "^5.5.2",
     "lint-staged": "^13.0.3",
     "npm-run-all": "^4.1.5",
-    "prettier": "^2.6.2",
-    "stylelint": "^14.8.5"
+    "prettier": "^2.7.1",
+    "stylelint": "^14.12.1"
   },
   "publishConfig": {
     "access": "public",

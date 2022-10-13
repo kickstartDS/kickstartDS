@@ -1,0 +1,75 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/base/lightbox-image.definitions.json",
+  "title": "Lightbox Image",
+  "description": "Lightbox Image",
+  "type": "object",
+  "properties": {
+    "thumb": {
+      "title": "Thumbnail Source",
+      "description": "Thumbnail Source",
+      "type": "string",
+      "format": "image",
+      "default": "https://picsum.photos/seed/kdslightboximage/600/338"
+    },
+    "image": {
+      "title": "Lightbox Image Source",
+      "description": "Lightbox Image Source",
+      "type": "string",
+      "format": "image",
+      "default": "https://picsum.photos/seed/kdslightboximage/1800/1013"
+    },
+    "width": {
+      "title": "Width",
+      "description": "Width",
+      "type": "integer",
+      "minimum": 0,
+      "default": 1920
+    },
+    "height": {
+      "title": "Height",
+      "description": "height",
+      "type": "integer",
+      "minimum": 0,
+      "default": 1280
+    },
+    "zoomIcon": {
+      "title": "Hover Zoom Icon",
+      "description": "Hover Zoom Icon",
+      "type": "boolean",
+      "default": true
+    },
+    "caption": {
+      "title": "Caption",
+      "description": "Caption",
+      "type": "string"
+    },
+    "hideCaption": {
+      "title": "Hide caption visually",
+      "description": "Hide caption visually",
+      "type": "boolean",
+      "default": false
+    },
+    "gallery": {
+      "type": "string",
+      "title": "Gallery identifier",
+      "description": "Gallery identifier",
+      "default": "lightbox"
+    },
+    "id": {
+      "type": "string",
+      "title": "ID",
+      "description": "ID"
+    },
+    "className": {
+      "type": "string",
+      "title": "Additional Class",
+      "description": "Additional Class"
+    },
+    "captionClassName": {
+      "type": "string",
+      "title": "Additional Caption Class",
+      "description": "Additional Caption Class"
+    }
+  }
+}

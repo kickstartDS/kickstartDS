@@ -101,10 +101,13 @@
                     },
                     "active": {
                       "$ref": "#/definitions/base"
+                    },
+                    "selected": {
+                      "$ref": "#/definitions/base"
                     }
                   },
                   "additionalProperties": false,
-                  "required": ["base", "hover", "active"]
+                  "required": ["base", "hover", "active", "selected"]
                 }
               },
               "additionalProperties": false,
@@ -127,10 +130,13 @@
                     },
                     "active": {
                       "$ref": "#/definitions/base"
+                    },
+                    "selected": {
+                      "$ref": "#/definitions/base"
                     }
                   },
                   "additionalProperties": false,
-                  "required": ["base", "hover", "active"]
+                  "required": ["base", "hover", "active", "selected"]
                 }
               },
               "additionalProperties": false,
@@ -162,10 +168,19 @@
                     },
                     "active": {
                       "$ref": "#/definitions/base"
+                    },
+                    "selected": {
+                      "$ref": "#/definitions/base"
                     }
                   },
                   "additionalProperties": false,
-                  "required": ["base", "disabled", "hover", "active"]
+                  "required": [
+                    "base",
+                    "disabled",
+                    "hover",
+                    "active",
+                    "selected"
+                  ]
                 }
               },
               "additionalProperties": false,
@@ -191,10 +206,19 @@
                     },
                     "active": {
                       "$ref": "#/definitions/base"
+                    },
+                    "selected": {
+                      "$ref": "#/definitions/base"
                     }
                   },
                   "additionalProperties": false,
-                  "required": ["base", "disabled", "hover", "active"]
+                  "required": [
+                    "base",
+                    "disabled",
+                    "hover",
+                    "active",
+                    "selected"
+                  ]
                 }
               },
               "additionalProperties": false,
@@ -217,10 +241,13 @@
                     },
                     "active": {
                       "$ref": "#/definitions/base"
+                    },
+                    "selected": {
+                      "$ref": "#/definitions/base"
                     }
                   },
                   "additionalProperties": false,
-                  "required": ["base", "hover", "active"]
+                  "required": ["base", "hover", "active", "selected"]
                 },
                 "translucent": {
                   "$ref": "#/definitions/base"
@@ -246,10 +273,13 @@
                     },
                     "active": {
                       "$ref": "#/definitions/base"
+                    },
+                    "selected": {
+                      "$ref": "#/definitions/base"
                     }
                   },
                   "additionalProperties": false,
-                  "required": ["base", "hover", "active"]
+                  "required": ["base", "hover", "active", "selected"]
                 },
                 "translucent": {
                   "$ref": "#/definitions/base"

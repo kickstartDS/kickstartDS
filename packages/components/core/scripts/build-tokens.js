@@ -16,14 +16,6 @@ StyleDictionary.extend(config)
       css: {
         buildPath: 'lib/design-tokens/',
       },
-      jsx: {
-        buildPath: path.join(__dirname, '../../../tools/storybook/.storybook/'),
-      },
-      storybook: {
-        buildPath: path.join(__dirname, '../../../tools/storybook/.storybook/'),
-      },
     },
   })
-  .buildPlatform('css')
-  .buildPlatform('jsx')
-  .buildPlatform('storybook');
+  .buildPlatform('css');

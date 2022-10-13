@@ -1,0 +1,19 @@
+$name-: 'c-visual-slider' !default;
+
+$nav: (
+  '.c-visual-slider': (
+    border-bottom-color: var(--ks-color-fg-alpha-1),
+  ),
+) !default;
+
+$preview: (
+  '.c-visual-slider': (
+    font: var(--ks-font-interface-s),
+    background: var(--ks-background-color-interface-interactive),
+    background-hover: var(--ks-background-color-interface-interactive-hover),
+    background-active: var(--ks-background-color-interface-interactive-current),
+    color-hover: null,
+    color-active: var(--ks-color-primary),
+    autoplay-indicator-color: var(--ks-color-fg-alpha-2),
+  ),
+) !default;
