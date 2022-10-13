@@ -1,4 +1,4 @@
-import { Component, define } from '@kickstartds/core/core';
+import { Component, define } from '@kickstartds/core/component';
 
 const identifier = 'visual';
 const scrollToSibling = (element) => {

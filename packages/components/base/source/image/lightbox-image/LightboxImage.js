@@ -1,5 +1,5 @@
 import PhotoSwipe from 'photoswipe';
-import { Component } from '@kickstartds/core/core';
+import { Component } from '@kickstartds/core/component';
 import { identifier } from './LightboxImage.desc';
 
 export default class LightboxImage extends Component {

@@ -1,5 +1,5 @@
 import merge from 'lodash-es/merge';
-import { Component } from '@kickstartds/core/core';
+import { Component } from '@kickstartds/core/component';
 import { windowEvents } from '@kickstartds/core/utils';
 import Keyboard from '@glidejs/glide/src/components/keyboard';
 import Glide from './glide/Glide';

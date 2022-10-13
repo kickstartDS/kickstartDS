@@ -16,21 +16,24 @@
   "type": "module",
   "exports": {
     "./package.json": "./package.json",
-    "./bundle": "./bundle/index.js",
     "./source/*": "./source/*",
+    "./*Component": {
+      "types": "./lib/*Component.d.ts",
+      "import": "./lib/*Component.js"
+    },
+    "./*": "./lib/*",
     ".": {
       "types": "./lib/index.d.ts",
       "import": "./lib/index.js"
-    },
-    "./*": {
-      "types": "./lib/*/index.d.ts",
-      "import": "./lib/*/index.js"
     }
   },
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "typesVersions": {
     "*": {
+      "*Component": [
+        "lib/*Component.d.ts"
+      ],
       "*": [
         "lib/*",
         "lib/*/index.d.ts"
