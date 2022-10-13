@@ -18,7 +18,7 @@
   "files": [
     "lib",
     "source/core/*.scss",
-    "source/design-tokens/icons/*.svg",
+    "source/design-tokens",
     "bundle/*.js",
     "cms"
   ],
