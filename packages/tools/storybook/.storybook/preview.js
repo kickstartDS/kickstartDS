@@ -12,7 +12,7 @@ import '../../../components/base/lib/global/base.js';
 import '../../../components/base/lib/global/base.css';
 
 import designTokens from '!!raw-loader!../tmp-tokens/tokens.css';
-import icons from '!!raw-loader!../tmp-tokens/icons.html';
+import icons from '!!raw-loader!../tmp-tokens/icons.svg';
 
 const myActions = actions('radio');
 window.rm.radio.on('*', myActions.radio);
