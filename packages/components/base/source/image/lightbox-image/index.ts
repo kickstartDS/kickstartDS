@@ -1,8 +1,6 @@
 import { forwardRef, createContext, createElement, useContext } from 'react';
-import {
-  LightboxImageComponent,
-  type LightboxImageProps,
-} from './LightboxImageComponent';
+import { LightboxImageComponent } from './LightboxImageComponent';
+import type { LightboxImageProps } from './LightboxImageComponent';
 import './lightbox-image.scss';
 import './lazyLightboxImage.js';
 

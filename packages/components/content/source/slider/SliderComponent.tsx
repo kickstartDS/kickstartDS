@@ -6,7 +6,7 @@ import {
   Children,
 } from 'react';
 import classnames from 'classnames';
-import { type SliderProps } from './SliderProps';
+import type { SliderProps } from './SliderProps';
 import { SlideContext } from './SlideContext';
 
 type Slides = ReactElement<{

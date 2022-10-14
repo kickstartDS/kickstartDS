@@ -1,4 +1,4 @@
-import { type ForwardRefRenderFunction, type HTMLAttributes } from 'react';
+import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
 
 export type ContainerProps = HTMLAttributes<HTMLDivElement> & {

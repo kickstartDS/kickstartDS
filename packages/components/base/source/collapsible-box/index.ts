@@ -1,9 +1,7 @@
 import { forwardRef, createContext } from 'react';
 import { withContainer } from '@kickstartds/core/lib/container';
-import {
-  CollapsibleBoxComponent,
-  type CollapsibleBoxProps,
-} from './CollapsibleBoxComponent';
+import { CollapsibleBoxComponent } from './CollapsibleBoxComponent';
+import type { CollapsibleBoxProps } from './CollapsibleBoxComponent';
 import './collapsible-box.scss';
 import './lazyCollapsibleBox.js';
 

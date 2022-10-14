@@ -1,7 +1,7 @@
 import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
 import { Picture } from '@kickstartds/base/lib/picture';
-import { type LogoTilesProps } from './LogoTilesProps';
+import type { LogoTilesProps } from './LogoTilesProps';
 
 export { LogoTilesProps };
 export const LogoTilesComponent: ForwardRefRenderFunction<

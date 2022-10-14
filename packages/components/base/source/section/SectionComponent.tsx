@@ -5,7 +5,7 @@ import {
 } from 'react';
 import classnames from 'classnames';
 import { Headline } from '../headline';
-import { type SectionProps } from './SectionProps';
+import type { SectionProps } from './SectionProps';
 
 const SectionContainer: FunctionComponent<SectionProps> = ({
   width,

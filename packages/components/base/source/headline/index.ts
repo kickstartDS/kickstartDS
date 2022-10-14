@@ -1,6 +1,7 @@
 import { forwardRef, createContext } from 'react';
 import { withContainer } from '@kickstartds/core/lib/container';
-import { HeadlineComponent, type HeadlineProps } from './HeadlineComponent';
+import { HeadlineComponent } from './HeadlineComponent';
+import type { HeadlineProps } from './HeadlineComponent';
 import './headline.scss';
 
 export { HeadlineProps };

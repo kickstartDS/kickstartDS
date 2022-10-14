@@ -1,7 +1,7 @@
 import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
 import { Icon } from '@kickstartds/base/lib/icon';
-import { type VisualProps as VisualSchemaProps } from './VisualProps';
+import type { VisualProps as VisualSchemaProps } from './VisualProps';
 import { VisualMediaPartial } from './VisualMediaPartial';
 import {
   RenderFunctions as BoxRenderFunctions,

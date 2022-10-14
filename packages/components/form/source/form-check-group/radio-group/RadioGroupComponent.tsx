@@ -2,7 +2,7 @@ import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
 import { defaultRenderFn } from '@kickstartds/core/lib/core';
 import { Radio } from '../../form-check/radio';
-import { type RadioGroupProps as RadioGroupSchemaProps } from './RadioGroupProps';
+import type { RadioGroupProps as RadioGroupSchemaProps } from './RadioGroupProps';
 
 export type RadioGroupProps = RadioGroupSchemaProps & {
   renderLabel?: typeof defaultRenderFn;

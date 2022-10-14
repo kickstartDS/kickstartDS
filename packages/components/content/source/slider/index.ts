@@ -1,6 +1,7 @@
 import { forwardRef, createContext } from 'react';
 import { withContainer } from '@kickstartds/core/lib/container';
-import { SliderComponent, type SliderProps } from './SliderComponent';
+import { SliderComponent } from './SliderComponent';
+import type { SliderProps } from './SliderComponent';
 import './slider.scss';
 import './lazySlider.js';
 

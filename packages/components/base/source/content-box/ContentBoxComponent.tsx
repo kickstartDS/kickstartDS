@@ -7,7 +7,7 @@ import {
 } from '../rich-text';
 import { Button } from '../button';
 import { Picture } from '../image/picture';
-import { type ContentBoxProps as ContentBoxSchemaProps } from './ContentBoxProps';
+import type { ContentBoxProps as ContentBoxSchemaProps } from './ContentBoxProps';
 
 export type ContentBoxProps = ContentBoxSchemaProps & {
   renderTopic?: typeof defaultRenderFn;

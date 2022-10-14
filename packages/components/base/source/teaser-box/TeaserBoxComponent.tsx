@@ -2,7 +2,8 @@ import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
 import { Picture } from '../image/picture';
 import { TeaserBoxProps as TeaserBoxSchemaProps } from './TeaserBoxProps';
-import { Teaser, type TeaserProps } from '../teaser';
+import { Teaser } from '../teaser';
+import type { TeaserProps } from '../teaser';
 
 export type TeaserBoxProps = TeaserBoxSchemaProps & TeaserProps;
 

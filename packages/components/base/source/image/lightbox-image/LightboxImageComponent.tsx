@@ -3,7 +3,7 @@ import classnames from 'classnames';
 import { Icon } from '../../icon';
 import { Link } from '../../link';
 import { Picture } from '../picture';
-import { type LightboxImageProps } from './LightboxImageProps';
+import type { LightboxImageProps } from './LightboxImageProps';
 
 export { LightboxImageProps };
 export const LightboxImageComponent: ForwardRefRenderFunction<

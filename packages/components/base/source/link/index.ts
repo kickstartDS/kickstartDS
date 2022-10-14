@@ -1,5 +1,6 @@
 import { forwardRef, createElement, createContext, useContext } from 'react';
-import { LinkComponent, type LinkProps } from './LinkComponent';
+import { LinkComponent } from './LinkComponent';
+import type { LinkProps } from './LinkComponent';
 
 export { LinkProps };
 export const LinkContextDefault = forwardRef(LinkComponent);

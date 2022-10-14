@@ -1,6 +1,7 @@
 import { forwardRef, createContext } from 'react';
 import { withContainer } from '@kickstartds/core/lib/container';
-import { TeaserBoxComponent, type TeaserBoxProps } from './TeaserBoxComponent';
+import { TeaserBoxComponent } from './TeaserBoxComponent';
+import type { TeaserBoxProps } from './TeaserBoxComponent';
 import './teaser-box.scss';
 
 export { TeaserBoxProps };
