@@ -2,3 +2,5 @@ dist
 tmp
 node_modules
 packages/components/*/lib
+packages/tools/storybook/tmp
+packages/tools/storybook/tmp-tokens

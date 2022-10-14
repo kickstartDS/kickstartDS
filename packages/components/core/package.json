@@ -13,8 +13,13 @@
   },
   "license": "SEE LICENSE IN LICENSE",
   "author": "ruhmesmeile GmbH <mail@ruhmesmeile.com> (https://ruhmesmeile.com)",
-  "main": "./lib/index.js",
-  "types": "./lib/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "*/index.d.ts"
+      ]
+    }
+  },
   "files": [
     "lib",
     "source/core/*.scss",
