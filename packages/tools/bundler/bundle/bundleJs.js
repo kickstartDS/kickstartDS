@@ -1,6 +1,9 @@
 const rollup = require('rollup');
 const { babel } = require('@rollup/plugin-babel');
 const replace = require('@rollup/plugin-replace');
+const commonjs = require('@rollup/plugin-commonjs');
+const { nodeResolve } = require('@rollup/plugin-node-resolve');
+const { externals } = require('rollup-plugin-node-externals');
 const log = require('../utils/log');
 const { dirRe } = require('../utils/utils');
 const {
@@ -20,6 +23,13 @@ const prepare = async (jsPaths) => {
     input,
     plugins: [
       ...sharedInputPlugins,
+      externals({
+        exclude: ['@glidejs/glide', /^@kickstartds\/.+\/source\/.+Component$/],
+      }),
+      nodeResolve({
+        extensions: ['.js', '.tsx', '.ts'],
+      }),
+      commonjs(),
       babel(
         sharedBabelConfig({
           extensions: ['.js', '.tsx', '.ts'],
@@ -41,8 +51,7 @@ const prepare = async (jsPaths) => {
         })
       ),
       replace({
-        exclude: '',
-        include: '**/*.tsx',
+        include: /\.tsx$/,
         values: {
           // unfortunately, vhtml doesn't handle all special JSX attributes, so they have to be replaced manually
           // https://github.com/developit/vhtml/blob/master/src/vhtml.js#L7 vs https://reactjs.org/docs/dom-elements.html#all-supported-html-attributes

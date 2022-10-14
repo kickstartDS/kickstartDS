@@ -1,5 +1,4 @@
 const json = require('@rollup/plugin-json');
-const { nodeResolve } = require('@rollup/plugin-node-resolve');
 const { terser } = require('rollup-plugin-terser');
 const importResolver = require('rollup-plugin-import-resolver');
 const mergeWith = require('lodash/mergeWith');
@@ -14,9 +13,6 @@ function customizer(objValue, srcValue) {
 module.exports = {
   sharedInputPlugins: [
     json(),
-    nodeResolve({
-      resolveOnly: ['@glidejs/glide'],
-    }),
     importResolver({
       extensions: ['.js', '.ts', '.tsx'],
     }),
