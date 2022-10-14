@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import Core from '@glidejs/glide/src/index';
 import Html from '@glidejs/glide/src/components/html';
 import Transition from '@glidejs/glide/src/components/transition';
