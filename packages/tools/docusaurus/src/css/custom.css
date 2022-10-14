@@ -98,12 +98,23 @@ code {
   border-radius: var(--ks-border-radius-card);
 }
 
+.ch-spotlight-tab {
+  border-color: var(--ks-color-fg-alpha-2);
+}
+
 .ch-scrollycoding-step-content[data-selected],
 .ch-spotlight-tab:hover,
 .ch-spotlight-tab[data-selected] {
-  border-color: var(--ks-border-color-accent);
+  border-color: transparent;
   box-shadow: var(--ks-box-shadow-card-hover);
   border-radius: var(--ks-border-radius-card);
+}
+
+[data-theme='dark'] .ch-scrollycoding-step-content[data-selected],
+[data-theme='dark'] .ch-spotlight-tab:hover,
+[data-theme='dark'] .ch-spotlight-tab[data-selected] {
+  box-shadow: var(--ks-box-shadow-card-hover);
+  background-color: var(--ks-color-primary-to-bg-1-base);
 }
 
 .ch-scrollycoding,
