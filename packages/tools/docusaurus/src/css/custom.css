@@ -8,6 +8,13 @@
 :root {
   --l-section--content-padding: var(--ifm-global-spacing);
   --ch-scrollycoding-sticker-width: 60%;
+  --g-topic--color: var(--ifm-heading-color);
+}
+
+[data-theme='dark'],
+[data-theme='dark'] [ks-theme],
+[data-theme='dark'] [ks-inverted] {
+  --g-topic--color: var(--ifm-link-color);
 }
 
 .navbar__item.navbar__link,

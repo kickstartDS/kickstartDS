@@ -1,6 +1,9 @@
 import React from 'react';
 
 import { TeaserBox } from '@kickstartds/base/lib/teaser-box';
+import { TeaserRow } from '@kickstartds/base/lib/teaser-row';
+import { Picture } from '@kickstartds/base/lib/picture';
+import { Icon } from '@kickstartds/base/lib/icon';
 import { Section } from '@kickstartds/base/lib/section';
 import {
   PictureContextDefault,
@@ -31,42 +34,42 @@ const PictureProvider = (props) => (
 const FeatureList = [
   {
     title: 'Basics',
-    Svg: require('@site/static/img/basics.svg').default,
+    Svg: require('@site/static/icon/basics.svg').default,
     description:
       'Learn about design token, component and recipe use in **kickstartDS**. These building blocks lay the foundation for a thorough understanding of more complex topics.',
     link: '/docs/basics',
   },
   {
     title: 'Integration',
-    Svg: require('@site/static/img/integration.svg').default,
+    Svg: require('@site/static/icon/integration.svg').default,
     description:
       'Dive into the different ways **kickstartDS** components can be leveraged to speed up prototyping, implementation and integration of frontend code.',
     link: '/docs/integration',
   },
   {
     title: 'Guides',
-    Svg: require('@site/static/img/guides.svg').default,
+    Svg: require('@site/static/icon/guides.svg').default,
     description:
       'Look up examples for inspiration, or faster ramp up, when developing. Or follow our short guides on focussed problems and their solution inside **kickstartDS**.',
     link: '/docs/guides',
   },
   {
     title: 'Concepts',
-    Svg: require('@site/static/img/concepts.svg').default,
+    Svg: require('@site/static/icon/concepts.svg').default,
     description:
       "Take a look behind the curtain: in-depth articles about the architecture of **kickstartDS**; which concepts are used, and what's the rationale for doing so.",
     link: '/docs/concepts',
   },
   {
     title: 'Feedback',
-    Svg: require('@site/static/img/feedback.svg').default,
+    Svg: require('@site/static/icon/feedback.svg').default,
     description:
       'Read through our FAQs, answering the most common questions. ... or get in contact with us for support on Twitter, Discord, Website Chat or via Email.',
     link: '/docs/feedback',
   },
   {
     title: 'Roadmap',
-    Svg: require('@site/static/img/roadmap.svg').default,
+    Svg: require('@site/static/icon/roadmap.svg').default,
     description:
       "Everything about our process of development, next releases, and how you can get involved. We're super excited about contributions, so please don't be shy!",
     link: '/docs/roadmap',
@@ -78,9 +81,10 @@ const FeatureList = [
 export default function HomepageFeatures() {
   return (
     <PictureProvider>
-      <Section ks-theme="docs" width="max">
+      <Section ks-theme="docs" width="default">
         {FeatureList.map(({ title, Svg, description, link }, idx) => (
           <TeaserBox
+            className="c-teaser-icon"
             imageSpacing
             key={idx}
             topic={title}
@@ -89,7 +93,14 @@ export default function HomepageFeatures() {
             link={{
               label: 'learn more',
               href: link,
+              hidden: true,
             }}
+            renderTopic={(topic) => (
+              <>
+                <Svg className={styles.featureSvg} role="img" />
+                <span>{topic}</span>
+              </>
+            )}
           />
         ))}
       </Section>

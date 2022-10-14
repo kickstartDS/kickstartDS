@@ -13,3 +13,42 @@
 .c-teaser-box:hover {
   border-color: var(--ks-border-color-interface-interactive-hover);
 }
+
+.c-teaser-icon {
+  padding: var(--c-teaser--padding);
+}
+
+.c-teaser.c-teaser-box.c-teaser-icon {
+  flex-direction: row;
+  gap: var(--ks-spacing-inline-xs);
+  width: 100%;
+  padding-bottom: var(--c-teaser--padding);
+}
+
+.c-teaser.c-teaser-box.c-teaser-icon .c-teaser__body {
+  padding: 0;
+  margin: 0;
+}
+
+.c-teaser.c-teaser-icon > :first-child {
+  display: none;
+}
+
+.c-teaser-icon .c-teaser__topic {
+  display: flex;
+  align-items: center;
+  gap: var(--ks-spacing-inline-xs);
+  margin-bottom: var(--ks-spacing-stack-xs);
+}
+
+.c-teaser.c-teaser-icon svg {
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0.25rem;
+  border-radius: var(--ks-border-radius-circle);
+  background-color: var(--ks-background-color-accent);
+}
+
+.c-teaser-icon .l-container--rich-text {
+  margin: 0;
+}

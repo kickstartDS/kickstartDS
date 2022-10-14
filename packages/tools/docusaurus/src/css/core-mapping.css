@@ -1,5 +1,6 @@
 [data-theme='dark'],
-[data-theme='dark'] [ks-theme] {
+[data-theme='dark'] [ks-theme],
+[data-theme='dark'] [ks-inverted] {
   --ks-background-color-accent: var(--ks-background-color-accent-inverted-base);
   --ks-background-color-accent-inverted: var(--ks-background-color-accent-base);
   --ks-background-color-clear: var(--ks-background-color-clear-inverted-base);
