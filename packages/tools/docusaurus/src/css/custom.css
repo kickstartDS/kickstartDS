@@ -9,6 +9,7 @@
   --l-section--content-padding: var(--ifm-global-spacing);
   --ch-scrollycoding-sticker-width: 60%;
   --g-topic--color: var(--ifm-heading-color);
+  --g-topic--font: var(--ks-font-copy-s);
 }
 
 [data-theme='dark'],

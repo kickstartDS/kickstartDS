@@ -37,16 +37,13 @@
 .c-teaser-icon .c-teaser__topic {
   display: flex;
   align-items: center;
-  gap: var(--ks-spacing-inline-xs);
-  margin-bottom: var(--ks-spacing-stack-xs);
+  gap: calc(var(--ks-spacing-inline-xs) * 1.5);
+  margin-bottom: calc(var(--ks-spacing-inline-xs) * 1.5);
 }
 
 .c-teaser.c-teaser-icon svg {
-  width: 2.5rem;
-  height: 2.5rem;
-  padding: 0.25rem;
-  border-radius: var(--ks-border-radius-circle);
-  background-color: var(--ks-background-color-accent);
+  width: 2.4rem;
+  height: 2.4rem;
 }
 
 .c-teaser-icon .l-container--rich-text {
