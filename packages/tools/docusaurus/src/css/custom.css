@@ -52,14 +52,6 @@ code {
   color: var(--ifm-color-primary);
 }
 
-.ch-frame-zoom {
-  --ch-frame-zoom: 0.5 !important;
-}
-
-.ch-code-scroll-parent {
-  font-size: 12px;
-}
-
 .markdown p a,
 .markdown li a {
   text-decoration: underline;
@@ -77,47 +69,4 @@ code {
 .c-teaser.js-linked,
 .pagination-nav__link {
   transition: box-shadow, border-color var(--ks-duration-fast) !important;
-}
-
-.ch-code-scroll-content > div {
-  transform: translateX(0px) translateY(19px) scale(1) !important;
-}
-
-.ch-spotlight-sticker {
-  width: var(--ch-scrollycoding-sticker-width, 420px);
-}
-
-.ch-scrollycoding-step-content,
-.ch-spotlight-tab {
-  padding: var(--ks-spacing-inset-s) var(--ks-spacing-inset-s);
-  --ifm-heading-margin-bottom: var(--ks-spacing-stack-xs);
-}
-
-.ch-scrollycoding-step-content,
-.ch-spotlight-tab {
-  border-radius: var(--ks-border-radius-card);
-}
-
-.ch-spotlight-tab {
-  border-color: var(--ks-color-fg-alpha-2);
-}
-
-.ch-scrollycoding-step-content[data-selected],
-.ch-spotlight-tab:hover,
-.ch-spotlight-tab[data-selected] {
-  border-color: transparent;
-  box-shadow: var(--ks-box-shadow-card-hover);
-  border-radius: var(--ks-border-radius-card);
-}
-
-[data-theme='dark'] .ch-scrollycoding-step-content[data-selected],
-[data-theme='dark'] .ch-spotlight-tab:hover,
-[data-theme='dark'] .ch-spotlight-tab[data-selected] {
-  box-shadow: var(--ks-box-shadow-card-hover);
-  background-color: var(--ks-color-primary-to-bg-1-base);
-}
-
-.ch-scrollycoding,
-.ch-spotlight {
-  gap: var(--ks-spacing-s);
 }
