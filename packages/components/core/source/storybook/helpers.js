@@ -8,8 +8,9 @@ const getArgsShared = (initialSchema) => {
     name,
     category,
     subcategory,
-    defaultValue,
-    required
+    required,
+    defaultValue = schema.default,
+    example = schema.examples?.[0]
   ) => {
     if ('const' in schema) return;
 
@@ -25,14 +26,12 @@ const getArgsShared = (initialSchema) => {
         },
         table: {
           category: category ?? 'general',
-          defaultValue: { summary: defaultValue ?? schema.default },
+          defaultValue: { summary: defaultValue },
           subcategory,
         },
         ...typeProps,
       };
-      args[name] = schema.examples?.length
-        ? schema.examples[0]
-        : defaultValue ?? schema.default;
+      args[name] = example ?? defaultValue;
     };
 
     switch (schema.type) {
@@ -92,8 +91,9 @@ const getArgsShared = (initialSchema) => {
                 name ? `${name}.${propName}` : propName,
                 cat,
                 subcat,
-                defaultValue?.[propName] ?? schema.default,
-                schema.required?.includes(propName)
+                schema.required?.includes(propName),
+                defaultValue?.[propName] ?? schema.default?.[propName],
+                example?.[propName] ?? schema.examples?.[0][propName]
               );
             }
           );
@@ -107,9 +107,8 @@ const getArgsShared = (initialSchema) => {
       case 'array':
         if (schema.items && schema.items.type) {
           const cat = category ?? name;
-          const example =
-            schema.examples?.[0] ?? defaultValue ?? schema.default;
-          const count = example?.length ?? 3;
+          const examples = example ?? schema.examples?.[0] ?? defaultValue;
+          const count = examples?.length ?? 3;
           new Array(count).fill().forEach((_, index) => {
             const subcat =
               cat &&
@@ -122,7 +121,9 @@ const getArgsShared = (initialSchema) => {
               name ? `${name}.${index}` : index,
               cat,
               subcat,
-              example?.[index]
+              undefined,
+              defaultValue?.[index] ?? schema.default?.[index],
+              examples?.[index]
             );
           });
         } else {
