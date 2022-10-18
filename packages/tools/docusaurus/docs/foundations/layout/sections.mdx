@@ -1,0 +1,130 @@
+---
+sidebar_position: 1
+---
+
+import { Section } from '@kickstartds/base/lib/section';
+import { TeaserBox } from '@kickstartds/base/lib/teaser-box';
+
+# Sections
+
+## Style
+
+Definition style, -> Link Guide "Create your own style variation" (TODO)
+
+`--l-section--background`
+
+## Frame Width
+
+How to use width options, which token are involved?
+
+The `width` propertiy determines the with of the frame the content will be displayed in.
+
+### Properties
+
+#### `narrow`
+
+A narrow display of content.
+The width is set here:
+`--l-section--content-width-narrow`
+
+#### `default`
+
+The medium display width of content.
+The width is set here:
+`--l-section--content-width-default`
+
+#### `wide`
+
+A wide display of content.
+The width is set here:
+`--l-section--content-width-wide`
+
+#### `max`
+
+The content will span over the entiere screen.
+`--l-section--content-padding`
+
+#### `full`
+
+The content will span over the intiere screen, without the default `content-padding`.
+
+## Space Before / Space After
+
+Determines how much top / bottom spacing a section will have
+
+### Properties
+
+#### `small`
+
+A small spacing
+The spacing is set here:
+`--l-section--space-small`
+
+#### `default`
+
+A medium spacing
+The spacing is set here:
+`--l-section--space`
+
+#### `none`
+
+The section will have no spacing.
+
+## Mode
+
+### Properties
+
+#### `default`
+
+The children will be placed next to each other, stretched over the full section width.
+
+<Section
+  ks-theme="section-preview"
+  spaceBefore="small"
+  spaceAfter="small"
+  width="full"
+>
+  <div className="section-preview--child">Content</div>
+  <div className="section-preview--child">Content</div>
+</Section>
+
+#### `tile`
+
+The children will be placed next to each other, in pre set column width.
+
+<Section
+  ks-theme="section-preview"
+  spaceBefore="small"
+  spaceAfter="small"
+  mode="tile"
+  width="full"
+>
+  <div className="section-preview--child">Content</div>
+  <div className="section-preview--child">Content</div>
+</Section>
+
+#### `list`
+
+The children will be placed on top of each other, stretched over the full section width.
+
+Which to use when, which tokens influence layout
+
+`--l-section_container--gutter`
+`--l-section_container--gutter-small`
+
+`--l-section_col--min-width`
+
+<Section
+  ks-theme="section-preview"
+  spaceBefore="small"
+  spaceAfter="small"
+  mode="list"
+  width="full"
+>
+  <div className="section-preview--child">Content</div>
+  <div className="section-preview--child">Content</div>
+</Section>
+
+## Children
+
+Which modes + components should be combined? -> Link "Section Examples" (TODO)

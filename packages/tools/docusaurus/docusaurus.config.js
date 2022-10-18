@@ -69,6 +69,7 @@ const config = {
             require.resolve('./src/css/core-mapping.css'),
             require.resolve('./src/css/shadow-preview.css'),
             require.resolve('./src/css/section.css'),
+            require.resolve('./src/css/section-preview.css'),
             require.resolve('./src/css/teaser.css'),
             require.resolve('./src/css/table.css'),
             require.resolve('./src/css/theme.css'),
