@@ -13,14 +13,14 @@ export const LightboxImageComponent: ForwardRefRenderFunction<
   {
     image,
     thumb,
-    zoomIcon,
+    zoomIcon = true,
     className,
     gallery,
     width,
     height,
     id,
     caption,
-    hideCaption,
+    hideCaption = false,
     captionClassName,
     alt,
     ...props

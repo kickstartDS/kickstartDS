@@ -32,7 +32,6 @@ const compile = async (file) => {
   const { css, loadedUrls } = sass.compile(file, {
     loadPaths,
     importers,
-    quietDeps: true,
   });
 
   dependencies[path.relative(cwd, file)] = loadedUrls.reduce((prev, curr) => {

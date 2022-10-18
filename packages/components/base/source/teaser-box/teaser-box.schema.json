@@ -12,24 +12,24 @@
       "type": "object",
       "properties": {
         "image": {
-          "type": "string",
-          "default": "https://picsum.photos/seed/kdsteaserbox/500/300",
-          "format": "image",
           "title": "Image source",
-          "description": "Select an image to display inside the teaser box, at the top"
+          "description": "Select an image to display inside the teaser box, at the top",
+          "type": "string",
+          "format": "image",
+          "examples": ["https://picsum.photos/seed/kdsteaserbox/500/300"]
         },
         "ratio": {
+          "title": "Image ratio",
+          "description": "Choose the ratio used to crop and display the image",
           "type": "string",
           "enum": ["4:3", "16:9", "1:1"],
-          "default": "16:9",
-          "title": "Image ratio",
-          "description": "Choose the ratio used to crop and display the image"
+          "examples": ["16:9"]
         },
         "imageSpacing": {
-          "type": "boolean",
-          "default": false,
           "title": "Image spacing",
-          "description": "Optionally add inner spacing to the displayed image"
+          "description": "Optionally add inner spacing to the displayed image",
+          "type": "boolean",
+          "default": false
         }
       }
     }

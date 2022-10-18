@@ -128,49 +128,16 @@ export type FullWidthMedia1 = boolean;
  * Caption
  */
 export type Caption1 = string;
-/**
- * Thumbnail Source
- */
 export type ThumbnailSource = string;
-/**
- * Lightbox Image Source
- */
 export type LightboxImageSource = string;
-/**
- * Width
- */
 export type Width2 = number;
-/**
- * height
- */
 export type Height2 = number;
-/**
- * Hover Zoom Icon
- */
 export type HoverZoomIcon = boolean;
-/**
- * Caption
- */
 export type Caption2 = string;
-/**
- * Hide caption visually
- */
 export type HideCaptionVisually = boolean;
-/**
- * Gallery identifier
- */
 export type GalleryIdentifier = string;
-/**
- * ID
- */
 export type ID = string;
-/**
- * Additional Class
- */
 export type AdditionalClass = string;
-/**
- * Additional Caption Class
- */
 export type AdditionalCaptionClass = string;
 /**
  * Display media item over full width
@@ -194,7 +161,7 @@ export type Class = string;
  */
 export interface TextMediaProps {
   text: TextContent;
-  mediaAlignment: MediaAlignment;
+  mediaAlignment?: MediaAlignment;
   media?: Media;
   className?: Class;
 }

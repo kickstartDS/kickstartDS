@@ -6,56 +6,56 @@
   "type": "object",
   "properties": {
     "src": {
-      "type": "string",
       "title": "Source",
       "description": "Picture source",
+      "type": "string",
       "format": "image",
-      "default": "https://picsum.photos/seed/kdspicture/300/300"
+      "examples": ["https://picsum.photos/seed/kdspicture/300/300"]
     },
     "srcSet": {
-      "type": "string",
       "title": "Picture sourceset",
       "description": "Use a srcSet to display picture",
+      "type": "string",
       "format": "image"
     },
     "alt": {
-      "type": "string",
       "title": "Alt text",
-      "description": "Alt text to display for picture"
+      "description": "Alt text to display for picture",
+      "type": "string"
     },
     "width": {
       "title": "Width",
       "description": "Width of the picture",
       "type": "integer",
       "minimum": 0,
-      "default": 300
+      "examples": [300]
     },
     "height": {
       "title": "Height",
       "description": "Height of the picture",
       "type": "integer",
       "minimum": 0,
-      "default": 300
+      "examples": [300]
     },
     "className": {
-      "type": "string",
       "title": "Additional Classes",
-      "description": "Add additional css classes that should be applied to the button"
+      "description": "Add additional css classes that should be applied to the button",
+      "type": "string"
     },
     "id": {
-      "type": "string",
       "title": "Id",
-      "description": "Add id attribute to the image"
+      "description": "Add id attribute to the image",
+      "type": "string"
     },
     "itemProp": {
-      "type": "string",
       "title": "`itemprop` attribute",
-      "description": "Define an itemprop attribute for the picture"
+      "description": "Define an itemprop attribute for the picture",
+      "type": "string"
     },
     "style": {
-      "type": "string",
       "title": "`style` attribute",
-      "description": "Define a style attribute for the picture"
+      "description": "Define a style attribute for the picture",
+      "type": "string"
     },
     "noscript": {
       "title": "Noscript",
@@ -77,28 +77,28 @@
         "type": "object",
         "properties": {
           "srcSet": {
-            "type": "string",
             "title": "Picture sourceset",
             "description": "Use a srcSet to display picture",
+            "type": "string",
             "format": "image"
           },
           "media": {
-            "type": "string",
             "title": "TODO MEDIA TITLE",
-            "description": "TODO MEDIA DESCRIPTION"
+            "description": "TODO MEDIA DESCRIPTION",
+            "type": "string"
           },
           "type": {
-            "type": "string",
             "title": "TODO TYPE TITLE",
-            "description": "TODO TYPE DESCRIPTION"
+            "description": "TODO TYPE DESCRIPTION",
+            "type": "string"
           }
         }
       }
     },
     "pictureClassName": {
-      "type": "string",
       "title": "`class` attribute",
-      "description": "Set additional class(es) to the picture"
+      "description": "Set additional class(es) to the picture",
+      "type": "string"
     }
   }
 }

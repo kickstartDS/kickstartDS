@@ -24,13 +24,13 @@
       "description": "Choose an alignment for the headline",
       "type": "string",
       "enum": ["left", "center", "right"],
-      "default": "center"
+      "default": "left"
     },
     "content": {
       "title": "Text",
       "description": "Text content for the headline",
       "type": "string",
-      "default": "Headline"
+      "examples": ["Headline"]
     },
     "subheadline": {
       "title": "Subheadline",
@@ -56,5 +56,5 @@
       "description": "Add additional css classes that should be applied to the headline"
     }
   },
-  "required": ["level", "align", "spaceAfter"]
+  "required": ["content"]
 }

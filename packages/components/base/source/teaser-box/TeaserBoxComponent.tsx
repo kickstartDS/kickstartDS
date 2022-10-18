@@ -10,7 +10,7 @@ export type TeaserBoxProps = TeaserBoxSchemaProps & TeaserProps;
 export const TeaserBoxComponent: ForwardRefRenderFunction<
   HTMLDivElement,
   TeaserBoxProps & HTMLAttributes<HTMLDivElement>
-> = ({ image, ratio, imageSpacing, className, ...props }, ref) => (
+> = ({ image, ratio, imageSpacing = false, className, ...props }, ref) => (
   <Teaser
     className={classnames(
       'c-teaser-box',

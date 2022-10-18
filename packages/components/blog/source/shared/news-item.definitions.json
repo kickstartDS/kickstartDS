@@ -10,7 +10,7 @@
       "description": "Date for news item",
       "type": "string",
       "format": "date",
-      "default": "2021-03-29"
+      "examples": ["2021-03-29"]
     },
     "link": {
       "title": "Link",
@@ -22,7 +22,7 @@
         },
         "label": {
           "$ref": "http://schema.kickstartds.com/base/button.schema.json#/properties/label",
-          "default": "weiter zum Newseintrag"
+          "examples": ["weiter zum Newseintrag"]
         }
       },
       "required": ["href", "label"]
@@ -31,13 +31,15 @@
       "title": "Title",
       "description": "Title for news item",
       "type": "string",
-      "default": "Lorem ipsum, dolor sit"
+      "examples": ["Lorem ipsum, dolor sit"]
     },
     "body": {
       "title": "Bodytext",
       "description": "Bodytext for news item",
       "type": "string",
-      "default": "Hic maxime sed eos non. Consequatur ut qui amet accusantium nesciunt."
+      "examples": [
+        "Hic maxime sed eos non. Consequatur ut qui amet accusantium nesciunt."
+      ]
     },
     "categories": {
       "title": "Categories",

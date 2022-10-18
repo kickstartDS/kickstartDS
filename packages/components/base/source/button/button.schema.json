@@ -6,40 +6,35 @@
   "type": "object",
   "properties": {
     "label": {
-      "type": "string",
       "title": "Label",
       "description": "Text used on button",
-      "default": "Lorem Ipsum"
+      "type": "string",
+      "examples": ["Lorem Ipsum"]
     },
     "variant": {
-      "type": "string",
-      "enum": ["solid", "clear", "outline"],
       "title": "Button Style",
       "description": "Choose one of the styles from the list",
+      "type": "string",
+      "enum": ["solid", "clear", "outline"],
       "default": "solid"
     },
     "inverted": {
-      "type": "boolean",
-      "title": "Inverted"
+      "title": "Inverted",
+      "type": "boolean"
     },
     "size": {
+      "title": "Button Size",
+      "description": "Choose a size between small, medium and large",
       "type": "string",
       "enum": ["small", "medium", "large"],
-      "default": "medium",
-      "title": "Button Size",
-      "description": "Choose a size between small, medium and large"
+      "default": "medium"
     },
     "href": {
-      "type": "string",
       "title": "Button href?",
       "description": "Link used for button",
-      "format": "uri",
-      "default": "https://example.com"
-    },
-    "className": {
       "type": "string",
-      "title": "Additional Classes",
-      "description": "Add additional css classes that should be applied to the button"
+      "format": "uri",
+      "examples": ["https://example.com"]
     },
     "iconBefore": {
       "allOf": [
@@ -63,53 +58,57 @@
         }
       ]
     },
-    "dataComponent": {
-      "type": "string",
-      "title": "`data-component` attribute",
-      "description": "Overwrite the data-component to use for rendering"
-    },
     "fillAnimation": {
-      "type": "boolean",
-      "default": false,
       "title": "Fill Animation",
-      "description": "Add fill animation on hover"
+      "description": "Add fill animation on hover",
+      "type": "boolean",
+      "default": false
     },
     "iconAnimation": {
-      "type": "boolean",
-      "default": false,
       "title": "Icon Animation",
-      "description": "Add icon animation on hover"
+      "description": "Add icon animation on hover",
+      "type": "boolean",
+      "default": false
     },
     "type": {
+      "title": "`type` attribute",
+      "description": "Select the type attribute for the button",
       "type": "string",
       "enum": ["button", "submit", "reset"],
-      "default": "button",
-      "title": "`type` attribute",
-      "description": "Select the type attribute for the button"
+      "default": "button"
     },
     "value": {
-      "type": "string",
       "title": "`value` attribute",
-      "description": "Define a value attribute for the button"
+      "description": "Define a value attribute for the button",
+      "type": "string"
     },
     "name": {
-      "type": "string",
       "title": "`name` attribute",
-      "description": "Define a name attribute for the button"
+      "description": "Define a name attribute for the button",
+      "type": "string"
     },
     "disabled": {
-      "type": "boolean",
-      "default": false,
       "title": "`disabled` attribute",
-      "description": "Set the disabled attribute for the button"
+      "description": "Set the disabled attribute for the button",
+      "type": "boolean",
+      "default": false
     },
     "newTab": {
-      "type": "boolean",
       "title": "Open link in new Tab",
       "description": "Open link in new Tab",
+      "type": "boolean",
       "default": false
+    },
+    "className": {
+      "title": "Additional Classes",
+      "description": "Add additional css classes that should be applied to the button",
+      "type": "string"
+    },
+    "dataComponent": {
+      "title": "`data-component` attribute",
+      "description": "Overwrite the data-component to use for rendering",
+      "type": "string"
     }
   },
-  "required": ["label", "variant", "size"],
   "additionalProperties": false
 }

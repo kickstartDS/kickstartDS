@@ -12,13 +12,13 @@
       "title": "Title",
       "description": "Name, company name, etc.",
       "type": "string",
-      "default": "Max Mütze"
+      "examples": ["Max Mütze"]
     },
     "subtitle": {
       "title": "Subtitle",
       "description": "Position, profession, department, location, etc.",
       "type": "string",
-      "default": "Geschäftsführer"
+      "examples": ["Geschäftsführer"]
     },
     "links": {
       "type": "array",
@@ -36,24 +36,26 @@
             "format": "uri"
           },
           "newTab": {
-            "type": "boolean",
             "title": "Open link in new Tab",
             "description": "Open link in new Tab",
+            "type": "boolean",
             "default": false
           }
         }
       },
-      "default": [
-        {
-          "icon": "phone",
-          "label": "0228 / 688 966 20",
-          "href": "tel:+4922868896620"
-        },
-        {
-          "icon": "email",
-          "label": "mail@example.com",
-          "href": "mailto:mail@example.com"
-        }
+      "examples": [
+        [
+          {
+            "icon": "phone",
+            "label": "0228 / 688 966 20",
+            "href": "tel:+4922868896620"
+          },
+          {
+            "icon": "email",
+            "label": "mail@example.com",
+            "href": "mailto:mail@example.com"
+          }
+        ]
       ]
     },
     "copy": {

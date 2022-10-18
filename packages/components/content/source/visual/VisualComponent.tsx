@@ -18,9 +18,9 @@ export const VisualComponent: ForwardRefRenderFunction<
     box,
     overlay,
     backgroundColor,
-    inbox,
-    height,
-    skipButton,
+    inbox = false,
+    height = 'default',
+    skipButton = false,
     className,
     ...props
   },

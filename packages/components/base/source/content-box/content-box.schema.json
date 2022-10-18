@@ -23,19 +23,21 @@
       "title": "Image source",
       "type": "string",
       "format": "image",
-      "default": "https://picsum.photos/seed/kdscontentbox/500/300",
-      "description": "Select an image to display inside the content box, at the top"
+      "description": "Select an image to display inside the content box, at the top",
+      "examples": ["https://picsum.photos/seed/kdscontentbox/500/300"]
     },
     "topic": {
       "title": "Topic",
       "type": "string",
-      "default": "Lorem Ipsum",
-      "description": "Topic for the content box. Displayed before the text, in bold"
+      "description": "Topic for the content box. Displayed before the text, in bold",
+      "examples": ["Lorem Ipsum"]
     },
     "text": {
       "title": "Text content",
       "type": "string",
-      "default": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ispum dolor distinctio minima unde voluptatum aut. Lorem ipsum dolor sit amet.",
+      "examples": [
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ispum dolor distinctio minima unde voluptatum aut. Lorem ipsum dolor sit amet."
+      ],
       "description": "Text for the content box",
       "format": "markdown"
     },
@@ -65,6 +67,5 @@
       "description": "Add additional css classes that should be applied to the content box"
     }
   },
-  "required": ["ratio", "alignement"],
   "additionalProperties": false
 }

@@ -37,10 +37,10 @@ export const SliderComponent: ForwardRefRenderFunction<
   SliderProps & HTMLAttributes<HTMLDivElement>
 > = (
   {
-    autoplay,
+    autoplay = false,
     className,
     component = 'content.slider',
-    arrows,
+    arrows = 'none',
     children,
     ...props
   },

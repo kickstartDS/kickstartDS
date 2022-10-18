@@ -9,7 +9,7 @@
       "title": "Preview label",
       "description": "Preview label for slide in slider",
       "type": "string",
-      "default": "Slide 1"
+      "examples": ["Slide 1"]
     }
   }
 }

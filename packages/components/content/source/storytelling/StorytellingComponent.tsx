@@ -47,8 +47,8 @@ const StorytellingMixin: ForwardRefExoticComponent<
     {
       lazy,
       image,
-      box,
-      full,
+      box = {},
+      full = false,
       backgroundColor,
       backgroundImage,
       renderText = richTextDefaultRenderFn,

@@ -9,23 +9,25 @@
       "title": "Number",
       "description": "Final number to count to",
       "type": "integer",
-      "default": 1200
+      "examples": [1200]
     },
     "icon": {
       "$ref": "http://schema.kickstartds.com/base/icon.definitions.json"
     },
     "topic": {
       "title": "Topic",
+      "description": "Topic for the count-up box. Displayed before the text, in bold",
       "type": "string",
-      "default": "Lorem Ipsum",
-      "description": "Topic for the count-up box. Displayed before the text, in bold"
+      "examples": ["Lorem Ipsum"]
     },
     "text": {
       "title": "Text content",
       "description": "Copy text for the element",
       "type": "string",
       "format": "markdown",
-      "default": "Consequuntur est quia atque eum ducimus. Consequatur fugiat hic eos perferendis. Libero unde omnis dolorem maxime occaecati sapiente distinctio. Consectetur non placeat dolorem est animi."
+      "examples": [
+        "Consequuntur est quia atque eum ducimus. Consequatur fugiat hic eos perferendis. Libero unde omnis dolorem maxime occaecati sapiente distinctio. Consectetur non placeat dolorem est animi."
+      ]
     },
     "link": {
       "title": "Link",

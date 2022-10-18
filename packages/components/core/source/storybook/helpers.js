@@ -1,7 +1,7 @@
-/* eslint-disable no-nested-ternary, no-console */
+/* eslint-disable no-nested-ternary */
 const getArgsShared = (initialSchema) => {
   const argTypes = {};
-  const defaultArgs = {};
+  const args = {};
 
   const getArgTypes = (
     schema,
@@ -16,7 +16,9 @@ const getArgsShared = (initialSchema) => {
     const add = (typeProps) => {
       argTypes[name] = {
         name,
-        description: `**${schema.title}:**\n\n${schema.description}`,
+        description: `**${schema.title}${schema.description ? ':' : ''}**${
+          schema.description ? `\n\n${schema.description}` : ''
+        }`,
         type: {
           required,
           summary: schema.type,
@@ -28,7 +30,9 @@ const getArgsShared = (initialSchema) => {
         },
         ...typeProps,
       };
-      defaultArgs[name] = defaultValue ?? schema.default;
+      args[name] = schema.examples?.length
+        ? schema.examples[0]
+        : defaultValue ?? schema.default;
     };
 
     switch (schema.type) {
@@ -103,7 +107,9 @@ const getArgsShared = (initialSchema) => {
       case 'array':
         if (schema.items && schema.items.type) {
           const cat = category ?? name;
-          const count = defaultValue?.length ?? schema?.default?.length ?? 3;
+          const example =
+            schema.examples?.[0] ?? defaultValue ?? schema.default;
+          const count = example?.length ?? 3;
           new Array(count).fill().forEach((_, index) => {
             const subcat =
               cat &&
@@ -116,7 +122,7 @@ const getArgsShared = (initialSchema) => {
               name ? `${name}.${index}` : index,
               cat,
               subcat,
-              defaultValue?.[index] ?? schema?.default?.[index]
+              example?.[index]
             );
           });
         } else {
@@ -132,7 +138,7 @@ const getArgsShared = (initialSchema) => {
   };
   getArgTypes(initialSchema);
 
-  return { argTypes, defaultArgs };
+  return { argTypes, args };
 };
 
 const unpack = (flatArgs) => {

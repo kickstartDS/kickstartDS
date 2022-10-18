@@ -18,7 +18,7 @@ export const ButtonComponent: ForwardRefRenderFunction<
     type = 'button',
     variant = 'solid',
     inverted,
-    size,
+    size = 'medium',
     href,
     newTab,
     className,

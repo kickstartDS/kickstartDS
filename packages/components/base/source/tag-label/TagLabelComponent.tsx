@@ -17,7 +17,7 @@ export const TagLabelComponent: ForwardRefRenderFunction<
     label,
     size = 'm',
     link,
-    removable,
+    removable = false,
     renderLabel = defaultRenderFn,
     className,
     ...props

@@ -34,14 +34,14 @@ export const SectionComponent: ForwardRefRenderFunction<
   SectionProps & HTMLAttributes<HTMLDivElement>
 > = (
   {
-    background,
+    background = 'default',
     inverted,
-    spaceBefore,
-    spaceAfter,
+    spaceBefore = 'default',
+    spaceAfter = 'default',
     headline,
-    width,
-    gutter,
-    mode,
+    width = 'default',
+    gutter = 'default',
+    mode = 'default',
     className,
     children,
     ...props

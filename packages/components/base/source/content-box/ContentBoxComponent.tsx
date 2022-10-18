@@ -21,10 +21,10 @@ export const ContentBoxComponent: ForwardRefRenderFunction<
   {
     image,
     topic,
-    alignement,
+    alignement = 'left',
     text,
     link,
-    ratio,
+    ratio = 'none',
     renderTopic = defaultRenderFn,
     renderText = richTextDefaultRenderFn,
     className,

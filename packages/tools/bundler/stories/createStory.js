@@ -1,31 +1,29 @@
 const { capitalCase, pascalCase } = require('change-case');
 const fs = require('fs-extra');
-const { getArgsShared } = require('./storyUtils');
 
 const template = ({
   moduleDir,
   componentName,
   componentPascalcased,
   schema,
-  argTypes,
-  defaultArgs,
 }) => `
 import { jsx } from 'react/jsx-runtime';
+import { getArgsShared } from "@kickstartds/core/lib/storybook/helpers";
 import { ${componentPascalcased} } from './index.js';
 import cssprops from './${componentName}-tokens.json';
 
 ${componentPascalcased}.displayName = '${componentPascalcased}';
+const schema = ${JSON.stringify(schema, null, 2)};
 export const Template = (args) => /*#__PURE__*/jsx(${componentPascalcased}, args);
 
 export default {
   title: '${capitalCase(moduleDir)}/${capitalCase(schema.title)}',
   component: ${componentPascalcased},
-  argTypes: ${JSON.stringify(argTypes, null, 2)},
-  args: ${JSON.stringify(defaultArgs, null, 2)},
   excludeStories: ['Template'],
   parameters: {
     cssprops,
   },
+  ...getArgsShared(schema),
 };
 
 export const Default = Template.bind({});
@@ -43,7 +41,6 @@ const createStory = (schema, dest) => {
           componentName,
           componentPascalcased: pascalCase(componentName),
           schema,
-          ...getArgsShared(schema),
         })
       ),
       fs.outputJSON(`${dest}/${componentName}-tokens.json`, {}),

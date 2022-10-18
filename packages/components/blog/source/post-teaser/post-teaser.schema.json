@@ -11,13 +11,13 @@
         {
           "properties": {
             "src": {
-              "default": "https://picsum.photos/seed/kdsnewslatest/900/380"
+              "examples": ["https://picsum.photos/seed/kdsnewslatest/900/380"]
             },
             "width": {
-              "default": 900
+              "examples": [900]
             },
             "height": {
-              "default": 380
+              "examples": [380]
             }
           }
         },

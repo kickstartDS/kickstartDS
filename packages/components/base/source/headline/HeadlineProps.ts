@@ -42,12 +42,12 @@ export type AdditionalClasses = string;
  * Headline
  */
 export interface HeadlineProps {
-  level: Level;
+  level?: Level;
   styleAs?: Style;
-  align: Alignment;
-  content?: Text;
+  align?: Alignment;
+  content: Text;
   subheadline?: Subheadline;
-  spaceAfter: BottomSpacing;
+  spaceAfter?: BottomSpacing;
   pageHeader?: PageHeader;
   className?: AdditionalClasses;
   [k: string]: unknown;

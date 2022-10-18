@@ -173,10 +173,6 @@ export type Class1 = string;
  */
 export type Text1 = string;
 /**
- * Choose an alignment for the headline
- */
-export type Alignment = 'left' | 'center' | 'right';
-/**
  * Select the headline level to use, or p alternatively
  */
 export type Level = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
@@ -184,6 +180,10 @@ export type Level = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
  * Select the headline style to use
  */
 export type Style = 'none' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
+/**
+ * Choose an alignment for the headline
+ */
+export type Alignment = 'left' | 'center' | 'right';
 /**
  * Text content for the optional subheadline
  */
@@ -311,12 +311,12 @@ export interface PostShareBar {
  * Headline
  */
 export interface Headline {
-  content?: Text1;
-  align: Alignment;
-  level: Level;
+  content: Text1;
+  level?: Level;
   styleAs?: Style;
+  align?: Alignment;
   subheadline?: Subheadline;
-  spaceAfter: BottomSpacing;
+  spaceAfter?: BottomSpacing;
   pageHeader?: PageHeader;
   className?: AdditionalClasses2;
   [k: string]: unknown;
