@@ -66,7 +66,7 @@ export const SectionComponent: ForwardRefRenderFunction<
   >
     {headline && headline.content && (
       <SectionContainer width={width}>
-        <Headline {...headline} />
+        <Headline align="center" {...headline} />
       </SectionContainer>
     )}
     {children && (
