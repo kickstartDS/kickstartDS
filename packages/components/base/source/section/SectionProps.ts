@@ -1347,6 +1347,10 @@ export type HideLink1 = boolean;
 export type Class11 = string;
 export type Inverted13 = boolean;
 /**
+ * Choose an alignment for the headline
+ */
+export type Alignment5 = 'left' | 'center' | 'right';
+/**
  * Select the headline level to use, or p alternatively
  */
 export type Level4 = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
@@ -1354,10 +1358,6 @@ export type Level4 = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
  * Select the headline style to use
  */
 export type Style4 = 'none' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
-/**
- * Choose an alignment for the headline
- */
-export type Alignment5 = 'left' | 'center' | 'right';
 /**
  * Text content for the headline
  */
@@ -2201,9 +2201,9 @@ export interface IconAfterButton7 {
  * Headline
  */
 export interface Headline4 {
+  align?: Alignment5;
   level?: Level4;
   styleAs?: Style4;
-  align?: Alignment5;
   content: Text7;
   subheadline?: Subheadline4;
   spaceAfter?: BottomSpacing4;

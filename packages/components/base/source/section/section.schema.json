@@ -94,7 +94,24 @@
       "default": "default"
     },
     "headline": {
-      "$ref": "http://schema.kickstartds.com/base/headline.schema.json"
+      "allOf": [
+        {
+          "type": "object",
+          "properties": {
+            "align": {
+              "allOf": [
+                {
+                  "default": "center"
+                },
+                {
+                  "$ref": "http://schema.kickstartds.com/base/headline.schema.json#/properties/align"
+                }
+              ]
+            }
+          }
+        },
+        { "$ref": "http://schema.kickstartds.com/base/headline.schema.json" }
+      ]
     },
     "className": {
       "type": "string",
