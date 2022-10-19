@@ -213,8 +213,7 @@
         },
         "inverted": {
           "title": "Inverted",
-          "type": "boolean",
-          "default": false
+          "type": "boolean"
         }
       },
       "additionalProperties": false

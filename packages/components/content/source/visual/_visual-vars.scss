@@ -45,8 +45,8 @@ $box: (
   '.c-visual__box': (
     border: null,
     border-radius: null,
-    color: var(--ks-text-color-primary-inverted),
-    background: var(--ks-background-color-primary-translucent),
+    color: var(--ks-text-color-primary),
+    background: var(--ks-background-color-primary-inverted-translucent),
     max-width: (
       0: var(--l-section--content-width-default),
       640: 50%,
