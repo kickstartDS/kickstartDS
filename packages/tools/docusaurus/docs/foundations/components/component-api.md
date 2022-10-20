@@ -2,8 +2,8 @@
 sidebar_position: 2
 ---
 
-# Design
+# Component API
 
 ## Table of contents:
 
-- Component Token
+- JSON Schema
