@@ -26,7 +26,7 @@ rm -rf src/stories
 Now add all the addons that will be utilized:
 
 ```bash
-$ yarn add @whitespace/storybook-addon-html storybook-design-token @kickstartds/storybook-addon-component-tokens @kickstartds/storybook-addon-jsonschema
+yarn add @whitespace/storybook-addon-html storybook-design-token @kickstartds/storybook-addon-component-tokens @kickstartds/storybook-addon-jsonschema
 ```
 
 Let's have another look at our `package.json` now, it's starting to grow already:
@@ -384,7 +384,88 @@ TODO link integration page
 
 ### Configure addons
 
-TODO describe
+Next we'll add configuration for those addons to `.storybook/main.js`:
+
+<CH.Scrollycoding>
+
+#### Original `.storybook/main.js`
+
+Starting off with the current version of the file.
+
+<CH.Code>
+```js .storybook/main.js
+module.exports = {
+  "stories": [
+    "../src/**/*.stories.mdx",
+    "../src/**/*.stories.@(js|jsx|ts|tsx)"
+  ],
+  "addons": [
+    "@storybook/addon-links",
+    "@storybook/addon-essentials",
+    "@storybook/addon-interactions"
+  ],
+  "framework": "@storybook/react"
+}
+```
+</CH.Code>
+
+---
+
+#### Addon configuration
+
+Activate all plugins by adding them to the `addons` array.
+
+<CH.Code>
+```js .storybook/main.js focus=10:15
+module.exports = {
+  "stories": [
+    "../src/**/*.stories.mdx",
+    "../src/**/*.stories.@(js|jsx|ts|tsx)"
+  ],
+  "addons": [
+    "@storybook/addon-links",
+    "@storybook/addon-essentials",
+    "@storybook/addon-interactions",
+    { name: 'storybook-design-token', options: { designTokenGlob: 'src/token/storybook/*' } },
+    "@whitespace/storybook-addon-html",
+    "storybook-addon-playroom",
+    "@kickstartds/storybook-addon-component-tokens",
+    "@kickstartds/storybook-addon-jsonschema",
+  ],
+  "framework": "@storybook/react"
+}
+```
+</CH.Code>
+
+---
+
+#### Storybook Design Token configuration
+
+For [`storybook-design-token`](https://github.com/UX-and-I/storybook-design-token#specify-a-custom-glob-for-your-token-files) we additionally configure a `designTokenGlob` through their options, which will be utilized in the next part of this step when connecting your Design Tokens to `Storybook`.
+
+<CH.Code>
+```js .storybook/main.js focus=10
+module.exports = {
+  "stories": [
+    "../src/**/*.stories.mdx",
+    "../src/**/*.stories.@(js|jsx|ts|tsx)"
+  ],
+  "addons": [
+    "@storybook/addon-links",
+    "@storybook/addon-essentials",
+    "@storybook/addon-interactions",
+    { name: 'storybook-design-token', options: { designTokenGlob: 'src/token/storybook/*' } },
+    "@whitespace/storybook-addon-html",
+    "storybook-addon-playroom",
+    "@kickstartds/storybook-addon-component-tokens",
+    "@kickstartds/storybook-addon-jsonschema",
+  ],
+  "framework": "@storybook/react"
+}
+```
+</CH.Code>
+
+</CH.Scrollycoding>
 
 ### Design Token integration
 
