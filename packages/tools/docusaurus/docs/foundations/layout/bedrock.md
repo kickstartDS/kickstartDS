@@ -2,10 +2,22 @@
 sidebar_position: 3
 ---
 
+import { Quote } from '@kickstartds/content/lib/quote';
+
 # Bedrock
 
-TODO Description: How to use Bedrock for more custom layout needs
+We use Bedrock as our library of choice when it comes to layouting:
+
+<Quote
+  byline="The Lodash of Web Layouts"
+  source="BEDROCK LAYOUT PRIMITIVES"
+  text="A collection of utility components that are designed to be used as building blocks for your web application's layout."
+/>
+
+## Components vs. Layout
 
 ## Integrating with kickstartDS
 
 TODO Describe how to integrate our Design Token for spacing with the approach Bedrock is using internally.
+
+https://github.com/kickstartDS/rub-design-system/blob/main/src/bedrock/BedrockProvider.jsx
