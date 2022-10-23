@@ -460,6 +460,8 @@ TODO add image of sidebar here
 
 Next up is adding some glue code to have our **Design Token** set integrated with our **Storybook** nicely. We can start by copying some stories provided by **kickstartDS** (those are the same that can be seen [here](https://www.kickstartds.com/storybook/?path=/story/design-tokens-colors--page)).
 
+#### Add `storybook-design-token` addon
+
 For **Design Token** documentation we also use [`storybook-design-token`](https://storybook.js.org/addons/storybook-design-token/) as an addon. Mainly for its `DesignTokenDocBlock` component, which helps in rendering the pages we've copied. So we also install that, too:
 
 ```bash
@@ -467,9 +469,11 @@ cp -r node_modules/@kickstartds/core/lib/design-tokens docs/tokens
 yarn add -D storybook-design-token
 ```
 
-But if you start your **Storybook** now (`yarn storybook`), you'll be greeted by empty pages. That's because we've not set up the actual **Design Token** integration with **Storybook** / our `Style Dictionary`, yet.
+But if you start your **Storybook** now (`yarn storybook`), you'll be greeted by empty pages. That's because we've not set up the actual **Design Token** integration with **Storybook** / our **Style Dictionary**, yet.
 
-As the `storybook-design-token` addon needs our tokens in a specific format (read more [here](https://github.com/UX-and-I/storybook-design-token#available-presenters)), we adjust our `Style Dictionary` configuration in `sd.config.js` to include the provided **Storybook** configuration. We also tell it to put those **Storybook** specific files into our already existing `src/token` directory:
+#### Integrate with **Style Dictionary**
+
+As the `storybook-design-token` addon needs our tokens in a specific format (read more [here](https://github.com/UX-and-I/storybook-design-token#available-presenters)), we adjust our **Style Dictionary** configuration in `sd.config.js` to include the provided **Storybook** configuration. We also tell it to put those **Storybook** specific files into our already existing `src/token` directory:
 
 ```js sd.config.js focus=14:16
 const path = require('path');
@@ -552,7 +556,7 @@ Done in 1.08s.
 
 ---
 
-#### Annotated `tokens.css`
+##### Annotated `tokens.css`
 
 Those are all of our **Design Token** converted to [CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) (as with `src/token/tokens.css`), but with the correct `storybook-design-token` presenters already added.
 
@@ -606,7 +610,7 @@ Done in 1.08s.
 
 ---
 
-#### `icons.svg` icon collection
+##### `icons.svg` icon collection
 
 Contains a collection of all used icons. Similarly to before, they just get annotated with the correct presenters for `storybook-design-token` for **Storybook**.<br/>
 The file gets picked up by the addon automatically, we don't need to add any additional configuration.
@@ -661,6 +665,8 @@ Done in 1.08s.
 
 </CH.Spotlight>
 
+#### Integrate with **Storybook** manager
+
 The final piece of the puzzle to get our **Design Token** docs working is to actually load our prepared `src/token/storybook/tokens.css` file. As this is specific to **Storybook** (we'll use the untouched, converted CSS custom properties of `src/token/tokens.css` for `preview.js`), this will be done in a new file `.storybook/manager.scss`. We use `Sass` here, as it will be featured later in this guide for component customization, too.
 
 Here it helps re-using the file in `src/token`, while also adding some **CSS**.
@@ -698,7 +704,7 @@ yarn add -D sass
 
 <CH.Scrollycoding>
 
-#### After adding `sass`
+##### After adding `sass`
 
 A single entry in `devDependencies` should've been added.
 
@@ -744,7 +750,7 @@ A single entry in `devDependencies` should've been added.
 
 ---
 
-#### Re-order `scripts` entries
+##### Re-order `scripts` entries
 
 To keep some order in our `scripts` entries, we re-order them to be sorted alphabetically before adding some more.
 
@@ -794,7 +800,7 @@ To keep some order in our `scripts` entries, we re-order them to be sorted alpha
 
 ---
 
-#### Compile `.storybook/manager.scss`
+##### Compile `.storybook/manager.scss`
 
 We add a script entry called `sass-manager`, which when called will compile our `Sass` to a regular **CSS** file (placed in `static/manager.css`) to be read by **Storybook**.
 
@@ -841,7 +847,7 @@ We add a script entry called `sass-manager`, which when called will compile our 
 
 ---
 
-#### Watch mode for `.storybook/manager.scss`
+##### Watch mode for `.storybook/manager.scss`
 
 And while we're at it, we'll also add a watch task that can be used in development. This rebuilds your changes to `manager.scss` live, and triggers a reload in your browser subsequently.
 
@@ -895,11 +901,13 @@ The correct place to put such **CSS** specific to **Storybook**s UI is `.storybo
 touch .storybook/manager-head.html
 ```
 
-And add the following content to it (later our custom favicon will also be added here):
+And add the following content to it ([this will later TODO add link to theming section](#) have the markup for our favicons, too):
 
 ```html .storybook/manager-head.html
 <link rel="stylesheet" href="manager.css" />
 ```
+
+#### Finalizing **Design Token** integration steps
 
 <CH.Section>
 To get **Storybook** to pick up our `static` folder when run / compiled, and thus above relative reference to work, we also [need to tell **Storybook** about it](focus://17) in `.storybook/main.js`. We also need to [add the `storybook-design-token` addon](focus://11:14) to the `addons`. [The `designTokenGlob`](focus://13[18:57]) tells it where to find our token definitions (the annotated `token.css` from before):
@@ -949,11 +957,206 @@ src/token/storybook/icons.svg
 static/manager.css
 ```
 
-### Add theming
+### Add **Storybook** theming
 
-TODO describe, should include:<br/>
+We have a **Design Token** set, we have a **Storybook**... what better idea than to combine them! Re-using our existing token to add some (reserved) theming to our general **Storybook** UI also serves as a great first, albeit small, demonstration for how useful a well constructed **Design Token** set can be!
 
-```html .storybook/manager-head.html
+Creating a **Storybook** theme involves creating two files, and adding a new output format (`.js`) to our **Style Dictionary**:
+
+* `.storybook/manager.js`: used to import and set our custom theme
+* `.storybook/themes.js`: definition of our custom theme, using the new output format
+
+Learn more [about theming in **Storybook**](https://storybook.js.org/docs/react/configure/theming).
+
+#### Adding a **Style Dictionary** transform
+
+We start off by adding the new **Style Dictionary** transform in `sd.config.js`:
+
+<CH.Section>
+<CH.Code>
+```js sd.config.js focus=17:26
+const path = require('path');
+const StyleDictionary = require("style-dictionary");
+const { config } = require("@kickstartds/style-dictionary");
+
+module.exports = StyleDictionary.extend(config).extend({
+  source: [
+    "src/token/dictionary/**/*.json",
+    path.join(path.dirname(require.resolve('@kickstartds/core/package.json')), 'source/design-tokens/icons/*.svg')
+  ],
+  platforms: {
+    css: {
+      buildPath: 'src/token/'
+    },
+    storybook: {
+      buildPath: 'src/token/storybook/'
+    },
+    js: {
+      transforms: ["attribute/cti", "name/cti/pascal", "size/rem", "color/css"],
+      buildPath: "src/token/storybook/",
+      files: [
+        {
+          destination: "tokens.js",
+          format: "javascript/es6",
+        },
+      ],
+    },
+  },
+});
+
+```
+</CH.Code>
+
+[The `transforms`](focus://18) ensures a naming format that we'll use in our `.storybook/themes.js`, up next. We also instruct our new transform to put the generate **JavaScript** file [into our **Storybook** specific token folder](focus://19) `src/token/storybook` [as `tokens.js`](focus://22). We opt for **JavaScript** so an easy import from inside `.storybook/themes.js` is possible. This is also the reason for selecting [`javascript/es6` as the `format`](focus://20:25).
+</CH.Section>
+
+With that new transform in place, re-build your **Design Token** set again:
+
+```bash
+yarn build-tokens
+```
+
+You'll be greeted by a new file being created at `src/token/storybook/tokens.js`:
+
+```shellscript focus=41:42
+yarn run v1.22.18
+$ kickstartDS tokens compile --token-path './src/token/dictionary' --cleanup --rc-only
+  _    _      _        _             _   ____  ____
+ | | _(_) ___| | _____| |_ __ _ _ __| |_|  _ \/ ___|
+ | |/ / |/ __| |/ / __| __/ _` | '__| __| | | \___ \
+ |   <| | (__|   <\__ \ || (_| | |  | |_| |_| |___) |
+ |_|\_\_|\___|_|\_\___/\__\__,_|_|   \__|____/|____/
+
+______________/\\\\\\\\\__/\\\______________/\\\\\\\\\\\_______
+ ___________/\\\////////__\/\\\_____________\/////\\\///________
+  _________/\\\/___________\/\\\_________________\/\\\___________
+   ________/\\\_____________\/\\\_________________\/\\\___________
+    _______\/\\\_____________\/\\\_________________\/\\\___________
+     _______\//\\\____________\/\\\_________________\/\\\___________
+      ________\///\\\__________\/\\\_________________\/\\\___________
+       __/\\\____\////\\\\\\\\\_\/\\\\\\\\\\\\\\\__/\\\\\\\\\\\__/\\\_
+        _\///________\/////////__\///////////////__\///////////__\///__
+
+Version: 0.2.39
+For more information visit:
+https://www.kickstartDS.com/cli
+
+Starting...
+[kickstartDS: general] [info]: welcome to the kickstartDS CLI
+[kickstartDS: tokens/compile] starting: compile command with compile variable compile-task
+[1/1] [compile: check] [info]: checking prerequesites before starting
+[1/1] [compile: check] [info]: prerequesites met, starting
+[compile: cleanup] [info]: cleaning up temp dir /tmp/tokens-compile-compile-task before starting command
+[compile: cleanup] [info]: finished cleaning up temp dir /tmp/tokens-compile-compile-task before starting command
+[1/1] [compile: compile] [info]: running the compile subtask
+[1/1] [compile: compile] [info]: getting Style Dictionary from token files
+[1/1] [compile: compile] [info]: compiling Style Dictionary to needed CSS and assets
+
+css
+✔︎ src/token/tokens.css
+
+storybook
+✔︎ src/token/storybook/tokens.css
+✔︎ src/token/storybook/icons.svg
+
+js
+✔︎ src/token/storybook/tokens.js
+[1/1] [compile: compile] [info]: copying generated CSS and assets to local folder
+[1/1] [compile: compile] [info]: finished running the compile subtask successfully
+[kickstartDS: tokens/compile] finished: compile command with compile variable compile-task
+Done in 1.17s.
+```
+
+#### Adding `.storybook/themes.js`
+
+Create the file `.storybook/themes.js`...
+
+```bash
+touch .storybook/themes.js
+```
+
+... and add the following content:
+
+<CH.Section>
+<CH.Code>
+```js .storybook/themes.js
+import { create } from "@storybook/theming";
+import * as tokens from '../src/token/storybook/tokens';
+
+export const light = create({
+  base: "light",
+
+  colorPrimary: tokens.KsColorPrimaryBase,
+  colorSecondary: tokens.KsColorPrimaryBase,
+
+  // UI
+  appBg: tokens.KsColorPrimaryToBg9Base,
+  appContentBg: tokens.KsBackgroundColorDefaultBase,
+  appBorderColor: tokens.KsColorPrimaryAlpha2Base,
+  appBorderRadius: tokens.KsBorderRadiusCard,
+
+  // Typography
+  fontBase: tokens.KsFontFamilyInterface,
+  fontCode: tokens.KsFontFamilyMono,
+
+  // Text colors
+  textColor: tokens.KsTextColorDefaultBase,
+  textInverseColor: tokens.KsTextColorDefaultInvertedBase,
+
+  // Toolbar default and active colors
+  barTextColor: tokens.KsColorPrimaryAlpha6Base,
+  barSelectedColor: tokens.KsColorPrimaryBase,
+  barBg: tokens.KsBackgroundColorDefaultBase,
+
+  // Form colors
+  inputBg: tokens.KsBackgroundColorInterfaceInteractiveBase,
+  inputBorder: tokens.KsColorFgToBg7Base,
+  inputTextColor: tokens.KsTextColorInterfaceInteractiveBase,
+  inputBorderRadius: tokens.KsBorderRadiusControl,
+
+  brandTitle: "Your kickstartDS Storybook",
+  brandUrl: "https://www.kickstartDS.com",
+  brandImage: "/logo.svg",
+});
+```
+</CH.Code>
+
+We [import the `create` function](focus://1) from **Storybook** [and our token](focus://2). With those we create a new theme, [with `light` as the `base`](focus://5). We won't go into detail about[ the specific token applications](focus://7:33) now, but feel free to adjust [`brandTitle` and `brandUrl`](focus://35:36) to your liking! [`brandImage`](focus://37) will be added next...
+</CH.Section>
+
+For this to work, we add our logo to the `static/` directory created before, as `logo.svg`. If you don't have a fitting logo laying around now, feel free to [just use ours (right click > save as)](https://www.kickstartds.com/logo.svg).
+
+#### Adding `.storybook/manager.js`
+
+Now create the second file needed, `.storybook/manager.js`...
+
+```bash
+touch .storybook/manager.js
+```
+
+... and add this code to it:
+
+<CH.Section>
+<CH.Code>
+```js .storybook/manager.js
+import { addons } from "@storybook/addons";
+import { light } from "./themes";
+
+addons.setConfig({ theme: light });
+```
+</CH.Code>
+
+We import [`addons` from **Storybook**](focus://1), and [our newly created theme](focus://2) from `.storybook/themes.js`. We combine those to [apply our theme to **Storybook**](focus://4).
+</CH.Section>
+
+#### Add a fitting `favicon`
+
+Our final addition for this section includes changing `.storybook/manager-head.html` again. Add the following lines to it:
+
+<CH.Section>
+<CH.Code>
+```html .storybook/manager-head.html focus=2:8
+<link rel="stylesheet" href="manager.css" />
 <link rel="shortcut icon" href="/favicon/favicon.ico" />
 <link
   rel="icon"
@@ -962,16 +1165,59 @@ TODO describe, should include:<br/>
   sizes="192x192"
 />
 ```
+</CH.Code>
+
+This adds a good looking, custom `favicon` to our **Storybook** when opened in the browser, which really helps to find your own **Design System**... in a sea of tabs 😅.<br/>
+The configuration expects the files [`favicon/favicon.ico`](focus://2[27:53]) and [`favicon/favicon-192-192.png`](focus://6[3:37]) to be placed in our `static/` folder, like it was the case for `logo.svg` before.
+</CH.Section>
+
+Create the sub directory...
+
+```bash
+mkdir -p static/favicon
+```
+
+... and place your files inside. If you need something to continue, feel free to use our [`favicon.ico` (right click > save as)](https://www.kickstartDS.com/favicon/favicon.ico) and [`favicon-192-192.png` (right click > save as)](https://www.kickstartDS.com/favicon/favicon-192-192.png) instead!
+
+#### Finalizing **Storybook** theming
+
+If you start your **Storybook** now (`yarn storybook`), you should feel right at home! You should see your own logo, your own colors and your font being applied to **Storybook** itself (or the ones you've used while testing around). Giving it your own, unique flavour... without being distracting!
+
+TODO add screenshot here, too
+
+As we've added one new generated file, we make sure to include it in our `.gitignore`:
+
+```bash .gitignore focus=10
+# Node
+node_modules
+
+# Storybook
+storybook-static
+
+# kickstartDS
+src/token/tokens.css
+src/token/storybook/tokens.css
+src/token/storybook/tokens.js
+src/token/storybook/icons.svg
+static/manager.css
+static/manager.css.map
+```
+
+### Integrate with **kickstartDS**
+
+TODO describe
 
 ### Install addons
 
 Now add all the addons that will be utilized:
 
 ```bash
-yarn add @whitespace/storybook-addon-html storybook-design-token @kickstartds/storybook-addon-component-tokens @kickstartds/storybook-addon-jsonschema
+yarn add @whitespace/storybook-addon-html @kickstartds/storybook-addon-component-tokens @kickstartds/storybook-addon-jsonschema
 ```
 
-Let's have another look at our `package.json` now, it's starting to grow already:
+### Review changes
+
+Let us review our `package.json` again now, it's starting to grow already:
 
 <CH.Spotlight>
 <CH.Code>
