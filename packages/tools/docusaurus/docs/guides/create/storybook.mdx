@@ -12,24 +12,14 @@ TODO there should be a page detailing `Storybook`, and our usage of it, somewher
 
 ## Install `Storybook`
 
-We start by initializing `Storybook` using their CLI. We call it with `npx`, which runs the command (`storybook`) without actually installing the dependency. And as we won't be using their included examples, we just remove them immediately:
+We start by initializing `Storybook` using their CLI. We call it with `npx`, which runs the command (`storybook`) without actually installing the dependency to our project. And as we won't be using their included examples, we just remove those immediately, too:
 
 ```bash
 npx storybook init
 rm -rf src/stories
 ```
 
-## Configure `Storybook`
-
-### Install addons
-
-Now add all the addons that will be utilized:
-
-```bash
-yarn add @whitespace/storybook-addon-html storybook-design-token @kickstartds/storybook-addon-component-tokens @kickstartds/storybook-addon-jsonschema
-```
-
-Let's have another look at our `package.json` now, it's starting to grow already:
+Let's have a look at our `package.json`, it's starting to grow already:
 
 <CH.Spotlight>
 <CH.Code>
@@ -50,13 +40,9 @@ Let's have another look at our `package.json` now, it's starting to grow already
   "license": "MIT",
   "dependencies": {
     "@kickstartds/base": "2.0.0-canary.922.4908.0",
-    "@kickstartds/storybook-addon-component-tokens": "^0.1.6",
-    "@kickstartds/storybook-addon-jsonschema": "^1.0.5",
-    "@whitespace/storybook-addon-html": "^5.0.0",
     "kickstartds": "0.2.32",
     "react": "17",
-    "react-dom": "17",
-    "storybook-design-token": "^2.7.1"
+    "react-dom": "17"
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",
@@ -81,8 +67,10 @@ Let's have another look at our `package.json` now, it's starting to grow already
 
 Those are the dependencies added through using `npx storybook init`. They ensure `Storybook` itself can be built for development and production.
 
+It also includes `Storybook`s Essential addon, adding recommended addons by default: https://storybook.js.org/docs/react/essentials/introduction
+
 <CH.Code>
-```json package.json focus=25:36
+```json package.json focus=21:32
 {
   "name": "@my/design-system",
   "version": "1.0.0",
@@ -99,13 +87,9 @@ Those are the dependencies added through using `npx storybook init`. They ensure
   "license": "MIT",
   "dependencies": {
     "@kickstartds/base": "2.0.0-canary.922.4908.0",
-    "@kickstartds/storybook-addon-component-tokens": "^0.1.6",
-    "@kickstartds/storybook-addon-jsonschema": "^1.0.5",
-    "@whitespace/storybook-addon-html": "^5.0.0",
     "kickstartds": "0.2.32",
     "react": "17",
-    "react-dom": "17",
-    "storybook-design-token": "^2.7.1"
+    "react-dom": "17"
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",
@@ -135,6 +119,349 @@ Next to the dependencies, two `scripts` entries were added by the `Storybook` in
 
 <CH.Code>
 ```json package.json focus=10:11
+{
+  "name": "@my/design-system",
+  "version": "1.0.0",
+  "description": "Design System for all @MY needs",
+  "main": "dist/index.js",
+  "scripts": {
+    "init-tokens": "kickstartDS tokens init --cleanup --rc-only",
+    "build-tokens": "kickstartDS tokens compile --cleanup --rc-only",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "author": "Jonas Ulrich",
+  "license": "MIT",
+  "dependencies": {
+    "@kickstartds/base": "2.0.0-canary.922.4908.0",
+    "kickstartds": "0.2.32",
+    "react": "17",
+    "react-dom": "17"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "@storybook/addon-actions": "^6.5.12",
+    "@storybook/addon-essentials": "^6.5.12",
+    "@storybook/addon-interactions": "^6.5.12",
+    "@storybook/addon-links": "^6.5.12",
+    "@storybook/builder-webpack4": "^6.5.12",
+    "@storybook/manager-webpack4": "^6.5.12",
+    "@storybook/react": "^6.5.12",
+    "@storybook/testing-library": "^0.0.13",
+    "babel-loader": "^8.2.5"
+  }
+}
+
+````
+
+</CH.Code>
+</CH.Spotlight>
+
+
+## Configure `Storybook`
+
+Now that we have installed `Storybook`, it's time to add some general configuration. We'll also add a first "Welcome" page to test everything configured so far actually works.
+
+### General configuration
+
+For this we'll be looking at the `.storybook` folder, automatically created for us by `npx storybook init`. It contains all general configuration to make a `Storybook` your own, and allows to really adapt it to your use case. We'll set up some integrations that are convenient to use, especially when working with **kickstartDS**.
+
+The folder contains two files for now:
+* `.storybook/main.js`
+* `.storybook/preview.js`
+
+#### `main.js` configuration
+
+This file contains configuration for `Storybook`... which addons to load, additional addon configuration, Webpack configuration, and so on. We'll continue building this up while adding addons in the next steps.
+
+For a detailed overview, have a look at [`Storybook`s documentation](https://storybook.js.org/docs/react/configure/overview).
+
+<CH.Scrollycoding>
+
+##### After `npx storybook init`
+
+Right after running `Storybook`s initialization, you should find it looking like this.
+
+<CH.Code>
+```js .storybook/main.js
+module.exports = {
+  "stories": [
+    "../src/**/*.stories.mdx",
+    "../src/**/*.stories.@(js|jsx|ts|tsx)"
+  ],
+  "addons": [
+    "@storybook/addon-links",
+    "@storybook/addon-essentials",
+    "@storybook/addon-interactions",
+  ],
+  "framework": "@storybook/react",
+}
+```
+</CH.Code>
+
+---
+
+##### Remove quotes
+
+We remove some quotes from `main.js`, because we're in a `.js` file.
+
+<CH.Code>
+```js .storybook/main.js focus=2,6,11
+module.exports = {
+  stories: [
+    "../src/**/*.stories.mdx",
+    "../src/**/*.stories.@(js|jsx|ts|tsx)"
+  ],
+  addons: [
+    "@storybook/addon-links",
+    "@storybook/addon-essentials",
+    "@storybook/addon-interactions",
+  ],
+  framework: "@storybook/react",
+}
+```
+</CH.Code>
+
+---
+
+##### Deactivate implicit Post CSS loader
+
+As we don't need it, we deactivate the implicit Post CSS loader as recommended.
+
+You can read more about this [here](https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#deprecated-implicit-postcss-loader).
+
+<CH.Code>
+```js .storybook/main.js focus=12:14
+module.exports = {
+  stories: [
+    "../src/**/*.stories.mdx",
+    "../src/**/*.stories.@(js|jsx|ts|tsx)"
+  ],
+  addons: [
+    "@storybook/addon-links",
+    "@storybook/addon-essentials",
+    "@storybook/addon-interactions",
+  ],
+  framework: "@storybook/react",
+  features: {
+    postcss: false,
+  },
+}
+```
+</CH.Code>
+
+---
+
+##### Add glob for documentation
+
+We'll be adding a few pages of documentation to test configuration, but these can also serve as the perfect starting point and orientation for your own growing documentation. For `Storybook` to pick up those pages, we have to tell it where those will be found. We'll be creating that folder `docs/` later.
+
+<CH.Code>
+```js .storybook/main.js focus=5
+module.exports = {
+  stories: [
+    "../src/**/*.stories.mdx",
+    "../src/**/*.stories.@(js|jsx|ts|tsx)",
+    "../docs/**/*.stories.mdx",
+  ],
+  addons: [
+    "@storybook/addon-links",
+    "@storybook/addon-essentials",
+    "@storybook/addon-interactions",
+  ],
+  framework: "@storybook/react",
+  features: {
+    postcss: false,
+  },
+}
+```
+</CH.Code>
+</CH.Scrollycoding>
+
+#### `preview.js` configuration
+
+This file specifically includes configuration for component **previews**, we'll need to make sure all needed CSS is loaded here... for example! Additionally, configuration for how stories are displayed can be adjusted through the exports `parameters` and `decorators` (amongst others, learn more [here](https://storybook.js.org/docs/react/configure/overview#configure-story-rendering)).
+
+<CH.Scrollycoding>
+
+##### After `npx storybook init`
+
+We'll start off again with the file as created by `Storybook`s initialization.
+
+<CH.Code>
+```js .storybook/preview.js
+export const parameters = {
+  actions: { argTypesRegex: "^on[A-Z].*" },
+  controls: {
+    matchers: {
+      color: /(background|color)$/i,
+      date: /Date$/,
+    },
+  },
+}
+```
+</CH.Code>
+
+---
+
+##### Add story sorting
+
+Adding a `storySort` function to the `options` allows us to ensure the "Welcome" page will always be displayed first. Everything else should be sorted alphabetically. Learn more [about `storySort`](https://storybook.js.org/docs/react/writing-stories/naming-components-and-hierarchy#sorting-stories).
+
+<CH.Code>
+```js .storybook/preview.js focus=9:21
+export const parameters = {
+  actions: { argTypesRegex: "^on[A-Z].*" },
+  controls: {
+    matchers: {
+      color: /(background|color)$/i,
+      date: /Date$/,
+    },
+  },
+  options: {
+    storySort(a, b) {
+      // welcome page to top!
+      if (a[0].includes("welcome")) {
+        return -1;
+      }
+
+      // alphabetically
+      return a[1].kind === b[1].kind
+        ? 0
+        : a[1].id.localeCompare(b[1].id, undefined, { numeric: true });
+    },
+  },
+}
+```
+</CH.Code>
+</CH.Scrollycoding>
+
+#### Adding a "Welcome" page
+
+As promised we add a "Welcome" page now, to verify configuration... and to have something in `Storybook` to display in the browser.
+
+Create a folder `docs` at the root of your repository, and add a file `welcome.stories.mdx` to it. `.mdx` is an extension of the popular [Markdown](https://daringfireball.net/projects/markdown/) format, allowing the use of `React` / `JSX` components as part of your documentation. In the context of **kickstartDS** this also means being able to use all of your components as part of your `Storybook` documentation, too. For example having nice hero images on pages important to you!
+
+Learn more about the `.mdx` format [here](https://mdxjs.com/).
+
+```bash
+mkdir -p docs
+touch docs/welcome.stories.mdx
+```
+
+Add the following content to it:
+
+<CH.Spotlight>
+<CH.Code>
+```mdx docs/welcome.stories.mdx
+import { Meta } from "@storybook/addon-docs";
+
+<Meta title="Docs/Welcome" />
+
+# Your kickstartDS based Design System
+
+Ipsum voluptate reprehenderit ut aliquid laborum enim. Optio et suscipit aliquam voluptate nostrum est. Corrupti ab laboriosam qui aut aliquid iusto nobis voluptatum. Perferendis non reiciendis illum. Vel et sint est.
+
+Alias placeat accusantium voluptatem pariatur dolor et. Dicta quia officia voluptatem quia nulla natus. Accusantium in voluptate porro. Libero voluptatem placeat ipsum dolores deserunt omnis odio.
+
+Sed distinctio consequuntur et et aliquid. Exercitationem autem impedit expedita. Beatae eum voluptatem eaque necessitatibus repellendus. Velit qui est optio. Ut est voluptates incidunt et qui sed dolorem. Quidem molestiae velit non laudantium consequatur autem.
+
+Amet doloremque voluptas suscipit. Omnis incidunt sit nesciunt voluptate sed voluptatem delectus quis. Repudiandae occaecati magni fugit. Minus sunt quia ab temporibus. Voluptatibus vel odit facere enim et.
+
+Consequatur et consequuntur et. Nam consequatur sed voluptas ea. Tempore vero velit et hic. Ut et aspernatur quaerat ut aut consequatur. Quisquam aliquid ea adipisci nulla quia ut dolor. Accusamus earum quasi quaerat.
+```
+</CH.Code>
+
+---
+
+##### Define story title and category
+
+We define a title and category for our "Welcome" page by importing and using `Meta` from `@storybook/addon-docs`, a component provided to us by `Storybook`.
+
+This would also be a first example on the benefits of using `.mdx` for documentation.
+
+<CH.Code>
+```mdx docs/welcome.stories.mdx focus=1,3
+import { Meta } from "@storybook/addon-docs";
+
+<Meta title="Docs/Welcome" />
+
+# Your kickstartDS based Design System
+
+Ipsum voluptate reprehenderit ut aliquid laborum enim. Optio et suscipit aliquam voluptate nostrum est. Corrupti ab laboriosam qui aut aliquid iusto nobis voluptatum. Perferendis non reiciendis illum. Vel et sint est.
+
+Alias placeat accusantium voluptatem pariatur dolor et. Dicta quia officia voluptatem quia nulla natus. Accusantium in voluptate porro. Libero voluptatem placeat ipsum dolores deserunt omnis odio.
+
+Sed distinctio consequuntur et et aliquid. Exercitationem autem impedit expedita. Beatae eum voluptatem eaque necessitatibus repellendus. Velit qui est optio. Ut est voluptates incidunt et qui sed dolorem. Quidem molestiae velit non laudantium consequatur autem.
+
+Amet doloremque voluptas suscipit. Omnis incidunt sit nesciunt voluptate sed voluptatem delectus quis. Repudiandae occaecati magni fugit. Minus sunt quia ab temporibus. Voluptatibus vel odit facere enim et.
+
+Consequatur et consequuntur et. Nam consequatur sed voluptas ea. Tempore vero velit et hic. Ut et aspernatur quaerat ut aut consequatur. Quisquam aliquid ea adipisci nulla quia ut dolor. Accusamus earum quasi quaerat.
+```
+</CH.Code>
+
+---
+
+##### Some initial dummy content
+
+The rest of the file just contains some dummy content to start. Feel free to replace this with something more meaningful, but you'll probably want to revisit this page later, anyways!
+
+<CH.Code>
+```mdx docs/welcome.stories.mdx focus=5:15
+import { Meta } from "@storybook/addon-docs";
+
+<Meta title="Docs/Welcome" />
+
+# Your kickstartDS based Design System
+
+Ipsum voluptate reprehenderit ut aliquid laborum enim. Optio et suscipit aliquam voluptate nostrum est. Corrupti ab laboriosam qui aut aliquid iusto nobis voluptatum. Perferendis non reiciendis illum. Vel et sint est.
+
+Alias placeat accusantium voluptatem pariatur dolor et. Dicta quia officia voluptatem quia nulla natus. Accusantium in voluptate porro. Libero voluptatem placeat ipsum dolores deserunt omnis odio.
+
+Sed distinctio consequuntur et et aliquid. Exercitationem autem impedit expedita. Beatae eum voluptatem eaque necessitatibus repellendus. Velit qui est optio. Ut est voluptates incidunt et qui sed dolorem. Quidem molestiae velit non laudantium consequatur autem.
+
+Amet doloremque voluptas suscipit. Omnis incidunt sit nesciunt voluptate sed voluptatem delectus quis. Repudiandae occaecati magni fugit. Minus sunt quia ab temporibus. Voluptatibus vel odit facere enim et.
+
+Consequatur et consequuntur et. Nam consequatur sed voluptas ea. Tempore vero velit et hic. Ut et aspernatur quaerat ut aut consequatur. Quisquam aliquid ea adipisci nulla quia ut dolor. Accusamus earum quasi quaerat.
+```
+</CH.Code>
+
+</CH.Spotlight>
+
+### Verify configuration
+
+It's not much, yet, but we can start our `Storybook` now to see our "Welcome" page in action:
+
+```bash
+yarn storybook
+```
+
+This should automatically open `Storybook` in your browser of choice. Next to displaying your first page (🙌), there's something interesting happening!
+
+As part of the left sidebar, and under your initially opened "Welcome" page, there'll be a section headlined `@kickstartds/base`. This gets shown because we've added `@kickstartds/base` as a dependency before. **kickstartDS** uses [Storybook composition](https://storybook.js.org/docs/react/sharing/storybook-composition) to always include the base documentation (in the correct version used by your Design System) to your `Storybook` as a handy reference!
+
+TODO add image of sidebar here
+
+
+* Add Welcome page + sort in preview
+* Add needed decorators / Providers
+* Add icon sprite
+* Add Design Token docs
+
+### Install addons
+
+Now add all the addons that will be utilized:
+
+```bash
+yarn add @whitespace/storybook-addon-html storybook-design-token @kickstartds/storybook-addon-component-tokens @kickstartds/storybook-addon-jsonschema
+```
+
+Let's have another look at our `package.json` now, it's starting to grow already:
+
+<CH.Spotlight>
+<CH.Code>
+```json package.json
 {
   "name": "@my/design-system",
   "version": "1.0.0",
@@ -411,6 +738,29 @@ module.exports = {
 
 ---
 
+#### Remove quotes
+
+We remove some quotes from `main.js`, because we're in a `.js` file:
+
+<CH.Code>
+```js .storybook/main.js
+module.exports = {
+  stories: [
+    "../src/**/*.stories.mdx",
+    "../src/**/*.stories.@(js|jsx|ts|tsx)"
+  ],
+  addons: [
+    "@storybook/addon-links",
+    "@storybook/addon-essentials",
+    "@storybook/addon-interactions"
+  ],
+  framework: "@storybook/react"
+}
+```
+</CH.Code>
+
+---
+
 #### Addon configuration
 
 Activate all plugins by adding them to the `addons` array.
@@ -418,11 +768,11 @@ Activate all plugins by adding them to the `addons` array.
 <CH.Code>
 ```js .storybook/main.js focus=10:15
 module.exports = {
-  "stories": [
+  stories: [
     "../src/**/*.stories.mdx",
     "../src/**/*.stories.@(js|jsx|ts|tsx)"
   ],
-  "addons": [
+  addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
@@ -432,7 +782,7 @@ module.exports = {
     "@kickstartds/storybook-addon-component-tokens",
     "@kickstartds/storybook-addon-jsonschema",
   ],
-  "framework": "@storybook/react"
+  framework: "@storybook/react"
 }
 ```
 </CH.Code>
@@ -446,11 +796,11 @@ For [`storybook-design-token`](https://github.com/UX-and-I/storybook-design-toke
 <CH.Code>
 ```js .storybook/main.js focus=10
 module.exports = {
-  "stories": [
+  stories: [
     "../src/**/*.stories.mdx",
     "../src/**/*.stories.@(js|jsx|ts|tsx)"
   ],
-  "addons": [
+  addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
@@ -460,7 +810,35 @@ module.exports = {
     "@kickstartds/storybook-addon-component-tokens",
     "@kickstartds/storybook-addon-jsonschema",
   ],
-  "framework": "@storybook/react"
+  framework: "@storybook/react"
+}
+```
+</CH.Code>
+
+---
+
+#### Storybook Design Token configuration
+
+For [`storybook-design-token`](https://github.com/UX-and-I/storybook-design-token#specify-a-custom-glob-for-your-token-files) we additionally configure a `designTokenGlob` through their options, which will be utilized in the next part of this step when connecting your Design Tokens to `Storybook`.
+
+<CH.Code>
+```js .storybook/main.js focus=10
+module.exports = {
+  stories: [
+    "../src/**/*.stories.mdx",
+    "../src/**/*.stories.@(js|jsx|ts|tsx)"
+  ],
+  addons: [
+    "@storybook/addon-links",
+    "@storybook/addon-essentials",
+    "@storybook/addon-interactions",
+    { name: 'storybook-design-token', options: { designTokenGlob: 'src/token/storybook/*' } },
+    "@whitespace/storybook-addon-html",
+    "storybook-addon-playroom",
+    "@kickstartds/storybook-addon-component-tokens",
+    "@kickstartds/storybook-addon-jsonschema",
+  ],
+  framework: "@storybook/react"
 }
 ```
 </CH.Code>
@@ -520,4 +898,7 @@ TODO add Commit reminder
 ## Code Sandbox
 
 TODO add Code Sandbox with result of step
-````
+
+```
+
+```
