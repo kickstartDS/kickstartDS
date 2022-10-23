@@ -500,12 +500,10 @@ yarn build-tokens
 
 You'll notice it now writes two additional files for you, specifically for the **Storybook** integration:
 
-TODO: find correct format for raw output, `raw` is wrong!
-
 <CH.Spotlight>
 
 <CH.Code>
-```raw focus=37:39
+```shellscript focus=37:39
 yarn run v1.22.18
 $ kickstartDS tokens compile --cleanup --rc-only
   _    _      _        _             _   ____  ____
@@ -559,7 +557,7 @@ Done in 1.08s.
 Those are all of our **Design Token** converted to [CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) (as with `src/token/tokens.css`), but with the correct `storybook-design-token` presenters already added.
 
 <CH.Code>
-```raw focus=38
+```shellscript focus=38
 yarn run v1.22.18
 $ kickstartDS tokens compile --cleanup --rc-only
   _    _      _        _             _   ____  ____
@@ -614,7 +612,7 @@ Contains a collection of all used icons. Similarly to before, they just get anno
 The file gets picked up by the addon automatically, we don't need to add any additional configuration.
 
 <CH.Code>
-```raw focus=39
+```shellscript focus=39
 yarn run v1.22.18
 $ kickstartDS tokens compile --cleanup --rc-only
   _    _      _        _             _   ____  ____
