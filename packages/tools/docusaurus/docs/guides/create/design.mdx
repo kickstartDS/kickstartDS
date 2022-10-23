@@ -10,26 +10,29 @@ import Admonition from 'react-admonitions';
 
 Applying your branding and corporate design to **kickstartDS** is itself done in roughly two steps:
 
-1. Use a reduced set of Branding Token to generate your initial Design Token set
-2. Fine tune the resulting Design Token set to closely fit your corporate identity
+1. Use a reduced set of `Branding Token` to generate your initial `Design Token` set
+2. Fine tune the resulting `Design Token` set to closely fit your corporate identity
 
 ## Apply branding
 
 ### Initialization
 
-We start by creating a new file: `branding-token.json` at our project root:
+TODO rename this file (`token-primitives.json` -> `branding-token.json`), change `kickstartDS-cli` accordingly, location should also be configurable there
+
+We start by creating a file `branding-token.json`, inside a new directory `src/token`... for everything to do with `Design Token` going forward:
 
 ```bash
-touch branding-token.json
+mkdir -p src/token
+touch src/token/branding-token.json
 ```
 
-This will hold all of our `Branding Token`. Those are used to initialize you first Design Token set, and especially ease first-time setup.<br/>
+This file will hold all of our `Branding Token`. Those are used to initialize you first `Design Token` set, and especially ease first-time setup.<br/>
 Get the most up-to-date version of its content [from here](https://github.com/kickstartDS/kickstartDS/blob/feature/style-dictionary-container-queries/packages/tools/style-dictionary/defaultPrimitives.json), and paste it into the file you just created:
 
 <CH.Section>
 <CH.Code>
 
-```json branding-token.json
+```json src/token/branding-token.json
 {
   "color": {
     "primary": "#333",
@@ -108,33 +111,6 @@ Get the most up-to-date version of its content [from here](https://github.com/ki
     "desktop": 1200
   }
 }
-```
-
-```json package.json
-{
-  "name": "@my/design-system",
-  "version": "1.0.0",
-  "description": "Design System for all @MY needs",
-  "main": "dist/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Jonas Ulrich",
-  "license": "MIT",
-  "dependencies": {
-    "@kickstartds/base": "2.0.0-canary.922.4908.0",
-    "react": "17",
-    "react-dom": "17"
-  }
-}
-```
-
-```bash .nvmrc
-16.14
-```
-
-```bash .gitignore
-node_modules
 ```
 
 </CH.Code>
@@ -166,12 +142,12 @@ But to get a first feel for working with the file, and to add some flavour to ou
 | <div className="color-preview color-primary"></div> | `scale-ratio`          | `1.35`                                                                                                                                          |
 | <div className="color-preview color-primary"></div> | `bp-ratio`             | `1.15`                                                                                                                                          |
 
-TODO add presenters for token values to make this nicer
+TODO add presenters for token values to make this nicer<br/>
 TODO **really** think again about adding a demo theme to make this whole guide less confusing
 
 ### Apply Branding Token
 
-So let's get into it:
+So let's get right into it, customizing step by step:
 
 <CH.Scrollycoding>
 
@@ -181,7 +157,7 @@ This is the file you've copied before, we'll start updating it piecemeal to show
 
 <CH.Code>
 
-```json branding-token.json
+```json src/token/branding-token.json
 {
   "color": {
     "primary": "#333",
@@ -262,33 +238,6 @@ This is the file you've copied before, we'll start updating it piecemeal to show
 }
 ```
 
-```json package.json
-{
-  "name": "@my/design-system",
-  "version": "1.0.0",
-  "description": "Design System for all @MY needs",
-  "main": "dist/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Jonas Ulrich",
-  "license": "MIT",
-  "dependencies": {
-    "@kickstartds/base": "2.0.0-canary.922.4908.0",
-    "react": "17",
-    "react-dom": "17"
-  }
-}
-```
-
-```bash .nvmrc
-16.14
-```
-
-```bash .gitignore
-node_modules
-```
-
 </CH.Code>
 
 ---
@@ -301,7 +250,7 @@ Next to `primary` itself, we'll also define its counter part `primary-inverted` 
 
 <CH.Code>
 
-```json branding-token.json focus=2:4
+```json src/token/branding-token.json focus=2:4
 {
   "color": {
     "primary": "#05566a",
@@ -382,18 +331,6 @@ Next to `primary` itself, we'll also define its counter part `primary-inverted` 
 }
 ```
 
-```json package.json
-
-```
-
-```bash .nvmrc
-
-```
-
-```bash .gitignore
-
-```
-
 </CH.Code>
 
 ---
@@ -406,7 +343,7 @@ Additionally we'll define some slightly different colors for our `link` and `lin
 
 <CH.Code>
 
-```json branding-token.json focus=2:4,6:8
+```json src/token/branding-token.json focus=2:4,6:8
 {
   "color": {
     "primary": "#05566a",
@@ -487,18 +424,6 @@ Additionally we'll define some slightly different colors for our `link` and `lin
 }
 ```
 
-```json package.json
-
-```
-
-```bash .nvmrc
-
-```
-
-```bash .gitignore
-
-```
-
 </CH.Code>
 
 ---
@@ -511,7 +436,7 @@ Because it seems to fit our branding, and doesn't interfere with user expectatio
 
 <CH.Code>
 
-```json branding-token.json focus=2:4,6:8,11:12
+```json src/token/branding-token.json focus=2:4,6:8,11:12
 {
   "color": {
     "primary": "#05566a",
@@ -592,18 +517,6 @@ Because it seems to fit our branding, and doesn't interfere with user expectatio
 }
 ```
 
-```json package.json
-
-```
-
-```bash .nvmrc
-
-```
-
-```bash .gitignore
-
-```
-
 </CH.Code>
 
 ---
@@ -614,7 +527,7 @@ In this guide we'll opt for a native system font stack for our `display` and `co
 
 <CH.Code>
 
-```json branding-token.json focus=18:20,29:30
+```json src/token/branding-token.json focus=18:20,29:30
 {
   "color": {
     "primary": "#05566a",
@@ -695,18 +608,6 @@ In this guide we'll opt for a native system font stack for our `display` and `co
 }
 ```
 
-```json package.json
-
-```
-
-```bash .nvmrc
-
-```
-
-```bash .gitignore
-
-```
-
 </CH.Code>
 
 ---
@@ -719,7 +620,7 @@ We keep the general spacing of `8px`, though. We'll also leave the rest of the v
 
 <CH.Code>
 
-```json branding-token.json focus=63,65:66
+```json src/token/branding-token.json focus=63,65:66
 {
   "color": {
     "primary": "#05566a",
@@ -800,23 +701,11 @@ We keep the general spacing of `8px`, though. We'll also leave the rest of the v
 }
 ```
 
-```json package.json
-
-```
-
-```bash .nvmrc
-
-```
-
-```bash .gitignore
-
-```
-
 </CH.Code>
 
 </CH.Scrollycoding>
 
-Now that we have a slightly modified, up-to-date version of our Branding Token in place, we can start hooking everything up.
+Now that we have a slightly modified, up-to-date version of our `Branding Token` in place, we can start hooking everything up.
 
 ## `kickstartDS` Integration
 
@@ -826,128 +715,68 @@ First, add the `kickstartDS CLI` to your project:
 yarn add kickstartds
 ```
 
-Read more about our CLI [here](#) TODO add link
-
-Then add the following two lines to your `package.json` scripts block:
-
 <CH.Code>
-
-```json package.json focus=6:8,13,15
+```json package.json focus=11,13
 {
   "name": "@my/design-system",
   "version": "1.0.0",
   "description": "Design System for all @MY needs",
   "main": "dist/index.js",
   "scripts": {
-    "init-tokens": "kickstartDS tokens init --cleanup --rc-only",
-    "build-tokens": "kickstartDS tokens compile --cleanup --rc-only",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jonas Ulrich",
   "license": "MIT",
   "dependencies": {
     "@kickstartds/base": "2.0.0-canary.922.4908.0",
-    "kickstartds": "0.2.32",
+    "kickstartds": "0.2.39",
     "react": "17",
     "react-dom": "17"
   }
 }
 ```
 
-```json branding-token.json
+</CH.Code>
+
+Read more about our CLI [here](#) TODO add link
+
+TODO the lines being added below should include CLI options for `branding-token.json` location, just like `--token-path` for the path to write the tokens to
+
+Then add the following two additional lines to your `package.json` scripts block:
+
+<CH.Code>
+
+```json package.json focus=6:8
 {
-  "color": {
-    "primary": "#05566a",
-    "primary-inverted": "#ecff00",
-    "background": "#fff",
-    "foreground": "#050505",
-    "link": "#5D5DD5",
-    "link-inverted": "#C6C6FF",
-    "positive": "#66a80f",
-    "positive-inverted": "#94d82d",
-    "informative": "#05566a",
-    "informative-inverted": "#ecff00",
-    "notice": "#fab005",
-    "notice-inverted": "#f59f00",
-    "negative": "#e03131",
-    "negative-inverted": "#fa5c5c"
+  "name": "@my/design-system",
+  "version": "1.0.0",
+  "description": "Design System for all @MY needs",
+  "main": "dist/index.js",
+  "scripts": {
+    "init-tokens": "kickstartDS tokens init --token-path './src/token/dictionary' --cleanup --rc-only",
+    "build-tokens": "kickstartDS tokens compile --token-path './src/token/dictionary' --cleanup --rc-only",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "font": {
-    "display": {
-      "family": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
-      "font-size": 16,
-      "line-height": 1.75,
-      "scale-ratio": 1.225,
-      "bp-factor": {
-        "phone": 1.167,
-        "tablet": 1.333
-      }
-    },
-    "copy": {
-      "family": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
-      "font-size": 16,
-      "line-height": 1.75,
-      "scale-ratio": 1.225,
-      "bp-factor": {
-        "tablet": 1.125
-      }
-    },
-    "interface": {
-      "family": "system-ui, -apple-system, BlinkMacSystemFont, 'Avenir Next', 'Avenir', 'Segoe UI', 'Lucida Grande', 'Helvetica Neue', 'Helvetica', 'Fira Sans', 'Roboto', 'Noto', 'Droid Sans', 'Cantarell', 'Oxygen', 'Ubuntu', 'Franklin Gothic Medium', 'Century Gothic', 'Liberation Sans', sans-serif",
-      "font-size": 16,
-      "line-height": 1.75,
-      "scale-ratio": 1.225,
-      "bp-factor": {
-        "tablet": 1.125
-      }
-    },
-    "mono": {
-      "family": "ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace",
-      "font-size": 16,
-      "line-height": 1.75,
-      "scale-ratio": 1.225,
-      "bp-factor": {
-        "tablet": 1.125
-      }
-    }
-  },
-  "font-weight": {
-    "light": 300,
-    "regular": 400,
-    "semi-bold": 600,
-    "bold": 700
-  },
-  "spacing": {
-    "base": 8,
-    "scale-ratio": 1.35,
-    "bp-ratio": 1.15
-  },
-  "border-radius": "2px",
-  "box-shadow": {
-    "blur": "2.75px"
-  },
-  "breakpoints": {
-    "phone": 576,
-    "tablet": 768,
-    "laptop": 992,
-    "desktop": 1200
+  "author": "Jonas Ulrich",
+  "license": "MIT",
+  "dependencies": {
+    "@kickstartds/base": "2.0.0-canary.922.4908.0",
+    "kickstartds": "0.2.39",
+    "react": "17",
+    "react-dom": "17"
   }
 }
 ```
 
-```bash .nvmrc
-16.14
-```
-
-```bash .gitignore
-node_modules
-```
-
 </CH.Code>
+
+`init-tokens` is used to convert your `Branding Token` (`branding-token.json`) into a `Style Dictionary` compatible `Design Token` set (a bunch of `JSON` files), whereas `build-tokens` takes your `Design Token` set, and converts it to the outputs needed to use and display your Design System. But more about this later!
+
+The `--token-path` set here tells our CLI where to put and search for your `Design Token` set, we'll use `src/token/dictionary` in this guide (but you may change this to something else of course).
 
 ### Generate first Design Token set
 
-Generate your first full set of Design Token by calling:
+Generate your first full set of `Design Token` now, by calling:
 
 ```bash
 yarn init-tokens
@@ -955,9 +784,9 @@ yarn init-tokens
 
 Your output should look roughly like this:
 
-```
+```txt
 yarn run v1.22.18
-$ kickstartDS tokens init --cleanup --rc-only .txt
+$ kickstartDS tokens init --token-path './src/token/dictionary' --cleanup --rc-only
   _    _      _        _             _   ____  ____
  | | _(_) ___| | _____| |_ __ _ _ __| |_|  _ \/ ___|
  | |/ / |/ __| |/ / __| __/ _` | '__| __| | | \___ \
@@ -974,7 +803,7 @@ ______________/\\\\\\\\\__/\\\______________/\\\\\\\\\\\_______
        __/\\\____\////\\\\\\\\\_\/\\\\\\\\\\\\\\\__/\\\\\\\\\\\__/\\\_
         _\///________\/////////__\///////////////__\///////////__\///__
 
-Version: 0.2.32
+Version: 0.2.39
 For more information visit:
 https://www.kickstartDS.com/cli
 
@@ -987,20 +816,19 @@ Starting...
 [init: cleanup] info: finished cleaning up temp dir /tmp/tokens-init-init-task before starting command
 [1/1] [init: init] info: running the init subtask
 [info] generating your token set from primitives tokens file /tmp/tokens-init-init-task/token-primitives.json
-[info] successfully generated primitives tokens and wrote them to folder /tmp/tokens-init-init-task/tokens
+[info] successfully generated primitives tokens and wrote them to folder /tmp/tokens-init-init-task/./src/token/dictionary
 [1/1] [init: init] info: finished running the init subtask successfully
 [kickstartDS: tokens/init] finished: init command with init variable init-task
-Done in 1.29s.
-
+Done in 1.19s.
 
 ```
 
-It uses your `branding-token.json` as an input, and generates a folder `tokens` for you. That folder holds `JSON` files defining your Design Token by category:
+It uses your `branding-token.json` as an input, and generates a folder `src/token/dictionary` for you. That folder holds `JSON` files defining your `Design Token` by category:
 
 ```bash
-$ tree tokens
+$ tree src/token/dictionary
 
-> tokens
+> src/token/dictionary
 > ├── background-color.json
 > ├── border-color.json
 > ├── border.json
@@ -1017,15 +845,17 @@ $ tree tokens
 > 0 directories, 12 files
 ```
 
-You'll only use this mechanism when first setting up your tokens. It's meant to specifically ease this workflow. Running it again will overwrite changes you manually did to your Design Token set, which is probably not intended!
+You'll only use this mechanism when first setting up your tokens. It's meant to specifically ease this workflow. Running it again will overwrite changes you manually did to your `Design Token` set, which is probably not intended!
+
+To learn more about the categories represented by those generated files, have a look at [our foundations page about them](../../foundations/token/design-token/index.md).
 
 ### Compile Design Token
 
 Finally, to test the integration works as expected, we'll first want to create one additional file: `sd.config.js`. As the name may imply, this is further configuration for our Design Token, to convert them into different outputs (more specifically the Style Dictionary that gets used under the hood):
 
-This is based on `Style Dictionary`, so generally follows [their configuration scheme](https://amzn.github.io/style-dictionary/#/config?id=using-configuration-files).
+As this is based on `Style Dictionary`, it generally follows [their configuration scheme](https://amzn.github.io/style-dictionary/#/config?id=using-configuration-files).
 
-Let's details some lines:
+Let's detail some lines:
 
 <CH.Spotlight>
 <CH.Code>
@@ -1037,7 +867,7 @@ const { config } = require('@kickstartds/style-dictionary');
 
 module.exports = StyleDictionary.extend(config).extend({
   source: [
-    'tokens/**/*.json',
+    'src/token/dictionary/**/*.json',
     path.join(
       path.dirname(require.resolve('@kickstartds/core/package.json')),
       'source/design-tokens/icons/*.svg'
@@ -1049,117 +879,6 @@ module.exports = StyleDictionary.extend(config).extend({
     },
   },
 });
-```
-
-```json package.json
-{
-  "name": "@my/design-system",
-  "version": "1.0.0",
-  "description": "Design System for all @MY needs",
-  "main": "dist/index.js",
-  "scripts": {
-    "init-tokens": "kickstartDS tokens init --cleanup --rc-only",
-    "build-tokens": "kickstartDS tokens compile --cleanup --rc-only",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Jonas Ulrich",
-  "license": "MIT",
-  "dependencies": {
-    "@kickstartds/base": "2.0.0-canary.922.4908.0",
-    "kickstartds": "0.2.32",
-    "react": "17",
-    "react-dom": "17"
-  }
-}
-```
-
-```json branding-token.json
-{
-  "color": {
-    "primary": "#05566a",
-    "primary-inverted": "#ecff00",
-    "background": "#fff",
-    "foreground": "#050505",
-    "link": "#5D5DD5",
-    "link-inverted": "#C6C6FF",
-    "positive": "#66a80f",
-    "positive-inverted": "#94d82d",
-    "informative": "#05566a",
-    "informative-inverted": "#ecff00",
-    "notice": "#fab005",
-    "notice-inverted": "#f59f00",
-    "negative": "#e03131",
-    "negative-inverted": "#fa5c5c"
-  },
-  "font": {
-    "display": {
-      "family": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
-      "font-size": 16,
-      "line-height": 1.75,
-      "scale-ratio": 1.225,
-      "bp-factor": {
-        "phone": 1.167,
-        "tablet": 1.333
-      }
-    },
-    "copy": {
-      "family": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
-      "font-size": 16,
-      "line-height": 1.75,
-      "scale-ratio": 1.225,
-      "bp-factor": {
-        "tablet": 1.125
-      }
-    },
-    "interface": {
-      "family": "system-ui, -apple-system, BlinkMacSystemFont, 'Avenir Next', 'Avenir', 'Segoe UI', 'Lucida Grande', 'Helvetica Neue', 'Helvetica', 'Fira Sans', 'Roboto', 'Noto', 'Droid Sans', 'Cantarell', 'Oxygen', 'Ubuntu', 'Franklin Gothic Medium', 'Century Gothic', 'Liberation Sans', sans-serif",
-      "font-size": 16,
-      "line-height": 1.75,
-      "scale-ratio": 1.225,
-      "bp-factor": {
-        "tablet": 1.125
-      }
-    },
-    "mono": {
-      "family": "ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace",
-      "font-size": 16,
-      "line-height": 1.75,
-      "scale-ratio": 1.225,
-      "bp-factor": {
-        "tablet": 1.125
-      }
-    }
-  },
-  "font-weight": {
-    "light": 300,
-    "regular": 400,
-    "semi-bold": 600,
-    "bold": 700
-  },
-  "spacing": {
-    "base": 8,
-    "scale-ratio": 1.35,
-    "bp-ratio": 1.15
-  },
-  "border-radius": "2px",
-  "box-shadow": {
-    "blur": "2.75px"
-  },
-  "breakpoints": {
-    "phone": 576,
-    "tablet": 768,
-    "laptop": 992,
-    "desktop": 1200
-  }
-}
-```
-
-```bash .nvmrc
-16.14
-```
-
-```bash .gitignore
-node_modules
 ```
 
 </CH.Code>
@@ -1179,7 +898,7 @@ const { config } = require('@kickstartds/style-dictionary');
 
 module.exports = StyleDictionary.extend(config).extend({
   source: [
-    'tokens/**/*.json',
+    'src/token/dictionary/**/*.json',
     path.join(
       path.dirname(require.resolve('@kickstartds/core/package.json')),
       'source/design-tokens/icons/*.svg'
@@ -1191,22 +910,6 @@ module.exports = StyleDictionary.extend(config).extend({
     },
   },
 });
-```
-
-```json package.json
-
-```
-
-```json branding-token.json
-
-```
-
-```bash .nvmrc
-
-```
-
-```bash .gitignore
-
 ```
 
 </CH.Code>
@@ -1226,7 +929,7 @@ const { config } = require('@kickstartds/style-dictionary');
 
 module.exports = StyleDictionary.extend(config).extend({
   source: [
-    'tokens/**/*.json',
+    'src/token/dictionary/**/*.json',
     path.join(
       path.dirname(require.resolve('@kickstartds/core/package.json')),
       'source/design-tokens/icons/*.svg'
@@ -1240,29 +943,13 @@ module.exports = StyleDictionary.extend(config).extend({
 });
 ```
 
-```json package.json
-
-```
-
-```json branding-token.json
-
-```
-
-```bash .nvmrc
-
-```
-
-```bash .gitignore
-
-```
-
 </CH.Code>
 
 ---
 
 #### Design Token location
 
-We configure the default Design Token location, which is `tokens` as a glob `tokens/**/*.json`...
+We configure the default Design Token location, which is `tokens` as a glob `src/token/dictionary/**/*.json`...
 
 <CH.Code>
 
@@ -1273,7 +960,7 @@ const { config } = require('@kickstartds/style-dictionary');
 
 module.exports = StyleDictionary.extend(config).extend({
   source: [
-    'tokens/**/*.json',
+    'src/token/dictionary/**/*.json',
     path.join(
       path.dirname(require.resolve('@kickstartds/core/package.json')),
       'source/design-tokens/icons/*.svg'
@@ -1285,22 +972,6 @@ module.exports = StyleDictionary.extend(config).extend({
     },
   },
 });
-```
-
-```json package.json
-
-```
-
-```json branding-token.json
-
-```
-
-```bash .nvmrc
-
-```
-
-```bash .gitignore
-
 ```
 
 </CH.Code>
@@ -1320,7 +991,7 @@ const { config } = require('@kickstartds/style-dictionary');
 
 module.exports = StyleDictionary.extend(config).extend({
   source: [
-    'tokens/**/*.json',
+    'src/token/dictionary/**/*.json',
     path.join(
       path.dirname(require.resolve('@kickstartds/core/package.json')),
       'source/design-tokens/icons/*.svg'
@@ -1334,29 +1005,13 @@ module.exports = StyleDictionary.extend(config).extend({
 });
 ```
 
-```json package.json
-
-```
-
-```json branding-token.json
-
-```
-
-```bash .nvmrc
-
-```
-
-```bash .gitignore
-
-```
-
 </CH.Code>
 
 ---
 
 #### Platforms
 
-To test that our integration works as expected, we'll add the `css` platform for now, which will result in our Design Token being converted to CSS Custom Properties, as `src/token/tokens.css`.
+To test that our integration works as expected, we'll add the `css` platform for now, which will result in our Design Token being converted to [CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties), as `src/token/tokens.css`.
 
 <CH.Code>
 
@@ -1367,7 +1022,7 @@ const { config } = require('@kickstartds/style-dictionary');
 
 module.exports = StyleDictionary.extend(config).extend({
   source: [
-    'tokens/**/*.json',
+    'src/token/dictionary/**/*.json',
     path.join(
       path.dirname(require.resolve('@kickstartds/core/package.json')),
       'source/design-tokens/icons/*.svg'
@@ -1379,22 +1034,6 @@ module.exports = StyleDictionary.extend(config).extend({
     },
   },
 });
-```
-
-```json package.json
-
-```
-
-```json branding-token.json
-
-```
-
-```bash .nvmrc
-
-```
-
-```bash .gitignore
-
 ```
 
 </CH.Code>
@@ -1417,7 +1056,7 @@ If everything worked as expected, you should end up with a long `src/token/token
 
 ```
 yarn run v1.22.18
-$ kickstartDS tokens compile --cleanup --rc-only
+$ kickstartDS tokens init --token-path './src/token/dictionary' --cleanup --rc-only
   _    _      _        _             _   ____  ____
  | | _(_) ___| | _____| |_ __ _ _ __| |_|  _ \/ ___|
  | |/ / |/ __| |/ / __| __/ _` | '__| __| | | \___ \
@@ -1434,32 +1073,28 @@ ______________/\\\\\\\\\__/\\\______________/\\\\\\\\\\\_______
        __/\\\____\////\\\\\\\\\_\/\\\\\\\\\\\\\\\__/\\\\\\\\\\\__/\\\_
         _\///________\/////////__\///////////////__\///////////__\///__
 
-Version: 0.2.32
+Version: 0.2.39
 For more information visit:
 https://www.kickstartDS.com/cli
 
 Starting...
-[kickstartDS: general] [info]: welcome to the kickstartDS CLI
-[kickstartDS: tokens/compile] starting: compile command with compile variable compile-task
-[1/1] [compile: check] [info]: checking prerequesites before starting
-[1/1] [compile: check] [info]: prerequesites met, starting
-[compile: cleanup] [info]: cleaning up temp dir /tmp/tokens-compile-compile-task before starting command
-[compile: cleanup] [info]: finished cleaning up temp dir /tmp/tokens-compile-compile-task before starting command
-[1/1] [compile: compile] [info]: running the compile subtask
-[1/1] [compile: compile] [info]: getting Style Dictionary from token files
-[1/1] [compile: compile] [info]: compiling Style Dictionary to needed CSS and assets
-
-css
-✔︎ src/token/tokens.css
-[1/1] [compile: compile] [info]: copying generated CSS and assets to local folder
-[1/1] [compile: compile] [info]: finished running the compile subtask successfully
-[kickstartDS: tokens/compile] finished: compile command with compile variable compile-task
-Done in 1.06s.
+[kickstartDS: general] [info: welcome to the kickstartDS CLI
+[kickstartDS: tokens/init] starting: init command with init variable init-task
+[1/1] [init: check] [info: checking prerequesites before starting
+[1/1] [init: check] [info: prerequesites met, starting
+[init: cleanup] [info: cleaning up temp dir /tmp/tokens-init-init-task before starting command
+[init: cleanup] [info: finished cleaning up temp dir /tmp/tokens-init-init-task before starting command
+[1/1] [init: init] [info: running the init subtask
+[[info] generating your token set from primitives tokens file /tmp/tokens-init-init-task/token-primitives.json
+[[info] successfully generated primitives tokens and wrote them to folder /tmp/tokens-init-init-task/./src/token/dictionary
+[1/1] [init: init] [info: finished running the init subtask successfully
+[kickstartDS: tokens/init] finished: init command with init variable init-task
+Done in 1.25s.
 
 ```
 
 <Admonition type="tip" title="To commit, or not to commit...">
-  It's up to personal / team preference if the generated `token.css` file should be added to your repository... or your `.gitignore`.
+  It's up to personal / team preference if the generated `src/token/token.css` file should be added to your repository... or your `.gitignore`.
 
 There are valid arguments to make for both sides, so you should just follow what feels right for you!
 
@@ -1467,9 +1102,9 @@ There are valid arguments to make for both sides, so you should just follow what
 
 ### Fine tune the design
 
-Once the Design Token are generated, the Design System will already have the broad look & feel of your Corporate Design!
-However you probably still have to tweak it a little to make it match up perfecly with your CD requirements.
-This can be done by configuring the various `.json` files found within the `tokens` folder.
+Once the `Design Token` are generated, the Design System will already have the broad look & feel of your Corporate Design!<br/>
+However you probably still have to tweak it a little to make it match up perfecly with your CD requirements.<br/>
+This can be done by configuring the various `.json` files found within the `dictionary` folder.<br/>
 
 <CH.Scrollycoding>
 
@@ -3878,6 +3513,8 @@ If you have a hugley variying font size it makes sense to adjust the line-height
 
 </CH.Scrollycoding>
 
+TODO add step re-generating token set with new values, maybe add before / after screenshots to visualize?
+
 ## Result
 
 So for the second step this will leave us with the following files overall:
@@ -3892,15 +3529,15 @@ So for the second step this will leave us with the following files overall:
   "description": "Design System for all @MY needs",
   "main": "dist/index.js",
   "scripts": {
-    "init-tokens": "kickstartDS tokens init --cleanup --rc-only",
-    "build-tokens": "kickstartDS tokens compile --cleanup --rc-only",
+    "init-tokens": "kickstartDS tokens init --token-path './src/token/dictionary' --cleanup --rc-only",
+    "build-tokens": "kickstartDS tokens compile --token-path './src/token/dictionary' --cleanup --rc-only",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jonas Ulrich",
   "license": "MIT",
   "dependencies": {
     "@kickstartds/base": "2.0.0-canary.922.4908.0",
-    "kickstartds": "0.2.32",
+    "kickstartds": "0.2.39",
     "react": "17",
     "react-dom": "17"
   }
@@ -3914,7 +3551,7 @@ const { config } = require('@kickstartds/style-dictionary');
 
 module.exports = StyleDictionary.extend(config).extend({
   source: [
-    'tokens/**/*.json',
+    'src/token/dictionary/**/*.json',
     path.join(
       path.dirname(require.resolve('@kickstartds/core/package.json')),
       'source/design-tokens/icons/*.svg'

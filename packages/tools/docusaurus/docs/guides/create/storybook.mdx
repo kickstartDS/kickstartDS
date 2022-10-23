@@ -30,8 +30,8 @@ Let's have a look at our `package.json`, it's starting to grow already:
   "description": "Design System for all @MY needs",
   "main": "dist/index.js",
   "scripts": {
-    "init-tokens": "kickstartDS tokens init --cleanup --rc-only",
-    "build-tokens": "kickstartDS tokens compile --cleanup --rc-only",
+    "init-tokens": "kickstartDS tokens init --token-path './src/token/dictionary' --cleanup --rc-only",
+    "build-tokens": "kickstartDS tokens compile --token-path './src/token/dictionary' --cleanup --rc-only",
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
@@ -40,7 +40,7 @@ Let's have a look at our `package.json`, it's starting to grow already:
   "license": "MIT",
   "dependencies": {
     "@kickstartds/base": "2.0.0-canary.922.4908.0",
-    "kickstartds": "0.2.32",
+    "kickstartds": "0.2.39",
     "react": "17",
     "react-dom": "17"
   },
@@ -77,8 +77,8 @@ It also includes `Storybook`s Essential addon, adding recommended addons by defa
   "description": "Design System for all @MY needs",
   "main": "dist/index.js",
   "scripts": {
-    "init-tokens": "kickstartDS tokens init --cleanup --rc-only",
-    "build-tokens": "kickstartDS tokens compile --cleanup --rc-only",
+    "init-tokens": "kickstartDS tokens init --token-path './src/token/dictionary' --cleanup --rc-only",
+    "build-tokens": "kickstartDS tokens compile --token-path './src/token/dictionary' --cleanup --rc-only",
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
@@ -87,7 +87,7 @@ It also includes `Storybook`s Essential addon, adding recommended addons by defa
   "license": "MIT",
   "dependencies": {
     "@kickstartds/base": "2.0.0-canary.922.4908.0",
-    "kickstartds": "0.2.32",
+    "kickstartds": "0.2.39",
     "react": "17",
     "react-dom": "17"
   },
@@ -125,8 +125,8 @@ Next to the dependencies, two `scripts` entries were added by the `Storybook` in
   "description": "Design System for all @MY needs",
   "main": "dist/index.js",
   "scripts": {
-    "init-tokens": "kickstartDS tokens init --cleanup --rc-only",
-    "build-tokens": "kickstartDS tokens compile --cleanup --rc-only",
+    "init-tokens": "kickstartDS tokens init --token-path './src/token/dictionary' --cleanup --rc-only",
+    "build-tokens": "kickstartDS tokens compile --token-path './src/token/dictionary' --cleanup --rc-only",
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
@@ -135,7 +135,7 @@ Next to the dependencies, two `scripts` entries were added by the `Storybook` in
   "license": "MIT",
   "dependencies": {
     "@kickstartds/base": "2.0.0-canary.922.4908.0",
-    "kickstartds": "0.2.32",
+    "kickstartds": "0.2.39",
     "react": "17",
     "react-dom": "17"
   },
@@ -173,7 +173,7 @@ The folder contains two files for now:
 
 #### `main.js` configuration
 
-This file contains configuration for `Storybook`... which addons to load, additional addon configuration, Webpack configuration, and so on. We'll continue building this up while adding addons in the next steps.
+This file contains configuration for `Storybook` itself... which addons to load, additional addon configuration, Webpack build & compile configuration, and so on. We'll continue building this up while adding addons in the next steps.
 
 For a detailed overview, have a look at [`Storybook`s documentation](https://storybook.js.org/docs/react/configure/overview).
 
@@ -281,7 +281,7 @@ module.exports = {
 
 #### `preview.js` configuration
 
-This file specifically includes configuration for component **previews**, we'll need to make sure all needed CSS is loaded here... for example! Additionally, configuration for how stories are displayed can be adjusted through the exports `parameters` and `decorators` (amongst others, learn more [here](https://storybook.js.org/docs/react/configure/overview#configure-story-rendering)).
+This file specifically includes configuration for component **previews**, we'll need to make sure all needed CSS is loaded here... for example! Additionally, configuration for how stories are displayed can be adjusted globally, through the exports `parameters` and `decorators` (amongst others, learn more [here](https://storybook.js.org/docs/react/configure/overview#configure-story-rendering)).
 
 <CH.Scrollycoding>
 
@@ -443,11 +443,213 @@ As part of the left sidebar, and under your initially opened "Welcome" page, the
 
 TODO add image of sidebar here
 
+### Design Token integration
 
-* Add Welcome page + sort in preview
-* Add needed decorators / Providers
-* Add icon sprite
-* Add Design Token docs
+Next up is adding some glue code to have our Design Token set integrated with our `Storybook` nicely. We can start by copying some stories provided by **kickstartDS** (those are the same that can be seen [here](https://www.kickstartds.com/storybook/?path=/story/design-tokens-colors--page)).
+
+For Design Token documentation we also use [`storybook-design-token`](https://storybook.js.org/addons/storybook-design-token/) as an addon. Mainly for its `DesignTokenDocBlock` component, which helps in rendering the pages we've copied. So we also install that, too:
+
+```bash
+cp -r node_modules/@kickstartds/core/lib/design-tokens docs/tokens
+yarn add -D storybook-design-token
+```
+
+But if you start your `Storybook` now (`yarn storybook`), you'll be greeted by empty pages. That's because we've not set up the actual Design Token integration with `Storybook` / our `Style Dictionary`, yet.
+
+As the `storybook-design-token` addon needs our tokens in a specific format (read more [here](https://github.com/UX-and-I/storybook-design-token#available-presenters)), we adjust our `Style Dictionary` configuration in `sd.config.js` to include the provided `Storybook` configuration. We also tell it to put those `Storybook` specific files into our already existing `src/token` directory:
+
+```js sd.config.js focus=14:16
+const path = require('path');
+const StyleDictionary = require("style-dictionary");
+const { config } = require("@kickstartds/style-dictionary");
+
+module.exports = StyleDictionary.extend(config).extend({
+  source: [
+    "src/token/dictionary/**/*.json",
+    path.join(path.dirname(require.resolve('@kickstartds/core/package.json')), 'source/design-tokens/icons/*.svg')
+  ],
+  platforms: {
+    css: {
+      buildPath: 'src/token/'
+    },
+    storybook: {
+      buildPath: 'src/token/storybook/'
+    },
+  },
+});
+```
+
+With that change, re-build your Design Token set:
+
+```bash
+yarn build-tokens
+```
+
+You'll notice it now writes two additional files for you, specifically for the `Storybook` integration:
+
+<CH.Spotlight>
+
+<CH.Code>
+```raw focus=37:39
+yarn run v1.22.18
+$ kickstartDS tokens compile --cleanup --rc-only
+  _    _      _        _             _   ____  ____
+ | | _(_) ___| | _____| |_ __ _ _ __| |_|  _ \/ ___|
+ | |/ / |/ __| |/ / __| __/ _` | '__| __| | | \___ \
+ |   <| | (__|   <\__ \ || (_| | |  | |_| |_| |___) |
+ |_|\_\_|\___|_|\_\___/\__\__,_|_|   \__|____/|____/
+
+______________/\\\\\\\\\__/\\\______________/\\\\\\\\\\\_______
+ ___________/\\\////////__\/\\\_____________\/////\\\///________
+  _________/\\\/___________\/\\\_________________\/\\\___________
+   ________/\\\_____________\/\\\_________________\/\\\___________
+    _______\/\\\_____________\/\\\_________________\/\\\___________
+     _______\//\\\____________\/\\\_________________\/\\\___________
+      ________\///\\\__________\/\\\_________________\/\\\___________
+       __/\\\____\////\\\\\\\\\_\/\\\\\\\\\\\\\\\__/\\\\\\\\\\\__/\\\_
+        _\///________\/////////__\///////////////__\///////////__\///__
+
+Version: 0.2.39
+For more information visit:
+https://www.kickstartDS.com/cli
+
+Starting...
+[kickstartDS: general] [info]: welcome to the kickstartDS CLI
+[kickstartDS: tokens/compile] starting: compile command with compile variable compile-task
+[1/1] [compile: check] [info]: checking prerequesites before starting
+[1/1] [compile: check] [info]: prerequesites met, starting
+[compile: cleanup] [info]: cleaning up temp dir /tmp/tokens-compile-compile-task before starting command
+[compile: cleanup] [info]: finished cleaning up temp dir /tmp/tokens-compile-compile-task before starting command
+[1/1] [compile: compile] [info]: running the compile subtask
+[1/1] [compile: compile] [info]: getting Style Dictionary from token files
+[1/1] [compile: compile] [info]: compiling Style Dictionary to needed CSS and assets
+
+css
+✔︎ src/token/tokens.css
+
+storybook
+✔︎ src/token/storybook/tokens.css
+✔︎ src/token/storybook/icons.html
+[1/1] [compile: compile] [info]: copying generated CSS and assets to local folder
+[1/1] [compile: compile] [info]: finished running the compile subtask successfully
+[kickstartDS: tokens/compile] finished: compile command with compile variable compile-task
+Done in 1.08s.
+```
+</CH.Code>
+
+---
+
+#### `src/token/storybook/tokens.css`
+
+Those are all of our Design Token converted to [CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) (as with `src/token/tokens.css`), but with the correct `storybook-design-token` presenters already added.
+
+<CH.Code>
+```raw focus=38
+yarn run v1.22.18
+$ kickstartDS tokens compile --cleanup --rc-only
+  _    _      _        _             _   ____  ____
+ | | _(_) ___| | _____| |_ __ _ _ __| |_|  _ \/ ___|
+ | |/ / |/ __| |/ / __| __/ _` | '__| __| | | \___ \
+ |   <| | (__|   <\__ \ || (_| | |  | |_| |_| |___) |
+ |_|\_\_|\___|_|\_\___/\__\__,_|_|   \__|____/|____/
+
+______________/\\\\\\\\\__/\\\______________/\\\\\\\\\\\_______
+ ___________/\\\////////__\/\\\_____________\/////\\\///________
+  _________/\\\/___________\/\\\_________________\/\\\___________
+   ________/\\\_____________\/\\\_________________\/\\\___________
+    _______\/\\\_____________\/\\\_________________\/\\\___________
+     _______\//\\\____________\/\\\_________________\/\\\___________
+      ________\///\\\__________\/\\\_________________\/\\\___________
+       __/\\\____\////\\\\\\\\\_\/\\\\\\\\\\\\\\\__/\\\\\\\\\\\__/\\\_
+        _\///________\/////////__\///////////////__\///////////__\///__
+
+Version: 0.2.39
+For more information visit:
+https://www.kickstartDS.com/cli
+
+Starting...
+[kickstartDS: general] [info]: welcome to the kickstartDS CLI
+[kickstartDS: tokens/compile] starting: compile command with compile variable compile-task
+[1/1] [compile: check] [info]: checking prerequesites before starting
+[1/1] [compile: check] [info]: prerequesites met, starting
+[compile: cleanup] [info]: cleaning up temp dir /tmp/tokens-compile-compile-task before starting command
+[compile: cleanup] [info]: finished cleaning up temp dir /tmp/tokens-compile-compile-task before starting command
+[1/1] [compile: compile] [info]: running the compile subtask
+[1/1] [compile: compile] [info]: getting Style Dictionary from token files
+[1/1] [compile: compile] [info]: compiling Style Dictionary to needed CSS and assets
+
+css
+✔︎ src/token/tokens.css
+
+storybook
+✔︎ src/token/storybook/tokens.css
+✔︎ src/token/storybook/icons.html
+[1/1] [compile: compile] [info]: copying generated CSS and assets to local folder
+[1/1] [compile: compile] [info]: finished running the compile subtask successfully
+[kickstartDS: tokens/compile] finished: compile command with compile variable compile-task
+Done in 1.08s.
+```
+</CH.Code>
+
+---
+
+#### `src/token/storybook/icons.html`
+
+Lorem ipsum dolor sit amet
+
+<CH.Code>
+```raw focus=39
+yarn run v1.22.18
+$ kickstartDS tokens compile --cleanup --rc-only
+  _    _      _        _             _   ____  ____
+ | | _(_) ___| | _____| |_ __ _ _ __| |_|  _ \/ ___|
+ | |/ / |/ __| |/ / __| __/ _` | '__| __| | | \___ \
+ |   <| | (__|   <\__ \ || (_| | |  | |_| |_| |___) |
+ |_|\_\_|\___|_|\_\___/\__\__,_|_|   \__|____/|____/
+
+______________/\\\\\\\\\__/\\\______________/\\\\\\\\\\\_______
+ ___________/\\\////////__\/\\\_____________\/////\\\///________
+  _________/\\\/___________\/\\\_________________\/\\\___________
+   ________/\\\_____________\/\\\_________________\/\\\___________
+    _______\/\\\_____________\/\\\_________________\/\\\___________
+     _______\//\\\____________\/\\\_________________\/\\\___________
+      ________\///\\\__________\/\\\_________________\/\\\___________
+       __/\\\____\////\\\\\\\\\_\/\\\\\\\\\\\\\\\__/\\\\\\\\\\\__/\\\_
+        _\///________\/////////__\///////////////__\///////////__\///__
+
+Version: 0.2.39
+For more information visit:
+https://www.kickstartDS.com/cli
+
+Starting...
+[kickstartDS: general] [info]: welcome to the kickstartDS CLI
+[kickstartDS: tokens/compile] starting: compile command with compile variable compile-task
+[1/1] [compile: check] [info]: checking prerequesites before starting
+[1/1] [compile: check] [info]: prerequesites met, starting
+[compile: cleanup] [info]: cleaning up temp dir /tmp/tokens-compile-compile-task before starting command
+[compile: cleanup] [info]: finished cleaning up temp dir /tmp/tokens-compile-compile-task before starting command
+[1/1] [compile: compile] [info]: running the compile subtask
+[1/1] [compile: compile] [info]: getting Style Dictionary from token files
+[1/1] [compile: compile] [info]: compiling Style Dictionary to needed CSS and assets
+
+css
+✔︎ src/token/tokens.css
+
+storybook
+✔︎ src/token/storybook/tokens.css
+✔︎ src/token/storybook/icons.html
+[1/1] [compile: compile] [info]: copying generated CSS and assets to local folder
+[1/1] [compile: compile] [info]: finished running the compile subtask successfully
+[kickstartDS: tokens/compile] finished: compile command with compile variable compile-task
+Done in 1.08s.
+```
+</CH.Code>
+
+</CH.Spotlight>
+
+### Add theming
+
+TODO describe
 
 ### Install addons
 
@@ -468,8 +670,8 @@ Let's have another look at our `package.json` now, it's starting to grow already
   "description": "Design System for all @MY needs",
   "main": "dist/index.js",
   "scripts": {
-    "init-tokens": "kickstartDS tokens init --cleanup --rc-only",
-    "build-tokens": "kickstartDS tokens compile --cleanup --rc-only",
+    "init-tokens": "kickstartDS tokens init --token-path './src/token/dictionary' --cleanup --rc-only",
+    "build-tokens": "kickstartDS tokens compile --token-path './src/token/dictionary' --cleanup --rc-only",
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
@@ -481,7 +683,7 @@ Let's have another look at our `package.json` now, it's starting to grow already
     "@kickstartds/storybook-addon-component-tokens": "^0.1.6",
     "@kickstartds/storybook-addon-jsonschema": "^1.0.5",
     "@whitespace/storybook-addon-html": "^5.0.0",
-    "kickstartds": "0.2.32",
+    "kickstartds": "0.2.39",
     "react": "17",
     "react-dom": "17",
     "storybook-design-token": "^2.7.1"
@@ -518,8 +720,8 @@ We use [`@whitespace/storybook-addon-html`](https://storybook.js.org/addons/@whi
   "description": "Design System for all @MY needs",
   "main": "dist/index.js",
   "scripts": {
-    "init-tokens": "kickstartDS tokens init --cleanup --rc-only",
-    "build-tokens": "kickstartDS tokens compile --cleanup --rc-only",
+    "init-tokens": "kickstartDS tokens init --token-path './src/token/dictionary' --cleanup --rc-only",
+    "build-tokens": "kickstartDS tokens compile --token-path './src/token/dictionary' --cleanup --rc-only",
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
@@ -531,7 +733,7 @@ We use [`@whitespace/storybook-addon-html`](https://storybook.js.org/addons/@whi
     "@kickstartds/storybook-addon-component-tokens": "^0.1.6",
     "@kickstartds/storybook-addon-jsonschema": "^1.0.5",
     "@whitespace/storybook-addon-html": "^5.0.0",
-    "kickstartds": "0.2.32",
+    "kickstartds": "0.2.39",
     "react": "17",
     "react-dom": "17",
     "storybook-design-token": "^2.7.1"
@@ -568,8 +770,8 @@ For Design Token documentation we use [`storybook-design-token`](https://storybo
   "description": "Design System for all @MY needs",
   "main": "dist/index.js",
   "scripts": {
-    "init-tokens": "kickstartDS tokens init --cleanup --rc-only",
-    "build-tokens": "kickstartDS tokens compile --cleanup --rc-only",
+    "init-tokens": "kickstartDS tokens init --token-path './src/token/dictionary' --cleanup --rc-only",
+    "build-tokens": "kickstartDS tokens compile --token-path './src/token/dictionary' --cleanup --rc-only",
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
@@ -581,7 +783,7 @@ For Design Token documentation we use [`storybook-design-token`](https://storybo
     "@kickstartds/storybook-addon-component-tokens": "^0.1.6",
     "@kickstartds/storybook-addon-jsonschema": "^1.0.5",
     "@whitespace/storybook-addon-html": "^5.0.0",
-    "kickstartds": "0.2.32",
+    "kickstartds": "0.2.39",
     "react": "17",
     "react-dom": "17",
     "storybook-design-token": "^2.7.1"
@@ -620,8 +822,8 @@ TODO link integration page
   "description": "Design System for all @MY needs",
   "main": "dist/index.js",
   "scripts": {
-    "init-tokens": "kickstartDS tokens init --cleanup --rc-only",
-    "build-tokens": "kickstartDS tokens compile --cleanup --rc-only",
+    "init-tokens": "kickstartDS tokens init --token-path './src/token/dictionary' --cleanup --rc-only",
+    "build-tokens": "kickstartDS tokens compile --token-path './src/token/dictionary' --cleanup --rc-only",
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
@@ -633,7 +835,7 @@ TODO link integration page
     "@kickstartds/storybook-addon-component-tokens": "^0.1.6",
     "@kickstartds/storybook-addon-jsonschema": "^1.0.5",
     "@whitespace/storybook-addon-html": "^5.0.0",
-    "kickstartds": "0.2.32",
+    "kickstartds": "0.2.39",
     "react": "17",
     "react-dom": "17",
     "storybook-design-token": "^2.7.1"
@@ -672,8 +874,8 @@ TODO link integration page
   "description": "Design System for all @MY needs",
   "main": "dist/index.js",
   "scripts": {
-    "init-tokens": "kickstartDS tokens init --cleanup --rc-only",
-    "build-tokens": "kickstartDS tokens compile --cleanup --rc-only",
+    "init-tokens": "kickstartDS tokens init --token-path './src/token/dictionary' --cleanup --rc-only",
+    "build-tokens": "kickstartDS tokens compile --token-path './src/token/dictionary' --cleanup --rc-only",
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
@@ -685,7 +887,7 @@ TODO link integration page
     "@kickstartds/storybook-addon-component-tokens": "^0.1.6",
     "@kickstartds/storybook-addon-jsonschema": "^1.0.5",
     "@whitespace/storybook-addon-html": "^5.0.0",
-    "kickstartds": "0.2.32",
+    "kickstartds": "0.2.39",
     "react": "17",
     "react-dom": "17",
     "storybook-design-token": "^2.7.1"
@@ -844,12 +1046,6 @@ module.exports = {
 </CH.Code>
 
 </CH.Scrollycoding>
-
-### Design Token integration
-
-TODO describe
-
-### Add theming
 
 ## Result
 
