@@ -460,14 +460,14 @@ TODO add image of sidebar here
 
 Next up is adding some glue code to have our `Design Token` set integrated with our `Storybook` nicely. We can start by copying some stories provided by **kickstartDS** (those are the same that can be seen [here](https://www.kickstartds.com/storybook/?path=/story/design-tokens-colors--page)).
 
-For Design Token documentation we also use [`storybook-design-token`](https://storybook.js.org/addons/storybook-design-token/) as an addon. Mainly for its `DesignTokenDocBlock` component, which helps in rendering the pages we've copied. So we also install that, too:
+For `Design Token` documentation we also use [`storybook-design-token`](https://storybook.js.org/addons/storybook-design-token/) as an addon. Mainly for its `DesignTokenDocBlock` component, which helps in rendering the pages we've copied. So we also install that, too:
 
 ```bash
 cp -r node_modules/@kickstartds/core/lib/design-tokens docs/tokens
 yarn add -D storybook-design-token
 ```
 
-But if you start your `Storybook` now (`yarn storybook`), you'll be greeted by empty pages. That's because we've not set up the actual Design Token integration with `Storybook` / our `Style Dictionary`, yet.
+But if you start your `Storybook` now (`yarn storybook`), you'll be greeted by empty pages. That's because we've not set up the actual `Design Token` integration with `Storybook` / our `Style Dictionary`, yet.
 
 As the `storybook-design-token` addon needs our tokens in a specific format (read more [here](https://github.com/UX-and-I/storybook-design-token#available-presenters)), we adjust our `Style Dictionary` configuration in `sd.config.js` to include the provided `Storybook` configuration. We also tell it to put those `Storybook` specific files into our already existing `src/token` directory:
 
@@ -931,7 +931,7 @@ If you re-start, or re-open, your `Storybook` now (`yarn storybook`), you'll be 
 
 TODO add screenshot here
 
-We'll add those additional files generated based on our `Design Tokens` to our `.gitignore` now:
+We'll add those additional files generated based on our `Design Token` set to our `.gitignore` now:
 
 ```bash .gitignore focus=7,9:11
 # Node
@@ -946,8 +946,6 @@ src/token/storybook/tokens.css
 src/token/storybook/icons.svg
 static/manager.css
 ```
-
-TODO ignore some stuff now before committing!
 
 ### Add theming
 
@@ -1070,9 +1068,9 @@ We use [`@whitespace/storybook-addon-html`](https://storybook.js.org/addons/@whi
 
 ---
 
-#### Design Token addon
+#### `Design Token` addon
 
-For Design Token documentation we use [`storybook-design-token`](https://storybook.js.org/addons/storybook-design-token/). Mainly for its `DesignTokenDocBlock` component, which helps rendering the pages we'll create to display our Design Token set.
+For `Design Token` documentation we use [`storybook-design-token`](https://storybook.js.org/addons/storybook-design-token/). Mainly for its `DesignTokenDocBlock` component, which helps rendering the pages we'll create to display our `Design Token` set.
 
 <CH.Code>
 ```json package.json focus=23
@@ -1303,9 +1301,9 @@ module.exports = {
 
 ---
 
-#### Storybook Design Token configuration
+#### Storybook `Design Token` configuration
 
-For [`storybook-design-token`](https://github.com/UX-and-I/storybook-design-token#specify-a-custom-glob-for-your-token-files) we additionally configure a `designTokenGlob` through their options, which will be utilized in the next part of this step when connecting your Design Tokens to `Storybook`.
+For [`storybook-design-token`](https://github.com/UX-and-I/storybook-design-token#specify-a-custom-glob-for-your-token-files) we additionally configure a `designTokenGlob` through their options, which will be utilized in the next part of this step when connecting your `Design Token` to `Storybook`.
 
 <CH.Code>
 ```js .storybook/main.js focus=10
@@ -1331,9 +1329,9 @@ module.exports = {
 
 ---
 
-#### Storybook Design Token configuration
+#### Storybook `Design Token` configuration
 
-For [`storybook-design-token`](https://github.com/UX-and-I/storybook-design-token#specify-a-custom-glob-for-your-token-files) we additionally configure a `designTokenGlob` through their options, which will be utilized in the next part of this step when connecting your Design Tokens to `Storybook`.
+For [`storybook-design-token`](https://github.com/UX-and-I/storybook-design-token#specify-a-custom-glob-for-your-token-files) we additionally configure a `designTokenGlob` through their options, which will be utilized in the next part of this step when connecting your `Design Token` to `Storybook`.
 
 <CH.Code>
 ```js .storybook/main.js focus=10
