@@ -8,11 +8,11 @@ import Admonition from 'react-admonitions';
 
 ## Overview
 
-TODO there should be a page detailing `Storybook`, and our usage of it, somewhere. Probably `Integrations`... write and link it
+TODO there should be a page detailing **Storybook**, and our usage of it, somewhere. Probably `Integrations`... write and link it
 
-## Install `Storybook`
+## Install **Storybook**
 
-We start by initializing `Storybook` using their CLI. We call it with `npx`, which runs the command (`storybook`) without actually installing the dependency to our project. And as we won't be using their included examples, we just remove those immediately, too:
+We start by initializing **Storybook** using their CLI. We call it with `npx`, which runs the command (**Storybook**) without actually installing the dependency to our project. And as we won't be using their included examples, we just remove those immediately, too:
 
 ```bash
 npx storybook init
@@ -63,11 +63,11 @@ Let's have a look at our `package.json`, it's starting to grow already:
 
 ---
 
-#### `Storybook` dependencies
+#### **Storybook** dependencies
 
-Those are the dependencies added through using `npx storybook init`. They ensure `Storybook` itself can be built for development and production.
+Those are the dependencies added through using `npx storybook init`. They ensure **Storybook** itself can be built for development and production.
 
-It also includes `Storybook`s Essential addon, adding recommended addons by default: https://storybook.js.org/docs/react/essentials/introduction
+It also includes **Storybook**s Essential addon, adding recommended addons by default: https://storybook.js.org/docs/react/essentials/introduction
 
 <CH.Code>
 ```json package.json focus=21:32
@@ -112,10 +112,10 @@ It also includes `Storybook`s Essential addon, adding recommended addons by defa
 
 #### New `scripts` entries
 
-Next to the dependencies, two `scripts` entries were added by the `Storybook` init:
+Next to the dependencies, two `scripts` entries were added by the **Storybook** init:
 
-1. `storybook`: to start your `Storybook` in development / watch mode
-2. `build-storybook`: to build a production ready, deployable version of your `Storybook`
+1. **Storybook**: to start your **Storybook** in development / watch mode
+2. `build-storybook`: to build a production ready, deployable version of your **Storybook**
 
 <CH.Code>
 ```json package.json focus=10:11
@@ -158,7 +158,7 @@ Next to the dependencies, two `scripts` entries were added by the `Storybook` in
 </CH.Code>
 </CH.Spotlight>
 
-Add the following lines to your `.gitignore` to exclude locally built versions of `Storybook` (e.g. by calling `yarn build-storybook`):
+Add the following lines to your `.gitignore` to exclude locally built versions of **Storybook** (e.g. by calling `yarn build-storybook`):
 
 ```bash .gitignore focus=4:5
 # Node
@@ -172,13 +172,13 @@ src/token/tokens.css
 ```
 
 
-## Configure `Storybook`
+## Configure **Storybook**
 
-Now that we have installed `Storybook`, it's time to add some general configuration. We'll also add a first "Welcome" page to test everything configured so far actually works.
+Now that we have installed **Storybook**, it's time to add some general configuration. We'll also add a first *Welcome* page to test everything configured so far actually works.
 
 ### General configuration
 
-For this we'll be looking at the `.storybook` folder, automatically created for us by `npx storybook init`. It contains all general configuration to make a `Storybook` your own, and allows to really adapt it to your use case. We'll set up some integrations that are convenient to use, especially when working with **kickstartDS**.
+For this we'll be looking at the `.storybook` folder, automatically created for us by `npx storybook init`. It contains all general configuration to make a **Storybook** your own, and allows to really adapt it to your use case. We'll set up some integrations that are convenient to use, especially when working with **kickstartDS**.
 
 The folder contains two files for now:
 * `.storybook/main.js`
@@ -186,15 +186,15 @@ The folder contains two files for now:
 
 #### `main.js` configuration
 
-This file contains configuration for `Storybook` itself... which addons to load, additional addon configuration, Webpack build & compile configuration, and so on. We'll continue building this up while adding addons in the next steps.
+This file contains configuration for **Storybook** itself... which addons to load, additional addon configuration, Webpack build & compile configuration, and so on. We'll continue building this up while adding addons in the next steps.
 
-For a detailed overview, have a look at [`Storybook`s documentation](https://storybook.js.org/docs/react/configure/overview).
+For a detailed overview, have a look at [**Storybook**s documentation](https://storybook.js.org/docs/react/configure/overview).
 
 <CH.Scrollycoding>
 
 ##### After `npx storybook init`
 
-Right after running `Storybook`s initialization, you should find it looking like this.
+Right after running **Storybook**s initialization, you should find it looking like this.
 
 <CH.Code>
 ```js .storybook/main.js
@@ -268,7 +268,7 @@ module.exports = {
 
 ##### Add glob for documentation
 
-We'll be adding a few pages of documentation to test configuration, but these can also serve as the perfect starting point and orientation for your own growing documentation. For `Storybook` to pick up those pages, we have to tell it where those will be found. We'll be creating that folder `docs/` later.
+We'll be adding a few pages of documentation to test configuration, but these can also serve as the perfect starting point and orientation for your own growing documentation. For **Storybook** to pick up those pages, we have to tell it where those will be found. We'll be creating that folder `docs/` later.
 
 <CH.Code>
 ```js .storybook/main.js focus=5
@@ -300,7 +300,7 @@ This file specifically includes configuration for component **previews**, we'll 
 
 ##### After `npx storybook init`
 
-We'll start off again with the file as created by `Storybook`s initialization.
+We'll start off again with the file as created by **Storybook**s initialization.
 
 <CH.Code>
 ```js .storybook/preview.js
@@ -320,7 +320,7 @@ export const parameters = {
 
 ##### Add story sorting
 
-Adding a `storySort` function to the `options` allows us to ensure the "Welcome" page will always be displayed first. Everything else should be sorted alphabetically. Learn more [about `storySort`](https://storybook.js.org/docs/react/writing-stories/naming-components-and-hierarchy#sorting-stories).
+Adding a `storySort` function to the `options` allows us to ensure the *Welcome* page will always be displayed first. Everything else should be sorted alphabetically. Learn more [about `storySort`](https://storybook.js.org/docs/react/writing-stories/naming-components-and-hierarchy#sorting-stories).
 
 <CH.Code>
 ```js .storybook/preview.js focus=9:21
@@ -350,11 +350,11 @@ export const parameters = {
 </CH.Code>
 </CH.Scrollycoding>
 
-#### Adding a "Welcome" page
+#### Adding a *Welcome* page
 
-As promised we add a "Welcome" page now, to verify configuration... and to have something in `Storybook` to display in the browser.
+As promised we add a *Welcome* page now, to verify configuration... and to have something in **Storybook** to display in the browser.
 
-Create a folder `docs` at the root of your repository, and add a file `welcome.stories.mdx` to it. `.mdx` is an extension of the popular [Markdown](https://daringfireball.net/projects/markdown/) format, allowing the use of `React` / `JSX` components as part of your documentation. In the context of **kickstartDS** this also means being able to use all of your components as part of your `Storybook` documentation, too. For example having nice hero images on pages important to you!
+Create a folder `docs` at the root of your repository, and add a file `welcome.stories.mdx` to it. `.mdx` is an extension of the popular [Markdown](https://daringfireball.net/projects/markdown/) format, allowing the use of `React` / `JSX` components as part of your documentation. In the context of **kickstartDS** this also means being able to use all of your components as part of your **Storybook** documentation, too. For example having nice hero images on pages important to you!
 
 Learn more about the `.mdx` format [here](https://mdxjs.com/).
 
@@ -390,7 +390,7 @@ Consequatur et consequuntur et. Nam consequatur sed voluptas ea. Tempore vero ve
 
 ##### Define story title and category
 
-We define a title and category for our "Welcome" page by importing and using `Meta` from `@storybook/addon-docs`, a component provided to us by `Storybook`.
+We define a title and category for our *Welcome* page by importing and using `Meta` from `@storybook/addon-docs`, a component provided to us by **Storybook**.
 
 This would also be a first example on the benefits of using `.mdx` for documentation.
 
@@ -444,32 +444,32 @@ Consequatur et consequuntur et. Nam consequatur sed voluptas ea. Tempore vero ve
 
 ### Verify configuration
 
-It's not much, yet, but we can start our `Storybook` now to see our "Welcome" page in action:
+It's not much, yet, but we can start our **Storybook** now to see our *Welcome* page in action:
 
 ```bash
 yarn storybook
 ```
 
-This should automatically open `Storybook` in your browser of choice. Next to displaying your first page (🙌), there's something interesting that happened!
+This should automatically open **Storybook** in your browser of choice. Next to displaying your first page (🙌), there's something interesting that happened!
 
-As part of the left sidebar, and under your initially opened "Welcome" page, there'll be a section titled `@kickstartds/base`. This gets shown because we've added `@kickstartds/base` as a dependency before. **kickstartDS** uses [Storybook composition](https://storybook.js.org/docs/react/sharing/storybook-composition) to always include the base documentation (in the correct version used by your Design System) to your `Storybook` as a handy reference!
+As part of the left sidebar, and under your initially opened *Welcome* page, there'll be a section titled `@kickstartds/base`. This gets shown because we've added `@kickstartds/base` as a dependency before. **kickstartDS** uses [Storybook composition](https://storybook.js.org/docs/react/sharing/storybook-composition) to always include the base documentation (in the correct version used by your Design System) to your **Storybook** as a handy reference!
 
 TODO add image of sidebar here
 
-### Design Token integration
+### **Design Token** integration
 
-Next up is adding some glue code to have our `Design Token` set integrated with our `Storybook` nicely. We can start by copying some stories provided by **kickstartDS** (those are the same that can be seen [here](https://www.kickstartds.com/storybook/?path=/story/design-tokens-colors--page)).
+Next up is adding some glue code to have our **Design Token** set integrated with our **Storybook** nicely. We can start by copying some stories provided by **kickstartDS** (those are the same that can be seen [here](https://www.kickstartds.com/storybook/?path=/story/design-tokens-colors--page)).
 
-For `Design Token` documentation we also use [`storybook-design-token`](https://storybook.js.org/addons/storybook-design-token/) as an addon. Mainly for its `DesignTokenDocBlock` component, which helps in rendering the pages we've copied. So we also install that, too:
+For **Design Token** documentation we also use [`storybook-design-token`](https://storybook.js.org/addons/storybook-design-token/) as an addon. Mainly for its `DesignTokenDocBlock` component, which helps in rendering the pages we've copied. So we also install that, too:
 
 ```bash
 cp -r node_modules/@kickstartds/core/lib/design-tokens docs/tokens
 yarn add -D storybook-design-token
 ```
 
-But if you start your `Storybook` now (`yarn storybook`), you'll be greeted by empty pages. That's because we've not set up the actual `Design Token` integration with `Storybook` / our `Style Dictionary`, yet.
+But if you start your **Storybook** now (`yarn storybook`), you'll be greeted by empty pages. That's because we've not set up the actual **Design Token** integration with **Storybook** / our `Style Dictionary`, yet.
 
-As the `storybook-design-token` addon needs our tokens in a specific format (read more [here](https://github.com/UX-and-I/storybook-design-token#available-presenters)), we adjust our `Style Dictionary` configuration in `sd.config.js` to include the provided `Storybook` configuration. We also tell it to put those `Storybook` specific files into our already existing `src/token` directory:
+As the `storybook-design-token` addon needs our tokens in a specific format (read more [here](https://github.com/UX-and-I/storybook-design-token#available-presenters)), we adjust our `Style Dictionary` configuration in `sd.config.js` to include the provided **Storybook** configuration. We also tell it to put those **Storybook** specific files into our already existing `src/token` directory:
 
 ```js sd.config.js focus=14:16
 const path = require('path');
@@ -492,13 +492,15 @@ module.exports = StyleDictionary.extend(config).extend({
 });
 ```
 
-With that change, re-build your `Design Token` set:
+With that change, re-build your **Design Token** set:
 
 ```bash
 yarn build-tokens
 ```
 
-You'll notice it now writes two additional files for you, specifically for the `Storybook` integration:
+You'll notice it now writes two additional files for you, specifically for the **Storybook** integration:
+
+TODO: find correct format for raw output, `raw` is wrong!
 
 <CH.Spotlight>
 
@@ -554,7 +556,7 @@ Done in 1.08s.
 
 #### Annotated `tokens.css`
 
-Those are all of our `Design Token` converted to [CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) (as with `src/token/tokens.css`), but with the correct `storybook-design-token` presenters already added.
+Those are all of our **Design Token** converted to [CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) (as with `src/token/tokens.css`), but with the correct `storybook-design-token` presenters already added.
 
 <CH.Code>
 ```raw focus=38
@@ -608,7 +610,7 @@ Done in 1.08s.
 
 #### `icons.svg` icon collection
 
-Contains a collection of all used icons. Similarly to before, they just get annotated with the correct presenters for `storybook-design-token` for `Storybook`.<br/>
+Contains a collection of all used icons. Similarly to before, they just get annotated with the correct presenters for `storybook-design-token` for **Storybook**.<br/>
 The file gets picked up by the addon automatically, we don't need to add any additional configuration.
 
 <CH.Code>
@@ -661,7 +663,9 @@ Done in 1.08s.
 
 </CH.Spotlight>
 
-The final piece of the puzzle to get our `Design Token` docs working is to actually load our prepared `src/token/storybook/tokens.css` file. As this is specific to `Storybook` (we'll use the untouched, converted CSS custom properties of `src/token/tokens.css` for `preview.js`), this will be done in a new file `.storybook/manager.scss`. We use `Sass` here, as it will be featured later in this guide for component customization, too.
+The final piece of the puzzle to get our **Design Token** docs working is to actually load our prepared `src/token/storybook/tokens.css` file. As this is specific to **Storybook** (we'll use the untouched, converted CSS custom properties of `src/token/tokens.css` for `preview.js`), this will be done in a new file `.storybook/manager.scss`. We use `Sass` here, as it will be featured later in this guide for component customization, too.
+
+Here it helps re-using the file in `src/token`, while also adding some **CSS**.
 
 Create the file:
 
@@ -794,7 +798,7 @@ To keep some order in our `scripts` entries, we re-order them to be sorted alpha
 
 #### Compile `.storybook/manager.scss`
 
-We add a script entry called `sass-manager`, which when called will compile our `Sass` to a regular `CSS` file (placed in `static/manager.css`) to be read by `Storybook`.
+We add a script entry called `sass-manager`, which when called will compile our `Sass` to a regular **CSS** file (placed in `static/manager.css`) to be read by **Storybook**.
 
 <CH.Code>
 ```json package.json focus=10
@@ -887,7 +891,7 @@ And while we're at it, we'll also add a watch task that can be used in developme
 
 </CH.Scrollycoding>
 
-The correct place to put such `CSS` specific to `Storybook`s UI is `.storybook/manager-head.html` (you can read more about their [`CSS escape hatches` here](https://storybook.js.org/docs/react/configure/theming#css-escape-hatches)). We'll create that file, too:
+The correct place to put such **CSS** specific to **Storybook**s UI is `.storybook/manager-head.html` (you can read more about their [`CSS escape hatches` here](https://storybook.js.org/docs/react/configure/theming#css-escape-hatches)). We'll create that file, too:
 
 ```bash
 touch .storybook/manager-head.html
@@ -900,7 +904,7 @@ And add the following content to it (later our custom favicon will also be added
 ```
 
 <CH.Section>
-To get `Storybook` to pick up our `static` folder when run / compiled, and thus above relative reference to work, we also [need to tell `Storybook` about it](focus://17) in `.storybook/main.js`. We also need to [add the `storybook-design-token` addon](focus://11:14) to the `addons`. [The `designTokenGlob`](focus://13[18:57]) tells it where to find our token definitions (the annotated `token.css` from before):
+To get **Storybook** to pick up our `static` folder when run / compiled, and thus above relative reference to work, we also [need to tell **Storybook** about it](focus://17) in `.storybook/main.js`. We also need to [add the `storybook-design-token` addon](focus://11:14) to the `addons`. [The `designTokenGlob`](focus://13[18:57]) tells it where to find our token definitions (the annotated `token.css` from before):
 
 ```js .storybook/main.js
 module.exports = {
@@ -927,11 +931,11 @@ module.exports = {
 ```
 </CH.Section>
 
-If you re-start, or re-open, your `Storybook` now (`yarn storybook`), you'll be greeted by all your glorious `Design Token`. Neatly categorized by category and semantic meaning!
+If you re-start, or re-open, your **Storybook** now (`yarn storybook`), you'll be greeted by all your glorious **Design Token**. Neatly categorized by category and semantic meaning!
 
 TODO add screenshot here
 
-We'll add those additional files generated based on our `Design Token` set to our `.gitignore` now:
+We'll add those additional files generated based on our **Design Token** set to our `.gitignore` now:
 
 ```bash .gitignore focus=7,9:11
 # Node
@@ -1068,9 +1072,9 @@ We use [`@whitespace/storybook-addon-html`](https://storybook.js.org/addons/@whi
 
 ---
 
-#### `Design Token` addon
+#### **Design Token** addon
 
-For `Design Token` documentation we use [`storybook-design-token`](https://storybook.js.org/addons/storybook-design-token/). Mainly for its `DesignTokenDocBlock` component, which helps rendering the pages we'll create to display our `Design Token` set.
+For **Design Token** documentation we use [`storybook-design-token`](https://storybook.js.org/addons/storybook-design-token/). Mainly for its `DesignTokenDocBlock` component, which helps rendering the pages we'll create to display our **Design Token** set.
 
 <CH.Code>
 ```json package.json focus=23
@@ -1301,9 +1305,9 @@ module.exports = {
 
 ---
 
-#### Storybook `Design Token` configuration
+#### Storybook **Design Token** configuration
 
-For [`storybook-design-token`](https://github.com/UX-and-I/storybook-design-token#specify-a-custom-glob-for-your-token-files) we additionally configure a `designTokenGlob` through their options, which will be utilized in the next part of this step when connecting your `Design Token` to `Storybook`.
+For [`storybook-design-token`](https://github.com/UX-and-I/storybook-design-token#specify-a-custom-glob-for-your-token-files) we additionally configure a `designTokenGlob` through their options, which will be utilized in the next part of this step when connecting your **Design Token** to **Storybook**.
 
 <CH.Code>
 ```js .storybook/main.js focus=10
@@ -1329,9 +1333,9 @@ module.exports = {
 
 ---
 
-#### Storybook `Design Token` configuration
+#### Storybook **Design Token** configuration
 
-For [`storybook-design-token`](https://github.com/UX-and-I/storybook-design-token#specify-a-custom-glob-for-your-token-files) we additionally configure a `designTokenGlob` through their options, which will be utilized in the next part of this step when connecting your `Design Token` to `Storybook`.
+For [`storybook-design-token`](https://github.com/UX-and-I/storybook-design-token#specify-a-custom-glob-for-your-token-files) we additionally configure a `designTokenGlob` through their options, which will be utilized in the next part of this step when connecting your **Design Token** to **Storybook**.
 
 <CH.Code>
 ```js .storybook/main.js focus=10
@@ -1397,7 +1401,7 @@ node_modules
 ## Next Step
 
 We'll continue by applying our branding to **kickstartDS**, which will result in a bunch of token files (`JSON`) being added to the project.<br/>
-This will also give us the opportunity to set up `Storybook`, and get a first visual representation of our Design System in the browser!
+This will also give us the opportunity to set up **Storybook**, and get a first visual representation of our Design System in the browser!
 
 TODO add Commit reminder
 
