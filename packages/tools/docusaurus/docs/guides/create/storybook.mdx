@@ -19,7 +19,7 @@ npx storybook init
 rm -rf src/stories
 ```
 
-Let's have a look at our `package.json`, it's starting to grow already:
+Let's have a look at our `package.json`, after having added **Storybook**:
 
 <CH.Spotlight>
 <CH.Code>
@@ -452,13 +452,13 @@ yarn storybook
 
 This should automatically open **Storybook** in your browser of choice. Next to displaying your first page (🙌), there's something interesting that happened!
 
-As part of the left sidebar, and under your initially opened *Welcome* page, there'll be a section titled `@kickstartds/base`. This gets shown because we've added `@kickstartds/base` as a dependency before. **kickstartDS** uses [Storybook composition](https://storybook.js.org/docs/react/sharing/storybook-composition) to always include the base documentation (in the correct version used by your Design System) to your **Storybook** as a handy reference!
+As part of the left sidebar, and under your initially opened *Welcome* page, there'll be a section titled `@kickstartds/base`. This gets shown because we've added `@kickstartds/base` as a dependency before. **kickstartDS** uses [Storybook composition](https://storybook.js.org/docs/react/sharing/storybook-composition) to always include the base documentation (in the correct version used by your Design System) to your **Storybook**, as a handy reference!
 
 TODO add image of sidebar here
 
 ### **Design Token** integration
 
-Next up is adding some glue code to have our **Design Token** set integrated with our **Storybook** nicely. We can start by copying some stories provided by **kickstartDS** (those are the same that can be seen [here](https://www.kickstartds.com/storybook/?path=/story/design-tokens-colors--page)).
+Next up is adding some glue code to have our **Design Token** set nicely integrated with **Storybook**. We can start by copying some stories provided by **kickstartDS** (those are the same that can be seen [here](https://www.kickstartds.com/storybook/?path=/story/design-tokens-colors--page)).
 
 #### Add `storybook-design-token` addon
 
@@ -959,7 +959,7 @@ static/manager.css
 
 ### Add **Storybook** theming
 
-We have a **Design Token** set, we have a **Storybook**... what better idea than to combine them! Re-using our existing token to add some (reserved) theming to our general **Storybook** UI also serves as a great first, albeit small, demonstration for how useful a well constructed **Design Token** set can be!
+We have a **Design Token** set, we have a **Storybook**... what better idea than to combine those two! Re-using our existing token to add some (reserved) theming to our general **Storybook** UI also serves as a great first, albeit small, demonstration for how useful a well constructed **Design Token** set can be!
 
 Creating a **Storybook** theme involves creating two files, and adding a new output format (`.js`) to our **Style Dictionary**:
 
@@ -1177,7 +1177,7 @@ Create the sub directory...
 mkdir -p static/favicon
 ```
 
-... and place your files inside. If you need something to continue, feel free to use our [`favicon.ico` (right click > save as)](https://www.kickstartDS.com/favicon/favicon.ico) and [`favicon-192-192.png` (right click > save as)](https://www.kickstartDS.com/favicon/favicon-192-192.png) instead!
+... and place your files inside. If you need something to continue, feel free to use our [`favicon.ico` (right click > save as)](https://www.kickstartDS.com/favicon/favicon.ico) and [`favicon-192-192.png` (right click > save as)](https://www.kickstartDS.com/favicon/favicon-192-192.png) for now!
 
 #### Finalizing **Storybook** theming
 
@@ -1204,6 +1204,158 @@ static/manager.css.map
 ```
 
 ### Integrate with **kickstartDS**
+
+What follows is in preparation for the next big chapter, adding components. It will have no immediately visible effect now, next to a small test component that we'll add to the *Welcome* page, but ensures compatibility. TODO improve text, add link to chapter
+
+#### Transpile `@kickstartDS` components
+
+Base components installed as part of `@kickstartDS` dependencies (e.g. `@kickstartDS/base`) are placed in your `node_modules` after installation. For those components to be compatible with **Storybook**, and its build &amp; compilation pipeline, we need to ensure that they get transpiled (like your [local code automatically is](https://storybook.js.org/docs/react/builders/webpack)). Add the following `webpackFinal` configuration to `.storybook/main.js`:
+
+<CH.Section>
+<CH.Code>
+```js .storybook/main.js focus=1,23:51
+const path = require("path");
+
+module.exports = {
+  stories: [
+    "../src/**/*.stories.mdx",
+    "../src/**/*.stories.@(js|jsx|ts|tsx)",
+    "../docs/**/*.stories.mdx",
+  ],
+  addons: [
+    "@storybook/addon-links",
+    "@storybook/addon-essentials",
+    "@storybook/addon-interactions",
+    {
+      name: "storybook-design-token",
+      options: { designTokenGlob: "src/token/storybook/*" },
+    },
+  ],
+  framework: "@storybook/react",
+  staticDirs: ["../static"],
+  features: {
+    postcss: false,
+  },
+  async webpackFinal(config, { configType }) {
+    const babelRuleIndex = config.module.rules.findIndex((rule) =>
+      rule?.use?.some((u) => u?.loader.includes("babel-loader"))
+    );
+
+    config.module.rules[babelRuleIndex].exclude =
+      /node_modules\/(?!(@kickstartds\/))/;
+
+    config.module.rules.push({
+      test: /\.scss$/,
+      use: [
+        "style-loader",
+        "css-loader",
+        {
+          loader: "sass-loader",
+          options: {
+            sassOptions: {
+              includePaths: [path.resolve(__dirname, "../node_modules")],
+            },
+          },
+        },
+      ],
+      include: path.resolve(__dirname, "../src"),
+    });
+
+    config.resolve.mainFields = ["browser", "module", "main"];
+
+    return config;
+  },
+}
+```
+</CH.Code>
+
+This sets up everything needed to import components from `@kickstartDS` (e.g. `import { Button } from "@kickstartds/base/lib/button"`). First we [add exemptions to the `babel-loader`](focus://24:29) for JavaScript code transpilation, which normally ignores code in `node_modules`. Additionally we add [loaders for **CSS** / **SCSS**](focus://31:46), [allow includes from `node_modules`](focus://39:41), configure [the path our code lives in](focus://45), and [configure `mainFields`](focus://48) ([learn more about them](config.resolve.mainFields)).
+
+Read more [about **Storybook**s **Webpack** builder](https://storybook.js.org/docs/react/builders/webpack), or [**Webpack** in general](https://webpack.js.org/) for details.
+</CH.Section>
+
+#### Adding a demo `Button`
+
+To test our **Storybook** setup and integration actually works, we add a `Button` to our *Welcome* page.
+
+<CH.Section>
+<CH.Code>
+```mdx docs/welcome.stories.mdx focus=2,18
+import { Meta } from "@storybook/addon-docs";
+import { Button } from "@kickstartds/base/lib/button";
+
+<Meta title="Welcome" />
+
+# Your kickstartDS based Design System
+
+Ipsum voluptate reprehenderit ut aliquid laborum enim. Optio et suscipit aliquam voluptate nostrum est. Corrupti ab laboriosam qui aut aliquid iusto nobis voluptatum. Perferendis non reiciendis illum. Vel et sint est.
+
+Alias placeat accusantium voluptatem pariatur dolor et. Dicta quia officia voluptatem quia nulla natus. Accusantium in voluptate porro. Libero voluptatem placeat ipsum dolores deserunt omnis odio.
+
+Sed distinctio consequuntur et et aliquid. Exercitationem autem impedit expedita. Beatae eum voluptatem eaque necessitatibus repellendus. Velit qui est optio. Ut est voluptates incidunt et qui sed dolorem. Quidem molestiae velit non laudantium consequatur autem.
+
+Amet doloremque voluptas suscipit. Omnis incidunt sit nesciunt voluptate sed voluptatem delectus quis. Repudiandae occaecati magni fugit. Minus sunt quia ab temporibus. Voluptatibus vel odit facere enim et.
+
+Consequatur et consequuntur et. Nam consequatur sed voluptas ea. Tempore vero velit et hic. Ut et aspernatur quaerat ut aut consequatur. Quisquam aliquid ea adipisci nulla quia ut dolor. Accusamus earum quasi quaerat.
+
+<Button label="Learn more"/>
+```
+</CH.Code>
+
+First we [import the `Button` component](focus://2) from `@kickstartds/base/lib/button`, to then [add it to the end of the page](focus://18) with a `label` of "Learn more". To see all available options for such a `Button` component [have a look at our **Storybook**](https://www.kickstartds.com/storybook/?path=/story/base-button--solid).
+
+If not still running, start your **Storybook** again now (`yarn storybook`), and browse to the *Welcome* page. You should be greeted by your newly added `Button` there. But there's something missing. It's not looking quite right, yet!
+</CH.Section>
+
+TODO add screenshot of unstyled `Button`.
+
+#### Add missing styles in `preview.js`
+
+<CH.Section>
+We need [some base styles and JavaScript](focus://1:2) provided by `@kickstartds/base`, and [our own **Design Token** set](focus://4), the one converted to **CSS custom properties** in `src/token/tokens.css`.
+
+Add the following lines to your `.storybook/preview.js`:
+
+<CH.Code>
+```js .storybook/preview.js focus=1:4
+import "@kickstartds/base/lib/global/base.js";
+import "@kickstartds/base/lib/global/base.css";
+
+import "../src/token/tokens.css";
+
+export const parameters = {
+  actions: { argTypesRegex: "^on[A-Z].*" },
+  controls: {
+    matchers: {
+      color: /(background|color)$/i,
+      date: /Date$/,
+    },
+  },
+  options: {
+    storySort(a, b) {
+      // welcome page to top!
+      if (a[0].includes("welcome")) {
+        return -1;
+      }
+
+      // alphabetically
+      return a[1].kind === b[1].kind
+        ? 0
+        : a[1].id.localeCompare(b[1].id, undefined, { numeric: true });
+    },
+  },
+}
+```
+</CH.Code>
+</CH.Section>
+
+Re-start **Storybook** to revisit the *Welcome* page. Everything should be looking as expected now!
+
+TODO add screenshot with correct `Button`
+
+TODO add icon to `Button` to show problem with missing `IconSprite` -> next section
+
+#### Integrate `IconSprite`
 
 TODO describe
 
