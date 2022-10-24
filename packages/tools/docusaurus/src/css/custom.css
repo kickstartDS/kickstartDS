@@ -70,3 +70,23 @@ code {
 .pagination-nav__link {
   transition: box-shadow, border-color var(--ks-duration-fast) !important;
 }
+
+[data-theme='dark']
+  .backToTopButton_---------node_modules-\@docusaurus-theme-classic-lib-theme-BackToTopButton-styles-module {
+  background-color: var(--ks-background-color-primary-interactive-base);
+}
+
+[data-theme='dark']
+  .backToTopButton_---------node_modules-\@docusaurus-theme-classic-lib-theme-BackToTopButton-styles-module:hover {
+  background-color: var(--ks-background-color-primary-interactive-hover-base);
+}
+
+[data-theme='dark']
+  .backToTopButton_---------node_modules-\@docusaurus-theme-classic-lib-theme-BackToTopButton-styles-module::after {
+  background-color: var(--ks-color-primary-to-bg-7-base) !important;
+}
+
+:root
+  .backToTopButton_---------node_modules-\@docusaurus-theme-classic-lib-theme-BackToTopButton-styles-module::after {
+  background-color: var(--ks-color-primary-base);
+}

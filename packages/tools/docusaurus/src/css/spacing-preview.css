@@ -31,6 +31,31 @@
   width: var(--ks-spacing-xxl);
 }
 
+.spacing-section {
+  height: var(--l-section--space);
+  width: 2rem;
+}
+
+.spacing-section-small {
+  height: var(--l-section--space-small);
+  width: 2rem;
+}
+
+.spacing-gutter-default {
+  width: 2rem;
+  height: var(--l-section_container--gutter);
+}
+
+.spacing-gutter-large {
+  width: 2rem;
+  height: var(--l-section_container--gutter-large);
+}
+
+.spacing-gutter-small {
+  width: 2rem;
+  height: var(--l-section_container--gutter-small);
+}
+
 .spacing {
   width: 100%;
   height: 200px;
