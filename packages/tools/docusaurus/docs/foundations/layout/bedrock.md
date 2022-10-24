@@ -16,8 +16,19 @@ We use Bedrock as our library of choice when it comes to layouting:
 
 ## Components vs. Layout
 
+TODO if we find a good description
+
 ## Integrating with kickstartDS
 
-TODO Describe how to integrate our Design Token for spacing with the approach Bedrock is using internally.
-
+TODO Describe how to integrate our Design Token for spacing with the approach Bedrock is using internally:<br/>
 https://github.com/kickstartDS/rub-design-system/blob/main/src/bedrock/BedrockProvider.jsx
+
+## Tips & Tricks
+
+TODO add if needed / enough content
+
+## Examples
+
+- Split
+- Stack
+- Grid
