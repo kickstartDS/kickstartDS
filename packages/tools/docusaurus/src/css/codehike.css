@@ -48,3 +48,24 @@
 .ch-spotlight {
   gap: var(--ks-spacing-s);
 }
+
+.ch-editor-frame {
+  background: #031419 !important;
+}
+
+[data-theme='dark'] .ch-frame-title-bar,
+[data-theme='dark'] .ch-code-wrapper {
+  background: transparent !important;
+}
+
+.ch-editor-tab-active {
+  background: rgba(255, 255, 255, 0.25) !important;
+}
+
+.ch-editor-tab-inactive {
+  background-color: transparent !important;
+}
+
+.ch-editor-tab {
+  border-bottom-color: transparent !important;
+}

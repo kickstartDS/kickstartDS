@@ -1,5 +1,5 @@
 :root [ks-theme='section-preview'] .l-section__container {
-  --l-section_col--min-width: 30%;
+  --l-section_col--min-width: 10rem;
 }
 :root [ks-theme='section-preview'] {
   background-color: var(--ks-background-color-accent);
@@ -9,6 +9,7 @@
 .section-preview {
   display: grid;
   width: 100%;
+  gap: 2rem;
 }
 
 .section-preview--child {
@@ -20,4 +21,22 @@
   width: 100%;
   height: 80px;
   background-color: var(--ks-background-color-primary);
+}
+
+.col-fill .l-section__container {
+  --l-section_col--min-width: 5rem !important;
+}
+
+.col-fixed .l-section__container {
+  --l-section_col--min-width: 5rem !important;
+  --l-section_col--max-width: 10rem !important;
+}
+
+.col-scale .l-section__container {
+  --l-section_col--min-width: 40% !important;
+}
+
+.col-limit .l-section__container {
+  --l-section_col--repeat: 3 !important;
+  --l-section_col--min-width: 5rem !important;
 }

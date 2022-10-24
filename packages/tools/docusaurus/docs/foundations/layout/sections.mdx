@@ -15,68 +15,31 @@ Definition style, -> Link Guide "Create your own style variation" (TODO)
 
 ## Frame Width
 
-How to use width options, which token are involved?
-
 The `width` propertiy determines the with of the frame the content will be displayed in.
 
-### Properties
-
-#### `narrow`
-
-A narrow display of content.
-The width is set here:
-`--l-section--content-width-narrow`
-
-#### `default`
-
-The medium display width of content.
-The width is set here:
-`--l-section--content-width-default`
-
-#### `wide`
-
-A wide display of content.
-The width is set here:
-`--l-section--content-width-wide`
-
-#### `max`
-
-The content will span over the entiere screen.
-`--l-section--content-padding`
-
-#### `full`
-
-The content will span over the intiere screen, without the default `content-padding`.
+| Setting   | Token                                | Application                                                                   |
+| --------- | ------------------------------------ | ----------------------------------------------------------------------------- |
+| `default` | `--l-section--content-width-default` | The default frame width of content                                            |
+| `narrow`  | `--l-section--content-width-narrow`  | A narrow frame width of content                                               |
+| `wide`    | `--l-section--content-width-wide`    | A wide frame width of content                                                 |
+| `max`     | `--l-section--content-width-max`     | The content will span over the entiere screen                                 |
+| `full`    | `--l-section--content-width-full`    | The content will span over the entiere screen,<br/> without `content-padding` |
 
 ## Space Before / Space After
 
-Determines how much top / bottom spacing a section will have
+Determines how much **vertical** spacing a section has
 
-### Properties
-
-#### `small`
-
-A small spacing
-The spacing is set here:
-`--l-section--space-small`
-
-#### `default`
-
-A medium spacing
-The spacing is set here:
-`--l-section--space`
-
-#### `none`
-
-The section will have no spacing.
+| Setting   | Preview                                                       | Token                      | Application                                        |
+| --------- | ------------------------------------------------------------- | -------------------------- | -------------------------------------------------- |
+| `default` | <div className="spacing-preview spacing-section"></div>       | `--l-section--space`       | The default section spacing ensuring an even rythm |
+| `small`   | <div className="spacing-preview spacing-section-small"></div> | `--l-section--space-small` | A smaller space between Sections                   |
+| `none`    |                                                               | ---                        | No space between Sections                          |
 
 ## Mode
 
-### Properties
-
 #### `default`
 
-The children will be placed next to each other, stretched over the full section width.
+The children will be placed next to each other, stretched across the full section width.
 
 <Section
   ks-theme="section-preview"
@@ -90,7 +53,7 @@ The children will be placed next to each other, stretched over the full section 
 
 #### `tile`
 
-The children will be placed next to each other, in pre set column width.
+The children will be placed next to each other, in a pre set column width.
 
 <Section
   ks-theme="section-preview"
@@ -105,25 +68,176 @@ The children will be placed next to each other, in pre set column width.
 
 #### `list`
 
-The children will be placed on top of each other, stretched over the full section width.
+The children will be placed on top of each other, stretched across the full section width.
 
-Which to use when, which tokens influence layout
+TODO: Which to use when, which tokens influence layout
 
-`--l-section_container--gutter`
-`--l-section_container--gutter-small`
+## Gutter
 
-`--l-section_col--min-width`
+The gutter is determined by the token `--l-section_container--gutter` (TBD) <br/>
+
+#### `none`
 
 <Section
   ks-theme="section-preview"
   spaceBefore="small"
   spaceAfter="small"
-  mode="list"
   width="full"
+  gutter="none"
+>
+  <div className="section-preview--child">Content</div>
+  <div className="section-preview--child">Content</div>
+  <div className="section-preview--child">Content</div>
+</Section>
+
+#### `small`
+
+<Section
+  ks-theme="section-preview"
+  spaceBefore="small"
+  spaceAfter="small"
+  width="full"
+  gutter="small"
+>
+  <div className="section-preview--child">Content</div>
+  <div className="section-preview--child">Content</div>
+  <div className="section-preview--child">Content</div>
+</Section>
+
+#### `default`
+
+<Section
+  ks-theme="section-preview"
+  spaceBefore="small"
+  spaceAfter="small"
+  width="full"
+  gutter="default"
+>
+  <div className="section-preview--child">Content</div>
+  <div className="section-preview--child">Content</div>
+  <div className="section-preview--child">Content</div>
+</Section>
+
+#### `large`
+
+<Section
+  ks-theme="section-preview"
+  spaceBefore="small"
+  spaceAfter="small"
+  width="full"
+  gutter="large"
 >
   <div className="section-preview--child">Content</div>
   <div className="section-preview--child">Content</div>
 </Section>
+
+## Grid settings
+
+KickstartDS Sections use `CSS Grid`.<br/>
+The child elements will be placed in columns, which are arranged in rows.
+
+The minimum width of a column is determined by `--l-section_col--min-width`.
+
+The maximum width of a column is determined by `--l-section_col--max-width`.<br/>
+The default value is `1fr`. (Recommended for responsive layouts)
+
+The amount of columns fit in one row is determined by `--l-section_col--repeat`.<br/>
+The default value is `auto-fit`. (Recommended for responsive layouts)
+
+### Fill Space
+
+If you want the available space to be efficiently used, it is recommended to leave the `max-width` token set to its default value of `1fr`.
+
+<div className="col-fill">
+  <Section
+    ks-theme="section-preview"
+    spaceBefore="small"
+    spaceAfter="small"
+    width="full"
+  >
+    <div className="section-preview--child">Content</div>
+    <div className="section-preview--child">Content</div>
+    <div className="section-preview--child">Content</div>
+    <div className="section-preview--child">Content</div>
+    <div className="section-preview--child">Content</div>
+    <div className="section-preview--child">Content</div>
+  </Section>
+</div>
+<br />
+
+`--l-section_col--min-width: 5rem`<br/>
+
+### Fixed Width
+
+If you dont want your elements to fill the available space, you can set a `max-width` value in addition to `min-width`.
+
+<div className="col-fixed">
+  <Section
+    ks-theme="section-preview"
+    spaceBefore="small"
+    spaceAfter="small"
+    width="full"
+  >
+    <div className="section-preview--child">Content</div>
+    <div className="section-preview--child">Content</div>
+    <div className="section-preview--child">Content</div>
+    <div className="section-preview--child">Content</div>
+    <div className="section-preview--child">Content</div>
+    <div className="section-preview--child">Content</div>
+  </Section>
+</div>
+<br />
+
+`--l-section_col--min-width: 5rem`<br />
+`--l-section_col--max-width: 10rem`
+
+### Scaling Width
+
+By using a percentage on the `min-width` token, you can create a scaling layout.<br/>
+It will keep its proportions, no matter the screen size.
+
+<div className="col-scale">
+  <Section
+    ks-theme="section-preview"
+    spaceBefore="small"
+    spaceAfter="small"
+    width="full"
+  >
+    <div className="section-preview--child">Content</div>
+    <div className="section-preview--child">Content</div>
+    <div className="section-preview--child">Content</div>
+    <div className="section-preview--child">Content</div>
+
+  </Section>
+</div>
+<br/>
+
+`--l-section_col--min-width: 40%`<br/>
+
+### Set Columns Amount
+
+If you use a custom value, make sure the columns do not exceed the avialable space in your layout (especially on narrow screens).<br/>
+You can do so by balancing out the `min-width` in correspondence to the set column amount.
+
+<div className="col-limit">
+  <Section
+    ks-theme="section-preview"
+    spaceBefore="small"
+    spaceAfter="small"
+    width="full"
+  >
+    <div className="section-preview--child">Content</div>
+    <div className="section-preview--child">Content</div>
+    <div className="section-preview--child">Content</div>
+    <div className="section-preview--child">Content</div>
+    <div className="section-preview--child">Content</div>
+
+  </Section>
+</div>
+<br/>
+
+`--l-section_col--repeat: 4` <br/>
+`--l-section_col--min-width: 5rem`
 
 ## Children
 
