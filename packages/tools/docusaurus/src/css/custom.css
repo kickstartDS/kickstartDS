@@ -90,3 +90,7 @@ code {
   .backToTopButton_---------node_modules-\@docusaurus-theme-classic-lib-theme-BackToTopButton-styles-module::after {
   background-color: var(--ks-color-primary-base);
 }
+
+[id] {
+  scroll-margin-top: calc(var(--g-scroll-offset) + 1.5rem);
+}
