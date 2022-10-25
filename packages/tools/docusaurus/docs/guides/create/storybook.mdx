@@ -1600,9 +1600,28 @@ Done in 1.49s.
 
 TODO add screenshot of `Button` **with** `Icon`
 
+Like before, we make sure to include the newly generated file in our `.gitignore`:
+
+```bash .gitignore focus=9
+# Node
+node_modules
+
+# Storybook
+storybook-static
+
+# kickstartDS
+src/token/tokens.css
+src/token/icons/IconSprite.js
+src/token/storybook/tokens.css
+src/token/storybook/tokens.js
+src/token/storybook/icons.svg
+static/manager.css
+static/manager.css.map
+```
+
 #### Integrate **kickstartDS** `radio` with **Storybook** actions
 
-We use a small, light-weight communication component called `radio` (basically a mini PubSub) in all existing components for communication and event handling. It's part of our **Core** (`@kickstartDS/core`) architecture (TODO link article about `radio`). To make debugging easier and more transparent, we connect our `radio` with **Storybook**s actions, and their actions addon.
+We use a small, light-weight communication component called `radio` (basically a mini [PubSub](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern) TODO check that this is actually true) in all existing components for communication and event handling. It's part of our **Core** (`@kickstartDS/core`) architecture (TODO link article about `radio`). To make debugging easier and more transparent, we connect our `radio` with **Storybook**s actions, and their actions addon.
 
 Configuration is pretty easy, just add the following lines to `.storybook/preview.js`:
 
@@ -1663,6 +1682,8 @@ export const decorators = [
   ),
 ];
 ```
+
+Now everytime a **kickstartDS** component emits an event over `radio`, it will be displayed in the **Actions** tab in **Storybook**.
 
 ### Install remaining addons
 
