@@ -6,23 +6,88 @@ import Admonition from 'react-admonitions';
 
 # 4. Add Components
 
-Now we'll get to the meat of it... adding your first set of components. Which ones you'll utimately need, and subsequentially build, can vary wildly based on your Design System needs. We'll add some exemplary ones now, to illustrate the main ways we offer to do this:
+Now we'll get to the meat of it... adding your first set of components based on **kickstartDS**. Which ones you'll utimately need, and subsequentially build, can vary wildly based on your specific Design System needs. We'll add some exemplary ones now, to illustrate the main ways on offer to do this:
 
-- Component Workflow 1
-- Component Workflow 2
-- Component Workflow 3
+- **`Button`** based on `@kickstartds/base/lib/button`:<br/>Adopt existing component, with a reduced set of props. Demo `Provider` and replacement in other components
+- **`Headline`** based on `@kickstartds/base/lib/headline`:<br/>Adopt existing component (with a reduced set of props), add custom field `switchOrder`
+- **`Teaser Card`** based on `@kickstartds/base/lib/teaser-box`:<br/>Adopt existing component (with a reduced set of props), reduce complexity by making `link` a simple string... hard-code rest of `Button` props
+- **`Section`** based on `@kickstartds/base/lib/section`:<br/>Adopt existing component (with a reduced set of props), add custom `background` to showcase extending existing property / `enum`. Also add `link` (display at the end of the `Section`), and let it take multiple entries (1. primary / 2. secondary / 3.+ outline / ghost)
 
-TODO there needs to be some stuff about Providers and layered components here, and the general setup of adding a `Providers.jsx` for re-use.
+TODO any ideas on where we could add some custom **JavaScript** and custom **CSS** / **SCSS**, to have that covered as part of the guide?
 
-Feel free to change these examplary components being implemented around to something you'll actually need, if you happen to have something in mind already.<br/>
+We'll then build our first recipe, using all of the added components to create a teaser component for articles. Recipes are like loose blueprints, that should serve as an inspiration for how components can be combined and remixed, to fit a multitude of use cases! To learn more about recipes, and different kinds of components, we recommend reading **Brad Frosts** excellent article on ["design system components, recipes, and snowflakes"](https://bradfrost.com/blog/post/design-system-components-recipes-and-snowflakes/).
+
+And to bring it full circle, we will add that component to our _Welcome_ page to tease the main pages of our **Storybook**, as a quick entry for users!
+
+Feel free to change these examplary components being implemented around to something you'll actually need instead, if you happen to have something in mind already.<br/>
 We'll try adding some components that are commonly needed, so it should be a good starting point either way!
 
 If you want to take a deeper dive on finding your first component set right now, jump over to our Guides around the `Design System Initiative`, and come back to this point later!
 
-TODO This should be linked to Guides following our `Design System Initiative`:<br/>
+TODO this should be linked to Guides following our `Design System Initiative`:<br/>
 https://www.kickstartds.com/services/
 
-Should also include prominent call out to that `services` page, to advertise our agency services around this!
+TODO should also include prominent call out to that `services` page, to advertise our agency services around this!
+
+## Establish structure
+
+TODO Create scaffolding for stuff that's needed for every component added:
+
+- `src/kds.js`
+- `src/index.js`
+- `src/index.scss`
+- `src/Providers.jsx`
+- `src/types.ts`
+
+TODO Also add compilation of sass and component js to `package.json`, possibly hook up `scripts` now (aggregated `yarn start`, for example) for better DX
+
+TODO import generated `js` / `css` in `.storybook/preview.js`
+
+TODO add `providerDecorator`
+
+TODO add `unpackDecorator`
+
+## Component implementation
+
+### Adding our custom `Button` component
+
+TODO write guide, wrap with component that we'll add in this guide (intro / motivation before, completed component code with preview after)
+
+### Adding our custom `Headline` component
+
+TODO write guide, wrap with component that we'll add in this guide (intro / motivation before, completed component code with preview after)
+
+### Adding our custom `Teaser Card` component
+
+TODO write guide, wrap with component that we'll add in this guide (intro / motivation before, completed component code with preview after)
+
+### Adding our custom `Section` component
+
+TODO write guide, wrap with component that we'll add in this guide (intro / motivation before, completed component code with preview after)
+
+### Fine tuning **Component Token**
+
+TODO write some exemplary filler so that **Component Token** are mentioned here as part of the regular workflow.
+
+## Adding an article teaser recipe
+
+TODO combine all components into article teaser
+
+TODO describe `src/docs/LinkProvider.jsx` setup, used to internally link to **Storybook** pages
+
+## Result
+
+TODO add remark about "advanced" ways of customizing components (like completely new CSS / markup, combining multiple components to build a bigger one, etc), that are out of scope for this guide. Reference guides for those (even if those don't exist / only go to pages with a vote feature for guides)
+
+## Next step
+
+TODO add next step -> publishing
+
+## Code Sandbox
+
+TODO create Code Sandbox including exact result after this step of the guide
+
+## Reference for component guides
 
 This will result in a bunch of components that need to be added. Those can be put into different categories, and for each category we will need a Guide outlining that way of adding a component:
 
@@ -45,15 +110,3 @@ All these guides need to include sections on:
 - `React` template
 
 Orthogonal to that, we will also need Guides on additional styling / theming / branding for a bunch of scenarios. Those are not included above, yet.
-
-## Establish structure
-
-## Implementation
-
-### Component implementation workflow 1
-
-### Component implementation workflow 2
-
-### Component implementation workflow 3
-
-### Fine tuning `Component Token`
