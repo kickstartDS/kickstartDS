@@ -4,21 +4,14 @@ sidebar_position: 7
 
 # Breakpoints
 
-The token can be found in `breakpoints.json`.
+Breakpoint tokens are only needed internally. They are used to generate scales of font sizes and spacing for different screen sizes.
 
-| Token                     | Description                                  |
-| ------------------------- | -------------------------------------------- |
-| `--ks-breakpoint-phone`   | For screen sizes of current smartphones      |
-| `--ks-breakpoint-tablet`  | For screen sizes of current tablets          |
-| `--ks-breakpoint-laptop`  | For screen sizes of current laptops          |
-| `--ks-breakpoint-desktop` | For screen sizes of current desktop displays |
-
-The `private` value dictates wether a CSS property for the breakpoint is generated.
+Only one CSS custom property is created, which is read via JavaScript and used to [inform](../../components/anatomy.md/#event-handling) components about a breakpoint change.
 
 <CH.Section>
 <CH.Code>
 
-```json box-shadow.json
+```json breakpoints.json
 {
   "ks": {
     "breakpoint": {
@@ -47,28 +40,14 @@ The `private` value dictates wether a CSS property for the breakpoint is generat
 :root {
   --ks-breakpoints: '{"phone":"36em","tablet":"48em","laptop":"62em","desktop":"75em"}';
 }
-
-@media (min-width: 36em) {
-  :root {
-    /* Token for phone breakpoint */
-  }
-}
-@media (min-width: 48em) {
-  :root {
-    /* Token for tablet breakpoint */
-  }
-}
-@media (min-width: 62em) {
-  :root {
-    /* Token for laptop breakpoint */
-  }
-}
-@media (min-width: 75em) {
-  :root {
-    /* Token for desktop breakpoint */
-  }
-}
 ```
 
 </CH.Code>
 </CH.Section>
+
+CSS custom properties don't work in media query declarations. So if you write custom styles, you have to write the media query declaration manually.
+
+TODO:
+
+- prefer [container queries](../../components/anatomy.md/#container-queries)
+- if scss, you can use [include-media](https://eduardoboucas.github.io/include-media/)
