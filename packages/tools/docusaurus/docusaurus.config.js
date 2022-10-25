@@ -48,7 +48,7 @@ const config = {
           ],
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
-            'https://github.com/kickstartDS/kickstartDS/tree/main/packages/components/core/docs/',
+            'https://github.com/kickstartDS/kickstartDS/tree/main/packages/tools/docusaurus/',
         },
         blog: false,
         theme: {

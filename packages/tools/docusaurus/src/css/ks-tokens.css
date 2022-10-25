@@ -535,7 +535,7 @@
   --ks-line-height-mono-xxl: 1.75;
   --color-white: #fff;
   --color-error: #e60201;
-  --g-header-height: 0px;
+  --g-header-height: var(--ifm-navbar-height);
   --g-scroll-offset: var(--g-header-height);
   --ks-font-size-display-xxs: calc(
     var(--ks-font-size-display-xxs-base) *
