@@ -50,6 +50,7 @@ The token can be found in `color.json`.
 :root,
 [ks-theme] {
   --ks-color-primary-base: #05566a;
+  --ks-color-primary-inverted-base: #ecff00;
 }
 
 :root,
@@ -71,6 +72,13 @@ The token can be found in `color.json`.
 kickstartDS generates color scales based on your Core Token.  
 `to-bg` mixes in `--ks-background-color-default` (by default defined as `--ks-color-fg-inverted`).  
 `alpha` adds transparency.
+
+Color scales are not linear. `--ks-color-primary-alpha-3` doesn't mean, its alpha channel is `0.3`. It's just the third most translucent variant. The same applies to `to-bg`.  
+We use a cubic Bézier curve to calculate the scales. This way there are more gradations at the beginning and at the end of the scale.
+
+For example, for hover or active states of a component you often need slight shades of a color. With a linear scaling the distance between the shades would be too large. In addition, the colors in the middle of the scale are almost useless, because they have too little contrast in combination with the background color.
+
+TODO illustrate the scale https://cubic-bezier.com/#1,.1,0,.9
 
 <div className="split-table">
 
