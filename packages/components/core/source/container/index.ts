@@ -13,7 +13,8 @@ import {
 } from 'react';
 import './container.scss';
 import './Container.js';
-import { ContainerComponent, type ContainerProps } from './ContainerComponent';
+import { ContainerComponent } from './ContainerComponent';
+import type { ContainerProps } from './ContainerComponent';
 
 export { ContainerProps };
 export const ContainerContextDefault = forwardRef(ContainerComponent);

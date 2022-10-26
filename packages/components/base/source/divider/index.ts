@@ -1,5 +1,6 @@
 import { forwardRef, createElement, createContext, useContext } from 'react';
-import { DividerComponent, type DividerProps } from './DividerComponent';
+import { DividerComponent } from './DividerComponent';
+import type { DividerProps } from './DividerComponent';
 import './divider.scss';
 
 export { DividerProps };

@@ -1,8 +1,6 @@
 import { forwardRef, createElement, createContext, useContext } from 'react';
-import {
-  TagLabelContainerComponent,
-  type TagLabelContainerProps,
-} from './TagLabelContainerComponent';
+import { TagLabelContainerComponent } from './TagLabelContainerComponent';
+import type { TagLabelContainerProps } from './TagLabelContainerComponent';
 import './tag-label-container.scss';
 
 export { TagLabelContainerProps };

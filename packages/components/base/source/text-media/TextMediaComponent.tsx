@@ -99,7 +99,7 @@ export const TextMediaComponent: ForwardRefRenderFunction<
   {
     text = '',
     media = [],
-    mediaAlignment,
+    mediaAlignment = 'above-center',
     renderText = defaultRenderFn,
     className,
     ...props
@@ -109,16 +109,16 @@ export const TextMediaComponent: ForwardRefRenderFunction<
   <div
     className={classnames(
       'text-media',
-      {
-        'text-media--above': mediaAlignment?.startsWith('above'),
-        'text-media--beside': mediaAlignment?.startsWith('beside'),
+      mediaAlignment && {
+        'text-media--above': mediaAlignment.startsWith('above'),
+        'text-media--beside': mediaAlignment.startsWith('beside'),
         'text-media--intext':
-          mediaAlignment?.startsWith('intext') ||
-          mediaAlignment?.startsWith('beside'),
-        'text-media--below': mediaAlignment?.startsWith('below'),
-        'text-media--left': mediaAlignment?.endsWith('left'),
-        'text-media--center': mediaAlignment?.endsWith('center'),
-        'text-media--right': mediaAlignment?.endsWith('right'),
+          mediaAlignment.startsWith('intext') ||
+          mediaAlignment.startsWith('beside'),
+        'text-media--below': mediaAlignment.startsWith('below'),
+        'text-media--left': mediaAlignment.endsWith('left'),
+        'text-media--center': mediaAlignment.endsWith('center'),
+        'text-media--right': mediaAlignment.endsWith('right'),
       },
       className
     )}

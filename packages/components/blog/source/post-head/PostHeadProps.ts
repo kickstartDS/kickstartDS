@@ -83,10 +83,6 @@ export type Alignment = 'left' | 'center' | 'right';
  */
 export type Date = string;
 /**
- * Choose an alignment for the headline
- */
-export type Alignment1 = 'left' | 'center' | 'right';
-/**
  * Text content for the headline
  */
 export type Text = string;
@@ -98,6 +94,10 @@ export type Level = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
  * Select the headline style to use
  */
 export type Style = 'none' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
+/**
+ * Choose an alignment for the headline
+ */
+export type Alignment1 = 'left' | 'center' | 'right';
 /**
  * Text content for the optional subheadline
  */
@@ -175,12 +175,12 @@ export interface Picture {
  * Headline
  */
 export interface Headline {
-  align: Alignment1;
-  content?: Text;
-  level: Level;
+  content: Text;
+  level?: Level;
   styleAs?: Style;
+  align?: Alignment1;
   subheadline?: Subheadline;
-  spaceAfter: BottomSpacing;
+  spaceAfter?: BottomSpacing;
   pageHeader?: PageHeader;
   className?: AdditionalClasses1;
   [k: string]: unknown;
@@ -190,7 +190,7 @@ export interface Headline {
  */
 export interface TagLabel {
   label: Label;
-  size: Size;
+  size?: Size;
   link?: LinkTarget;
   removable?: Removable;
   className?: AdditionalClasses2;

@@ -30,25 +30,27 @@
           "type": "string"
         }
       },
-      "default": [
+      "examples": [
         [
-          "Qui assumenda dolorum",
-          "Unde consequatur ea",
-          "Expedita eos",
-          "Sed ducimus"
-        ],
-        ["Sed et tempore", "Ut aud", "Reiciendis", "Explicabo ipsam"],
-        [
-          "Dolore culpa",
-          "Consectetur",
-          "Consectetur voluptatem",
-          "Nesciunt non rerum"
-        ],
-        [
-          "Placeat libero ratione",
-          "Laboriosam a expedita",
-          "Dolor",
-          "Omnis et cumque"
+          [
+            "Qui assumenda dolorum",
+            "Unde consequatur ea",
+            "Expedita eos",
+            "Sed ducimus"
+          ],
+          ["Sed et tempore", "Ut aud", "Reiciendis", "Explicabo ipsam"],
+          [
+            "Dolore culpa",
+            "Consectetur",
+            "Consectetur voluptatem",
+            "Nesciunt non rerum"
+          ],
+          [
+            "Placeat libero ratione",
+            "Laboriosam a expedita",
+            "Dolor",
+            "Omnis et cumque"
+          ]
         ]
       ]
     },
@@ -65,9 +67,9 @@
       "default": "border"
     },
     "className": {
-      "type": "string",
       "title": "Additional Classes",
-      "description": "Add additional css classes that should be applied to the table"
+      "description": "Add additional css classes that should be applied to the table",
+      "type": "string"
     }
   }
 }

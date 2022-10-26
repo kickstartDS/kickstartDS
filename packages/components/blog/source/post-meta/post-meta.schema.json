@@ -10,7 +10,7 @@
       "properties": {
         "name": {
           "type": "string",
-          "default": "Max Mütze"
+          "examples": ["Max Mütze"]
         },
         "image": {
           "$ref": "http://schema.kickstartds.com/base/picture.definitions.json"
@@ -31,15 +31,17 @@
           }
         }
       },
-      "default": [
-        {
-          "icon": "date",
-          "text": "14.02.2022"
-        },
-        {
-          "icon": "time",
-          "text": "5 min read"
-        }
+      "examples": [
+        [
+          {
+            "icon": "date",
+            "text": "14.02.2022"
+          },
+          {
+            "icon": "time",
+            "text": "5 min read"
+          }
+        ]
       ]
     },
     "className": {

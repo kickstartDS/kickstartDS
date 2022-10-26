@@ -34,28 +34,28 @@
               "description": "Background image source for small screens",
               "type": "string",
               "format": "image",
-              "default": "https://picsum.photos/seed/kdsvisual/640/270"
+              "examples": ["https://picsum.photos/seed/kdsvisual/640/270"]
             },
             "srcTablet": {
               "title": "Tablet image source",
               "description": "Background image source for medium screens",
               "type": "string",
               "format": "image",
-              "default": "https://picsum.photos/seed/kdsvisual/1280/540"
+              "examples": ["https://picsum.photos/seed/kdsvisual/1280/540"]
             },
             "srcDesktop": {
               "title": "Desktop image source",
               "description": "Background image source for large screens",
               "type": "string",
               "format": "image",
-              "default": "https://picsum.photos/seed/kdsvisual/1920/810"
+              "examples": ["https://picsum.photos/seed/kdsvisual/1920/810"]
             },
             "src": {
               "title": "Optional source",
               "description": "Override for img tag of picture element, if needed",
               "type": "string",
               "format": "image",
-              "default": "https://picsum.photos/seed/kdsvisual/640/270"
+              "examples": ["https://picsum.photos/seed/kdsvisual/640/270"]
             },
             "indent": {
               "title": "Image indent",
@@ -65,9 +65,9 @@
               "default": "none"
             },
             "alt": {
-              "type": "string",
               "title": "Alt text",
-              "description": "Alt text to display for picture"
+              "description": "Alt text to display for picture",
+              "type": "string"
             }
           }
         },
@@ -82,21 +82,27 @@
               "description": "Background video source for small screens",
               "type": "string",
               "format": "video",
-              "default": "https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_2mb.mp4"
+              "examples": [
+                "https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_2mb.mp4"
+              ]
             },
             "srcTablet": {
               "title": "Tablet video source",
               "description": "Background video source for medium screens",
               "type": "string",
               "format": "video",
-              "default": "https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_2mb.mp4"
+              "examples": [
+                "https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_2mb.mp4"
+              ]
             },
             "srcDesktop": {
               "title": "Desktop video source",
               "description": "Background video source for large screens",
               "type": "string",
               "format": "video",
-              "default": "https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_2mb.mp4"
+              "examples": [
+                "https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_2mb.mp4"
+              ]
             }
           }
         }
@@ -135,13 +141,9 @@
                   "type": "string",
                   "default": "h2"
                 },
-                "align": {
-                  "type": "string",
-                  "default": null
-                },
                 "content": {
                   "type": "string",
-                  "default": "Lorem Ipsum dolor"
+                  "examples": ["Lorem Ipsum dolor"]
                 }
               }
             },
@@ -155,7 +157,9 @@
           "description": "Text box copy text",
           "type": "string",
           "format": "markdown",
-          "default": "Hic maxime sed eos non. Consequatur ut qui amet accusantium nesciunt."
+          "examples": [
+            "Hic maxime sed eos non. Consequatur ut qui amet accusantium nesciunt."
+          ]
         },
         "link": {
           "title": "Link",
@@ -208,9 +212,8 @@
           "default": "solid"
         },
         "inverted": {
-          "type": "boolean",
           "title": "Inverted",
-          "default": false
+          "type": "boolean"
         }
       },
       "additionalProperties": false
@@ -220,8 +223,7 @@
       "description": "Custom css background color",
       "type": "string",
       "format": "color",
-      "examples": ["#000"],
-      "default": "#ccc"
+      "examples": ["#ccc"]
     },
     "inbox": {
       "title": "Inbox",

@@ -12,15 +12,15 @@
           "properties": {
             "src": {
               "type": "string",
-              "default": "https://picsum.photos/seed/kdsnewshead/900/380"
+              "examples": ["https://picsum.photos/seed/kdsnewshead/900/380"]
             },
             "width": {
               "type": "integer",
-              "default": 900
+              "examples": [900]
             },
             "height": {
               "type": "integer",
-              "default": 380
+              "examples": [380]
             }
           }
         },
@@ -31,10 +31,10 @@
     },
     "imageAlignment": {
       "title": "Alignment",
+      "description": "Choose an horizontal alignment for the image.",
       "type": "string",
       "enum": ["left", "center", "right"],
-      "default": "center",
-      "description": "Choose an horizontal alignment for the image."
+      "default": "center"
     },
     "date": {
       "$ref": "http://schema.kickstartds.com/blog/news-item.definitions.json#/definitions/date"
@@ -44,13 +44,9 @@
         {
           "type": "object",
           "properties": {
-            "align": {
-              "type": "string",
-              "default": "left"
-            },
             "content": {
               "type": "string",
-              "default": "Lorem ipsum dolor sit amet cons adipis elit "
+              "examples": ["Lorem ipsum dolor sit amet cons adipis elit"]
             },
             "level": {
               "type": "string",

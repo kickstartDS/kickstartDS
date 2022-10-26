@@ -46,20 +46,12 @@ export type ButtonSize = 'small' | 'medium' | 'large';
  * Link used for button
  */
 export type ButtonHref = string;
-/**
- * Add additional css classes that should be applied to the button
- */
-export type AdditionalClasses = string;
 export type IconIdentifier = string;
 export type AriaRole = string;
 export type AdditionalClass = string;
 export type IconIdentifier1 = string;
 export type AriaRole1 = string;
 export type AdditionalClass1 = string;
-/**
- * Overwrite the data-component to use for rendering
- */
-export type DataComponentAttribute = string;
 /**
  * Add fill animation on hover
  */
@@ -88,6 +80,14 @@ export type DisabledAttribute = boolean;
  * Open link in new Tab
  */
 export type OpenLinkInNewTab = boolean;
+/**
+ * Add additional css classes that should be applied to the button
+ */
+export type AdditionalClasses = string;
+/**
+ * Overwrite the data-component to use for rendering
+ */
+export type DataComponentAttribute = string;
 /**
  * Text to display inside tag label
  */
@@ -166,13 +166,13 @@ export type Level = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
  */
 export type Style = 'none' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
 /**
- * Choose an alignment for the headline
- */
-export type Alignment = 'left' | 'center' | 'right';
-/**
  * Text content for the headline
  */
 export type Text = string;
+/**
+ * Choose an alignment for the headline
+ */
+export type Alignment = 'left' | 'center' | 'right';
 /**
  * Text content for the optional subheadline
  */
@@ -214,20 +214,12 @@ export type ButtonSize1 = 'small' | 'medium' | 'large';
  * Link used for button
  */
 export type ButtonHref1 = string;
-/**
- * Add additional css classes that should be applied to the button
- */
-export type AdditionalClasses3 = string;
 export type IconIdentifier2 = string;
 export type AriaRole2 = string;
 export type AdditionalClass2 = string;
 export type IconIdentifier3 = string;
 export type AriaRole3 = string;
 export type AdditionalClass3 = string;
-/**
- * Overwrite the data-component to use for rendering
- */
-export type DataComponentAttribute1 = string;
 /**
  * Add fill animation on hover
  */
@@ -256,6 +248,14 @@ export type DisabledAttribute1 = boolean;
  * Open link in new Tab
  */
 export type OpenLinkInNewTab1 = boolean;
+/**
+ * Add additional css classes that should be applied to the button
+ */
+export type AdditionalClasses3 = string;
+/**
+ * Overwrite the data-component to use for rendering
+ */
+export type DataComponentAttribute1 = string;
 /**
  * The text box is aligned inside the content grid
  */
@@ -368,13 +368,13 @@ export type Level1 = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
  */
 export type Style1 = 'none' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
 /**
- * Choose an alignment for the headline
- */
-export type Alignment1 = 'left' | 'center' | 'right';
-/**
  * Text content for the headline
  */
 export type Text2 = string;
+/**
+ * Choose an alignment for the headline
+ */
+export type Alignment1 = 'left' | 'center' | 'right';
 /**
  * Text content for the optional subheadline
  */
@@ -416,20 +416,12 @@ export type ButtonSize2 = 'small' | 'medium' | 'large';
  * Link used for button
  */
 export type ButtonHref2 = string;
-/**
- * Add additional css classes that should be applied to the button
- */
-export type AdditionalClasses6 = string;
 export type IconIdentifier4 = string;
 export type AriaRole4 = string;
 export type AdditionalClass4 = string;
 export type IconIdentifier5 = string;
 export type AriaRole5 = string;
 export type AdditionalClass5 = string;
-/**
- * Overwrite the data-component to use for rendering
- */
-export type DataComponentAttribute2 = string;
 /**
  * Add fill animation on hover
  */
@@ -458,6 +450,14 @@ export type DisabledAttribute2 = boolean;
  * Open link in new Tab
  */
 export type OpenLinkInNewTab2 = boolean;
+/**
+ * Add additional css classes that should be applied to the button
+ */
+export type AdditionalClasses6 = string;
+/**
+ * Overwrite the data-component to use for rendering
+ */
+export type DataComponentAttribute2 = string;
 /**
  * The text box is aligned inside the content grid
  */
@@ -637,13 +637,13 @@ export type Level2 = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
  */
 export type Style2 = 'none' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
 /**
- * Choose an alignment for the headline
- */
-export type Alignment2 = 'left' | 'center' | 'right';
-/**
  * Text content for the headline
  */
 export type Text4 = string;
+/**
+ * Choose an alignment for the headline
+ */
+export type Alignment2 = 'left' | 'center' | 'right';
 /**
  * Text content for the optional subheadline
  */
@@ -697,20 +697,12 @@ export type ButtonSize3 = 'small' | 'medium' | 'large';
  * Link used for button
  */
 export type ButtonHref3 = string;
-/**
- * Add additional css classes that should be applied to the button
- */
-export type AdditionalClasses10 = string;
 export type IconIdentifier6 = string;
 export type AriaRole6 = string;
 export type AdditionalClass6 = string;
 export type IconIdentifier7 = string;
 export type AriaRole7 = string;
 export type AdditionalClass7 = string;
-/**
- * Overwrite the data-component to use for rendering
- */
-export type DataComponentAttribute3 = string;
 /**
  * Add fill animation on hover
  */
@@ -739,6 +731,14 @@ export type DisabledAttribute3 = boolean;
  * Open link in new Tab
  */
 export type OpenLinkInNewTab4 = boolean;
+/**
+ * Add additional css classes that should be applied to the button
+ */
+export type AdditionalClasses10 = string;
+/**
+ * Overwrite the data-component to use for rendering
+ */
+export type DataComponentAttribute3 = string;
 /**
  * Additional css classes attached to the wrapping element
  */
@@ -792,20 +792,12 @@ export type ButtonSize4 = 'small' | 'medium' | 'large';
  * Link used for button
  */
 export type ButtonHref4 = string;
-/**
- * Add additional css classes that should be applied to the button
- */
-export type AdditionalClasses11 = string;
 export type IconIdentifier9 = string;
 export type AriaRole9 = string;
 export type AdditionalClass9 = string;
 export type IconIdentifier10 = string;
 export type AriaRole10 = string;
 export type AdditionalClass10 = string;
-/**
- * Overwrite the data-component to use for rendering
- */
-export type DataComponentAttribute4 = string;
 /**
  * Add fill animation on hover
  */
@@ -834,6 +826,14 @@ export type DisabledAttribute4 = boolean;
  * Open link in new Tab
  */
 export type OpenLinkInNewTab5 = boolean;
+/**
+ * Add additional css classes that should be applied to the button
+ */
+export type AdditionalClasses11 = string;
+/**
+ * Overwrite the data-component to use for rendering
+ */
+export type DataComponentAttribute4 = string;
 /**
  * Additional css classes attached to the wrapping element
  */
@@ -879,20 +879,12 @@ export type ButtonSize5 = 'small' | 'medium' | 'large';
  * Link used for button
  */
 export type ButtonHref5 = string;
-/**
- * Add additional css classes that should be applied to the button
- */
-export type AdditionalClasses12 = string;
 export type IconIdentifier11 = string;
 export type AriaRole11 = string;
 export type AdditionalClass11 = string;
 export type IconIdentifier12 = string;
 export type AriaRole12 = string;
 export type AdditionalClass12 = string;
-/**
- * Overwrite the data-component to use for rendering
- */
-export type DataComponentAttribute5 = string;
 /**
  * Add fill animation on hover
  */
@@ -921,6 +913,14 @@ export type DisabledAttribute5 = boolean;
  * Open link in new Tab
  */
 export type OpenLinkInNewTab6 = boolean;
+/**
+ * Add additional css classes that should be applied to the button
+ */
+export type AdditionalClasses12 = string;
+/**
+ * Overwrite the data-component to use for rendering
+ */
+export type DataComponentAttribute5 = string;
 /**
  * Add additional css classes that should be applied to the content box
  */
@@ -1080,49 +1080,16 @@ export type FullWidthMedia1 = boolean;
  * Caption
  */
 export type Caption1 = string;
-/**
- * Thumbnail Source
- */
 export type ThumbnailSource = string;
-/**
- * Lightbox Image Source
- */
 export type LightboxImageSource = string;
-/**
- * Width
- */
 export type Width3 = number;
-/**
- * height
- */
 export type Height5 = number;
-/**
- * Hover Zoom Icon
- */
 export type HoverZoomIcon = boolean;
-/**
- * Caption
- */
 export type Caption2 = string;
-/**
- * Hide caption visually
- */
 export type HideCaptionVisually = boolean;
-/**
- * Gallery identifier
- */
 export type GalleryIdentifier = string;
-/**
- * ID
- */
 export type ID = string;
-/**
- * Additional Class
- */
 export type AdditionalClass13 = string;
-/**
- * Additional Caption Class
- */
 export type AdditionalCaptionClass = string;
 /**
  * Display media item over full width
@@ -1166,20 +1133,12 @@ export type ButtonSize6 = 'small' | 'medium' | 'large';
  * Link used for button
  */
 export type ButtonHref6 = string;
-/**
- * Add additional css classes that should be applied to the button
- */
-export type AdditionalClasses16 = string;
 export type IconIdentifier13 = string;
 export type AriaRole13 = string;
 export type AdditionalClass14 = string;
 export type IconIdentifier14 = string;
 export type AriaRole14 = string;
 export type AdditionalClass15 = string;
-/**
- * Overwrite the data-component to use for rendering
- */
-export type DataComponentAttribute6 = string;
 /**
  * Add fill animation on hover
  */
@@ -1208,6 +1167,14 @@ export type DisabledAttribute6 = boolean;
  * Open link in new Tab
  */
 export type OpenLinkInNewTab7 = boolean;
+/**
+ * Add additional css classes that should be applied to the button
+ */
+export type AdditionalClasses16 = string;
+/**
+ * Overwrite the data-component to use for rendering
+ */
+export type DataComponentAttribute6 = string;
 /**
  * Hides the link. The box as a whole keeps being clickable
  */
@@ -1328,20 +1295,12 @@ export type ButtonSize7 = 'small' | 'medium' | 'large';
  * Link used for button
  */
 export type ButtonHref7 = string;
-/**
- * Add additional css classes that should be applied to the button
- */
-export type AdditionalClasses18 = string;
 export type IconIdentifier15 = string;
 export type AriaRole15 = string;
 export type AdditionalClass16 = string;
 export type IconIdentifier16 = string;
 export type AriaRole16 = string;
 export type AdditionalClass17 = string;
-/**
- * Overwrite the data-component to use for rendering
- */
-export type DataComponentAttribute7 = string;
 /**
  * Add fill animation on hover
  */
@@ -1371,6 +1330,14 @@ export type DisabledAttribute7 = boolean;
  */
 export type OpenLinkInNewTab8 = boolean;
 /**
+ * Add additional css classes that should be applied to the button
+ */
+export type AdditionalClasses18 = string;
+/**
+ * Overwrite the data-component to use for rendering
+ */
+export type DataComponentAttribute7 = string;
+/**
  * Hides the link. The box as a whole keeps being clickable
  */
 export type HideLink1 = boolean;
@@ -1380,6 +1347,10 @@ export type HideLink1 = boolean;
 export type Class11 = string;
 export type Inverted13 = boolean;
 /**
+ * Choose an alignment for the headline
+ */
+export type Alignment5 = 'left' | 'center' | 'right';
+/**
  * Select the headline level to use, or p alternatively
  */
 export type Level4 = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
@@ -1387,10 +1358,6 @@ export type Level4 = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
  * Select the headline style to use
  */
 export type Style4 = 'none' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
-/**
- * Choose an alignment for the headline
- */
-export type Alignment5 = 'left' | 'center' | 'right';
 /**
  * Text content for the headline
  */
@@ -1466,15 +1433,13 @@ export interface Quote {
  * Component to display links and call-to-actions
  */
 export interface Button {
-  label: Label;
-  variant: ButtonStyle;
+  label?: Label;
+  variant?: ButtonStyle;
   inverted?: Inverted;
-  size: ButtonSize;
+  size?: ButtonSize;
   href?: ButtonHref;
-  className?: AdditionalClasses;
   iconBefore?: IconBeforeButton;
   iconAfter?: IconAfterButton;
-  dataComponent?: DataComponentAttribute;
   fillAnimation?: FillAnimation;
   iconAnimation?: IconAnimation;
   type?: TypeAttribute;
@@ -1482,6 +1447,8 @@ export interface Button {
   name?: NameAttribute;
   disabled?: DisabledAttribute;
   newTab?: OpenLinkInNewTab;
+  className?: AdditionalClasses;
+  dataComponent?: DataComponentAttribute;
 }
 /**
  * Icon identifier for icon before the button text
@@ -1506,7 +1473,7 @@ export interface IconAfterButton {
  */
 export interface TagLabel {
   label: Label1;
-  size: Size;
+  size?: Size;
   link?: LinkTarget;
   removable?: Removable;
   className?: AdditionalClasses1;
@@ -1571,12 +1538,12 @@ export interface TextBox {
  * Headline for the box
  */
 export interface Headline {
-  level: Level;
+  level?: Level;
   styleAs?: Style;
-  align: Alignment;
-  content?: Text;
+  content: Text;
+  align?: Alignment;
   subheadline?: Subheadline;
-  spaceAfter: BottomSpacing;
+  spaceAfter?: BottomSpacing;
   pageHeader?: PageHeader;
   className?: AdditionalClasses2;
   [k: string]: unknown;
@@ -1586,15 +1553,13 @@ export interface Headline {
  */
 export interface Link {
   enabled?: DisplayLink;
-  variant: ButtonStyle1;
-  label: Label2;
+  variant?: ButtonStyle1;
+  label?: Label2;
   inverted?: Inverted1;
-  size: ButtonSize1;
+  size?: ButtonSize1;
   href?: ButtonHref1;
-  className?: AdditionalClasses3;
   iconBefore?: IconBeforeButton1;
   iconAfter?: IconAfterButton1;
-  dataComponent?: DataComponentAttribute1;
   fillAnimation?: FillAnimation1;
   iconAnimation?: IconAnimation1;
   type?: TypeAttribute1;
@@ -1602,6 +1567,8 @@ export interface Link {
   name?: NameAttribute1;
   disabled?: DisabledAttribute1;
   newTab?: OpenLinkInNewTab1;
+  className?: AdditionalClasses3;
+  dataComponent?: DataComponentAttribute1;
 }
 /**
  * Icon identifier for icon before the button text
@@ -1702,12 +1669,12 @@ export interface TextBox1 {
  * Headline for the box
  */
 export interface Headline1 {
-  level: Level1;
+  level?: Level1;
   styleAs?: Style1;
-  align: Alignment1;
-  content?: Text2;
+  content: Text2;
+  align?: Alignment1;
   subheadline?: Subheadline1;
-  spaceAfter: BottomSpacing1;
+  spaceAfter?: BottomSpacing1;
   pageHeader?: PageHeader1;
   className?: AdditionalClasses5;
   [k: string]: unknown;
@@ -1717,15 +1684,13 @@ export interface Headline1 {
  */
 export interface Link1 {
   enabled?: DisplayLink1;
-  variant: ButtonStyle2;
-  label: Label3;
+  variant?: ButtonStyle2;
+  label?: Label3;
   inverted?: Inverted3;
-  size: ButtonSize2;
+  size?: ButtonSize2;
   href?: ButtonHref2;
-  className?: AdditionalClasses6;
   iconBefore?: IconBeforeButton2;
   iconAfter?: IconAfterButton2;
-  dataComponent?: DataComponentAttribute2;
   fillAnimation?: FillAnimation2;
   iconAnimation?: IconAnimation2;
   type?: TypeAttribute2;
@@ -1733,6 +1698,8 @@ export interface Link1 {
   name?: NameAttribute2;
   disabled?: DisabledAttribute2;
   newTab?: OpenLinkInNewTab2;
+  className?: AdditionalClasses6;
+  dataComponent?: DataComponentAttribute2;
 }
 /**
  * Icon identifier for icon before the button text
@@ -1838,12 +1805,12 @@ export interface TextBox2 {
  * Headline for the box
  */
 export interface Headline2 {
-  level: Level2;
+  level?: Level2;
   styleAs?: Style2;
-  align: Alignment2;
-  content?: Text4;
+  content: Text4;
+  align?: Alignment2;
   subheadline?: Subheadline2;
-  spaceAfter: BottomSpacing2;
+  spaceAfter?: BottomSpacing2;
   pageHeader?: PageHeader2;
   className?: AdditionalClasses9;
   [k: string]: unknown;
@@ -1852,15 +1819,13 @@ export interface Headline2 {
  * Component to display links and call-to-actions
  */
 export interface Button1 {
-  label: Label4;
-  variant: ButtonStyle3;
+  label?: Label4;
+  variant?: ButtonStyle3;
   inverted?: Inverted5;
-  size: ButtonSize3;
+  size?: ButtonSize3;
   href?: ButtonHref3;
-  className?: AdditionalClasses10;
   iconBefore?: IconBeforeButton3;
   iconAfter?: IconAfterButton3;
-  dataComponent?: DataComponentAttribute3;
   fillAnimation?: FillAnimation3;
   iconAnimation?: IconAnimation3;
   type?: TypeAttribute3;
@@ -1868,6 +1833,8 @@ export interface Button1 {
   name?: NameAttribute3;
   disabled?: DisabledAttribute3;
   newTab?: OpenLinkInNewTab4;
+  className?: AdditionalClasses10;
+  dataComponent?: DataComponentAttribute3;
 }
 /**
  * Icon identifier for icon before the button text
@@ -1925,15 +1892,13 @@ export interface Icon {
  */
 export interface Link2 {
   enabled?: DisplayLink2;
-  label: Label5;
-  variant: ButtonStyle4;
+  label?: Label5;
+  variant?: ButtonStyle4;
   inverted?: Inverted7;
-  size: ButtonSize4;
+  size?: ButtonSize4;
   href?: ButtonHref4;
-  className?: AdditionalClasses11;
   iconBefore?: IconBeforeButton4;
   iconAfter?: IconAfterButton4;
-  dataComponent?: DataComponentAttribute4;
   fillAnimation?: FillAnimation4;
   iconAnimation?: IconAnimation4;
   type?: TypeAttribute4;
@@ -1941,6 +1906,8 @@ export interface Link2 {
   name?: NameAttribute4;
   disabled?: DisabledAttribute4;
   newTab?: OpenLinkInNewTab5;
+  className?: AdditionalClasses11;
+  dataComponent?: DataComponentAttribute4;
 }
 /**
  * Icon identifier for icon before the button text
@@ -1964,8 +1931,8 @@ export interface IconAfterButton4 {
  * Component to display content in a condensed, boxed form
  */
 export interface ContentBox {
-  ratio: ImageRatio;
-  alignement: Alignment3;
+  ratio?: ImageRatio;
+  alignement?: Alignment3;
   image?: ImageSource3;
   topic?: Topic1;
   text?: TextContent3;
@@ -1977,15 +1944,13 @@ export interface ContentBox {
  */
 export interface Link3 {
   enabled?: DisplayLink3;
-  label: Label6;
-  variant: ButtonStyle5;
+  label?: Label6;
+  variant?: ButtonStyle5;
   inverted?: Inverted8;
-  size: ButtonSize5;
+  size?: ButtonSize5;
   href?: ButtonHref5;
-  className?: AdditionalClasses12;
   iconBefore?: IconBeforeButton5;
   iconAfter?: IconAfterButton5;
-  dataComponent?: DataComponentAttribute5;
   fillAnimation?: FillAnimation5;
   iconAnimation?: IconAnimation5;
   type?: TypeAttribute5;
@@ -1993,6 +1958,8 @@ export interface Link3 {
   name?: NameAttribute5;
   disabled?: DisabledAttribute5;
   newTab?: OpenLinkInNewTab6;
+  className?: AdditionalClasses12;
+  dataComponent?: DataComponentAttribute5;
 }
 /**
  * Icon identifier for icon before the button text
@@ -2016,12 +1983,12 @@ export interface IconAfterButton5 {
  * Headline
  */
 export interface Headline3 {
-  level: Level3;
+  level?: Level3;
   styleAs?: Style3;
-  align: Alignment4;
-  content?: Text6;
+  align?: Alignment4;
+  content: Text6;
   subheadline?: Subheadline3;
-  spaceAfter: BottomSpacing3;
+  spaceAfter?: BottomSpacing3;
   pageHeader?: PageHeader3;
   className?: AdditionalClasses14;
   [k: string]: unknown;
@@ -2031,7 +1998,7 @@ export interface Headline3 {
  */
 export interface TextMedia {
   text: TextContent4;
-  mediaAlignment: MediaAlignment;
+  mediaAlignment?: MediaAlignment;
   media?: Media;
   className?: Class8;
 }
@@ -2117,15 +2084,13 @@ export interface TeaserBox {
  * Component to display links and call-to-actions
  */
 export interface Button2 {
-  label: Label7;
-  variant: ButtonStyle6;
+  label?: Label7;
+  variant?: ButtonStyle6;
   inverted?: Inverted10;
-  size: ButtonSize6;
+  size?: ButtonSize6;
   href?: ButtonHref6;
-  className?: AdditionalClasses16;
   iconBefore?: IconBeforeButton6;
   iconAfter?: IconAfterButton6;
-  dataComponent?: DataComponentAttribute6;
   fillAnimation?: FillAnimation6;
   iconAnimation?: IconAnimation6;
   type?: TypeAttribute6;
@@ -2133,6 +2098,8 @@ export interface Button2 {
   name?: NameAttribute6;
   disabled?: DisabledAttribute6;
   newTab?: OpenLinkInNewTab7;
+  className?: AdditionalClasses16;
+  dataComponent?: DataComponentAttribute6;
   hidden?: HideLink;
 }
 /**
@@ -2194,15 +2161,13 @@ export interface TeaserRow {
  * Component to display links and call-to-actions
  */
 export interface Button3 {
-  label: Label8;
-  variant: ButtonStyle7;
+  label?: Label8;
+  variant?: ButtonStyle7;
   inverted?: Inverted12;
-  size: ButtonSize7;
+  size?: ButtonSize7;
   href?: ButtonHref7;
-  className?: AdditionalClasses18;
   iconBefore?: IconBeforeButton7;
   iconAfter?: IconAfterButton7;
-  dataComponent?: DataComponentAttribute7;
   fillAnimation?: FillAnimation7;
   iconAnimation?: IconAnimation7;
   type?: TypeAttribute7;
@@ -2210,6 +2175,8 @@ export interface Button3 {
   name?: NameAttribute7;
   disabled?: DisabledAttribute7;
   newTab?: OpenLinkInNewTab8;
+  className?: AdditionalClasses18;
+  dataComponent?: DataComponentAttribute7;
   hidden?: HideLink1;
 }
 /**
@@ -2234,12 +2201,12 @@ export interface IconAfterButton7 {
  * Headline
  */
 export interface Headline4 {
-  level: Level4;
+  align?: Alignment5;
+  level?: Level4;
   styleAs?: Style4;
-  align: Alignment5;
-  content?: Text7;
+  content: Text7;
   subheadline?: Subheadline4;
-  spaceAfter: BottomSpacing4;
+  spaceAfter?: BottomSpacing4;
   pageHeader?: PageHeader4;
   className?: AdditionalClasses19;
   [k: string]: unknown;

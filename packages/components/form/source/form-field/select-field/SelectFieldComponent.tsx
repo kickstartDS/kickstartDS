@@ -2,7 +2,7 @@ import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
 import { defaultRenderFn } from '@kickstartds/core/lib/core';
 import { Icon } from '@kickstartds/base/lib/icon';
-import { type SelectFieldProps as SelectFieldSchemaProps } from './SelectFieldProps';
+import type { SelectFieldProps as SelectFieldSchemaProps } from './SelectFieldProps';
 
 export type SelectFieldProps = SelectFieldSchemaProps & {
   renderLabel?: typeof defaultRenderFn;

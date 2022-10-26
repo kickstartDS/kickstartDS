@@ -7,7 +7,7 @@ import {
 } from '../rich-text';
 import { Button } from '../button';
 import { Picture } from '../image/picture';
-import { type ContentBoxProps as ContentBoxSchemaProps } from './ContentBoxProps';
+import type { ContentBoxProps as ContentBoxSchemaProps } from './ContentBoxProps';
 
 export type ContentBoxProps = ContentBoxSchemaProps & {
   renderTopic?: typeof defaultRenderFn;
@@ -21,10 +21,10 @@ export const ContentBoxComponent: ForwardRefRenderFunction<
   {
     image,
     topic,
-    alignement,
+    alignement = 'left',
     text,
     link,
-    ratio,
+    ratio = 'none',
     renderTopic = defaultRenderFn,
     renderText = richTextDefaultRenderFn,
     className,

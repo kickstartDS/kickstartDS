@@ -67,13 +67,13 @@ export type Level = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
  */
 export type Style = 'none' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
 /**
- * Choose an alignment for the headline
- */
-export type Alignment = 'left' | 'center' | 'right';
-/**
  * Text content for the headline
  */
 export type Text = string;
+/**
+ * Choose an alignment for the headline
+ */
+export type Alignment = 'left' | 'center' | 'right';
 /**
  * Text content for the optional subheadline
  */
@@ -115,20 +115,12 @@ export type ButtonSize = 'small' | 'medium' | 'large';
  * Link used for button
  */
 export type ButtonHref = string;
-/**
- * Add additional css classes that should be applied to the button
- */
-export type AdditionalClasses1 = string;
 export type IconIdentifier = string;
 export type AriaRole = string;
 export type AdditionalClass = string;
 export type IconIdentifier1 = string;
 export type AriaRole1 = string;
 export type AdditionalClass1 = string;
-/**
- * Overwrite the data-component to use for rendering
- */
-export type DataComponentAttribute = string;
 /**
  * Add fill animation on hover
  */
@@ -157,6 +149,14 @@ export type DisabledAttribute = boolean;
  * Open link in new Tab
  */
 export type OpenLinkInNewTab = boolean;
+/**
+ * Add additional css classes that should be applied to the button
+ */
+export type AdditionalClasses1 = string;
+/**
+ * Overwrite the data-component to use for rendering
+ */
+export type DataComponentAttribute = string;
 /**
  * The text box is aligned inside the content grid
  */
@@ -266,12 +266,12 @@ export interface TextBox {
  * Headline for the box
  */
 export interface Headline {
-  level: Level;
+  level?: Level;
   styleAs?: Style;
-  align: Alignment;
-  content?: Text;
+  content: Text;
+  align?: Alignment;
   subheadline?: Subheadline;
-  spaceAfter: BottomSpacing;
+  spaceAfter?: BottomSpacing;
   pageHeader?: PageHeader;
   className?: AdditionalClasses;
   [k: string]: unknown;
@@ -281,15 +281,13 @@ export interface Headline {
  */
 export interface Link {
   enabled?: DisplayLink;
-  variant: ButtonStyle;
-  label: Label;
+  variant?: ButtonStyle;
+  label?: Label;
   inverted?: Inverted;
-  size: ButtonSize;
+  size?: ButtonSize;
   href?: ButtonHref;
-  className?: AdditionalClasses1;
   iconBefore?: IconBeforeButton;
   iconAfter?: IconAfterButton;
-  dataComponent?: DataComponentAttribute;
   fillAnimation?: FillAnimation;
   iconAnimation?: IconAnimation;
   type?: TypeAttribute;
@@ -297,6 +295,8 @@ export interface Link {
   name?: NameAttribute;
   disabled?: DisabledAttribute;
   newTab?: OpenLinkInNewTab;
+  className?: AdditionalClasses1;
+  dataComponent?: DataComponentAttribute;
 }
 /**
  * Icon identifier for icon before the button text

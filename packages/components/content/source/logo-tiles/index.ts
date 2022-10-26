@@ -1,6 +1,7 @@
 import { forwardRef, createContext } from 'react';
 import { withContainer } from '@kickstartds/core/lib/container';
-import { LogoTilesComponent, type LogoTilesProps } from './LogoTilesComponent';
+import { LogoTilesComponent } from './LogoTilesComponent';
+import type { LogoTilesProps } from './LogoTilesComponent';
 import './logo-tiles.scss';
 
 export { LogoTilesProps };

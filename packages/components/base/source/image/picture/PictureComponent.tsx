@@ -6,7 +6,7 @@ import {
   forwardRef,
 } from 'react';
 import classnames from 'classnames';
-import { type PictureProps } from './PictureProps';
+import type { PictureProps } from './PictureProps';
 
 export { PictureProps };
 

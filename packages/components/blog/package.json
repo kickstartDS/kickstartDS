@@ -13,17 +13,22 @@
   },
   "license": "SEE LICENSE IN LICENSE",
   "author": "ruhmesmeile GmbH <mail@ruhmesmeile.com> (https://ruhmesmeile.com)",
-  "main": "./lib/index.js",
-  "types": "./lib/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "*/index.d.ts"
+      ]
+    }
+  },
   "files": [
     "lib",
     "source/**/_container.scss",
     "source/**/*-vars.scss"
   ],
   "scripts": {
-    "build": "node ../../tools/build-components/source",
-    "schema": "node ../../tools/build-components/source --schema",
-    "watch": "node ../../tools/build-components/source --watch"
+    "build": "kdsBundle",
+    "schema": "kdsBundle --schema",
+    "watch": "kdsBundle --watch"
   },
   "dependencies": {
     "@babel/runtime": "^7.19.0",
@@ -31,6 +36,9 @@
     "@kickstartds/core": "^1.5.0",
     "classnames": "^2.2.6",
     "date-fns": "^2.28.0"
+  },
+  "devDependencies": {
+    "@kickstartds/bundler": "^1.5.0"
   },
   "peerDependencies": {
     "react": "^17.0.2"

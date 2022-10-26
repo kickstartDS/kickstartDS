@@ -8,7 +8,7 @@
       "title": "Label",
       "description": "The label for the element",
       "type": "string",
-      "default": "Est dolore a debitis"
+      "examples": ["Est dolore a debitis"]
     },
     "selected": {
       "title": "Selected",

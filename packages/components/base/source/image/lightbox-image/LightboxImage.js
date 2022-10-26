@@ -1,4 +1,4 @@
-import PhotoSwipe from 'photoswipe/dist/photoswipe.esm';
+import PhotoSwipe from 'photoswipe';
 import { Component } from '@kickstartds/core/lib/core';
 import { identifier } from './LightboxImage.desc';
 

@@ -1,6 +1,7 @@
 import { forwardRef, createContext } from 'react';
 import { withContainer } from '@kickstartds/core/lib/container';
-import { TextMediaComponent, type TextMediaProps } from './TextMediaComponent';
+import { TextMediaComponent } from './TextMediaComponent';
+import type { TextMediaProps } from './TextMediaComponent';
 import './text-media.scss';
 
 export { TextMediaProps };

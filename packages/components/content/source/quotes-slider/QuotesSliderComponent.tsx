@@ -2,7 +2,7 @@ import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
 import { Slider } from '../slider';
 import { Quote } from '../quote';
-import { type QuotesSliderProps } from './QuotesSliderProps';
+import type { QuotesSliderProps } from './QuotesSliderProps';
 
 export { QuotesSliderProps };
 export const QuotesSliderComponent: ForwardRefRenderFunction<

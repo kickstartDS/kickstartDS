@@ -4,9 +4,9 @@ const { pathToFileURL } = require('url');
 const sass = require('sass');
 const chokidar = require('chokidar');
 const postcss = require('postcss');
-const { root, dirRe } = require('./utils');
+const { root, dirRe } = require('../utils/utils');
 const postcssPlugins = require('./postcssPlugins');
-const log = require('./log');
+const log = require('../utils/log');
 const { createTokens } = require('./customPropertyExtract');
 
 const cwd = process.cwd();
@@ -32,7 +32,6 @@ const compile = async (file) => {
   const { css, loadedUrls } = sass.compile(file, {
     loadPaths,
     importers,
-    quietDeps: true,
   });
 
   dependencies[path.relative(cwd, file)] = loadedUrls.reduce((prev, curr) => {

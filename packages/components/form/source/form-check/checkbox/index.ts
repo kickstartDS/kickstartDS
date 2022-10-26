@@ -1,5 +1,6 @@
 import { forwardRef, createElement, createContext, useContext } from 'react';
-import { CheckboxComponent, type CheckboxProps } from './CheckboxComponent';
+import { CheckboxComponent } from './CheckboxComponent';
+import type { CheckboxProps } from './CheckboxComponent';
 import '../form-check.scss';
 
 export { CheckboxProps };

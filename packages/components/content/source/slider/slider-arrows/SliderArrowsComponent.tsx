@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react';
-import { IconComponent as Icon } from '@kickstartds/base/lib/icon/IconComponent';
+import { IconComponent as Icon } from '@kickstartds/base/source/icon/IconComponent';
 
 export const SliderArrows: FunctionComponent = () => (
   <div className="c-slider__arrows" data-glide-el="controls">

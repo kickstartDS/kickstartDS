@@ -1,5 +1,6 @@
 import { forwardRef, createElement, createContext, useContext } from 'react';
-import { PostMetaComponent, type PostMetaProps } from './PostMetaComponent';
+import { PostMetaComponent } from './PostMetaComponent';
+import type { PostMetaProps } from './PostMetaComponent';
 import './post-meta.scss';
 
 export { PostMetaProps };

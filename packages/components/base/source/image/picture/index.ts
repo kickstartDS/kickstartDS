@@ -1,5 +1,6 @@
 import { forwardRef, createElement, createContext, useContext } from 'react';
-import { PictureComponent, type PictureProps } from './PictureComponent';
+import { PictureComponent } from './PictureComponent';
+import type { PictureProps } from './PictureComponent';
 
 export { PictureProps };
 export const PictureContextDefault = forwardRef(PictureComponent);

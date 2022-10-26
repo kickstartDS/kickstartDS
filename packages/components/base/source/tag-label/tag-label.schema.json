@@ -6,36 +6,36 @@
   "type": "object",
   "properties": {
     "label": {
-      "type": "string",
       "title": "Label",
-      "default": "Lorem Ipsum",
-      "description": "Text to display inside tag label"
+      "description": "Text to display inside tag label",
+      "type": "string",
+      "examples": ["Lorem Ipsum"]
     },
     "size": {
+      "title": "Size",
+      "description": "Choose a size to scale the tag label up or down",
       "type": "string",
       "enum": ["s", "m", "l"],
-      "default": "m",
-      "title": "Size",
-      "description": "Choose a size to scale the tag label up or down"
+      "default": "m"
     },
     "link": {
-      "type": "string",
       "title": "Link Target",
-      "format": "uri",
-      "description": "Set optional href to link the tag"
+      "description": "Set optional href to link the tag",
+      "type": "string",
+      "format": "uri"
     },
     "removable": {
-      "type": "boolean",
       "title": "Removable",
-      "default": false,
-      "description": "Choose whether the element is removable or not"
+      "description": "Choose whether the element is removable or not",
+      "type": "boolean",
+      "default": false
     },
     "className": {
-      "type": "string",
       "title": "Additional Classes",
-      "description": "Add additional css classes that should be applied to the label"
+      "description": "Add additional css classes that should be applied to the label",
+      "type": "string"
     }
   },
-  "required": ["label", "size"],
+  "required": ["label"],
   "additionalProperties": false
 }

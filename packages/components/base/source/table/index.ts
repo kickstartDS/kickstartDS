@@ -1,6 +1,7 @@
 import { forwardRef, createContext } from 'react';
 import { withContainer } from '@kickstartds/core/lib/container';
-import { TableComponent, type TableProps } from './TableComponent';
+import { TableComponent } from './TableComponent';
+import type { TableProps } from './TableComponent';
 import './table.scss';
 import './ResponsiveTable.js';
 

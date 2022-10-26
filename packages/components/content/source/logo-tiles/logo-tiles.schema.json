@@ -11,37 +11,39 @@
       "items": {
         "$ref": "http://schema.kickstartds.com/base/picture.definitions.json"
       },
-      "default": [
-        {
-          "src": "https://picsum.photos/seed/kdslogotiles1/300/225",
-          "width": 300,
-          "height": 225
-        },
-        {
-          "src": "https://picsum.photos/seed/kdslogotiles2/169/300",
-          "width": 169,
-          "height": 300
-        },
-        {
-          "src": "https://picsum.photos/seed/kdslogotiles3/127/300",
-          "width": 127,
-          "height": 300
-        },
-        {
-          "src": "https://picsum.photos/seed/kdslogotiles4/300/300",
-          "width": 300,
-          "height": 300
-        },
-        {
-          "src": "https://picsum.photos/seed/kdslogotiles5/300/127",
-          "width": 300,
-          "height": 127
-        },
-        {
-          "src": "https://picsum.photos/seed/kdslogotiles6/300/169",
-          "width": 300,
-          "height": 169
-        }
+      "examples": [
+        [
+          {
+            "src": "https://picsum.photos/seed/kdslogotiles1/300/225",
+            "width": 300,
+            "height": 225
+          },
+          {
+            "src": "https://picsum.photos/seed/kdslogotiles2/169/300",
+            "width": 169,
+            "height": 300
+          },
+          {
+            "src": "https://picsum.photos/seed/kdslogotiles3/127/300",
+            "width": 127,
+            "height": 300
+          },
+          {
+            "src": "https://picsum.photos/seed/kdslogotiles4/300/300",
+            "width": 300,
+            "height": 300
+          },
+          {
+            "src": "https://picsum.photos/seed/kdslogotiles5/300/127",
+            "width": 300,
+            "height": 127
+          },
+          {
+            "src": "https://picsum.photos/seed/kdslogotiles6/300/169",
+            "width": 300,
+            "height": 169
+          }
+        ]
       ]
     },
     "className": {

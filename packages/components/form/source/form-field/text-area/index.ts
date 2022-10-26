@@ -1,5 +1,6 @@
 import { forwardRef, createElement, createContext, useContext } from 'react';
-import { TextAreaComponent, type TextAreaProps } from './TextAreaComponent';
+import { TextAreaComponent } from './TextAreaComponent';
+import type { TextAreaProps } from './TextAreaComponent';
 import '../form-field.scss';
 
 export { TextAreaProps };

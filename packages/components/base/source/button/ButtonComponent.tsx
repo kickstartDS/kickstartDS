@@ -3,7 +3,7 @@ import classnames from 'classnames';
 import { defaultRenderFn } from '@kickstartds/core/lib/core';
 import { Link } from '../link';
 import { Icon } from '../icon';
-import { type ButtonProps as ButtonSchemaProps } from './ButtonProps';
+import type { ButtonProps as ButtonSchemaProps } from './ButtonProps';
 
 export type ButtonProps = ButtonSchemaProps & {
   renderLabel?: typeof defaultRenderFn;
@@ -18,7 +18,7 @@ export const ButtonComponent: ForwardRefRenderFunction<
     type = 'button',
     variant = 'solid',
     inverted,
-    size,
+    size = 'medium',
     href,
     newTab,
     className,

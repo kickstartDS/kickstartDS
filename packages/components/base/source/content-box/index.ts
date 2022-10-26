@@ -1,9 +1,7 @@
 import { forwardRef, createContext } from 'react';
 import { withContainer } from '@kickstartds/core/lib/container';
-import {
-  ContentBoxComponent,
-  type ContentBoxProps,
-} from './ContentBoxComponent';
+import { ContentBoxComponent } from './ContentBoxComponent';
+import type { ContentBoxProps } from './ContentBoxComponent';
 import './content-box.scss';
 
 export { ContentBoxProps };

@@ -1,7 +1,13 @@
 import {
-  FunctionComponent,
   ForwardRefRenderFunction,
+  ForwardRefExoticComponent,
+  ForwardedRef,
   HTMLAttributes,
+  MutableRefObject,
+  RefCallback,
+  forwardRef,
+  useRef,
+  useEffect,
 } from 'react';
 import classnames from 'classnames';
 import { Headline } from '@kickstartds/base/lib/headline';
@@ -11,7 +17,20 @@ import {
   defaultRenderFn as richTextDefaultRenderFn,
 } from '@kickstartds/base/lib/rich-text';
 import { Picture } from '@kickstartds/base/lib/picture';
-import { type StorytellingProps } from './StorytellingProps';
+import type { StorytellingProps } from './StorytellingProps';
+
+function mergeRefs<T>(
+  ...refs: Array<MutableRefObject<T> | RefCallback<T>>
+): RefCallback<T> {
+  return (value) =>
+    refs.forEach((ref) => {
+      if (typeof ref === 'function') {
+        ref(value);
+      } else if (ref != null) {
+        ref.current = value;
+      }
+    });
+}
 
 interface ILazy {
   lazy: boolean;
@@ -21,104 +40,119 @@ interface RenderFunctions {
   renderText?: typeof richTextDefaultRenderFn;
 }
 
-const StorytellingMixin: FunctionComponent<
+const StorytellingMixin: ForwardRefExoticComponent<
   StorytellingProps & ILazy & RenderFunctions & HTMLAttributes<HTMLDivElement>
-> = ({
-  lazy,
-  image,
-  box,
-  full,
-  backgroundColor,
-  backgroundImage,
-  renderText = richTextDefaultRenderFn,
-  inverted,
-  className,
-  ...props
-}) => (
-  <div
-    className={classnames(
-      'c-storytelling',
-      image && {
-        'c-storytelling--order-mobile-image-last':
-          image.order && image.order.mobileImageLast,
-        'c-storytelling--order-desktop-image-last':
-          image.order && image.order.desktopImageLast,
-        'c-storytelling--four-to-three': image.ratio === '4:3',
-        'c-storytelling--three-to-two': image.ratio === '3:2',
-        'c-storytelling--sixteen-to-nine': image.ratio === '16:9',
-        'c-storytelling--square': image.ratio === '1:1',
-      },
-      {
-        'c-storytelling--full': full,
-        lazyload: lazy && backgroundImage,
-      },
-      className
-    )}
-    style={{
+> = forwardRef(
+  (
+    {
+      lazy,
+      image,
+      box = {},
+      full = false,
       backgroundColor,
-      backgroundImage: lazy ? undefined : `url(${backgroundImage})`,
-    }}
-    data-bg={(lazy && backgroundImage) || null}
-    ks-inverted={inverted?.toString()}
-    {...props}
-  >
-    {image?.source && (
-      <div
-        className={classnames(
-          'c-storytelling__image',
-          image.vAlign &&
-            image.vAlign !== 'center' &&
-            `c-storytelling__image--${image.vAlign}`,
-          image.hAlign &&
-            image.hAlign !== 'center' &&
-            `c-storytelling__image--${image.hAlign}`
-        )}
-      >
-        <Picture src={image.source} alt="" lazy={lazy} />
-      </div>
-    )}
+      backgroundImage,
+      renderText = richTextDefaultRenderFn,
+      inverted,
+      className,
+      ...props
+    },
+    ref: ForwardedRef<HTMLDivElement>
+  ) => {
+    const localRef = useRef<HTMLDivElement>(null);
+    useEffect(() => {
+      // remove lazy loaded background image
+      if (!backgroundImage) {
+        localRef.current.style.backgroundImage = null;
+      }
+    }, [backgroundImage]);
 
-    <div
-      className={classnames(
-        'c-storytelling__box',
-        box.vAlign &&
-          box.vAlign !== 'center' &&
-          `c-storytelling__box--${box.vAlign}`,
-        box.hAlign &&
-          box.hAlign !== 'center' &&
-          `c-storytelling__box--${box.hAlign}`
-      )}
-    >
+    return (
       <div
         className={classnames(
-          'c-storytelling__box__content',
-          box.textAlign &&
-            box.textAlign !== 'left' &&
-            `c-storytelling__box__content--${box.textAlign}`
+          'c-storytelling',
+          image && {
+            'c-storytelling--order-mobile-image-last':
+              image.order && image.order.mobileImageLast,
+            'c-storytelling--order-desktop-image-last':
+              image.order && image.order.desktopImageLast,
+            'c-storytelling--four-to-three': image.ratio === '4:3',
+            'c-storytelling--three-to-two': image.ratio === '3:2',
+            'c-storytelling--sixteen-to-nine': image.ratio === '16:9',
+            'c-storytelling--square': image.ratio === '1:1',
+          },
+          {
+            'c-storytelling--full': full,
+            lazyload: lazy && backgroundImage,
+          },
+          className
         )}
-        style={{ color: box.textColor }}
+        style={{
+          backgroundColor,
+          backgroundImage: lazy ? undefined : `url(${backgroundImage})`,
+        }}
+        data-bg={(lazy && backgroundImage) || null}
+        ks-inverted={inverted?.toString()}
+        ref={mergeRefs(ref, localRef)}
+        {...props}
       >
-        {box.headline && (
-          <Headline
-            level="p"
-            styleAs="h2"
-            {...box.headline}
-            align={box.headline.align || box.textAlign || 'left'}
-          />
+        {image?.source && (
+          <div
+            className={classnames(
+              'c-storytelling__image',
+              image.vAlign &&
+                image.vAlign !== 'center' &&
+                `c-storytelling__image--${image.vAlign}`,
+              image.hAlign &&
+                image.hAlign !== 'center' &&
+                `c-storytelling__image--${image.hAlign}`
+            )}
+          >
+            <Picture src={image.source} alt="" lazy={lazy} />
+          </div>
         )}
-        {box.text && (
-          <RichText
-            text={box.text}
-            renderText={renderText}
-            className="c-storytelling__text"
-          />
-        )}
-        {box.link && <Button {...box.link} />}
+
+        <div
+          className={classnames(
+            'c-storytelling__box',
+            box.vAlign &&
+              box.vAlign !== 'center' &&
+              `c-storytelling__box--${box.vAlign}`,
+            box.hAlign &&
+              box.hAlign !== 'center' &&
+              `c-storytelling__box--${box.hAlign}`
+          )}
+        >
+          <div
+            className={classnames(
+              'c-storytelling__box__content',
+              box.textAlign &&
+                box.textAlign !== 'left' &&
+                `c-storytelling__box__content--${box.textAlign}`
+            )}
+            style={{ color: box.textColor }}
+          >
+            {box.headline && (
+              <Headline
+                level="p"
+                styleAs="h2"
+                {...box.headline}
+                align={box.headline.align || box.textAlign || 'left'}
+              />
+            )}
+            {box.text && (
+              <RichText
+                text={box.text}
+                renderText={renderText}
+                className="c-storytelling__text"
+              />
+            )}
+            {box.link && <Button {...box.link} />}
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
+    );
+  }
 );
-
 export { StorytellingProps };
 export const StorytellingComponent: ForwardRefRenderFunction<
   HTMLDivElement,

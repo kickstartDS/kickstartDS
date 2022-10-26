@@ -1,6 +1,7 @@
 import { forwardRef, createContext } from 'react';
 import { withContainer } from '@kickstartds/core/lib/container';
-import { TeaserRowComponent, type TeaserRowProps } from './TeaserRowComponent';
+import { TeaserRowComponent } from './TeaserRowComponent';
+import type { TeaserRowProps } from './TeaserRowComponent';
 import './teaser-row.scss';
 
 export { TeaserRowProps };

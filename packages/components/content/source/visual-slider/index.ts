@@ -1,8 +1,6 @@
 import { forwardRef, createElement, createContext, useContext } from 'react';
-import {
-  VisualSliderComponent,
-  type VisualSliderProps,
-} from './VisualSliderComponent';
+import { VisualSliderComponent } from './VisualSliderComponent';
+import type { VisualSliderProps } from './VisualSliderComponent';
 import './visual-slider.scss';
 
 export { VisualSliderProps };

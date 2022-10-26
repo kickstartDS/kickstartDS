@@ -271,7 +271,7 @@ export interface Link {
  */
 export interface TagLabel {
   label: Label1;
-  size: Size;
+  size?: Size;
   link?: LinkTarget;
   removable?: Removable;
   className?: AdditionalClasses2;

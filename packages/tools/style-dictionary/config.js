@@ -61,7 +61,7 @@ module.exports = {
         },
         {
           format: 'storybook/icons',
-          destination: 'icons.html',
+          destination: 'icons.svg',
           filter: 'includeIcons',
         },
       ],

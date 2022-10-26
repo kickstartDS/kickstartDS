@@ -1,11 +1,11 @@
 const fs = require('fs-extra');
 const fg = require('fast-glob');
 const chokidar = require('chokidar');
-const { dirRe } = require('./utils');
+const { dirRe } = require('../utils/utils');
 const { dereference } = require('./schemaDereference');
 const { createTypes } = require('./schemaToTypescript');
-const log = require('./log');
-const { createStory } = require('./createStory');
+const log = require('../utils/log');
+const { createStory } = require('../stories/createStory');
 
 const processSchema = async (schemaPath) => {
   const [, dir, base] = schemaPath.match(dirRe);

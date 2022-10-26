@@ -31,7 +31,7 @@ export type AdditionalClasses = string;
  */
 export interface TagLabelProps {
   label: Label;
-  size: Size;
+  size?: Size;
   link?: LinkTarget;
   removable?: Removable;
   className?: AdditionalClasses;

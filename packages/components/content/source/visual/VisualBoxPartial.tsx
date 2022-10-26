@@ -20,14 +20,14 @@ interface IBox extends TextBox {
 
 export const VisualBoxPartial: FunctionComponent<IBox & RenderFunctions> = ({
   inbox,
-  indent,
-  horizontal,
-  vertical,
+  indent = false,
+  horizontal = 'center',
+  vertical = 'center',
   background = 'solid',
   headline,
   text,
   link,
-  inverted = false,
+  inverted,
   renderHeadline = defaultRenderFn,
   renderText = richTextDefaultRenderFn,
 }) => (
@@ -73,7 +73,6 @@ export const VisualBoxPartial: FunctionComponent<IBox & RenderFunctions> = ({
             {...{
               ...link,
               enabled: undefined,
-              inverted: link.inverted ?? !inverted,
             }}
           />
         </div>

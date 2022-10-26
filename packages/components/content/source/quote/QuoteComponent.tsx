@@ -6,7 +6,7 @@ import {
   RichText,
   defaultRenderFn as richTextDefaultRenderFn,
 } from '@kickstartds/base/lib/rich-text';
-import { type QuoteProps as QuoteSchemaProps } from './QuoteProps';
+import type { QuoteProps as QuoteSchemaProps } from './QuoteProps';
 
 export type QuoteProps = QuoteSchemaProps & {
   renderText?: typeof richTextDefaultRenderFn;

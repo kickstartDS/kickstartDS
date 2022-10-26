@@ -6,7 +6,7 @@ import { Teaser, TeaserProps } from '@kickstartds/base/lib/teaser';
 import { Picture } from '@kickstartds/base/lib/picture';
 import { defaultRenderFn as richTextDefaultRenderFn } from '@kickstartds/base/lib/rich-text';
 import { PostMeta } from '../post-meta';
-import { type PostTeaserProps as PostTeaserSchemaProps } from './PostTeaserProps';
+import type { PostTeaserProps as PostTeaserSchemaProps } from './PostTeaserProps';
 
 export type PostTeaserProps = PostTeaserSchemaProps & TeaserProps;
 export const PostTeaserComponent: ForwardRefRenderFunction<

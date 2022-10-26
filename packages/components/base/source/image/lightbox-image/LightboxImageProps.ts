@@ -5,49 +5,16 @@
  * and run `yarn run schema` to regenerate this file.
  */
 
-/**
- * Thumbnail Source
- */
 export type ThumbnailSource = string;
-/**
- * Lightbox Image Source
- */
 export type LightboxImageSource = string;
-/**
- * Width
- */
 export type Width = number;
-/**
- * height
- */
 export type Height = number;
-/**
- * Hover Zoom Icon
- */
 export type HoverZoomIcon = boolean;
-/**
- * Caption
- */
 export type Caption = string;
-/**
- * Hide caption visually
- */
 export type HideCaptionVisually = boolean;
-/**
- * Gallery identifier
- */
 export type GalleryIdentifier = string;
-/**
- * ID
- */
 export type ID = string;
-/**
- * Additional Class
- */
 export type AdditionalClass = string;
-/**
- * Additional Caption Class
- */
 export type AdditionalCaptionClass = string;
 
 /**

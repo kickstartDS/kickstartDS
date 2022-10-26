@@ -5,7 +5,7 @@ import {
 } from 'react';
 import classnames from 'classnames';
 import { Headline } from '../headline';
-import { type SectionProps } from './SectionProps';
+import type { SectionProps } from './SectionProps';
 
 const SectionContainer: FunctionComponent<SectionProps> = ({
   width,
@@ -34,14 +34,14 @@ export const SectionComponent: ForwardRefRenderFunction<
   SectionProps & HTMLAttributes<HTMLDivElement>
 > = (
   {
-    background,
+    background = 'default',
     inverted,
-    spaceBefore,
-    spaceAfter,
+    spaceBefore = 'default',
+    spaceAfter = 'default',
     headline,
-    width,
-    gutter,
-    mode,
+    width = 'default',
+    gutter = 'default',
+    mode = 'default',
     className,
     children,
     ...props
@@ -66,7 +66,7 @@ export const SectionComponent: ForwardRefRenderFunction<
   >
     {headline && headline.content && (
       <SectionContainer width={width}>
-        <Headline {...headline} />
+        <Headline align="center" {...headline} />
       </SectionContainer>
     )}
     {children && (

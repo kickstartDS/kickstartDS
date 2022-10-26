@@ -7,7 +7,7 @@ import {
   defaultRenderFn as richTextDefaultRenderFn,
 } from '@kickstartds/base/lib/rich-text';
 import { Button } from '@kickstartds/base/lib/button';
-import { type CountUpProps as CountUpSchemaProps } from './CountUpProps';
+import type { CountUpProps as CountUpSchemaProps } from './CountUpProps';
 
 export type CountUpProps = CountUpSchemaProps & {
   renderTo?: typeof defaultRenderFn;
@@ -31,7 +31,7 @@ export const CountUpComponent: ForwardRefRenderFunction<
     renderText = richTextDefaultRenderFn,
     renderLinkLabel = defaultRenderFn,
     className,
-    expand,
+    expand = -100,
     ...props
   },
   ref
@@ -48,7 +48,7 @@ export const CountUpComponent: ForwardRefRenderFunction<
     <div
       className="c-count-up__number"
       data-component="content.count-up"
-      data-expand={expand || -100}
+      data-expand={expand}
     >
       {renderTo(to)}
     </div>

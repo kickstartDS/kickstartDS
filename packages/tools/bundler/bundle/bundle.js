@@ -4,36 +4,19 @@ const { bundleTs, watchTs } = require('./bundleTs');
 const { bundleJs, watchJs } = require('./bundleJs');
 const { compileScss, watchScss } = require('./scss');
 
-const createIndex = (tsPaths) => {
-  const indexContent = tsPaths.reduce(
-    (prev, fileName) =>
-      `${prev}export * from '${fileName.replace(
-        /^source(\/.*)\.tsx?$/,
-        '.$1'
-      )}';\n`,
-    ''
-  );
-  return fs.writeFile('source/index.ts', indexContent);
-};
-
 const exportsFromRollupOutput = (output) =>
   output.reduce((prev, { isEntry, fileName, exports }) => {
     if (isEntry) {
-      prev.set(fileName.replace(/(\.js)$/, ''), exports);
+      prev.set(fileName.replace('/index.js', ''), exports);
     }
     return prev;
   }, new Map());
 
-const getTsPaths = async () => {
-  const tsPaths = (await fg('source/*/**/{index.ts,*Component.tsx}')).sort();
-  await createIndex(tsPaths);
-  tsPaths.push('source/index.ts');
-  return tsPaths;
-};
+const getTsPaths = fg('source/*/**/index.ts');
 
 const buildBundle = async () => {
   try {
-    const tsPaths = await getTsPaths();
+    const tsPaths = await getTsPaths;
     const { output: tsOutput, cssAssets, jsAssets } = await bundleTs(tsPaths);
     const [{ output: jsOutput }, cssExports] = await Promise.all([
       bundleJs([...jsAssets]),
@@ -55,7 +38,7 @@ const buildBundle = async () => {
 };
 
 const watchBundle = async () => {
-  const tsPaths = await getTsPaths();
+  const tsPaths = await getTsPaths;
   const { cssAssets, jsAssets } = await watchTs(tsPaths);
   watchJs([...jsAssets]);
   watchScss([...cssAssets]);

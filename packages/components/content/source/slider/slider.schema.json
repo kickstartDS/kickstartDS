@@ -37,20 +37,18 @@
         "slideComponent": {
           "title": "slide component",
           "description": "slide component",
-          "type": "string",
-          "default": ""
+          "type": "string"
         },
         "previewComponent": {
           "title": "preview component",
           "description": "preview component",
-          "type": "string",
-          "default": ""
+          "type": "string"
         },
         "previewLabel": {
           "title": "preview label",
           "description": "preview label",
           "type": "string",
-          "default": "Slide 1"
+          "examples": ["Slide 1"]
         }
       }
     }

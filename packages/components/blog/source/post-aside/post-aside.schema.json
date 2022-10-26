@@ -18,7 +18,7 @@
             "headline": {
               "allOf": [
                 {
-                  "default": "Published by"
+                  "examples": ["Published by"]
                 },
                 {
                   "$ref": "http://schema.kickstartds.com/base/headline.schema.json#/properties/content"

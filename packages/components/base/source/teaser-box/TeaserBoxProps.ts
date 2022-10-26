@@ -31,20 +31,12 @@ export type ButtonSize = 'small' | 'medium' | 'large';
  * Link used for button
  */
 export type ButtonHref = string;
-/**
- * Add additional css classes that should be applied to the button
- */
-export type AdditionalClasses = string;
 export type IconIdentifier = string;
 export type AriaRole = string;
 export type AdditionalClass = string;
 export type IconIdentifier1 = string;
 export type AriaRole1 = string;
 export type AdditionalClass1 = string;
-/**
- * Overwrite the data-component to use for rendering
- */
-export type DataComponentAttribute = string;
 /**
  * Add fill animation on hover
  */
@@ -73,6 +65,14 @@ export type DisabledAttribute = boolean;
  * Open link in new Tab
  */
 export type OpenLinkInNewTab = boolean;
+/**
+ * Add additional css classes that should be applied to the button
+ */
+export type AdditionalClasses = string;
+/**
+ * Overwrite the data-component to use for rendering
+ */
+export type DataComponentAttribute = string;
 /**
  * Hides the link. The box as a whole keeps being clickable
  */
@@ -111,15 +111,13 @@ export interface TeaserBoxProps {
  * Component to display links and call-to-actions
  */
 export interface Button {
-  label: Label;
-  variant: ButtonStyle;
+  label?: Label;
+  variant?: ButtonStyle;
   inverted?: Inverted1;
-  size: ButtonSize;
+  size?: ButtonSize;
   href?: ButtonHref;
-  className?: AdditionalClasses;
   iconBefore?: IconBeforeButton;
   iconAfter?: IconAfterButton;
-  dataComponent?: DataComponentAttribute;
   fillAnimation?: FillAnimation;
   iconAnimation?: IconAnimation;
   type?: TypeAttribute;
@@ -127,6 +125,8 @@ export interface Button {
   name?: NameAttribute;
   disabled?: DisabledAttribute;
   newTab?: OpenLinkInNewTab;
+  className?: AdditionalClasses;
+  dataComponent?: DataComponentAttribute;
   hidden?: HideLink;
 }
 /**

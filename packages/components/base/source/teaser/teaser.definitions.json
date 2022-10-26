@@ -10,20 +10,22 @@
       "properties": {
         "topic": {
           "title": "Topic",
+          "description": "Topic for the teaser box. Displayed before the text, in bold",
           "type": "string",
-          "default": "Lorem Ipsum",
-          "description": "Topic for the teaser box. Displayed before the text, in bold"
+          "examples": ["Lorem Ipsum"]
         },
         "text": {
           "title": "Text content",
-          "type": "string",
-          "default": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ispum dolor distinctio minima unde voluptatum aut. Lorem ipsum dolor sit amet.",
           "description": "Text for the teaser box",
-          "format": "markdown"
+          "type": "string",
+          "format": "markdown",
+          "examples": [
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ispum dolor distinctio minima unde voluptatum aut. Lorem ipsum dolor sit amet."
+          ]
         },
         "inverted": {
-          "type": "boolean",
-          "title": "Inverted"
+          "title": "Inverted",
+          "type": "boolean"
         },
         "link": {
           "type": "object",
@@ -35,10 +37,10 @@
               "type": "object",
               "properties": {
                 "hidden": {
-                  "type": "boolean",
-                  "default": false,
                   "title": "Hide link",
-                  "description": "Hides the link. The box as a whole keeps being clickable"
+                  "description": "Hides the link. The box as a whole keeps being clickable",
+                  "type": "boolean",
+                  "default": false
                 }
               }
             }

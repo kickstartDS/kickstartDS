@@ -2,15 +2,22 @@ import { FunctionComponent, useContext } from 'react';
 import classnames from 'classnames';
 import { Picture } from '@kickstartds/base/lib/picture';
 import { SlideContext } from '../slider';
-import { MediaWrapper, Inbox } from './VisualProps';
+import {
+  MediaWrapper,
+  Inbox,
+  BackgroundImage,
+  BackgroundVideo,
+} from './VisualProps';
 
 interface IMedia extends MediaWrapper {
   inbox?: Inbox;
   overlay?: boolean;
 }
 
-const Image: FunctionComponent<IMedia> = ({ image = {} }) => {
-  const { srcMobile, srcTablet, srcDesktop, indent, alt, src } = image;
+const Image: FunctionComponent<IMedia> = ({
+  image = {} as BackgroundImage,
+}) => {
+  const { srcMobile, srcTablet, srcDesktop, indent = 'none', alt, src } = image;
   const slide = useContext(SlideContext);
   return (
     <picture
@@ -48,7 +55,9 @@ const Image: FunctionComponent<IMedia> = ({ image = {} }) => {
   );
 };
 
-const Video: FunctionComponent<IMedia> = ({ video = {} }) => {
+const Video: FunctionComponent<IMedia> = ({
+  video = {} as BackgroundVideo,
+}) => {
   const { srcMobile, srcTablet, srcDesktop } = video;
   return (
     <video

@@ -1,6 +1,7 @@
 import { forwardRef, createContext } from 'react';
 import { withContainer } from '@kickstartds/core/lib/container';
-import { VisualComponent, type VisualProps } from './VisualComponent';
+import { VisualComponent } from './VisualComponent';
+import type { VisualProps } from './VisualComponent';
 import './visual.scss';
 import './Visual.js';
 

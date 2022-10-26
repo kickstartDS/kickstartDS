@@ -1,5 +1,6 @@
 import { forwardRef, createElement, createContext, useContext } from 'react';
-import { TeaserComponent, type TeaserProps } from './TeaserComponent';
+import { TeaserComponent } from './TeaserComponent';
+import type { TeaserProps } from './TeaserComponent';
 import './teaser.scss';
 import './Teaser.js';
 
