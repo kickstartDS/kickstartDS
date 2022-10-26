@@ -152,6 +152,11 @@
       "title": "Class",
       "description": "Additional css classes attached to the wrapping element",
       "type": "string"
+    },
+    "component": {
+      "title": "`ks-component` attribute",
+      "description": "Optional custom component identifier",
+      "type": "string"
     }
   },
   "definitions": {

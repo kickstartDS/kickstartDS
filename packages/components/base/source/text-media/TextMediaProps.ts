@@ -76,6 +76,10 @@ export type Height1 = number;
  */
 export type AdditionalClasses = string;
 /**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute = string;
+/**
  * Add id attribute to the image
  */
 export type Id = string;
@@ -140,6 +144,10 @@ export type ID = string;
 export type AdditionalClass = string;
 export type AdditionalCaptionClass = string;
 /**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute1 = string;
+/**
  * Display media item over full width
  */
 export type FullWidthMedia2 = boolean;
@@ -155,6 +163,10 @@ export type Media = (TextMediaVideo | TextMediaImage | TextMediaLazyImage)[];
  * Additional css classes attached to the wrapping element
  */
 export type Class = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute2 = string;
 
 /**
  * Component to display copy text, including media
@@ -164,6 +176,7 @@ export interface TextMediaProps {
   mediaAlignment?: MediaAlignment;
   media?: Media;
   className?: Class;
+  component?: KsComponentAttribute2;
 }
 export interface TextMediaVideo {
   video?: Video;
@@ -198,6 +211,7 @@ export interface Picture {
   width?: Width1;
   height?: Height1;
   className?: AdditionalClasses;
+  component?: KsComponentAttribute;
   id?: Id;
   itemProp?: ItempropAttribute;
   style?: StyleAttribute;
@@ -228,5 +242,6 @@ export interface LightboxImage {
   id?: ID;
   className?: AdditionalClass;
   captionClassName?: AdditionalCaptionClass;
+  component?: KsComponentAttribute1;
   [k: string]: unknown;
 }

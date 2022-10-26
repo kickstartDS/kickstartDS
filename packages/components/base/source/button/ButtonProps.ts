@@ -25,9 +25,17 @@ export type ButtonHref = string;
 export type IconIdentifier = string;
 export type AriaRole = string;
 export type AdditionalClass = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute = string;
 export type IconIdentifier1 = string;
 export type AriaRole1 = string;
 export type AdditionalClass1 = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute1 = string;
 /**
  * Add fill animation on hover
  */
@@ -61,9 +69,9 @@ export type OpenLinkInNewTab = boolean;
  */
 export type AdditionalClasses = string;
 /**
- * Overwrite the data-component to use for rendering
+ * Optional custom component identifier
  */
-export type DataComponentAttribute = string;
+export type KsComponentAttribute2 = string;
 
 /**
  * Component to display links and call-to-actions
@@ -84,7 +92,7 @@ export interface ButtonProps {
   disabled?: DisabledAttribute;
   newTab?: OpenLinkInNewTab;
   className?: AdditionalClasses;
-  dataComponent?: DataComponentAttribute;
+  component?: KsComponentAttribute2;
 }
 /**
  * Icon identifier for icon before the button text
@@ -93,6 +101,7 @@ export interface IconBeforeButton {
   icon: IconIdentifier;
   role?: AriaRole;
   className?: AdditionalClass;
+  component?: KsComponentAttribute;
   [k: string]: unknown;
 }
 /**
@@ -102,5 +111,6 @@ export interface IconAfterButton {
   icon: IconIdentifier1;
   role?: AriaRole1;
   className?: AdditionalClass1;
+  component?: KsComponentAttribute1;
   [k: string]: unknown;
 }

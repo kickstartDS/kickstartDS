@@ -30,6 +30,10 @@ export type Height = number;
  */
 export type AdditionalClasses = string;
 /**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute = string;
+/**
  * Add id attribute to the image
  */
 export type Id = string;
@@ -92,6 +96,10 @@ export type CopyText = string;
  */
 export type Class = string;
 /**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute1 = string;
+/**
  * Text content for the headline
  */
 export type Text = string;
@@ -119,6 +127,10 @@ export type Height1 = number;
  * Add additional css classes that should be applied to the button
  */
 export type AdditionalClasses1 = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute2 = string;
 /**
  * Add id attribute to the image
  */
@@ -169,6 +181,10 @@ export type ClassAttribute1 = string;
  */
 export type Class1 = string;
 /**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute3 = string;
+/**
  * Text content for the headline
  */
 export type Text1 = string;
@@ -201,6 +217,10 @@ export type PageHeader = boolean;
  */
 export type AdditionalClasses2 = string;
 /**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute4 = string;
+/**
  * Open link in new Tab
  */
 export type OpenLinkInNewTab1 = boolean;
@@ -209,9 +229,17 @@ export type OpenLinkInNewTab1 = boolean;
  */
 export type Class2 = string;
 /**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute5 = string;
+/**
  * Additional css classes attached to the wrapping element
  */
 export type Class3 = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute6 = string;
 
 /**
  * Post Aside
@@ -221,6 +249,7 @@ export interface PostAsideProps {
   meta?: PostMeta;
   shareBar?: PostShareBar;
   className?: Class3;
+  component?: KsComponentAttribute6;
   [k: string]: unknown;
 }
 /**
@@ -239,6 +268,7 @@ export interface Author {
   }[];
   copy?: CopyText;
   className?: Class;
+  component?: KsComponentAttribute1;
   headline?: Text;
   [k: string]: unknown;
 }
@@ -252,6 +282,7 @@ export interface Picture {
   width?: Width;
   height?: Height;
   className?: AdditionalClasses;
+  component?: KsComponentAttribute;
   id?: Id;
   itemProp?: ItempropAttribute;
   style?: StyleAttribute;
@@ -272,6 +303,7 @@ export interface PostMeta {
   };
   items?: MetaItem[];
   className?: Class1;
+  component?: KsComponentAttribute3;
   [k: string]: unknown;
 }
 /**
@@ -284,6 +316,7 @@ export interface Picture1 {
   width?: Width1;
   height?: Height1;
   className?: AdditionalClasses1;
+  component?: KsComponentAttribute2;
   id?: Id1;
   itemProp?: ItempropAttribute1;
   style?: StyleAttribute1;
@@ -305,6 +338,7 @@ export interface PostShareBar {
   headline?: Headline;
   links?: ShareLink[];
   className?: Class2;
+  component?: KsComponentAttribute5;
   [k: string]: unknown;
 }
 /**
@@ -319,6 +353,7 @@ export interface Headline {
   spaceAfter?: BottomSpacing;
   pageHeader?: PageHeader;
   className?: AdditionalClasses2;
+  component?: KsComponentAttribute4;
   [k: string]: unknown;
 }
 export interface ShareLink {

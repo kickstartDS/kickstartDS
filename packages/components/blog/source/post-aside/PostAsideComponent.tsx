@@ -24,8 +24,13 @@ export { PostAsideProps };
 export const PostAsideComponent: ForwardRefRenderFunction<
   HTMLDivElement,
   PostAsideProps & HTMLAttributes<HTMLElement>
-> = ({ author, meta, shareBar, className, ...props }, ref) => (
-  <div className={classNames('c-post-aside', className)} ref={ref} {...props}>
+> = ({ author, meta, shareBar, className, component, ...props }, ref) => (
+  <div
+    className={classNames('c-post-aside', className)}
+    ks-component={component}
+    ref={ref}
+    {...props}
+  >
     {author && <Author {...author} />}
 
     {meta && (

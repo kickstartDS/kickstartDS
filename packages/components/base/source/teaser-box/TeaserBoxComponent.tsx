@@ -17,7 +17,6 @@ export const TeaserBoxComponent: ForwardRefRenderFunction<
       { 'image--spacing': imageSpacing },
       className
     )}
-    data-component="base.teaser"
     ref={ref}
     {...props}
   >

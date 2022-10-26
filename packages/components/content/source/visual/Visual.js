@@ -1,6 +1,6 @@
 import { Component, define } from '@kickstartds/core/lib/core';
 
-const identifier = 'visual';
+const identifier = 'content.visual';
 const scrollToSibling = (element) => {
   if (element) {
     if (element.nextElementSibling) {

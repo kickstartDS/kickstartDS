@@ -24,6 +24,7 @@ export const SelectFieldComponent: ForwardRefRenderFunction<
     options,
     icon = 'chevron-down',
     className,
+    component,
     ...props
   },
   ref
@@ -51,6 +52,7 @@ export const SelectFieldComponent: ForwardRefRenderFunction<
             },
             className
           )}
+          ks-component={component}
           ref={ref}
           {...props}
         >

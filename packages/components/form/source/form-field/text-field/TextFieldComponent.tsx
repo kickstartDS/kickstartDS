@@ -24,6 +24,7 @@ export const TextFieldComponent: ForwardRefRenderFunction<
     hint,
     icon,
     className,
+    component,
     ...props
   },
   ref
@@ -52,6 +53,7 @@ export const TextFieldComponent: ForwardRefRenderFunction<
             className
           )}
           type={type}
+          ks-component={component}
           ref={ref}
           {...props}
         />

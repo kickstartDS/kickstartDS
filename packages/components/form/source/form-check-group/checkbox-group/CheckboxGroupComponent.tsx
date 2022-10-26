@@ -20,6 +20,7 @@ export const CheckboxGroupComponent: ForwardRefRenderFunction<
     invalidMessage,
     options,
     className,
+    component,
     ...props
   },
   ref
@@ -28,6 +29,7 @@ export const CheckboxGroupComponent: ForwardRefRenderFunction<
     className={classnames('c-form-check-group', className, {
       'c-form-check-group--is-invalid': invalid,
     })}
+    ks-component={component}
     ref={ref}
     {...props}
   >

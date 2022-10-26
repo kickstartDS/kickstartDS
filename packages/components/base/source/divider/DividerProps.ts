@@ -13,6 +13,10 @@ export type StyleOfTheDivider = 'default' | 'accent';
  * Add additional css classes that should be applied to the divider
  */
 export type AdditionalClasses = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute = string;
 
 /**
  * Dividers bring clarity to a layout by grouping and dividing content in close proximity.
@@ -20,5 +24,6 @@ export type AdditionalClasses = string;
 export interface DividerProps {
   variant?: StyleOfTheDivider;
   className?: AdditionalClasses;
+  component?: KsComponentAttribute;
   [k: string]: unknown;
 }

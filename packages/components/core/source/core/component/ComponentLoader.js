@@ -4,11 +4,14 @@ import { uid } from './uid';
 import { domLoaded, inBrowser } from '../domLoaded';
 import { events } from '../lazysizes';
 
-const identifier = 'component';
+const componentAttribute = 'ks-component';
 const eachElement = (nodeList, cb) =>
   nodeList.forEach((node) => {
     if (node.nodeType === Node.ELEMENT_NODE) {
-      const elements = [node, ...node.querySelectorAll(`[data-${identifier}]`)];
+      const elements = [
+        node,
+        ...node.querySelectorAll(`[${componentAttribute}]`),
+      ];
       elements.forEach(cb);
     }
   });
@@ -66,7 +69,7 @@ export default class ComponentLoader {
             if (mutation.oldValue) {
               this.unmount([mutation.target]);
             }
-            if (mutation.target.dataset[identifier]) {
+            if (mutation.target.hasAttribute(componentAttribute)) {
               this.mount([mutation.target]);
             }
             break;
@@ -85,7 +88,8 @@ export default class ComponentLoader {
         childList: true,
         subtree: true,
         attributes: true,
-        attributeFilter: [`data-${identifier}`],
+        attributeOldValue: true,
+        attributeFilter: [componentAttribute],
       });
     });
   }
@@ -96,7 +100,7 @@ export default class ComponentLoader {
       Object.entries(classes).forEach(
         ([componentClassName, ComponentClassOrFn]) => {
           document.body
-            .querySelectorAll(`[data-${identifier}="${componentClassName}"]`)
+            .querySelectorAll(`[${componentAttribute}="${componentClassName}"]`)
             .forEach((element) => {
               mountElement(
                 element,
@@ -114,7 +118,7 @@ export default class ComponentLoader {
     eachElement(nodeList, (element) => {
       if (element.hasAttribute('data-uid')) return;
 
-      const componentClassName = element.dataset[identifier];
+      const componentClassName = element.getAttribute(componentAttribute);
       const ComponentClassOrFn = this.classes[componentClassName];
       if (ComponentClassOrFn) {
         mountElement(
@@ -130,6 +134,7 @@ export default class ComponentLoader {
   unmount(nodeList) {
     eachElement(nodeList, (element) => {
       if (element.hasAttribute('data-uid')) {
+        element.removeAttribute('data-uid');
         executeHooks(element, this.unmountHooks);
       }
     });

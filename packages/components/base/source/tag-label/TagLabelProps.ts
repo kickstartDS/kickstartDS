@@ -25,6 +25,10 @@ export type Removable = boolean;
  * Add additional css classes that should be applied to the label
  */
 export type AdditionalClasses = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute = string;
 
 /**
  * Component to render a pill / tag / label
@@ -35,4 +39,5 @@ export interface TagLabelProps {
   link?: LinkTarget;
   removable?: Removable;
   className?: AdditionalClasses;
+  component?: KsComponentAttribute;
 }

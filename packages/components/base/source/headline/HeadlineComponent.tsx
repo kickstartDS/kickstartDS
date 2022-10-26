@@ -23,6 +23,7 @@ export const HeadlineComponent: ForwardRefRenderFunction<
     renderContent = defaultRenderFn,
     renderSubheadline = defaultRenderFn,
     className,
+    component,
     ...props
   },
   ref
@@ -37,6 +38,7 @@ export const HeadlineComponent: ForwardRefRenderFunction<
         { 'c-headline--page-header': pageHeader },
         className
       )}
+      ks-component={component}
       ref={ref}
       {...props}
     >

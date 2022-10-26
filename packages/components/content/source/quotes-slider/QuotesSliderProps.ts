@@ -26,13 +26,22 @@ export type SourceAddition = string;
  */
 export type Class = string;
 /**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute = string;
+/**
  * Additional css classes attached to the slider
  */
 export type Class1 = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute1 = string;
 
 export interface QuotesSliderProps {
   slides?: Quote[];
   className?: Class1;
+  component?: KsComponentAttribute1;
   [k: string]: unknown;
 }
 /**
@@ -44,5 +53,6 @@ export interface Quote {
   source?: Source;
   byline?: SourceAddition;
   className?: Class;
+  component?: KsComponentAttribute;
   [k: string]: unknown;
 }

@@ -30,6 +30,10 @@ export type Height = number;
  */
 export type AdditionalClasses = string;
 /**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute = string;
+/**
  * Add id attribute to the image
  */
 export type Id = string;
@@ -91,6 +95,10 @@ export type CopyText = string;
  * Additional css classes attached to the wrapping element
  */
 export type Class = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute1 = string;
 
 /**
  * Component to show contact information
@@ -108,6 +116,7 @@ export interface ContactProps {
   }[];
   copy?: CopyText;
   className?: Class;
+  component?: KsComponentAttribute1;
   [k: string]: unknown;
 }
 /**
@@ -120,6 +129,7 @@ export interface Picture {
   width?: Width;
   height?: Height;
   className?: AdditionalClasses;
+  component?: KsComponentAttribute;
   id?: Id;
   itemProp?: ItempropAttribute;
   style?: StyleAttribute;

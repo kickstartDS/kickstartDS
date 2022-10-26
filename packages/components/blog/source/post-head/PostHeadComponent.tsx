@@ -11,10 +11,24 @@ export const PostHeadComponent: ForwardRefRenderFunction<
   HTMLDivElement,
   PostHeadProps & HTMLAttributes<HTMLDivElement>
 > = (
-  { date, categories, headline, image, imageAlignment, className, ...props },
+  {
+    date,
+    categories,
+    headline,
+    image,
+    imageAlignment,
+    className,
+    component,
+    ...props
+  },
   ref
 ) => (
-  <div className={classNames('c-post-head', className)} ref={ref} {...props}>
+  <div
+    className={classNames('c-post-head', className)}
+    ks-component={component}
+    ref={ref}
+    {...props}
+  >
     <div className="c-post-head__meta">
       {date && (
         <time

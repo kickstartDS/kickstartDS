@@ -6,13 +6,14 @@ export { DividerProps };
 export const DividerComponent: ForwardRefRenderFunction<
   HTMLHRElement,
   DividerProps & HTMLAttributes<HTMLHRElement>
-> = ({ variant = 'default', className, ...props }, ref) => (
+> = ({ variant = 'default', className, component, ...props }, ref) => (
   <hr
     className={classNames(
       'c-divider',
       variant && variant !== 'default' && `c-divider--${variant}`,
       className
     )}
+    ks-component={component}
     ref={ref}
     {...props}
   />

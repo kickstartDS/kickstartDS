@@ -66,6 +66,11 @@
       "title": "Class",
       "description": "Additional css classes attached to the select element",
       "type": "string"
+    },
+    "component": {
+      "title": "`ks-component` attribute",
+      "description": "Optional custom component identifier",
+      "type": "string"
     }
   }
 }

@@ -38,6 +38,10 @@ export type Options = RadioButton[];
  * Additional css classes attached to the wrapping element
  */
 export type Class = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute = string;
 
 /**
  * A Radio Group allows users to select one item from a list of choices.
@@ -49,6 +53,7 @@ export interface RadioGroupProps {
   invalidMessage?: InvalidMessage;
   options?: Options;
   className?: Class;
+  component?: KsComponentAttribute;
   [k: string]: unknown;
 }
 /**

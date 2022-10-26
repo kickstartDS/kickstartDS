@@ -10,7 +10,7 @@ export const ContainerComponent: ForwardRefRenderFunction<
   ContainerProps
 > = ({ name, className, ...props }, ref) => (
   <div
-    data-component="base.container"
+    ks-component="base.container"
     className={classnames(
       'l-container',
       name && `l-container--${name}`,

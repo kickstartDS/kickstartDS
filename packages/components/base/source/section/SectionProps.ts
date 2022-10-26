@@ -26,9 +26,17 @@ export type SourceAddition = string;
  */
 export type Class = string;
 /**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute = string;
+/**
  * Additional css classes attached to the slider
  */
 export type Class1 = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute1 = string;
 /**
  * Text used on button
  */
@@ -49,9 +57,17 @@ export type ButtonHref = string;
 export type IconIdentifier = string;
 export type AriaRole = string;
 export type AdditionalClass = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute2 = string;
 export type IconIdentifier1 = string;
 export type AriaRole1 = string;
 export type AdditionalClass1 = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute3 = string;
 /**
  * Add fill animation on hover
  */
@@ -85,9 +101,9 @@ export type OpenLinkInNewTab = boolean;
  */
 export type AdditionalClasses = string;
 /**
- * Overwrite the data-component to use for rendering
+ * Optional custom component identifier
  */
-export type DataComponentAttribute = string;
+export type KsComponentAttribute4 = string;
 /**
  * Text to display inside tag label
  */
@@ -108,6 +124,10 @@ export type Removable = boolean;
  * Add additional css classes that should be applied to the label
  */
 export type AdditionalClasses1 = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute5 = string;
 export type Height = 'small' | 'default' | 'fullImage' | 'fullScreen';
 /**
  * Choose a media type between image, video and none
@@ -190,6 +210,10 @@ export type PageHeader = boolean;
  */
 export type AdditionalClasses2 = string;
 /**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute6 = string;
+/**
  * Text box copy text
  */
 export type Text1 = string;
@@ -217,9 +241,17 @@ export type ButtonHref1 = string;
 export type IconIdentifier2 = string;
 export type AriaRole2 = string;
 export type AdditionalClass2 = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute7 = string;
 export type IconIdentifier3 = string;
 export type AriaRole3 = string;
 export type AdditionalClass3 = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute8 = string;
 /**
  * Add fill animation on hover
  */
@@ -253,9 +285,9 @@ export type OpenLinkInNewTab1 = boolean;
  */
 export type AdditionalClasses3 = string;
 /**
- * Overwrite the data-component to use for rendering
+ * Optional custom component identifier
  */
-export type DataComponentAttribute1 = string;
+export type KsComponentAttribute9 = string;
 /**
  * The text box is aligned inside the content grid
  */
@@ -287,6 +319,10 @@ export type Inbox = boolean;
 export type SkipButton = boolean;
 export type AdditionalClasses4 = string;
 /**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute10 = string;
+/**
  * Select an image to display inside the quote, to the left
  */
 export type ImageSource1 = string;
@@ -306,6 +342,10 @@ export type SourceAddition1 = string;
  * Additional css classes attached to the wrapping element
  */
 export type Class2 = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute11 = string;
 /**
  * Automatically move to next slide after 4 seconds without user interaction
  */
@@ -392,6 +432,10 @@ export type PageHeader1 = boolean;
  */
 export type AdditionalClasses5 = string;
 /**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute12 = string;
+/**
  * Text box copy text
  */
 export type Text3 = string;
@@ -419,9 +463,17 @@ export type ButtonHref2 = string;
 export type IconIdentifier4 = string;
 export type AriaRole4 = string;
 export type AdditionalClass4 = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute13 = string;
 export type IconIdentifier5 = string;
 export type AriaRole5 = string;
 export type AdditionalClass5 = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute14 = string;
 /**
  * Add fill animation on hover
  */
@@ -455,9 +507,9 @@ export type OpenLinkInNewTab2 = boolean;
  */
 export type AdditionalClasses6 = string;
 /**
- * Overwrite the data-component to use for rendering
+ * Optional custom component identifier
  */
-export type DataComponentAttribute2 = string;
+export type KsComponentAttribute15 = string;
 /**
  * The text box is aligned inside the content grid
  */
@@ -489,6 +541,10 @@ export type Inbox1 = boolean;
 export type SkipButton1 = boolean;
 export type AdditionalClasses7 = string;
 /**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute16 = string;
+/**
  * preview label
  */
 export type SlidePreviewLabel = string;
@@ -496,6 +552,10 @@ export type SlidePreviewLabel = string;
  * Additional css classes attached to the wrapping element
  */
 export type Class3 = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute17 = string;
 /**
  * Picture source
  */
@@ -520,6 +580,10 @@ export type Height2 = number;
  * Add additional css classes that should be applied to the button
  */
 export type AdditionalClasses8 = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute18 = string;
 /**
  * Add id attribute to the image
  */
@@ -582,6 +646,10 @@ export type CopyText = string;
  * Additional css classes attached to the wrapping element
  */
 export type Class4 = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute19 = string;
 /**
  * Background image for the whole element
  */
@@ -661,6 +729,10 @@ export type PageHeader2 = boolean;
  */
 export type AdditionalClasses9 = string;
 /**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute20 = string;
+/**
  * Text content to display inside the element
  */
 export type Text5 = string;
@@ -700,9 +772,17 @@ export type ButtonHref3 = string;
 export type IconIdentifier6 = string;
 export type AriaRole6 = string;
 export type AdditionalClass6 = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute21 = string;
 export type IconIdentifier7 = string;
 export type AriaRole7 = string;
 export type AdditionalClass7 = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute22 = string;
 /**
  * Add fill animation on hover
  */
@@ -736,14 +816,18 @@ export type OpenLinkInNewTab4 = boolean;
  */
 export type AdditionalClasses10 = string;
 /**
- * Overwrite the data-component to use for rendering
+ * Optional custom component identifier
  */
-export type DataComponentAttribute3 = string;
+export type KsComponentAttribute23 = string;
 /**
  * Additional css classes attached to the wrapping element
  */
 export type Class5 = string;
 export type Inverted6 = boolean;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute24 = string;
 /**
  * Include the text for the collapsible that should be visible before opening
  */
@@ -757,12 +841,20 @@ export type ContentOfTheCollapsible = string;
  */
 export type Class6 = string;
 /**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute25 = string;
+/**
  * Final number to count to
  */
 export type Number = number;
 export type IconIdentifier8 = string;
 export type AriaRole8 = string;
 export type AdditionalClass8 = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute26 = string;
 /**
  * Topic for the count-up box. Displayed before the text, in bold
  */
@@ -795,9 +887,17 @@ export type ButtonHref4 = string;
 export type IconIdentifier9 = string;
 export type AriaRole9 = string;
 export type AdditionalClass9 = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute27 = string;
 export type IconIdentifier10 = string;
 export type AriaRole10 = string;
 export type AdditionalClass10 = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute28 = string;
 /**
  * Add fill animation on hover
  */
@@ -831,13 +931,17 @@ export type OpenLinkInNewTab5 = boolean;
  */
 export type AdditionalClasses11 = string;
 /**
- * Overwrite the data-component to use for rendering
+ * Optional custom component identifier
  */
-export type DataComponentAttribute4 = string;
+export type KsComponentAttribute29 = string;
 /**
  * Additional css classes attached to the wrapping element
  */
 export type Class7 = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute30 = string;
 /**
  * Choose one of the set ratios, all ratios except `none` stretch the image to 100% width
  */
@@ -882,9 +986,17 @@ export type ButtonHref5 = string;
 export type IconIdentifier11 = string;
 export type AriaRole11 = string;
 export type AdditionalClass11 = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute31 = string;
 export type IconIdentifier12 = string;
 export type AriaRole12 = string;
 export type AdditionalClass12 = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute32 = string;
 /**
  * Add fill animation on hover
  */
@@ -918,13 +1030,17 @@ export type OpenLinkInNewTab6 = boolean;
  */
 export type AdditionalClasses12 = string;
 /**
- * Overwrite the data-component to use for rendering
+ * Optional custom component identifier
  */
-export type DataComponentAttribute5 = string;
+export type KsComponentAttribute33 = string;
 /**
  * Add additional css classes that should be applied to the content box
  */
 export type AdditionalClasses13 = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute34 = string;
 /**
  * Select the headline level to use, or p alternatively
  */
@@ -957,6 +1073,10 @@ export type PageHeader3 = boolean;
  * Add additional css classes that should be applied to the headline
  */
 export type AdditionalClasses14 = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute35 = string;
 /**
  * Copy text for the element
  */
@@ -1028,6 +1148,10 @@ export type Height4 = number;
  */
 export type AdditionalClasses15 = string;
 /**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute36 = string;
+/**
  * Add id attribute to the image
  */
 export type Id1 = string;
@@ -1092,6 +1216,10 @@ export type ID = string;
 export type AdditionalClass13 = string;
 export type AdditionalCaptionClass = string;
 /**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute37 = string;
+/**
  * Display media item over full width
  */
 export type FullWidthMedia2 = boolean;
@@ -1107,6 +1235,10 @@ export type Media = (TextMediaVideo | TextMediaImage | TextMediaLazyImage)[];
  * Additional css classes attached to the wrapping element
  */
 export type Class8 = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute38 = string;
 /**
  * Topic for the teaser box. Displayed before the text, in bold
  */
@@ -1136,9 +1268,17 @@ export type ButtonHref6 = string;
 export type IconIdentifier13 = string;
 export type AriaRole13 = string;
 export type AdditionalClass14 = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute39 = string;
 export type IconIdentifier14 = string;
 export type AriaRole14 = string;
 export type AdditionalClass15 = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute40 = string;
 /**
  * Add fill animation on hover
  */
@@ -1172,9 +1312,9 @@ export type OpenLinkInNewTab7 = boolean;
  */
 export type AdditionalClasses16 = string;
 /**
- * Overwrite the data-component to use for rendering
+ * Optional custom component identifier
  */
-export type DataComponentAttribute6 = string;
+export type KsComponentAttribute41 = string;
 /**
  * Hides the link. The box as a whole keeps being clickable
  */
@@ -1183,6 +1323,10 @@ export type HideLink = boolean;
  * Additional css classes attached to the box
  */
 export type Class9 = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute42 = string;
 /**
  * Select an image to display inside the teaser box, at the top
  */
@@ -1219,6 +1363,10 @@ export type Height6 = number;
  * Add additional css classes that should be applied to the button
  */
 export type AdditionalClasses17 = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute43 = string;
 /**
  * Add id attribute to the image
  */
@@ -1270,6 +1418,10 @@ export type Logos = Picture2[];
  */
 export type Class10 = string;
 /**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute44 = string;
+/**
  * Topic for the teaser box. Displayed before the text, in bold
  */
 export type Topic3 = string;
@@ -1298,9 +1450,17 @@ export type ButtonHref7 = string;
 export type IconIdentifier15 = string;
 export type AriaRole15 = string;
 export type AdditionalClass16 = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute45 = string;
 export type IconIdentifier16 = string;
 export type AriaRole16 = string;
 export type AdditionalClass17 = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute46 = string;
 /**
  * Add fill animation on hover
  */
@@ -1334,9 +1494,9 @@ export type OpenLinkInNewTab8 = boolean;
  */
 export type AdditionalClasses18 = string;
 /**
- * Overwrite the data-component to use for rendering
+ * Optional custom component identifier
  */
-export type DataComponentAttribute7 = string;
+export type KsComponentAttribute47 = string;
 /**
  * Hides the link. The box as a whole keeps being clickable
  */
@@ -1345,6 +1505,10 @@ export type HideLink1 = boolean;
  * Additional css classes attached to the box
  */
 export type Class11 = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute48 = string;
 export type Inverted13 = boolean;
 /**
  * Choose an alignment for the headline
@@ -1379,9 +1543,17 @@ export type PageHeader4 = boolean;
  */
 export type AdditionalClasses19 = string;
 /**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute49 = string;
+/**
  * Add additional css classes that should be applied to the section
  */
 export type AdditionalClass18 = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute50 = string;
 
 export interface SectionProps {
   width?: 'full' | 'max' | 'wide' | 'default' | 'narrow';
@@ -1411,11 +1583,13 @@ export interface SectionProps {
   spaceAfter?: 'default' | 'small' | 'none';
   headline?: Headline4;
   className?: AdditionalClass18;
+  component?: KsComponentAttribute50;
   [k: string]: unknown;
 }
 export interface QuotesSlider {
   slides?: Quote[];
   className?: Class1;
+  component?: KsComponentAttribute1;
   [k: string]: unknown;
 }
 /**
@@ -1427,6 +1601,7 @@ export interface Quote {
   source?: Source;
   byline?: SourceAddition;
   className?: Class;
+  component?: KsComponentAttribute;
   [k: string]: unknown;
 }
 /**
@@ -1448,7 +1623,7 @@ export interface Button {
   disabled?: DisabledAttribute;
   newTab?: OpenLinkInNewTab;
   className?: AdditionalClasses;
-  dataComponent?: DataComponentAttribute;
+  component?: KsComponentAttribute4;
 }
 /**
  * Icon identifier for icon before the button text
@@ -1457,6 +1632,7 @@ export interface IconBeforeButton {
   icon: IconIdentifier;
   role?: AriaRole;
   className?: AdditionalClass;
+  component?: KsComponentAttribute2;
   [k: string]: unknown;
 }
 /**
@@ -1466,6 +1642,7 @@ export interface IconAfterButton {
   icon: IconIdentifier1;
   role?: AriaRole1;
   className?: AdditionalClass1;
+  component?: KsComponentAttribute3;
   [k: string]: unknown;
 }
 /**
@@ -1477,6 +1654,7 @@ export interface TagLabel {
   link?: LinkTarget;
   removable?: Removable;
   className?: AdditionalClasses1;
+  component?: KsComponentAttribute5;
 }
 /**
  * visual
@@ -1490,6 +1668,7 @@ export interface Visual {
   inbox?: Inbox;
   skipButton?: SkipButton;
   className?: AdditionalClasses4;
+  component?: KsComponentAttribute10;
 }
 /**
  * Wrapper for all media types
@@ -1546,6 +1725,7 @@ export interface Headline {
   spaceAfter?: BottomSpacing;
   pageHeader?: PageHeader;
   className?: AdditionalClasses2;
+  component?: KsComponentAttribute6;
   [k: string]: unknown;
 }
 /**
@@ -1568,7 +1748,7 @@ export interface Link {
   disabled?: DisabledAttribute1;
   newTab?: OpenLinkInNewTab1;
   className?: AdditionalClasses3;
-  dataComponent?: DataComponentAttribute1;
+  component?: KsComponentAttribute9;
 }
 /**
  * Icon identifier for icon before the button text
@@ -1577,6 +1757,7 @@ export interface IconBeforeButton1 {
   icon: IconIdentifier2;
   role?: AriaRole2;
   className?: AdditionalClass2;
+  component?: KsComponentAttribute7;
   [k: string]: unknown;
 }
 /**
@@ -1586,6 +1767,7 @@ export interface IconAfterButton1 {
   icon: IconIdentifier3;
   role?: AriaRole3;
   className?: AdditionalClass3;
+  component?: KsComponentAttribute8;
   [k: string]: unknown;
 }
 /**
@@ -1597,6 +1779,7 @@ export interface Quote1 {
   source?: Source1;
   byline?: SourceAddition1;
   className?: Class2;
+  component?: KsComponentAttribute11;
   [k: string]: unknown;
 }
 /**
@@ -1606,6 +1789,7 @@ export interface VisualSlider {
   autoplay?: AutoPlay;
   slides: Visual1[];
   className?: Class3;
+  component?: KsComponentAttribute17;
   [k: string]: unknown;
 }
 /**
@@ -1620,6 +1804,7 @@ export interface Visual1 {
   inbox?: Inbox1;
   skipButton?: SkipButton1;
   className?: AdditionalClasses7;
+  component?: KsComponentAttribute16;
   label?: SlidePreviewLabel;
 }
 /**
@@ -1677,6 +1862,7 @@ export interface Headline1 {
   spaceAfter?: BottomSpacing1;
   pageHeader?: PageHeader1;
   className?: AdditionalClasses5;
+  component?: KsComponentAttribute12;
   [k: string]: unknown;
 }
 /**
@@ -1699,7 +1885,7 @@ export interface Link1 {
   disabled?: DisabledAttribute2;
   newTab?: OpenLinkInNewTab2;
   className?: AdditionalClasses6;
-  dataComponent?: DataComponentAttribute2;
+  component?: KsComponentAttribute15;
 }
 /**
  * Icon identifier for icon before the button text
@@ -1708,6 +1894,7 @@ export interface IconBeforeButton2 {
   icon: IconIdentifier4;
   role?: AriaRole4;
   className?: AdditionalClass4;
+  component?: KsComponentAttribute13;
   [k: string]: unknown;
 }
 /**
@@ -1717,6 +1904,7 @@ export interface IconAfterButton2 {
   icon: IconIdentifier5;
   role?: AriaRole5;
   className?: AdditionalClass5;
+  component?: KsComponentAttribute14;
   [k: string]: unknown;
 }
 /**
@@ -1735,6 +1923,7 @@ export interface Contact {
   }[];
   copy?: CopyText;
   className?: Class4;
+  component?: KsComponentAttribute19;
   [k: string]: unknown;
 }
 /**
@@ -1747,6 +1936,7 @@ export interface Picture {
   width?: Width;
   height?: Height2;
   className?: AdditionalClasses8;
+  component?: KsComponentAttribute18;
   id?: Id;
   itemProp?: ItempropAttribute;
   style?: StyleAttribute;
@@ -1767,6 +1957,7 @@ export interface Storytelling {
   box: TextBox2;
   className?: Class5;
   inverted?: Inverted6;
+  component?: KsComponentAttribute24;
   [k: string]: unknown;
 }
 /**
@@ -1813,6 +2004,7 @@ export interface Headline2 {
   spaceAfter?: BottomSpacing2;
   pageHeader?: PageHeader2;
   className?: AdditionalClasses9;
+  component?: KsComponentAttribute20;
   [k: string]: unknown;
 }
 /**
@@ -1834,7 +2026,7 @@ export interface Button1 {
   disabled?: DisabledAttribute3;
   newTab?: OpenLinkInNewTab4;
   className?: AdditionalClasses10;
-  dataComponent?: DataComponentAttribute3;
+  component?: KsComponentAttribute23;
 }
 /**
  * Icon identifier for icon before the button text
@@ -1843,6 +2035,7 @@ export interface IconBeforeButton3 {
   icon: IconIdentifier6;
   role?: AriaRole6;
   className?: AdditionalClass6;
+  component?: KsComponentAttribute21;
   [k: string]: unknown;
 }
 /**
@@ -1852,6 +2045,7 @@ export interface IconAfterButton3 {
   icon: IconIdentifier7;
   role?: AriaRole7;
   className?: AdditionalClass7;
+  component?: KsComponentAttribute22;
   [k: string]: unknown;
 }
 /**
@@ -1861,6 +2055,7 @@ export interface CollapsibleBox {
   summary: SummaryTextForTheCollapsible;
   text: ContentOfTheCollapsible;
   className?: Class6;
+  component?: KsComponentAttribute25;
 }
 /**
  * Component to to increase a number up to a final value
@@ -1876,6 +2071,7 @@ export interface CountUp {
    * See https://github.com/aFarkas/lazysizes/blob/gh-pages/README.md#data-expand-attribute
    */
   expand?: number;
+  component?: KsComponentAttribute30;
   [k: string]: unknown;
 }
 /**
@@ -1885,6 +2081,7 @@ export interface Icon {
   icon: IconIdentifier8;
   role?: AriaRole8;
   className?: AdditionalClass8;
+  component?: KsComponentAttribute26;
   [k: string]: unknown;
 }
 /**
@@ -1907,7 +2104,7 @@ export interface Link2 {
   disabled?: DisabledAttribute4;
   newTab?: OpenLinkInNewTab5;
   className?: AdditionalClasses11;
-  dataComponent?: DataComponentAttribute4;
+  component?: KsComponentAttribute29;
 }
 /**
  * Icon identifier for icon before the button text
@@ -1916,6 +2113,7 @@ export interface IconBeforeButton4 {
   icon: IconIdentifier9;
   role?: AriaRole9;
   className?: AdditionalClass9;
+  component?: KsComponentAttribute27;
   [k: string]: unknown;
 }
 /**
@@ -1925,6 +2123,7 @@ export interface IconAfterButton4 {
   icon: IconIdentifier10;
   role?: AriaRole10;
   className?: AdditionalClass10;
+  component?: KsComponentAttribute28;
   [k: string]: unknown;
 }
 /**
@@ -1938,6 +2137,7 @@ export interface ContentBox {
   text?: TextContent3;
   link?: Link3;
   className?: AdditionalClasses13;
+  component?: KsComponentAttribute34;
 }
 /**
  * Content box link configuration
@@ -1959,7 +2159,7 @@ export interface Link3 {
   disabled?: DisabledAttribute5;
   newTab?: OpenLinkInNewTab6;
   className?: AdditionalClasses12;
-  dataComponent?: DataComponentAttribute5;
+  component?: KsComponentAttribute33;
 }
 /**
  * Icon identifier for icon before the button text
@@ -1968,6 +2168,7 @@ export interface IconBeforeButton5 {
   icon: IconIdentifier11;
   role?: AriaRole11;
   className?: AdditionalClass11;
+  component?: KsComponentAttribute31;
   [k: string]: unknown;
 }
 /**
@@ -1977,6 +2178,7 @@ export interface IconAfterButton5 {
   icon: IconIdentifier12;
   role?: AriaRole12;
   className?: AdditionalClass12;
+  component?: KsComponentAttribute32;
   [k: string]: unknown;
 }
 /**
@@ -1991,6 +2193,7 @@ export interface Headline3 {
   spaceAfter?: BottomSpacing3;
   pageHeader?: PageHeader3;
   className?: AdditionalClasses14;
+  component?: KsComponentAttribute35;
   [k: string]: unknown;
 }
 /**
@@ -2001,6 +2204,7 @@ export interface TextMedia {
   mediaAlignment?: MediaAlignment;
   media?: Media;
   className?: Class8;
+  component?: KsComponentAttribute38;
 }
 export interface TextMediaVideo {
   video?: Video;
@@ -2035,6 +2239,7 @@ export interface Picture1 {
   width?: Width2;
   height?: Height4;
   className?: AdditionalClasses15;
+  component?: KsComponentAttribute36;
   id?: Id1;
   itemProp?: ItempropAttribute1;
   style?: StyleAttribute1;
@@ -2065,6 +2270,7 @@ export interface LightboxImage {
   id?: ID;
   className?: AdditionalClass13;
   captionClassName?: AdditionalCaptionClass;
+  component?: KsComponentAttribute37;
   [k: string]: unknown;
 }
 /**
@@ -2076,6 +2282,7 @@ export interface TeaserBox {
   inverted?: Inverted9;
   link?: Button2;
   className?: Class9;
+  component?: KsComponentAttribute42;
   image?: ImageSource4;
   ratio: ImageRatio1;
   imageSpacing?: ImageSpacing;
@@ -2099,7 +2306,7 @@ export interface Button2 {
   disabled?: DisabledAttribute6;
   newTab?: OpenLinkInNewTab7;
   className?: AdditionalClasses16;
-  dataComponent?: DataComponentAttribute6;
+  component?: KsComponentAttribute41;
   hidden?: HideLink;
 }
 /**
@@ -2109,6 +2316,7 @@ export interface IconBeforeButton6 {
   icon: IconIdentifier13;
   role?: AriaRole13;
   className?: AdditionalClass14;
+  component?: KsComponentAttribute39;
   [k: string]: unknown;
 }
 /**
@@ -2118,6 +2326,7 @@ export interface IconAfterButton6 {
   icon: IconIdentifier14;
   role?: AriaRole14;
   className?: AdditionalClass15;
+  component?: KsComponentAttribute40;
   [k: string]: unknown;
 }
 /**
@@ -2126,6 +2335,7 @@ export interface IconAfterButton6 {
 export interface LogoTiles {
   logos?: Logos;
   className?: Class10;
+  component?: KsComponentAttribute44;
   [k: string]: unknown;
 }
 /**
@@ -2138,6 +2348,7 @@ export interface Picture2 {
   width?: Width4;
   height?: Height6;
   className?: AdditionalClasses17;
+  component?: KsComponentAttribute43;
   id?: Id2;
   itemProp?: ItempropAttribute2;
   style?: StyleAttribute2;
@@ -2156,6 +2367,7 @@ export interface TeaserRow {
   inverted?: Inverted11;
   link?: Button3;
   className?: Class11;
+  component?: KsComponentAttribute48;
 }
 /**
  * Component to display links and call-to-actions
@@ -2176,7 +2388,7 @@ export interface Button3 {
   disabled?: DisabledAttribute7;
   newTab?: OpenLinkInNewTab8;
   className?: AdditionalClasses18;
-  dataComponent?: DataComponentAttribute7;
+  component?: KsComponentAttribute47;
   hidden?: HideLink1;
 }
 /**
@@ -2186,6 +2398,7 @@ export interface IconBeforeButton7 {
   icon: IconIdentifier15;
   role?: AriaRole15;
   className?: AdditionalClass16;
+  component?: KsComponentAttribute45;
   [k: string]: unknown;
 }
 /**
@@ -2195,6 +2408,7 @@ export interface IconAfterButton7 {
   icon: IconIdentifier16;
   role?: AriaRole16;
   className?: AdditionalClass17;
+  component?: KsComponentAttribute46;
   [k: string]: unknown;
 }
 /**
@@ -2209,5 +2423,6 @@ export interface Headline4 {
   spaceAfter?: BottomSpacing4;
   pageHeader?: PageHeader4;
   className?: AdditionalClasses19;
+  component?: KsComponentAttribute49;
   [k: string]: unknown;
 }

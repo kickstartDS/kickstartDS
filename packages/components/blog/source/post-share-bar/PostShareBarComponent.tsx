@@ -9,13 +9,14 @@ export { PostShareBarProps };
 export const PostShareBarComponent: ForwardRefRenderFunction<
   HTMLDivElement,
   PostShareBarProps & HTMLAttributes<HTMLDivElement>
-> = ({ headline = {}, links, className, ...props }, ref) => {
+> = ({ headline = {}, links, className, component, ...props }, ref) => {
   const { align = 'left', ...headlineProps } = headline;
   return (
     <div
       className={classNames('c-post-share-bar', className)}
-      {...props}
+      ks-component={component}
       ref={ref}
+      {...props}
     >
       {headline.content && <Headline {...headlineProps} align={align} />}
       {links &&

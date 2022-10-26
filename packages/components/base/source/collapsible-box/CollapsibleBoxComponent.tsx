@@ -24,13 +24,14 @@ export const CollapsibleBoxComponent: ForwardRefRenderFunction<
     renderText = richTextDefaultRenderFn,
     children,
     className,
+    component = 'base.collapsible-box',
     ...props
   },
   ref
 ) => (
   <div
     className={classnames('c-collapsible-box lazyload', className)}
-    data-component="base.collapsible-box"
+    ks-component={component}
     ref={ref}
     {...props}
   >

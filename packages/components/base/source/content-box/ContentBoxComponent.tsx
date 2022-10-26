@@ -28,6 +28,7 @@ export const ContentBoxComponent: ForwardRefRenderFunction<
     renderTopic = defaultRenderFn,
     renderText = richTextDefaultRenderFn,
     className,
+    component,
     ...props
   },
   ref
@@ -40,6 +41,7 @@ export const ContentBoxComponent: ForwardRefRenderFunction<
         `c-content-box--align-${alignement}`,
       className
     )}
+    ks-component={component}
     ref={ref}
     {...props}
   >

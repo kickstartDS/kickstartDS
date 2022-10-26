@@ -57,6 +57,10 @@ export type IconIdentifier = string;
  * Additional css classes attached to the select element
  */
 export type Class = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute = string;
 
 /**
  * Input that allow users to select a single option from a list of mutually exclusive options.
@@ -73,5 +77,6 @@ export interface SelectFieldProps {
   hint?: HintMessage;
   icon?: IconIdentifier;
   className?: Class;
+  component?: KsComponentAttribute;
   [k: string]: unknown;
 }

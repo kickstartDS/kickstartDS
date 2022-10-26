@@ -29,6 +29,10 @@ export type HintMessage = string;
  * Additional css classes attached to the input element
  */
 export type Class = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute = string;
 
 /**
  * Checkboxes allow users to select multiple items from a list of individual items, or to mark one individual item as selected.
@@ -40,5 +44,6 @@ export interface CheckboxProps {
   invalidMessage?: InvalidMessage;
   hint?: HintMessage;
   className?: Class;
+  component?: KsComponentAttribute;
   [k: string]: unknown;
 }

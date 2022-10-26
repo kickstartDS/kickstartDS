@@ -54,6 +54,11 @@
       "type": "string",
       "title": "Additional Classes",
       "description": "Add additional css classes that should be applied to the headline"
+    },
+    "component": {
+      "title": "`ks-component` attribute",
+      "description": "Optional custom component identifier",
+      "type": "string"
     }
   },
   "required": ["content"]

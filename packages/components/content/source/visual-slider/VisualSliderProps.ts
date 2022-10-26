@@ -91,6 +91,10 @@ export type PageHeader = boolean;
  */
 export type AdditionalClasses = string;
 /**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute = string;
+/**
  * Text box copy text
  */
 export type Text1 = string;
@@ -118,9 +122,17 @@ export type ButtonHref = string;
 export type IconIdentifier = string;
 export type AriaRole = string;
 export type AdditionalClass = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute1 = string;
 export type IconIdentifier1 = string;
 export type AriaRole1 = string;
 export type AdditionalClass1 = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute2 = string;
 /**
  * Add fill animation on hover
  */
@@ -154,9 +166,9 @@ export type OpenLinkInNewTab = boolean;
  */
 export type AdditionalClasses1 = string;
 /**
- * Overwrite the data-component to use for rendering
+ * Optional custom component identifier
  */
-export type DataComponentAttribute = string;
+export type KsComponentAttribute3 = string;
 /**
  * The text box is aligned inside the content grid
  */
@@ -188,6 +200,10 @@ export type Inbox = boolean;
 export type SkipButton = boolean;
 export type AdditionalClasses2 = string;
 /**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute4 = string;
+/**
  * preview label
  */
 export type SlidePreviewLabel = string;
@@ -195,6 +211,10 @@ export type SlidePreviewLabel = string;
  * Additional css classes attached to the wrapping element
  */
 export type Class = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute5 = string;
 
 /**
  * Visual Slider
@@ -203,6 +223,7 @@ export interface VisualSliderProps {
   autoplay?: AutoPlay;
   slides: Visual[];
   className?: Class;
+  component?: KsComponentAttribute5;
   [k: string]: unknown;
 }
 /**
@@ -217,6 +238,7 @@ export interface Visual {
   inbox?: Inbox;
   skipButton?: SkipButton;
   className?: AdditionalClasses2;
+  component?: KsComponentAttribute4;
   label?: SlidePreviewLabel;
 }
 /**
@@ -274,6 +296,7 @@ export interface Headline {
   spaceAfter?: BottomSpacing;
   pageHeader?: PageHeader;
   className?: AdditionalClasses;
+  component?: KsComponentAttribute;
   [k: string]: unknown;
 }
 /**
@@ -296,7 +319,7 @@ export interface Link {
   disabled?: DisabledAttribute;
   newTab?: OpenLinkInNewTab;
   className?: AdditionalClasses1;
-  dataComponent?: DataComponentAttribute;
+  component?: KsComponentAttribute3;
 }
 /**
  * Icon identifier for icon before the button text
@@ -305,6 +328,7 @@ export interface IconBeforeButton {
   icon: IconIdentifier;
   role?: AriaRole;
   className?: AdditionalClass;
+  component?: KsComponentAttribute1;
   [k: string]: unknown;
 }
 /**
@@ -314,5 +338,6 @@ export interface IconAfterButton {
   icon: IconIdentifier1;
   role?: AriaRole1;
   className?: AdditionalClass1;
+  component?: KsComponentAttribute2;
   [k: string]: unknown;
 }

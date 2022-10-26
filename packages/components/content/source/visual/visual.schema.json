@@ -240,6 +240,12 @@
     "className": {
       "type": "string",
       "title": "Additional Classes"
+    },
+    "component": {
+      "title": "`ks-component` attribute",
+      "description": "Optional custom component identifier",
+      "type": "string",
+      "default": "content.visual"
     }
   },
   "additionalProperties": false

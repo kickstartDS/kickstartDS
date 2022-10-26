@@ -7,7 +7,7 @@ export const events = {
 
 if (inBrowser) {
   document.addEventListener('lazybeforeunveil', (event) => {
-    const componentName = event.target.dataset.component;
+    const componentName = event.target.getAttribute('ks-component');
     if (componentName) {
       window.rm.radio.emit(
         `${events.beforeunveil}.${componentName}`,

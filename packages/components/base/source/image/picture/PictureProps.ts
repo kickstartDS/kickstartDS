@@ -30,6 +30,10 @@ export type Height = number;
  */
 export type AdditionalClasses = string;
 /**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute = string;
+/**
  * Add id attribute to the image
  */
 export type Id = string;
@@ -85,6 +89,7 @@ export interface PictureProps {
   width?: Width;
   height?: Height;
   className?: AdditionalClasses;
+  component?: KsComponentAttribute;
   id?: Id;
   itemProp?: ItempropAttribute;
   style?: StyleAttribute;

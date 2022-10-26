@@ -7,18 +7,28 @@ export type IframeRatioProps = {
   width: number;
   height: number;
   setParentWidth?: boolean;
+  component?: string;
 };
 
 export const IframeRatioComponent: ForwardRefRenderFunction<
   HTMLDivElement,
   IframeRatioProps & HTMLAttributes<HTMLDivElement>
 > = (
-  { src, title, width, height, setParentWidth, className, ...props },
+  {
+    src,
+    title,
+    width,
+    height,
+    setParentWidth,
+    className,
+    component = 'base.iframe-ratio',
+    ...props
+  },
   ref
 ) => (
   <div
     className={classNames('iframe-ratio', className)}
-    data-component="base.iframe-ratio"
+    ks-component={component}
     data-auto-width={setParentWidth}
     ref={ref}
     {...props}

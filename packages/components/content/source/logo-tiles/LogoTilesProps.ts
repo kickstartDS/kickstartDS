@@ -30,6 +30,10 @@ export type Height = number;
  */
 export type AdditionalClasses = string;
 /**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute = string;
+/**
  * Add id attribute to the image
  */
 export type Id = string;
@@ -79,6 +83,10 @@ export type Logos = Picture[];
  * Additional css classes attached to the wrapping element
  */
 export type Class = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute1 = string;
 
 /**
  * Component to list logos or seals
@@ -86,6 +94,7 @@ export type Class = string;
 export interface LogoTilesProps {
   logos?: Logos;
   className?: Class;
+  component?: KsComponentAttribute1;
   [k: string]: unknown;
 }
 /**
@@ -98,6 +107,7 @@ export interface Picture {
   width?: Width;
   height?: Height;
   className?: AdditionalClasses;
+  component?: KsComponentAttribute;
   id?: Id;
   itemProp?: ItempropAttribute;
   style?: StyleAttribute;

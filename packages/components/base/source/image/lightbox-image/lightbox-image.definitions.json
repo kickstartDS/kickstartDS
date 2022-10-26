@@ -59,6 +59,12 @@
     "captionClassName": {
       "title": "Additional Caption Class",
       "type": "string"
+    },
+    "component": {
+      "title": "`ks-component` attribute",
+      "description": "Optional custom component identifier",
+      "type": "string",
+      "default": "base.lightbox-image"
     }
   }
 }

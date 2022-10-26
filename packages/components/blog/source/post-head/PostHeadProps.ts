@@ -30,6 +30,10 @@ export type AltText = string;
  */
 export type AdditionalClasses = string;
 /**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute = string;
+/**
  * Add id attribute to the image
  */
 export type Id = string;
@@ -115,6 +119,10 @@ export type PageHeader = boolean;
  */
 export type AdditionalClasses1 = string;
 /**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute1 = string;
+/**
  * Text to display inside tag label
  */
 export type Label = string;
@@ -134,11 +142,19 @@ export type Removable = boolean;
  * Add additional css classes that should be applied to the label
  */
 export type AdditionalClasses2 = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute2 = string;
 export type Categories = TagLabel[];
 /**
  * Additional css classes attached to the wrapping element
  */
 export type Class = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute3 = string;
 
 /**
  * Post Head
@@ -150,6 +166,7 @@ export interface PostHeadProps {
   headline?: Headline;
   categories?: Categories;
   className?: Class;
+  component?: KsComponentAttribute3;
   [k: string]: unknown;
 }
 /**
@@ -162,6 +179,7 @@ export interface Picture {
   srcSet?: PictureSourceset;
   alt?: AltText;
   className?: AdditionalClasses;
+  component?: KsComponentAttribute;
   id?: Id;
   itemProp?: ItempropAttribute;
   style?: StyleAttribute;
@@ -183,6 +201,7 @@ export interface Headline {
   spaceAfter?: BottomSpacing;
   pageHeader?: PageHeader;
   className?: AdditionalClasses1;
+  component?: KsComponentAttribute1;
   [k: string]: unknown;
 }
 /**
@@ -194,4 +213,5 @@ export interface TagLabel {
   link?: LinkTarget;
   removable?: Removable;
   className?: AdditionalClasses2;
+  component?: KsComponentAttribute2;
 }

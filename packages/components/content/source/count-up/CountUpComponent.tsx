@@ -31,12 +31,19 @@ export const CountUpComponent: ForwardRefRenderFunction<
     renderText = richTextDefaultRenderFn,
     renderLinkLabel = defaultRenderFn,
     className,
+    component = 'content.count-up',
     expand = -100,
     ...props
   },
   ref
 ) => (
-  <div className={classnames('c-count-up', className)} ref={ref} {...props}>
+  <div
+    className={classnames('c-count-up', className)}
+    data-expand={expand}
+    ks-component={component}
+    ref={ref}
+    {...props}
+  >
     {icon && icon.icon ? (
       <div className="c-count-up__icon">
         <Icon {...icon} />
@@ -45,13 +52,7 @@ export const CountUpComponent: ForwardRefRenderFunction<
       ''
     )}
 
-    <div
-      className="c-count-up__number"
-      data-component="content.count-up"
-      data-expand={expand}
-    >
-      {renderTo(to)}
-    </div>
+    <div className="c-count-up__number">{renderTo(to)}</div>
 
     {topic ? <div className="c-count-up__topic">{renderTopic(topic)}</div> : ''}
 

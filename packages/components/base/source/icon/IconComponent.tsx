@@ -6,10 +6,11 @@ export { IconProps };
 export const IconComponent: ForwardRefRenderFunction<
   SVGSVGElement,
   IconProps & SVGAttributes<SVGElement>
-> = ({ icon, className, role, ...props }, ref) => (
+> = ({ icon, className, role, component, ...props }, ref) => (
   <svg
     className={classNames('icon', className)}
     role={role}
+    ks-component={component}
     ref={ref}
     {...props}
   >

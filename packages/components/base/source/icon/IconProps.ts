@@ -8,6 +8,10 @@
 export type IconIdentifier = string;
 export type AriaRole = string;
 export type AdditionalClass = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute = string;
 
 /**
  * Icon
@@ -16,5 +20,6 @@ export interface IconProps {
   icon: IconIdentifier;
   role?: AriaRole;
   className?: AdditionalClass;
+  component?: KsComponentAttribute;
   [k: string]: unknown;
 }

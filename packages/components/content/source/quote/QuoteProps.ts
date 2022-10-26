@@ -25,6 +25,10 @@ export type SourceAddition = string;
  * Additional css classes attached to the wrapping element
  */
 export type Class = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute = string;
 
 /**
  * Component to display a rich quote
@@ -35,5 +39,6 @@ export interface QuoteProps {
   source?: Source;
   byline?: SourceAddition;
   className?: Class;
+  component?: KsComponentAttribute;
   [k: string]: unknown;
 }

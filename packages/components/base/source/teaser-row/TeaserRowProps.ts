@@ -34,9 +34,17 @@ export type ButtonHref = string;
 export type IconIdentifier = string;
 export type AriaRole = string;
 export type AdditionalClass = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute = string;
 export type IconIdentifier1 = string;
 export type AriaRole1 = string;
 export type AdditionalClass1 = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute1 = string;
 /**
  * Add fill animation on hover
  */
@@ -70,9 +78,9 @@ export type OpenLinkInNewTab = boolean;
  */
 export type AdditionalClasses = string;
 /**
- * Overwrite the data-component to use for rendering
+ * Optional custom component identifier
  */
-export type DataComponentAttribute = string;
+export type KsComponentAttribute2 = string;
 /**
  * Hides the link. The box as a whole keeps being clickable
  */
@@ -81,6 +89,10 @@ export type HideLink = boolean;
  * Additional css classes attached to the box
  */
 export type Class = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute3 = string;
 
 /**
  * Component to tease external content
@@ -91,6 +103,7 @@ export interface TeaserRowProps {
   inverted?: Inverted;
   link?: Button;
   className?: Class;
+  component?: KsComponentAttribute3;
 }
 /**
  * Component to display links and call-to-actions
@@ -111,7 +124,7 @@ export interface Button {
   disabled?: DisabledAttribute;
   newTab?: OpenLinkInNewTab;
   className?: AdditionalClasses;
-  dataComponent?: DataComponentAttribute;
+  component?: KsComponentAttribute2;
   hidden?: HideLink;
 }
 /**
@@ -121,6 +134,7 @@ export interface IconBeforeButton {
   icon: IconIdentifier;
   role?: AriaRole;
   className?: AdditionalClass;
+  component?: KsComponentAttribute;
   [k: string]: unknown;
 }
 /**
@@ -130,5 +144,6 @@ export interface IconAfterButton {
   icon: IconIdentifier1;
   role?: AriaRole1;
   className?: AdditionalClass1;
+  component?: KsComponentAttribute1;
   [k: string]: unknown;
 }

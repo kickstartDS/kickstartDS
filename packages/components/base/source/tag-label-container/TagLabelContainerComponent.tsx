@@ -4,14 +4,16 @@ import { TagLabel, TagLabelProps } from '../tag-label';
 
 export type TagLabelContainerProps = {
   tagLabels: TagLabelProps[];
+  component?: string;
 };
 
 export const TagLabelContainerComponent: ForwardRefRenderFunction<
   HTMLDivElement,
   TagLabelContainerProps & HTMLAttributes<HTMLDivElement>
-> = ({ tagLabels = [], className, ...props }, ref) => (
+> = ({ tagLabels = [], className, component, ...props }, ref) => (
   <div
     className={classNames('tag-label-container', className)}
+    ks-component={component}
     {...props}
     ref={ref}
   >

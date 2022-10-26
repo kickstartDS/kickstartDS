@@ -41,7 +41,7 @@ export default function (Glide, Components, Events) {
 
             // start new
             clone
-              .querySelectorAll('[data-component]')
+              .querySelectorAll('[ks-component]')
               .forEach((el) => el.removeAttribute('data-uid'));
             // end new
 
@@ -55,7 +55,7 @@ export default function (Glide, Components, Events) {
 
             // start new
             clone
-              .querySelectorAll('[data-component]')
+              .querySelectorAll('[ks-component]')
               .forEach((el) => el.removeAttribute('data-uid'));
             // end new
 

@@ -54,6 +54,7 @@ const StorytellingMixin: ForwardRefExoticComponent<
       renderText = richTextDefaultRenderFn,
       inverted,
       className,
+      component,
       ...props
     },
     ref: ForwardedRef<HTMLDivElement>
@@ -92,6 +93,7 @@ const StorytellingMixin: ForwardRefExoticComponent<
         }}
         data-bg={(lazy && backgroundImage) || null}
         ks-inverted={inverted?.toString()}
+        ks-component={component}
         ref={mergeRefs(ref, localRef)}
         {...props}
       >

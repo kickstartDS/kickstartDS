@@ -13,6 +13,10 @@ export type IconIdentifier = string;
 export type AriaRole = string;
 export type AdditionalClass = string;
 /**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute = string;
+/**
  * Topic for the count-up box. Displayed before the text, in bold
  */
 export type Topic = string;
@@ -44,9 +48,17 @@ export type ButtonHref = string;
 export type IconIdentifier1 = string;
 export type AriaRole1 = string;
 export type AdditionalClass1 = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute1 = string;
 export type IconIdentifier2 = string;
 export type AriaRole2 = string;
 export type AdditionalClass2 = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute2 = string;
 /**
  * Add fill animation on hover
  */
@@ -80,13 +92,17 @@ export type OpenLinkInNewTab = boolean;
  */
 export type AdditionalClasses = string;
 /**
- * Overwrite the data-component to use for rendering
+ * Optional custom component identifier
  */
-export type DataComponentAttribute = string;
+export type KsComponentAttribute3 = string;
 /**
  * Additional css classes attached to the wrapping element
  */
 export type Class = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute4 = string;
 
 /**
  * Component to to increase a number up to a final value
@@ -102,6 +118,7 @@ export interface CountUpProps {
    * See https://github.com/aFarkas/lazysizes/blob/gh-pages/README.md#data-expand-attribute
    */
   expand?: number;
+  component?: KsComponentAttribute4;
   [k: string]: unknown;
 }
 /**
@@ -111,6 +128,7 @@ export interface Icon {
   icon: IconIdentifier;
   role?: AriaRole;
   className?: AdditionalClass;
+  component?: KsComponentAttribute;
   [k: string]: unknown;
 }
 /**
@@ -133,7 +151,7 @@ export interface Link {
   disabled?: DisabledAttribute;
   newTab?: OpenLinkInNewTab;
   className?: AdditionalClasses;
-  dataComponent?: DataComponentAttribute;
+  component?: KsComponentAttribute3;
 }
 /**
  * Icon identifier for icon before the button text
@@ -142,6 +160,7 @@ export interface IconBeforeButton {
   icon: IconIdentifier1;
   role?: AriaRole1;
   className?: AdditionalClass1;
+  component?: KsComponentAttribute1;
   [k: string]: unknown;
 }
 /**
@@ -151,5 +170,6 @@ export interface IconAfterButton {
   icon: IconIdentifier2;
   role?: AriaRole2;
   className?: AdditionalClass2;
+  component?: KsComponentAttribute2;
   [k: string]: unknown;
 }

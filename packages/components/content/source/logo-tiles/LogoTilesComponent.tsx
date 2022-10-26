@@ -7,8 +7,13 @@ export { LogoTilesProps };
 export const LogoTilesComponent: ForwardRefRenderFunction<
   HTMLUListElement,
   LogoTilesProps & HTMLAttributes<HTMLUListElement>
-> = ({ logos, className, ...props }, ref) => (
-  <ul className={classnames('c-logo-tiles', className)} ref={ref} {...props}>
+> = ({ logos, className, component, ...props }, ref) => (
+  <ul
+    className={classnames('c-logo-tiles', className)}
+    ks-component={component}
+    ref={ref}
+    {...props}
+  >
     {logos &&
       logos.map((logo, index) => (
         <li className="c-logo-tiles__col" key={`logo-${index}`}>

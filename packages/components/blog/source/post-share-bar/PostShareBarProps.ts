@@ -38,6 +38,10 @@ export type PageHeader = boolean;
  */
 export type AdditionalClasses = string;
 /**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute = string;
+/**
  * Open link in new Tab
  */
 export type OpenLinkInNewTab = boolean;
@@ -45,6 +49,10 @@ export type OpenLinkInNewTab = boolean;
  * Additional css classes attached to the wrapping element
  */
 export type Class = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute1 = string;
 
 /**
  * Post Share Bar
@@ -53,6 +61,7 @@ export interface PostShareBarProps {
   headline?: Headline;
   links?: ShareLink[];
   className?: Class;
+  component?: KsComponentAttribute1;
   [k: string]: unknown;
 }
 /**
@@ -67,6 +76,7 @@ export interface Headline {
   spaceAfter?: BottomSpacing;
   pageHeader?: PageHeader;
   className?: AdditionalClasses;
+  component?: KsComponentAttribute;
   [k: string]: unknown;
 }
 export interface ShareLink {

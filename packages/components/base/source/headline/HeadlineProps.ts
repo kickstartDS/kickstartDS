@@ -37,6 +37,10 @@ export type PageHeader = boolean;
  * Add additional css classes that should be applied to the headline
  */
 export type AdditionalClasses = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute = string;
 
 /**
  * Headline
@@ -50,5 +54,6 @@ export interface HeadlineProps {
   spaceAfter?: BottomSpacing;
   pageHeader?: PageHeader;
   className?: AdditionalClasses;
+  component?: KsComponentAttribute;
   [k: string]: unknown;
 }

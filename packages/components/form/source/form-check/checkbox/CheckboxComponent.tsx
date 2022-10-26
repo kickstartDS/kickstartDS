@@ -20,6 +20,7 @@ export const CheckboxComponent: ForwardRefRenderFunction<
     invalidMessage,
     hint,
     className,
+    component,
     ...props
   },
   ref
@@ -39,6 +40,7 @@ export const CheckboxComponent: ForwardRefRenderFunction<
             'c-form-check__input--is-invalid': invalid,
           })}
           type="checkbox"
+          ks-component={component}
           ref={ref}
           {...props}
         />

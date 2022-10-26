@@ -26,15 +26,16 @@ export const TeaserComponent: ForwardRefRenderFunction<
     renderTopic = defaultRenderFn,
     className,
     children,
+    component = 'base.teaser',
     ...props
   },
   ref
 ) => (
   <div
     className={classnames('c-teaser', className)}
-    data-component="base.teaser"
     ref={ref}
     ks-inverted={inverted?.toString()}
+    ks-component={component}
     {...props}
   >
     {children}

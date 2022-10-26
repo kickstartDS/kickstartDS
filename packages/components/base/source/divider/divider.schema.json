@@ -16,6 +16,11 @@
       "type": "string",
       "title": "Additional Classes",
       "description": "Add additional css classes that should be applied to the divider"
+    },
+    "component": {
+      "title": "`ks-component` attribute",
+      "description": "Optional custom component identifier",
+      "type": "string"
     }
   }
 }

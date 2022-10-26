@@ -84,6 +84,10 @@ export type PageHeader = boolean;
  */
 export type AdditionalClasses = string;
 /**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute = string;
+/**
  * Text content to display inside the element
  */
 export type Text1 = string;
@@ -123,9 +127,17 @@ export type ButtonHref = string;
 export type IconIdentifier = string;
 export type AriaRole = string;
 export type AdditionalClass = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute1 = string;
 export type IconIdentifier1 = string;
 export type AriaRole1 = string;
 export type AdditionalClass1 = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute2 = string;
 /**
  * Add fill animation on hover
  */
@@ -159,14 +171,18 @@ export type OpenLinkInNewTab = boolean;
  */
 export type AdditionalClasses1 = string;
 /**
- * Overwrite the data-component to use for rendering
+ * Optional custom component identifier
  */
-export type DataComponentAttribute = string;
+export type KsComponentAttribute3 = string;
 /**
  * Additional css classes attached to the wrapping element
  */
 export type Class = string;
 export type Inverted1 = boolean;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute4 = string;
 
 /**
  * Component to present rich combinations of text and media, best used sequentially
@@ -179,6 +195,7 @@ export interface StorytellingProps {
   box: TextBox;
   className?: Class;
   inverted?: Inverted1;
+  component?: KsComponentAttribute4;
   [k: string]: unknown;
 }
 /**
@@ -225,6 +242,7 @@ export interface Headline {
   spaceAfter?: BottomSpacing;
   pageHeader?: PageHeader;
   className?: AdditionalClasses;
+  component?: KsComponentAttribute;
   [k: string]: unknown;
 }
 /**
@@ -246,7 +264,7 @@ export interface Button {
   disabled?: DisabledAttribute;
   newTab?: OpenLinkInNewTab;
   className?: AdditionalClasses1;
-  dataComponent?: DataComponentAttribute;
+  component?: KsComponentAttribute3;
 }
 /**
  * Icon identifier for icon before the button text
@@ -255,6 +273,7 @@ export interface IconBeforeButton {
   icon: IconIdentifier;
   role?: AriaRole;
   className?: AdditionalClass;
+  component?: KsComponentAttribute1;
   [k: string]: unknown;
 }
 /**
@@ -264,5 +283,6 @@ export interface IconAfterButton {
   icon: IconIdentifier1;
   role?: AriaRole1;
   className?: AdditionalClass1;
+  component?: KsComponentAttribute2;
   [k: string]: unknown;
 }

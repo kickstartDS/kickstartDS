@@ -27,11 +27,17 @@ export const QuoteComponent: ForwardRefRenderFunction<
     renderSource = defaultRenderFn,
     renderByline = defaultRenderFn,
     className,
+    component,
     ...props
   },
   ref
 ) => (
-  <div className={classnames('c-quote', className)} ref={ref} {...props}>
+  <div
+    className={classnames('c-quote', className)}
+    ks-component={component}
+    ref={ref}
+    {...props}
+  >
     {image && (
       <div className="c-quote__image">
         <Picture src={image} />

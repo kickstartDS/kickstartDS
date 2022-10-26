@@ -1,7 +1,7 @@
 function getHeight(element) {
   const parent = element.parentNode;
   const clone = element.cloneNode(true);
-  clone.removeAttribute('data-component');
+  clone.removeAttribute('ks-component');
   clone.style.cssText = 'visibility: hidden; display: block;';
   const height = parent.appendChild(clone).clientHeight;
   parent.removeChild(clone);

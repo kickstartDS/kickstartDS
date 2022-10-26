@@ -20,13 +20,14 @@ export const TagLabelComponent: ForwardRefRenderFunction<
     removable = false,
     renderLabel = defaultRenderFn,
     className,
+    component = removable ? 'base.tag-label' : null,
     ...props
   },
   ref
 ) => (
   <div
     className={classnames('c-tag-label', `c-tag-label--${size}`, className)}
-    data-component={removable ? 'base.tag-label' : null}
+    ks-component={component}
     ref={ref}
     {...props}
   >

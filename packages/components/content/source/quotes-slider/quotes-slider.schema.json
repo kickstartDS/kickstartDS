@@ -14,6 +14,12 @@
       "title": "Class",
       "description": "Additional css classes attached to the slider",
       "type": "string"
+    },
+    "component": {
+      "title": "`ks-component` attribute",
+      "description": "Optional custom component identifier",
+      "type": "string",
+      "default": "content.quotes-slider"
     }
   }
 }

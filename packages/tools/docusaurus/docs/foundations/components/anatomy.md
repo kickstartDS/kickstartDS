@@ -67,7 +67,7 @@ For interactive components, a JavaScript module is loaded separately. This modul
 
 kickstartDS uses [Mutation Observer](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver) to initialize components when they appear on the page.
 
-A component script is a JavaScript class with the static property `identifier`. A component with the HTML attribute `data-component="{identifier}"` is then initialized with the appropriate class.
+A component script is a JavaScript class with the static property `identifier`. A component with the HTML attribute `ks-component="{identifier}"` is then initialized with the appropriate class.
 
 #### Lazy loading
 

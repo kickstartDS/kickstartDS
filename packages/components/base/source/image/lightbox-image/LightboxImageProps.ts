@@ -16,6 +16,10 @@ export type GalleryIdentifier = string;
 export type ID = string;
 export type AdditionalClass = string;
 export type AdditionalCaptionClass = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute = string;
 
 /**
  * Lightbox Image
@@ -32,5 +36,6 @@ export interface LightboxImageProps {
   id?: ID;
   className?: AdditionalClass;
   captionClassName?: AdditionalCaptionClass;
+  component?: KsComponentAttribute;
   [k: string]: unknown;
 }

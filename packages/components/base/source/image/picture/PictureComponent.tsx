@@ -14,7 +14,15 @@ const Image: ForwardRefExoticComponent<
   PictureProps & HTMLAttributes<HTMLImageElement>
 > = forwardRef(
   (
-    { className, src, srcSet, lazy = true, noscript = true, ...props },
+    {
+      className,
+      src,
+      srcSet,
+      lazy = true,
+      noscript = true,
+      component,
+      ...props
+    },
     ref: ForwardedRef<HTMLImageElement>
   ) => (
     <>
@@ -25,6 +33,7 @@ const Image: ForwardRefExoticComponent<
         data-src={lazy ? src : undefined}
         srcSet={!lazy ? srcSet : undefined}
         data-srcset={lazy ? srcSet : undefined}
+        ks-component={component}
         ref={ref}
       />
       {lazy && noscript && (

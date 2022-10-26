@@ -12,10 +12,15 @@ export const ContactComponent: ForwardRefRenderFunction<
   HTMLElement,
   ContactProps & HTMLAttributes<HTMLElement>
 > = (
-  { image, title, subtitle, links = [], copy, className, ...props },
+  { image, title, subtitle, links = [], copy, className, component, ...props },
   ref
 ) => (
-  <address className={classnames('c-contact', className)} ref={ref} {...props}>
+  <address
+    className={classnames('c-contact', className)}
+    ks-component={component}
+    ref={ref}
+    {...props}
+  >
     {image && image.src ? (
       <div className="c-contact__image">
         <Picture {...image} />

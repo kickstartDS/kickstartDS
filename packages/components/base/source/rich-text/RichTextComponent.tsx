@@ -9,13 +9,22 @@ export const defaultRenderFn = (t: string): ReactNode => (
 export type RichTextProps = {
   text: string;
   renderText?: typeof defaultRenderFn;
+  component?: string;
 };
 
 export const RichTextComponent: ForwardRefRenderFunction<
   HTMLDivElement,
   RichTextProps & HTMLAttributes<HTMLDivElement>
-> = ({ text, renderText = defaultRenderFn, className, ...props }, ref) => (
-  <div className={classnames('c-rich-text', className)} ref={ref} {...props}>
+> = (
+  { text, renderText = defaultRenderFn, className, component, ...props },
+  ref
+) => (
+  <div
+    className={classnames('c-rich-text', className)}
+    ks-component={component}
+    ref={ref}
+    {...props}
+  >
     {renderText(text)}
   </div>
 );

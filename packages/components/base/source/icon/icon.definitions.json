@@ -16,6 +16,11 @@
     "className": {
       "type": "string",
       "title": "additional class"
+    },
+    "component": {
+      "title": "`ks-component` attribute",
+      "description": "Optional custom component identifier",
+      "type": "string"
     }
   },
   "required": ["icon"]

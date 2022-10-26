@@ -23,12 +23,14 @@ export const PostTeaserComponent: ForwardRefRenderFunction<
     renderText = richTextDefaultRenderFn,
     meta,
     className,
+    component,
     ...props
   },
   ref
 ) => (
   <article
     className={classnames('c-post-teaser', className)}
+    ks-component={component}
     ref={ref}
     {...props}
   >

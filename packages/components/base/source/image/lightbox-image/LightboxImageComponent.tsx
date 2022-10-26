@@ -23,6 +23,7 @@ export const LightboxImageComponent: ForwardRefRenderFunction<
     hideCaption = false,
     captionClassName,
     alt,
+    component = 'base.lightbox-image',
     ...props
   },
   ref
@@ -34,7 +35,7 @@ export const LightboxImageComponent: ForwardRefRenderFunction<
       className
     )}
     itemScope={!!id}
-    data-component="base.lightbox-image"
+    ks-component={component}
     ref={ref}
     {...props}
   >

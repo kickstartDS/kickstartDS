@@ -24,6 +24,7 @@ export const TextAreaComponent: ForwardRefRenderFunction<
     invalidMessage,
     hint,
     className,
+    component,
     ...props
   },
   ref
@@ -51,6 +52,7 @@ export const TextAreaComponent: ForwardRefRenderFunction<
             },
             className
           )}
+          ks-component={component}
           ref={ref}
           {...props}
         >

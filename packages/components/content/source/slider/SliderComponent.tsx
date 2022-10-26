@@ -53,7 +53,7 @@ export const SliderComponent: ForwardRefRenderFunction<
       autoplay && 'c-slider--autoplay',
       className
     )}
-    data-component={component}
+    ks-component={component}
     ref={ref}
     {...props}
   >

@@ -25,9 +25,10 @@ export default class CountUpNumber extends Component {
   constructor(element) {
     super(element);
 
-    const text = element.textContent.replace(/\./g, '').replace(',', '.');
+    const number = element.querySelector('.c-count-up__number');
+    const text = number.textContent.replace(/\./g, '').replace(',', '.');
     const to = parseFloat(text);
-    const countUp = new CountUp(element, to, {
+    const countUp = new CountUp(number, to, {
       ...defaultOptions,
       duration: defaultOptions.duration + durationModifier(to),
     });

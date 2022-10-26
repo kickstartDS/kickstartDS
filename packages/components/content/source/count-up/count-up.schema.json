@@ -58,6 +58,12 @@
       "description": "See https://github.com/aFarkas/lazysizes/blob/gh-pages/README.md#data-expand-attribute",
       "type": "integer",
       "default": -100
+    },
+    "component": {
+      "title": "`ks-component` attribute",
+      "description": "Optional custom component identifier",
+      "type": "string",
+      "default": "content.count-up"
     }
   },
   "required": ["to"]

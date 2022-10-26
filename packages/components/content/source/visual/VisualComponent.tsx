@@ -22,12 +22,13 @@ export const VisualComponent: ForwardRefRenderFunction<
     height = 'default',
     skipButton = false,
     className,
+    component = 'content.visual',
     ...props
   },
   ref
 ) => (
   <div
-    data-component="visual"
+    ks-component={component}
     className={classnames(
       'c-visual',
       {

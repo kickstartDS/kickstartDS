@@ -8,10 +8,13 @@ export { QuotesSliderProps };
 export const QuotesSliderComponent: ForwardRefRenderFunction<
   HTMLDivElement,
   QuotesSliderProps & HTMLAttributes<HTMLDivElement>
-> = ({ slides, className, ...props }, ref) => (
+> = (
+  { slides, className, component = 'content.quotes-slider', ...props },
+  ref
+) => (
   <Slider
     autoplay={false}
-    component="content.quotes-slider"
+    component={component}
     arrows="outer"
     className={classnames('quotes-slider', className)}
     ref={ref}

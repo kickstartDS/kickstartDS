@@ -117,6 +117,11 @@
       "type": "string",
       "title": "Additional Class",
       "description": "Add additional css classes that should be applied to the section"
+    },
+    "component": {
+      "title": "`ks-component` attribute",
+      "description": "Optional custom component identifier",
+      "type": "string"
     }
   }
 }

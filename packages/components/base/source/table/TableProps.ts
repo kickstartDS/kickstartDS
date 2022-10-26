@@ -24,6 +24,10 @@ export type TableVariant = 'border' | 'zebra';
  * Add additional css classes that should be applied to the table
  */
 export type AdditionalClasses = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute = string;
 
 /**
  * Table
@@ -36,5 +40,6 @@ export interface TableProps {
   responsive?: Responsive;
   variant?: TableVariant;
   className?: AdditionalClasses;
+  component?: KsComponentAttribute;
   [k: string]: unknown;
 }

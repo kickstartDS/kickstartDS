@@ -23,6 +23,7 @@ export const TableComponent: ForwardRefRenderFunction<
     responsive = false,
     variant = 'border',
     className,
+    component = responsive ? 'base.responsive-table' : null,
     renderHead = defaultRenderFn,
     renderCell = defaultRenderFn,
     renderCaption = defaultRenderFn,
@@ -45,7 +46,7 @@ export const TableComponent: ForwardRefRenderFunction<
       )}
       ref={ref}
       {...props}
-      data-component={responsive ? 'base.responsive-table' : null}
+      ks-component={component}
     >
       {caption && <caption>{renderCaption(caption)}</caption>}
       {rowHead && (

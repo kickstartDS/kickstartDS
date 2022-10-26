@@ -102,6 +102,7 @@ export const TextMediaComponent: ForwardRefRenderFunction<
     mediaAlignment = 'above-center',
     renderText = defaultRenderFn,
     className,
+    component,
     ...props
   },
   ref
@@ -122,6 +123,7 @@ export const TextMediaComponent: ForwardRefRenderFunction<
       },
       className
     )}
+    ks-component={component}
     ref={ref}
     {...props}
   >

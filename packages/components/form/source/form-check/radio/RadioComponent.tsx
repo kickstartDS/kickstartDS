@@ -20,6 +20,7 @@ export const RadioComponent: ForwardRefRenderFunction<
     invalidMessage,
     hint,
     className,
+    component,
     ...props
   },
   ref
@@ -36,6 +37,7 @@ export const RadioComponent: ForwardRefRenderFunction<
             'c-form-check__input--is-invalid': invalid,
           })}
           type="radio"
+          ks-component={component}
           ref={ref}
           {...props}
         />

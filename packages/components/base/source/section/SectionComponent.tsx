@@ -43,6 +43,7 @@ export const SectionComponent: ForwardRefRenderFunction<
     gutter = 'default',
     mode = 'default',
     className,
+    component,
     children,
     ...props
   },
@@ -61,6 +62,7 @@ export const SectionComponent: ForwardRefRenderFunction<
       className
     )}
     ks-inverted={inverted?.toString()}
+    ks-component={component}
     ref={ref}
     {...props}
   >

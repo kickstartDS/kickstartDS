@@ -49,6 +49,10 @@ export type HintMessage = string;
  * Additional css classes attached to the textarea element
  */
 export type Class = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute = string;
 
 /**
  * Multiline text input, useful for cases where users have a sizable amount of text to enter.
@@ -65,5 +69,6 @@ export interface TextAreaProps {
   invalidMessage?: InvalidMessage;
   hint?: HintMessage;
   className?: Class;
+  component?: KsComponentAttribute;
   [k: string]: unknown;
 }

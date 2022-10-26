@@ -104,9 +104,9 @@
       "description": "Add additional css classes that should be applied to the button",
       "type": "string"
     },
-    "dataComponent": {
-      "title": "`data-component` attribute",
-      "description": "Overwrite the data-component to use for rendering",
+    "component": {
+      "title": "`ks-component` attribute",
+      "description": "Optional custom component identifier",
       "type": "string"
     }
   },

@@ -30,6 +30,10 @@ export type AltText = string;
  */
 export type AdditionalClasses = string;
 /**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute = string;
+/**
  * Add id attribute to the image
  */
 export type Id = string;
@@ -99,6 +103,10 @@ export type Height1 = number;
  */
 export type AdditionalClasses1 = string;
 /**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute1 = string;
+/**
  * Add id attribute to the image
  */
 export type Id1 = string;
@@ -148,6 +156,10 @@ export type ClassAttribute1 = string;
  */
 export type Class = string;
 /**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute2 = string;
+/**
  * Link used for button
  */
 export type ButtonHref = string;
@@ -183,11 +195,19 @@ export type Removable = boolean;
  * Add additional css classes that should be applied to the label
  */
 export type AdditionalClasses2 = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute3 = string;
 export type Categories = TagLabel[];
 /**
  * Additional css classes attached to the wrapping element
  */
 export type Class1 = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute4 = string;
 
 /**
  * Post Teaser
@@ -200,6 +220,7 @@ export interface PostTeaserProps {
   body?: Bodytext;
   categories?: Categories;
   className?: Class1;
+  component?: KsComponentAttribute4;
   [k: string]: unknown;
 }
 /**
@@ -212,6 +233,7 @@ export interface Picture {
   srcSet?: PictureSourceset;
   alt?: AltText;
   className?: AdditionalClasses;
+  component?: KsComponentAttribute;
   id?: Id;
   itemProp?: ItempropAttribute;
   style?: StyleAttribute;
@@ -232,6 +254,7 @@ export interface PostMeta {
   };
   items?: MetaItem[];
   className?: Class;
+  component?: KsComponentAttribute2;
   [k: string]: unknown;
 }
 /**
@@ -244,6 +267,7 @@ export interface Picture1 {
   width?: Width1;
   height?: Height1;
   className?: AdditionalClasses1;
+  component?: KsComponentAttribute1;
   id?: Id1;
   itemProp?: ItempropAttribute1;
   style?: StyleAttribute1;
@@ -275,4 +299,5 @@ export interface TagLabel {
   link?: LinkTarget;
   removable?: Removable;
   className?: AdditionalClasses2;
+  component?: KsComponentAttribute3;
 }

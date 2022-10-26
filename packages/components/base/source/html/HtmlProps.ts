@@ -10,6 +10,10 @@ export type HTMLString = string;
  * Add additional css classes that should be applied to the element
  */
 export type AdditionalClasses = string;
+/**
+ * Optional custom component identifier
+ */
+export type KsComponentAttribute = string;
 
 /**
  * Display raw HTML.
@@ -17,5 +21,6 @@ export type AdditionalClasses = string;
 export interface HTMLProps {
   html?: HTMLString;
   className?: AdditionalClasses;
+  component?: KsComponentAttribute;
   [k: string]: unknown;
 }
