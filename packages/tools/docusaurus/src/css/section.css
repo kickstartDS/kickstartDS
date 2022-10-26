@@ -1,3 +1,7 @@
-html .l-section {
-  background: var(--ifm-background-color);
+.l-section {
+  --l-section--background: var(--ifm-background-color);
+}
+
+.content-nav .l-section__container {
+  --l-section_col--min-width: 14rem;
 }

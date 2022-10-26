@@ -49,17 +49,18 @@
   gap: var(--ks-spacing-s);
 }
 
-.ch-editor-frame {
+.ch-editor-frame,
+[data-theme='dark'] .ch-frame-title-bar,
+[data-theme='dark'] .ch-code {
   background: #031419 !important;
 }
 
-[data-theme='dark'] .ch-frame-title-bar,
 [data-theme='dark'] .ch-code-wrapper {
   background: transparent !important;
 }
 
 .ch-editor-tab-active {
-  background: rgba(255, 255, 255, 0.25) !important;
+  background: rgba(255, 255, 255, 0.15) !important;
 }
 
 .ch-editor-tab-inactive {
@@ -68,4 +69,13 @@
 
 .ch-editor-tab {
   border-bottom-color: transparent !important;
+}
+
+.component-preview .ch-frame-content {
+  height: 500px;
+  flex-basis: auto;
+}
+
+.ch-frame-zoom .c-storytelling {
+  flex-direction: row;
 }

@@ -1,4 +1,4 @@
-.c-teaser.c-teaser-box {
+:root .c-teaser {
   --c-teaser--background: var(--ifm-background-color);
   --c-teaser--color: var(--ifm-font-color);
   --c-teaser--shadow-hover: none;
