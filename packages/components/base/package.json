@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.19.4",
-    "@glidejs/glide": "^3.5.2",
+    "@glidejs/glide": "^3.6.0",
     "@kickstartds/core": "^1.5.0",
     "classnames": "^2.3.2",
     "focus-visible": "^5.0.2",
