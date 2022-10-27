@@ -80,7 +80,7 @@ For example, for hover or active states of a component you often need slight sha
 
 <div className="color-scale">
 <div className="color-scale-y-value">
-    <span>`alpha`</span>
+    <span>`alpha scale`</span>
   </div>
   <div className="color-scale-preview">
     <div className="color-scale-preview-value"><span>1</span></div>
@@ -94,7 +94,7 @@ For example, for hover or active states of a component you often need slight sha
     <div className="color-scale-preview-value"><span>9</span></div>
   </div>
   <div className="color-scale-x-value">
-    <span>Opacity</span>
+    <span>`opacity`</span>
   </div>
 </div>
 

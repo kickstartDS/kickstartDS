@@ -17,10 +17,9 @@
   gap: 0.5rem;
   width: 100%;
   align-items: baseline;
-
-  background-size: 9% 9%;
+  background-size: 10% 10%;
   background-image: linear-gradient(
-    to right,
+    to left,
     var(--ks-color-fg-alpha-3) 1px,
     transparent 1px
   );
