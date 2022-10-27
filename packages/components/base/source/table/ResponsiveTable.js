@@ -1,4 +1,4 @@
-import { Component, define } from '@kickstartds/core/lib/core';
+import { Component } from '@kickstartds/core/lib/component';
 
 export default class ResponsiveTable extends Component {
   static identifier = 'base.responsive-table';
@@ -17,5 +17,3 @@ export default class ResponsiveTable extends Component {
     }
   }
 }
-
-define(ResponsiveTable.identifier, ResponsiveTable);

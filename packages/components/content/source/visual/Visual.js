@@ -1,4 +1,4 @@
-import { Component, define } from '@kickstartds/core/lib/core';
+import { Component } from '@kickstartds/core/lib/component';
 
 const identifier = 'content.visual';
 const scrollToSibling = (element) => {
@@ -49,5 +49,3 @@ export default class Visual extends Component {
     scrollToSibling(this.element);
   }
 }
-
-define(identifier, Visual);

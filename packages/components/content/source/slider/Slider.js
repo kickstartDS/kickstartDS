@@ -1,5 +1,5 @@
 import merge from 'lodash-es/merge';
-import { Component } from '@kickstartds/core/lib/core';
+import { Component } from '@kickstartds/core/lib/component';
 import { windowEvents } from '@kickstartds/core/lib/utils';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import Keyboard from '@glidejs/glide/src/components/keyboard';
@@ -7,7 +7,6 @@ import Glide from './glide/Glide';
 import Click from './glide/Click';
 import Autoheight from './glide/Autoheight';
 import { SliderArrows as sliderArrowsTemplate } from './slider-arrows/SliderArrowsComponent.tsx';
-import { identifier, actions } from './Slider.desc';
 
 // Keep these in sync with `$current-animation-duration` in _slider-nav.scss
 const ANIMATION_SPEED = 400;
@@ -89,11 +88,13 @@ const render = (htmlString, root) => {
 };
 
 const arrowsHtml = sliderArrowsTemplate();
-
+const identifier = 'content.slider';
 export default class Slider extends Component {
   static identifier = identifier;
 
-  static actions = actions;
+  static actions = {
+    go: `${identifier}.go`,
+  };
 
   constructor(element, mainOptions = {}, navOptions = {}) {
     super(element);

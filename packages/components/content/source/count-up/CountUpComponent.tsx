@@ -66,7 +66,10 @@ export const CountUpComponent: ForwardRefRenderFunction<
 
     {link && link.enabled ? (
       <div className="c-count-up__link">
-        <Button {...link} renderLabel={renderLinkLabel} />
+        <Button
+          {...{ ...link, enabled: undefined }}
+          renderLabel={renderLinkLabel}
+        />
       </div>
     ) : (
       ''

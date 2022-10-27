@@ -1,6 +1,6 @@
-import { Component, define } from '@kickstartds/core/lib/core';
+import { Component } from '@kickstartds/core/lib/component';
 
-export default class VideoIframe extends Component {
+export default class IframeRatio extends Component {
   static identifier = 'base.iframe-ratio';
 
   constructor(element) {
@@ -20,5 +20,3 @@ export default class VideoIframe extends Component {
     }
   }
 }
-
-define(VideoIframe.identifier, VideoIframe);

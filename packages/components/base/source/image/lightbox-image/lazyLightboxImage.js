@@ -1,6 +1,3 @@
-import { define } from '@kickstartds/core/lib/core';
-import { identifier } from './LightboxImage.desc';
+import { define } from '@kickstartds/core/lib/component';
 
-export const lazySlider = () => import('./LightboxImage');
-
-define(identifier, lazySlider);
+define('base.lightbox-image', () => import('./LightboxImage'));

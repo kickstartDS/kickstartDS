@@ -1,9 +1,6 @@
-import {
-  Component,
-  define,
-  events as lazyEvents,
-} from '@kickstartds/core/lib/core';
-import { CountUp } from 'countup.js';
+import { Component } from '@kickstartds/core/lib/component';
+import { events as lazyEvents } from '@kickstartds/core/lib/core';
+import { CountUp as CountUpLib } from 'countup.js';
 
 const identifier = 'content.count-up';
 const events = {
@@ -19,7 +16,7 @@ const defaultOptions = {
 
 const durationModifier = (value) => Math.abs(value) ** (1 / 3) / 20;
 
-export default class CountUpNumber extends Component {
+export default class CountUp extends Component {
   static identifier = identifier;
 
   constructor(element) {
@@ -28,7 +25,7 @@ export default class CountUpNumber extends Component {
     const number = element.querySelector('.c-count-up__number');
     const text = number.textContent.replace(/\./g, '').replace(',', '.');
     const to = parseFloat(text);
-    const countUp = new CountUp(number, to, {
+    const countUp = new CountUpLib(number, to, {
       ...defaultOptions,
       duration: defaultOptions.duration + durationModifier(to),
     });
@@ -47,5 +44,3 @@ export default class CountUpNumber extends Component {
     element.classList.add('lazyload');
   }
 }
-
-define(CountUpNumber.identifier, CountUpNumber);

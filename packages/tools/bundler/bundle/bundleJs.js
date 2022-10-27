@@ -1,3 +1,4 @@
+const fs = require('fs');
 const rollup = require('rollup');
 const { babel } = require('@rollup/plugin-babel');
 const replace = require('@rollup/plugin-replace');
@@ -13,12 +14,19 @@ const {
 } = require('./rollupUtils');
 
 const prepare = async (jsPaths) => {
-  const input = Object.fromEntries(
-    jsPaths.map((file) => {
-      const [, dir, name] = file.match(dirRe);
-      return [`${dir}/${name}`, file];
-    })
-  );
+  const input = {};
+  const addInput = (filePath) => {
+    const [, dir, name] = filePath.match(dirRe);
+    input[`${dir}/${name}`] = filePath;
+  };
+  jsPaths.forEach((jsPath) => {
+    addInput(jsPath);
+
+    const componentPath = jsPath.replace(/\/lazy(\w+\.js)/, '/$1');
+    if (componentPath !== jsPath && fs.existsSync(componentPath)) {
+      addInput(componentPath);
+    }
+  });
   const inputOptions = {
     input,
     plugins: [

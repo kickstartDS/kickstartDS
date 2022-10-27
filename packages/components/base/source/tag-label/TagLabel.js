@@ -1,4 +1,4 @@
-import { Component, define } from '@kickstartds/core/lib/core';
+import { Component } from '@kickstartds/core/lib/component';
 
 const identifier = 'base.tag-label';
 export default class TagLabel extends Component {
@@ -18,5 +18,3 @@ export default class TagLabel extends Component {
     this.element.parentNode.removeChild(this.element);
   }
 }
-
-define(identifier, TagLabel);

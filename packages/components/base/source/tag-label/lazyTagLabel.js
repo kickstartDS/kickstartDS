@@ -1,3 +1,3 @@
 import { define } from '@kickstartds/core/lib/component';
 
-define('content.slider', () => import('./Slider'));
+define('base.tag-label', () => import('./TagLabel'));
