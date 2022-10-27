@@ -13,7 +13,7 @@ export default class CollapsibleBox extends Component {
     this.content = element.querySelector('.c-collapsible-box__content');
 
     this.trigger.addEventListener('click', this);
-    window.rm.radio.on(windowEvents.hashchange, () => {
+    window._ks.radio.on(windowEvents.hashchange, () => {
       this.openFromHash();
     });
 

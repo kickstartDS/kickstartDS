@@ -32,14 +32,14 @@ export default class CountUpNumber extends Component {
       ...defaultOptions,
       duration: defaultOptions.duration + durationModifier(to),
     });
-    const token = window.rm.radio.on(lazyEvents.beforeunveil, (_, el) => {
+    const token = window._ks.radio.on(lazyEvents.beforeunveil, (_, el) => {
       if (el === element) {
-        window.rm.radio.off(token);
-        window.rm.radio.emit(events.start, {
+        window._ks.radio.off(token);
+        window._ks.radio.emit(events.start, {
           element,
           data: countUp,
         });
-        countUp.start(() => window.rm.radio.emit(events.end, { element }));
+        countUp.start(() => window._ks.radio.emit(events.end, { element }));
       }
     });
 

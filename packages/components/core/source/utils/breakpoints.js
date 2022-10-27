@@ -19,7 +19,7 @@ domLoaded(() => {
       ])
     );
     const breakpointChangePublisher = debounce(
-      () => window.rm.radio.emit(breakpointEvents.change, media),
+      () => window._ks.radio.emit(breakpointEvents.change, media),
       80
     );
     Object.values(media).forEach((mediaQuery) =>

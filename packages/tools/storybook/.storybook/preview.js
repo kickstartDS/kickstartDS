@@ -15,7 +15,7 @@ import designTokens from '!!raw-loader!../tmp-tokens/tokens.css';
 import icons from '!!raw-loader!../tmp-tokens/icons.svg';
 
 const myActions = actions('radio');
-window.rm.radio.on('*', myActions.radio);
+window._ks.radio.on('*', myActions.radio);
 
 const InvertedDecorator = (Story, context) => {
   const darkMode = useDarkMode();

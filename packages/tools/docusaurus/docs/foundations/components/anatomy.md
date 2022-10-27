@@ -81,8 +81,6 @@ You can go further and load the script only when the component scrolls into the 
 Components can communicate with each other via a [PubSub](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern) event bus.
 Anyone can participate in the event bus; it is publicly available at `window._ks.radio` and can therefore also be used to communicate with the "outside world" or to send events from outside into components.
 
-> **TBD: `radio` liegt aktuell unter `window.rm`. Das sollten wir ändern.**
-
 ### HTML / Markup
 
 TODO short description about layer
