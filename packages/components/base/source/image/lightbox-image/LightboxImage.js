@@ -74,7 +74,7 @@ export default class LightboxImage extends Component {
     lightbox.on('destroy', () => {
       if (sliderElement) {
         // go to slide where the image was last seen in PhotoSwipe
-        window.rm.radio.emit('content.slider.go', {
+        window._ks.radio.emit('content.slider.go', {
           element: sliderElement,
           args: [`=${lightbox.currIndex}`],
         });

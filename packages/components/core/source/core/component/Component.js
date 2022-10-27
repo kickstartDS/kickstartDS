@@ -12,8 +12,8 @@ export class Component {
 
     if (this.constructor.actions) {
       const actions = Object.keys(this.constructor.actions);
-      window.rm.radio.off(this.publicApiSubscription);
-      this.publicApiSubscription = window.rm.radio.on(
+      window._ks.radio.off(this.publicApiSubscription);
+      this.publicApiSubscription = window._ks.radio.on(
         this.constructor.identifier,
         (msg, { args = [], element: el } = {}) => {
           const fn = msg.split('.')[2];

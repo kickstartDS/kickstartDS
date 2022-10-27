@@ -151,13 +151,13 @@ export default class Slider extends Component {
       )
       .mount({ Click });
 
-    window.rm.radio.on(windowEvents.resize, () => {
+    window._ks.radio.on(windowEvents.resize, () => {
       this.setNav();
       this.update();
     });
 
     if (this.mainSliderOptions.autoplay) {
-      window.rm.radio.on(windowEvents.scroll, () => this.setAutoplay());
+      window._ks.radio.on(windowEvents.scroll, () => this.setAutoplay());
     }
 
     this.setNav();
