@@ -27,7 +27,7 @@
     "watch": "node ../../tools/build-components/source --watch"
   },
   "dependencies": {
-    "@babel/runtime": "^7.19.4",
+    "@babel/runtime": "^7.20.0",
     "bourbon": "^7.2.0",
     "del": "^6.0.0",
     "dependency-graph": "^0.11.0",
