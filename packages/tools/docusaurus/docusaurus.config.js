@@ -29,6 +29,8 @@ const config = {
     locales: ['en'],
   },
 
+  plugins: ['docusaurus-plugin-sass'],
+
   presets: [
     [
       'classic',
@@ -57,26 +59,7 @@ const config = {
               '../../components/core/lib/design-tokens/tokens.css'
             ),
             require.resolve('@code-hike/mdx/styles.css'),
-            require.resolve('./src/css/ks-tokens.css'),
-            require.resolve('./src/css/visual.css'),
-            require.resolve('./src/css/button.css'),
-            require.resolve('./src/css/color-preview.css'),
-            require.resolve('./src/css/color-scale-preview.css'),
-            require.resolve('./src/css/codehike.css'),
-            require.resolve('./src/css/border-preview.css'),
-            require.resolve('./src/css/font-preview.css'),
-            require.resolve('./src/css/spacing-preview.css'),
-            require.resolve('./src/css/opacity-preview.css'),
-            require.resolve('./src/css/core-mapping.css'),
-            require.resolve('./src/css/shadow-preview.css'),
-            require.resolve('./src/css/section.css'),
-            require.resolve('./src/css/section-preview.css'),
-            require.resolve('./src/css/teaser.css'),
-            require.resolve('./src/css/table.css'),
-            require.resolve('./src/css/theme.css'),
-            require.resolve('./src/css/headline.css'),
-            require.resolve('./src/css/custom.css'),
-            require.resolve('./src/css/mapping.css'),
+            require.resolve('./src/css/index.scss'),
           ],
         },
       }),
