@@ -51,7 +51,7 @@ $vars: meta.module-variables(rich-text-vars);
   code {
     font-size: 0.85em;
 
-    background: var(--c-rich-text_code--background, var(--ks-color-fg-alpha-1));
+    background: var(--c-rich-text_code--background, var(--ks-color-fg-alpha-9));
     border-radius: var(--c-rich-text_code--border-radius, 0.25rem);
 
     padding: 0.2rem 0.5rem;
@@ -69,7 +69,7 @@ $vars: meta.module-variables(rich-text-vars);
   blockquote {
     border-left: var(
       --c-rich-text_blockquote--border-left,
-      0.3rem solid var(--ks-color-fg-alpha-2)
+      0.3rem solid var(--ks-color-fg-alpha-8)
     );
     margin: var(--c-rich-text--vertical-spacing) 0;
     padding: 0 var(--c-rich-text--horizontal-spacing);
@@ -81,7 +81,7 @@ $vars: meta.module-variables(rich-text-vars);
     border: 0;
     border-bottom: var(
       --c-rich-text_hr--border,
-      1px solid var(--ks-color-fg-alpha-3)
+      1px solid var(--ks-color-fg-alpha-7)
     );
     margin: calc(var(--c-rich-text--vertical-spacing) * 2) 0;
   }
