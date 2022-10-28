@@ -13,6 +13,8 @@ import { Storytelling } from '@kickstartds/content/lib/storytelling';
 
 ## Style
 
+https://polaris.shopify.com/components/layout TODO
+
 A section style is mainly expressed by the given background color. <br/>
 You should make sure that the chosen background color always offers enough contrast to display various font colors!
 
@@ -256,9 +258,11 @@ TODO: update gutter Token in KickstartDS
   </CH.Preview>
 
 <CollapsibleBox
-  summary="View Code"
+  summary="Toggle Code"
   className="collapsible-code"
 >
+  <CH.Code rows={30}>
+
 ```jsx
 <Section
   mode="list"
@@ -266,7 +270,7 @@ TODO: update gutter Token in KickstartDS
     styleAs: 'h2',
     content: 'How can we help you?',
     align: 'center',
-    spaceAfter: `small`
+    spaceAfter: `small`,
   }}
 >
   <TeaserRow
@@ -274,6 +278,7 @@ TODO: update gutter Token in KickstartDS
     image="https://www.kickstartds.com/img/recipes/generator.svg"
     ratio="none"
     text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
+    imageSpacing
     link={{
       variant: 'solid',
       label: 'Explore generators',
@@ -282,13 +287,14 @@ TODO: update gutter Token in KickstartDS
         icon: 'chevron-right',
       },
     }}
-    imageSpacing
   />
+
   <TeaserRow
     topic="Components"
     image="https://www.kickstartds.com/img/recipes/toolbox.svg"
     ratio="none"
     text="Tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod."
+    imageSpacing
     link={{
       variant: 'solid',
       label: 'See our components',
@@ -297,13 +303,14 @@ TODO: update gutter Token in KickstartDS
         icon: 'chevron-right',
       },
     }}
-    imageSpacing
   />
+
   <TeaserRow
     topic="Components"
     image="https://www.kickstartds.com/img/recipes/toolbox.svg"
     ratio="none"
     text="Tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod."
+    imageSpacing
     link={{
       variant: 'solid',
       label: 'See our components',
@@ -312,13 +319,14 @@ TODO: update gutter Token in KickstartDS
         icon: 'chevron-right',
       },
     }}
-    imageSpacing
   />
+
   <TeaserRow
     topic="Components"
     image="https://www.kickstartds.com/img/recipes/toolbox.svg"
     ratio="none"
     text="Tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod."
+    imageSpacing
     link={{
       variant: 'solid',
       label: 'See our components',
@@ -327,11 +335,11 @@ TODO: update gutter Token in KickstartDS
         icon: 'chevron-right',
       },
     }}
-    imageSpacing
   />
 </Section>
 ```
 
+</CH.Code >
 </CollapsibleBox>
 
 </div>
@@ -516,9 +524,11 @@ TODO: update gutter Token in KickstartDS
 </CH.Preview>
 
 <CollapsibleBox
-  summary="View Code"
+  summary="Toggle Code"
   className="collapsible-code"
 >
+<CH.Code rows={30}>
+
 ```jsx
 <Section
   className="content-nav"
@@ -532,189 +542,165 @@ TODO: update gutter Token in KickstartDS
     spaceAfter: 'small',
   }}
 >
-    <TeaserBox
+  <TeaserBox
     topic="Button"
     image="https://www.kickstartds.com/img/recipes/icons/button.svg"
     ratio="none"
+    imageSpacing
     text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr."
     link={{
       hidden: true,
       variant: "clear",
       label: "Explore generators",
-
     }}
-    imageSpacing
+  />
 
+<TeaserBox
+  topic="Content Box"
+  image="https://www.kickstartds.com/img/recipes/icons/content-box.svg"
+  ratio="none"
+  imageSpacing
+  text="Consetetur sadipscing elitr, sed diam nonumy eirmod."
+  link={{
+    hidden: true,
+    variant: 'clear',
+    label: 'See our components',
+  }}
 />
 
-  <TeaserBox
-    topic="Content Box"
-    image="https://www.kickstartds.com/img/recipes/icons/content-box.svg"
-    ratio="none"
-    text="Consetetur sadipscing elitr, sed diam nonumy eirmod."
-    link={{
-      hidden: true,
-      variant: "clear",
-      label: "See our components",
-
-    }}
-    imageSpacing
-
+<TeaserBox
+  topic="Count Up"
+  image="https://www.kickstartds.com/img/recipes/icons/count-up.svg"
+  ratio="none"
+  imageSpacing
+  text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr."
+  link={{
+    hidden: true,
+    variant: 'clear',
+    label: 'See our components',
+  }}
 />
 
-  <TeaserBox
-    topic="Count Up"
-    image="https://www.kickstartds.com/img/recipes/icons/count-up.svg"
-    ratio="none"
-    text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr."
-    link={{
-      hidden: true,
-      variant: "clear",
-      label: "See our components",
-
-    }}
-    imageSpacing
-
+<TeaserBox
+  topic="Divider"
+  image="https://www.kickstartds.com/img/recipes/icons/divider.svg"
+  ratio="none"
+  text="Consetetur sadipscing elitr, sed diam nonumy eirmod."
+  imageSpacing
+  link={{
+    hidden: true,
+    variant: 'clear',
+    label: 'See our components',
+  }}
 />
 
-  <TeaserBox
-    topic="Divider"
-    image="https://www.kickstartds.com/img/recipes/icons/divider.svg"
-    ratio="none"
-    text="Consetetur sadipscing elitr, sed diam nonumy eirmod."
-    link={{
-      hidden: true,
-      variant: "clear",
-      label: "See our components",
-
-    }}
-    imageSpacing
-
+<TeaserBox
+  topic="Divider"
+  image="https://www.kickstartds.com/img/recipes/icons/divider.svg"
+  ratio="none"
+  text="Consetetur sadipscing elitr, sed diam nonumy eirmod."
+  imageSpacing
+  link={{
+    hidden: true,
+    variant: 'clear',
+    label: 'See our components',
+  }}
 />
 
-  <TeaserBox
-    topic="Divider"
-    image="https://www.kickstartds.com/img/recipes/icons/divider.svg"
-    ratio="none"
-    text="Consetetur sadipscing elitr, sed diam nonumy eirmod."
-    link={{
-      hidden: true,
-      variant: "clear",
-      label: "See our components",
-
-    }}
-    imageSpacing
-
+<TeaserBox
+  topic="Headline"
+  image="https://www.kickstartds.com/img/recipes/icons/headline.svg"
+  ratio="none"
+  text="Consetetur sadipscing elitr, sed diam nonumy eirmod."
+  imageSpacing
+  link={{
+    hidden: true,
+    variant: 'clear',
+    label: 'See our components',
+  }}
 />
 
-  <TeaserBox
-    topic="Headline"
-    image="https://www.kickstartds.com/img/recipes/icons/headline.svg"
-    ratio="none"
-    text="Consetetur sadipscing elitr, sed diam nonumy eirmod."
-    link={{
-      hidden: true,
-      variant: "clear",
-      label: "See our components",
-
-    }}
-    imageSpacing
-
+<TeaserBox
+  topic="Quote Slider"
+  image="https://www.kickstartds.com/img/recipes/icons/quote-slider.svg"
+  ratio="none"
+  text="Consetetur sadipscing elitr, sed diam nonumy eirmod."
+  imageSpacing
+  link={{
+    hidden: true,
+    variant: 'clear',
+    label: 'See our components',
+  }}
 />
 
-  <TeaserBox
-    topic="Quote Slider"
-    image="https://www.kickstartds.com/img/recipes/icons/quote-slider.svg"
-    ratio="none"
-    text="Consetetur sadipscing elitr, sed diam nonumy eirmod."
-    link={{
-      hidden: true,
-      variant: "clear",
-      label: "See our components",
-
-    }}
-    imageSpacing
-
+<TeaserBox
+  topic="Section"
+  image="https://www.kickstartds.com/img/recipes/icons/section.svg"
+  ratio="none"
+  text="Consetetur sadipscing elitr, sed diam nonumy eirmod."
+  imageSpacing
+  link={{
+    hidden: true,
+    variant: 'clear',
+    label: 'See our components',
+  }}
 />
 
-  <TeaserBox
-    topic="Section"
-    image="https://www.kickstartds.com/img/recipes/icons/section.svg"
-    ratio="none"
-    text="Consetetur sadipscing elitr, sed diam nonumy eirmod."
-    link={{
-      hidden: true,
-      variant: "clear",
-      label: "See our components",
-
-    }}
-    imageSpacing
-
+<TeaserBox
+  topic="Slider"
+  image="https://www.kickstartds.com/img/recipes/icons/slider.svg"
+  ratio="none"
+  text="Consetetur sadipscing elitr, sed diam nonumy eirmod."
+  imageSpacing
+  link={{
+    hidden: true,
+    variant: 'clear',
+    label: 'See our components',
+  }}
 />
 
-  <TeaserBox
-    topic="Slider"
-    image="https://www.kickstartds.com/img/recipes/icons/slider.svg"
-    ratio="none"
-    text="Consetetur sadipscing elitr, sed diam nonumy eirmod."
-    link={{
-      hidden: true,
-      variant: "clear",
-      label: "See our components",
-
-    }}
-    imageSpacing
-
+<TeaserBox
+  topic="Storytelling"
+  image="https://www.kickstartds.com/img/recipes/icons/storytelling.svg"
+  ratio="none"
+  text="Consetetur sadipscing elitr, sed diam nonumy eirmod."
+  imageSpacing
+  link={{
+    hidden: true,
+    variant: 'clear',
+    label: 'See our components',
+  }}
 />
 
-  <TeaserBox
-    topic="Storytelling"
-    image="https://www.kickstartds.com/img/recipes/icons/storytelling.svg"
-    ratio="none"
-    text="Consetetur sadipscing elitr, sed diam nonumy eirmod."
-    link={{
-      hidden: true,
-      variant: "clear",
-      label: "See our components",
-
-    }}
-    imageSpacing
-
+<TeaserBox
+  topic="Tag Label"
+  image="https://www.kickstartds.com/img/recipes/icons/tag-label.svg"
+  ratio="none"
+  text="Consetetur sadipscing elitr, sed diam nonumy eirmod."
+  imageSpacing
+  link={{
+    hidden: true,
+    variant: 'clear',
+    label: 'See our components',
+  }}
 />
 
-  <TeaserBox
-    topic="Tag Label"
-    image="https://www.kickstartds.com/img/recipes/icons/tag-label.svg"
-    ratio="none"
-    text="Consetetur sadipscing elitr, sed diam nonumy eirmod."
-    link={{
-      hidden: true,
-      variant: "clear",
-      label: "See our components",
-
-    }}
-    imageSpacing
-
-/>
-
-  <TeaserBox
-    topic="Text Media"
-    image="https://www.kickstartds.com/img/recipes/icons/text-media.svg"
-    ratio="none"
-    text="Consetetur sadipscing elitr, sed diam nonumy eirmod."
-    link={{
-      hidden: true,
-      variant: "clear",
-      label: "See our components",
-
-    }}
-    imageSpacing
-
+<TeaserBox
+  topic="Text Media"
+  image="https://www.kickstartds.com/img/recipes/icons/text-media.svg"
+  ratio="none"
+  text="Consetetur sadipscing elitr, sed diam nonumy eirmod."
+  imageSpacing
+  link={{
+    hidden: true,
+    variant: 'clear',
+    label: 'See our components',
+  }}
 />
 
 </Section>
 ```
-
+</CH.Code>
 </CollapsibleBox>
 
 </div>
@@ -767,9 +753,10 @@ TODO: update gutter Token in KickstartDS
   </CH.Preview>
 
 <CollapsibleBox
-  summary="View Code"
+  summary="Toggle Code"
   className="collapsible-code"
 >
+<CH.Code rows={30}>
 ```jsx
 <Section width="full" spaceBefore="none" spaceAfter="none">
 <Storytelling
@@ -810,7 +797,7 @@ TODO: update gutter Token in KickstartDS
 />
 </Section>
 ```
-
+</CH.Code>
 </CollapsibleBox>
 </div>
 

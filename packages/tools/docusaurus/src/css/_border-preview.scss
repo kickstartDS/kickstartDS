@@ -1,0 +1,54 @@
+.border-width {
+  &-preview {
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 6px;
+    border-color: var(--ks-border-color-primary);
+    border-style: solid;
+  }
+
+  &-default {
+    border-width: var(--ks-border-width-default);
+  }
+
+  &-emphasized {
+    border-width: var(--ks-border-width-emphasized);
+  }
+}
+
+.border-radius {
+  &-preview {
+    border: var(--ks-border-width-default) solid var(--ks-border-color-primary);
+    margin-bottom: 1rem;
+  }
+
+  &-control {
+    border-radius: var(--ks-border-radius-control);
+    height: 50px;
+    width: 300px;
+  }
+
+  &-card {
+    border-radius: var(--ks-border-radius-card);
+    height: 400px;
+    width: 300px;
+  }
+
+  &-surface {
+    border-radius: var(--ks-border-radius-surface);
+    height: 200px;
+    width: 100%;
+  }
+
+  &-circle {
+    border-radius: var(--ks-border-radius-circle);
+    height: 100px;
+    width: 100px;
+  }
+
+  &-pill {
+    border-radius: var(--ks-border-radius-pill);
+    height: 35px;
+    width: 100px;
+  }
+}
