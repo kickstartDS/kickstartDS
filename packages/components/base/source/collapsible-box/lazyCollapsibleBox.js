@@ -1,6 +1,3 @@
-import { define } from '@kickstartds/core/lib/core';
-import { identifier } from './CollapsibleBox.desc';
+import { define } from '@kickstartds/core/lib/component';
 
-export const lazyCollapsibleBox = () => import('./CollapsibleBox');
-
-define(identifier, lazyCollapsibleBox);
+define('base.collapsible-box', () => import('./CollapsibleBox'));

@@ -2,7 +2,7 @@ import { forwardRef, createElement, createContext, useContext } from 'react';
 import { CountUpComponent } from './CountUpComponent';
 import type { CountUpProps } from './CountUpComponent';
 import './count-up.scss';
-import './CountUp.js';
+import './lazyCountUp.js';
 
 export { CountUpProps };
 export const CountUpContextDefault = forwardRef(CountUpComponent);

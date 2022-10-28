@@ -1,9 +1,8 @@
 import PhotoSwipe from 'photoswipe';
-import { Component } from '@kickstartds/core/lib/core';
-import { identifier } from './LightboxImage.desc';
+import { Component } from '@kickstartds/core/lib/component';
 
 export default class LightboxImage extends Component {
-  static identifier = identifier;
+  static identifier = 'base.lightbox-image';
 
   constructor(element) {
     super(element);

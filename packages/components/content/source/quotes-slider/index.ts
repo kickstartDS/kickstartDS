@@ -1,7 +1,7 @@
 import { forwardRef, createElement, createContext, useContext } from 'react';
 import { QuotesSliderComponent } from './QuotesSliderComponent';
 import type { QuotesSliderProps } from './QuotesSliderComponent';
-import './QuotesSlider.js';
+import './lazyQuotesSlider.js';
 
 export { QuotesSliderProps };
 export const QuotesSliderContextDefault = forwardRef(QuotesSliderComponent);

@@ -1,25 +1,16 @@
-import { define } from '@kickstartds/core/lib/core';
-import { lazySlider } from '../slider/lazySlider';
+import Slider from '../slider/Slider';
 
 const identifier = 'content.quotes-slider';
 
-const lazyQuotesSlider = () =>
-  lazySlider().then(
-    ({ default: Slider }) =>
-      class QuotesSlider extends Slider {
-        static identifier = identifier;
+export default class QuotesSlider extends Slider {
+  static identifier = identifier;
 
-        constructor(element) {
-          const mainOptions = {
-            perView: 1,
-            gap: 16,
-          };
+  constructor(element) {
+    const mainOptions = {
+      perView: 1,
+      gap: 16,
+    };
 
-          super(element, mainOptions);
-        }
-      }
-  );
-
-export default lazyQuotesSlider;
-
-define(identifier, lazyQuotesSlider);
+    super(element, mainOptions);
+  }
+}

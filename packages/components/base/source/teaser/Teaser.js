@@ -1,4 +1,4 @@
-import { Component, define } from '@kickstartds/core/lib/core';
+import { Component } from '@kickstartds/core/lib/component';
 import linkedArea from '../helpers/linkedArea';
 
 const identifier = 'base.teaser';
@@ -15,5 +15,3 @@ export default class Teaser extends Component {
     }
   }
 }
-
-define(identifier, Teaser);

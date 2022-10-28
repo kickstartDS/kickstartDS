@@ -3,7 +3,7 @@ import { withContainer } from '@kickstartds/core/lib/container';
 import { TableComponent } from './TableComponent';
 import type { TableProps } from './TableComponent';
 import './table.scss';
-import './ResponsiveTable.js';
+import './lazyResponsiveTable.js';
 
 export { TableProps };
 export const TableContextDefault = forwardRef(TableComponent);

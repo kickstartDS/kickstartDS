@@ -5,6 +5,6 @@ const loader = new ComponentLoader();
 
 export function define(identifier, component) {
   if (inBrowser) {
-    loader.add({ [identifier]: component });
+    loader.add(identifier, component);
   }
 }

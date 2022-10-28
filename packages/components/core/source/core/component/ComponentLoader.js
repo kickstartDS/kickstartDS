@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable no-new */
 import { findComponentClass, executeHooks } from './helper';
 import { uid } from './uid';
@@ -27,11 +28,11 @@ function mountElement(
       element.classList.contains('lazyload') &&
       !element.classList.contains('lazyloaded')
     ) {
-      const topic = rm.radio.on(
+      const topic = window._ks.radio.on(
         `${events.beforeunveil}.${componentClassName}`,
         (_, el) => {
           if (el === element) {
-            rm.radio.off(topic);
+            window._ks.radio.off(topic);
             resolve(ComponentClassOrFn);
           }
         }
@@ -49,8 +50,8 @@ function mountElement(
       }
     })
     .catch((error) => {
-      // eslint-disable-next-line no-console
-      console.error(`Error in ${componentClassName}\n`, error);
+      console.error(`Error in ${componentClassName}:`);
+      console.error(error);
     });
 }
 
@@ -94,23 +95,19 @@ export default class ComponentLoader {
     });
   }
 
-  add(classes) {
-    Object.assign(this.classes, classes);
+  add(componentClassName, lazyComponentFn) {
+    this.classes[componentClassName] = lazyComponentFn;
     domLoaded(() => {
-      Object.entries(classes).forEach(
-        ([componentClassName, ComponentClassOrFn]) => {
-          document.body
-            .querySelectorAll(`[${componentAttribute}="${componentClassName}"]`)
-            .forEach((element) => {
-              mountElement(
-                element,
-                componentClassName,
-                ComponentClassOrFn,
-                this.mountHooks
-              );
-            });
-        }
-      );
+      document.body
+        .querySelectorAll(`[${componentAttribute}="${componentClassName}"]`)
+        .forEach((element) => {
+          mountElement(
+            element,
+            componentClassName,
+            lazyComponentFn,
+            this.mountHooks
+          );
+        });
     });
   }
 
