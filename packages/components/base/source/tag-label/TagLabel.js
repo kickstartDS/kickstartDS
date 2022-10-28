@@ -11,6 +11,10 @@ export default class TagLabel extends Component {
 
     if (this.removeBtn) {
       this.removeBtn.addEventListener('click', this);
+
+      this.onDisconnect(() =>
+        this.removeBtn.removeEventListener('click', this)
+      );
     }
   }
 

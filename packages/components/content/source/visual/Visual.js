@@ -20,6 +20,9 @@ export default class Visual extends Component {
     this.continueBtn = element.querySelector('.c-visual__continue-btn');
     if (this.continueBtn) {
       this.continueBtn.addEventListener('click', this);
+      this.onDisconnect(() =>
+        this.continueBtn.removeEventListener('click', this)
+      );
     }
 
     const video = element.querySelector('.c-visual__video');
@@ -42,6 +45,8 @@ export default class Visual extends Component {
       });
       observer.observe(element);
       playVideo();
+
+      this.onDisconnect(() => observer.unobserve(element));
     }
   }
 

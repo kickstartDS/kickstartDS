@@ -152,13 +152,22 @@ export default class Slider extends Component {
       )
       .mount({ Click });
 
-    window._ks.radio.on(windowEvents.resize, () => {
+    const resizeToken = window._ks.radio.on(windowEvents.resize, () => {
       this.setNav();
       this.update();
     });
 
+    this.onDisconnect(() => {
+      this.mainSlider.destroy();
+      this.navSlider.destroy();
+      window._ks.radio.off(resizeToken);
+    });
+
     if (this.mainSliderOptions.autoplay) {
-      window._ks.radio.on(windowEvents.scroll, () => this.setAutoplay());
+      const scrollToken = window._ks.radio.on(windowEvents.scroll, () =>
+        this.setAutoplay()
+      );
+      this.onDisconnect(() => window._ks.radio.off(scrollToken));
     }
 
     this.setNav();

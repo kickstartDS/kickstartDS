@@ -42,5 +42,7 @@ export default class CountUp extends Component {
 
     element.dataset.expand = element.dataset.expand || '-100';
     element.classList.add('lazyload');
+
+    this.onDisconnect(() => window._ks.radio.off(token));
   }
 }

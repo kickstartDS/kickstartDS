@@ -11,7 +11,9 @@ export default class Teaser extends Component {
     const link = element.querySelector('.c-teaser__link a');
     if (link) {
       element.classList.add('js-linked');
-      linkedArea(element, link);
+      const cleanup = linkedArea(element, link);
+
+      this.onDisconnect(cleanup);
     }
   }
 }

@@ -70,6 +70,8 @@ if (inBrowser && !('CSSContainerRule' in window)) {
         element[minProp] = Array.from(containers[containerSelector].min);
         element[maxProp] = Array.from(containers[containerSelector].max);
         RO.observe(element);
+
+        this.onDisconnect(() => RO.unobserve(element));
       }
     }
   }

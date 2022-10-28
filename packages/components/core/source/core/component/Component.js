@@ -22,10 +22,15 @@ export class Component {
           }
         }
       );
+      this.onDisconnect(() => window._ks.radio.off(this.publicApiSubscription));
     }
   }
 
   handleEvent(event) {
     this[`on${event.type}`](event);
+  }
+
+  onDisconnect(cb) {
+    this.element._ks.d.push(cb);
   }
 }

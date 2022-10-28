@@ -9,6 +9,8 @@ export default class LightboxImage extends Component {
 
     this.link = element.querySelector('.lightbox-image__link');
     this.link.addEventListener('click', this);
+
+    this.onDisconnect(() => this.link.removeEventListener('click', this));
   }
 
   onclick(event) {
