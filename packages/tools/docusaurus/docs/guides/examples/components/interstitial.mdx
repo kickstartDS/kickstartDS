@@ -8,7 +8,7 @@ import Admonition from 'react-admonitions';
 import { Storytelling } from '@kickstartds/content/lib/storytelling';
 // TODO check why TextMedia doesn't work here, errors with:
 // `Module not found: Error: Package path ./dist/photoswipe-ui-default is not exported from package /home/julrich/Projects/Frontend/code/kickstartDS/node_modules/photoswipe`
-// import { TextMedia } from '@kickstartds/base';
+import { TextMedia } from '@kickstartds/base/lib/text-media';
 import { StorytellingProvider } from '@kickstartds/design-system/dist/components/storytelling/StorytellingComponent';
 
 # Create `Interstitial` component
@@ -36,34 +36,37 @@ This will be done in 3 simple steps:
 ## Requirements
 
 This guide assumes that you already have a working Design System, that is based on **kickstartDS**, running.<br/>
-If that's not the case, follow our guide [Create your Design System](../../create.md).
+If that's not the case, follow our guide [Create your Design System](../../create/index.mdx).
+
+Additionally you'll need access to our **Content** module, to use the `Storytelling` component this guide is based on.<br/>
+TODO add link / CTA to **Content** module here
 
 ## 1. Component Definition
 
 ### Purpose
 
-<figure
-  style={{
-    float: 'right',
-    marginLeft: '1rem',
-    border: '1px solid var(--ks-border-color-interface-interactive)',
-    padding: '.25rem',
-  }}
->
-  <img
-    src={require('./assets/interstitial-usage.png').default}
-    alt="Interstital component in use"
-    width="300"
-  />
-  <figcaption>Interstitial component in use</figcaption>
-</figure>
-
-We want to create an element that can be interjected into otherwise monotone content. To direct focus, or present alternatives, to the main body of content.
+<TextMedia
+  media={[
+    {
+      lightboxImage: {
+        image: require('./assets/interstitial-usage.png').default,
+        thumb: require('./assets/interstitial-usage.png').default,
+        width: 1904,
+        height: 903,
+        zoomIcon: true,
+        gallery: 'interstitial-use',
+      },
+      caption: "Examplary use of such a component"
+    }
+  ]}
+  mediaAlignment="intext-right"
+  text="We want to create an element that can be interjected into otherwise monotone content. To direct focus, or present alternatives, to the main body of content.
 We'll probably need to be able to define a `title` and some `body` content. Additionally, we want to add some flavour to the component by using noticeable design variations, not typically found in our other components.
 
 Adding a static background image to the component could be nice touch!
 
-Finally being able to add a `link` with a link target (`link.target`) and and link text (`link.text`) will be needed, but they should be optional.
+Finally being able to add a `link` with a link target (`link.target`) and and link text (`link.text`) will be needed, but they should be optional."
+/>
 
 TODO: solve this with `TextMedia` component, which currently doesn't work. Should include zoomable image, and caption!
 
@@ -180,8 +183,7 @@ export default function App() {
           size: 'medium',
           variant: 'solid',
         },
-        text:
-          'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+        text: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
         textAlign: 'left',
         vAlign: 'center',
       }}
@@ -845,7 +847,7 @@ If you're using `Storybook`, you can follow this part of the example to get all 
 
 <Admonition type="tip" title="`Storybook` setup">
   This guide assumes you're using a set up like described in our [Create your
-  Design System](../../create.mdx) guide! Be sure to adapt commands and
+  Design System](../../create/index.mdx) guide! Be sure to adapt commands and
   configuration to your use accordingly, when following this part!
 </Admonition>
 
