@@ -1,0 +1,88 @@
+.display {
+  font-family: var(--ks-font-family-display);
+}
+.copy {
+  font-family: var(--ks-font-family-copy);
+}
+.mono {
+  font-family: var(--ks-font-family-mono);
+}
+.interface {
+  font-family: var(--ks-font-family-ui);
+}
+
+.font {
+  &-display {
+    font: var(--ks-font-display-m);
+  }
+  &-copy {
+    font: var(--ks-font-copy-m);
+  }
+  &-mono {
+    font: var(--ks-font-mono-m);
+  }
+  &-interface {
+    font: var(--ks-font-ui-m);
+  }
+}
+
+.light {
+  font-family: var(--ks-font-weight-light);
+}
+.medium {
+  font-weight: var(--ks-font-weight-medium);
+}
+.semi-bold {
+  font-weight: var(--ks-font-weight-semi-bold);
+}
+.bold {
+  font-weight: var(--ks-font-weight-bold);
+}
+
+.copy {
+  &-xxs {
+    font-size: var(--ks-font-size-copy-xxs);
+  }
+  &-xs {
+    font-size: var(--ks-font-size-copy-xs);
+  }
+  &-s {
+    font-size: var(--ks-font-size-copy-s);
+  }
+  &-m {
+    font-size: var(--ks-font-size-copy-m);
+  }
+  &-l {
+    font-size: var(--ks-font-size-copy-l);
+  }
+  &-xl {
+    font-size: var(--ks-font-size-copy-xl);
+  }
+  &-xxl {
+    font-size: var(--ks-font-size-copy-xxl);
+  }
+}
+
+.line-height-copy {
+  &-xxs {
+    line-height: var(--ks-line-height-copy-xxs);
+  }
+  &-xs {
+    line-height: var(--ks-line-height-copy-xs);
+  }
+  &-s {
+    line-height: var(--ks-line-height-copy-s);
+  }
+  &-m {
+    line-height: var(--ks-line-height-copy-m);
+  }
+  &-l {
+    line-height: var(--ks-line-height-copy-l);
+  }
+  &-xl {
+    line-height: var(--ks-line-height-copy-xl);
+  }
+  &-xxl {
+    line-height: var(--ks-line-height-copy-xxl);
+  }
+}

@@ -22,11 +22,11 @@ Link Guide "Create your own style variation" (TODO)
 
 <div className="section-background-table">
 
-| Setting   | Token                            | Description                                                                            |
-| --------- | -------------------------------- | -------------------------------------------------------------------------------------- |
-| `default` | `--l-section--background`        | The default background color, shouldnt be percieved as a distinct surface              |
-| `bold`    | `--l-section--background-bold`   | A very prevelant color heavily drawing focus to the displayed content                  |
-| `accent`  | `--l-section--background-accent` | A light color, making it disctinct from the default background without being too heavy |
+| Setting   | Token                             | Description                                                                            |
+| --------- | --------------------------------- | -------------------------------------------------------------------------------------- |
+| `default` | `--l-section--background-default` | The default background color, shouldnt be percieved as a distinct surface              |
+| `bold`    | `--l-section--background-bold`    | A very prevelant color heavily drawing focus to the displayed content                  |
+| `accent`  | `--l-section--background-accent`  | A light color, making it disctinct from the default background without being too heavy |
 
 </div>
 
@@ -53,11 +53,11 @@ With the `full` option the content will be placed directly against the browser b
 
 Determines how much **vertical** spacing a section has.
 
-| Setting   | Preview                                                       | Token                      | Application                                        |
-| --------- | ------------------------------------------------------------- | -------------------------- | -------------------------------------------------- |
-| `default` | <div className="spacing-preview spacing-section"></div>       | `--l-section--space`       | The default section spacing ensuring an even rythm |
-| `small`   | <div className="spacing-preview spacing-section-small"></div> | `--l-section--space-small` | A smaller space between Sections                   |
-| `none`    |                                                               | ---                        | No space between Sections                          |
+| Setting   | Preview                                                         | Token                        | Application                                        |
+| --------- | --------------------------------------------------------------- | ---------------------------- | -------------------------------------------------- |
+| `default` | <div className="spacing-preview spacing-section-default"></div> | `--l-section--space-default` | The default section spacing ensuring an even rythm |
+| `small`   | <div className="spacing-preview spacing-section-small"></div>   | `--l-section--space-small`   | A smaller space between Sections                   |
+| `none`    |                                                                 | ---                          | No space between Sections                          |
 
 #### Combining spacings
 
@@ -354,7 +354,6 @@ TODO: update gutter Token in KickstartDS
   <Section
     className="content-nav"
     width="wide"
-    background="accent"
     mode="tile"
     headline={{
       styleAs: 'h2',
@@ -533,7 +532,6 @@ TODO: update gutter Token in KickstartDS
 <Section
   className="content-nav"
   width="wide"
-  background="accent"
   mode="tile"
   headline={{
     styleAs: 'h2',

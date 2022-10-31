@@ -31,7 +31,7 @@
   width: var(--ks-spacing-xxl);
 }
 
-.spacing-section {
+.spacing-section-default {
   height: var(--l-section--space);
   width: 2rem;
 }
