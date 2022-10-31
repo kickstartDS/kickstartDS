@@ -1,6 +1,1 @@
-.storybook/*.html
-.storybook/*.css
-.storybook/IconSprite.js
-tmp
-tmp-tokens
 storybook-static

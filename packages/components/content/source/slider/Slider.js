@@ -6,7 +6,7 @@ import Keyboard from '@glidejs/glide/src/components/keyboard';
 import Glide from './glide/Glide';
 import Click from './glide/Click';
 import Autoheight from './glide/Autoheight';
-import { SliderArrows as sliderArrowsTemplate } from './slider-arrows/SliderArrowsComponent.tsx';
+import { sliderArrowsTemplate } from './slider-arrows/sliderArrowsTemplate';
 
 // Keep these in sync with `$current-animation-duration` in _slider-nav.scss
 const ANIMATION_SPEED = 400;
@@ -87,7 +87,6 @@ const render = (htmlString, root) => {
   );
 };
 
-const arrowsHtml = sliderArrowsTemplate();
 const identifier = 'content.slider';
 export default class Slider extends Component {
   static identifier = identifier;
@@ -122,7 +121,7 @@ export default class Slider extends Component {
       slider.querySelector('.c-slider__track').dataset.glideEl = 'track';
 
       if (slider.dataset.sliderArrows !== 'none') {
-        render(arrowsHtml, slider);
+        render(sliderArrowsTemplate, slider);
       }
     });
 

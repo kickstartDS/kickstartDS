@@ -4,7 +4,6 @@ const { babel } = require('@rollup/plugin-babel');
 const replace = require('@rollup/plugin-replace');
 const commonjs = require('@rollup/plugin-commonjs');
 const { nodeResolve } = require('@rollup/plugin-node-resolve');
-const { externals } = require('rollup-plugin-node-externals');
 const log = require('../utils/log');
 const { dirRe } = require('../utils/utils');
 const {
@@ -31,9 +30,6 @@ const prepare = async (jsPaths) => {
     input,
     plugins: [
       ...sharedInputPlugins,
-      externals({
-        exclude: ['@glidejs/glide', /^@kickstartds\/.+\/source\/.+Component$/],
-      }),
       nodeResolve({
         extensions: ['.js', '.tsx', '.ts'],
       }),
@@ -43,19 +39,6 @@ const prepare = async (jsPaths) => {
           extensions: ['.js', '.tsx', '.ts'],
           babelHelpers: 'runtime',
           skipPreflightCheck: true,
-          presets: [
-            ['@babel/preset-react', { runtime: 'classic', pragma: 'html' }],
-          ],
-          plugins: [
-            [
-              '@wordpress/babel-plugin-import-jsx-pragma',
-              {
-                scopeVariable: 'html',
-                source: 'vhtml',
-                isDefault: true,
-              },
-            ],
-          ],
         })
       ),
       replace({
