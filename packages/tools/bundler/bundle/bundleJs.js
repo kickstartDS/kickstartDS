@@ -32,7 +32,7 @@ const prepare = async (jsPaths) => {
     plugins: [
       ...sharedInputPlugins,
       externals({
-        exclude: ['@glidejs/glide', /^@kickstartds\/.+\/source\/.+Component$/],
+        exclude: ['@glidejs/glide'],
       }),
       nodeResolve({
         extensions: ['.js', '.tsx', '.ts'],
@@ -43,19 +43,6 @@ const prepare = async (jsPaths) => {
           extensions: ['.js', '.tsx', '.ts'],
           babelHelpers: 'runtime',
           skipPreflightCheck: true,
-          presets: [
-            ['@babel/preset-react', { runtime: 'classic', pragma: 'html' }],
-          ],
-          plugins: [
-            [
-              '@wordpress/babel-plugin-import-jsx-pragma',
-              {
-                scopeVariable: 'html',
-                source: 'vhtml',
-                isDefault: true,
-              },
-            ],
-          ],
         })
       ),
       replace({

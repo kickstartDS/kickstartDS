@@ -15,10 +15,10 @@ module.exports = () =>
       tokens: merge(...createTokens().map(([, tokens]) => tokens)),
       platforms: {
         jsx: {
-          buildPath: path.join(__dirname, '../tmp-tokens/'),
+          buildPath: path.join(__dirname, '../storybook-tmp/'),
         },
         storybook: {
-          buildPath: path.join(__dirname, '../tmp-tokens/'),
+          buildPath: path.join(__dirname, '../storybook-tmp/'),
         },
       },
     })

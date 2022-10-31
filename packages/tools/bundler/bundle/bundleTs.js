@@ -1,4 +1,5 @@
 const fs = require('fs-extra');
+const path = require('path');
 const rollup = require('rollup');
 const { babel } = require('@rollup/plugin-babel');
 const { externals } = require('rollup-plugin-node-externals');
@@ -77,7 +78,7 @@ const prepare = async (tsPaths) => {
   const outputOptions = {
     ...sharedOutputOptions,
     paths(id) {
-      if (id.indexOf('/packages/components/') !== -1) {
+      if (path.isAbsolute(id) && id.indexOf('/node_modules/') === -1) {
         const [, dir, base, ext] = id.match(dirRe);
         if (ext === 'js') {
           jsAssets.add(id);

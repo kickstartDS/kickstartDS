@@ -1,8 +1,10 @@
 const { spawn } = require('child_process');
+const path = require('path');
 const argv = require('yargs-parser')(process.argv.slice(2));
-const cleanup = require('./scripts/cleanup-stories');
-const createMarkdownStories = require('./scripts/create-stories-from-markdown');
-const buildTokens = require('./scripts/build-tokens');
+const fg = require('fast-glob');
+const createMarkdownStories = require('@kickstartds/bundler/stories/createStoriesFromMarkdown');
+const { root } = require('@kickstartds/bundler/utils/utils');
+const buildTokens = require('@kickstartds/bundler/stories/build-tokens');
 
 const exec = (...args) =>
   new Promise((resolve, reject) => {
@@ -13,8 +15,16 @@ const exec = (...args) =>
 
 const [task] = argv._;
 const kdsModule = argv.module;
-const kdsModules = kdsModule ? `{${kdsModule},core}` : '*';
-process.env.KDS_MODULES = kdsModules;
+const kdsModulesGlob = kdsModule ? `{${kdsModule},core}` : '*';
+process.env.KDS_MODULES_GLOB = `${root}/packages/components/${kdsModulesGlob}`;
+
+const kdsModules = fg(process.env.KDS_MODULES_GLOB, {
+  onlyDirectories: true,
+  cwd: '/',
+  absolute: true,
+}).then((modulePaths) =>
+  modulePaths.map((modulePath) => [modulePath, path.basename(modulePath)])
+);
 
 const storybookOptions = ['--config-dir', '.storybook'];
 const storybookOptionsBuild = [
@@ -24,8 +34,15 @@ const storybookOptionsBuild = [
 ];
 const storybookOptionsStart = [...storybookOptions, '--port', '3000'];
 
-cleanup()
-  .then(() => Promise.all([createMarkdownStories(kdsModules), buildTokens()]))
+kdsModules
+  .then((resolvedModules) =>
+    Promise.all([
+      ...resolvedModules.map(([modPath, mod]) =>
+        createMarkdownStories(modPath, mod)
+      ),
+      buildTokens(),
+    ])
+  )
   .then(() => {
     switch (task) {
       case 'build': {
