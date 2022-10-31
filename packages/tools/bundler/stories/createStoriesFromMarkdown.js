@@ -32,7 +32,7 @@ module.exports = async (modPath, mod) => {
   const filePaths = await glob(`${modPath}/**/*.md`, {
     cwd: root,
     absolute: true,
-    ignore: `${modPath}/*/node_modules`,
+    ignore: 'node_modules',
   });
   filePaths.forEach(async (filePath) => {
     const content = await fs.readFile(filePath);
