@@ -25,7 +25,7 @@
     "watch": "node ../../tools/build-components/source --watch"
   },
   "dependencies": {
-    "@babel/runtime": "^7.19.4",
+    "@babel/runtime": "^7.20.1",
     "@kickstartds/base": "^1.5.1",
     "@kickstartds/core": "^1.5.0",
     "classnames": "^2.3.2"
