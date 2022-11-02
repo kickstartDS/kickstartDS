@@ -18,17 +18,8 @@
     "storybook:build": "node index.js build"
   },
   "dependencies": {
-    "@kickstartds/core": "^1.5.0",
-    "@kickstartds/style-dictionary": "^1.5.0",
-    "change-case": "^4.1.2",
-    "del": "^6.0.0",
+    "@kickstartds/bundler": "^1.5.0",
     "fast-glob": "^3.2.11",
-    "find-up": "^5.0.0",
-    "fs-extra": "^10.1.0",
-    "lazysizes": "^5.3.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.1",
-    "react-emoji-render": "^1.2.4",
     "yargs-parser": "^21.1.1"
   },
   "devDependencies": {
@@ -43,8 +34,6 @@
     "@types/react-dom": "^17.0.14",
     "@whitespace/storybook-addon-html": "git+https://github.com/lmestel/storybook-addon-html.git#v5.3.1",
     "chromatic": "^6.10.0",
-    "lodash": "^4.17.21",
-    "storybook-dark-mode": "^1.1.2",
-    "style-dictionary": "^3.7.1"
+    "storybook-dark-mode": "^1.1.2"
   }
 }

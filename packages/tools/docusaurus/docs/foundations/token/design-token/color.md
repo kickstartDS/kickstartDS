@@ -79,7 +79,7 @@ We use a cubic Bézier curve to calculate the scales. This way there are more gr
 For example, for hover or active states of a component you often need slight shades of a color. With a linear scaling the distance between the shades would be too large. In addition, the colors in the middle of the scale are almost useless, because they have too little contrast in combination with the background color.
 
 <div className="color-scale">
-<div className="color-scale-y-value">
+<div className="color-scale-y-label">
     <span>`alpha/to-bg scale`</span>
   </div>
   <div className="color-scale-preview">
@@ -93,7 +93,7 @@ For example, for hover or active states of a component you often need slight sha
     <div className="color-scale-preview-value"><span>8</span></div>
     <div className="color-scale-preview-value"><span>9</span></div>
   </div>
-  <div className="color-scale-x-value">
+  <div className="color-scale-x-label">
     <span>`opacity/bg-mixin`</span>
   </div>
 </div>

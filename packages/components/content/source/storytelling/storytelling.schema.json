@@ -97,6 +97,10 @@
                   "type": "string",
                   "default": "h2"
                 },
+                "spaceAfter": {
+                  "type": "string",
+                  "default": "small"
+                },
                 "content": {
                   "type": "string",
                   "examples": ["Lorem Ipsum dolor"]

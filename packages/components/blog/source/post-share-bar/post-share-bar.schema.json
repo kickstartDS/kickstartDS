@@ -12,9 +12,23 @@
           "properties": {
             "content": {
               "allOf": [
-                { "examples": ["Share this article"] },
+                {
+                  "type": "string",
+                  "examples": ["Share this article"]
+                },
                 {
                   "$ref": "http://schema.kickstartds.com/base/headline.schema.json#/properties/content"
+                }
+              ]
+            },
+            "spaceAfter": {
+              "allOf": [
+                {
+                  "type": "string",
+                  "default": "small"
+                },
+                {
+                  "$ref": "http://schema.kickstartds.com/base/headline.schema.json#/properties/spaceAfter"
                 }
               ]
             }

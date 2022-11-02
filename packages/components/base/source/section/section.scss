@@ -11,7 +11,7 @@ $vars: meta.module-variables(section-vars);
 .l-section {
   @include anchor.anchor-target;
 
-  padding: var(--l-section--space) 0;
+  padding: var(--l-section--space-default) 0;
   background: var(--l-section--background);
   box-sizing: border-box;
 
@@ -44,7 +44,7 @@ $vars: meta.module-variables(section-vars);
         var(--l-section_col--max-width)
       )
     );
-    grid-gap: var(--l-section_container--gutter);
+    grid-gap: var(--l-section--gutter);
 
     &--narrow {
       max-width: var(--l-section--content-width-narrow);
@@ -55,12 +55,12 @@ $vars: meta.module-variables(section-vars);
     }
 
     &--max {
-      max-width: 100%;
+      max-width: var(--l-section--content-width-max);
     }
 
     &--full {
       padding: 0;
-      max-width: 100%;
+      max-width: var(--l-section--content-width-full);
     }
   }
 }

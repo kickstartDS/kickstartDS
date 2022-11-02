@@ -137,6 +137,7 @@ const StorytellingMixin: ForwardRefExoticComponent<
               <Headline
                 level="p"
                 styleAs="h2"
+                spaceAfter="small"
                 {...box.headline}
                 align={box.headline.align || box.textAlign || 'left'}
               />

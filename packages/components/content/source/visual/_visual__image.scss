@@ -1,5 +1,5 @@
 @use 'bourbon/core/bourbon';
-@use '@kickstartds/base/source/helpers/helpers';
+@use '@kickstartds/core/source/core/helpers';
 
 @mixin visual-image {
   display: block;

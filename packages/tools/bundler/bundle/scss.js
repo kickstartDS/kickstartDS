@@ -10,7 +10,7 @@ const log = require('../utils/log');
 const { createTokens } = require('./customPropertyExtract');
 
 const cwd = process.cwd();
-const loadPaths = [`${root}/packages/components`, `${root}/node_modules`];
+const loadPaths = [`${root}/node_modules`];
 
 const search = '@kickstartds/';
 const searchLength = search.length;

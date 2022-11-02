@@ -76,8 +76,6 @@ const FeatureList = [
   },
 ];
 
-// <Svg className={styles.featureSvg} role="img" />
-
 export default function HomepageFeatures() {
   return (
     <PictureProvider>
@@ -85,7 +83,6 @@ export default function HomepageFeatures() {
         {FeatureList.map(({ title, Svg, description, link }, idx) => (
           <TeaserBox
             className="c-teaser-icon"
-            imageSpacing
             key={idx}
             topic={title}
             image={Svg}

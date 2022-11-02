@@ -13,6 +13,8 @@ import { Storytelling } from '@kickstartds/content/lib/storytelling';
 
 ## Style
 
+https://polaris.shopify.com/components/layout TODO
+
 A section style is mainly expressed by the given background color. <br/>
 You should make sure that the chosen background color always offers enough contrast to display various font colors!
 
@@ -20,11 +22,11 @@ Link Guide "Create your own style variation" (TODO)
 
 <div className="section-background-table">
 
-| Setting   | Token                            | Description                                                                            |
-| --------- | -------------------------------- | -------------------------------------------------------------------------------------- |
-| `default` | `--l-section--background`        | The default background color, shouldnt be percieved as a distinct surface              |
-| `bold`    | `--l-section--background-bold`   | A very prevelant color heavily drawing focus to the displayed content                  |
-| `accent`  | `--l-section--background-accent` | A light color, making it disctinct from the default background without being too heavy |
+| Setting   | Token                             | Description                                                                            |
+| --------- | --------------------------------- | -------------------------------------------------------------------------------------- |
+| `default` | `--l-section--background-default` | The default background color, shouldnt be percieved as a distinct surface              |
+| `bold`    | `--l-section--background-bold`    | A very prevelant color heavily drawing focus to the displayed content                  |
+| `accent`  | `--l-section--background-accent`  | A light color, making it disctinct from the default background without being too heavy |
 
 </div>
 
@@ -51,11 +53,11 @@ With the `full` option the content will be placed directly against the browser b
 
 Determines how much **vertical** spacing a section has.
 
-| Setting   | Preview                                                       | Token                      | Application                                        |
-| --------- | ------------------------------------------------------------- | -------------------------- | -------------------------------------------------- |
-| `default` | <div className="spacing-preview spacing-section"></div>       | `--l-section--space`       | The default section spacing ensuring an even rythm |
-| `small`   | <div className="spacing-preview spacing-section-small"></div> | `--l-section--space-small` | A smaller space between Sections                   |
-| `none`    |                                                               | ---                        | No space between Sections                          |
+| Setting   | Preview                                                         | Token                        | Application                                        |
+| --------- | --------------------------------------------------------------- | ---------------------------- | -------------------------------------------------- |
+| `default` | <div className="spacing-preview spacing-section-default"></div> | `--l-section--space-default` | The default section spacing ensuring an even rythm |
+| `small`   | <div className="spacing-preview spacing-section-small"></div>   | `--l-section--space-small`   | A smaller space between Sections                   |
+| `none`    |                                                                 | ---                          | No space between Sections                          |
 
 #### Combining spacings
 
@@ -180,9 +182,10 @@ TODO: update gutter Token in KickstartDS
 
 `mode: list`
 
-<div className="component-preview" >
+<div className="component-preview">
   <CH.Preview>
     <Section
+     ks-theme="preview"
       mode="list"
       headline={{
         styleAs: 'h2',
@@ -256,9 +259,11 @@ TODO: update gutter Token in KickstartDS
   </CH.Preview>
 
 <CollapsibleBox
-  summary="View Code"
+  summary="Toggle Code"
   className="collapsible-code"
 >
+  <CH.Code rows={30}>
+
 ```jsx
 <Section
   mode="list"
@@ -266,7 +271,7 @@ TODO: update gutter Token in KickstartDS
     styleAs: 'h2',
     content: 'How can we help you?',
     align: 'center',
-    spaceAfter: `small`
+    spaceAfter: `small`,
   }}
 >
   <TeaserRow
@@ -274,6 +279,7 @@ TODO: update gutter Token in KickstartDS
     image="https://www.kickstartds.com/img/recipes/generator.svg"
     ratio="none"
     text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
+    imageSpacing
     link={{
       variant: 'solid',
       label: 'Explore generators',
@@ -282,13 +288,14 @@ TODO: update gutter Token in KickstartDS
         icon: 'chevron-right',
       },
     }}
-    imageSpacing
   />
+
   <TeaserRow
     topic="Components"
     image="https://www.kickstartds.com/img/recipes/toolbox.svg"
     ratio="none"
     text="Tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod."
+    imageSpacing
     link={{
       variant: 'solid',
       label: 'See our components',
@@ -297,13 +304,14 @@ TODO: update gutter Token in KickstartDS
         icon: 'chevron-right',
       },
     }}
-    imageSpacing
   />
+
   <TeaserRow
     topic="Components"
     image="https://www.kickstartds.com/img/recipes/toolbox.svg"
     ratio="none"
     text="Tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod."
+    imageSpacing
     link={{
       variant: 'solid',
       label: 'See our components',
@@ -312,13 +320,14 @@ TODO: update gutter Token in KickstartDS
         icon: 'chevron-right',
       },
     }}
-    imageSpacing
   />
+
   <TeaserRow
     topic="Components"
     image="https://www.kickstartds.com/img/recipes/toolbox.svg"
     ratio="none"
     text="Tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod."
+    imageSpacing
     link={{
       variant: 'solid',
       label: 'See our components',
@@ -327,11 +336,11 @@ TODO: update gutter Token in KickstartDS
         icon: 'chevron-right',
       },
     }}
-    imageSpacing
   />
 </Section>
 ```
 
+</CH.Code >
 </CollapsibleBox>
 
 </div>
@@ -341,12 +350,11 @@ TODO: update gutter Token in KickstartDS
 `mode: tile`<br/>
 `--l-section_col--min-width: 14rem`<br/>
 
-<div className="component-preview">
+<div className="component-preview" ks-theme="preview">
 <CH.Preview>
   <Section
     className="content-nav"
     width="wide"
-    background="accent"
     mode="tile"
     headline={{
       styleAs: 'h2',
@@ -516,14 +524,15 @@ TODO: update gutter Token in KickstartDS
 </CH.Preview>
 
 <CollapsibleBox
-  summary="View Code"
+  summary="Toggle Code"
   className="collapsible-code"
 >
+<CH.Code rows={30}>
+
 ```jsx
 <Section
   className="content-nav"
   width="wide"
-  background="accent"
   mode="tile"
   headline={{
     styleAs: 'h2',
@@ -532,189 +541,165 @@ TODO: update gutter Token in KickstartDS
     spaceAfter: 'small',
   }}
 >
-    <TeaserBox
+  <TeaserBox
     topic="Button"
     image="https://www.kickstartds.com/img/recipes/icons/button.svg"
     ratio="none"
+    imageSpacing
     text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr."
     link={{
       hidden: true,
-      variant: "clear",
-      label: "Explore generators",
-
+      variant: 'clear',
+      label: 'Explore generators',
     }}
-    imageSpacing
-
-/>
+  />
 
   <TeaserBox
     topic="Content Box"
     image="https://www.kickstartds.com/img/recipes/icons/content-box.svg"
     ratio="none"
+    imageSpacing
     text="Consetetur sadipscing elitr, sed diam nonumy eirmod."
     link={{
       hidden: true,
-      variant: "clear",
-      label: "See our components",
-
+      variant: 'clear',
+      label: 'See our components',
     }}
-    imageSpacing
-
-/>
+  />
 
   <TeaserBox
     topic="Count Up"
     image="https://www.kickstartds.com/img/recipes/icons/count-up.svg"
     ratio="none"
+    imageSpacing
     text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr."
     link={{
       hidden: true,
-      variant: "clear",
-      label: "See our components",
-
+      variant: 'clear',
+      label: 'See our components',
     }}
-    imageSpacing
-
-/>
+  />
 
   <TeaserBox
     topic="Divider"
     image="https://www.kickstartds.com/img/recipes/icons/divider.svg"
     ratio="none"
     text="Consetetur sadipscing elitr, sed diam nonumy eirmod."
+    imageSpacing
     link={{
       hidden: true,
-      variant: "clear",
-      label: "See our components",
-
+      variant: 'clear',
+      label: 'See our components',
     }}
-    imageSpacing
-
-/>
+  />
 
   <TeaserBox
     topic="Divider"
     image="https://www.kickstartds.com/img/recipes/icons/divider.svg"
     ratio="none"
     text="Consetetur sadipscing elitr, sed diam nonumy eirmod."
+    imageSpacing
     link={{
       hidden: true,
-      variant: "clear",
-      label: "See our components",
-
+      variant: 'clear',
+      label: 'See our components',
     }}
-    imageSpacing
-
-/>
+  />
 
   <TeaserBox
     topic="Headline"
     image="https://www.kickstartds.com/img/recipes/icons/headline.svg"
     ratio="none"
     text="Consetetur sadipscing elitr, sed diam nonumy eirmod."
+    imageSpacing
     link={{
       hidden: true,
-      variant: "clear",
-      label: "See our components",
-
+      variant: 'clear',
+      label: 'See our components',
     }}
-    imageSpacing
-
-/>
+  />
 
   <TeaserBox
     topic="Quote Slider"
     image="https://www.kickstartds.com/img/recipes/icons/quote-slider.svg"
     ratio="none"
     text="Consetetur sadipscing elitr, sed diam nonumy eirmod."
+    imageSpacing
     link={{
       hidden: true,
-      variant: "clear",
-      label: "See our components",
-
+      variant: 'clear',
+      label: 'See our components',
     }}
-    imageSpacing
-
-/>
+  />
 
   <TeaserBox
     topic="Section"
     image="https://www.kickstartds.com/img/recipes/icons/section.svg"
     ratio="none"
     text="Consetetur sadipscing elitr, sed diam nonumy eirmod."
+    imageSpacing
     link={{
       hidden: true,
-      variant: "clear",
-      label: "See our components",
-
+      variant: 'clear',
+      label: 'See our components',
     }}
-    imageSpacing
-
-/>
+  />
 
   <TeaserBox
     topic="Slider"
     image="https://www.kickstartds.com/img/recipes/icons/slider.svg"
     ratio="none"
     text="Consetetur sadipscing elitr, sed diam nonumy eirmod."
+    imageSpacing
     link={{
       hidden: true,
-      variant: "clear",
-      label: "See our components",
-
+      variant: 'clear',
+      label: 'See our components',
     }}
-    imageSpacing
-
-/>
+  />
 
   <TeaserBox
     topic="Storytelling"
     image="https://www.kickstartds.com/img/recipes/icons/storytelling.svg"
     ratio="none"
     text="Consetetur sadipscing elitr, sed diam nonumy eirmod."
+    imageSpacing
     link={{
       hidden: true,
-      variant: "clear",
-      label: "See our components",
-
+      variant: 'clear',
+      label: 'See our components',
     }}
-    imageSpacing
-
-/>
+  />
 
   <TeaserBox
     topic="Tag Label"
     image="https://www.kickstartds.com/img/recipes/icons/tag-label.svg"
     ratio="none"
     text="Consetetur sadipscing elitr, sed diam nonumy eirmod."
+    imageSpacing
     link={{
       hidden: true,
-      variant: "clear",
-      label: "See our components",
-
+      variant: 'clear',
+      label: 'See our components',
     }}
-    imageSpacing
-
-/>
+  />
 
   <TeaserBox
     topic="Text Media"
     image="https://www.kickstartds.com/img/recipes/icons/text-media.svg"
     ratio="none"
     text="Consetetur sadipscing elitr, sed diam nonumy eirmod."
+    imageSpacing
     link={{
       hidden: true,
-      variant: "clear",
-      label: "See our components",
-
+      variant: 'clear',
+      label: 'See our components',
     }}
-    imageSpacing
-
-/>
-
+  />
 </Section>
 ```
 
+</CH.Code>
 </CollapsibleBox>
 
 </div>
@@ -724,9 +709,9 @@ TODO: update gutter Token in KickstartDS
 `mode: tile`<br/>
 `--l-section_col--min-width: 14rem`<br/>
 
-<div className="component-preview">
+<div className="component-preview" >
   <CH.Preview>
-    <Section width="full" spaceBefore="none" spaceAfter="none">
+    <Section ks-theme="preview" width="full" spaceBefore="none" spaceAfter="none">
       <Storytelling
         image={{
           source: 'https://www.kickstartds.com/img/recipes/hero-angled.png',
@@ -767,9 +752,10 @@ TODO: update gutter Token in KickstartDS
   </CH.Preview>
 
 <CollapsibleBox
-  summary="View Code"
+  summary="Toggle Code"
   className="collapsible-code"
 >
+<CH.Code rows={30}>
 ```jsx
 <Section width="full" spaceBefore="none" spaceAfter="none">
 <Storytelling
@@ -810,7 +796,7 @@ TODO: update gutter Token in KickstartDS
 />
 </Section>
 ```
-
+</CH.Code>
 </CollapsibleBox>
 </div>
 
@@ -826,19 +812,19 @@ To increase the selector accuracy, its recommended to wrap them into a `:root` s
 :root,
 [ks-inverted],
 [ks-theme] {
-  .l-section__container {
+  .l-section {
     //Adjust background styles
-    --l-section--background: var(--ks-background-fg-alpha-1);
+    --l-section--background-default: var(--ks-background-fg-alpha-1);
     --l-section--background-accent: var(--ks-background-primary-to-bg-8);
     --l-section--background-dark: var(--ks-background-primary-to-bg-2);
 
     //Adjust vertical spacing
-    --l-section--space: var(--ks-spacing-xl);
+    --l-section--space-default: var(--ks-spacing-xl);
     --l-section--space-small: var(--ks-spacing-m);
 
     //Adjust gutter spacing
-    --l-section--gutter: var(--ks-spacing-m);
     --l-section--gutter-small: var(--ks-spacing-s);
+    --l-section--gutter-default: var(--ks-spacing-m);
     --l-section--gutter-large: var(--ks-spacing-l);
 
     //Adjust frame widths
@@ -853,7 +839,7 @@ To increase the selector accuracy, its recommended to wrap them into a `:root` s
 ```
 
 ```scss _section.scss
-@use "./section-tokens";
+@use './section-tokens';
 ```
 
 </CH.Code>

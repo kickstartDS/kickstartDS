@@ -167,8 +167,8 @@
   --ifm-container-width-xl: 1320px;
   --ifm-code-background: none;
   --ifm-code-border-radius: var(--ifm-global-radius);
-  --ifm-code-color: rgba(0, 0, 0, 0.8);
-  --ifm-code-font-size: 95%;
+  --ifm-code-color: unset;
+  --ifm-code-font-size: 90%;
   --ifm-code-padding-horizontal: 0;
   --ifm-code-padding-vertical: 0;
 

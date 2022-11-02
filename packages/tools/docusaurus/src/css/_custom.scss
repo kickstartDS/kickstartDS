@@ -6,8 +6,8 @@
  */
 
 :root {
-  --l-section--content-padding: var(--ifm-global-spacing);
   --ch-scrollycoding-sticker-width: 60%;
+  --l-section--content-padding: var(--ifm-global-spacing);
   --g-topic--color: var(--ifm-heading-color);
   --g-topic--font: var(--ks-font-copy-s);
 }
@@ -33,18 +33,20 @@ a.footer__link-item {
 }
 
 .pagination-nav__link {
-  border: var(--ks-border-width-emphasized) solid
-    var(--ks-border-color-interface-interactive);
+  border: 1px solid var(--ks-border-color-interface-interactive);
+
+  &:hover {
+    border-color: var(--ks-border-color-interface-interactive-hover);
+  }
 }
 
-.pagination-nav__link:hover {
-  border-color: var(--ks-border-color-interface-interactive-hover);
-}
-
-code {
+code,
+:root .c-rich-text code {
   border: 0;
-  color: var(--ifm-code-color);
-  font-weight: 600;
+  padding: 0.15em 0.25em;
+  background-color: var(--ks-background-color-accent);
+  border-radius: 0;
+  margin: 0;
   vertical-align: baseline;
 }
 
@@ -55,11 +57,11 @@ code {
 .markdown p a,
 .markdown li a {
   text-decoration: underline;
-}
 
-.markdown p a:hover,
-.markdown li a:hover {
-  text-decoration: none;
+  &:hover,
+  &:active {
+    text-decoration: none;
+  }
 }
 
 .toggleButton_---------node_modules-\@docusaurus-theme-classic-lib-theme-ColorModeToggle-styles-module:hover {
@@ -74,23 +76,18 @@ code {
 [data-theme='dark']
   .backToTopButton_---------node_modules-\@docusaurus-theme-classic-lib-theme-BackToTopButton-styles-module {
   background-color: var(--ks-background-color-primary-interactive-base);
-}
 
-[data-theme='dark']
-  .backToTopButton_---------node_modules-\@docusaurus-theme-classic-lib-theme-BackToTopButton-styles-module:hover {
-  background-color: var(--ks-background-color-primary-interactive-hover-base);
-}
+  &:hover {
+    background-color: var(--ks-background-color-primary-interactive-hover-base);
+  }
 
-[data-theme='dark']
-  .backToTopButton_---------node_modules-\@docusaurus-theme-classic-lib-theme-BackToTopButton-styles-module::after {
-  background-color: var(--ks-color-primary-to-bg-7-base) !important;
+  &::after {
+    background-color: var(--ks-color-primary-to-bg-7-base) !important;
+  }
 }
 
 :root
-  .backToTopButton_---------node_modules-\@docusaurus-theme-classic-lib-theme-BackToTopButton-styles-module::after {
-  background-color: var(--ks-color-primary-base);
-}
-
-[id] {
+  .backToTopButton_---------node_modules-\@docusaurus-theme-classic-lib-theme-BackToTopButton-styles-module
+  [id] {
   scroll-margin-top: calc(var(--g-scroll-offset) + 1.5rem);
 }

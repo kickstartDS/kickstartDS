@@ -200,11 +200,7 @@ export type Subheadline = string;
 /**
  * Add additional spacing to the bottom of the headline
  */
-export type BottomSpacing = 'none' | 'small' | 'large';
-/**
- * Set the headline as a page header, triggering special css treatment
- */
-export type PageHeader = boolean;
+export type BottomSpacing = 'minimum' | 'small' | 'large';
 /**
  * Add additional css classes that should be applied to the headline
  */
@@ -422,11 +418,7 @@ export type Subheadline1 = string;
 /**
  * Add additional spacing to the bottom of the headline
  */
-export type BottomSpacing1 = 'none' | 'small' | 'large';
-/**
- * Set the headline as a page header, triggering special css treatment
- */
-export type PageHeader1 = boolean;
+export type BottomSpacing1 = 'minimum' | 'small' | 'large';
 /**
  * Add additional css classes that should be applied to the headline
  */
@@ -705,6 +697,10 @@ export type Level2 = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
  */
 export type Style2 = 'none' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
 /**
+ * Add additional spacing to the bottom of the headline
+ */
+export type BottomSpacing2 = 'minimum' | 'small' | 'large';
+/**
  * Text content for the headline
  */
 export type Text4 = string;
@@ -716,14 +712,6 @@ export type Alignment2 = 'left' | 'center' | 'right';
  * Text content for the optional subheadline
  */
 export type Subheadline2 = string;
-/**
- * Add additional spacing to the bottom of the headline
- */
-export type BottomSpacing2 = 'none' | 'small' | 'large';
-/**
- * Set the headline as a page header, triggering special css treatment
- */
-export type PageHeader2 = boolean;
 /**
  * Add additional css classes that should be applied to the headline
  */
@@ -1064,11 +1052,7 @@ export type Subheadline3 = string;
 /**
  * Add additional spacing to the bottom of the headline
  */
-export type BottomSpacing3 = 'none' | 'small' | 'large';
-/**
- * Set the headline as a page header, triggering special css treatment
- */
-export type PageHeader3 = boolean;
+export type BottomSpacing3 = 'minimum' | 'small' | 'large';
 /**
  * Add additional css classes that should be applied to the headline
  */
@@ -1533,11 +1517,7 @@ export type Subheadline4 = string;
 /**
  * Add additional spacing to the bottom of the headline
  */
-export type BottomSpacing4 = 'none' | 'small' | 'large';
-/**
- * Set the headline as a page header, triggering special css treatment
- */
-export type PageHeader4 = boolean;
+export type BottomSpacing4 = 'minimum' | 'small' | 'large';
 /**
  * Add additional css classes that should be applied to the headline
  */
@@ -1577,7 +1557,7 @@ export interface SectionProps {
     | LogoTiles
     | TeaserRow
   )[];
-  background?: 'default' | 'accent';
+  background?: 'default' | 'accent' | 'bold';
   inverted?: Inverted13;
   spaceBefore?: 'default' | 'small' | 'none';
   spaceAfter?: 'default' | 'small' | 'none';
@@ -1723,7 +1703,6 @@ export interface Headline {
   align?: Alignment;
   subheadline?: Subheadline;
   spaceAfter?: BottomSpacing;
-  pageHeader?: PageHeader;
   className?: AdditionalClasses2;
   component?: KsComponentAttribute6;
   [k: string]: unknown;
@@ -1860,7 +1839,6 @@ export interface Headline1 {
   align?: Alignment1;
   subheadline?: Subheadline1;
   spaceAfter?: BottomSpacing1;
-  pageHeader?: PageHeader1;
   className?: AdditionalClasses5;
   component?: KsComponentAttribute12;
   [k: string]: unknown;
@@ -1998,11 +1976,10 @@ export interface TextBox2 {
 export interface Headline2 {
   level?: Level2;
   styleAs?: Style2;
+  spaceAfter?: BottomSpacing2;
   content: Text4;
   align?: Alignment2;
   subheadline?: Subheadline2;
-  spaceAfter?: BottomSpacing2;
-  pageHeader?: PageHeader2;
   className?: AdditionalClasses9;
   component?: KsComponentAttribute20;
   [k: string]: unknown;
@@ -2191,7 +2168,6 @@ export interface Headline3 {
   content: Text6;
   subheadline?: Subheadline3;
   spaceAfter?: BottomSpacing3;
-  pageHeader?: PageHeader3;
   className?: AdditionalClasses14;
   component?: KsComponentAttribute35;
   [k: string]: unknown;
@@ -2421,7 +2397,6 @@ export interface Headline4 {
   content: Text7;
   subheadline?: Subheadline4;
   spaceAfter?: BottomSpacing4;
-  pageHeader?: PageHeader4;
   className?: AdditionalClasses19;
   component?: KsComponentAttribute49;
   [k: string]: unknown;
