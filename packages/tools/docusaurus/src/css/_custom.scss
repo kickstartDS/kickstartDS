@@ -10,8 +10,6 @@
   --l-section--content-padding: var(--ifm-global-spacing);
   --g-topic--color: var(--ifm-heading-color);
   --g-topic--font: var(--ks-font-copy-s);
-  --c-rich-text--font: var(--ifm-font-size-base) / var(--ifm-line-height-base)
-    var(--ifm-font-family-base) !important;
 }
 
 [data-theme='dark'],
@@ -35,8 +33,7 @@ a.footer__link-item {
 }
 
 .pagination-nav__link {
-  border: var(--ks-border-width-emphasized) solid
-    var(--ks-border-color-interface-interactive);
+  border: 1px solid var(--ks-border-color-interface-interactive);
 
   &:hover {
     border-color: var(--ks-border-color-interface-interactive-hover);

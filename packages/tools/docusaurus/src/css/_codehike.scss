@@ -1,6 +1,6 @@
 :root {
-  --ch-code-background: #012a34;
-  --ch-code-title-bar-background: var(--ks-color-primary);
+  --ch-code-background: #023542;
+  --ch-code-title-bar-background: #012a34;
 
   // Step
   --ch-step-background: transparent;
@@ -16,13 +16,6 @@
   --ch-active-indicator-background: var(--ks-color-primary);
 
   --ch-step-gap: var(--ks-spacing-stack-xs);
-}
-
-[data-theme='dark'],
-[data-theme='dark'] [ks-theme],
-[data-theme='dark'] [ks-inverted] {
-  --ch-code-background: #012a34;
-  --ch-code-title-bar-background: var(--ks-color-primary-inverted);
 }
 
 .ch-frame-zoom {
@@ -45,12 +38,6 @@
       transform: translateX(0px) translateY(19px) scale(1) !important;
     }
   }
-
-  // &-button {
-  //   bottom: var(--ks-spacing-s);
-  //   right: var(--ks-spacing-s);
-  //   top: unset;
-  // }
 }
 
 .ch-codeblock {
@@ -71,6 +58,10 @@
     border-color: var(--ch-step-border-color);
     border-radius: 0;
     position: relative;
+
+    &:hover {
+      cursor: pointer;
+    }
 
     &:hover,
     &[data-selected] {
@@ -115,6 +106,10 @@
       position: relative;
       background-color: var(--ch-step-background);
 
+      &:hover {
+        cursor: pointer;
+      }
+
       &[data-selected] {
         border-color: var(--ch-step-border-color-active);
         background-color: var(--ch-step-background-active);
@@ -151,19 +146,21 @@
       background: rgba(255, 255, 255, 0.15) !important;
     }
   }
-  // &-button {
-  //   position: absolute;
-  //   bottom: var(--ks-spacing-s);
-  //   right: var(--ks-spacing-s);
-  //   top: unset;
-  //   z-index: 1;
-  // }
+}
+
+.ch-mini-browser {
+  .ch-frame-title-bar {
+    input {
+      background-color: var(--ks-color-fg-inverted-alpha-4-base) !important;
+      border: none !important;
+      height: 1.2em;
+    }
+  }
 }
 
 .ch-frame {
   &-title-bar {
     background: var(--ch-code-title-bar-background) !important;
-    // position: unset;
   }
 
   &-zoom .c-storytelling {
@@ -177,7 +174,7 @@
 }
 
 .ch-frame-content {
-  border: 2px solid var(--ch-code-background);
+  border: 2px solid var(--ch-code-title-bar-background);
   border-top: 0;
 }
 
@@ -208,8 +205,8 @@
   );
 
   .c-collapsible-box__header {
+    background-color: var(--ch-code-title-bar-background);
     width: fit-content;
-    // background-color: var(--ch-code-background);
     margin-left: auto;
     margin-right: var(--ks-spacing-inline-s);
 

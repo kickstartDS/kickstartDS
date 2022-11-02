@@ -5,7 +5,7 @@
  * work well for content-centric websites.
  */
 
-:root [ks-theme='docs'] {
+[ks-theme='docs'] {
   --ks-spacing-xxs-bp-factor: 1;
   --ks-spacing-xs-bp-factor: 1;
   --ks-spacing-s-bp-factor: 1;
@@ -34,13 +34,28 @@
   --ks-font-copy-xl: 1rem;
   --ks-font-copy-xxl: 1.25rem;
 
+  --c-rich-text--color: var(--ifm-font-color-base) !important;
+
+  --ks-border-color-interface-interactive-base: var(--ks-color-primary-alpha-4);
+  --ks-border-color-interface-interactive-hover-base: var(--ks-color-primary);
+
+  [data-theme='dark'] & {
+    --ks-border-color-interface-interactive-base: var(--ks-color-fg-alpha-4);
+    --ks-border-color-interface-interactive-hover-base: var(--ks-color-fg);
+  }
+
+  --ks-border-width-default: 1px;
+  --ks-border-width-emphasized: 1px;
+
   .l-section__container {
     --l-section_col--min-width: 15rem;
   }
 }
 
-:root,
-[ks-theme] {
-  --ks-border-width-default: 1px;
-  --ks-border-width-emphasized: 1px;
+[ks-theme='docs'] [ks-theme='preview'] {
+  --ks-border-width-default: 2px;
+  --ks-border-width-emphasized: 3px;
+  --ks-border-radius-card: 6px;
+  --ks-border-radius-control: 4px;
+  --ks-border-radius-surface: 10px;
 }

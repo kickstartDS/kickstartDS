@@ -1,0 +1,459 @@
+[ks-theme='preview'] {
+  .c-teaser {
+    --c-teaser--background: var(--ks-background-color-default) !important;
+    --c-teaser--color: var(--ks-text-color-default) !important;
+  }
+
+  a {
+    color: var(--ks-color-link) !important;
+  }
+
+  --g-topic--color: var(--ks-text-color-default) !important;
+  --ks-background-color-accent: var(
+    --ks-background-color-accent-base
+  ) !important;
+  --ks-background-color-accent-inverted: var(
+    --ks-background-color-accent-inverted-base
+  ) !important;
+  --ks-background-color-clear: var(--ks-background-color-clear-base) !important;
+  --ks-background-color-clear-interactive: var(
+    --ks-background-color-clear-interactive-base
+  ) !important;
+  --ks-background-color-clear-interactive-hover: var(
+    --ks-background-color-clear-interactive-hover-base
+  ) !important;
+  --ks-background-color-clear-interactive-active: var(
+    --ks-background-color-clear-interactive-active-base
+  ) !important;
+  --ks-background-color-clear-inverted: var(
+    --ks-background-color-clear-inverted-base
+  ) !important;
+  --ks-background-color-clear-inverted-interactive: var(
+    --ks-background-color-clear-inverted-interactive-base
+  ) !important;
+  --ks-background-color-clear-inverted-interactive-hover: var(
+    --ks-background-color-clear-inverted-interactive-hover-base
+  ) !important;
+  --ks-background-color-clear-inverted-interactive-active: var(
+    --ks-background-color-clear-inverted-interactive-active-base
+  ) !important;
+  --ks-background-color-default: var(
+    --ks-background-color-default-base
+  ) !important;
+  --ks-background-color-default-inverted: var(
+    --ks-background-color-default-inverted-base
+  ) !important;
+  --ks-background-color-interface: var(
+    --ks-background-color-interface-base
+  ) !important;
+  --ks-background-color-interface-interactive: var(
+    --ks-background-color-interface-interactive-base
+  ) !important;
+  --ks-background-color-interface-interactive-disabled: var(
+    --ks-background-color-interface-interactive-disabled-base
+  ) !important;
+  --ks-background-color-interface-interactive-hover: var(
+    --ks-background-color-interface-interactive-hover-base
+  ) !important;
+  --ks-background-color-interface-interactive-active: var(
+    --ks-background-color-interface-interactive-active-base
+  ) !important;
+  --ks-background-color-interface-inverted: var(
+    --ks-background-color-interface-inverted-base
+  ) !important;
+  --ks-background-color-interface-inverted-interactive: var(
+    --ks-background-color-interface-inverted-interactive-base
+  ) !important;
+  --ks-background-color-interface-inverted-interactive-disabled: var(
+    --ks-background-color-interface-inverted-interactive-disabled-base
+  ) !important;
+  --ks-background-color-interface-inverted-interactive-hover: var(
+    --ks-background-color-interface-inverted-interactive-hover-base
+  ) !important;
+  --ks-background-color-interface-inverted-interactive-active: var(
+    --ks-background-color-interface-inverted-interactive-active-base
+  ) !important;
+  --ks-background-color-primary: var(
+    --ks-background-color-primary-base
+  ) !important;
+  --ks-background-color-primary-interactive: var(
+    --ks-background-color-primary-interactive-base
+  ) !important;
+  --ks-background-color-primary-interactive-hover: var(
+    --ks-background-color-primary-interactive-hover-base
+  ) !important;
+  --ks-background-color-primary-interactive-active: var(
+    --ks-background-color-primary-interactive-active-base
+  ) !important;
+  --ks-background-color-primary-translucent: var(
+    --ks-background-color-primary-translucent-base
+  ) !important;
+  --ks-background-color-primary-inverted: var(
+    --ks-background-color-primary-inverted-base
+  ) !important;
+  --ks-background-color-primary-inverted-interactive: var(
+    --ks-background-color-primary-inverted-interactive-base
+  ) !important;
+  --ks-background-color-primary-inverted-interactive-hover: var(
+    --ks-background-color-primary-inverted-interactive-hover-base
+  ) !important;
+  --ks-background-color-primary-inverted-interactive-active: var(
+    --ks-background-color-primary-inverted-interactive-active-base
+  ) !important;
+  --ks-background-color-primary-inverted-translucent: var(
+    --ks-background-color-primary-inverted-translucent-base
+  ) !important;
+  --ks-border-color-accent: var(--ks-border-color-accent-base) !important;
+  --ks-border-color-accent-inverted: var(
+    --ks-border-color-accent-inverted-base
+  ) !important;
+  --ks-border-color-clear-interactive: var(
+    --ks-border-color-clear-interactive-base
+  ) !important;
+  --ks-border-color-clear-interactive-hover: var(
+    --ks-border-color-clear-interactive-hover-base
+  ) !important;
+  --ks-border-color-clear-interactive-active: var(
+    --ks-border-color-clear-interactive-active-base
+  ) !important;
+  --ks-border-color-clear-inverted-interactive: var(
+    --ks-border-color-clear-inverted-interactive-base
+  ) !important;
+  --ks-border-color-clear-inverted-interactive-hover: var(
+    --ks-border-color-clear-inverted-interactive-hover-base
+  ) !important;
+  --ks-border-color-clear-inverted-interactive-active: var(
+    --ks-border-color-clear-inverted-interactive-active-base
+  ) !important;
+  --ks-border-color-default: var(--ks-border-color-default-base) !important;
+  --ks-border-color-default-inverted: var(
+    --ks-border-color-default-inverted-base
+  ) !important;
+  --ks-border-color-interface: var(--ks-border-color-interface-base) !important;
+  --ks-border-color-interface-interactive: var(
+    --ks-border-color-interface-interactive-base
+  ) !important;
+  --ks-border-color-interface-interactive-disabled: var(
+    --ks-border-color-interface-interactive-disabled-base
+  ) !important;
+  --ks-border-color-interface-interactive-hover: var(
+    --ks-border-color-interface-interactive-hover-base
+  ) !important;
+  --ks-border-color-interface-interactive-active: var(
+    --ks-border-color-interface-interactive-active-base
+  ) !important;
+  --ks-border-color-interface-inverted: var(
+    --ks-border-color-interface-inverted-base
+  ) !important;
+  --ks-border-color-interface-inverted-interactive: var(
+    --ks-border-color-interface-inverted-interactive-base
+  ) !important;
+  --ks-border-color-interface-inverted-interactive-disabled: var(
+    --ks-border-color-interface-inverted-interactive-disabled-base
+  ) !important;
+  --ks-border-color-interface-inverted-interactive-hover: var(
+    --ks-border-color-interface-inverted-interactive-hover-base
+  ) !important;
+  --ks-border-color-interface-inverted-interactive-active: var(
+    --ks-border-color-interface-inverted-interactive-active-base
+  ) !important;
+  --ks-border-color-primary: var(--ks-border-color-primary-base) !important;
+  --ks-border-color-primary-interactive: var(
+    --ks-border-color-primary-interactive-base
+  ) !important;
+  --ks-border-color-primary-interactive-hover: var(
+    --ks-border-color-primary-interactive-hover-base
+  ) !important;
+  --ks-border-color-primary-interactive-active: var(
+    --ks-border-color-primary-interactive-active-base
+  ) !important;
+  --ks-border-color-primary-translucent: var(
+    --ks-border-color-primary-translucent-base
+  ) !important;
+  --ks-border-color-primary-inverted: var(
+    --ks-border-color-primary-inverted-base
+  ) !important;
+  --ks-border-color-primary-inverted-interactive: var(
+    --ks-border-color-primary-inverted-interactive-base
+  ) !important;
+  --ks-border-color-primary-inverted-interactive-hover: var(
+    --ks-border-color-primary-inverted-interactive-hover-base
+  ) !important;
+  --ks-border-color-primary-inverted-interactive-active: var(
+    --ks-border-color-primary-inverted-interactive-active-base
+  ) !important;
+  --ks-border-color-primary-inverted-translucent: var(
+    --ks-border-color-primary-inverted-translucent-base
+  ) !important;
+  --ks-color-primary: var(--ks-color-primary-base) !important;
+  --ks-color-primary-alpha-1: var(--ks-color-primary-alpha-1-base) !important;
+  --ks-color-primary-alpha-2: var(--ks-color-primary-alpha-2-base) !important;
+  --ks-color-primary-alpha-3: var(--ks-color-primary-alpha-3-base) !important;
+  --ks-color-primary-alpha-4: var(--ks-color-primary-alpha-4-base) !important;
+  --ks-color-primary-alpha-5: var(--ks-color-primary-alpha-5-base) !important;
+  --ks-color-primary-alpha-6: var(--ks-color-primary-alpha-6-base) !important;
+  --ks-color-primary-alpha-7: var(--ks-color-primary-alpha-7-base) !important;
+  --ks-color-primary-alpha-8: var(--ks-color-primary-alpha-8-base) !important;
+  --ks-color-primary-alpha-9: var(--ks-color-primary-alpha-9-base) !important;
+  --ks-color-primary-to-bg-1: var(--ks-color-primary-to-bg-1-base) !important;
+  --ks-color-primary-to-bg-2: var(--ks-color-primary-to-bg-2-base) !important;
+  --ks-color-primary-to-bg-3: var(--ks-color-primary-to-bg-3-base) !important;
+  --ks-color-primary-to-bg-4: var(--ks-color-primary-to-bg-4-base) !important;
+  --ks-color-primary-to-bg-5: var(--ks-color-primary-to-bg-5-base) !important;
+  --ks-color-primary-to-bg-6: var(--ks-color-primary-to-bg-6-base) !important;
+  --ks-color-primary-to-bg-7: var(--ks-color-primary-to-bg-7-base) !important;
+  --ks-color-primary-to-bg-8: var(--ks-color-primary-to-bg-8-base) !important;
+  --ks-color-primary-to-bg-9: var(--ks-color-primary-to-bg-9-base) !important;
+  --ks-color-primary-to-fg-1: var(--ks-color-primary-to-fg-1-base) !important;
+  --ks-color-primary-to-fg-2: var(--ks-color-primary-to-fg-2-base) !important;
+  --ks-color-primary-to-fg-3: var(--ks-color-primary-to-fg-3-base) !important;
+  --ks-color-primary-to-fg-4: var(--ks-color-primary-to-fg-4-base) !important;
+  --ks-color-primary-to-fg-5: var(--ks-color-primary-to-fg-5-base) !important;
+  --ks-color-primary-to-fg-6: var(--ks-color-primary-to-fg-6-base) !important;
+  --ks-color-primary-to-fg-7: var(--ks-color-primary-to-fg-7-base) !important;
+  --ks-color-primary-to-fg-8: var(--ks-color-primary-to-fg-8-base) !important;
+  --ks-color-primary-to-fg-9: var(--ks-color-primary-to-fg-9-base) !important;
+  --ks-color-primary-inverted: var(--ks-color-primary-inverted-base) !important;
+  --ks-color-primary-inverted-alpha-1: var(
+    --ks-color-primary-inverted-alpha-1-base
+  ) !important;
+  --ks-color-primary-inverted-alpha-2: var(
+    --ks-color-primary-inverted-alpha-2-base
+  ) !important;
+  --ks-color-primary-inverted-alpha-3: var(
+    --ks-color-primary-inverted-alpha-3-base
+  ) !important;
+  --ks-color-primary-inverted-alpha-4: var(
+    --ks-color-primary-inverted-alpha-4-base
+  ) !important;
+  --ks-color-primary-inverted-alpha-5: var(
+    --ks-color-primary-inverted-alpha-5-base
+  ) !important;
+  --ks-color-primary-inverted-alpha-6: var(
+    --ks-color-primary-inverted-alpha-6-base
+  ) !important;
+  --ks-color-primary-inverted-alpha-7: var(
+    --ks-color-primary-inverted-alpha-7-base
+  ) !important;
+  --ks-color-primary-inverted-alpha-8: var(
+    --ks-color-primary-inverted-alpha-8-base
+  ) !important;
+  --ks-color-primary-inverted-alpha-9: var(
+    --ks-color-primary-inverted-alpha-9-base
+  ) !important;
+  --ks-color-primary-inverted-to-bg-1: var(
+    --ks-color-primary-inverted-to-bg-1-base
+  ) !important;
+  --ks-color-primary-inverted-to-bg-2: var(
+    --ks-color-primary-inverted-to-bg-2-base
+  ) !important;
+  --ks-color-primary-inverted-to-bg-3: var(
+    --ks-color-primary-inverted-to-bg-3-base
+  ) !important;
+  --ks-color-primary-inverted-to-bg-4: var(
+    --ks-color-primary-inverted-to-bg-4-base
+  ) !important;
+  --ks-color-primary-inverted-to-bg-5: var(
+    --ks-color-primary-inverted-to-bg-5-base
+  ) !important;
+  --ks-color-primary-inverted-to-bg-6: var(
+    --ks-color-primary-inverted-to-bg-6-base
+  ) !important;
+  --ks-color-primary-inverted-to-bg-7: var(
+    --ks-color-primary-inverted-to-bg-7-base
+  ) !important;
+  --ks-color-primary-inverted-to-bg-8: var(
+    --ks-color-primary-inverted-to-bg-8-base
+  ) !important;
+  --ks-color-primary-inverted-to-bg-9: var(
+    --ks-color-primary-inverted-to-bg-9-base
+  ) !important;
+  --ks-color-primary-inverted-to-fg-1: var(
+    --ks-color-primary-inverted-to-fg-1-base
+  ) !important;
+  --ks-color-primary-inverted-to-fg-2: var(
+    --ks-color-primary-inverted-to-fg-2-base
+  ) !important;
+  --ks-color-primary-inverted-to-fg-3: var(
+    --ks-color-primary-inverted-to-fg-3-base
+  ) !important;
+  --ks-color-primary-inverted-to-fg-4: var(
+    --ks-color-primary-inverted-to-fg-4-base
+  ) !important;
+  --ks-color-primary-inverted-to-fg-5: var(
+    --ks-color-primary-inverted-to-fg-5-base
+  ) !important;
+  --ks-color-primary-inverted-to-fg-6: var(
+    --ks-color-primary-inverted-to-fg-6-base
+  ) !important;
+  --ks-color-primary-inverted-to-fg-7: var(
+    --ks-color-primary-inverted-to-fg-7-base
+  ) !important;
+  --ks-color-primary-inverted-to-fg-8: var(
+    --ks-color-primary-inverted-to-fg-8-base
+  ) !important;
+  --ks-color-primary-inverted-to-fg-9: var(
+    --ks-color-primary-inverted-to-fg-9-base
+  ) !important;
+  --ks-color-fg: var(--ks-color-fg-base) !important;
+  --ks-color-fg-alpha-1: var(--ks-color-fg-alpha-1-base) !important;
+  --ks-color-fg-alpha-2: var(--ks-color-fg-alpha-2-base) !important;
+  --ks-color-fg-alpha-3: var(--ks-color-fg-alpha-3-base) !important;
+  --ks-color-fg-alpha-4: var(--ks-color-fg-alpha-4-base) !important;
+  --ks-color-fg-alpha-5: var(--ks-color-fg-alpha-5-base) !important;
+  --ks-color-fg-alpha-6: var(--ks-color-fg-alpha-6-base) !important;
+  --ks-color-fg-alpha-7: var(--ks-color-fg-alpha-7-base) !important;
+  --ks-color-fg-alpha-8: var(--ks-color-fg-alpha-8-base) !important;
+  --ks-color-fg-alpha-9: var(--ks-color-fg-alpha-9-base) !important;
+  --ks-color-fg-to-bg-1: var(--ks-color-fg-to-bg-1-base) !important;
+  --ks-color-fg-to-bg-2: var(--ks-color-fg-to-bg-2-base) !important;
+  --ks-color-fg-to-bg-3: var(--ks-color-fg-to-bg-3-base) !important;
+  --ks-color-fg-to-bg-4: var(--ks-color-fg-to-bg-4-base) !important;
+  --ks-color-fg-to-bg-5: var(--ks-color-fg-to-bg-5-base) !important;
+  --ks-color-fg-to-bg-6: var(--ks-color-fg-to-bg-6-base) !important;
+  --ks-color-fg-to-bg-7: var(--ks-color-fg-to-bg-7-base) !important;
+  --ks-color-fg-to-bg-8: var(--ks-color-fg-to-bg-8-base) !important;
+  --ks-color-fg-to-bg-9: var(--ks-color-fg-to-bg-9-base) !important;
+  --ks-color-fg-inverted: var(--ks-color-fg-inverted-base) !important;
+  --ks-color-fg-inverted-alpha-1: var(
+    --ks-color-fg-inverted-alpha-1-base
+  ) !important;
+  --ks-color-fg-inverted-alpha-2: var(
+    --ks-color-fg-inverted-alpha-2-base
+  ) !important;
+  --ks-color-fg-inverted-alpha-3: var(
+    --ks-color-fg-inverted-alpha-3-base
+  ) !important;
+  --ks-color-fg-inverted-alpha-4: var(
+    --ks-color-fg-inverted-alpha-4-base
+  ) !important;
+  --ks-color-fg-inverted-alpha-5: var(
+    --ks-color-fg-inverted-alpha-5-base
+  ) !important;
+  --ks-color-fg-inverted-alpha-6: var(
+    --ks-color-fg-inverted-alpha-6-base
+  ) !important;
+  --ks-color-fg-inverted-alpha-7: var(
+    --ks-color-fg-inverted-alpha-7-base
+  ) !important;
+  --ks-color-fg-inverted-alpha-8: var(
+    --ks-color-fg-inverted-alpha-8-base
+  ) !important;
+  --ks-color-fg-inverted-alpha-9: var(
+    --ks-color-fg-inverted-alpha-9-base
+  ) !important;
+  --ks-color-fg-inverted-to-bg-1: var(
+    --ks-color-fg-inverted-to-bg-1-base
+  ) !important;
+  --ks-color-fg-inverted-to-bg-2: var(
+    --ks-color-fg-inverted-to-bg-2-base
+  ) !important;
+  --ks-color-fg-inverted-to-bg-3: var(
+    --ks-color-fg-inverted-to-bg-3-base
+  ) !important;
+  --ks-color-fg-inverted-to-bg-4: var(
+    --ks-color-fg-inverted-to-bg-4-base
+  ) !important;
+  --ks-color-fg-inverted-to-bg-5: var(
+    --ks-color-fg-inverted-to-bg-5-base
+  ) !important;
+  --ks-color-fg-inverted-to-bg-6: var(
+    --ks-color-fg-inverted-to-bg-6-base
+  ) !important;
+  --ks-color-fg-inverted-to-bg-7: var(
+    --ks-color-fg-inverted-to-bg-7-base
+  ) !important;
+  --ks-color-fg-inverted-to-bg-8: var(
+    --ks-color-fg-inverted-to-bg-8-base
+  ) !important;
+  --ks-color-fg-inverted-to-bg-9: var(
+    --ks-color-fg-inverted-to-bg-9-base
+  ) !important;
+  --ks-color-link: var(--ks-color-link-base) !important;
+  --ks-color-link-inverted: var(--ks-color-link-inverted-base) !important;
+  --ks-color-transparent: var(--ks-color-transparent-base) !important;
+  --ks-text-color-default: var(--ks-text-color-default-base) !important;
+  --ks-text-color-default-interactive: var(
+    --ks-text-color-default-interactive-base
+  ) !important;
+  --ks-text-color-default-interactive-hover: var(
+    --ks-text-color-default-interactive-hover-base
+  ) !important;
+  --ks-text-color-default-interactive-active: var(
+    --ks-text-color-default-interactive-active-base
+  ) !important;
+  --ks-text-color-default-interactive-visited: var(
+    --ks-text-color-default-interactive-visited-base
+  ) !important;
+  --ks-text-color-default-inverted: var(
+    --ks-text-color-default-inverted-base
+  ) !important;
+  --ks-text-color-default-inverted-interactive: var(
+    --ks-text-color-default-inverted-interactive-base
+  ) !important;
+  --ks-text-color-default-inverted-interactive-hover: var(
+    --ks-text-color-default-inverted-interactive-hover-base
+  ) !important;
+  --ks-text-color-default-inverted-interactive-active: var(
+    --ks-text-color-default-inverted-interactive-active-base
+  ) !important;
+  --ks-text-color-default-inverted-interactive-visited: var(
+    --ks-text-color-default-inverted-interactive-visited-base
+  ) !important;
+  --ks-text-color-interface: var(--ks-text-color-interface-base) !important;
+  --ks-text-color-interface-interactive: var(
+    --ks-text-color-interface-interactive-base
+  ) !important;
+  --ks-text-color-interface-interactive-hover: var(
+    --ks-text-color-interface-interactive-hover-base
+  ) !important;
+  --ks-text-color-interface-interactive-active: var(
+    --ks-text-color-interface-interactive-active-base
+  ) !important;
+  --ks-text-color-interface-interactive-visited: var(
+    --ks-text-color-interface-interactive-visited-base
+  ) !important;
+  --ks-text-color-interface-inverted: var(
+    --ks-text-color-interface-inverted-base
+  ) !important;
+  --ks-text-color-interface-inverted-interactive: var(
+    --ks-text-color-interface-inverted-interactive-base
+  ) !important;
+  --ks-text-color-interface-inverted-interactive-hover: var(
+    --ks-text-color-interface-inverted-interactive-hover-base
+  ) !important;
+  --ks-text-color-interface-inverted-interactive-active: var(
+    --ks-text-color-interface-inverted-interactive-active-base
+  ) !important;
+  --ks-text-color-interface-inverted-interactive-visited: var(
+    --ks-text-color-interface-inverted-interactive-visited-base
+  ) !important;
+  --ks-text-color-primary: var(--ks-text-color-primary-base) !important;
+  --ks-text-color-primary-interactive: var(
+    --ks-text-color-primary-interactive-base
+  ) !important;
+  --ks-text-color-primary-interactive-hover: var(
+    --ks-text-color-primary-interactive-hover-base
+  ) !important;
+  --ks-text-color-primary-interactive-active: var(
+    --ks-text-color-primary-interactive-active-base
+  ) !important;
+  --ks-text-color-primary-interactive-visited: var(
+    --ks-text-color-primary-interactive-visited-base
+  ) !important;
+  --ks-text-color-primary-inverted: var(
+    --ks-text-color-primary-inverted-base
+  ) !important;
+  --ks-text-color-primary-inverted-interactive: var(
+    --ks-text-color-primary-inverted-interactive-base
+  ) !important;
+  --ks-text-color-primary-inverted-interactive-hover: var(
+    --ks-text-color-primary-inverted-interactive-hover-base
+  ) !important;
+  --ks-text-color-primary-inverted-interactive-active: var(
+    --ks-text-color-primary-inverted-interactive-active-base
+  ) !important;
+  --ks-text-color-primary-inverted-interactive-visited: var(
+    --ks-text-color-primary-inverted-interactive-visited-base
+  ) !important;
+}

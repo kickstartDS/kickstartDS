@@ -3,16 +3,16 @@
   --c-teaser--color: var(--ifm-font-color);
   --c-teaser--shadow-hover: none;
   border-width: var(--ks-border-width-emphasized);
-  border-color: var(--ks-border-color-interface-interactive);
+  border-color: var(--ks-border-color-interface-interactive-base);
+
+  &:hover {
+    border-color: var(--ks-border-color-interface-interactive-hover-base);
+  }
 }
 
 .c-teaser {
   .c-teaser__topic {
     font-weight: var(--ifm-font-weight-bold);
-  }
-
-  &:hover {
-    border-color: var(--ks-border-color-interface-interactive-hover);
   }
 
   &-icon {

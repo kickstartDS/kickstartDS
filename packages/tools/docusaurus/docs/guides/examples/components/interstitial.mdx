@@ -46,6 +46,7 @@ TODO add link / CTA to **Content** module here
 ### Purpose
 
 <TextMedia
+  ks-theme="docs"
   media={[
     {
       lightboxImage: {
@@ -113,6 +114,7 @@ This only gives us a rough sketch, though. We still need to adjust the example c
 
 <CH.Scrollycoding>
 <CH.Preview>
+<div className="component-preview" ks-theme="preview">
   <StorytellingProvider>
     <Storytelling
       box={{
@@ -153,6 +155,7 @@ This only gives us a rough sketch, though. We still need to adjust the example c
       }}
     />
   </StorytellingProvider>
+</div>
 </CH.Preview>
 
 ```jsx src/App.jsx focus=1,5:42
@@ -183,7 +186,8 @@ export default function App() {
           size: 'medium',
           variant: 'solid',
         },
-        text: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+        text:
+          'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
         textAlign: 'left',
         vAlign: 'center',
       }}
@@ -239,21 +243,23 @@ export default function App() {
 ```
 
 <CH.Preview>
-  <Storytelling
-    box={{
-      headline: {
-        content: 'Great components',
-        level: 'h2',
-        styleAs: 'h2',
-        subheadline: 'Sed diam nonumy eirmod tempor invidunt',
-      },
-      link: {
-        href: '#',
-        label: 'Request a guided demo',
-        variant: 'solid',
-      },
-    }}
-  />
+  <div className="component-preview" ks-theme="preview">
+    <Storytelling
+      box={{
+        headline: {
+          content: 'Great components',
+          level: 'h2',
+          styleAs: 'h2',
+          subheadline: 'Sed diam nonumy eirmod tempor invidunt',
+        },
+        link: {
+          href: '#',
+          label: 'Request a guided demo',
+          variant: 'solid',
+        },
+      }}
+    />
+  </div>
 </CH.Preview>
 ---
 
@@ -290,25 +296,27 @@ export default function App() {
 ```
 
 <CH.Preview>
-  <Storytelling
-    backgroundColor="#06566A"
-    backgroundImage="https://www.kickstartDS.com/img/recipes/graphics--bg.svg"
-    ks-inverted="true"
-    box={{
-      hAlign: 'left',
-      headline: {
-        content: 'Great components',
-        level: 'h2',
-        styleAs: 'h1',
-        subheadline: 'Sed diam nonumy eirmod tempor invidunt',
-      },
-      link: {
-        href: '#',
-        label: 'Request a guided demo',
-        variant: 'solid',
-      },
-    }}
-  />
+  <div className="component-preview" ks-theme="preview">
+    <Storytelling
+      backgroundColor="#06566A"
+      backgroundImage="https://www.kickstartDS.com/img/recipes/graphics--bg.svg"
+      ks-inverted="true"
+      box={{
+        hAlign: 'left',
+        headline: {
+          content: 'Great components',
+          level: 'h2',
+          styleAs: 'h1',
+          subheadline: 'Sed diam nonumy eirmod tempor invidunt',
+        },
+        link: {
+          href: '#',
+          label: 'Request a guided demo',
+          variant: 'solid',
+        },
+      }}
+    />
+  </div>
 </CH.Preview>
 
 ---
@@ -347,6 +355,7 @@ export default function App() {
 ```
 
 <CH.Preview>
+<div className="component-preview" ks-theme="preview">
   <Storytelling
     backgroundColor="#06566A"
     backgroundImage="https://www.kickstartDS.com/img/recipes/graphics--bg.svg"
@@ -367,6 +376,7 @@ export default function App() {
       },
     }}
   />
+</div>
 </CH.Preview>
 </CH.Scrollycoding>
 

@@ -76,8 +76,6 @@ const FeatureList = [
   },
 ];
 
-// <Svg className={styles.featureSvg} role="img" />
-
 export default function HomepageFeatures() {
   return (
     <PictureProvider>
