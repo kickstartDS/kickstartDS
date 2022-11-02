@@ -62,7 +62,7 @@ export type Style = 'none' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
 /**
  * Add additional spacing to the bottom of the headline
  */
-export type BottomSpacing = 'minimum' | 'small' | 'default' | 'large';
+export type BottomSpacing = 'minimum' | 'small' | 'large';
 /**
  * Text content for the headline
  */

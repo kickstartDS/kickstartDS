@@ -200,7 +200,7 @@ export type Subheadline = string;
 /**
  * Add additional spacing to the bottom of the headline
  */
-export type BottomSpacing = 'minimum' | 'small' | 'default' | 'large';
+export type BottomSpacing = 'minimum' | 'small' | 'large';
 /**
  * Add additional css classes that should be applied to the headline
  */
@@ -418,7 +418,7 @@ export type Subheadline1 = string;
 /**
  * Add additional spacing to the bottom of the headline
  */
-export type BottomSpacing1 = 'minimum' | 'small' | 'default' | 'large';
+export type BottomSpacing1 = 'minimum' | 'small' | 'large';
 /**
  * Add additional css classes that should be applied to the headline
  */
@@ -699,7 +699,7 @@ export type Style2 = 'none' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
 /**
  * Add additional spacing to the bottom of the headline
  */
-export type BottomSpacing2 = 'minimum' | 'small' | 'default' | 'large';
+export type BottomSpacing2 = 'minimum' | 'small' | 'large';
 /**
  * Text content for the headline
  */
@@ -1052,7 +1052,7 @@ export type Subheadline3 = string;
 /**
  * Add additional spacing to the bottom of the headline
  */
-export type BottomSpacing3 = 'minimum' | 'small' | 'default' | 'large';
+export type BottomSpacing3 = 'minimum' | 'small' | 'large';
 /**
  * Add additional css classes that should be applied to the headline
  */
@@ -1517,7 +1517,7 @@ export type Subheadline4 = string;
 /**
  * Add additional spacing to the bottom of the headline
  */
-export type BottomSpacing4 = 'minimum' | 'small' | 'default' | 'large';
+export type BottomSpacing4 = 'minimum' | 'small' | 'large';
 /**
  * Add additional css classes that should be applied to the headline
  */

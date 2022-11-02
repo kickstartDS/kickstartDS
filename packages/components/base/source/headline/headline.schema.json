@@ -41,7 +41,7 @@
       "title": "Bottom spacing",
       "description": "Add additional spacing to the bottom of the headline",
       "type": "string",
-      "enum": ["minimum", "small", "default", "large"],
+      "enum": ["minimum", "small", "large"],
       "default": "minimum"
     },
     "className": {

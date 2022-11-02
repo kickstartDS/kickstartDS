@@ -191,7 +191,7 @@ export type Text1 = string;
 /**
  * Add additional spacing to the bottom of the headline
  */
-export type BottomSpacing = 'minimum' | 'small' | 'default' | 'large';
+export type BottomSpacing = 'minimum' | 'small' | 'large';
 /**
  * Select the headline level to use, or p alternatively
  */

@@ -4,14 +4,10 @@ $host: (
   '.c-headline': (
     space-after-minimum: 0,
     space-after-small: var(--ks-spacing-stack-s),
-    space-after-default: var(--ks-spacing-stack-m),
     space-after-large: var(--ks-spacing-stack-l),
-    space-after: var(--c-headline--space-after-default),
+    space-after: var(--c-headline--space-after-minimum),
     font-weight: var(--c-rich-text_headline--font-weight),
     color: var(--c-rich-text_headline--color),
-  ),
-  '.c-headline--space-after-minimum': (
-    space-after: var(--c-headline--space-after-minimum),
   ),
   '.c-headline--space-after-small': (
     space-after: var(--c-headline--space-after-small),

@@ -77,7 +77,7 @@ export type Subheadline = string;
 /**
  * Add additional spacing to the bottom of the headline
  */
-export type BottomSpacing = 'minimum' | 'small' | 'default' | 'large';
+export type BottomSpacing = 'minimum' | 'small' | 'large';
 /**
  * Add additional css classes that should be applied to the headline
  */
