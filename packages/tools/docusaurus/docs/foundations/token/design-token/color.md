@@ -300,15 +300,15 @@ TODO illustrate the scale https://cubic-bezier.com/#1,.1,0,.9
 ```css token.css
 :root,
 [ks-theme] {
-  --ks-color-primary-alpha-1-base: rgba(5, 86, 106, 0.05);
-  --ks-color-primary-alpha-2-base: rgba(5, 86, 106, 0.13);
-  --ks-color-primary-alpha-3-base: rgba(5, 86, 106, 0.24);
-  --ks-color-primary-alpha-4-base: rgba(5, 86, 106, 0.37);
+  --ks-color-primary-alpha-1-base: rgba(5, 86, 106, 0.95);
+  --ks-color-primary-alpha-2-base: rgba(5, 86, 106, 0.87);
+  --ks-color-primary-alpha-3-base: rgba(5, 86, 106, 0.76);
+  --ks-color-primary-alpha-4-base: rgba(5, 86, 106, 0.63);
   --ks-color-primary-alpha-5-base: rgba(5, 86, 106, 0.5);
-  --ks-color-primary-alpha-6-base: rgba(5, 86, 106, 0.63);
-  --ks-color-primary-alpha-7-base: rgba(5, 86, 106, 0.76);
-  --ks-color-primary-alpha-8-base: rgba(5, 86, 106, 0.87);
-  --ks-color-primary-alpha-9-base: rgba(5, 86, 106, 0.95);
+  --ks-color-primary-alpha-6-base: rgba(5, 86, 106, 0.37);
+  --ks-color-primary-alpha-7-base: rgba(5, 86, 106, 0.24);
+  --ks-color-primary-alpha-8-base: rgba(5, 86, 106, 0.13);
+  --ks-color-primary-alpha-9-base: rgba(5, 86, 106, 0.05);
 }
 
 :root,

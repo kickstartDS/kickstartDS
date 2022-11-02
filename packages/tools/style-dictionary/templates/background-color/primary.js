@@ -13,7 +13,7 @@ module.exports = () => ({
       active: { base: token('{ks.color.primary.to-bg.3.base}') },
       selected: { base: token('{ks.color.primary.base}') },
     },
-    translucent: { base: token('{ks.color.primary.alpha.8.base}') },
+    translucent: { base: token('{ks.color.primary.alpha.2.base}') },
   },
   'primary-inverted': {
     base: token('{ks.color.primary-inverted.base}'),
@@ -23,6 +23,6 @@ module.exports = () => ({
       active: { base: token('{ks.color.primary-inverted.to-bg.3.base}') },
       selected: { base: token('{ks.color.primary-inverted.base}') },
     },
-    translucent: { base: token('{ks.color.primary-inverted.alpha.8.base}') },
+    translucent: { base: token('{ks.color.primary-inverted.alpha.2.base}') },
   },
 });

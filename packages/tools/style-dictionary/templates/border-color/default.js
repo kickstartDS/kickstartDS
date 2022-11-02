@@ -6,5 +6,5 @@ const token = (value) => ({
 
 module.exports = () => ({
   default: { base: token('{ks.color.fg-inverted.base}') },
-  'default-inverted': { base: token('{ks.color.fg.alpha.7.base}') },
+  'default-inverted': { base: token('{ks.color.fg.alpha.3.base}') },
 });

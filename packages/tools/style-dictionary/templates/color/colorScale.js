@@ -20,7 +20,7 @@ module.exports = (key, name = key, nameInverted = `${name}-inverted`) => {
       alpha: Object.fromEntries(
         indices.map((index) => [
           index.toString(),
-          { base: token(Color(color[name]).setAlpha(scale[index])) },
+          { base: token(Color(color[name]).setAlpha(1 - scale[index])) },
         ])
       ),
       'to-bg': Object.fromEntries(
@@ -40,7 +40,7 @@ module.exports = (key, name = key, nameInverted = `${name}-inverted`) => {
         indices.map((index) => [
           index.toString(),
           {
-            base: token(Color(color[nameInverted]).setAlpha(scale[index])),
+            base: token(Color(color[nameInverted]).setAlpha(1 - scale[index])),
           },
         ])
       ),
