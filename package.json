@@ -18,7 +18,6 @@
     "chromatic-blog": "yarn workspace @kickstartds-internal/storybook chromatic-blog",
     "chromatic-content": "yarn workspace @kickstartds-internal/storybook chromatic-content",
     "chromatic-form": "yarn workspace @kickstartds-internal/storybook chromatic-form",
-    "dereference": "node scripts/schemaDereference.js",
     "docusaurus-start": "yarn workspace @kickstartds-internal/docusaurus start",
     "docusaurus-build": "yarn workspace @kickstartds-internal/docusaurus build",
     "eslint": "eslint \"**/*.{js,jsx,ts,tsx}\"",
