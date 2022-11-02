@@ -1,14 +1,16 @@
 :root {
-  --ch-code-background: rgb(46, 52, 64);
-  --ch-code-background-active: rgb(46, 52, 64);
+  --ch-code-background: #012a34;
+  --ch-code-title-bar-background: var(--ks-color-primary);
 
   // Step
   --ch-step-background: transparent;
   --ch-step-background-active: var(--ks-color-primary-alpha-1);
 
   --ch-step-border: 1px solid;
-  --ch-step-border-color: var(--ks-color-fg-alpha-1);
-  --ch-step-border-color-active: var(--ks-color-fg-alpha-2);
+  --ch-step-border-color: var(--ks-border-color-interface-interactive);
+  --ch-step-border-color-active: var(
+    --ks-border-color-interface-interactive-hover
+  );
 
   --ch-step-active-indicator-width: 4px;
   --ch-active-indicator-background: var(--ks-color-primary);
@@ -19,8 +21,8 @@
 [data-theme='dark'],
 [data-theme='dark'] [ks-theme],
 [data-theme='dark'] [ks-inverted] {
-  --ch-code-background: #031419;
-  --ch-step-border-active: var(--ks-color-fg-alpha-5);
+  --ch-code-background: #012a34;
+  --ch-code-title-bar-background: var(--ks-color-primary-inverted);
 }
 
 .ch-frame-zoom {
@@ -135,7 +137,7 @@
   position: relative;
 
   &-frame {
-    // background: var(--ch-code-background) !important;
+    background: var(--ch-code-background) !important;
   }
 
   &-tab {
@@ -160,8 +162,8 @@
 
 .ch-frame {
   &-title-bar {
-    background: var(--ch-code-background) !important;
-    position: unset;
+    background: var(--ch-code-title-bar-background) !important;
+    // position: unset;
   }
 
   &-zoom .c-storytelling {

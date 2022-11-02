@@ -33,14 +33,14 @@
   --ks-font-copy-l: 0.85rem;
   --ks-font-copy-xl: 1rem;
   --ks-font-copy-xxl: 1.25rem;
+
+  .l-section__container {
+    --l-section_col--min-width: 15rem;
+  }
 }
 
 :root,
 [ks-theme] {
   --ks-border-width-default: 1px;
   --ks-border-width-emphasized: 1px;
-}
-
-:root [ks-theme='docs'] .l-section__container {
-  --l-section_col--min-width: 15rem;
 }

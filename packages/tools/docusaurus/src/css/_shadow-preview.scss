@@ -7,9 +7,10 @@
   box-shadow: var(--ks-box-shadow-control);
   height: 50px;
   width: 300px;
-}
-.shadow-control:hover {
-  box-shadow: var(--ks-box-shadow-control-hover);
+
+  &:hover {
+    box-shadow: var(--ks-box-shadow-control-hover);
+  }
 }
 
 .shadow-card {
@@ -17,9 +18,10 @@
   box-shadow: var(--ks-box-shadow-card);
   height: 400px;
   width: 300px;
-}
-.shadow-card:hover {
-  box-shadow: var(--ks-box-shadow-card-hover);
+
+  :hover {
+    box-shadow: var(--ks-box-shadow-card-hover);
+  }
 }
 
 .shadow-surface {
@@ -27,7 +29,8 @@
   box-shadow: var(--ks-box-shadow-surface);
   height: 200px;
   width: 100%;
-}
-.shadow-surface:hover {
-  box-shadow: var(--ks-box-shadow-surface-hover);
+
+  &:hover {
+    box-shadow: var(--ks-box-shadow-surface-hover);
+  }
 }
