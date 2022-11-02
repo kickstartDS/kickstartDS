@@ -8,7 +8,7 @@ $vars: meta.module-variables(headline-vars);
 @include container.wrapper;
 
 .c-headline {
-  margin: 0 auto var(--c-headline--margin-bottom);
+  margin: 0 auto var(--c-headline--space-after);
   text-align: center;
 
   &--align-left {
@@ -22,23 +22,11 @@ $vars: meta.module-variables(headline-vars);
   }
 
   .l-section &:not(:first-child) {
-    margin-top: calc(var(--c-headline--margin-bottom) * 1.5);
+    margin-top: calc(var(--c-headline--space-after) * 1.5);
   }
 
   @include container.size('≥', 640px) {
     max-width: 70%;
-  }
-
-  &--page-header {
-    margin-bottom: 0 !important;
-  }
-
-  &--space-after-small {
-    padding-bottom: calc(var(--ks-spacing-xxl) / 2);
-  }
-
-  &--space-after-large {
-    padding-bottom: var(--ks-spacing-xxl);
   }
 
   &__headline {

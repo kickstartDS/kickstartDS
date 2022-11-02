@@ -189,6 +189,10 @@ export type KsComponentAttribute3 = string;
  */
 export type Text1 = string;
 /**
+ * Add additional spacing to the bottom of the headline
+ */
+export type BottomSpacing = 'minimum' | 'small' | 'default' | 'large';
+/**
  * Select the headline level to use, or p alternatively
  */
 export type Level = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
@@ -204,14 +208,6 @@ export type Alignment = 'left' | 'center' | 'right';
  * Text content for the optional subheadline
  */
 export type Subheadline = string;
-/**
- * Add additional spacing to the bottom of the headline
- */
-export type BottomSpacing = 'none' | 'small' | 'large';
-/**
- * Set the headline as a page header, triggering special css treatment
- */
-export type PageHeader = boolean;
 /**
  * Add additional css classes that should be applied to the headline
  */
@@ -346,12 +342,11 @@ export interface PostShareBar {
  */
 export interface Headline {
   content: Text1;
+  spaceAfter?: BottomSpacing;
   level?: Level;
   styleAs?: Style;
   align?: Alignment;
   subheadline?: Subheadline;
-  spaceAfter?: BottomSpacing;
-  pageHeader?: PageHeader;
   className?: AdditionalClasses2;
   component?: KsComponentAttribute4;
   [k: string]: unknown;

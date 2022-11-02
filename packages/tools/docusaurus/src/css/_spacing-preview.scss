@@ -40,7 +40,7 @@
   }
 
   &-section-default {
-    height: var(--l-section--space);
+    height: var(--l-section--space-default);
     width: 2rem;
   }
 
@@ -51,17 +51,17 @@
 
   &-gutter-default {
     width: 2rem;
-    height: var(--l-section_container--gutter);
+    height: var(--l-section--gutter-default);
   }
 
   &-gutter-large {
     width: 2rem;
-    height: var(--l-section_container--gutter-large);
+    height: var(--l-section--gutter-large);
   }
 
   &-gutter-small {
     width: 2rem;
-    height: var(--l-section_container--gutter-small);
+    height: var(--l-section--gutter-small);
   }
 
   &::before,

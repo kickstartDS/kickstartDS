@@ -41,14 +41,8 @@
       "title": "Bottom spacing",
       "description": "Add additional spacing to the bottom of the headline",
       "type": "string",
-      "enum": ["none", "small", "large"],
-      "default": "none"
-    },
-    "pageHeader": {
-      "title": "Page header",
-      "description": "Set the headline as a page header, triggering special css treatment",
-      "type": "boolean",
-      "default": false
+      "enum": ["minimum", "small", "default", "large"],
+      "default": "minimum"
     },
     "className": {
       "type": "string",

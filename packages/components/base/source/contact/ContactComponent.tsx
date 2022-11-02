@@ -35,7 +35,7 @@ export const ContactComponent: ForwardRefRenderFunction<
           content={title}
           subheadline={subtitle}
           align="left"
-          spaceAfter="none"
+          spaceAfter="small"
         />
       )}
       {links.length ? (

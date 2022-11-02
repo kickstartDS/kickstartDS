@@ -19,7 +19,7 @@ export const HeadlineComponent: ForwardRefRenderFunction<
     align = 'left',
     pageHeader,
     subheadline,
-    spaceAfter = 'none',
+    spaceAfter = 'minimum',
     renderContent = defaultRenderFn,
     renderSubheadline = defaultRenderFn,
     className,

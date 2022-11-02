@@ -14,7 +14,7 @@ import './post-aside.scss';
 
 const Author: FunctionComponent<AuthorPros> = ({ headline, ...props }) => (
   <div className="c-post-aside__author">
-    <Headline content={headline} />
+    <Headline spaceAfter="small" content={headline} />
     <Contact {...props} />
   </div>
 );

@@ -77,11 +77,7 @@ export type Subheadline = string;
 /**
  * Add additional spacing to the bottom of the headline
  */
-export type BottomSpacing = 'none' | 'small' | 'large';
-/**
- * Set the headline as a page header, triggering special css treatment
- */
-export type PageHeader = boolean;
+export type BottomSpacing = 'minimum' | 'small' | 'default' | 'large';
 /**
  * Add additional css classes that should be applied to the headline
  */
@@ -267,7 +263,6 @@ export interface Headline {
   align?: Alignment;
   subheadline?: Subheadline;
   spaceAfter?: BottomSpacing;
-  pageHeader?: PageHeader;
   className?: AdditionalClasses;
   component?: KsComponentAttribute;
   [k: string]: unknown;
