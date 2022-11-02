@@ -3,29 +3,396 @@ sidebar_position: 1
 sidebar_label: Adopt Button component
 ---
 
+import { Button } from '@kickstartds/base/lib/button';
+import { ButtonProvider } from '@kickstartds/design-system/dist/components/button/ButtonComponent';
+
 # Adopt `Button` component
 
 TODO describe workflow this stands for (adapt vs adopt)
 
 ## Overview
 
+TODO intro description
+
+<iframe
+  src="https://60dc476b80673e003b4258d6-czyzkgbgek.chromatic.com/iframe.html?args=&id=base-button--solid&viewMode=story"
+  width="200"
+  height="80"
+></iframe>
+
+TODO TBD This will be done in 3 simple steps:
+
+1. Create component structure
+2. Find matching component
+3. Map properties
+
 ## Requirements
+
+This guide assumes that you already have a working Design System, that is based on **kickstartDS**, running.<br/>
+If that's not the case, follow our guide [Create your Design System](../../create/index.mdx).
 
 ## 1. Component Definition
 
 ### Purpose
 
+TODO add reasoning for including selected props, use `TextMedia` and image of example buttons
+
 ### Structure
 
-## 2. Component Mapping
+| Property   | Description                                    |
+| ---------- | ---------------------------------------------- |
+| `label *`  | Label shown on the button                      |
+| `target`   | Target that should be linked                   |
+| `variant`  | Variant of button used                         |
+| `size`     | Size the button should be shown in             |
+| `disabled` | Whether the button should be shown as disabled |
 
-### Match it
+## 2. Component Creation
 
-### Adjustments
+We like to colocate components. This means to have all involved files next to each other in the same folder; the template (`.jsx` / `.tsx`), potential CSS / SASS (`.css` / `.scss`), JavaScript (`.js` / `.ts`), our JSON Schema component definition (`.schema.json`), and so on.
 
-## 3. Component Creation
+So we start by creating the directory `src/components/interstitial`, from our Design System repository root:
+
+```bash
+mkdir src/components/button
+```
+
+This is the folder we'll add new files to in the coming few paragraphs.
 
 ### JSON Schema
+
+First file we'll create is the `JSON Schema` definition, encoding the structure we've defined for our component before:
+
+<CH.Scrollycoding>
+#### Start with just the boilerplate for a component definition
+
+This includes all necessarily required values for a valid component definition in **kickstartDS**.
+
+To learn more about our use of `JSON Schema`, read our Concepts (TODO create + link) article.
+
+<CH.Code>
+```json src/components/button/button.schema.json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "",
+  "title": "",
+  "description": "",
+  "type": "object",
+  "properties": {}
+}
+```
+</CH.Code>
+
+---
+
+#### Add basic info describing component
+
+We start by adding a `title`, `description` and `$id` attribute. The correct `$id` depends on your Design System configuration. We'll assume you've created components before, living under the schema prefix `http://schema.mydesignsystem.com`.
+
+<CH.Code>
+```json src/components/button/button.schema.json focus=3:5
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/button.schema.json",
+  "title": "Button",
+  "description": "Component used to for user interaction",
+  "type": "object",
+  "properties": {}
+}
+```
+</CH.Code>
+
+---
+
+#### Create `label` and `target` fields...
+
+Both fields are straight-forward `string` type properties, so we just document them a bit!<br/>
+We do mark `target` by setting `format` to `uri`, though, to enable validation later on.
+
+<CH.Code>
+```json src/components/button/button.schema.json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/button.schema.json",
+  "title": "Button",
+  "description": "Component used to for user interaction",
+  "type": "object",
+  "properties": {
+    "label": {
+      "type": "string",
+      "title": "Label",
+      "description": "Text content to display inside the button",
+      "default": "Read more"
+    },
+    "target": {
+      "type": "string",
+      "title": "Target",
+      "description": "Target that should be linked, makes the Button behave like a link semantically",
+      "format": "uri"
+    }
+  }
+}
+```
+</CH.Code>
+
+---
+
+#### ... and make `label` required
+
+We declare `label` as required on the uppermost `object`!
+
+<CH.Code>
+```json src/components/button/button.schema.json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/button.schema.json",
+  "title": "Button",
+  "description": "Component used to for user interaction",
+  "type": "object",
+  "properties": {
+    "label": {
+      "type": "string",
+      "title": "Label",
+      "description": "Text content to display inside the button",
+      "default": "Read more"
+    },
+    "target": {
+      "type": "string",
+      "title": "Target",
+      "description": "Target that should be linked, makes the Button behave like a link semantically",
+      "format": "uri"
+    }
+  },
+  "required": ["label"]
+}
+```
+</CH.Code>
+
+---
+
+#### Add allowed `size`s 1/2
+
+TODO add enum description
+
+<CH.Code>
+```json src/components/button/button.schema.json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/button.schema.json",
+  "title": "Button",
+  "description": "Component used to for user interaction",
+  "type": "object",
+  "properties": {
+    "label": {
+      "type": "string",
+      "title": "Label",
+      "description": "Text content to display inside the button",
+      "default": "Read more"
+    },
+    "target": {
+      "type": "string",
+      "title": "Target",
+      "description": "Target that should be linked, makes the Button behave like a link semantically",
+      "format": "uri"
+    },
+    "size": {
+      "type": "string",
+      "title": "Size",
+      "description": "Size of button to use"
+    }
+  },
+  "required": ["label"]
+}
+```
+</CH.Code>
+
+---
+
+#### Add allowed `size`s 2/2
+
+TODO add enum description
+
+<CH.Code>
+```json src/components/button/button.schema.json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/button.schema.json",
+  "title": "Button",
+  "description": "Component used to for user interaction",
+  "type": "object",
+  "properties": {
+    "label": {
+      "type": "string",
+      "title": "Label",
+      "description": "Text content to display inside the button",
+      "default": "Read more"
+    },
+    "target": {
+      "type": "string",
+      "title": "Target",
+      "description": "Target that should be linked, makes the Button behave like a link semantically",
+      "format": "uri"
+    },
+    "size": {
+      "type": "string",
+      "enum": ["small", "medium", "large"],
+      "title": "Size",
+      "description": "Size of button to use",
+      "default": "medium"
+    }
+  },
+  "required": ["label"]
+}
+```
+</CH.Code>
+
+---
+
+#### Add allowed `variant`s 1/2
+
+TODO add enum description
+
+<CH.Code>
+```json src/components/button/button.schema.json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/button.schema.json",
+  "title": "Button",
+  "description": "Component used to for user interaction",
+  "type": "object",
+  "properties": {
+    "label": {
+      "type": "string",
+      "title": "Label",
+      "description": "Text content to display inside the button",
+      "default": "Read more"
+    },
+    "target": {
+      "type": "string",
+      "title": "Target",
+      "description": "Target that should be linked, makes the Button behave like a link semantically",
+      "format": "uri"
+    },
+    "size": {
+      "type": "string",
+      "enum": ["small", "medium", "large"],
+      "title": "Size",
+      "description": "Size of button to use",
+      "default": "medium"
+    },
+    "variant": {
+      "type": "string",
+      "title": "Variant",
+      "description": "Variant of button to be used"
+    }
+  },
+  "required": ["label"]
+}
+```
+</CH.Code>
+
+---
+
+#### Add allowed `variant`s 2/2
+
+TODO add enum description
+
+<CH.Code>
+```json src/components/button/button.schema.json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/button.schema.json",
+  "title": "Button",
+  "description": "Component used to for user interaction",
+  "type": "object",
+  "properties": {
+    "label": {
+      "type": "string",
+      "title": "Label",
+      "description": "Text content to display inside the button",
+      "default": "Read more"
+    },
+    "target": {
+      "type": "string",
+      "title": "Target",
+      "description": "Target that should be linked, makes the Button behave like a link semantically",
+      "format": "uri"
+    },
+    "size": {
+      "type": "string",
+      "enum": ["small", "medium", "large"],
+      "title": "Size",
+      "description": "Size of button to use",
+      "default": "medium"
+    },
+    "variant": {
+      "type": "string",
+      "enum": ["primary", "secondary", "tertiary"],
+      "title": "Variant",
+      "description": "Variant of button to be used",
+      "default": "secondary"
+    }
+  },
+  "required": ["label"]
+}
+```
+</CH.Code>
+
+---
+
+#### Add `disabled` property
+
+TODO add boolean description
+
+<CH.Code>
+```json src/components/button/button.schema.json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/button.schema.json",
+  "title": "Button",
+  "description": "Component used to for user interaction",
+  "type": "object",
+  "properties": {
+    "label": {
+      "type": "string",
+      "title": "Label",
+      "description": "Text content to display inside the button",
+      "default": "Read more"
+    },
+    "target": {
+      "type": "string",
+      "title": "Target",
+      "description": "Target that should be linked, makes the button behave like a link semantically",
+      "format": "uri"
+    },
+    "size": {
+      "type": "string",
+      "enum": ["small", "medium", "large"],
+      "title": "Size",
+      "description": "Size of button to use",
+      "default": "medium"
+    },
+    "variant": {
+      "type": "string",
+      "enum": ["primary", "secondary", "tertiary"],
+      "title": "Variant",
+      "description": "Variant of button to be used",
+      "default": "secondary"
+    },
+    "disabled": {
+      "type": "boolean",
+      "title": "Disabled?",
+      "description": "Whether the button should be disabled",
+      "default": false
+    }
+  },
+  "required": ["label"]
+}
+
+```
+</CH.Code>
+
+</CH.Scrollycoding>
 
 ### Template
 
@@ -35,4 +402,12 @@ TODO describe workflow this stands for (adapt vs adopt)
 
 ## Technical debt
 
+## Advanced `allOf` / `$ref` variant of JSON Schema
+
 ## Open TODOs
+
+```
+
+```
+
+```

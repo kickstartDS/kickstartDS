@@ -6,8 +6,6 @@ sidebar_label: Create Interstitial component
 import Admonition from 'react-admonitions';
 
 import { Storytelling } from '@kickstartds/content/lib/storytelling';
-// TODO check why TextMedia doesn't work here, errors with:
-// `Module not found: Error: Package path ./dist/photoswipe-ui-default is not exported from package /home/julrich/Projects/Frontend/code/kickstartDS/node_modules/photoswipe`
 import { TextMedia } from '@kickstartds/base/lib/text-media';
 import { StorytellingProvider } from '@kickstartds/design-system/dist/components/storytelling/StorytellingComponent';
 
@@ -68,10 +66,6 @@ Adding a static background image to the component could be nice touch!
 
 Finally being able to add a `link` with a link target (`link.target`) and and link text (`link.text`) will be needed, but they should be optional."
 />
-
-TODO: solve this with `TextMedia` component, which currently doesn't work. Should include zoomable image, and caption!
-
-<div style={{ clear: 'both' }}></div>
 
 ### Structure
 
@@ -159,7 +153,7 @@ This only gives us a rough sketch, though. We still need to adjust the example c
 </CH.Preview>
 
 ```jsx src/App.jsx focus=1,5:42
-import { Storytelling } from '@kickstartds/content';
+import { Storytelling } from '@kickstartds/content/lib/storytelling';
 
 export default function App() {
   return (
@@ -384,7 +378,7 @@ With our small API in place, and this rough sketch for the markup in mind, we ca
 
 ## 3. Component Creation
 
-We like to colocate components. This means to have all its files next to each other in the same folder; the template (`.jsx` / `.tsx`), potential CSS / SASS (`.css` / `.scss`), JavaScript (`.js` / `.ts`), our JSON Schema component definition (`.schema.json`), and so on.
+We like to colocate components. This means to have all involved files next to each other in the same folder; the template (`.jsx` / `.tsx`), potential CSS / SASS (`.css` / `.scss`), JavaScript (`.js` / `.ts`), our JSON Schema component definition (`.schema.json`), and so on.
 
 So we start by creating the directory `src/components/interstitial`, from our Design System repository root:
 
@@ -405,7 +399,7 @@ This includes all necessarily required values for a valid component definition i
 
 To learn more about our use of `JSON Schema`, read our Concepts (TODO create + link) article.
 
-<CH.Code rows={60}>
+<CH.Code>
 ```json src/components/interstitial/interstitial.schema.json
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
@@ -424,7 +418,7 @@ To learn more about our use of `JSON Schema`, read our Concepts (TODO create + l
 
 We start by adding a `title`, `description` and `$id` attribute. The correct `$id` depends on your Design System configuration. We'll assume you've created components before, living under the schema prefix `http://schema.mydesignsystem.com`.
 
-<CH.Code rows={60}>
+<CH.Code>
 ```json src/components/interstitial/interstitial.schema.json focus=3:5
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
@@ -444,7 +438,7 @@ We start by adding a `title`, `description` and `$id` attribute. The correct `$i
 Both fields are straight-forward `string` type properties, so we just document them a bit!<br/>
 We do mark them by setting `format` to `markdown`, though, which enables light RTE functionality in its rendering later on.
 
-<CH.Code rows={60}>
+<CH.Code>
 ```json src/components/interstitial/interstitial.schema.json focus=8:21
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
@@ -478,7 +472,7 @@ We do mark them by setting `format` to `markdown`, though, which enables light R
 
 We declare both properties as required!
 
-<CH.Code rows={60}>
+<CH.Code>
 ```json src/components/interstitial/interstitial.schema.json focus=23
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
@@ -513,7 +507,7 @@ We declare both properties as required!
 
 This will hold our properties `target` and `text`. We add them to their own object to indicate that they're used to be together, thus hinting at their combined usage.
 
-<CH.Code rows={60}>
+<CH.Code>
 ```json src/components/interstitial/interstitial.schema.json focus=22:27
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
@@ -554,7 +548,7 @@ This will hold our properties `target` and `text`. We add them to their own obje
 
 Finalizing our `JSON Schema`, we add the two last `link` sub properties `target` and `link`, both again simple `string` types.
 
-<CH.Code rows={60}>
+<CH.Code>
 ```json src/components/interstitial/interstitial.schema.json focus=27:37
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
