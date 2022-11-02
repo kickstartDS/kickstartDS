@@ -812,19 +812,19 @@ To increase the selector accuracy, its recommended to wrap them into a `:root` s
 :root,
 [ks-inverted],
 [ks-theme] {
-  .l-section__container {
+  .l-section {
     //Adjust background styles
-    --l-section--background: var(--ks-background-fg-alpha-1);
+    --l-section--background-default: var(--ks-background-fg-alpha-1);
     --l-section--background-accent: var(--ks-background-primary-to-bg-8);
     --l-section--background-dark: var(--ks-background-primary-to-bg-2);
 
     //Adjust vertical spacing
-    --l-section--space: var(--ks-spacing-xl);
+    --l-section--space-default: var(--ks-spacing-xl);
     --l-section--space-small: var(--ks-spacing-m);
 
     //Adjust gutter spacing
-    --l-section--gutter: var(--ks-spacing-m);
     --l-section--gutter-small: var(--ks-spacing-s);
+    --l-section--gutter-default: var(--ks-spacing-m);
     --l-section--gutter-large: var(--ks-spacing-l);
 
     //Adjust frame widths

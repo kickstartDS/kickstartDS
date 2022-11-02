@@ -80,7 +80,6 @@ $vars: meta.module-variables(visual-vars);
 
   .c-headline {
     --c-headline--color: var(--c-visual_headline--color, inherit);
-    margin: 0;
     max-width: none;
 
     &__subheadline {

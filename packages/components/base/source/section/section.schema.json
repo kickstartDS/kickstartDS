@@ -76,7 +76,7 @@
     },
     "background": {
       "type": "string",
-      "enum": ["default", "accent"],
+      "enum": ["default", "accent", "bold"],
       "default": "default"
     },
     "inverted": {

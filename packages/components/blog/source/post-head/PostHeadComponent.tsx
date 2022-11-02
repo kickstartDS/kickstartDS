@@ -50,7 +50,7 @@ export const PostHeadComponent: ForwardRefRenderFunction<
       )}
     </div>
 
-    <Headline {...headline} />
+    <Headline level="h1" spaceAfter="small" {...headline} />
 
     {image && (
       <div

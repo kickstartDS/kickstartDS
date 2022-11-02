@@ -9,28 +9,25 @@ export { PostShareBarProps };
 export const PostShareBarComponent: ForwardRefRenderFunction<
   HTMLDivElement,
   PostShareBarProps & HTMLAttributes<HTMLDivElement>
-> = ({ headline = {}, links, className, component, ...props }, ref) => {
-  const { align = 'left', ...headlineProps } = headline;
-  return (
-    <div
-      className={classNames('c-post-share-bar', className)}
-      ks-component={component}
-      ref={ref}
-      {...props}
-    >
-      {headline.content && <Headline {...headlineProps} align={align} />}
-      {links &&
-        links.length &&
-        links.map(({ icon, newTab, ...linkProps }, i) => (
-          <Link
-            className="c-post-share-bar__link"
-            {...(newTab ? { target: '_blank', rel: 'noopener' } : {})}
-            {...linkProps}
-            key={i}
-          >
-            <Icon icon={icon} />
-          </Link>
-        ))}
-    </div>
-  );
-};
+> = ({ headline, links, className, component, ...props }, ref) => (
+  <div
+    className={classNames('c-post-share-bar', className)}
+    ks-component={component}
+    ref={ref}
+    {...props}
+  >
+    {headline?.content && <Headline spaceAfter="small" {...headline} />}
+    {links &&
+      links.length &&
+      links.map(({ icon, newTab, ...linkProps }, i) => (
+        <Link
+          className="c-post-share-bar__link"
+          {...(newTab ? { target: '_blank', rel: 'noopener' } : {})}
+          {...linkProps}
+          key={i}
+        >
+          <Icon icon={icon} />
+        </Link>
+      ))}
+  </div>
+);
