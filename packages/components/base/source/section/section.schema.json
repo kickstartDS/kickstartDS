@@ -6,21 +6,29 @@
   "properties": {
     "width": {
       "type": "string",
+      "title": "Width",
+      "description": "Width of section to use",
       "enum": ["full", "max", "wide", "default", "narrow"],
       "default": "default"
     },
     "gutter": {
       "type": "string",
+      "title": "Gutter",
+      "description": "Size of gutter to use",
       "enum": ["large", "default", "small", "none"],
       "default": "default"
     },
     "mode": {
       "type": "string",
+      "title": "Mode",
+      "description": "Layout mode used for section contents",
       "enum": ["default", "tile", "list"],
       "default": "default"
     },
     "content": {
       "type": "array",
+      "title": "Content",
+      "description": "Allowed content for the section",
       "items": {
         "anyOf": [
           {
@@ -76,20 +84,28 @@
     },
     "background": {
       "type": "string",
+      "title": "Background",
+      "description": "Type of background",
       "enum": ["default", "accent", "bold"],
       "default": "default"
     },
     "inverted": {
       "type": "boolean",
-      "title": "Inverted"
+      "title": "Inverted",
+      "description": "Whether to invert the section",
+      "default": false
     },
     "spaceBefore": {
       "type": "string",
+      "title": "Space Before",
+      "description": "Amount of spacing before the section",
       "enum": ["default", "small", "none"],
       "default": "default"
     },
     "spaceAfter": {
       "type": "string",
+      "title": "Space After",
+      "description": "Amount of spacing after the section",
       "enum": ["default", "small", "none"],
       "default": "default"
     },
@@ -119,9 +135,9 @@
       "description": "Add additional css classes that should be applied to the section"
     },
     "component": {
+      "type": "string",
       "title": "`ks-component` attribute",
-      "description": "Optional custom component identifier",
-      "type": "string"
+      "description": "Optional custom component identifier"
     }
   }
 }

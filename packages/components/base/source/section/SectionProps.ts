@@ -6,6 +6,18 @@
  */
 
 /**
+ * Width of section to use
+ */
+export type Width = 'full' | 'max' | 'wide' | 'default' | 'narrow';
+/**
+ * Size of gutter to use
+ */
+export type Gutter = 'large' | 'default' | 'small' | 'none';
+/**
+ * Layout mode used for section contents
+ */
+export type Mode = 'default' | 'tile' | 'list';
+/**
  * Select an image to display inside the quote, to the left
  */
 export type ImageSource = string;
@@ -563,7 +575,7 @@ export type AltText2 = string;
 /**
  * Width of the picture
  */
-export type Width = number;
+export type Width1 = number;
 /**
  * Height of the picture
  */
@@ -1094,7 +1106,7 @@ export type VideoTitle = string;
 /**
  * Width of the video
  */
-export type Width1 = number;
+export type Width2 = number;
 /**
  * Height of the video
  */
@@ -1122,7 +1134,7 @@ export type AltText3 = string;
 /**
  * Width of the picture
  */
-export type Width2 = number;
+export type Width3 = number;
 /**
  * Height of the picture
  */
@@ -1190,7 +1202,7 @@ export type FullWidthMedia1 = boolean;
 export type Caption1 = string;
 export type ThumbnailSource = string;
 export type LightboxImageSource = string;
-export type Width3 = number;
+export type Width4 = number;
 export type Height5 = number;
 export type HoverZoomIcon = boolean;
 export type Caption2 = string;
@@ -1338,7 +1350,7 @@ export type AltText4 = string;
 /**
  * Width of the picture
  */
-export type Width4 = number;
+export type Width5 = number;
 /**
  * Height of the picture
  */
@@ -1493,7 +1505,43 @@ export type Class11 = string;
  * Optional custom component identifier
  */
 export type KsComponentAttribute48 = string;
+/**
+ * Allowed content for the section
+ */
+export type Content = (
+  | QuotesSlider
+  | Button
+  | TagLabel
+  | Visual
+  | Quote1
+  | VisualSlider
+  | Contact
+  | Storytelling
+  | CollapsibleBox
+  | CountUp
+  | ContentBox
+  | Headline3
+  | TextMedia
+  | TeaserBox
+  | LogoTiles
+  | TeaserRow
+)[];
+/**
+ * Type of background
+ */
+export type Background = 'default' | 'accent' | 'bold';
+/**
+ * Whether to invert the section
+ */
 export type Inverted13 = boolean;
+/**
+ * Amount of spacing before the section
+ */
+export type SpaceBefore = 'default' | 'small' | 'none';
+/**
+ * Amount of spacing after the section
+ */
+export type SpaceAfter = 'default' | 'small' | 'none';
 /**
  * Choose an alignment for the headline
  */
@@ -1536,31 +1584,14 @@ export type AdditionalClass18 = string;
 export type KsComponentAttribute50 = string;
 
 export interface SectionProps {
-  width?: 'full' | 'max' | 'wide' | 'default' | 'narrow';
-  gutter?: 'large' | 'default' | 'small' | 'none';
-  mode?: 'default' | 'tile' | 'list';
-  content?: (
-    | QuotesSlider
-    | Button
-    | TagLabel
-    | Visual
-    | Quote1
-    | VisualSlider
-    | Contact
-    | Storytelling
-    | CollapsibleBox
-    | CountUp
-    | ContentBox
-    | Headline3
-    | TextMedia
-    | TeaserBox
-    | LogoTiles
-    | TeaserRow
-  )[];
-  background?: 'default' | 'accent' | 'bold';
+  width?: Width;
+  gutter?: Gutter;
+  mode?: Mode;
+  content?: Content;
+  background?: Background;
   inverted?: Inverted13;
-  spaceBefore?: 'default' | 'small' | 'none';
-  spaceAfter?: 'default' | 'small' | 'none';
+  spaceBefore?: SpaceBefore;
+  spaceAfter?: SpaceAfter;
   headline?: Headline4;
   className?: AdditionalClass18;
   component?: KsComponentAttribute50;
@@ -1911,7 +1942,7 @@ export interface Picture {
   src?: Source2;
   srcSet?: PictureSourceset;
   alt?: AltText2;
-  width?: Width;
+  width?: Width1;
   height?: Height2;
   className?: AdditionalClasses8;
   component?: KsComponentAttribute18;
@@ -2195,7 +2226,7 @@ export interface Video {
   src: Source3;
   iframe?: EmbeddedIframe;
   title?: VideoTitle;
-  width: Width1;
+  width: Width2;
   height: Height3;
   [k: string]: unknown;
 }
@@ -2212,7 +2243,7 @@ export interface Picture1 {
   src?: Source4;
   srcSet?: PictureSourceset2;
   alt?: AltText3;
-  width?: Width2;
+  width?: Width3;
   height?: Height4;
   className?: AdditionalClasses15;
   component?: KsComponentAttribute36;
@@ -2237,7 +2268,7 @@ export interface TextMediaLazyImage {
 export interface LightboxImage {
   thumb?: ThumbnailSource;
   image?: LightboxImageSource;
-  width?: Width3;
+  width?: Width4;
   height?: Height5;
   zoomIcon?: HoverZoomIcon;
   caption?: Caption2;
@@ -2321,7 +2352,7 @@ export interface Picture2 {
   src?: Source5;
   srcSet?: PictureSourceset4;
   alt?: AltText4;
-  width?: Width4;
+  width?: Width5;
   height?: Height6;
   className?: AdditionalClasses17;
   component?: KsComponentAttribute43;
