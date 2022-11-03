@@ -2,7 +2,7 @@
   &-preview {
     width: 1.75rem;
     height: 1.75rem;
-    border-radius: 6px;
+    border-radius: var(--ks-border-radius-control);
     border-color: var(--ks-border-color-primary);
     border-style: solid;
   }

@@ -4,11 +4,12 @@
     --c-teaser--color: var(--ks-text-color-default) !important;
   }
 
-  a {
+  a:not(.c-button) {
     color: var(--ks-color-link) !important;
   }
 
   --g-topic--color: var(--ks-text-color-default) !important;
+
   --ks-background-color-accent: var(
     --ks-background-color-accent-base
   ) !important;

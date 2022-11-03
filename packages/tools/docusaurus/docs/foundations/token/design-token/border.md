@@ -6,10 +6,10 @@ sidebar_position: 4
 
 ## Width
 
-|                                                                      | Token                          | Description                                       |
-| -------------------------------------------------------------------- | ------------------------------ | ------------------------------------------------- |
-| <div className="border-width-preview border-width-default"></div>    | `--ks-border-width-default`    | The default width for elements featuring a border |
-| <div className="border-width-preview border-width-emphasized"></div> | `--ks-border-width-emphasized` | For highlighting important elements               |
+|                                                                       | Token                          | Description                                       |
+| --------------------------------------------------------------------- | ------------------------------ | ------------------------------------------------- |
+| <div  className="border-width-preview border-width-default"></div>    | `--ks-border-width-default`    | The default width for elements featuring a border |
+| <div  className="border-width-preview border-width-emphasized"></div> | `--ks-border-width-emphasized` | For highlighting important elements               |
 
 <CH.Section>
 <CH.Code>
