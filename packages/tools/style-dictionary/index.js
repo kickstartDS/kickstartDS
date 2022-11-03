@@ -2,7 +2,7 @@ const { writeFile } = require('fs/promises');
 const path = require('path');
 const Ajv = require('ajv');
 const merge = require('lodash/merge');
-const defaultPrimitives = require('./defaultPrimitives.json');
+const fallbackBrandingToken = require('./branding-token.json');
 const primitivesSchema = require('./primitives.schema.json');
 const config = require('./config');
 
@@ -49,12 +49,12 @@ const templates = [
 const ajv = new Ajv();
 const validate = ajv.compile(primitivesSchema);
 
-const createTokens = (primitives) => {
-  const mergedPrimitives = merge(defaultPrimitives, primitives);
-  const valid = validate(mergedPrimitives);
+const createTokens = (brandingToken) => {
+  const mergedBrandingToken = merge(fallbackBrandingToken, brandingToken);
+  const valid = validate(mergedBrandingToken);
   if (!valid) throw validate.errors;
   return templates.map(([name, template, schema]) => {
-    const tokens = template(mergedPrimitives);
+    const tokens = template(mergedBrandingToken);
 
     const ajvTokens = new Ajv();
     const validateTokens = ajvTokens.compile(schema);
