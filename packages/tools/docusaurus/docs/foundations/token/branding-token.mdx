@@ -1,0 +1,123 @@
+---
+sidebar_position: 3
+---
+
+# Branding Token
+
+When selecting branding token to create your initial Design Token set, you apply basic corporate design elements to the Design System.
+
+## Color Palette
+
+```json title="token-primitives.json"
+  "color": {
+    "primary": "#05566a",
+    "primary-inverted": "#ecff00",
+    "background": "#fff",
+    "foreground": "#050505",
+    "link": "#5D5DD5",
+    "link-inverted": "#C6C6FF"
+  },
+```
+
+|                                                                        | Token        | Description                                                                      |
+| ---------------------------------------------------------------------- | ------------ | -------------------------------------------------------------------------------- |
+| <div ks-theme="preview" className="color-preview color-primary"></div> | `primary`    | Important/interactive elements<br/>The most prevalent color of the design system |
+| <div ks-theme="preview" className="color-preview color-bg"></div>      | `background` | Default background-color                                                         |
+| <div ks-theme="preview" className="color-preview color-fg"></div>      | `foreground` | Default text-color<br/>Upon inversion, foreground and background will be swapped |
+| <div ks-theme="preview" className="color-preview color-link"></div>    | `link`       | Signals text-links                                                               |
+
+## Spacing Scales
+
+```json title="token-primitives.json"
+  "spacing": {
+    "base": 8,
+    "scale-ratio": 1.35,
+    "bp-ratio": 1.15
+  },
+```
+
+| Token         | Description                                                                                                                                                                                          |
+| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `base`        | The base spacing pixel value<br/>It will represent the `spacing-m` value on the spacing scale<br/>This value will be applied directly on mobile devices, on further breakpoints it will be scaled up |
+| `scale-ratio` | Set the value the m spacing value will be scaled by, down to `xxs` and up to `xxl`                                                                                                                   |
+| `bp-factor`   | A single value by which the base spacing will be multiplied on each breakpoint                                                                                                                       |
+
+## Fonts
+
+```json title="token-primitives.json"
+"font": {
+    "display": {
+      "family": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+      "font-size": 18,
+      "line-height": 1.5,
+      "scale-ratio": 1.225,
+      "bp-factor": {
+        "phone": 1.167,
+        "tablet": 1.333
+      }
+    },
+    "copy": {
+      "family": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+      "font-size": 16,
+      "line-height": 1.5,
+      "scale-ratio": 1.225,
+      "bp-factor": {
+        "tablet": 1.125
+      }
+    },
+    "ui": {
+      "family": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+      "font-size": 16,
+      "line-height": 1.5,
+      "scale-ratio": 1.225,
+      "bp-factor": {
+        "tablet": 1.125
+      }
+    },
+    "mono": {
+      "family": "ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace",
+      "font-size": 16,
+      "line-height": 1.75,
+      "scale-ratio": 1.225,
+      "bp-factor": {
+        "tablet": 1.125
+      }
+    }
+  },
+```
+
+| Token         | Preview                                                                                                                                                                                                     |
+| ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `display`     | `font-family` for headlines                                                                                                                                                                                 |
+| `copy`        | `font-family` for copy text                                                                                                                                                                                 |
+| `ui`          | `font-family` for user interface                                                                                                                                                                            |
+| `mono`        | `font-family` for code display                                                                                                                                                                              |
+| `font-size`   | The base font size pixel value<br/>It will represent the `font-size-*-m` value on the font-size scale<br/>This value will be applied directly on mobile screens, on larger breakpoints it will be scaled up |
+| `line-height` | The base line-height factor<br/>The factor is multiplied with the font-size                                                                                                                                 |
+| `bp-factor`   | The value by which the base font size will be multiplied, when on a certain breakpoint                                                                                                                      |
+
+## Font Weights
+
+```json title="token-primitives.json"
+  "font-weight": {
+    "light": 300,
+    "regular": 400,
+    "semi-bold": 600,
+    "bold": 700
+  },
+```
+
+Add font-weights and the corresponding values to your design system.
+
+## Breakpoints
+
+```json title="token-primitives.json"
+  "breakpoints": {
+    "phone": 576,
+    "tablet": 768,
+    "laptop": 992,
+    "desktop": 1200
+  }
+```
+
+Set the screen sizes from which on the according breakpoint will be applied.

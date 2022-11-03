@@ -1,7 +1,12 @@
 .color-preview {
   width: 1.75rem;
   height: 1.75rem;
-  border-radius: 6px;
+  border: 1px solid var(--ks-color-fg);
+  border-radius: var(--ks-border-radius-control);
+
+  [data-theme='dark'] & {
+    border-color: var(--ks-color-fg-inverted);
+  }
 }
 
 .color-link {
@@ -10,7 +15,6 @@
 
 .color-transparent {
   background-color: var(--ks-color-transparent);
-  border: 1px solid var(--ks-border-color-interface-interactive);
 }
 
 .color-primary {
@@ -80,6 +84,10 @@
   background-color: var(--ks-color-fg);
 }
 
+.color-bg {
+  background-color: var(--ks-color-fg-inverted);
+}
+
 .background {
   &-primary {
     background-color: var(--ks-background-color-primary);
@@ -107,17 +115,14 @@
 
   &-default {
     background-color: var(--ks-color-default);
-    border: 1px solid var(--ks-border-color-interface-interactive);
   }
 
   &-translucent {
     background-color: var(--ks-background-color-primary-translucent);
-    border: 1px solid var(--ks-border-color-interface-interactive);
   }
 
   &-clear {
     background-color: var(--ks-background-color-clear);
-    border: 1px solid var(--ks-border-color-interface-interactive);
   }
 }
 

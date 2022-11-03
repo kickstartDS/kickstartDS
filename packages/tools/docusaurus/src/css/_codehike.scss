@@ -1,6 +1,6 @@
 :root {
   --ch-code-background: #023542;
-  --ch-code-title-bar-background: #012a34;
+  --ch-code-title-bar-background: #044e61;
 
   // Step
   --ch-step-background: transparent;
@@ -16,10 +16,21 @@
   --ch-active-indicator-background: var(--ks-color-primary);
 
   --ch-step-gap: var(--ks-spacing-stack-xs);
+  --ch-browser-fg-color: var(--ks-text-color-interface-inverted);
+
+  &[data-theme='dark'] {
+    --ch-browser-fg-color: var(--ks-text-color-primary-inverted);
+    --ch-code-title-bar-background: var(--ks-color-primary-to-bg-7-base);
+    --ch-code-background: #012a34;
+
+    --ch-step-border-color-active: var(--ks-border-color-fg);
+    --ch-step-background-active: var(--ks-color-fg-alpha-1);
+  }
 }
 
 .ch-frame-zoom {
   --ch-frame-zoom: 0.5 !important;
+  color-scheme: light;
 }
 
 .ch-code {
@@ -128,6 +139,12 @@
   }
 }
 
+.ch-browser {
+  &-button {
+    color: var(--ch-browser-fg-color) !important;
+  }
+}
+
 .ch-editor {
   position: relative;
 
@@ -137,13 +154,19 @@
 
   &-tab {
     border-bottom-color: transparent !important;
+    color: var(--ch-browser-fg-color) !important;
 
     &-inactive {
       background-color: transparent !important;
     }
 
     &-active {
-      background: rgba(255, 255, 255, 0.15) !important;
+      background: var(--ks-color-fg-inverted-alpha-2) !important;
+
+      [data-theme='dark'] & {
+        background: var(--ks-color-fg) !important;
+        // background: var(--ks-color-fg-inverted-base) !important;
+      }
     }
   }
 }
@@ -151,7 +174,6 @@
 .ch-mini-browser {
   .ch-frame-title-bar {
     input {
-      background-color: var(--ks-color-fg-inverted-alpha-4-base) !important;
       border: none !important;
       height: 1.2em;
     }
@@ -160,7 +182,16 @@
 
 .ch-frame {
   &-title-bar {
+    color: var(--ch-browser-fg-color) !important;
     background: var(--ch-code-title-bar-background) !important;
+
+    input {
+      background: var(--ks-color-fg-inverted-alpha-4) !important;
+
+      [data-theme='dark'] & {
+        background: var(--ks-color-primary-inverted-alpha-4) !important;
+      }
+    }
   }
 
   &-zoom .c-storytelling {
@@ -212,11 +243,12 @@
 
     &__text {
       padding-right: var(--ks-spacing-xxs);
+      font-weight: var(--ks-font-weight-semi-bold);
     }
 
     &-wrapper {
+      color: var(--ch-browser-fg-color);
       padding: var(--toggle-spacing-v) var(--ks-spacing-xs);
-      color: var(--ks-text-color-interface-inverted-base);
     }
   }
 
