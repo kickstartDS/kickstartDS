@@ -30,8 +30,8 @@ Let's have a look at our `package.json`, after having added **Storybook**:
   "description": "Design System for all @MY needs",
   "main": "dist/index.js",
   "scripts": {
-    "init-tokens": "kickstartDS tokens init --token-path './src/token/dictionary' --cleanup --rc-only",
-    "build-tokens": "kickstartDS tokens compile --token-path './src/token/dictionary' --cleanup --rc-only",
+    "init-tokens": "kickstartDS tokens init",
+    "build-tokens": "kickstartDS tokens compile",
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
@@ -77,8 +77,8 @@ It also includes **Storybook**s Essential addon, adding recommended addons by de
   "description": "Design System for all @MY needs",
   "main": "dist/index.js",
   "scripts": {
-    "init-tokens": "kickstartDS tokens init --token-path './src/token/dictionary' --cleanup --rc-only",
-    "build-tokens": "kickstartDS tokens compile --token-path './src/token/dictionary' --cleanup --rc-only",
+    "init-tokens": "kickstartDS tokens init",
+    "build-tokens": "kickstartDS tokens compile",
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
@@ -125,8 +125,8 @@ Next to the dependencies, two `scripts` entries were added by the **Storybook** 
   "description": "Design System for all @MY needs",
   "main": "dist/index.js",
   "scripts": {
-    "init-tokens": "kickstartDS tokens init --token-path './src/token/dictionary' --cleanup --rc-only",
-    "build-tokens": "kickstartDS tokens compile --token-path './src/token/dictionary' --cleanup --rc-only",
+    "init-tokens": "kickstartDS tokens init",
+    "build-tokens": "kickstartDS tokens compile",
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
@@ -509,7 +509,7 @@ You'll notice it now writes two additional files for you, specifically for the *
 <CH.Code>
 ```shellscript focus=37:39
 yarn run v1.22.18
-$ kickstartDS tokens compile --cleanup --rc-only
+$ kickstartDS tokens compile
   _    _      _        _             _   ____  ____
  | | _(_) ___| | _____| |_ __ _ _ __| |_|  _ \/ ___|
  | |/ / |/ __| |/ / __| __/ _` | '__| __| | | \___ \
@@ -563,7 +563,7 @@ Those are all of our **Design Token** converted to [CSS custom properties](https
 <CH.Code>
 ```shellscript focus=38
 yarn run v1.22.18
-$ kickstartDS tokens compile --cleanup --rc-only
+$ kickstartDS tokens compile
   _    _      _        _             _   ____  ____
  | | _(_) ___| | _____| |_ __ _ _ __| |_|  _ \/ ___|
  | |/ / |/ __| |/ / __| __/ _` | '__| __| | | \___ \
@@ -618,7 +618,7 @@ The file gets picked up by the addon automatically, we don't need to add any add
 <CH.Code>
 ```shellscript focus=39
 yarn run v1.22.18
-$ kickstartDS tokens compile --cleanup --rc-only
+$ kickstartDS tokens compile
   _    _      _        _             _   ____  ____
  | | _(_) ___| | _____| |_ __ _ _ __| |_|  _ \/ ___|
  | |/ / |/ __| |/ / __| __/ _` | '__| __| | | \___ \
@@ -716,8 +716,8 @@ A single entry in `devDependencies` should've been added.
   "description": "Design System for all @MY needs",
   "main": "dist/index.js",
   "scripts": {
-    "init-tokens": "kickstartDS tokens init --token-path './src/token/dictionary' --cleanup --rc-only",
-    "build-tokens": "kickstartDS tokens compile --token-path './src/token/dictionary' --cleanup --rc-only",
+    "init-tokens": "kickstartDS tokens init",
+    "build-tokens": "kickstartDS tokens compile",
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
@@ -767,8 +767,8 @@ To keep some order in our `scripts` entries, we re-order them to be sorted alpha
   "main": "dist/index.js",
   "scripts": {
     "build-storybook": "build-storybook",
-    "build-tokens": "kickstartDS tokens compile --token-path './src/token/dictionary' --cleanup --rc-only",
-    "init-tokens": "kickstartDS tokens init --token-path './src/token/dictionary' --cleanup --rc-only",
+    "build-tokens": "kickstartDS tokens compile",
+    "init-tokens": "kickstartDS tokens init",
     "storybook": "start-storybook -p 6006",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -813,8 +813,8 @@ We add a script entry called `sass-manager`, which when called will compile our 
   "main": "dist/index.js",
   "scripts": {
     "build-storybook": "build-storybook",
-    "build-tokens": "kickstartDS tokens compile --token-path './src/token/dictionary' --cleanup --rc-only",
-    "init-tokens": "kickstartDS tokens init --token-path './src/token/dictionary' --cleanup --rc-only",
+    "build-tokens": "kickstartDS tokens compile",
+    "init-tokens": "kickstartDS tokens init",
     "sass-manager": "sass --load-path=node_modules .storybook/manager.scss static/manager.css",
     "storybook": "start-storybook -p 6006",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -860,8 +860,8 @@ And while we're at it, we'll also add a watch task that can be used in developme
   "main": "dist/index.js",
   "scripts": {
     "build-storybook": "build-storybook",
-    "build-tokens": "kickstartDS tokens compile --token-path './src/token/dictionary' --cleanup --rc-only",
-    "init-tokens": "kickstartDS tokens init --token-path './src/token/dictionary' --cleanup --rc-only",
+    "build-tokens": "kickstartDS tokens compile",
+    "init-tokens": "kickstartDS tokens init",
     "sass-manager": "sass --load-path=node_modules .storybook/manager.scss static/manager.css",
     "storybook": "start-storybook -p 6006",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -1052,7 +1052,7 @@ You'll be greeted by a new file being created at `src/token/storybook/tokens.js`
 
 ```shellscript focus=41:42
 yarn run v1.22.18
-$ kickstartDS tokens compile --token-path './src/token/dictionary' --cleanup --rc-only
+$ kickstartDS tokens compile
   _    _      _        _             _   ____  ____
  | | _(_) ___| | _____| |_ __ _ _ __| |_|  _ \/ ___|
  | |/ / |/ __| |/ / __| __/ _` | '__| __| | | \___ \
@@ -1546,7 +1546,7 @@ yarn build-tokens
 
 ```shellscript focus=37:38
 yarn run v1.22.18
-$ kickstartDS tokens compile --token-path './src/token/dictionary' --cleanup --rc-only
+$ kickstartDS tokens compile
   _    _      _        _             _   ____  ____
  | | _(_) ___| | _____| |_ __ _ _ __| |_|  _ \/ ___|
  | |/ / |/ __| |/ / __| __/ _` | '__| __| | | \___ \
@@ -1779,8 +1779,8 @@ Let us review our `package.json` again now, it's starting to grow already:
   "main": "dist/index.js",
   "scripts": {
     "build-storybook": "build-storybook",
-    "build-tokens": "kickstartDS tokens compile --token-path './src/token/dictionary' --cleanup --rc-only",
-    "init-tokens": "kickstartDS tokens init --token-path './src/token/dictionary' --cleanup --rc-only",
+    "build-tokens": "kickstartDS tokens compile",
+    "init-tokens": "kickstartDS tokens init",
     "sass-manager": "sass --load-path=node_modules .storybook/manager.scss static/manager.css",
     "storybook": "start-storybook -p 6006",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -1831,8 +1831,8 @@ We use [`@whitespace/storybook-addon-html`](https://storybook.js.org/addons/@whi
   "main": "dist/index.js",
   "scripts": {
     "build-storybook": "build-storybook",
-    "build-tokens": "kickstartDS tokens compile --token-path './src/token/dictionary' --cleanup --rc-only",
-    "init-tokens": "kickstartDS tokens init --token-path './src/token/dictionary' --cleanup --rc-only",
+    "build-tokens": "kickstartDS tokens compile",
+    "init-tokens": "kickstartDS tokens init",
     "sass-manager": "sass --load-path=node_modules .storybook/manager.scss static/manager.css",
     "storybook": "start-storybook -p 6006",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -1884,8 +1884,8 @@ For **Design Token** documentation we use [`storybook-design-token`](https://sto
   "main": "dist/index.js",
   "scripts": {
     "build-storybook": "build-storybook",
-    "build-tokens": "kickstartDS tokens compile --token-path './src/token/dictionary' --cleanup --rc-only",
-    "init-tokens": "kickstartDS tokens init --token-path './src/token/dictionary' --cleanup --rc-only",
+    "build-tokens": "kickstartDS tokens compile",
+    "init-tokens": "kickstartDS tokens init",
     "sass-manager": "sass --load-path=node_modules .storybook/manager.scss static/manager.css",
     "storybook": "start-storybook -p 6006",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -1938,8 +1938,8 @@ TODO link integration page
   "main": "dist/index.js",
   "scripts": {
     "build-storybook": "build-storybook",
-    "build-tokens": "kickstartDS tokens compile --token-path './src/token/dictionary' --cleanup --rc-only",
-    "init-tokens": "kickstartDS tokens init --token-path './src/token/dictionary' --cleanup --rc-only",
+    "build-tokens": "kickstartDS tokens compile",
+    "init-tokens": "kickstartDS tokens init",
     "sass-manager": "sass --load-path=node_modules .storybook/manager.scss static/manager.css",
     "storybook": "start-storybook -p 6006",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -1992,8 +1992,8 @@ TODO link integration page
   "main": "dist/index.js",
   "scripts": {
     "build-storybook": "build-storybook",
-    "build-tokens": "kickstartDS tokens compile --token-path './src/token/dictionary' --cleanup --rc-only",
-    "init-tokens": "kickstartDS tokens init --token-path './src/token/dictionary' --cleanup --rc-only",
+    "build-tokens": "kickstartDS tokens compile",
+    "init-tokens": "kickstartDS tokens init",
     "sass-manager": "sass --load-path=node_modules .storybook/manager.scss static/manager.css",
     "storybook": "start-storybook -p 6006",
     "test": "echo \"Error: no test specified\" && exit 1",

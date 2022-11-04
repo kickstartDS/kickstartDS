@@ -753,8 +753,8 @@ Then add the following two additional lines to your `package.json` scripts block
   "description": "Design System for all @MY needs",
   "main": "dist/index.js",
   "scripts": {
-    "init-tokens": "kickstartDS tokens init --token-path './src/token/dictionary' --cleanup --rc-only",
-    "build-tokens": "kickstartDS tokens compile --token-path './src/token/dictionary' --cleanup --rc-only",
+    "init-tokens": "kickstartDS tokens init",
+    "build-tokens": "kickstartDS tokens compile",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jonas Ulrich",
@@ -786,7 +786,7 @@ Your output should look roughly like this:
 
 ```shellscript
 yarn run v1.22.18
-$ kickstartDS tokens init --token-path './src/token/dictionary' --cleanup --rc-only
+$ kickstartDS tokens init
   _    _      _        _             _   ____  ____
  | | _(_) ___| | _____| |_ __ _ _ __| |_|  _ \/ ___|
  | |/ / |/ __| |/ / __| __/ _` | '__| __| | | \___ \
@@ -1056,7 +1056,7 @@ If everything worked as expected, you should end up with a long `src/token/token
 
 ```shellscript
 yarn run v1.22.18
-$ kickstartDS tokens init --token-path './src/token/dictionary' --cleanup --rc-only
+$ kickstartDS tokens init
   _    _      _        _             _   ____  ____
  | | _(_) ___| | _____| |_ __ _ _ __| |_|  _ \/ ___|
  | |/ / |/ __| |/ / __| __/ _` | '__| __| | | \___ \
@@ -3539,8 +3539,8 @@ So for the second step this will leave us with the following files overall:
   "description": "Design System for all @MY needs",
   "main": "dist/index.js",
   "scripts": {
-    "init-tokens": "kickstartDS tokens init --token-path './src/token/dictionary' --cleanup --rc-only",
-    "build-tokens": "kickstartDS tokens compile --token-path './src/token/dictionary' --cleanup --rc-only",
+    "init-tokens": "kickstartDS tokens init",
+    "build-tokens": "kickstartDS tokens compile",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jonas Ulrich",
