@@ -165,7 +165,6 @@
 
       [data-theme='dark'] & {
         background: var(--ks-color-fg) !important;
-        // background: var(--ks-color-fg-inverted-base) !important;
       }
     }
   }
@@ -214,9 +213,20 @@
   box-shadow: none;
 }
 
-.component-preview {
+.layout-preview {
   .ch-frame-content {
     height: 500px;
+    flex-basis: auto;
+  }
+}
+
+.component-preview {
+  .ch-frame-zoom {
+    --ch-frame-zoom: 1 !important;
+  }
+
+  .ch-frame-content {
+    height: min-content;
     flex-basis: auto;
   }
 }
