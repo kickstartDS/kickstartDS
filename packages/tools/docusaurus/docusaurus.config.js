@@ -111,6 +111,12 @@ const config = {
           },
           {
             type: 'doc',
+            docId: 'FAQ',
+            position: 'right',
+            label: 'FAQ',
+          },
+          {
+            type: 'doc',
             docId: 'roadmap/index',
             position: 'right',
             label: 'Roadmap',

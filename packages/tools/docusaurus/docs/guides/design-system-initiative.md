@@ -1,3 +1,7 @@
+---
+sidebar_position: 8
+---
+
 # Design System Initiative
 
 A **Design System Initiative** is the process an organization undertakes when considering to initialize a Design System. This generally occurs in a couple of steps where usually different kinds of workshops are run. It starts way before the pure design and development process itself by impacting many disciplines and stakeholders within the organization.

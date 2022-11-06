@@ -1,14 +1,19 @@
 ---
 sidebar_position: 1
-sidebar_label: Adopt Button component
+sidebar_label: Adapt Button component
 ---
 
 import { Button } from '@kickstartds/base/lib/button';
 import { ButtonProvider } from '@kickstartds/design-system/dist/components/button/ButtonComponent';
+import { TextMedia } from '@kickstartds/base/lib/text-media';
 
-# Adopt `Button` component
+# Adapt `Button` component
 
-TODO describe workflow this stands for (adapt vs adopt)
+This guide shows how you'd typically add components to your Design System that are directly based on components part of **kickstartDS**. This mostly includes components that are needed in every Design System, and that typically also get added with the same name (like our `Button` here).
+
+Even while directly pulling the component, including its name, from **kickstartDS**, you'll want to find the correct set of properties for your own use cases. Components in **kickstartDS** come equipped with properties for a wide range of possible use cases, so it makes sense to reduce those to the ones you really need... to make components easier to understand, use and reason about!
+
+We call this type of workflow **Adaptation**. Learn more about it in [our dedicated guide](../../components/adapt.mdx) about it.
 
 ## Overview
 
@@ -35,9 +40,32 @@ If that's not the case, follow our guide [Create your Design System](../../creat
 
 ### Purpose
 
-TODO add reasoning for including selected props, use `TextMedia` and image of example buttons
+<TextMedia
+  ks-theme="docs"
+  media={[
+    {
+      lightboxImage: {
+        image: require('./assets/button-usage.png').default,
+        thumb: require('./assets/button-usage.png').default,
+        width: 1904,
+        height: 903,
+        zoomIcon: true,
+        gallery: 'button-use',
+      },
+      caption: "Examples of button component variants"
+    }
+  ]}
+  mediaAlignment="intext-right"
+  text="There are some straight foward things we'd want to do with a button in our Design System. Most obvious ones would probably be putting a `label` on it, and making the `target` of it available for users. If the `target` is set, the resulting button should look like one, but use the `a` tag semantically. It should just be a styled, but native, `<button>` otherwise.
+
+Additionally we'll want to be able to influence the `size` of a button, and be able to choose from a limited set of `variant`s. We'll use the options offered by **kickstartDS** 1:1 for the `size` property (`small`, `medium`, `large`). But for `variant` we opt to define our own naming, further removing how a button looks from the naming scheme (like `outline`, `clear`, etc) and going for straight priority with `primary`, `secondary` and `tertiary`.
+
+Finally, being able to mark a button as `disabled` should be possible!"
+/>
 
 ### Structure
+
+Defining the structure of a component means finding the [component API](../../../foundations/components/component-api.md) for it:
 
 | Property   | Description                                    |
 | ---------- | ---------------------------------------------- |
@@ -59,7 +87,7 @@ mkdir src/components/button
 
 This is the folder we'll add new files to in the coming few paragraphs.
 
-### JSON Schema
+### **JSON Schema** definition
 
 First file we'll create is the `JSON Schema` definition, encoding the structure we've defined for our component before:
 
@@ -394,9 +422,9 @@ TODO add boolean description
 
 </CH.Scrollycoding>
 
-### Template
+### **React** Template
 
-## Use of `Storybook`
+## Use of **Storybook**
 
 ## Completed component
 

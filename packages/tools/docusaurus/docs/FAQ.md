@@ -2,6 +2,8 @@
 
 ## [React](https://reactjs.org/)
 
+TODO revise this, possibly integrate with Zendesk
+
 ### How can I debug components re-rendering too often / in an infinite loop?
 
 When being confronted with a case of components re-rendering way too often (compared to your expectation, and the necessity to do so), or even re-rendering in an infinite loop, you can try adding the following dependency to your setup to debug why specific components were actually re-rendered:

@@ -1,0 +1,62 @@
+---
+sidebar_position: 1
+---
+
+import Admonition from 'react-admonitions';
+import { Quote } from '@kickstartds/content/lib/quote';
+
+# Adapt a component
+
+## Definition
+
+Adapting a component means to use the component "directly". This includes using the same name and purpose for it. The obvious example would be using the `Button` provided by **kickstartDS** for the `Button` as part of your own Design System. It typically doesn't make a lot of sense to find a different name for this component, because the name is fitting and well-known.
+
+<Quote
+  image={require('./assets/Cambridge_University_Crest_-_flat.png').default}
+  byline="Cambridge Dictionary"
+  source="https://dictionary.cambridge.org/dictionary/english/adaptation"
+  text="the process of changing to suit different conditions"
+/>
+
+The word "directly" above is set in quotes, because even though we re-use the component with the same intent, we will still want to reduce the offered options (component properties) to better suit our needs. A simple [component API](../../foundations/components/component-api.md) helps in creating a shared understanding of what a component is, and does.
+
+<Admonition type="tip" title="kickstartDS component properties">
+  Components as delivered by **kickstartDS** modules (like `@kickstartDS/base` for the `Button`) have to support a wide range of use cases, as they get used to build a multitude of different, but custom, `Button` implementations in the end.
+
+This means reducing the set of properties, given by the [component API](../../foundations/components/component-api.md) of a **kickstartDS** component, to your needs is explicitly something that should be done! You still benefit by the broad, underlying foundation giving you flexibility when further adapting your own version of it. For example when adding a variant including an `Icon`, which was not part of your `Button` before.
+
+</Admonition>
+
+For a detailed example of adapting the `Button` component, have a look [at our component example](../examples/components/button.mdx) guide describing just that!
+
+## Adaptation process
+
+TODO describe Adaptation process
+
+### 1. Component Definition
+
+#### Purpose
+
+#### Structure
+
+### 2. Component Creation
+
+#### JSON Schema
+
+#### React Template
+
+## Examples
+
+We continuously expand our [component example guides](../examples/components/index.md), below we've collected the ones acting as a good sample of the adaptation process.
+
+### Adapt `Button` component
+
+In [this example component guide](../examples/components/button.mdx) we adapt the `Button` component (as part of the `@kickstartDS/base` module) to use it for buttons in our own Design System. We drastically reduce the options used, and offered, in our own adaptation. We remove all options that include having an `Icon` displayed as part of the `Button`, for example.
+
+This is what the result looks like:
+
+<iframe
+  src="https://60dc476b80673e003b4258d6-czyzkgbgek.chromatic.com/iframe.html?args=&id=base-button--solid&viewMode=story"
+  width="200"
+  height="80"
+></iframe>
