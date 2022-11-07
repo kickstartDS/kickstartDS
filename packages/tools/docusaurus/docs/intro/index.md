@@ -135,7 +135,7 @@ The template includes all our Token categories (colors, spacings, typography, bo
 
 You can just copy that file and enter your own Design Token (as defined in your Style Dictionary) to have a Figma file to hand around to your designers, enabling them to use the same, semantic structure underlying your real components and interfaces. It also serves as a great illustration of your Design Token.
 
-Learn more about our [token structure](../basics/token/index.md), and how to leverage it for yourself.
+Learn more about our [token structure](../foundations/token/index.md), and how to leverage it for yourself.
 
 We're currently working on an automatic sync option native to **kickstartDS**, which should work in both directions (Figma -> Style Dictionary, Style Dictionary -> Figma) and thus enable true synchronization in shared workflows.
 
