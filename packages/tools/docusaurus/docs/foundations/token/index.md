@@ -14,48 +14,39 @@ import { TeaserBox } from "@kickstartds/base/lib/teaser-box";
 > The single source of truth to name and store a design decision, distributed so teams can use it across design tools and coding languages.  
 > _-W3C Design Token Community Group_
 
-**kickstartDS** differentiates between Design and Component Token. Whereas described above Design Token store values e.g. color, typography, spacing, animation, etc., Component Token represent the properties and values that are contained in a component, e.g. container, label text, icons, and states.
+## Inherit Token Level
+
+**kickstartDS** differentiates between Branding, Design and Component Token. Whereas described above Design Token store values e.g. color, typography, spacing, animation, etc., Branding Token are are very small token subset to setup your corporate design in lightspeed. Component Token represent the properties and values that are contained in a component, e.g. container, label text, icons, and states.
 
 <Section ks-theme="docs" spaceBefore="none" spaceAfter="small" width="full">
   <TeaserBox
     link={{
       size: 'small',
-      href: '/docs/basics/tokens/design-token',
-      label: "Explore Design token",
+      href: '/docs/foundations/token/branding-token',
+      label: "Your brand representated",
       variant: "outline",
     }}
     text="encode your main brand identity, including colors, fonts and typography. "
+    topic="Branding Token"
+  />
+  <TeaserBox
+    link={{
+      size: 'small',
+      href: '/docs/foundations/token/design-token',
+      label: "Explore Design Token",
+      variant: "outline",
+    }}
+    text="are the core pieces and main building blocks of your Design System. "
     topic="Design Token"
   />
   <TeaserBox
     link={{
       size: 'small',
-      href: '/docs/basics/tokens/component-token/',
+      href: '/docs/foundations/token/component-token/',
       label: "Why do I need these?",
       variant: "outline",
     }}
-    text="TODO"
+    text="are here to fulfill even sophisticated design decisions on component-level."
     topic="Component Token"
   />
 </Section>
-
-## Core token
-
-```json title="token-primitives.json"
-  "color": {
-    "primary": "#05566a",
-    "primary-inverted": "#ecff00",
-    "background": "#fff",
-    "foreground": "#050505",
-    "link": "#5D5DD5",
-    "link-inverted": "#C6C6FF"
-  },
-```
-
-## Semantic Token
-
-```json title="token-primitives.json"
-TODO
-```
-
-### Inverted display

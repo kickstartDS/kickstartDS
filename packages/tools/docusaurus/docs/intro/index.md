@@ -8,9 +8,15 @@ import { TeaserBox } from "@kickstartds/base/lib/teaser-box";
 
 # Introduction to kickstartDS
 
-**kickstartDS** is an open source Design System starter and UI toolkit for building up your very own Design System. This in turn enables you, and your team, to build brand-compliant websites and apps super efficiently. All while using core web technologies — HTML, CSS, and JavaScript — and best practices.
+**kickstartDS** is an Open Source Design System starter and UI toolkit for building up your very own Design System. This in turn enables you, and your team, to build brand-compliant websites and apps super efficiently. All while using core web technologies — HTML, CSS, and JavaScript — and best practices.
 
-_TODO_: Add expressive visualization of **what** kickstartDS is
+Please checkout this video clip for a more detailed demonstration and see kickstartDS in action.
+
+<iframe width="50%" height="280" src="https://www.youtube.com/embed/54_xZYjWzWE?start=3685" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Many thanks to [Amplifyn](https://www.amplifyn.com) for allowing us to share their recording.
+
+## Get started
 
 Get started building your own Design System by installing **kickstartDS** into your project, or by following our [Create your first Design System](https://todo) tutorial, to learn about the main concepts involved.
 
@@ -18,7 +24,7 @@ Get started building your own Design System by installing **kickstartDS** into y
   <TeaserBox
     link={{
       size: 'small',
-      href: '/blog/',
+      href: '/docs/intro/environment/',
       label: "Getting started",
       variant: "outline",
     }}
@@ -28,7 +34,7 @@ Get started building your own Design System by installing **kickstartDS** into y
   <TeaserBox
     link={{
       size: 'small',
-      href: '/blog/',
+      href: '/docs/guides/create/',
       label: "Make it yours",
       variant: "outline",
     }}
@@ -39,10 +45,10 @@ Get started building your own Design System by installing **kickstartDS** into y
     link={{
       size: 'small',
       href: '/blog/',
-      label: "Concepts",
+      label: "TODO: Concepts",
       variant: "outline",
     }}
-    text="Take a look behind the scenes, and learn about the conceps and ideas making up **kickstartDS**"
+    text="TODO: Take a look behind the scenes, and learn about the conceps and ideas making up **kickstartDS**"
     topic="How It Works"
   />
 </Section>
