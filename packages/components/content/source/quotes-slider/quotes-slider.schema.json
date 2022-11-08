@@ -8,7 +8,29 @@
       "type": "array",
       "items": {
         "$ref": "http://schema.kickstartds.com/content/quote.schema.json"
-      }
+      },
+      "minumum": 1,
+      "maximum": 4,
+      "examples": [
+        {
+          "image": "https://picsum.photos/seed/kdsquote1/300/300",
+          "text": "Consequuntur est quia atque eum ducimus. Consequatur fugiat hic eos perferendis. Libero unde omnis dolorem maxime occaecati sapiente distinctio. Consectetur non placeat dolorem est animi. Suscipit quos rem suscipit culpa. Et distinctio et veritatis consectetur quae dolorem aut. Explicabo commodi repudiandae fugiat. Accusamus alias mollitia perferendis qui iure magni. Minus est vitae dolor dolor.",
+          "source": "Richard McClintock",
+          "byline": "CEO"
+        },
+        {
+          "image": "https://picsum.photos/seed/kdsquote2/300/300",
+          "text": "Consequuntur est quia atque eum ducimus. Consequatur fugiat hic eos perferendis. Libero unde omnis dolorem maxime occaecati sapiente distinctio. Consectetur non placeat dolorem est animi. Suscipit quos rem suscipit culpa. Et distinctio et veritatis consectetur quae dolorem aut. Explicabo commodi repudiandae fugiat. Accusamus alias mollitia perferendis qui iure magni. Minus est vitae dolor dolor.",
+          "source": "Eugene Burke",
+          "byline": "Developer"
+        },
+        {
+          "image": "https://picsum.photos/seed/kdsquote3/300/300",
+          "text": "Consequuntur est quia atque eum ducimus. Consequatur fugiat hic eos perferendis. Libero unde omnis dolorem maxime occaecati sapiente distinctio. Consectetur non placeat dolorem est animi. Suscipit quos rem suscipit culpa. Et distinctio et veritatis consectetur quae dolorem aut. Explicabo commodi repudiandae fugiat. Accusamus alias mollitia perferendis qui iure magni. Minus est vitae dolor dolor.",
+          "source": "Marian Cook",
+          "byline": "Designer"
+        }
+      ]
     },
     "className": {
       "title": "Class",

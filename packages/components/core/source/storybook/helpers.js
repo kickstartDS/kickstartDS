@@ -10,9 +10,13 @@ const getArgsShared = (initialSchema) => {
     subcategory,
     required,
     defaultValue = schema.default,
-    example = schema.examples?.[0]
+    example = schema.examples?.[0],
+    conditional = false,
+    condition = ''
   ) => {
     if ('const' in schema) return;
+
+    let localCondition = '';
 
     const add = (typeProps) => {
       argTypes[name] = {
@@ -29,10 +33,35 @@ const getArgsShared = (initialSchema) => {
           defaultValue: { summary: defaultValue },
           subcategory,
         },
+        if: condition &&
+          condition.length > 0 && {
+            arg: condition,
+          },
         ...typeProps,
       };
       args[name] = example ?? defaultValue;
     };
+
+    if (conditional === true) {
+      argTypes[`${name}.active`] = {
+        name: `${name}.active`,
+        description: `**${schema.title}${schema.description ? ':' : ''}**${
+          schema.description ? `\n\n${schema.description}` : ''
+        }`,
+        type: {
+          required,
+          summary: schema.type,
+        },
+        table: {
+          category: category ?? 'general',
+          defaultValue: { summary: defaultValue },
+          subcategory,
+        },
+      };
+
+      args[`${name}.active`] = false;
+      localCondition = `${name}.active`;
+    }
 
     switch (schema.type) {
       case 'string':
@@ -93,7 +122,9 @@ const getArgsShared = (initialSchema) => {
                 subcat,
                 schema.required?.includes(propName),
                 defaultValue?.[propName] ?? schema.default?.[propName],
-                example?.[propName] ?? schema.examples?.[0][propName]
+                example?.[propName] ?? schema.examples?.[0][propName],
+                false,
+                condition || localCondition
               );
             }
           );
@@ -107,8 +138,9 @@ const getArgsShared = (initialSchema) => {
       case 'array':
         if (schema.items && schema.items.type) {
           const cat = category ?? name;
-          const examples = example ?? schema.examples?.[0] ?? defaultValue;
-          const count = examples?.length ?? 3;
+          // const examples = example ?? schema.examples?.[0] ?? defaultValue;
+          const { examples } = schema;
+          const count = schema.maximum ?? examples?.length ?? 3;
           new Array(count).fill().forEach((_, index) => {
             const subcat =
               cat &&
@@ -122,8 +154,10 @@ const getArgsShared = (initialSchema) => {
               cat,
               subcat,
               undefined,
+              // defaultValue?.[index] ?? schema.default?.[index],
               defaultValue?.[index] ?? schema.default?.[index],
-              examples?.[index]
+              examples[index],
+              true
             );
           });
         } else {
