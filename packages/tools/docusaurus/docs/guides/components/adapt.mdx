@@ -31,17 +31,308 @@ For a detailed example of adapting the `Button` component, have a look [at our c
 
 ## Adaptation process
 
-TODO describe Adaptation process
+There's one big assupmtion made when choosing the adaptation process: you've already identified a component you'd like to use... and it already offers all the options you'll need. Let's call it the base component.
+
+This greatly simplifies finding a component definition, as it means simply selecting props you'd like to use for yourself, from a well-defined set.
+
+<Admonition type="tip" title="Adaptation process as a base line">
+  Each of the other ways of adding a component to your Design System based on **kickstartDS** build upon this adapdation process.
+
+Which is to say, you'll always want to reduce the props of **kickstartDS** components used as a base, as described here. But sometimes that may not be enough. You might need a slightly different version of the component, or its props (learn more in our guide ["Customize a component"](./customize.mdx), or view ["Customize `Headline` component"](../examples/components/headline.mdx) as an example), or you may want to add something completely new to it (learn more in our guide ["Extend a component"](./extend.mdx), or view ["Extend `Section` component"](../examples/components/section.mdx) as an example).
+
+</Admonition>
+
+If you don't have component in mind yet, you're probably served better by our guide ["Create a component"](./create.mdx). In that guide, you'll start off without a specific component in mind. This means defining a structure (someting you probably have an idea about already) first, and then mapping that structure to a fitting component second.
+
+We also have an example for this with ["Create `Teaser Card` component"](../examples/components/teaser-card.mdx).
 
 ### 1. Component Definition
 
+We start by defining a component API. As touched on before, this mainly means selecting a set of props from the pool of props available through your selected base component.
+
+We'll use the `Button` component throughout this guide to illustrate concepts. This will not be an exhaustive example, though. For that have a look at our guide ["Adapt `Button` component"](../examples/components/button.mdx).
+
 #### Purpose
 
+For the adaptation process the main purpose of a component is already defined by the selected base component. Nontheless the purpose for even a well-known type of component, like the `Button`, can vary from one Design System to the next. So it helps to think about the specific purpose the selected base component will serve in **your** Design System.
+
+As a hypothetical: you might decide to **really** only use components looking like a `Button` for elements the user directly interacts with... but not for links. This would be a big part of the components purpose, and thus should inform your property selection and naming process.
+
 #### Structure
+
+Before we start implementing, we'll want to define a first rough draft of our component API. Defining a name and a small description per property goes a long way in focussing you on the core of your component.
+
+Let's keep using the `Button` as an example. We're starting with the following properties with that one:
+
+| Property        | Description                                                     |
+| --------------- | --------------------------------------------------------------- |
+| `label`         | Text used on button                                             |
+| `variant`       | Choose one of the styles from the list                          |
+| `inverted`      | If the button should be inverted                                |
+| `size`          | Choose a size between small, medium and large                   |
+| `href`          | Link used for button                                            |
+| `iconBefore`    | Icon identifier for icon before the button text                 |
+| `iconAfter`     | Icon identifier for icon after the button text                  |
+| `fillAnimation` | Add fill animation on hover                                     |
+| `iconAnimation` | Add icon animation on hover                                     |
+| `type`          | Select the type attribute for the button                        |
+| `value`         | Define a value attribute for the button                         |
+| `name`          | Define a name attribute for the button                          |
+| `disabled`      | Set the disabled attribute for the button                       |
+| `newTab`        | Open link in new Tab                                            |
+| `className`     | Add additional css classes that should be applied to the button |
+| `component`     | Optional custom component identifier                            |
+
+One potential set of props, it's the one used in our guide ["Adapt `Button` component"](../examples/components/button.mdx) if you're wondering, would be this:
+
+| Property   | Description                                                                    |
+| ---------- | ------------------------------------------------------------------------------ |
+| `label`    | Text content to display inside the button                                      |
+| `target`   | Target that should be linked, makes the button behave like a link semantically |
+| `variant`  | Variant of button to be used                                                   |
+| `size`     | Size of button to use                                                          |
+| `disabled` | Whether the button should be disabled                                          |
+
+We took `label`, `variant`, `size` and `disabled` directly, and renamed `href` to `target` for our version of the `Button`.
+
+In our hypothetical above, we would probably drop the option of specifying `href` / `target` altogether.
 
 ### 2. Component Creation
 
 #### **JSON Schema** definition
+
+We establish the structure of components by creating a **JSON Schema** for them, defining their component API in code.
+
+For an abridged version of that process, have a look at the `Button` again:
+
+<CH.Spotlight>
+<CH.Code>
+```json button.schema.json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/base/button.schema.json",
+  "title": "Button",
+  "description": "Component to display links and call-to-actions",
+  "type": "object",
+  "properties": {
+    "label": { ... },
+    "variant": { ... },
+    "inverted": { ... },
+    "size": { ... },
+    "href": { ... },
+    "iconBefore": { ... },
+    "iconAfter": { ... },
+    "fillAnimation": { ... },
+    "iconAnimation": { ... },
+    "type": { ... },
+    "value": { ... },
+    "name": { ... },
+    "disabled": { ... },
+    "newTab": { ... },
+    "className": { ... },
+    "component": { ... }
+  },
+  "additionalProperties": false
+}
+
+````
+</CH.Code>
+
+---
+
+#### Original `Button`
+
+This is the "full" button component API / **JSON Schema**. We've just reduced the property definitions.
+
+<CH.Code>
+```json button.schema.json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/base/button.schema.json",
+  "title": "Button",
+  "description": "Component to display links and call-to-actions",
+  "type": "object",
+  "properties": {
+    "label": { ... },
+    "variant": { ... },
+    "inverted": { ... },
+    "size": { ... },
+    "href": { ... },
+    "iconBefore": { ... },
+    "iconAfter": { ... },
+    "fillAnimation": { ... },
+    "iconAnimation": { ... },
+    "type": { ... },
+    "value": { ... },
+    "name": { ... },
+    "disabled": { ... },
+    "newTab": { ... },
+    "className": { ... },
+    "component": { ... }
+  },
+  "additionalProperties": false
+}
+
+````
+
+</CH.Code>
+
+---
+
+#### Select from available props
+
+Let's highlight the ones we've identified when thinking about our component structure before.
+
+<CH.Code>
+```json button.schema.json focus=8,9,11,12,20
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/base/button.schema.json",
+  "title": "Button",
+  "description": "Component to display links and call-to-actions",
+  "type": "object",
+  "properties": {
+    "label": { ... },
+    "variant": { ... },
+    "inverted": { ... },
+    "size": { ... },
+    "href": { ... },
+    "iconBefore": { ... },
+    "iconAfter": { ... },
+    "fillAnimation": { ... },
+    "iconAnimation": { ... },
+    "type": { ... },
+    "value": { ... },
+    "name": { ... },
+    "disabled": { ... },
+    "newTab": { ... },
+    "className": { ... },
+    "component": { ... }
+  },
+  "additionalProperties": false
+}
+
+````
+
+</CH.Code>
+
+---
+
+#### Create your own component API
+
+Subsequently we add exactly those fields to our own components component API / **JSON Schema**...
+
+<CH.Code>
+```json mybutton.schema.json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/button.schema.json",
+  "title": "Button",
+  "description": "Component used for user interaction",
+  "type": "object",
+  "properties": {
+    "label": { ... },
+    "variant": { ... },
+    "size": { ... },
+    "href": { ... },
+    "disabled": { ... },
+  },
+  "additionalProperties": false
+}
+
+```
+
+```json button.schema.json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/base/button.schema.json",
+  "title": "Button",
+  "description": "Component to display links and call-to-actions",
+  "type": "object",
+  "properties": {
+    "label": { ... },
+    "variant": { ... },
+    "inverted": { ... },
+    "size": { ... },
+    "href": { ... },
+    "iconBefore": { ... },
+    "iconAfter": { ... },
+    "fillAnimation": { ... },
+    "iconAnimation": { ... },
+    "type": { ... },
+    "value": { ... },
+    "name": { ... },
+    "disabled": { ... },
+    "newTab": { ... },
+    "className": { ... },
+    "component": { ... }
+  },
+  "additionalProperties": false
+}
+```
+
+</CH.Code>
+
+---
+
+#### Renaming props
+
+... and we can even rename props in the process.
+
+<CH.Code>
+```json mybutton.schema.json focus=11
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/button.schema.json",
+  "title": "Button",
+  "description": "Component used for user interaction",
+  "type": "object",
+  "properties": {
+    "label": { ... },
+    "variant": { ... },
+    "size": { ... },
+    "target": { ... },
+    "disabled": { ... },
+  },
+  "additionalProperties": false
+}
+
+```
+
+```json button.schema.json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/base/button.schema.json",
+  "title": "Button",
+  "description": "Component to display links and call-to-actions",
+  "type": "object",
+  "properties": {
+    "label": { ... },
+    "variant": { ... },
+    "inverted": { ... },
+    "size": { ... },
+    "href": { ... },
+    "iconBefore": { ... },
+    "iconAfter": { ... },
+    "fillAnimation": { ... },
+    "iconAnimation": { ... },
+    "type": { ... },
+    "value": { ... },
+    "name": { ... },
+    "disabled": { ... },
+    "newTab": { ... },
+    "className": { ... },
+    "component": { ... }
+  },
+  "additionalProperties": false
+}
+```
+
+</CH.Code>
+
+</CH.Spotlight>
+
+For the full / extended version of adapting a `Button` have a look at our guide ["Adapt `Button` component"](../examples/components/button.mdx).
 
 #### **React** Template
 
@@ -62,3 +353,5 @@ This is what the result looks like (TODO replace with preview from real Storyboo
   width="200"
   height="80"
 ></iframe>
+```
+````

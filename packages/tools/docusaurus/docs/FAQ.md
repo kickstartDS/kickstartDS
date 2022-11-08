@@ -1,8 +1,8 @@
 # Frequently Asked Questions
 
-## [React](https://reactjs.org/)
-
 TODO revise this, possibly integrate with Zendesk
+
+## [React](https://reactjs.org/)
 
 ### How can I debug components re-rendering too often / in an infinite loop?
 
