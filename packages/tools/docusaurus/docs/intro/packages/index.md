@@ -41,14 +41,13 @@ We try to slice modules by the use cases its components enable, or the type of i
 - Helpers used to enrich components in **Storybook** (like automatically generating all the **Controls** for you)
 - Utilities to help constructing **React** templates (like `createProvider` for easy creation of **kickstartDS** component `Provider`s)
 
-You can find the package on **npm** here:<br/>
-https://www.npmjs.com/package/@kickstartds/core
+You can find this package on:
 
-In our **Github** mono-repository here:<br/>
-https://github.com/kickstartDS/kickstartDS/tree/master/packages/components/core
-
-And its `CHANGELOG.md`, with all releases, lives here:<br/>
-https://github.com/kickstartDS/kickstartDS/blob/master/packages/components/core/CHANGELOG.md
+| Category                         | Link                                                                                         |
+| -------------------------------- | -------------------------------------------------------------------------------------------- |
+| **npm** package registry         | https://www.npmjs.com/package/@kickstartds/core                                              |
+| Our **Github** mono-repository   | https://github.com/kickstartDS/kickstartDS/tree/master/packages/components/core              |
+| `CHANGELOG.md` with all releases | https://github.com/kickstartDS/kickstartDS/blob/master/packages/components/core/CHANGELOG.md |
 
 ### **Base** module
 
@@ -62,7 +61,6 @@ Some components included here, to get a feeling:
 - `ContentBox` for more condensed inline content ([Storybook](https://www.kickstartds.com/storybook/?path=/docs/base-content-box--image))
 - `TeaserBox` to tease something that's linked ([Storybook](https://www.kickstartds.com/storybook/?path=/docs/base-teaser-box--linked-without-button))
 - `Section` to organize components into pages ([Storybook](https://www.kickstartds.com/storybook/?path=/docs/base-section--content-boxes))
-- ...
 
 For a complete list of components have a look at the following folder:<br/>
 https://github.com/kickstartDS/kickstartDS/tree/master/packages/components/base/source
@@ -70,14 +68,13 @@ https://github.com/kickstartDS/kickstartDS/tree/master/packages/components/base/
 Or have a look through the **BASE** category (part of the left sidebar) in our **Storybook**:<br/>
 https://www.kickstartds.com/storybook/
 
-You can find the package on **npm** here:<br/>
-https://www.npmjs.com/package/@kickstartds/base
+You can find this package on:
 
-In our **Github** mono-repository here:<br/>
-https://github.com/kickstartDS/kickstartDS/tree/master/packages/components/base
-
-And its `CHANGELOG.md`, with all releases, lives here:<br/>
-https://github.com/kickstartDS/kickstartDS/blob/master/packages/components/base/CHANGELOG.md
+| Category                         | Link                                                                                         |
+| -------------------------------- | -------------------------------------------------------------------------------------------- |
+| **npm** package registry         | https://www.npmjs.com/package/@kickstartds/base                                              |
+| Our **Github** mono-repository   | https://github.com/kickstartDS/kickstartDS/tree/master/packages/components/base              |
+| `CHANGELOG.md` with all releases | https://github.com/kickstartDS/kickstartDS/blob/master/packages/components/base/CHANGELOG.md |
 
 ### **Content** module
 
@@ -101,14 +98,13 @@ https://github.com/kickstartDS/content/tree/master/source
 Or have a look through the **CONTENT** category (part of the left sidebar) in our **Storybook**:<br/>
 https://www.kickstartds.com/storybook/
 
-You can find the package on **npm** here (access needed):<br/>
-https://www.npmjs.com/package/@kickstartds/content
+You can find this package on (access provided):
 
-In its own **Github** repository here (access needed):<br/>
-https://github.com/kickstartDS/content/tree/master
-
-And its `CHANGELOG.md`, with all releases, lives here (access needed):<br/>
-https://github.com/kickstartDS/content/blob/master/CHANGELOG.md
+| Category                         | Link                                                            |
+| -------------------------------- | --------------------------------------------------------------- |
+| **npm** package registry         | https://www.npmjs.com/package/@kickstartds/content              |
+| Its own **Github** repository    | https://github.com/kickstartDS/content/tree/master              |
+| `CHANGELOG.md` with all releases | https://github.com/kickstartDS/content/blob/master/CHANGELOG.md |
 
 ### **Form** module
 
@@ -132,14 +128,13 @@ https://github.com/kickstartDS/kickstartDS/tree/master/packages/components/form/
 Or have a look through the **FORM** category (part of the left sidebar) in our **Storybook**:<br/>
 https://www.kickstartds.com/storybook/
 
-You can find the package on **npm** here:<br/>
-https://www.npmjs.com/package/@kickstartds/core
+You can find this package on:
 
-In our **Github** mono-repository here:<br/>
-https://github.com/kickstartDS/kickstartDS/tree/master/packages/components/form
-
-And its `CHANGELOG.md`, with all releases, lives here:<br/>
-https://github.com/kickstartDS/kickstartDS/blob/master/packages/components/form/CHANGELOG.md
+| Category                         | Link                                                                                         |
+| -------------------------------- | -------------------------------------------------------------------------------------------- |
+| **npm** package registry         | https://www.npmjs.com/package/@kickstartds/form                                              |
+| Our **Github** mono-repository   | https://github.com/kickstartDS/kickstartDS/tree/master/packages/components/form              |
+| `CHANGELOG.md` with all releases | https://github.com/kickstartDS/kickstartDS/blob/master/packages/components/form/CHANGELOG.md |
 
 ### **Blog** module
 
@@ -159,14 +154,13 @@ https://github.com/kickstartDS/kickstartDS/tree/master/packages/components/blog/
 Or have a look through the **BLOG** category (part of the left sidebar) in our **Storybook**:<br/>
 https://www.kickstartds.com/storybook/
 
-You can find the package on **npm** here:<br/>
-https://www.npmjs.com/package/@kickstartds/core
+You can find this package on:
 
-In our **Github** mono-repository here:<br/>
-https://github.com/kickstartDS/kickstartDS/tree/master/packages/components/blog
-
-And its `CHANGELOG.md`, with all releases, lives here:<br/>
-https://github.com/kickstartDS/kickstartDS/blob/master/packages/components/blog/CHANGELOG.md
+| Category                         | Link                                                                                         |
+| -------------------------------- | -------------------------------------------------------------------------------------------- |
+| **npm** package registry         | https://www.npmjs.com/package/@kickstartds/blog                                              |
+| Our **Github** mono-repository   | https://github.com/kickstartDS/kickstartDS/tree/master/packages/components/blog              |
+| `CHANGELOG.md` with all releases | https://github.com/kickstartDS/kickstartDS/blob/master/packages/components/blog/CHANGELOG.md |
 
 ## Tooling packages
 
@@ -176,14 +170,13 @@ There are some packages used internally (`@kickstartds/bundler`) by **kickstartD
 
 `kickstartds` holds our CLI, and is the only package not published under the `@kickstartDS` org namespace, living directly at `kickstartds` instead. It's used to initialize and compile Design Token sets, generate **TypeScript** types for components and dereferenced **JSON Schema** files for you. To learn more about it, have a look at our ["CLI Usage"](./../cli/index.md) page.
 
-You can find the CLI on **npm** here:<br/>
-https://www.npmjs.com/package/kickstartds
+You can find the CLI on:
 
-In its own **Github** repository here:<br/>
-https://github.com/kickstartDS/kickstartDS-cli
-
-And its `CHANGELOG.md`, with all releases, lives here:<br/>
-https://github.com/kickstartDS/kickstartDS-cli/blob/main/CHANGELOG.md
+| Category                         | Link                                                                  |
+| -------------------------------- | --------------------------------------------------------------------- |
+| **npm** package registry         | https://www.npmjs.com/package/kickstartds                             |
+| Its own **Github** repository    | https://github.com/kickstartDS/kickstartDS-cli                        |
+| `CHANGELOG.md` with all releases | https://github.com/kickstartDS/kickstartDS-cli/blob/main/CHANGELOG.md |
 
 ### **kickstartDS** Bundler
 
@@ -198,14 +191,13 @@ This includes (non-exhaustive):
 
 If you're wondering how you'd do that in your own Design System, have a look at the final step of our main guide ["Create your Design System"](../../guides/create/index.mdx). We describe one way to do it there, but this setup will always heavily depend on your specific set of circumstances... and the projects that you plan on using your Design System in.
 
-You can find the bundler on **npm** here:<br/>
-https://www.npmjs.com/package/@kickstartds/bundler
+You can find the bundler on:
 
-In our **Github** mono-repository here:<br/>
-https://github.com/kickstartDS/kickstartDS/tree/master/packages/tools/bundler
-
-And its `CHANGELOG.md`, with all releases, lives here:<br/>
-https://github.com/kickstartDS/kickstartDS/blob/master/packages/tools/bundler/CHANGELOG.md
+| Category                         | Link                                                                                       |
+| -------------------------------- | ------------------------------------------------------------------------------------------ |
+| **npm** package registry         | https://www.npmjs.com/package/@kickstartds/bundler                                         |
+| Our **Github** mono-repository   | https://github.com/kickstartDS/kickstartDS/tree/master/packages/tools/bundler              |
+| `CHANGELOG.md` with all releases | https://github.com/kickstartDS/kickstartDS/blob/master/packages/tools/bundler/CHANGELOG.md |
 
 ### **Style Dictionary** integration
 
@@ -215,14 +207,13 @@ https://github.com/kickstartDS/kickstartDS/blob/master/packages/tools/bundler/CH
 
 To learn more about **Style Dictionary** in general, [visit their website](https://amzn.github.io/style-dictionary/).
 
-You can find our **Style Dictionary** utilities on **npm** here:<br/>
-https://www.npmjs.com/package/@kickstartds/style-dictionary
+You can find our **Style Dictionary** utilities on:
 
-In our **Github** mono-repository here:<br/>
-https://github.com/kickstartDS/kickstartDS/tree/master/packages/tools/style-dictionary
-
-And its `CHANGELOG.md`, with all releases, here:<br/>
-https://github.com/kickstartDS/kickstartDS/blob/master/packages/tools/style-dictionary/CHANGELOG.md
+| Category                         | Link                                                                                                |
+| -------------------------------- | --------------------------------------------------------------------------------------------------- |
+| **npm** package registry         | https://www.npmjs.com/package/@kickstartds/style-dictionary                                         |
+| Our **Github** mono-repository   | https://github.com/kickstartDS/kickstartDS/tree/master/packages/tools/style-dictionary              |
+| `CHANGELOG.md` with all releases | https://github.com/kickstartDS/kickstartDS/blob/master/packages/tools/style-dictionary/CHANGELOG.md |
 
 ## **Storybook** addons
 
@@ -234,16 +225,15 @@ We still try to write those addons in a way that they're useful outside of **kic
 
 `@kickstartds/storybook-addon-jsonschema` is an addon we wrote to display **JSON Schema** documentation for your [component API](../../foundations/components/component-api.md), including a validating JSON Code Editor with semantic auto-complete, the ability to interact with your components, and copy configurations with ease.
 
-To learn more about this addon, view our [dedicated integrations page about it](../../integration/storybook/schema.md).
+To learn more about this addon, view our [dedicated integrations page about it](../../integration/storybook/schema.mdx).
 
-You can find the addon on **npm** here:<br/>
-https://www.npmjs.com/package/@kickstartds/storybook-addon-jsonschema
+You can find this addon on:
 
-In its own **Github** repository here:<br/>
-https://github.com/kickstartDS/storybook-addon-jsonschema
-
-And its `CHANGELOG.md`, with all releases, here:<br/>
-https://github.com/kickstartDS/storybook-addon-jsonschema/blob/main/CHANGELOG.md
+| Category                         | Link                                                                             |
+| -------------------------------- | -------------------------------------------------------------------------------- |
+| **npm** package registry         | https://www.npmjs.com/package/@kickstartds/storybook-addon-jsonschema            |
+| Its own **Github** repository    | https://github.com/kickstartDS/storybook-addon-jsonschema                        |
+| `CHANGELOG.md` with all releases | https://github.com/kickstartDS/storybook-addon-jsonschema/blob/main/CHANGELOG.md |
 
 ### **Component Token** addon
 
@@ -251,14 +241,13 @@ https://github.com/kickstartDS/storybook-addon-jsonschema/blob/main/CHANGELOG.md
 
 To learn more about this addon, view our [dedicated integrations page about it](../../integration/storybook/token.mdx).
 
-You can find the addon on **npm** here:<br/>
-https://www.npmjs.com/package/@kickstartds/storybook-addon-component-tokens
+You can find this addon on:
 
-In its own **Github** repository here:<br/>
-https://github.com/kickstartDS/storybook-addon-component-tokens
-
-And its `CHANGELOG.md`, with all releases, here:<br/>
-https://github.com/kickstartDS/storybook-addon-component-tokens/blob/main/CHANGELOG.md
+| Category                         | Link                                                                                   |
+| -------------------------------- | -------------------------------------------------------------------------------------- |
+| **npm** package registry         | https://www.npmjs.com/package/@kickstartds/storybook-addon-component-tokens            |
+| Its own **Github** repository    | https://github.com/kickstartDS/storybook-addon-component-tokens                        |
+| `CHANGELOG.md` with all releases | https://github.com/kickstartDS/storybook-addon-component-tokens/blob/main/CHANGELOG.md |
 
 ## Configuration packages
 
@@ -268,14 +257,13 @@ All the packages listed here include ready-to-use configuration for coding best 
 
 `@kickstartds/auto-config` contains a configuration for **Auto**, a tool to generate releases based on semantic version labels on pull requests. Learn more on [their Github](https://github.com/intuit/auto) or [dedicated website for the tool](https://intuit.github.io/auto/). We use this ourselves, to generate releases for all of our **npm** packages. Have a look at part 5 of ["Create your Design System"](../../guides/create/publish.mdx) for a deeper look on how this can work for your own Design System.
 
-You can find the config on **npm** here:<br/>
-https://www.npmjs.com/package/@kickstartds/auto-config
+You can find this config on:
 
-As part of our **Github** config mono-repository here:<br/>
-https://github.com/kickstartDS/config/tree/master/packages/auto
-
-And its `CHANGELOG.md`, with all releases, here:<br/>
-https://github.com/kickstartDS/config/blob/master/packages/auto/CHANGELOG.md
+| Category                         | Link                                                                         |
+| -------------------------------- | ---------------------------------------------------------------------------- |
+| **npm** package registry         | https://www.npmjs.com/package/@kickstartds/auto-config                       |
+| Our **Github** mono-repository   | https://github.com/kickstartDS/config/tree/master/packages/auto              |
+| `CHANGELOG.md` with all releases | https://github.com/kickstartDS/config/blob/master/packages/auto/CHANGELOG.md |
 
 ### **ESLint** configuration
 
@@ -283,14 +271,13 @@ https://github.com/kickstartDS/config/blob/master/packages/auto/CHANGELOG.md
 
 You can easily re-use this for your own Design System! Learn more about **ESLint** [on their dedicated website](https://eslint.org/).
 
-You can find the config on **npm** here:<br/>
-https://www.npmjs.com/package/@kickstartds/eslint-config
+You can find this config on:
 
-As part of our **Github** config mono-repository here:<br/>
-https://github.com/kickstartDS/config/tree/master/packages/eslint
-
-And its `CHANGELOG.md`, with all releases, here:<br/>
-https://github.com/kickstartDS/config/blob/master/packages/eslint/CHANGELOG.md
+| Category                         | Link                                                                           |
+| -------------------------------- | ------------------------------------------------------------------------------ |
+| **npm** package registry         | https://www.npmjs.com/package/@kickstartds/eslint-config                       |
+| Our **Github** mono-repository   | https://github.com/kickstartDS/config/tree/master/packages/eslint              |
+| `CHANGELOG.md` with all releases | https://github.com/kickstartDS/config/blob/master/packages/eslint/CHANGELOG.md |
 
 ### **Stylelint** configuration
 
@@ -298,14 +285,13 @@ https://github.com/kickstartDS/config/blob/master/packages/eslint/CHANGELOG.md
 
 As with `@kickstartds/eslint-config`, you can easily re-use this for your own Design System! Learn more about **Stylelint** [on their dedicated website](https://stylelint.io/).
 
-You can find the config on **npm** here:<br/>
-https://www.npmjs.com/package/@kickstartds/stylelint-config
+You can find this config on:
 
-As part of our **Github** config mono-repository here:<br/>
-https://github.com/kickstartDS/config/tree/master/packages/stylelint
-
-And its `CHANGELOG.md`, with all releases, here:<br/>
-https://github.com/kickstartDS/config/blob/master/packages/stylelint/CHANGELOG.md
+| Category                         | Link                                                                              |
+| -------------------------------- | --------------------------------------------------------------------------------- |
+| **npm** package registry         | https://www.npmjs.com/package/@kickstartds/stylelint-config                       |
+| Our **Github** mono-repository   | https://github.com/kickstartDS/config/tree/master/packages/stylelint              |
+| `CHANGELOG.md` with all releases | https://github.com/kickstartDS/config/blob/master/packages/stylelint/CHANGELOG.md |
 
 ## **kickstartDS** packages
 
@@ -325,8 +311,9 @@ This leaves us with some packages that can't quite fit the categories above. Cur
 
 `@kickstartds/json-schema-viewer` is a fork of [`atlassian/json-schema-viewer`](https://github.com/atlassian-labs/json-schema-viewer). We forked that project to update the bundling to enable compiling it for the browser, and export some components more directly for consumption. It's used inside `@kickstartds/storybook-addon-jsonschema`, see its section above for more details.
 
-You can find the fork on **npm** here:<br/>
-https://www.npmjs.com/package/@kickstartds/json-schema-viewer
+You can find this fork on:
 
-In its own **Github** repository here:<br/>
-https://github.com/kickstartDS/json-schema-viewer
+| Category                      | Link                                                          |
+| ----------------------------- | ------------------------------------------------------------- |
+| **npm** package registry      | https://www.npmjs.com/package/@kickstartds/json-schema-viewer |
+| Its own **Github** repository | https://github.com/kickstartDS/json-schema-viewer             |
