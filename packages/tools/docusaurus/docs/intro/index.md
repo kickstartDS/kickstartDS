@@ -10,11 +10,11 @@ import { TeaserBox } from "@kickstartds/base/lib/teaser-box";
 
 **kickstartDS** is an Open Source Design System starter and UI toolkit for building up your very own Design System. This in turn enables you, and your team, to build brand-compliant websites and apps super efficiently. All while using core web technologies — HTML, CSS, and JavaScript — and best practices.
 
-Please checkout this video clip for a more detailed demonstration and see kickstartDS in action.
+Check out the following video for a more in-depth demonstration, and see kickstartDS in action (timestamped start):
 
 <iframe width="50%" height="280" src="https://www.youtube.com/embed/54_xZYjWzWE?start=3685" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-Many thanks to [Amplifyn](https://www.amplifyn.com) for allowing us to share their recording.
+Many thanks to [Amplifyn](https://www.amplifyn.com) for allowing us to use their recording.
 
 ## Get started
 

@@ -18,12 +18,14 @@ We typically use different channels for different stabilities:
 - `beta` is connected to the `beta` branch on our mono-repository, always contains the next breaking release that's in preparation
 - `canary` is connected to all branches that have an active PR open on Github, and generates a Canary release specific to that branch, [for isolated, early testing](https://martinfowler.com/bliki/CanaryRelease.html)
 
-This also aligns with our semantic versioning scheme. Breaking changes (`X.0.0`) mature through the `beta` channel before being merged to `latest`, feature releases (`1.X.0`) go through `next` and fixes (`1.0.X`) land on `latest` directly. As every change introduced to these channels will have gone through a PR on Github, it will also have included a Canary release for it. All branches [auto-releases based on merged PRs](#) TODO add link to release handling
+This also aligns with our semantic versioning scheme. Breaking changes (`X.0.0`) mature through the `beta` channel before being merged to `latest`, feature releases (`1.X.0`) go through `next` and fixes (`1.0.X`) land on `latest` directly. As every change introduced to these channels will have gone through a PR on Github, it will also have included a Canary release for it. All branches [auto release based on merged PRs](../upgrading/index.md#semantic-versioning-with-auto)
 
 All releases get published on **Github**, too. So you can also use that as a reference:<br/>
 https://github.com/kickstartDS/kickstartDS/releases
 
-We've categorized all the packages existing right now below, so feel free to have a closer look!
+To learn more about **Auto**, **Semantic Versioning** and release handling you can read some background information on the "Upgrading" page, [in the following section](../upgrading/index.md#some-background-information).
+
+We've categorized all the packages existing (right now) below, so feel free to have a closer look!
 
 ## Component modules
 
