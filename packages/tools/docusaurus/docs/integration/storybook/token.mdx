@@ -2,11 +2,22 @@
 sidebar_position: 2
 ---
 
-# Token
+# Design & Branding Token
 
 ## Design Token Integration
 
-TODO Describe integration of Design Token Storybook addon
+To display your **Design Token** set in **Storybook** we use and recommend the [`storybook-design-token`](https://github.com/UX-and-I/storybook-design-token) addon. We also include a format for **Style Dictionary**, which outputs your **Design Token** set into a specific **CSS Custom Properties** format, annotated with the token presenters as needed by `storybook-design-token`.
+
+For an example on how this needs to be configured, have a look at the chapter ["3. Configure Storybook"](../../guides/create/storybook.mdx#design-token-integration) of our ["Create your Design System"](../../guides/create/index.md) guide.
+
+We also provide ready-to-use docs pages for **Storybook**, using the `DesignTokenDocBlock` by `storybook-design-token`, mapped to our semantic **Design Token** categories and values.
+
+<img
+  src={require('./assets/teaser-designtoken.png').default}
+  alt="Image showing the Design Token addon in action"
+/>
+
+You can find those [in our mono-repository](https://github.com/kickstartDS/kickstartDS/tree/feature/docs/packages/components/core/source/design-tokens), or have a look at them in action on [our own hosted **Storybook**](https://www.kickstartds.com/storybook/?path=/story/design-tokens-colors--page) (category `DESIGN TOKENS` in the sidebar).
 
 ## Component Token integration
 
