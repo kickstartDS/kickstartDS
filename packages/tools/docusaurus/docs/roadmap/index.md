@@ -4,9 +4,7 @@ sidebar_position: 1
 
 # Roadmap
 
-This section
-
-As we just released kickstartDS with the first version of this documentation. We know, that we still have to work on many details to let our documentation shine. As we want to explain the underlaying concepts in-depth. ake a look at each stage to see which features we've launched, worked on, or planned for future releases. If we're missing something, let us know at info@platter.dev!
+As we just released kickstartDS with the first version of this documentation, we know, that we still have to work on many details to let our documentation shine. As we want to explain the underlaying concepts in-depth. ake a look at each stage to see which features we've launched, worked on, or planned for future releases. If we're missing something, let us know at hello@kickstartds.com.
 
 ## v2.0
 

@@ -230,45 +230,47 @@
     flex-basis: auto;
   }
 }
-
-.c-collapsible-box.collapsible-code {
-  margin: 0;
-  --c-collapsible-box_header--font: var(--ks-font-ui-xs);
-  --c-collapsible-box_content--padding: 0;
-  --toggle-spacing-v: var(--ks-spacing-xxs);
-  --c-collapsible-box_icon--size: 1.5rem;
-
-  margin-top: calc(
-    calc(
-        var(--c-collapsible-box_icon--size) + var(--toggle-spacing-v) +
-          var(--toggle-spacing-v)
-      ) * -1
-  );
-
-  .c-collapsible-box__header {
-    background-color: var(--ch-code-title-bar-background);
-    width: fit-content;
-    margin-left: auto;
-    margin-right: var(--ks-spacing-inline-s);
-
-    &__text {
-      padding-right: var(--ks-spacing-xxs);
-      font-weight: var(--ks-font-weight-semi-bold);
-    }
-
-    &-wrapper {
-      color: var(--ch-browser-fg-color);
-      padding: var(--toggle-spacing-v) var(--ks-spacing-xs);
-    }
-  }
-
-  details {
-    border: 0;
-  }
-
-  .ch-codegroup,
-  .ch-codeblock {
+:root {
+  .c-collapsible-box.collapsible-code {
+    position: relative;
     margin: 0;
-    border-top-left-radius: 0;
+    --c-collapsible-box_header--font: var(--ks-font-ui-xs);
+    --c-collapsible-box_content--padding: 0;
+    --toggle-spacing-v: var(--ks-spacing-xxs);
+    --c-collapsible-box_icon--size: 1.5rem !important;
+
+    margin-top: calc(
+      calc(
+          var(--c-collapsible-box_icon--size) + var(--toggle-spacing-v) +
+            var(--toggle-spacing-v)
+        ) * -1
+    );
+
+    .c-collapsible-box__header {
+      background-color: var(--ch-code-title-bar-background);
+      width: fit-content;
+      margin-left: auto;
+      margin-right: var(--ks-spacing-inline-s);
+
+      .c-collapsible-box__header__text {
+        padding-right: var(--ks-spacing-xxs);
+        font-weight: var(--ks-font-weight-semi-bold);
+      }
+
+      &-wrapper {
+        color: var(--ch-browser-fg-color);
+        padding: var(--toggle-spacing-v) var(--ks-spacing-xs);
+      }
+    }
+
+    details {
+      border: 0;
+    }
+
+    .ch-codegroup,
+    .ch-codeblock {
+      margin: 0;
+      border-top-left-radius: 0;
+    }
   }
 }
