@@ -17,18 +17,18 @@ TODO describe workflow this stands for (adapt vs adopt)
 
 ### Structure
 
-| Property      | Description                       |
-| ------------- | --------------------------------- |
-| `headline`    | Headline for the section          |
-| `width`       | Width of section                  |
-| `gutter`      | Gutter of section                 |
-| `mode`        | Layout mode for section           |
-| `content`     | Allowed content for the section   |
-| `style`       | Style variation of section        |
-| `spaceBefore` | (Optional) space before section   |
-| `spaceAfter`  | (Optional) space after section    |
-| `inverted`    | Show inverted version of section? |
-| `ctas`        | Optional targets to link          |
+| Property      | Type       | Description                       |
+| ------------- | ---------- | --------------------------------- |
+| `headline`    | `string`   | Headline for the section          |
+| `width`       | `enum`     | Width of section                  |
+| `gutter`      | `enum`     | Gutter of section                 |
+| `mode`        | `enum`     | Layout mode for section           |
+| `content`     | `children` | Allowed content for the section   |
+| `style`       | `enum`     | Style variation of section        |
+| `spaceBefore` | `enum`     | (Optional) space before section   |
+| `spaceAfter`  | `enum`     | (Optional) space after section    |
+| `inverted`    | `boolean`  | Show inverted version of section? |
+| `ctas`        | `object`   | Optional targets to link          |
 
 TODO should probably make sub fields of `ctas` explicit in table
 

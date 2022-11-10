@@ -49,8 +49,10 @@ https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/c
 
 ### Github and npm releases
 
-Additionally you can explore all releases through either our [Github releases page](https://github.com/kickstartDS/kickstartDS/releases), or by viewing all [packages and release channels on npm](https://www.npmjs.com/org/kickstartds). This can give you a quick overview over current stable releases, upcoming feature-related releases, or even cutting edge work on future versions to test out early.  
-Lastly you'll find Canary releases, used to enable early testing of bugfix changes or new features, in an isolated fashion. Canary releases get generated for every branch of our Github repository automatically. They get applied the same build processes like the stable `master` branch, or the `next` branch with upcoming features, enabling visual regression testing and the aforementioned automatic releases for local reproducability.  
+Additionally you can explore all releases through either our [Github releases page](https://github.com/kickstartDS/kickstartDS/releases), or by viewing all [packages and release channels on npm](https://www.npmjs.com/org/kickstartds). This can give you a quick overview over current stable releases, upcoming feature-related releases, or even cutting edge work on future versions to test out early.
+
+Lastly you'll find Canary releases, used to enable early testing of bugfix changes or new features, in an isolated fashion. Canary releases get generated for every branch of our Github repository automatically. They get applied the same build processes like the stable `master` branch, or the `next` branch with upcoming features, enabling visual regression testing and the aforementioned automatic releases for local reproducability.
+
 As work on bugs and features always occurs on branches, this enables continous quality control from the start.
 
-Learn in detail about our releases and their corresponding release pipeline. TODO Create content, and link it
+To learn about our packages in more detail, have a look at [the Packages page](../packages/index.md).
