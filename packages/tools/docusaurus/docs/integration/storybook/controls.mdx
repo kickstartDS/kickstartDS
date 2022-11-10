@@ -1,0 +1,372 @@
+---
+sidebar_position: 3
+---
+
+import { Quote } from '@kickstartds/content/lib/quote';
+import { TextMedia } from '@kickstartds/base/lib/text-media';
+
+# Generated Controls
+
+Using [**Controls**](https://storybook.js.org/docs/react/essentials/controls), and the [**Controls addon**](https://github.com/storybookjs/storybook/tree/next/code/addons/controls), is one of the main reasons for choosing **Storybook**. They really help bring your components to life! To quote from the source:
+
+<Quote
+  image={require('./assets/logo-storybook.png').default}
+  byline="https://storybook.js.org/docs/react/essentials/controls"
+  source="Controls docs Storybook"
+  text="Storybook Controls gives you a graphical UI to interact with a component's arguments dynamically without needing to code. It creates an addon panel next to your component examples ('stories'), so you can edit them live."
+/>
+
+<br />
+
+Just that this (normally) comes with one caveat: You'll have to decide to either:
+
+- Live with the inferred defaults the addon automatically creates for you (but this is uncurated), or
+- explicitly define controls for your properties yourself ([**Storybook** accounts for that](https://storybook.js.org/docs/react/essentials/controls#choosing-the-control-type), but it's extra work), or finally
+- just disable **Controls** to reduce potential confusion
+
+## Usage with **kickstartDS**
+
+If you think about it, everything that should be available in your **Controls** is already defined by your respective [component API](../../foundations/components/component-api.md), anyway. This is why we've written some helpers that do this for you... as long as a valid **JSON Schema** is found for your component, it will automatically be decorated with documentation for all its properties in **Storybook**, and in your **Controls** addon.
+
+### Features
+
+Using our helpers provides the following conversion for your **JSON Schema**:
+
+- Add type of **Control** based on **JSON Schema** field type
+- Add title, description and meta info like `required`
+- Automatically flatten nested structures for **Storybook Args** compatibility
+- Use that information to intelligently **group Controls** for a better overview
+
+<img
+  src={require('./assets/screenshot-controlsksDS.png').default}
+  alt="Image showing the generated Controls in action"
+/>
+
+### Implementation
+
+You can find the implementation in our **Github** mono-repository:<br/>
+https://github.com/kickstartDS/kickstartDS/tree/next/packages/components/core/source/storybook/helpers.js
+
+There are four functions exported to be used in your own stories for **Storybook Controls**:
+
+| Function        | Description                                                                   |
+| --------------- | ----------------------------------------------------------------------------- |
+| getArgsShared   | Takes a **JSON Schema** and returns **Args** and **ArgTypes**                 |
+| pack            | Takes a component instance (`JSON` object) and returns it with flattened keys |
+| unpack          | Takes a flattened instance and returns the complete `JSON` object             |
+| unpackDecorator | Decorator you can use to add `unpack`ing to all stories                       |
+
+### Integration
+
+Integration works by adding the `unpackDecorator` to all of your stories in `.storybook/preview.js`:
+
+```js .storybook/preview.js
+import {
+  unpackDecorator,
+} from "@kickstartds/core/lib/storybook/helpers";
+
+[...]
+
+export const decorators = [
+  unpackDecorator,
+];
+```
+
+This ensures props passed down to our components by **Storybook Args** get converted back to their original, deep `JSON` structure by default.
+
+And in stories themselves you'll have to use `getArgsShared` to get `Args` and `ArgTypes` to configure your components. See the example below, on how that would look for a `Button` story.
+
+### Example
+
+#### Component
+
+Let's take the `Button` as an example. This is the **JSON Schema** we've defined for an [adapted](../../guides/components/adapt.mdx) version of it, as [part of the "Create your Design System" guide](../../guides/create/components.mdx):
+
+```json button.schema.json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/button.schema.json",
+  "title": "Button",
+  "description": "Component used for user interaction",
+  "type": "object",
+  "properties": {
+    "label": {
+      "type": "string",
+      "title": "Label",
+      "description": "Text content to display inside the button"
+    },
+    "target": {
+      "type": "string",
+      "title": "Target",
+      "description": "Target that should be linked, makes the button behave like a link semantically",
+      "format": "uri"
+    },
+    "variant": {
+      "type": "string",
+      "title": "Variant",
+      "description": "Variant of button to be used",
+      "enum": ["primary", "secondary", "tertiary"],
+      "default": "secondary"
+    },
+    "size": {
+      "type": "string",
+      "title": "Size",
+      "description": "Size of button to use",
+      "enum": ["small", "medium", "large"],
+      "default": "medium"
+    },
+    "disabled": {
+      "type": "boolean",
+      "title": "Disabled?",
+      "description": "Whether the button should be disabled",
+      "default": false
+    }
+  },
+  "required": ["label"]
+}
+```
+
+<TextMedia
+  ks-theme="docs"
+  media={[
+    {
+      lightboxImage: {
+        image: require('./assets/screenshot-controls.png').default,
+        thumb: require('./assets/screenshot-controls.png').default,
+        width: 1236,
+        height: 923,
+        zoomIcon: true,
+        gallery: 'storybook-controls-button',
+      },
+      caption: 'Example of generated Controls for the Button',
+    },
+    {
+      lightboxImage: {
+        image: require('./assets/screenshot-docs.png').default,
+        thumb: require('./assets/screenshot-docs.png').default,
+        width: 1236,
+        height: 923,
+        zoomIcon: true,
+        gallery: 'storybook-controls-button',
+      },
+      caption: 'Example of generated Docs for the Button',
+    },
+  ]}
+  mediaAlignment="intext-right"
+  text="Using our helpers inside your story files automatically generates the following **Controls** for our `Button`, while also generating the full documentation block for the **Docs** view"
+/>
+
+TODO fix this, looks horrible!
+
+#### Story
+
+The corresponding story for our `Button` might look a little like this when adding all our helpers:
+
+<CH.Spotlight>
+<CH.Code>
+```jsx src/components/button/Button.stories.jsx
+import { Button } from "./ButtonComponent";
+import { pack, getArgsShared } from "@kickstartds/core/lib/storybook/helpers";
+import ButtonStories from "@kickstartds/base/lib/button/button.stories";
+import schema from "./button.schema.dereffed.json";
+
+const { defaultArgs: args, argTypes } = getArgsShared(schema);
+
+const Template = (args) => <Button {...args} />;
+
+export default {
+  ...ButtonStories,
+  title: "Components/Button",
+  args,
+  argTypes,
+  parameters: {
+    jsonschema: schema,
+  },
+};
+
+export const NativeButton = Template.bind({});
+NativeButton.args = pack({
+  label: "Click me",
+  variant: "primary",
+});
+```
+</CH.Code>
+
+---
+
+##### Import helpers and schema
+
+First we import all helpers we'll use, and the dereferenced version ouf our components **JSON Schema**.
+
+<CH.Code>
+```jsx src/components/button/Button.stories.jsx focus=2,4
+import { Button } from "./ButtonComponent";
+import { pack, getArgsShared } from "@kickstartds/core/lib/storybook/helpers";
+import ButtonStories from "@kickstartds/base/lib/button/button.stories";
+import schema from "./button.schema.dereffed.json";
+
+const { defaultArgs: args, argTypes } = getArgsShared(schema);
+
+const Template = (args) => <Button {...args} />;
+
+export default {
+  ...ButtonStories,
+  title: "Components/Button",
+  args,
+  argTypes,
+  parameters: {
+    jsonschema: schema,
+  },
+};
+
+export const NativeButton = Template.bind({});
+NativeButton.args = pack({
+  label: "Click me",
+  variant: "primary",
+});
+```
+</CH.Code>
+
+---
+
+##### Get **Args** and **ArgTypes**
+
+We pull out `args` (as `defaultArgs`) and `argTypes` for our schema out of `getArgsShared`.
+
+<CH.Code>
+```jsx src/components/button/Button.stories.jsx focus=6
+import { Button } from "./ButtonComponent";
+import { pack, getArgsShared } from "@kickstartds/core/lib/storybook/helpers";
+import ButtonStories from "@kickstartds/base/lib/button/button.stories";
+import schema from "./button.schema.dereffed.json";
+
+const { defaultArgs: args, argTypes } = getArgsShared(schema);
+
+const Template = (args) => <Button {...args} />;
+
+export default {
+  ...ButtonStories,
+  title: "Components/Button",
+  args,
+  argTypes,
+  parameters: {
+    jsonschema: schema,
+  },
+};
+
+export const NativeButton = Template.bind({});
+NativeButton.args = pack({
+  label: "Click me",
+  variant: "primary",
+});
+```
+</CH.Code>
+
+---
+
+##### Pass through args in `Template`
+
+We tell our `Template` to pass through our `unpack`ed (by the `unpackDecorator`) `args` to the component.
+
+<CH.Code>
+```jsx src/components/button/Button.stories.jsx focus=8
+import { Button } from "./ButtonComponent";
+import { pack, getArgsShared } from "@kickstartds/core/lib/storybook/helpers";
+import ButtonStories from "@kickstartds/base/lib/button/button.stories";
+import schema from "./button.schema.dereffed.json";
+
+const { defaultArgs: args, argTypes } = getArgsShared(schema);
+
+const Template = (args) => <Button {...args} />;
+
+export default {
+  ...ButtonStories,
+  title: "Components/Button",
+  args,
+  argTypes,
+  parameters: {
+    jsonschema: schema,
+  },
+};
+
+export const NativeButton = Template.bind({});
+NativeButton.args = pack({
+  label: "Click me",
+  variant: "primary",
+});
+```
+</CH.Code>
+
+---
+
+##### Add **Args** and **ArgTypes** to story
+
+Setting `args` and `argTypes` in the `default` export ensures all variants of the story we'll use will share the same, correct definition.
+
+<CH.Code>
+```jsx src/components/button/Button.stories.jsx focus=13:14
+import { Button } from "./ButtonComponent";
+import { pack, getArgsShared } from "@kickstartds/core/lib/storybook/helpers";
+import ButtonStories from "@kickstartds/base/lib/button/button.stories";
+import schema from "./button.schema.dereffed.json";
+
+const { defaultArgs: args, argTypes } = getArgsShared(schema);
+
+const Template = (args) => <Button {...args} />;
+
+export default {
+  ...ButtonStories,
+  title: "Components/Button",
+  args,
+  argTypes,
+  parameters: {
+    jsonschema: schema,
+  },
+};
+
+export const NativeButton = Template.bind({});
+NativeButton.args = pack({
+  label: "Click me",
+  variant: "primary",
+});
+```
+</CH.Code>
+
+---
+
+##### Pack arguments given to story instances
+
+Finally, we'll need to `pack` options given to our stories / components.
+
+<CH.Code>
+```jsx src/components/button/Button.stories.jsx focus=21:24
+import { Button } from "./ButtonComponent";
+import { pack, getArgsShared } from "@kickstartds/core/lib/storybook/helpers";
+import ButtonStories from "@kickstartds/base/lib/button/button.stories";
+import schema from "./button.schema.dereffed.json";
+
+const { defaultArgs: args, argTypes } = getArgsShared(schema);
+
+const Template = (args) => <Button {...args} />;
+
+export default {
+  ...ButtonStories,
+  title: "Components/Button",
+  args,
+  argTypes,
+  parameters: {
+    jsonschema: schema,
+  },
+};
+
+export const NativeButton = Template.bind({});
+NativeButton.args = pack({
+  label: "Click me",
+  variant: "primary",
+});
+```
+</CH.Code>
+
+</CH.Spotlight>
+
+Have a look at the ["Adapt `Button` component"](../../guides/examples/components/button.mdx) guide for a full version of the `Button` component shown here.

@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Design & Branding Token
+# Design & Component Token
 
 ## Design Token Integration
 
@@ -19,6 +19,8 @@ We also provide ready-to-use docs pages for **Storybook**, using the `DesignToke
 
 You can find those [in our mono-repository](https://github.com/kickstartDS/kickstartDS/tree/feature/docs/packages/components/core/source/design-tokens), or have a look at them in action on [our own hosted **Storybook**](https://www.kickstartds.com/storybook/?path=/story/design-tokens-colors--page) (category `DESIGN TOKENS` in the sidebar).
 
+For a detailed explanation on how to add those to your project, have a look [at part three of our "Create your Design System"](../../guides/create/storybook.mdx#design-token-integration) guide.
+
 ## Component Token integration
 
 Our `storybook-adddon-component-tokens` addon displays CSS Custom Properties used inside a component directly as part of your **Storybook**. It extracts those values using [`custom-property-extract`](https://github.com/Dschungelabenteuer/custom-property-extract), and then converts those to a format displayed alongside your component.
@@ -29,26 +31,13 @@ You can also interact with those variables, for example changing some colors aro
 
 **[Show me a working demo](https://www.kickstartds.com/storybook/?path=/story/base-content-box--image)** (click on the `Component Tokens` addon tab)
 
-View the addon on **Github**: https://github.com/kickstartDS/storybook-addon-component-tokens
+View the addon on **Github**: https://github.com/kickstartDS/storybook-addon-component-tokens<br/>
+Or directly on **Storybook**s page: https://storybook.js.org/addons/@kickstartds/storybook-addon-component-tokens/
 
 <img
   src={require('./assets/teaser-componenttoken.png').default}
   alt="Image showing the Component Token addon in action"
 />
-
-**Table of contents:**
-
-- [Tokens](#tokens)
-  - [Design Token Integration](#design-token-integration)
-  - [Component Token Addon](#component-token-addon)
-    - [What it's for](#what-its-for)
-    - [Getting started](#getting-started)
-      - [Usage](#usage)
-        - [Adding to DocsPage and MDX](#adding-to-docspage-and-mdx)
-        - [DocsPage](#docspage)
-    - [Advanced configuration](#advanced-configuration)
-
-TODO fix this ToC, shouldn't include levels below `Getting started`
 
 ### What it's for
 

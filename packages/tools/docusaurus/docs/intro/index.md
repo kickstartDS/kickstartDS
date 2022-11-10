@@ -189,3 +189,5 @@ If that's not your cup of tea, you can also reach out to us:
 - By [writing us on WhatsApp](https://wa.me/491752131879?text=Hi!%20I%20am%20interested%20to%20know%20more%20about%20kickstartDS.)
 
 TODO add newly added docs here as deep links (e.g. `Next.js Helper` -> `Integrations` > `Frameworks` > `Next.js`)
+
+TODO reword some copied paragraphs of text, that sound to marketing heavy currently... and should be re-phrased in another voice. E.g. `Make the most out of your frontend interfaces by unifying their core – utilizing componen` -> `... should help users make the most out their frontend interfaces by unifying their core -`, etc

@@ -1,0 +1,144 @@
+---
+sidebar_position: 4
+---
+
+import { Quote } from '@kickstartds/content/lib/quote';
+
+# Premade Stories
+
+**Stories** are at the heart of **Storybook** (who whould've guessed 😅). They are the stage and workbench for your components. [As with **Storybook Controls**](./controls.mdx) you don't have to start from zero with **kickstartDS**.
+
+<Quote
+  image={require('./assets/logo-storybook.png').default}
+  byline="https://storybook.js.org/docs/react/get-started/whats-a-story"
+  source="What's a Story? page"
+  text="A story captures the rendered state of a UI component. Developers write multiple stories per component that describe all the “interesting” states a component can support."
+/>
+
+<br />
+
+## Usage with **kickstartDS**
+
+We provide support in two key areas when it comes to **Storybook** stories:
+
+1. Premade **Design Token** stories
+2. Premade component stories
+
+See below for an explanation what these can do for you!
+
+### 1. Premade **Design Token** stories
+
+Our premade **Design Token** stories showcase your **Design Token** set instantly, neatly categorized and grouped by their semantic meaning established through **kickstartDS**.
+
+See the integration page about ["Design & Component Token" in this very section](./token.mdx#design-token-integration) to see a detailed description, and how you'd use them for your own Design System.
+
+### 2. Premade component stories
+
+When building your own components based on **kickstartDS**, often you'll find that there's one single component, or a very limited set of components, that back your new creation. It'd make sense to re-use existing documentation for those, too!
+
+To enable re-use, we `export` stories as part of every component that's part of our modules. You can simply import those to set useful defaults for your own component stories, inheriting from the base component.
+
+#### Simple example `Button`
+
+Let's see how this would look like when building a story for your own, hypothetical `Button` component (based on the `@kickstartDS/base` component `Button`):
+
+<CH.Spotlight>
+<CH.Code>
+```jsx src/components/button/Button.stories.jsx
+import { Button } from "./ButtonComponent";
+import { pack, getArgsShared } from "@kickstartds/core/lib/storybook/helpers";
+import ButtonStories from "@kickstartds/base/lib/button/button.stories";
+import schema from "./button.schema.dereffed.json";
+
+const { defaultArgs: args, argTypes } = getArgsShared(schema);
+
+const Template = (args) => <Button {...args} />;
+
+export default {
+  ...ButtonStories,
+  title: "Components/Button",
+  args,
+  argTypes,
+  parameters: {
+    jsonschema: schema,
+  },
+};
+```
+</CH.Code>
+
+---
+
+##### Import existing stories
+
+First we import the existing `ButtonStories` from `@kickstartds/base`.
+
+<CH.Code>
+```jsx src/components/button/Button.stories.jsx focus=3
+import { Button } from "./ButtonComponent";
+import { pack, getArgsShared } from "@kickstartds/core/lib/storybook/helpers";
+import ButtonStories from "@kickstartds/base/lib/button/button.stories";
+import schema from "./button.schema.dereffed.json";
+
+const { defaultArgs: args, argTypes } = getArgsShared(schema);
+
+const Template = (args) => <Button {...args} />;
+
+export default {
+  ...ButtonStories,
+  title: "Components/Button",
+  args,
+  argTypes,
+  parameters: {
+    jsonschema: schema,
+  },
+};
+```
+</CH.Code>
+
+---
+
+##### Add them as defaults
+
+Destructure them into your `default` export as defaults, and overwrite just what you want to need to.
+
+<CH.Code>
+```jsx src/components/button/Button.stories.jsx focus=11
+import { Button } from "./ButtonComponent";
+import { pack, getArgsShared } from "@kickstartds/core/lib/storybook/helpers";
+import ButtonStories from "@kickstartds/base/lib/button/button.stories";
+import schema from "./button.schema.dereffed.json";
+
+const { defaultArgs: args, argTypes } = getArgsShared(schema);
+
+const Template = (args) => <Button {...args} />;
+
+export default {
+  ...ButtonStories,
+  title: "Components/Button",
+  args,
+  argTypes,
+  parameters: {
+    jsonschema: schema,
+  },
+};
+```
+</CH.Code>
+</CH.Spotlight>
+
+That's it, and as always this should help you focus on the important details! Have a look at the ["Adapt `Button` component"](../../guides/examples/components/button.mdx) guide for a full version of the `Button` component shown here.
+
+This also works when working with more than one component:
+
+#### Complex example `Section`
+
+For a more complex example, involving multiple base components see the `Section` we've created in our ["Create your Design System" guide](../../guides/create/components.mdx):
+
+TODO find a fitting example involving importing from multiple stories
+
+#### In action
+
+To see this in action, have a look at the base story for our **kickstartDS** `Button` component, for example:<br/>
+https://master--6080932e6ca776002127f0c5.chromatic.com/?path=/story/base-button--default
+
+Then compare it to the story for the `Button` in our own **kickstartDS** Design System (which, of course, is also based on **kickstartDS**), which re-uses the base story from above:<br/>
+https://www.kickstartds.com/storybook/?path=/story/base-button--solid

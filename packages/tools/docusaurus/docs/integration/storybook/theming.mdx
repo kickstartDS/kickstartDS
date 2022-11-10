@@ -1,0 +1,71 @@
+---
+sidebar_position: 5
+---
+
+# Theming
+
+There are some limited options to theming **Storybook**. But while this might seem like a small thing, it can really help make your **Storybook** feel like home.
+
+To learn more about theming in **Storybook**, have a look at [their dedicated docs for that](https://storybook.js.org/docs/react/configure/theming).
+
+## Usage with **kickstartDS**
+
+You already have a well established **Design Token** set when working with a Design System based on **kickstartDS**. In our mission to always provide sensible defaults, that improve your status quo without a big upfront investment of time, we provide a transformer in our **Style Dictionary** implementation (it's the tool backing your **Design Token** set, [learn more](#) TODO add link). That transformer takes your **Design Token** set and converts it to **JavaScript** values that can be imported in **Storybooks** theme file (`.storybook/themes.js`).
+
+As this is a generated file, based on your configuration, it's content will vary, but it should a little like this:
+
+```js .storybook/themes.js
+import { create } from '@storybook/theming';
+import * as tokens from '../src/token/storybook/tokens';
+
+export const light = create({
+  base: 'light',
+
+  colorPrimary: tokens.KsColorPrimaryBase,
+  colorSecondary: tokens.KsColorPrimaryBase,
+
+  // UI
+  appBg: tokens.KsColorPrimaryToBg9Base,
+  appContentBg: tokens.KsBackgroundColorDefaultBase,
+  appBorderColor: tokens.KsColorPrimaryAlpha2Base,
+  appBorderRadius: tokens.KsBorderRadiusCard,
+
+  // Typography
+  fontBase: tokens.KsFontFamilyInterface,
+  fontCode: tokens.KsFontFamilyMono,
+
+  // Text colors
+  textColor: tokens.KsTextColorDefaultBase,
+  textInverseColor: tokens.KsTextColorDefaultInvertedBase,
+
+  // Toolbar default and active colors
+  barTextColor: tokens.KsColorPrimaryAlpha6Base,
+  barSelectedColor: tokens.KsColorPrimaryBase,
+  barBg: tokens.KsBackgroundColorDefaultBase,
+
+  // Form colors
+  inputBg: tokens.KsBackgroundColorInterfaceInteractiveBase,
+  inputBorder: tokens.KsColorFgToBg7Base,
+  inputTextColor: tokens.KsTextColorInterfaceInteractiveBase,
+  inputBorderRadius: tokens.KsBorderRadiusControl,
+
+  brandTitle: 'Your kickstartDS Storybook',
+  brandUrl: 'https://www.kickstartDS.com',
+  brandImage: '/logo.svg',
+});
+```
+
+This automatically connects your **Design Token** set to your **Storybook** theme, while also setting your logo.
+
+## Example
+
+Have a look at our very own **kickstartDS** instance to see our colors (as an example) at work:
+
+<img
+  src={require('./assets/screenshot-branding.png').default}
+  alt="Image showing our corporate branding used to theme Storybook"
+/>
+
+<br />
+
+To learn how to use this in your own **Storybook**, have a look at [part three of our "Create your Design System"](../../guides/create/storybook.mdx) guide for an in-depth explanation.

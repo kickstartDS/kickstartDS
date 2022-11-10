@@ -227,7 +227,7 @@ We still try to write those addons in a way that they're useful outside of **kic
 
 `@kickstartds/storybook-addon-jsonschema` is an addon we wrote to display **JSON Schema** documentation for your [component API](../../foundations/components/component-api.md), including a validating JSON Code Editor with semantic auto-complete, the ability to interact with your components, and copy configurations with ease.
 
-To learn more about this addon, view our [dedicated integrations page about it](../../integration/storybook/schema.mdx).
+To learn more about this addon, view our [dedicated integrations page about it](../integration/storybook/schema.mdx).
 
 You can find this addon on:
 
@@ -241,7 +241,7 @@ You can find this addon on:
 
 `@kickstartds/storybook-addon-component-tokens` is an addon we wrote to display **Component Token** directly alongside your component in **Storybook**. This enables you to inspect token assignment or layering, you can even experiment by changing tokens around and testing the result by browsing through the rest of your **Storybook** (changes to your tokens made this way are persisted for your browser session).
 
-To learn more about this addon, view our [dedicated integrations page about it](../../integration/storybook/token.mdx).
+To learn more about this addon, view our [dedicated integrations page about it](../integration/storybook/token.mdx#component-token-integration).
 
 You can find this addon on:
 
