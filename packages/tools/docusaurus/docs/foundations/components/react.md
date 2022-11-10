@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# Customizing
+# React
 
 ## Table of contents:
 

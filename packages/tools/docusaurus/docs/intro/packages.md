@@ -4,6 +4,8 @@ sidebar_position: 5
 
 # Packages
 
+TODO add super short, general description on what a package is, and what **npm** does, link Environment Intro-page
+
 ## Overview
 
 **kickstartDS** is split into a bunch of different packages. This way you can pick and choose which parts you actually want to use in your own setup. Not every package will be used directly, as there are existing dependencies between those packages, too. For example adding `@kickstartds/base` to your project will automatically also add `@kickstartds/core` in an up-to-date and compatible version.
