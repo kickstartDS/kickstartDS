@@ -6,6 +6,8 @@ sidebar_position: 1
 
 TODO Paragraph as introduction
 
+- system of systems
+
 ## Component driven development
 
 TODO describe development in components in isolation:<br/>
@@ -21,6 +23,8 @@ TODO motivate the fact that we add utilities helping in constructing components:
 
 ## Overview of layers
 
+<img src={require('./assets/component_slices.png').default} alt="Infographic representing a sliced core listing the different layers" />
+
 Different layers:
 
 - Branding Token
@@ -31,8 +35,6 @@ Different layers:
 - HTML / Markup
 - React & TypeScript
 - JSON Schema
-
-TODO add image for layers
 
 ### Branding Token
 

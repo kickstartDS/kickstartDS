@@ -4,9 +4,19 @@ sidebar_position: 1
 
 # Roadmap
 
-As we just released kickstartDS with the first version of this documentation, we know, that we still have to work on many details to let our documentation shine. As we want to explain the underlaying concepts in-depth. ake a look at each stage to see which features we've launched, worked on, or planned for future releases. If we're missing something, let us know at hello@kickstartds.com.
+As we just released kickstartDS with the first version of this documentation, we know, that we still have to work on many details to let our documentation shine. As we want to explain the underlaying concepts in-depth. The roadmap shall provide an overview of the versions to inform you on what we are working on or what is in the pipe for future releases. If you are missing something, ping us at hello@kickstartds.com or [text us on Discord](https://discord.gg/mwKzD5gejY).
 
-## v2.0
+## Planned
+
+- [ ] Full check accessibility
+- [ ] Complete Documentation
+- [ ] Add Concepts
+- [ ] Add more guides
+- [ ] Refine roadmap
+
+## v2.0 (current version)
+
+- [x] Open Source release
 
 ## v1.5
 

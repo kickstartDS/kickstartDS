@@ -36,11 +36,7 @@ TODO describe usage as part of a Design System dependency, without global instal
 
 TODO find a nice-looking image to add here, acting as a visual divider. Ideally links somewhere, too
 
-<p align="center">
-  <a href="#">
-    <img src="https://www.kickstartds.com/static/9523fbdfdbee5e57c29c3f89a04eeb8e/ec668/storybook-teaser-box-component.webp" alt="kickstartDS Dummy Screenshot" width="50%" />
-  </a>
-</p>
+<img src={require('./assets/screenshot-cli.png').default} alt="Screenshot of the kickstartDS CLI" />
 
 ---
 
