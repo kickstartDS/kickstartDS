@@ -25,91 +25,107 @@ The word "directly" above is set in quotes, because even though we re-use the co
 
 This means reducing the set of properties, given by the [component API](../../foundations/components/component-api.md) of a **kickstartDS** component, to your needs is explicitly something that should be done! You still benefit by the broad, underlying foundation giving you flexibility when further adapting your own version of it. For example when adding a variant including an `Icon`, which was not part of your `Button` before.
 
-</Admonition>
-
 For a detailed example of adapting the `Button` component, have a look [at our component example](../examples/components/button.mdx) guide describing just that!
+
+</Admonition>
 
 ## Adaptation process
 
-There's one big assumption made when choosing the adaptation process: you've already identified a component you'd like to use... and it already offers all the options you'll need. Let's call it the base component.
+There's one big assumption made when choosing the adaptation process: you've already identified a component you'd like to use... and it already offers all the options you'll need. Let's call this component the base component.
 
 This greatly simplifies finding a component definition, as it means simply selecting props you'd like to use for yourself, from a well-defined set.
 
 <Admonition type="tip" title="Adaptation process as a base line">
-  Each of the other ways of adding a component to your Design System based on **kickstartDS** build upon this adapdation process.
+  Each of the other ways of adding a component to your Design System based on **kickstartDS** builds upon this adapdation process.
 
 Which is to say, you'll always want to reduce the props of **kickstartDS** components used as a base, as described here. But sometimes that may not be enough. You might need a slightly different version of the component, or its props (learn more in our guide ["Customize a component"](./customize.mdx), or view ["Customize `Headline` component"](../examples/components/headline.mdx) as an example), or you may want to add something completely new to it (learn more in our guide ["Extend a component"](./extend.mdx), or view ["Extend `Section` component"](../examples/components/section.mdx) as an example).
 
 </Admonition>
 
-If you don't have component in mind yet, you're probably served better by our guide ["Create a component"](./create.mdx). In that guide, you'll start off without a specific component in mind. This means defining a structure (someting you probably have an idea about already) first, and then mapping that structure to a fitting component second.
+If you don't have component in mind yet, you're probably better serverd by our guide ["Create a component"](./create.mdx). In that guide, you'll start off without a specific component in mind. This means defining a structure (someting you probably have an idea about already) first, and then mapping that structure to a fitting component second.
 
 We also have an example for this with ["Create `Teaser Card` component"](../examples/components/teaser-card.mdx).
 
+There are two main steps in adapting a component:
+
+1. Component definition, and
+2. Component creation
+
+TODO should / could possibly include "Component documentation" as a third step, where the **Storybook** story is added
+
+Let's see what they're all about!
+
 ### 1. Component Definition
 
-We start by defining a component API. As touched on before, this mainly means selecting a set of props from the pool of props available through your selected base component.
+The adaptation process starts by defining a [component API](../../foundations/components/component-api.md). As touched on before, this mainly means selecting a set of props from the pool of props available through your selected base component.
 
 We'll use the `Button` component throughout this guide to illustrate concepts. This will not be an exhaustive example, though. For that have a look at our guide ["Adapt `Button` component"](../examples/components/button.mdx).
 
 #### Purpose
 
-For the adaptation process the main purpose of a component is already defined by the selected base component. Nontheless the purpose for even a well-known type of component, like the `Button`, can vary from one Design System to the next. So it helps to think about the specific purpose the selected base component will serve in **your** Design System.
+For the adaptation process the main purpose of a component is already defined by the selected base component. Nontheless, the purpose for even a well-known type of component, like the `Button`, can vary from one Design System to the next. So it helps to think about the specific purpose the selected base component will serve in **your** Design System.
 
 As a hypothetical: you might decide to **really** only use components looking like a `Button` for elements the user directly interacts with... but not for links. This would be a big part of the components purpose, and thus should inform your property selection and naming process.
 
 #### Structure
 
-Before we start implementing, we'll want to define a first rough draft of our component API. Defining a name and a small description per property goes a long way in focussing you on the core of your component.
+Before we start implementing, we'll want to define a first rough draft of our component API. Defining a name, a small description and a rough type, per property, goes a long way in keeping the focus on the core of your component.
 
 Let's keep using the `Button` as an example. We're starting with the following properties with that one:
 
-| Property        | Description                                                     |
-| --------------- | --------------------------------------------------------------- |
-| `label`         | Text used on button                                             |
-| `variant`       | Choose one of the styles from the list                          |
-| `inverted`      | If the button should be inverted                                |
-| `size`          | Choose a size between small, medium and large                   |
-| `href`          | Link used for button                                            |
-| `iconBefore`    | Icon identifier for icon before the button text                 |
-| `iconAfter`     | Icon identifier for icon after the button text                  |
-| `fillAnimation` | Add fill animation on hover                                     |
-| `iconAnimation` | Add icon animation on hover                                     |
-| `type`          | Select the type attribute for the button                        |
-| `value`         | Define a value attribute for the button                         |
-| `name`          | Define a name attribute for the button                          |
-| `disabled`      | Set the disabled attribute for the button                       |
-| `newTab`        | Open link in new Tab                                            |
-| `className`     | Add additional css classes that should be applied to the button |
-| `component`     | Optional custom component identifier                            |
+| Property        | Type      | Description                                                     |
+| --------------- | --------- | --------------------------------------------------------------- |
+| `label`         | `string`  | Text used on button                                             |
+| `variant`       | `enum`    | Choose one of the styles from the list                          |
+| `inverted`      | `boolean` | If the button should be inverted                                |
+| `size`          | `enum`    | Choose a size between small, medium and large                   |
+| `href`          | `string`  | Link used for button                                            |
+| `iconBefore`    | `object`  | Icon identifier for icon before the button text                 |
+| `iconAfter`     | `object`  | Icon identifier for icon after the button text                  |
+| `fillAnimation` | `boolean` | Add fill animation on hover                                     |
+| `iconAnimation` | `boolean` | Add icon animation on hover                                     |
+| `type`          | `string`  | Select the type attribute for the button                        |
+| `value`         | `string`  | Define a value attribute for the button                         |
+| `name`          | `string`  | Define a name attribute for the button                          |
+| `disabled`      | `boolean` | Set the disabled attribute for the button                       |
+| `newTab`        | `boolean` | Open link in new Tab                                            |
+| `className`     | `string`  | Add additional css classes that should be applied to the button |
+| `component`     | `string`  | Optional custom component identifier                            |
 
-TODO add `Type` to all tables in this page
+TODO add required fields
 
-One potential set of props, it's the one used in our guide ["Adapt `Button` component"](../examples/components/button.mdx) if you're wondering, would be this:
+For the detailed documentation have a look at the `Button` in our **Storybook** here:<br/>
+https://www.kickstartds.com/storybook/?path=/docs/base-button--solid
 
-| Property   | Description                                                                    |
-| ---------- | ------------------------------------------------------------------------------ |
-| `label`    | Text content to display inside the button                                      |
-| `target`   | Target that should be linked, makes the button behave like a link semantically |
-| `variant`  | Variant of button to be used                                                   |
-| `size`     | Size of button to use                                                          |
-| `disabled` | Whether the button should be disabled                                          |
+One potential set of props, it's also the one used in our guide ["Adapt `Button` component"](../examples/components/button.mdx) if you're wondering, would be the following:
+
+| Property   | Type      | Description                                                                             |
+| ---------- | --------- | --------------------------------------------------------------------------------------- |
+| `label`    | `string`  | Text content to display inside the button                                               |
+| `target`   | `string`  | Target that should be linked, makes the button behave like a link semantically when set |
+| `variant`  | `enum`    | Variant of button to be used                                                            |
+| `size`     | `enum`    | Size of button to use                                                                   |
+| `disabled` | `boolean` | Whether the button should be disabled                                                   |
+
+TODO add required fields
 
 We took `label`, `variant`, `size` and `disabled` directly, and renamed `href` to `target` for our version of the `Button`.
 
-In our hypothetical above, we would probably drop the option of specifying `href` / `target` altogether.
+In our hypothetical above, we would probably drop the option of specifying `href` or `target` altogether.
 
 ### 2. Component Creation
 
+In the second and final step we'll get to actually create our component. We'll encode the [component API](../../foundations/components/component-api.md) by creating its **JSON Schema**, and create a **React** template matching our selected properties to the **kickstartDS** base component.
+
 #### **JSON Schema** definition
 
-We establish the structure of components by creating a **JSON Schema** for them, defining their component API in code.
+We establish the structure of components by creating a **JSON Schema** for them, defining their [component API](../../foundations/components/component-api.md) in code.
 
 For an abridged version of that process, have a look at the `Button` again:
 
 <CH.Spotlight>
 <CH.Code>
-```json button.schema.json
+```json @kickstartds/button.schema.json
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "http://schema.kickstartds.com/base/button.schema.json",
@@ -147,7 +163,7 @@ For an abridged version of that process, have a look at the `Button` again:
 This is the "full" button component API / **JSON Schema**. We've just reduced the property definitions.
 
 <CH.Code>
-```json button.schema.json
+```json @kickstartds/button.schema.json
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "http://schema.kickstartds.com/base/button.schema.json",
@@ -186,7 +202,7 @@ This is the "full" button component API / **JSON Schema**. We've just reduced th
 Let's highlight the ones we've identified when thinking about our component structure before.
 
 <CH.Code>
-```json button.schema.json focus=8,9,11,12,20
+```json @kickstartds/button.schema.json focus=8,9,11,12,20
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "http://schema.kickstartds.com/base/button.schema.json",
@@ -220,12 +236,12 @@ Let's highlight the ones we've identified when thinking about our component stru
 
 ---
 
-#### Create your own component API
+#### Create your component API
 
 Subsequently we add exactly those fields to our own components component API / **JSON Schema**...
 
 <CH.Code>
-```json mybutton.schema.json
+```json src/components/button/button.schema.json
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "http://schema.mydesignsystem.com/button.schema.json",
@@ -244,7 +260,7 @@ Subsequently we add exactly those fields to our own components component API / *
 
 ```
 
-```json button.schema.json
+```json @kickstartds/button.schema.json
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "http://schema.kickstartds.com/base/button.schema.json",
@@ -282,7 +298,7 @@ Subsequently we add exactly those fields to our own components component API / *
 ... and we can even rename props in the process.
 
 <CH.Code>
-```json mybutton.schema.json focus=11
+```json src/components/button/button.schema.json focus=11
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "http://schema.mydesignsystem.com/button.schema.json",
@@ -301,7 +317,7 @@ Subsequently we add exactly those fields to our own components component API / *
 
 ```
 
-```json button.schema.json
+```json @kickstartds/button.schema.json
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "http://schema.kickstartds.com/base/button.schema.json",
@@ -338,7 +354,554 @@ For the full / extended version of adapting a `Button` have a look at our guide 
 
 #### **React** Template
 
+Now that our **JSON Schema** is defined, we'll automatically get matching **TypeScript** types for our component. We use those, combined with the types already included with the **kickstartDS** base component, to quickly hook up our set of properties to the original component. Using auto-complete, and **TypeScript** telling us about required properties in the base component, this is done in light speed!
+
+To learn more about the tooling that create those types for you, and how to hook it up, see [part four of our "Create your Design System" guide](../../guides/create/components.mdx#add-packagejson-scripts).
+
+Let's continue showcasing this process using our `Button`, creating the component template:
+
+<CH.Spotlight>
+<CH.Code>
+```tsx src/components/button/ButtonComponent.tsx
+import { HTMLAttributes, forwardRef, FC, PropsWithChildren } from "react";
+import {
+  ButtonContextDefault,
+  ButtonContext,
+} from "@kickstartds/base/lib/button";
+import { ButtonProps } from "./ButtonProps";
+
+export const Button = forwardRef<
+  HTMLAnchorElement | HTMLButtonElement,
+  ButtonProps & HTMLAttributes<HTMLElement>
+>(({
+  label,
+  target,
+  size = "medium",
+  variant = "secondary",
+  disabled = false,
+  ...props
+}, ref) => (
+  <ButtonContextDefault
+    {...props}
+    href={target}
+    label={label}
+    size={size}
+    variant={
+      variant === 'primary'
+        ? 'solid'
+        : variant === 'secondary'
+          ? 'outline'
+          : 'clear'
+    }
+    disabled={disabled}
+    ref={ref}
+  />
+));
+
+export const ButtonProvider: FC<PropsWithChildren<any>> = (props) => (
+  <ButtonContext.Provider {...props} value={Button} />
+);
+
+```
+</CH.Code>
+
+---
+
+##### Necessary imports
+
+The main imports here are the **kickstartDS** base component and our own components **TypeScript** types.
+
+<CH.Code>
+```tsx src/components/button/ButtonComponent.tsx focus=2:6
+import { HTMLAttributes, forwardRef, FC, PropsWithChildren } from "react";
+import {
+  ButtonContextDefault,
+  ButtonContext,
+} from "@kickstartds/base/lib/button";
+import { ButtonProps } from "./ButtonProps";
+
+export const Button = forwardRef<
+  HTMLAnchorElement | HTMLButtonElement,
+  ButtonProps & HTMLAttributes<HTMLElement>
+>(({
+  label,
+  target,
+  size = "medium",
+  variant = "secondary",
+  disabled = false,
+  ...props
+}, ref) => (
+  <ButtonContextDefault
+    {...props}
+    href={target}
+    label={label}
+    size={size}
+    variant={
+      variant === 'primary'
+        ? 'solid'
+        : variant === 'secondary'
+          ? 'outline'
+          : 'clear'
+    }
+    disabled={disabled}
+    ref={ref}
+  />
+));
+
+export const ButtonProvider: FC<PropsWithChildren<any>> = (props) => (
+  <ButtonContext.Provider {...props} value={Button} />
+);
+
+```
+</CH.Code>
+
+---
+
+##### Add correct type to component
+
+We need to type our **React** component to use our **JSON Schema**, while also making sure native HTML attributes and **React** refs are passed correctly. For the `Button` this means also including `HTMLAnchorElement | HTMLButtonElement` and using [`forwardRef`](https://reactjs.org/docs/forwarding-refs.html).
+
+Doing this allows users of your component to enjoy having the same auto-complete and safety when working with your Design System.
+
+<CH.Code>
+```tsx src/components/button/ButtonComponent.tsx focus=8:11
+import { HTMLAttributes, forwardRef, FC, PropsWithChildren } from "react";
+import {
+  ButtonContextDefault,
+  ButtonContext,
+} from "@kickstartds/base/lib/button";
+import { ButtonProps } from "./ButtonProps";
+
+export const Button = forwardRef<
+  HTMLAnchorElement | HTMLButtonElement,
+  ButtonProps & HTMLAttributes<HTMLElement>
+>(({
+  label,
+  target,
+  size = "medium",
+  variant = "secondary",
+  disabled = false,
+  ...props
+}, ref) => (
+  <ButtonContextDefault
+    {...props}
+    href={target}
+    label={label}
+    size={size}
+    variant={
+      variant === 'primary'
+        ? 'solid'
+        : variant === 'secondary'
+          ? 'outline'
+          : 'clear'
+    }
+    disabled={disabled}
+    ref={ref}
+  />
+));
+
+export const ButtonProvider: FC<PropsWithChildren<any>> = (props) => (
+  <ButtonContext.Provider {...props} value={Button} />
+);
+
+```
+</CH.Code>
+
+---
+
+##### Add parameters to component
+
+Next we add all our components defined properties to its function signature. For properties having a default defined in your [component API](../../foundations/components/component-api.md) we add that default here, too.
+
+As we also want to pass through all the props not explicitly managed by us we sponge up `...props`.
+
+And in the case of the `Button`, we also have to add the `ref` added through [`forwardRef`](https://reactjs.org/docs/forwarding-refs.html).
+
+<CH.Code>
+```tsx src/components/button/ButtonComponent.tsx focus=11:18
+import { HTMLAttributes, forwardRef, FC, PropsWithChildren } from "react";
+import {
+  ButtonContextDefault,
+  ButtonContext,
+} from "@kickstartds/base/lib/button";
+import { ButtonProps } from "./ButtonProps";
+
+export const Button = forwardRef<
+  HTMLAnchorElement | HTMLButtonElement,
+  ButtonProps & HTMLAttributes<HTMLElement>
+>(({
+  label,
+  target,
+  size = "medium",
+  variant = "secondary",
+  disabled = false,
+  ...props
+}, ref) => (
+  <ButtonContextDefault
+    {...props}
+    href={target}
+    label={label}
+    size={size}
+    variant={
+      variant === 'primary'
+        ? 'solid'
+        : variant === 'secondary'
+          ? 'outline'
+          : 'clear'
+    }
+    disabled={disabled}
+    ref={ref}
+  />
+));
+
+export const ButtonProvider: FC<PropsWithChildren<any>> = (props) => (
+  <ButtonContext.Provider {...props} value={Button} />
+);
+
+```
+</CH.Code>
+
+---
+
+##### Destructure additional props
+
+Coming to our component JSX, we start by passing down (destructuring) the `props` we're carrying through first. This ensures properties defined in our [component API](../../foundations/components/component-api.md) will always take precedence, because they're added after the general `props`.
+
+<CH.Code>
+```tsx src/components/button/ButtonComponent.tsx focus=19:20,33
+import { HTMLAttributes, forwardRef, FC, PropsWithChildren } from "react";
+import {
+  ButtonContextDefault,
+  ButtonContext,
+} from "@kickstartds/base/lib/button";
+import { ButtonProps } from "./ButtonProps";
+
+export const Button = forwardRef<
+  HTMLAnchorElement | HTMLButtonElement,
+  ButtonProps & HTMLAttributes<HTMLElement>
+>(({
+  label,
+  target,
+  size = "medium",
+  variant = "secondary",
+  disabled = false,
+  ...props
+}, ref) => (
+  <ButtonContextDefault
+    {...props}
+    href={target}
+    label={label}
+    size={size}
+    variant={
+      variant === 'primary'
+        ? 'solid'
+        : variant === 'secondary'
+          ? 'outline'
+          : 'clear'
+    }
+    disabled={disabled}
+    ref={ref}
+  />
+));
+
+export const ButtonProvider: FC<PropsWithChildren<any>> = (props) => (
+  <ButtonContext.Provider {...props} value={Button} />
+);
+
+```
+</CH.Code>
+
+---
+
+##### Glue component API to base component 1/3
+
+The simplest cases of connecting props to the base component is when the name of the property is taken from the base component. We can just directly pass those without much thought.
+
+<CH.Code>
+```tsx src/components/button/ButtonComponent.tsx focus=19,22,23,31,33
+import { HTMLAttributes, forwardRef, FC, PropsWithChildren } from "react";
+import {
+  ButtonContextDefault,
+  ButtonContext,
+} from "@kickstartds/base/lib/button";
+import { ButtonProps } from "./ButtonProps";
+
+export const Button = forwardRef<
+  HTMLAnchorElement | HTMLButtonElement,
+  ButtonProps & HTMLAttributes<HTMLElement>
+>(({
+  label,
+  target,
+  size = "medium",
+  variant = "secondary",
+  disabled = false,
+  ...props
+}, ref) => (
+  <ButtonContextDefault
+    {...props}
+    href={target}
+    label={label}
+    size={size}
+    variant={
+      variant === 'primary'
+        ? 'solid'
+        : variant === 'secondary'
+          ? 'outline'
+          : 'clear'
+    }
+    disabled={disabled}
+    ref={ref}
+  />
+));
+
+export const ButtonProvider: FC<PropsWithChildren<any>> = (props) => (
+  <ButtonContext.Provider {...props} value={Button} />
+);
+
+```
+</CH.Code>
+
+---
+
+##### Glue component API to base component 2/3
+
+In some cases we might have changed the name of a prop. In that instance, we just to have to wire up the renamed property to the originally named base components property.
+
+<CH.Code>
+```tsx src/components/button/ButtonComponent.tsx focus=19,21,33
+import { HTMLAttributes, forwardRef, FC, PropsWithChildren } from "react";
+import {
+  ButtonContextDefault,
+  ButtonContext,
+} from "@kickstartds/base/lib/button";
+import { ButtonProps } from "./ButtonProps";
+
+export const Button = forwardRef<
+  HTMLAnchorElement | HTMLButtonElement,
+  ButtonProps & HTMLAttributes<HTMLElement>
+>(({
+  label,
+  target,
+  size = "medium",
+  variant = "secondary",
+  disabled = false,
+  ...props
+}, ref) => (
+  <ButtonContextDefault
+    {...props}
+    href={target}
+    label={label}
+    size={size}
+    variant={
+      variant === 'primary'
+        ? 'solid'
+        : variant === 'secondary'
+          ? 'outline'
+          : 'clear'
+    }
+    disabled={disabled}
+    ref={ref}
+  />
+));
+
+export const ButtonProvider: FC<PropsWithChildren<any>> = (props) => (
+  <ButtonContext.Provider {...props} value={Button} />
+);
+
+```
+</CH.Code>
+
+---
+
+##### Glue component API to base component 3/3
+
+Finally there might be properties where the naming of the actual values was changed, for example when adapting `enum` typed properties.
+
+We'll have to simply rewire the values in that case.
+
+<CH.Code>
+```tsx src/components/button/ButtonComponent.tsx focus=19,24:30,33
+import { HTMLAttributes, forwardRef, FC, PropsWithChildren } from "react";
+import {
+  ButtonContextDefault,
+  ButtonContext,
+} from "@kickstartds/base/lib/button";
+import { ButtonProps } from "./ButtonProps";
+
+export const Button = forwardRef<
+  HTMLAnchorElement | HTMLButtonElement,
+  ButtonProps & HTMLAttributes<HTMLElement>
+>(({
+  label,
+  target,
+  size = "medium",
+  variant = "secondary",
+  disabled = false,
+  ...props
+}, ref) => (
+  <ButtonContextDefault
+    {...props}
+    href={target}
+    label={label}
+    size={size}
+    variant={
+      variant === 'primary'
+        ? 'solid'
+        : variant === 'secondary'
+          ? 'outline'
+          : 'clear'
+    }
+    disabled={disabled}
+    ref={ref}
+  />
+));
+
+export const ButtonProvider: FC<PropsWithChildren<any>> = (props) => (
+  <ButtonContext.Provider {...props} value={Button} />
+);
+
+```
+</CH.Code>
+
+---
+
+##### Finalize component JSX by adding the `ref`
+
+This will be optional, and depend on the element being handled. If you've included a [`forwardRef`](https://reactjs.org/docs/forwarding-refs.html) before, you'll have to pass that `ref` down to the **kickstartDS** base component.
+
+We'll have to simply rewire the values in that case.
+
+<CH.Code>
+```tsx src/components/button/ButtonComponent.tsx focus=19,32,33
+import { HTMLAttributes, forwardRef, FC, PropsWithChildren } from "react";
+import {
+  ButtonContextDefault,
+  ButtonContext,
+} from "@kickstartds/base/lib/button";
+import { ButtonProps } from "./ButtonProps";
+
+export const Button = forwardRef<
+  HTMLAnchorElement | HTMLButtonElement,
+  ButtonProps & HTMLAttributes<HTMLElement>
+>(({
+  label,
+  target,
+  size = "medium",
+  variant = "secondary",
+  disabled = false,
+  ...props
+}, ref) => (
+  <ButtonContextDefault
+    {...props}
+    href={target}
+    label={label}
+    size={size}
+    variant={
+      variant === 'primary'
+        ? 'solid'
+        : variant === 'secondary'
+          ? 'outline'
+          : 'clear'
+    }
+    disabled={disabled}
+    ref={ref}
+  />
+));
+
+export const ButtonProvider: FC<PropsWithChildren<any>> = (props) => (
+  <ButtonContext.Provider {...props} value={Button} />
+);
+
+```
+</CH.Code>
+
+---
+
+##### Adding a `Provider`
+
+The final part of creating our **React** component is adding a component `Provider` for it. As we've adapted a component here, we'll want to make sure that every time another component includes the base component, our own version of it gets used instead.
+
+<CH.Code>
+```tsx src/components/button/ButtonComponent.tsx focus=36:38
+import { HTMLAttributes, forwardRef, FC, PropsWithChildren } from "react";
+import {
+  ButtonContextDefault,
+  ButtonContext,
+} from "@kickstartds/base/lib/button";
+import { ButtonProps } from "./ButtonProps";
+
+export const Button = forwardRef<
+  HTMLAnchorElement | HTMLButtonElement,
+  ButtonProps & HTMLAttributes<HTMLElement>
+>(({
+  label,
+  target,
+  size = "medium",
+  variant = "secondary",
+  disabled = false,
+  ...props
+}, ref) => (
+  <ButtonContextDefault
+    {...props}
+    href={target}
+    label={label}
+    size={size}
+    variant={
+      variant === 'primary'
+        ? 'solid'
+        : variant === 'secondary'
+          ? 'outline'
+          : 'clear'
+    }
+    disabled={disabled}
+    ref={ref}
+  />
+));
+
+export const ButtonProvider: FC<PropsWithChildren<any>> = (props) => (
+  <ButtonContext.Provider {...props} value={Button} />
+);
+
+```
+</CH.Code>
+</CH.Spotlight>
+
+If you're wondering what that `Provider` we've added last is all about, think about it like this:<br/>
+There may be other components you've built, that themselves use the base `Button` component by default. For example we might have our own `TeaserCard` component, based on the **kickstartDS** `TeaserBox` which includes a `Button`.
+
+As a means to not having to go through every combination of those component now, making sure our `Button` actually gets used, you can just change the default `Button` rendered by adding a single `Provider` once, instead.
+
+Learn more about `Providers` and **React Context** in [our dedicated page about them](#). TODO add link.<br />
+Or look at our ["Create your Design System" guide](../../guides/create/components.mdx), where we add the general setup for `Providers`. That one also includes some more details on this!
+
+
+<Admonition type="tip" title="VS Code component property quick-fix">
+VS Code has a great feature aiding in this workflow, with **React** components that include **TypeScript** types... like **kickstartDS** components do. When adding a "bare" component without props to your template, VS Code will offer you the option to `Add missing attributes`.
+
+This will automatically create all required options for your component. Now you just have to connect your own props to those, while hard-coding the ones you don't plan on exposing as part of your components [component API](../../foundations/components/component-api.md).
+
+Just hover the squiggly, red line that should be decorating your component, and choose `Quick Fix...`, to get to that option (alternatively put your cursor on the component tag and hit `Ctrl+.`).
+
+TODO add short animation of this workflow
+</Admonition>
+
 ## Technical debt
+
+This way of creating components adds minimal technical debt to your Design System. Not much has been changed around, we just add a small layer on top of the original **kickstartDS** base component.
+
+Relevant underlying changes you'll have to look out for:
+
+- changes to the base components [component API](../../foundations/components/component-api.md)
+- removal of the base component
+
+You're immune to underlying changes to:
+
+- the components template (both **React**, and the resulting **HTML**)
+- the design and layout (changes to **CSS**, **SCSS** and **Design & Component Token**)
+
+In the case of a changed [component API](../../foundations/components/component-api.md), you should have a look at the corresponding `CHANGELOG.md` and potential notes in our matching [migration guide](../migrations/index.md). You'll probably just need to add a newly added field to your **React** template, and potentially your own [component API](../../foundations/components/component-api.md) if you want to use it. If a field was changed, that might also necessitate some adaption of your own version. Finally a removed field you're actually using would mean adding additional customization to regain that functionality. Have a look at our [`Headline` example guide](../examples/components/headline.mdx) to see how you'd add your own, new property!
+
+Learn more about what we mean by technical debt here on the [overview page of this section](#) TODO link to technical debt section on parent page.
 
 ## Examples
 
@@ -355,5 +918,5 @@ This is what the result looks like (TODO replace with preview from real Storyboo
   width="200"
   height="80"
 ></iframe>
-```
+
 ````
