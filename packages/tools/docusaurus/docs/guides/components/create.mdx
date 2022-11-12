@@ -6,39 +6,866 @@ import Admonition from 'react-admonitions';
 
 # Create a component
 
-TODO: see Examples > Components > Interstitial for the steps that should be explained in more detail here. So every example can link to those general descriptions here. In turn we can link to illustrative examples from our texts here.
-
 ## Definition
+
+Creating a component differs from "just" adapting a component in that it starts out without a specific **kickstartDS** component already in mind.
+
+All but the most obvious components will be implemented following this strategy. And it's the preferrable way to do it, too. You **should** start out with just a concept of what you actually need. Which components can help in bringing that concept to life should be something you concern yourself with second.
+
+This also explains why this has an additional step in "Component Mapping", when compared with [adapting a component](./adapt.mdx). This is where we will try to match our [component API](../../foundations/components/component-api.md) to existing components.
+
+This works especially well in 2 cases:
+
+1. When what you need is actually just a specialized case of one of our existing components. Like when wanting to create an article teaser, you'll probably find a general purpose **kickstartDS** component like the `TeaserCard` that matches this signature really well
+2. You have a rather complex component (think something like a more advanced blog head component). Often you'll find those components to be composed of basic building bricks (like `Button`s, `TagLabel`s or `Headline`s) after all, which is where component mapping to **kickstartDS** comes into the picture again
+
+<Admonition type="tip" title="When zooming in enough, everything starts to look the same">
+  If you think about it, there's only a limited number of ways information can actually be presented. And oftentimes you'll find there's already preferred versions of doing it out there, what we'd call learned user interface (UI), or just best practices. [The **Hamburger** menu icon](https://www.nngroup.com/articles/hamburger-menus/) would be such an example. Or how certain information is often teased in the form of structured cards.
+
+Adhering to that expectation, and not creating unneeded artificial friction, is one big part of delivering a good user experience (UX). We're convinced we can cover a great range of those basic building blocks for you. Allowing you to concentrate on destructuring your requirements, mapping the resulting pieces to **kickstartDS** components. It's how bigger **kickstartDS** components like a [`Storytelling`](https://www.kickstartds.com/storybook/?path=/story/content-storytelling--image) component (using `Button`, `Headline`, `RichText`, etc) are constructed, too.
+
+</Admonition>
+
+Additionally this can of course also be combined with [customization](./customize.mdx) for your own added properties, not part of the used **kickstartDS** base components (see our [`Headline` component example](../examples/components/headline.mdx) for that). Or be implemented using [extension](./extend.mdx) if the component should expand on some **kickstartDS** base component (see our [`Section` component example](../examples/components/section.mdx) for that).
 
 ## Creation process
 
-<Admonition type="tip" title="Adaptation process as a base line">
-  If you've read our guide ["Adapt a component"](./adapt.mdx) you probably already know this:
+You should already have an idea of what you'll need from your component, or some rough image of what it should do. We start by refining those requirements into a component API, which we'll then map to existing **kickstartDS** base components. This will then serve as our starting point for creating the actual component.
 
-This guide expects you to reduce the set of props offered by **kickstartDS** components, when used as a base component. We'll also skip over, or significantly shorten, parts already covered by that guide. If unsure about something, best cross-reference it!
+There are three main steps in creating a component:
+
+1. Component definition,
+2. Component mapping, and
+3. Component creation
+
+TODO should / could possibly include "Component documentation" as a fourth step, where the **Storybook** story is added
+
+So the main way this differs from [adapting a component](./adapt.mdx) is in adding "Component Mapping", in between "Component definition" and "Component creation". This is where we'll try to match our [component API](../../foundations/components/component-api.md) to existing components.
+
+We'll also slightly deviate from it when defining our structure, as we can't just reduce an existing set of component properties here.
+
+<Admonition type="tip" title="Adaptation process as a base line">
+  If you've read our ["Adapt a component"](./adapt.mdx) guide you probably already know this:
+
+This guide expects you to reduce the set of props offered by **kickstartDS** components, when used as base components. We'll also skip over, or significantly shorten, parts already covered by that guide. If unsure about something, best cross-reference it!
 
 </Admonition>
 
 ### 1. Component Definition
 
+Like the adaptation process we start by defining a [component API](../../foundations/components/component-api.md). But unlike it, we directly write down what we need. We don't start with a blueprint this time.
+
+We'll use the `TeaserCard` component throughout this guide to illustrate concepts. This will not be an exhaustive example, though. For that have a look at our guide ["Create `TeaserCard` component"](../examples/components/teaser-card.mdx). We also have an additional example in ["Create `Interstitial` component"](../examples/components/interstitial.mdx), but to actually implement that you need access to our **kickstartDS** content module. But following the thought process behind it can provide values nontheless.
+
+TODO add content module CTA here
+
 #### Purpose
+
+When thinking about a component that should be part of your Design System, you should already have a strong sense of what that component should be, and what it should accomplish for you. If that's not the case, it probably isn't stable enough yet to be part of a Design System that should find wider adoption. You should probably take a step back first, and maybe start a [Design System Initiative](../design-system-initiative.md) to narrow down on what components you'll really need.
+
+With that in mind, let's assume that the purpose of our component (the `TeaserCard`) is to tease content. It should look like a card while doing that, and have the obvious features one would assume a card based component to have. Like a cover image, a link, a headline and some text... with some of those potentially being optional. And because our Design System has an [invert feature](#), it should also be invertible.
+
+TODO describe invert feature somewhere, link it above
 
 #### Structure
 
+Before we start implementing, we'll want to define a first rough draft of our [component API](../../foundations/components/component-api.md).
+Defining a name, a small description and a rough type, per property, goes a long way in keeping the focus on the core of your component.
+
+Let's keep using the `TeaserCard` as an example, with the following properties being the result of pinning down our rough idea:
+
+| Property     | Type      | Description                          |
+| ------------ | --------- | ------------------------------------ |
+| `headline *` | `string`  | Headline for the teaser card         |
+| `text *`     | `string`  | Body text for the teaser card        |
+| `image`      | `string`  | (Optional) image to display as cover |
+| `inverted`   | `boolean` | Show inverted version of card?       |
+| `target *`   | `string`  | Target that should be linked         |
+
+Fields that should be required are marked with a `*`.
+
 ### 2. Component Mapping
 
-#### Match it
+This is the part unique to this way of implementing a component (compared, for example, to [adapting a component](./adapt.mdx)). We'll match the component to one, or more, **kickstartDS** base components... and potentially make some slight adjustments.
+
+#### Matching it
+
+Matching one or more components means finding components that are part of **kickstartDS** that can cover your use case, or one part of it. This way you create your component by composition.
+
+For our `TeaserCard`, when looking through all of the existing **kickstartDS** base components (one great way of doing this is through our [**Storybook**](https://www.kickstartDS.com/storybook/)), we identify the [`TeaserBox`](https://www.kickstartds.com/storybook/?path=/story/base-teaser-box--linked-without-button) as a great candidate. It:
+
+- has a `topic` that can serve as our `headline`
+- takes `text` for the body copy
+- already includes options for a cover (`image`), and even some options for it (`ratio`, `imageSpacing`)
+- can be `inverted`
+- and takes a `Link` component for `link`
+
+This seems to match really well!
 
 #### Adjustments
 
+While just matching a component can already get you pretty far, oftentimes you'll want to make some more adjustments to really make everything fit for you. And while the properties may match up really well, there's still some translation to do to make it work.
+
+Comparing `TeaserCard` and `TeaserBox`... we don't have to do anything for `text`, `inverted` or `image`, as these already share a name and definition. In the case of `headline` we just have to rename the prop (from `topic`). And for `target` we simplify the existing `link` object to a single string property... hard coding the rest of the values in the process, while also renaming it.
+
 ### 3. Component Creation
+
+In the third and final step we'll get to actually create our component. We'll encode the [component API](../../foundations/components/component-api.md) by creating its **JSON Schema**, and create a **React** template matching our selected properties to the **kickstartDS** base component.
 
 #### **JSON Schema** definition
 
+We establish the structure of components by creating a **JSON Schema** for them, defining their [component API](../../foundations/components/component-api.md) in code.
+
+For an abridged version of that process, have a look at the `TeaserCard` again:
+
+<CH.Spotlight>
+<CH.Code>
+```json @kickstartds/teaser-box.schema.json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/base/teaser-box.schema.json",
+  "title": "Teaser Box",
+  "description": "Component to tease external content",
+  "type": "object",
+  "properties": {
+    "image":  {... },
+    "ratio": { ... },
+    "imageSpacing": { ... },
+    "topic": { ... },
+    "text": { ...},
+    "inverted":  {... },
+    "link": { ... },
+    "className": { ... },
+    "component": { ... }
+  },
+  "required": ["ratio"],
+  "additionalProperties": false
+}
+
+````
+</CH.Code>
+
+---
+
+#### `TeaserBox` base component
+
+This is the "full" `TeaserBox` [component API](../../foundations/components/component-api.md) / **JSON Schema**. We've just reduced the property definitions.
+
+<CH.Code>
+```json @kickstartds/teaser-box.schema.json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/base/teaser-box.schema.json",
+  "title": "Teaser Box",
+  "description": "Component to tease external content",
+  "type": "object",
+  "properties": {
+    "image":  {... },
+    "ratio": { ... },
+    "imageSpacing": { ... },
+    "topic": { ... },
+    "text": { ...},
+    "inverted":  {... },
+    "link": { ... },
+    "className": { ... },
+    "component": { ... }
+  },
+  "required": ["ratio"],
+  "additionalProperties": false
+}
+
+
+````
+
+</CH.Code>
+
+---
+
+#### Select from available props
+
+Let's highlight the ones we've identified when thinking about our component structure before.
+
+<CH.Code>
+```json @kickstartds/teaser-box.schema.json focus=8,11:14
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/base/teaser-box.schema.json",
+  "title": "Teaser Box",
+  "description": "Component to tease external content",
+  "type": "object",
+  "properties": {
+    "image":  {... },
+    "ratio": { ... },
+    "imageSpacing": { ... },
+    "topic": { ... },
+    "text": { ...},
+    "inverted":  {... },
+    "link": { ... },
+    "className": { ... },
+    "component": { ... }
+  },
+  "required": ["ratio"],
+  "additionalProperties": false
+}
+
+````
+
+</CH.Code>
+
+---
+
+#### Create your component API
+
+Subsequently we add exactly those fields to our own components component API / **JSON Schema**...
+
+<CH.Code>
+```json src/components/teaser-card/teaser-card.schema.json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/teaser-card.schema.json",
+  "title": "Teaser Card",
+  "description": "Component used to tease content",
+  "type": "object",
+  "properties": {
+    "headline": { ... },
+    "text": { ... },
+    "target": { ... },
+    "image": { ... },
+    "inverted": { ... }
+  },
+  "required": ["headline", "text", "target"]
+}
+
+```
+
+```json @kickstartds/teaser-box.schema.json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/base/teaser-box.schema.json",
+  "title": "Teaser Box",
+  "description": "Component to tease external content",
+  "type": "object",
+  "properties": {
+    "image":  {... },
+    "ratio": { ... },
+    "imageSpacing": { ... },
+    "topic": { ... },
+    "text": { ...},
+    "inverted":  {... },
+    "link": { ... },
+    "className": { ... },
+    "component": { ... }
+  },
+  "required": ["ratio"],
+  "additionalProperties": false
+}
+
+```
+
+</CH.Code>
+
+---
+
+#### Renaming props
+
+... and we rename props as needed, in the process.
+
+<CH.Code>
+```json src/components/teaser-card/teaser-card.schema.json focus=8,10
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/teaser-card.schema.json",
+  "title": "Teaser Card",
+  "description": "Component used to tease content",
+  "type": "object",
+  "properties": {
+    "headline": { ... },
+    "text": { ... },
+    "target": { ... },
+    "image": { ... },
+    "inverted": { ... }
+  },
+  "required": ["headline", "text", "target"]
+}
+
+```
+
+```json @kickstartds/teaser-box.schema.json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/base/teaser-box.schema.json",
+  "title": "Teaser Box",
+  "description": "Component to tease external content",
+  "type": "object",
+  "properties": {
+    "image":  {... },
+    "ratio": { ... },
+    "imageSpacing": { ... },
+    "topic": { ... },
+    "text": { ...},
+    "inverted":  {... },
+    "link": { ... },
+    "className": { ... },
+    "component": { ... }
+  },
+  "required": ["ratio"],
+  "additionalProperties": false
+}
+
+```
+
+</CH.Code>
+
+---
+
+#### Add `required` fields
+
+And finally, set all the fields identified as `required`.
+
+<CH.Code>
+```json src/components/teaser-card/teaser-card.schema.json focus=14
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/teaser-card.schema.json",
+  "title": "Teaser Card",
+  "description": "Component used to tease content",
+  "type": "object",
+  "properties": {
+    "headline": { ... },
+    "text": { ... },
+    "target": { ... },
+    "image": { ... },
+    "inverted": { ... }
+  },
+  "required": ["headline", "text", "target"]
+}
+
+```
+
+```json @kickstartds/teaser-box.schema.json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/base/teaser-box.schema.json",
+  "title": "Teaser Box",
+  "description": "Component to tease external content",
+  "type": "object",
+  "properties": {
+    "image":  {... },
+    "ratio": { ... },
+    "imageSpacing": { ... },
+    "topic": { ... },
+    "text": { ...},
+    "inverted":  {... },
+    "link": { ... },
+    "className": { ... },
+    "component": { ... }
+  },
+  "required": ["ratio"],
+  "additionalProperties": false
+}
+
+```
+
+</CH.Code>
+
+</CH.Spotlight>
+
+<Admonition type="tip" title="Using multiple components">
+  This process can also involve using properties from multiple components. For example when building one like the [`Storytelling`](https://www.kickstartds.com/storybook/?path=/story/content-storytelling--image) component, using `Headline`, `Button` and `RichText`.
+
+  You can either just merge properties on your root component, or group included components on their own property. Like adding a `link` to something, which maps to the `Button` component and some of its properties (as their own `object` in your **JSON Schema**).
+</Admonition>
+
+For the full version of creating the `TeaserCard` have a look at our guide ["Create `TeaserCard` component"](../examples/components/teaser-card.mdx).
+
 #### **React** Template
 
-## Technical debt
+Now that our **JSON Schema** is defined, we'll automatically get matching **TypeScript** types for our component. We use those, combined with the types already included with the **kickstartDS** base component(s), to quickly hook up our set of properties to the mapped component(s). Using auto-complete, and **TypeScript** telling us about required properties in the mapped component(s), this is done in light speed!
+
+To learn more about the tooling that create those types for you, and how to hook it up, see [part four of our "Create your Design System" guide](../../guides/create/components.mdx#add-packagejson-scripts).
+
+Let's continue showcasing this process using our `TeaserCard`, creating the component template:
+
+<CH.Spotlight>
+<CH.Code>
+```tsx src/components/teaser-card/TeaserCardComponent.tsx
+import { HTMLAttributes, forwardRef, FC, PropsWithChildren } from "react";
+import {
+  TeaserBoxContextDefault,
+  TeaserBoxContext,
+} from "@kickstartds/base/lib/teaser-box";
+import { TeaserCardProps } from "./TeaserCardProps";
+
+export const TeaserCard: FC<
+TeaserCardProps & HTMLAttributes<HTMLElement>
+> = ({
+  headline,
+  text,
+  target,
+  image,
+  inverted,
+  ...props
+}) => {
+  return (
+    <TeaserBoxContextDefault
+      {...props}
+      topic={headline}
+      text={text}
+      link={{
+        label: "Read more",
+        href: target,
+      }}
+      image={image}
+      inverted={inverted}
+    />
+  );
+};
+
+export const TeaserBoxProvider: FC<PropsWithChildren<any>> = (props) => (
+  <TeaserBoxContext.Provider {...props} value={TeaserCard} />
+);
+```
+</CH.Code>
+
+---
+
+##### Necessary imports
+
+The main imports here are the **kickstartDS** base component(s) and our own components **TypeScript** types.
+
+<CH.Code>
+```tsx src/components/teaser-card/TeaserCardComponent.tsx focus=2:6
+import { HTMLAttributes, forwardRef, FC, PropsWithChildren } from "react";
+import {
+  TeaserBoxContextDefault,
+  TeaserBoxContext,
+} from "@kickstartds/base/lib/teaser-box";
+import { TeaserCardProps } from "./TeaserCardProps";
+
+export const TeaserCard: FC<
+TeaserCardProps & HTMLAttributes<HTMLElement>
+> = ({
+  headline,
+  text,
+  target,
+  image,
+  inverted,
+  ...props
+}) => {
+  return (
+    <TeaserBoxContextDefault
+      {...props}
+      topic={headline}
+      text={text}
+      link={{
+        label: "Read more",
+        href: target,
+      }}
+      image={image}
+      inverted={inverted}
+    />
+  );
+};
+
+export const TeaserBoxProvider: FC<PropsWithChildren<any>> = (props) => (
+  <TeaserBoxContext.Provider {...props} value={TeaserCard} />
+);
+```
+</CH.Code>
+
+---
+
+##### Add correct type to component
+
+We need to type our **React** component to use our **JSON Schema**, while also making sure native HTML attributes are passed correctly. For the `TeaserCard` this means also including `HTMLAttributes<HTMLElement>` as it maps to a `<div>` under the hood.
+
+Doing this allows users of your component to enjoy having the same auto-complete and safety when working with your Design System.
+
+<CH.Code>
+```tsx src/components/teaser-card/TeaserCardComponent.tsx focus=8:10
+import { HTMLAttributes, forwardRef, FC, PropsWithChildren } from "react";
+import {
+  TeaserBoxContextDefault,
+  TeaserBoxContext,
+} from "@kickstartds/base/lib/teaser-box";
+import { TeaserCardProps } from "./TeaserCardProps";
+
+export const TeaserCard: FC<
+TeaserCardProps & HTMLAttributes<HTMLElement>
+> = ({
+  headline,
+  text,
+  target,
+  image,
+  inverted,
+  ...props
+}) => {
+  return (
+    <TeaserBoxContextDefault
+      {...props}
+      topic={headline}
+      text={text}
+      link={{
+        label: "Read more",
+        href: target,
+      }}
+      image={image}
+      inverted={inverted}
+    />
+  );
+};
+
+export const TeaserBoxProvider: FC<PropsWithChildren<any>> = (props) => (
+  <TeaserBoxContext.Provider {...props} value={TeaserCard} />
+);
+```
+</CH.Code>
+
+---
+
+##### Add parameters to component
+
+Next we add all our components defined properties to its function signature. For properties having a default defined in your [component API](../../foundations/components/component-api.md) we add that default here, too.
+
+As we also want to pass through all the props not explicitly managed by us we sponge up `...props`.
+
+<CH.Code>
+```tsx src/components/teaser-card/TeaserCardComponent.tsx focus=10:17
+import { HTMLAttributes, forwardRef, FC, PropsWithChildren } from "react";
+import {
+  TeaserBoxContextDefault,
+  TeaserBoxContext,
+} from "@kickstartds/base/lib/teaser-box";
+import { TeaserCardProps } from "./TeaserCardProps";
+
+export const TeaserCard: FC<
+TeaserCardProps & HTMLAttributes<HTMLElement>
+> = ({
+  headline,
+  text,
+  target,
+  image,
+  inverted,
+  ...props
+}) => {
+  return (
+    <TeaserBoxContextDefault
+      {...props}
+      topic={headline}
+      text={text}
+      link={{
+        label: "Read more",
+        href: target,
+      }}
+      image={image}
+      inverted={inverted}
+    />
+  );
+};
+
+export const TeaserBoxProvider: FC<PropsWithChildren<any>> = (props) => (
+  <TeaserBoxContext.Provider {...props} value={TeaserCard} />
+);
+```
+</CH.Code>
+
+---
+
+##### Destructure additional props
+
+Coming to our component JSX, we start by passing down (destructuring) the `props` we're carrying through first. This ensures properties defined in our [component API](../../foundations/components/component-api.md) will always take precedence, because they're added after the general `props`.
+
+<CH.Code>
+```tsx src/components/teaser-card/TeaserCardComponent.tsx focus=20
+import { HTMLAttributes, forwardRef, FC, PropsWithChildren } from "react";
+import {
+  TeaserBoxContextDefault,
+  TeaserBoxContext,
+} from "@kickstartds/base/lib/teaser-box";
+import { TeaserCardProps } from "./TeaserCardProps";
+
+export const TeaserCard: FC<
+TeaserCardProps & HTMLAttributes<HTMLElement>
+> = ({
+  headline,
+  text,
+  target,
+  image,
+  inverted,
+  ...props
+}) => {
+  return (
+    <TeaserBoxContextDefault
+      {...props}
+      topic={headline}
+      text={text}
+      link={{
+        label: "Read more",
+        href: target,
+      }}
+      image={image}
+      inverted={inverted}
+    />
+  );
+};
+
+export const TeaserBoxProvider: FC<PropsWithChildren<any>> = (props) => (
+  <TeaserBoxContext.Provider {...props} value={TeaserCard} />
+);
+```
+</CH.Code>
+
+---
+
+##### Glue component API to base component 1/3
+
+The simplest cases of connecting props to the base component is when the name of the property is taken from the base component. We can just directly pass those without much thought.
+
+<CH.Code>
+```tsx src/components/teaser-card/TeaserCardComponent.tsx focus=22,27,28
+import { HTMLAttributes, forwardRef, FC, PropsWithChildren } from "react";
+import {
+  TeaserBoxContextDefault,
+  TeaserBoxContext,
+} from "@kickstartds/base/lib/teaser-box";
+import { TeaserCardProps } from "./TeaserCardProps";
+
+export const TeaserCard: FC<
+TeaserCardProps & HTMLAttributes<HTMLElement>
+> = ({
+  headline,
+  text,
+  target,
+  image,
+  inverted,
+  ...props
+}) => {
+  return (
+    <TeaserBoxContextDefault
+      {...props}
+      topic={headline}
+      text={text}
+      link={{
+        label: "Read more",
+        href: target,
+      }}
+      image={image}
+      inverted={inverted}
+    />
+  );
+};
+
+export const TeaserBoxProvider: FC<PropsWithChildren<any>> = (props) => (
+  <TeaserBoxContext.Provider {...props} value={TeaserCard} />
+);
+```
+</CH.Code>
+
+---
+
+##### Glue component API to base component 2/3
+
+In some cases we might have changed the name of a prop. In that instance, we just to have to wire up the renamed property to the originally named base components property.
+
+<CH.Code>
+```tsx src/components/teaser-card/TeaserCardComponent.tsx focus=21
+import { HTMLAttributes, forwardRef, FC, PropsWithChildren } from "react";
+import {
+  TeaserBoxContextDefault,
+  TeaserBoxContext,
+} from "@kickstartds/base/lib/teaser-box";
+import { TeaserCardProps } from "./TeaserCardProps";
+
+export const TeaserCard: FC<
+TeaserCardProps & HTMLAttributes<HTMLElement>
+> = ({
+  headline,
+  text,
+  target,
+  image,
+  inverted,
+  ...props
+}) => {
+  return (
+    <TeaserBoxContextDefault
+      {...props}
+      topic={headline}
+      text={text}
+      link={{
+        label: "Read more",
+        href: target,
+      }}
+      image={image}
+      inverted={inverted}
+    />
+  );
+};
+
+export const TeaserBoxProvider: FC<PropsWithChildren<any>> = (props) => (
+  <TeaserBoxContext.Provider {...props} value={TeaserCard} />
+);
+```
+</CH.Code>
+
+---
+
+##### Glue component API to base component 3/3
+
+Finally there might be fields where we're using a set of properties of the mapped component(s), but only expose one of those in our own [component API](../../foundations/components/component-api.md)... the rest get hard coded.
+
+That's the case with our `target` property, which maps to the `link.href` property of the `TeaserBox`. We hard code the required `label` property to *Read more*.
+
+<CH.Code>
+```tsx src/components/teaser-card/TeaserCardComponent.tsx focus=23:26
+import { HTMLAttributes, forwardRef, FC, PropsWithChildren } from "react";
+import {
+  TeaserBoxContextDefault,
+  TeaserBoxContext,
+} from "@kickstartds/base/lib/teaser-box";
+import { TeaserCardProps } from "./TeaserCardProps";
+
+export const TeaserCard: FC<
+TeaserCardProps & HTMLAttributes<HTMLElement>
+> = ({
+  headline,
+  text,
+  target,
+  image,
+  inverted,
+  ...props
+}) => {
+  return (
+    <TeaserBoxContextDefault
+      {...props}
+      topic={headline}
+      text={text}
+      link={{
+        label: "Read more",
+        href: target,
+      }}
+      image={image}
+      inverted={inverted}
+    />
+  );
+};
+
+export const TeaserBoxProvider: FC<PropsWithChildren<any>> = (props) => (
+  <TeaserBoxContext.Provider {...props} value={TeaserCard} />
+);
+```
+</CH.Code>
+
+---
+
+##### Adding a `Provider`
+
+The final part of creating our **React** component is adding a component `Provider` for it. As we've adapted a component here, we'll want to make sure that every time another component includes the base component, our own version of it gets used instead.
+
+<CH.Code>
+```tsx src/components/teaser-card/TeaserCardComponent.tsx focus=33:35
+import { HTMLAttributes, forwardRef, FC, PropsWithChildren } from "react";
+import {
+  TeaserBoxContextDefault,
+  TeaserBoxContext,
+} from "@kickstartds/base/lib/teaser-box";
+import { TeaserCardProps } from "./TeaserCardProps";
+
+export const TeaserCard: FC<
+TeaserCardProps & HTMLAttributes<HTMLElement>
+> = ({
+  headline,
+  text,
+  target,
+  image,
+  inverted,
+  ...props
+}) => {
+  return (
+    <TeaserBoxContextDefault
+      {...props}
+      topic={headline}
+      text={text}
+      link={{
+        label: "Read more",
+        href: target,
+      }}
+      image={image}
+      inverted={inverted}
+    />
+  );
+};
+
+export const TeaserBoxProvider: FC<PropsWithChildren<any>> = (props) => (
+  <TeaserBoxContext.Provider {...props} value={TeaserCard} />
+);
+```
+</CH.Code>
+</CH.Spotlight>
+
+If you're wondering what that `Provider` we've added last is all about, think about it like this:<br/>
+There may be other components you've built, that themselves use the base `Button` component by default. For example we might have our own `TeaserCard` component, based on the **kickstartDS** `TeaserBox` which includes a `Button`.
+
+As a means to not having to go through every combination of those component now, making sure our `Button` actually gets used, you can just change the default `Button` rendered by adding a single `Provider` once, instead.
+
+Learn more about `Providers` and **React Context** in [our dedicated page about them](#). TODO add link.<br />
+Or look at our ["Create your Design System" guide](../../guides/create/components.mdx), where we add the general setup for `Providers`. That one also includes some more details on this!
+
+<Admonition type="tip" title="Visual Studio Code component property quick-fix">
+Visual Studio Code has a great feature aiding in this workflow, with **React** components that include **TypeScript** types... like **kickstartDS** components do. When adding a "bare" component without props to your template, Visual Studio Code will offer you the option to `Add missing attributes`.
+
+This will automatically create all required options for your component. Now you just have to connect your own props to those, while hard-coding the ones you don't plan on exposing as part of your components [component API](../../foundations/components/component-api.md).
+
+Just hover the squiggly, red line that should be decorating your component, and choose `Quick Fix...`, to get to that option (alternatively put your cursor on the component tag and hit `Ctrl+.`).
+
+TODO add short animation of this workflow
+</Admonition>
+
+TODO check `TeaserBoxProvider` usage here, probably not useful? If useful... describe why here! also fix text above which still is copy &amp; pasted directly from "Adapt a component"
+
+## Technical debt added
+
+This way of creating components adds minimal technical debt to your Design System. Not much has been changed around, we just add a small layer on top of the original **kickstartDS** base component(s).
+
+Relevant underlying changes you'll have to look out for:
+
+- changes to the base components [component API](../../foundations/components/component-api.md)
+- removal of the base component(s)
+
+You're immune to underlying changes to:
+
+- the components template (both **React**, and the resulting **HTML**)
+- the design and layout (changes to **CSS**, **SCSS** and **Design &amp; Component Token**)
+
+In the case of a changed [component API](../../foundations/components/component-api.md), you should have a look at the corresponding `CHANGELOG.md` and potential notes in our matching [migration guide](../migrations/index.md). You'll probably just need to add a newly added field to your **React** template, and potentially your own [component API](../../foundations/components/component-api.md) if you want to use it. If a field was changed, that might also necessitate some adaption of your own version. Finally a removed field you're actually using would mean adding additional customization to regain that functionality. Have a look at our [`Headline` example guide](../examples/components/headline.mdx) to see how you'd add your own, new property!
+
+Learn more about what we mean by technical debt here on the [overview page of this section](#) TODO link to technical debt section on parent page.
 
 ## Examples
 
-### Create `Teaser Card` component
+We continuously expand our [component example guides](../examples/components/index.md), below we've collected the ones acting as a good sample of the adaptation process.
+
+### Create `TeaserCard` component
+
+In [this example component guide](../examples/components/teaser-card.mdx) we create the `TeaserCard` component, mapped to the `TeaserBox` component (part of the `@kickstartDS/base` module), to tease content in our Design System. We greatly simplify the `Button` to a single `string` props, and drastically reduce the rest of the options used, and offered, in our own adaptation of the `TeaserBox`.
+
+This is what the result looks like (TODO replace with preview from real Storybook, not ours):
+
+<iframe
+  src="https://60dc476b80673e003b4258d6-czyzkgbgek.chromatic.com/iframe.html?args=&id=base-teaser-box--linked-without-button&viewMode=story"
+  width="500"
+  height="500"
+></iframe>
+
+
+### Create `Interstitial` component
+
+In [this example component guide](../examples/components/teaser-card.mdx) we create the `Interstitial` component, mapped to the `Storytelling` component (part of the `@kickstartDS/content` module), to add interstitial content elements that break the flow of content for really emphasized call-to-actions. As with all examples, we reduce the set of options greatly.
+
+This is what the result looks like (TODO replace with preview from real Storybook, not ours):
+
+<iframe
+  src="https://60dc476b80673e003b4258d6-czyzkgbgek.chromatic.com/iframe.html?args=&id=content-storytelling--background-image&viewMode=story"
+  width="1000"
+  height="400"
+></iframe>
+````

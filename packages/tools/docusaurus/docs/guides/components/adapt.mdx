@@ -42,9 +42,11 @@ Which is to say, you'll always want to reduce the props of **kickstartDS** compo
 
 </Admonition>
 
-If you don't have component in mind yet, you're probably better serverd by our guide ["Create a component"](./create.mdx). In that guide, you'll start off without a specific component in mind. This means defining a structure (someting you probably have an idea about already) first, and then mapping that structure to a fitting component second.
+If you don't have component in mind yet, you're probably better served by our guide ["Create a component"](./create.mdx). In that guide, you'll start off without a specific component in mind. This means defining a structure (someting you probably have an idea about already) first, and then mapping that structure to a fitting component second.
 
 We also have an example for this with ["Create `Teaser Card` component"](../examples/components/teaser-card.mdx).
+
+If you're still unsure, then maybe you're still missing a clear picture on what your components should look like. In that case, you should probably take a step back first, and maybe start a [Design System Initiative](../design-system-initiative.md) to narrow down on what components you'll really need.
 
 There are two main steps in adapting a component:
 
@@ -69,16 +71,16 @@ As a hypothetical: you might decide to **really** only use components looking li
 
 #### Structure
 
-Before we start implementing, we'll want to define a first rough draft of our component API. Defining a name, a small description and a rough type, per property, goes a long way in keeping the focus on the core of your component.
+Before we start implementing, we'll want to define a first rough draft of our [component API](../../foundations/components/component-api.md). Defining a name, a small description and a rough type, per property, goes a long way in keeping the focus on the core of your component.
 
 Let's keep using the `Button` as an example. We're starting with the following properties with that one:
 
 | Property        | Type      | Description                                                     |
 | --------------- | --------- | --------------------------------------------------------------- |
-| `label`         | `string`  | Text used on button                                             |
-| `variant`       | `enum`    | Choose one of the styles from the list                          |
+| `label *`       | `string`  | Text used on button                                             |
+| `variant *`     | `enum`    | Choose one of the styles from the list                          |
 | `inverted`      | `boolean` | If the button should be inverted                                |
-| `size`          | `enum`    | Choose a size between small, medium and large                   |
+| `size *`        | `enum`    | Choose a size between small, medium and large                   |
 | `href`          | `string`  | Link used for button                                            |
 | `iconBefore`    | `object`  | Icon identifier for icon before the button text                 |
 | `iconAfter`     | `object`  | Icon identifier for icon after the button text                  |
@@ -92,7 +94,7 @@ Let's keep using the `Button` as an example. We're starting with the following p
 | `className`     | `string`  | Add additional css classes that should be applied to the button |
 | `component`     | `string`  | Optional custom component identifier                            |
 
-TODO add required fields
+Fields that should be required are marked with a `*`.
 
 For the detailed documentation have a look at the `Button` in our **Storybook** here:<br/>
 https://www.kickstartds.com/storybook/?path=/docs/base-button--solid
@@ -101,15 +103,13 @@ One potential set of props, it's also the one used in our guide ["Adapt `Button`
 
 | Property   | Type      | Description                                                                             |
 | ---------- | --------- | --------------------------------------------------------------------------------------- |
-| `label`    | `string`  | Text content to display inside the button                                               |
+| `label *`  | `string`  | Text content to display inside the button                                               |
 | `target`   | `string`  | Target that should be linked, makes the button behave like a link semantically when set |
 | `variant`  | `enum`    | Variant of button to be used                                                            |
 | `size`     | `enum`    | Size of button to use                                                                   |
 | `disabled` | `boolean` | Whether the button should be disabled                                                   |
 
-TODO add required fields
-
-We took `label`, `variant`, `size` and `disabled` directly, and renamed `href` to `target` for our version of the `Button`.
+We took `label`, `variant`, `size` and `disabled` directly, and renamed `href` to `target` for our version of the `Button`. Required fields are marked with a `*` again.
 
 In our hypothetical above, we would probably drop the option of specifying `href` or `target` altogether.
 
@@ -238,7 +238,7 @@ Let's highlight the ones we've identified when thinking about our component stru
 
 #### Create your component API
 
-Subsequently we add exactly those fields to our own components component API / **JSON Schema**...
+Subsequently we add exactly those fields to our own components [component API](../../foundations/components/component-api.md) / **JSON Schema**...
 
 <CH.Code>
 ```json src/components/button/button.schema.json
@@ -250,12 +250,12 @@ Subsequently we add exactly those fields to our own components component API / *
   "type": "object",
   "properties": {
     "label": { ... },
+    "target": { ... },
     "variant": { ... },
     "size": { ... },
-    "href": { ... },
-    "disabled": { ... },
+    "disabled": { ... }
   },
-  "additionalProperties": false
+  "required": ["label"]
 }
 
 ```
@@ -298,7 +298,7 @@ Subsequently we add exactly those fields to our own components component API / *
 ... and we can even rename props in the process.
 
 <CH.Code>
-```json src/components/button/button.schema.json focus=11
+```json src/components/button/button.schema.json focus=9
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "http://schema.mydesignsystem.com/button.schema.json",
@@ -307,12 +307,12 @@ Subsequently we add exactly those fields to our own components component API / *
   "type": "object",
   "properties": {
     "label": { ... },
+    "target": { ... },
     "variant": { ... },
     "size": { ... },
-    "target": { ... },
-    "disabled": { ... },
+    "disabled": { ... }
   },
-  "additionalProperties": false
+  "required": ["label"]
 }
 
 ```
@@ -348,9 +348,59 @@ Subsequently we add exactly those fields to our own components component API / *
 
 </CH.Code>
 
+---
+
+#### Add `required` fields
+
+And finally, set all the fields identified as `required`.
+
+<CH.Code>
+```json src/components/teaser-card/teaser-card.schema.json focus=14
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/button.schema.json",
+  "title": "Button",
+  "description": "Component used for user interaction",
+  "type": "object",
+  "properties": {
+    "label": { ... },
+    "target": { ... },
+    "variant": { ... },
+    "size": { ... },
+    "disabled": { ... }
+  },
+  "required": ["label"]
+}
+```
+
+```json @kickstartds/teaser-box.schema.json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/base/teaser-box.schema.json",
+  "title": "Teaser Box",
+  "description": "Component to tease external content",
+  "type": "object",
+  "properties": {
+    "image":  {... },
+    "ratio": { ... },
+    "imageSpacing": { ... },
+    "topic": { ... },
+    "text": { ...},
+    "inverted":  {... },
+    "link": { ... },
+    "className": { ... },
+    "component": { ... }
+  },
+  "required": ["ratio"],
+  "additionalProperties": false
+}
+
+```
+
+</CH.Code>
 </CH.Spotlight>
 
-For the full / extended version of adapting a `Button` have a look at our guide ["Adapt `Button` component"](../examples/components/button.mdx).
+For the full version of adapting a `Button` have a look at our guide ["Adapt `Button` component"](../examples/components/button.mdx).
 
 #### **React** Template
 
@@ -874,9 +924,8 @@ As a means to not having to go through every combination of those component now,
 Learn more about `Providers` and **React Context** in [our dedicated page about them](#). TODO add link.<br />
 Or look at our ["Create your Design System" guide](../../guides/create/components.mdx), where we add the general setup for `Providers`. That one also includes some more details on this!
 
-
-<Admonition type="tip" title="VS Code component property quick-fix">
-VS Code has a great feature aiding in this workflow, with **React** components that include **TypeScript** types... like **kickstartDS** components do. When adding a "bare" component without props to your template, VS Code will offer you the option to `Add missing attributes`.
+<Admonition type="tip" title="Visual Studio Code component property quick-fix">
+Visual Studio Code has a great feature aiding in this workflow, with **React** components that include **TypeScript** types... like **kickstartDS** components do. When adding a "bare" component without props to your template, Visual Studio Code will offer you the option to `Add missing attributes`.
 
 This will automatically create all required options for your component. Now you just have to connect your own props to those, while hard-coding the ones you don't plan on exposing as part of your components [component API](../../foundations/components/component-api.md).
 
@@ -885,7 +934,7 @@ Just hover the squiggly, red line that should be decorating your component, and 
 TODO add short animation of this workflow
 </Admonition>
 
-## Technical debt
+## Technical debt added
 
 This way of creating components adds minimal technical debt to your Design System. Not much has been changed around, we just add a small layer on top of the original **kickstartDS** base component.
 
@@ -897,7 +946,7 @@ Relevant underlying changes you'll have to look out for:
 You're immune to underlying changes to:
 
 - the components template (both **React**, and the resulting **HTML**)
-- the design and layout (changes to **CSS**, **SCSS** and **Design & Component Token**)
+- the design and layout (changes to **CSS**, **SCSS** and **Design &amp; Component Token**)
 
 In the case of a changed [component API](../../foundations/components/component-api.md), you should have a look at the corresponding `CHANGELOG.md` and potential notes in our matching [migration guide](../migrations/index.md). You'll probably just need to add a newly added field to your **React** template, and potentially your own [component API](../../foundations/components/component-api.md) if you want to use it. If a field was changed, that might also necessitate some adaption of your own version. Finally a removed field you're actually using would mean adding additional customization to regain that functionality. Have a look at our [`Headline` example guide](../examples/components/headline.mdx) to see how you'd add your own, new property!
 

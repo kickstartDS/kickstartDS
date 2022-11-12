@@ -4,7 +4,9 @@ sidebar_position: 5
 
 # Packages
 
-TODO add super short, general description on what a package is, and what **npm** does, link Environment Intro-page
+Packages in programming are commonly used to divide up code into distinctly (re-)usable blocks of functionality. (Almost) every programming language has its own version of handling packages, package dependencies and package installation. As we're using Node and **JavaScript** / **TypeScript** as our programming language of choice, our package registry will be **npm**. To read more about this topic, have a look at the ["Environment"](./environment.md) chapter of this section.
+
+On this page, we'll try to give an overview to all the packages we've created in the context of working with Design Systems and **kickstartDS**.
 
 ## Overview
 
@@ -299,13 +301,20 @@ You can find this config on:
 
 ## **kickstartDS** packages
 
-TODO TBD show this?
-
-Those are packages we use for our own purposes. For example to create our main marketing page, our documentation, our branded **Storybook**, and so on. These can be interesting to see how we've used **kickstartDS** ourselves. This currently (in a published form) includes the repository containing our own **Storybook** instance / Design System.
+The following packages are used for our own purposes. For example to create our main marketing page, our documentation, our branded **Storybook**, and so on. These can be interesting to see how we've used **kickstartDS** ourselves. This currently (in a published form) includes the repository containing our own **Storybook** instance / Design System.
 
 ### **kickstartDS** Design System
 
-`@kickstartds/design-system`
+`@kickstartds/design-system` is our Design System, and includes all of our **kickstartDS** branded component versions. This can be a great place to find inspiration, as we've used the concepts described throughout this documentation ourselves, to build up our own website.
+
+You can find it here:
+
+| Category                         | Link                                                                          |
+| -------------------------------- | ----------------------------------------------------------------------------- |
+| Hosted **Storybook**             | https://www.kickstartds.com/storybook/                                        |
+| **npm** package registry         | https://www.npmjs.com/package/@kickstartds/design-system                      |
+| Its own **Github** repository    | https://github.com/kickstartDS/kickstartDS-storybook                          |
+| `CHANGELOG.md` with all releases | https://github.com/kickstartDS/kickstartDS-storybook/blob/master/CHANGELOG.md |
 
 ## Misc packages
 

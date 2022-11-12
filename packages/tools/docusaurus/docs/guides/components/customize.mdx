@@ -8,11 +8,1287 @@ import Admonition from 'react-admonitions';
 
 ## Definition
 
+Customizing a component should be part of your arsenal if you already have a specific **kickstartDS** component in mind, but it's missing a certain feature that you require. Instead of starting from zero, you can always just customize existing base components for your own purposes.
+
+It involves the same rough steps as [adapting a component](./adapt.mdx), but differs from it when it comes to creating the **React** template. Instead of (only) using the base component directly as imported, and just re-wiring properties, we customize the markup the base component uses to include our own behaviour. Everything else will basically be the same.
+
+Additionally this can of course also be used while [creating](./create.mdx) a component, (see our [`TeaserCard` component example](../examples/components/teaser-card.mdx) for that). Or be used while [extending](./extend.mdx) a component that expands on some **kickstartDS** base component (see our [`Section` component example](../examples/components/section.mdx) for that).
+
 ## Customization process
 
+As with the adaptation process, the big assumption here is that you already have a **kickstartDS** base component in mind. But unlike in that one, we have some requirement or feature in mind that is not covered by it. We _almost_ have a match.
+
+Finding your component definition is still very simplified, we just have to add those properties, not covered by the base component, ourselves.
+
 <Admonition type="tip" title="Adaptation process as a base line">
-  If you've read our guide ["Adapt a component"](./adapt.mdx) you probably already know this:
+  If you've read our ["Adapt a component"](./adapt.mdx) guide you probably already know this:
 
 This guide expects you to reduce the set of props offered by **kickstartDS** components, when used as a base component. We'll also skip over, or significantly shorten, parts already covered by that guide. If unsure about something, best cross-reference it!
 
 </Admonition>
+
+If you don't have component in mind yet, you're probably better served by our guide ["Create a component"](./create.mdx). In that guide, you'll start off without a specific component in mind. This means defining a structure (someting you probably have an idea about already) first, and then mapping that structure to a fitting component second.
+
+We also have an example for this with ["Create `Teaser Card` component"](../examples/components/teaser-card.mdx).
+
+If you're still unsure, then maybe you're still missing a clear picture on what your components should look like. In that case, you should probably take a step back first, and maybe start a [Design System Initiative](../design-system-initiative.md) to narrow down on what components you'll really need.
+
+There are two main steps in customizing a component:
+
+1. Component definition, and
+2. Component creation
+
+TODO should / could possibly include "Component documentation" as a third step, where the **Storybook** story is added
+
+Let's get right to it!
+
+### 1. Component Definition
+
+The customizing process starts by defining a [component API](../../foundations/components/component-api.md). As with the [adaptation process](./adapt.mdx) this mainly means selecting a set of props from the pool of props available through your selected base component. But this time, we'll also add a requirement that's not covered by the base component.
+
+We'll use the `Headline` component throughout this guide to illustrate concepts. This will not be an exhaustive example, though. For that have a look at our guide ["Customize `Headline` component"](../examples/components/headline.mdx).
+
+As our additional requirement, we'll want to be able to switch the order of the main und sub headlines. That's not something the base `Headline` can do, so we'll add this ourselves. We also want to be able to render some light RTE-like markup in our headline and subheadline, to emphasize something with by making it bold for example.
+
+#### Purpose
+
+There's not a lot different here when compared to the [adaptation process](./adapt.mdx). We just mainly keep close to the original purpose of our chosen **kickstartDS** base component.
+
+There should be an exception though, as we have a requirement on mind that is not part of the component yet. This will probably be part of the purpose of our component.
+
+For our `Headline` example, this could mean adding more flexibility being that requirement. We might want our component to fit more use cases, by switching said order in specific circumstances, and allowing additional code formatting for its content.
+
+#### Structure
+
+We'll also still start by defining a rough draft of our [component API](../../foundations/components/component-api.md) here.
+
+Let's keep going with our `Headline` component as an example. We're starting with the following properties:
+
+| Property      | Type     | Description                                          |
+| ------------- | -------- | ---------------------------------------------------- |
+| `level`       | `enum`   | Select the headline level to use, or p alternatively |
+| `styleAs`     | `enum`   | Select the headline style to use                     |
+| `align`       | `enum`   | Choose an alignment for the headline                 |
+| `content *`   | `string` | Text content for the headline                        |
+| `subheadline` | `string` | Text content for the optional subheadline            |
+| `spaceAfter`  | `enum`   | Add additional spacing to the bottom of the headline |
+| `className`   | `string` | Additional Classes                                   |
+| `component`   | `string` | Optional custom component identifier                 |
+
+Fields that should be required are marked with a `*`.
+
+For the detailed documentation have a look at the `Headline` in our **Storybook** here:<br/>
+https://www.kickstartds.com/storybook/?path=/story/base-headline--h-1
+
+One potential set of props, it's also the one used in our guide ["Customize `Headline` component"](../examples/components/headline.mdx) if you're wondering, would be the following:
+
+| Property      | Type      | Description                              |
+| ------------- | --------- | ---------------------------------------- |
+| `text *`      | `string`  | Text content of headline                 |
+| `sub`         | `string`  | Subheadline content                      |
+| `switchOrder` | `boolean` | Switch order of headline and subheadline |
+| `level *`     | `enum`    | Level of headline to use                 |
+| `style`       | `enum`    | Style of headline to show                |
+| `spaceAfter`  | `enum`    | Whether to display space after headline  |
+
+We took `level` and `spaceAfter` directly, renamed `subheadline` to `sub`, `styleAs` to `style` and `content` to `text` for our version of the `Headline`. And crucially we add our own property `switchOrder` into the mix. Required fields are marked with a `*` again.
+
+### 2. Component Creation
+
+In the second and final step we'll get to actually create our component. We'll encode the [component API](../../foundations/components/component-api.md) by creating its **JSON Schema**, and create a **React** template matching our selected properties to the **kickstartDS** base component. While creating that template, we'll add the markup changes necessary to fit our additional requirement into the component.
+
+#### **JSON Schema** definition
+
+We establish the structure of components by creating a **JSON Schema** for them, defining their [component API](../../foundations/components/component-api.md) in code. This time we add our own, new property into the mix.
+
+For an abridged version of that process, have a look at the `Headline` again (adding our own `switchOrder`):
+
+<CH.Spotlight>
+<CH.Code>
+```json @kickstartds/headline.schema.json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/base/headline.schema.json",
+  "title": "Headline",
+  "description": "Headline",
+  "type": "object",
+  "properties": {
+    "level": { ... },
+    "styleAs": { ... },
+    "align": { ... },
+    "content": { ... },
+    "subheadline": { ... },
+    "spaceAfter": { ... },
+    "className": { ... },
+    "component": { ... }
+  },
+  "required": ["content"]
+}
+```
+</CH.Code>
+
+---
+
+#### Original `Headline`
+
+This is the "full" headline component API / **JSON Schema**. We've just reduced the property definitions.
+
+<CH.Code>
+```json @kickstartds/headline.schema.json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/base/headline.schema.json",
+  "title": "Headline",
+  "description": "Headline",
+  "type": "object",
+  "properties": {
+    "level": { ... },
+    "styleAs": { ... },
+    "align": { ... },
+    "content": { ... },
+    "subheadline": { ... },
+    "spaceAfter": { ... },
+    "className": { ... },
+    "component": { ... }
+  },
+  "required": ["content"]
+}
+```
+
+</CH.Code>
+
+---
+
+#### Select from available props
+
+Let's highlight the ones we've identified when thinking about our component structure before.
+
+<CH.Code>
+```json @kickstartds/headline.schema.json focus=8,9,11:13
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/base/headline.schema.json",
+  "title": "Headline",
+  "description": "Headline",
+  "type": "object",
+  "properties": {
+    "level": { ... },
+    "styleAs": { ... },
+    "align": { ... },
+    "content": { ... },
+    "subheadline": { ... },
+    "spaceAfter": { ... },
+    "className": { ... },
+    "component": { ... }
+  },
+  "required": ["content"]
+}
+```
+
+</CH.Code>
+
+---
+
+#### Create your component API
+
+Subsequently we add exactly those fields to our own components [component API](../../foundations/components/component-api.md) / **JSON Schema**...
+
+<CH.Code>
+```json src/components/headline/headline.schema.json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/headline.schema.json",
+  "title": "Headline",
+  "description": "Component used for headlines",
+  "type": "object",
+  "properties": {
+    "text": { ... },
+    "sub": { ... },
+    "level": { ... },
+    "style": { ... },
+    "spaceAfter": { ... }
+  },
+  "required": ["level", "text"]
+}
+```
+
+```json @kickstartds/headline.schema.json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/base/headline.schema.json",
+  "title": "Headline",
+  "description": "Headline",
+  "type": "object",
+  "properties": {
+    "level": { ... },
+    "styleAs": { ... },
+    "align": { ... },
+    "content": { ... },
+    "subheadline": { ... },
+    "spaceAfter": { ... },
+    "className": { ... },
+    "component": { ... }
+  },
+  "required": ["content"]
+}
+```
+
+</CH.Code>
+
+---
+
+#### Renaming props
+
+... and rename props in the process.
+
+<CH.Code>
+```json src/components/headline/headline.schema.json focus=8:9,11
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/headline.schema.json",
+  "title": "Headline",
+  "description": "Component used for headlines",
+  "type": "object",
+  "properties": {
+    "text": { ... },
+    "sub": { ... },
+    "level": { ... },
+    "style": { ... },
+    "spaceAfter": { ... }
+  },
+  "required": ["level", "text"]
+}
+```
+
+```json @kickstartds/headline.schema.json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/base/headline.schema.json",
+  "title": "Headline",
+  "description": "Headline",
+  "type": "object",
+  "properties": {
+    "level": { ... },
+    "styleAs": { ... },
+    "align": { ... },
+    "content": { ... },
+    "subheadline": { ... },
+    "spaceAfter": { ... },
+    "className": { ... },
+    "component": { ... }
+  },
+  "required": ["content"]
+}
+```
+
+</CH.Code>
+
+---
+
+#### Add our new prop
+
+Most importantly, we add our new property.
+
+<CH.Code>
+```json src/components/headline/headline.schema.json focus=10
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/headline.schema.json",
+  "title": "Headline",
+  "description": "Component used for headlines",
+  "type": "object",
+  "properties": {
+    "text": { ... },
+    "sub": { ... },
+    "switchOrder": { ... },
+    "level": { ... },
+    "style": { ... },
+    "spaceAfter": { ... }
+  },
+  "required": ["level", "text"]
+}
+```
+
+```json @kickstartds/headline.schema.json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/base/headline.schema.json",
+  "title": "Headline",
+  "description": "Headline",
+  "type": "object",
+  "properties": {
+    "level": { ... },
+    "styleAs": { ... },
+    "align": { ... },
+    "content": { ... },
+    "subheadline": { ... },
+    "spaceAfter": { ... },
+    "className": { ... },
+    "component": { ... }
+  },
+  "required": ["content"]
+}
+```
+
+</CH.Code>
+
+---
+
+#### Add `required` fields
+
+And finally, set all the fields identified as `required`.
+
+<CH.Code>
+```json src/components/headline/headline.schema.json focus=15
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/headline.schema.json",
+  "title": "Headline",
+  "description": "Component used for headlines",
+  "type": "object",
+  "properties": {
+    "text": { ... },
+    "sub": { ... },
+    "switchOrder": { ... },
+    "level": { ... },
+    "style": { ... },
+    "spaceAfter": { ... }
+  },
+  "required": ["level", "text"]
+}
+```
+
+```json @kickstartds/headline.schema.json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/base/headline.schema.json",
+  "title": "Headline",
+  "description": "Headline",
+  "type": "object",
+  "properties": {
+    "level": { ... },
+    "styleAs": { ... },
+    "align": { ... },
+    "content": { ... },
+    "subheadline": { ... },
+    "spaceAfter": { ... },
+    "className": { ... },
+    "component": { ... }
+  },
+  "required": ["content"]
+}
+```
+
+</CH.Code>
+</CH.Spotlight>
+
+<Admonition type="tip" title="Customizing multiple properties">
+  This process can also involve customizing a component by adding multiple properties to it. Just repeat all the steps for every property you'll need to add.
+
+In genera: these guides are mainly meant as basic building blocks, that can be combined and remixed by you to create exactly what you need... even if that's something more complex as described in these basic guides here.
+
+</Admonition>
+
+For the full version of customizing a `Headline` have a look at our guide ["Customize `Headline` component"](../examples/components/headline.mdx).
+
+#### **React** Template
+
+Now that our **JSON Schema** is defined, we'll automatically get matching **TypeScript** types for our component. We use those, combined with the types already included with the **kickstartDS** base component, to quickly hook up our set of properties to the original component. Using auto-complete, and **TypeScript** telling us about required properties in the base component, this is gets easy like squeezing a lemon!
+
+To learn more about the tooling that create those types for you, and how to hook it up, see [part four of our "Create your Design System" guide](../../guides/create/components.mdx#add-packagejson-scripts).
+
+Let's continue showcasing this process using our `Headline`, creating the component template:
+
+TODO fix formatting in first code sample here
+
+<CH.Spotlight>
+<CH.Code>
+```tsx src/components/headline/HeadlineComponent.tsx
+import classnames from "classnames";
+import { HTMLAttributes, FC, PropsWithChildren } from "react";
+
+import { HeadlineContext } from '@kickstartds/base/lib/headline';
+import { defaultRenderFn } from '@kickstartds/core/lib/core';
+
+import { HeadlineProps } from './HeadlineProps';
+
+interface RenderFunctions {
+renderContent?: typeof defaultRenderFn;
+renderSubheadline?: typeof defaultRenderFn;
+}
+
+export const Headline: FC<
+  HeadlineProps & RenderFunctions & HTMLAttributes<HTMLElement>
+> = ({
+  text,
+  sub,
+  switchOrder = false,
+  level = "h2",
+  style = "h2",
+  spaceAfter = "small",
+  renderContent = defaultRenderFn,
+  renderSubheadline = defaultRenderFn,
+  ...props
+}) => {
+  const TagName = level;
+
+return (
+
+<>
+  {text || sub ? (
+    <>
+      <header
+        className={classnames(
+          'c-headline',
+          `c-headline--align-left`,
+          spaceAfter && `c-headline--space-after-${spaceAfter}`
+        )}
+        {...props}
+      >
+        {sub && switchOrder && (
+          <p className="c-headline__subheadline">{renderSubheadline(sub)}</p>
+        )}
+        <TagName
+          className={classnames(
+            'c-headline**headline',
+            style !== 'none' && style !== level && `c-headline**${style}`
+          )}
+        >
+          {renderContent(text)}
+        </TagName>
+        {sub && !switchOrder && (
+          <p className="c-headline__subheadline">{renderSubheadline(sub)}</p>
+        )}
+      </header>
+    </>
+  ) : (
+    ''
+  )}
+</>
+); };
+
+export const HeadlineProvider: FC<PropsWithChildren<any>> = (props) => (
+  <HeadlineContext.Provider {...props} value={Headline} />
+);
+
+````
+
+</CH.Code>
+
+---
+
+##### Necessary imports
+
+The main imports here are the **kickstartDS** base component, a rendering function being capable of rendering **Markdown** and our own components **TypeScript** types.
+
+Unlike the adapt, create and extend processes we don't actually need the `HeadlineContextDefault`, because we'll add our own markup... based on the original **kickstartDS** base components markup.
+
+<CH.Code>
+```tsx src/components/headline/HeadlineComponent.tsx focus=4,5,7
+import classnames from "classnames";
+import { HTMLAttributes, FC, PropsWithChildren } from "react";
+
+import { HeadlineContext } from "@kickstartds/base/lib/headline";
+import { defaultRenderFn } from "@kickstartds/core/lib/core";
+
+import { HeadlineProps } from "./HeadlineProps";
+
+interface RenderFunctions {
+  renderContent?: typeof defaultRenderFn;
+  renderSubheadline?: typeof defaultRenderFn;
+}
+
+export const Headline: FC<
+  HeadlineProps & RenderFunctions & HTMLAttributes<HTMLElement>
+> = ({
+  text,
+  sub,
+  switchOrder = false,
+  level = "h2",
+  style = "h2",
+  spaceAfter = "small",
+  renderContent = defaultRenderFn,
+  renderSubheadline = defaultRenderFn,
+  ...props
+}) => {
+  const TagName = level;
+
+  return (
+    <>
+      {text || sub ? (
+        <>
+          <header
+            className={classnames(
+              "c-headline",
+              `c-headline--align-left`,
+              spaceAfter && `c-headline--space-after-${spaceAfter}`,
+            )}
+            {...props}
+          >
+            {sub && switchOrder && (
+              <p className="c-headline__subheadline">
+                {renderSubheadline(sub)}
+              </p>
+            )}
+            <TagName
+              className={classnames(
+                "c-headline__headline",
+                style !== "none" &&
+                  style !== level &&
+                  `c-headline__${style}`
+              )}
+            >
+              {renderContent(text)}
+            </TagName>
+            {sub && !switchOrder && (
+              <p className="c-headline__subheadline">
+                {renderSubheadline(sub)}
+              </p>
+            )}
+          </header>
+        </>
+      ) : (
+        ""
+      )}
+    </>
+  );
+};
+
+export const HeadlineProvider: FC<PropsWithChildren<any>> = (props) => (
+  <HeadlineContext.Provider {...props} value={Headline} />
+);
+
+````
+
+</CH.Code>
+
+---
+
+##### Defining `RenderFunctions`
+
+We define the render functions interface that will enable our RTE-like functionality for the `text` and `sub` properties.
+
+TODO add link to render functions in `Foundations` > `Components` > `React`
+
+<CH.Code>
+```tsx src/components/headline/HeadlineComponent.tsx focus=9:12
+import classnames from "classnames";
+import { HTMLAttributes, FC, PropsWithChildren } from "react";
+
+import { HeadlineContext } from '@kickstartds/base/lib/headline';
+import { defaultRenderFn } from '@kickstartds/core/lib/core';
+
+import { HeadlineProps } from './HeadlineProps';
+
+interface RenderFunctions {
+renderContent?: typeof defaultRenderFn;
+renderSubheadline?: typeof defaultRenderFn;
+}
+
+export const Headline: FC<
+  HeadlineProps & RenderFunctions & HTMLAttributes<HTMLElement>
+> = ({
+  text,
+  sub,
+  switchOrder = false,
+  level = "h2",
+  style = "h2",
+  spaceAfter = "small",
+  renderContent = defaultRenderFn,
+  renderSubheadline = defaultRenderFn,
+  ...props
+}) => {
+  const TagName = level;
+
+return (
+
+<>
+  {text || sub ? (
+    <>
+      <header
+        className={classnames(
+          'c-headline',
+          `c-headline--align-left`,
+          spaceAfter && `c-headline--space-after-${spaceAfter}`
+        )}
+        {...props}
+      >
+        {sub && switchOrder && (
+          <p className="c-headline__subheadline">{renderSubheadline(sub)}</p>
+        )}
+        <TagName
+          className={classnames(
+            'c-headline**headline',
+            style !== 'none' && style !== level && `c-headline**${style}`
+          )}
+        >
+          {renderContent(text)}
+        </TagName>
+        {sub && !switchOrder && (
+          <p className="c-headline__subheadline">{renderSubheadline(sub)}</p>
+        )}
+      </header>
+    </>
+  ) : (
+    ''
+  )}
+</>
+); };
+
+export const HeadlineProvider: FC<PropsWithChildren<any>> = (props) => (
+  <HeadlineContext.Provider {...props} value={Headline} />
+);
+
+````
+
+</CH.Code>
+
+---
+
+##### Add correct type to component
+
+We need to type our **React** component to use our **JSON Schema**, while also making sure native HTML attributes are passed correctly and our render functions are understood. For the `Headline` this means including `HTMLAttributes<HTMLElement>`, as it maps to a `<div>` under the hood, and our `RenderFunctions` interface.
+
+Doing this allows users of your component to enjoy having the same auto-complete and safety when working with your Design System.
+
+<CH.Code>
+```tsx src/components/headline/HeadlineComponent.tsx focus=14:16
+import classnames from "classnames";
+import { HTMLAttributes, FC, PropsWithChildren } from "react";
+
+import { HeadlineContext } from '@kickstartds/base/lib/headline';
+import { defaultRenderFn } from '@kickstartds/core/lib/core';
+
+import { HeadlineProps } from './HeadlineProps';
+
+interface RenderFunctions {
+renderContent?: typeof defaultRenderFn;
+renderSubheadline?: typeof defaultRenderFn;
+}
+
+export const Headline: FC<
+  HeadlineProps & RenderFunctions & HTMLAttributes<HTMLElement>
+> = ({
+  text,
+  sub,
+  switchOrder = false,
+  level = "h2",
+  style = "h2",
+  spaceAfter = "small",
+  renderContent = defaultRenderFn,
+  renderSubheadline = defaultRenderFn,
+  ...props
+}) => {
+  const TagName = level;
+
+return (
+
+<>
+  {text || sub ? (
+    <>
+      <header
+        className={classnames(
+          'c-headline',
+          `c-headline--align-left`,
+          spaceAfter && `c-headline--space-after-${spaceAfter}`
+        )}
+        {...props}
+      >
+        {sub && switchOrder && (
+          <p className="c-headline__subheadline">{renderSubheadline(sub)}</p>
+        )}
+        <TagName
+          className={classnames(
+            'c-headline**headline',
+            style !== 'none' && style !== level && `c-headline**${style}`
+          )}
+        >
+          {renderContent(text)}
+        </TagName>
+        {sub && !switchOrder && (
+          <p className="c-headline__subheadline">{renderSubheadline(sub)}</p>
+        )}
+      </header>
+    </>
+  ) : (
+    ''
+  )}
+</>
+); };
+
+export const HeadlineProvider: FC<PropsWithChildren<any>> = (props) => (
+  <HeadlineContext.Provider {...props} value={Headline} />
+);
+
+````
+
+</CH.Code>
+
+---
+
+##### Add parameters to component
+
+Next we add all our components defined properties to its function signature. For properties having a default defined in your [component API](../../foundations/components/component-api.md) we add that default here, too.
+
+As we also want to pass through all the props not explicitly managed by us we sponge up `...props`.
+
+And in the case of the `Headline`, we also include our rendering functions.
+
+<CH.Code>
+```tsx src/components/headline/HeadlineComponent.tsx focus=16:26
+import classnames from "classnames";
+import { HTMLAttributes, FC, PropsWithChildren } from "react";
+
+import { HeadlineContext } from '@kickstartds/base/lib/headline';
+import { defaultRenderFn } from '@kickstartds/core/lib/core';
+
+import { HeadlineProps } from './HeadlineProps';
+
+interface RenderFunctions {
+renderContent?: typeof defaultRenderFn;
+renderSubheadline?: typeof defaultRenderFn;
+}
+
+export const Headline: FC<
+  HeadlineProps & RenderFunctions & HTMLAttributes<HTMLElement>
+> = ({
+  text,
+  sub,
+  switchOrder = false,
+  level = "h2",
+  style = "h2",
+  spaceAfter = "small",
+  renderContent = defaultRenderFn,
+  renderSubheadline = defaultRenderFn,
+  ...props
+}) => {
+  const TagName = level;
+
+return (
+
+<>
+  {text || sub ? (
+    <>
+      <header
+        className={classnames(
+          'c-headline',
+          `c-headline--align-left`,
+          spaceAfter && `c-headline--space-after-${spaceAfter}`
+        )}
+        {...props}
+      >
+        {sub && switchOrder && (
+          <p className="c-headline__subheadline">{renderSubheadline(sub)}</p>
+        )}
+        <TagName
+          className={classnames(
+            'c-headline**headline',
+            style !== 'none' && style !== level && `c-headline**${style}`
+          )}
+        >
+          {renderContent(text)}
+        </TagName>
+        {sub && !switchOrder && (
+          <p className="c-headline__subheadline">{renderSubheadline(sub)}</p>
+        )}
+      </header>
+    </>
+  ) : (
+    ''
+  )}
+</>
+); };
+
+export const HeadlineProvider: FC<PropsWithChildren<any>> = (props) => (
+  <HeadlineContext.Provider {...props} value={Headline} />
+);
+
+````
+
+</CH.Code>
+
+---
+
+##### Destructure additional props
+
+Coming to our component JSX, we start by passing down (destructuring) the `props` we're carrying through first. This ensures properties defined in our [component API](../../foundations/components/component-api.md) will always take precedence, because they're added after the general `props`.
+
+<CH.Code>
+```tsx src/components/headline/HeadlineComponent.tsx focus=40
+import classnames from "classnames";
+import { HTMLAttributes, FC, PropsWithChildren } from "react";
+
+import { HeadlineContext } from '@kickstartds/base/lib/headline';
+import { defaultRenderFn } from '@kickstartds/core/lib/core';
+
+import { HeadlineProps } from './HeadlineProps';
+
+interface RenderFunctions {
+renderContent?: typeof defaultRenderFn;
+renderSubheadline?: typeof defaultRenderFn;
+}
+
+export const Headline: FC<
+  HeadlineProps & RenderFunctions & HTMLAttributes<HTMLElement>
+> = ({
+  text,
+  sub,
+  switchOrder = false,
+  level = "h2",
+  style = "h2",
+  spaceAfter = "small",
+  renderContent = defaultRenderFn,
+  renderSubheadline = defaultRenderFn,
+  ...props
+}) => {
+  const TagName = level;
+
+return (
+
+<>
+  {text || sub ? (
+    <>
+      <header
+        className={classnames(
+          'c-headline',
+          `c-headline--align-left`,
+          spaceAfter && `c-headline--space-after-${spaceAfter}`
+        )}
+        {...props}
+      >
+        {sub && switchOrder && (
+          <p className="c-headline__subheadline">{renderSubheadline(sub)}</p>
+        )}
+        <TagName
+          className={classnames(
+            'c-headline**headline',
+            style !== 'none' && style !== level && `c-headline**${style}`
+          )}
+        >
+          {renderContent(text)}
+        </TagName>
+        {sub && !switchOrder && (
+          <p className="c-headline__subheadline">{renderSubheadline(sub)}</p>
+        )}
+      </header>
+    </>
+  ) : (
+    ''
+  )}
+</>
+); };
+
+export const HeadlineProvider: FC<PropsWithChildren<any>> = (props) => (
+  <HeadlineContext.Provider {...props} value={Headline} />
+);
+
+````
+
+</CH.Code>
+
+---
+
+##### Glue component API to base component 1/3
+
+The simplest cases of connecting props to the base component is when the name of the property is taken from the base component. We can just directly pass those without much thought.
+
+<CH.Code>
+```tsx src/components/headline/HeadlineComponent.tsx
+import classnames from "classnames";
+import { HTMLAttributes, FC, PropsWithChildren } from "react";
+
+import { HeadlineContext } from '@kickstartds/base/lib/headline';
+import { defaultRenderFn } from '@kickstartds/core/lib/core';
+
+import { HeadlineProps } from './HeadlineProps';
+
+interface RenderFunctions {
+renderContent?: typeof defaultRenderFn;
+renderSubheadline?: typeof defaultRenderFn;
+}
+
+export const Headline: FC<
+  HeadlineProps & RenderFunctions & HTMLAttributes<HTMLElement>
+> = ({
+  text,
+  sub,
+  switchOrder = false,
+  level = "h2",
+  style = "h2",
+  spaceAfter = "small",
+  renderContent = defaultRenderFn,
+  renderSubheadline = defaultRenderFn,
+  ...props
+}) => {
+  const TagName = level;
+
+return (
+
+<>
+  {text || sub ? (
+    <>
+      <header
+        className={classnames(
+          'c-headline',
+          `c-headline--align-left`,
+          spaceAfter && `c-headline--space-after-${spaceAfter}`
+        )}
+        {...props}
+      >
+        {sub && switchOrder && (
+          <p className="c-headline__subheadline">{renderSubheadline(sub)}</p>
+        )}
+        <TagName
+          className={classnames(
+            'c-headline**headline',
+            style !== 'none' && style !== level && `c-headline**${style}`
+          )}
+        >
+          {renderContent(text)}
+        </TagName>
+        {sub && !switchOrder && (
+          <p className="c-headline__subheadline">{renderSubheadline(sub)}</p>
+        )}
+      </header>
+    </>
+  ) : (
+    ''
+  )}
+</>
+); };
+
+export const HeadlineProvider: FC<PropsWithChildren<any>> = (props) => (
+  <HeadlineContext.Provider {...props} value={Headline} />
+);
+
+````
+
+</CH.Code>
+
+---
+
+##### Glue component API to base component 2/3
+
+In some cases we might have changed the name of a prop. In that instance, we just to have to wire up the renamed property to the originally named base components property.
+
+<CH.Code>
+```tsx src/components/headline/HeadlineComponent.tsx
+import classnames from "classnames";
+import { HTMLAttributes, FC, PropsWithChildren } from "react";
+
+import { HeadlineContext } from '@kickstartds/base/lib/headline';
+import { defaultRenderFn } from '@kickstartds/core/lib/core';
+
+import { HeadlineProps } from './HeadlineProps';
+
+interface RenderFunctions {
+renderContent?: typeof defaultRenderFn;
+renderSubheadline?: typeof defaultRenderFn;
+}
+
+export const Headline: FC<
+  HeadlineProps & RenderFunctions & HTMLAttributes<HTMLElement>
+> = ({
+  text,
+  sub,
+  switchOrder = false,
+  level = "h2",
+  style = "h2",
+  spaceAfter = "small",
+  renderContent = defaultRenderFn,
+  renderSubheadline = defaultRenderFn,
+  ...props
+}) => {
+  const TagName = level;
+
+return (
+
+<>
+  {text || sub ? (
+    <>
+      <header
+        className={classnames(
+          'c-headline',
+          `c-headline--align-left`,
+          spaceAfter && `c-headline--space-after-${spaceAfter}`
+        )}
+        {...props}
+      >
+        {sub && switchOrder && (
+          <p className="c-headline__subheadline">{renderSubheadline(sub)}</p>
+        )}
+        <TagName
+          className={classnames(
+            'c-headline**headline',
+            style !== 'none' && style !== level && `c-headline**${style}`
+          )}
+        >
+          {renderContent(text)}
+        </TagName>
+        {sub && !switchOrder && (
+          <p className="c-headline__subheadline">{renderSubheadline(sub)}</p>
+        )}
+      </header>
+    </>
+  ) : (
+    ''
+  )}
+</>
+); };
+
+export const HeadlineProvider: FC<PropsWithChildren<any>> = (props) => (
+  <HeadlineContext.Provider {...props} value={Headline} />
+);
+
+````
+
+</CH.Code>
+
+---
+
+##### Glue component API to base component 3/3
+
+Finally there might be properties where the naming of the actual values was changed, for example when adapting `enum` typed properties.
+
+We'll have to simply rewire the values in that case.
+
+<CH.Code>
+```tsx src/components/headline/HeadlineComponent.tsx
+import classnames from "classnames";
+import { HTMLAttributes, FC, PropsWithChildren } from "react";
+
+import { HeadlineContext } from '@kickstartds/base/lib/headline';
+import { defaultRenderFn } from '@kickstartds/core/lib/core';
+
+import { HeadlineProps } from './HeadlineProps';
+
+interface RenderFunctions {
+renderContent?: typeof defaultRenderFn;
+renderSubheadline?: typeof defaultRenderFn;
+}
+
+export const Headline: FC<
+  HeadlineProps & RenderFunctions & HTMLAttributes<HTMLElement>
+> = ({
+  text,
+  sub,
+  switchOrder = false,
+  level = "h2",
+  style = "h2",
+  spaceAfter = "small",
+  renderContent = defaultRenderFn,
+  renderSubheadline = defaultRenderFn,
+  ...props
+}) => {
+  const TagName = level;
+
+return (
+
+<>
+  {text || sub ? (
+    <>
+      <header
+        className={classnames(
+          'c-headline',
+          `c-headline--align-left`,
+          spaceAfter && `c-headline--space-after-${spaceAfter}`
+        )}
+        {...props}
+      >
+        {sub && switchOrder && (
+          <p className="c-headline__subheadline">{renderSubheadline(sub)}</p>
+        )}
+        <TagName
+          className={classnames(
+            'c-headline**headline',
+            style !== 'none' && style !== level && `c-headline**${style}`
+          )}
+        >
+          {renderContent(text)}
+        </TagName>
+        {sub && !switchOrder && (
+          <p className="c-headline__subheadline">{renderSubheadline(sub)}</p>
+        )}
+      </header>
+    </>
+  ) : (
+    ''
+  )}
+</>
+); };
+
+export const HeadlineProvider: FC<PropsWithChildren<any>> = (props) => (
+  <HeadlineContext.Provider {...props} value={Headline} />
+);
+
+````
+
+</CH.Code>
+
+---
+
+##### Finalize component JSX by adding the `ref`
+
+This will be optional, and depend on the element being handled. If you've included a [`forwardRef`](https://reactjs.org/docs/forwarding-refs.html) before, you'll have to pass that `ref` down to the **kickstartDS** base component.
+
+We'll have to simply rewire the values in that case.
+
+<CH.Code>
+```tsx src/components/headline/HeadlineComponent.tsx
+import classnames from "classnames";
+import { HTMLAttributes, FC, PropsWithChildren } from "react";
+
+import { HeadlineContext } from '@kickstartds/base/lib/headline';
+import { defaultRenderFn } from '@kickstartds/core/lib/core';
+
+import { HeadlineProps } from './HeadlineProps';
+
+interface RenderFunctions {
+renderContent?: typeof defaultRenderFn;
+renderSubheadline?: typeof defaultRenderFn;
+}
+
+export const Headline: FC<
+  HeadlineProps & RenderFunctions & HTMLAttributes<HTMLElement>
+> = ({
+  text,
+  sub,
+  switchOrder = false,
+  level = "h2",
+  style = "h2",
+  spaceAfter = "small",
+  renderContent = defaultRenderFn,
+  renderSubheadline = defaultRenderFn,
+  ...props
+}) => {
+  const TagName = level;
+
+return (
+
+<>
+  {text || sub ? (
+    <>
+      <header
+        className={classnames(
+          'c-headline',
+          `c-headline--align-left`,
+          spaceAfter && `c-headline--space-after-${spaceAfter}`
+        )}
+        {...props}
+      >
+        {sub && switchOrder && (
+          <p className="c-headline__subheadline">{renderSubheadline(sub)}</p>
+        )}
+        <TagName
+          className={classnames(
+            'c-headline**headline',
+            style !== 'none' && style !== level && `c-headline**${style}`
+          )}
+        >
+          {renderContent(text)}
+        </TagName>
+        {sub && !switchOrder && (
+          <p className="c-headline__subheadline">{renderSubheadline(sub)}</p>
+        )}
+      </header>
+    </>
+  ) : (
+    ''
+  )}
+</>
+); };
+
+export const HeadlineProvider: FC<PropsWithChildren<any>> = (props) => (
+  <HeadlineContext.Provider {...props} value={Headline} />
+);
+
+````
+
+</CH.Code>
+
+---
+
+##### Adding a `Provider`
+
+The final part of creating our **React** component is adding a component `Provider` for it. As we've adapted a component here, we'll want to make sure that every time another component includes the base component, our own version of it gets used instead.
+
+<CH.Code>
+```tsx src/components/headline/HeadlineComponent.tsx
+import classnames from "classnames";
+import { HTMLAttributes, FC, PropsWithChildren } from "react";
+
+import { HeadlineContext } from '@kickstartds/base/lib/headline';
+import { defaultRenderFn } from '@kickstartds/core/lib/core';
+
+import { HeadlineProps } from './HeadlineProps';
+
+interface RenderFunctions {
+renderContent?: typeof defaultRenderFn;
+renderSubheadline?: typeof defaultRenderFn;
+}
+
+export const Headline: FC<
+  HeadlineProps & RenderFunctions & HTMLAttributes<HTMLElement>
+> = ({
+  text,
+  sub,
+  switchOrder = false,
+  level = "h2",
+  style = "h2",
+  spaceAfter = "small",
+  renderContent = defaultRenderFn,
+  renderSubheadline = defaultRenderFn,
+  ...props
+}) => {
+  const TagName = level;
+
+return (
+
+<>
+  {text || sub ? (
+    <>
+      <header
+        className={classnames(
+          'c-headline',
+          `c-headline--align-left`,
+          spaceAfter && `c-headline--space-after-${spaceAfter}`
+        )}
+        {...props}
+      >
+        {sub && switchOrder && (
+          <p className="c-headline__subheadline">{renderSubheadline(sub)}</p>
+        )}
+        <TagName
+          className={classnames(
+            'c-headline**headline',
+            style !== 'none' && style !== level && `c-headline**${style}`
+          )}
+        >
+          {renderContent(text)}
+        </TagName>
+        {sub && !switchOrder && (
+          <p className="c-headline__subheadline">{renderSubheadline(sub)}</p>
+        )}
+      </header>
+    </>
+  ) : (
+    ''
+  )}
+</>
+); };
+
+export const HeadlineProvider: FC<PropsWithChildren<any>> = (props) => (
+  <HeadlineContext.Provider {...props} value={Headline} />
+);
+
+```
+
+</CH.Code>
+</CH.Spotlight>
+
+## Technical debt added
+
+## Examples
+
+### Customize `Headline` component
+```
