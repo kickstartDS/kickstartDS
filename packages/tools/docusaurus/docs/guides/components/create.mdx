@@ -51,6 +51,8 @@ This guide expects you to reduce the set of props offered by **kickstartDS** com
 
 </Admonition>
 
+Let's start with the definition!
+
 ### 1. Component Definition
 
 Like the adaptation process we start by defining a [component API](../../foundations/components/component-api.md). But unlike it, we directly write down what we need. We don't start with a blueprint this time.
@@ -227,13 +229,12 @@ Subsequently we add exactly those fields to our own components component API / *
   "description": "Component used to tease content",
   "type": "object",
   "properties": {
-    "headline": { ... },
+    "topic": { ... },
     "text": { ... },
-    "target": { ... },
+    "link": { ... },
     "image": { ... },
     "inverted": { ... }
-  },
-  "required": ["headline", "text", "target"]
+  }
 }
 
 ```
@@ -284,8 +285,7 @@ Subsequently we add exactly those fields to our own components component API / *
     "target": { ... },
     "image": { ... },
     "inverted": { ... }
-  },
-  "required": ["headline", "text", "target"]
+  }
 }
 
 ```
@@ -365,7 +365,57 @@ And finally, set all the fields identified as `required`.
 }
 
 ```
+</CH.Code>
 
+---
+
+#### Finished component **JSON Schema**
+
+The finished component definition in all its glory.
+
+<CH.Code>
+```json src/components/teaser-card/teaser-card.schema.json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/teaser-card.schema.json",
+  "title": "Teaser Card",
+  "description": "Component used to tease content",
+  "type": "object",
+  "properties": {
+    "headline": { ... },
+    "text": { ... },
+    "target": { ... },
+    "image": { ... },
+    "inverted": { ... }
+  },
+  "required": ["headline", "text", "target"]
+}
+
+```
+
+```json @kickstartds/teaser-box.schema.json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/base/teaser-box.schema.json",
+  "title": "Teaser Box",
+  "description": "Component to tease external content",
+  "type": "object",
+  "properties": {
+    "image":  {... },
+    "ratio": { ... },
+    "imageSpacing": { ... },
+    "topic": { ... },
+    "text": { ...},
+    "inverted":  {... },
+    "link": { ... },
+    "className": { ... },
+    "component": { ... }
+  },
+  "required": ["ratio"],
+  "additionalProperties": false
+}
+
+```
 </CH.Code>
 
 </CH.Spotlight>
@@ -378,7 +428,7 @@ And finally, set all the fields identified as `required`.
 
 For the full version of creating the `TeaserCard` have a look at our guide ["Create `TeaserCard` component"](../examples/components/teaser-card.mdx).
 
-#### **React** Template
+#### **React** template
 
 Now that our **JSON Schema** is defined, we'll automatically get matching **TypeScript** types for our component. We use those, combined with the types already included with the **kickstartDS** base component(s), to quickly hook up our set of properties to the mapped component(s). Using auto-complete, and **TypeScript** telling us about required properties in the mapped component(s), this is done in light speed!
 

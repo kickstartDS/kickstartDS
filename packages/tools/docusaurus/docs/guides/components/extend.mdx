@@ -8,7 +8,28 @@ import Admonition from 'react-admonitions';
 
 ## Definition
 
+Extending a component takes a **kickstartDS** component and expands upon its abilities. But in contrast to [customizing a component](./customize.mdx) we don't just add a property, often resulting in changing the markup / template of the involved component in the process. When extending, we add new capabilities to a component by composing it with other components.
+
+It involves the same rough steps as [adapting a component](./adapt.mdx), but differs from it when it comes to creating the **React** template. Instead of (only) using the base component directly as imported, and just re-wiring properties, we import and use multiple **kickstartDS** base components. We also wire our properties into those used different components as needed.
+
+<Admonition type="tip" title="Customizing vs Extending">
+  In both processes we add new features to a component, which results in it fitting one of the use cases we have in mind for our Design System.
+
+In the case of [customizing a component](./customize.mdx), we either change the way a property of an existing **kickstartDS** base component behaves, or we add a new property to it altogether. But it's always a change that results in customizing the **React** component template, too. For example: [adding a `switchOrder` property to the `Headline`](../examples/components/headline.mdx).
+
+When extending a component, we take one existing **kickstartDS** base component and compose it with other **kickstartDS** base components to gain new functionality. We don't change the **React** component template in the process. For example: [adding call-to-actions to our `Section`](../examples/components/section.mdx).
+
+Both processes can be combined in a component, if needed!
+
+</Admonition>
+
+This can also be part of [creating](./create.mdx) a component, (see our [`TeaserCard` component example](../examples/components/teaser-card.mdx) for that). Or be used while [customizing](./customize.mdx) a component that expands on some **kickstartDS** base component (see our [`Section` component example](../examples/components/section.mdx) for that).
+
 ## Extension process
+
+As with the adaptation process, the big assumption here is that you already have a **kickstartDS** base component in mind. But unlike in that one, we have some requirement or feature that is not covered by it. We _almost_ have a match. Additionally, the change required involves adding other **kickstartDS** base components into the mix... not changing the involved components themselves. That would be covered by the [customization process](./customize.mdx).
+
+Finding your component definition is still very simplified, we just have to add those properties not covered by the base component into the mix ourselves.
 
 <Admonition type="tip" title="Adaptation process as a base line">
   If you've read our ["Adapt a component"](./adapt.mdx) guide you probably already know this:
@@ -16,3 +37,1346 @@ import Admonition from 'react-admonitions';
 This guide expects you to reduce the set of props offered by **kickstartDS** components, when used as a base component. We'll also skip over, or significantly shorten, parts already covered by that guide. If unsure about something, best cross-reference it!
 
 </Admonition>
+
+If you don't have a **kickstartDS** base component in mind yet, you're probably better served by our guide ["Create a component"](./create.mdx). In that guide, you'll start off without a specific component in mind. This means defining a structure (someting you probably have an idea about already) first, and then mapping that structure to a fitting component second.
+
+We also have an example for this with ["Create `Teaser Card` component"](../examples/components/teaser-card.mdx).
+
+If you're still unsure, then maybe you're still missing a clear picture on what your components should look like. In that case, you should probably take a step back first, and maybe start a [Design System Initiative](../design-system-initiative.md) to narrow down on what components you'll really need.
+
+There are two main steps in customizing a component:
+
+1. Component definition, and
+2. Component creation
+
+TODO should / could possibly include "Component documentation" as a third step, where the **Storybook** story is added
+
+Let's get started!
+
+### 1. Component definition
+
+The extension process starts by defining a [component API](../../foundations/components/component-api.md). As with the [adaptation process](./adapt.mdx) this mainly means selecting a set of props from the pool of props available through your selected base component. But this time, we'll also add a requirement that's not covered by the base component.
+
+We'll use the `Section` component throughout this guide to illustrate concepts. This will not be an exhaustive example, though. For that have a look at our guide ["Extend `Section` component"](../examples/components/section.mdx).
+
+As our additional requirement, we'll want to be able to add some call-to-actions at the end of a section. That's not something the base `Section` can do, so we'll add this ourselves.
+
+#### Purpose
+
+There's not a lot different here when compared to the [adaptation process](./adapt.mdx). We just mainly keep close to the original purpose of our chosen **kickstartDS** base component.
+
+There should be an exception though, as we have a requirement on our mind that is not part of the component yet. This will probably be part of the purpose of our component.
+
+For our `Section` example, this could mean adding more places of putting call-to-actions being that requirement. Adding it to the `Section` allows adding one between every section of our website, which should be plenty! Using the `Button` as a component for those call-to-actions allows for re-use there, too.
+
+#### Structure
+
+We'll also still start by defining a rough draft of our [component API](../../foundations/components/component-api.md) here.
+
+Let's keep going with our `Section` component as an example. We're starting with the following properties:
+
+| Property      | Type      | Description                           |
+| ------------- | --------- | ------------------------------------- |
+| `width`       | `enum`    | Width of section to use               |
+| `gutter`      | `enum`    | Size of gutter to use                 |
+| `mode`        | `enum`    | Layout mode used for section contents |
+| `content`     | `array`   | Allowed content for the section       |
+| `background`  | `enum`    | Type of background                    |
+| `inverted`    | `boolean` | Whether to invert the section         |
+| `spaceBefore` | `enum`    | Amount of spacing before the section  |
+| `spaceAfter`  | `enum`    | Amount of spacing after the section   |
+| `headline`    | `object`  | Headline                              |
+| `className`   | `string`  | Additional Class                      |
+| `component`   | `string`  | Optional custom component identifier  |
+
+For the detailed documentation have a look at the `Section` in our **Storybook** here:<br/>
+https://www.kickstartds.com/storybook/?path=/docs/base-section--content-boxes
+
+One potential set of props, it's also the one used in our guide ["Extend `Section` component"](../examples/components/section.mdx) if you're wondering, would be the following:
+
+| Property          | Type      | Description                             |
+| ----------------- | --------- | --------------------------------------- |
+| `headline`        | `string`  | Headline for the section                |
+| `width`           | `enum`    | Width of section to use                 |
+| `gutter`          | `enum`    | Size of gutter to use                   |
+| `mode`            | `enum`    | Layout mode used for section contents   |
+| `content`         | `array`   | Allowed content for the section         |
+| `style`           | `enum`    | Style of section, influences background |
+| `spaceBefore`     | `enum`    | Amount of spacing before the section    |
+| `spaceAfter`      | `enum`    | Amount of spacing after the section     |
+| `inverted`        | `boolean` | Whether to invert the section           |
+| `ctas`            | `array`   | Call-to-actions to show                 |
+| `ctas[].label *`  | `string`  | Label for the Call to action            |
+| `ctas[].target *` | `string`  | Target for the Call to action           |
+
+We took `width`, `gutter`, `mode`, `content`, `spaceBefore`, `spaceAfter` and `inverted` directly, and renamed `background` to `style` for our version of the `Section`. And crucially we add our own property `ctas` into the mix. We also reduce the complexity of `headline` significantly... from mapping to all of the `Headline` properties, to just a single `string` type prop setting its content. Required fields are marked with a `*`.
+
+### 2. Component Creation
+
+In the second and final step we'll get to actually create our component. We'll encode the [component API](../../foundations/components/component-api.md) by creating its **JSON Schema**, and create a **React** template matching our selected properties to the **kickstartDS** base component. While creating that template, we'll also import additional components and mix them with our original **kickstartDS** base component to implement our new requirements.
+
+#### **JSON Schema** definition
+
+We establish the structure of components by creating a **JSON Schema** for them, defining their [component API](../../foundations/components/component-api.md) in code. Like with [customization](./customize.mdx) we add our own, new property into the mix.
+
+For an abridged version of that process, have a look at the `Section` again (adding our own `ctas` property):
+
+<CH.Spotlight>
+<CH.Code>
+```json @kickstartds/section.schema.json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/base/section.schema.json",
+  "title": "Section",
+  "type": "object",
+  "properties": {
+    "width": { ... },
+    "gutter": { ... },
+    "mode": { ... },
+    "content": { ... },
+    "background": { ... },
+    "inverted": { ... },
+    "spaceBefore": { ... },
+    "spaceAfter": { ... },
+    "headline": { ... },
+    "className": { ... },
+    "component": { ... }
+  }
+}
+```
+</CH.Code>
+
+---
+
+#### Original `Section`
+
+This is the "full" section component API / **JSON Schema**. We've just reduced the property definitions.
+
+<CH.Code>
+```json @kickstartds/section.schema.json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/base/section.schema.json",
+  "title": "Section",
+  "type": "object",
+  "properties": {
+    "width": { ... },
+    "gutter": { ... },
+    "mode": { ... },
+    "content": { ... },
+    "background": { ... },
+    "inverted": { ... },
+    "spaceBefore": { ... },
+    "spaceAfter": { ... },
+    "headline": { ... },
+    "className": { ... },
+    "component": { ... }
+  }
+}
+```
+</CH.Code>
+
+---
+
+#### Select from available props
+
+Let's highlight the ones we've identified when thinking about our component structure before.
+
+<CH.Code>
+```json @kickstartds/section.schema.json focus=7:15
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/base/section.schema.json",
+  "title": "Section",
+  "type": "object",
+  "properties": {
+    "width": { ... },
+    "gutter": { ... },
+    "mode": { ... },
+    "content": { ... },
+    "background": { ... },
+    "inverted": { ... },
+    "spaceBefore": { ... },
+    "spaceAfter": { ... },
+    "headline": { ... },
+    "className": { ... },
+    "component": { ... }
+  }
+}
+```
+
+</CH.Code>
+
+---
+
+#### Create your component API
+
+Subsequently we add exactly those fields to our own components [component API](../../foundations/components/component-api.md) / **JSON Schema**...
+
+<CH.Code>
+```json src/components/section/section.schema.json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/section.schema.json",
+  "title": "Section",
+  "description": "Component used to layout components into pages",
+  "type": "object",
+  "properties": {
+    "headline": { ... },
+    "width": { ... },
+    "gutter": { ... },
+    "mode": { ... },
+    "content": { ... },
+    "background": { ... },
+    "spaceBefore": { ... },
+    "spaceAfter": { ... },
+    "inverted": { ... }
+  },
+  "required": []
+}
+```
+
+```json @kickstartds/section.schema.json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/base/section.schema.json",
+  "title": "Section",
+  "type": "object",
+  "properties": {
+    "width": { ... },
+    "gutter": { ... },
+    "mode": { ... },
+    "content": { ... },
+    "background": { ... },
+    "inverted": { ... },
+    "spaceBefore": { ... },
+    "spaceAfter": { ... },
+    "headline": { ... },
+    "className": { ... },
+    "component": { ... }
+  }
+}
+```
+
+</CH.Code>
+
+---
+
+#### Renaming props
+
+... and rename props in the process.
+
+<CH.Code>
+```json src/components/section/section.schema.json focus=13
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/section.schema.json",
+  "title": "Section",
+  "description": "Component used to layout components into pages",
+  "type": "object",
+  "properties": {
+    "headline": { ... },
+    "width": { ... },
+    "gutter": { ... },
+    "mode": { ... },
+    "content": { ... },
+    "style": { ... },
+    "spaceBefore": { ... },
+    "spaceAfter": { ... },
+    "inverted": { ... }
+  },
+  "required": []
+}
+```
+
+```json @kickstartds/section.schema.json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/base/section.schema.json",
+  "title": "Section",
+  "type": "object",
+  "properties": {
+    "width": { ... },
+    "gutter": { ... },
+    "mode": { ... },
+    "content": { ... },
+    "background": { ... },
+    "inverted": { ... },
+    "spaceBefore": { ... },
+    "spaceAfter": { ... },
+    "headline": { ... },
+    "className": { ... },
+    "component": { ... }
+  }
+}
+```
+
+</CH.Code>
+
+---
+
+#### Add our new prop
+
+Most importantly, we add our new property.
+
+<CH.Code>
+```json src/components/section/section.schema.json focus=17:27
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/section.schema.json",
+  "title": "Section",
+  "description": "Component used to layout components into pages",
+  "type": "object",
+  "properties": {
+    "headline": { ... },
+    "width": { ... },
+    "gutter": { ... },
+    "mode": { ... },
+    "content": { ... },
+    "style": { ... },
+    "spaceBefore": { ... },
+    "spaceAfter": { ... },
+    "inverted": { ... },
+    "ctas": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "label": { ... },
+          "target": { ... }
+        },
+        "required": ["label", "target"]
+      }
+    }
+  },
+  "required": []
+}
+```
+
+```json @kickstartds/section.schema.json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/base/section.schema.json",
+  "title": "Section",
+  "type": "object",
+  "properties": {
+    "width": { ... },
+    "gutter": { ... },
+    "mode": { ... },
+    "content": { ... },
+    "background": { ... },
+    "inverted": { ... },
+    "spaceBefore": { ... },
+    "spaceAfter": { ... },
+    "headline": { ... },
+    "className": { ... },
+    "component": { ... }
+  }
+}
+```
+
+</CH.Code>
+
+---
+
+#### Finished component **JSON Schema**
+
+The finished component definition in all its glory.
+
+<CH.Code>
+```json src/components/section/section.schema.json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/section.schema.json",
+  "title": "Section",
+  "description": "Component used to layout components into pages",
+  "type": "object",
+  "properties": {
+    "headline": { ... },
+    "width": { ... },
+    "gutter": { ... },
+    "mode": { ... },
+    "content": { ... },
+    "style": { ... },
+    "spaceBefore": { ... },
+    "spaceAfter": { ... },
+    "inverted": { ... },
+    "ctas": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "label": { ... },
+          "target": { ... }
+        },
+        "required": ["label", "target"]
+      }
+    }
+  },
+  "required": []
+}
+```
+
+```json @kickstartds/section.schema.json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/base/section.schema.json",
+  "title": "Section",
+  "type": "object",
+  "properties": {
+    "width": { ... },
+    "gutter": { ... },
+    "mode": { ... },
+    "content": { ... },
+    "background": { ... },
+    "inverted": { ... },
+    "spaceBefore": { ... },
+    "spaceAfter": { ... },
+    "headline": { ... },
+    "className": { ... },
+    "component": { ... }
+  }
+}
+```
+
+</CH.Code>
+</CH.Spotlight>
+
+<Admonition type="tip" title="Extending multiple properties">
+  This process can also involve extending a component by adding multiple properties to it. Just repeat all the steps for every property you'll need to add.
+
+In general: these guides are mainly meant as basic building blocks, that can be combined and remixed by you to create exactly what you need... even if that's something more complex than described in these basic guides here.
+
+</Admonition>
+
+For the full version of customizing a `Section` have a look at our ["Extend `Section` component"](../examples/components/headline.mdx) guide.
+
+#### **React** template
+
+Now that our **JSON Schema** is defined, we'll automatically get matching **TypeScript** types for our component. We use those, combined with the types already included with the **kickstartDS** base component, to quickly hook up our set of properties to the original component. Using auto-complete, and **TypeScript** telling us about required properties in the base component, this is gets easy like squeezing a lemon!
+
+To learn more about the tooling that create those types for you, and how to hook it up, see [part four of our "Create your Design System" guide](../../guides/create/components.mdx#add-packagejson-scripts).
+
+Let's continue showcasing this process using our `Section`, creating the component template:
+
+<CH.Spotlight>
+<CH.Code>
+```tsx src/components/section/SectionComponent.tsx
+import { HTMLAttributes, FC, PropsWithChildren } from "react";
+
+import {
+  SectionContextDefault,
+  SectionContext,
+} from "@kickstartds/base/lib/section";
+
+import { SectionProps } from "./SectionProps";
+import { Button } from "../button/ButtonComponent";
+
+export const Section: FC<
+  SectionProps & HTMLAttributes<HTMLElement>
+> = ({
+  headline,
+  width = "default",
+  gutter = "default",
+  mode = "default",
+  style = "default",
+  spaceBefore = "default",
+  spaceAfter = "default",
+  inverted = false,
+  ctas = [],
+  ...props
+}) => {
+  return (
+    <>
+      <SectionContextDefault
+        {...props}
+        background={style}
+        headline={{
+          content: headline
+        }}
+        width={width}
+        gutter={gutter}
+        mode={mode}
+        spaceBefore={spaceBefore}
+        spaceAfter={ctas && ctas.length > 0 ? 'none' : spaceAfter}
+        inverted={inverted}
+      />
+      {ctas && ctas.length > 0 && (
+        <SectionContextDefault
+          background={style}
+          width="narrow"
+          gutter={gutter}
+          mode="default"
+          spaceBefore="default"
+          spaceAfter={spaceAfter}
+          inverted={inverted}
+        >
+          {ctas.map((cta, index) => (
+            <Button label={cta.label} variant={index === 0 ? "primary" : index === 1 ? "secondary": "tertiary" } size="medium" />
+          ))}
+        </SectionContextDefault>
+      )}
+    </>
+  );
+};
+
+export const SectionProvider: FC<PropsWithChildren<any>> = (props) => (
+  <SectionContext.Provider {...props} value={Section} />
+);
+```
+</CH.Code>
+
+---
+
+##### Necessary imports
+
+The main imports here are the **kickstartDS** base component `Section`, our own `Button` component, and our own components **TypeScript** types.
+
+We use our own `Button` here, with the assumption that that already got [adapted](./adapt.mdx) by us. See the ["Adapt `Button` component"](../examples/components/button.mdx) guide to see how this could look like. But we could just as well have imported another (or even multiple other) **kickstartDS** base component(s) here.
+
+<CH.Code>
+```tsx src/components/section/SectionComponent.tsx focus=3:6,8:9
+import { HTMLAttributes, FC, PropsWithChildren } from "react";
+
+import {
+  SectionContextDefault,
+  SectionContext,
+} from "@kickstartds/base/lib/section";
+
+import { SectionProps } from "./SectionProps";
+import { Button } from "../button/ButtonComponent";
+
+export const Section: FC<
+  SectionProps & HTMLAttributes<HTMLElement>
+> = ({
+  headline,
+  width = "default",
+  gutter = "default",
+  mode = "default",
+  style = "default",
+  spaceBefore = "default",
+  spaceAfter = "default",
+  inverted = false,
+  ctas = [],
+  ...props
+}) => {
+  return (
+    <>
+      <SectionContextDefault
+        {...props}
+        background={style}
+        headline={{
+          content: headline
+        }}
+        width={width}
+        gutter={gutter}
+        mode={mode}
+        spaceBefore={spaceBefore}
+        spaceAfter={ctas && ctas.length > 0 ? 'none' : spaceAfter}
+        inverted={inverted}
+      />
+      {ctas && ctas.length > 0 && (
+        <SectionContextDefault
+          background={style}
+          width="narrow"
+          gutter={gutter}
+          mode="default"
+          spaceBefore="default"
+          spaceAfter={spaceAfter}
+          inverted={inverted}
+        >
+          {ctas.map((cta, index) => (
+            <Button label={cta.label} variant={index === 0 ? "primary" : index === 1 ? "secondary": "tertiary" } size="medium" />
+          ))}
+        </SectionContextDefault>
+      )}
+    </>
+  );
+};
+
+export const SectionProvider: FC<PropsWithChildren<any>> = (props) => (
+  <SectionContext.Provider {...props} value={Section} />
+);
+```
+</CH.Code>
+
+---
+
+##### Add correct type to component
+
+We need to type our **React** component to use our **JSON Schema**, while also making sure native HTML attributes are passed correctly. For the `Section` this means including `HTMLAttributes<HTMLElement>`, as it maps to a `<div>` under the hood.
+
+Doing this allows users of your component to enjoy having the same auto-complete and safety when working with your Design System.
+
+<CH.Code>
+```tsx src/components/section/SectionComponent.tsx focus=11:13
+import { HTMLAttributes, FC, PropsWithChildren } from "react";
+
+import {
+  SectionContextDefault,
+  SectionContext,
+} from "@kickstartds/base/lib/section";
+
+import { SectionProps } from "./SectionProps";
+import { Button } from "../button/ButtonComponent";
+
+export const Section: FC<
+  SectionProps & HTMLAttributes<HTMLElement>
+> = ({
+  headline,
+  width = "default",
+  gutter = "default",
+  mode = "default",
+  style = "default",
+  spaceBefore = "default",
+  spaceAfter = "default",
+  inverted = false,
+  ctas = [],
+  ...props
+}) => {
+  return (
+    <>
+      <SectionContextDefault
+        {...props}
+        background={style}
+        headline={{
+          content: headline
+        }}
+        width={width}
+        gutter={gutter}
+        mode={mode}
+        spaceBefore={spaceBefore}
+        spaceAfter={ctas && ctas.length > 0 ? 'none' : spaceAfter}
+        inverted={inverted}
+      />
+      {ctas && ctas.length > 0 && (
+        <SectionContextDefault
+          background={style}
+          width="narrow"
+          gutter={gutter}
+          mode="default"
+          spaceBefore="default"
+          spaceAfter={spaceAfter}
+          inverted={inverted}
+        >
+          {ctas.map((cta, index) => (
+            <Button label={cta.label} variant={index === 0 ? "primary" : index === 1 ? "secondary": "tertiary" } size="medium" />
+          ))}
+        </SectionContextDefault>
+      )}
+    </>
+  );
+};
+
+export const SectionProvider: FC<PropsWithChildren<any>> = (props) => (
+  <SectionContext.Provider {...props} value={Section} />
+);
+```
+</CH.Code>
+
+---
+
+##### Add parameters to component
+
+Next we add all our components defined properties to its function signature. For properties having a default defined in your [component API](../../foundations/components/component-api.md) we add that default here, too.
+
+As we also want to pass through all the props not explicitly managed by us we sponge up `...props`.
+
+<CH.Code>
+```tsx src/components/section/SectionComponent.tsx focus=13:24
+import { HTMLAttributes, FC, PropsWithChildren } from "react";
+
+import {
+  SectionContextDefault,
+  SectionContext,
+} from "@kickstartds/base/lib/section";
+
+import { SectionProps } from "./SectionProps";
+import { Button } from "../button/ButtonComponent";
+
+export const Section: FC<
+  SectionProps & HTMLAttributes<HTMLElement>
+> = ({
+  headline,
+  width = "default",
+  gutter = "default",
+  mode = "default",
+  style = "default",
+  spaceBefore = "default",
+  spaceAfter = "default",
+  inverted = false,
+  ctas = [],
+  ...props
+}) => {
+  return (
+    <>
+      <SectionContextDefault
+        {...props}
+        background={style}
+        headline={{
+          content: headline
+        }}
+        width={width}
+        gutter={gutter}
+        mode={mode}
+        spaceBefore={spaceBefore}
+        spaceAfter={ctas && ctas.length > 0 ? 'none' : spaceAfter}
+        inverted={inverted}
+      />
+      {ctas && ctas.length > 0 && (
+        <SectionContextDefault
+          background={style}
+          width="narrow"
+          gutter={gutter}
+          mode="default"
+          spaceBefore="default"
+          spaceAfter={spaceAfter}
+          inverted={inverted}
+        >
+          {ctas.map((cta, index) => (
+            <Button label={cta.label} variant={index === 0 ? "primary" : index === 1 ? "secondary": "tertiary" } size="medium" />
+          ))}
+        </SectionContextDefault>
+      )}
+    </>
+  );
+};
+
+export const SectionProvider: FC<PropsWithChildren<any>> = (props) => (
+  <SectionContext.Provider {...props} value={Section} />
+);
+```
+</CH.Code>
+
+---
+
+##### Add the actual **JSX**
+
+Unlike when directly adapting or creating a **kickstartDS** base component, we don't just use one base component. We recombine several different base components into a version that fits our needs instead.
+
+And unlike customizing, we don't change any **kickstartDS** base components underlying markup.
+
+<CH.Code>
+```tsx src/components/section/SectionComponent.tsx focus=25:56
+import { HTMLAttributes, FC, PropsWithChildren } from "react";
+
+import {
+  SectionContextDefault,
+  SectionContext,
+} from "@kickstartds/base/lib/section";
+
+import { SectionProps } from "./SectionProps";
+import { Button } from "../button/ButtonComponent";
+
+export const Section: FC<
+  SectionProps & HTMLAttributes<HTMLElement>
+> = ({
+  headline,
+  width = "default",
+  gutter = "default",
+  mode = "default",
+  style = "default",
+  spaceBefore = "default",
+  spaceAfter = "default",
+  inverted = false,
+  ctas = [],
+  ...props
+}) => {
+  return (
+    <>
+      <SectionContextDefault
+        {...props}
+        background={style}
+        headline={{
+          content: headline
+        }}
+        width={width}
+        gutter={gutter}
+        mode={mode}
+        spaceBefore={spaceBefore}
+        spaceAfter={ctas && ctas.length > 0 ? 'none' : spaceAfter}
+        inverted={inverted}
+      />
+      {ctas && ctas.length > 0 && (
+        <SectionContextDefault
+          background={style}
+          width="narrow"
+          gutter={gutter}
+          mode="default"
+          spaceBefore="default"
+          spaceAfter={spaceAfter}
+          inverted={inverted}
+        >
+          {ctas.map((cta, index) => (
+            <Button label={cta.label} variant={index === 0 ? "primary" : index === 1 ? "secondary": "tertiary" } size="medium" />
+          ))}
+        </SectionContextDefault>
+      )}
+    </>
+  );
+};
+
+export const SectionProvider: FC<PropsWithChildren<any>> = (props) => (
+  <SectionContext.Provider {...props} value={Section} />
+);
+```
+</CH.Code>
+
+---
+
+##### Destructure additional props
+
+We start with the `props` we're carrying through first. This ensures properties defined in our [component API](../../foundations/components/component-api.md) will always take precedence, because they're added after the general `props`.
+
+<CH.Code>
+```tsx src/components/section/SectionComponent.tsx focus=28
+import { HTMLAttributes, FC, PropsWithChildren } from "react";
+
+import {
+  SectionContextDefault,
+  SectionContext,
+} from "@kickstartds/base/lib/section";
+
+import { SectionProps } from "./SectionProps";
+import { Button } from "../button/ButtonComponent";
+
+export const Section: FC<
+  SectionProps & HTMLAttributes<HTMLElement>
+> = ({
+  headline,
+  width = "default",
+  gutter = "default",
+  mode = "default",
+  style = "default",
+  spaceBefore = "default",
+  spaceAfter = "default",
+  inverted = false,
+  ctas = [],
+  ...props
+}) => {
+  return (
+    <>
+      <SectionContextDefault
+        {...props}
+        background={style}
+        headline={{
+          content: headline
+        }}
+        width={width}
+        gutter={gutter}
+        mode={mode}
+        spaceBefore={spaceBefore}
+        spaceAfter={ctas && ctas.length > 0 ? 'none' : spaceAfter}
+        inverted={inverted}
+      />
+      {ctas && ctas.length > 0 && (
+        <SectionContextDefault
+          background={style}
+          width="narrow"
+          gutter={gutter}
+          mode="default"
+          spaceBefore="default"
+          spaceAfter={spaceAfter}
+          inverted={inverted}
+        >
+          {ctas.map((cta, index) => (
+            <Button label={cta.label} variant={index === 0 ? "primary" : index === 1 ? "secondary": "tertiary" } size="medium" />
+          ))}
+        </SectionContextDefault>
+      )}
+    </>
+  );
+};
+
+export const SectionProvider: FC<PropsWithChildren<any>> = (props) => (
+  <SectionContext.Provider {...props} value={Section} />
+);
+```
+</CH.Code>
+
+---
+
+##### Combining base components 1/5
+
+This is where we actually extend the original components scope.
+
+We apply a small trick here: if there are `ctas` defined, we'll just add a second section to the output.
+
+<CH.Code>
+```tsx src/components/section/SectionComponent.tsx focus=40:54
+import { HTMLAttributes, FC, PropsWithChildren } from "react";
+
+import {
+  SectionContextDefault,
+  SectionContext,
+} from "@kickstartds/base/lib/section";
+
+import { SectionProps } from "./SectionProps";
+import { Button } from "../button/ButtonComponent";
+
+export const Section: FC<
+  SectionProps & HTMLAttributes<HTMLElement>
+> = ({
+  headline,
+  width = "default",
+  gutter = "default",
+  mode = "default",
+  style = "default",
+  spaceBefore = "default",
+  spaceAfter = "default",
+  inverted = false,
+  ctas = [],
+  ...props
+}) => {
+  return (
+    <>
+      <SectionContextDefault
+        {...props}
+        background={style}
+        headline={{
+          content: headline
+        }}
+        width={width}
+        gutter={gutter}
+        mode={mode}
+        spaceBefore={spaceBefore}
+        spaceAfter={ctas && ctas.length > 0 ? 'none' : spaceAfter}
+        inverted={inverted}
+      />
+      {ctas && ctas.length > 0 && (
+        <SectionContextDefault
+          background={style}
+          width="narrow"
+          gutter={gutter}
+          mode="default"
+          spaceBefore="default"
+          spaceAfter={spaceAfter}
+          inverted={inverted}
+        >
+          {ctas.map((cta, index) => (
+            <Button label={cta.label} variant={index === 0 ? "primary" : index === 1 ? "secondary": "tertiary" } size="medium" />
+          ))}
+        </SectionContextDefault>
+      )}
+    </>
+  );
+};
+
+export const SectionProvider: FC<PropsWithChildren<any>> = (props) => (
+  <SectionContext.Provider {...props} value={Section} />
+);
+```
+</CH.Code>
+
+---
+
+##### Combining base components 2/5
+
+Inside that second section, we render all the call-to-actions given to us as `Button`s. We choose the variant rendered according to its index (first = `primary`, etc) in the list.
+
+<CH.Code>
+```tsx src/components/section/SectionComponent.tsx focus=50:52
+import { HTMLAttributes, FC, PropsWithChildren } from "react";
+
+import {
+  SectionContextDefault,
+  SectionContext,
+} from "@kickstartds/base/lib/section";
+
+import { SectionProps } from "./SectionProps";
+import { Button } from "../button/ButtonComponent";
+
+export const Section: FC<
+  SectionProps & HTMLAttributes<HTMLElement>
+> = ({
+  headline,
+  width = "default",
+  gutter = "default",
+  mode = "default",
+  style = "default",
+  spaceBefore = "default",
+  spaceAfter = "default",
+  inverted = false,
+  ctas = [],
+  ...props
+}) => {
+  return (
+    <>
+      <SectionContextDefault
+        {...props}
+        background={style}
+        headline={{
+          content: headline
+        }}
+        width={width}
+        gutter={gutter}
+        mode={mode}
+        spaceBefore={spaceBefore}
+        spaceAfter={ctas && ctas.length > 0 ? 'none' : spaceAfter}
+        inverted={inverted}
+      />
+      {ctas && ctas.length > 0 && (
+        <SectionContextDefault
+          background={style}
+          width="narrow"
+          gutter={gutter}
+          mode="default"
+          spaceBefore="default"
+          spaceAfter={spaceAfter}
+          inverted={inverted}
+        >
+          {ctas.map((cta, index) => (
+            <Button label={cta.label} variant={index === 0 ? "primary" : index === 1 ? "secondary": "tertiary" } size="medium" />
+          ))}
+        </SectionContextDefault>
+      )}
+    </>
+  );
+};
+
+export const SectionProvider: FC<PropsWithChildren<any>> = (props) => (
+  <SectionContext.Provider {...props} value={Section} />
+);
+```
+</CH.Code>
+---
+
+##### Combining base components 3/5
+
+When there are call-to-actions, we also ensure the sections share the same visual style...
+
+<CH.Code>
+```tsx src/components/section/SectionComponent.tsx focus=29,34,36,38,42,47,48
+import { HTMLAttributes, FC, PropsWithChildren } from "react";
+
+import {
+  SectionContextDefault,
+  SectionContext,
+} from "@kickstartds/base/lib/section";
+
+import { SectionProps } from "./SectionProps";
+import { Button } from "../button/ButtonComponent";
+
+export const Section: FC<
+  SectionProps & HTMLAttributes<HTMLElement>
+> = ({
+  headline,
+  width = "default",
+  gutter = "default",
+  mode = "default",
+  style = "default",
+  spaceBefore = "default",
+  spaceAfter = "default",
+  inverted = false,
+  ctas = [],
+  ...props
+}) => {
+  return (
+    <>
+      <SectionContextDefault
+        {...props}
+        background={style}
+        headline={{
+          content: headline
+        }}
+        width={width}
+        gutter={gutter}
+        mode={mode}
+        spaceBefore={spaceBefore}
+        spaceAfter={ctas && ctas.length > 0 ? 'none' : spaceAfter}
+        inverted={inverted}
+      />
+      {ctas && ctas.length > 0 && (
+        <SectionContextDefault
+          background={style}
+          width="narrow"
+          gutter={gutter}
+          mode="default"
+          spaceBefore="default"
+          spaceAfter={spaceAfter}
+          inverted={inverted}
+        >
+          {ctas.map((cta, index) => (
+            <Button label={cta.label} variant={index === 0 ? "primary" : index === 1 ? "secondary": "tertiary" } size="medium" />
+          ))}
+        </SectionContextDefault>
+      )}
+    </>
+  );
+};
+
+export const SectionProvider: FC<PropsWithChildren<any>> = (props) => (
+  <SectionContext.Provider {...props} value={Section} />
+);
+```
+</CH.Code>
+
+---
+
+##### Combining base components 4/5
+
+... and reduce the spacing between them to make everything feel seamless!
+
+<CH.Code>
+```tsx src/components/section/SectionComponent.tsx focus=36,37,46,47
+import { HTMLAttributes, FC, PropsWithChildren } from "react";
+
+import {
+  SectionContextDefault,
+  SectionContext,
+} from "@kickstartds/base/lib/section";
+
+import { SectionProps } from "./SectionProps";
+import { Button } from "../button/ButtonComponent";
+
+export const Section: FC<
+  SectionProps & HTMLAttributes<HTMLElement>
+> = ({
+  headline,
+  width = "default",
+  gutter = "default",
+  mode = "default",
+  style = "default",
+  spaceBefore = "default",
+  spaceAfter = "default",
+  inverted = false,
+  ctas = [],
+  ...props
+}) => {
+  return (
+    <>
+      <SectionContextDefault
+        {...props}
+        background={style}
+        headline={{
+          content: headline
+        }}
+        width={width}
+        gutter={gutter}
+        mode={mode}
+        spaceBefore={spaceBefore}
+        spaceAfter={ctas && ctas.length > 0 ? 'none' : spaceAfter}
+        inverted={inverted}
+      />
+      {ctas && ctas.length > 0 && (
+        <SectionContextDefault
+          background={style}
+          width="narrow"
+          gutter={gutter}
+          mode="default"
+          spaceBefore="default"
+          spaceAfter={spaceAfter}
+          inverted={inverted}
+        >
+          {ctas.map((cta, index) => (
+            <Button label={cta.label} variant={index === 0 ? "primary" : index === 1 ? "secondary": "tertiary" } size="medium" />
+          ))}
+        </SectionContextDefault>
+      )}
+    </>
+  );
+};
+
+export const SectionProvider: FC<PropsWithChildren<any>> = (props) => (
+  <SectionContext.Provider {...props} value={Section} />
+);
+```
+</CH.Code>
+
+---
+
+##### Combining base components 5/5
+
+The rest of the components gets wired up as usual.
+
+<CH.Code>
+```tsx src/components/section/SectionComponent.tsx focus=27:39
+import { HTMLAttributes, FC, PropsWithChildren } from "react";
+
+import {
+  SectionContextDefault,
+  SectionContext,
+} from "@kickstartds/base/lib/section";
+
+import { SectionProps } from "./SectionProps";
+import { Button } from "../button/ButtonComponent";
+
+export const Section: FC<
+  SectionProps & HTMLAttributes<HTMLElement>
+> = ({
+  headline,
+  width = "default",
+  gutter = "default",
+  mode = "default",
+  style = "default",
+  spaceBefore = "default",
+  spaceAfter = "default",
+  inverted = false,
+  ctas = [],
+  ...props
+}) => {
+  return (
+    <>
+      <SectionContextDefault
+        {...props}
+        background={style}
+        headline={{
+          content: headline
+        }}
+        width={width}
+        gutter={gutter}
+        mode={mode}
+        spaceBefore={spaceBefore}
+        spaceAfter={ctas && ctas.length > 0 ? 'none' : spaceAfter}
+        inverted={inverted}
+      />
+      {ctas && ctas.length > 0 && (
+        <SectionContextDefault
+          background={style}
+          width="narrow"
+          gutter={gutter}
+          mode="default"
+          spaceBefore="default"
+          spaceAfter={spaceAfter}
+          inverted={inverted}
+        >
+          {ctas.map((cta, index) => (
+            <Button label={cta.label} variant={index === 0 ? "primary" : index === 1 ? "secondary": "tertiary" } size="medium" />
+          ))}
+        </SectionContextDefault>
+      )}
+    </>
+  );
+};
+
+export const SectionProvider: FC<PropsWithChildren<any>> = (props) => (
+  <SectionContext.Provider {...props} value={Section} />
+);
+```
+</CH.Code>
+
+---
+
+##### Adding a `Provider`
+
+The final part of creating our **React** component is adding a component `Provider` for it. As we've adapted an existing **kickstartDS** base component here, we'll want to make sure that every time another component includes that base component, our own version of it gets used instead.
+
+<CH.Code>
+```tsx src/components/section/SectionComponent.tsx focus=59:61
+import { HTMLAttributes, FC, PropsWithChildren } from "react";
+
+import {
+  SectionContextDefault,
+  SectionContext,
+} from "@kickstartds/base/lib/section";
+
+import { SectionProps } from "./SectionProps";
+import { Button } from "../button/ButtonComponent";
+
+export const Section: FC<
+  SectionProps & HTMLAttributes<HTMLElement>
+> = ({
+  headline,
+  width = "default",
+  gutter = "default",
+  mode = "default",
+  style = "default",
+  spaceBefore = "default",
+  spaceAfter = "default",
+  inverted = false,
+  ctas = [],
+  ...props
+}) => {
+  return (
+    <>
+      <SectionContextDefault
+        {...props}
+        background={style}
+        headline={{
+          content: headline
+        }}
+        width={width}
+        gutter={gutter}
+        mode={mode}
+        spaceBefore={spaceBefore}
+        spaceAfter={ctas && ctas.length > 0 ? 'none' : spaceAfter}
+        inverted={inverted}
+      />
+      {ctas && ctas.length > 0 && (
+        <SectionContextDefault
+          background={style}
+          width="narrow"
+          gutter={gutter}
+          mode="default"
+          spaceBefore="default"
+          spaceAfter={spaceAfter}
+          inverted={inverted}
+        >
+          {ctas.map((cta, index) => (
+            <Button label={cta.label} variant={index === 0 ? "primary" : index === 1 ? "secondary": "tertiary" } size="medium" />
+          ))}
+        </SectionContextDefault>
+      )}
+    </>
+  );
+};
+
+export const SectionProvider: FC<PropsWithChildren<any>> = (props) => (
+  <SectionContext.Provider {...props} value={Section} />
+);
+```
+</CH.Code>
+</CH.Spotlight>
+
+If you're wondering what that `Provider` we've added last is all about, think about it like this:<br/>
+There may be other components you've built, that themselves use the base `Section` component by default. For example we might have our own `Page` component, based on the **kickstartDS** `Page` which includes a `Section`.
+
+As a means to not having to go through every combination of those component now, making sure our customized `Section` actually gets used, you can just change the default `Section` rendered by adding a single `Provider` once, instead.
+
+Learn more about `Providers` and **React Context** in [our dedicated page about them](#). TODO add link.<br />
+Or look at our ["Create your Design System" guide](../../guides/create/components.mdx), where we add the general setup for `Providers`. That one also includes some more details on this!
+
+<Admonition type="tip" title="Visual Studio Code component property quick-fix">
+Visual Studio Code has a great feature aiding in this workflow, with **React** components that include **TypeScript** types... like **kickstartDS** components do. When adding a "bare" component without props to your template, Visual Studio Code will offer you the option to `Add missing attributes`.
+
+This will automatically create all required options for your component. Now you just have to connect your own props to those, while hard-coding the ones you don't plan on exposing as part of your components [component API](../../foundations/components/component-api.md).
+
+Just hover the squiggly, red line that should be decorating your component, and choose `Quick Fix...`, to get to that option (alternatively put your cursor on the component tag and hit `Ctrl+.`).
+
+TODO add short animation of this workflow
+
+</Admonition>
+
+## Technical debt added
+
+This way of creating components adds minimal technical debt to your Design System. Not much has been changed around, we just add a small layer on top of the original **kickstartDS** base component(s).
+
+Relevant underlying changes you'll have to look out for:
+
+- changes to the base components [component API](../../foundations/components/component-api.md)
+- removal of the base component(s)
+
+You're immune to underlying changes to:
+
+- the components template (both **React**, and the resulting **HTML**)
+- the design and layout (changes to **CSS**, **SCSS** and **Design &amp; Component Token**)
+
+In the case of a changed [component API](../../foundations/components/component-api.md), you should have a look at the corresponding `CHANGELOG.md` and potential notes in our matching [migration guide](../migrations/index.md). You'll probably just need to add a newly added field to your **React** template, and potentially your own [component API](../../foundations/components/component-api.md) if you want to use it. If a field was changed, that might also necessitate some adaption of your own version. Finally a removed field you're actually using would mean adding additional customization to regain that functionality. Have a look at our [`Headline` example guide](../examples/components/headline.mdx) to see how you'd add your own, new property!
+
+Learn more about what we mean by technical debt here on the [overview page of this section](#) TODO link to technical debt section on parent page.
+
+## Examples
+
+We continuously expand our [component example guides](../examples/components/index.md), below we've collected the ones acting as a good sample of the adaptation process.
+
+### Extend `Section` component
+
+In [this example component guide](../examples/components/section.mdx) we extend the `Section` component (as part of the `@kickstartDS/base` module) to use it for sections in our own Design System. We greatly simplify the `Headline` that's part of a `Section` normally, and add our own `ctas` property for adding call-to-action `Button`s to a `Section`.
+
+This is what the result looks like (TODO replace with preview from real Storybook, not ours):
+
+<iframe
+  src="https://60dc476b80673e003b4258d6-czyzkgbgek.chromatic.com/iframe.html?args=&id=base-section--content-boxes&viewMode=story"
+  width="800"
+  height="600"
+></iframe>

@@ -250,12 +250,11 @@ Subsequently we add exactly those fields to our own components [component API](.
   "type": "object",
   "properties": {
     "label": { ... },
-    "target": { ... },
+    "href": { ... },
     "variant": { ... },
     "size": { ... },
     "disabled": { ... }
-  },
-  "required": ["label"]
+  }
 }
 
 ```
@@ -311,8 +310,7 @@ Subsequently we add exactly those fields to our own components [component API](.
     "variant": { ... },
     "size": { ... },
     "disabled": { ... }
-  },
-  "required": ["label"]
+  }
 }
 
 ```
@@ -355,7 +353,7 @@ Subsequently we add exactly those fields to our own components [component API](.
 And finally, set all the fields identified as `required`.
 
 <CH.Code>
-```json src/components/teaser-card/teaser-card.schema.json focus=14
+```json src/components/button/button.schema.json focus=14
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "http://schema.mydesignsystem.com/button.schema.json",
@@ -373,28 +371,89 @@ And finally, set all the fields identified as `required`.
 }
 ```
 
-```json @kickstartds/teaser-box.schema.json
+```json @kickstartds/button.schema.json
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.kickstartds.com/base/teaser-box.schema.json",
-  "title": "Teaser Box",
-  "description": "Component to tease external content",
+  "$id": "http://schema.kickstartds.com/base/button.schema.json",
+  "title": "Button",
+  "description": "Component to display links and call-to-actions",
   "type": "object",
   "properties": {
-    "image":  {... },
-    "ratio": { ... },
-    "imageSpacing": { ... },
-    "topic": { ... },
-    "text": { ...},
-    "inverted":  {... },
-    "link": { ... },
+    "label": { ... },
+    "variant": { ... },
+    "inverted": { ... },
+    "size": { ... },
+    "href": { ... },
+    "iconBefore": { ... },
+    "iconAfter": { ... },
+    "fillAnimation": { ... },
+    "iconAnimation": { ... },
+    "type": { ... },
+    "value": { ... },
+    "name": { ... },
+    "disabled": { ... },
+    "newTab": { ... },
     "className": { ... },
     "component": { ... }
   },
-  "required": ["ratio"],
   "additionalProperties": false
 }
+```
 
+</CH.Code>
+
+---
+
+#### Finished component **JSON Schema**
+
+The finished component definition in all its glory.
+
+<CH.Code>
+```json src/components/button/button.schema.json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/button.schema.json",
+  "title": "Button",
+  "description": "Component used for user interaction",
+  "type": "object",
+  "properties": {
+    "label": { ... },
+    "target": { ... },
+    "variant": { ... },
+    "size": { ... },
+    "disabled": { ... }
+  },
+  "required": ["label"]
+}
+```
+
+```json @kickstartds/button.schema.json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/base/button.schema.json",
+  "title": "Button",
+  "description": "Component to display links and call-to-actions",
+  "type": "object",
+  "properties": {
+    "label": { ... },
+    "variant": { ... },
+    "inverted": { ... },
+    "size": { ... },
+    "href": { ... },
+    "iconBefore": { ... },
+    "iconAfter": { ... },
+    "fillAnimation": { ... },
+    "iconAnimation": { ... },
+    "type": { ... },
+    "value": { ... },
+    "name": { ... },
+    "disabled": { ... },
+    "newTab": { ... },
+    "className": { ... },
+    "component": { ... }
+  },
+  "additionalProperties": false
+}
 ```
 
 </CH.Code>
@@ -402,7 +461,7 @@ And finally, set all the fields identified as `required`.
 
 For the full version of adapting a `Button` have a look at our guide ["Adapt `Button` component"](../examples/components/button.mdx).
 
-#### **React** Template
+#### **React** template
 
 Now that our **JSON Schema** is defined, we'll automatically get matching **TypeScript** types for our component. We use those, combined with the types already included with the **kickstartDS** base component, to quickly hook up our set of properties to the original component. Using auto-complete, and **TypeScript** telling us about required properties in the base component, this is done in light speed!
 
