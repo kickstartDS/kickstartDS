@@ -571,6 +571,53 @@ export const TeaserBoxProvider: FC<PropsWithChildren<any>> = (props) => (
 
 ---
 
+##### Add the actual **JSX**
+
+For our component **JSX** we can directly use the `TeaserBoxContextDefault`, which is the **kickstartDS** base component.
+
+<CH.Code>
+```tsx src/components/teaser-card/TeaserCardComponent.tsx focus=18:30
+import { HTMLAttributes, forwardRef, FC, PropsWithChildren } from "react";
+import {
+  TeaserBoxContextDefault,
+  TeaserBoxContext,
+} from "@kickstartds/base/lib/teaser-box";
+import { TeaserCardProps } from "./TeaserCardProps";
+
+export const TeaserCard: FC<
+TeaserCardProps & HTMLAttributes<HTMLElement>
+> = ({
+  headline,
+  text,
+  target,
+  image,
+  inverted,
+  ...props
+}) => {
+  return (
+    <TeaserBoxContextDefault
+      {...props}
+      topic={headline}
+      text={text}
+      link={{
+        label: "Read more",
+        href: target,
+      }}
+      image={image}
+      inverted={inverted}
+    />
+  );
+};
+
+export const TeaserBoxProvider: FC<PropsWithChildren<any>> = (props) => (
+  <TeaserBoxContext.Provider {...props} value={TeaserCard} />
+);
+```
+</CH.Code>
+
+
+---
+
 ##### Destructure additional props
 
 Coming to our component JSX, we start by passing down (destructuring) the `props` we're carrying through first. This ensures properties defined in our [component API](../../foundations/components/component-api.md) will always take precedence, because they're added after the general `props`.
@@ -810,6 +857,8 @@ As a means to not having to go through every combination of those component now,
 Learn more about `Providers` and **React Context** in [our dedicated page about them](#). TODO add link.<br />
 Or look at our ["Create your Design System" guide](../../guides/create/components.mdx), where we add the general setup for `Providers`. That one also includes some more details on this!
 
+TODO check `TeaserBoxProvider` usage here, probably not useful? If useful... describe why here! also fix text above which still is copy &amp; pasted directly from "Adapt a component"
+
 <Admonition type="tip" title="Visual Studio Code component property quick-fix">
 Visual Studio Code has a great feature aiding in this workflow, with **React** components that include **TypeScript** types... like **kickstartDS** components do. When adding a "bare" component without props to your template, Visual Studio Code will offer you the option to `Add missing attributes`.
 
@@ -819,8 +868,6 @@ Just hover the squiggly, red line that should be decorating your component, and 
 
 TODO add short animation of this workflow
 </Admonition>
-
-TODO check `TeaserBoxProvider` usage here, probably not useful? If useful... describe why here! also fix text above which still is copy &amp; pasted directly from "Adapt a component"
 
 ## Technical debt added
 
@@ -855,7 +902,6 @@ This is what the result looks like (TODO replace with preview from real Storyboo
   width="500"
   height="500"
 ></iframe>
-
 
 ### Create `Interstitial` component
 
