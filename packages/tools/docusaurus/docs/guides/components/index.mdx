@@ -46,6 +46,11 @@ This is the most basic way of building up a **kickstartDS** base component. We a
 
 We just reduce the number of properties we use in our own adaptation of the selected component. We can also rename properties (to be a better fit for our own use), or even the component itself. It's pretty normal to end up with multiple components being based on the same **kickstartDS** base component in the end, but with each having a unique name and [component API](../../foundations/components/component-api.md)... thus fulfilling a much more specialized and semantic function in your Design System (for example having both a `LinkButton` and a `NativeButton` in your Design System, both based on the **kickstartDS** `Button` behind the scenes).
 
+General structure:
+
+1. Component Definition
+2. Component Creation
+
 Our **React** template imports **kickstartDS** components, and rewires them to our own [component API](../../foundations/components/component-api.md).
 
 **kickstartDS** components are meant to be specialized, but general purpose, components in that way. This is also the reason for every other of the processes including the expectation of also adapting the **kickstartDS** base components (or more specifically: their [component API](../../foundations/components/component-api.md)).
@@ -63,6 +68,12 @@ Instead of already having a **kickstartDS** base component in mind, we start wit
 
 We narrow that concept down, find a matching component in **kickstartDS** and then massage its properties to fit our use case, just like established by "Adapt a component".
 
+General structure:
+
+1. Component Definition
+2. Component Mapping
+3. Component Creation
+
 The **React** template imports **kickstartDS** components, and rewires them to our own [component API](../../foundations/components/component-api.md).
 
 <Button
@@ -76,6 +87,11 @@ The **React** template imports **kickstartDS** components, and rewires them to o
 
 Unlike with [adaptation](./adapt.mdx), we do start out with a **kickstartDS** base component in mind. But it's still missing a crucial feature we need, or one of its features needs a little adjustment to work for us. This means while also following everything established by "Adapt a component", we potentially add new, custom properties to our [component API](../../foundations/components/component-api.md) that were not part of the original **kickstartDS** base component.
 
+General structure:
+
+1. Component Definition
+2. Component Creation
+
 We can't just re-use existing **kickstartDS** exports here. Instead we custommize the **React** template by copying the original markup and adding our own modifications on top.
 
 <Button
@@ -88,6 +104,11 @@ We can't just re-use existing **kickstartDS** exports here. Instead we custommiz
 ### Extend a component
 
 While [customizing](./customize.mdx) a component allows adding or mutating functionality directly localized to your selected **kickstartDS** base component, we use composition when extending a component. To combine features of multiple **kickstartDS** base components, without actually changing **React** templates or markup.
+
+General structure:
+
+1. Component Definition
+2. Component Creation
 
 We import multiple **kickstartDS** base components for our **React** template, and rewire them to our own [component API](../../foundations/components/component-api.md).
 
