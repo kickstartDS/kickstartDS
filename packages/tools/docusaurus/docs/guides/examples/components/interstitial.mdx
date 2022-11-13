@@ -11,9 +11,13 @@ import { StorytellingProvider } from '@kickstartds/design-system/dist/components
 
 # Create `Interstitial` component
 
-This will serve as an example on how repurposing an existing component can look like. Meaning: take an existing component, find a fitting new name for the use case, and give it a new purpose by greatly restricting its options for the new context. Read more in our guide on the ways of creating components (TODO add link to guide).
+This guided example show how to find a fitting, existing **kickstartDS** base component for one of your use cases, to repurpose it. Meaning: you start with some requirements, match an existing component, find a fitting new name for the use case, and give it a new purpose by greatly restricting and rewiring its options for the new context.
 
-This also means that, for this example, we'll get by without any additional styling needed. We'll live off of everything already set in place by our existing Design Token and component structure.
+Even while using the component rather directly from **kickstartDS**, you'll want to find the correct set of properties for your own use case. Components in **kickstartDS** come equipped with properties for a wide range of possible use cases, so it makes sense to reduce those to the ones you really need... to make components easier to understand, use and reason about!
+
+We call this type of workflow **Creation**. Learn more about it in [our dedicated guide](../../components/create.mdx) about it. If you're unsure about something, have a look over there. We go into more background detail there about what we're doing here.
+
+This also means that, for this example, we'll get by without any additional styling needed. We'll live off of everything already set in place by our existing [**Design Token**](../../../foundations/token/design-token/index.md) and component structure.
 
 ## Overview
 
@@ -25,16 +29,18 @@ More concretely: what we're building up to in this example... and for the sake o
   height="375"
 ></iframe>
 
-This will be done in 3 simple steps:
+This will be done in three simple steps:
 
-1. Create component structure
-2. Find matching component
-3. Map properties
+1. Component Definition,
+2. Component Mapping, and
+3. Component Creation
+
+For more details about those steps, have a look at [the guide about different component processes](../../components/index.mdx) and their shared structure.
 
 ## Requirements
 
 This guide assumes that you already have a working Design System, that is based on **kickstartDS**, running.<br/>
-If that's not the case, follow our guide [Create your Design System](../../create/index.mdx).
+If that's not the case, follow our [Create your Design System](../../create/index.mdx) guide .
 
 Additionally you'll need access to our **Content** module, to use the `Storytelling` component this guide is based on.<br/>
 TODO add link / CTA to **Content** module here
@@ -78,16 +84,17 @@ This would leave us with the following properties (API) for our new component. R
 | `link.target` | `string` | Page to link to          |
 | `link.text`   | `string` | Text to use for the link |
 
+Fields that should be required are marked with a `*`.
+
 While directly helping us get a better grasp on our new component, these will also be used to write our `JSON Schema` later!
 
 ## 2. Component Mapping
 
 Next we want to search for components that could be of use in assembling this new one. This might be a single, big component that more or less directly fits our use case, or alternatively a combination of components that could serve as the basis by combining them.
 
-This will then serve as our basis, which will be adjusted to fit our needs!
-(TODO: this could possibly go into the more general description, and reduced in detail here)
+This will then serve as our **kickstartDS** base component, which will be adjusted to fit our needs!
 
-### Match it
+### Matching it
 
 From a quick glance, our `Storytelling` component seems like it might fit the bill quite nicely! It has options for a `title` (`box.headline`) and `body` (`box.text`), supports some RTE-like formatting for our `body`, and has a wide range of possible design adjustments: mainly background colors & images, an optional foreground image and a bunch of possible arrangements of those.
 
@@ -99,12 +106,12 @@ This would also enable us to add a nice-looking background image to the whole co
   height="700"
 ></iframe>
 
-For a complete overview of the available options, take a look at the `Storytelling` component API here:<br/>
+For a complete overview of the available options, take a look at the `Storytelling` [component API](../../../foundations/components/component-api.md) here:<br/>
 https://www.kickstartds.com/storybook/?path=/docs/content-storytelling--image
 
 ### Adjustments
 
-This only gives us a rough sketch, though. We still need to adjust the example code to exactly fit our needs. In the process we will hard-code a bunch of options, because we're only interested in a specific set of them. The rest can be set to default values, which don't need to become part of the component API.
+This only gives us a rough sketch, though. We still need to adjust the example code to exactly fit our needs. In the process we will hard-code a bunch of options, because we're only interested in a specific set of them. The rest can be set to default values, which don't need to become part of the [component API](../../../foundations/components/component-api.md).
 
 <CH.Scrollycoding>
 <CH.Preview>
@@ -373,7 +380,7 @@ export default function App() {
 </CH.Preview>
 </CH.Scrollycoding>
 
-With our small API in place, and this rough sketch for the markup in mind, we can start actually implementing our component!
+With our small [component API](../../../foundations/components/component-api.md) in place, and this rough sketch for the markup in mind, we can start actually implementing our component!
 
 ## 3. Component Creation
 
@@ -382,12 +389,12 @@ We like to colocate components. This means to have all involved files next to ea
 So we start by creating the directory `src/components/interstitial`, from our Design System repository root:
 
 ```bash
-mkdir src/components/interstitial
+mkdir -p src/components/interstitial
 ```
 
 This is the folder we'll add new files to in the coming few paragraphs.
 
-### JSON Schema
+### **JSON Schema** definition
 
 First file we'll create is the `JSON Schema` definition, encoding the structure we've defined for our component before:
 
@@ -396,7 +403,7 @@ First file we'll create is the `JSON Schema` definition, encoding the structure 
 
 This includes all necessarily required values for a valid component definition in **kickstartDS**.
 
-To learn more about our use of `JSON Schema`, read our Concepts (TODO create + link) article.
+To learn more about our use of `JSON Schema`, read our [Foundations page about it](../../../foundations/components/component-api.md).
 
 <CH.Code>
 ```json src/components/interstitial/interstitial.schema.json
@@ -594,6 +601,59 @@ Finalizing our `JSON Schema`, we add the two last `link` sub properties `target`
 ```
 </CH.Code>
 
+---
+
+#### Finished **JSON Schema**
+
+Let's have a look at our completed **JSON Schema** definition.
+
+<CH.Code>
+```json src/components/interstitial/interstitial.schema.json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/interstitial.schema.json",
+  "title": "Interstitial",
+  "description": "Component used to interject prominent call-to-action into content",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "title": "Title",
+      "description": "Title for interstitial",
+      "format": "markdown",
+      "default": "Dont know where to start?"
+    },
+    "body": {
+      "type": "string",
+      "title": "Body",
+      "description": "Text content to display inside the interstitial",
+      "format": "markdown",
+      "default": "Autem voluptas quis facere et qui voluptate earum. Dolorum totam animi perferendis."
+    },
+    "link": {
+      "type": "object",
+      "title": "Link",
+      "description": "Link added to the interstitial",
+      "properties": {
+        "target": {
+          "type": "string",
+          "title": "Target (href)",
+          "description": "URL / href for the link to point to"
+        },
+        "text": {
+          "type": "string",
+          "title": "Label",
+          "description": "Label to use for the link",
+          "default": "Get in touch"
+        }
+      }
+    }
+  },
+  "required": ["title", "body"]
+}
+```
+
+</CH.Code>
 </CH.Scrollycoding>
 
 This concludes creating the `JSON Schema`. When running the schema generation in our Design System again, we should now automatically end up with a corresponding type definition to be used in creation of the template in the next step:
@@ -693,12 +753,11 @@ This concludes creating the `JSON Schema`. When running the schema generation in
 
 </CH.Code>
 
-How your schema generation is started might change depending on your setup.
+How your schema generation is started might change depending on your setup. If you've followed our ["Create your Design System" guide](../../create/index.mdx) before, or want to add it like we do, follow [this section of it](../../create/components.mdx) closely.
 
-TODO: add best-practice way established in "Create your Design System" guide.<br/>
 TODO: fix markdown formatting of generated `.ts`-file above
 
-### Template
+### **React** Template
 
 As the final step for this example, we'll add the template. This will be a purely functional `React` component, mapping our component structure (as defined in the `JSON Schema`) to the original component we're basing our work off of; the **kickstartDS** `Storytelling` component.
 
@@ -719,7 +778,7 @@ export const Interstitial: FunctionComponent<HTMLAttributes<HTMLDivElement>> = (
 
 #### Add correct typings
 
-Import and add generated props from `InterstitialProps.ts`. Generated by our `JSON Schema`, these guarantee you're matching your expected component structure while implementing. In combination with `TypeScript` this enables auto-complete and auto-fix (TODO add info about Visual Studio Code "Add all missing properties") for even better DX!
+Import and add generated props from `InterstitialProps.ts`. Generated by our `JSON Schema`, these guarantee you're matching your expected component structure while implementing. In combination with `TypeScript` this enables auto-complete and auto-fix for even better DX! ([see here](../../components/create.mdx#react-template), at the very end of that section, for more details)
 
 ```tsx src/components/interstitial/InterstitialComponent.tsx focus=3,6
 import React, { FunctionComponent, HTMLAttributes } from 'react';
@@ -758,7 +817,7 @@ export const Interstitial: FunctionComponent<
 
 #### Add `Storytelling` component
 
-Now we'll import the **kickstartDS** `Storytelling` component. To start, we'll use the exact markup we've generated before (TODO link #adjustments).
+Now we'll import the **kickstartDS** `Storytelling` component. To start, we'll use the exact markup [we've generated before](#adjustments).
 
 ```tsx src/components/interstitial/InterstitialComponent.tsx focus=3,10:29
 import React, { FunctionComponent, HTMLAttributes } from 'react';
@@ -844,11 +903,11 @@ TODO: this is missing
 
 This concludes the creation of our new `Interstitial` component. It's now ready to be used inside your Design System, and available to your down stream consumers... hopefully efficiently closing a gap!
 
-## Use of `Storybook`
+## Use of **Storybook**
 
-If you're using `Storybook`, you can follow this part of the example to get all the integration goodness possible with **kickstartDS**!
+If you're using **Storybook**, you can follow this part of the example to get all the integration goodness possible with **kickstartDS**!
 
-<Admonition type="tip" title="`Storybook` setup">
+<Admonition type="tip" title="Storybook setup">
   This guide assumes you're using a set up like described in our [Create your
   Design System](../../create/index.mdx) guide! Be sure to adapt commands and
   configuration to your use accordingly, when following this part!
@@ -876,12 +935,6 @@ Play around with your new component directly in a `Code Sandbox` below:<br/>
 
 ## Technical debt added
 
-We've added a wholly new component, for which you take on full responsibility. On the other side, only changes you'll want to make yourself should necessitate change anyway. Changes to the structure, and how it maps to the underlying component, fall on you. The only other thing you'll have to watch out for are `Breaking Changes` (TODO link page describing releases / `Breaking Changes`), which may include changes to the component your basing off of. In that case, follow the `CHANGELOG.md` for that components `module` (e.g. module `content` for the `Storytelling` component) closely, to adopt any necessary changes.
+TODO revise this section
 
-## Open TODOs
-
-- TODO: link general descriptions for following steps in Guides > Components > Create
-- TODO: link Design System create-Guide, if user has no DS yet
-- TODO: check why new `links` property doesn't work in Storytelling, not even by using a provider
-- TODO: check why `ks-inverted` seems not to work as expected, should invert `solid` `Button` used in `Storytelling` example below
-- TODO: fix height of code blocks, improve layout overall
+We've added a wholly new component, for which you take on full responsibility. On the other side, only changes you'll want to make yourself should necessitate change anyway. Changes to the structure, and how it maps to the underlying component, fall on you. The only other thing you'll have to watch out for are [`Breaking Changes`](../../../intro/upgrading.md), which may include changes to the component your basing off of. In that case, follow the `CHANGELOG.md` for that components `module` (e.g. module `content` for the `Storytelling` component) closely, to adopt any necessary changes.
