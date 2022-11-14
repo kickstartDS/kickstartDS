@@ -6,6 +6,8 @@ import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import { Visual } from '@kickstartds/content/lib/visual';
 import { Section } from '@kickstartds/base/lib/section';
+import { Button } from '@kickstartds/base/lib/button';
+import { Headline } from '@kickstartds/base/lib/headline';
 
 import styles from './index.module.css';
 
@@ -14,66 +16,57 @@ function HomepageHeader() {
   return (
     <>
       <div>
-        <Section spaceBefore="small" spaceAfter="small">
-          <Visual
-            box={{
-              background: 'transparent',
-              enabled: true,
-              headline: {
-                level: 'h1',
-                styleAs: 'h1',
-                content: 'Welcome 👋',
-                subheadline: 'Get started with the kickstartDS Design System!',
-              },
-              horizontal: 'center',
-              indent: false,
-              text: "Explore our frontend first framework, and all of its comprehensive components backing our landing page, our Wordpress blog and the glossary. Take a deeper look at our design and component token, interact with the Storybook controls, or preview some sample pages we've assembled.",
-              vertical: 'center',
-            }}
-            media={{
-              image: {
-                indent: 'none',
-                srcDesktop: 'img/banner/welcome-centered.svg',
-                srcTablet: 'img/banner/welcome-centered.svg',
-                srcMobile: 'img/banner/welcome-centered-m.svg',
-              },
-              mode: 'image',
-            }}
+        <Section
+          spaceBefore="small"
+          spaceAfter="small"
+          width="wide"
+          align="center"
+          mode="list"
+        >
+          <Headline
+            level="h1"
+            styleAs="h1"
+            content="kickstartDS documentation"
+            subheadline="Learn how to own a Design System without investing years of development."
+            align="center"
           />
+          <div>
+            <Button
+              href="/docs/intro"
+              label="Get started"
+              size="large"
+              variant="solid"
+            />
+          </div>
         </Section>
-        <Visual
-          backgroundColor="var(--ifm-background-surface-color)"
-          box={{
-            background: 'transparent',
-            enabled: true,
-            headline: {
-              level: 'h3',
-              styleAs: 'h3',
-              content: 'kickstartDS docs',
-              subheadline: '... easy like squeeeeezing a lemon',
-            },
-            horizontal: 'center',
-            indent: false,
-            link: {
-              'ks-inverted': 'false',
-              enabled: true,
-              fillAnimation: false,
-              href: 'https://example.com',
-              iconAfter: false,
-              iconAnimation: false,
-              iconBefore: false,
-              icon: {
-                icon: 'chevron-right',
-              },
-              label: 'Learn how to migrate to 2.0.0 - 5min ⏱️',
-              newTab: false,
-              size: 'medium',
-              variant: 'solid',
-            },
-            vertical: 'center',
-          }}
-          height="small"
-        />
+        <Section
+          spaceBefore="small"
+          spaceAfter="small"
+          width="full"
+          background="accent"
+          mode="list"
+          align="center"
+          gutter="none"
+        >
+          <Headline
+            level="h2"
+            styleAs="h3"
+            content="We are also live on Product Hunt"
+            subheadline="Learn how to own a Design System without investing years of development."
+            align="center"
+          />
+          <a
+            href="https://www.producthunt.com/posts/kickstartds?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-kickstartds"
+            target="_blank"
+          >
+            <img
+              src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=366575&theme=light"
+              alt="kickstartDS is live on Product Hunt"
+              width="250"
+              height="54"
+            />
+          </a>
+        </Section>
       </div>
     </>
   );
@@ -83,7 +76,7 @@ export default function Home() {
   const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
+      title={`Welcome to ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />"
     >
       <HomepageHeader />

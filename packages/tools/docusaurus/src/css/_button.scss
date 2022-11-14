@@ -1,5 +1,8 @@
 a.c-button {
   --c-button--font-weight: var(--ifm-font-weight-semibold);
+  .icon {
+    margin-left: var(--ks-spacing-xxs);
+  }
 }
 
 a.c-button.c-button--solid {
