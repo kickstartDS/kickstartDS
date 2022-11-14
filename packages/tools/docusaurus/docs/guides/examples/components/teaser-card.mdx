@@ -291,6 +291,57 @@ This is the folder we'll add new files to in the coming few paragraphs.
 First file we'll create is the `JSON Schema` definition, encoding the structure we've defined for our component before:
 
 <CH.Scrollycoding>
+#### Finished **JSON Schema**
+
+We'll work our way up to this **JSON Schema** definition.
+
+<CH.Code>
+```json src/components/teaser-card/teaser-card.schema.json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/teaser-card.schema.json",
+  "title": "Teaser Card",
+  "description": "Component used to tease content",
+  "type": "object",
+  "properties": {
+    "headline": {
+      "type": "string",
+      "title": "Headline",
+      "description": "Headline for the teaser card",
+      "format": "markdown"
+    },
+    "text": {
+      "type": "string",
+      "title": "Text",
+      "description": "Body text for the teaser card",
+      "format": "markdown"
+    },
+    "target": {
+      "type": "string",
+      "title": "Target",
+      "description": "Target that should be linked",
+      "format": "uri"
+    },
+    "image": {
+      "type": "string",
+      "title": "Image",
+      "description": "Image to display as cover",
+      "format": "uri"
+    },
+    "inverted": {
+      "type": "boolean",
+      "title": "Invert card?",
+      "description": "Whether to invert the card",
+      "default": false
+    }
+  },
+  "required": ["headline", "text", "target"]
+}
+```
+</CH.Code>
+
+---
+
 #### Start with just the boilerplate for a component definition
 
 This includes all necessarily required values for a valid component definition in **kickstartDS**.
@@ -329,9 +380,265 @@ We start by adding a `title`, `description` and `$id` attribute. The correct `$i
 ```
 </CH.Code>
 
-</CH.Scrollycoding>
+---
 
-TODO finish **JSON Schema**
+#### Create `headline` and `text` fields...
+
+Both fields are straight-forward `string` type properties, so we just document them a bit!<br/>
+We do mark `headline` and `text` by setting `format` to `markdown`, though, to enable some light RTE-like formatting options of rendered text later on.
+
+<CH.Code>
+```json src/components/teaser-card/teaser-card.schema.json focus=8:19
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/teaser-card.schema.json",
+  "title": "Teaser Card",
+  "description": "Component used to tease content",
+  "type": "object",
+  "properties": {
+    "headline": {
+      "type": "string",
+      "title": "Headline",
+      "description": "Headline for the teaser card",
+      "format": "markdown"
+    },
+    "text": {
+      "type": "string",
+      "title": "Text",
+      "description": "Body text for the teaser card",
+      "format": "markdown"
+    }
+  }
+}
+```
+</CH.Code>
+
+---
+
+#### ... and make both required
+
+We declare `headline` and `text` as required on the uppermost `object`!
+
+<CH.Code>
+```json src/components/teaser-card/teaser-card.schema.json focus=21
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/teaser-card.schema.json",
+  "title": "Teaser Card",
+  "description": "Component used to tease content",
+  "type": "object",
+  "properties": {
+    "headline": {
+      "type": "string",
+      "title": "Headline",
+      "description": "Headline for the teaser card",
+      "format": "markdown"
+    },
+    "text": {
+      "type": "string",
+      "title": "Text",
+      "description": "Body text for the teaser card",
+      "format": "markdown"
+    }
+  },
+  "required": ["headline", "text"]
+}
+```
+</CH.Code>
+
+---
+
+#### Create `target` and `image` fields...
+
+Both fields are also straight-forward `string` type properties!<br/>
+We do mark `target` and `image` by setting `format` to `uri`, this time enable URL-like behaviour for those fields.
+
+<CH.Code>
+```json src/components/teaser-card/teaser-card.schema.json focus=20:31
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/teaser-card.schema.json",
+  "title": "Teaser Card",
+  "description": "Component used to tease content",
+  "type": "object",
+  "properties": {
+    "headline": {
+      "type": "string",
+      "title": "Headline",
+      "description": "Headline for the teaser card",
+      "format": "markdown"
+    },
+    "text": {
+      "type": "string",
+      "title": "Text",
+      "description": "Body text for the teaser card",
+      "format": "markdown"
+    },
+    "target": {
+      "type": "string",
+      "title": "Target",
+      "description": "Target that should be linked",
+      "format": "uri"
+    },
+    "image": {
+      "type": "string",
+      "title": "Image",
+      "description": "Image to display as cover",
+      "format": "uri"
+    }
+  },
+  "required": ["headline", "text"]
+}
+```
+</CH.Code>
+
+---
+
+#### ... and make `target` required
+
+We add `target` as required on the uppermost `object`!
+
+<CH.Code>
+```json src/components/teaser-card/teaser-card.schema.json focus=33
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/teaser-card.schema.json",
+  "title": "Teaser Card",
+  "description": "Component used to tease content",
+  "type": "object",
+  "properties": {
+    "headline": {
+      "type": "string",
+      "title": "Headline",
+      "description": "Headline for the teaser card",
+      "format": "markdown"
+    },
+    "text": {
+      "type": "string",
+      "title": "Text",
+      "description": "Body text for the teaser card",
+      "format": "markdown"
+    },
+    "target": {
+      "type": "string",
+      "title": "Target",
+      "description": "Target that should be linked",
+      "format": "uri"
+    },
+    "image": {
+      "type": "string",
+      "title": "Image",
+      "description": "Image to display as cover",
+      "format": "uri"
+    }
+  },
+  "required": ["headline", "text", "target"]
+}
+```
+</CH.Code>
+
+---
+
+#### Add `inverted` property
+
+As the last property we add `inverted`, as a `boolean`.
+
+<CH.Code>
+```json src/components/teaser-card/teaser-card.schema.json focus=32:37
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/teaser-card.schema.json",
+  "title": "Teaser Card",
+  "description": "Component used to tease content",
+  "type": "object",
+  "properties": {
+    "headline": {
+      "type": "string",
+      "title": "Headline",
+      "description": "Headline for the teaser card",
+      "format": "markdown"
+    },
+    "text": {
+      "type": "string",
+      "title": "Text",
+      "description": "Body text for the teaser card",
+      "format": "markdown"
+    },
+    "target": {
+      "type": "string",
+      "title": "Target",
+      "description": "Target that should be linked",
+      "format": "uri"
+    },
+    "image": {
+      "type": "string",
+      "title": "Image",
+      "description": "Image to display as cover",
+      "format": "uri"
+    },
+    "inverted": {
+      "type": "boolean",
+      "title": "Invert card?",
+      "description": "Whether to invert the card",
+      "default": false
+    }
+  },
+  "required": ["headline", "text", "target"]
+}
+```
+</CH.Code>
+
+---
+
+#### Finished **JSON Schema**
+
+Let's have a look at our completed **JSON Schema** definition.
+
+<CH.Code>
+```json src/components/teaser-card/teaser-card.schema.json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/teaser-card.schema.json",
+  "title": "Teaser Card",
+  "description": "Component used to tease content",
+  "type": "object",
+  "properties": {
+    "headline": {
+      "type": "string",
+      "title": "Headline",
+      "description": "Headline for the teaser card",
+      "format": "markdown"
+    },
+    "text": {
+      "type": "string",
+      "title": "Text",
+      "description": "Body text for the teaser card",
+      "format": "markdown"
+    },
+    "target": {
+      "type": "string",
+      "title": "Target",
+      "description": "Target that should be linked",
+      "format": "uri"
+    },
+    "image": {
+      "type": "string",
+      "title": "Image",
+      "description": "Image to display as cover",
+      "format": "uri"
+    },
+    "inverted": {
+      "type": "boolean",
+      "title": "Invert card?",
+      "description": "Whether to invert the card",
+      "default": false
+    }
+  },
+  "required": ["headline", "text", "target"]
+}
+```
+</CH.Code>
+</CH.Scrollycoding>
 
 This concludes creating the `JSON Schema`. When running the schema generation in our Design System again, we should now automatically end up with a corresponding type definition to be used in creation of the template in the next step:
 
@@ -379,10 +686,52 @@ This concludes creating the `JSON Schema`. When running the schema generation in
   [k: string]: unknown;
   }
 
-```
-</CH.Code>
+````
 
-TODO add finished schema above
+```json src/components/teaser-card/teaser-card.schema.json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/teaser-card.schema.json",
+  "title": "Teaser Card",
+  "description": "Component used to tease content",
+  "type": "object",
+  "properties": {
+    "headline": {
+      "type": "string",
+      "title": "Headline",
+      "description": "Headline for the teaser card",
+      "format": "markdown"
+    },
+    "text": {
+      "type": "string",
+      "title": "Text",
+      "description": "Body text for the teaser card",
+      "format": "markdown"
+    },
+    "target": {
+      "type": "string",
+      "title": "Target",
+      "description": "Target that should be linked",
+      "format": "uri"
+    },
+    "image": {
+      "type": "string",
+      "title": "Image",
+      "description": "Image to display as cover",
+      "format": "uri"
+    },
+    "inverted": {
+      "type": "boolean",
+      "title": "Invert card?",
+      "description": "Whether to invert the card",
+      "default": false
+    }
+  },
+  "required": ["headline", "text", "target"]
+}
+````
+
+</CH.Code>
 
 How your schema generation is started might change depending on your setup. If you've followed our ["Create your Design System" guide](../../create/index.mdx) before, or want to add it like we do, follow [this section of it](../../create/components.mdx) closely.
 
@@ -413,4 +762,7 @@ TODO actually add Code Sandbox
 ## Technical debt
 
 TODO describe technical debt
+
+```
+
 ```

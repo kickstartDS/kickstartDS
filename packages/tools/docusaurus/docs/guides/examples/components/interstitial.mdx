@@ -399,6 +399,59 @@ This is the folder we'll add new files to in the coming few paragraphs.
 First file we'll create is the `JSON Schema` definition, encoding the structure we've defined for our component before:
 
 <CH.Scrollycoding>
+#### Finished **JSON Schema**
+
+We'll work our way up to this **JSON Schema** definition.
+
+<CH.Code>
+```json src/components/interstitial/interstitial.schema.json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/interstitial.schema.json",
+  "title": "Interstitial",
+  "description": "Component used to interject prominent call-to-action into content",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "title": "Title",
+      "description": "Title for interstitial",
+      "format": "markdown",
+      "default": "Dont know where to start?"
+    },
+    "body": {
+      "type": "string",
+      "title": "Body",
+      "description": "Text content to display inside the interstitial",
+      "format": "markdown",
+      "default": "Autem voluptas quis facere et qui voluptate earum. Dolorum totam animi perferendis."
+    },
+    "link": {
+      "type": "object",
+      "title": "Link",
+      "description": "Link added to the interstitial",
+      "properties": {
+        "target": {
+          "type": "string",
+          "title": "Target (href)",
+          "description": "URL / href for the link to point to"
+        },
+        "text": {
+          "type": "string",
+          "title": "Label",
+          "description": "Label to use for the link",
+          "default": "Get in touch"
+        }
+      }
+    }
+  },
+  "required": ["title", "body"]
+}
+```
+</CH.Code>
+
+---
+
 #### Start with just the boilerplate for a component definition
 
 This includes all necessarily required values for a valid component definition in **kickstartDS**.
