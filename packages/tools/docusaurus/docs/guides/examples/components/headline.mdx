@@ -101,6 +101,66 @@ This is the folder we'll add new files to in the coming few paragraphs.
 First file we'll create is the `JSON Schema` definition, encoding the structure we've defined for our component before:
 
 <CH.Scrollycoding>
+#### Finished **JSON Schema**
+
+We'll work our way up to this **JSON Schema** definition.
+
+<CH.Code>
+```json src/components/headline/headline.schema.json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/headline.schema.json",
+  "title": "Headline",
+  "description": "Component used for headlines",
+  "type": "object",
+  "properties": {
+    "text": {
+      "type": "string",
+      "title": "Text",
+      "description": "Text content of headline",
+      "format": "markdown"
+    },
+    "sub": {
+      "type": "string",
+      "title": "Sub",
+      "description": "Subheadline content",
+      "format": "markdown"
+    },
+    "switchOrder": {
+      "type": "boolean",
+      "title": "Switch order?",
+      "description": "Switch order of headline and subheadline",
+      "default": false
+    },
+    "level": {
+      "type": "string",
+      "title": "Level",
+      "description": "Level of headline to use",
+      "enum": ["h1", "h2", "h3", "h4", "p"],
+      "default": "h2"
+    },
+    "style": {
+      "type": "string",
+      "title": "Style",
+      "description": "Style of headline to show",
+      "enum": ["h1", "h2", "h3", "h4", "p"],
+      "default": "h2"
+    },
+    "spaceAfter": {
+      "type": "string",
+      "title": "Space after?",
+      "description": "Whether to display space after headline",
+      "enum": ["minimum", "small", "large"],
+      "default": "small"
+    }
+  },
+  "required": ["level", "text"]
+}
+```
+</CH.Code>
+
+---
+
 #### Start with just the boilerplate for a component definition
 
 This includes all necessarily required values for a valid component definition in **kickstartDS**.

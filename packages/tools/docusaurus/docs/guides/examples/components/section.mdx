@@ -107,6 +107,121 @@ This is the folder we'll add new files to in the coming few paragraphs.
 First file we'll create is the `JSON Schema` definition, encoding the structure we've defined for our component before:
 
 <CH.Scrollycoding>
+#### Finished JSON Schema
+
+We'll work our way up to this **JSON Schema** definition.
+
+<CH.Code>
+```json src/components/section/section.schema.json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/section.schema.json",
+  "title": "Section",
+  "description": "Component used to layout components into pages",
+  "type": "object",
+  "properties": {
+    "headline": {
+      "type": "string",
+      "title": "Headline",
+      "description": "Headline for the section",
+      "format": "markdown"
+    },
+    "width": {
+      "type": "string",
+      "title": "Width",
+      "description": "Width of section to use",
+      "enum": ["full", "max", "wide", "default", "narrow"],
+      "default": "default"
+    },
+    "gutter": {
+      "type": "string",
+      "title": "Gutter",
+      "description": "Size of gutter to use",
+      "enum": ["large", "default", "small", "none"],
+      "default": "default"
+    },
+    "mode": {
+      "type": "string",
+      "title": "Mode",
+      "description": "Layout mode used for section contents",
+      "enum": ["default", "tile", "list"],
+      "default": "default"
+    },
+    "content": {
+      "type": "array",
+      "title": "Content",
+      "description": "Allowed content for the section",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "http://schema.mydesignsystem.com/button.schema.json"
+          },
+          {
+            "$ref": "http://schema.mydesignsystem.com/headline.schema.json"
+          },
+          {
+            "$ref": "http://schema.mydesignsystem.com/teaser-card.schema.json"
+          }
+        ]
+      }
+    },
+    "style": {
+      "type": "string",
+      "title": "Style",
+      "description": "Style of background",
+      "enum": ["default", "accent", "bold"],
+      "default": "default"
+    },
+    "spaceBefore": {
+      "type": "string",
+      "title": "Space Before",
+      "description": "Amount of spacing before the section",
+      "enum": ["default", "small", "none"],
+      "default": "default"
+    },
+    "spaceAfter": {
+      "type": "string",
+      "title": "Space After",
+      "description": "Amount of spacing after the section",
+      "enum": ["default", "small", "none"],
+      "default": "default"
+    },
+    "inverted": {
+      "type": "boolean",
+      "title": "Inverted",
+      "description": "Whether to invert the section",
+      "default": false
+    },
+    "ctas": {
+      "type": "array",
+      "title": "Call to actions",
+      "description": "Add Call to actions to the end of the section",
+      "items": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string",
+            "title": "Label",
+            "description": "Label for the Call to action"
+          },
+          "target": {
+            "type": "string",
+            "title": "Target",
+            "description": "Target for the Call to action",
+            "format": "uri"
+          }
+        },
+        "required": ["label", "target"]
+      }
+    }
+  },
+  "required": []
+}
+```
+</CH.Code>
+
+---
+
 #### Start with just the boilerplate for a component definition
 
 This includes all necessarily required values for a valid component definition in **kickstartDS**.
@@ -145,9 +260,1218 @@ We start by adding a `title`, `description` and `$id` attribute. The correct `$i
 ```
 </CH.Code>
 
-</CH.Scrollycoding>
+---
 
-TODO finish **JSON Schema**
+#### Create `headline` field
+
+The `headline` field is a straight-forward `string` type properties, so we just document it a bit!<br/>
+We do mark it by setting `format` to `markdown`, though, to enable some light RTE-like formatting options of the rendered text later on.
+
+<CH.Code>
+```json src/components/section/section.schema.json focus=8:13
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/section.schema.json",
+  "title": "Section",
+  "description": "Component used to layout components into pages",
+  "type": "object",
+  "properties": {
+    "headline": {
+      "type": "string",
+      "title": "Headline",
+      "description": "Headline for the section",
+      "format": "markdown"
+    }
+  }
+}
+```
+</CH.Code>
+
+---
+
+#### Add allowed `width`s 1/2
+
+We add a `width` property of type `string`...
+
+<CH.Code>
+```json src/components/section/section.schema.json focus=14:18
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/section.schema.json",
+  "title": "Section",
+  "description": "Component used to layout components into pages",
+  "type": "object",
+  "properties": {
+    "headline": {
+      "type": "string",
+      "title": "Headline",
+      "description": "Headline for the section",
+      "format": "markdown"
+    },
+    "width": {
+      "type": "string",
+      "title": "Width",
+      "description": "Width of section to use"
+    }
+  }
+}
+```
+</CH.Code>
+
+---
+
+#### Add allowed `width`s 2/2
+
+... and make it an `enum`, defining its available options explicitly. We also set a `default`.
+
+<CH.Code>
+```json src/components/section/section.schema.json focus=18:19
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/section.schema.json",
+  "title": "Section",
+  "description": "Component used to layout components into pages",
+  "type": "object",
+  "properties": {
+    "headline": {
+      "type": "string",
+      "title": "Headline",
+      "description": "Headline for the section",
+      "format": "markdown"
+    },
+    "width": {
+      "type": "string",
+      "title": "Width",
+      "description": "Width of section to use",
+      "enum": ["full", "max", "wide", "default", "narrow"],
+      "default": "default"
+    }
+  }
+}
+```
+</CH.Code>
+
+---
+
+#### Add allowed `gutter`s 1/2
+
+We add a `gutter` property of type `string`...
+
+<CH.Code>
+```json src/components/section/section.schema.json focus=21:25
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/section.schema.json",
+  "title": "Section",
+  "description": "Component used to layout components into pages",
+  "type": "object",
+  "properties": {
+    "headline": {
+      "type": "string",
+      "title": "Headline",
+      "description": "Headline for the section",
+      "format": "markdown"
+    },
+    "width": {
+      "type": "string",
+      "title": "Width",
+      "description": "Width of section to use",
+      "enum": ["full", "max", "wide", "default", "narrow"],
+      "default": "default"
+    },
+    "gutter": {
+      "type": "string",
+      "title": "Gutter",
+      "description": "Size of gutter to use"
+    }
+  }
+}
+```
+</CH.Code>
+
+---
+
+#### Add allowed `gutter`s 2/2
+
+... and make it an `enum`, defining its available options explicitly. We also set a `default`.
+
+<CH.Code>
+```json src/components/section/section.schema.json focus=25:26
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/section.schema.json",
+  "title": "Section",
+  "description": "Component used to layout components into pages",
+  "type": "object",
+  "properties": {
+    "headline": {
+      "type": "string",
+      "title": "Headline",
+      "description": "Headline for the section",
+      "format": "markdown"
+    },
+    "width": {
+      "type": "string",
+      "title": "Width",
+      "description": "Width of section to use",
+      "enum": ["full", "max", "wide", "default", "narrow"],
+      "default": "default"
+    },
+    "gutter": {
+      "type": "string",
+      "title": "Gutter",
+      "description": "Size of gutter to use",
+      "enum": ["large", "default", "small", "none"],
+      "default": "default"
+    }
+  }
+}
+```
+</CH.Code>
+
+---
+
+#### Add allowed `mode`s 1/2
+
+We add a `mode` property of type `string`...
+
+<CH.Code>
+```json src/components/section/section.schema.json focus=28:32
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/section.schema.json",
+  "title": "Section",
+  "description": "Component used to layout components into pages",
+  "type": "object",
+  "properties": {
+    "headline": {
+      "type": "string",
+      "title": "Headline",
+      "description": "Headline for the section",
+      "format": "markdown"
+    },
+    "width": {
+      "type": "string",
+      "title": "Width",
+      "description": "Width of section to use",
+      "enum": ["full", "max", "wide", "default", "narrow"],
+      "default": "default"
+    },
+    "gutter": {
+      "type": "string",
+      "title": "Gutter",
+      "description": "Size of gutter to use",
+      "enum": ["large", "default", "small", "none"],
+      "default": "default"
+    },
+    "mode": {
+      "type": "string",
+      "title": "Mode",
+      "description": "Layout mode used for section contents"
+    }
+  }
+}
+```
+</CH.Code>
+
+---
+
+#### Add allowed `mode`s 2/2
+
+... and make it an `enum`, defining its available options explicitly. We also set a `default`.
+
+<CH.Code>
+```json src/components/section/section.schema.json focus=32:33
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/section.schema.json",
+  "title": "Section",
+  "description": "Component used to layout components into pages",
+  "type": "object",
+  "properties": {
+    "headline": {
+      "type": "string",
+      "title": "Headline",
+      "description": "Headline for the section",
+      "format": "markdown"
+    },
+    "width": {
+      "type": "string",
+      "title": "Width",
+      "description": "Width of section to use",
+      "enum": ["full", "max", "wide", "default", "narrow"],
+      "default": "default"
+    },
+    "gutter": {
+      "type": "string",
+      "title": "Gutter",
+      "description": "Size of gutter to use",
+      "enum": ["large", "default", "small", "none"],
+      "default": "default"
+    },
+    "mode": {
+      "type": "string",
+      "title": "Mode",
+      "description": "Layout mode used for section contents",
+      "enum": ["default", "tile", "list"],
+      "default": "default"
+    }
+  }
+}
+```
+</CH.Code>
+
+---
+
+#### Add allowed `content`s
+
+We add a field `content` of type `array´. Let's assume we have three components that can be used as content for the section. We reference each one using `anyOf`and`$ref`.
+
+<CH.Code>
+```json src/components/section/section.schema.json focus=35:52
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/section.schema.json",
+  "title": "Section",
+  "description": "Component used to layout components into pages",
+  "type": "object",
+  "properties": {
+    "headline": {
+      "type": "string",
+      "title": "Headline",
+      "description": "Headline for the section",
+      "format": "markdown"
+    },
+    "width": {
+      "type": "string",
+      "title": "Width",
+      "description": "Width of section to use",
+      "enum": ["full", "max", "wide", "default", "narrow"],
+      "default": "default"
+    },
+    "gutter": {
+      "type": "string",
+      "title": "Gutter",
+      "description": "Size of gutter to use",
+      "enum": ["large", "default", "small", "none"],
+      "default": "default"
+    },
+    "mode": {
+      "type": "string",
+      "title": "Mode",
+      "description": "Layout mode used for section contents",
+      "enum": ["default", "tile", "list"],
+      "default": "default"
+    },
+    "content": {
+      "type": "array",
+      "title": "Content",
+      "description": "Allowed content for the section",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "http://schema.mydesignsystem.com/button.schema.json"
+          },
+          {
+            "$ref": "http://schema.mydesignsystem.com/headline.schema.json"
+          },
+          {
+            "$ref": "http://schema.mydesignsystem.com/teaser-card.schema.json"
+          }
+        ]
+      }
+    }
+  }
+}
+```
+</CH.Code>
+
+---
+
+#### Add allowed `style`s 1/2
+
+We add a `style` property of type `string`...
+
+<CH.Code>
+```json src/components/section/section.schema.json focus=53:57
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/section.schema.json",
+  "title": "Section",
+  "description": "Component used to layout components into pages",
+  "type": "object",
+  "properties": {
+    "headline": {
+      "type": "string",
+      "title": "Headline",
+      "description": "Headline for the section",
+      "format": "markdown"
+    },
+    "width": {
+      "type": "string",
+      "title": "Width",
+      "description": "Width of section to use",
+      "enum": ["full", "max", "wide", "default", "narrow"],
+      "default": "default"
+    },
+    "gutter": {
+      "type": "string",
+      "title": "Gutter",
+      "description": "Size of gutter to use",
+      "enum": ["large", "default", "small", "none"],
+      "default": "default"
+    },
+    "mode": {
+      "type": "string",
+      "title": "Mode",
+      "description": "Layout mode used for section contents",
+      "enum": ["default", "tile", "list"],
+      "default": "default"
+    },
+    "content": {
+      "type": "array",
+      "title": "Content",
+      "description": "Allowed content for the section",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "http://schema.mydesignsystem.com/button.schema.json"
+          },
+          {
+            "$ref": "http://schema.mydesignsystem.com/headline.schema.json"
+          },
+          {
+            "$ref": "http://schema.mydesignsystem.com/teaser-card.schema.json"
+          }
+        ]
+      }
+    },
+    "style": {
+      "type": "string",
+      "title": "Style",
+      "description": "Style of background"
+    }
+  }
+}
+```
+</CH.Code>
+
+---
+
+#### Add allowed `style`s 2/2
+
+... and make it an `enum`, defining its available options explicitly. We also set a `default`.
+
+<CH.Code>
+```json src/components/section/section.schema.json focus=57:58
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/section.schema.json",
+  "title": "Section",
+  "description": "Component used to layout components into pages",
+  "type": "object",
+  "properties": {
+    "headline": {
+      "type": "string",
+      "title": "Headline",
+      "description": "Headline for the section",
+      "format": "markdown"
+    },
+    "width": {
+      "type": "string",
+      "title": "Width",
+      "description": "Width of section to use",
+      "enum": ["full", "max", "wide", "default", "narrow"],
+      "default": "default"
+    },
+    "gutter": {
+      "type": "string",
+      "title": "Gutter",
+      "description": "Size of gutter to use",
+      "enum": ["large", "default", "small", "none"],
+      "default": "default"
+    },
+    "mode": {
+      "type": "string",
+      "title": "Mode",
+      "description": "Layout mode used for section contents",
+      "enum": ["default", "tile", "list"],
+      "default": "default"
+    },
+    "content": {
+      "type": "array",
+      "title": "Content",
+      "description": "Allowed content for the section",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "http://schema.mydesignsystem.com/button.schema.json"
+          },
+          {
+            "$ref": "http://schema.mydesignsystem.com/headline.schema.json"
+          },
+          {
+            "$ref": "http://schema.mydesignsystem.com/teaser-card.schema.json"
+          }
+        ]
+      }
+    },
+    "style": {
+      "type": "string",
+      "title": "Style",
+      "description": "Style of background",
+      "enum": ["default", "accent", "bold"],
+      "default": "default"
+    }
+  }
+}
+```
+</CH.Code>
+
+---
+
+#### Add allowed `spaceBefore`s 1/2
+
+We add a `spaceBefore` property of type `string`...
+
+<CH.Code>
+```json src/components/section/section.schema.json focus=60:64
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/section.schema.json",
+  "title": "Section",
+  "description": "Component used to layout components into pages",
+  "type": "object",
+  "properties": {
+    "headline": {
+      "type": "string",
+      "title": "Headline",
+      "description": "Headline for the section",
+      "format": "markdown"
+    },
+    "width": {
+      "type": "string",
+      "title": "Width",
+      "description": "Width of section to use",
+      "enum": ["full", "max", "wide", "default", "narrow"],
+      "default": "default"
+    },
+    "gutter": {
+      "type": "string",
+      "title": "Gutter",
+      "description": "Size of gutter to use",
+      "enum": ["large", "default", "small", "none"],
+      "default": "default"
+    },
+    "mode": {
+      "type": "string",
+      "title": "Mode",
+      "description": "Layout mode used for section contents",
+      "enum": ["default", "tile", "list"],
+      "default": "default"
+    },
+    "content": {
+      "type": "array",
+      "title": "Content",
+      "description": "Allowed content for the section",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "http://schema.mydesignsystem.com/button.schema.json"
+          },
+          {
+            "$ref": "http://schema.mydesignsystem.com/headline.schema.json"
+          },
+          {
+            "$ref": "http://schema.mydesignsystem.com/teaser-card.schema.json"
+          }
+        ]
+      }
+    },
+    "style": {
+      "type": "string",
+      "title": "Style",
+      "description": "Style of background",
+      "enum": ["default", "accent", "bold"],
+      "default": "default"
+    },
+    "spaceBefore": {
+      "type": "string",
+      "title": "Space Before",
+      "description": "Amount of spacing before the section"
+    }
+  }
+}
+```
+</CH.Code>
+
+---
+
+#### Add allowed `spaceBefore`s 2/2
+
+... and make it an `enum`, defining its available options explicitly. We also set a `default`.
+
+<CH.Code>
+```json src/components/section/section.schema.json focus=64:65
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/section.schema.json",
+  "title": "Section",
+  "description": "Component used to layout components into pages",
+  "type": "object",
+  "properties": {
+    "headline": {
+      "type": "string",
+      "title": "Headline",
+      "description": "Headline for the section",
+      "format": "markdown"
+    },
+    "width": {
+      "type": "string",
+      "title": "Width",
+      "description": "Width of section to use",
+      "enum": ["full", "max", "wide", "default", "narrow"],
+      "default": "default"
+    },
+    "gutter": {
+      "type": "string",
+      "title": "Gutter",
+      "description": "Size of gutter to use",
+      "enum": ["large", "default", "small", "none"],
+      "default": "default"
+    },
+    "mode": {
+      "type": "string",
+      "title": "Mode",
+      "description": "Layout mode used for section contents",
+      "enum": ["default", "tile", "list"],
+      "default": "default"
+    },
+    "content": {
+      "type": "array",
+      "title": "Content",
+      "description": "Allowed content for the section",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "http://schema.mydesignsystem.com/button.schema.json"
+          },
+          {
+            "$ref": "http://schema.mydesignsystem.com/headline.schema.json"
+          },
+          {
+            "$ref": "http://schema.mydesignsystem.com/teaser-card.schema.json"
+          }
+        ]
+      }
+    },
+    "style": {
+      "type": "string",
+      "title": "Style",
+      "description": "Style of background",
+      "enum": ["default", "accent", "bold"],
+      "default": "default"
+    },
+    "spaceBefore": {
+      "type": "string",
+      "title": "Space Before",
+      "description": "Amount of spacing before the section",
+      "enum": ["default", "small", "none"],
+      "default": "default"
+    }
+  }
+}
+```
+</CH.Code>
+
+---
+
+#### Add allowed `spaceAfter`s 1/2
+
+We add a `spaceAfter` property of type `string`...
+
+<CH.Code>
+```json src/components/section/section.schema.json focus=67:71
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/section.schema.json",
+  "title": "Section",
+  "description": "Component used to layout components into pages",
+  "type": "object",
+  "properties": {
+    "headline": {
+      "type": "string",
+      "title": "Headline",
+      "description": "Headline for the section",
+      "format": "markdown"
+    },
+    "width": {
+      "type": "string",
+      "title": "Width",
+      "description": "Width of section to use",
+      "enum": ["full", "max", "wide", "default", "narrow"],
+      "default": "default"
+    },
+    "gutter": {
+      "type": "string",
+      "title": "Gutter",
+      "description": "Size of gutter to use",
+      "enum": ["large", "default", "small", "none"],
+      "default": "default"
+    },
+    "mode": {
+      "type": "string",
+      "title": "Mode",
+      "description": "Layout mode used for section contents",
+      "enum": ["default", "tile", "list"],
+      "default": "default"
+    },
+    "content": {
+      "type": "array",
+      "title": "Content",
+      "description": "Allowed content for the section",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "http://schema.mydesignsystem.com/button.schema.json"
+          },
+          {
+            "$ref": "http://schema.mydesignsystem.com/headline.schema.json"
+          },
+          {
+            "$ref": "http://schema.mydesignsystem.com/teaser-card.schema.json"
+          }
+        ]
+      }
+    },
+    "style": {
+      "type": "string",
+      "title": "Style",
+      "description": "Style of background",
+      "enum": ["default", "accent", "bold"],
+      "default": "default"
+    },
+    "spaceBefore": {
+      "type": "string",
+      "title": "Space Before",
+      "description": "Amount of spacing before the section",
+      "enum": ["default", "small", "none"],
+      "default": "default"
+    },
+    "spaceAfter": {
+      "type": "string",
+      "title": "Space After",
+      "description": "Amount of spacing after the section"
+    }
+  }
+}
+```
+</CH.Code>
+
+---
+
+#### Add allowed `spaceAfter`s 2/2
+
+... and make it an `enum`, defining its available options explicitly. We also set a `default`.
+
+<CH.Code>
+```json src/components/section/section.schema.json focus=71:72
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/section.schema.json",
+  "title": "Section",
+  "description": "Component used to layout components into pages",
+  "type": "object",
+  "properties": {
+    "headline": {
+      "type": "string",
+      "title": "Headline",
+      "description": "Headline for the section",
+      "format": "markdown"
+    },
+    "width": {
+      "type": "string",
+      "title": "Width",
+      "description": "Width of section to use",
+      "enum": ["full", "max", "wide", "default", "narrow"],
+      "default": "default"
+    },
+    "gutter": {
+      "type": "string",
+      "title": "Gutter",
+      "description": "Size of gutter to use",
+      "enum": ["large", "default", "small", "none"],
+      "default": "default"
+    },
+    "mode": {
+      "type": "string",
+      "title": "Mode",
+      "description": "Layout mode used for section contents",
+      "enum": ["default", "tile", "list"],
+      "default": "default"
+    },
+    "content": {
+      "type": "array",
+      "title": "Content",
+      "description": "Allowed content for the section",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "http://schema.mydesignsystem.com/button.schema.json"
+          },
+          {
+            "$ref": "http://schema.mydesignsystem.com/headline.schema.json"
+          },
+          {
+            "$ref": "http://schema.mydesignsystem.com/teaser-card.schema.json"
+          }
+        ]
+      }
+    },
+    "style": {
+      "type": "string",
+      "title": "Style",
+      "description": "Style of background",
+      "enum": ["default", "accent", "bold"],
+      "default": "default"
+    },
+    "spaceBefore": {
+      "type": "string",
+      "title": "Space Before",
+      "description": "Amount of spacing before the section",
+      "enum": ["default", "small", "none"],
+      "default": "default"
+    },
+    "spaceAfter": {
+      "type": "string",
+      "title": "Space After",
+      "description": "Amount of spacing after the section",
+      "enum": ["default", "small", "none"],
+      "default": "default"
+    }
+  }
+}
+```
+</CH.Code>
+
+---
+
+#### Add `inverted` property
+
+We add a property `inverted`, as a `boolean`.
+
+<CH.Code>
+```json src/components/section/section.schema.json focus=74:79
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/section.schema.json",
+  "title": "Section",
+  "description": "Component used to layout components into pages",
+  "type": "object",
+  "properties": {
+    "headline": {
+      "type": "string",
+      "title": "Headline",
+      "description": "Headline for the section",
+      "format": "markdown"
+    },
+    "width": {
+      "type": "string",
+      "title": "Width",
+      "description": "Width of section to use",
+      "enum": ["full", "max", "wide", "default", "narrow"],
+      "default": "default"
+    },
+    "gutter": {
+      "type": "string",
+      "title": "Gutter",
+      "description": "Size of gutter to use",
+      "enum": ["large", "default", "small", "none"],
+      "default": "default"
+    },
+    "mode": {
+      "type": "string",
+      "title": "Mode",
+      "description": "Layout mode used for section contents",
+      "enum": ["default", "tile", "list"],
+      "default": "default"
+    },
+    "content": {
+      "type": "array",
+      "title": "Content",
+      "description": "Allowed content for the section",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "http://schema.mydesignsystem.com/button.schema.json"
+          },
+          {
+            "$ref": "http://schema.mydesignsystem.com/headline.schema.json"
+          },
+          {
+            "$ref": "http://schema.mydesignsystem.com/teaser-card.schema.json"
+          }
+        ]
+      }
+    },
+    "style": {
+      "type": "string",
+      "title": "Style",
+      "description": "Style of background",
+      "enum": ["default", "accent", "bold"],
+      "default": "default"
+    },
+    "spaceBefore": {
+      "type": "string",
+      "title": "Space Before",
+      "description": "Amount of spacing before the section",
+      "enum": ["default", "small", "none"],
+      "default": "default"
+    },
+    "spaceAfter": {
+      "type": "string",
+      "title": "Space After",
+      "description": "Amount of spacing after the section",
+      "enum": ["default", "small", "none"],
+      "default": "default"
+    },
+    "inverted": {
+      "type": "boolean",
+      "title": "Inverted",
+      "description": "Whether to invert the section",
+      "default": false
+    }
+  }
+}
+```
+</CH.Code>
+
+---
+
+#### Add `ctas` property 1/2
+
+We add the `ctas` property of type `array`, this will hold our call-to-action related properties `label` and `target`.
+
+<CH.Code>
+```json src/components/section/section.schema.json focus=80:84
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/section.schema.json",
+  "title": "Section",
+  "description": "Component used to layout components into pages",
+  "type": "object",
+  "properties": {
+    "headline": {
+      "type": "string",
+      "title": "Headline",
+      "description": "Headline for the section",
+      "format": "markdown"
+    },
+    "width": {
+      "type": "string",
+      "title": "Width",
+      "description": "Width of section to use",
+      "enum": ["full", "max", "wide", "default", "narrow"],
+      "default": "default"
+    },
+    "gutter": {
+      "type": "string",
+      "title": "Gutter",
+      "description": "Size of gutter to use",
+      "enum": ["large", "default", "small", "none"],
+      "default": "default"
+    },
+    "mode": {
+      "type": "string",
+      "title": "Mode",
+      "description": "Layout mode used for section contents",
+      "enum": ["default", "tile", "list"],
+      "default": "default"
+    },
+    "content": {
+      "type": "array",
+      "title": "Content",
+      "description": "Allowed content for the section",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "http://schema.mydesignsystem.com/button.schema.json"
+          },
+          {
+            "$ref": "http://schema.mydesignsystem.com/headline.schema.json"
+          },
+          {
+            "$ref": "http://schema.mydesignsystem.com/teaser-card.schema.json"
+          }
+        ]
+      }
+    },
+    "style": {
+      "type": "string",
+      "title": "Style",
+      "description": "Style of background",
+      "enum": ["default", "accent", "bold"],
+      "default": "default"
+    },
+    "spaceBefore": {
+      "type": "string",
+      "title": "Space Before",
+      "description": "Amount of spacing before the section",
+      "enum": ["default", "small", "none"],
+      "default": "default"
+    },
+    "spaceAfter": {
+      "type": "string",
+      "title": "Space After",
+      "description": "Amount of spacing after the section",
+      "enum": ["default", "small", "none"],
+      "default": "default"
+    },
+    "inverted": {
+      "type": "boolean",
+      "title": "Inverted",
+      "description": "Whether to invert the section",
+      "default": false
+    },
+    "ctas": {
+      "type": "array",
+      "title": "Call to actions",
+      "description": "Add Call to actions to the end of the section"
+    }
+  }
+}
+```
+</CH.Code>
+
+---
+
+#### Add `ctas` property 2/2
+
+We specify the array `items` type, adding an `object` with properties `label` and `target` to it, both of simple `string` types (with `target` having `format` set to `uri` to enable resource-like behaviour).
+
+<CH.Code>
+```json src/components/section/section.schema.json focus=84:100
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/section.schema.json",
+  "title": "Section",
+  "description": "Component used to layout components into pages",
+  "type": "object",
+  "properties": {
+    "headline": {
+      "type": "string",
+      "title": "Headline",
+      "description": "Headline for the section",
+      "format": "markdown"
+    },
+    "width": {
+      "type": "string",
+      "title": "Width",
+      "description": "Width of section to use",
+      "enum": ["full", "max", "wide", "default", "narrow"],
+      "default": "default"
+    },
+    "gutter": {
+      "type": "string",
+      "title": "Gutter",
+      "description": "Size of gutter to use",
+      "enum": ["large", "default", "small", "none"],
+      "default": "default"
+    },
+    "mode": {
+      "type": "string",
+      "title": "Mode",
+      "description": "Layout mode used for section contents",
+      "enum": ["default", "tile", "list"],
+      "default": "default"
+    },
+    "content": {
+      "type": "array",
+      "title": "Content",
+      "description": "Allowed content for the section",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "http://schema.mydesignsystem.com/button.schema.json"
+          },
+          {
+            "$ref": "http://schema.mydesignsystem.com/headline.schema.json"
+          },
+          {
+            "$ref": "http://schema.mydesignsystem.com/teaser-card.schema.json"
+          }
+        ]
+      }
+    },
+    "style": {
+      "type": "string",
+      "title": "Style",
+      "description": "Style of background",
+      "enum": ["default", "accent", "bold"],
+      "default": "default"
+    },
+    "spaceBefore": {
+      "type": "string",
+      "title": "Space Before",
+      "description": "Amount of spacing before the section",
+      "enum": ["default", "small", "none"],
+      "default": "default"
+    },
+    "spaceAfter": {
+      "type": "string",
+      "title": "Space After",
+      "description": "Amount of spacing after the section",
+      "enum": ["default", "small", "none"],
+      "default": "default"
+    },
+    "inverted": {
+      "type": "boolean",
+      "title": "Inverted",
+      "description": "Whether to invert the section",
+      "default": false
+    },
+    "ctas": {
+      "type": "array",
+      "title": "Call to actions",
+      "description": "Add Call to actions to the end of the section",
+      "items": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string",
+            "title": "Label",
+            "description": "Label for the Call to action"
+          },
+          "target": {
+            "type": "string",
+            "title": "Target",
+            "description": "Target for the Call to action",
+            "format": "uri"
+          }
+        },
+        "required": ["label", "target"]
+      }
+    }
+  }
+}
+```
+</CH.Code>
+
+---
+
+#### Finished **JSON Schema**
+
+Let's have a look at our completed **JSON Schema** definition.
+
+<CH.Code>
+```json src/components/section/section.schema.json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/section.schema.json",
+  "title": "Section",
+  "description": "Component used to layout components into pages",
+  "type": "object",
+  "properties": {
+    "headline": {
+      "type": "string",
+      "title": "Headline",
+      "description": "Headline for the section",
+      "format": "markdown"
+    },
+    "width": {
+      "type": "string",
+      "title": "Width",
+      "description": "Width of section to use",
+      "enum": ["full", "max", "wide", "default", "narrow"],
+      "default": "default"
+    },
+    "gutter": {
+      "type": "string",
+      "title": "Gutter",
+      "description": "Size of gutter to use",
+      "enum": ["large", "default", "small", "none"],
+      "default": "default"
+    },
+    "mode": {
+      "type": "string",
+      "title": "Mode",
+      "description": "Layout mode used for section contents",
+      "enum": ["default", "tile", "list"],
+      "default": "default"
+    },
+    "content": {
+      "type": "array",
+      "title": "Content",
+      "description": "Allowed content for the section",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "http://schema.mydesignsystem.com/button.schema.json"
+          },
+          {
+            "$ref": "http://schema.mydesignsystem.com/headline.schema.json"
+          },
+          {
+            "$ref": "http://schema.mydesignsystem.com/teaser-card.schema.json"
+          }
+        ]
+      }
+    },
+    "style": {
+      "type": "string",
+      "title": "Style",
+      "description": "Style of background",
+      "enum": ["default", "accent", "bold"],
+      "default": "default"
+    },
+    "spaceBefore": {
+      "type": "string",
+      "title": "Space Before",
+      "description": "Amount of spacing before the section",
+      "enum": ["default", "small", "none"],
+      "default": "default"
+    },
+    "spaceAfter": {
+      "type": "string",
+      "title": "Space After",
+      "description": "Amount of spacing after the section",
+      "enum": ["default", "small", "none"],
+      "default": "default"
+    },
+    "inverted": {
+      "type": "boolean",
+      "title": "Inverted",
+      "description": "Whether to invert the section",
+      "default": false
+    },
+    "ctas": {
+      "type": "array",
+      "title": "Call to actions",
+      "description": "Add Call to actions to the end of the section",
+      "items": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string",
+            "title": "Label",
+            "description": "Label for the Call to action"
+          },
+          "target": {
+            "type": "string",
+            "title": "Target",
+            "description": "Target for the Call to action",
+            "format": "uri"
+          }
+        },
+        "required": ["label", "target"]
+      }
+    }
+  },
+  "required": []
+}
+```
+</CH.Code>
+</CH.Scrollycoding>
 
 This concludes creating the `JSON Schema`. When running the schema generation in our Design System again, we should now automatically end up with a corresponding type definition to be used in creation of the template in the next step:
 
@@ -330,10 +1654,116 @@ This concludes creating the `JSON Schema`. When running the schema generation in
   [k: string]: unknown;
   }
 
-```
-</CH.Code>
+````
 
-TODO add finished schema above
+```json src/components/section/section.schema.json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/section.schema.json",
+  "title": "Section",
+  "description": "Component used to layout components into pages",
+  "type": "object",
+  "properties": {
+    "headline": {
+      "type": "string",
+      "title": "Headline",
+      "description": "Headline for the section",
+      "format": "markdown"
+    },
+    "width": {
+      "type": "string",
+      "title": "Width",
+      "description": "Width of section to use",
+      "enum": ["full", "max", "wide", "default", "narrow"],
+      "default": "default"
+    },
+    "gutter": {
+      "type": "string",
+      "title": "Gutter",
+      "description": "Size of gutter to use",
+      "enum": ["large", "default", "small", "none"],
+      "default": "default"
+    },
+    "mode": {
+      "type": "string",
+      "title": "Mode",
+      "description": "Layout mode used for section contents",
+      "enum": ["default", "tile", "list"],
+      "default": "default"
+    },
+    "content": {
+      "type": "array",
+      "title": "Content",
+      "description": "Allowed content for the section",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "http://schema.mydesignsystem.com/button.schema.json"
+          },
+          {
+            "$ref": "http://schema.mydesignsystem.com/headline.schema.json"
+          },
+          {
+            "$ref": "http://schema.mydesignsystem.com/teaser-card.schema.json"
+          }
+        ]
+      }
+    },
+    "style": {
+      "type": "string",
+      "title": "Style",
+      "description": "Style of background",
+      "enum": ["default", "accent", "bold"],
+      "default": "default"
+    },
+    "spaceBefore": {
+      "type": "string",
+      "title": "Space Before",
+      "description": "Amount of spacing before the section",
+      "enum": ["default", "small", "none"],
+      "default": "default"
+    },
+    "spaceAfter": {
+      "type": "string",
+      "title": "Space After",
+      "description": "Amount of spacing after the section",
+      "enum": ["default", "small", "none"],
+      "default": "default"
+    },
+    "inverted": {
+      "type": "boolean",
+      "title": "Inverted",
+      "description": "Whether to invert the section",
+      "default": false
+    },
+    "ctas": {
+      "type": "array",
+      "title": "Call to actions",
+      "description": "Add Call to actions to the end of the section",
+      "items": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string",
+            "title": "Label",
+            "description": "Label for the Call to action"
+          },
+          "target": {
+            "type": "string",
+            "title": "Target",
+            "description": "Target for the Call to action",
+            "format": "uri"
+          }
+        },
+        "required": ["label", "target"]
+      }
+    }
+  },
+  "required": []
+}
+````
+
+</CH.Code>
 
 How your schema generation is started might change depending on your setup. If you've followed our ["Create your Design System" guide](../../create/index.mdx) before, or want to add it like we do, follow [this section of it](../../create/components.mdx) closely.
 
@@ -364,4 +1794,7 @@ TODO actually add Code Sandbox
 ## Technical debt
 
 TODO describe technical debt
+
+```
+
 ```

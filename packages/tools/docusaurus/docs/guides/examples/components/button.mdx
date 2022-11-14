@@ -102,6 +102,61 @@ This is the folder we'll add new files to in the coming few paragraphs.
 First file we'll create is the `JSON Schema` definition, encoding the structure we've defined for our component before:
 
 <CH.Scrollycoding>
+#### Finished **JSON Schema**
+
+We'll work our way up to this **JSON Schema** definition.
+
+<CH.Code>
+```json src/components/button/button.schema.json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/button.schema.json",
+  "title": "Button",
+  "description": "Component used to for user interaction",
+  "type": "object",
+  "properties": {
+    "label": {
+      "type": "string",
+      "title": "Label",
+      "description": "Text content to display inside the button",
+      "default": "Read more"
+    },
+    "target": {
+      "type": "string",
+      "title": "Target",
+      "description": "Target that should be linked, makes the button behave like a link semantically",
+      "format": "uri"
+    },
+    "size": {
+      "type": "string",
+      "enum": ["small", "medium", "large"],
+      "title": "Size",
+      "description": "Size of button to use",
+      "default": "medium"
+    },
+    "variant": {
+      "type": "string",
+      "enum": ["primary", "secondary", "tertiary"],
+      "title": "Variant",
+      "description": "Variant of button to be used",
+      "default": "secondary"
+    },
+    "disabled": {
+      "type": "boolean",
+      "title": "Disabled?",
+      "description": "Whether the button should be disabled",
+      "default": false
+    }
+  },
+  "required": ["label"]
+}
+
+````
+
+</CH.Code>
+
+---
+
 #### Start with just the boilerplate for a component definition
 
 This includes all necessarily required values for a valid component definition in **kickstartDS**.
@@ -428,6 +483,7 @@ Finally, we add a property `disabled`, of type `boolean`.
 }
 
 ````
+
 </CH.Code>
 
 ---
@@ -577,8 +633,7 @@ This concludes creating the `JSON Schema`. When running the schema generation in
   },
   "required": ["label"]
 }
-
-````
+```
 
 </CH.Code>
 
