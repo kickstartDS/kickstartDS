@@ -46,7 +46,7 @@
     "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",
     "pubsub-js": "^1.9.4",
-    "sass": "^1.52.1"
+    "sass": "^1.56.0"
   },
   "devDependencies": {
     "@kickstartds/bundler": "^1.5.0",
