@@ -1,6 +1,6 @@
 :root {
   --ch-code-background: #023542;
-  --ch-code-title-bar-background: #044e61;
+  --ch-code-title-bar-background: #0b4857;
 
   // Step
   --ch-step-background: transparent;
@@ -16,10 +16,10 @@
   --ch-active-indicator-background: var(--ks-color-primary);
 
   --ch-step-gap: var(--ks-spacing-stack-xs);
-  --ch-browser-fg-color: var(--ks-text-color-interface-inverted);
+  --ch-browser-fg-color: var(--ks-color-fg-inverted);
 
   &[data-theme='dark'] {
-    --ch-browser-fg-color: var(--ks-text-color-primary-inverted);
+    --ch-browser-fg-color: var(--ks-color-primary-inverted);
     --ch-code-title-bar-background: var(--ks-color-primary-to-bg-7-base);
     --ch-code-background: #012a34;
 
@@ -155,6 +155,10 @@
   &-tab {
     border-bottom-color: transparent !important;
     color: var(--ch-browser-fg-color) !important;
+
+    span {
+      opacity: 0.75 !important;
+    }
 
     &-inactive {
       background-color: transparent !important;

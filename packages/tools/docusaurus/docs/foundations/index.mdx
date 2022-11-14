@@ -6,6 +6,7 @@ import { Section } from '@kickstartds/base/lib/section';
 import { TeaserBox } from '@kickstartds/base/lib/teaser-box';
 import { Columns } from '@bedrock-layout/primitives';
 import { Storytelling } from '@kickstartds/content/lib/storytelling';
+import myImageUrl from '../../static/img/content-module.png';
 
 # Foundations
 
@@ -81,7 +82,7 @@ Foundations are the visual elements needed to create your Design System and its 
   mode="list"
 >
   <Storytelling
-    backgroundImage="./assets/content-moduke.png"
+    backgroundImage={myImageUrl}
     box={{
       hAlign: 'left',
       headline: {
@@ -106,7 +107,8 @@ Foundations are the visual elements needed to create your Design System and its 
           variant: 'solid',
         },
       ],
-      text: 'The **Content Module** includes seven rich components: Hero visual, Quote, Storytelling etc. — everything you need to build beautiful content experiences or to enrich your existing Design System',
+      text:
+        'The **Content Module** includes seven rich components: Hero visual, Quote, Storytelling etc. — everything you need to build beautiful content experiences or to enrich your existing Design System',
       textAlign: 'left',
       vAlign: 'center',
     }}

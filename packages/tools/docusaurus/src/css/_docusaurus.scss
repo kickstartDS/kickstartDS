@@ -17,6 +17,11 @@
       margin-top: var(--ks-spacing-stack-s);
       content: '';
       background-color: var(--ks-color-primary-alpha-3);
+
+      [data-theme='dark'] & {
+        background-color: var(--ks-color-fg-alpha-5);
+      }
+
       width: 0;
       height: 2px;
       bottom: 0;
