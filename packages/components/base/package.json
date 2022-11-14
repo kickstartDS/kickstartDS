@@ -2,7 +2,7 @@
   "name": "@kickstartds/base",
   "version": "1.5.1",
   "description": "kickstartDS Base Module",
-  "homepage": "https://ruhmesmeile.com",
+  "homepage": "https://www.kickstartDS.com",
   "bugs": {
     "url": "https://github.com/kickstartDS/kickstartDS/issues"
   },
@@ -11,8 +11,8 @@
     "url": "https://github.com/kickstartDS/kickstartDS.git",
     "directory": "packages/components/base"
   },
-  "license": "SEE LICENSE IN LICENSE",
-  "author": "ruhmesmeile GmbH <mail@ruhmesmeile.com> (https://ruhmesmeile.com)",
+  "license": "(MIT OR Apache-2.0)",
+  "author": "Jonas Ulrich <jonas.ulrich@kickstartds.com> (https://www.kickstartDS.com/)",
   "typesVersions": {
     "*": {
       "*": [

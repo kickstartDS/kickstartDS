@@ -2,6 +2,9 @@
   "name": "@kickstartds-internal/docusaurus",
   "version": "0.0.0",
   "private": true,
+  "license": "(MIT OR Apache-2.0)",
+  "homepage": "https://www.kickstartDS.com",
+  "author": "Jonas Ulrich <jonas.ulrich@kickstartds.com> (https://www.kickstartDS.com/)",
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",

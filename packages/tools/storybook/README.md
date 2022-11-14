@@ -1,4 +1,4 @@
-# Website
+# kickstartDS Storybook tooling
 
 kickstartDS is an Open Source Design System starter and UI toolkit for building up your very own Design System. This in turn enables you, and your team, to build brand-compliant websites and apps super efficiently. All while using core web technologies — HTML, CSS, and JavaScript — and best practices.
 

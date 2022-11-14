@@ -5,6 +5,7 @@
     "type": "git",
     "url": "https://github.com/kickstartDS/kickstartDS.git"
   },
+  "license": "(MIT OR Apache-2.0)",
   "workspaces": [
     "packages/components/*",
     "packages/tools/*"

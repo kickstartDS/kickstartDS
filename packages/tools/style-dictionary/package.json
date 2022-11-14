@@ -2,7 +2,7 @@
   "name": "@kickstartds/style-dictionary",
   "version": "1.5.0",
   "description": "kickstartDS Style Dictionary Config",
-  "homepage": "https://ruhmesmeile.com",
+  "homepage": "https://www.kickstartDS.com",
   "bugs": {
     "url": "https://github.com/kickstartDS/kickstartDS/issues"
   },
@@ -11,8 +11,8 @@
     "url": "https://github.com/kickstartDS/kickstartDS.git",
     "directory": "packages/tools/style-dictionary"
   },
-  "license": "SEE LICENSE IN LICENSE",
-  "author": "ruhmesmeile GmbH <mail@ruhmesmeile.com> (https://ruhmesmeile.com)",
+  "license": "(MIT OR Apache-2.0)",
+  "author": "Jonas Ulrich <jonas.ulrich@kickstartds.com> (https://www.kickstartDS.com/)",
   "main": "./index.js",
   "dependencies": {
     "@babel/core": "^7.17.8",
