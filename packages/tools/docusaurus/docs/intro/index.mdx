@@ -3,8 +3,9 @@ sidebar_position: 1
 sidebar_label: Overview
 ---
 
-import { Section } from "@kickstartds/base/lib/section";
-import { TeaserBox } from "@kickstartds/base/lib/teaser-box";
+import { Section } from '@kickstartds/base/lib/section';
+import { TeaserBox } from '@kickstartds/base/lib/teaser-box';
+import { Columns } from '@bedrock-layout/primitives';
 
 # Introduction to kickstartDS
 
@@ -12,7 +13,15 @@ import { TeaserBox } from "@kickstartds/base/lib/teaser-box";
 
 Check out the following video for a more in-depth demonstration, and see kickstartDS in action (timestamped start):
 
-<iframe width="50%" height="280" src="https://www.youtube.com/embed/54_xZYjWzWE?start=3685" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe
+  width="50%"
+  height="280"
+  src="https://www.youtube.com/embed/54_xZYjWzWE?start=3685"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
 
 Many thanks to [Amplifyn](https://www.amplifyn.com) for allowing us to use their recording.
 
@@ -20,38 +29,53 @@ Many thanks to [Amplifyn](https://www.amplifyn.com) for allowing us to use their
 
 Get started building your own Design System by installing **kickstartDS** into your project, or by following our [Create your first Design System](https://todo) tutorial, to learn about the main concepts involved.
 
-<Section ks-theme="docs" spaceBefore="none" spaceAfter="small" width="full">
-  <TeaserBox
-    link={{
-      size: 'small',
-      href: '/docs/intro/environment/',
-      label: "Getting started",
-      variant: "outline",
-    }}
-    text="Configure your environment, and add **kickstartDS** into your project"
-    topic="Installation"
-  />
-  <TeaserBox
-    link={{
-      size: 'small',
-      href: '/docs/guides/create/',
-      label: "Make it yours",
-      variant: "outline",
-    }}
-    text="Learn about token generation, brand application and customization options"
-    topic="Design application"
-  />
-  <TeaserBox
-    link={{
-      size: 'small',
-      href: '/blog/',
-      label: "TODO: Concepts",
-      variant: "outline",
-    }}
-    text="TODO: Take a look behind the scenes, and learn about the conceps and ideas making up **kickstartDS**"
-    topic="How It Works"
-  />
-</Section>
+<div ks-theme="docs">
+  <Columns columns={3} gutter="md" switchAt="42rem">
+    <TeaserBox
+      link={{
+        size: 'small',
+        href: '/docs/intro/environment/',
+        label: 'Getting started',
+        variant: 'clear',
+        iconAnimation: true,
+        iconAfter: {
+          icon: 'chevron-right',
+        },
+      }}
+      text="Configure your environment, and add **kickstartDS** into your project"
+      topic="Installation"
+    />
+    <TeaserBox
+      link={{
+        size: 'small',
+        href: '/docs/guides/create/',
+        label: 'Make it yours',
+        variant: 'clear',
+        iconAnimation: true,
+        iconAfter: {
+          icon: 'chevron-right',
+        },
+      }}
+      text="Learn about token generation, brand application and customization options"
+      topic="Design application"
+    />
+    <TeaserBox
+      link={{
+        size: 'small',
+        href: '/blog/',
+        label: 'TODO: Concepts',
+        variant: 'clear',
+        iconAnimation: true,
+        iconAfter: {
+          icon: 'chevron-right',
+        },
+      }}
+      text="TODO: Take a look behind the scenes, and learn about the conceps and ideas making up **kickstartDS**"
+      topic="How It Works"
+    />
+
+  </Columns>
+</div>
 
 ## Overview
 
@@ -135,7 +159,12 @@ The **kickstartDS** CLI, or Command Line Interface, is a tool to quickly scaffol
 
 We currently support integrating with Figma through our official Design Token library:
 
-<iframe width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FH7F4P2fsDgEkIcc7U1alk1%2FkickstartDS-Design-token%3Fnode-id%3D0%253A1" allowfullscreen></iframe>
+<iframe
+  width="800"
+  height="450"
+  src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FH7F4P2fsDgEkIcc7U1alk1%2FkickstartDS-Design-token%3Fnode-id%3D0%253A1"
+  allowfullscreen
+></iframe>
 
 The template includes all our Token categories (colors, spacings, typography, borders, durations, opacities and shadows), and for all of those Token categories there are pre-defined base scales and semantic Token based on those base scales. All ready to use, but customizable by just re-defining relationships.
 
