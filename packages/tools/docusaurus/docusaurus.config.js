@@ -185,7 +185,7 @@ const config = {
       announcementBar: {
         id: 'beta_release',
         content:
-          "We're thrilled and very proud to announce our Open Source release today and are officially live on ProductHunt! 🎉  <a target='_blank' rel='noopener noreferrer' href='#'><strong>Support us on ProductHunt</strong></a>",
+          "We're thrilled and very proud to announce our Open Source release today and are officially live on ProductHunt! 🎉  <a target='_blank' rel='noopener noreferrer' href='https://www.producthunt.com/posts/kickstartds'><strong>Support us on ProductHunt</strong></a>",
         backgroundColor: 'var(--ks-color-primary)',
         textColor: 'var(--ks-color-primary-inverted)',
         isCloseable: false,
