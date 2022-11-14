@@ -2,7 +2,7 @@
 
 kickstartDS is an Open Source Design System starter and UI toolkit for building up your very own Design System. This in turn enables you, and your team, to build brand-compliant websites and apps super efficiently. All while using core web technologies — HTML, CSS, and JavaScript — and best practices.
 
-<img src="./assets/own-a-design-system-2.png" alt="Own a Design System without investing years of development - Next-gen UI development toolkit to democratize Design Systems">
+![Own a Design System without investing years of development - Next-gen UI development toolkit to democratize Design Systems](assets/own-a-design-system.png)
 
 ## Goals
 
@@ -30,7 +30,7 @@ We have the following categories in our docs:
 
 This is our main guide, where you'll create a complete Design System from scratch... based on **kickstartDS**.
 
-<img src="./assets/own-a-design-system-1.png" alt="Own a Design System without investing years of development - Next-gen UI development toolkit to democratize Design Systems">
+![Own a Design System without investing years of development - Next-gen UI development toolkit to democratize Design Systems - Next-gen UI development toolkit to democratize Design Systems](assets/own-a-design-system-1.png)
 
 Start here: https://www.kickstartds.com/docs/guides/create/
 
