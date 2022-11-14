@@ -12,6 +12,7 @@ As we just released kickstartDS with the first version of this documentation, we
 - [ ] Complete Documentation
 - [ ] Add Concepts
 - [ ] Add more guides
+- [ ] Add Recipes
 - [ ] Refine roadmap
 
 ## v2.0 (current version)

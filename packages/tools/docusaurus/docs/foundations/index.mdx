@@ -2,14 +2,16 @@
 sidebar_position: 1
 ---
 
+import { Section } from '@kickstartds/base/lib/section';
 import { TeaserBox } from '@kickstartds/base/lib/teaser-box';
 import { Columns } from '@bedrock-layout/primitives';
+import { Storytelling } from '@kickstartds/content/lib/storytelling';
 
 # Foundations
 
 Foundations are the visual elements needed to create your Design System and its engaging user experiences. You can build up your specifics based on all the best practice defaults given by kickstartDS on token, like color, typography, but also components and layout.
 
-<div ks-theme="docs">
+<Section ks-theme="docs" spaceBefore="none" width="full">
   <Columns columns={2} gutter="md" switchAt="30rem">
     <TeaserBox
       topic="Token"
@@ -64,4 +66,55 @@ Foundations are the visual elements needed to create your Design System and its 
       }}
     />
   </Columns>
-</div>
+</Section>
+
+<Section
+  ks-theme="docs"
+  spaceBefore="none"
+  spaceAfter="none"
+  width="full"
+  inverted="true"
+  mode="list"
+>
+  <Storytelling
+    backgroundImage="./assets/content-moduke.png"
+    box={{
+      hAlign: 'left',
+      headline: {
+        align: null,
+        content: 'kickstartDS Content Module',
+        level: 'h2',
+        pageHeader: false,
+        spaceAfter: 'none',
+        styleAs: 'h2',
+        subheadline: 'The perfect addition to our Open Source base',
+      },
+      links: [
+        {
+          fillAnimation: false,
+          href: '#',
+          iconAfter: false,
+          iconAnimation: false,
+          iconBefore: false,
+          label: 'Request a guided demo',
+          newTab: false,
+          size: 'medium',
+          variant: 'solid',
+        },
+      ],
+      text: 'The **Content Module** includes seven rich components: Hero visual, Quote, Storytelling etc. — everything you need to build beautiful content experiences or to enrich your existing Design System',
+      textAlign: 'left',
+      vAlign: 'center',
+    }}
+    image={{
+      hAlign: 'right',
+      order: {
+        desktopImageLast: true,
+        mobileImageLast: false,
+      },
+      ratio: 'none',
+      source: '',
+      vAlign: 'bottom',
+    }}
+  />
+</Section>
