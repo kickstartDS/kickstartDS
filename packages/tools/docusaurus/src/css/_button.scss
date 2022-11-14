@@ -1,12 +1,28 @@
 a.c-button {
   --c-button--font-weight: var(--ifm-font-weight-semibold);
+  display: block;
+  text-align: left;
+  box-sizing: content-box;
+  width: fit-content;
+
+  span {
+    text-align: left;
+  }
+
   .icon {
     margin-left: var(--ks-spacing-xxs);
+    display: inline;
   }
-}
 
-a.c-button.c-button--solid {
-  --c-button--color: var(--ifm-button-color);
-  --c-button--background-color: var(--ifm-button-background-color);
-  --c-button--background-color-hover: var(--ifm-color-primary-light);
+  .c-teaser &.c-button--clear {
+    --c-button--padding: 0;
+    --c-button--background-color-hover: transparent;
+    --c-button--color-hover: var(--ks-color-primary-to-fg-2);
+  }
+
+  &.c-button--solid {
+    --c-button--color: var(--ifm-button-color);
+    --c-button--background-color: var(--ifm-button-background-color);
+    --c-button--background-color-hover: var(--ifm-color-primary-light);
+  }
 }

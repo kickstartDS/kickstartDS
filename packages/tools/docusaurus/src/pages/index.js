@@ -42,7 +42,7 @@ function HomepageHeader() {
         <Section
           spaceBefore="small"
           spaceAfter="small"
-          width="full"
+          width="wide"
           background="accent"
           mode="list"
           align="center"
@@ -55,17 +55,19 @@ function HomepageHeader() {
             subheadline="Learn how to own a Design System without investing years of development."
             align="center"
           />
-          <a
-            href="https://www.producthunt.com/posts/kickstartds?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-kickstartds"
-            target="_blank"
-          >
-            <img
-              src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=366575&theme=light"
-              alt="kickstartDS is live on Product Hunt"
-              width="250"
-              height="54"
-            />
-          </a>
+          <div>
+            <a
+              href="https://www.producthunt.com/posts/kickstartds?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-kickstartds"
+              target="_blank"
+            >
+              <img
+                src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=366575&theme=light"
+                alt="kickstartDS is live on Product Hunt"
+                width="250"
+                height="54"
+              />
+            </a>
+          </div>
         </Section>
       </div>
     </>
