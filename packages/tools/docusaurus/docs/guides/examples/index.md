@@ -12,7 +12,7 @@ TODO: add description how those examples are meant: "interactive recipes", inspi
 ## Components
 
 <div ks-theme="docs">
-  <Columns columns={2} gutter="md" switchAt="48rem">
+  <Columns columns={2} gutter="md" switchAt={768}>
     <TeaserBox
       topic="Adapt Button component"
       text="This guide shows how to add components to your Design System that use a kickstartDS base component directly"
@@ -84,7 +84,7 @@ TODO: add description how those examples are meant: "interactive recipes", inspi
 ## Recipes
 
 <div ks-theme="docs">
-  <Columns columns={2} gutter="md" switchAt="48rem">
+  <Columns columns={2} gutter="md" switchAt={768}>
     <TeaserBox
       topic="Article Teaser recipe"
       text=""

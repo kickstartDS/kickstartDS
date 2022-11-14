@@ -10,7 +10,7 @@ import { Columns } from '@bedrock-layout/primitives';
 Components are the main building blocks for any user interface. Using reusable components will enhance your product development workflow by reducing design and tech debt and speeding up the process. Following we provide some examples on how customize the compoentns contained kickstartdS to make them your own.
 
 <div ks-theme="docs">
-  <Columns columns={2} gutter="md" switchAt="48rem">
+  <Columns columns={2} gutter="md" switchAt={768}>
     <TeaserBox
       topic="Adapt Button component"
       text="This guide shows how to add components to your Design System that use a kickstartDS base component directly"
