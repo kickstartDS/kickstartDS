@@ -12,25 +12,25 @@ import myImageUrl from '../../static/img/content-module.png';
 
 kickstartDS comes with different component modules which are all built on top of each other. Experience all modules and its compontents with all their properties and possibities in our [Storybook](https://www.kickstartds.com/storybook/).
 
-## Core Module `open source`
+## Core Module `Open Source`
 
 The Core Module is principally the base layer of any kickstartDS instance. It contains no components which you can grab and use further it is rather the foundation for every layout by beholding a `Container Component`, at least that s what we call it. Its speciality is the usage of `container queries`. If you want to learn more about this, take a deeper look into the according information at mozilla.org: [CSS Container Queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Container_Queries)
 
-## Base Module `open source`
+## Base Module `Open Source`
 
 The **kickstartDS Base Module** is our comprehensive component library enabling development teams to create consistent and brand compliant web frontends super efficiently. It contains a solid set of default components being the building blocks to create your Design System from the scratch, code first!
 
-## Form Module `open source`
+## Form Module `Open Source`
 
 The Form Module contains all the form elements you need to be styled to create your form recipes on top of it. Browse the different form elements in our [Storybook](https://www.kickstartds.com/storybook/?path=/story/@kickstartds/form_form-checkbox--default).
 
-## Blog Module `open source`
+## Blog Module `Open Source`
 
 A Design System is nothing without a system applying it. That's why we created a simple set of components to empower you creating a blog to bring kickstartDS into action. The Blog Module contains five rich components,
 
 Check 'em in the [Storybook](https://www.kickstartds.com/storybook/?path=/story/blog-post-teaser--default).
 
-## **Content Module** `closed`
+## **Content Module** `Closed`
 
 As the perfect addition to our Open Source Base, we offer a closed **Content Module**. In almost every project teams need to structur and layout content. Be it your next landing or marking page, your main website, a CMS-project or whenever content is key.
 
