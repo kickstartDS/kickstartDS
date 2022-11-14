@@ -54,6 +54,7 @@ export const ButtonComponent: ForwardRefRenderFunction<
       ks-inverted={inverted?.toString()}
       ks-component={component}
       {...(isLink && newTab ? { target: '_blank', rel: 'noopener' } : {})}
+      disabled={isLink ? undefined : disabled}
       ref={ref}
       {...props}
     >
