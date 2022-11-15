@@ -1,3 +1,15 @@
+# v2.0.2 (Tue Nov 15 2022)
+
+#### ⚠️ Pushed to `master`
+
+- chore(changelog): finalize CHANGELOGs ([@julrich](https://github.com/julrich))
+
+#### Authors: 1
+
+- Jonas Ulrich ([@julrich](https://github.com/julrich))
+
+---
+
 # v2.0.1 (Tue Nov 15 2022)
 
 #### ⚠️ Pushed to `master`
