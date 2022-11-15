@@ -51,7 +51,7 @@
   "devDependencies": {
     "@kickstartds/bundler": "^2.0.2",
     "@kickstartds/style-dictionary": "^2.0.0",
-    "storybook-design-token": "^1.4.0",
+    "storybook-design-token": "^2.7.1",
     "style-dictionary": "^3.7.1"
   },
   "peerDependencies": {
