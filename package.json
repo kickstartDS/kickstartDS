@@ -58,8 +58,8 @@
     "fast-glob": "^3.2.11",
     "fs-extra": "^10.1.0",
     "license-checker": "^25.0.1",
-    "postcss": "^8.4.16",
-    "postcss-scss": "^4.0.4",
+    "postcss": "^8.4.17",
+    "postcss-scss": "^4.0.5",
     "react": "^17.0.2"
   },
   "devDependencies": {
@@ -67,8 +67,8 @@
     "@auto-it/first-time-contributor": "^10.37.6",
     "@auto-it/npm": "^10.37.6",
     "@auto-it/released": "^10.37.6",
-    "@commitlint/cli": "^17.0.3",
-    "@commitlint/config-conventional": "^17.0.3",
+    "@commitlint/cli": "^17.2.0",
+    "@commitlint/config-conventional": "^17.1.0",
     "@types/react": "^17.0.50",
     "@types/react-dom": "^17.0.17",
     "auto": "^10.37.6",
@@ -81,7 +81,7 @@
     "lint-staged": "^13.0.3",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.7.1",
-    "stylelint": "^14.12.1"
+    "stylelint": "^14.13.0"
   },
   "publishConfig": {
     "access": "public",
