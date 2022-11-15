@@ -2,6 +2,19 @@
 
 #### ⚠️ Pushed to `master`
 
+- docs(design): add custom color previews ([@fleven-kds](https://github.com/fleven-kds))
+- docs(design): add color previews ([@fleven-kds](https://github.com/fleven-kds))
+
+#### Authors: 1
+
+- Franz ([@fleven-kds](https://github.com/fleven-kds))
+
+---
+
+# (Tue Nov 15 2022)
+
+#### ⚠️ Pushed to `master`
+
 - chore(changelog): add main CHAGENLOG note ([@julrich](https://github.com/julrich))
 - `@kickstartds/base@2.0.2`, `@kickstartds/blog@2.0.2`, `@kickstartds/core@2.0.2`, `@kickstartds/form@2.0.2`, `@kickstartds/bundler@2.0.2`
   - chore(changelog): finalize CHANGELOGs ([@julrich](https://github.com/julrich))
