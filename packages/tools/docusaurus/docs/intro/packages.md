@@ -2,6 +2,12 @@
 sidebar_position: 5
 ---
 
+import { Section } from '@kickstartds/base/lib/section';
+import { TeaserBox } from '@kickstartds/base/lib/teaser-box';
+import { Columns } from '@bedrock-layout/primitives';
+import { Storytelling } from '@kickstartds/content/lib/storytelling';
+import myImageUrl from '../../static/img/content-module.png';
+
 # Packages
 
 Packages in programming are commonly used to divide up code into distinctly (re-)usable blocks of functionality. (Almost) every programming language has its own version of handling packages, package dependencies and package installation. As we're using Node and **JavaScript** / **TypeScript** as our programming language of choice, our package registry will be **npm**. To read more about this topic, have a look at the ["Environment"](./environment.md) chapter of this section.
@@ -88,7 +94,46 @@ You can find this package on:
 
 We think this module is a nice addition when building your Design System, but it's in no way a necessity. By offering this as a paid module, we enable further development of **kickstartDS**... while also delivering great value in the components offered. We're pretty sure you're always coming out ahead when choosing between using our content module and building similar components yourself!
 
-TODO add content module CTA / link content module page
+<Section
+  ks-theme="docs"
+  spaceBefore="none"
+  spaceAfter="none"
+  width="full"
+  inverted="true"
+  mode="list"
+>
+  <Storytelling
+    backgroundImage={myImageUrl}
+    box={{
+      hAlign: 'left',
+      headline: {
+        align: null,
+        content: 'kickstartDS Content Module',
+        level: 'h2',
+        pageHeader: false,
+        spaceAfter: 'none',
+        styleAs: 'h1',
+        subheadline: 'The perfect addition to our Open Source base',
+      },
+      link: {
+        fillAnimation: false,
+        href: '#',
+        iconAfter: false,
+        iconAnimation: false,
+        iconBefore: false,
+        label: 'Interested? Contact us!',
+        newTab: false,
+        size: 'small',
+        variant: 'solid',
+      },
+      text: 'The **Content Module** includes seven rich components: Hero visual, Quote, Storytelling etc. — everything you need to build beautiful content experiences or to enrich your existing Design System',
+      textAlign: 'left',
+      vAlign: 'center',
+    }}
+  />
+</Section>
+
+<br/><br/>
 
 Components included with our paid module:
 
@@ -125,8 +170,6 @@ Components included here:
 - `SelectField` for select fields ([Storybook](https://www.kickstartds.com/storybook/?path=/docs/@kickstartds/form_form-select-field--default))
 - `TextArea` for text area fields ([Storybook](https://www.kickstartds.com/storybook/?path=/docs/@kickstartds/form_form-text-area--default))
 - `TextField` for text input fields ([Storybook](https://www.kickstartds.com/storybook/?path=/docs/@kickstartds/form_form-text-field--default))
-
-TODO we should include those in our own **Storybook**, too... to be able to link them there, with working Controls
 
 For a complete list of components have a look at the following folder:<br/>
 https://github.com/kickstartDS/kickstartDS/tree/master/packages/components/form/source

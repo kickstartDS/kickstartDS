@@ -46,8 +46,3 @@ Only one CSS custom property is created, which is read via JavaScript and used t
 </CH.Section>
 
 CSS custom properties don't work in media query declarations. So if you write custom styles, you have to write the media query declaration manually.
-
-TODO:
-
-- prefer [container queries](../../components/anatomy.md/#container-queries)
-- if scss, you can use [include-media](https://eduardoboucas.github.io/include-media/)

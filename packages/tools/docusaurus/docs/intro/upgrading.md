@@ -35,7 +35,7 @@ To give some general context to versioning and releases with **kickstartDS**, yo
 Versioning is done semantically, closely following [SemVer](https://semver.org/lang/de/). So Breaking Changes will be expressed in the initial number of the version (we're currently on `2.x`)
 To further improve ease of use, and add consistency through good defaults, we use Auto to generate releases based on semantic version labels on pull requests on our Github repository.
 
-Learn more about this in our Contribution-Guide, detailling this process of Github Discussions, Issues, Pull Requests, Canaries and releases. TODO Create content, and link it
+Learn more about this in our Contribution-Guide, detailling this process of Github Discussions, Issues, Pull Requests, Canaries and releases.
 
 ### Automatic Changelog generation
 
@@ -55,4 +55,4 @@ Lastly you'll find Canary releases, used to enable early testing of bugfix chang
 
 As work on bugs and features always occurs on branches, this enables continous quality control from the start.
 
-To learn about our packages in more detail, have a look at [the Packages page](../packages/index.md).
+To learn about our packages in more detail, have a look at [the Packages page](./packages.md).

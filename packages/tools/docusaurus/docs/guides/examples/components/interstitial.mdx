@@ -5,9 +5,11 @@ sidebar_label: Create Interstitial component
 
 import Admonition from 'react-admonitions';
 
+import { Section } from '@kickstartds/base/lib/section';
 import { Storytelling } from '@kickstartds/content/lib/storytelling';
 import { TextMedia } from '@kickstartds/base/lib/text-media';
 import { StorytellingProvider } from '@kickstartds/design-system/dist/components/storytelling/StorytellingComponent';
+import myImageUrl from '../../../../static/img/content-module.png';
 
 # Create `Interstitial` component
 
@@ -42,8 +44,46 @@ For more details about those steps, have a look at [the guide about different co
 This guide assumes that you already have a working Design System, that is based on **kickstartDS**, running.<br/>
 If that's not the case, follow our [Create your Design System](../../create/index.mdx) guide .
 
-Additionally you'll need access to our **Content** module, to use the `Storytelling` component this guide is based on.<br/>
-TODO add link / CTA to **Content** module here
+Additionally you'll need access to our **Content** module, to use the `Storytelling` component this guide is based on.
+
+<Section
+  ks-theme="docs"
+  spaceBefore="none"
+  spaceAfter="none"
+  width="full"
+  inverted="true"
+  mode="list"
+>
+  <Storytelling
+    backgroundImage={myImageUrl}
+    box={{
+      hAlign: 'left',
+      headline: {
+        align: null,
+        content: 'kickstartDS Content Module',
+        level: 'h2',
+        pageHeader: false,
+        spaceAfter: 'none',
+        styleAs: 'h1',
+        subheadline: 'The perfect addition to our Open Source base',
+      },
+      link: {
+        fillAnimation: false,
+        href: '#',
+        iconAfter: false,
+        iconAnimation: false,
+        iconBefore: false,
+        label: 'Interested? Contact us!',
+        newTab: false,
+        size: 'small',
+        variant: 'solid',
+      },
+      text: 'The **Content Module** includes seven rich components: Hero visual, Quote, Storytelling etc. — everything you need to build beautiful content experiences or to enrich your existing Design System',
+      textAlign: 'left',
+      vAlign: 'center',
+    }}
+  />
+</Section>
 
 ## 1. Component Definition
 
@@ -808,8 +848,6 @@ This concludes creating the `JSON Schema`. When running the schema generation in
 
 How your schema generation is started might change depending on your setup. If you've followed our ["Create your Design System" guide](../../create/index.mdx) before, or want to add it like we do, follow [this section of it](../../create/components.mdx) closely.
 
-TODO: fix markdown formatting of generated `.ts`-file above
-
 ### **React** Template
 
 As the final step for this example, we'll add the template. This will be a purely functional `React` component, mapping our component structure (as defined in the `JSON Schema`) to the original component we're basing our work off of; the **kickstartDS** `Storytelling` component.
@@ -1057,7 +1095,7 @@ If you're using **Storybook**, you can follow this part of the example to get al
   configuration to your use accordingly, when following this part!
 </Admonition>
 
-TODO actually add guide
+This part of the guide will follow soon! Please come back soon, or hit us up for an update!
 
 ## Completed component
 
@@ -1076,11 +1114,3 @@ Play around with your new component directly in a `Code Sandbox` below:<br/>
   allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
   sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 ></iframe>
-
-## Technical debt added
-
-TODO revise this section
-
-We've added a wholly new component, for which you take on full responsibility. On the other side, only changes you'll want to make yourself should necessitate change anyway. Changes to the structure, and how it maps to the underlying component, fall on you. The only other thing you'll have to watch out for are [`Breaking Changes`](../../../intro/upgrading.md), which may include changes to the component your basing off of. In that case, follow the `CHANGELOG.md` for that components `module` (e.g. module `content` for the `Storytelling` component) closely, to adopt any necessary changes.
-
-TODO align FC / FunctionComponent imports with other guides / examples

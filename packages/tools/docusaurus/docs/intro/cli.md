@@ -5,10 +5,7 @@ sidebar_label: CLI Usage
 
 # What is kickstartDS CLI?
 
-TODO Describe how the kickstartDS cli eases everyday development tasks, by packaging workflows and dependencies for easy consumption.
-
-TODO add (not needed in GitHub `README.md`) features supported by CLI (Inquirer, rc files, timing, shell completions)
-TODO also add technical details like ESM setup, etc
+Description follows soon!
 
 # Install kickstartDS CLI
 
@@ -28,13 +25,11 @@ or if using **Yarn**:
 yarn global add kickstartds
 ```
 
-If you're encountering problems with this, or for more details on the technical setup needed to work with **kickstartDS**, see our **Getting Started** [over in our documentation](#) TODO add link to section in docs.
+If you're encountering problems with this, or for more details on the technical setup needed to work with **kickstartDS**, see our **Getting Started** .
 
 ## Install as a part of a **kickstartDS** Design System
 
-TODO describe usage as part of a Design System dependency, without global installation. Short description + link to part of main guide in docs.
-
-TODO find a nice-looking image to add here, acting as a visual divider. Ideally links somewhere, too
+Description follows soon!
 
 <img src={require('./assets/screenshot-cli.png').default} alt="Screenshot of the kickstartDS CLI" />
 
@@ -48,47 +43,41 @@ Once you've installed the kickstartDS CLI, you can verify everything works as ex
 kickstartDS --help
 ```
 
-TODO add image of console output of `--help` here
+Description follows soon!
 
 Fully hosted reference documentation for all options will follow soon, until then everything is discoverable, and documented, through interaction with the CLI.
 
 ## Setting up shell completions
 
-TODO describe shell completions
+Description follows soon!
 
 ## Design Token commands
 
-TODO describe Design Token commands
+Description follows soon!
 
 ## JSON Schema commands
 
-TODO describe JSON Schema commands
+Description follows soon!
 
 ### Using kickstartDS in your CI/CD
 
-TODO describe kickstartDS as working easily inside of CI/CD because of its usage in `package.json` based `scripts` entries -> usage as part of a Design System.
+Description follows soon!
 
 ## Tips, Tricks and Gotchas
 
-TODO add some, maybe explain some special flags here
+Description follows soon!
 
 # Getting support
 
-TODO describe a way to get support
+Description follows soon!
 
 # Contributing
 
-TODO add contribution guidelines
+Description follows soon!
 
 # Security
 
-TODO Create `SECURITY.md` and link it
-
-# Telemetry
-
-The kickstartDS CLI includes a telemetry feature that collects some usage data. See our [telemetry reference](#) TODO add link for details.
-
-TODO describe opt-out through environment variable
+Description follows soon!
 
 # Used projects:
 

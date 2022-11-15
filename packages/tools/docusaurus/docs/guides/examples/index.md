@@ -7,7 +7,7 @@ import { Columns } from '@bedrock-layout/primitives';
 
 # Examples
 
-TODO: add description how those examples are meant: "interactive recipes", inspiration, rough guidance on the workflow of creating your own components / Design System
+Those are guides showing, in detail, how you could potentially create components. They should act as inspiration, and hopefully you'll develop a feeling for the concepts at play. This should enable you to think freely about those topics when creating new components. It should start to feel natural after following a bunch of them!
 
 ## Components
 

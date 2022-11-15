@@ -26,8 +26,6 @@ This is how the result of this guide will look like:
   height="150"
 ></iframe>
 
-TODO add `iframe` to real example
-
 It will only need two simple steps for that:
 
 1. Component Definition, and
@@ -164,8 +162,6 @@ We'll work our way up to this **JSON Schema** definition.
 #### Start with just the boilerplate for a component definition
 
 This includes all necessarily required values for a valid component definition in **kickstartDS**.
-
-To learn more about our use of `JSON Schema`, read our Concepts (TODO create + link) article.
 
 <CH.Code>
 ```json src/components/headline/headline.schema.json
@@ -832,8 +828,6 @@ This concludes creating the `JSON Schema`. When running the schema generation in
 
 How your schema generation is started might change depending on your setup. If you've followed our ["Create your Design System" guide](../../create/index.mdx) before, or want to add it like we do, follow [this section of it](../../create/components.mdx) closely.
 
-TODO: fix markdown formatting of generated `.ts`-file above
-
 ### **React** template
 
 As the final step for this example, we'll add the template. This will be a purely functional `React` component, mapping our component structure (as defined in the `JSON Schema`) to the original component we're basing our work off of; the **kickstartDS** `Storytelling` component.
@@ -936,8 +930,6 @@ export const Headline: FC<HTMLAttributes<HTMLDivElement>> = (
 ##### Defining `RenderFunctions`
 
 We define the render functions interface that will enable our RTE-like functionality for the `text` and `sub` properties.
-
-TODO add link to render functions in `Foundations` > `Components` > `React`
 
 <CH.Code>
 ```tsx src/components/headline/HeadlineComponent.tsx focus=3:8
@@ -1528,14 +1520,4 @@ If you're using **Storybook**, you can follow this part of the example to get al
   configuration to your use accordingly, when following this part!
 </Admonition>
 
-TODO actually add guide
-
-## Completed component
-
-Play around with your new component directly in a `Code Sandbox` below:<br/>
-
-TODO actually add Code Sandbox
-
-## Technical debt
-
-TODO describe technical debt
+This part of the guide will follow soon! Please come back soon, or hit us up for an update!

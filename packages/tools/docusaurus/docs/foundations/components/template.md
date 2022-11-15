@@ -4,4 +4,4 @@ sidebar_position: 3
 
 # Template
 
-## Table of contents:
+This foundations page will follow soon, please have a look back here soon!

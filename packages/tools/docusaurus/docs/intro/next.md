@@ -6,8 +6,6 @@ sidebar_position: 6
 
 One of the following, in that order:
 
-- Follow our main guide "Create your Design System"
-- Directly start with our template repository
-- Read more about the Design System Initiative
-
-TODO find nice way to display those three options
+- Follow our main guide ["Create your Design System"](../guides/create/index.mdx)
+- Directly start with our template repository (coming soon...)
+- Read more about the [Design System Initiative](../guides/design-system-initiative.md)
