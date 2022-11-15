@@ -116,16 +116,6 @@ jobs:
           name: Publish Chromatic Module Blog
           command: CHROMATIC_PROJECT_TOKEN=${CHROMATIC_PROJECT_TOKEN_BLOG} yarn run chromatic-blog
 
-  publish-content:
-    <<: *defaults
-    steps:
-      - checkout
-      - restore_cache: *restore-cache-node
-      - *attach_workspace
-      - run:
-          name: Publish Chromatic Module Content
-          command: CHROMATIC_PROJECT_TOKEN=${CHROMATIC_PROJECT_TOKEN_CONTENT} yarn run chromatic-content
-
   publish-form:
     <<: *defaults
     steps:
@@ -165,12 +155,6 @@ workflows:
             - release
 
       - publish-blog:
-          <<: *release_branches_only
-          context: kickstartDS
-          requires:
-            - release
-
-      - publish-content:
           <<: *release_branches_only
           context: kickstartDS
           requires:
