@@ -1,6 +1,6 @@
 {
   "name": "@kickstartds-internal/storybook",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "private": true,
   "main": "index.js",
   "license": "(MIT OR Apache-2.0)",
@@ -21,7 +21,7 @@
     "storybook:build": "node index.js build"
   },
   "dependencies": {
-    "@kickstartds/bundler": "^2.0.0",
+    "@kickstartds/bundler": "^2.0.1",
     "fast-glob": "^3.2.11",
     "yargs-parser": "^21.1.1"
   },

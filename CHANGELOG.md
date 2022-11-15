@@ -1,5 +1,18 @@
 # (Tue Nov 15 2022)
 
+#### ⚠️ Pushed to `master`
+
+- `@kickstartds/base@2.0.1`, `@kickstartds/blog@2.0.1`, `@kickstartds/core@2.0.1`, `@kickstartds/form@2.0.1`, `@kickstartds/bundler@2.0.1`
+  - chore(changelog): add CHANGELOG notes ([@julrich](https://github.com/julrich))
+
+#### Authors: 1
+
+- Jonas Ulrich ([@julrich](https://github.com/julrich))
+
+---
+
+# (Tue Nov 15 2022)
+
 ## **kickstartDS** 2.0.0 - Release of **kickstartDS** as **Open Source**
 
 Release of **kickstartDS** as **Open Source**, read more on our blog:

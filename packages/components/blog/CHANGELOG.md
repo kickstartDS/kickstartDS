@@ -1,3 +1,15 @@
+# v2.0.1 (Tue Nov 15 2022)
+
+#### ⚠️ Pushed to `master`
+
+- chore(changelog): add CHANGELOG notes ([@julrich](https://github.com/julrich))
+
+#### Authors: 1
+
+- Jonas Ulrich ([@julrich](https://github.com/julrich))
+
+---
+
 # v2.0.0 (Tue Nov 15 2022)
 
 ## **kickstartDS** 2.0.0 - Release of **kickstartDS** as **Open Source**
