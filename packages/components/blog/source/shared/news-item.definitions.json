@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/blog/news-item.definitions.json",
+  "title": "News List / Latest Definitions",
+  "description": "News List / Latest Definitions",
+  "type": "object",
+  "definitions": {
+    "date": {
+      "title": "Date",
+      "description": "Date for news item",
+      "type": "string",
+      "format": "date",
+      "examples": ["2021-03-29"]
+    },
+    "link": {
+      "title": "Link",
+      "description": "Link for news item",
+      "type": "object",
+      "properties": {
+        "href": {
+          "$ref": "http://schema.kickstartds.com/base/button.schema.json#/properties/href"
+        },
+        "label": {
+          "$ref": "http://schema.kickstartds.com/base/button.schema.json#/properties/label",
+          "examples": ["weiter zum Newseintrag"]
+        }
+      },
+      "required": ["href", "label"]
+    },
+    "title": {
+      "title": "Title",
+      "description": "Title for news item",
+      "type": "string",
+      "examples": ["Lorem ipsum, dolor sit"]
+    },
+    "body": {
+      "title": "Bodytext",
+      "description": "Bodytext for news item",
+      "type": "string",
+      "examples": [
+        "Hic maxime sed eos non. Consequatur ut qui amet accusantium nesciunt."
+      ]
+    },
+    "categories": {
+      "title": "Categories",
+      "type": "array",
+      "items": {
+        "$ref": "http://schema.kickstartds.com/base/tag-label.schema.json"
+      }
+    }
+  }
+}

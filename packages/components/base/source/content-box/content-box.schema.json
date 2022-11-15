@@ -1,0 +1,76 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/base/content-box.schema.json",
+  "title": "Content Box",
+  "description": "Component to display content in a condensed, boxed form",
+  "type": "object",
+  "properties": {
+    "ratio": {
+      "title": "Image ratio",
+      "type": "string",
+      "enum": ["none", "4:3", "16:9", "1:1"],
+      "default": "none",
+      "description": "Choose one of the set ratios, all ratios except `none` stretch the image to 100% width"
+    },
+    "alignement": {
+      "title": "Alignment",
+      "type": "string",
+      "enum": ["left", "center", "right"],
+      "default": "left",
+      "description": "Choose an alignment for the box. For the image it only applies for a `ratio` value of `none`"
+    },
+    "image": {
+      "title": "Image source",
+      "type": "string",
+      "format": "image",
+      "description": "Select an image to display inside the content box, at the top",
+      "examples": ["https://picsum.photos/seed/kdscontentbox/500/300"]
+    },
+    "topic": {
+      "title": "Topic",
+      "type": "string",
+      "description": "Topic for the content box. Displayed before the text, in bold",
+      "examples": ["Lorem Ipsum"]
+    },
+    "text": {
+      "title": "Text content",
+      "type": "string",
+      "examples": [
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ispum dolor distinctio minima unde voluptatum aut. Lorem ipsum dolor sit amet."
+      ],
+      "description": "Text for the content box",
+      "format": "markdown"
+    },
+    "link": {
+      "title": "Link",
+      "description": "Content box link configuration",
+      "type": "object",
+      "allOf": [
+        {
+          "properties": {
+            "enabled": {
+              "title": "Display link",
+              "description": "Toggles visibility of the link",
+              "type": "boolean",
+              "default": false
+            }
+          }
+        },
+        {
+          "$ref": "http://schema.kickstartds.com/base/button.schema.json"
+        }
+      ]
+    },
+    "className": {
+      "type": "string",
+      "title": "Additional Classes",
+      "description": "Add additional css classes that should be applied to the content box"
+    },
+    "component": {
+      "title": "`ks-component` attribute",
+      "description": "Optional custom component identifier",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

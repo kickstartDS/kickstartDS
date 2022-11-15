@@ -1,0 +1,27 @@
+$name-: 'c-headline' !default;
+
+$host: (
+  '.c-headline': (
+    space-after-minimum: 0,
+    space-after-small: var(--ks-spacing-stack-s),
+    space-after-large: var(--ks-spacing-stack-l),
+    space-after: var(--c-headline--space-after-minimum),
+    font-weight: var(--c-rich-text_headline--font-weight),
+    color: var(--c-rich-text_headline--color),
+  ),
+  '.c-headline--space-after-small': (
+    space-after: var(--c-headline--space-after-small),
+  ),
+  '.c-headline--space-after-large': (
+    space-after: var(--c-headline--space-after-large),
+  ),
+) !default;
+
+$subheadline: (
+  '.c-headline__subheadline': (
+    margin: 0.5em 0 0,
+    font: var(--ks-font-copy-m),
+    font-weight: var(--ks-font-weight-regular),
+    color: var(--c-rich-text_headline--color),
+  ),
+) !default;

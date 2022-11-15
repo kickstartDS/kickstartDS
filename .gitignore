@@ -6,6 +6,8 @@ storybook-static
 licenses*.csv
 packages/**/package-lock.json
 packages/*/*/lib
+packages/*/*/storybook-tmp
+kds-root.schema.json
 
 # Logs
 logs

@@ -2,7 +2,7 @@
   "name": "@kickstartds/form",
   "version": "1.5.1",
   "description": "kickstartDS Form Module",
-  "homepage": "https://ruhmesmeile.com",
+  "homepage": "https://www.kickstartDS.com",
   "bugs": {
     "url": "https://github.com/kickstartDS/kickstartDS/issues"
   },
@@ -11,26 +11,33 @@
     "url": "https://github.com/kickstartDS/kickstartDS.git",
     "directory": "packages/components/form"
   },
-  "license": "SEE LICENSE IN LICENSE",
-  "author": "ruhmesmeile GmbH <mail@ruhmesmeile.com> (https://ruhmesmeile.com)",
-  "main": "./lib/index.js",
-  "types": "./lib/index.d.ts",
+  "license": "(MIT OR Apache-2.0)",
+  "author": "Jonas Ulrich <jonas.ulrich@kickstartds.com> (https://www.kickstartDS.com/)",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "*/index.d.ts"
+      ]
+    }
+  },
   "files": [
     "lib",
+    "source/**/_container.scss",
     "source/**/*-vars.scss"
   ],
   "scripts": {
-    "build": "node ../../tools/build-components/source",
-    "schema": "node ../../tools/build-components/source --schema",
-    "watch": "node ../../tools/build-components/source --watch"
+    "build": "kdsBundle",
+    "schema": "kdsBundle --schema",
+    "watch": "kdsBundle --watch"
   },
   "dependencies": {
-    "@babel/runtime": "^7.19.4",
+    "@babel/runtime": "^7.20.1",
     "@kickstartds/base": "^1.5.1",
     "@kickstartds/core": "^1.5.0",
     "classnames": "^2.3.2"
   },
   "devDependencies": {
+    "@kickstartds/bundler": "^1.5.0",
     "bourbon": "^7.2.0"
   },
   "peerDependencies": {

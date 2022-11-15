@@ -1,34 +1,37 @@
-/* eslint-disable no-nested-ternary, no-console */
+/* eslint-disable no-nested-ternary */
 const getArgsShared = (initialSchema) => {
   const argTypes = {};
-  const defaultArgs = {};
+  const args = {};
 
   const getArgTypes = (
     schema,
     name,
     category,
     subcategory,
-    defaultValue,
-    required
+    required,
+    defaultValue = schema.default,
+    example = schema.examples?.[0]
   ) => {
     if ('const' in schema) return;
 
     const add = (typeProps) => {
       argTypes[name] = {
         name,
-        description: `**${schema.title}:**\n\n${schema.description}`,
+        description: `**${schema.title}${schema.description ? ':' : ''}**${
+          schema.description ? `\n\n${schema.description}` : ''
+        }`,
         type: {
           required,
           summary: schema.type,
         },
         table: {
           category: category ?? 'general',
-          defaultValue: { summary: defaultValue ?? schema.default },
+          defaultValue: { summary: defaultValue },
           subcategory,
         },
         ...typeProps,
       };
-      defaultArgs[name] = defaultValue ?? schema.default;
+      args[name] = example ?? defaultValue;
     };
 
     switch (schema.type) {
@@ -88,8 +91,9 @@ const getArgsShared = (initialSchema) => {
                 name ? `${name}.${propName}` : propName,
                 cat,
                 subcat,
-                defaultValue?.[propName] ?? schema.default,
-                schema.required?.includes(propName)
+                schema.required?.includes(propName),
+                defaultValue?.[propName] ?? schema.default?.[propName],
+                example?.[propName] ?? schema.examples?.[0][propName]
               );
             }
           );
@@ -103,7 +107,8 @@ const getArgsShared = (initialSchema) => {
       case 'array':
         if (schema.items && schema.items.type) {
           const cat = category ?? name;
-          const count = defaultValue?.length ?? schema?.default?.length ?? 3;
+          const examples = example ?? schema.examples?.[0] ?? defaultValue;
+          const count = examples?.length ?? 3;
           new Array(count).fill().forEach((_, index) => {
             const subcat =
               cat &&
@@ -116,7 +121,9 @@ const getArgsShared = (initialSchema) => {
               name ? `${name}.${index}` : index,
               cat,
               subcat,
-              defaultValue?.[index] ?? schema?.default?.[index]
+              undefined,
+              defaultValue?.[index] ?? schema.default?.[index],
+              examples?.[index]
             );
           });
         } else {
@@ -132,7 +139,7 @@ const getArgsShared = (initialSchema) => {
   };
   getArgTypes(initialSchema);
 
-  return { argTypes, defaultArgs };
+  return { argTypes, args };
 };
 
 const unpack = (flatArgs) => {

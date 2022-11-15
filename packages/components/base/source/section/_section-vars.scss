@@ -1,0 +1,52 @@
+$name-: 'l-section';
+
+$host: (
+  ':root, [ks-theme], [ks-inverted]': (
+    content-width-narrow: 46.5rem,
+    content-width-default: 62rem,
+    content-width-wide: 75rem,
+    content-width-max: 120rem,
+    content-width-full: 120rem,
+    content-padding: var(--ks-spacing-m),
+    background-default: var(--ks-background-color-default),
+    background-accent: var(--ks-background-color-accent),
+    background-bold: var(--ks-color-fg-alpha-4),
+    space-default: var(--ks-spacing-xxl),
+    space-small: calc(var(--l-section--space-default) / 2),
+    gutter-small: var(--ks-spacing-xs),
+    gutter-default: var(--ks-spacing-m),
+    gutter-large: var(--ks-spacing-xl),
+  ),
+  '.l-section': (
+    background: var(--l-section--background-default),
+  ),
+  '.l-section--accent': (
+    background: var(--l-section--background-accent),
+  ),
+  '.l-section--bold': (
+    background: var(--l-section--background-bold),
+  ),
+  '.l-section__container': (
+    gutter: var(--l-section--gutter-default),
+  ),
+  '.l-section__container--gutter-small': (
+    gutter: var(--l-section--gutter-small),
+  ),
+  '.l-section__container--gutter-large': (
+    gutter: var(--l-section--gutter-large),
+  ),
+) !default;
+
+$col: (
+  '.l-section__container': (
+    min-width: 18rem,
+    max-width: 1fr,
+    repeat: 'auto-fit',
+  ),
+  '.l-section__container--tile': (
+    repeat: 'auto-fill',
+  ),
+  '.l-section__container--list': (
+    repeat: 1,
+  ),
+) !default;

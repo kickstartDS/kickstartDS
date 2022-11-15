@@ -1,0 +1,358 @@
+---
+sidebar_position: 4
+---
+
+import Admonition from 'react-admonitions';
+
+# 4. Add Components
+
+Now we'll get to the meat of it... adding our first set of components based on **kickstartDS**. Which ones you'll utimately need, and subsequentially build, can vary wildly based on your specific Design System needs. We'll add some exemplary ones now, to illustrate the main ways on offer to do this:
+
+1. **Adding a `Button` component**<br/>based on `@kickstartds/base/lib/button`,<br/>to show the process of **adapting** an existing component
+2. **Adding a `Headline` component**<br/>based on `@kickstartds/base/lib/headline`,<br/>to show the process of **customizing** an existing component
+3. **Adding a `TeaserCard` component**<br/>based on `@kickstartds/base/lib/teaser-box`,<br/>to show the process of **creating** a new component
+4. **Adding a `Section` component**<br/>based on `@kickstartds/base/lib/section`,<br/>to show the process of **extending** an existing component
+
+We'll then build our first recipe, using all of the added components to create a teaser component for articles. Recipes are like loose blueprints, that should serve as an inspiration for how components can be combined and remixed, to fit a multitude of use cases! To learn more about recipes, and different kinds of components, we recommend reading **Brad Frosts** excellent article on ["design system components, recipes, and snowflakes"](https://bradfrost.com/blog/post/design-system-components-recipes-and-snowflakes/).
+
+And to bring it full circle, we will add that component to our _Welcome_ page to tease the main pages of our **Storybook**, as a quick entry for users!
+
+Feel free to change these examplary components being implemented around to something you'll actually need instead, if you happen to have something in mind already.<br/>
+We'll try adding some components that are commonly needed, so it should be a good starting point either way!
+
+If you want to take a deeper dive on finding your first component set right now, jump over to our [guide around the `Design System Initiative`](../design-system-initiative.md), and come back to this point later!
+
+And if all of this feels overwhelming, or like too much work for you to do on your own or your team, feel free to also have a look [at the services we offer around Design Systems](https://www.kickstartds.com/services/) and **kickstartDS**. They're in no way a necessity to use **kickstartDS**, but we're always happy to help in getting your first Design System, a Design System Initiative or internal DesignOps team off the ground!
+
+## Establish structure
+
+Before we get into the components themselves, we need to do a last bit of setup that will be needed by all of them.
+
+This includes setting up some **React** constructs like `Providers`, that ensure our own components get used everywhere (including when part of another component), hooking up **JavaScript** and **CSS** / **SCSS** integration and compilation, making sure our **TypeScript** types are available for users of our components, and finally creating some new `scripts` entries in `package.json` to improve our own developer experience when working on the Design System.
+
+### Add component `Providers`
+
+All components in **kickstartDS** come with their own `Provider`. This enables you to switch component implementations at will. From sweeping changes like switching all `Button`s for your own custom `Button`, including the ones that are part of other, bigger components, or surgical changes like just replacing the `Button` that gets used in a `Teaser Box` specifically.
+
+To have that benefit for our own users, too, we'll add the same general structure to our Design System.
+
+#### Aggregate global `Providers`
+
+We first create a file `Providers.jsx` at `src/components/`. This will import all of our global component providers, which are mainly the ones deep replacing **kickstartDS** components (TODO add a good link here), and export a single member that can be used to import and integrate **all** providers at once, reducing the need for copy &amp; pasted code.
+
+Add the file...
+
+```bash
+touch src/components/Providers.jsx
+```
+
+... and add the following content to it:
+
+<CH.Code>
+```jsx src/components/Providers.jsx
+export default (props) => (
+  {...props}
+);
+```
+</CH.Code>
+
+For now this will not do anything, but we'll hook it up to **Storybook** in the next step... and then subsequently build it up when adding components.
+
+TODO review this code section, not sure this is functional code
+
+#### Add `Provider` decorator to **Storybook**
+
+Integration with **Storybook** is done in `.storybook/preview.js` again, as this is related to how components are rendered / previewed:
+
+```js .storybook/preview.js
+import { actions } from '@storybook/addon-actions';
+import { DocsContainer } from '@storybook/addon-docs';
+
+import '@kickstartds/base/lib/global/base.js';
+import '@kickstartds/base/lib/global/base.css';
+
+import IconSprite from '../src/token/icons/IconSprite';
+import Providers from '../src/components/Providers';
+
+import '../src/token/tokens.css';
+
+const myActions = actions('radio');
+window._ks.radio.on('*', myActions.radio);
+
+const providerDecorator = (Story, context) => (
+  <Providers>
+    <Story {...context} />
+  </Providers>
+);
+
+export const parameters = {
+  actions: { argTypesRegex: '^on[A-Z].*' },
+  controls: {
+    matchers: {
+      color: /(background|color)$/i,
+      date: /Date$/,
+    },
+  },
+  options: {
+    storySort(a, b) {
+      // welcome page to top!
+      if (a[0].includes('welcome')) {
+        return -1;
+      }
+
+      // alphabetically
+      return a[1].kind === b[1].kind
+        ? 0
+        : a[1].id.localeCompare(b[1].id, undefined, { numeric: true });
+    },
+  },
+  designToken: {
+    disable: true,
+  },
+  docs: {
+    container: (props) => (
+      <Providers>
+        <IconSprite />
+        <DocsContainer {...props} />
+      </Providers>
+    ),
+  },
+};
+
+export const decorators = [
+  providerDecorator,
+  (Story) => (
+    <>
+      <IconSprite />
+      <Story />
+    </>
+  ),
+];
+```
+
+TODO add `CH.Spotlight`, was having trouble with **Prettier** destroying the formatting of code here, unfortunately
+
+#### Add **unpack** decorator to **Storybook**
+
+While at it, we also add the **unpack** decorator to our **Storybook**. This decorator is provided by **kickstartDS** as part of `@kickstartDS/core`, and is used to unpack arguments provided to the component, rendered as part of a Story.
+
+<Admonition type="tip" title="pack, unpack, story args... huh?">
+  **kickstartDS** offers helpers you can use to automatically configure your
+  stories [**Storybook
+  Controls**](https://storybook.js.org/docs/react/essentials/controls). If used,
+  you'll automatically get Controls and respective documentation based on your
+  component API (**JSON Schema**). Because nesting Controls isn't
+  straight-forward, we've written those helpers (`pack`, `unpack`) that take
+  complex JSON, and, as the name suggests, `pack` those into an object with
+  flattened keys compatible with the Controls addon (much like [a library like
+  `flat`](https://github.com/hughsk/flat) does it). Vice versa with `unpack`, so
+  a component controlled by those args (read more about [Story
+  Args](https://storybook.js.org/docs/react/writing-stories/args) and [Story
+  ArgTypes](https://storybook.js.org/docs/react/api/argtypes)) gets back the
+  "complex" version of its properties.
+</Admonition>
+
+TODO fix code formatting, this should includes paragraphs, but **Prettier** is super aggressive here.
+
+```js .storybook/preview.js
+import { actions } from '@storybook/addon-actions';
+import { DocsContainer } from '@storybook/addon-docs';
+
+import { unpackDecorator } from '@kickstartds/core/lib/storybook/helpers';
+
+import '@kickstartds/base/lib/global/base.js';
+import '@kickstartds/base/lib/global/base.css';
+
+import IconSprite from '../src/token/icons/IconSprite';
+import Providers from '../src/components/Providers';
+
+import '../src/token/tokens.css';
+
+const myActions = actions('radio');
+window._ks.radio.on('*', myActions.radio);
+
+const providerDecorator = (Story, context) => (
+  <Providers>
+    <Story {...context} />
+  </Providers>
+);
+
+export const parameters = {
+  actions: { argTypesRegex: '^on[A-Z].*' },
+  controls: {
+    matchers: {
+      color: /(background|color)$/i,
+      date: /Date$/,
+    },
+  },
+  options: {
+    storySort(a, b) {
+      // welcome page to top!
+      if (a[0].includes('welcome')) {
+        return -1;
+      }
+
+      // alphabetically
+      return a[1].kind === b[1].kind
+        ? 0
+        : a[1].id.localeCompare(b[1].id, undefined, { numeric: true });
+    },
+  },
+  designToken: {
+    disable: true,
+  },
+  docs: {
+    container: (props) => (
+      <Providers>
+        <IconSprite />
+        <DocsContainer {...props} />
+      </Providers>
+    ),
+  },
+};
+
+export const decorators = [
+  unpackDecorator,
+  providerDecorator,
+  (Story) => (
+    <>
+      <IconSprite />
+      <Story />
+    </>
+  ),
+];
+```
+
+### Hook up **JavaScript**
+
+Some components need additional **JavaScript** for their functionality. As **JavaScript** for **kickstartDS** components gets written in isolation, not involving **React** or any other framework, we will need to make sure that **JavaScript** gets bundled and loaded correctly. We also need to make sure **Storybook** knows about those compiled assets.
+
+TODO add `package.json` compilation stuff
+
+TODO check for code duplication, e.g. `import "lazysizes/plugins/attrchange/ls.attrchange";`, especially in combination with `.storybook/preview.js`
+
+TODO import generated `js` / `css` in `.storybook/preview.js`
+
+- `src/kds.js`
+- `src/index.js`
+
+### Hook up **CSS** / **SCSS**
+
+As with the **JavaScript** functionality before, there will be cases where we'll want to add some custom **CSS** or **SCSS**, to further customize how a component looks or behaves. With **SCSS** this means adding compilation to the mix, and both will need some bundling. And again, making those assets known to **Storybook**.
+
+TODO add `package.json` compilation stuff
+
+TODO check for code duplication, e.g. `@use "@kickstartds/base/lib/global/base.css";`
+
+TODO import generated `js` / `css` in `.storybook/preview.js`
+
+- `src/index.scss`
+
+### Add `package.json` `scripts`
+
+Good `scripts` entries in your `package.json` help new users when learning about your Design System, while also offering way better developer experience for everyone else. Aggregated commands to quickly start everything in development / watch mode, to compile everything for production, or for generating a new release mean taking complexities away from the average developer, while granular commands, used by those aggregate commands under the hood, allow for maximal flexibility.
+
+TODO aggregated `yarn start`, for example
+
+TODO do the following ones:
+
+- `**sass**`: `sass --load-path=node_modules src/index.scss static/index.css`
+- `**start**`: `run-p watch:* storybook`
+- `**watch:sass**`: `yarn sass --watch`
+- `**watch:schema**`: `yarn schema && chokidar \"src/**/*.schema.json\" -c \"yarn dereference-schemas --schemaPath {path}\"`
+- `**watch:dictionary**`: `chokidar \"src/token/dictionary/*.json\" -c \"yarn build-tokens\"`
+
+TODO add `--schemaPath` option to **kickstartDS CLI**
+
+## Component implementation
+
+We roughly see four different ways of adding a component to your Design System, in the context of **kickstartDS**. Those are most definitely not exhausting, but they serve as a good introduction:
+
+1. [**Adapt** a component](#1-adding-our-own-button-component) (`Button`)
+2. [**Create** a component](#2-adding-our-own-headline-component) (`Headline`)
+3. [**Customize** a component](#3-adding-our-own-teaser-card-component) (`TeaserCard`)
+4. [**Extend** a component](#4-adding-our-own-section-component) (`Section`)
+
+We'll follow one guide for each of those general workflows, resulting in the four planned components being added to our Design System. In the real world the truth is not that clear cut, at least most of the time. Typically you'd probably have a mix of those scenarios.
+
+TODO document that it's okay to just follow the components as displayed in the linked guide, even if those propose first doing a Design System Initiative (for example).
+
+### 1. Adding our own `Button` component
+
+To demonstrate the first, and easiest, way of adding a component to your own Design System we will add a `Button` component.
+
+This also serves as an example for [**adapting** a component](../components/adapt.mdx), where we mostly take a component directly from **kickstartDS**, while still finding our own definition for it.
+
+The result will look like this:
+
+<iframe
+  src="https://60dc476b80673e003b4258d6-czyzkgbgek.chromatic.com/iframe.html?args=&id=base-button--solid&viewMode=story"
+  width="200"
+  height="80"
+></iframe>
+
+TODO link to guide, mention following it is optional -> use Code Sandbox to copy everything otherwise
+
+TODO use this to demo adding a Provider in a bit more detail, refer to this from other guides
+
+TODO add complete code example here
+
+TODO mention component re-use (e.g. `Button` in `Teaser Box`)
+
+### 2. Adding our own `Headline` component
+
+TODO link to guide, mention following it is optional -> use Code Sandbox to copy everything otherwise
+
+TODO `switchOrder` to show
+
+TODO mention main points that should be made here
+
+TODO add complete code example here
+
+### 3. Adding our own `TeaserCard` component
+
+TODO link to guide, mention following it is optional -> use Code Sandbox to copy everything otherwise
+
+TODO mention main points that should be made here
+
+TODO add complete code example here
+
+### 4. Adding our own `Section` component
+
+TODO link to guide, mention following it is optional -> use Code Sandbox to copy everything otherwise
+
+TODO mention main points that should be made here
+
+TODO add complete code example here
+
+### Fine tuning **Component Token**
+
+TODO write some exemplary filler so that **Component Token** are mentioned here as part of the regular workflow.
+
+## Adding an article teaser recipe
+
+TODO link to guide, mention following it is optional -> use Code Sandbox to copy everything otherwise
+
+TODO combine all components into article teaser
+
+TODO link to guide about Recipe creation
+
+TODO add complete code example here
+
+TODO describe `src/docs/LinkProvider.jsx` setup, used to internally link to **Storybook** pages
+
+## Result
+
+TODO add remark about "advanced" ways of customizing components (like completely new CSS / markup, combining multiple components to build a bigger one, etc), that are out of scope for this guide. Reference guides for those (even if those don't exist / only go to pages with a vote feature for guides)
+
+## Next step
+
+TODO add next step -> publishing
+
+## Code Sandbox
+
+TODO create Code Sandbox including exact result after this step of the guide
+
+```
+
+```

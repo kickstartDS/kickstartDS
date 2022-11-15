@@ -1,0 +1,78 @@
+{
+  "color": {
+    "primary": "#333",
+    "primary-inverted": "#fff",
+    "background": "#fff",
+    "foreground": "#000",
+    "link": "#1c7ed6",
+    "link-inverted": "#a5d8ff",
+    "positive": "#66a80f",
+    "positive-inverted": "#94d82d",
+    "informative": "#1a78cc",
+    "informative-inverted": "#4dabf7",
+    "notice": "#fab005",
+    "notice-inverted": "#f59f00",
+    "negative": "#e03131",
+    "negative-inverted": "#fa5c5c"
+  },
+  "font": {
+    "display": {
+      "family": "Garamond, Baskerville, 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif",
+      "font-size": 16,
+      "line-height": 1.75,
+      "scale-ratio": 1.225,
+      "bp-factor": {
+        "phone": 1.167,
+        "tablet": 1.333
+      }
+    },
+    "copy": {
+      "family": "'Helvetica Neue', Helvetica, Arial, sans-serif",
+      "font-size": 16,
+      "line-height": 1.75,
+      "scale-ratio": 1.225,
+      "bp-factor": {
+        "tablet": 1.125
+      }
+    },
+    "interface": {
+      "family": "system-ui, -apple-system, BlinkMacSystemFont, 'Avenir Next', 'Avenir', 'Segoe UI', 'Lucida Grande', 'Helvetica Neue', 'Helvetica', 'Fira Sans', 'Roboto', 'Noto', 'Droid Sans', 'Cantarell', 'Oxygen', 'Ubuntu', 'Franklin Gothic Medium', 'Century Gothic', 'Liberation Sans', sans-serif",
+      "font-size": 16,
+      "line-height": 1.75,
+      "scale-ratio": 1.225,
+      "bp-factor": {
+        "tablet": 1.125
+      }
+    },
+    "mono": {
+      "family": "ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace",
+      "font-size": 16,
+      "line-height": 1.75,
+      "scale-ratio": 1.225,
+      "bp-factor": {
+        "tablet": 1.125
+      }
+    }
+  },
+  "font-weight": {
+    "light": 300,
+    "regular": 400,
+    "semi-bold": 600,
+    "bold": 700
+  },
+  "spacing": {
+    "base": 8,
+    "scale-ratio": 1.618,
+    "bp-ratio": 1.414
+  },
+  "border-radius": "2px",
+  "box-shadow": {
+    "blur": "2.75px"
+  },
+  "breakpoints": {
+    "phone": 576,
+    "tablet": 768,
+    "laptop": 992,
+    "desktop": 1200
+  }
+}

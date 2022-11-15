@@ -1,0 +1,35 @@
+@use 'sass:meta';
+@use '@kickstartds/core/source/core/custom-properties';
+@use 'photoswipe/dist/photoswipe.css';
+@use './lightbox-vars';
+
+$vars: meta.module-variables(lightbox-vars);
+@include custom-properties.styles($vars);
+
+.pswp {
+  --pswp-bg: var(--c-lightbox--bg);
+  --pswp-placeholder-bg: var(--c-lightbox-placeholder-bg);
+  --pswp-root-z-index: var(--c-lightbox--root-z-index);
+  --pswp-icon-color: var(--c-lightbox--icon-color);
+  --pswp-icon-color-secondary: var(--c-lightbox--icon-color-secondary);
+  --pswp-icon-stroke-color: var(--c-lightbox--stroke-color);
+  --pswp-icon-stroke-width: var(--c-lightbox--stroke-width);
+  --pswp-error-text-color: var(--c-lightbox--error-text-color);
+
+  font: var(--ks-font-interface-s);
+
+  &__caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: var(--ks-color-fg-inverted);
+    padding: 15px 0;
+    background-color: var(--ks-color-fg-alpha-7);
+
+    &:empty {
+      padding: 0;
+    }
+  }
+}

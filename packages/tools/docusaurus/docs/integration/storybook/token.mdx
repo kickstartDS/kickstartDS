@@ -1,0 +1,103 @@
+---
+sidebar_position: 2
+---
+
+# Design & Component Token
+
+## Design Token Integration
+
+To display your **Design Token** set in **Storybook** we use and recommend the [`storybook-design-token`](https://github.com/UX-and-I/storybook-design-token) addon. We also include a format for **Style Dictionary**, which outputs your **Design Token** set into a specific **CSS Custom Properties** format, annotated with the token presenters as needed by `storybook-design-token`.
+
+For an example on how this needs to be configured, have a look at the chapter ["3. Configure Storybook"](../../guides/create/storybook.mdx#design-token-integration) of our ["Create your Design System"](../../guides/create/index.md) guide.
+
+We also provide ready-to-use docs pages for **Storybook**, using the `DesignTokenDocBlock` by `storybook-design-token`, mapped to our semantic **Design Token** categories and values.
+
+<img
+  src={require('./assets/teaser-designtoken.png').default}
+  alt="Image showing the Design Token addon in action"
+/>
+
+<br />
+<br />
+
+You can find those [in our mono-repository](https://github.com/kickstartDS/kickstartDS/tree/feature/docs/packages/components/core/source/design-tokens), or have a look at them in action on [our own hosted **Storybook**](https://www.kickstartds.com/storybook/?path=/story/design-tokens-colors--page) (category `DESIGN TOKENS` in the sidebar).
+
+## Component Token integration
+
+Our `storybook-adddon-component-tokens` addon displays CSS Custom Properties used inside a component directly as part of your **Storybook**. It extracts those values using [`custom-property-extract`](https://github.com/Dschungelabenteuer/custom-property-extract), and then converts those to a format displayed alongside your component.
+
+This helps in making token associations explicit (which **Component Token** uses what **Design Token** under the hood), while also illustrating the layering of tokens inside a single component (for example to generate style variations).
+
+You can also interact with those variables, for example changing some colors around. Those changes get persisted in your browser session, so you can easily verify if your changes work in the context of other components, too (the new color on that button might not be accessible when used in you `Hero` component, after all). There's currently no way of persisting changes made in the browser in this way, but we're thinking about this. Let us know if that's something that you'd be interested in!
+
+**[Show me a working demo](https://www.kickstartds.com/storybook/?path=/story/base-content-box--image)** (click on the `Component Tokens` addon tab)
+
+View the addon on **Github**: https://github.com/kickstartDS/storybook-addon-component-tokens<br/>
+Or directly on **Storybook**s page: https://storybook.js.org/addons/@kickstartds/storybook-addon-component-tokens/
+
+<img
+  src={require('./assets/teaser-componenttoken.png').default}
+  alt="Image showing the Component Token addon in action"
+/>
+
+### What it's for
+
+Main things you can do with this addon:
+
+1. Look through defined and layered **Component Token**
+2. Modify token assignments live in **Storybook**
+3. Test those changed tokens in all available contexts
+
+### Getting started
+
+```sh
+yarn add --dev @kickstartds/storybook-addon-component-tokens
+```
+
+Enable the addon in [`.storybook/main.js`](https://storybook.js.org/docs/react/configure/overview#configure-your-storybook-project):
+
+```js
+module.exports = {
+  addons: ['@kickstartds/storybook-addon-component-tokens'],
+};
+```
+
+To use it inside MDX, or when customising the docs page:
+
+```js
+import { CssPropsBlock } from '@kickstartds/storybook-addon-component-tokens';
+```
+
+#### Usage
+
+Include your component tokens, the addon will apply and document this automatically.
+
+```jsx
+export default {
+  title: "Simple Component",
+  parameters: {
+    cssprops: {
+      "--color-primary": [
+        {
+          value: "#ff017d",
+          selector: ":root"
+        }
+      ]
+    }
+  },
+} as Meta;
+```
+
+For a more detailed description of this integration, have a look at [part three of our "Create your Design System" guide](../../guides/create/storybook.mdx#install-remaining-addons).
+
+##### Adding to DocsPage and MDX
+
+This is currently not documented. But feel free to ping us on Twitter or Discord to learn more about this.
+
+##### DocsPage
+
+Modify the docs page based by [following the storybook docs](https://storybook.js.org/docs/react/writing-docs/docs-page#remixing-docspage-using-doc-blocks). Including `<CssPropsBlock />` where you prefer.
+
+### Advanced configuration
+
+This addon is still early, advanced configuration options will be added at a later date. Feel free to let us know in the issues if something specific is unclear, or doesn't work!

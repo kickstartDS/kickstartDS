@@ -8,8 +8,8 @@ import { inBrowser } from './domLoaded';
  */
 
 if (inBrowser) {
-  window.rm = window.rm || {};
-  window.rm.radio = {
+  window._ks = window._ks || {};
+  window._ks.radio = {
     /**
      * Subscribes the passed function to the passed message.
      * Every returned token is unique and should be stored if you need to unsubscribe
@@ -44,12 +44,12 @@ if (inBrowser) {
      * @function
      * @param { String | Function } value A token, function or topic to unsubscribe from
      * @example // Unsubscribing with a token
-     * var token = window.rm.radio.on('mytopic', myFunc);
-     * window.rm.radio.off(token);
+     * var token = window._ks.radio.on('mytopic', myFunc);
+     * window._ks.radio.off(token);
      * @example // Unsubscribing with a function
-     * window.rm.radio.off(myFunc);
+     * window._ks.radio.off(myFunc);
      * @example // Unsubscribing from a topic
-     * window.rm.radio.off('mytopic');
+     * window._ks.radio.off('mytopic');
      */
     off(tokenOrFunction) {
       return PubSub.unsubscribe(tokenOrFunction);

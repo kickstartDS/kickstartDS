@@ -1,0 +1,120 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/tokens/box-shadow.schema.json",
+  "definitions": {
+    "token": {
+      "type": "object",
+      "properties": {
+        "value": {},
+        "attributes": {
+          "type": "object",
+          "properties": {
+            "category": {
+              "type": "string"
+            }
+          },
+          "required": ["category"]
+        },
+        "token": {
+          "type": "object",
+          "properties": {
+            "category": {
+              "type": "string"
+            },
+            "presenter": {
+              "type": "string"
+            }
+          },
+          "required": ["category", "presenter"]
+        }
+      },
+      "required": ["value"]
+    },
+    "string-token": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/token"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "string"
+            }
+          }
+        }
+      ]
+    },
+    "base-tokens": {
+      "type": "object",
+      "properties": {
+        "_": {
+          "$ref": "#/definitions/string-token"
+        },
+        "hover": {
+          "$ref": "#/definitions/string-token"
+        }
+      },
+      "additionalProperties": false,
+      "required": ["_", "hover"]
+    }
+  },
+  "type": "object",
+  "properties": {
+    "ks": {
+      "type": "object",
+      "properties": {
+        "box-shadow": {
+          "type": "object",
+          "properties": {
+            "opacity": {
+              "type": "object",
+              "properties": {
+                "control": {
+                  "$ref": "#/definitions/base-tokens"
+                },
+                "card": {
+                  "$ref": "#/definitions/base-tokens"
+                },
+                "surface": {
+                  "$ref": "#/definitions/base-tokens"
+                }
+              },
+              "additionalProperties": false,
+              "required": ["control", "card", "surface"]
+            },
+            "color": {
+              "type": "object",
+              "properties": {
+                "control": {
+                  "$ref": "#/definitions/base-tokens"
+                },
+                "card": {
+                  "$ref": "#/definitions/base-tokens"
+                },
+                "surface": {
+                  "$ref": "#/definitions/base-tokens"
+                }
+              },
+              "additionalProperties": false,
+              "required": ["control", "card", "surface"]
+            },
+            "control": {
+              "$ref": "#/definitions/base-tokens"
+            },
+            "card": {
+              "$ref": "#/definitions/base-tokens"
+            },
+            "surface": {
+              "$ref": "#/definitions/base-tokens"
+            }
+          },
+          "additionalProperties": false,
+          "required": ["opacity", "color", "control", "card", "surface"]
+        }
+      },
+      "required": ["box-shadow"]
+    }
+  },
+  "required": ["ks"]
+}

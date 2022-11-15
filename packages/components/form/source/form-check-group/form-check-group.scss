@@ -1,0 +1,30 @@
+@use 'sass:meta';
+@use '@kickstartds/core/source/core/custom-properties';
+@use './form-check-group-vars';
+
+$vars: meta.module-variables(form-check-group-vars);
+@include custom-properties.styles($vars);
+
+.c-form-check-group {
+  font: var(--ks-font-interface-s);
+  color: var(--ks-text-color-default);
+
+  &__label {
+    display: inline-block;
+    padding: var(--c-form-check-group-label--padding);
+    cursor: default;
+  }
+
+  &__group {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+    margin: calc(-1 * var(--c-form-check-group--vertical-gutter))
+      calc(-1 * var(--c-form-check-group--horizontal-gutter));
+
+    > * {
+      margin: var(--c-form-check-group--vertical-gutter)
+        var(--c-form-check-group--horizontal-gutter) !important;
+    }
+  }
+}

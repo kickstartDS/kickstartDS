@@ -5,12 +5,13 @@
     "type": "git",
     "url": "https://github.com/kickstartDS/kickstartDS.git"
   },
+  "license": "(MIT OR Apache-2.0)",
   "workspaces": [
     "packages/components/*",
     "packages/tools/*"
   ],
   "scripts": {
-    "build": "lerna run --stream --no-prefix build",
+    "build": "lerna run --stream --no-prefix --scope @kickstartds/* build",
     "build:prod": "NODE_ENV=production yarn run build",
     "copy-env-file": "[ ! -f .env ] && cp .env-example .env || true",
     "chromatic": "yarn workspace @kickstartds-internal/storybook chromatic",
@@ -18,7 +19,8 @@
     "chromatic-blog": "yarn workspace @kickstartds-internal/storybook chromatic-blog",
     "chromatic-content": "yarn workspace @kickstartds-internal/storybook chromatic-content",
     "chromatic-form": "yarn workspace @kickstartds-internal/storybook chromatic-form",
-    "dereference": "node scripts/schemaDereference.js",
+    "docusaurus-start": "yarn workspace @kickstartds-internal/docusaurus start",
+    "docusaurus-build": "yarn workspace @kickstartds-internal/docusaurus build",
     "eslint": "eslint \"**/*.{js,jsx,ts,tsx}\"",
     "find-licenses": "node ./scripts/license.js",
     "format": "prettier --cache --write .",
@@ -50,8 +52,8 @@
   },
   "dependencies": {
     "@iwsio/json-csv-node": "^5.0.7",
-    "@kickstartds/eslint-config": "^1.0.2",
-    "@kickstartds/stylelint-config": "^2.0.1",
+    "@kickstartds/eslint-config": "^1.1.0",
+    "@kickstartds/stylelint-config": "^2.1.0",
     "execa": "^5.1.1",
     "fast-glob": "^3.2.11",
     "fs-extra": "^10.1.0",
@@ -65,8 +67,10 @@
     "@auto-it/first-time-contributor": "^10.37.6",
     "@auto-it/npm": "^10.37.6",
     "@auto-it/released": "^10.37.6",
-    "@commitlint/cli": "^17.0.3",
+    "@commitlint/cli": "^17.2.0",
     "@commitlint/config-conventional": "^17.1.0",
+    "@types/react": "^17.0.50",
+    "@types/react-dom": "^17.0.17",
     "auto": "^10.37.6",
     "commitizen": "^4.2.5",
     "cz-conventional-changelog": "^3.3.0",

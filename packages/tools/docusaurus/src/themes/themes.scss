@@ -1,0 +1,26 @@
+// Disables spacing sacling on breakpoints
+@mixin ks-theme-mobile-spacing {
+  --ks-spacing-xxs-bp-factor: 1;
+  --ks-spacing-xs-bp-factor: 1;
+  --ks-spacing-s-bp-factor: 1;
+  --ks-spacing-m-bp-factor: 1;
+  --ks-spacing-l-bp-factor: 1;
+  --ks-spacing-xl-bp-factor: 1;
+  --ks-spacing-xxl-bp-factor: 1;
+}
+
+// Custom token for docs Elements
+@mixin ks-theme-docs {
+  --ks-font-display-xxs: var(--ks-font-ui-xxs);
+  --ks-font-display-xs: var(--ks-font-ui-xs);
+  --ks-font-display-s: var(--ks-font-ui-s);
+  --ks-font-display-m: var(--ks-font-ui-m);
+  --ks-font-display-l: var(--ks-font-ui-l);
+  --ks-font-display-xl: var(--ks-font-ui-xl);
+  --ks-font-display-xxl: var(--ks-font-ui-xxl);
+}
+
+:root [ks-theme='docs'] {
+  @include ks-theme-docs;
+  @include ks-theme-mobile-spacing;
+}

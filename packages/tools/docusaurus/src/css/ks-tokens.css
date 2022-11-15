@@ -1,0 +1,1523 @@
+/**
+ * Do not edit directly
+ * Generated on Fri, 17 Jun 2022 20:14:25 GMT
+ */
+:root,
+[ks-theme] {
+  --ks-background-color-accent-base: var(--ks-color-primary-to-bg-9-base);
+  --ks-background-color-accent-inverted-base: var(
+    --ks-color-primary-to-bg-2-base
+  );
+  --ks-background-color-clear-base: var(--ks-color-transparent-base);
+  --ks-background-color-clear-interactive-base: var(
+    --ks-color-transparent-base
+  );
+  --ks-background-color-clear-interactive-hover-base: var(
+    --ks-color-primary-alpha-2-base
+  );
+  --ks-background-color-clear-interactive-active-base: var(
+    --ks-color-primary-alpha-3-base
+  );
+  --ks-background-color-clear-inverted-base: var(--ks-color-transparent-base);
+  --ks-background-color-clear-inverted-interactive-base: var(
+    --ks-color-transparent-base
+  );
+  --ks-background-color-clear-inverted-interactive-hover-base: var(
+    --ks-color-fg-inverted-alpha-2-base
+  );
+  --ks-background-color-clear-inverted-interactive-active-base: var(
+    --ks-color-primary-inverted-alpha-4-base
+  );
+  --ks-background-color-default-base: var(--ks-color-fg-inverted-base);
+  --ks-background-color-default-inverted-base: var(--ks-color-primary-base);
+  --ks-background-color-interface-base: var(--ks-color-primary-alpha-2-base);
+  --ks-background-color-interface-interactive-base: var(
+    --ks-color-transparent-base
+  );
+  --ks-background-color-interface-interactive-disabled-base: var(
+    --ks-color-fg-alpha-1-base
+  );
+  --ks-background-color-interface-interactive-hover-base: var(
+    --ks-color-fg-alpha-1-base
+  );
+  --ks-background-color-interface-interactive-active-base: var(
+    --ks-color-fg-alpha-1-base
+  );
+  --ks-background-color-interface-inverted-base: var(
+    --ks-color-fg-inverted-alpha-1-base
+  );
+  --ks-background-color-interface-inverted-interactive-base: var(
+    --ks-color-transparent-base
+  );
+  --ks-background-color-interface-inverted-interactive-disabled-base: var(
+    --ks-color-fg-inverted-alpha-1-base
+  );
+  --ks-background-color-interface-inverted-interactive-hover-base: var(
+    --ks-color-fg-inverted-alpha-1-base
+  );
+  --ks-background-color-interface-inverted-interactive-active-base: var(
+    --ks-color-fg-inverted-alpha-1-base
+  );
+  --ks-background-color-primary-base: var(--ks-color-primary-base);
+  --ks-background-color-primary-interactive-base: var(--ks-color-primary-base);
+  --ks-background-color-primary-interactive-hover-base: var(
+    --ks-color-primary-to-bg-2-base
+  );
+  --ks-background-color-primary-interactive-active-base: var(
+    --ks-color-primary-to-bg-4-base
+  );
+  --ks-background-color-primary-translucent-base: var(
+    --ks-color-primary-alpha-8-base
+  );
+  --ks-background-color-primary-inverted-base: var(
+    --ks-color-primary-inverted-base
+  );
+  --ks-background-color-primary-inverted-interactive-base: var(
+    --ks-color-primary-inverted-base
+  );
+  --ks-background-color-primary-inverted-interactive-hover-base: var(
+    --ks-color-primary-inverted-to-fg-8-base
+  );
+  --ks-background-color-primary-inverted-interactive-active-base: var(
+    --ks-color-primary-inverted-to-bg-2-base
+  );
+  --ks-background-color-primary-inverted-translucent-base: var(
+    --ks-color-primary-inverted-alpha-8-base
+  );
+  --ks-border-color-accent-base: var(--ks-color-primary-alpha-2-base);
+  --ks-border-color-accent-inverted-base: var(
+    --ks-color-fg-inverted-to-bg-8-base
+  );
+  --ks-border-color-clear-interactive-base: var(--ks-color-transparent-base);
+  --ks-border-color-clear-interactive-hover-base: var(
+    --ks-color-primary-alpha-2-base
+  );
+  --ks-border-color-clear-interactive-active-base: var(
+    --ks-color-primary-alpha-3-base
+  );
+  --ks-border-color-clear-inverted-interactive-base: var(
+    --ks-color-transparent-base
+  );
+  --ks-border-color-clear-inverted-interactive-hover-base: var(
+    --ks-color-primary-inverted-alpha-3-base
+  );
+  --ks-border-color-clear-inverted-interactive-active-base: var(
+    --ks-color-primary-inverted-alpha-4-base
+  );
+  --ks-border-color-default-base: var(--ks-color-fg-inverted-base);
+  --ks-border-color-default-inverted-base: var(--ks-color-fg-alpha-7-base);
+  --ks-border-color-interface-base: rgba(0, 0, 0, 0);
+  --ks-border-color-interface-interactive-base: var(
+    --ks-color-primary-alpha-2-base
+  );
+  --ks-border-color-interface-interactive-disabled-base: var(
+    --ks-color-fg-alpha-1-base
+  );
+  --ks-border-color-interface-interactive-hover-base: var(
+    --ks-color-primary-alpha-4-base
+  );
+  --ks-border-color-interface-interactive-active-base: var(
+    --ks-color-primary-alpha-6-base
+  );
+  --ks-border-color-interface-inverted-base: var(--ks-color-transparent-base);
+  --ks-border-color-interface-inverted-interactive-base: var(
+    --ks-color-primary-alpha-4-base
+  );
+  --ks-border-color-interface-inverted-interactive-disabled-base: var(
+    --ks-color-fg-alpha-1-base
+  );
+  --ks-border-color-interface-inverted-interactive-hover-base: var(
+    --ks-color-primary-alpha-6-base
+  );
+  --ks-border-color-interface-inverted-interactive-active-base: var(
+    --ks-color-primary-alpha-7-base
+  );
+  --ks-border-color-primary-base: var(--ks-color-primary-base);
+  --ks-border-color-primary-interactive-base: var(--ks-color-primary-base);
+  --ks-border-color-primary-interactive-hover-base: var(
+    --ks-color-primary-to-bg-2-base
+  );
+  --ks-border-color-primary-interactive-active-base: var(
+    --ks-color-primary-to-bg-3-base
+  );
+  --ks-border-color-primary-translucent-base: var(
+    --ks-color-primary-alpha-8-base
+  );
+  --ks-border-color-primary-inverted-base: var(
+    --ks-color-primary-inverted-base
+  );
+  --ks-border-color-primary-inverted-interactive-base: var(
+    --ks-color-primary-inverted-base
+  );
+  --ks-border-color-primary-inverted-interactive-hover-base: var(
+    --ks-color-primary-inverted-to-fg-7-base
+  );
+  --ks-border-color-primary-inverted-interactive-active-base: var(
+    --ks-color-primary-inverted-to-bg-3-base
+  );
+  --ks-border-color-primary-inverted-translucent-base: var(
+    --ks-color-primary-inverted-alpha-8-base
+  );
+  --ks-border-width-default: 2px;
+  --ks-border-width-emphasized: 3px;
+  --ks-border-radius-control: 0px;
+  --ks-border-radius-card: 0px;
+  --ks-border-radius-surface: 0px;
+  --ks-border-radius-pill: 999px;
+  --ks-border-radius-circle: 50%;
+  --ks-box-shadow-opacity-control: 0.2;
+  --ks-box-shadow-opacity-control-hover: 0.3;
+  --ks-box-shadow-opacity-card: 0.2;
+  --ks-box-shadow-opacity-card-hover: 0.3;
+  --ks-box-shadow-opacity-surface: 0.1;
+  --ks-box-shadow-opacity-surface-hover: 0.2;
+  --ks-box-shadow-color-control: rgba(
+    5,
+    5,
+    5,
+    var(--ks-box-shadow-opacity-control)
+  );
+  --ks-box-shadow-color-control-hover: rgba(
+    5,
+    5,
+    5,
+    var(--ks-box-shadow-opacity-control-hover)
+  );
+  --ks-box-shadow-color-card: rgba(5, 5, 5, var(--ks-box-shadow-opacity-card));
+  --ks-box-shadow-color-card-hover: rgba(
+    5,
+    5,
+    5,
+    var(--ks-box-shadow-opacity-card-hover)
+  );
+  --ks-box-shadow-color-surface: rgba(
+    5,
+    5,
+    5,
+    var(--ks-box-shadow-opacity-surface)
+  );
+  --ks-box-shadow-color-surface-hover: rgba(
+    5,
+    5,
+    5,
+    var(--ks-box-shadow-opacity-surface-hover)
+  );
+  --ks-box-shadow-control: 0 1px 2.75px var(--ks-box-shadow-color-control);
+  --ks-box-shadow-control-hover: 0 1px 5.5px
+    var(--ks-box-shadow-color-control-hover);
+  --ks-box-shadow-card: 0 1px 5.5px var(--ks-box-shadow-color-card);
+  --ks-box-shadow-card-hover: 0 1px 11px var(--ks-box-shadow-color-card-hover);
+  --ks-box-shadow-surface: 0 1px 11px var(--ks-box-shadow-color-surface);
+  --ks-box-shadow-surface-hover: 0 1px 22px
+    var(--ks-box-shadow-color-surface-hover);
+  --ks-color-primary-base: #05566a;
+  --ks-color-primary-alpha-1-base: rgba(5, 86, 106, 0.05);
+  --ks-color-primary-alpha-2-base: rgba(5, 86, 106, 0.13);
+  --ks-color-primary-alpha-3-base: rgba(5, 86, 106, 0.24);
+  --ks-color-primary-alpha-4-base: rgba(5, 86, 106, 0.37);
+  --ks-color-primary-alpha-5-base: rgba(5, 86, 106, 0.5);
+  --ks-color-primary-alpha-6-base: rgba(5, 86, 106, 0.63);
+  --ks-color-primary-alpha-7-base: rgba(5, 86, 106, 0.76);
+  --ks-color-primary-alpha-8-base: rgba(5, 86, 106, 0.87);
+  --ks-color-primary-alpha-9-base: rgba(5, 86, 106, 0.95);
+  --ks-color-primary-to-bg-1-base: #125e71;
+  --ks-color-primary-to-bg-2-base: #266c7d;
+  --ks-color-primary-to-bg-3-base: #417f8e;
+  --ks-color-primary-to-bg-4-base: #6295a1;
+  --ks-color-primary-to-bg-5-base: #82abb5;
+  --ks-color-primary-to-bg-6-base: #a3c0c8;
+  --ks-color-primary-to-bg-7-base: #c3d6db;
+  --ks-color-primary-to-bg-8-base: #dfe9ec;
+  --ks-color-primary-to-bg-9-base: #eceff3;
+  --ks-color-primary-to-fg-1-base: #054e60;
+  --ks-color-primary-to-fg-2-base: #054656;
+  --ks-color-primary-to-fg-3-base: #053e4c;
+  --ks-color-primary-to-fg-4-base: #053642;
+  --ks-color-primary-to-fg-5-base: #052e38;
+  --ks-color-primary-to-fg-6-base: #05252d;
+  --ks-color-primary-to-fg-7-base: #051d23;
+  --ks-color-primary-to-fg-8-base: #051519;
+  --ks-color-primary-to-fg-9-base: #050d0f;
+  --ks-color-primary-inverted-base: #ecff00;
+  --ks-color-primary-inverted-alpha-1-base: rgba(236, 255, 0, 0.05);
+  --ks-color-primary-inverted-alpha-2-base: rgba(236, 255, 0, 0.13);
+  --ks-color-primary-inverted-alpha-3-base: rgba(236, 255, 0, 0.24);
+  --ks-color-primary-inverted-alpha-4-base: rgba(236, 255, 0, 0.37);
+  --ks-color-primary-inverted-alpha-5-base: rgba(236, 255, 0, 0.5);
+  --ks-color-primary-inverted-alpha-6-base: rgba(236, 255, 0, 0.63);
+  --ks-color-primary-inverted-alpha-7-base: rgba(236, 255, 0, 0.76);
+  --ks-color-primary-inverted-alpha-8-base: rgba(236, 255, 0, 0.87);
+  --ks-color-primary-inverted-alpha-9-base: rgba(236, 255, 0, 0.95);
+  --ks-color-primary-inverted-to-bg-1-base: #e0f300;
+  --ks-color-primary-inverted-to-bg-2-base: #cedf01;
+  --ks-color-primary-inverted-to-bg-3-base: #b5c301;
+  --ks-color-primary-inverted-to-bg-4-base: #97a302;
+  --ks-color-primary-inverted-to-bg-5-base: #798203;
+  --ks-color-primary-inverted-to-bg-6-base: #5a6203;
+  --ks-color-primary-inverted-to-bg-7-base: #3c4104;
+  --ks-color-primary-inverted-to-bg-8-base: #232604;
+  --ks-color-primary-inverted-to-bg-9-base: #111205;
+  --ks-color-primary-inverted-to-fg-1-base: #eeff1a;
+  --ks-color-primary-inverted-to-fg-2-base: #f0ff33;
+  --ks-color-primary-inverted-to-fg-3-base: #f2ff4d;
+  --ks-color-primary-inverted-to-fg-4-base: #f4ff66;
+  --ks-color-primary-inverted-to-fg-5-base: #f6ff80;
+  --ks-color-primary-inverted-to-fg-6-base: #f7ff99;
+  --ks-color-primary-inverted-to-fg-7-base: #f9ffb3;
+  --ks-color-primary-inverted-to-fg-8-base: #fbffcc;
+  --ks-color-primary-inverted-to-fg-9-base: #fdffe6;
+  --ks-color-fg-base: #444f52;
+  --ks-color-fg-alpha-1-base: rgba(5, 5, 5, 0.05);
+  --ks-color-fg-alpha-2-base: rgba(5, 5, 5, 0.13);
+  --ks-color-fg-alpha-3-base: rgba(5, 5, 5, 0.24);
+  --ks-color-fg-alpha-4-base: rgba(5, 5, 5, 0.37);
+  --ks-color-fg-alpha-5-base: rgba(5, 5, 5, 0.5);
+  --ks-color-fg-alpha-6-base: rgba(5, 5, 5, 0.63);
+  --ks-color-fg-alpha-7-base: rgba(5, 5, 5, 0.76);
+  --ks-color-fg-alpha-8-base: rgba(5, 5, 5, 0.87);
+  --ks-color-fg-alpha-9-base: rgba(5, 5, 5, 0.95);
+  --ks-color-fg-to-bg-1-base: #121212;
+  --ks-color-fg-to-bg-2-base: #262626;
+  --ks-color-fg-to-bg-3-base: #414141;
+  --ks-color-fg-to-bg-4-base: #626262;
+  --ks-color-fg-to-bg-5-base: #828282;
+  --ks-color-fg-to-bg-6-base: #a3a3a3;
+  --ks-color-fg-to-bg-7-base: #c3c3c3;
+  --ks-color-fg-to-bg-8-base: #dfdfdf;
+  --ks-color-fg-to-bg-9-base: #f3f3f3;
+  --ks-color-fg-inverted-base: #fff;
+  --ks-color-fg-inverted-alpha-1-base: hsla(0, 0%, 100%, 0.05);
+  --ks-color-fg-inverted-alpha-2-base: hsla(0, 0%, 100%, 0.13);
+  --ks-color-fg-inverted-alpha-3-base: hsla(0, 0%, 100%, 0.24);
+  --ks-color-fg-inverted-alpha-4-base: hsla(0, 0%, 100%, 0.37);
+  --ks-color-fg-inverted-alpha-5-base: hsla(0, 0%, 100%, 0.5);
+  --ks-color-fg-inverted-alpha-6-base: hsla(0, 0%, 100%, 0.63);
+  --ks-color-fg-inverted-alpha-7-base: hsla(0, 0%, 100%, 0.76);
+  --ks-color-fg-inverted-alpha-8-base: hsla(0, 0%, 100%, 0.87);
+  --ks-color-fg-inverted-alpha-9-base: hsla(0, 0%, 100%, 0.95);
+  --ks-color-fg-inverted-to-bg-1-base: #f3f3f3;
+  --ks-color-fg-inverted-to-bg-2-base: #dfdfdf;
+  --ks-color-fg-inverted-to-bg-3-base: #c3c3c3;
+  --ks-color-fg-inverted-to-bg-4-base: #a3a3a3;
+  --ks-color-fg-inverted-to-bg-5-base: #828282;
+  --ks-color-fg-inverted-to-bg-6-base: #626262;
+  --ks-color-fg-inverted-to-bg-7-base: #414141;
+  --ks-color-fg-inverted-to-bg-8-base: #262626;
+  --ks-color-fg-inverted-to-bg-9-base: #121212;
+  --ks-color-link-base: #05566a;
+  --ks-color-link-inverted-base: #ecff00;
+  --ks-color-transparent-base: rgba(0, 0, 0, 0);
+  --ks-depth-modal: 1000;
+  --ks-spacing-xxs: var(--ks-spacing-xxs-base);
+  --ks-spacing-xxs-base: 0.125rem;
+  --ks-spacing-xxs-bp-factor-phone: 1;
+  --ks-spacing-xxs-bp-factor-tablet: 1.15;
+  --ks-spacing-xxs-bp-factor-laptop: 1.25;
+  --ks-spacing-xxs-bp-factor-desktop: 1.35;
+  --ks-spacing-xs: var(--ks-spacing-xs-base);
+  --ks-spacing-xs-base: 0.3125rem;
+  --ks-spacing-xs-bp-factor-phone: 1;
+  --ks-spacing-xs-bp-factor-tablet: 1.25;
+  --ks-spacing-xs-bp-factor-laptop: 1.35;
+  --ks-spacing-xs-bp-factor-desktop: 1.35;
+  --ks-spacing-s: var(--ks-spacing-s-base);
+  --ks-spacing-s-base: 0.75rem;
+  --ks-spacing-s-bp-factor-phone: 1;
+  --ks-spacing-s-bp-factor-tablet: 1.25;
+  --ks-spacing-s-bp-factor-laptop: 1.35;
+  --ks-spacing-s-bp-factor-desktop: 1.75;
+  --ks-spacing-m: var(--ks-spacing-m-base);
+  --ks-spacing-m-base: 1.5rem;
+  --ks-spacing-m-bp-factor-phone: 1;
+  --ks-spacing-m-bp-factor-tablet: 1.15;
+  --ks-spacing-m-bp-factor-laptop: 1.25;
+  --ks-spacing-m-bp-factor-desktop: 1.35;
+  --ks-spacing-l: var(--ks-spacing-l-base);
+  --ks-spacing-l-base: 2.5rem;
+  --ks-spacing-l-bp-factor-phone: 1;
+  --ks-spacing-l-bp-factor-tablet: 1.25;
+  --ks-spacing-l-bp-factor-laptop: 1.35;
+  --ks-spacing-l-bp-factor-desktop: 1.5;
+  --ks-spacing-xl: var(--ks-spacing-xl-base);
+  --ks-spacing-xl-base: 3.75rem;
+  --ks-spacing-xl-bp-factor-phone: 1;
+  --ks-spacing-xl-bp-factor-tablet: 1.25;
+  --ks-spacing-xl-bp-factor-laptop: 1.35;
+  --ks-spacing-xl-bp-factor-desktop: 1.5;
+  --ks-spacing-xxl: var(--ks-spacing-xxl-base);
+  --ks-spacing-xxl-base: 5rem;
+  --ks-spacing-xxl-bp-factor-phone: 1;
+  --ks-spacing-xxl-bp-factor-tablet: 1.25;
+  --ks-spacing-xxl-bp-factor-laptop: 1.35;
+  --ks-spacing-xxl-bp-factor-desktop: 1.5;
+  --ks-spacing-stack-xs: var(--ks-spacing-xs);
+  --ks-spacing-stack-s: var(--ks-spacing-s);
+  --ks-spacing-stack-m: var(--ks-spacing-m);
+  --ks-spacing-stack-l: var(--ks-spacing-l);
+  --ks-spacing-stack-xl: var(--ks-spacing-xl);
+  --ks-spacing-inline-xs: var(--ks-spacing-xs);
+  --ks-spacing-inline-s: var(--ks-spacing-s);
+  --ks-spacing-inline-m: var(--ks-spacing-m);
+  --ks-spacing-inline-l: var(--ks-spacing-l);
+  --ks-spacing-inline-xl: var(--ks-spacing-xl);
+  --ks-spacing-inset-xs: var(--ks-spacing-xs);
+  --ks-spacing-inset-s: var(--ks-spacing-s);
+  --ks-spacing-inset-m: var(--ks-spacing-m);
+  --ks-spacing-inset-l: var(--ks-spacing-l);
+  --ks-spacing-inset-xl: var(--ks-spacing-xl);
+  --ks-spacing-inset-squish-xs: var(--ks-spacing-xxs) var(--ks-spacing-xs);
+  --ks-spacing-inset-squish-s: var(--ks-spacing-xs) var(--ks-spacing-s);
+  --ks-spacing-inset-squish-m: var(--ks-spacing-s) var(--ks-spacing-m);
+  --ks-spacing-inset-squish-l: var(--ks-spacing-m) var(--ks-spacing-l);
+  --ks-spacing-inset-squish-xl: var(--ks-spacing-l) var(--ks-spacing-xl);
+  --ks-spacing-inset-squish-xxl: var(--ks-spacing-xl) var(--ks-spacing-xxl);
+  --ks-spacing-inset-stretch-xs: var(--ks-spacing-s) var(--ks-spacing-xs);
+  --ks-spacing-inset-stretch-s: var(--ks-spacing-m) var(--ks-spacing-s);
+  --ks-spacing-inset-stretch-m: var(--ks-spacing-l) var(--ks-spacing-m);
+  --ks-spacing-inset-stretch-l: var(--ks-spacing-xl) var(--ks-spacing-l);
+  --ks-spacing-inset-stretch-xxl: var(--ks-spacing-xxl) var(--ks-spacing-xl);
+  --ks-text-color-default-base: var(--ks-color-fg-base);
+  --ks-text-color-default-interactive-base: var(--ks-color-link-base);
+  --ks-text-color-default-interactive-hover-base: var(--ks-color-link-base);
+  --ks-text-color-default-interactive-active-base: var(--ks-color-link-base);
+  --ks-text-color-default-interactive-visited-base: var(--ks-color-link-base);
+  --ks-text-color-default-inverted-base: var(--ks-color-fg-inverted-base);
+  --ks-text-color-default-inverted-interactive-base: var(
+    --ks-color-link-inverted-base
+  );
+  --ks-text-color-default-inverted-interactive-hover-base: var(
+    --ks-color-link-inverted-base
+  );
+  --ks-text-color-default-inverted-interactive-active-base: var(
+    --ks-color-link-inverted-base
+  );
+  --ks-text-color-default-inverted-interactive-visited-base: var(
+    --ks-color-link-inverted-base
+  );
+  --ks-text-color-interface-base: var(--ks-color-fg-alpha-8-base);
+  --ks-text-color-interface-interactive-base: var(--ks-color-fg-base);
+  --ks-text-color-interface-interactive-hover-base: var(--ks-color-fg-base);
+  --ks-text-color-interface-interactive-active-base: var(--ks-color-fg-base);
+  --ks-text-color-interface-interactive-visited-base: var(--ks-color-fg-base);
+  --ks-text-color-interface-inverted-base: var(
+    --ks-color-fg-inverted-alpha-8-base
+  );
+  --ks-text-color-interface-inverted-interactive-base: var(
+    --ks-color-fg-inverted-base
+  );
+  --ks-text-color-interface-inverted-interactive-hover-base: var(
+    --ks-color-fg-inverted-base
+  );
+  --ks-text-color-interface-inverted-interactive-active-base: var(
+    --ks-color-fg-inverted-base
+  );
+  --ks-text-color-interface-inverted-interactive-visited-base: var(
+    --ks-color-fg-inverted-base
+  );
+  --ks-text-color-primary-base: var(--ks-color-primary-base);
+  --ks-text-color-primary-interactive-base: var(
+    --ks-color-primary-alpha-8-base
+  );
+  --ks-text-color-primary-interactive-hover-base: var(
+    --ks-color-primary-to-bg-2-base
+  );
+  --ks-text-color-primary-interactive-active-base: var(
+    --ks-color-primary-to-fg-4-base
+  );
+  --ks-text-color-primary-interactive-visited-base: var(
+    --ks-color-primary-alpha-8-base
+  );
+  --ks-text-color-primary-inverted-base: var(--ks-color-primary-inverted-base);
+  --ks-text-color-primary-inverted-interactive-base: var(
+    --ks-color-primary-inverted-base
+  );
+  --ks-text-color-primary-inverted-interactive-hover-base: var(
+    --ks-color-primary-inverted-to-fg-8-base
+  );
+  --ks-text-color-primary-inverted-interactive-active-base: var(
+    --ks-color-fg-base
+  );
+  --ks-text-color-primary-inverted-interactive-visited-base: var(
+    --ks-color-primary-inverted-alpha-8-base
+  );
+  --ks-duration-immediate: 50ms;
+  --ks-duration-fast: 100ms;
+  --ks-duration-medium: 150ms;
+  --ks-duration-slow: 275ms;
+  --ks-timing-function-bounce: cubic-bezier(0.17, 1, 0.5, 1.45);
+  --ks-timing-function-ease-out: ease-out;
+  --ks-timing-function-ease-in: ease-in;
+  --ks-timing-function-ease-in-out: ease-in-out;
+  --ks-timing-function-linear: linear;
+  --ks-transition-collapse: var(--ks-duration-slow)
+    var(--ks-timing-function-ease-out);
+  --ks-transition-hover: var(--ks-duration-fast)
+    var(--ks-timing-function-ease-in-out);
+  --ks-transition-fade: var(--ks-duration-slow)
+    var(--ks-timing-function-ease-out);
+  --ks-transition-bounce: var(--ks-duration-slow)
+    var(--ks-timing-function-bounce);
+  --ks-font-family-display: -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol';
+  --ks-font-family-copy: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol';
+  --ks-font-family-ui: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol';
+  --ks-font-family-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo,
+    Consolas, 'Liberation Mono', monospace;
+  --ks-font-weight-light: 300;
+  --ks-font-weight-regular: 400;
+  --ks-font-weight-semi-bold: 500;
+  --ks-font-weight-bold: 700;
+  --ks-font-size-display-bp-factor-phone: 1;
+  --ks-font-size-display-bp-factor-tablet: 1.75;
+  --ks-font-size-display-xxs-base: 0.75rem;
+  --ks-font-size-display-xs-base: 0.875rem;
+  --ks-font-size-display-s-base: 1rem;
+  --ks-font-size-display-m-base: 1.125rem;
+  --ks-font-size-display-l-base: 1.25rem;
+  --ks-font-size-display-xl-base: 1.5rem;
+  --ks-font-size-display-xxl-base: 2rem;
+  --ks-font-size-copy-bp-factor-tablet: 1.125;
+  --ks-font-size-copy-xxs-base: 0.5rem;
+  --ks-font-size-copy-xs-base: 0.75rem;
+  --ks-font-size-copy-s-base: 1rem;
+  --ks-font-size-copy-m-base: 1.25rem;
+  --ks-font-size-copy-l-base: 1.5rem;
+  --ks-font-size-copy-xl-base: 1.75rem;
+  --ks-font-size-copy-xxl-base: 2rem;
+  --ks-font-size-ui-bp-factor-tablet: 1.125;
+  --ks-font-size-ui-xxs-base: 0.5rem;
+  --ks-font-size-ui-xs-base: 0.75rem;
+  --ks-font-size-ui-s-base: 1rem;
+  --ks-font-size-ui-m-base: 1.25rem;
+  --ks-font-size-ui-l-base: 1.5rem;
+  --ks-font-size-ui-xl-base: 1.75rem;
+  --ks-font-size-ui-xxl-base: 2rem;
+  --ks-font-size-mono-bp-factor-tablet: 1.125;
+  --ks-font-size-mono-xxs-base: 0.544rem;
+  --ks-font-size-mono-xs-base: 0.6664rem;
+  --ks-font-size-mono-s-base: 0.8163rem;
+  --ks-font-size-mono-m-base: 1rem;
+  --ks-font-size-mono-l-base: 1.225rem;
+  --ks-font-size-mono-xl-base: 1.5006rem;
+  --ks-font-size-mono-xxl-base: 1.8383rem;
+  --ks-line-height-display-xxs: 1.35;
+  --ks-line-height-display-xs: 1.35;
+  --ks-line-height-display-s: 1.35;
+  --ks-line-height-display-m: 1.35;
+  --ks-line-height-display-l: 1.35;
+  --ks-line-height-display-xl: 1.35;
+  --ks-line-height-display-xxl: 1.35;
+  --ks-line-height-copy-xxs: 1.5;
+  --ks-line-height-copy-xs: 1.5;
+  --ks-line-height-copy-s: 1.5;
+  --ks-line-height-copy-m: 1.5;
+  --ks-line-height-copy-l: 1.5;
+  --ks-line-height-copy-xl: 1.5;
+  --ks-line-height-copy-xxl: 1.5;
+  --ks-line-height-ui-xxs: 1.5;
+  --ks-line-height-ui-xs: 1.5;
+  --ks-line-height-ui-s: 1.5;
+  --ks-line-height-ui-m: 1.5;
+  --ks-line-height-ui-l: 1.5;
+  --ks-line-height-ui-xl: 1.5;
+  --ks-line-height-ui-xxl: 1.5;
+  --ks-line-height-mono-xxs: 1.75;
+  --ks-line-height-mono-xs: 1.75;
+  --ks-line-height-mono-s: 1.75;
+  --ks-line-height-mono-m: 1.75;
+  --ks-line-height-mono-l: 1.75;
+  --ks-line-height-mono-xl: 1.75;
+  --ks-line-height-mono-xxl: 1.75;
+  --color-white: #fff;
+  --color-error: #e60201;
+  --g-header-height: var(--ifm-navbar-height);
+  --g-scroll-offset: var(--g-header-height);
+  --ks-font-size-display-xxs: calc(
+    var(--ks-font-size-display-xxs-base) *
+      var(--ks-font-size-display-bp-factor, 1)
+  );
+  --ks-font-display-xxs: var(--ks-font-size-display-xxs) /
+    var(--ks-line-height-display-xxs) var(--ks-font-family-display);
+  --ks-font-size-display-xs: calc(
+    var(--ks-font-size-display-xs-base) *
+      var(--ks-font-size-display-bp-factor, 1)
+  );
+  --ks-font-display-xs: var(--ks-font-size-display-xs) /
+    var(--ks-line-height-display-xs) var(--ks-font-family-display);
+  --ks-font-size-display-s: calc(
+    var(--ks-font-size-display-s-base) *
+      var(--ks-font-size-display-bp-factor, 1)
+  );
+  --ks-font-display-s: var(--ks-font-size-display-s) /
+    var(--ks-line-height-display-s) var(--ks-font-family-display);
+  --ks-font-size-display-m: calc(
+    var(--ks-font-size-display-m-base) *
+      var(--ks-font-size-display-bp-factor, 1)
+  );
+  --ks-font-display-m: var(--ks-font-size-display-m) /
+    var(--ks-line-height-display-m) var(--ks-font-family-display);
+  --ks-font-size-display-l: calc(
+    var(--ks-font-size-display-l-base) *
+      var(--ks-font-size-display-bp-factor, 1)
+  );
+  --ks-font-display-l: var(--ks-font-size-display-l) /
+    var(--ks-line-height-display-l) var(--ks-font-family-display);
+  --ks-font-size-display-xl: calc(
+    var(--ks-font-size-display-xl-base) *
+      var(--ks-font-size-display-bp-factor, 1)
+  );
+  --ks-font-display-xl: var(--ks-font-size-display-xl) /
+    var(--ks-line-height-display-xl) var(--ks-font-family-display);
+  --ks-font-size-display-xxl: calc(
+    var(--ks-font-size-display-xxl-base) *
+      var(--ks-font-size-display-bp-factor, 1)
+  );
+  --ks-font-display-xxl: var(--ks-font-size-display-xxl) /
+    var(--ks-line-height-display-xxl) var(--ks-font-family-display);
+  --ks-font-size-copy-xxs: calc(
+    var(--ks-font-size-copy-xxs-base) * var(--ks-font-size-copy-bp-factor, 1)
+  );
+  --ks-font-copy-xxs: var(--ks-font-size-copy-xxs) /
+    var(--ks-line-height-copy-xxs) var(--ks-font-family-copy);
+  --ks-font-size-copy-xs: calc(
+    var(--ks-font-size-copy-xs-base) * var(--ks-font-size-copy-bp-factor, 1)
+  );
+  --ks-font-copy-xs: var(--ks-font-size-copy-xs) / var(--ks-line-height-copy-xs)
+    var(--ks-font-family-copy);
+  --ks-font-size-copy-s: calc(
+    var(--ks-font-size-copy-s-base) * var(--ks-font-size-copy-bp-factor, 1)
+  );
+  --ks-font-copy-s: var(--ks-font-size-copy-s) / var(--ks-line-height-copy-s)
+    var(--ks-font-family-copy);
+  --ks-font-size-copy-m: calc(
+    var(--ks-font-size-copy-m-base) * var(--ks-font-size-copy-bp-factor, 1)
+  );
+  --ks-font-copy-m: var(--ks-font-size-copy-m) / var(--ks-line-height-copy-m)
+    var(--ks-font-family-copy);
+  --ks-font-size-copy-l: calc(
+    var(--ks-font-size-copy-l-base) * var(--ks-font-size-copy-bp-factor, 1)
+  );
+  --ks-font-copy-l: var(--ks-font-size-copy-l) / var(--ks-line-height-copy-l)
+    var(--ks-font-family-copy);
+  --ks-font-size-copy-xl: calc(
+    var(--ks-font-size-copy-xl-base) * var(--ks-font-size-copy-bp-factor, 1)
+  );
+  --ks-font-copy-xl: var(--ks-font-size-copy-xl) / var(--ks-line-height-copy-xl)
+    var(--ks-font-family-copy);
+  --ks-font-size-copy-xxl: calc(
+    var(--ks-font-size-copy-xxl-base) * var(--ks-font-size-copy-bp-factor, 1)
+  );
+  --ks-font-copy-xxl: var(--ks-font-size-copy-xxl) /
+    var(--ks-line-height-copy-xxl) var(--ks-font-family-copy);
+  --ks-font-size-ui-xxs: calc(
+    var(--ks-font-size-ui-xxs-base) * var(--ks-font-size-ui-bp-factor, 1)
+  );
+  --ks-font-ui-xxs: var(--ks-font-size-ui-xxs) / var(--ks-line-height-ui-xxs)
+    var(--ks-font-family-ui);
+  --ks-font-size-ui-xs: calc(
+    var(--ks-font-size-ui-xs-base) * var(--ks-font-size-ui-bp-factor, 1)
+  );
+  --ks-font-ui-xs: var(--ks-font-size-ui-xs) / var(--ks-line-height-ui-xs)
+    var(--ks-font-family-ui);
+  --ks-font-size-ui-s: calc(
+    var(--ks-font-size-ui-s-base) * var(--ks-font-size-ui-bp-factor, 1)
+  );
+  --ks-font-ui-s: var(--ks-font-size-ui-s) / var(--ks-line-height-ui-s)
+    var(--ks-font-family-ui);
+  --ks-font-size-ui-m: calc(
+    var(--ks-font-size-ui-m-base) * var(--ks-font-size-ui-bp-factor, 1)
+  );
+  --ks-font-ui-m: var(--ks-font-size-ui-m) / var(--ks-line-height-ui-m)
+    var(--ks-font-family-ui);
+  --ks-font-size-ui-l: calc(
+    var(--ks-font-size-ui-l-base) * var(--ks-font-size-ui-bp-factor, 1)
+  );
+  --ks-font-ui-l: var(--ks-font-size-ui-l) / var(--ks-line-height-ui-l)
+    var(--ks-font-family-ui);
+  --ks-font-size-ui-xl: calc(
+    var(--ks-font-size-ui-xl-base) * var(--ks-font-size-ui-bp-factor, 1)
+  );
+  --ks-font-ui-xl: var(--ks-font-size-ui-xl) / var(--ks-line-height-ui-xl)
+    var(--ks-font-family-ui);
+  --ks-font-size-ui-xxl: calc(
+    var(--ks-font-size-ui-xxl-base) * var(--ks-font-size-ui-bp-factor, 1)
+  );
+  --ks-font-ui-xxl: var(--ks-font-size-ui-xxl) / var(--ks-line-height-ui-xxl)
+    var(--ks-font-family-ui);
+  --ks-font-size-mono-xxs: calc(
+    var(--ks-font-size-mono-xxs-base) * var(--ks-font-size-mono-bp-factor, 1)
+  );
+  --ks-font-mono-xxs: var(--ks-font-size-mono-xxs) /
+    var(--ks-line-height-mono-xxs) var(--ks-font-family-mono);
+  --ks-font-size-mono-xs: calc(
+    var(--ks-font-size-mono-xs-base) * var(--ks-font-size-mono-bp-factor, 1)
+  );
+  --ks-font-mono-xs: var(--ks-font-size-mono-xs) / var(--ks-line-height-mono-xs)
+    var(--ks-font-family-mono);
+  --ks-font-size-mono-s: calc(
+    var(--ks-font-size-mono-s-base) * var(--ks-font-size-mono-bp-factor, 1)
+  );
+  --ks-font-mono-s: var(--ks-font-size-mono-s) / var(--ks-line-height-mono-s)
+    var(--ks-font-family-mono);
+  --ks-font-size-mono-m: calc(
+    var(--ks-font-size-mono-m-base) * var(--ks-font-size-mono-bp-factor, 1)
+  );
+  --ks-font-mono-m: var(--ks-font-size-mono-m) / var(--ks-line-height-mono-m)
+    var(--ks-font-family-mono);
+  --ks-font-size-mono-l: calc(
+    var(--ks-font-size-mono-l-base) * var(--ks-font-size-mono-bp-factor, 1)
+  );
+  --ks-font-mono-l: var(--ks-font-size-mono-l) / var(--ks-line-height-mono-l)
+    var(--ks-font-family-mono);
+  --ks-font-size-mono-xl: calc(
+    var(--ks-font-size-mono-xl-base) * var(--ks-font-size-mono-bp-factor, 1)
+  );
+  --ks-font-mono-xl: var(--ks-font-size-mono-xl) / var(--ks-line-height-mono-xl)
+    var(--ks-font-family-mono);
+  --ks-font-size-mono-xxl: calc(
+    var(--ks-font-size-mono-xxl-base) * var(--ks-font-size-mono-bp-factor, 1)
+  );
+  --ks-font-mono-xxl: var(--ks-font-size-mono-xxl) /
+    var(--ks-line-height-mono-xxl) var(--ks-font-family-mono);
+  --ks-spacing-xxs: calc(
+    var(--ks-spacing-xxs-base) * var(--ks-spacing-xxs-bp-factor, 1)
+  );
+  --ks-spacing-xs: calc(
+    var(--ks-spacing-xs-base) * var(--ks-spacing-xs-bp-factor, 1)
+  );
+  --ks-spacing-s: calc(
+    var(--ks-spacing-s-base) * var(--ks-spacing-s-bp-factor, 1)
+  );
+  --ks-spacing-m: calc(
+    var(--ks-spacing-m-base) * var(--ks-spacing-m-bp-factor, 1)
+  );
+  --ks-spacing-l: calc(
+    var(--ks-spacing-l-base) * var(--ks-spacing-l-bp-factor, 1)
+  );
+  --ks-spacing-xl: calc(
+    var(--ks-spacing-xl-base) * var(--ks-spacing-xl-bp-factor, 1)
+  );
+  --ks-spacing-xxl: calc(
+    var(--ks-spacing-xxl-base) * var(--ks-spacing-xxl-bp-factor, 1)
+  );
+  --ks-spacing-stack: calc(
+    var(--ks-spacing-stack-base) * var(--ks-spacing-stack-bp-factor, 1)
+  );
+  --ks-spacing-inline: calc(
+    var(--ks-spacing-inline-base) * var(--ks-spacing-inline-bp-factor, 1)
+  );
+  --ks-spacing-inset: calc(
+    var(--ks-spacing-inset-base) * var(--ks-spacing-inset-bp-factor, 1)
+  );
+  --ks-spacing-inset-squish: calc(
+    var(--ks-spacing-inset-squish-base) *
+      var(--ks-spacing-inset-squish-bp-factor, 1)
+  );
+  --ks-spacing-inset-stretch: calc(
+    var(--ks-spacing-inset-stretch-base) *
+      var(--ks-spacing-inset-stretch-bp-factor, 1)
+  );
+  --ks-breakpoints: '{"phone":"36em","tablet":"48em","laptop":"62em","desktop":"75em"}';
+}
+
+:root,
+[ks-theme],
+[ks-inverted='false'] {
+  --ks-background-color-accent: var(--ks-background-color-accent-base);
+  --ks-background-color-accent-inverted: var(
+    --ks-background-color-accent-inverted-base
+  );
+  --ks-background-color-clear: var(--ks-background-color-clear-base);
+  --ks-background-color-clear-interactive: var(
+    --ks-background-color-clear-interactive-base
+  );
+  --ks-background-color-clear-interactive-hover: var(
+    --ks-background-color-clear-interactive-hover-base
+  );
+  --ks-background-color-clear-interactive-active: var(
+    --ks-background-color-clear-interactive-active-base
+  );
+  --ks-background-color-clear-inverted: var(
+    --ks-background-color-clear-inverted-base
+  );
+  --ks-background-color-clear-inverted-interactive: var(
+    --ks-background-color-clear-inverted-interactive-base
+  );
+  --ks-background-color-clear-inverted-interactive-hover: var(
+    --ks-background-color-clear-inverted-interactive-hover-base
+  );
+  --ks-background-color-clear-inverted-interactive-active: var(
+    --ks-background-color-clear-inverted-interactive-active-base
+  );
+  --ks-background-color-default: var(--ks-background-color-default-base);
+  --ks-background-color-default-inverted: var(
+    --ks-background-color-default-inverted-base
+  );
+  --ks-background-color-interface: var(--ks-background-color-interface-base);
+  --ks-background-color-interface-interactive: var(
+    --ks-background-color-interface-interactive-base
+  );
+  --ks-background-color-interface-interactive-disabled: var(
+    --ks-background-color-interface-interactive-disabled-base
+  );
+  --ks-background-color-interface-interactive-hover: var(
+    --ks-background-color-interface-interactive-hover-base
+  );
+  --ks-background-color-interface-interactive-active: var(
+    --ks-background-color-interface-interactive-active-base
+  );
+  --ks-background-color-interface-inverted: var(
+    --ks-background-color-interface-inverted-base
+  );
+  --ks-background-color-interface-inverted-interactive: var(
+    --ks-background-color-interface-inverted-interactive-base
+  );
+  --ks-background-color-interface-inverted-interactive-disabled: var(
+    --ks-background-color-interface-inverted-interactive-disabled-base
+  );
+  --ks-background-color-interface-inverted-interactive-hover: var(
+    --ks-background-color-interface-inverted-interactive-hover-base
+  );
+  --ks-background-color-interface-inverted-interactive-active: var(
+    --ks-background-color-interface-inverted-interactive-active-base
+  );
+  --ks-background-color-primary: var(--ks-background-color-primary-base);
+  --ks-background-color-primary-interactive: var(
+    --ks-background-color-primary-interactive-base
+  );
+  --ks-background-color-primary-interactive-hover: var(
+    --ks-background-color-primary-interactive-hover-base
+  );
+  --ks-background-color-primary-interactive-active: var(
+    --ks-background-color-primary-interactive-active-base
+  );
+  --ks-background-color-primary-translucent: var(
+    --ks-background-color-primary-translucent-base
+  );
+  --ks-background-color-primary-inverted: var(
+    --ks-background-color-primary-inverted-base
+  );
+  --ks-background-color-primary-inverted-interactive: var(
+    --ks-background-color-primary-inverted-interactive-base
+  );
+  --ks-background-color-primary-inverted-interactive-hover: var(
+    --ks-background-color-primary-inverted-interactive-hover-base
+  );
+  --ks-background-color-primary-inverted-interactive-active: var(
+    --ks-background-color-primary-inverted-interactive-active-base
+  );
+  --ks-background-color-primary-inverted-translucent: var(
+    --ks-background-color-primary-inverted-translucent-base
+  );
+  --ks-border-color-accent: var(--ks-border-color-accent-base);
+  --ks-border-color-accent-inverted: var(
+    --ks-border-color-accent-inverted-base
+  );
+  --ks-border-color-clear-interactive: var(
+    --ks-border-color-clear-interactive-base
+  );
+  --ks-border-color-clear-interactive-hover: var(
+    --ks-border-color-clear-interactive-hover-base
+  );
+  --ks-border-color-clear-interactive-active: var(
+    --ks-border-color-clear-interactive-active-base
+  );
+  --ks-border-color-clear-inverted-interactive: var(
+    --ks-border-color-clear-inverted-interactive-base
+  );
+  --ks-border-color-clear-inverted-interactive-hover: var(
+    --ks-border-color-clear-inverted-interactive-hover-base
+  );
+  --ks-border-color-clear-inverted-interactive-active: var(
+    --ks-border-color-clear-inverted-interactive-active-base
+  );
+  --ks-border-color-default: var(--ks-border-color-default-base);
+  --ks-border-color-default-inverted: var(
+    --ks-border-color-default-inverted-base
+  );
+  --ks-border-color-interface: var(--ks-border-color-interface-base);
+  --ks-border-color-interface-interactive: var(
+    --ks-border-color-interface-interactive-base
+  );
+  --ks-border-color-interface-interactive-disabled: var(
+    --ks-border-color-interface-interactive-disabled-base
+  );
+  --ks-border-color-interface-interactive-hover: var(
+    --ks-border-color-interface-interactive-hover-base
+  );
+  --ks-border-color-interface-interactive-active: var(
+    --ks-border-color-interface-interactive-active-base
+  );
+  --ks-border-color-interface-inverted: var(
+    --ks-border-color-interface-inverted-base
+  );
+  --ks-border-color-interface-inverted-interactive: var(
+    --ks-border-color-interface-inverted-interactive-base
+  );
+  --ks-border-color-interface-inverted-interactive-disabled: var(
+    --ks-border-color-interface-inverted-interactive-disabled-base
+  );
+  --ks-border-color-interface-inverted-interactive-hover: var(
+    --ks-border-color-interface-inverted-interactive-hover-base
+  );
+  --ks-border-color-interface-inverted-interactive-active: var(
+    --ks-border-color-interface-inverted-interactive-active-base
+  );
+  --ks-border-color-primary: var(--ks-border-color-primary-base);
+  --ks-border-color-primary-interactive: var(
+    --ks-border-color-primary-interactive-base
+  );
+  --ks-border-color-primary-interactive-hover: var(
+    --ks-border-color-primary-interactive-hover-base
+  );
+  --ks-border-color-primary-interactive-active: var(
+    --ks-border-color-primary-interactive-active-base
+  );
+  --ks-border-color-primary-translucent: var(
+    --ks-border-color-primary-translucent-base
+  );
+  --ks-border-color-primary-inverted: var(
+    --ks-border-color-primary-inverted-base
+  );
+  --ks-border-color-primary-inverted-interactive: var(
+    --ks-border-color-primary-inverted-interactive-base
+  );
+  --ks-border-color-primary-inverted-interactive-hover: var(
+    --ks-border-color-primary-inverted-interactive-hover-base
+  );
+  --ks-border-color-primary-inverted-interactive-active: var(
+    --ks-border-color-primary-inverted-interactive-active-base
+  );
+  --ks-border-color-primary-inverted-translucent: var(
+    --ks-border-color-primary-inverted-translucent-base
+  );
+  --ks-color-primary: var(--ks-color-primary-base);
+  --ks-color-primary-alpha-1: var(--ks-color-primary-alpha-1-base);
+  --ks-color-primary-alpha-2: var(--ks-color-primary-alpha-2-base);
+  --ks-color-primary-alpha-3: var(--ks-color-primary-alpha-3-base);
+  --ks-color-primary-alpha-4: var(--ks-color-primary-alpha-4-base);
+  --ks-color-primary-alpha-5: var(--ks-color-primary-alpha-5-base);
+  --ks-color-primary-alpha-6: var(--ks-color-primary-alpha-6-base);
+  --ks-color-primary-alpha-7: var(--ks-color-primary-alpha-7-base);
+  --ks-color-primary-alpha-8: var(--ks-color-primary-alpha-8-base);
+  --ks-color-primary-alpha-9: var(--ks-color-primary-alpha-9-base);
+  --ks-color-primary-to-bg-1: var(--ks-color-primary-to-bg-1-base);
+  --ks-color-primary-to-bg-2: var(--ks-color-primary-to-bg-2-base);
+  --ks-color-primary-to-bg-3: var(--ks-color-primary-to-bg-3-base);
+  --ks-color-primary-to-bg-4: var(--ks-color-primary-to-bg-4-base);
+  --ks-color-primary-to-bg-5: var(--ks-color-primary-to-bg-5-base);
+  --ks-color-primary-to-bg-6: var(--ks-color-primary-to-bg-6-base);
+  --ks-color-primary-to-bg-7: var(--ks-color-primary-to-bg-7-base);
+  --ks-color-primary-to-bg-8: var(--ks-color-primary-to-bg-8-base);
+  --ks-color-primary-to-bg-9: var(--ks-color-primary-to-bg-9-base);
+  --ks-color-primary-to-fg-1: var(--ks-color-primary-to-fg-1-base);
+  --ks-color-primary-to-fg-2: var(--ks-color-primary-to-fg-2-base);
+  --ks-color-primary-to-fg-3: var(--ks-color-primary-to-fg-3-base);
+  --ks-color-primary-to-fg-4: var(--ks-color-primary-to-fg-4-base);
+  --ks-color-primary-to-fg-5: var(--ks-color-primary-to-fg-5-base);
+  --ks-color-primary-to-fg-6: var(--ks-color-primary-to-fg-6-base);
+  --ks-color-primary-to-fg-7: var(--ks-color-primary-to-fg-7-base);
+  --ks-color-primary-to-fg-8: var(--ks-color-primary-to-fg-8-base);
+  --ks-color-primary-to-fg-9: var(--ks-color-primary-to-fg-9-base);
+  --ks-color-primary-inverted: var(--ks-color-primary-inverted-base);
+  --ks-color-primary-inverted-alpha-1: var(
+    --ks-color-primary-inverted-alpha-1-base
+  );
+  --ks-color-primary-inverted-alpha-2: var(
+    --ks-color-primary-inverted-alpha-2-base
+  );
+  --ks-color-primary-inverted-alpha-3: var(
+    --ks-color-primary-inverted-alpha-3-base
+  );
+  --ks-color-primary-inverted-alpha-4: var(
+    --ks-color-primary-inverted-alpha-4-base
+  );
+  --ks-color-primary-inverted-alpha-5: var(
+    --ks-color-primary-inverted-alpha-5-base
+  );
+  --ks-color-primary-inverted-alpha-6: var(
+    --ks-color-primary-inverted-alpha-6-base
+  );
+  --ks-color-primary-inverted-alpha-7: var(
+    --ks-color-primary-inverted-alpha-7-base
+  );
+  --ks-color-primary-inverted-alpha-8: var(
+    --ks-color-primary-inverted-alpha-8-base
+  );
+  --ks-color-primary-inverted-alpha-9: var(
+    --ks-color-primary-inverted-alpha-9-base
+  );
+  --ks-color-primary-inverted-to-bg-1: var(
+    --ks-color-primary-inverted-to-bg-1-base
+  );
+  --ks-color-primary-inverted-to-bg-2: var(
+    --ks-color-primary-inverted-to-bg-2-base
+  );
+  --ks-color-primary-inverted-to-bg-3: var(
+    --ks-color-primary-inverted-to-bg-3-base
+  );
+  --ks-color-primary-inverted-to-bg-4: var(
+    --ks-color-primary-inverted-to-bg-4-base
+  );
+  --ks-color-primary-inverted-to-bg-5: var(
+    --ks-color-primary-inverted-to-bg-5-base
+  );
+  --ks-color-primary-inverted-to-bg-6: var(
+    --ks-color-primary-inverted-to-bg-6-base
+  );
+  --ks-color-primary-inverted-to-bg-7: var(
+    --ks-color-primary-inverted-to-bg-7-base
+  );
+  --ks-color-primary-inverted-to-bg-8: var(
+    --ks-color-primary-inverted-to-bg-8-base
+  );
+  --ks-color-primary-inverted-to-bg-9: var(
+    --ks-color-primary-inverted-to-bg-9-base
+  );
+  --ks-color-primary-inverted-to-fg-1: var(
+    --ks-color-primary-inverted-to-fg-1-base
+  );
+  --ks-color-primary-inverted-to-fg-2: var(
+    --ks-color-primary-inverted-to-fg-2-base
+  );
+  --ks-color-primary-inverted-to-fg-3: var(
+    --ks-color-primary-inverted-to-fg-3-base
+  );
+  --ks-color-primary-inverted-to-fg-4: var(
+    --ks-color-primary-inverted-to-fg-4-base
+  );
+  --ks-color-primary-inverted-to-fg-5: var(
+    --ks-color-primary-inverted-to-fg-5-base
+  );
+  --ks-color-primary-inverted-to-fg-6: var(
+    --ks-color-primary-inverted-to-fg-6-base
+  );
+  --ks-color-primary-inverted-to-fg-7: var(
+    --ks-color-primary-inverted-to-fg-7-base
+  );
+  --ks-color-primary-inverted-to-fg-8: var(
+    --ks-color-primary-inverted-to-fg-8-base
+  );
+  --ks-color-primary-inverted-to-fg-9: var(
+    --ks-color-primary-inverted-to-fg-9-base
+  );
+  --ks-color-fg: var(--ks-color-fg-base);
+  --ks-color-fg-alpha-1: var(--ks-color-fg-alpha-1-base);
+  --ks-color-fg-alpha-2: var(--ks-color-fg-alpha-2-base);
+  --ks-color-fg-alpha-3: var(--ks-color-fg-alpha-3-base);
+  --ks-color-fg-alpha-4: var(--ks-color-fg-alpha-4-base);
+  --ks-color-fg-alpha-5: var(--ks-color-fg-alpha-5-base);
+  --ks-color-fg-alpha-6: var(--ks-color-fg-alpha-6-base);
+  --ks-color-fg-alpha-7: var(--ks-color-fg-alpha-7-base);
+  --ks-color-fg-alpha-8: var(--ks-color-fg-alpha-8-base);
+  --ks-color-fg-alpha-9: var(--ks-color-fg-alpha-9-base);
+  --ks-color-fg-to-bg-1: var(--ks-color-fg-to-bg-1-base);
+  --ks-color-fg-to-bg-2: var(--ks-color-fg-to-bg-2-base);
+  --ks-color-fg-to-bg-3: var(--ks-color-fg-to-bg-3-base);
+  --ks-color-fg-to-bg-4: var(--ks-color-fg-to-bg-4-base);
+  --ks-color-fg-to-bg-5: var(--ks-color-fg-to-bg-5-base);
+  --ks-color-fg-to-bg-6: var(--ks-color-fg-to-bg-6-base);
+  --ks-color-fg-to-bg-7: var(--ks-color-fg-to-bg-7-base);
+  --ks-color-fg-to-bg-8: var(--ks-color-fg-to-bg-8-base);
+  --ks-color-fg-to-bg-9: var(--ks-color-fg-to-bg-9-base);
+  --ks-color-fg-inverted: var(--ks-color-fg-inverted-base);
+  --ks-color-fg-inverted-alpha-1: var(--ks-color-fg-inverted-alpha-1-base);
+  --ks-color-fg-inverted-alpha-2: var(--ks-color-fg-inverted-alpha-2-base);
+  --ks-color-fg-inverted-alpha-3: var(--ks-color-fg-inverted-alpha-3-base);
+  --ks-color-fg-inverted-alpha-4: var(--ks-color-fg-inverted-alpha-4-base);
+  --ks-color-fg-inverted-alpha-5: var(--ks-color-fg-inverted-alpha-5-base);
+  --ks-color-fg-inverted-alpha-6: var(--ks-color-fg-inverted-alpha-6-base);
+  --ks-color-fg-inverted-alpha-7: var(--ks-color-fg-inverted-alpha-7-base);
+  --ks-color-fg-inverted-alpha-8: var(--ks-color-fg-inverted-alpha-8-base);
+  --ks-color-fg-inverted-alpha-9: var(--ks-color-fg-inverted-alpha-9-base);
+  --ks-color-fg-inverted-to-bg-1: var(--ks-color-fg-inverted-to-bg-1-base);
+  --ks-color-fg-inverted-to-bg-2: var(--ks-color-fg-inverted-to-bg-2-base);
+  --ks-color-fg-inverted-to-bg-3: var(--ks-color-fg-inverted-to-bg-3-base);
+  --ks-color-fg-inverted-to-bg-4: var(--ks-color-fg-inverted-to-bg-4-base);
+  --ks-color-fg-inverted-to-bg-5: var(--ks-color-fg-inverted-to-bg-5-base);
+  --ks-color-fg-inverted-to-bg-6: var(--ks-color-fg-inverted-to-bg-6-base);
+  --ks-color-fg-inverted-to-bg-7: var(--ks-color-fg-inverted-to-bg-7-base);
+  --ks-color-fg-inverted-to-bg-8: var(--ks-color-fg-inverted-to-bg-8-base);
+  --ks-color-fg-inverted-to-bg-9: var(--ks-color-fg-inverted-to-bg-9-base);
+  --ks-color-link: var(--ks-color-link-base);
+  --ks-color-link-inverted: var(--ks-color-link-inverted-base);
+  --ks-color-transparent: var(--ks-color-transparent-base);
+  --ks-text-color-default: var(--ks-text-color-default-base);
+  --ks-text-color-default-interactive: var(
+    --ks-text-color-default-interactive-base
+  );
+  --ks-text-color-default-interactive-hover: var(
+    --ks-text-color-default-interactive-hover-base
+  );
+  --ks-text-color-default-interactive-active: var(
+    --ks-text-color-default-interactive-active-base
+  );
+  --ks-text-color-default-interactive-visited: var(
+    --ks-text-color-default-interactive-visited-base
+  );
+  --ks-text-color-default-inverted: var(--ks-text-color-default-inverted-base);
+  --ks-text-color-default-inverted-interactive: var(
+    --ks-text-color-default-inverted-interactive-base
+  );
+  --ks-text-color-default-inverted-interactive-hover: var(
+    --ks-text-color-default-inverted-interactive-hover-base
+  );
+  --ks-text-color-default-inverted-interactive-active: var(
+    --ks-text-color-default-inverted-interactive-active-base
+  );
+  --ks-text-color-default-inverted-interactive-visited: var(
+    --ks-text-color-default-inverted-interactive-visited-base
+  );
+  --ks-text-color-interface: var(--ks-text-color-interface-base);
+  --ks-text-color-interface-interactive: var(
+    --ks-text-color-interface-interactive-base
+  );
+  --ks-text-color-interface-interactive-hover: var(
+    --ks-text-color-interface-interactive-hover-base
+  );
+  --ks-text-color-interface-interactive-active: var(
+    --ks-text-color-interface-interactive-active-base
+  );
+  --ks-text-color-interface-interactive-visited: var(
+    --ks-text-color-interface-interactive-visited-base
+  );
+  --ks-text-color-interface-inverted: var(
+    --ks-text-color-interface-inverted-base
+  );
+  --ks-text-color-interface-inverted-interactive: var(
+    --ks-text-color-interface-inverted-interactive-base
+  );
+  --ks-text-color-interface-inverted-interactive-hover: var(
+    --ks-text-color-interface-inverted-interactive-hover-base
+  );
+  --ks-text-color-interface-inverted-interactive-active: var(
+    --ks-text-color-interface-inverted-interactive-active-base
+  );
+  --ks-text-color-interface-inverted-interactive-visited: var(
+    --ks-text-color-interface-inverted-interactive-visited-base
+  );
+  --ks-text-color-primary: var(--ks-text-color-primary-base);
+  --ks-text-color-primary-interactive: var(
+    --ks-text-color-primary-interactive-base
+  );
+  --ks-text-color-primary-interactive-hover: var(
+    --ks-text-color-primary-interactive-hover-base
+  );
+  --ks-text-color-primary-interactive-active: var(
+    --ks-text-color-primary-interactive-active-base
+  );
+  --ks-text-color-primary-interactive-visited: var(
+    --ks-text-color-primary-interactive-visited-base
+  );
+  --ks-text-color-primary-inverted: var(--ks-text-color-primary-inverted-base);
+  --ks-text-color-primary-inverted-interactive: var(
+    --ks-text-color-primary-inverted-interactive-base
+  );
+  --ks-text-color-primary-inverted-interactive-hover: var(
+    --ks-text-color-primary-inverted-interactive-hover-base
+  );
+  --ks-text-color-primary-inverted-interactive-active: var(
+    --ks-text-color-primary-inverted-interactive-active-base
+  );
+  --ks-text-color-primary-inverted-interactive-visited: var(
+    --ks-text-color-primary-inverted-interactive-visited-base
+  );
+}
+
+[ks-inverted='true'] {
+  --ks-background-color-accent: var(--ks-background-color-accent-inverted-base);
+  --ks-background-color-accent-inverted: var(--ks-background-color-accent-base);
+  --ks-background-color-clear: var(--ks-background-color-clear-inverted-base);
+  --ks-background-color-clear-inverted: var(--ks-background-color-clear-base);
+  --ks-background-color-clear-interactive: var(
+    --ks-background-color-clear-inverted-interactive-base
+  );
+  --ks-background-color-clear-inverted-interactive: var(
+    --ks-background-color-clear-interactive-base
+  );
+  --ks-background-color-clear-interactive-hover: var(
+    --ks-background-color-clear-inverted-interactive-hover-base
+  );
+  --ks-background-color-clear-inverted-interactive-hover: var(
+    --ks-background-color-clear-interactive-hover-base
+  );
+  --ks-background-color-clear-interactive-active: var(
+    --ks-background-color-clear-inverted-interactive-active-base
+  );
+  --ks-background-color-clear-inverted-interactive-active: var(
+    --ks-background-color-clear-interactive-active-base
+  );
+  --ks-background-color-default: var(
+    --ks-background-color-default-inverted-base
+  );
+  --ks-background-color-default-inverted: var(
+    --ks-background-color-default-base
+  );
+  --ks-background-color-interface: var(
+    --ks-background-color-interface-inverted-base
+  );
+  --ks-background-color-interface-inverted: var(
+    --ks-background-color-interface-base
+  );
+  --ks-background-color-interface-interactive: var(
+    --ks-background-color-interface-inverted-interactive-base
+  );
+  --ks-background-color-interface-inverted-interactive: var(
+    --ks-background-color-interface-interactive-base
+  );
+  --ks-background-color-interface-interactive-disabled: var(
+    --ks-background-color-interface-inverted-interactive-disabled-base
+  );
+  --ks-background-color-interface-inverted-interactive-disabled: var(
+    --ks-background-color-interface-interactive-disabled-base
+  );
+  --ks-background-color-interface-interactive-hover: var(
+    --ks-background-color-interface-inverted-interactive-hover-base
+  );
+  --ks-background-color-interface-inverted-interactive-hover: var(
+    --ks-background-color-interface-interactive-hover-base
+  );
+  --ks-background-color-interface-interactive-active: var(
+    --ks-background-color-interface-inverted-interactive-active-base
+  );
+  --ks-background-color-interface-inverted-interactive-active: var(
+    --ks-background-color-interface-interactive-active-base
+  );
+  --ks-background-color-primary: var(
+    --ks-background-color-primary-inverted-base
+  );
+  --ks-background-color-primary-inverted: var(
+    --ks-background-color-primary-base
+  );
+  --ks-background-color-primary-interactive: var(
+    --ks-background-color-primary-inverted-interactive-base
+  );
+  --ks-background-color-primary-inverted-interactive: var(
+    --ks-background-color-primary-interactive-base
+  );
+  --ks-background-color-primary-interactive-hover: var(
+    --ks-background-color-primary-inverted-interactive-hover-base
+  );
+  --ks-background-color-primary-inverted-interactive-hover: var(
+    --ks-background-color-primary-interactive-hover-base
+  );
+  --ks-background-color-primary-interactive-active: var(
+    --ks-background-color-primary-inverted-interactive-active-base
+  );
+  --ks-background-color-primary-inverted-interactive-active: var(
+    --ks-background-color-primary-interactive-active-base
+  );
+  --ks-background-color-primary-translucent: var(
+    --ks-background-color-primary-inverted-translucent-base
+  );
+  --ks-background-color-primary-inverted-translucent: var(
+    --ks-background-color-primary-translucent-base
+  );
+  --ks-border-color-accent: var(--ks-border-color-accent-inverted-base);
+  --ks-border-color-accent-inverted: var(--ks-border-color-accent-base);
+  --ks-border-color-clear-interactive: var(
+    --ks-border-color-clear-inverted-interactive-base
+  );
+  --ks-border-color-clear-inverted-interactive: var(
+    --ks-border-color-clear-interactive-base
+  );
+  --ks-border-color-clear-interactive-hover: var(
+    --ks-border-color-clear-inverted-interactive-hover-base
+  );
+  --ks-border-color-clear-inverted-interactive-hover: var(
+    --ks-border-color-clear-interactive-hover-base
+  );
+  --ks-border-color-clear-interactive-active: var(
+    --ks-border-color-clear-inverted-interactive-active-base
+  );
+  --ks-border-color-clear-inverted-interactive-active: var(
+    --ks-border-color-clear-interactive-active-base
+  );
+  --ks-border-color-default: var(--ks-border-color-default-inverted-base);
+  --ks-border-color-default-inverted: var(--ks-border-color-default-base);
+  --ks-border-color-interface: var(--ks-border-color-interface-inverted-base);
+  --ks-border-color-interface-inverted: var(--ks-border-color-interface-base);
+  --ks-border-color-interface-interactive: var(
+    --ks-border-color-interface-inverted-interactive-base
+  );
+  --ks-border-color-interface-inverted-interactive: var(
+    --ks-border-color-interface-interactive-base
+  );
+  --ks-border-color-interface-interactive-disabled: var(
+    --ks-border-color-interface-inverted-interactive-disabled-base
+  );
+  --ks-border-color-interface-inverted-interactive-disabled: var(
+    --ks-border-color-interface-interactive-disabled-base
+  );
+  --ks-border-color-interface-interactive-hover: var(
+    --ks-border-color-interface-inverted-interactive-hover-base
+  );
+  --ks-border-color-interface-inverted-interactive-hover: var(
+    --ks-border-color-interface-interactive-hover-base
+  );
+  --ks-border-color-interface-interactive-active: var(
+    --ks-border-color-interface-inverted-interactive-active-base
+  );
+  --ks-border-color-interface-inverted-interactive-active: var(
+    --ks-border-color-interface-interactive-active-base
+  );
+  --ks-border-color-primary: var(--ks-border-color-primary-inverted-base);
+  --ks-border-color-primary-inverted: var(--ks-border-color-primary-base);
+  --ks-border-color-primary-interactive: var(
+    --ks-border-color-primary-inverted-interactive-base
+  );
+  --ks-border-color-primary-inverted-interactive: var(
+    --ks-border-color-primary-interactive-base
+  );
+  --ks-border-color-primary-interactive-hover: var(
+    --ks-border-color-primary-inverted-interactive-hover-base
+  );
+  --ks-border-color-primary-inverted-interactive-hover: var(
+    --ks-border-color-primary-interactive-hover-base
+  );
+  --ks-border-color-primary-interactive-active: var(
+    --ks-border-color-primary-inverted-interactive-active-base
+  );
+  --ks-border-color-primary-inverted-interactive-active: var(
+    --ks-border-color-primary-interactive-active-base
+  );
+  --ks-border-color-primary-translucent: var(
+    --ks-border-color-primary-inverted-translucent-base
+  );
+  --ks-border-color-primary-inverted-translucent: var(
+    --ks-border-color-primary-translucent-base
+  );
+  --ks-color-primary: var(--ks-color-primary-inverted-base);
+  --ks-color-primary-inverted: var(--ks-color-primary-base);
+  --ks-color-primary-alpha-1: var(--ks-color-primary-inverted-alpha-1-base);
+  --ks-color-primary-inverted-alpha-1: var(--ks-color-primary-alpha-1-base);
+  --ks-color-primary-alpha-2: var(--ks-color-primary-inverted-alpha-2-base);
+  --ks-color-primary-inverted-alpha-2: var(--ks-color-primary-alpha-2-base);
+  --ks-color-primary-alpha-3: var(--ks-color-primary-inverted-alpha-3-base);
+  --ks-color-primary-inverted-alpha-3: var(--ks-color-primary-alpha-3-base);
+  --ks-color-primary-alpha-4: var(--ks-color-primary-inverted-alpha-4-base);
+  --ks-color-primary-inverted-alpha-4: var(--ks-color-primary-alpha-4-base);
+  --ks-color-primary-alpha-5: var(--ks-color-primary-inverted-alpha-5-base);
+  --ks-color-primary-inverted-alpha-5: var(--ks-color-primary-alpha-5-base);
+  --ks-color-primary-alpha-6: var(--ks-color-primary-inverted-alpha-6-base);
+  --ks-color-primary-inverted-alpha-6: var(--ks-color-primary-alpha-6-base);
+  --ks-color-primary-alpha-7: var(--ks-color-primary-inverted-alpha-7-base);
+  --ks-color-primary-inverted-alpha-7: var(--ks-color-primary-alpha-7-base);
+  --ks-color-primary-alpha-8: var(--ks-color-primary-inverted-alpha-8-base);
+  --ks-color-primary-inverted-alpha-8: var(--ks-color-primary-alpha-8-base);
+  --ks-color-primary-alpha-9: var(--ks-color-primary-inverted-alpha-9-base);
+  --ks-color-primary-inverted-alpha-9: var(--ks-color-primary-alpha-9-base);
+  --ks-color-primary-to-bg-1: var(--ks-color-primary-inverted-to-bg-1-base);
+  --ks-color-primary-inverted-to-bg-1: var(--ks-color-primary-to-bg-1-base);
+  --ks-color-primary-to-bg-2: var(--ks-color-primary-inverted-to-bg-2-base);
+  --ks-color-primary-inverted-to-bg-2: var(--ks-color-primary-to-bg-2-base);
+  --ks-color-primary-to-bg-3: var(--ks-color-primary-inverted-to-bg-3-base);
+  --ks-color-primary-inverted-to-bg-3: var(--ks-color-primary-to-bg-3-base);
+  --ks-color-primary-to-bg-4: var(--ks-color-primary-inverted-to-bg-4-base);
+  --ks-color-primary-inverted-to-bg-4: var(--ks-color-primary-to-bg-4-base);
+  --ks-color-primary-to-bg-5: var(--ks-color-primary-inverted-to-bg-5-base);
+  --ks-color-primary-inverted-to-bg-5: var(--ks-color-primary-to-bg-5-base);
+  --ks-color-primary-to-bg-6: var(--ks-color-primary-inverted-to-bg-6-base);
+  --ks-color-primary-inverted-to-bg-6: var(--ks-color-primary-to-bg-6-base);
+  --ks-color-primary-to-bg-7: var(--ks-color-primary-inverted-to-bg-7-base);
+  --ks-color-primary-inverted-to-bg-7: var(--ks-color-primary-to-bg-7-base);
+  --ks-color-primary-to-bg-8: var(--ks-color-primary-inverted-to-bg-8-base);
+  --ks-color-primary-inverted-to-bg-8: var(--ks-color-primary-to-bg-8-base);
+  --ks-color-primary-to-bg-9: var(--ks-color-primary-inverted-to-bg-9-base);
+  --ks-color-primary-inverted-to-bg-9: var(--ks-color-primary-to-bg-9-base);
+  --ks-color-primary-to-fg-1: var(--ks-color-primary-inverted-to-fg-1-base);
+  --ks-color-primary-inverted-to-fg-1: var(--ks-color-primary-to-fg-1-base);
+  --ks-color-primary-to-fg-2: var(--ks-color-primary-inverted-to-fg-2-base);
+  --ks-color-primary-inverted-to-fg-2: var(--ks-color-primary-to-fg-2-base);
+  --ks-color-primary-to-fg-3: var(--ks-color-primary-inverted-to-fg-3-base);
+  --ks-color-primary-inverted-to-fg-3: var(--ks-color-primary-to-fg-3-base);
+  --ks-color-primary-to-fg-4: var(--ks-color-primary-inverted-to-fg-4-base);
+  --ks-color-primary-inverted-to-fg-4: var(--ks-color-primary-to-fg-4-base);
+  --ks-color-primary-to-fg-5: var(--ks-color-primary-inverted-to-fg-5-base);
+  --ks-color-primary-inverted-to-fg-5: var(--ks-color-primary-to-fg-5-base);
+  --ks-color-primary-to-fg-6: var(--ks-color-primary-inverted-to-fg-6-base);
+  --ks-color-primary-inverted-to-fg-6: var(--ks-color-primary-to-fg-6-base);
+  --ks-color-primary-to-fg-7: var(--ks-color-primary-inverted-to-fg-7-base);
+  --ks-color-primary-inverted-to-fg-7: var(--ks-color-primary-to-fg-7-base);
+  --ks-color-primary-to-fg-8: var(--ks-color-primary-inverted-to-fg-8-base);
+  --ks-color-primary-inverted-to-fg-8: var(--ks-color-primary-to-fg-8-base);
+  --ks-color-primary-to-fg-9: var(--ks-color-primary-inverted-to-fg-9-base);
+  --ks-color-primary-inverted-to-fg-9: var(--ks-color-primary-to-fg-9-base);
+  --ks-color-fg: var(--ks-color-fg-inverted-base);
+  --ks-color-fg-inverted: var(--ks-color-fg-base);
+  --ks-color-fg-alpha-1: var(--ks-color-fg-inverted-alpha-1-base);
+  --ks-color-fg-inverted-alpha-1: var(--ks-color-fg-alpha-1-base);
+  --ks-color-fg-alpha-2: var(--ks-color-fg-inverted-alpha-2-base);
+  --ks-color-fg-inverted-alpha-2: var(--ks-color-fg-alpha-2-base);
+  --ks-color-fg-alpha-3: var(--ks-color-fg-inverted-alpha-3-base);
+  --ks-color-fg-inverted-alpha-3: var(--ks-color-fg-alpha-3-base);
+  --ks-color-fg-alpha-4: var(--ks-color-fg-inverted-alpha-4-base);
+  --ks-color-fg-inverted-alpha-4: var(--ks-color-fg-alpha-4-base);
+  --ks-color-fg-alpha-5: var(--ks-color-fg-inverted-alpha-5-base);
+  --ks-color-fg-inverted-alpha-5: var(--ks-color-fg-alpha-5-base);
+  --ks-color-fg-alpha-6: var(--ks-color-fg-inverted-alpha-6-base);
+  --ks-color-fg-inverted-alpha-6: var(--ks-color-fg-alpha-6-base);
+  --ks-color-fg-alpha-7: var(--ks-color-fg-inverted-alpha-7-base);
+  --ks-color-fg-inverted-alpha-7: var(--ks-color-fg-alpha-7-base);
+  --ks-color-fg-alpha-8: var(--ks-color-fg-inverted-alpha-8-base);
+  --ks-color-fg-inverted-alpha-8: var(--ks-color-fg-alpha-8-base);
+  --ks-color-fg-alpha-9: var(--ks-color-fg-inverted-alpha-9-base);
+  --ks-color-fg-inverted-alpha-9: var(--ks-color-fg-alpha-9-base);
+  --ks-color-fg-to-bg-1: var(--ks-color-fg-inverted-to-bg-1-base);
+  --ks-color-fg-inverted-to-bg-1: var(--ks-color-fg-to-bg-1-base);
+  --ks-color-fg-to-bg-2: var(--ks-color-fg-inverted-to-bg-2-base);
+  --ks-color-fg-inverted-to-bg-2: var(--ks-color-fg-to-bg-2-base);
+  --ks-color-fg-to-bg-3: var(--ks-color-fg-inverted-to-bg-3-base);
+  --ks-color-fg-inverted-to-bg-3: var(--ks-color-fg-to-bg-3-base);
+  --ks-color-fg-to-bg-4: var(--ks-color-fg-inverted-to-bg-4-base);
+  --ks-color-fg-inverted-to-bg-4: var(--ks-color-fg-to-bg-4-base);
+  --ks-color-fg-to-bg-5: var(--ks-color-fg-inverted-to-bg-5-base);
+  --ks-color-fg-inverted-to-bg-5: var(--ks-color-fg-to-bg-5-base);
+  --ks-color-fg-to-bg-6: var(--ks-color-fg-inverted-to-bg-6-base);
+  --ks-color-fg-inverted-to-bg-6: var(--ks-color-fg-to-bg-6-base);
+  --ks-color-fg-to-bg-7: var(--ks-color-fg-inverted-to-bg-7-base);
+  --ks-color-fg-inverted-to-bg-7: var(--ks-color-fg-to-bg-7-base);
+  --ks-color-fg-to-bg-8: var(--ks-color-fg-inverted-to-bg-8-base);
+  --ks-color-fg-inverted-to-bg-8: var(--ks-color-fg-to-bg-8-base);
+  --ks-color-fg-to-bg-9: var(--ks-color-fg-inverted-to-bg-9-base);
+  --ks-color-fg-inverted-to-bg-9: var(--ks-color-fg-to-bg-9-base);
+  --ks-color-link: var(--ks-color-link-inverted-base);
+  --ks-color-link-inverted: var(--ks-color-link-base);
+  --ks-text-color-default: var(--ks-text-color-default-inverted-base);
+  --ks-text-color-default-inverted: var(--ks-text-color-default-base);
+  --ks-text-color-default-interactive: var(
+    --ks-text-color-default-inverted-interactive-base
+  );
+  --ks-text-color-default-inverted-interactive: var(
+    --ks-text-color-default-interactive-base
+  );
+  --ks-text-color-default-interactive-hover: var(
+    --ks-text-color-default-inverted-interactive-hover-base
+  );
+  --ks-text-color-default-inverted-interactive-hover: var(
+    --ks-text-color-default-interactive-hover-base
+  );
+  --ks-text-color-default-interactive-active: var(
+    --ks-text-color-default-inverted-interactive-active-base
+  );
+  --ks-text-color-default-inverted-interactive-active: var(
+    --ks-text-color-default-interactive-active-base
+  );
+  --ks-text-color-default-interactive-visited: var(
+    --ks-text-color-default-inverted-interactive-visited-base
+  );
+  --ks-text-color-default-inverted-interactive-visited: var(
+    --ks-text-color-default-interactive-visited-base
+  );
+  --ks-text-color-interface: var(--ks-text-color-interface-inverted-base);
+  --ks-text-color-interface-inverted: var(--ks-text-color-interface-base);
+  --ks-text-color-interface-interactive: var(
+    --ks-text-color-interface-inverted-interactive-base
+  );
+  --ks-text-color-interface-inverted-interactive: var(
+    --ks-text-color-interface-interactive-base
+  );
+  --ks-text-color-interface-interactive-hover: var(
+    --ks-text-color-interface-inverted-interactive-hover-base
+  );
+  --ks-text-color-interface-inverted-interactive-hover: var(
+    --ks-text-color-interface-interactive-hover-base
+  );
+  --ks-text-color-interface-interactive-active: var(
+    --ks-text-color-interface-inverted-interactive-active-base
+  );
+  --ks-text-color-interface-inverted-interactive-active: var(
+    --ks-text-color-interface-interactive-active-base
+  );
+  --ks-text-color-interface-interactive-visited: var(
+    --ks-text-color-interface-inverted-interactive-visited-base
+  );
+  --ks-text-color-interface-inverted-interactive-visited: var(
+    --ks-text-color-interface-interactive-visited-base
+  );
+  --ks-text-color-primary: var(--ks-text-color-primary-inverted-base);
+  --ks-text-color-primary-inverted: var(--ks-text-color-primary-base);
+  --ks-text-color-primary-interactive: var(
+    --ks-text-color-primary-inverted-interactive-base
+  );
+  --ks-text-color-primary-inverted-interactive: var(
+    --ks-text-color-primary-interactive-base
+  );
+  --ks-text-color-primary-interactive-hover: var(
+    --ks-text-color-primary-inverted-interactive-hover-base
+  );
+  --ks-text-color-primary-inverted-interactive-hover: var(
+    --ks-text-color-primary-interactive-hover-base
+  );
+  --ks-text-color-primary-interactive-active: var(
+    --ks-text-color-primary-inverted-interactive-active-base
+  );
+  --ks-text-color-primary-inverted-interactive-active: var(
+    --ks-text-color-primary-interactive-active-base
+  );
+  --ks-text-color-primary-interactive-visited: var(
+    --ks-text-color-primary-inverted-interactive-visited-base
+  );
+  --ks-text-color-primary-inverted-interactive-visited: var(
+    --ks-text-color-primary-interactive-visited-base
+  );
+}
+
+@media (min-width: 36em) {
+  :root {
+    --ks-font-size-display-bp-factor: var(
+      --ks-font-size-display-bp-factor-phone
+    );
+    --ks-spacing-xxs-bp-factor: var(--ks-spacing-xxs-bp-factor-phone);
+    --ks-spacing-xs-bp-factor: var(--ks-spacing-xs-bp-factor-phone);
+    --ks-spacing-s-bp-factor: var(--ks-spacing-s-bp-factor-phone);
+    --ks-spacing-m-bp-factor: var(--ks-spacing-m-bp-factor-phone);
+    --ks-spacing-l-bp-factor: var(--ks-spacing-l-bp-factor-phone);
+    --ks-spacing-xl-bp-factor: var(--ks-spacing-xl-bp-factor-phone);
+    --ks-spacing-xxl-bp-factor: var(--ks-spacing-xxl-bp-factor-phone);
+  }
+}
+@media (min-width: 48em) {
+  :root {
+    --ks-font-size-display-bp-factor: var(
+      --ks-font-size-display-bp-factor-tablet
+    );
+    --ks-font-size-copy-bp-factor: var(--ks-font-size-copy-bp-factor-tablet);
+    --ks-font-size-ui-bp-factor: var(--ks-font-size-ui-bp-factor-tablet);
+    --ks-font-size-mono-bp-factor: var(--ks-font-size-mono-bp-factor-tablet);
+    --ks-spacing-xxs-bp-factor: var(--ks-spacing-xxs-bp-factor-tablet);
+    --ks-spacing-xs-bp-factor: var(--ks-spacing-xs-bp-factor-tablet);
+    --ks-spacing-s-bp-factor: var(--ks-spacing-s-bp-factor-tablet);
+    --ks-spacing-m-bp-factor: var(--ks-spacing-m-bp-factor-tablet);
+    --ks-spacing-l-bp-factor: var(--ks-spacing-l-bp-factor-tablet);
+    --ks-spacing-xl-bp-factor: var(--ks-spacing-xl-bp-factor-tablet);
+    --ks-spacing-xxl-bp-factor: var(--ks-spacing-xxl-bp-factor-tablet);
+  }
+}
+@media (min-width: 62em) {
+  :root {
+    --ks-spacing-xxs-bp-factor: var(--ks-spacing-xxs-bp-factor-laptop);
+    --ks-spacing-xs-bp-factor: var(--ks-spacing-xs-bp-factor-laptop);
+    --ks-spacing-s-bp-factor: var(--ks-spacing-s-bp-factor-laptop);
+    --ks-spacing-m-bp-factor: var(--ks-spacing-m-bp-factor-laptop);
+    --ks-spacing-l-bp-factor: var(--ks-spacing-l-bp-factor-laptop);
+    --ks-spacing-xl-bp-factor: var(--ks-spacing-xl-bp-factor-laptop);
+    --ks-spacing-xxl-bp-factor: var(--ks-spacing-xxl-bp-factor-laptop);
+  }
+}
+@media (min-width: 75em) {
+  :root {
+    --ks-spacing-xxs-bp-factor: var(--ks-spacing-xxs-bp-factor-desktop);
+    --ks-spacing-xs-bp-factor: var(--ks-spacing-xs-bp-factor-desktop);
+    --ks-spacing-s-bp-factor: var(--ks-spacing-s-bp-factor-desktop);
+    --ks-spacing-m-bp-factor: var(--ks-spacing-m-bp-factor-desktop);
+    --ks-spacing-l-bp-factor: var(--ks-spacing-l-bp-factor-desktop);
+    --ks-spacing-xl-bp-factor: var(--ks-spacing-xl-bp-factor-desktop);
+    --ks-spacing-xxl-bp-factor: var(--ks-spacing-xxl-bp-factor-desktop);
+  }
+}

@@ -61,6 +61,7 @@ jobs:
           root: .
           paths:
             - packages/components
+            - packages/tools/storybook/.storybook
 
   chromatic:
     <<: *defaults
@@ -71,6 +72,29 @@ jobs:
       - run:
           name: Build Storybook & deploy to Chromatic
           command: yarn run chromatic
+
+  docusaurus:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache: *restore-cache-node
+      - *attach_workspace
+      - run:
+          name: Build docs
+          command: yarn run docusaurus-build --out-dir=../../../docs
+      - run:
+          name: Compress docs folder
+          command: tar -czf docs.tar.gz docs
+      - store_artifacts:
+          path: docs.tar.gz
+      - run:
+          name: Trigger website deployment
+          command: |
+            curl --request POST \
+              --url "https://circleci.com/api/v2/project/gh/kickstartDS/website-deployment/pipeline" \
+              --header "Circle-Token: ${CIRCLE_CI_WEBSITE_BUILD_TOKEN}" \
+              --header "content-type: application/json" \
+              --data '{"branch":"master","parameters":{"run_workflow_deploy":true, "website_branch":"master"}}'
 
   publish-base:
     <<: *defaults
@@ -122,6 +146,14 @@ workflows:
               ignore: /^dependabot\/.*$/
 
       - chromatic:
+          context: kickstartDS
+          requires:
+            - release
+
+      - docusaurus:
+          filters:
+            branches:
+              only: feature/docs
           context: kickstartDS
           requires:
             - release

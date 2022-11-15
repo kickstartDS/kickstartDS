@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/form/checkbox.schema.json",
+  "title": "Checkbox",
+  "description": "Checkboxes allow users to select multiple items from a list of individual items, or to mark one individual item as selected.",
+  "type": "object",
+  "properties": {
+    "label": {
+      "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/label"
+    },
+    "disabled": {
+      "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/disabled"
+    },
+    "invalid": {
+      "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/invalid"
+    },
+    "invalidMessage": {
+      "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/invalidMessage"
+    },
+    "hint": {
+      "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/hint"
+    },
+    "className": {
+      "title": "Class",
+      "description": "Additional css classes attached to the input element",
+      "type": "string"
+    },
+    "component": {
+      "title": "`ks-component` attribute",
+      "description": "Optional custom component identifier",
+      "type": "string"
+    }
+  },
+  "required": ["label"]
+}

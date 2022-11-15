@@ -2,7 +2,7 @@
   "name": "@kickstartds/core",
   "version": "1.5.0",
   "description": "kickstartDS Core Module",
-  "homepage": "https://ruhmesmeile.com",
+  "homepage": "https://www.kickstartDS.com",
   "bugs": {
     "url": "https://github.com/kickstartDS/kickstartDS/issues"
   },
@@ -11,37 +11,48 @@
     "url": "https://github.com/kickstartDS/kickstartDS.git",
     "directory": "packages/components/core"
   },
-  "license": "SEE LICENSE IN LICENSE",
-  "author": "ruhmesmeile GmbH <mail@ruhmesmeile.com> (https://ruhmesmeile.com)",
-  "main": "./lib/index.js",
-  "types": "./lib/index.d.ts",
+  "license": "(MIT OR Apache-2.0)",
+  "author": "Jonas Ulrich <jonas.ulrich@kickstartds.com> (https://www.kickstartDS.com/)",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "*/index.d.ts"
+      ]
+    }
+  },
   "files": [
     "lib",
     "source/core/*.scss",
-    "source/design-tokens/**/*.scss",
-    "bundle/*.js"
+    "source/design-tokens",
+    "bundle/*.js",
+    "cms"
   ],
   "scripts": {
-    "build": "node ../../tools/build-components/source",
-    "schema": "node ../../tools/build-components/source --schema",
-    "watch": "node ../../tools/build-components/source --watch"
+    "build": "kdsBundle && yarn build-tokens",
+    "build-tokens": "node scripts/build-tokens.js",
+    "schema": "kdsBundle --schema",
+    "watch": "yarn build-tokens && kdsBundle --watch"
   },
   "dependencies": {
-    "@babel/runtime": "^7.19.4",
+    "@babel/runtime": "^7.20.1",
     "bourbon": "^7.2.0",
+    "classnames": "^2.2.6",
     "del": "^6.0.0",
     "dependency-graph": "^0.11.0",
     "esbuild": "^0.15.10",
     "fast-glob": "^3.2.11",
     "fs-extra": "^10.1.0",
     "lazysizes": "^5.3.2",
+    "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",
     "pubsub-js": "^1.9.4",
-    "sass": "^1.55.0"
+    "sass": "^1.56.0"
   },
   "devDependencies": {
-    "include-media": "^1.4.9",
-    "storybook-design-token": "^1.4.0"
+    "@kickstartds/bundler": "^1.5.0",
+    "@kickstartds/style-dictionary": "^1.5.0",
+    "storybook-design-token": "^1.4.0",
+    "style-dictionary": "^3.7.1"
   },
   "peerDependencies": {
     "react": "^17.0.2"

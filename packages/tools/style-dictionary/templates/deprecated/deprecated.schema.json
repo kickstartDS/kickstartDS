@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/tokens/deprecated.schema.json",
+  "definitions": {
+    "deprecated-token": {
+      "type": "object",
+      "properties": {
+        "value": {},
+        "attributes": {
+          "type": "object",
+          "properties": {
+            "category": {
+              "type": "string"
+            },
+            "deprecated": {
+              "const": true
+            }
+          }
+        },
+        "token": {
+          "type": "object",
+          "properties": {
+            "category": {
+              "type": "string"
+            },
+            "presenter": {
+              "type": "string"
+            }
+          },
+          "required": ["category", "presenter"]
+        }
+      },
+      "required": ["value", "attributes"]
+    }
+  },
+  "type": "object",
+  "properties": {
+    "g": {
+      "type": "object",
+      "properties": {
+        "header-height": {
+          "$ref": "#/definitions/deprecated-token"
+        },
+        "scroll-offset": {
+          "$ref": "#/definitions/deprecated-token"
+        }
+      }
+    }
+  },
+  "required": ["g"]
+}

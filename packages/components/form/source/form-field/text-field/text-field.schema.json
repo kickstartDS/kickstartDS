@@ -1,0 +1,85 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/form/text-field.schema.json",
+  "title": "Text Field",
+  "description": "TextFields are text inputs that allow users to input custom text entries with a keyboard.",
+  "type": "object",
+  "properties": {
+    "label": {
+      "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/label"
+    },
+    "value": {
+      "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/value"
+    },
+    "name": {
+      "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/name"
+    },
+    "disabled": {
+      "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/disabled"
+    },
+    "placeholder": {
+      "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/placeholder"
+    },
+    "type": {
+      "title": "Type",
+      "description": "The type of input to render",
+      "type": "string",
+      "enum": [
+        "date",
+        "datetime-local",
+        "email",
+        "month",
+        "number",
+        "password",
+        "search",
+        "tel",
+        "text",
+        "time",
+        "url",
+        "week"
+      ],
+      "default": "text"
+    },
+    "inputMode": {
+      "title": "Input Mode",
+      "description": "Hints at the type of data that might be entered by the user while editing the element or its contents",
+      "type": "string",
+      "enum": [
+        "none",
+        "text",
+        "search",
+        "url",
+        "tel",
+        "email",
+        "numeric",
+        "decimal"
+      ],
+      "default": "text"
+    },
+    "hideLabel": {
+      "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/hideLabel"
+    },
+    "icon": {
+      "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/icon"
+    },
+    "invalid": {
+      "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/invalid"
+    },
+    "invalidMessage": {
+      "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/invalidMessage"
+    },
+    "hint": {
+      "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/hint"
+    },
+    "className": {
+      "title": "Class",
+      "description": "Additional css classes attached to the input element",
+      "type": "string"
+    },
+    "component": {
+      "title": "`ks-component` attribute",
+      "description": "Optional custom component identifier",
+      "type": "string"
+    }
+  }
+}

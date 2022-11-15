@@ -1,0 +1,27 @@
+$name-: 'c-post-meta' !default;
+
+$host: (
+  '.c-post-meta': (
+    gap: var(--ks-spacing-m),
+  ),
+) !default;
+
+$item: (
+  '.c-post-meta': (
+    gap: var(--ks-spacing-xs),
+    font: var(--ks-font-interface-s),
+    color: var(--ks-text-color-interface),
+    icon-size: 1.2em,
+  ),
+) !default;
+
+$author: (
+  '.c-post-meta': (
+    gap: var(--c-post-meta_item--gap),
+    font: var(--c-post-meta_item--font),
+    color: var(--c-post-meta_item--color),
+    font-weight: var(--ks-font-weight-bold),
+    avatar-size: 1.5em,
+    avatar-border-radius: var(--ks-border-radius-circle),
+  ),
+) !default;

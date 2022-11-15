@@ -1,0 +1,36 @@
+table {
+  * {
+    font-size: 13px;
+  }
+
+  code {
+    font-size: 12px;
+    border: none;
+    background: none;
+    padding: 0;
+  }
+
+  td,
+  th {
+    border-left: transparent;
+    border-right: transparent;
+  }
+
+  th,
+  tr {
+    border: 0 !important;
+    text-align: left;
+  }
+
+  tr:last-child {
+    td {
+      border-bottom: none;
+    }
+  }
+}
+
+.split-table {
+  display: flex;
+  gap: var(--ks-spacing-m-base);
+  flex-wrap: wrap;
+}

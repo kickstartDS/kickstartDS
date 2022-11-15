@@ -1,0 +1,59 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/base/headline.schema.json",
+  "title": "Headline",
+  "description": "Headline",
+  "type": "object",
+  "properties": {
+    "level": {
+      "title": "Level",
+      "description": "Select the headline level to use, or p alternatively",
+      "type": "string",
+      "enum": ["h1", "h2", "h3", "h4", "h5", "p"],
+      "default": "h2"
+    },
+    "styleAs": {
+      "title": "Style",
+      "description": "Select the headline style to use",
+      "type": "string",
+      "enum": ["none", "h1", "h2", "h3", "h4", "h5", "p"],
+      "default": "none"
+    },
+    "align": {
+      "title": "Alignment",
+      "description": "Choose an alignment for the headline",
+      "type": "string",
+      "enum": ["left", "center", "right"],
+      "default": "left"
+    },
+    "content": {
+      "title": "Text",
+      "description": "Text content for the headline",
+      "type": "string",
+      "examples": ["Headline"]
+    },
+    "subheadline": {
+      "title": "Subheadline",
+      "description": "Text content for the optional subheadline",
+      "type": "string"
+    },
+    "spaceAfter": {
+      "title": "Bottom spacing",
+      "description": "Add additional spacing to the bottom of the headline",
+      "type": "string",
+      "enum": ["minimum", "small", "large"],
+      "default": "minimum"
+    },
+    "className": {
+      "type": "string",
+      "title": "Additional Classes",
+      "description": "Add additional css classes that should be applied to the headline"
+    },
+    "component": {
+      "title": "`ks-component` attribute",
+      "description": "Optional custom component identifier",
+      "type": "string"
+    }
+  },
+  "required": ["content"]
+}

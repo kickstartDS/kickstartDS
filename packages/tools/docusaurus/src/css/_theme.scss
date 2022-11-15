@@ -1,0 +1,61 @@
+/* stylelint-disable custom-property-empty-line-before */
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+[ks-theme='docs'] {
+  --ks-spacing-xxs-bp-factor: 1;
+  --ks-spacing-xs-bp-factor: 1;
+  --ks-spacing-s-bp-factor: 1;
+  --ks-spacing-m-bp-factor: 1;
+  --ks-spacing-l-bp-factor: 1;
+  --ks-spacing-xl-bp-factor: 1;
+  --ks-spacing-xxl-bp-factor: 1;
+
+  --ks-font-size-display-bp-factor: 1;
+  --ks-font-size-copy-bp-factor: 1;
+  --ks-font-size-ui-bp-factor: 1;
+
+  --ks-font-display-xxs: var(--ks-font-ui-xxs);
+  --ks-font-display-xs: var(--ks-font-ui-xs);
+  --ks-font-display-s: var(--ks-font-ui-s);
+  --ks-font-display-m: var(--ks-font-ui-m);
+  --ks-font-display-l: var(--ks-font-ui-l);
+  --ks-font-display-xl: var(--ks-font-ui-xl);
+  --ks-font-display-xxl: var(--ks-font-ui-xxl);
+
+  --ks-font-copy-xxs: 0.45rem;
+  --ks-font-copy-xs: 0.5rem;
+  --ks-font-copy-s: 0.65rem;
+  --ks-font-copy-m: 0.75rem;
+  --ks-font-copy-l: 0.85rem;
+  --ks-font-copy-xl: 1rem;
+  --ks-font-copy-xxl: 1.25rem;
+
+  --c-rich-text--color: var(--ifm-font-color-base) !important;
+
+  --ks-border-color-interface-interactive-base: var(--ks-color-primary-alpha-4);
+  --ks-border-color-interface-interactive-hover-base: var(--ks-color-primary);
+
+  [data-theme='dark'] & {
+    --ks-border-color-interface-interactive-base: var(--ks-color-fg-alpha-4);
+    --ks-border-color-interface-interactive-hover-base: var(--ks-color-fg);
+  }
+
+  --ks-border-width-default: 1px;
+  --ks-border-width-emphasized: 1px;
+
+  .l-section__container {
+    --l-section_col--min-width: 15rem;
+  }
+}
+
+[ks-theme='docs'] [ks-theme='preview'] {
+  --ks-border-width-default: 2px;
+  --ks-border-width-emphasized: 3px;
+  --ks-border-radius-card: 6px;
+  --ks-border-radius-control: 4px;
+  --ks-border-radius-surface: 10px;
+}

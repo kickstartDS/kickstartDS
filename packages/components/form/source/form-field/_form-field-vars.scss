@@ -1,0 +1,33 @@
+$name-: 'c-form-field';
+
+$host: (
+  ':root, [ks-theme], [ks-inverted]': (
+    border: var(--ks-border-width-default) solid,
+    border-color: var(--ks-border-color-interface-interactive),
+    border-radius: var(--ks-border-radius-control),
+    background: var(--ks-background-color-interface-interactive),
+    background-disabled:
+      var(--ks-background-color-interface-interactive-disabled),
+    color: var(--ks-text-color-interface-interactive),
+  ),
+) !default;
+
+$hover: (
+  ':root, [ks-theme], [ks-inverted]': (
+    border-color: var(--ks-border-color-interface-interactive-hover),
+  ),
+) !default;
+
+$focus: (
+  ':root, [ks-theme], [ks-inverted]': (
+    border-color: var(--ks-border-color-interface-interactive-active),
+    shadow: 0 0 4px -1px,
+  ),
+) !default;
+
+$icon: (
+  ':root, [ks-theme], [ks-inverted]': (
+    size: calc(var(--ks-line-height-interface-m) * 0.75em),
+    color: var(--ks-color-fg-alpha-3),
+  ),
+) !default;

@@ -1,0 +1,109 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/base/picture.definitions.json",
+  "title": "Picture",
+  "description": "Base component to display a picture",
+  "type": "object",
+  "properties": {
+    "src": {
+      "title": "Source",
+      "description": "Picture source",
+      "type": "string",
+      "format": "image",
+      "examples": ["https://picsum.photos/seed/kdspicture/300/300"]
+    },
+    "srcSet": {
+      "title": "Picture sourceset",
+      "description": "Use a srcSet to display picture",
+      "type": "string",
+      "format": "image"
+    },
+    "alt": {
+      "title": "Alt text",
+      "description": "Alt text to display for picture",
+      "type": "string"
+    },
+    "width": {
+      "title": "Width",
+      "description": "Width of the picture",
+      "type": "integer",
+      "minimum": 0,
+      "examples": [300]
+    },
+    "height": {
+      "title": "Height",
+      "description": "Height of the picture",
+      "type": "integer",
+      "minimum": 0,
+      "examples": [300]
+    },
+    "className": {
+      "title": "Additional Classes",
+      "description": "Add additional css classes that should be applied to the button",
+      "type": "string"
+    },
+    "component": {
+      "title": "`ks-component` attribute",
+      "description": "Optional custom component identifier",
+      "type": "string"
+    },
+    "id": {
+      "title": "Id",
+      "description": "Add id attribute to the image",
+      "type": "string"
+    },
+    "itemProp": {
+      "title": "`itemprop` attribute",
+      "description": "Define an itemprop attribute for the picture",
+      "type": "string"
+    },
+    "style": {
+      "title": "`style` attribute",
+      "description": "Define a style attribute for the picture",
+      "type": "string"
+    },
+    "noscript": {
+      "title": "Noscript",
+      "description": "Render noscript fallback",
+      "type": "boolean",
+      "default": true
+    },
+    "lazy": {
+      "title": "Lazy",
+      "description": "Load the picture lazily",
+      "type": "boolean",
+      "default": true
+    },
+    "sources": {
+      "title": "Sources",
+      "description": "Additional sources. This will result in a `picture`-Element",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "srcSet": {
+            "title": "Picture sourceset",
+            "description": "Use a srcSet to display picture",
+            "type": "string",
+            "format": "image"
+          },
+          "media": {
+            "title": "TODO MEDIA TITLE",
+            "description": "TODO MEDIA DESCRIPTION",
+            "type": "string"
+          },
+          "type": {
+            "title": "TODO TYPE TITLE",
+            "description": "TODO TYPE DESCRIPTION",
+            "type": "string"
+          }
+        }
+      }
+    },
+    "pictureClassName": {
+      "title": "`class` attribute",
+      "description": "Set additional class(es) to the picture",
+      "type": "string"
+    }
+  }
+}
