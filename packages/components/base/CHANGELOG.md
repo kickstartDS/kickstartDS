@@ -1,10 +1,23 @@
 # v2.0.0 (Tue Nov 15 2022)
 
+## **kickstartDS** 2.0.0 - Release of **kickstartDS** as **Open Source**
+
+Release of **kickstartDS** as **Open Source**, read more on our blog:
+https://www.kickstartds.com/blog/kickstartds-is-open-source-now-lets-start-to-democratize-design-systems-today/
+
+Also includes some major new and reworked features:
+* Introduction of **Style Dictionary**, semantic Design Token (with Figma support) and Component Token
+* Switch to CSS Container Queries for all component layouting
+* Addition of documentation at https://www.kickstartDS.com/docs
+
+Read the extended `CHANGELOG.md` there, for all the changes included in this release.
+See the migrations page to upgrade: https://www.kickstartds.com/docs/guides/migrations/
+
 :tada: This release contains work from new contributors! :tada:
 
 Thanks for all your work!
 
-:heart: null[@fleven-kds](https://github.com/fleven-kds)
+:heart: Franz [@fleven-kds](https://github.com/fleven-kds)
 
 :heart: Daniel ([@DanielLeyUX](https://github.com/DanielLeyUX))
 
