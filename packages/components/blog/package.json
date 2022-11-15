@@ -1,6 +1,6 @@
 {
   "name": "@kickstartds/blog",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "kickstartDS Blog Module",
   "homepage": "https://www.kickstartDS.com",
   "bugs": {
@@ -32,13 +32,13 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.20.1",
-    "@kickstartds/base": "^2.0.0",
-    "@kickstartds/core": "^2.0.0",
+    "@kickstartds/base": "^2.0.1",
+    "@kickstartds/core": "^2.0.1",
     "classnames": "^2.3.2",
     "date-fns": "^2.29.3"
   },
   "devDependencies": {
-    "@kickstartds/bundler": "^2.0.0"
+    "@kickstartds/bundler": "^2.0.1"
   },
   "peerDependencies": {
     "react": "^17.0.2"
