@@ -34,7 +34,7 @@ This includes setting up some **React** constructs like `Providers`, that ensure
 
 All components in **kickstartDS** come with their own `Provider`. This enables you to switch component implementations at will. From sweeping changes like switching all `Button`s for your own custom `Button`, including the ones that are part of other, bigger components, or surgical changes like just replacing the `Button` that gets used in a `Teaser Box` specifically.
 
-To have that benefit for our own users, too, we'll add the same general structure to our Design System.
+To have that benefit for our own users, too, we'll add the same general structure to our Design System here.
 
 #### Aggregate global `Providers`
 
@@ -60,13 +60,17 @@ For now this will not do anything, but we'll hook it up to **Storybook** in the 
 
 TODO review this code section, not sure this is functional code
 
-#### Add `Provider` decorator to **Storybook**
+#### Update `.storybook/preview.js`
 
-Integration with **Storybook** is done in `.storybook/preview.js` again, as this is related to how components are rendered / previewed:
+Integration with **Storybook** is done in `.storybook/preview.js` again, as this is related to how components are rendered / previewed. Just add the following lines to it:
 
-```js .storybook/preview.js
-import { actions } from '@storybook/addon-actions';
-import { DocsContainer } from '@storybook/addon-docs';
+<CH.Spotlight>
+<CH.Code>
+```jsx .storybook/preview.js
+import { actions } from "@storybook/addon-actions";
+import { DocsContainer } from "@storybook/addon-docs";
+
+import { unpackDecorator } from '@kickstartds/core/lib/storybook/helpers';
 
 import '@kickstartds/base/lib/global/base.js';
 import '@kickstartds/base/lib/global/base.css';
@@ -76,17 +80,18 @@ import Providers from '../src/components/Providers';
 
 import '../src/token/tokens.css';
 
-const myActions = actions('radio');
-window._ks.radio.on('*', myActions.radio);
+const myActions = actions("radio");
+window.rm.radio.on("\*", myActions.radio);
 
 const providerDecorator = (Story, context) => (
-  <Providers>
-    <Story {...context} />
-  </Providers>
+
+<Providers>
+  <Story {...context} />
+</Providers>
 );
 
 export const parameters = {
-  actions: { argTypesRegex: '^on[A-Z].*' },
+  actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
     matchers: {
       color: /(background|color)$/i,
@@ -96,7 +101,7 @@ export const parameters = {
   options: {
     storySort(a, b) {
       // welcome page to top!
-      if (a[0].includes('welcome')) {
+      if (a[0].includes("welcome")) {
         return -1;
       }
 
@@ -105,21 +110,22 @@ export const parameters = {
         ? 0
         : a[1].id.localeCompare(b[1].id, undefined, { numeric: true });
     },
-  },
-  designToken: {
-    disable: true,
-  },
-  docs: {
-    container: (props) => (
-      <Providers>
-        <IconSprite />
-        <DocsContainer {...props} />
-      </Providers>
-    ),
-  },
-};
+
+},
+designToken: {
+disable: true,
+},
+docs: {
+container: (props) => (
+
+<Providers>
+  <IconSprite />
+  <DocsContainer {...props} />
+</Providers>
+), }, };
 
 export const decorators = [
+  unpackDecorator,
   providerDecorator,
   (Story) => (
     <>
@@ -129,30 +135,173 @@ export const decorators = [
   ),
 ];
 ```
+</CH.Code>
 
-TODO add `CH.Spotlight`, was having trouble with **Prettier** destroying the formatting of code here, unfortunately
+---
+
+#### Add `Provider` decorator to **Storybook**
+
+We start by importing our (still empty) `Providers` that we created,
+
+<CH.Code>
+```jsx .storybook/preview.js focus=4
+import { actions } from "@storybook/addon-actions";
+import { DocsContainer } from "@storybook/addon-docs";
+
+import { unpackDecorator } from '@kickstartds/core/lib/storybook/helpers';
+
+import '@kickstartds/base/lib/global/base.js';
+import '@kickstartds/base/lib/global/base.css';
+
+import IconSprite from '../src/token/icons/IconSprite';
+import Providers from '../src/components/Providers';
+
+import '../src/token/tokens.css';
+
+const myActions = actions("radio");
+window.rm.radio.on("\*", myActions.radio);
+
+const providerDecorator = (Story, context) => (
+
+<Providers>
+  <Story {...context} />
+</Providers>
+);
+
+export const parameters = {
+  actions: { argTypesRegex: "^on[A-Z].*" },
+  controls: {
+    matchers: {
+      color: /(background|color)$/i,
+      date: /Date$/,
+    },
+  },
+  options: {
+    storySort(a, b) {
+      // welcome page to top!
+      if (a[0].includes("welcome")) {
+        return -1;
+      }
+
+      // alphabetically
+      return a[1].kind === b[1].kind
+        ? 0
+        : a[1].id.localeCompare(b[1].id, undefined, { numeric: true });
+    },
+
+},
+designToken: {
+disable: true,
+},
+docs: {
+container: (props) => (
+
+<Providers>
+  <IconSprite />
+  <DocsContainer {...props} />
+</Providers>
+), }, };
+
+export const decorators = [
+  unpackDecorator,
+  providerDecorator,
+  (Story) => (
+    <>
+      <IconSprite />
+      <Story />
+    </>
+  ),
+];
+```
+</CH.Code>
+
+---
 
 #### Add **unpack** decorator to **Storybook**
 
 While at it, we also add the **unpack** decorator to our **Storybook**. This decorator is provided by **kickstartDS** as part of `@kickstartDS/core`, and is used to unpack arguments provided to the component, rendered as part of a Story.
 
 <Admonition type="tip" title="pack, unpack, story args... huh?">
-  **kickstartDS** offers helpers you can use to automatically configure your
-  stories [**Storybook
-  Controls**](https://storybook.js.org/docs/react/essentials/controls). If used,
-  you'll automatically get Controls and respective documentation based on your
-  component API (**JSON Schema**). Because nesting Controls isn't
-  straight-forward, we've written those helpers (`pack`, `unpack`) that take
-  complex JSON, and, as the name suggests, `pack` those into an object with
-  flattened keys compatible with the Controls addon (much like [a library like
-  `flat`](https://github.com/hughsk/flat) does it). Vice versa with `unpack`, so
-  a component controlled by those args (read more about [Story
-  Args](https://storybook.js.org/docs/react/writing-stories/args) and [Story
-  ArgTypes](https://storybook.js.org/docs/react/api/argtypes)) gets back the
-  "complex" version of its properties.
+  **kickstartDS** offers helpers you can use to automatically configure your stories [**Storybook Controls**](https://storybook.js.org/docs/react/essentials/controls). If used, you'll automatically get **Controls** and respective documentation based on your [component API](../../foundations/components/component-api.md) (**JSON Schema**).
+
+Because nesting Controls isn't straight-forward, we've written those helpers (`pack`, `unpack`) that take complex JSON, and, as the name suggests, `pack` those into an object with flattened keys compatible with the Controls addon (much like [a library like `flat`](https://github.com/hughsk/flat) does it).
+
 </Admonition>
 
-TODO fix code formatting, this should includes paragraphs, but **Prettier** is super aggressive here.
+<CH.Code>
+```jsx .storybook/preview.js
+import { actions } from "@storybook/addon-actions";
+import { DocsContainer } from "@storybook/addon-docs";
+
+import { unpackDecorator } from '@kickstartds/core/lib/storybook/helpers';
+
+import '@kickstartds/base/lib/global/base.js';
+import '@kickstartds/base/lib/global/base.css';
+
+import IconSprite from '../src/token/icons/IconSprite';
+import Providers from '../src/components/Providers';
+
+import '../src/token/tokens.css';
+
+const myActions = actions("radio");
+window.rm.radio.on("\*", myActions.radio);
+
+const providerDecorator = (Story, context) => {
+return (
+
+<Providers>
+  <Story {...context} />
+</Providers>
+); }
+
+export const parameters = {
+  actions: { argTypesRegex: "^on[A-Z].*" },
+  controls: {
+    matchers: {
+      color: /(background|color)$/i,
+      date: /Date$/,
+    },
+  },
+  options: {
+    storySort(a, b) {
+      // welcome page to top!
+      if (a[0].includes("welcome")) {
+        return -1;
+      }
+
+      // alphabetically
+      return a[1].kind === b[1].kind
+        ? 0
+        : a[1].id.localeCompare(b[1].id, undefined, { numeric: true });
+    },
+
+},
+designToken: {
+disable: true,
+},
+docs: {
+container: (props) => (
+
+<Providers>
+  <IconSprite />
+  <DocsContainer {...props} />
+</Providers>
+), }, };
+
+export const decorators = [
+  unpackDecorator,
+  providerDecorator,
+  (Story) => (
+    <>
+      <IconSprite />
+      <Story />
+    </>
+  ),
+];
+```
+</CH.Code>
+
+</CH.Spotlight>
 
 ```js .storybook/preview.js
 import { actions } from '@storybook/addon-actions';
@@ -222,31 +371,6 @@ export const decorators = [
   ),
 ];
 ```
-
-### Hook up **JavaScript**
-
-Some components need additional **JavaScript** for their functionality. As **JavaScript** for **kickstartDS** components gets written in isolation, not involving **React** or any other framework, we will need to make sure that **JavaScript** gets bundled and loaded correctly. We also need to make sure **Storybook** knows about those compiled assets.
-
-TODO add `package.json` compilation stuff
-
-TODO check for code duplication, e.g. `import "lazysizes/plugins/attrchange/ls.attrchange";`, especially in combination with `.storybook/preview.js`
-
-TODO import generated `js` / `css` in `.storybook/preview.js`
-
-- `src/kds.js`
-- `src/index.js`
-
-### Hook up **CSS** / **SCSS**
-
-As with the **JavaScript** functionality before, there will be cases where we'll want to add some custom **CSS** or **SCSS**, to further customize how a component looks or behaves. With **SCSS** this means adding compilation to the mix, and both will need some bundling. And again, making those assets known to **Storybook**.
-
-TODO add `package.json` compilation stuff
-
-TODO check for code duplication, e.g. `@use "@kickstartds/base/lib/global/base.css";`
-
-TODO import generated `js` / `css` in `.storybook/preview.js`
-
-- `src/index.scss`
 
 ### Add `package.json` `scripts`
 

@@ -22,12 +22,12 @@ We typically use different channels for different stabilities:
 - `beta` is connected to the `beta` branch on our mono-repository, always contains the next breaking release that's in preparation
 - `canary` is connected to all branches that have an active PR open on Github, and generates a Canary release specific to that branch, [for isolated, early testing](https://martinfowler.com/bliki/CanaryRelease.html)
 
-This also aligns with our semantic versioning scheme. Breaking changes (`X.0.0`) mature through the `beta` channel before being merged to `latest`, feature releases (`1.X.0`) go through `next` and fixes (`1.0.X`) land on `latest` directly. As every change introduced to these channels will have gone through a PR on Github, it will also have included a Canary release for it. All branches [auto release based on merged PRs](../upgrading/index.md#semantic-versioning-with-auto)
+This also aligns with our semantic versioning scheme. Breaking changes (`X.0.0`) mature through the `beta` channel before being merged to `latest`, feature releases (`1.X.0`) go through `next` and fixes (`1.0.X`) land on `latest` directly. As every change introduced to these channels will have gone through a PR on Github, it will also have included a Canary release for it. All branches [auto release based on merged PRs](./upgrading.md#semantic-versioning-with-auto)
 
 All releases get published on **Github**, too. So you can also use that as a reference:<br/>
 https://github.com/kickstartDS/kickstartDS/releases
 
-To learn more about **Auto**, **Semantic Versioning** and release handling you can read some background information on the "Upgrading" page, [in the following section](../upgrading/index.md#some-background-information).
+To learn more about **Auto**, **Semantic Versioning** and release handling you can read some background information on the "Upgrading" page, [in the following section](./upgrading.md#some-background-information).
 
 We've categorized all the packages existing (right now) below, so feel free to have a closer look!
 
@@ -174,7 +174,7 @@ There are some packages used internally (`@kickstartds/bundler`) by **kickstartD
 
 ### **kickstartDS** CLI
 
-`kickstartds` holds our CLI, and is the only package not published under the `@kickstartDS` org namespace, living directly at `kickstartds` instead. It's used to initialize and compile Design Token sets, generate **TypeScript** types for components and dereferenced **JSON Schema** files for you. To learn more about it, have a look at our ["CLI Usage"](./../cli/index.md) page.
+`kickstartds` holds our CLI, and is the only package not published under the `@kickstartDS` org namespace, living directly at `kickstartds` instead. It's used to initialize and compile Design Token sets, generate **TypeScript** types for components and dereferenced **JSON Schema** files for you. To learn more about it, have a look at our ["CLI Usage"](./cli.md) page.
 
 You can find the CLI on:
 
@@ -195,7 +195,7 @@ This includes (non-exhaustive):
 - Transpiling code to be browser-compatible
 - Generating **CSS** bundles from **SCSS**
 
-If you're wondering how you'd do that in your own Design System, have a look at the final step of our main guide ["Create your Design System"](../../guides/create/index.mdx). We describe one way to do it there, but this setup will always heavily depend on your specific set of circumstances... and the projects that you plan on using your Design System in.
+If you're wondering how you'd do that in your own Design System, have a look at the final step of our main guide ["Create your Design System"](../guides/create/index.mdx). We describe one way to do it there, but this setup will always heavily depend on your specific set of circumstances... and the projects that you plan on using your Design System in.
 
 You can find the bundler on:
 
@@ -209,7 +209,7 @@ You can find the bundler on:
 
 `@kickstartds/style-dictionary` provides a directly re-usable **Style Dictionary** configuration. Either consume a completely **kickstartDS**-compatible base config from this, or build up your own config using **kickstartDS** building blocks (like filters, formats, parsers and templates).
 
-**Style Dictionary** is used as a tool to manage your **Design Token** set. All your atomic design decisions get encoded in standardized JSON, ready to be transformed to all the outputs you might need. For **kickstartDS** this currently means converting your [Design Token](../../foundations/token/design-token/index.md) set to component-compatible CSS Custom Properties (CSS variables). Those, in turn, are used inside components by defining [Component Token](../../foundations/token/component-token.mdx). But it could also mean exporting them in a format compatible with **iOS**, **Android** development, or to generate brand-compliant theming inputs for **Material UI** / **MUI**, **Bootstrap** or **SAP Fiori**.
+**Style Dictionary** is used as a tool to manage your **Design Token** set. All your atomic design decisions get encoded in standardized JSON, ready to be transformed to all the outputs you might need. For **kickstartDS** this currently means converting your [Design Token](../foundations/token/design-token/index.md) set to component-compatible CSS Custom Properties (CSS variables). Those, in turn, are used inside components by defining [Component Token](../foundations/token/component-token.mdx). But it could also mean exporting them in a format compatible with **iOS**, **Android** development, or to generate brand-compliant theming inputs for **Material UI** / **MUI**, **Bootstrap** or **SAP Fiori**.
 
 To learn more about **Style Dictionary** in general, [visit their website](https://amzn.github.io/style-dictionary/).
 
@@ -229,7 +229,7 @@ We still try to write those addons in a way that they're useful outside of **kic
 
 ### **JSON Schema** addon
 
-`@kickstartds/storybook-addon-jsonschema` is an addon we wrote to display **JSON Schema** documentation for your [component API](../../foundations/components/component-api.md), including a validating JSON Code Editor with semantic auto-complete, the ability to interact with your components, and copy configurations with ease.
+`@kickstartds/storybook-addon-jsonschema` is an addon we wrote to display **JSON Schema** documentation for your [component API](../foundations/components/component-api.md), including a validating JSON Code Editor with semantic auto-complete, the ability to interact with your components, and copy configurations with ease.
 
 To learn more about this addon, view our [dedicated integrations page about it](../integration/storybook/schema.mdx).
 
@@ -261,7 +261,7 @@ All the packages listed here include ready-to-use configuration for coding best 
 
 ### **Auto** configuration
 
-`@kickstartds/auto-config` contains a configuration for **Auto**, a tool to generate releases based on semantic version labels on pull requests. Learn more on [their Github](https://github.com/intuit/auto) or [dedicated website for the tool](https://intuit.github.io/auto/). We use this ourselves, to generate releases for all of our **npm** packages. Have a look at part 5 of ["Create your Design System"](../../guides/create/publish.mdx) for a deeper look on how this can work for your own Design System.
+`@kickstartds/auto-config` contains a configuration for **Auto**, a tool to generate releases based on semantic version labels on pull requests. Learn more on [their Github](https://github.com/intuit/auto) or [dedicated website for the tool](https://intuit.github.io/auto/). We use this ourselves, to generate releases for all of our **npm** packages. Have a look at part 5 of ["Create your Design System"](../guides/create/publish.mdx) for a deeper look on how this can work for your own Design System.
 
 You can find this config on:
 
