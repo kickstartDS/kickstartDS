@@ -1,3 +1,142 @@
+# v2.0.0 (Tue Nov 15 2022)
+
+:tada: This release contains work from new contributors! :tada:
+
+Thanks for all your work!
+
+:heart: null[@fleven-kds](https://github.com/fleven-kds)
+
+:heart: Daniel ([@DanielLeyUX](https://github.com/DanielLeyUX))
+
+#### 💥 Breaking Change
+
+- Major Open Source release [#1092](https://github.com/kickstartDS/kickstartDS/pull/1092) ([@lmestel](https://github.com/lmestel) [@fleven-kds](https://github.com/fleven-kds) [@julrich](https://github.com/julrich) [@dependabot[bot]](https://github.com/dependabot[bot]) [@DanielLeyUX](https://github.com/DanielLeyUX))
+- merge `link-button` into `button` component [#930](https://github.com/kickstartDS/kickstartDS/pull/930) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@lmestel](https://github.com/lmestel))
+- fix: fix inverted colors in components [#1092](https://github.com/kickstartDS/kickstartDS/pull/1092) ([@lmestel](https://github.com/lmestel))
+- feat: add `ks-theme` layer to enable partial token overwrites [#1092](https://github.com/kickstartDS/kickstartDS/pull/1092) ([@lmestel](https://github.com/lmestel))
+- feat: add foreground color scale; improve inverted logic [#1092](https://github.com/kickstartDS/kickstartDS/pull/1092) ([@lmestel](https://github.com/lmestel))
+- feat: add primary color alpha scale tokens [#1092](https://github.com/kickstartDS/kickstartDS/pull/1092) ([@lmestel](https://github.com/lmestel))
+- feat: add border, box-shadow & transition tokens [#1092](https://github.com/kickstartDS/kickstartDS/pull/1092) ([@lmestel](https://github.com/lmestel))
+- fix: fix scss syntax error [#1092](https://github.com/kickstartDS/kickstartDS/pull/1092) ([@lmestel](https://github.com/lmestel))
+- fix: fix deprecated grey scale & form field styles [#1092](https://github.com/kickstartDS/kickstartDS/pull/1092) ([@lmestel](https://github.com/lmestel))
+- Merge branch 'feature/style-dictionary' into feature/style-dictionary-container-queries [#1092](https://github.com/kickstartDS/kickstartDS/pull/1092) ([@lmestel](https://github.com/lmestel))
+- feat: add scss container mixins [#1092](https://github.com/kickstartDS/kickstartDS/pull/1092) ([@lmestel](https://github.com/lmestel))
+- refactor: move token primitives in single json file [#1092](https://github.com/kickstartDS/kickstartDS/pull/1092) ([@lmestel](https://github.com/lmestel))
+- Merge branch 'beta' into feature/style-dictionary [#1092](https://github.com/kickstartDS/kickstartDS/pull/1092) ([@lmestel](https://github.com/lmestel))
+- feat: add background- & text-color tokens [#1092](https://github.com/kickstartDS/kickstartDS/pull/1092) ([@lmestel](https://github.com/lmestel))
+- Merge branch 'next' into beta [#1092](https://github.com/kickstartDS/kickstartDS/pull/1092) ([@lmestel](https://github.com/lmestel))
+- change schema ids to `schema.kickstartds.com` [#830](https://github.com/kickstartDS/kickstartDS/pull/830) ([@lmestel](https://github.com/lmestel))
+- import css files in components [#781](https://github.com/kickstartDS/kickstartDS/pull/781) ([@lmestel](https://github.com/lmestel))
+- Merge branch 'next' into feature/style-dictionary [#1092](https://github.com/kickstartDS/kickstartDS/pull/1092) ([@lmestel](https://github.com/lmestel))
+
+#### 🚀 Enhancement
+
+- Merge branch 'feature/inverted-tokens' into feature/style-dictionary-container-queries [#976](https://github.com/kickstartDS/kickstartDS/pull/976) ([@lmestel](https://github.com/lmestel))
+- every component forwards its `ref` [#645](https://github.com/kickstartDS/kickstartDS/pull/645) ([@lmestel](https://github.com/lmestel))
+
+#### 🐛 Bug Fix
+
+- Merge branch 'next' into feature/docs ([@lmestel](https://github.com/lmestel))
+- Merge branch 'feature/docs' of github.com:kickstartDS/kickstartDS into feature/docs ([@julrich](https://github.com/julrich))
+- docs: add LICENSES and update README.mds ([@julrich](https://github.com/julrich))
+- feat: reverse alpha color scale [#1181](https://github.com/kickstartDS/kickstartDS/pull/1181) ([@lmestel](https://github.com/lmestel))
+- build(deps): bump @babel/runtime from 7.19.0 to 7.19.4 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- feat: rename `data-component` to `ks-component` & add `component` prop to every component ([@lmestel](https://github.com/lmestel))
+- Merge branch 'feature/style-dictionary-container-queries' into feature/docs ([@lmestel](https://github.com/lmestel))
+- refactor: move example data in schemas from `default` prop to `examples` ([@lmestel](https://github.com/lmestel))
+- build: remove package's single entrypoint ([@lmestel](https://github.com/lmestel))
+- refactor: fix type hints ([@lmestel](https://github.com/lmestel))
+- build: publish @kickstartds/bundler package ([@lmestel](https://github.com/lmestel))
+- Merge branch 'feature/style-dictionary-container-queries' of github.com:kickstartDS/kickstartDS into feature/style-dictionary-container-queries ([@lmestel](https://github.com/lmestel))
+- Merge branch 'feature/style-dictionary-container-queries' into feature/docs ([@julrich](https://github.com/julrich))
+- feat: add semantic color tokens ([@lmestel](https://github.com/lmestel))
+- feat: add border color tokens ([@lmestel](https://github.com/lmestel))
+- refactor: rename type `ui` variant to `interface` ([@lmestel](https://github.com/lmestel))
+- Merge branch 'feature/docs' of https://github.com/kickstartDS/kickstartDS into feature/docs ([@fleven-kds](https://github.com/fleven-kds))
+- feat: add `labelProps` prop to form elements ([@lmestel](https://github.com/lmestel))
+- feat: add `icon` prop to select field ([@lmestel](https://github.com/lmestel))
+- build(deps): bump classnames from 2.3.1 to 2.3.2 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore: move collapsible box & contact components to base ([@lmestel](https://github.com/lmestel))
+- Merge branch 'next' into feature/style-dictionary-container-queries ([@lmestel](https://github.com/lmestel))
+- chore: remove atomic folder structure ([@lmestel](https://github.com/lmestel))
+- Merge branch 'feature/style-dictionary-container-queries' into dependabot/npm_and_yarn/photoswipe-5.3.2 ([@lmestel](https://github.com/lmestel))
+- build(deps): bump @babel/runtime from 7.17.9 to 7.19.0 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- test: fix `renderFn` types ([@lmestel](https://github.com/lmestel))
+- Merge branch 'feature/style-dictionary-container-queries' into feature/one-button-to-rule-them-all ([@lmestel](https://github.com/lmestel))
+- chore: schema inconsistencies and upgrade [#999](https://github.com/kickstartDS/kickstartDS/pull/999) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@julrich](https://github.com/julrich) [@lmestel](https://github.com/lmestel))
+- build(deps): bump @babel/runtime from 7.17.8 to 7.17.9 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(merge): merge next into branch ([@julrich](https://github.com/julrich))
+- Merge branch 'next' into fix/simplify-section-schema-and-open-up-enums ([@julrich](https://github.com/julrich))
+- unify component props exports [#961](https://github.com/kickstartDS/kickstartDS/pull/961) ([@lmestel](https://github.com/lmestel))
+- refactor: annotate type imports ([@lmestel](https://github.com/lmestel))
+- refactor: remove duplicate style imports ([@lmestel](https://github.com/lmestel))
+- refactor: unify component props exports ([@lmestel](https://github.com/lmestel))
+- build(deps): bump @babel/runtime from 7.17.2 to 7.17.8 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- Merge branch 'docs/post-aside-defaults' into feature/blog-refactoring ([@lmestel](https://github.com/lmestel))
+- build(deps): bump bourbon from 7.0.0 to 7.2.0 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- add vcs information in packages [#867](https://github.com/kickstartDS/kickstartDS/pull/867) ([@lmestel](https://github.com/lmestel))
+- chore: add url to the project's issue tracker in packages ([@lmestel](https://github.com/lmestel))
+- chore: add vcs information to packages ([@lmestel](https://github.com/lmestel))
+- chore: unify package.json structure ([@lmestel](https://github.com/lmestel))
+- Merge branch 'beta' into feature/schema-naming ([@lmestel](https://github.com/lmestel))
+- Merge branch 'beta' into build/component-style-loading ([@lmestel](https://github.com/lmestel))
+- feat: change schema ids to `schema.kickstartds.com` ([@lmestel](https://github.com/lmestel))
+- Merge branch 'next' into build/component-style-loading ([@lmestel](https://github.com/lmestel))
+- remove unnecessary polyfills [#829](https://github.com/kickstartDS/kickstartDS/pull/829) ([@lmestel](https://github.com/lmestel))
+- fix: show focus on input fields when using keyboard ([@lmestel](https://github.com/lmestel))
+- build(deps): bump @babel/runtime from 7.16.7 to 7.17.2 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- refactor: move negative numbers to the left in calc expressions ([@lmestel](https://github.com/lmestel))
+- build(deps): bump @babel/runtime from 7.16.5 to 7.16.7 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- Merge branch 'next' into dependabot/npm_and_yarn/babel/core-7.16.5 ([@lmestel](https://github.com/lmestel))
+- build(deps): bump @babel/runtime from 7.16.3 to 7.16.5 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- Merge branch 'next' into feature/container-queries ([@lmestel](https://github.com/lmestel))
+- Merge branch 'next' into dependabot/npm_and_yarn/storybook/cli-6.4.9 ([@lmestel](https://github.com/lmestel))
+- style: satisfy stylelint ([@lmestel](https://github.com/lmestel))
+- feat: forward `ref` in any component ([@lmestel](https://github.com/lmestel))
+- build(deps): bump @babel/runtime from 7.16.0 to 7.16.3 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### 🏠 Internal
+
+- update stylelint [#653](https://github.com/kickstartDS/kickstartDS/pull/653) ([@lmestel](https://github.com/lmestel))
+
+#### 🔩 Dependency Updates
+
+- build(deps): bump @babel/core from 7.19.1 to 7.19.6 [#1172](https://github.com/kickstartDS/kickstartDS/pull/1172) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump @wordpress/babel-plugin-import-jsx-pragma from 4.1.0 to 4.2.0 [#1158](https://github.com/kickstartDS/kickstartDS/pull/1158) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump esbuild from 0.14.42 to 0.15.10 [#1154](https://github.com/kickstartDS/kickstartDS/pull/1154) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump postcss-scss from 4.0.4 to 4.0.5 [#1150](https://github.com/kickstartDS/kickstartDS/pull/1150) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump sass from 1.52.1 to 1.55.0 [#1146](https://github.com/kickstartDS/kickstartDS/pull/1146) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump classnames from 2.3.1 to 2.3.2 [#1149](https://github.com/kickstartDS/kickstartDS/pull/1149) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump auto from 10.37.1 to 10.37.6 [#1122](https://github.com/kickstartDS/kickstartDS/pull/1122) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@lmestel](https://github.com/lmestel))
+- build(deps-dev): bump lerna from 5.4.2 to 5.5.2 [#1126](https://github.com/kickstartDS/kickstartDS/pull/1126) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump @babel/core from 7.18.5 to 7.19.1 [#1123](https://github.com/kickstartDS/kickstartDS/pull/1123) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump autoprefixer from 10.4.4 to 10.4.5 [#1003](https://github.com/kickstartDS/kickstartDS/pull/1003) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump fs-extra from 10.0.1 to 10.1.0 [#1000](https://github.com/kickstartDS/kickstartDS/pull/1000) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump @babel/core from 7.17.8 to 7.17.9 [#964](https://github.com/kickstartDS/kickstartDS/pull/964) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump @wordpress/babel-plugin-import-jsx-pragma from 3.1.1 to 3.1.2 [#903](https://github.com/kickstartDS/kickstartDS/pull/903) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump react-markdown from 8.0.0 to 8.0.1 [#912](https://github.com/kickstartDS/kickstartDS/pull/912) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump @babel/core from 7.17.5 to 7.17.8 [#924](https://github.com/kickstartDS/kickstartDS/pull/924) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump rollup from 2.67.3 to 2.68.0 [#873](https://github.com/kickstartDS/kickstartDS/pull/873) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump fs-extra from 10.0.0 to 10.0.1 [#874](https://github.com/kickstartDS/kickstartDS/pull/874) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump stylelint from 14.5.1 to 14.5.2 [#872](https://github.com/kickstartDS/kickstartDS/pull/872) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump bourbon from 7.0.0 to 7.2.0 [#869](https://github.com/kickstartDS/kickstartDS/pull/869) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump json-csv from 4.0.2 to 4.0.3 [#825](https://github.com/kickstartDS/kickstartDS/pull/825) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump @babel/core from 7.17.0 to 7.17.2 [#821](https://github.com/kickstartDS/kickstartDS/pull/821) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump @babel/core from 7.16.5 to 7.16.7 [#719](https://github.com/kickstartDS/kickstartDS/pull/719) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump @babel/core from 7.16.0 to 7.16.5 [#689](https://github.com/kickstartDS/kickstartDS/pull/689) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@lmestel](https://github.com/lmestel))
+- build(deps): bump @babel/runtime from 7.16.0 to 7.16.3 [#577](https://github.com/kickstartDS/kickstartDS/pull/577) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump esbuild from 0.13.12 to 0.13.13 [#576](https://github.com/kickstartDS/kickstartDS/pull/576) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 5
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- [@fleven-kds](https://github.com/fleven-kds)
+- Daniel ([@DanielLeyUX](https://github.com/DanielLeyUX))
+- Jonas Ulrich ([@julrich](https://github.com/julrich))
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+
+---
+
 # v1.5.0 (Mon Nov 08 2021)
 
 #### 🚀 Enhancement
