@@ -2571,10 +2571,10 @@
     styled-components "^5.3.6"
     typescript "^4.5.4"
 
-"@kickstartds/eslint-config@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@kickstartds/eslint-config/-/eslint-config-1.1.0.tgz#a34e98ec9bc8d813697fe20bc9fb579670b438dd"
-  integrity sha512-132CrMmat5wcnMQM02jYoDL1RNkFri0bUne1DygZz3xC6PqVh9LFBhjtp4lODtNqdg6/7DlrytM7qKUHN6wMug==
+"@kickstartds/eslint-config@^1.1.2":
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@kickstartds/eslint-config/-/eslint-config-1.1.2.tgz#181ec3e2aa4d81dfde9a40ac4a21cec9a799b04d"
+  integrity sha512-Gy6hSy/Vdl37QtOO96aZmUbIynHcphco8twIFsY77gJqLB04R6Z312GQXmZSSXA6YTOm9IV6+Brq+61Pzj0JzQ==
   dependencies:
     "@babel/core" "^7.19.6"
     "@babel/eslint-parser" "^7.19.1"
