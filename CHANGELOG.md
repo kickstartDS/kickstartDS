@@ -1,13 +1,17 @@
 # (Tue Nov 15 2022)
 
-:tada: This release contains work from new contributors! :tada:
+## **kickstartDS** 2.0.0 - Release of **kickstartDS** as **Open Source**
 
-Thanks for all your work!
+Release of **kickstartDS** as **Open Source**, read more on our blog:
+https://www.kickstartds.com/blog/kickstartds-is-open-source-now-lets-start-to-democratize-design-systems-today/
 
-:heart: null[@fleven-kds](https://github.com/fleven-kds)
+Also includes some major new and reworked features:
+* Introduction of **Style Dictionary**, semantic Design Token (with Figma support) and Component Token
+* Switch to CSS Container Queries for all component layouting
+* Addition of documentation at https://www.kickstartDS.com/docs
 
-:heart: Daniel ([@DanielLeyUX](https://github.com/DanielLeyUX))
-
+Read the extended `CHANGELOG.md` there, for all the changes included in this release.
+See the migrations page to upgrade: https://www.kickstartds.com/docs/guides/migrations/
 #### 💥 Breaking Change
 
 - feat: add imageSpacing to TeaserBoxes [#1092](https://github.com/kickstartDS/kickstartDS/pull/1092) ([@fleven-kds](https://github.com/fleven-kds))
