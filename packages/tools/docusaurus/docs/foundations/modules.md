@@ -77,8 +77,6 @@ The **Content Module** includes seven rich components: like the famous hero visu
   />
 </Section>
 
-TODO: add Zendesk to Button
-
 <br/><br/>
 
 <Admonition type="tip" title="Do you miss something?">

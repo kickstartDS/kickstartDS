@@ -16,6 +16,4 @@ Simplification and automation of processes:
 - automatic typing and IDE-completion
 - generation of documentation inside Storybook
 
-## Table of contents:
-
-- JSON Schema
+We'll heavily expand upon this section, soon. Please come back soon for more **JSON Schema** goodness!

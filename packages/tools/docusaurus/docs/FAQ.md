@@ -1,6 +1,6 @@
 # Frequently Asked Questions
 
-TODO revise this, possibly integrate with Zendesk
+We'll add a more comprehensive FAQ soon, please tell us your questions... we'll make sure to include answers to them here!
 
 ## [React](https://reactjs.org/)
 

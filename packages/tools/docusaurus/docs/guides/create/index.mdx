@@ -12,7 +12,11 @@ In this guide we'll get your first Design System, based on **kickstartDS** of co
 
 You could say that this is **the** main guide for **kickstartDS**, as it branches out into a bunch of sub guides in the process. Hopefully giving you a well-rounded overview over everything offered and possible in the end. While also creating the draft for your first Design System in the process!
 
-TODO add disclaimer that this guide can be a great reference while using our starter, too, if following the whole guide (which is quite long) seems a bit too much. This allows only (re-)visiting the parts that are unclear. This page should serve as a great entry point for this, by giving a great / detailed overview, and adding deep links to parts of the (sub-)guides.
+This guide can act as a great reference, too. If you're struggling somewhere, just look up the section concerned with that part of the setup!
+
+And if following such a long guide (it's quite comprehensive) seems daunting, we also have a starter in the works you'll be able to use to have something running in no time. You can always come back to specific sections then anyways!
+
+Just keep this page in mind as a great overview and intro point into **kickstartDS** in general!
 
 The main steps will go as follows:
 
@@ -24,48 +28,92 @@ The main steps will go as follows:
 
 As said previously, the resulting Design System will obviously not be finished by the end of this guide, but you'll have everything set up to start on the real work. We'll add links along the way, when it makes sense, calling out concepts in play or processes to use to find and refine your own personalized use (stuff like choosing an initial component set for your Design System).
 
-TODO add link to video version on YouTube<br/>
-TODO add link to starter to shortcut guide<br/>
-TODO add CLI
-TODO add `.gitignore`, add hints about making a commit at important points
-
 ## 1. Start your Design System
 
 In this step you'll either create a new project entirely, or learn which basics to add to your existing project to get started!
 
-[Go to step 1](./start.mdx).
+Start: [Go to step 1](./start.mdx).
 
-TODO add result of step in Code Sandbox
+A rough outline:
+
+- [Overview](./start.mdx#overview)
+- [Create new project](./start.mdx#create-new-project)
+- [Add to existing project](./start.mdx#add-to-existing-project)
+  - [Dependencies](./start.mdx#dependencies)
+- [Result](./start.mdx#result)
+- [Next Step](./start.mdx#next-step)
 
 ## 2. Design Application
 
 We will create your initial Design Token set by applying your corporate design, as a reduced set of `Branding Token`.<br/>
-We'll then fine-tune this, as much as sensibly possible in such a guide.
+We'll then fine-tune this, as much as sensibly possible in such a guide, at least. We also compile a first semantic **Design Token** set with our **Style Dictionary**.
 
-[Go to step 2](./design.mdx)
+Start: [Go to step 2](./design.mdx)
 
-TODO add result of step in Code Sandbox
+A rough outline:
+
+- [Overview](./design.mdx#overview)
+- [Apply branding](./design.mdx#apply-branding)
+  - [Initialization](./design.mdx#initialization)
+  - [Select **Branding Token**](./design.mdx#select-branding-token)
+  - [Apply **Branding Token**](./design.mdx#apply-branding-token)
+- [kickstartDS Integration](./design.mdx#kickstartds-integration)
+  - [Generate first **Design Token** set](./design.mdx#generate-first-design-token-set)
+  - [Compile **Design Token** set](./design.mdx#compile-design-token-set)
+  - [Fine tune the design](./design.mdx#fine-tune-the-design)
+- [Result](./design.mdx#result)
+- [Next Step](./design.mdx#next-step)
 
 ## 3. Configure Storybook
 
-TODO add description
+We add **Storybook** here, which includes installing and configuring all the addons we suggest to use. This also includes some we've written ourselves, to really get the most out of **kickstartDS**. We'll also add those, and add integrations with **kickstartDS** (tokens, icons, etc). You will end with a fully configured **Storybook**.
 
-[Go to step 3](./storybook.mdx)
+Start: [Go to step 3](./storybook.mdx)
 
-TODO add result of step in Code Sandbox
+A rough outline:
+
+- [Overview](./storybook.mdx#overview)
+- [Install **Storybook**](./storybook.mdx#install-storybook)
+  - [**Storybook** dependencies](./storybook.mdx#storybook-dependencies)
+  - [New `scripts` entries](./storybook.mdx#new-scripts-entries)
+- [Configure **Storybook**](./storybook.mdx#configure-storybook)
+  - [General configuration](./storybook.mdx#general-configuration)
+  - [**Design Token** integration](./storybook.mdx#design-token-integration)
+  - [Add **Storybook** theming](./storybook.mdx#add-storybook-theming)
+  - [Integrate with **kickstartDS**](./storybook.mdx#integrate-with-kickstartds)
+  - [Install remaining addons](./storybook.mdx#install-remaining-addons)
+- [Review changes](./storybook.mdx#review-changes)
+  - [**HTML** rendering addon](./storybook.mdx#html-rendering-addon)
+  - [**Design Token** addon](./storybook.mdx#design-token-addon)
+  - [**JSON Schema** addon](./storybook.mdx#json-schema-addon)
+  - [**Component Token** addon](./storybook.mdx#component-token-addon)
+- [Result](./storybook.mdx#result)
+- [Next Step](./storybook.mdx#next-step)
 
 ## 4. Add Components
 
-TODO add description
+In this part we'll add 4 exemplary components to illustrate the 4 main ways of adding a component to **kickstartDS**. A `Button` to show [adaptation](../components/adapt.mdx), a `Headline` to show [customization](../components/customize.mdx), a `TeaserCard` to show [creation](../components/create.mdx), and finally `Section` for [extension](../components/extend.mdx).
 
-[Go to step 4](./components.mdx)
+We'll then add a recipe, demonstrating that concept, combining those 4 components into one big article teaser component! This should hopefully equip you with all the weapons needed to start creating your very own components! We'd love to hear how it went!
 
-TODO add result of step in Code Sandbox
+Start: [Go to step 4](./components.mdx)
+
+A rough outline:
+
+- [Establish structure](./components.mdx#establish-structure)
+  - [Add component `Provider`s](./components.mdx#add-component-providers)
+  - [Add `package.json` `scripts`](./components.mdx#add-packagejson-scripts)
+- [Component implementation](./components.mdx#component-implementation)
+  - [1. Adding our own `Button` component](./components.mdx#1-adding-our-own-button-component)
+  - [2. Adding our own `Headline` component](./components.mdx#2-adding-our-own-headline-component)
+  - [3. Adding our own `TeaserCard` component](./components.mdx#3-adding-our-own-teasercard-component)
+  - [4. Adding our own `Section` component](./components.mdx#4-adding-our-own-section-component)
+- [Adding an article teaser recipe](./components.mdx#adding-an-article-teaser-recipe)
+- [Result](./components.mdx#result)
+- [Next Step](./components.mdx#next-step)
 
 ## 5. Publish your Design System
 
-TODO add description
+We're currently in the process of finishing this section. Come back real soon, and it should be here!
 
-[Go to step 5](./publish.mdx)
-
-TODO add result of step in Code Sandbox
+Start: [Go to step 5](./publish.mdx)

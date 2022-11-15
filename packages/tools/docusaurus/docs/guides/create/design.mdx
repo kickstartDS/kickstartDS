@@ -17,8 +17,6 @@ Applying your branding and corporate design to **kickstartDS** is itself done in
 
 ### Initialization
 
-TODO rename this file (`token-primitives.json` -> `branding-token.json`), change `kickstartDS-cli` accordingly, location should also be configurable there
-
 We start by creating a file `branding-token.json`, inside a new directory `src/token`... for everything to do with **Design Token** going forward:
 
 ```bash
@@ -142,9 +140,6 @@ But to get a first feel for working with the file, and to add some flavour to ou
 |                                                                                      | `scale-ratio`          | `1.35`                                                                                                                                          |
 |                                                                                      | `bp-ratio`             | `1.15`                                                                                                                                          |
 
-TODO add presenters for token values to make this nicer<br/>
-TODO **really** think again about adding a demo theme to make this whole guide less confusing
-
 ### Apply **Branding Token**
 
 So let's get right into it, customizing step by step:
@@ -246,7 +241,7 @@ This is the file you've copied before, we'll start updating it piecemeal to show
 
 Most brands have such a `primary` color as part of their corporate design guidelines. This will be used to highlight elements, and give them more importance.
 
-Next to `primary` itself, we'll also define its counter part `primary-inverted` as `#ecff00` (`#fff` / `white` works for most uses otherwise, read about the finer [details here](#) TODO add link).
+Next to `primary` itself, we'll also define its counter part `primary-inverted` as `#ecff00` (`#fff` / `white` works for most uses otherwise, read about the finer [details here](../../foundations/token/index.mdx)).
 
 <CH.Code>
 
@@ -523,7 +518,7 @@ Because it seems to fit our branding, and doesn't interfere with user expectatio
 
 #### Add a fitting font
 
-In this guide we'll opt for a native system font stack for our `display` and `copy` fonts. We'll leave `interface` and `mono` and all size values untouched for now. If you have other requirements (for example a self-hosted font, or one by Google Fonts) have a look at our [Fonts guide](#) TODO create and link guide.
+In this guide we'll opt for a native system font stack for our `display` and `copy` fonts. We'll leave `interface` and `mono` and all size values untouched for now. If you have other requirements (for example a self-hosted font, or one by Google Fonts), we'll add a guide for that soon!
 
 <CH.Code>
 
@@ -738,9 +733,7 @@ yarn add kickstartds
 
 </CH.Code>
 
-Read more about our CLI [here](#) TODO add link
-
-TODO the lines being added below should include CLI options for `branding-token.json` location, just like `--token-path` for the path to write the tokens to
+Read more [about our CLI here](../../intro/cli.md)
 
 Then add the following two additional lines to your `package.json` scripts block:
 
@@ -1040,11 +1033,10 @@ module.exports = StyleDictionary.extend(config).extend({
 </CH.Spotlight>
 
 <Admonition type="tip" title="Using correct file extension">
-  It's important to actually use `cjs` as the file extension here. TODO we
-  should add an actual explanation here!
+  It's important to actually use `cjs` as the file extension here.
 </Admonition>
 
-You can build your **Design Token** set into different outputs using **Style Dictionary** and **kickstartDS**. So far we've mainly configured how token are ingested, but we'll build on our single test platform **CSS** in the process of this guide. Adding integrations for Storybook, the use in **kickstartDS** components, and so on! By re-using our pre-made configurations we only have to define a `buildPath` to activate a platform. Optionally you can define file names with `files`, too (read more in our [concepts page about Style Dictionary](#) TODO add link).
+You can build your **Design Token** set into different outputs using **Style Dictionary** and **kickstartDS**. So far we've mainly configured how token are ingested, but we'll build on our single test platform **CSS** in the process of this guide. Adding integrations for Storybook, the use in **kickstartDS** components, and so on! By re-using our pre-made configurations we only have to define a `buildPath` to activate a platform. Optionally you can define file names with `files`, too.
 
 With all of that in place, for the first time compile your **Design Token** set into CSS Custom Properties now:
 
@@ -3523,8 +3515,6 @@ If you have a hugley variying font size it makes sense to adjust the line-height
 
 </CH.Scrollycoding>
 
-TODO add step re-generating token set with new values, maybe add before / after screenshots to visualize?
-
 ## Result
 
 So for the second step this will leave us with the following files overall:
@@ -3673,8 +3663,4 @@ Not included here are generated files, have a look at the Code Sandbox for the c
 
 In the next step we'll set up **Storybook**. This connects nicely, as we'll add the **Storybook** integration for **Design Token** there, to make them viewable in the browser. We'll also make preparations for the step after, where we'll add components.
 
-TODO add Commit reminder
-
-## Code Sandbox
-
-TODO add Code Sandbox with result of step
+It's probably a good idea to commit everything again, now!

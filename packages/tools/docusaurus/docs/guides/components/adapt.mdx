@@ -55,8 +55,6 @@ There are two main steps in adapting a component:
 1. Component definition, and
 2. Component creation
 
-TODO should / could possibly include "Component documentation" as a third step, where the **Storybook** story is added
-
 Let's see what they're all about!
 
 ### 1. Component Definition
@@ -982,7 +980,7 @@ There may be other components you've built, that themselves use the base `Button
 
 As a means to not having to go through every combination of those component now, making sure our `Button` actually gets used, you can just change the default `Button` rendered by adding a single `Provider` once, instead.
 
-Learn more about `Providers` and **React Context** in [our dedicated page about them](#). TODO add link.<br />
+Learn more about `Providers` and **React Context** in[our dedicated page about them.<br />
 Or look at our ["Create your Design System" guide](../../guides/create/components.mdx), where we add the general setup for `Providers`. That one also includes some more details on this!
 
 <Admonition type="tip" title="Visual Studio Code component property quick-fix">
@@ -991,8 +989,6 @@ Visual Studio Code has a great feature aiding in this workflow, with **React** c
 This will automatically create all required options for your component. Now you just have to connect your own props to those, while hard-coding the ones you don't plan on exposing as part of your components [component API](../../foundations/components/component-api.md).
 
 Just hover the squiggly, red line that should be decorating your component, and choose `Quick Fix...`, to get to that option (alternatively put your cursor on the component tag and hit `Ctrl+.`).
-
-TODO add short animation of this workflow
 </Admonition>
 
 ## Technical debt added
@@ -1011,7 +1007,7 @@ You're immune to underlying changes to:
 
 In the case of a changed [component API](../../foundations/components/component-api.md), you should have a look at the corresponding `CHANGELOG.md` and potential notes in our matching [migration guide](../migrations/index.md). You'll probably just need to add a newly added field to your **React** template, and potentially your own [component API](../../foundations/components/component-api.md) if you want to use it. If a field was changed, that might also necessitate some adaption of your own version. Finally a removed field you're actually using would mean adding additional customization to regain that functionality. Have a look at our [`Headline` example guide](../examples/components/headline.mdx) to see how you'd add your own, new property!
 
-Learn more about what we mean by technical debt here on the [overview page of this section](#) TODO link to technical debt section on parent page.
+Learn more about what we mean by technical debt here on the overview page of this section.
 
 ## Examples
 
@@ -1021,7 +1017,7 @@ We continuously expand our [component example guides](../examples/components/ind
 
 In [this example component guide](../examples/components/button.mdx) we adapt the `Button` component (as part of the `@kickstartDS/base` module) to use it for buttons in our own Design System. We drastically reduce the options used, and offered, in our own adaptation. We remove all options that include having an `Icon` displayed as part of the `Button`, for example.
 
-This is what the result looks like (TODO replace with preview from real Storybook, not ours):
+This is what the result looks like:
 
 <iframe
   src="https://60dc476b80673e003b4258d6-czyzkgbgek.chromatic.com/iframe.html?args=&id=base-button--solid&viewMode=story"

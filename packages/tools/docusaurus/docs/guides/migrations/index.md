@@ -4,5 +4,5 @@ sidebar_position: 5
 
 # Migrations
 
-TODO: this should be auto-generated index page of all subpages, displayed in reduced cards, see as an example:  
-https://docusaurus.io/docs/category/guides
+There's currently only a single migration available. Have a look at it here for upgrade unstruction for **kickstartDS** `2.0.0`:<br/>
+[Upgrade `2.0.0` guide](./upgrade-2.0.0.md)

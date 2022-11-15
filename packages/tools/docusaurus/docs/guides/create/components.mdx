@@ -38,7 +38,7 @@ To have that benefit for our own users, too, we'll add the same general structur
 
 #### Aggregate global `Providers`
 
-We first create a file `Providers.jsx` at `src/components/`. This will import all of our global component providers, which are mainly the ones deep replacing **kickstartDS** components (TODO add a good link here), and export a single member that can be used to import and integrate **all** providers at once, reducing the need for copy &amp; pasted code.
+We first create a file `Providers.jsx` at `src/components/`. This will import all of our global component providers, which are mainly the ones deep replacing **kickstartDS** components, and export a single member that can be used to import and integrate **all** providers at once, reducing the need for copy &amp; pasted code.
 
 Add the file...
 
@@ -57,8 +57,6 @@ export default (props) => (
 </CH.Code>
 
 For now this will not do anything, but we'll hook it up to **Storybook** in the next step... and then subsequently build it up when adding components.
-
-TODO review this code section, not sure this is functional code
 
 #### Update `.storybook/preview.js`
 
@@ -141,10 +139,88 @@ export const decorators = [
 
 #### Add `Provider` decorator to **Storybook**
 
-We start by importing our (still empty) `Providers` that we created,
+We start by importing our (still empty) `Providers` that we created, and adding them to the `decorators` array.
 
 <CH.Code>
-```jsx .storybook/preview.js focus=4
+```jsx .storybook/preview.js focus=10,17:22,58,60
+import { actions } from "@storybook/addon-actions";
+import { DocsContainer } from "@storybook/addon-docs";
+
+import { unpackDecorator } from '@kickstartds/core/lib/storybook/helpers';
+
+import '@kickstartds/base/lib/global/base.js';
+import '@kickstartds/base/lib/global/base.css';
+
+import IconSprite from '../src/token/icons/IconSprite';
+import Providers from '../src/components/Providers';
+
+import '../src/token/tokens.css';
+
+const myActions = actions("radio");
+window.rm.radio.on("\*", myActions.radio);
+
+const providerDecorator = (Story, context) => (
+
+<Providers>
+  <Story {...context} />
+</Providers>
+);
+
+export const parameters = {
+  actions: { argTypesRegex: "^on[A-Z].*" },
+  controls: {
+    matchers: {
+      color: /(background|color)$/i,
+      date: /Date$/,
+    },
+  },
+  options: {
+    storySort(a, b) {
+      // welcome page to top!
+      if (a[0].includes("welcome")) {
+        return -1;
+      }
+
+      // alphabetically
+      return a[1].kind === b[1].kind
+        ? 0
+        : a[1].id.localeCompare(b[1].id, undefined, { numeric: true });
+    },
+
+},
+designToken: {
+disable: true,
+},
+docs: {
+container: (props) => (
+
+<Providers>
+  <IconSprite />
+  <DocsContainer {...props} />
+</Providers>
+), }, };
+
+export const decorators = [
+  unpackDecorator,
+  providerDecorator,
+  (Story) => (
+    <>
+      <IconSprite />
+      <Story />
+    </>
+  ),
+];
+```
+</CH.Code>
+
+---
+
+#### Add `Provider` to docs pages
+
+We also add the `Provider`s to the `docs` rendering of **Storybook**.
+
+<CH.Code>
+```jsx .storybook/preview.js focus=52,55
 import { actions } from "@storybook/addon-actions";
 import { DocsContainer } from "@storybook/addon-docs";
 
@@ -221,15 +297,8 @@ export const decorators = [
 
 While at it, we also add the **unpack** decorator to our **Storybook**. This decorator is provided by **kickstartDS** as part of `@kickstartDS/core`, and is used to unpack arguments provided to the component, rendered as part of a Story.
 
-<Admonition type="tip" title="pack, unpack, story args... huh?">
-  **kickstartDS** offers helpers you can use to automatically configure your stories [**Storybook Controls**](https://storybook.js.org/docs/react/essentials/controls). If used, you'll automatically get **Controls** and respective documentation based on your [component API](../../foundations/components/component-api.md) (**JSON Schema**).
-
-Because nesting Controls isn't straight-forward, we've written those helpers (`pack`, `unpack`) that take complex JSON, and, as the name suggests, `pack` those into an object with flattened keys compatible with the Controls addon (much like [a library like `flat`](https://github.com/hughsk/flat) does it).
-
-</Admonition>
-
 <CH.Code>
-```jsx .storybook/preview.js
+```jsx .storybook/preview.js focus=4,59
 import { actions } from "@storybook/addon-actions";
 import { DocsContainer } from "@storybook/addon-docs";
 
@@ -246,13 +315,12 @@ import '../src/token/tokens.css';
 const myActions = actions("radio");
 window.rm.radio.on("\*", myActions.radio);
 
-const providerDecorator = (Story, context) => {
-return (
+const providerDecorator = (Story, context) => (
 
 <Providers>
   <Story {...context} />
 </Providers>
-); }
+);
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -303,90 +371,441 @@ export const decorators = [
 
 </CH.Spotlight>
 
-```js .storybook/preview.js
-import { actions } from '@storybook/addon-actions';
-import { DocsContainer } from '@storybook/addon-docs';
+This concludes the **Storybook** integration!
 
-import { unpackDecorator } from '@kickstartds/core/lib/storybook/helpers';
+<Admonition type="tip" title="pack, unpack, story args... huh?">
+  **kickstartDS** offers helpers you can use to automatically configure your stories [**Storybook Controls**](https://storybook.js.org/docs/react/essentials/controls). If used, you'll automatically get **Controls** and respective documentation based on your [component API](../../foundations/components/component-api.md) (**JSON Schema**).
 
-import '@kickstartds/base/lib/global/base.js';
-import '@kickstartds/base/lib/global/base.css';
+Because nesting Controls isn't straight-forward, we've written those helpers (`pack`, `unpack`) that take complex JSON, and, as the name suggests, `pack` those into an object with flattened keys compatible with the Controls addon (much like [a library like `flat`](https://github.com/hughsk/flat) does it).
 
-import IconSprite from '../src/token/icons/IconSprite';
-import Providers from '../src/components/Providers';
-
-import '../src/token/tokens.css';
-
-const myActions = actions('radio');
-window._ks.radio.on('*', myActions.radio);
-
-const providerDecorator = (Story, context) => (
-  <Providers>
-    <Story {...context} />
-  </Providers>
-);
-
-export const parameters = {
-  actions: { argTypesRegex: '^on[A-Z].*' },
-  controls: {
-    matchers: {
-      color: /(background|color)$/i,
-      date: /Date$/,
-    },
-  },
-  options: {
-    storySort(a, b) {
-      // welcome page to top!
-      if (a[0].includes('welcome')) {
-        return -1;
-      }
-
-      // alphabetically
-      return a[1].kind === b[1].kind
-        ? 0
-        : a[1].id.localeCompare(b[1].id, undefined, { numeric: true });
-    },
-  },
-  designToken: {
-    disable: true,
-  },
-  docs: {
-    container: (props) => (
-      <Providers>
-        <IconSprite />
-        <DocsContainer {...props} />
-      </Providers>
-    ),
-  },
-};
-
-export const decorators = [
-  unpackDecorator,
-  providerDecorator,
-  (Story) => (
-    <>
-      <IconSprite />
-      <Story />
-    </>
-  ),
-];
-```
+</Admonition>
 
 ### Add `package.json` `scripts`
 
 Good `scripts` entries in your `package.json` help new users when learning about your Design System, while also offering way better developer experience for everyone else. Aggregated commands to quickly start everything in development / watch mode, to compile everything for production, or for generating a new release mean taking complexities away from the average developer, while granular commands, used by those aggregate commands under the hood, allow for maximal flexibility.
 
-TODO aggregated `yarn start`, for example
+To aggregate some commands, we add [the package `npm-run-all`](https://www.npmjs.com/package/npm-run-all) to the project. It can be used to run multiple commands either sequentially or parallelized. We also add [`chokidarcli`](https://www.npmjs.com/package/chokidar-cli) to listen for file change events, and re-trigger commands for hot reload:
 
-TODO do the following ones:
+```bash
+yarn add npm-run-all chokidar-cli --dev
+```
 
-- `**sass**`: `sass --load-path=node_modules src/index.scss static/index.css`
-- `**start**`: `run-p watch:* storybook`
-- `**watch:sass**`: `yarn sass --watch`
-- `**watch:schema**`: `yarn schema && chokidar \"src/**/*.schema.json\" -c \"yarn dereference-schemas --schemaPath {path}\"`
-- `**watch:dictionary**`: `chokidar \"src/token/dictionary/*.json\" -c \"yarn build-tokens\"`
+We then add the following `scripts` entries to our `package.json` now:
 
-TODO add `--schemaPath` option to **kickstartDS CLI**
+<CH.Scrollycoding>
+
+#### Unchanged `package.json`
+
+This is how your `package.json` should look like currently.
+
+<CH.Code>
+```json package.json
+{
+  "name": "@my/design-system",
+  "version": "1.0.0",
+  "description": "Design System for all @MY needs",
+  "main": "dist/index.js",
+  "scripts": {
+    "build-storybook": "build-storybook",
+    "build-tokens": "kickstartDS tokens compile",
+    "dereference-schemas": "kickstartDS schema dereference --schema-domain schema.mydesignsystem.com",
+    "generate-props": "kickstartDS schema types --schema-domain schema.mydesignsystem.com",
+    "init-tokens": "kickstartDS tokens init",
+    "sass-manager": "sass --load-path=node_modules .storybook/manager.scss static/manager.css",
+    "storybook": "start-storybook -p 6006",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch:sass-manager": "yarn sass-manager --watch"
+  },
+  "author": "Jonas Ulrich",
+  "license": "MIT",
+  "dependencies": {
+    "@kickstartds/base": "2.0.0-canary.922.4908.0",
+    "kickstartds": "v1.0.0-beta.6",
+    "react": "17",
+    "react-dom": "17"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "@kickstartds/storybook-addon-component-tokens": "^0.1.6",
+    "@kickstartds/storybook-addon-jsonschema": "^1.0.5",
+    "@storybook/addon-actions": "^6.5.12",
+    "@storybook/addon-essentials": "^6.5.12",
+    "@storybook/addon-interactions": "^6.5.12",
+    "@storybook/addon-links": "^6.5.12",
+    "@storybook/builder-webpack4": "^6.5.12",
+    "@storybook/manager-webpack4": "^6.5.12",
+    "@storybook/react": "^6.5.12",
+    "@storybook/testing-library": "^0.0.13",
+    "@whitespace/storybook-addon-html": "git+https://github.com/lmestel/storybook-addon-html.git",
+    "babel-loader": "^8.2.5",
+    "chokidar-cli": "^3.0.0",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.55.0",
+    "storybook-design-token": "^2.7.1"
+  }
+}
+```
+</CH.Code>
+
+---
+
+#### Add aggregated `schema` script
+
+We add a command aggregating schema dereferencing and props generation for us in `schema`. `run-p schema:*` runs all commands prefixed with `schema:` in parallel.
+
+<CH.Code>
+```json package.json focus=13
+{
+  "name": "@my/design-system",
+  "version": "1.0.0",
+  "description": "Design System for all @MY needs",
+  "main": "dist/index.js",
+  "scripts": {
+    "build-storybook": "build-storybook",
+    "build-tokens": "kickstartDS tokens compile",
+    "dereference-schemas": "kickstartDS schema dereference --schema-domain schema.mydesignsystem.com",
+    "generate-props": "kickstartDS schema types --schema-domain schema.mydesignsystem.com",
+    "init-tokens": "kickstartDS tokens init",
+    "sass-manager": "sass --load-path=node_modules .storybook/manager.scss static/manager.css",
+    "schema": "run-p schema:*",
+    "storybook": "start-storybook -p 6006",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch:sass-manager": "yarn sass-manager --watch"
+  },
+  "author": "Jonas Ulrich",
+  "license": "MIT",
+  "dependencies": {
+    "@kickstartds/base": "2.0.0-canary.922.4908.0",
+    "kickstartds": "v1.0.0-beta.6",
+    "react": "17",
+    "react-dom": "17"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "@kickstartds/storybook-addon-component-tokens": "^0.1.6",
+    "@kickstartds/storybook-addon-jsonschema": "^1.0.5",
+    "@storybook/addon-actions": "^6.5.12",
+    "@storybook/addon-essentials": "^6.5.12",
+    "@storybook/addon-interactions": "^6.5.12",
+    "@storybook/addon-links": "^6.5.12",
+    "@storybook/builder-webpack4": "^6.5.12",
+    "@storybook/manager-webpack4": "^6.5.12",
+    "@storybook/react": "^6.5.12",
+    "@storybook/testing-library": "^0.0.13",
+    "@whitespace/storybook-addon-html": "git+https://github.com/lmestel/storybook-addon-html.git",
+    "babel-loader": "^8.2.5",
+    "chokidar-cli": "^3.0.0",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.55.0",
+    "storybook-design-token": "^2.7.1"
+  }
+}
+```
+</CH.Code>
+
+---
+
+#### Add prefix to schema related tasks
+
+We now move all schema related tasks to using that `schema` prefix.
+
+<CH.Code>
+```json package.json focus=12:13
+{
+  "name": "@my/desig"chokidar": "^3.5.3",
+"chokidar": "^3.5.3",
+"chokidar": "^3.5.3",
+"chokidar": "^3.5.3",
+"chokidar": "^3.5.3",
+"chokidar": "^3.5.3",
+"chokidar": "^3.5.3",esign System for all @MY needs",
+  "main": "dist/index.js",
+  "scripts": {
+    "build-storybook": "build-storybook",
+    "build-tokens": "kickstartDS tokens compile",
+    "init-tokens": "kickstartDS tokens init",
+    "sass-manager": "sass --load-path=node_modules .storybook/manager.scss static/manager.css",
+    "schema": "run-p schema:*",
+    "schema:dereference-schemas": "kickstartDS schema dereference --schema-domain schema.mydesignsystem.com",
+    "schema:generate-props": "kickstartDS schema types --schema-domain schema.mydesignsystem.com",
+    "storybook": "start-storybook -p 6006",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch:sass-manager": "yarn sass-manager --watch"
+  },
+  "author": "Jonas Ulrich",
+  "license": "MIT",
+  "dependencies": {
+    "@kickstartds/base": "2.0.0-canary.922.4908.0",
+    "kickstartds": "v1.0.0-beta.6",
+    "react": "17",
+    "react-dom": "17"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "@kickstartds/storybook-addon-component-tokens": "^0.1.6",
+    "@kickstartds/storybook-addon-jsonschema": "^1.0.5",
+    "@storybook/addon-actions": "^6.5.12",
+    "@storybook/addon-essentials": "^6.5.12",
+    "@storybook/addon-interactions": "^6.5.12",
+    "@storybook/addon-links": "^6.5.12",
+    "@storybook/builder-webpack4": "^6.5.12",
+    "@storybook/manager-webpack4": "^6.5.12",
+    "@storybook/react": "^6.5.12",
+    "@storybook/testing-library": "^0.0.13",
+    "@whitespace/storybook-addon-html": "git+https://github.com/lmestel/storybook-addon-html.git",
+    "babel-loader": "^8.2.5",
+    "chokidar-cli": "^3.0.0",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.55.0",
+    "storybook-design-token": "^2.7.1"
+  }
+}
+```
+</CH.Code>
+
+---
+
+#### Add token and schema handling to `build-storybook`
+
+Make sure everything is compiled, before building **Storybook**.
+
+<CH.Code>
+```json package.json focus=7
+{
+  "name": "@my/design-system",
+  "version": "1.0.0",
+  "description": "Design System for all @MY needs",
+  "main": "dist/index.js",
+  "scripts": {
+    "build-storybook": "yarn build-tokens && run-p sass-manager schema && build-storybook",
+    "build-tokens": "kickstartDS tokens compile",
+    "init-tokens": "kickstartDS tokens init",
+    "sass-manager": "sass --load-path=node_modules .storybook/manager.scss static/manager.css",
+    "schema": "run-p schema:*",
+    "schema:dereference-schemas": "kickstartDS schema dereference --schema-domain schema.mydesignsystem.com",
+    "schema:generate-props": "kickstartDS schema types --schema-domain schema.mydesignsystem.com",
+    "storybook": "start-storybook -p 6006",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch:sass-manager": "yarn sass-manager --watch"
+  },
+  "author": "Jonas Ulrich",
+  "license": "MIT",
+  "dependencies": {
+    "@kickstartds/base": "2.0.0-canary.922.4908.0",
+    "kickstartds": "v1.0.0-beta.6",
+    "react": "17",
+    "react-dom": "17"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "@kickstartds/storybook-addon-component-tokens": "^0.1.6",
+    "@kickstartds/storybook-addon-jsonschema": "^1.0.5",
+    "@storybook/addon-actions": "^6.5.12",
+    "@storybook/addon-essentials": "^6.5.12",
+    "@storybook/addon-interactions": "^6.5.12",
+    "@storybook/addon-links": "^6.5.12",
+    "@storybook/builder-webpack4": "^6.5.12",
+    "@storybook/manager-webpack4": "^6.5.12",
+    "@storybook/react": "^6.5.12",
+    "@storybook/testing-library": "^0.0.13",
+    "@whitespace/storybook-addon-html": "git+https://github.com/lmestel/storybook-addon-html.git",
+    "babel-loader": "^8.2.5",
+    "chokidar-cli": "^3.0.0",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.55.0",
+    "storybook-design-token": "^2.7.1"
+  }
+}
+```
+</CH.Code>
+
+---
+
+#### Add additional `watch` tasks
+
+We now add `watch` tasks for `schema` and `dictionary`, using `chokidar`.
+
+- `schema`: regenerates component API and TypeScript types on schema change
+- `dictionary`: regenerates your CSS Custom Properties on **Style Dictionary** change
+
+<CH.Code>
+```json package.json focus=17:18
+{
+  "name": "@my/design-system",
+  "version": "1.0.0",
+  "description": "Design System for all @MY needs",
+  "main": "dist/index.js",
+  "scripts": {
+    "build-storybook": "yarn build-tokens && run-p sass-manager schema && build-storybook",
+    "build-tokens": "kickstartDS tokens compile",
+    "init-tokens": "kickstartDS tokens init",
+    "sass-manager": "sass --load-path=node_modules .storybook/manager.scss static/manager.css",
+    "schema": "run-p schema:*",
+    "schema:dereference-schemas": "kickstartDS schema dereference --schema-domain schema.mydesignsystem.com",
+    "schema:generate-props": "kickstartDS schema types --schema-domain schema.mydesignsystem.com",
+    "storybook": "start-storybook -p 6006",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch:sass-manager": "yarn sass-manager --watch",
+    "watch:schema": "yarn schema && chokidar \"src/**/*.schema.json\" -c \"yarn schema\"",
+    "watch:dictionary": "chokidar \"src/token/dictionary/*.json\" -c \"yarn build-tokens\""
+  },
+  "author": "Jonas Ulrich",
+  "license": "MIT",
+  "dependencies": {
+    "@kickstartds/base": "2.0.0-canary.922.4908.0",
+    "kickstartds": "v1.0.0-beta.6",
+    "react": "17",
+    "react-dom": "17"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "@kickstartds/storybook-addon-component-tokens": "^0.1.6",
+    "@kickstartds/storybook-addon-jsonschema": "^1.0.5",
+    "@storybook/addon-actions": "^6.5.12",
+    "@storybook/addon-essentials": "^6.5.12",
+    "@storybook/addon-interactions": "^6.5.12",
+    "@storybook/addon-links": "^6.5.12",
+    "@storybook/builder-webpack4": "^6.5.12",
+    "@storybook/manager-webpack4": "^6.5.12",
+    "@storybook/react": "^6.5.12",
+    "@storybook/testing-library": "^0.0.13",
+    "@whitespace/storybook-addon-html": "git+https://github.com/lmestel/storybook-addon-html.git",
+    "babel-loader": "^8.2.5",
+    "chokidar-cli": "^3.0.0",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.55.0",
+    "storybook-design-token": "^2.7.1"
+  }
+}
+```
+</CH.Code>
+
+---
+
+#### Add `start` command
+
+We can use that in development, to start everything with hot reload because of the watchers we've added.
+
+<CH.Code>
+```json package.json focus=14
+{
+  "name": "@my/design-system",
+  "version": "1.0.0",
+  "description": "Design System for all @MY needs",
+  "main": "dist/index.js",
+  "scripts": {
+    "build-storybook": "yarn build-tokens && run-p sass-manager schema && build-storybook",
+    "build-tokens": "kickstartDS tokens compile",
+    "init-tokens": "kickstartDS tokens init",
+    "sass-manager": "sass --load-path=node_modules .storybook/manager.scss static/manager.css",
+    "schema": "run-p schema:*",
+    "schema:dereference-schemas": "kickstartDS schema dereference --schema-domain schema.mydesignsystem.com",
+    "schema:generate-props": "kickstartDS schema types --schema-domain schema.mydesignsystem.com",
+    "start": "run-p watch:* storybook",
+    "storybook": "start-storybook -p 6006",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch:sass-manager": "yarn sass-manager --watch",
+    "watch:schema": "yarn schema && chokidar \"src/**/*.schema.json\" -c \"yarn schema\"",
+    "watch:dictionary": "chokidar \"src/token/dictionary/*.json\" -c \"yarn build-tokens\""
+  },
+  "author": "Jonas Ulrich",
+  "license": "MIT",
+  "dependencies": {
+    "@kickstartds/base": "2.0.0-canary.922.4908.0",
+    "kickstartds": "v1.0.0-beta.6",
+    "react": "17",
+    "react-dom": "17"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "@kickstartds/storybook-addon-component-tokens": "^0.1.6",
+    "@kickstartds/storybook-addon-jsonschema": "^1.0.5",
+    "@storybook/addon-actions": "^6.5.12",
+    "@storybook/addon-essentials": "^6.5.12",
+    "@storybook/addon-interactions": "^6.5.12",
+    "@storybook/addon-links": "^6.5.12",
+    "@storybook/builder-webpack4": "^6.5.12",
+    "@storybook/manager-webpack4": "^6.5.12",
+    "@storybook/react": "^6.5.12",
+    "@storybook/testing-library": "^0.0.13",
+    "@whitespace/storybook-addon-html": "git+https://github.com/lmestel/storybook-addon-html.git",
+    "babel-loader": "^8.2.5",
+    "chokidar-cli": "^3.0.0",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.55.0",
+    "storybook-design-token": "^2.7.1"
+  }
+}
+```
+</CH.Code>
+
+---
+
+#### Finished `package.json`
+
+Your `package.json` should look like this now!
+
+<CH.Code>
+```json package.json
+{
+  "name": "@my/design-system",
+  "version": "1.0.0",
+  "description": "Design System for all @MY needs",
+  "main": "dist/index.js",
+  "scripts": {
+    "build-storybook": "yarn build-tokens && run-p sass-manager schema && build-storybook",
+    "build-tokens": "kickstartDS tokens compile",
+    "init-tokens": "kickstartDS tokens init",
+    "sass-manager": "sass --load-path=node_modules .storybook/manager.scss static/manager.css",
+    "schema": "run-p schema:*",
+    "schema:dereference-schemas": "kickstartDS schema dereference --schema-domain schema.mydesignsystem.com",
+    "schema:generate-props": "kickstartDS schema types --schema-domain schema.mydesignsystem.com",
+    "start": "run-p watch:* storybook",
+    "storybook": "start-storybook -p 6006",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch:sass-manager": "yarn sass-manager --watch",
+    "watch:schema": "yarn schema && chokidar \"src/**/*.schema.json\" -c \"yarn schema\"",
+    "watch:dictionary": "chokidar \"src/token/dictionary/*.json\" -c \"yarn build-tokens\""
+  },
+  "author": "Jonas Ulrich",
+  "license": "MIT",
+  "dependencies": {
+    "@kickstartds/base": "2.0.0-canary.922.4908.0",
+    "kickstartds": "v1.0.0-beta.6",
+    "react": "17",
+    "react-dom": "17"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "@kickstartds/storybook-addon-component-tokens": "^0.1.6",
+    "@kickstartds/storybook-addon-jsonschema": "^1.0.5",
+    "@storybook/addon-actions": "^6.5.12",
+    "@storybook/addon-essentials": "^6.5.12",
+    "@storybook/addon-interactions": "^6.5.12",
+    "@storybook/addon-links": "^6.5.12",
+    "@storybook/builder-webpack4": "^6.5.12",
+    "@storybook/manager-webpack4": "^6.5.12",
+    "@storybook/react": "^6.5.12",
+    "@storybook/testing-library": "^0.0.13",
+    "@whitespace/storybook-addon-html": "git+https://github.com/lmestel/storybook-addon-html.git",
+    "babel-loader": "^8.2.5",
+    "chokidar-cli": "^3.0.0",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.55.0",
+    "storybook-design-token": "^2.7.1"
+  }
+}
+```
+</CH.Code>
+</CH.Scrollycoding>
+
+Feel free to start your **Storybook** now by just calling the `start` command:
+
+```bash
+yarn start
+```
+
+Isn't that convenient? 😅 Now everything is set up to start the fun part: adding components!
 
 ## Component implementation
 
@@ -399,13 +818,15 @@ We roughly see four different ways of adding a component to your Design System, 
 
 We'll follow one guide for each of those general workflows, resulting in the four planned components being added to our Design System. In the real world the truth is not that clear cut, at least most of the time. Typically you'd probably have a mix of those scenarios.
 
-TODO document that it's okay to just follow the components as displayed in the linked guide, even if those propose first doing a Design System Initiative (for example).
+Feel free to just add the components as shown in the guides for now, every if you'll change those later for real use. You can always adapt them further at a later point! You can also skip the exhaustive component example guides, if you just want to copy &amp; paste along. We'll always include the respective code snapshots to do that!
+
+To learn about finding components to implement, have a look at the [Design System Initiative](../../design-system-initiative.md) guide.
 
 ### 1. Adding our own `Button` component
 
-To demonstrate the first, and easiest, way of adding a component to your own Design System we will add a `Button` component.
+To demonstrate the first, and easiest, way of adding a component to your own Design System we will adapt a `Button` component.
 
-This also serves as an example for [**adapting** a component](../components/adapt.mdx), where we mostly take a component directly from **kickstartDS**, while still finding our own definition for it.
+This also serves as an example for [**adapting** a component](../components/adapt.mdx), where we mostly take a component directly from **kickstartDS**, while still finding our own, often more restrictire, [component API](../../foundations/components/component-api.md) for it.
 
 The result will look like this:
 
@@ -415,68 +836,92 @@ The result will look like this:
   height="80"
 ></iframe>
 
-TODO link to guide, mention following it is optional -> use Code Sandbox to copy everything otherwise
+Choose your own adventure:
 
-TODO use this to demo adding a Provider in a bit more detail, refer to this from other guides
-
-TODO add complete code example here
-
-TODO mention component re-use (e.g. `Button` in `Teaser Box`)
+| Path                               | Link                                                          |
+| ---------------------------------- | ------------------------------------------------------------- |
+| Follow the Component example guide | [Adapt `Button` component](../examples/components/button.mdx) |
+| Read the process description       | [Adapt a component](../components/adapt.mdx)                  |
+| Look at the Code Sandbox           | ...soon                                                       |
 
 ### 2. Adding our own `Headline` component
 
-TODO link to guide, mention following it is optional -> use Code Sandbox to copy everything otherwise
+The second way of adding a component involves much of the same steps we've seen for the `Button` already. That's not a coincidence, as every process should involve following the steps outlined by [the adaptation process](../components/adapt.mdx). It's like a base process that gets inherited, because reducing the offered properties into your own [component API](../../foundations/components/component-api.md) is essential!
 
-TODO `switchOrder` to show
+In addition to that process we customize the component with this one. We add our own property `switchOrder` to switch the order of headline and subheadline. Not a feature of the **kickstartDS** base `Headline` normally. This results in us having to change the **React** template, which makes this [customizing](../components/customize.mdx), compared to example to [extension](../components/extend.mdx). We also add RTE-like rendering capabilities to the content fields.
 
-TODO mention main points that should be made here
+We have a [dedicated guide for customization](../components/custommize.mdx), too, explaining the concepts a bit more in-depth.
 
-TODO add complete code example here
+The result will look like this:
+
+<iframe
+  src="https://60dc476b80673e003b4258d6-czyzkgbgek.chromatic.com/iframe.html?args=&id=base-headline--subheadline&viewMode=story"
+  width="500"
+  height="150"
+></iframe>
+
+Choose your own adventure:
+
+| Path                               | Link                                                                  |
+| ---------------------------------- | --------------------------------------------------------------------- |
+| Follow the Component example guide | [Customize `Headline` component](../examples/components/headline.mdx) |
+| Read the process description       | [Customize a component](../components/customize.mdx)                  |
+| Look at the Code Sandbox           | ...soon                                                               |
 
 ### 3. Adding our own `TeaserCard` component
 
-TODO link to guide, mention following it is optional -> use Code Sandbox to copy everything otherwise
+For the third way of adding a component we add a `TeaserCard` to our Design System. This is not a component we will build while having a **kickstartDS** base component in mind, yet. Instead, we'll start with "just" the requirements (this really is the most common scenario, btw., it just builds nicely on the two before). We'll then map those to a component second, and proceed like for the others!
 
-TODO mention main points that should be made here
+This serves as a great example of [the creation process](../components/create.mdx). We create something new, but still benefit from all the underlying Design System goodness.
 
-TODO add complete code example here
+The result will look like this:
+
+<iframe
+  src="https://60dc476b80673e003b4258d6-czyzkgbgek.chromatic.com/iframe.html?args=&id=base-teaser-box--linked-without-button&viewMode=story"
+  width="500"
+  height="530"
+></iframe>
+
+Choose your own adventure:
+
+| Path                               | Link                                                                    |
+| ---------------------------------- | ----------------------------------------------------------------------- |
+| Follow the Component example guide | [Create `TeaserCard` component](../examples/components/teaser-card.mdx) |
+| Read the process description       | [Customize a component](../components/create.mdx)                       |
+| Look at the Code Sandbox           | ...soon                                                                 |
 
 ### 4. Adding our own `Section` component
 
-TODO link to guide, mention following it is optional -> use Code Sandbox to copy everything otherwise
+For the last component, we'll add a `Section` that can be used to combine all of the components we've added before to create our first composable use cases! We take it from the **kickstartDS** base component pretty much verbatim. But we expand upon its capabilities by adding the option to every `Section` to add as many call-to-actions to it that get displayed at the end of the `Section`. Also not a feature currently offered by **kickstartDS** `Section`s.
 
-TODO mention main points that should be made here
+This showcases our last way of adding components nicely, namely [extending a component](../components/extend.mdx). We take existing components and just combine and re-mix them to cover new use cases. This can be done completely without changing any markup... with just composition!
 
-TODO add complete code example here
+The result will look like this:
 
-### Fine tuning **Component Token**
+<iframe
+  src="https://60dc476b80673e003b4258d6-czyzkgbgek.chromatic.com/iframe.html?args=&id=base-section--content-boxes&viewMode=story"
+  width="800"
+  height="600"
+></iframe>
 
-TODO write some exemplary filler so that **Component Token** are mentioned here as part of the regular workflow.
+Choose your own adventure:
+
+| Path                               | Link                                                             |
+| ---------------------------------- | ---------------------------------------------------------------- |
+| Follow the Component example guide | [Extend `Section` component](../examples/components/section.mdx) |
+| Read the process description       | [Customize a component](../components/extend.mdx)                |
+| Look at the Code Sandbox           | ...soon                                                          |
 
 ## Adding an article teaser recipe
 
-TODO link to guide, mention following it is optional -> use Code Sandbox to copy everything otherwise
-
-TODO combine all components into article teaser
-
-TODO link to guide about Recipe creation
-
-TODO add complete code example here
-
-TODO describe `src/docs/LinkProvider.jsx` setup, used to internally link to **Storybook** pages
+We're currently still working on this guide, it will follow soon! We will combine all of the added components into a recipe here. A recipe is not quite a component (it doesn't have its own [component API](../../foundations/components/component-api.md) for example), but more of inspiration to your Design Systems users. They show how more complex, but slightly one-off, components can be built by just combining existing stuff in smart ways!
 
 ## Result
 
-TODO add remark about "advanced" ways of customizing components (like completely new CSS / markup, combining multiple components to build a bigger one, etc), that are out of scope for this guide. Reference guides for those (even if those don't exist / only go to pages with a vote feature for guides)
+Following those examples is mostly meant as an illustration of the basic building blocks of adding a component. They can be combined, mixed and scaled freely! We'll start adding more advanced [component example guides](../components/index.mdx) for that, too!
+
+This concludes adding components to our Design System. It's also the last of the 5 parts currently documented. We're in the process of finishing the fifth section about publishing your Design System. So stay tuned for that!
 
 ## Next step
 
-TODO add next step -> publishing
-
-## Code Sandbox
-
-TODO create Code Sandbox including exact result after this step of the guide
-
-```
-
-```
+Start adding more components, try to re-mix those processes... and let us know how it went!
