@@ -1,0 +1,94 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/tokens/border.schema.json",
+  "definitions": {
+    "token": {
+      "type": "object",
+      "properties": {
+        "value": {},
+        "attributes": {
+          "type": "object",
+          "properties": {
+            "category": {
+              "type": "string"
+            }
+          },
+          "required": ["category"]
+        },
+        "token": {
+          "type": "object",
+          "properties": {
+            "category": {
+              "type": "string"
+            },
+            "presenter": {
+              "type": "string"
+            }
+          },
+          "required": ["category", "presenter"]
+        }
+      },
+      "required": ["value"]
+    },
+    "string-token": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/token"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "string"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "type": "object",
+  "properties": {
+    "ks": {
+      "type": "object",
+      "properties": {
+        "border-width": {
+          "type": "object",
+          "properties": {
+            "default": {
+              "$ref": "#/definitions/string-token"
+            },
+            "emphasized": {
+              "$ref": "#/definitions/string-token"
+            }
+          },
+          "additionalProperties": false,
+          "required": ["default", "emphasized"]
+        },
+        "border-radius": {
+          "type": "object",
+          "properties": {
+            "control": {
+              "$ref": "#/definitions/string-token"
+            },
+            "card": {
+              "$ref": "#/definitions/string-token"
+            },
+            "surface": {
+              "$ref": "#/definitions/string-token"
+            },
+            "pill": {
+              "$ref": "#/definitions/string-token"
+            },
+            "circle": {
+              "$ref": "#/definitions/string-token"
+            }
+          },
+          "additionalProperties": false,
+          "required": ["control", "card", "surface", "pill", "circle"]
+        }
+      },
+      "required": ["border-width", "border-radius"]
+    }
+  },
+  "required": ["ks"]
+}

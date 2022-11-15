@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/form/radio-group.schema.json",
+  "title": "Radio Group",
+  "description": "A Radio Group allows users to select one item from a list of choices.",
+  "type": "object",
+  "properties": {
+    "label": {
+      "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/label"
+    },
+    "name": {
+      "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/name"
+    },
+    "invalid": {
+      "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/invalid"
+    },
+    "invalidMessage": {
+      "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/invalidMessage"
+    },
+    "options": {
+      "title": "Options",
+      "type": "array",
+      "items": {
+        "title": "Radio Button",
+        "description": "Radio buttons allow users to select a single option from a list of mutually exclusive options.",
+        "type": "object",
+        "properties": {
+          "label": {
+            "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/label"
+          },
+          "disabled": {
+            "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/disabled"
+          },
+          "hint": {
+            "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/hint"
+          }
+        },
+        "required": ["label"]
+      }
+    },
+    "className": {
+      "title": "Class",
+      "description": "Additional css classes attached to the wrapping element",
+      "type": "string"
+    },
+    "component": {
+      "title": "`ks-component` attribute",
+      "description": "Optional custom component identifier",
+      "type": "string"
+    }
+  },
+  "required": ["label"]
+}

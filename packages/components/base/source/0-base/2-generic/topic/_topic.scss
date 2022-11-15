@@ -1,6 +1,0 @@
-@use 'sass:meta';
-@use '@kickstartds/core/source/core/custom-properties';
-@use './topic-vars';
-
-$vars: meta.module-variables(topic-vars);
-@include custom-properties.styles($vars, true);

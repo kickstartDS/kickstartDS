@@ -1,0 +1,21 @@
+.c-visual {
+  .c-visual__box {
+    --c-visual_box--color: var(--ifm-font-color-base);
+  }
+
+  .c-headline {
+    --c-visual_headline--color: var(--ifm-heading-color);
+  }
+
+  .c-visual__image img {
+    object-fit: contain;
+  }
+
+  p.c-headline__subheadline {
+    --c-headline_subheadline--color: var(--ifm-color-primary);
+  }
+
+  .c-visual__box.c-visual__box--transparent {
+    background: none;
+  }
+}

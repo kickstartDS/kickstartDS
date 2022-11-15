@@ -1,30 +1,27 @@
 @use 'sass:meta';
 @use 'sass:map';
-@use './breakpoint';
+@use 'sass:string';
 
-@mixin responsive-custom-property($name, $value, $critical) {
+@mixin responsive-custom-property($name, $value, $container-name: null) {
   @if meta.type-of($value) == 'map' {
     @each $bp, $val in $value {
-      @if $bp == 'xs' or $bp == null {
-        @include responsive-custom-property($name, $val, $critical);
+      @if $bp == 0 {
+        @include responsive-custom-property($name, $val);
       } @else {
-        @include breakpoint.media('≥#{$bp}') {
-          @include responsive-custom-property($name, $val, $critical);
+        @if not $container-name {
+          @error '`container-name-`-property is requred for #{$name}.';
+        }
+        @container #{string.unquote($container-name)} (min-width: #{$bp}px) {
+          @include responsive-custom-property($name, $val);
         }
       }
     }
-  } @else if $value != null {
-    @if $critical {
-      /* critical:start */
-    }
+  } @else if $value {
     #{$name}: #{$value};
-    @if $critical {
-      /* critical:end */
-    }
   }
 }
 
-@mixin styles($map, $critical: false) {
+@mixin styles($map, $container-name: null) {
   @if not map.has-key($map, 'name-') {
     @error '`name-`-property is requred.';
   }
@@ -41,7 +38,7 @@
           @include responsive-custom-property(
             $prefix + $property,
             $value,
-            $critical
+            $container-name
           );
         }
       }

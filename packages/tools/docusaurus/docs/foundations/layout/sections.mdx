@@ -1,0 +1,929 @@
+---
+sidebar_position: 1
+---
+
+import { Section } from '@kickstartds/base/lib/section';
+import { TeaserBox } from '@kickstartds/base/lib/teaser-box';
+import { TeaserRow } from '@kickstartds/base/lib/teaser-row';
+import { CollapsibleBox } from '@kickstartds/base/lib/collapsible-box';
+import { Visual } from '@kickstartds/content/lib/visual';
+import { Storytelling } from '@kickstartds/content/lib/storytelling';
+
+# Sections
+
+## Style
+
+https://polaris.shopify.com/components/layout TODO
+
+A section style is mainly expressed by the given background color. <br/>
+You should make sure that the chosen background color always offers enough contrast to display various font colors!
+
+Link Guide "Create your own style variation" (TODO)
+
+|                                                                             | Setting   | Token                             | Description                                                                            |
+| --------------------------------------------------------------------------- | --------- | --------------------------------- | -------------------------------------------------------------------------------------- |
+| <div ks-theme="preview" className="color-preview color-bg"></div>           | `default` | `--l-section--background-default` | The default background color, shouldnt be percieved as a distinct surface              |
+| <div ks-theme="preview" className="color-preview background-primary"></div> | `bold`    | `--l-section--background-bold`    | A very prevelant color heavily drawing focus to the displayed content                  |
+| <div ks-theme="preview" className="color-preview background-accent"></div>  | `accent`  | `--l-section--background-accent`  | A light color, making it disctinct from the default background without being too heavy |
+
+## Frame Width
+
+The `width` propertiy determines the with of the frame the content will be displayed in.
+
+| Setting   | Token                                | Application                                                               |
+| --------- | ------------------------------------ | ------------------------------------------------------------------------- |
+| `default` | `--l-section--content-width-default` | The default frame width                                                   |
+| `narrow`  | `--l-section--content-width-narrow`  | A narrow frame width                                                      |
+| `wide`    | `--l-section--content-width-wide`    | A wide frame width                                                        |
+| `max`     | `--l-section--content-width-max`     | The content spans over the entiere screen                                 |
+| `full`    | `--l-section--content-width-full`    | The content spans over the entiere screen,<br/> without `content-padding` |
+
+#### Screen spanning layouts
+
+For creating full screen layouts there are options of `max` and `full`.<br/>
+They both state that the frame spans over the entire screen.<br/>
+The `max` option still leaves `content-padding` to the left and right browser border.<br/>
+With the `full` option the content will be placed directly against the browser border.
+
+## Space Before / Space After
+
+Determines how much **vertical** spacing a section has.
+
+| Setting   | Preview                                                         | Token                        | Application                                        |
+| --------- | --------------------------------------------------------------- | ---------------------------- | -------------------------------------------------- |
+| `default` | <div className="spacing-preview spacing-section-default"></div> | `--l-section--space-default` | The default section spacing ensuring an even rythm |
+| `small`   | <div className="spacing-preview spacing-section-small"></div>   | `--l-section--space-small`   | A smaller space between Sections                   |
+| `none`    |                                                                 | ---                          | No space between Sections                          |
+
+#### Combining spacings
+
+By combining the given `spaceAfter`/`spaceBefore` options, it's possible to move sections closer together.<br/>
+That way you can create a visual connection between the content in two sections.<br/>
+You can even make them seem as a single element by removing all spacing between them.
+
+## Mode
+
+#### `default`
+
+The children will be placed next to each other, stretched across the full section width.
+
+<Section
+  ks-theme="section-preview"
+  spaceBefore="small"
+  spaceAfter="small"
+  width="full"
+>
+  <div className="section-preview--child">Content</div>
+  <div className="section-preview--child">Content</div>
+</Section>
+
+#### `tile`
+
+The children will be placed next to each other, in a pre set column width.
+
+<Section
+  ks-theme="section-preview"
+  spaceBefore="small"
+  spaceAfter="small"
+  mode="tile"
+  width="full"
+>
+  <div className="section-preview--child">Content</div>
+  <div className="section-preview--child">Content</div>
+</Section>
+
+#### `list`
+
+The children will be placed on top of each other, stretched across the full section width.
+
+<Section
+  ks-theme="section-preview"
+  spaceBefore="small"
+  spaceAfter="small"
+  mode="list"
+  width="full"
+>
+  <div className="section-preview--child">Content</div>
+  <div className="section-preview--child">Content</div>
+</Section>
+## Gutter
+
+TODO: update gutter Token in KickstartDS
+
+| Setting   | Token                       | Application                                                  |
+| --------- | --------------------------- | ------------------------------------------------------------ |
+| `none`    | ---                         | No space between children                                    |
+| `small`   | `--l-section--gutter-small` | A small space between children                               |
+| `default` | `--l-section--gutter`       | The default spacing between children, ensuring an even rythm |
+| `large`   | `--l-section--gutter-large` | A large space between children                               |
+
+#### `none`
+
+<Section
+  ks-theme="section-preview"
+  spaceBefore="small"
+  spaceAfter="small"
+  width="full"
+  gutter="none"
+>
+  <div className="section-preview--child">Content</div>
+  <div className="section-preview--child">Content</div>
+  <div className="section-preview--child">Content</div>
+</Section>
+
+#### `small`
+
+<Section
+  ks-theme="section-preview"
+  spaceBefore="small"
+  spaceAfter="small"
+  width="full"
+  gutter="small"
+>
+  <div className="section-preview--child">Content</div>
+  <div className="section-preview--child">Content</div>
+  <div className="section-preview--child">Content</div>
+</Section>
+
+#### `default`
+
+<Section
+  ks-theme="section-preview"
+  spaceBefore="small"
+  spaceAfter="small"
+  width="full"
+  gutter="default"
+>
+  <div className="section-preview--child">Content</div>
+  <div className="section-preview--child">Content</div>
+  <div className="section-preview--child">Content</div>
+</Section>
+
+#### `large`
+
+<Section
+  ks-theme="section-preview"
+  spaceBefore="small"
+  spaceAfter="small"
+  width="full"
+  gutter="large"
+>
+  <div className="section-preview--child">Content</div>
+  <div className="section-preview--child">Content</div>
+</Section>
+
+## Examples
+
+### List
+
+`mode: list`
+
+<div className="layout-preview">
+  <CH.Preview>
+    <Section
+      ks-theme="preview"
+      mode="list"
+      headline={{
+        styleAs: 'h2',
+        content: 'How can we help you?',
+        align: 'center',
+        spaceAfter: `small`
+      }}
+    >
+      <TeaserRow
+        topic="Generators"
+        image="https://www.kickstartds.com/img/recipes/generator.svg"
+        ratio="none"
+        text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
+        link={{
+          variant: 'solid',
+          label: 'Explore generators',
+          iconAfter: false,
+          icon: {
+            icon: 'chevron-right',
+          },
+        }}
+      />
+      <TeaserRow
+        topic="Components"
+        image="https://www.kickstartds.com/img/recipes/toolbox.svg"
+        ratio="none"
+        text="Tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod."
+        link={{
+          variant: 'solid',
+          label: 'See our components',
+          iconAfter: false,
+          icon: {
+            icon: 'chevron-right',
+          },
+        }}
+      />
+      <TeaserRow
+        topic="Components"
+        image="https://www.kickstartds.com/img/recipes/toolbox.svg"
+        ratio="none"
+        text="Tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod."
+        link={{
+          variant: 'solid',
+          label: 'See our components',
+          iconAfter: false,
+          icon: {
+            icon: 'chevron-right',
+          },
+        }}
+      />
+      <TeaserRow
+        topic="Components"
+        image="https://www.kickstartds.com/img/recipes/toolbox.svg"
+        ratio="none"
+        text="Tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod."
+        link={{
+          variant: 'solid',
+          label: 'See our components',
+          iconAfter: false,
+          icon: {
+            icon: 'chevron-right',
+          },
+        }}
+      />
+    </Section>
+
+  </CH.Preview>
+<CollapsibleBox
+  summary="Toggle Code"
+  className="collapsible-code"
+>
+  <div>
+  <CH.Code rows={30}>
+
+```jsx
+<Section
+  mode="list"
+  headline={{
+    styleAs: 'h2',
+    content: 'How can we help you?',
+    align: 'center',
+    spaceAfter: `small`,
+  }}
+>
+  <TeaserRow
+    topic="Generators"
+    image="https://www.kickstartds.com/img/recipes/generator.svg"
+    ratio="none"
+    text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
+    link={{
+      variant: 'solid',
+      label: 'Explore generators',
+      iconAfter: false,
+      icon: {
+        icon: 'chevron-right',
+      },
+    }}
+  />
+
+  <TeaserRow
+    topic="Components"
+    image="https://www.kickstartds.com/img/recipes/toolbox.svg"
+    ratio="none"
+    text="Tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod."
+    link={{
+      variant: 'solid',
+      label: 'See our components',
+      iconAfter: false,
+      icon: {
+        icon: 'chevron-right',
+      },
+    }}
+  />
+
+  <TeaserRow
+    topic="Components"
+    image="https://www.kickstartds.com/img/recipes/toolbox.svg"
+    ratio="none"
+    text="Tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod."
+    link={{
+      variant: 'solid',
+      label: 'See our components',
+      iconAfter: false,
+      icon: {
+        icon: 'chevron-right',
+      },
+    }}
+  />
+
+  <TeaserRow
+    topic="Components"
+    image="https://www.kickstartds.com/img/recipes/toolbox.svg"
+    ratio="none"
+    text="Tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod."
+    link={{
+      variant: 'solid',
+      label: 'See our components',
+      iconAfter: false,
+      icon: {
+        icon: 'chevron-right',
+      },
+    }}
+  />
+</Section>
+```
+
+</CH.Code >
+</div>
+</CollapsibleBox>
+</div>
+
+### Grid
+
+`mode: tile`<br/>
+`--l-section_col--min-width: 14rem`<br/>
+
+<div className="layout-preview" ks-theme="preview">
+<CH.Preview>
+  <Section
+    className="content-nav"
+    width="wide"
+    mode="tile"
+    headline={{
+      styleAs: 'h2',
+      content: 'Choose your component',
+      align: 'center',
+      spaceAfter: 'small',
+    }}
+  >
+       <TeaserBox
+        topic="Button"
+        image="https://www.kickstartds.com/img/recipes/icons/button.svg"
+        ratio="none"
+        text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr."
+        link={{
+          hidden: true,
+          href:'#',
+          label: "Explore generators",
+        }}
+        imageSpacing
+      />
+      <TeaserBox
+        topic="Content Box"
+        image="https://www.kickstartds.com/img/recipes/icons/content-box.svg"
+        ratio="none"
+        text="Consetetur sadipscing elitr, sed diam nonumy eirmod."
+        link={{
+          hidden: true,
+          href:'#',
+          label: "See our components",
+        }}
+        imageSpacing
+      />
+      <TeaserBox
+        topic="Count Up"
+        image="https://www.kickstartds.com/img/recipes/icons/count-up.svg"
+        ratio="none"
+        text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr."
+        link={{
+          hidden: true,
+          href:'#',
+          label: "See our components",
+        }}
+        imageSpacing
+      />
+      <TeaserBox
+        topic="Divider"
+        image="https://www.kickstartds.com/img/recipes/icons/divider.svg"
+        ratio="none"
+        text="Consetetur sadipscing elitr, sed diam nonumy eirmod."
+        link={{
+          hidden: true,
+          href:'#',
+          label: "See our components",
+        }}
+        imageSpacing
+      />
+      <TeaserBox
+        topic="Divider"
+        image="https://www.kickstartds.com/img/recipes/icons/divider.svg"
+        ratio="none"
+        text="Consetetur sadipscing elitr, sed diam nonumy eirmod."
+        link={{
+          hidden: true,
+          href:'#',
+          label: "See our components",
+        }}
+        imageSpacing
+      />
+      <TeaserBox
+        topic="Headline"
+        image="https://www.kickstartds.com/img/recipes/icons/headline.svg"
+        ratio="none"
+        text="Consetetur sadipscing elitr, sed diam nonumy eirmod."
+        link={{
+          hidden: true,
+          href:'#',
+          label: "See our components",
+        }}
+        imageSpacing
+      />
+      <TeaserBox
+        topic="Quote Slider"
+        image="https://www.kickstartds.com/img/recipes/icons/quote-slider.svg"
+        ratio="none"
+        text="Consetetur sadipscing elitr, sed diam nonumy eirmod."
+        link={{
+          hidden: true,
+          href:'#',
+          label: "See our components",
+        }}
+        imageSpacing
+      />
+      <TeaserBox
+        topic="Section"
+        image="https://www.kickstartds.com/img/recipes/icons/section.svg"
+        ratio="none"
+        text="Consetetur sadipscing elitr, sed diam nonumy eirmod."
+        link={{
+          hidden: true,
+          href:'#',
+          label: "See our components",
+        }}
+        imageSpacing
+      />
+      <TeaserBox
+        topic="Slider"
+        image="https://www.kickstartds.com/img/recipes/icons/slider.svg"
+        ratio="none"
+        text="Consetetur sadipscing elitr, sed diam nonumy eirmod."
+        link={{
+          hidden: true,
+          href:'#',
+          label: "See our components",
+        }}
+        imageSpacing
+      />
+      <TeaserBox
+        topic="Storytelling"
+        image="https://www.kickstartds.com/img/recipes/icons/storytelling.svg"
+        ratio="none"
+        text="Consetetur sadipscing elitr, sed diam nonumy eirmod."
+        link={{
+          hidden: true,
+          href:'#',
+          label: "See our components",
+        }}
+        imageSpacing
+      />
+      <TeaserBox
+        topic="Tag Label"
+        image="https://www.kickstartds.com/img/recipes/icons/tag-label.svg"
+        ratio="none"
+        text="Consetetur sadipscing elitr, sed diam nonumy eirmod."
+        link={{
+          hidden: true,
+          href:'#',
+          label: "See our components",
+        }}
+        imageSpacing
+      />
+      <TeaserBox
+        topic="Text Media"
+        image="https://www.kickstartds.com/img/recipes/icons/text-media.svg"
+        ratio="none"
+        text="Consetetur sadipscing elitr, sed diam nonumy eirmod."
+        link={{
+          hidden: true,
+          href:'#',
+          label: "See our components",
+        }}
+        imageSpacing
+      />
+
+  </Section>
+</CH.Preview>
+
+<CollapsibleBox
+  summary="Toggle Code"
+  className="collapsible-code"
+>
+<CH.Code rows={30}>
+
+```jsx
+<Section
+  className="content-nav"
+  width="wide"
+  mode="tile"
+  headline={{
+    styleAs: 'h2',
+    content: 'Choose your component',
+    align: 'center',
+    spaceAfter: 'small',
+  }}
+>
+  <TeaserBox
+    topic="Button"
+    image="https://www.kickstartds.com/img/recipes/icons/button.svg"
+    ratio="none"
+    imageSpacing
+    text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr."
+    link={{
+      hidden: true,
+      href: '#',
+      label: 'Explore generators',
+    }}
+  />
+
+  <TeaserBox
+    topic="Content Box"
+    image="https://www.kickstartds.com/img/recipes/icons/content-box.svg"
+    ratio="none"
+    imageSpacing
+    text="Consetetur sadipscing elitr, sed diam nonumy eirmod."
+    link={{
+      hidden: true,
+      href: '#',
+      label: 'See our components',
+    }}
+  />
+
+  <TeaserBox
+    topic="Count Up"
+    image="https://www.kickstartds.com/img/recipes/icons/count-up.svg"
+    ratio="none"
+    imageSpacing
+    text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr."
+    link={{
+      hidden: true,
+      href: '#',
+      label: 'See our components',
+    }}
+  />
+
+  <TeaserBox
+    topic="Divider"
+    image="https://www.kickstartds.com/img/recipes/icons/divider.svg"
+    ratio="none"
+    text="Consetetur sadipscing elitr, sed diam nonumy eirmod."
+    imageSpacing
+    link={{
+      hidden: true,
+      href: '#',
+      label: 'See our components',
+    }}
+  />
+
+  <TeaserBox
+    topic="Divider"
+    image="https://www.kickstartds.com/img/recipes/icons/divider.svg"
+    ratio="none"
+    text="Consetetur sadipscing elitr, sed diam nonumy eirmod."
+    imageSpacing
+    link={{
+      hidden: true,
+      href: '#',
+      label: 'See our components',
+    }}
+  />
+
+  <TeaserBox
+    topic="Headline"
+    image="https://www.kickstartds.com/img/recipes/icons/headline.svg"
+    ratio="none"
+    text="Consetetur sadipscing elitr, sed diam nonumy eirmod."
+    imageSpacing
+    link={{
+      hidden: true,
+      href: '#',
+      label: 'See our components',
+    }}
+  />
+
+  <TeaserBox
+    topic="Quote Slider"
+    image="https://www.kickstartds.com/img/recipes/icons/quote-slider.svg"
+    ratio="none"
+    text="Consetetur sadipscing elitr, sed diam nonumy eirmod."
+    imageSpacing
+    link={{
+      hidden: true,
+      href: '#',
+      label: 'See our components',
+    }}
+  />
+
+  <TeaserBox
+    topic="Section"
+    image="https://www.kickstartds.com/img/recipes/icons/section.svg"
+    ratio="none"
+    text="Consetetur sadipscing elitr, sed diam nonumy eirmod."
+    imageSpacing
+    link={{
+      hidden: true,
+      href: '#',
+      label: 'See our components',
+    }}
+  />
+
+  <TeaserBox
+    topic="Slider"
+    image="https://www.kickstartds.com/img/recipes/icons/slider.svg"
+    ratio="none"
+    text="Consetetur sadipscing elitr, sed diam nonumy eirmod."
+    imageSpacing
+    link={{
+      hidden: true,
+      href: '#',
+      label: 'See our components',
+    }}
+  />
+
+  <TeaserBox
+    topic="Storytelling"
+    image="https://www.kickstartds.com/img/recipes/icons/storytelling.svg"
+    ratio="none"
+    text="Consetetur sadipscing elitr, sed diam nonumy eirmod."
+    imageSpacing
+    link={{
+      hidden: true,
+      href: '#',
+      label: 'See our components',
+    }}
+  />
+
+  <TeaserBox
+    topic="Tag Label"
+    image="https://www.kickstartds.com/img/recipes/icons/tag-label.svg"
+    ratio="none"
+    text="Consetetur sadipscing elitr, sed diam nonumy eirmod."
+    imageSpacing
+    link={{
+      hidden: true,
+      href: '#',
+      label: 'See our components',
+    }}
+  />
+
+  <TeaserBox
+    topic="Text Media"
+    image="https://www.kickstartds.com/img/recipes/icons/text-media.svg"
+    ratio="none"
+    text="Consetetur sadipscing elitr, sed diam nonumy eirmod."
+    imageSpacing
+    link={{
+      hidden: true,
+      href: '#',
+      label: 'See our components',
+    }}
+  />
+</Section>
+```
+
+</CH.Code>
+</CollapsibleBox>
+
+</div>
+
+### Full Screen
+
+`mode: tile`<br/>
+`--l-section_col--min-width: 14rem`<br/>
+
+<div className="layout-preview" >
+  <CH.Preview>
+    <Section ks-theme="preview" width="full" spaceBefore="none" spaceAfter="none">
+      <Storytelling
+        image={{
+          source: 'https://www.kickstartds.com/img/recipes/hero-angled.png',
+          order: {
+            desktopImageLast: true,
+          },
+        }}
+        box={{
+          headline: {
+            level: 'h1',
+            styleAs: 'h1',
+            content: 'We help you overcome digital obstacles',
+            subheadline: 'Autem voluptas quis facere et qui voluptate earum.',
+          },
+          text: `Lorem ipsum dolor sit amet, [consetetur sadipscing](http://example.com/) elitr, sed diam voluptua. At vero eos et accusam et justo duo **dolores et ea rebum.**`,
+          links: [
+            {
+              fillAnimation: false,
+              href: '#',
+              iconAfter: false,
+              iconAnimation: false,
+              iconBefore: false,
+              label: 'Start now',
+              newTab: false,
+              size: 'medium',
+              variant: 'solid',
+            },
+            {
+              href: '#',
+              label: 'Request a demo',
+              variant: 'outline',
+            },
+          ],
+        }}
+        full
+      />
+    </Section>
+  </CH.Preview>
+
+<CollapsibleBox
+  summary="Toggle Code"
+  className="collapsible-code"
+>
+<CH.Code rows={30}>
+```jsx
+<Section width="full" spaceBefore="none" spaceAfter="none">
+<Storytelling
+  image={{
+    source: 'https://www.kickstartds.com/img/recipes/hero-angled.png',
+    order: {
+      desktopImageLast: true,
+    },
+  }}
+  box={{
+    headline: {
+      level: 'h1',
+      styleAs: 'h1',
+      content: 'We help you overcome digital obstacles',
+      subheadline: 'Autem voluptas quis facere et qui voluptate earum.',
+    },
+    text: `Lorem ipsum dolor sit amet, [consetetur sadipscing](http://example.com/) elitr, sed diam voluptua. At vero eos et accusam et justo duo **dolores et ea rebum.**`,
+    links: [
+      {
+        fillAnimation: false,
+        href: '#',
+        iconAfter: false,
+        iconAnimation: false,
+        iconBefore: false,
+        label: 'Start now',
+        newTab: false,
+        size: 'medium',
+        variant: 'solid',
+      },
+      {
+        href: '#',
+        label: 'Request a demo',
+        variant: 'outline',
+      },
+    ],
+  }}
+  full
+/>
+</Section>
+```
+</CH.Code>
+</CollapsibleBox>
+</div>
+
+## Customisation
+
+Customisation is typically done via `scss` files.<br/>
+The default token are declared on the `.l-section__container` selector and can be overritten there.<br/>
+To increase the selector accuracy, its recommended to wrap them into a `:root` selector.
+
+<CH.Code>
+
+```scss _section-token.scss
+:root,
+[ks-inverted],
+[ks-theme] {
+  .l-section {
+    //Adjust background styles
+    --l-section--background-default: var(--ks-background-fg-alpha-9);
+    --l-section--background-accent: var(--ks-background-primary-to-bg-8);
+    --l-section--background-dark: var(--ks-background-primary-to-bg-2);
+
+    //Adjust vertical spacing
+    --l-section--space-default: var(--ks-spacing-xl);
+    --l-section--space-small: var(--ks-spacing-m);
+
+    //Adjust gutter spacing
+    --l-section--gutter-small: var(--ks-spacing-s);
+    --l-section--gutter-default: var(--ks-spacing-m);
+    --l-section--gutter-large: var(--ks-spacing-l);
+
+    //Adjust frame widths
+    --l-section--content-width-wide: 87.5rem;
+    --l-section--content-width-default: 77.5rem;
+    --l-section--content-width-narrow: 62.5rem;
+
+    //Adjust grid settings
+    --l-section_col--min-width: 5rem;
+  }
+}
+```
+
+```scss _section.scss
+@use './section-tokens';
+```
+
+</CH.Code>
+
+KickstartDS Sections use `CSS Grid`.<br/>
+The child elements will be placed in columns, which are arranged in rows.<br/>
+To get deeper into the workings of `CSS Grid` we recommend this article:<br/>
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout
+
+The minimum width of a column is determined by `--l-section_col--min-width`.
+
+The maximum width of a column is determined by `--l-section_col--max-width`.<br/>
+The default value is `1fr`. (Recommended for responsive layouts)
+
+The amount of columns fit in one row is determined by `--l-section_col--repeat`.<br/>
+The default value is `auto-fit`. (Recommended for responsive layouts)
+
+### Fill Space
+
+If you want the available space to be efficiently used, it is recommended to leave the `max-width` token set to its default value of `1fr`.
+
+<div className="col-fill">
+  <Section
+    ks-theme="section-preview"
+    spaceBefore="small"
+    spaceAfter="small"
+    width="full"
+  >
+    <div className="section-preview--child">Content</div>
+    <div className="section-preview--child">Content</div>
+    <div className="section-preview--child">Content</div>
+    <div className="section-preview--child">Content</div>
+    <div className="section-preview--child">Content</div>
+    <div className="section-preview--child">Content</div>
+  </Section>
+</div>
+<br />
+
+`--l-section_col--min-width: 5rem`<br/>
+
+### Fixed Width
+
+If you dont want your elements to fill the available space, you can set a `max-width` value in addition to `min-width`.
+
+<div className="col-fixed">
+  <Section
+    ks-theme="section-preview"
+    spaceBefore="small"
+    spaceAfter="small"
+    width="full"
+  >
+    <div className="section-preview--child">Content</div>
+    <div className="section-preview--child">Content</div>
+    <div className="section-preview--child">Content</div>
+    <div className="section-preview--child">Content</div>
+    <div className="section-preview--child">Content</div>
+    <div className="section-preview--child">Content</div>
+  </Section>
+</div>
+<br />
+
+`--l-section_col--min-width: 5rem`<br />
+`--l-section_col--max-width: 10rem`
+
+### Scaling Width
+
+By using a percentage on the `min-width` token, you can create a scaling layout.<br/>
+It will keep its proportions, no matter the screen size.
+
+<div className="col-scale">
+  <Section
+    ks-theme="section-preview"
+    spaceBefore="small"
+    spaceAfter="small"
+    width="full"
+  >
+    <div className="section-preview--child">Content</div>
+    <div className="section-preview--child">Content</div>
+    <div className="section-preview--child">Content</div>
+    <div className="section-preview--child">Content</div>
+
+  </Section>
+</div>
+<br/>
+
+`--l-section_col--min-width: 40%`<br/>
+
+### Set Columns Amount
+
+If you use a custom value, make sure the columns do not exceed the avialable space in your layout (especially on narrow screens).<br/>
+You can do so by balancing out the `min-width` in correspondence to the set column amount.
+
+<div className="col-limit">
+  <Section
+    ks-theme="section-preview"
+    spaceBefore="small"
+    spaceAfter="small"
+    width="full"
+  >
+    <div className="section-preview--child">Content</div>
+    <div className="section-preview--child">Content</div>
+    <div className="section-preview--child">Content</div>
+    <div className="section-preview--child">Content</div>
+    <div className="section-preview--child">Content</div>
+
+  </Section>
+</div>
+<br/>
+
+`--l-section_col--repeat: 4` <br/>
+`--l-section_col--min-width: 5rem`

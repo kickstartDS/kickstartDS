@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/blog/post-meta.schema.json",
+  "title": "Post Meta",
+  "description": "Post Meta",
+  "type": "object",
+  "properties": {
+    "author": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "examples": ["Max Mütze"]
+        },
+        "image": {
+          "$ref": "http://schema.kickstartds.com/base/picture.definitions.json"
+        }
+      }
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "title": "Meta Item",
+        "type": "object",
+        "properties": {
+          "icon": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          }
+        }
+      },
+      "examples": [
+        [
+          {
+            "icon": "date",
+            "text": "14.02.2022"
+          },
+          {
+            "icon": "time",
+            "text": "5 min read"
+          }
+        ]
+      ]
+    },
+    "className": {
+      "title": "Class",
+      "description": "Additional css classes attached to the wrapping element",
+      "type": "string"
+    },
+    "component": {
+      "title": "`ks-component` attribute",
+      "description": "Optional custom component identifier",
+      "type": "string"
+    }
+  }
+}

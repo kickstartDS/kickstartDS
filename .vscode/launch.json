@@ -7,7 +7,7 @@
     {
       "type": "node",
       "request": "launch",
-      "runtimeVersion": "14.17.2",
+      "runtimeVersion": "16.14.2",
       "name": "Launch Schema Dereffing",
       "program": "${workspaceRoot}/packages/tools/storybook/scripts/schema-dereference-components.js",
       "cwd": "${workspaceRoot}",
@@ -16,7 +16,7 @@
     {
       "type": "node",
       "request": "launch",
-      "runtimeVersion": "14.17.2",
+      "runtimeVersion": "16.14.2",
       "name": "Launch Storybook Story Creation",
       "program": "${workspaceRoot}/packages/tools/storybook/scripts/create-stories-from-template.js",
       "cwd": "${workspaceRoot}",
@@ -25,7 +25,7 @@
     {
       "type": "node",
       "request": "launch",
-      "runtimeVersion": "14.17.2",
+      "runtimeVersion": "16.14.2",
       "name": "Launch Storybook Data Migration",
       "program": "${workspaceRoot}/packages/tools/storybook/scripts/migrate-data-to-current-schema.js",
       "cwd": "${workspaceRoot}",
@@ -34,7 +34,7 @@
     {
       "type": "node",
       "request": "launch",
-      "runtimeVersion": "14.17.2",
+      "runtimeVersion": "16.14.2",
       "name": "Launch Storybook Start",
       "program": "${workspaceRoot}/node_modules/.bin/start-storybook",
       "args": ["-c", "packages/tools/storybook/.storybook", "-s", "dist/"],
@@ -44,14 +44,12 @@
     {
       "type": "node",
       "request": "launch",
-      "runtimeVersion": "14.17.2",
+      "runtimeVersion": "16.14.2",
       "name": "Launch Storybook Build",
       "program": "${workspaceRoot}/node_modules/.bin/build-storybook",
       "args": [
         "--config-dir",
         "${workspaceRoot}/packages/tools/storybook/.storybook",
-        "--static-dir",
-        "legacy-instance",
         "--output-dir",
         "dist"
       ],
@@ -61,7 +59,7 @@
     {
       "type": "node",
       "request": "launch",
-      "runtimeVersion": "14.17.2",
+      "runtimeVersion": "16.14.2",
       "name": "Launch Storybook Preview Head Generation",
       "program": "${workspaceRoot}/packages/tools/storybook/scripts/create-preview-head-from-assets.js",
       "cwd": "${workspaceRoot}",

@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/base/html.schema.json",
+  "title": "HTML",
+  "description": "Display raw HTML.",
+  "type": "object",
+  "properties": {
+    "html": {
+      "title": "HTML string",
+      "type": "string",
+      "examples": ["<p>Hello world!</p>"]
+    },
+    "className": {
+      "title": "Additional Classes",
+      "description": "Add additional css classes that should be applied to the element",
+      "type": "string"
+    },
+    "component": {
+      "title": "`ks-component` attribute",
+      "description": "Optional custom component identifier",
+      "type": "string"
+    }
+  }
+}

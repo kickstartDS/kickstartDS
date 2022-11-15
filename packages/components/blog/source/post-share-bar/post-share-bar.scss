@@ -1,0 +1,18 @@
+@use 'sass:meta';
+@use '@kickstartds/core/source/core/custom-properties';
+@use './post-share-bar-vars';
+
+$vars: meta.module-variables(post-share-bar-vars);
+@include custom-properties.styles($vars);
+
+.c-post-share-bar {
+  &__link {
+    display: inline-block;
+    padding: var(--c-post-share-bar_link--padding);
+
+    .icon {
+      height: var(--c-post-share-bar_link--icon-size);
+      width: var(--c-post-share-bar_link--icon-size);
+    }
+  }
+}

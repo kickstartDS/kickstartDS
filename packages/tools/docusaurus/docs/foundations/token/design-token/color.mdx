@@ -1,0 +1,508 @@
+---
+sidebar_position: 1
+---
+
+# Color
+
+## Core Token
+
+The token can be found in `color.json`.
+
+### Color palette
+
+|                                                                            | Token                    | Description                                            |
+| -------------------------------------------------------------------------- | ------------------------ | ------------------------------------------------------ |
+| <div ks-theme="preview" className="color-preview color-primary"></div>     | `--ks-color-primary`     | High priority elements                                 |
+| <div ks-theme="preview" className="color-preview color-fg"></div>          | `--ks-color-fg`          | Default foreground color, most prevelant in copy text. |
+| <div ks-theme="preview" className="color-preview color-link"></div>        | `--ks-color-link`        | Hyperlink color                                        |
+| <div ks-theme="preview" className="color-preview color-transparent"></div> | `--ks-color-transparent` | Elements featuring transparency                        |
+
+<CH.Section>
+<CH.Code>
+
+```json color.json
+{
+  "ks": {
+    "color": {
+      "primary": {
+        "base": {
+          "value": {
+            "r": 51,
+            "g": 51,
+            "b": 51,
+            "a": 1
+          },
+          "attributes": {
+            "category": "color"
+          },
+          "token": {
+            "category": "Colors: Primary",
+            "presenter": "Color"
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+```css tokens.css
+:root,
+[ks-theme] {
+  --ks-color-primary-base: #05566a;
+  --ks-color-primary-inverted-base: #ecff00;
+}
+
+:root,
+[ks-theme],
+[ks-inverted='false'] {
+  --ks-color-primary: var(--ks-color-primary-base);
+}
+
+[ks-inverted='true'] {
+  --ks-color-primary: var(--ks-color-primary-inverted-base);
+}
+```
+
+</CH.Code>
+</CH.Section>
+
+### Color scales
+
+kickstartDS generates color scales based on your Core Token.
+`to-bg` mixes in `--ks-background-color-default` (by default defined as `--ks-color-fg-inverted`).
+`alpha` adds transparency.
+
+Color scales are not linear. `--ks-color-primary-alpha-3` doesn't mean, its alpha channel is `0.3`. It's just the third most translucent variant. The same applies to `to-bg`.
+We use a cubic Bézier curve to calculate the scales. This way there are more gradations at the beginning and at the end of the scale.
+
+For example, for hover or active states of a component you often need slight shades of a color. With a linear scaling the distance between the shades would be too large. In addition, the colors in the middle of the scale are almost useless, because they have too little contrast in combination with the background color.
+
+<div className="color-scale">
+  <div className="color-scale-y-label">
+    <span>`alpha/to-bg scale`</span>
+  </div>
+  <div className="color-scale-preview">
+    <div className="color-scale-preview-value">
+      <span>1</span>
+    </div>
+    <div className="color-scale-preview-value">
+      <span>2</span>
+    </div>
+    <div className="color-scale-preview-value">
+      <span>3</span>
+    </div>
+    <div className="color-scale-preview-value">
+      <span>4</span>
+    </div>
+    <div className="color-scale-preview-value">
+      <span>5</span>
+    </div>
+    <div className="color-scale-preview-value">
+      <span>6</span>
+    </div>
+    <div className="color-scale-preview-value">
+      <span>7</span>
+    </div>
+    <div className="color-scale-preview-value">
+      <span>8</span>
+    </div>
+    <div className="color-scale-preview-value">
+      <span>9</span>
+    </div>
+  </div>
+  <div className="color-scale-x-label">
+    <span>`opacity/bg-mixin`</span>
+  </div>
+</div>
+
+TODO illustrate the scale https://cubic-bezier.com/#1,.1,0,.9
+
+<div className="split-table">
+
+|                                                                                | to-bg                        |
+| ------------------------------------------------------------------------------ | ---------------------------- |
+| <div ks-theme="preview" className="color-preview color-primary-to-bg-1"></div> | `--ks-color-primary-to-bg-1` |
+| <div ks-theme="preview" className="color-preview color-primary-to-bg-2"></div> | `--ks-color-primary-to-bg-2` |
+| <div ks-theme="preview" className="color-preview color-primary-to-bg-3"></div> | `--ks-color-primary-to-bg-3` |
+| <div ks-theme="preview" className="color-preview color-primary-to-bg-4"></div> | `--ks-color-primary-to-bg-4` |
+| <div ks-theme="preview" className="color-preview color-primary-to-bg-5"></div> | `--ks-color-primary-to-bg-5` |
+| <div ks-theme="preview" className="color-preview color-primary-to-bg-6"></div> | `--ks-color-primary-to-bg-6` |
+| <div ks-theme="preview" className="color-preview color-primary-to-bg-7"></div> | `--ks-color-primary-to-bg-7` |
+| <div ks-theme="preview" className="color-preview color-primary-to-bg-8"></div> | `--ks-color-primary-to-bg-8` |
+| <div ks-theme="preview" className="color-preview color-primary-to-bg-9"></div> | `--ks-color-primary-to-bg-9` |
+
+|                                                                                | alpha                        |
+| ------------------------------------------------------------------------------ | ---------------------------- |
+| <div ks-theme="preview" className="color-preview color-primary-alpha-1"></div> | `--ks-color-primary-alpha-1` |
+| <div ks-theme="preview" className="color-preview color-primary-alpha-2"></div> | `--ks-color-primary-alpha-2` |
+| <div ks-theme="preview" className="color-preview color-primary-alpha-3"></div> | `--ks-color-primary-alpha-3` |
+| <div ks-theme="preview" className="color-preview color-primary-alpha-4"></div> | `--ks-color-primary-alpha-4` |
+| <div ks-theme="preview" className="color-preview color-primary-alpha-5"></div> | `--ks-color-primary-alpha-5` |
+| <div ks-theme="preview" className="color-preview color-primary-alpha-6"></div> | `--ks-color-primary-alpha-6` |
+| <div ks-theme="preview" className="color-preview color-primary-alpha-7"></div> | `--ks-color-primary-alpha-7` |
+| <div ks-theme="preview" className="color-preview color-primary-alpha-8"></div> | `--ks-color-primary-alpha-8` |
+| <div ks-theme="preview" className="color-preview color-primary-alpha-9"></div> | `--ks-color-primary-alpha-9` |
+
+</div>
+
+<CH.Section>
+<CH.Code rows={30}>
+
+```json color.json
+{
+  "ks": {
+    "color": {
+      "primary": {
+        "alpha": {
+          "1": {
+            "base": {
+              "value": {
+                "r": 51,
+                "g": 51,
+                "b": 51,
+                "a": 0.05
+              },
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Primary",
+                "presenter": "Color"
+              }
+            }
+          },
+          "2": {
+            "base": {
+              "value": {
+                "r": 51,
+                "g": 51,
+                "b": 51,
+                "a": 0.13
+              },
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Primary",
+                "presenter": "Color"
+              }
+            }
+          },
+          "3": {
+            "base": {
+              "value": {
+                "r": 51,
+                "g": 51,
+                "b": 51,
+                "a": 0.24
+              },
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Primary",
+                "presenter": "Color"
+              }
+            }
+          },
+          "4": {
+            "base": {
+              "value": {
+                "r": 51,
+                "g": 51,
+                "b": 51,
+                "a": 0.37
+              },
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Primary",
+                "presenter": "Color"
+              }
+            }
+          },
+          "5": {
+            "base": {
+              "value": {
+                "r": 51,
+                "g": 51,
+                "b": 51,
+                "a": 0.5
+              },
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Primary",
+                "presenter": "Color"
+              }
+            }
+          },
+          "6": {
+            "base": {
+              "value": {
+                "r": 51,
+                "g": 51,
+                "b": 51,
+                "a": 0.63
+              },
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Primary",
+                "presenter": "Color"
+              }
+            }
+          },
+          "7": {
+            "base": {
+              "value": {
+                "r": 51,
+                "g": 51,
+                "b": 51,
+                "a": 0.76
+              },
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Primary",
+                "presenter": "Color"
+              }
+            }
+          },
+          "8": {
+            "base": {
+              "value": {
+                "r": 51,
+                "g": 51,
+                "b": 51,
+                "a": 0.87
+              },
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Primary",
+                "presenter": "Color"
+              }
+            }
+          },
+          "9": {
+            "base": {
+              "value": {
+                "r": 51,
+                "g": 51,
+                "b": 51,
+                "a": 0.95
+              },
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Primary",
+                "presenter": "Color"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+```css token.css
+:root,
+[ks-theme] {
+  --ks-color-primary-alpha-1-base: rgba(5, 86, 106, 0.95);
+  --ks-color-primary-alpha-2-base: rgba(5, 86, 106, 0.87);
+  --ks-color-primary-alpha-3-base: rgba(5, 86, 106, 0.76);
+  --ks-color-primary-alpha-4-base: rgba(5, 86, 106, 0.63);
+  --ks-color-primary-alpha-5-base: rgba(5, 86, 106, 0.5);
+  --ks-color-primary-alpha-6-base: rgba(5, 86, 106, 0.37);
+  --ks-color-primary-alpha-7-base: rgba(5, 86, 106, 0.24);
+  --ks-color-primary-alpha-8-base: rgba(5, 86, 106, 0.13);
+  --ks-color-primary-alpha-9-base: rgba(5, 86, 106, 0.05);
+}
+
+:root,
+[ks-theme],
+[ks-inverted='false'] {
+  --ks-color-primary-alpha-1: var(--ks-color-primary-alpha-1-base);
+  --ks-color-primary-alpha-2: var(--ks-color-primary-alpha-2-base);
+  --ks-color-primary-alpha-3: var(--ks-color-primary-alpha-3-base);
+  --ks-color-primary-alpha-4: var(--ks-color-primary-alpha-4-base);
+  --ks-color-primary-alpha-5: var(--ks-color-primary-alpha-5-base);
+  --ks-color-primary-alpha-6: var(--ks-color-primary-alpha-6-base);
+  --ks-color-primary-alpha-7: var(--ks-color-primary-alpha-7-base);
+  --ks-color-primary-alpha-8: var(--ks-color-primary-alpha-8-base);
+  --ks-color-primary-alpha-9: var(--ks-color-primary-alpha-9-base);
+}
+
+:root,
+[ks-inverted='true'] {
+  --ks-color-primary-alpha-1: var(--ks-color-primary-inverted-alpha-1-base);
+  --ks-color-primary-alpha-2: var(--ks-color-primary-inverted-alpha-2-base);
+  --ks-color-primary-alpha-3: var(--ks-color-primary-inverted-alpha-3-base);
+  --ks-color-primary-alpha-4: var(--ks-color-primary-inverted-alpha-4-base);
+  --ks-color-primary-alpha-5: var(--ks-color-primary-inverted-alpha-5-base);
+  --ks-color-primary-alpha-6: var(--ks-color-primary-inverted-alpha-6-base);
+  --ks-color-primary-alpha-7: var(--ks-color-primary-inverted-alpha-7-base);
+  --ks-color-primary-alpha-8: var(--ks-color-primary-inverted-alpha-8-base);
+  --ks-color-primary-alpha-9: var(--ks-color-primary-inverted-alpha-9-base);
+}
+```
+
+</CH.Code>
+</CH.Section>
+
+## Semantic Token
+
+### Color variants
+
+| Variant     | Description                                                             |
+| ----------- | ----------------------------------------------------------------------- |
+| `primary`   | Highlights elements. The most prevalent color of the design system.     |
+| `accent`    | Highlights elements that are hierarchically second to primary elements. |
+| `default`   | The default color of elements. Used as a fallback.                      |
+| `clear`     | Elements featuring transparency                                         |
+| `interface` | Signals user interactability                                            |
+
+### Color categories
+
+| Category           | Description                                                             |
+| ------------------ | ----------------------------------------------------------------------- |
+| `background-color` | Highlights elements. The most prevalent color of the design system.     |
+| `text-color`       | Highlights elements that are hierarchically second to primary elements. |
+| `border-color`     | The default background-color. Used on page the background.              |
+
+### Color concepts
+
+`interactive` applies to `primary`, `interface` & `clear` variants.
+`translucent` applies to `primary` variant.
+
+| Concept              | Description                      |
+| -------------------- | -------------------------------- |
+| `interactive`        | Signals interactability          |
+| `interactive-hover`  | State of the element on hover    |
+| `interactive-active` | State of the element when active |
+| `translucent`        | Element has some form of opacity |
+
+<CH.Section>
+<CH.Code rows={30}>
+
+```json background-color.json
+{
+  "ks": {
+    "background-color": {
+      "primary": {
+        "interactive": {
+          "base": {
+            "value": "{ks.color.primary.base}",
+            "attributes": {
+              "category": "color"
+            },
+            "token": {
+              "category": "Colors: Background Primary",
+              "presenter": "Color"
+            }
+          },
+          "hover": {
+            "base": {
+              "value": "{ks.color.primary.to-bg.2.base}",
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Background Primary",
+                "presenter": "Color"
+              }
+            }
+          },
+          "active": {
+            "base": {
+              "value": "{ks.color.primary.to-bg.3.base}",
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Background Primary",
+                "presenter": "Color"
+              }
+            }
+          },
+          "selected": {
+            "base": {
+              "value": "{ks.color.primary.base}",
+              "attributes": {
+                "category": "color"
+              },
+              "token": {
+                "category": "Colors: Background Primary",
+                "presenter": "Color"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+```css tokens.css
+:root,
+[ks-theme] {
+  --ks-background-color-primary-interactive-base: var(--ks-color-primary-base);
+  --ks-background-color-primary-interactive-hover-base: var(
+    --ks-color-primary-to-bg-2-base
+  );
+  --ks-background-color-primary-interactive-active-base: var(
+    --ks-color-primary-to-bg-4-base
+  );
+}
+
+:root,
+[ks-theme],
+[ks-inverted='false'] {
+  --ks-background-color-primary-interactive: var(
+    --ks-background-color-primary-interactive-base
+  );
+  --ks-background-color-primary-interactive-hover: var(
+    --ks-background-color-primary-interactive-hover-base
+  );
+  --ks-background-color-primary-interactive-active: var(
+    --ks-background-color-primary-interactive-active-base
+  );
+}
+
+[ks-inverted='true'] {
+  --ks-background-color-primary-interactive: var(
+    --ks-background-color-primary-inverted-interactive-base
+  );
+  --ks-background-color-primary-interactive-hover: var(
+    --ks-background-color-primary-inverted-interactive-hover-base
+  );
+  --ks-background-color-primary-interactive-active: var(
+    --ks-background-color-primary-inverted-interactive-active-base
+  );
+}
+```
+
+</CH.Code>
+</CH.Section>
+
+## Figma
+
+See the following `Page` in our `Figma` tokens file for a visual representation:
+
+<iframe
+  width="800"
+  height="450"
+  src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FH7F4P2fsDgEkIcc7U1alk1%2FkickstartDS-Design-Tokens%3Fnode-id%3D1%253A3"
+  allowFullScreen
+></iframe>

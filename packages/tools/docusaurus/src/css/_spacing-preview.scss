@@ -1,0 +1,137 @@
+.spacing {
+  width: 100%;
+  height: 200px;
+  border: var(--ks-border-color-accent);
+  box-shadow: var(--ks-box-shadow-card);
+  background-color: var(--ks-background-color-primary);
+  margin-bottom: var(--ifm-leading);
+
+  &-preview {
+    height: 1.75rem;
+    background-color: var(--ifm-color-primary);
+  }
+
+  &-xxs {
+    width: var(--ks-spacing-xxs);
+  }
+
+  &-xs {
+    width: var(--ks-spacing-xs);
+  }
+
+  &-s {
+    width: var(--ks-spacing-s);
+  }
+
+  &-m {
+    width: var(--ks-spacing-m);
+  }
+
+  &-l {
+    width: var(--ks-spacing-l);
+  }
+
+  &-xl {
+    width: var(--ks-spacing-xl);
+  }
+
+  &-xxl {
+    width: var(--ks-spacing-xxl);
+  }
+
+  &-section-default {
+    height: var(--l-section--space-default);
+    width: 2rem;
+  }
+
+  &-section-small {
+    height: var(--l-section--space-small);
+    width: 2rem;
+  }
+
+  &-gutter-default {
+    width: 2rem;
+    height: var(--l-section--gutter-default);
+  }
+
+  &-gutter-large {
+    width: 2rem;
+    height: var(--l-section--gutter-large);
+  }
+
+  &-gutter-small {
+    width: 2rem;
+    height: var(--l-section--gutter-small);
+  }
+
+  &::before,
+  &::after {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: var(--ks-background-color-default);
+    margin: auto;
+    text-align: center;
+    font-weight: var(--ks-font-weight-bold);
+  }
+
+  &::before {
+    content: 'Content';
+  }
+
+  &-inset {
+    padding: var(--ks-spacing-inset-m);
+  }
+
+  &-inset-squish {
+    padding: var(--ks-spacing-inset-squish-m);
+  }
+
+  &-inset-stretch {
+    padding: var(--ks-spacing-inset-stretch-m);
+  }
+
+  &-inline {
+    display: flex;
+    gap: var(--ks-spacing-inline-m);
+    &::after {
+      content: 'Content';
+    }
+  }
+
+  &-stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--ks-spacing-inline-m);
+    &::after {
+      content: 'Content';
+    }
+  }
+
+  &-preview-grid {
+    grid-template-columns: repeat(auto-fill, minmax(min(18rem, 100%), 1fr));
+    display: grid;
+    gap: var(--ks-spacing-m);
+
+    p {
+      text-align: left;
+      margin-top: auto;
+    }
+  }
+
+  &-legacy {
+    display: flex;
+    gap: var(--ks-spacing-inline-s);
+    margin-bottom: var(--ifm-leading);
+
+    * {
+      display: flex;
+      gap: var(--ks-spacing-inline-xs);
+      align-items: center;
+      margin: 0;
+    }
+  }
+}

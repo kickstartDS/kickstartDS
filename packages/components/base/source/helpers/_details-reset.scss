@@ -1,0 +1,15 @@
+@mixin details-reset {
+  summary {
+    list-style: none;
+    cursor: pointer;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &::before {
+      // reset the marker from details polyfill
+      content: '';
+    }
+  }
+}

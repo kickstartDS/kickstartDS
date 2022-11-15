@@ -1,0 +1,80 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/blog/post-head.schema.json",
+  "title": "Post Head",
+  "description": "Post Head",
+  "type": "object",
+  "properties": {
+    "image": {
+      "allOf": [
+        {
+          "type": "object",
+          "properties": {
+            "src": {
+              "type": "string",
+              "examples": ["https://picsum.photos/seed/kdsnewshead/900/380"]
+            },
+            "width": {
+              "type": "integer",
+              "examples": [900]
+            },
+            "height": {
+              "type": "integer",
+              "examples": [380]
+            }
+          }
+        },
+        {
+          "$ref": "http://schema.kickstartds.com/base/picture.definitions.json"
+        }
+      ]
+    },
+    "imageAlignment": {
+      "title": "Alignment",
+      "description": "Choose an horizontal alignment for the image.",
+      "type": "string",
+      "enum": ["left", "center", "right"],
+      "default": "center"
+    },
+    "date": {
+      "$ref": "http://schema.kickstartds.com/blog/news-item.definitions.json#/definitions/date"
+    },
+    "headline": {
+      "allOf": [
+        {
+          "type": "object",
+          "properties": {
+            "content": {
+              "type": "string",
+              "examples": ["Lorem ipsum dolor sit amet cons adipis elit"]
+            },
+            "level": {
+              "type": "string",
+              "default": "h1"
+            },
+            "spaceAfter": {
+              "type": "string",
+              "default": "small"
+            }
+          }
+        },
+        {
+          "$ref": "http://schema.kickstartds.com/base/headline.schema.json"
+        }
+      ]
+    },
+    "categories": {
+      "$ref": "http://schema.kickstartds.com/blog/news-item.definitions.json#/definitions/categories"
+    },
+    "className": {
+      "title": "Class",
+      "description": "Additional css classes attached to the wrapping element",
+      "type": "string"
+    },
+    "component": {
+      "title": "`ks-component` attribute",
+      "description": "Optional custom component identifier",
+      "type": "string"
+    }
+  }
+}

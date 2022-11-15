@@ -1,0 +1,103 @@
+---
+sidebar_position: 1
+---
+
+import { TeaserBox } from '@kickstartds/base/lib/teaser-box';
+import { Columns } from '@bedrock-layout/primitives';
+
+# Guides
+
+Guides provide instructions on how to get the most out of kickstartDS to create your own Design System. Let us know which guide you are actually missing.
+
+TODO: add zendesk
+
+<div ks-theme="docs">
+  <Columns columns={3} gutter="md" switchAt={768}>
+    <TeaserBox
+      topic="Create your Design System"
+      text="This is basically the main guide. It explains how you get your first Design System setup in five simple steps"
+      link={{
+        href: './create/',
+        label: 'See starter guide',
+        variant: 'clear',
+        size: 'small',
+        iconAnimation: true,
+        iconAfter: {
+          icon: 'chevron-right',
+        },
+      }}
+    />
+    <TeaserBox
+      topic="Components"
+      text="Learn about the different ways on how you use base components from kickstartDS to create your own and more complex components"
+      link={{
+        href: './components/',
+        label: 'Explore components guides',
+        variant: 'clear',
+        size: 'small',
+        iconAnimation: true,
+        iconAfter: {
+          icon: 'chevron-right',
+        },
+      }}
+    />
+    <TeaserBox
+      topic="Examples"
+      text="These instructions guide you through some common examples to show you how to adapt or customize components to your own needs"
+      link={{
+        href: './examples/',
+        label: 'Check examples',
+        variant: 'clear',
+        size: 'small',
+        iconAnimation: true,
+        iconAfter: {
+          icon: 'chevron-right',
+        },
+      }}
+    />
+    <TeaserBox
+      topic="Migrations"
+      text="Find informationen on how to upgrade from older versions of kickstartDS to v2.0.0"
+      link={{
+        href: './migrations/',
+        label: 'Read migration guide',
+        variant: 'clear',
+        size: 'small',
+        iconAnimation: true,
+        iconAfter: {
+          icon: 'chevron-right',
+        },
+      }}
+    />
+    <TeaserBox
+      topic="Using our starter"
+      text="TODO: add short intro description about the starters"
+      link={{
+        href: './use-our-starter/',
+        label: 'See starters',
+        variant: 'clear',
+        size: 'small',
+        iconAnimation: true,
+        iconAfter: {
+          icon: 'chevron-right',
+        },
+      }}
+    />
+
+    <TeaserBox
+      topic="Design System Initiative"
+      text="Here you find a high-level description on what a this process is and how it helps organization when considering to initialize a Design System"
+      link={{
+        href: './design-system-initiative/',
+        label: 'More about this initiative',
+        variant: 'clear',
+        size: 'small',
+        iconAnimation: true,
+        iconAfter: {
+          icon: 'chevron-right',
+        },
+      }}
+    />
+
+  </Columns>
+</div>

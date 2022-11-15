@@ -1,0 +1,11 @@
+$name-: 'c-divider';
+
+$host: (
+  '.c-divider': (
+    background: var(--ks-color-fg-alpha-9),
+    height: 1px,
+  ),
+  '.c-divider--accent': (
+    background: var(--ks-color-primary-alpha-9),
+  ),
+) !default;

@@ -1,0 +1,56 @@
+.opacity {
+  &-preview {
+    height: 5rem;
+    width: 5rem;
+    background-color: #797979;
+    position: relative;
+
+    &:before,
+    &:after {
+      position: absolute;
+      content: '';
+      height: 65%;
+      width: 65%;
+      top: 20%;
+      border-radius: var(--ks-border-radius-circle);
+    }
+
+    &:before {
+      background-color: white;
+      right: 10%;
+    }
+    &:after {
+      background-color: black;
+      left: 10%;
+    }
+  }
+
+  &-control {
+    &:after {
+      opacity: var(--ks-box-shadow-opacity-control);
+    }
+
+    &-hover:after {
+      opacity: var(--ks-box-shadow-opacity-control-hover);
+    }
+  }
+  &-card {
+    &:after {
+      opacity: var(--ks-box-shadow-opacity-card);
+    }
+
+    &-hover:after {
+      opacity: var(--ks-box-shadow-opacity-card-hover);
+    }
+  }
+
+  &-surface {
+    &:after {
+      opacity: var(--ks-box-shadow-opacity-surface);
+    }
+
+    &-hover:after {
+      opacity: var(--ks-box-shadow-opacity-surface-hover);
+    }
+  }
+}

@@ -1,13 +1,17 @@
 {
   "name": "kickstartds",
   "private": true,
-  "repository": "kickstartDS/kickstartDS",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kickstartDS/kickstartDS.git"
+  },
+  "license": "(MIT OR Apache-2.0)",
   "workspaces": [
     "packages/components/*",
     "packages/tools/*"
   ],
   "scripts": {
-    "build": "lerna run --stream --no-prefix build",
+    "build": "lerna run --stream --no-prefix --scope @kickstartds/* build",
     "build:prod": "NODE_ENV=production yarn run build",
     "copy-env-file": "[ ! -f .env ] && cp .env-example .env || true",
     "chromatic": "yarn workspace @kickstartds-internal/storybook chromatic",
@@ -15,10 +19,11 @@
     "chromatic-blog": "yarn workspace @kickstartds-internal/storybook chromatic-blog",
     "chromatic-content": "yarn workspace @kickstartds-internal/storybook chromatic-content",
     "chromatic-form": "yarn workspace @kickstartds-internal/storybook chromatic-form",
-    "dereference": "node scripts/schemaDereference.js",
+    "docusaurus-start": "yarn workspace @kickstartds-internal/docusaurus start",
+    "docusaurus-build": "yarn workspace @kickstartds-internal/docusaurus build",
     "eslint": "eslint \"**/*.{js,jsx,ts,tsx}\"",
     "find-licenses": "node ./scripts/license.js",
-    "format": "prettier --write .",
+    "format": "prettier --cache --write .",
     "git-config": "git config --local include.path ../.gitconfig",
     "husky-commit-msg": "commitlint -E GIT_PARAMS",
     "husky-pre-commit": "yarn run schema && git add packages/*/*/source/**/*Props.ts && lint-staged",
@@ -36,38 +41,8 @@
     "watch": "lerna run --parallel --no-prefix watch",
     "watch-tokens": "sass --watch --load-path=node_modules packages/components/core/source/design-tokens/tokens.scss packages/components/core/lib/design-tokens/tokens.css"
   },
-  "dependencies": {
-    "@kickstartds/eslint-config": "^1.0.1",
-    "@kickstartds/stylelint-config": "^1.0.1",
-    "execa": "^5.1.1",
-    "fast-glob": "^3.2.7",
-    "fs-extra": "^10.0.0",
-    "json-csv": "^4.0.2",
-    "license-checker": "^25.0.1",
-    "react": "^17.0.2"
-  },
-  "devDependencies": {
-    "@auto-it/all-contributors": "^10.32.2",
-    "@auto-it/first-time-contributor": "^10.32.2",
-    "@auto-it/npm": "^10.32.2",
-    "@auto-it/released": "^10.32.2",
-    "@commitlint/cli": "^14.1.0",
-    "@commitlint/config-conventional": "^14.1.0",
-    "auto": "^10.32.2",
-    "commitizen": "^4.2.4",
-    "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^7.32.0",
-    "eslint-import-resolver-lerna": "^2.0.0",
-    "husky": "^7.0.4",
-    "lerna": "^4.0.0",
-    "lint-staged": "^11.2.6",
-    "npm-run-all": "^4.1.5",
-    "prettier": "^2.4.1",
-    "stylelint": "^13.13.0"
-  },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org",
-    "access": "public"
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,md,json,scss}": "prettier --cache --write"
   },
   "config": {
     "commitizen": {
@@ -75,7 +50,41 @@
     },
     "unsafe-perm": true
   },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx,md,json,scss}": "prettier --write"
+  "dependencies": {
+    "@iwsio/json-csv-node": "^5.0.7",
+    "@kickstartds/eslint-config": "^1.1.0",
+    "@kickstartds/stylelint-config": "^2.1.0",
+    "execa": "^5.1.1",
+    "fast-glob": "^3.2.11",
+    "fs-extra": "^10.1.0",
+    "license-checker": "^25.0.1",
+    "postcss": "^8.4.17",
+    "postcss-scss": "^4.0.5",
+    "react": "^17.0.2"
+  },
+  "devDependencies": {
+    "@auto-it/all-contributors": "^10.37.6",
+    "@auto-it/first-time-contributor": "^10.37.6",
+    "@auto-it/npm": "^10.37.6",
+    "@auto-it/released": "^10.37.6",
+    "@commitlint/cli": "^17.2.0",
+    "@commitlint/config-conventional": "^17.1.0",
+    "@types/react": "^17.0.50",
+    "@types/react-dom": "^17.0.17",
+    "auto": "^10.37.6",
+    "commitizen": "^4.2.5",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^7.32.0",
+    "eslint-import-resolver-lerna": "^2.0.0",
+    "husky": "^8.0.1",
+    "lerna": "^5.5.2",
+    "lint-staged": "^13.0.3",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.7.1",
+    "stylelint": "^14.13.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
   }
 }

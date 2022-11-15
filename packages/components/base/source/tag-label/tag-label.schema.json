@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/base/tag-label.schema.json",
+  "title": "Tag Label",
+  "description": "Component to render a pill / tag / label",
+  "type": "object",
+  "properties": {
+    "label": {
+      "title": "Label",
+      "description": "Text to display inside tag label",
+      "type": "string",
+      "examples": ["Lorem Ipsum"]
+    },
+    "size": {
+      "title": "Size",
+      "description": "Choose a size to scale the tag label up or down",
+      "type": "string",
+      "enum": ["s", "m", "l"],
+      "default": "m"
+    },
+    "link": {
+      "title": "Link Target",
+      "description": "Set optional href to link the tag",
+      "type": "string",
+      "format": "uri"
+    },
+    "removable": {
+      "title": "Removable",
+      "description": "Choose whether the element is removable or not",
+      "type": "boolean",
+      "default": false
+    },
+    "className": {
+      "title": "Additional Classes",
+      "description": "Add additional css classes that should be applied to the label",
+      "type": "string"
+    },
+    "component": {
+      "title": "`ks-component` attribute",
+      "description": "Optional custom component identifier",
+      "type": "string"
+    }
+  },
+  "required": ["label"],
+  "additionalProperties": false
+}

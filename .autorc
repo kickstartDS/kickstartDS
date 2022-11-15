@@ -1,6 +1,10 @@
 {
   "author": "Lukas Mestel <lukas.mestel@kickstartds.com>",
   "baseBranch": "master",
+  "prereleaseBranches": [
+    "next",
+    "beta"
+  ],
   "plugins": [
     "npm",
     [

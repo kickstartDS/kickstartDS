@@ -2,7 +2,7 @@ version: 2.1
 
 defaults: &defaults
   docker:
-    - image: circleci/node:14.17
+    - image: cimg/node:16.14
   working_directory: /mnt/ramdisk
   resource_class: medium+
 
@@ -61,6 +61,7 @@ jobs:
           root: .
           paths:
             - packages/components
+            - packages/tools/storybook/.storybook
 
   chromatic:
     <<: *defaults
@@ -71,6 +72,29 @@ jobs:
       - run:
           name: Build Storybook & deploy to Chromatic
           command: yarn run chromatic
+
+  docusaurus:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache: *restore-cache-node
+      - *attach_workspace
+      - run:
+          name: Build docs
+          command: yarn run docusaurus-build --out-dir=../../../docs
+      - run:
+          name: Compress docs folder
+          command: tar -czf docs.tar.gz docs
+      - store_artifacts:
+          path: docs.tar.gz
+      - run:
+          name: Trigger website deployment
+          command: |
+            curl --request POST \
+              --url "https://circleci.com/api/v2/project/gh/kickstartDS/website-deployment/pipeline" \
+              --header "Circle-Token: ${CIRCLE_CI_WEBSITE_BUILD_TOKEN}" \
+              --header "content-type: application/json" \
+              --data '{"branch":"master","parameters":{"run_workflow_deploy":true, "website_branch":"master"}}'
 
   publish-base:
     <<: *defaults
@@ -91,16 +115,6 @@ jobs:
       - run:
           name: Publish Chromatic Module Blog
           command: CHROMATIC_PROJECT_TOKEN=${CHROMATIC_PROJECT_TOKEN_BLOG} yarn run chromatic-blog
-
-  publish-content:
-    <<: *defaults
-    steps:
-      - checkout
-      - restore_cache: *restore-cache-node
-      - *attach_workspace
-      - run:
-          name: Publish Chromatic Module Content
-          command: CHROMATIC_PROJECT_TOKEN=${CHROMATIC_PROJECT_TOKEN_CONTENT} yarn run chromatic-content
 
   publish-form:
     <<: *defaults
@@ -126,6 +140,14 @@ workflows:
           requires:
             - release
 
+      - docusaurus:
+          filters:
+            branches:
+              only: feature/docs
+          context: kickstartDS
+          requires:
+            - release
+
       - publish-base:
           <<: *release_branches_only
           context: kickstartDS
@@ -133,12 +155,6 @@ workflows:
             - release
 
       - publish-blog:
-          <<: *release_branches_only
-          context: kickstartDS
-          requires:
-            - release
-
-      - publish-content:
           <<: *release_branches_only
           context: kickstartDS
           requires:

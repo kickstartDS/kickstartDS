@@ -1,0 +1,36 @@
+.shadow-preview {
+  margin-bottom: 1rem;
+}
+
+.shadow-control {
+  border-radius: var(--ks-border-radius-control);
+  box-shadow: var(--ks-box-shadow-control);
+  height: 50px;
+  width: 300px;
+
+  &:hover {
+    box-shadow: var(--ks-box-shadow-control-hover);
+  }
+}
+
+.shadow-card {
+  border-radius: var(--ks-border-radius-card);
+  box-shadow: var(--ks-box-shadow-card);
+  height: 400px;
+  width: 300px;
+
+  :hover {
+    box-shadow: var(--ks-box-shadow-card-hover);
+  }
+}
+
+.shadow-surface {
+  border-radius: var(--ks-border-radius-surface);
+  box-shadow: var(--ks-box-shadow-surface);
+  height: 200px;
+  width: 100%;
+
+  &:hover {
+    box-shadow: var(--ks-box-shadow-surface-hover);
+  }
+}

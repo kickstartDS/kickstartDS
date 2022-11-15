@@ -1,0 +1,8 @@
+@use 'bourbon/core/bourbon';
+
+.icon {
+  @include bourbon.size(2em);
+  display: inline-block;
+  vertical-align: middle;
+  fill: currentColor;
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/base/icon.definitions.json",
+  "title": "Icon",
+  "description": "Icon",
+  "type": "object",
+  "properties": {
+    "icon": {
+      "type": "string",
+      "title": "Icon identifier"
+    },
+    "role": {
+      "type": "string",
+      "title": "Aria role"
+    },
+    "className": {
+      "type": "string",
+      "title": "additional class"
+    },
+    "component": {
+      "title": "`ks-component` attribute",
+      "description": "Optional custom component identifier",
+      "type": "string"
+    }
+  },
+  "required": ["icon"]
+}

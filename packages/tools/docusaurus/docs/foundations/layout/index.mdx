@@ -1,0 +1,43 @@
+---
+sidebar_position: 4
+---
+
+import { TeaserBox } from '@kickstartds/base/lib/teaser-box';
+import { Columns } from '@bedrock-layout/primitives';
+
+# Layout
+
+The Layout helps you to generate flexible methods to present and structure your content supporting consistency across your applications.
+
+<div ks-theme="docs">
+  <Columns columns={2} gutter="md" switchAt={672}>
+    <TeaserBox
+      link={{
+        size: 'small',
+        href: '/docs/foundations/token/branding-token',
+        label: 'Go to Sections',
+        variant: 'clear',
+        iconAnimation: true,
+        iconAfter: {
+          icon: 'chevron-right',
+        },
+      }}
+      text="The native way to create layouts in kickstartDS. Sections ensure a consistent display of content while offering a varietey of customisation options."
+      topic="Sections"
+    />
+    <TeaserBox
+      link={{
+        size: 'small',
+        href: '/docs/foundations/token/design-token',
+        label: 'Explore Bedrock',
+        variant: 'clear',
+        iconAnimation: true,
+        iconAfter: {
+          icon: 'chevron-right',
+        },
+      }}
+      text="A collection of utility components that are designed to be used as building blocks for your web application's layout."
+      topic="Bedrock"
+    />
+  </Columns>
+</div>

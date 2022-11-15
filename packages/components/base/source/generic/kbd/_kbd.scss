@@ -1,0 +1,11 @@
+kbd {
+  font: var(--ks-font-interface-s);
+  display: inline-block;
+  margin: 0 0.1em;
+  padding: 0.1em 0.5em 0;
+  border: var(--ks-border-width-default) solid var(--ks-color-fg-to-bg-8);
+  border-radius: var(--ks-border-radius-control);
+  box-shadow: 0 1px 0 var(--ks-color-fg-alpha-8);
+  vertical-align: 0.1em;
+  white-space: nowrap;
+}

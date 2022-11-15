@@ -1,0 +1,96 @@
+@use 'bourbon/core/bourbon';
+@use './container';
+
+@include container.wrapper;
+
+.text-media {
+  @include bourbon.clearfix;
+
+  &--beside {
+    .text-media__text {
+      overflow: hidden;
+
+      @media print {
+        overflow: visible;
+      }
+    }
+  }
+
+  &__gallery {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: var(--ks-spacing-m);
+
+    // above/below left (default), center, right
+    .text-media--above & {
+      padding-bottom: var(--ks-spacing-s);
+    }
+
+    .text-media--below & {
+      padding-top: var(--ks-spacing-s);
+    }
+
+    .text-media--center & {
+      justify-content: center;
+    }
+
+    .text-media--right & {
+      justify-content: flex-end;
+    }
+
+    // intext left, right
+    .text-media--intext & {
+      padding-bottom: var(--ks-spacing-s);
+
+      @include container.size('≥', 600px) {
+        padding-bottom: var(--ks-spacing-xs);
+        max-width: 50%;
+        min-width: 0;
+      }
+
+      @media print {
+        width: 30%;
+      }
+    }
+
+    .text-media--intext.text-media--left & {
+      @include container.size('≥', 600px) {
+        float: left;
+        padding-right: var(--ks-spacing-m);
+      }
+    }
+
+    .text-media--intext.text-media--right & {
+      @include container.size('≥', 600px) {
+        float: right;
+        padding-left: var(--ks-spacing-m);
+      }
+    }
+  }
+
+  &__media {
+    display: table;
+    table-layout: fixed;
+    max-width: 100%;
+    box-sizing: content-box;
+
+    &--full {
+      &,
+      > * {
+        width: 100% !important;
+      }
+    }
+
+    a {
+      display: table-cell;
+    }
+  }
+
+  &__caption {
+    display: table-caption;
+    caption-side: bottom;
+    text-align: left;
+    color: var(--ks-text-color-default);
+  }
+}

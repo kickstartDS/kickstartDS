@@ -1,0 +1,19 @@
+header.c-headline {
+  --c-headline--color: var(--ifm-heading-color);
+
+  &--align-center {
+    margin: auto;
+  }
+
+  .c-headline__subheadline {
+    --c-headline_subheadline--font-weight: var(--ifm-font-weight-semibold);
+    [data-theme='dark'] &,
+    [ks-inverted='true'] & {
+      --c-headline_subheadline--color: var(--ks-color-primary-inverted-to-bg-7);
+    }
+  }
+}
+
+p.c-headline__subheadline {
+  --c-headline_subheadline--color: var(--ks-color-primary);
+}

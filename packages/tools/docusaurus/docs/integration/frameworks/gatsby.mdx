@@ -1,0 +1,63 @@
+---
+sidebar_position: 2
+---
+
+import { Quote } from '@kickstartds/content/lib/quote';
+
+# Gatsby
+
+**Gatsby** is a framework helping developers build websites faster and with better results overall, while being compatible with a wide range of other systems out-of-the-box.
+
+<Quote
+  image={require('./assets/gatsby-logo.png').default}
+  byline="https://www.gatsbyjs.com/why-gatsby"
+  source="Why Gatsby page"
+  text="Gatsby enables developers to build fast, secure, and powerful websites using a React-based framework and innovative data layer that makes integrating different content, APIs, and services into one web experience incredibly simple."
+/>
+
+<br />
+
+We have a feature complete **Gatsby** theme coming up, which automatically enables all of your (own, custom!) components to be usable on your website without additional work. You can see the Gatsby theme in action today, on our own website:<br/>
+https://www.kickstartDS.com
+
+To learn more about **Gatsby**, visit [their official website](https://www.gatsbyjs.com/).
+
+## Usage with **kickstartDS**
+
+Some tips on combining **Gatsby** and **kickstartDS**.
+
+### Features
+
+Using our upcoming theme will mean benefitting from included Gatsby [Node definitions](https://www.gatsbyjs.com/docs/reference/graphql-data-layer/schema-customization/#creating-type-definitions) for **kickstartDS** compatible pages, and even already existing [resolvers](https://www.gatsbyjs.com/docs/reference/graphql-data-layer/schema-customization/#createresolvers-api) to connect to one of the following CMS as a headless content providers:
+
+- WordPress (see our own blog for an example of that combination): https://www.kickstartDS.com/blog/
+- Contentful (see our glossary for an example of that combination): https://www.kickstartDS.com/glossary/typescript/
+- Netlify CMS (see our main marketing- and landing pages): https://www.kickstartDS.com/
+- MDX
+
+### Templates
+
+Ready-made templates include (you can preview them in our **Storybook**):
+
+- Content Page ([Storybook](https://www.kickstartds.com/storybook/?path=/story/pages--integrations))
+- Glossary Entry Page ([Storybook](https://www.kickstartds.com/storybook/?path=/story/pages--glossary-entry))
+- Blog List Page ([Storybook](https://www.kickstartds.com/storybook/?path=/story/pages--blog-list))
+- Blog Detail Page ([Storybook](https://www.kickstartds.com/storybook/?path=/story/pages--blog-post))
+
+This allows for extremely flexible combinations of data sources for your website, all while using one uniform frontend (your Design System) **and** minimizing implementation work, even when creating your completely new and custom transformer.
+
+### Other
+
+It will also handle the following things for you out-of-the-box:
+
+- Integrated SEO independent of used source systems
+- Centralized menu concept
+- Performance optimization
+
+## Interested?
+
+Get in contact if you want to learn more! We'll flesh out this part of our documentation soon, you may also sign up for a notification when this is done.
+
+TODO add CTA here to signup for release of this page
+
+TODO maybe add general "Coming soon" disclaimer element

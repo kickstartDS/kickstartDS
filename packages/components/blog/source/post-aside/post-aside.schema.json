@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/blog/post-aside.schema.json",
+  "title": "Post Aside",
+  "description": "Post Aside",
+  "type": "object",
+  "properties": {
+    "author": {
+      "title": "Author",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "http://schema.kickstartds.com/base/contact.schema.json"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "headline": {
+              "allOf": [
+                {
+                  "examples": ["Published by"]
+                },
+                {
+                  "$ref": "http://schema.kickstartds.com/base/headline.schema.json#/properties/content"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "meta": {
+      "$ref": "http://schema.kickstartds.com/blog/post-meta.schema.json"
+    },
+    "shareBar": {
+      "$ref": "http://schema.kickstartds.com/blog/post-share-bar.schema.json"
+    },
+    "className": {
+      "title": "Class",
+      "description": "Additional css classes attached to the wrapping element",
+      "type": "string"
+    },
+    "component": {
+      "title": "`ks-component` attribute",
+      "description": "Optional custom component identifier",
+      "type": "string"
+    }
+  }
+}

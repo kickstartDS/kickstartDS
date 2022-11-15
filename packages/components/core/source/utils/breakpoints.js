@@ -1,50 +1,32 @@
 import debounce from 'lodash-es/debounce';
 import { domLoaded } from '../core/domLoaded';
 
-const breakpointEvents = {
+export const breakpointEvents = {
   change: 'core.breakpoint.change',
 };
-const removeQuotes = (string) =>
-  // removes backslashes and leading & trailing quotes
-  string.replace(/\\|^\s*['"]|['"]\s*$/g, '');
 
-const includeMediaExport = (() => {
-  let breakpoints = {};
-  domLoaded(() => {
+domLoaded(() => {
+  try {
+    const raw = window
+      .getComputedStyle(document.documentElement)
+      .getPropertyValue('--ks-breakpoints')
+      // removes backslashes and leading & trailing quotes
+      .replace(/\\|^\s*['"]|['"]\s*$/g, '');
+    const media = Object.fromEntries(
+      Object.entries(JSON.parse(raw)).map(([key, value]) => [
+        key,
+        window.matchMedia(`(min-width:${value})`),
+      ])
+    );
     const breakpointChangePublisher = debounce(
-      () => window.rm.radio.emit(breakpointEvents.change),
+      () => window._ks.radio.emit(breakpointEvents.change, media),
       80
     );
-    try {
-      const raw = window
-        .getComputedStyle(document.documentElement)
-        .getPropertyValue('--breakpoints');
-      breakpoints = Object.entries(JSON.parse(removeQuotes(raw))).reduce(
-        (prev, [breakpoint, value]) => {
-          prev[breakpoint] = window.matchMedia(`(min-width:${value})`);
-          prev[breakpoint].addEventListener(
-            'change',
-            breakpointChangePublisher
-          );
-          return prev;
-        },
-        {}
-      );
-    } catch (e) {
-      // eslint-disable-next-line no-console
-      console.error(e);
-    }
-  });
-
-  const isBreakpointActive = (breakpoint) =>
-    breakpoint in breakpoints && breakpoints[breakpoint].matches;
-
-  const isBreakpointNotActive = (breakpoint) => !isBreakpointActive(breakpoint);
-
-  return {
-    greaterThan: isBreakpointActive,
-    lessThan: isBreakpointNotActive,
-  };
-})();
-
-export { breakpointEvents, includeMediaExport as breakpoints };
+    Object.values(media).forEach((mediaQuery) =>
+      mediaQuery.addEventListener('change', breakpointChangePublisher)
+    );
+  } catch (e) {
+    // eslint-disable-next-line no-console
+    console.error(e);
+  }
+});

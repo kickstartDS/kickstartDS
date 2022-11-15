@@ -11,15 +11,15 @@ export const windowEvents = {
 
 if (inBrowser) {
   const resizeEndPublisher = debounce(
-    () => window.rm.radio.emitSync(windowEvents.resize),
+    () => window._ks.radio.emitSync(windowEvents.resize),
     100
   );
   const scrollPublisher = throttle(
-    () => window.rm.radio.emitSync(windowEvents.scroll),
+    () => window._ks.radio.emitSync(windowEvents.scroll),
     100
   );
   const scrollEndPublisher = debounce(
-    () => window.rm.radio.emitSync(windowEvents.scrollEnd),
+    () => window._ks.radio.emitSync(windowEvents.scrollEnd),
     100
   );
 
@@ -34,6 +34,6 @@ if (inBrowser) {
   );
   window.addEventListener('hashchange', (event) => {
     event.preventDefault();
-    window.rm.radio.emit(windowEvents.hashchange);
+    window._ks.radio.emit(windowEvents.hashchange);
   });
 }

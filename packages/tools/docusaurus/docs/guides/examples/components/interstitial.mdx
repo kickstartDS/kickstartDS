@@ -1,0 +1,1086 @@
+---
+sidebar_position: 5
+sidebar_label: Create Interstitial component
+---
+
+import Admonition from 'react-admonitions';
+
+import { Storytelling } from '@kickstartds/content/lib/storytelling';
+import { TextMedia } from '@kickstartds/base/lib/text-media';
+import { StorytellingProvider } from '@kickstartds/design-system/dist/components/storytelling/StorytellingComponent';
+
+# Create `Interstitial` component
+
+This guided example show how to find a fitting, existing **kickstartDS** base component for one of your use cases, to repurpose it. Meaning: you start with some requirements, match an existing component, find a fitting new name for the use case, and give it a new purpose by greatly restricting and rewiring its options for the new context.
+
+Even while using the component rather directly from **kickstartDS**, you'll want to find the correct set of properties for your own use case. Components in **kickstartDS** come equipped with properties for a wide range of possible use cases, so it makes sense to reduce those to the ones you really need... to make components easier to understand, use and reason about!
+
+We call this type of workflow **Creation**. Learn more about it in [our dedicated guide](../../components/create.mdx) about it. If you're unsure about something, have a look over there. We go into more background detail there about what we're doing here.
+
+This also means that, for this example, we'll get by without any additional styling needed. We'll live off of everything already set in place by our existing [**Design Token**](../../../foundations/token/design-token/index.md) and component structure.
+
+## Overview
+
+More concretely: what we're building up to in this example... and for the sake of imagination, assume this was what your designer cooked up:
+
+<iframe
+  src="https://60dc476b80673e003b4258d6-czyzkgbgek.chromatic.com/iframe.html?args=&id=recipes-cta--banner-background-image&viewMode=story"
+  width="900"
+  height="375"
+></iframe>
+
+This will be done in three simple steps:
+
+1. Component Definition,
+2. Component Mapping, and
+3. Component Creation
+
+For more details about those steps, have a look at [the guide about different component processes](../../components/index.mdx) and their shared structure.
+
+## Requirements
+
+This guide assumes that you already have a working Design System, that is based on **kickstartDS**, running.<br/>
+If that's not the case, follow our [Create your Design System](../../create/index.mdx) guide .
+
+Additionally you'll need access to our **Content** module, to use the `Storytelling` component this guide is based on.<br/>
+TODO add link / CTA to **Content** module here
+
+## 1. Component Definition
+
+### Purpose
+
+<TextMedia
+  ks-theme="docs"
+  media={[
+    {
+      lightboxImage: {
+        image: require('./assets/interstitial-usage.png').default,
+        thumb: require('./assets/interstitial-usage.png').default,
+        width: 1904,
+        height: 903,
+        zoomIcon: true,
+        gallery: 'interstitial-use',
+      },
+      caption: "Examplary use of such a component"
+    }
+  ]}
+  mediaAlignment="intext-right"
+  text="We want to create an element that can be interjected into otherwise monotone content. To direct focus, or present alternatives, to the main body of content.
+We'll probably need to be able to define a `title` and some `body` content. Additionally, we want to add some flavour to the component by using noticeable design variations, not typically found in our other components.
+
+Adding a static background image to the component could be nice touch!
+
+Finally being able to add a `link` with a link target (`link.target`) and and link text (`link.text`) will be needed, but they should be optional."
+/>
+
+### Structure
+
+This would leave us with the following properties (API) for our new component. Required fields are marked with a `*`:
+
+| Property      | Type     | Description              |
+| ------------- | -------- | ------------------------ |
+| `title *`     | `string` | Title to show            |
+| `body *`      | `string` | Body content to display  |
+| `link.target` | `string` | Page to link to          |
+| `link.text`   | `string` | Text to use for the link |
+
+Fields that should be required are marked with a `*`.
+
+While directly helping us get a better grasp on our new component, these will also be used to write our `JSON Schema` later!
+
+## 2. Component Mapping
+
+Next we want to search for components that could be of use in assembling this new one. This might be a single, big component that more or less directly fits our use case, or alternatively a combination of components that could serve as the basis by combining them.
+
+This will then serve as our **kickstartDS** base component, which will be adjusted to fit our needs!
+
+### Matching it
+
+From a quick glance, our `Storytelling` component seems like it might fit the bill quite nicely! It has options for a `title` (`box.headline`) and `body` (`box.text`), supports some RTE-like formatting for our `body`, and has a wide range of possible design adjustments: mainly background colors & images, an optional foreground image and a bunch of possible arrangements of those.
+
+This would also enable us to add a nice-looking background image to the whole component by using a combination of its attributes `backgroundImage` and `backgroundColor`:
+
+<iframe
+  src="https://60dc476b80673e003b4258d6-czyzkgbgek.chromatic.com/?path=/story/content-storytelling--image&full=1&shortcuts=false&singleStory=true"
+  width="900"
+  height="700"
+></iframe>
+
+For a complete overview of the available options, take a look at the `Storytelling` [component API](../../../foundations/components/component-api.md) here:<br/>
+https://www.kickstartds.com/storybook/?path=/docs/content-storytelling--image
+
+### Adjustments
+
+This only gives us a rough sketch, though. We still need to adjust the example code to exactly fit our needs. In the process we will hard-code a bunch of options, because we're only interested in a specific set of them. The rest can be set to default values, which don't need to become part of the [component API](../../../foundations/components/component-api.md).
+
+<CH.Scrollycoding>
+<CH.Preview>
+<div className="layout-preview" ks-theme="preview">
+  <StorytellingProvider>
+    <Storytelling
+      box={{
+        hAlign: 'center',
+        headline: {
+          align: null,
+          content: 'Great components',
+          level: 'h2',
+          pageHeader: false,
+          spaceAfter: 'minimum',
+          styleAs: 'h2',
+          subheadline: 'Sed diam nonumy eirmod tempor invidunt'
+        },
+        link: {
+          fillAnimation: false,
+          href: '#',
+          iconAfter: false,
+          iconAnimation: false,
+          iconBefore: false,
+          label: 'Request a guided demo',
+          newTab: false,
+          size: 'medium',
+          variant: 'solid'
+        },
+        text: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+        textAlign: 'left',
+        vAlign: 'center'
+      }}
+      image={{
+        hAlign: 'center',
+        order: {
+          desktopImageLast: true,
+          mobileImageLast: false
+        },
+        ratio: 'none',
+        source: 'https://www.kickstartDS.com/img/recipes/toolbox.svg',
+        vAlign: 'center'
+      }}
+    />
+  </StorytellingProvider>
+</div>
+</CH.Preview>
+
+```jsx src/App.jsx focus=1,5:42
+import { Storytelling } from '@kickstartds/content/lib/storytelling';
+
+export default function App() {
+  return (
+    <Storytelling
+      box={{
+        hAlign: 'center',
+        headline: {
+          align: null,
+          content: 'Great components',
+          level: 'h2',
+          pageHeader: false,
+          spaceAfter: 'minimum',
+          styleAs: 'h2',
+          subheadline: 'Sed diam nonumy eirmod tempor invidunt',
+        },
+        link: {
+          fillAnimation: false,
+          href: '#',
+          iconAfter: false,
+          iconAnimation: false,
+          iconBefore: false,
+          label: 'Request a guided demo',
+          newTab: false,
+          size: 'medium',
+          variant: 'solid',
+        },
+        text: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+        textAlign: 'left',
+        vAlign: 'center',
+      }}
+      image={{
+        hAlign: 'center',
+        order: {
+          desktopImageLast: true,
+          mobileImageLast: false,
+        },
+        ratio: 'none',
+        source: 'https://www.kickstartDS.com/img/recipes/toolbox.svg',
+        vAlign: 'center',
+      }}
+    />
+  );
+}
+```
+
+#### Start with an existing `Storytelling` component variant
+
+We'll start by copying the `JSX` code for the `Image` variant of our `Storytelling` component, from here:<br/>
+https://www.kickstartds.com/storybook/?path=/docs/content-storytelling--image
+
+---
+
+#### Remove all of the unneeded stuff
+
+There are a bunch of properties that are completely optional, mainly those having their values `undefined` or `null` in the copied JSX, or ones which just state the `default` value of that property anyway. Those can be freely removed.<br/>
+We'll also not be utilizing the `image`, at least for now!
+
+```jsx src/App.jsx focus=5:20
+import { Storytelling } from '@kickstartds/content';
+
+export default function App() {
+  return (
+    <Storytelling
+      box={{
+        headline: {
+          content: 'Great components',
+          level: 'h2',
+          styleAs: 'h2',
+          subheadline: 'Sed diam nonumy eirmod tempor invidunt',
+        },
+        link: {
+          href: '#',
+          label: 'Request a guided demo',
+          variant: 'solid',
+        },
+      }}
+    />
+  );
+}
+```
+
+<CH.Preview>
+  <div className="layout-preview" ks-theme="preview">
+    <Storytelling
+      box={{
+        headline: {
+          content: 'Great components',
+          level: 'h2',
+          styleAs: 'h2',
+          subheadline: 'Sed diam nonumy eirmod tempor invidunt',
+        },
+        link: {
+          href: '#',
+          label: 'Request a guided demo',
+          variant: 'solid',
+        },
+      }}
+    />
+  </div>
+</CH.Preview>
+---
+
+#### Hard-code static, required properties
+
+We add nice values for `backgroundColor` and `backgroundImage`, invert everything with `ks-inverted` to make it pop, and change some alignments for the `box`, as well as make the `headline` "louder" by styling it as a `h1`.
+
+```jsx src/App.jsx focus=6:8,10,14
+import { Storytelling } from '@kickstartds/content';
+
+export default function App() {
+  return (
+    <Storytelling
+      backgroundColor="#06566A"
+      backgroundImage="https://www.kickstartDS.com/img/recipes/graphics--bg.svg"
+      ks-inverted="true"
+      box={{
+        hAlign: 'left',
+        headline: {
+          content: 'Great components',
+          level: 'h2',
+          styleAs: 'h1',
+          subheadline: 'Sed diam nonumy eirmod tempor invidunt',
+        },
+        link: {
+          href: '#',
+          label: 'Request a guided demo',
+          variant: 'solid',
+        },
+      }}
+    />
+  );
+}
+```
+
+<CH.Preview>
+  <div className="layout-preview" ks-theme="preview">
+    <Storytelling
+      backgroundColor="#06566A"
+      backgroundImage="https://www.kickstartDS.com/img/recipes/graphics--bg.svg"
+      ks-inverted="true"
+      box={{
+        hAlign: 'left',
+        headline: {
+          content: 'Great components',
+          level: 'h2',
+          styleAs: 'h1',
+          subheadline: 'Sed diam nonumy eirmod tempor invidunt',
+        },
+        link: {
+          href: '#',
+          label: 'Request a guided demo',
+          variant: 'solid',
+        },
+      }}
+    />
+  </div>
+</CH.Preview>
+
+---
+
+#### Add some demo content
+
+Now we just need to enter some "real" content, and we've successfully recreated what we set out to do in the start. At least for the markup part!
+
+```jsx src/App.jsx focus=12,15,20
+import { Storytelling } from '@kickstartds/content';
+
+export default function App() {
+  return (
+    <Storytelling
+      backgroundColor="#06566A"
+      backgroundImage="https://www.kickstartDS.com/img/recipes/graphics--bg.svg"
+      ks-inverted="true"
+      box={{
+        hAlign: 'left',
+        headline: {
+          content: 'Dont know where to start?',
+          level: 'h2',
+          styleAs: 'h1',
+          subheadline:
+            'Autem voluptas quis facere et qui voluptate earum. Dolorum totam animi perferendis.',
+        },
+        link: {
+          href: '#',
+          label: 'Get in touch',
+          variant: 'solid',
+        },
+      }}
+    />
+  );
+}
+```
+
+<CH.Preview>
+<div className="layout-preview" ks-theme="preview">
+  <Storytelling
+    backgroundColor="#06566A"
+    backgroundImage="https://www.kickstartDS.com/img/recipes/graphics--bg.svg"
+    ks-inverted="true"
+    box={{
+      hAlign: 'left',
+      headline: {
+        content: 'Dont know where to start?',
+        level: 'h2',
+        styleAs: 'h1',
+        subheadline:
+          'Autem voluptas quis facere et qui voluptate earum. Dolorum totam animi perferendis.',
+      },
+      link: {
+        href: '#',
+        label: 'Get in touch',
+        variant: 'solid',
+      },
+    }}
+  />
+</div>
+</CH.Preview>
+</CH.Scrollycoding>
+
+With our small [component API](../../../foundations/components/component-api.md) in place, and this rough sketch for the markup in mind, we can start actually implementing our component!
+
+## 3. Component Creation
+
+We like to colocate components. This means to have all involved files next to each other in the same folder; the template (`.jsx` / `.tsx`), potential CSS / SASS (`.css` / `.scss`), JavaScript (`.js` / `.ts`), our JSON Schema component definition (`.schema.json`), and so on.
+
+So we start by creating the directory `src/components/interstitial`, from our Design System repository root:
+
+```bash
+mkdir -p src/components/interstitial
+```
+
+This is the folder we'll add new files to in the coming few paragraphs.
+
+### **JSON Schema** definition
+
+First file we'll create is the `JSON Schema` definition, encoding the structure we've defined for our component before:
+
+<CH.Scrollycoding>
+#### Finished **JSON Schema**
+
+We'll work our way up to this **JSON Schema** definition.
+
+<CH.Code>
+```json src/components/interstitial/interstitial.schema.json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/interstitial.schema.json",
+  "title": "Interstitial",
+  "description": "Component used to interject prominent call-to-action into content",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "title": "Title",
+      "description": "Title for interstitial",
+      "format": "markdown",
+      "default": "Dont know where to start?"
+    },
+    "body": {
+      "type": "string",
+      "title": "Body",
+      "description": "Text content to display inside the interstitial",
+      "format": "markdown",
+      "default": "Autem voluptas quis facere et qui voluptate earum. Dolorum totam animi perferendis."
+    },
+    "link": {
+      "type": "object",
+      "title": "Link",
+      "description": "Link added to the interstitial",
+      "properties": {
+        "target": {
+          "type": "string",
+          "title": "Target (href)",
+          "description": "URL / href for the link to point to"
+        },
+        "text": {
+          "type": "string",
+          "title": "Label",
+          "description": "Label to use for the link",
+          "default": "Get in touch"
+        }
+      }
+    }
+  },
+  "required": ["title", "body"]
+}
+```
+</CH.Code>
+
+---
+
+#### Start with just the boilerplate for a component definition
+
+This includes all necessarily required values for a valid component definition in **kickstartDS**.
+
+To learn more about our use of `JSON Schema`, read our [Foundations page about it](../../../foundations/components/component-api.md).
+
+<CH.Code>
+```json src/components/interstitial/interstitial.schema.json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "",
+  "title": "",
+  "description": "",
+  "type": "object",
+  "properties": {}
+}
+```
+</CH.Code>
+
+---
+
+#### Add basic info describing component
+
+We start by adding a `title`, `description` and `$id` attribute. The correct `$id` depends on your Design System configuration. We'll assume you've created components before, living under the schema prefix `http://schema.mydesignsystem.com`.
+
+<CH.Code>
+```json src/components/interstitial/interstitial.schema.json focus=3:5
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/interstitial.schema.json",
+  "title": "Interstitial",
+  "description": "Component used to interject prominent call-to-action into content",
+  "type": "object",
+  "properties": {}
+}
+```
+</CH.Code>
+
+---
+
+#### Create `title` and `body` fields...
+
+Both fields are straight-forward `string` type properties, so we just document them a bit!<br/>
+We do mark them by setting `format` to `markdown`, though, which enables light RTE functionality in its rendering later on.
+
+<CH.Code>
+```json src/components/interstitial/interstitial.schema.json focus=8:21
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/interstitial.schema.json",
+  "title": "Interstitial",
+  "description": "Component used to interject prominent call-to-action into content",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "title": "Title",
+      "description": "Title for interstitial",
+      "format": "markdown",
+      "default": "Dont know where to start?"
+    },
+    "body": {
+      "type": "string",
+      "title": "Body",
+      "description": "Text content to display inside the interstitial",
+      "format": "markdown",
+      "default": "Autem voluptas quis facere et qui voluptate earum. Dolorum totam animi perferendis."
+    }
+  }
+}
+```
+</CH.Code>
+
+---
+
+#### ... and make them required
+
+We declare both properties as required!
+
+<CH.Code>
+```json src/components/interstitial/interstitial.schema.json focus=23
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/interstitial.schema.json",
+  "title": "Interstitial",
+  "description": "Component used to interject prominent call-to-action into content",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "title": "Title",
+      "description": "Title for interstitial",
+      "format": "markdown",
+      "default": "Dont know where to start?"
+    },
+    "body": {
+      "type": "string",
+      "title": "Body",
+      "description": "Text content to display inside the interstitial",
+      "format": "markdown",
+      "default": "Autem voluptas quis facere et qui voluptate earum. Dolorum totam animi perferendis."
+    }
+  },
+  "required": ["title", "body"]
+}
+```
+</CH.Code>
+
+---
+
+#### Add object to hold `link` properties
+
+This will hold our properties `target` and `text`. We add them to their own object to indicate that they're used to be together, thus hinting at their combined usage.
+
+<CH.Code>
+```json src/components/interstitial/interstitial.schema.json focus=22:27
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/interstitial.schema.json",
+  "title": "Interstitial",
+  "description": "Component used to interject prominent call-to-action into content",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "title": "Title",
+      "description": "Title for interstitial",
+      "format": "markdown",
+      "default": "Dont know where to start?"
+    },
+    "body": {
+      "type": "string",
+      "title": "Body",
+      "description": "Text content to display inside the interstitial",
+      "format": "markdown",
+      "default": "Autem voluptas quis facere et qui voluptate earum. Dolorum totam animi perferendis."
+    },
+    "link": {
+      "type": "object",
+      "title": "Link",
+      "description": "Link added to the interstitial",
+      "properties": {}
+    }
+  },
+  "required": ["title", "body"]
+}
+```
+</CH.Code>
+
+---
+
+#### Add `target` and `text` to `link` property
+
+Finalizing our `JSON Schema`, we add the two last `link` sub properties `target` and `link`, both again simple `string` types.
+
+<CH.Code>
+```json src/components/interstitial/interstitial.schema.json focus=27:37
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/interstitial.schema.json",
+  "title": "Interstitial",
+  "description": "Component used to interject prominent call-to-action into content",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "title": "Title",
+      "description": "Title for interstitial",
+      "format": "markdown",
+      "default": "Dont know where to start?"
+    },
+    "body": {
+      "type": "string",
+      "title": "Body",
+      "description": "Text content to display inside the interstitial",
+      "format": "markdown",
+      "default": "Autem voluptas quis facere et qui voluptate earum. Dolorum totam animi perferendis."
+    },
+    "link": {
+      "type": "object",
+      "title": "Link",
+      "description": "Link added to the interstitial",
+      "properties": {
+        "target": {
+          "type": "string",
+          "title": "Target (href)",
+          "description": "URL / href for the link to point to"
+        },
+        "text": {
+          "type": "string",
+          "title": "Label",
+          "description": "Label to use for the link",
+          "default": "Get in touch"
+        }
+      }
+    }
+  },
+  "required": ["title", "body"]
+}
+```
+</CH.Code>
+
+---
+
+#### Finished **JSON Schema**
+
+Let's have a look at our completed **JSON Schema** definition.
+
+<CH.Code>
+```json src/components/interstitial/interstitial.schema.json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/interstitial.schema.json",
+  "title": "Interstitial",
+  "description": "Component used to interject prominent call-to-action into content",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "title": "Title",
+      "description": "Title for interstitial",
+      "format": "markdown",
+      "default": "Dont know where to start?"
+    },
+    "body": {
+      "type": "string",
+      "title": "Body",
+      "description": "Text content to display inside the interstitial",
+      "format": "markdown",
+      "default": "Autem voluptas quis facere et qui voluptate earum. Dolorum totam animi perferendis."
+    },
+    "link": {
+      "type": "object",
+      "title": "Link",
+      "description": "Link added to the interstitial",
+      "properties": {
+        "target": {
+          "type": "string",
+          "title": "Target (href)",
+          "description": "URL / href for the link to point to"
+        },
+        "text": {
+          "type": "string",
+          "title": "Label",
+          "description": "Label to use for the link",
+          "default": "Get in touch"
+        }
+      }
+    }
+  },
+  "required": ["title", "body"]
+}
+```
+
+</CH.Code>
+</CH.Scrollycoding>
+
+This concludes creating the `JSON Schema`. When running the schema generation in our Design System again, we should now automatically end up with a corresponding type definition to be used in creation of the template in the next step:
+
+<CH.Code>
+```ts src/components/interstitial/InterstitialProps.ts
+/* eslint-disable */
+/**
+ * This file was automatically generated by json-schema-to-typescript.
+ * DO NOT MODIFY IT BY HAND. Instead, modify the source JSONSchema file,
+ * and run `yarn run schema` to regenerate this file.
+ */
+
+/\*\*
+
+- Title for interstitial
+  \*/
+  export type Title = string;
+  /\*\*
+- Text content to display inside the interstitial
+  \*/
+  export type Body = string;
+  /\*\*
+- URL / href for the link to point to
+  \*/
+  export type TargetHref = string;
+  /\*\*
+- Label to use for the link
+  \*/
+  export type Label = string;
+
+/\*\*
+
+- Component used to interject prominent call-to-action into content
+  \*/
+  export interface InterstitialProps {
+  title: Title;
+  body: Body;
+  link?: Link;
+  [k: string]: unknown;
+  }
+  /\*\*
+- Link added to the interstitial
+  \*/
+  export interface Link {
+  target?: TargetHref;
+  text?: Label;
+  [k: string]: unknown;
+  }
+
+````
+
+```json src/components/interstitial/interstitial.schema.json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.mydesignsystem.com/interstitial.schema.json",
+  "title": "Interstitial",
+  "description": "Component used to interject prominent call-to-action into content",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "title": "Title",
+      "description": "Title for interstitial",
+      "format": "markdown",
+      "default": "Dont know where to start?"
+    },
+    "body": {
+      "type": "string",
+      "title": "Body",
+      "description": "Text content to display inside the interstitial",
+      "format": "markdown",
+      "default": "Autem voluptas quis facere et qui voluptate earum. Dolorum totam animi perferendis."
+    },
+    "link": {
+      "type": "object",
+      "title": "Link",
+      "description": "Link added to the interstitial",
+      "properties": {
+        "target": {
+          "type": "string",
+          "title": "Target (href)",
+          "description": "URL / href for the link to point to"
+        },
+        "text": {
+          "type": "string",
+          "title": "Label",
+          "description": "Label to use for the link",
+          "default": "Get in touch"
+        }
+      }
+    }
+  },
+  "required": ["title", "body"]
+}
+````
+
+</CH.Code>
+
+How your schema generation is started might change depending on your setup. If you've followed our ["Create your Design System" guide](../../create/index.mdx) before, or want to add it like we do, follow [this section of it](../../create/components.mdx) closely.
+
+TODO: fix markdown formatting of generated `.ts`-file above
+
+### **React** Template
+
+As the final step for this example, we'll add the template. This will be a purely functional `React` component, mapping our component structure (as defined in the `JSON Schema`) to the original component we're basing our work off of; the **kickstartDS** `Storytelling` component.
+
+<CH.Scrollycoding>
+#### Finished **React** template
+
+We'll work our way up to this **React** template.
+
+<CH.Code>
+```tsx src/components/interstitial/InterstitialComponent.tsx
+import React, { FunctionComponent, HTMLAttributes } from 'react';
+
+import { Storytelling } from '@kickstartds/content';
+
+import { InterstitialProps } from './InterstitialProps';
+
+export const Interstitial: FunctionComponent<
+  InterstitialProps & HTMLAttributes<HTMLDivElement>
+> = ({ title, body, link, ...props }) => (
+  <Storytelling
+    backgroundColor="#06566A"
+    backgroundImage="https://www.kickstartDS.com/img/recipes/graphics--bg.svg"
+    ks-inverted="true"
+    box={{
+      hAlign: 'left',
+      headline: {
+        content: title,
+        level: 'h2',
+        styleAs: 'h1',
+        subheadline: body,
+      },
+      link: link
+        ? {
+            href: link.target,
+            label: link.text,
+            variant: 'solid',
+          }
+        : {},
+    }}
+    {...props}
+  />
+);
+```
+</CH.Code>
+
+---
+
+#### Start with a boilerplate
+
+Again we'll start with a very basic skeleton for our **React** component. We're using **TypeScript** here (`.tsx`), but it works the same with plain **JSX** (`.jsx`).
+
+<CH.Code>
+```tsx src/components/interstitial/InterstitialComponent.tsx
+import React, { FunctionComponent, HTMLAttributes } from 'react';
+
+export const Interstitial: FunctionComponent<HTMLAttributes<HTMLDivElement>> = (
+  props
+) => <div {...props}>Lorem ipsum</div>;
+```
+
+</CH.Code>
+
+---
+
+#### Add correct typings
+
+Import and add generated props from `InterstitialProps.ts`. Generated by our **JSON Schema**, these guarantee you're matching your expected component structure while implementing. In combination with **TypeScript** this enables auto-complete and auto-fix for even better DX! ([see here](../../components/create.mdx#react-template), at the very end of that section, for more details)
+
+<CH.Code>
+```tsx src/components/interstitial/InterstitialComponent.tsx focus=3,6
+import React, { FunctionComponent, HTMLAttributes } from 'react';
+
+import { InterstitialProps } from './InterstitialProps';
+
+export const Interstitial: FunctionComponent<
+  InterstitialProps & HTMLAttributes<HTMLDivElement>
+> = (props) => <div {...props}>Lorem ipsum</div>;
+```
+</CH.Code>
+
+---
+
+#### Destructure `props`
+
+We also need to add our own properties, so we'll destructure `props`. We'll just pass through everything `HTMLDivElement` related!<br/>
+While at it, some dummy markup for our properties is added.
+
+<CH.Code>
+```tsx src/components/interstitial/InterstitialComponent.tsx focus=7:12
+import React, { FunctionComponent, HTMLAttributes } from 'react';
+
+import { InterstitialProps } from './InterstitialProps';
+
+export const Interstitial: FunctionComponent<
+  InterstitialProps & HTMLAttributes<HTMLDivElement>
+> = ({ title, body, link, ...props }) => (
+  <div {...props}>
+    <span>{title}</span>
+    <span>{body}</span>
+    {link && <a href={link.target}>{link.text}</a>}
+  </div>
+);
+```
+</CH.Code>
+
+---
+
+#### Add `Storytelling` component
+
+Now we'll import the **kickstartDS** `Storytelling` component. To start, we'll use the exact markup [we've generated before](#adjustments).
+
+<CH.Code>
+```tsx src/components/interstitial/InterstitialComponent.tsx focus=3,10:29
+import React, { FunctionComponent, HTMLAttributes } from 'react';
+
+import { Storytelling } from '@kickstartds/content';
+
+import { InterstitialProps } from './InterstitialProps';
+
+export const Interstitial: FunctionComponent<
+  InterstitialProps & HTMLAttributes<HTMLDivElement>
+> = ({ title, body, link, ...props }) => (
+  <Storytelling
+    backgroundColor="#06566A"
+    backgroundImage="https://www.kickstartDS.com/img/recipes/graphics--bg.svg"
+    ks-inverted="true"
+    box={{
+      hAlign: 'left',
+      headline: {
+        content: 'Dont know where to start?',
+        level: 'h2',
+        styleAs: 'h1',
+        subheadline:
+          'Autem voluptas quis facere et qui voluptate earum. Dolorum totam animi perferendis.',
+      },
+      link: {
+        href: '#',
+        label: 'Get in touch',
+        variant: 'solid',
+      },
+    }}
+  />
+);
+```
+</CH.Code>
+
+---
+
+#### Connect `props`
+
+Finally we connect our `props` to the `Storytelling` component accordingly.
+
+<CH.Code>
+```tsx src/components/interstitial/InterstitialComponent.tsx focus=17,20,22:28
+import React, { FunctionComponent, HTMLAttributes } from 'react';
+
+import { Storytelling } from '@kickstartds/content';
+
+import { InterstitialProps } from './InterstitialProps';
+
+export const Interstitial: FunctionComponent<
+  InterstitialProps & HTMLAttributes<HTMLDivElement>
+> = ({ title, body, link, ...props }) => (
+  <Storytelling
+    backgroundColor="#06566A"
+    backgroundImage="https://www.kickstartDS.com/img/recipes/graphics--bg.svg"
+    ks-inverted="true"
+    box={{
+      hAlign: 'left',
+      headline: {
+        content: title,
+        level: 'h2',
+        styleAs: 'h1',
+        subheadline: body,
+      },
+      link: link
+        ? {
+            href: link.target,
+            label: link.text,
+            variant: 'solid',
+          }
+        : {},
+    }}
+    {...props}
+  />
+);
+```
+</CH.Code>
+
+---
+
+#### Finished **React** template
+
+Let's have a look at our completed **React** template.
+
+<CH.Code>
+```tsx src/components/interstitial/InterstitialComponent.tsx
+import React, { FunctionComponent, HTMLAttributes } from 'react';
+
+import { Storytelling } from '@kickstartds/content';
+
+import { InterstitialProps } from './InterstitialProps';
+
+export const Interstitial: FunctionComponent<
+  InterstitialProps & HTMLAttributes<HTMLDivElement>
+> = ({ title, body, link, ...props }) => (
+  <Storytelling
+    backgroundColor="#06566A"
+    backgroundImage="https://www.kickstartDS.com/img/recipes/graphics--bg.svg"
+    ks-inverted="true"
+    box={{
+      hAlign: 'left',
+      headline: {
+        content: title,
+        level: 'h2',
+        styleAs: 'h1',
+        subheadline: body,
+      },
+      link: link
+        ? {
+            href: link.target,
+            label: link.text,
+            variant: 'solid',
+          }
+        : {},
+    }}
+    {...props}
+  />
+);
+```
+</CH.Code>
+
+</CH.Scrollycoding>
+
+This concludes the creation of our new `Interstitial` component. It's now ready to be used inside your Design System, and available to your down stream consumers... hopefully efficiently closing a gap for them!
+
+## Use of **Storybook**
+
+If you're using **Storybook**, you can follow this part of the example to get all the integration goodness possible with **kickstartDS**!
+
+<Admonition type="tip" title="Storybook setup">
+  This guide assumes you're using a set up like described in our [Create your
+  Design System](../../create/index.mdx) guide! Be sure to adapt commands and
+  configuration to your use accordingly, when following this part!
+</Admonition>
+
+TODO actually add guide
+
+## Completed component
+
+Play around with your new component directly in a `Code Sandbox` below:<br/>
+
+<iframe
+  src="https://codesandbox.io/embed/interstitial-component-d8qr18?fontsize=12&hidenavigation=1&theme=dark&module=/src/InterstitialComponent.tsx,/src/InterstitialProps.ts,/src/interstitial.schema.json,/src/index.tsx"
+  style={{
+    width: '100%',
+    height: '500px',
+    border: 0,
+    borderRadius: '4px',
+    overflow: 'hidden',
+  }}
+  title="cool-pine-d8qr18"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
+
+## Technical debt added
+
+TODO revise this section
+
+We've added a wholly new component, for which you take on full responsibility. On the other side, only changes you'll want to make yourself should necessitate change anyway. Changes to the structure, and how it maps to the underlying component, fall on you. The only other thing you'll have to watch out for are [`Breaking Changes`](../../../intro/upgrading.md), which may include changes to the component your basing off of. In that case, follow the `CHANGELOG.md` for that components `module` (e.g. module `content` for the `Storytelling` component) closely, to adopt any necessary changes.
+
+TODO align FC / FunctionComponent imports with other guides / examples

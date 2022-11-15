@@ -1,0 +1,119 @@
+/* stylelint-disable no-descending-specificity */
+@use 'sass:meta';
+@use '@kickstartds/core/source/core/custom-properties';
+@use './container';
+@use './rich-text-vars';
+
+$vars: meta.module-variables(rich-text-vars);
+@include custom-properties.styles($vars, container.$name);
+@include container.wrapper;
+
+.c-rich-text {
+  font: var(--c-rich-text--font);
+  font-weight: var(--c-rich-text--font-weight);
+  color: var(--c-rich-text--color);
+
+  &__align {
+    &-center {
+      text-align: center;
+    }
+
+    &-right {
+      text-align: right;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font: var(--c-rich-text_headline--font);
+    font-weight: var(--c-rich-text_headline--font-weight);
+    text-transform: var(--c-rich-text_headline--text-transform);
+    color: var(--c-rich-text_headline--color);
+    margin: var(--c-rich-text_headline--margin);
+
+    @media print {
+      page-break-after: avoid;
+    }
+
+    a {
+      text-decoration: none !important;
+    }
+  }
+
+  p {
+    margin: var(--c-rich-text--vertical-spacing) 0;
+  }
+
+  code {
+    font-size: 0.85em;
+
+    background: var(--c-rich-text_code--background, var(--ks-color-fg-alpha-9));
+    border-radius: var(--c-rich-text_code--border-radius, 0.25rem);
+
+    padding: 0.2rem 0.5rem;
+    margin: 0 0.2rem;
+    white-space: nowrap;
+  }
+
+  pre > code {
+    display: block;
+    padding: var(--c-rich-text--horizontal-spacing);
+    white-space: pre;
+    overflow: auto;
+  }
+
+  blockquote {
+    border-left: var(
+      --c-rich-text_blockquote--border-left,
+      0.3rem solid var(--ks-color-fg-alpha-8)
+    );
+    margin: var(--c-rich-text--vertical-spacing) 0;
+    padding: 0 var(--c-rich-text--horizontal-spacing);
+
+    font-style: var(--c-rich-text_blockquote--font-style);
+  }
+
+  hr {
+    border: 0;
+    border-bottom: var(
+      --c-rich-text_hr--border,
+      1px solid var(--ks-color-fg-alpha-7)
+    );
+    margin: calc(var(--c-rich-text--vertical-spacing) * 2) 0;
+  }
+
+  ul,
+  ol {
+    margin: var(--c-rich-text--vertical-spacing) 0;
+    padding-left: 1.5rem;
+
+    ul,
+    ol {
+      margin-top: 0;
+    }
+  }
+
+  li {
+    margin: calc(var(--c-rich-text--vertical-spacing) / 4) 0;
+  }
+
+  ul {
+    list-style: var(--c-rich-text_ul--style, disc);
+  }
+
+  ol {
+    list-style: var(--c-rich-text_ol--style, decimal);
+  }
+
+  :first-child {
+    margin-top: 0;
+  }
+
+  :last-child {
+    margin-bottom: 0;
+  }
+}

@@ -1,0 +1,92 @@
+---
+sidebar_position: 3
+---
+
+import { Quote } from '@kickstartds/content/lib/quote';
+
+# Next.js
+
+We've already implemented a bunch of **Next.js** based apps and pages using **kickstartDS** successfully. It's compatible pretty much out-of-the-box, only some slight transpilation may be needed (see below on how to do that).
+
+<Quote
+  image={require('./assets/nextjs-logo.png').default}
+  byline="https://nextjs.org/learn/foundations/about-nextjs/what-is-nextjs"
+  source="What is Next.js? page"
+  text="Next.js is a flexible React framework that gives you building blocks to create fast web applications."
+/>
+
+<br />
+
+There's some obvious overlap between **Next.js** and **kickstartDS** in the choice of **React** as the frontend technology. We also benefit from some key concepts implemented in our components **React** templates when building **Next.js** based pages and apps.
+
+To learn more about **Next.js**, visit [their official website](https://nextjs.org/).
+
+## Usage with **kickstartDS**
+
+Some tips on combining **Next.js** and **kickstartDS**.
+
+### Features
+
+Some of those **React** concepts that are at the core of **kickstartDS** components:
+
+- Use of [Context / Provider](https://reactjs.org/docs/context.html)
+- Use of [renderProps](https://reactjs.org/docs/render-props.html)
+- Purely [functional components](https://blog.logrocket.com/what-are-react-pure-functional-components/)
+
+For some real world examples on how this can help you:
+
+- see [how to replace **Rich Text**](../react/rich-text-rendering.md) (like **Markdown**) in all **kickstartDS** components
+- see [how to replace **Image**](../react/image-rendering.md) handling in all **kickstartDS** components
+
+### Transpilation
+
+Transpilation of our packages is needed because we deliver components as [ES Modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules). Those are not natively understood by **Next.js**. Additionally we have `import` statements loading component **CSS** inside of those exported components that you'll import. Those will also have to be processed by the **Next.js** pipeline, which by default ignores `node_modules` where your **kickstartDS** dependencies live.
+
+We recommend using [`next-transpile-modules`](https://github.com/martpie/next-transpile-modules) for transpilation.
+
+#### Configuration
+
+To add transpilation to your **Next.js** based project, first add the **npm** dependency:
+
+```bash
+yarn add next-transpile-modules
+```
+
+Then add the following code snippets to your `next.config.js`, at your projects root:
+
+```js next.config.js
+const withTM = require('next-transpile-modules')([
+  '@kickstartds/core',
+  '@kickstartds/base',
+]);
+
+module.exports = withTM({});
+```
+
+There's a great chance that file already includes configuration for your project. In that case, make sure ([as the official docs mention](https://github.com/martpie/next-transpile-modules#examples)) to include `withTM` as the outermost plugin.
+
+To learn more about **Next.js** plugins and `next.config.js`, see [the official **Next.js** docs on that](https://nextjs.org/docs/api-reference/next.config.js/introduction).
+
+#### Using other / additional modules
+
+If you're using other **kickstartDS** dependencies, you'll have to add them to that list above. For example, when using `@kickstartds/form`, `@kickstartds/content` and `@kickstartds/blog`, too:
+
+```js next.config.js
+const withTM = require('next-transpile-modules')([
+  '@kickstartds/core',
+  '@kickstartds/base',
+  '@kickstartds/blog',
+  '@kickstartds/content',
+  '@kickstartds/form',
+]);
+
+module.exports = withTM({});
+```
+
+## Interested?
+
+If you want to know more, feel free to get in contact! We'll flesh out this part of our documentation soon, you may also sign up for a notification when this is done.
+
+TODO add CTA here to signup for release of this page
+
+TODO maybe add general "Coming soon" disclaimer element

@@ -1,0 +1,48 @@
+$name-: 'c-form-check';
+
+$box: (
+  ':root, [ks-theme], [ks-inverted]': (
+    size: 1rem,
+    border: var(--ks-border-width-default) solid,
+    border-color: var(--ks-border-color-interface-interactive),
+    background: var(--ks-background-color-interface-interactive),
+  ),
+  '.c-form-check--checkbox': (
+    border-radius: var(--ks-border-radius-control),
+  ),
+  '.c-form-check--radio': (
+    border-radius: var(--ks-border-radius-circle),
+  ),
+) !default;
+
+$box-hover: (
+  ':root, [ks-theme], [ks-inverted]': (
+    border-color: var(--ks-border-color-interface-interactive-hover),
+  ),
+) !default;
+
+$box-focus: (
+  ':root, [ks-theme], [ks-inverted]': (
+    border-color: var(--ks-border-color-interface-interactive-active),
+    shadow: 0 0 4px 0,
+  ),
+) !default;
+
+$box-checked: (
+  ':root, [ks-theme], [ks-inverted]': (
+    background: var(--ks-background-color-interface-interactive-selected),
+    border-color: var(--ks-border-color-interface-interactive-selected),
+  ),
+) !default;
+
+$checkmark: (
+  ':root, [ks-theme], [ks-inverted]': (
+    color: var(--ks-color-primary-inverted),
+  ),
+  '.c-form-check--checkbox': (
+    width: 2px,
+  ),
+  '.c-form-check--radio': (
+    size: 0.5rem,
+  ),
+) !default;
