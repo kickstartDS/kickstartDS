@@ -29,7 +29,33 @@ const config = {
     locales: ['en'],
   },
 
-  plugins: ['docusaurus-plugin-sass'],
+  plugins: [
+    'docusaurus-plugin-sass',
+    (context) => ({
+      name: 'compile-node-modules',
+      configureWebpack(webpackConfig, isServer, utils) {
+        return {
+          mergeStrategy: {
+            'module.rules': 'append',
+          },
+          module: {
+            rules: [
+              {
+                test: /\.js$/i,
+                exclude(modulePath) {
+                  return !modulePath.includes('@glidejs/glide');
+                },
+                use: [utils.getJSLoader({ isServer })],
+                resolve: {
+                  fullySpecified: false,
+                },
+              },
+            ],
+          },
+        };
+      },
+    }),
+  ],
 
   presets: [
     [
