@@ -32,34 +32,16 @@
       "items": {
         "anyOf": [
           {
-            "$ref": "http://schema.kickstartds.com/content/quotes-slider.schema.json"
-          },
-          {
             "$ref": "http://schema.kickstartds.com/base/button.schema.json"
           },
           {
             "$ref": "http://schema.kickstartds.com/base/tag-label.schema.json"
           },
           {
-            "$ref": "http://schema.kickstartds.com/content/visual.schema.json"
-          },
-          {
-            "$ref": "http://schema.kickstartds.com/content/quote.schema.json"
-          },
-          {
-            "$ref": "http://schema.kickstartds.com/content/visual-slider.schema.json"
-          },
-          {
             "$ref": "http://schema.kickstartds.com/base/contact.schema.json"
           },
           {
-            "$ref": "http://schema.kickstartds.com/content/storytelling.schema.json"
-          },
-          {
             "$ref": "http://schema.kickstartds.com/base/collapsible-box.schema.json"
-          },
-          {
-            "$ref": "http://schema.kickstartds.com/content/count-up.schema.json"
           },
           {
             "$ref": "http://schema.kickstartds.com/base/content-box.schema.json"
@@ -72,9 +54,6 @@
           },
           {
             "$ref": "http://schema.kickstartds.com/base/teaser-box.schema.json"
-          },
-          {
-            "$ref": "http://schema.kickstartds.com/content/logo-tiles.schema.json"
           },
           {
             "$ref": "http://schema.kickstartds.com/base/teaser-row.schema.json"
