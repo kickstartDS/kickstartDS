@@ -42,7 +42,7 @@
     "json-schema-to-typescript": "^11.0.2",
     "json-schema-traverse": "^1.0.0",
     "lodash": "^4.17.21",
-    "postcss": "^8.4.17",
+    "postcss": "^8.4.19",
     "postcss-combine-duplicated-selectors": "^10.0.3",
     "postcss-sort-container-queries": "https://github.com/lmestel/postcss-sort-container-queries",
     "postcss-sort-media-queries": "^4.3.0",

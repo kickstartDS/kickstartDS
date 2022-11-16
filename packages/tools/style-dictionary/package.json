@@ -22,7 +22,7 @@
     "htmltojsx": "^0.3.0",
     "lodash": "^4.17.21",
     "node-html-parser": "^5.2.0",
-    "postcss": "^8.4.6",
+    "postcss": "^8.4.19",
     "postcss-calc": "^8.2.4",
     "postcss-colormin": "^5.3.0",
     "postcss-normalize-whitespace": "^5.1.1",
