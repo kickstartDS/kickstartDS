@@ -40,7 +40,13 @@ To have that benefit for our own users, too, we'll add the same general structur
 
 We first create a file `Providers.jsx` at `src/components/`. This will import all of our global component providers, which are mainly the ones deep replacing **kickstartDS** components, and export a single member that can be used to import and integrate **all** providers at once, reducing the need for copy &amp; pasted code.
 
-Add the file...
+And as we haven't created it before, it's now time to create `src/components`:
+
+```bash
+mkdir -p src/components
+```
+
+... create the file...
 
 ```bash
 touch src/components/Providers.jsx
@@ -50,9 +56,11 @@ touch src/components/Providers.jsx
 
 <CH.Code>
 ```jsx src/components/Providers.jsx
-export default (props) => (
-  {...props}
-);
+export default (props) => {
+  return (
+    <div {...props} />
+  )
+};
 ```
 </CH.Code>
 
@@ -79,7 +87,8 @@ import Providers from '../src/components/Providers';
 import '../src/token/tokens.css';
 
 const myActions = actions("radio");
-window.rm.radio.on("\*", myActions.radio);
+
+window.\_ks.radio.on("\*", myActions.radio);
 
 const providerDecorator = (Story, context) => (
 
@@ -157,7 +166,7 @@ import Providers from '../src/components/Providers';
 import '../src/token/tokens.css';
 
 const myActions = actions("radio");
-window.rm.radio.on("\*", myActions.radio);
+window.\_ks.radio.on("\*", myActions.radio);
 
 const providerDecorator = (Story, context) => (
 
@@ -235,7 +244,7 @@ import Providers from '../src/components/Providers';
 import '../src/token/tokens.css';
 
 const myActions = actions("radio");
-window.rm.radio.on("\*", myActions.radio);
+window.\_ks.radio.on("\*", myActions.radio);
 
 const providerDecorator = (Story, context) => (
 
@@ -313,7 +322,7 @@ import Providers from '../src/components/Providers';
 import '../src/token/tokens.css';
 
 const myActions = actions("radio");
-window.rm.radio.on("\*", myActions.radio);
+window.\_ks.radio.on("\*", myActions.radio);
 
 const providerDecorator = (Story, context) => (
 
@@ -371,6 +380,13 @@ export const decorators = [
 
 </CH.Spotlight>
 
+<Admonition type="tip" title="code formatting bug">
+  Attention: there's a code formatting bug with the code above. The following line `window.\_ks.radio.on("\*", myActions.radio);` should read `window._ks.radio.on("*", myActions.radio);`
+
+We'll hopefully be able to fix this soon!
+
+</Admonition>
+
 This concludes the **Storybook** integration!
 
 <Admonition type="tip" title="pack, unpack, story args... huh?">
@@ -419,10 +435,10 @@ This is how your `package.json` should look like currently.
   "author": "Jonas Ulrich",
   "license": "MIT",
   "dependencies": {
-    "@kickstartds/base": "2.0.0-canary.922.4908.0",
-    "kickstartds": "v1.0.0-beta.6",
-    "react": "17",
-    "react-dom": "17"
+    "@kickstartds/base": "^2.0.2",
+    "kickstartds": "^1.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",
@@ -475,10 +491,10 @@ We add a command aggregating schema dereferencing and props generation for us in
   "author": "Jonas Ulrich",
   "license": "MIT",
   "dependencies": {
-    "@kickstartds/base": "2.0.0-canary.922.4908.0",
-    "kickstartds": "v1.0.0-beta.6",
-    "react": "17",
-    "react-dom": "17"
+    "@kickstartds/base": "^2.0.2",
+    "kickstartds": "^1.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",
@@ -535,10 +551,10 @@ We now move all schema related tasks to using that `schema` prefix.
   "author": "Jonas Ulrich",
   "license": "MIT",
   "dependencies": {
-    "@kickstartds/base": "2.0.0-canary.922.4908.0",
-    "kickstartds": "v1.0.0-beta.6",
-    "react": "17",
-    "react-dom": "17"
+    "@kickstartds/base": "^2.0.2",
+    "kickstartds": "^1.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",
@@ -591,10 +607,10 @@ Make sure everything is compiled, before building **Storybook**.
   "author": "Jonas Ulrich",
   "license": "MIT",
   "dependencies": {
-    "@kickstartds/base": "2.0.0-canary.922.4908.0",
-    "kickstartds": "v1.0.0-beta.6",
-    "react": "17",
-    "react-dom": "17"
+    "@kickstartds/base": "^2.0.2",
+    "kickstartds": "^1.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",
@@ -652,10 +668,10 @@ We now add `watch` tasks for `schema` and `dictionary`, using `chokidar`.
   "author": "Jonas Ulrich",
   "license": "MIT",
   "dependencies": {
-    "@kickstartds/base": "2.0.0-canary.922.4908.0",
-    "kickstartds": "v1.0.0-beta.6",
-    "react": "17",
-    "react-dom": "17"
+    "@kickstartds/base": "^2.0.2",
+    "kickstartds": "^1.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",
@@ -711,10 +727,10 @@ We can use that in development, to start everything with hot reload because of t
   "author": "Jonas Ulrich",
   "license": "MIT",
   "dependencies": {
-    "@kickstartds/base": "2.0.0-canary.922.4908.0",
-    "kickstartds": "v1.0.0-beta.6",
-    "react": "17",
-    "react-dom": "17"
+    "@kickstartds/base": "^2.0.2",
+    "kickstartds": "^1.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",
@@ -770,10 +786,10 @@ Your `package.json` should look like this now!
   "author": "Jonas Ulrich",
   "license": "MIT",
   "dependencies": {
-    "@kickstartds/base": "2.0.0-canary.922.4908.0",
-    "kickstartds": "v1.0.0-beta.6",
-    "react": "17",
-    "react-dom": "17"
+    "@kickstartds/base": "^2.0.2",
+    "kickstartds": "^1.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",
@@ -826,7 +842,7 @@ To learn about finding components to implement, have a look at the [Design Syste
 
 To demonstrate the first, and easiest, way of adding a component to your own Design System we will adapt a `Button` component.
 
-This also serves as an example for [**adapting** a component](../components/adapt.mdx), where we mostly take a component directly from **kickstartDS**, while still finding our own, often more restrictire, [component API](../../foundations/components/component-api.md) for it.
+This also serves as an example for [**adapting** a component](../components/adapt.mdx), where we mostly take a component directly from **kickstartDS**, while still finding our own, often more restrictive, [component API](../../foundations/components/component-api.md) for it.
 
 The result will look like this:
 
@@ -842,7 +858,25 @@ Choose your own adventure:
 | ---------------------------------- | ------------------------------------------------------------- |
 | Follow the Component example guide | [Adapt `Button` component](../examples/components/button.mdx) |
 | Read the process description       | [Adapt a component](../components/adapt.mdx)                  |
-| Look at the Code Sandbox           | ...soon                                                       |
+| Look at the Code Sandbox           | see below                                                     |
+
+See the completed example in a **Code Sandbox** below:
+
+<iframe
+  src="https://codesandbox.io/embed/github/kickstartDS/ds-guide/tree/step%2F4/?fontsize=14&hidenavigation=1&module=%2Fsrc%2Fcomponents%2Fbutton%2FButtonComponent.tsx&theme=dark&view=editor"
+  style={{
+    width: '100%',
+    height: '500px',
+    border: 0,
+    borderRadius: '4px',
+    overflow: 'hidden',
+  }}
+  title="ds-guide"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
+
+Toggle the file browser with the hamburger icon at the top left, [or open it directly in your browser](https://codesandbox.io/s/github/kickstartDS/ds-guide/tree/step/4?file=/src/components/button/ButtonComponent.tsx).
 
 ### 2. Adding our own `Headline` component
 
@@ -866,7 +900,25 @@ Choose your own adventure:
 | ---------------------------------- | --------------------------------------------------------------------- |
 | Follow the Component example guide | [Customize `Headline` component](../examples/components/headline.mdx) |
 | Read the process description       | [Customize a component](../components/customize.mdx)                  |
-| Look at the Code Sandbox           | ...soon                                                               |
+| Look at the Code Sandbox           | see below                                                             |
+
+See the completed example in a **Code Sandbox** below:
+
+<iframe
+  src="https://codesandbox.io/embed/github/kickstartDS/ds-guide/tree/step%2F4/?fontsize=14&hidenavigation=1&module=%2Fsrc%2Fcomponents%2Fheadline%2FHeadlineComponent.tsx&theme=dark&view=editor"
+  style={{
+    width: '100%',
+    height: '500px',
+    border: 0,
+    borderRadius: '4px',
+    overflow: 'hidden',
+  }}
+  title="ds-guide"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
+
+Toggle the file browser with the hamburger icon at the top left, [or open it directly in your browser](https://codesandbox.io/s/github/kickstartDS/ds-guide/tree/step/4?file=/src/components/headline/HeadlineComponent.tsx).
 
 ### 3. Adding our own `TeaserCard` component
 
@@ -888,7 +940,25 @@ Choose your own adventure:
 | ---------------------------------- | ----------------------------------------------------------------------- |
 | Follow the Component example guide | [Create `TeaserCard` component](../examples/components/teaser-card.mdx) |
 | Read the process description       | [Customize a component](../components/create.mdx)                       |
-| Look at the Code Sandbox           | ...soon                                                                 |
+| Look at the Code Sandbox           | see below                                                               |
+
+See the completed example in a **Code Sandbox** below:
+
+<iframe
+  src="https://codesandbox.io/embed/github/kickstartDS/ds-guide/tree/step%2F4/?fontsize=14&hidenavigation=1&module=%2Fsrc%2Fcomponents%2Fteaser-card%2FTeaserCardComponent.tsx&theme=dark&view=editor"
+  style={{
+    width: '100%',
+    height: '500px',
+    border: 0,
+    borderRadius: '4px',
+    overflow: 'hidden',
+  }}
+  title="ds-guide"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
+
+Toggle the file browser with the hamburger icon at the top left, [or open it directly in your browser](https://codesandbox.io/s/github/kickstartDS/ds-guide/tree/step/4?file=/src/components/teaser-card/TeaserCardComponent.tsx).
 
 ### 4. Adding our own `Section` component
 
@@ -910,7 +980,25 @@ Choose your own adventure:
 | ---------------------------------- | ---------------------------------------------------------------- |
 | Follow the Component example guide | [Extend `Section` component](../examples/components/section.mdx) |
 | Read the process description       | [Customize a component](../components/extend.mdx)                |
-| Look at the Code Sandbox           | ...soon                                                          |
+| Look at the Code Sandbox           | see below                                                        |
+
+See the completed example in a **Code Sandbox** below:
+
+<iframe
+  src="https://codesandbox.io/embed/github/kickstartDS/ds-guide/tree/step%2F4/?fontsize=14&hidenavigation=1&module=%2Fsrc%2Fcomponents%2Fsection%2FSectionComponent.tsx&theme=dark&view=editor"
+  style={{
+    width: '100%',
+    height: '500px',
+    border: 0,
+    borderRadius: '4px',
+    overflow: 'hidden',
+  }}
+  title="ds-guide"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
+
+Toggle the file browser with the hamburger icon at the top left, [or open it directly in your browser](https://codesandbox.io/s/github/kickstartDS/ds-guide/tree/step/4?file=/src/components/section/SectionComponent.tsx).
 
 ## Adding an article teaser recipe
 
@@ -925,3 +1013,23 @@ This concludes adding components to our Design System. It's also the last of the
 ## Next step
 
 Start adding more components, try to re-mix those processes... and let us know how it went!
+
+## Code Sandbox
+
+See the result of this step in the **Code Sandbox** below. It's showing specifically the result after this step. You can also view this on **Github** directly in [the `ds-guide` repository](https://github.com/kickstartDS/ds-guide), there's a branch for every step... and we're currently on [the branch `step/4`](https://github.com/kickstartDS/ds-guide/tree/step/4) in the guide:
+
+<iframe
+  src="https://codesandbox.io/embed/github/kickstartDS/ds-guide/tree/step%2F4/?fontsize=14&hidenavigation=1&module=%2Fpackage.json&theme=dark&view=editor"
+  style={{
+    width: '100%',
+    height: '500px',
+    border: 0,
+    borderRadius: '4px',
+    overflow: 'hidden',
+  }}
+  title="ds-guide"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
+
+Toggle the file browser with the hamburger icon at the top left, [or open it directly in your browser](https://codesandbox.io/s/github/kickstartDS/ds-guide/tree/step/4?file=/package.json).

@@ -51,22 +51,16 @@ function HomepageHeader() {
           <Headline
             level="h2"
             styleAs="h3"
-            content="We are also live on Product Hunt"
-            subheadline="Learn how to own a Design System without investing years of development."
+            content="Own Design System in just 5 steps"
+            subheadline='Follow our main guide to "Create your Design System"'
             align="center"
           />
           <div>
-            <a
-              href="https://www.producthunt.com/posts/kickstartds?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-kickstartds"
-              target="_blank"
-            >
-              <img
-                src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=366575&theme=light"
-                alt="kickstartDS is live on Product Hunt"
-                width="250"
-                height="54"
-              />
-            </a>
+            <Button
+              label="Open guide"
+              href="/docs/guides/create/"
+              variant="outline"
+            />
           </div>
         </Section>
       </div>
