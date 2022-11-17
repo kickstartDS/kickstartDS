@@ -183,6 +183,34 @@ yarn add react@17 react-dom@17
 
 ---
 
+#### Change **SemVer** requirement
+
+<CH.Code>
+
+```json package.json focus=12:13
+{
+  "name": "@my/design-system",
+  "version": "1.0.0",
+  "description": "Design System for all @MY needs",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jonas Ulrich",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
+```
+
+</CH.Code>
+
+We want to get newer versions for **React** 17, so we change the import slightly! [Learn more about those restrictions](https://docs.npmjs.com/about-semantic-versioning).
+
+---
+
 #### Add `kickstartDS`
 
 <CH.Code>
@@ -199,19 +227,19 @@ yarn add react@17 react-dom@17
   "author": "Jonas Ulrich",
   "license": "MIT",
   "dependencies": {
-    "@kickstartds/base": "2.0.0-canary.922.4908.0",
-    "react": "17",
-    "react-dom": "17"
+    "@kickstartds/base": "^2.0.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   }
 }
 ```
 
 </CH.Code>
 
-Next we'll add the `kickstartDS` dependencies themselves. We start out by adding our `base` module (`@kickstartds/base`), which contains all of the base components, to get started:
+Next we'll add the **kickstartDS** dependencies themselves. We start out by adding our **base** module (`@kickstartds/base`), which contains all of the base components, to get started:
 
 ```bash
-yarn add @kickstartds/base@2.0.0-canary.922.4908.0
+yarn add @kickstartds/base
 ```
 
 Learn more about the different modules **kickstartDS** has to offer in our [overview here](../../foundations/modules.md).
@@ -220,43 +248,29 @@ Learn more about the different modules **kickstartDS** has to offer in our [over
 
 ## Result
 
-This will leave us with the following files for now, at least if you've started afresh:
-
-<CH.Section>
-<CH.Code>
-
-```json package.json
-{
-  "name": "@my/design-system",
-  "version": "1.0.0",
-  "description": "Design System for all @MY needs",
-  "main": "dist/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Jonas Ulrich",
-  "license": "MIT",
-  "dependencies": {
-    "@kickstartds/base": "2.0.0-canary.922.4908.0",
-    "react": "17",
-    "react-dom": "17"
-  }
-}
-```
-
-```bash .nvmrc
-16.14
-```
-
-```bash .gitignore
-# Node
-node_modules
-```
-
-</CH.Code>
-</CH.Section>
+Our repository is initialized. We can now connect it to a **Git** host, or just continue with the guide without pushing our code to a registry. If you'd like to learn more about **Git** hosts, see our [Environments page about it](../../intro/environment.md).
 
 ## Next Step
 
 We'll continue by applying our branding to **kickstartDS**, which will result in a bunch of token files (`JSON`) being added to the project.<br/>
 This will also give us the opportunity to set up **Storybook**, and get a first visual representation of our Design System in the browser!
+
+## Code Sandbox
+
+See the result of this step in the **Code Sandbox** below. It's showing specifically the result after this step. You can also view this on **Github** directly in [the `ds-guide` repository](https://github.com/kickstartDS/ds-guide), there's a branch for every step... and we're currently on [the branch `step/1`](https://github.com/kickstartDS/ds-guide/tree/step/1) in the guide:
+
+<iframe
+  src="https://codesandbox.io/embed/github/kickstartDS/ds-guide/tree/step%2F1/?fontsize=14&hidenavigation=1&module=%2Fpackage.json&theme=dark&view=editor"
+  style={{
+    width: '100%',
+    height: '500px',
+    border: 0,
+    borderRadius: '4px',
+    overflow: 'hidden',
+  }}
+  title="ds-guide"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
+
+Toggle the file browser with the hamburger icon at the top left, [or open it directly in your browser](https://codesandbox.io/s/github/kickstartDS/ds-guide/tree/step/1?file=/package.json).
