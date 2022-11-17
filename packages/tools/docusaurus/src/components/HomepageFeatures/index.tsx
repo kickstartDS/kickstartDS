@@ -34,7 +34,7 @@ const PictureProvider = (props) => (
 const FeatureList = [
   {
     title: 'Foundations',
-    linkLabel: 'Go to Foundatioons',
+    linkLabel: 'Go to Foundations',
     Svg: require('@site/static/icon/basics.svg').default,
     description:
       'Learn about design token, component and recipe use in **kickstartDS**. These building blocks lay the foundation for a thorough understanding of more complex topics.',
