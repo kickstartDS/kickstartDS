@@ -59,7 +59,13 @@ module.exports = {
           setComputedProperties: true,
         },
         presets: [
-          ['@babel/preset-env', { bugfixes: true }],
+          [
+            '@babel/preset-env',
+            {
+              bugfixes: true,
+              targets: { browsers: 'defaults, last 2 years', esmodules: true },
+            },
+          ],
           ['@babel/preset-typescript'],
         ],
         plugins: [['@babel/plugin-transform-runtime', { useESModules: true }]],
