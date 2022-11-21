@@ -51,8 +51,6 @@ There are two main steps in customizing a component:
 1. Component definition, and
 2. Component creation
 
-TODO should / could possibly include "Component documentation" as a third step, where the **Storybook** story is added
-
 Let's get right to it!
 
 ### 1. Component Definition
@@ -458,8 +456,6 @@ To learn more about the tooling that create those types for you, and how to hook
 
 Let's continue showcasing this process using our `Headline`, creating the component template:
 
-TODO fix formatting in code samples here
-
 <CH.Spotlight>
 <CH.Code>
 ```tsx src/components/headline/HeadlineComponent.tsx
@@ -626,8 +622,6 @@ export const HeadlineProvider: FC<PropsWithChildren<any>> = (props) => (
 ##### Defining `RenderFunctions`
 
 We define the render functions interface that will enable our RTE-like functionality for the `text` and `sub` properties.
-
-TODO add link to render functions in `Foundations` > `Components` > `React`
 
 <CH.Code>
 ```tsx src/components/headline/HeadlineComponent.tsx focus=9:12
@@ -1350,7 +1344,7 @@ There may be other components you've built, that themselves use the base `Headli
 
 As a means to not having to go through every combination of those component now, making sure our customized `Headline` actually gets used, you can just change the default `Headline` rendered by adding a single `Provider` once, instead.
 
-Learn more about `Providers` and **React Context** in [our dedicated page about them](#). TODO add link.<br />
+Learn more about `Providers` and **React Context** in our dedicated page about them.<br />
 Or look at our ["Create your Design System" guide](../../guides/create/components.mdx), where we add the general setup for `Providers`. That one also includes some more details on this!
 
 <Admonition type="tip" title="Visual Studio Code component property quick-fix">
@@ -1359,8 +1353,6 @@ Visual Studio Code has a great feature aiding in this workflow, with **React** c
 This will automatically create all required options for your component. Now you just have to connect your own props to those, while hard-coding the ones you don't plan on exposing as part of your components [component API](../../foundations/components/component-api.md).
 
 Just hover the squiggly, red line that should be decorating your component, and choose `Quick Fix...`, to get to that option (alternatively put your cursor on the component tag and hit `Ctrl+.`).
-
-TODO add short animation of this workflow
 </Admonition>
 
 ## Technical debt added
@@ -1385,7 +1377,7 @@ Changes to the markup of a components **React** component will also need to be a
 How immune you are to changes to design and layout of a **kickstartDS** base component can depend on the changes you've made to the component while customizing. If you're closely adhering to the original **CSS** / **SCSS** BEM class structure, only hard coding some classes in your copied template, you should be safe.
 </Admonition>
 
-Learn more about what we mean by technical debt here on the [overview page of this section](#) TODO link to technical debt section on parent page.
+Learn more about what we mean by technical debt here on the overview page of this section.
 
 ## Examples
 
@@ -1395,7 +1387,7 @@ We continuously expand our [component example guides](../examples/components/ind
 
 In [this example component guide](../examples/components/headline.mdx) we customize the `Headline` component (as part of the `@kickstartDS/base` module) to use it for headlines in our own Design System. We greatly simplify the `Headline` and add both our own `switchOrder` property and RTE-like rendering capabilities for text content.
 
-This is what the result looks like (TODO replace with preview from real Storybook, not ours):
+This is what the result looks like:
 
 <iframe
   src="https://60dc476b80673e003b4258d6-czyzkgbgek.chromatic.com/iframe.html?args=&id=base-headline--subheadline&viewMode=story"

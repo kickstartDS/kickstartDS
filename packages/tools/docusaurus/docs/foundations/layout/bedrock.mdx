@@ -33,7 +33,11 @@ We use Bedrock as our library of choice when it comes to layouting:
 
 ## Components vs. Layout
 
-TODO if we find a good description
+Components are distinct units of interface, that shouldn't make any assumptions about where they're used. They should just use all the place given to them.
+
+This makes it necessary to add dedicated layout functionality to your Design System, to help users actually create pages and interfaces out of your offered components!
+
+We offer the `Section` for this when constructing websites, because it has some really nice convenience features for that! When more flexibility is needed we like to add **Bedrock** into the mix, which is easily connected to your **Design Token** set (for example your existing spacings) for a cohesive overall experience.
 
 ## Integrating with kickstartDS
 

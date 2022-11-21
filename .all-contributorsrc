@@ -42,6 +42,16 @@
         "example",
         "code"
       ]
+    },
+    {
+      "login": "fleven-kds",
+      "name": "Franz",
+      "avatar_url": "https://avatars.githubusercontent.com/u/83078080?v=4",
+      "profile": "https://www.kickstartds.com/",
+      "contributions": [
+        "code",
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7

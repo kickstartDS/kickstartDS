@@ -17,8 +17,6 @@ Applying your branding and corporate design to **kickstartDS** is itself done in
 
 ### Initialization
 
-TODO rename this file (`token-primitives.json` -> `branding-token.json`), change `kickstartDS-cli` accordingly, location should also be configurable there
-
 We start by creating a file `branding-token.json`, inside a new directory `src/token`... for everything to do with **Design Token** going forward:
 
 ```bash
@@ -124,26 +122,23 @@ Get the most up-to-date version of its content [from here](https://github.com/ki
 
 ### Select **Branding Token**
 
-For a more in-depth overview of this process, have a look at our [Generate Token Set guide](../theming/generate-token-set.md) or the [foundations page about **Branding Token**](../../foundations/token/branding-token.mdx), detailing all values in use.<br/>
+For a more in-depth overview of those token, have a look at our [foundations page about **Branding Token**](../../foundations/token/branding-token.mdx), detailing all values in use.<br/>
 
 But to get a first feel for working with the file, and to add some flavour to our Design System, we'll change some select values around. And feel free to replace everything with values that seem more appropriate for you, or that fit your particular brand (maybe even because you opted to follow the more detailed guide above). If you're wondering which values we selected for this guide... we're mostly matching our own brand for this guide:
 
-| Token                                               | Name                   | Value                                                                                                                                           |
-| --------------------------------------------------- | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| <div className="color-preview color-primary"></div> | `primary`              | `#05566a`                                                                                                                                       |
-| <div className="color-preview color-primary"></div> | `primary-inverted`     | `#ecff00`                                                                                                                                       |
-| <div className="color-preview color-primary"></div> | `background`           | `#fff`                                                                                                                                          |
-| <div className="color-preview color-primary"></div> | `foreground`           | `#050505`                                                                                                                                       |
-| <div className="color-preview color-primary"></div> | `link`                 | `#5D5DD5`                                                                                                                                       |
-| <div className="color-preview color-primary"></div> | `link-inverted`        | `#C6C6FF`                                                                                                                                       |
-| <div className="color-preview color-primary"></div> | `informative`          | `#05566a`                                                                                                                                       |
-| <div className="color-preview color-primary"></div> | `informative-inverted` | `#ecff00`                                                                                                                                       |
-| <div className="color-preview color-primary"></div> | `font-family`          | `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'` |
-| <div className="color-preview color-primary"></div> | `scale-ratio`          | `1.35`                                                                                                                                          |
-| <div className="color-preview color-primary"></div> | `bp-ratio`             | `1.15`                                                                                                                                          |
-
-TODO add presenters for token values to make this nicer<br/>
-TODO **really** think again about adding a demo theme to make this whole guide less confusing
+| Preview                                                                              | Name                   | Value                                                                                                                                           |
+| ------------------------------------------------------------------------------------ | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| <div ks-theme="preview" className="color-preview color-primary"></div>               | `primary`              | `#05566a`                                                                                                                                       |
+| <div ks-theme="preview" className="color-preview color-primary-inverted"></div>      | `primary-inverted`     | `#ecff00`                                                                                                                                       |
+| <div ks-theme="preview" className="color-preview background-default"></div>          | `background`           | `#fff`                                                                                                                                          |
+| <div ks-theme="preview" className="color-preview background-default-inverted"></div> | `foreground`           | `#050505`                                                                                                                                       |
+| <div ks-theme="preview" className="color-preview color-link"></div>                  | `link`                 | `#5D5DD5`                                                                                                                                       |
+| <div ks-theme="preview" className="color-preview color-link-inverted"></div>         | `link-inverted`        | `#C6C6FF`                                                                                                                                       |
+| <div ks-theme="preview" className="color-preview color-info"></div>                  | `informative`          | `#05566a`                                                                                                                                       |
+| <div ks-theme="preview" className="color-preview color-info-inverted"></div>         | `informative-inverted` | `#ecff00`                                                                                                                                       |
+|                                                                                      | `font-family`          | `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'` |
+|                                                                                      | `scale-ratio`          | `1.35`                                                                                                                                          |
+|                                                                                      | `bp-ratio`             | `1.15`                                                                                                                                          |
 
 ### Apply **Branding Token**
 
@@ -246,7 +241,7 @@ This is the file you've copied before, we'll start updating it piecemeal to show
 
 Most brands have such a `primary` color as part of their corporate design guidelines. This will be used to highlight elements, and give them more importance.
 
-Next to `primary` itself, we'll also define its counter part `primary-inverted` as `#ecff00` (`#fff` / `white` works for most uses otherwise, read about the finer [details here](#) TODO add link).
+Next to `primary` itself, we'll also define its counter part `primary-inverted` as `#ecff00` (`#fff` / `white` works for most uses otherwise, read about the finer [details here](../../foundations/token/index.mdx)).
 
 <CH.Code>
 
@@ -523,7 +518,7 @@ Because it seems to fit our branding, and doesn't interfere with user expectatio
 
 #### Add a fitting font
 
-In this guide we'll opt for a native system font stack for our `display` and `copy` fonts. We'll leave `interface` and `mono` and all size values untouched for now. If you have other requirements (for example a self-hosted font, or one by Google Fonts) have a look at our [Fonts guide](#) TODO create and link guide.
+In this guide we'll opt for a native system font stack for our `display` and `copy` fonts. We'll leave `interface` and `mono` and all size values untouched for now. If you have other requirements (for example a self-hosted font, or one by Google Fonts), we'll add a guide for that soon!
 
 <CH.Code>
 
@@ -728,19 +723,17 @@ yarn add kickstartds
   "author": "Jonas Ulrich",
   "license": "MIT",
   "dependencies": {
-    "@kickstartds/base": "2.0.0-canary.922.4908.0",
-    "kickstartds": "0.2.39",
-    "react": "17",
-    "react-dom": "17"
+    "@kickstartds/base": "^2.0.2",
+    "kickstartds": "^1.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   }
 }
 ```
 
 </CH.Code>
 
-Read more about our CLI [here](#) TODO add link
-
-TODO the lines being added below should include CLI options for `branding-token.json` location, just like `--token-path` for the path to write the tokens to
+Read more [about our CLI here](../../intro/cli.md)
 
 Then add the following two additional lines to your `package.json` scripts block:
 
@@ -760,10 +753,10 @@ Then add the following two additional lines to your `package.json` scripts block
   "author": "Jonas Ulrich",
   "license": "MIT",
   "dependencies": {
-    "@kickstartds/base": "2.0.0-canary.922.4908.0",
-    "kickstartds": "0.2.39",
-    "react": "17",
-    "react-dom": "17"
+    "@kickstartds/base": "^2.0.2",
+    "kickstartds": "^1.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   }
 }
 ```
@@ -771,8 +764,6 @@ Then add the following two additional lines to your `package.json` scripts block
 </CH.Code>
 
 `init-tokens` is used to convert your **Branding Token** (`branding-token.json`) into a **Style Dictionary** compatible **Design Token** set (a bunch of `JSON` files), whereas `build-tokens` takes your **Design Token** set, and converts it to the outputs needed to use and display your Design System. But more about this later!
-
-The `--token-path` set here tells our CLI where to put and search for your **Design Token** set, we'll use `src/token/dictionary` in this guide (but you may change this to something else of course).
 
 ### Generate first **Design Token** set
 
@@ -803,9 +794,9 @@ ______________/\\\\\\\\\__/\\\______________/\\\\\\\\\\\_______
        __/\\\____\////\\\\\\\\\_\/\\\\\\\\\\\\\\\__/\\\\\\\\\\\__/\\\_
         _\///________\/////////__\///////////////__\///////////__\///__
 
-Version: 0.2.39
+Version: 1.0.0
 For more information visit:
-https://www.kickstartDS.com/cli
+https://www.kickstartDS.com/docs/intro/cli
 
 Starting...
 [kickstartDS: general] info: welcome to the kickstartDS CLI
@@ -851,9 +842,9 @@ To learn more about the categories represented by those generated files, have a 
 
 ### Compile **Design Token** set
 
-Finally, to test the integration works as expected, we'll first want to create one additional file: `sd.config.js`. As the name may imply, this is further configuration for our **Design Token**, to convert them into different outputs (more specifically the Style Dictionary that gets used under the hood):
+Finally, to test the integration works as expected, we'll first want to create one additional file: `sd.config.js`. As the name may imply, this is further configuration for our **Design Token**, to convert them into different outputs (more specifically the **Style Dictionary** that gets used under the hood):
 
-As this is based on **Style Dictionary**, it generally follows [their configuration scheme](https://amzn.github.io/style-dictionary/#/config?id=using-configuration-files).
+And, as this is based on **Style Dictionary**, it generally follows [their configuration scheme](https://amzn.github.io/style-dictionary/#/config?id=using-configuration-files).
 
 Let's detail some lines:
 
@@ -1040,11 +1031,10 @@ module.exports = StyleDictionary.extend(config).extend({
 </CH.Spotlight>
 
 <Admonition type="tip" title="Using correct file extension">
-  It's important to actually use `cjs` as the file extension here. TODO we
-  should add an actual explanation here!
+  It's important to actually use `cjs` as the file extension here.
 </Admonition>
 
-You can build your **Design Token** set into different outputs using **Style Dictionary** and **kickstartDS**. So far we've mainly configured how token are ingested, but we'll build on our single test platform **CSS** in the process of this guide. Adding integrations for Storybook, the use in **kickstartDS** components, and so on! By re-using our pre-made configurations we only have to define a `buildPath` to activate a platform. Optionally you can define file names with `files`, too (read more in our [concepts page about Style Dictionary](#) TODO add link).
+You can build your **Design Token** set into different outputs using **Style Dictionary** and **kickstartDS**. So far we've mainly configured how token are ingested, but we'll build on our single test platform **CSS** in the process of this guide. Adding integrations for Storybook, the use in **kickstartDS** components, and so on! By re-using our pre-made configurations we only have to define a `buildPath` to activate a platform. Optionally you can define file names with `files`, too.
 
 With all of that in place, for the first time compile your **Design Token** set into CSS Custom Properties now:
 
@@ -1073,9 +1063,9 @@ ______________/\\\\\\\\\__/\\\______________/\\\\\\\\\\\_______
        __/\\\____\////\\\\\\\\\_\/\\\\\\\\\\\\\\\__/\\\\\\\\\\\__/\\\_
         _\///________\/////////__\///////////////__\///////////__\///__
 
-Version: 0.2.39
+Version: 1.0.0
 For more information visit:
-https://www.kickstartDS.com/cli
+https://www.kickstartDS.com/docs/intro/cli
 
 Starting...
 [kickstartDS: general] [info: welcome to the kickstartDS CLI
@@ -3523,158 +3513,32 @@ If you have a hugley variying font size it makes sense to adjust the line-height
 
 </CH.Scrollycoding>
 
-TODO add step re-generating token set with new values, maybe add before / after screenshots to visualize?
-
 ## Result
 
-So for the second step this will leave us with the following files overall:
-
-<CH.Section>
-<CH.Code>
-
-```json package.json
-{
-  "name": "@my/design-system",
-  "version": "1.0.0",
-  "description": "Design System for all @MY needs",
-  "main": "dist/index.js",
-  "scripts": {
-    "init-tokens": "kickstartDS tokens init",
-    "build-tokens": "kickstartDS tokens compile",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Jonas Ulrich",
-  "license": "MIT",
-  "dependencies": {
-    "@kickstartds/base": "2.0.0-canary.922.4908.0",
-    "kickstartds": "0.2.39",
-    "react": "17",
-    "react-dom": "17"
-  }
-}
-```
-
-```js sd.config.cjs
-const path = require('path');
-const StyleDictionary = require('style-dictionary');
-const { config } = require('@kickstartds/style-dictionary');
-
-module.exports = StyleDictionary.extend(config).extend({
-  source: [
-    'src/token/dictionary/**/*.json',
-    path.join(
-      path.dirname(require.resolve('@kickstartds/core/package.json')),
-      'source/design-tokens/icons/*.svg'
-    ),
-  ],
-  platforms: {
-    css: {
-      buildPath: 'src/token/',
-    },
-  },
-});
-```
-
-```json branding-token.json
-{
-  "color": {
-    "primary": "#05566a",
-    "primary-inverted": "#ecff00",
-    "background": "#fff",
-    "foreground": "#050505",
-    "link": "#5D5DD5",
-    "link-inverted": "#C6C6FF",
-    "positive": "#66a80f",
-    "positive-inverted": "#94d82d",
-    "informative": "#05566a",
-    "informative-inverted": "#ecff00",
-    "notice": "#fab005",
-    "notice-inverted": "#f59f00",
-    "negative": "#e03131",
-    "negative-inverted": "#fa5c5c"
-  },
-  "font": {
-    "display": {
-      "family": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
-      "font-size": 16,
-      "line-height": 1.75,
-      "scale-ratio": 1.225,
-      "bp-factor": {
-        "phone": 1.167,
-        "tablet": 1.333
-      }
-    },
-    "copy": {
-      "family": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
-      "font-size": 16,
-      "line-height": 1.75,
-      "scale-ratio": 1.225,
-      "bp-factor": {
-        "tablet": 1.125
-      }
-    },
-    "interface": {
-      "family": "system-ui, -apple-system, BlinkMacSystemFont, 'Avenir Next', 'Avenir', 'Segoe UI', 'Lucida Grande', 'Helvetica Neue', 'Helvetica', 'Fira Sans', 'Roboto', 'Noto', 'Droid Sans', 'Cantarell', 'Oxygen', 'Ubuntu', 'Franklin Gothic Medium', 'Century Gothic', 'Liberation Sans', sans-serif",
-      "font-size": 16,
-      "line-height": 1.75,
-      "scale-ratio": 1.225,
-      "bp-factor": {
-        "tablet": 1.125
-      }
-    },
-    "mono": {
-      "family": "ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace",
-      "font-size": 16,
-      "line-height": 1.75,
-      "scale-ratio": 1.225,
-      "bp-factor": {
-        "tablet": 1.125
-      }
-    }
-  },
-  "font-weight": {
-    "light": 300,
-    "regular": 400,
-    "semi-bold": 600,
-    "bold": 700
-  },
-  "spacing": {
-    "base": 8,
-    "scale-ratio": 1.35,
-    "bp-ratio": 1.15
-  },
-  "border-radius": "2px",
-  "box-shadow": {
-    "blur": "2.75px"
-  },
-  "breakpoints": {
-    "phone": 576,
-    "tablet": 768,
-    "laptop": 992,
-    "desktop": 1200
-  }
-}
-```
-
-```bash .nvmrc
-16.14
-```
-
-```bash .gitignore
-node_modules
-```
-
-</CH.Code>
-</CH.Section>
-
-Not included here are generated files, have a look at the Code Sandbox for the complete result for this step.
+With this we have completed our Design Token setup, and our branding should be successfully applied to **kickstartDS**!
 
 ## Next Step
 
 In the next step we'll set up **Storybook**. This connects nicely, as we'll add the **Storybook** integration for **Design Token** there, to make them viewable in the browser. We'll also make preparations for the step after, where we'll add components.
 
-TODO add Commit reminder
+It's probably a good idea to commit everything again, now!
 
 ## Code Sandbox
 
-TODO add Code Sandbox with result of step
+See the result of this step in the **Code Sandbox** below. It's showing specifically the result after this step. You can also view this on **Github** directly in [the `ds-guide` repository](https://github.com/kickstartDS/ds-guide), there's a branch for every step... and we're currently on [the branch `step/2`](https://github.com/kickstartDS/ds-guide/tree/step/2) in the guide:
+
+<iframe
+  src="https://codesandbox.io/embed/github/kickstartDS/ds-guide/tree/step%2F2/?fontsize=14&hidenavigation=1&module=%2Fpackage.json&theme=dark&view=editor"
+  style={{
+    width: '100%',
+    height: '500px',
+    border: 0,
+    borderRadius: '4px',
+    overflow: 'hidden',
+  }}
+  title="ds-guide"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
+
+Toggle the file browser with the hamburger icon at the top left, [or open it directly in your browser](https://codesandbox.io/s/github/kickstartDS/ds-guide/tree/step/2?file=/package.json).

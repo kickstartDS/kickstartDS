@@ -33,12 +33,12 @@ const PictureProvider = (props) => (
 
 const FeatureList = [
   {
-    title: 'Basics',
-    linkLabel: 'Go to Basics',
+    title: 'Foundations',
+    linkLabel: 'Go to Foundations',
     Svg: require('@site/static/icon/basics.svg').default,
     description:
       'Learn about design token, component and recipe use in **kickstartDS**. These building blocks lay the foundation for a thorough understanding of more complex topics.',
-    link: '/docs/basics',
+    link: '/docs/foundations',
   },
   {
     title: 'Integration',

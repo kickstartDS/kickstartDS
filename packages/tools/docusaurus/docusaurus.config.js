@@ -209,9 +209,9 @@ const config = {
         darkTheme: darkCodeTheme,
       },
       announcementBar: {
-        id: 'beta_release',
+        id: 'main_guide',
         content:
-          "We're thrilled and very proud to announce our Open Source release today and are officially live on ProductHunt! 🎉  <a target='_blank' rel='noopener noreferrer' href='https://www.producthunt.com/posts/kickstartds'><strong>Support us on ProductHunt</strong></a>",
+          'Follow our main guide to learn how you can "Create your Design System" in just 5 steps: <a target="_blank" rel="noopener noreferrer" href="https://www.kickstartDS.com/docs/guides/create/"><strong>Open guide</strong></a>',
         backgroundColor: 'var(--ks-color-primary)',
         textColor: 'var(--ks-color-primary-inverted)',
         isCloseable: false,

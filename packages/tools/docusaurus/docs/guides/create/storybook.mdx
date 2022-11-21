@@ -8,7 +8,7 @@ import Admonition from 'react-admonitions';
 
 ## Overview
 
-TODO there should be a page detailing **Storybook**, and our usage of it, somewhere. Probably `Integrations`... write and link it. Could use the overview page [here](../../integration/storybook/index.md).
+We use **Storybook** for a lot of different useful features it offers. For an overview, have a look at our [integrations overview for **Storybook**](../../integration/storybook/index.md).
 
 ## Install **Storybook**
 
@@ -39,10 +39,10 @@ Let's have a look at our `package.json`, after having added **Storybook**:
   "author": "Jonas Ulrich",
   "license": "MIT",
   "dependencies": {
-    "@kickstartds/base": "2.0.0-canary.922.4908.0",
-    "kickstartds": "0.2.39",
-    "react": "17",
-    "react-dom": "17"
+    "@kickstartds/base": "^2.0.2",
+    "kickstartds": "^1.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",
@@ -86,10 +86,10 @@ It also includes **Storybook**s Essential addon, adding recommended addons by de
   "author": "Jonas Ulrich",
   "license": "MIT",
   "dependencies": {
-    "@kickstartds/base": "2.0.0-canary.922.4908.0",
-    "kickstartds": "0.2.39",
-    "react": "17",
-    "react-dom": "17"
+    "@kickstartds/base": "^2.0.2",
+    "kickstartds": "^1.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",
@@ -134,10 +134,10 @@ Next to the dependencies, two `scripts` entries were added by the **Storybook** 
   "author": "Jonas Ulrich",
   "license": "MIT",
   "dependencies": {
-    "@kickstartds/base": "2.0.0-canary.922.4908.0",
-    "kickstartds": "0.2.39",
-    "react": "17",
-    "react-dom": "17"
+    "@kickstartds/base": "^2.0.2",
+    "kickstartds": "^1.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",
@@ -454,8 +454,6 @@ This should automatically open **Storybook** in your browser of choice. Next to 
 
 As part of the left sidebar, and under your initially opened *Welcome* page, there'll be a section titled `@kickstartds/base`. This gets shown because we've added `@kickstartds/base` as a dependency before. **kickstartDS** uses [Storybook composition](https://storybook.js.org/docs/react/sharing/storybook-composition) to always include the base documentation (in the correct version used by your Design System) to your **Storybook**, as a handy reference!
 
-TODO add image of sidebar here
-
 ### **Design Token** integration
 
 Next up is adding some glue code to have our **Design Token** set nicely integrated with **Storybook**. We can start by copying some stories provided by **kickstartDS** (those are the same that can be seen [here](https://www.kickstartds.com/storybook/?path=/story/design-tokens-colors--page)).
@@ -526,9 +524,9 @@ ______________/\\\\\\\\\__/\\\______________/\\\\\\\\\\\_______
        __/\\\____\////\\\\\\\\\_\/\\\\\\\\\\\\\\\__/\\\\\\\\\\\__/\\\_
         _\///________\/////////__\///////////////__\///////////__\///__
 
-Version: 0.2.39
+Version: 1.0.0
 For more information visit:
-https://www.kickstartDS.com/cli
+https://www.kickstartDS.com/docs/intro/cli
 
 Starting...
 [kickstartDS: general] [info]: welcome to the kickstartDS CLI
@@ -580,9 +578,9 @@ ______________/\\\\\\\\\__/\\\______________/\\\\\\\\\\\_______
        __/\\\____\////\\\\\\\\\_\/\\\\\\\\\\\\\\\__/\\\\\\\\\\\__/\\\_
         _\///________\/////////__\///////////////__\///////////__\///__
 
-Version: 0.2.39
+Version: 1.0.0
 For more information visit:
-https://www.kickstartDS.com/cli
+https://www.kickstartDS.com/docs/intro/cli
 
 Starting...
 [kickstartDS: general] [info]: welcome to the kickstartDS CLI
@@ -635,9 +633,9 @@ ______________/\\\\\\\\\__/\\\______________/\\\\\\\\\\\_______
        __/\\\____\////\\\\\\\\\_\/\\\\\\\\\\\\\\\__/\\\\\\\\\\\__/\\\_
         _\///________\/////////__\///////////////__\///////////__\///__
 
-Version: 0.2.39
+Version: 1.0.0
 For more information visit:
-https://www.kickstartDS.com/cli
+https://www.kickstartDS.com/docs/intro/cli
 
 Starting...
 [kickstartDS: general] [info]: welcome to the kickstartDS CLI
@@ -693,7 +691,7 @@ And add the following content to it:
 ```
 </CH.Code>
 
-We pull in our generated tokens with [`@use`](focus://1), and add [some CSS](focus://3:7) to ensure the icon colors actually get inherited (TODO check this is actually what this is for!).
+We pull in our generated tokens with [`@use`](focus://1), and add [some CSS](focus://3:7) to ensure the icon colors actually get inherited.
 </CH.Section>
 
 Now that we've added a `.scss` file, we'll need to also add `Sass` compilation capabilities to our project. Install `sass` and add the following lines to your `package.json`:
@@ -725,10 +723,10 @@ A single entry in `devDependencies` should've been added.
   "author": "Jonas Ulrich",
   "license": "MIT",
   "dependencies": {
-    "@kickstartds/base": "2.0.0-canary.922.4908.0",
-    "kickstartds": "0.2.39",
-    "react": "17",
-    "react-dom": "17"
+    "@kickstartds/base": "^2.0.2",
+    "kickstartds": "^1.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",
@@ -775,10 +773,10 @@ To keep some order in our `scripts` entries, we re-order them to be sorted alpha
   "author": "Jonas Ulrich",
   "license": "MIT",
   "dependencies": {
-    "@kickstartds/base": "2.0.0-canary.922.4908.0",
-    "kickstartds": "0.2.39",
-    "react": "17",
-    "react-dom": "17"
+    "@kickstartds/base": "^2.0.2",
+    "kickstartds": "^1.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",
@@ -822,10 +820,10 @@ We add a script entry called `sass-manager`, which when called will compile our 
   "author": "Jonas Ulrich",
   "license": "MIT",
   "dependencies": {
-    "@kickstartds/base": "2.0.0-canary.922.4908.0",
-    "kickstartds": "0.2.39",
-    "react": "17",
-    "react-dom": "17"
+    "@kickstartds/base": "^2.0.2",
+    "kickstartds": "^1.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",
@@ -870,10 +868,10 @@ And while we're at it, we'll also add a watch task that can be used in developme
   "author": "Jonas Ulrich",
   "license": "MIT",
   "dependencies": {
-    "@kickstartds/base": "2.0.0-canary.922.4908.0",
-    "kickstartds": "0.2.39",
-    "react": "17",
-    "react-dom": "17"
+    "@kickstartds/base": "^2.0.2",
+    "kickstartds": "^1.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",
@@ -901,7 +899,7 @@ The correct place to put such **CSS** specific to **Storybook**s UI is `.storybo
 touch .storybook/manager-head.html
 ```
 
-And add the following content to it ([this will later TODO add link to theming section](#) have the markup for our favicons, too):
+And add the following content to it:
 
 ```html .storybook/manager-head.html
 <link rel="stylesheet" href="manager.css" />
@@ -970,8 +968,6 @@ export const parameters = {
 ```
 
 If you re-start, or re-open, your **Storybook** now (`yarn storybook`), you'll be greeted by all your glorious **Design Token**. Neatly categorized by category and semantic meaning!
-
-TODO add screenshot here
 
 We'll add those additional files generated based on our **Design Token** set to our `.gitignore` now:
 
@@ -1069,9 +1065,9 @@ ______________/\\\\\\\\\__/\\\______________/\\\\\\\\\\\_______
        __/\\\____\////\\\\\\\\\_\/\\\\\\\\\\\\\\\__/\\\\\\\\\\\__/\\\_
         _\///________\/////////__\///////////////__\///////////__\///__
 
-Version: 0.2.39
+Version: 1.0.0
 For more information visit:
-https://www.kickstartDS.com/cli
+https://www.kickstartDS.com/docs/intro/cli
 
 Starting...
 [kickstartDS: general] [info]: welcome to the kickstartDS CLI
@@ -1156,6 +1152,12 @@ export const light = create({
 We [import the `create` function](focus://1) from **Storybook** [and our token](focus://2). With those we create a new theme, [with `light` as the `base`](focus://5). We won't go into detail about[ the specific token applications](focus://7:33) now, but feel free to adjust [`brandTitle` and `brandUrl`](focus://35:36) to your liking! [`brandImage`](focus://37) will be added next...
 </CH.Section>
 
+Create a folder `static` on your project root now:
+
+```bash
+mkdir -p static
+```
+
 For this to work, we add our logo to the `static/` directory created before, as `logo.svg`. If you don't have a fitting logo laying around now, feel free to [just use ours (right click > save as)](https://www.kickstartds.com/logo.svg).
 
 #### Adding `.storybook/manager.js`
@@ -1214,8 +1216,6 @@ mkdir -p static/favicon
 #### Finalizing **Storybook** theming
 
 If you start your **Storybook** now (`yarn storybook`), you should feel right at home! You should see your own logo, your own colors and your font being applied to **Storybook** itself (or the ones you've used while testing around). Giving it your own, unique flavour... without being distracting!
-
-TODO add screenshot here, too
 
 As we've added one new generated file, we make sure to include it in our `.gitignore`:
 
@@ -1341,8 +1341,6 @@ First we [import the `Button` component](focus://2) from `@kickstartds/base/lib/
 If not still running, start your **Storybook** again now (`yarn storybook`), and browse to the *Welcome* page. You should be greeted by your newly added `Button` there. But there's something missing. It's not looking quite right, yet!
 </CH.Section>
 
-TODO add screenshot of unstyled `Button`.
-
 #### Add missing styles in `preview.js`
 
 <CH.Section>
@@ -1388,8 +1386,6 @@ export const parameters = {
 
 Re-start **Storybook** to revisit the *Welcome* page. Everything should be looking as expected now!
 
-TODO add screenshot with correct `Button`
-
 #### Adding an `Icon` to our `Button`
 
 As a small motivation for the next section, change the `Button` markup in `docs/welcome.stories.jsx` slightly:
@@ -1421,17 +1417,15 @@ Consequatur et consequuntur et. Nam consequatur sed voluptas ea. Tempore vero ve
 We [add an `Icon` to the button](focus://18[9:45]) using `iconAfter` (you can use `iconAfter` or `iconBefore`, or both!). To see a list of available `Icon`s you can have a look at your `Storybook`. It should have a page titled **Icons** in the **Design Tokens** category. This has all of your `.svg` icons compiled, all those are possible inputs for `icon` here.
 </CH.Section>
 
-To see all options available on a `Button`, have a look at its documentation in `Storybook` (either [in our docs](https://www.kickstartds.com/storybook/?path=/docs/base-button--solid), or locally through the composed docs in your sidebar TODO add link to composition above).
+To see all options available on a `Button`, have a look at its documentation in `Storybook` (either [in our docs](https://www.kickstartds.com/storybook/?path=/docs/base-button--solid), or locally through the composed docs in your sidebar).
 
-If you re-check your *Welcome* page in the browser again now, you'll see the button having space reserved for an `Icon`. But the `Icon` itself is still missing. This is because we haven't included our **Icon Sprite** for component previews in **Storybook**, yet. The only reason they're successfully displayed on your **Icons** page currently, is that the `storybook-design-token` addon is picking them up using its own loader (TODO add link to `storybook-design-token` addon configuration section).
-
-TODO add picture of `Button` with reserved spacing
+If you re-check your *Welcome* page in the browser again now, you'll see the button having space reserved for an `Icon`. But the `Icon` itself is still missing. This is because we haven't included our **Icon Sprite** for component previews in **Storybook**, yet. The only reason they're successfully displayed on your **Icons** page currently, is that the `storybook-design-token` addon is picking them up using its own loader.
 
 Let's add our **Icon Sprite** to **Storybook** for real, now!
 
 #### Integrate `Icons` with **Storybook** previews
 
-TODO add short motivational description of why we use `IconSprites`, and link to IconSprite / Icons-docs
+Instead of loading a bunch of single files per icon, we encourage compiling all your `SVG`s into one sprite. We offer different output formats for that through the pre-configured **Style Dictionary** in use (SVG, HTML, React). This can be included once in the page, and the elements will just be referenced. Learn more about sprites with [`<symbol>` and `<use>` on MDN](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/symbol).
 
 As with other changes that had to do with how **Storybook** renders our own components (in a preview context), we will need to adjust `.storybook/preview.js` again to integrate **kickstartDS** and **Storybook**:
 
@@ -1495,7 +1489,7 @@ export const decorators = [
 We wrap **Storybook**s story rendering in two places. Firstly we [import the default `DocsContainer`](focus://1) from `@storybook/addon-docs` [and our **Icons**](focus://6) from `../src/token/icons/IconSprite`, to then [ensure that every time a docs page is rendered](focus://34:41), our **Icons** [get included there](focus://37), too. Secondly we [add our first decorator](focus://44:51) to the `decorators` array, also [adding our imported **Icons**](focus://47). This one is concerned with all the other story previews there are, read [more about decorators here](https://storybook.js.org/docs/react/writing-stories/decorators).
 </CH.Section>
 
-You might have stumbled over our **Icons** import above: `import IconSprite from "../src/token/icons/IconSprite"`. That file doesn't actually exist (yet)! You might also recall how we've added annotated **Design Token** before, [by adding a new transform to our **Style Dictionary** configuration](#) TODO link to section of page (`sd.config.js`). We'll now add another transform to it that takes our **Icons** and converts them to a `JSX` component-variant of our `IconSprite`, ready to be imported in `.storybook/preview.js`:
+You might have stumbled over our **Icons** import above: `import IconSprite from "../src/token/icons/IconSprite"`. That file doesn't actually exist (yet)! You might also recall how we've added annotated **Design Token** before, by adding a new transform to our **Style Dictionary** configuration. We'll now add another transform to it that takes our **Icons** and converts them to a `JSX` component-variant of our `IconSprite`, ready to be imported in `.storybook/preview.js`:
 
 <CH.Section>
 <CH.Code>
@@ -1563,9 +1557,9 @@ ______________/\\\\\\\\\__/\\\______________/\\\\\\\\\\\_______
        __/\\\____\////\\\\\\\\\_\/\\\\\\\\\\\\\\\__/\\\\\\\\\\\__/\\\_
         _\///________\/////////__\///////////////__\///////////__\///__
 
-Version: 0.2.39
+Version: 1.0.0
 For more information visit:
-https://www.kickstartDS.com/cli
+https://www.kickstartDS.com/docs/intro/cli
 
 Starting...
 [kickstartDS: general] [info]: welcome to the kickstartDS CLI
@@ -1598,8 +1592,6 @@ Done in 1.49s.
 
 (Re-)open your **Storybook** now and change to the *Welcome* page. You should be greeted by a `Button` with its `Icon` visible, as configured in the component props!
 
-TODO add screenshot of `Button` **with** `Icon`
-
 Like before, we make sure to include the newly generated file in our `.gitignore`:
 
 ```bash .gitignore focus=9
@@ -1621,7 +1613,7 @@ static/manager.css.map
 
 #### Integrate **kickstartDS** `radio` with **Storybook** actions
 
-We use a small, light-weight communication component called `radio` (basically a mini [PubSub](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern) TODO check that this is actually true) in all existing components for communication and event handling. It's part of our **Core** (`@kickstartDS/core`) architecture (TODO link article about `radio`). To make debugging easier and more transparent, we connect our `radio` with **Storybook**s actions, and their actions addon.
+We use a small, light-weight communication component called `radio` (basically a mini [PubSub](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern)) in all existing components for communication and event handling. It's part of our **Core** (`@kickstartDS/core`) architecture. To make debugging easier and more transparent, we connect our `radio` with **Storybook**s actions, and their actions addon.
 
 Configuration is pretty easy, just add the following lines to `.storybook/preview.js`:
 
@@ -1765,6 +1757,10 @@ module.exports = {
 }
 ```
 
+<Admonition type="tip" title="Fork of @whitespace/storybook-addon-html">
+  We deactivate `@kickstartds/storybook-addon-jsonschema` for now, because there's a bug that needs to be fixed to make it compatible with the Open Source `2.0.0` release of **kickstartDS**. You can follow the progress for this on the following ticket: [kickstartDS/storybook-addon-jsonschema/issues/19](https://github.com/kickstartDS/storybook-addon-jsonschema/issues/19)
+</Admonition>
+
 ## Review changes
 
 Let us review our `package.json` again now, it's starting to grow already:
@@ -1789,10 +1785,10 @@ Let us review our `package.json` again now, it's starting to grow already:
   "author": "Jonas Ulrich",
   "license": "MIT",
   "dependencies": {
-    "@kickstartds/base": "2.0.0-canary.922.4908.0",
-    "kickstartds": "0.2.39",
-    "react": "17",
-    "react-dom": "17"
+    "@kickstartds/base": "^2.0.2",
+    "kickstartds": "^1.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",
@@ -1841,10 +1837,10 @@ We use [`@whitespace/storybook-addon-html`](https://storybook.js.org/addons/@whi
   "author": "Jonas Ulrich",
   "license": "MIT",
   "dependencies": {
-    "@kickstartds/base": "2.0.0-canary.922.4908.0",
-    "kickstartds": "0.2.39",
-    "react": "17",
-    "react-dom": "17"
+    "@kickstartds/base": "^2.0.2",
+    "kickstartds": "^1.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",
@@ -1894,10 +1890,10 @@ For **Design Token** documentation we use [`storybook-design-token`](https://sto
   "author": "Jonas Ulrich",
   "license": "MIT",
   "dependencies": {
-    "@kickstartds/base": "2.0.0-canary.922.4908.0",
-    "kickstartds": "0.2.39",
-    "react": "17",
-    "react-dom": "17"
+    "@kickstartds/base": "^2.0.2",
+    "kickstartds": "^1.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",
@@ -1927,7 +1923,7 @@ For **Design Token** documentation we use [`storybook-design-token`](https://sto
 
 We use our own [`@kickstartds/storybook-addon-jsonschema`](https://storybook.js.org/addons/@kickstartds/storybook-addon-jsonschema) to display our component structure / API in a Canvas tab, alongside the component.
 
-TODO link integration page
+Read more about it on our [dedicated integration page](../../integration/storybook/schema.mdx).
 
 <CH.Code>
 ```json package.json focus=26
@@ -1948,10 +1944,10 @@ TODO link integration page
   "author": "Jonas Ulrich",
   "license": "MIT",
   "dependencies": {
-    "@kickstartds/base": "2.0.0-canary.922.4908.0",
-    "kickstartds": "0.2.39",
-    "react": "17",
-    "react-dom": "17"
+    "@kickstartds/base": "^2.0.2",
+    "kickstartds": "^1.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",
@@ -1981,7 +1977,7 @@ TODO link integration page
 
 For this we use another Canvas and tab based addon we've written ourselves, to visualize your Component Token: [`@kickstartds/storybook-addon-component-token`](https://storybook.js.org/addons/@kickstartds/storybook-addon-component-tokens/). Especially helps discovering the token layering applied to a component.
 
-TODO link integration page
+Read more about it on our [dedicated integration page](../../integration/storybook/token.mdx).
 
 <CH.Code>
 ```json package.json focus=25
@@ -2002,10 +1998,10 @@ TODO link integration page
   "author": "Jonas Ulrich",
   "license": "MIT",
   "dependencies": {
-    "@kickstartds/base": "2.0.0-canary.922.4908.0",
-    "kickstartds": "0.2.39",
-    "react": "17",
-    "react-dom": "17"
+    "@kickstartds/base": "^2.0.2",
+    "kickstartds": "^1.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",
@@ -2030,22 +2026,30 @@ TODO link integration page
 </CH.Code>
 </CH.Spotlight>
 
-With that, we've successfully added **Storybook** to our Design System, integrated it with our **Design Token** / **Style Dictionary**, adopted some concepts of **kickstartDS**, and even added a bit of theming!
-
 ## Result
 
-TODO describe result, maybe cut this from all sub pages... tbd
+With that, we've successfully added **Storybook** to our Design System, integrated it with our **Design Token** / **Style Dictionary**, adopted some concepts of **kickstartDS**, and even added a bit of theming! We have our main setup running now, including **Storybook**.
 
 ## Next Step
 
-Now that all the general setup is out of our way, we'll get to the fun part. Filling our Design System with life, adding our own components!
-
-TODO add Commit reminder
+It's time to get to the exciting part... adding components to our Design System. To learn about the different ways you can go about in that, follow our next section!
 
 ## Code Sandbox
 
-TODO add Code Sandbox with result of step
+See the result of this step in the **Code Sandbox** below. It's showing specifically the result after this step. You can also view this on **Github** directly in [the `ds-guide` repository](https://github.com/kickstartDS/ds-guide), there's a branch for every step... and we're currently on [the branch `step/3`](https://github.com/kickstartDS/ds-guide/tree/step/3) in the guide:
 
-```
+<iframe
+  src="https://codesandbox.io/embed/github/kickstartDS/ds-guide/tree/step%2F3/?fontsize=14&hidenavigation=1&module=%2Fpackage.json&theme=dark&view=editor"
+  style={{
+    width: '100%',
+    height: '500px',
+    border: 0,
+    borderRadius: '4px',
+    overflow: 'hidden',
+  }}
+  title="ds-guide"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
 
-```
+Toggle the file browser with the hamburger icon at the top left, [or open it directly in your browser](https://codesandbox.io/s/github/kickstartDS/ds-guide/tree/step/3?file=/package.json).

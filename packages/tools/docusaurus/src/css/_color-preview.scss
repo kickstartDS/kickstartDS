@@ -9,83 +9,103 @@
   }
 }
 
-.color-link {
-  background-color: var(--ks-color-link);
-}
+.color {
+  &-link {
+    background-color: var(--ks-color-link);
+  }
 
-.color-transparent {
-  background-color: var(--ks-color-transparent);
-}
+  &-link-inverted {
+    background-color: var(--ks-color-link-inverted);
+  }
 
-.color-primary {
-  background-color: var(--ks-color-primary);
-  &-to-bg {
-    &-1 {
-      background-color: var(--ks-color-primary-to-bg-1);
+  &-transparent {
+    background-color: var(--ks-color-transparent);
+  }
+
+  &-info {
+    background-color: #05566a;
+    // background-color: var(--ks-color-info);
+  }
+
+  &-info-inverted {
+    background-color: #ecff00;
+    // background-color: var(--ks-color-info-inverted);
+  }
+
+  &-primary {
+    &-inverted {
+      background-color: var(--ks-color-primary-inverted);
     }
-    &-2 {
-      background-color: var(--ks-color-primary-to-bg-2);
+
+    background-color: var(--ks-color-primary);
+    &-to-bg {
+      &-1 {
+        background-color: var(--ks-color-primary-to-bg-1);
+      }
+      &-2 {
+        background-color: var(--ks-color-primary-to-bg-2);
+      }
+      &-3 {
+        background-color: var(--ks-color-primary-to-bg-3);
+      }
+      &-4 {
+        background-color: var(--ks-color-primary-to-bg-4);
+      }
+      &-5 {
+        background-color: var(--ks-color-primary-to-bg-5);
+      }
+      &-6 {
+        background-color: var(--ks-color-primary-to-bg-6);
+      }
+      &-7 {
+        background-color: var(--ks-color-primary-to-bg-7);
+      }
+      &-8 {
+        background-color: var(--ks-color-primary-to-bg-8);
+      }
+      &-9 {
+        background-color: var(--ks-color-primary-to-bg-9);
+      }
     }
-    &-3 {
-      background-color: var(--ks-color-primary-to-bg-3);
-    }
-    &-4 {
-      background-color: var(--ks-color-primary-to-bg-4);
-    }
-    &-5 {
-      background-color: var(--ks-color-primary-to-bg-5);
-    }
-    &-6 {
-      background-color: var(--ks-color-primary-to-bg-6);
-    }
-    &-7 {
-      background-color: var(--ks-color-primary-to-bg-7);
-    }
-    &-8 {
-      background-color: var(--ks-color-primary-to-bg-8);
-    }
-    &-9 {
-      background-color: var(--ks-color-primary-to-bg-9);
+
+    &-alpha {
+      &-1 {
+        background-color: var(--ks-color-primary-alpha-9);
+      }
+      &-2 {
+        background-color: var(--ks-color-primary-alpha-8);
+      }
+      &-3 {
+        background-color: var(--ks-color-primary-alpha-7);
+      }
+      &-4 {
+        background-color: var(--ks-color-primary-alpha-6);
+      }
+      &-5 {
+        background-color: var(--ks-color-primary-alpha-5);
+      }
+      &-6 {
+        background-color: var(--ks-color-primary-alpha-4);
+      }
+      &-7 {
+        background-color: var(--ks-color-primary-alpha-3);
+      }
+      &-8 {
+        background-color: var(--ks-color-primary-alpha-2);
+      }
+      &-9 {
+        background-color: var(--ks-color-primary-alpha-1);
+      }
     }
   }
 
-  &-alpha {
-    &-1 {
-      background-color: var(--ks-color-primary-alpha-9);
-    }
-    &-2 {
-      background-color: var(--ks-color-primary-alpha-8);
-    }
-    &-3 {
-      background-color: var(--ks-color-primary-alpha-7);
-    }
-    &-4 {
-      background-color: var(--ks-color-primary-alpha-6);
-    }
-    &-5 {
-      background-color: var(--ks-color-primary-alpha-5);
-    }
-    &-6 {
-      background-color: var(--ks-color-primary-alpha-4);
-    }
-    &-7 {
-      background-color: var(--ks-color-primary-alpha-3);
-    }
-    &-8 {
-      background-color: var(--ks-color-primary-alpha-2);
-    }
-    &-9 {
-      background-color: var(--ks-color-primary-alpha-1);
-    }
+  &-fg {
+    background-color: var(--ks-color-fg);
   }
-}
 
-.color-fg {
-  background-color: var(--ks-color-fg);
-}
-
-.color-bg {
-  background-color: var(--ks-color-fg-inverted);
+  &-bg {
+    background-color: var(--ks-color-fg-inverted);
+  }
 }
 
 .background {
@@ -105,16 +125,16 @@
     background-color: var(--ks-background-color-accent);
   }
 
-  &-link {
-    background-color: var(--ks-color-link);
-  }
-
   &-interface {
     background-color: var(--ks-background-color-interface);
   }
 
   &-default {
-    background-color: var(--ks-color-default);
+    background-color: var(--ks-background-color-default);
+  }
+
+  &-default-inverted {
+    background-color: var(--ks-color-fg);
   }
 
   &-translucent {
