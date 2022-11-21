@@ -1,3 +1,20 @@
+# v2.0.3 (Mon Nov 21 2022)
+
+#### 🐛 Bug Fix
+
+- build: increase browser support & fix babel config ([@lmestel](https://github.com/lmestel))
+
+#### 🏠 Internal
+
+- increase browser support & fix babel config [#1205](https://github.com/kickstartDS/kickstartDS/pull/1205) ([@lmestel](https://github.com/lmestel))
+
+#### Authors: 2
+
+- Daniel ([@DanielLeyUX](https://github.com/DanielLeyUX))
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+
+---
+
 # v2.0.2 (Tue Nov 15 2022)
 
 #### ⚠️ Pushed to `master`
