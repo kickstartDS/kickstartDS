@@ -84,3 +84,21 @@
     width: 100%;
   }
 }
+
+:root
+  .announcementBar_---------node_modules-\@docusaurus-theme-classic-lib-theme-AnnouncementBar-styles-module {
+  border-bottom: 0;
+}
+
+.announcementBarContent_---------node_modules-\@docusaurus-theme-classic-lib-theme-AnnouncementBar-styles-module {
+  color: var(--ks-color-fg-inverted-base);
+  background-color: var(--ks-color-primary);
+
+  a {
+    color: var(--ks-text-color-primary-inverted-interactive-base) !important;
+  }
+
+  [data-theme='dark'] & {
+    background-color: var(--ks-background-color-accent);
+  }
+}
