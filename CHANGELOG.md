@@ -1,3 +1,35 @@
+# (Mon Nov 21 2022)
+
+#### 🐛 Bug Fix
+
+
+#### ⚠️ Pushed to `master`
+
+- docs(design): add custom color previews ([@fleven-kds](https://github.com/fleven-kds))
+- docs(design): add color previews ([@fleven-kds](https://github.com/fleven-kds))
+
+#### 🏠 Internal
+
+- `@kickstartds/bundler@2.0.3`
+  - increase browser support & fix babel config [#1205](https://github.com/kickstartDS/kickstartDS/pull/1205) ([@lmestel](https://github.com/lmestel))
+
+#### 📝 Documentation
+
+- Fix banner in docs [#1200](https://github.com/kickstartDS/kickstartDS/pull/1200) ([@julrich](https://github.com/julrich))
+- Fix main guide after release [#1199](https://github.com/kickstartDS/kickstartDS/pull/1199) ([@julrich](https://github.com/julrich))
+- Add missing passages to docs, replace TODOs with content [#1193](https://github.com/kickstartDS/kickstartDS/pull/1193) ([@julrich](https://github.com/julrich))
+- Docs/fix links [#1192](https://github.com/kickstartDS/kickstartDS/pull/1192) ([@julrich](https://github.com/julrich))
+- Docs/fix some links in documentation [#1191](https://github.com/kickstartDS/kickstartDS/pull/1191) ([@julrich](https://github.com/julrich))
+
+#### Authors: 4
+
+- Daniel ([@DanielLeyUX](https://github.com/DanielLeyUX))
+- Franz ([@fleven-kds](https://github.com/fleven-kds))
+- Jonas Ulrich ([@julrich](https://github.com/julrich))
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+
+---
+
 # (Tue Nov 15 2022)
 
 #### ⚠️ Pushed to `master`

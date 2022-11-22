@@ -740,7 +740,7 @@ A single entry in `devDependencies` should've been added.
     "@storybook/testing-library": "^0.0.13",
     "babel-loader": "^8.2.5",
     "sass": "^1.56.0",
-    "storybook-design-token": "^2.7.1"
+    "storybook-design-token": "^2.8.0"
   }
 }
 ```
@@ -790,7 +790,7 @@ To keep some order in our `scripts` entries, we re-order them to be sorted alpha
     "@storybook/testing-library": "^0.0.13",
     "babel-loader": "^8.2.5",
     "sass": "^1.56.0",
-    "storybook-design-token": "^2.7.1"
+    "storybook-design-token": "^2.8.0"
   }
 }
 ```
@@ -837,7 +837,7 @@ We add a script entry called `sass-manager`, which when called will compile our 
     "@storybook/testing-library": "^0.0.13",
     "babel-loader": "^8.2.5",
     "sass": "^1.56.0",
-    "storybook-design-token": "^2.7.1"
+    "storybook-design-token": "^2.8.0"
   }
 }
 ```
@@ -885,7 +885,7 @@ And while we're at it, we'll also add a watch task that can be used in developme
     "@storybook/testing-library": "^0.0.13",
     "babel-loader": "^8.2.5",
     "sass": "^1.56.0",
-    "storybook-design-token": "^2.7.1"
+    "storybook-design-token": "^2.8.0"
   }
 }
 ```
@@ -968,6 +968,12 @@ export const parameters = {
 ```
 
 If you re-start, or re-open, your **Storybook** now (`yarn storybook`), you'll be greeted by all your glorious **Design Token**. Neatly categorized by category and semantic meaning!
+
+<Admonition type="tip" title="Empty tables in Firefox?">
+  This was a bug with the `storybook-design-token` addon, [see this issue](https://github.com/UX-and-I/storybook-design-token/issues/129).
+
+  This is fixed starting with version `2.8.0` of the addon. If you're affected, just update your version to `^2.8.0` or higher in your `package.json`, to fix the addon!
+</Admonition>
 
 We'll add those additional files generated based on our **Design Token** set to our `.gitignore` now:
 
@@ -1805,7 +1811,7 @@ Let us review our `package.json` again now, it's starting to grow already:
     "@whitespace/storybook-addon-html": "git+https://github.com/lmestel/storybook-addon-html.git",
     "babel-loader": "^8.2.5",
     "sass": "^1.56.0",
-    "storybook-design-token": "^2.7.1"
+    "storybook-design-token": "^2.8.0"
   }
 }
 ````
@@ -1857,7 +1863,7 @@ We use [`@whitespace/storybook-addon-html`](https://storybook.js.org/addons/@whi
     "@whitespace/storybook-addon-html": "git+https://github.com/lmestel/storybook-addon-html.git",
     "babel-loader": "^8.2.5",
     "sass": "^1.56.0",
-    "storybook-design-token": "^2.7.1"
+    "storybook-design-token": "^2.8.0"
   }
 }
 
@@ -1910,7 +1916,7 @@ For **Design Token** documentation we use [`storybook-design-token`](https://sto
     "@whitespace/storybook-addon-html": "git+https://github.com/lmestel/storybook-addon-html.git",
     "babel-loader": "^8.2.5",
     "sass": "^1.56.0",
-    "storybook-design-token": "^2.7.1"
+    "storybook-design-token": "^2.8.0"
   }
 }
 ````
@@ -1964,7 +1970,7 @@ Read more about it on our [dedicated integration page](../../integration/storybo
     "@whitespace/storybook-addon-html": "git+https://github.com/lmestel/storybook-addon-html.git",
     "babel-loader": "^8.2.5",
     "sass": "^1.56.0",
-    "storybook-design-token": "^2.7.1"
+    "storybook-design-token": "^2.8.0"
   }
 }
 ````
@@ -2018,7 +2024,7 @@ Read more about it on our [dedicated integration page](../../integration/storybo
     "@whitespace/storybook-addon-html": "git+https://github.com/lmestel/storybook-addon-html.git",
     "babel-loader": "^8.2.5",
     "sass": "^1.56.0",
-    "storybook-design-token": "^2.7.1"
+    "storybook-design-token": "^2.8.0"
   }
 }
 ```

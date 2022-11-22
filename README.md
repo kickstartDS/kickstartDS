@@ -30,7 +30,7 @@ We have the following categories in our docs:
 
 This is our main guide, where you'll create a complete Design System from scratch... based on **kickstartDS**.
 
-![Own a Design System without investing years of development - Next-gen UI development toolkit to democratize Design Systems - Next-gen UI development toolkit to democratize Design Systems](assets/own-a-design-system-1.png)
+![Open Source framework for Design System creation in just 5 steps: 1. Start your Design System, 2. Design application, 3. Configure details, 4. Add components, 5. Publish your Design System](assets/github_readme2.png)
 
 Start here: https://www.kickstartds.com/docs/guides/create/
 

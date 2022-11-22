@@ -1,6 +1,6 @@
 {
   "name": "@kickstartds/core",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "kickstartDS Core Module",
   "homepage": "https://www.kickstartDS.com",
   "bugs": {
@@ -49,7 +49,7 @@
     "sass": "^1.56.0"
   },
   "devDependencies": {
-    "@kickstartds/bundler": "^2.0.2",
+    "@kickstartds/bundler": "^2.0.3",
     "@kickstartds/style-dictionary": "^2.0.0",
     "storybook-design-token": "^1.4.0",
     "style-dictionary": "^3.7.1"
