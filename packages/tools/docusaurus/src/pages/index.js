@@ -51,7 +51,7 @@ function HomepageHeader() {
           <Headline
             level="h2"
             styleAs="h3"
-            content="Own Design System in just 5 steps"
+            content="Own a Design System in just 5 steps"
             subheadline='Follow our main guide to "Create your Design System"'
             align="center"
           />

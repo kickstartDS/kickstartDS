@@ -1164,6 +1164,28 @@ export const TeaserBoxProvider: FC<PropsWithChildren<any>> = (props) => (
 </CH.Code>
 </CH.Scrollycoding>
 
+To complete the template we add the `TeaserBoxProvider` to our `src/components/Providers.jsx`:
+
+<CH.Code>
+```jsx src/components/Providers.jsx focus=3,10
+import { ButtonProvider } from "./button/ButtonComponent";
+import { SectionProvider } from "./section/SectionComponent";
+import { TeaserBoxProvider } from "./teaser-card/TeaserCardComponent";
+import { HeadlineProvider } from "./headline/HeadlineComponent";
+
+export default (props) => (
+  <ButtonProvider>
+    <HeadlineProvider>
+      <SectionProvider>
+        <TeaserBoxProvider {...props} />
+      </SectionProvider>
+    </HeadlineProvider>
+  </ButtonProvider>
+);
+
+````
+</CH.Code>
+
 This concludes the creation of our new `TeaserCard` component. It's now ready to be used inside your Design System, and available to your down stream consumers... hopefully efficiently closing a gap for them!
 
 ## Use of **Storybook**
@@ -1176,4 +1198,144 @@ If you're using **Storybook**, you can follow this part of the example to get al
   configuration to your use accordingly, when following this part!
 </Admonition>
 
-This part of the guide will follow soon! Please come back soon, or hit us up for an update!
+Add the following file to your `src/components/teaser-card` folder:
+
+<CH.Spotlight>
+<CH.Code>
+```jsx src/components/teaser-card/TeaserCard.stories.jsx
+import { TeaserCard } from "./TeaserCardComponent";
+import { pack, getArgsShared } from "@kickstartds/core/lib/storybook/helpers";
+import TeaserBoxStories from "@kickstartds/base/lib/teaser-box/teaser-box.stories";
+import schema from "./teaser-card.schema.dereffed.json";
+
+const { args, argTypes } = getArgsShared(schema);
+
+const Template = (args) => <TeaserCard {...args} />;
+
+export default {
+  ...TeaserBoxStories,
+  title: "Components/Teaser Card",
+  args,
+  argTypes,
+  parameters: {
+    jsonschema: schema,
+  },
+};
+
+export const CardWithImage = Template.bind({});
+CardWithImage.args = pack({
+  headline: "TeaserCard headline",
+  text: "TeaserCard text content that can be quite a bit longer, and use **Markdown**",
+  target: "#",
+  image: "https://images.unsplash.com/photo-1665125143199-a6b44a9e1b21?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY2NzUxNDQyOA&ixlib=rb-1.2.1&q=80&w=1080",
+  inverted: false
+});
+
+````
+
+</CH.Code>
+
+---
+
+### Import `TeaserCard` component
+
+Import `TeaserCard` component and add it to the `Template` that we'll bind **Stories** to.
+
+<CH.Code>
+```jsx src/components/teaser-card/TeaserCard.stories.jsx focus=1,8
+
+````
+</CH.Code>
+
+---
+
+### Import **Storybook Controls** helpers
+
+Import dereferenced component **JSON Schema** and `getArgsShared` helper to generate **Storybook Controls**, and parameterize [**Storybook JSON Schema Addon**](../../../integration/storybook/schema#storybook-json-schema-addon).
+
+<CH.Code>
+```jsx src/components/teaser-card/TeaserCard.stories.jsx focus=2,4,6,15:17
+
+````
+
+</CH.Code>
+
+---
+
+### Import re-usable `TeaserCard` **Stories**...
+
+We import the existing `TeaserCard` **Story** part of `@kickstartDS/base`, to re-use all the default settings.
+
+<CH.Code>
+```jsx src/components/teaser-card/TeaserCard.stories.jsx focus=3,11
+
+````
+
+</CH.Code>
+
+---
+
+### ... and overwrite values where needed
+
+We set all the **Story** defaults specific to our component.
+
+<CH.Code>
+```jsx src/components/teaser-card/TeaserCard.stories.jsx focus=10,12:18
+
+````
+
+</CH.Code>
+
+---
+
+### Converting args to flat keys
+
+We use `pack` to convert all deep **JSON** args to flat (`.` delimited) keys and values. This is the format your **Storybook Controls** get generated off.
+
+<CH.Code>
+```jsx src/components/teaser-card/TeaserCard.stories.jsx focus=2,21:27
+
+````
+
+</CH.Code>
+
+---
+
+### Create `TeaserCard` variants
+
+We do this by binding to our `Template`, and use `pack` to convert all deep **JSON** args to flat (`.` delimited) keys and values. This is the format your **Storybook Controls** get generated off.
+
+<CH.Code>
+```jsx src/components/teaser-card/TeaserCard.stories.jsx focus=8,20
+
+````
+
+</CH.Code>
+
+</CH.Spotlight>
+
+If you reopen your **Storybook** now, or if you kept it running while following along, you should now see your new `TeaserCard` in all its glory!
+
+## Finished **Code Sandbox**
+
+You can also have a look at the completed component in the following **Code Sandbox**:
+
+<iframe
+  src="https://codesandbox.io/embed/github/kickstartDS/ds-guide/tree/step%2F4/?fontsize=14&hidenavigation=1&module=%2Fsrc%2Fcomponents%2Fteaser-card%2FTeaserCardComponent.tsx&theme=dark&view=editor"
+  style={{
+    width: '100%',
+    height: '500px',
+    border: 0,
+    borderRadius: '4px',
+    overflow: 'hidden',
+  }}
+  title="ds-guide"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
+
+Toggle the file browser with the hamburger icon at the top left, [or open it directly in your browser](https://codesandbox.io/s/github/kickstartDS/ds-guide/tree/step/4?file=/src/components/teaser-card/TeaserCardComponent.tsx).
+
+```
+
+```

@@ -1,0 +1,33 @@
+---
+sidebar_position: 5
+---
+
+import { Section } from '@kickstartds/base/lib/section';
+import { TeaserBox } from '@kickstartds/base/lib/teaser-box';
+import { Columns } from '@bedrock-layout/primitives';
+
+# Migrations
+
+There's currently only a single migration available. Have a look at it here for upgrade unstruction for **kickstartDS** `2.0.0`:<br/>
+[Upgrade `2.0.0` guide](./upgrade-2.0.0.md)
+
+<div ks-theme="docs">
+  Integration with common **React** frameworks can really speed up adoption, and
+  make the difference between a successful Design System... and one that fails!
+  <Columns columns={3} gutter="md" switchAt={768}>
+    <TeaserBox
+      topic="Migrate to 2.0.0"
+      text="Learn everything changed with 2.0.0, and how to upgrade to it."
+      link={{
+        href: './upgrade-2.0.0',
+        label: 'Upgrade notes',
+        variant: 'clear',
+        size: 'small',
+        iconAnimation: true,
+        iconAfter: {
+          icon: 'chevron-right',
+        },
+      }}
+    />
+  </Columns>
+</div>
