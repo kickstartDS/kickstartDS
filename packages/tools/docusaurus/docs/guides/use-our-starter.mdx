@@ -64,7 +64,7 @@ We have extensive documentation building up most of the code you'll find in this
 The following is a list of included features, that are pre-configured for immediate use:
 
 - Ready-to-start, fully functional **Design System**
-- Pre-configured semantic token structure ([**Branding Token**](../foundations/token/branding-token.mdx), [**Design Token**](../foundations/token/design-token/index.mdx) and [**Component Token**](../foundations/token/component-token.mdx))
+- Pre-configured semantic token structure ([**Branding Token**](../foundations/token/branding-token.mdx), [**Design Token**](../foundations/token/design-token/index.md) and [**Component Token**](../foundations/token/component-token.mdx))
 - [**Branding Token**](../foundations/token/branding-token.mdx) file for quick application of CI / CD
 - Three exemplary components (`Button`, `Headline` and `TeaserCard`) and a layout element (`Section`)
 - Full page demo, recipe demo and rudimentary demo docs
@@ -179,7 +179,7 @@ When getting started with your **Design System**, you will find the current **De
 There are two concepts involved with design and token application in **kickstartDS**:
 
 1. [**Branding Token**](../foundations/token/branding-token.mdx): Small set of expressive values to seed your initial **Design Token** set
-2. [**Design Token**](../foundations/token/design-token/index.mdx): Managed **Style Dictionary** containing your semantic **Design Token** set
+2. [**Design Token**](../foundations/token/design-token/index.md): Managed **Style Dictionary** containing your semantic **Design Token** set
 
 **Branding Token** are set in `src/token/branding-token.json`, while your **Design Token** set lives at `src/token/dictionary`. Initialization of token happens through `yarn init-tokens`, while compiling your **Design Token** set to **Component Token** (among other formats) is done by running `yarn build-tokens`.
 
@@ -229,7 +229,7 @@ We already include a minimal **Style Dictionary** configuration as part of our [
 
 | Platform      | Description                                                                                                                                                                                                                                                                                                                                                                                   |
 | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **css**       | Creates a `token.css` file including all of your [**Design Token**](../foundations/token/design-token/index.mdx) converted to **CSS Custom Properties**, using the naming structure expected by [**Component Token**](../foundations/token/component-token.mdx) in `src/token`                                                                                                                |
+| **css**       | Creates a `token.css` file including all of your [**Design Token**](../foundations/token/design-token/index.md) converted to **CSS Custom Properties**, using the naming structure expected by [**Component Token**](../foundations/token/component-token.mdx) in `src/token`                                                                                                                 |
 | **html**      | **HTML** icon sprite ([learn more](https://css-tricks.com/svg-sprites-use-better-icon-fonts/)), that is needed when integrating raw **HTML** (e.g. into **PHP**, **ASP.NET**, or similar). Also serves as the central icon file read by [the **storybook-design-token** addon](../integration/storybook/token.mdx#design-token-integration). Added as `icon-sprite.html` in `src/token/icons` |
 | **jsx**       | **React** version of the same file as the one above, this should be used when working with **React** directly. Called `IconSprite.js` in `src/token/icons`                                                                                                                                                                                                                                    |
 | **storybook** | Writes a selection of files (`icons.svg`, `tokens.css`) to `src/token/storybook`. Those are versions of files already described above, but with automatically added annotations for the **storybook-design-token** addon                                                                                                                                                                      |
@@ -572,9 +572,3 @@ Short descriptions for all of the scripts entries in `package.json`:
 | `watch:schema`               | [Features > **Storybook** integration](#storybook-integration)                  | Run all the schema scripts in parallel, when a **JSON Schema** changes                                                                                |
 | `watch:token`                | [Features > **Design Token** integration](#design-token-integration)            | Compile **Design Token** set and extract **Component Token** when a tokens **CSS** / **SCSS** file changes                                            |
 | `watch:dictionary`           | [Features > **Design Token** integration](#design-token-integration)            | Compile **Design Token** set when a **Style Dictionary** file changes                                                                                 |
-
-## Contributing
-
-Unless you explicitly state otherwise, any contribution intentionally submitted
-for inclusion in the work by you, as defined in the Apache-2.0 license, shall be
-dual licensed as below, without any additional terms or conditions.
