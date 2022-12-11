@@ -85,20 +85,19 @@
   }
 }
 
-:root
-  .announcementBar_---------node_modules-\@docusaurus-theme-classic-lib-theme-AnnouncementBar-styles-module {
+:root [class^='announcementBar'][role='banner'] {
   border-bottom: 0;
-}
 
-.announcementBarContent_---------node_modules-\@docusaurus-theme-classic-lib-theme-AnnouncementBar-styles-module {
-  color: var(--ks-color-fg-inverted-base);
-  background-color: var(--ks-color-primary);
+  > div {
+    color: var(--ks-color-fg-inverted-base);
+    background-color: var(--ks-color-primary-base);
 
-  a {
-    color: var(--ks-text-color-primary-inverted-interactive-base) !important;
-  }
+    a {
+      color: var(--ks-text-color-primary-inverted-interactive-base) !important;
+    }
 
-  [data-theme='dark'] & {
-    background-color: var(--ks-background-color-accent);
+    [data-theme='dark'] & {
+      background-color: var(--ks-background-color-accent-base);
+    }
   }
 }

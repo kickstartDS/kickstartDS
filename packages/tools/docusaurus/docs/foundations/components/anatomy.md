@@ -64,8 +64,6 @@ A component script is a JavaScript class with the static property `identifier`. 
 Component scripts are loaded only when the component is on the page or dynamically added.  
 You can go further and load the script only when the component scrolls into the viewport by simply adding the `lazyload` class to the component.
 
-> **TBD: Trifft nur für bestimmte Komponenten zu; sollten wir ggf ändern.**
-
 #### Event-Handling
 
 Components can communicate with each other via a [PubSub](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern) event bus.
