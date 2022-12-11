@@ -8,6 +8,7 @@ import { Visual } from '@kickstartds/content/lib/visual';
 import { Section } from '@kickstartds/base/lib/section';
 import { Button } from '@kickstartds/base/lib/button';
 import { Headline } from '@kickstartds/base/lib/headline';
+import { Inline } from '@bedrock-layout/primitives';
 
 import styles from './index.module.css';
 
@@ -55,13 +56,24 @@ function HomepageHeader() {
             subheadline='Follow our main guide to "Create your Design System"'
             align="center"
           />
-          <div>
+          <Inline gutter="md" justify="center" align="center">
             <Button
               label="Open guide"
               href="/docs/guides/create/"
               variant="outline"
+              iconAfter={{
+                icon: 'chevron-right',
+              }}
             />
-          </div>
+            <Button
+              label="Use Starter"
+              href="/docs/guides/use-our-starter/"
+              variant="clear"
+              iconAfter={{
+                icon: 'chevron-right',
+              }}
+            />
+          </Inline>
         </Section>
       </div>
     </>

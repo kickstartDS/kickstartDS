@@ -2352,7 +2352,7 @@ export const Section: FC<SectionProps & HTMLAttributes<HTMLElement>> = ({
 
 #### Add component `Provider`
 
-We want our `Headline` to replace all default **kickstartDS** base `Headline`s, no matter where they appear. We add a `Provider` for that purpose now!
+We want our `Section` to replace all default **kickstartDS** base `Section`s, no matter where they appear. We add a `Provider` for that purpose now!
 
 <CH.Code>
 ```tsx src/components/section/SectionComponent.tsx focus=1,5,61:63
@@ -2651,7 +2651,7 @@ Import dereferenced component **JSON Schema** and `getArgsShared` helper to gene
 
 ---
 
-### ... and overwrite values where needed
+### Overwrite **Story** values where needed
 
 We set all the **Story** defaults specific to our component.
 
@@ -2664,7 +2664,7 @@ We set all the **Story** defaults specific to our component.
 
 ---
 
-### Converting args to flat keys
+### Convert args to flat keys
 
 We use `pack` to convert all deep **JSON** args to flat (`.` delimited) keys and values. This is the format your **Storybook Controls** get generated off.
 
