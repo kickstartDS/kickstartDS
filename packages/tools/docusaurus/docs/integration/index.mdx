@@ -8,6 +8,16 @@ import { Button } from '@kickstartds/base/lib/button';
 
 # Integration
 
+There's one thing every **Design System** shares: it only generates value when being applied! And as a **Design System** also needs to be able to stand on its own, applying it in projects always means integrating it in some way... into something you actually build websites, interfaces or apps with.
+
+That's why we, from the very start, tried to find abstractions that can help in that. One core aspect of this is using **JSON Schema** to encode [component APIs](../foundations/components/component-api.md). This structure is especially useful when connecting headless CMS systems (like [Sanity](https://www.sanity.io/), [Contentful](https://www.contentful.com/), [Storyblok](https://www.storyblok.com/), etc) or other **Design System** adjacent tooling (like [Uniform.dev](https://uniform.dev/), [Knapsack.cloud](https://www.knapsack.cloud/), [Backlight.dev](https://backlight.dev/)).
+
+Next to using good abstractions, we also try to build as many integrations as possible ourselves. Both to make adoption easier, and to give inspiration on how to best leverage **kickstartDS**. It also generates great feedback on how to improve our core further, making it adaptable in as many contexts as possible.
+
+While those types of integrations help with adoption, there are also integrations meant to improve the developer experience (DX) when working on the **Design System** itself. One big category there would be integrating well with **Storybook**. We've written [some](./storybook/schema.mdx) [addons](./storybook/token.mdx) to aid in that ourselves, but also try to always [provide best-practice configuration and recommendations](./storybook/index.mdx) for your setup!
+
+See below for a list of integratons already built, that can be used today. Or [hit us up](../feedback/index.md) if you feel like there is something that is obviously missing! We also have [some details on our main website](https://www.kickstartds.com/integrations/) about integrations.
+
 ## Storybook
 
 <div ks-theme="docs">
@@ -104,7 +114,7 @@ Integrating well with **Storybook** means giving all the users of your Design Sy
 
 <div ks-theme="docs">
 
-**React** as our templating language of choice offers great integration capabilities, and we've built some on top of those... to help you even more when creating your own components.
+**React** as our templating language of choice offers great integration capabilities, and we've built some additional ones on top of those... to help you even more when creating your own components.
 
 <Button
   size="small"
@@ -151,7 +161,7 @@ Integrating well with **Storybook** means giving all the users of your Design Sy
 
 ## Frameworks
 
-Integration with common **React** frameworks can really speed up adoption, and make the difference between a successful Design System... and one that fails!
+Integration with common **React** frameworks can really speed up adoption, and make the difference between a successful **Design System**... and one that fails!
 
 <Button
   size="small"

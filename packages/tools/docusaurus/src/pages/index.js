@@ -340,8 +340,7 @@ export default function Home() {
             content: 'Sitemap',
             spaceAfter: 'small',
             align: 'left',
-            subheadline:
-              'Quick access to all pages of our main guide sections:',
+            subheadline: 'Quick access to all pages of our main docs sections:',
           }}
           spaceBefore="small"
           spaceAfter="small"
