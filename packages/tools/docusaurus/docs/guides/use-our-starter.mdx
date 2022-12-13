@@ -66,7 +66,7 @@ The following is a list of included features, that are pre-configured for immedi
 - Ready-to-start, fully functional **Design System**
 - Pre-configured semantic token structure ([**Branding Token**](../foundations/token/branding-token.mdx), [**Design Token**](../foundations/token/design-token/index.md) and [**Component Token**](../foundations/token/component-token.mdx))
 - [**Branding Token**](../foundations/token/branding-token.mdx) file for quick application of CI / CD
-- Three exemplary components (`Button`, `Headline` and `TeaserCard`) and a layout element (`Section`)
+- Three exemplary components ([`Button`](https://www.kickstartds.com/docs/guides/examples/components/button), [`Headline`](https://www.kickstartds.com/docs/guides/examples/components/headline) and [`TeaserCard`](https://www.kickstartds.com/docs/guides/examples/components/teaser-card)) and a layout element ([`Section`](https://www.kickstartds.com/docs/guides/examples/components/section))
 - Full page demo, recipe demo and rudimentary demo docs
 - [**Storybook**](https://storybook.js.org/) with best-practice configuration, **kickstartDS** integration, addons and composition
 - **Hot reload** for **all** code changes: **Design Token** set, **JSON Schema**, **CSS** / **SCSS**, **JavaScript** and **React** templates
@@ -201,7 +201,7 @@ If unsure on what components you actually need, or which ones to tackle first, y
 
 ### Dig into our docs
 
-We have added a lot of links to specific docs sections in all the other paragraphs already. But they deserve a special mention here. Creating a **Design System** can be both highly custom and opinionated. This is why we think explaining our reasoning in detail, especially when we take decisions for you (like using **Style Dictionary**), is super important. And for areas where there is no clear cut decision to take, we always try to add recommondations (like how to best construct your components to [avoid adding technical debt](./components/index.mdx#technical-debt-added)) instead.
+We have added a lot of links to specific docs sections in all the other paragraphs already. But they deserve a special mention here. Creating a **Design System** can be both highly custom and opinionated. This is why we think explaining our reasoning in detail, especially when we take decisions for you (like using **Style Dictionary**), is super important. And for areas where there is no clear cut decision to take, we always try to add recommendations (like how to best construct your components to [avoid adding technical debt](./components/index.mdx#technical-debt-added)) instead.
 
 Some quick links to get you started:
 
@@ -211,7 +211,7 @@ Some quick links to get you started:
 | https://www.kickstartds.com/docs/intro/         | Super general introduction of **kickstartDS**, including **YouTube** explanation |
 | https://www.kickstartds.com/docs/foundations/   | Foundational info about the structure and architecture of **kickstartDS**        |
 | https://www.kickstartds.com/docs/integration/   | Info about the ways **kickstartDS** integrates with other tooling and systems    |
-| https://www.kickstartds.com/docs/guides/        | Focussed guides, categorized into the main areas of a **Design System**          |
+| https://www.kickstartds.com/docs/guides/        | Focused guides, categorized into the main areas of a **Design System**           |
 | https://www.kickstartds.com/docs/guides/create/ | Main guide, also a great reference for the reasoning behind this starter         |
 | https://www.kickstartds.com/docs/feedback/      | All the ways you can provide feedback to us, which we value a lot!               |
 
@@ -334,7 +334,7 @@ Some aspects of our integration with **Storybook** were already covered by the l
 | **Theming**            | Finally [some light theming](https://github.com/kickstartDS/ds-starter/blob/main/.storybook/themes.js) gets applied to your **Storybook** instance, based on your **Design Token** set. It should be subdued, but making **Storybook** your own really helps in establishing a sense of ownership!                                                                                              |
 | **Composition**        | As part of the left sidebar you have a section titled `@kickstartds/base`, at the very bottom. This gets shown because `@kickstartds/base` is a dependency. **kickstartDS** uses [Storybook composition](https://storybook.js.org/docs/react/sharing/storybook-composition) to always include the base documentation (in the correct version used by your Design System) to your **Storybook**. |
 
-**Design Token** get compiled using the [**kickstartDS CLI**](../intro/cli.mdx) as [part of your `package.json`](https://github.com/kickstartDS/ds-starter/blob/main/package.json#L22). This converts your **Style Dictionary** from `src/token/dictionary` into all the formats configured in [`sd.config.js`](https://github.com/kickstartDS/ds-starter/blob/main/sd.config.cjs). **Storybook** is [configured to import](https://github.com/kickstartDS/ds-starter/blob/main/.storybook/manager-head.html#L1) our special, annotated `src/token/storybook/tokens.css` (this one includes presenters for **storybook-design-token**) through the [import of the compiled `manager.css`](https://github.com/kickstartDS/ds-starter/blob/main/.storybook/manager.scss#L1).
+**Design Token** get compiled using the [**kickstartDS CLI**](../intro/cli.mdx) as [part of your `package.json`](https://github.com/kickstartDS/ds-starter/blob/main/package.json#L22). This converts your **Style Dictionary** from `src/token/dictionary` into all the formats configured in [`sd.config.cjs`](https://github.com/kickstartDS/ds-starter/blob/main/sd.config.cjs). **Storybook** is [configured to import](https://github.com/kickstartDS/ds-starter/blob/main/.storybook/manager-head.html#L1) our special, annotated `src/token/storybook/tokens.css` (this one includes presenters for **storybook-design-token**) through the [import of the compiled `manager.css`](https://github.com/kickstartDS/ds-starter/blob/main/.storybook/manager.scss#L1).
 
 **Theming** is done in [`.storybook/themes.js`](https://github.com/kickstartDS/ds-starter/blob/main/.storybook/themes.js), and works by [importing our tokens](https://github.com/kickstartDS/ds-starter/blob/main/.storybook/themes.js#L2) (generated with [their own special **Style Dictionary** format](https://github.com/kickstartDS/ds-starter/blob/main/sd.config.cjs#L23-L32)). Those then just [get connected into the **Storybook** theme](https://github.com/kickstartDS/ds-starter/blob/main/.storybook/themes.js#L7-L33) structure in a sensible way.
 

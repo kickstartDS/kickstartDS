@@ -471,9 +471,9 @@ But if you start your **Storybook** now (`yarn storybook`), you'll be greeted by
 
 #### Integrate with **Style Dictionary**
 
-As the `storybook-design-token` addon needs our tokens in a specific format (read more [here](https://github.com/UX-and-I/storybook-design-token#available-presenters)), we adjust our **Style Dictionary** configuration in `sd.config.js` to include the provided **Storybook** configuration. We also tell it to put those **Storybook** specific files into our already existing `src/token` directory:
+As the `storybook-design-token` addon needs our tokens in a specific format (read more [here](https://github.com/UX-and-I/storybook-design-token#available-presenters)), we adjust our **Style Dictionary** configuration in `sd.config.cjs` to include the provided **Storybook** configuration. We also tell it to put those **Storybook** specific files into our already existing `src/token` directory:
 
-```js sd.config.js focus=14:16
+```js sd.config.cjs focus=14:16
 const path = require('path');
 const StyleDictionary = require("style-dictionary");
 const { config } = require("@kickstartds/style-dictionary");
@@ -1004,11 +1004,11 @@ Learn more [about theming in **Storybook**](https://storybook.js.org/docs/react/
 
 #### Adding a **Style Dictionary** transform
 
-We start off by adding the new **Style Dictionary** transform in `sd.config.js`:
+We start off by adding the new **Style Dictionary** transform in `sd.config.cjs`:
 
 <CH.Section>
 <CH.Code>
-```js sd.config.js focus=17:26
+```js sd.config.cjs focus=17:26
 const path = require('path');
 const StyleDictionary = require("style-dictionary");
 const { config } = require("@kickstartds/style-dictionary");
@@ -1499,7 +1499,7 @@ You might have stumbled over our **Icons** import above: `import IconSprite from
 
 <CH.Section>
 <CH.Code>
-```js sd.config.js focus=14:16
+```js sd.config.cjs focus=14:16
 const path = require('path');
 const StyleDictionary = require("style-dictionary");
 const { config } = require("@kickstartds/style-dictionary");
@@ -1536,7 +1536,7 @@ module.exports = StyleDictionary.extend(config).extend({
 </CH.Code>
 </CH.Section>
 
-And, you know the drill by now, after changing our `sd.config.js` we'll want to re-compile our **Style Dictionary**...
+And, you know the drill by now, after changing our `sd.config.cjs` we'll want to re-compile our **Style Dictionary**...
 
 ```bash
 yarn build-tokens
