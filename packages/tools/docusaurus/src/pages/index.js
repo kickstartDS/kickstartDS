@@ -8,7 +8,7 @@ import { Visual } from '@kickstartds/content/lib/visual';
 import { Section } from '@kickstartds/base/lib/section';
 import { Button } from '@kickstartds/base/lib/button';
 import { Headline } from '@kickstartds/base/lib/headline';
-import { Inline, Stack } from '@bedrock-layout/primitives';
+import { Inline, Stack, MasonryGrid } from '@bedrock-layout/primitives';
 
 import styles from './index.module.css';
 
@@ -56,11 +56,12 @@ function HomepageHeader() {
             subheadline='Follow our main guide to "Create your Design System"'
             align="center"
           />
-          <Inline gutter="md" justify="center" align="center">
+          <Inline gutter="sm" justify="center" align="center">
             <Button
               label="Open guide"
               href="/docs/guides/create/"
               variant="outline"
+              size="small"
               iconAfter={{
                 icon: 'chevron-right',
               }}
@@ -68,7 +69,8 @@ function HomepageHeader() {
             <Button
               label="Use Starter"
               href="/docs/guides/use-our-starter/"
-              variant="clear"
+              variant="solid"
+              size="small"
               iconAfter={{
                 icon: 'chevron-right',
               }}
@@ -345,32 +347,37 @@ export default function Home() {
           spaceBefore="small"
           spaceAfter="small"
           width="max"
-          mode="tile"
           gutter="none"
           background="accent"
         >
-          {navbar &&
-            navbar.items &&
-            navbar.items.length > 0 &&
-            navbar.items.slice(0, -4).map((section, idx) => (
-              <Stack key={idx} gutter="md">
-                <Headline level="p" styleAs="h4" content={section.label} />
-                {siteMap[section.docId] && siteMap[section.docId].length > 0 && (
-                  <>
-                    <strong>Section overview:</strong>
-                    <ul>
-                      {siteMap[section.docId].map((page) => createMenu(page))}
-                    </ul>
-                  </>
-                )}
-                <Button
-                  label={`Open ${section.label} section`}
-                  href={section.docId.replace('index', '')}
-                  variant="outline"
-                  size="small"
-                />
-              </Stack>
-            ))}
+          <MasonryGrid gutter="2rem" minItemWidth="20rem">
+            {navbar &&
+              navbar.items &&
+              navbar.items.length > 0 &&
+              navbar.items.slice(0, -4).map((section, idx) => (
+                <Stack key={idx} gutter="xs">
+                  <Headline level="p" styleAs="h5" content={section.label} />
+                  {siteMap[section.docId] && siteMap[section.docId].length > 0 && (
+                    <>
+                      <strong>Section overview:</strong>
+                      <ul className="docs-pagetree">
+                        {siteMap[section.docId].map((page) => createMenu(page))}
+                      </ul>
+                    </>
+                  )}
+                  <Button
+                    label={`Open ${section.label} section`}
+                    href={section.docId.replace('index', '')}
+                    variant="clear"
+                    size="small"
+                    iconAnimation
+                    iconAfter={{
+                      icon: 'chevron-right',
+                    }}
+                  />
+                </Stack>
+              ))}
+          </MasonryGrid>
         </Section>
       </main>
     </Layout>
