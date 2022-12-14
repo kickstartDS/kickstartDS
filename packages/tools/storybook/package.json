@@ -1,6 +1,6 @@
 {
   "name": "@kickstartds-internal/storybook",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "private": true,
   "main": "index.js",
   "license": "(MIT OR Apache-2.0)",
