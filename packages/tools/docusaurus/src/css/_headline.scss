@@ -1,8 +1,17 @@
 header.c-headline {
   --c-headline--color: var(--ifm-heading-color);
+  --c-headline--margin-bottom: 0;
 
   &--align-center {
     margin: auto;
+  }
+
+  .c-headline__h5 {
+    --c-rich-text_headline--font: var(--ks-font-display-s);
+  }
+
+  .c-headline__h6 {
+    --c-rich-text_headline--font: var(--ks-font-display-xs);
   }
 
   .c-headline__subheadline {

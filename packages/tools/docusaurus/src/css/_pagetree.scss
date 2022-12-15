@@ -4,6 +4,11 @@
   a {
     font-weight: var(--ks-font-weight-semi-bold);
     line-height: 1.65;
+    color: var(--ifm-navbar-link-color);
+
+    &:hover {
+      color: var(--ifm-navbar-link-hover-color);
+    }
   }
 
   * {

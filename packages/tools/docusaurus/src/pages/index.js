@@ -69,7 +69,7 @@ function HomepageHeader() {
             <Button
               label="Use Starter"
               href="/docs/guides/use-our-starter/"
-              variant="solid"
+              variant="clear"
               size="small"
               iconAfter={{
                 icon: 'chevron-right',
@@ -356,10 +356,16 @@ export default function Home() {
               navbar.items.length > 0 &&
               navbar.items.slice(0, -4).map((section, idx) => (
                 <Stack key={idx} gutter="xs">
-                  <Headline level="p" styleAs="h5" content={section.label} />
+                  <Headline level="p" styleAs="h6" content={section.label} />
                   {siteMap[section.docId] && siteMap[section.docId].length > 0 && (
                     <>
-                      <strong>Section overview:</strong>
+                      <strong
+                        style={{
+                          color: 'var(--ks-color-fg)',
+                        }}
+                      >
+                        Section overview:
+                      </strong>
                       <ul className="docs-pagetree">
                         {siteMap[section.docId].map((page) => createMenu(page))}
                       </ul>

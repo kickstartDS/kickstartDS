@@ -18,7 +18,11 @@ a.c-button {
     padding-left: 0;
     padding-right: 0;
     --c-button--background-color-hover: transparent;
-    --c-button--color-hover: var(--ks-color-primary-to-fg-8);
+    --c-button--color-hover: var(--ks-color-primary-to-fg-2);
+
+    [data-theme='dark'] & {
+      --c-button--color-hover: var(--ks-color-primary-to-fg-8);
+    }
   }
 
   &.c-button--solid {

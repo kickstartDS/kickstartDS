@@ -214,7 +214,7 @@
   --ifm-table-cell-color: inherit;
   /* Links. */
   --ifm-link-color: var(--ks-color-primary);
-  --ifm-link-decoration: var(--g-link--text-decoration);
+  --ifm-link-decoration: underline;
   --ifm-link-color-hover: var(--ifm-link-color);
   --ifm-link-hover-decoration: underline;
 
@@ -394,7 +394,7 @@
 
   /* Links. */
   --ifm-link-color: var(--ks-color-fg);
-  --ifm-link-decoration: var(--g-link--text-decoration);
+  --ifm-link-decoration: underline;
 
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 

@@ -101,3 +101,10 @@
     }
   }
 }
+
+.menu__link,
+.table-of-contents a,
+.pagination-nav__link,
+.docs-pagetree a {
+  text-decoration: none;
+}

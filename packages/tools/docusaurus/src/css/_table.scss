@@ -3,6 +3,14 @@ table {
     font-size: 13px;
   }
 
+  a {
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
   code {
     font-size: 12px;
     border: none;
