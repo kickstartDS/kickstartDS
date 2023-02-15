@@ -31,6 +31,12 @@ const config = {
 
   plugins: [
     'docusaurus-plugin-sass',
+    [
+      '@docusaurus/plugin-google-tag-manager',
+      {
+        containerId: 'GTM-WSKKW69',
+      },
+    ],
     (context) => ({
       name: 'compile-node-modules',
       configureWebpack(webpackConfig, isServer, utils) {
@@ -87,9 +93,6 @@ const config = {
             require.resolve('@code-hike/mdx/styles.css'),
             require.resolve('./src/css/index.scss'),
           ],
-        },
-        googleTagManager: {
-          containerId: 'GTM-WSKKW69',
         },
       }),
     ],
