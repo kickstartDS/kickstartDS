@@ -88,6 +88,9 @@ const config = {
             require.resolve('./src/css/index.scss'),
           ],
         },
+        googleTagManager: {
+          containerId: 'GTM-WSKKW69',
+        },
       }),
     ],
   ],
