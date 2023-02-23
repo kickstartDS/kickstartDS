@@ -1,3 +1,26 @@
+# (Wed Dec 14 2022)
+
+#### ⚠️ Pushed to `master`
+
+- feat(pagetree): style pagetree ([@fleven-kds](https://github.com/fleven-kds))
+
+#### 📝 Documentation
+
+- Fix some typos and broken links, update some text in docs [#1234](https://github.com/kickstartDS/kickstartDS/pull/1234) ([@julrich](https://github.com/julrich))
+- Add docs for CLI and Starter, fill some gaps [#1214](https://github.com/kickstartDS/kickstartDS/pull/1214) ([@julrich](https://github.com/julrich))
+- Adjust banner style [#1208](https://github.com/kickstartDS/kickstartDS/pull/1208) ([@fleven-kds](https://github.com/fleven-kds) [@julrich](https://github.com/julrich))
+- docs(guides): update storybook-design-token addon [#1201](https://github.com/kickstartDS/kickstartDS/pull/1201) ([@julrich](https://github.com/julrich) [@lmestel](https://github.com/lmestel))
+- Fix typo in layout page [#1207](https://github.com/kickstartDS/kickstartDS/pull/1207) ([@DanielLeyUX](https://github.com/DanielLeyUX))
+
+#### Authors: 4
+
+- Daniel ([@DanielLeyUX](https://github.com/DanielLeyUX))
+- Franz ([@fleven-kds](https://github.com/fleven-kds))
+- Jonas Ulrich ([@julrich](https://github.com/julrich))
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+
+---
+
 # (Mon Nov 21 2022)
 
 #### 🐛 Bug Fix

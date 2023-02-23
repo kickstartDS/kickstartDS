@@ -958,7 +958,7 @@ export const Button = forwardRef<
 
 #### Add component `Provider`
 
-We want our `Headline` to replace all default **kickstartDS** base `Headline`s, no matter where they appear. We add a `Provider` for that purpose now!
+We want our `Button` to replace all default **kickstartDS** base `Button`s, no matter where they appear. We add a `Provider` for that purpose now!
 
 <CH.Code>
 ```tsx src/components/button/ButtonComponent.tsx focus=1,4,37:39
@@ -1056,11 +1056,33 @@ export const ButtonProvider: FC<PropsWithChildren<any>> = (props) => (
 
 </CH.Scrollycoding>
 
+To complete the template we add the `ButtonProvider` to our `src/components/Providers.jsx`:
+
+<CH.Code>
+```jsx src/components/Providers.jsx focus=1,7,13
+import { ButtonProvider } from "./button/ButtonComponent";
+import { SectionProvider } from "./section/SectionComponent";
+import { TeaserBoxProvider } from "./teaser-card/TeaserCardComponent";
+import { HeadlineProvider } from "./headline/HeadlineComponent";
+
+export default (props) => (
+  <ButtonProvider>
+    <HeadlineProvider>
+      <SectionProvider>
+        <TeaserBoxProvider {...props} />
+      </SectionProvider>
+    </HeadlineProvider>
+  </ButtonProvider>
+);
+
+````
+</CH.Code>
+
 This concludes the creation of our new `Button` component. It's now ready to be used inside your Design System, and available to your down stream consumers... hopefully efficiently closing a gap for them!
 
 ## Use of **Storybook**
 
-If you're using **Storybook**, you can follow this part of the example to get all the integration goodness possible with **kickstartDS**!
+If you're using **Storybook**, you can follow this part of the example to get all the [integration goodness possible with **kickstartDS**](../../../integration/storybook/index.mdx)!
 
 <Admonition type="tip" title="Storybook setup">
   This guide assumes you're using a set up like described in our [Create your
@@ -1068,4 +1090,176 @@ If you're using **Storybook**, you can follow this part of the example to get al
   configuration to your use accordingly, when following this part!
 </Admonition>
 
-This part of the guide will follow soon! Please come back soon, or hit us up for an update!
+Add the following file to your `src/components/button` folder:
+
+<CH.Spotlight>
+<CH.Code>
+```jsx src/components/button/Button.stories.jsx
+import { Button } from "./ButtonComponent";
+import { pack, getArgsShared } from "@kickstartds/core/lib/storybook/helpers";
+import ButtonStories from "@kickstartds/base/lib/button/button.stories";
+import schema from "./button.schema.dereffed.json";
+
+const { args, argTypes } = getArgsShared(schema);
+
+const Template = (args) => <Button {...args} />;
+
+export default {
+  ...ButtonStories,
+  title: "Components/Button",
+  args,
+  argTypes,
+  parameters: {
+    jsonschema: schema,
+  },
+};
+
+export const NativeButton = Template.bind({});
+NativeButton.args = pack({
+  label: "Native Button",
+  variant: "primary",
+});
+
+export const LinkButton = Template.bind({});
+LinkButton.args = pack({
+  label: "Link Button",
+  variant: "secondary",
+  target: "#",
+});
+
+export const DisabledButton = Template.bind({});
+DisabledButton.args = pack({
+  label: "Disabled Button",
+  variant: "primary",
+  disabled: true,
+});
+
+export const PrimaryButton = Template.bind({});
+PrimaryButton.args = pack({
+  label: "Primary Button",
+  variant: "primary",
+});
+
+export const SecondaryButton = Template.bind({});
+SecondaryButton.args = pack({
+  label: "Secondary Button",
+  variant: "secondary",
+});
+
+export const TertiaryButton = Template.bind({});
+TertiaryButton.args = pack({
+  label: "Tertiary Button",
+  variant: "tertiary",
+});
+````
+
+</CH.Code>
+
+---
+
+### Import `Button` component
+
+Import `Button` component and add it to the `Template` that we'll bind **Stories** to.
+
+<CH.Code>
+```jsx src/components/button/Button.stories.jsx focus=1,8
+
+````
+</CH.Code>
+
+---
+
+### Import **Storybook Controls** helpers
+
+Import dereferenced component **JSON Schema** and `getArgsShared` helper to generate **Storybook Controls**, and parameterize [**Storybook JSON Schema Addon**](../../../integration/storybook/schema#storybook-json-schema-addon).
+
+<CH.Code>
+```jsx src/components/button/Button.stories.jsx focus=2,4,6,15:17
+
+````
+
+</CH.Code>
+
+---
+
+### Import re-usable `Button` **Stories**...
+
+We import the existing `Button` **Story** part of `@kickstartDS/base`, to re-use all the default settings.
+
+<CH.Code>
+```jsx src/components/button/Button.stories.jsx focus=3,11
+
+````
+
+</CH.Code>
+
+---
+
+### ... and overwrite values where needed
+
+We set all the **Story** defaults specific to our component.
+
+<CH.Code>
+```jsx src/components/button/Button.stories.jsx focus=10,12:18
+
+````
+
+</CH.Code>
+
+---
+
+### Convert args to flat keys
+
+We use `pack` to convert all deep **JSON** args to flat (`.` delimited) keys and values. This is the format your **Storybook Controls** get generated off.
+
+<CH.Code>
+```jsx src/components/button/Button.stories.jsx focus=2,21:24
+
+````
+
+</CH.Code>
+
+---
+
+### Create `Button` variants
+
+We do this by binding to our `Template`, and use `pack` to convert all deep **JSON** args to flat (`.` delimited) keys and values. This is the format your **Storybook Controls** get generated off.
+
+<CH.Code>
+```jsx src/components/button/Button.stories.jsx focus=8,20
+
+````
+
+</CH.Code>
+
+</CH.Spotlight>
+
+If you reopen your **Storybook** now, or if you kept it running while following along, you should now see your new `Button` in all its glory!
+
+## Finished **Code Sandbox**
+
+You can also have a look at the completed component in the following **Code Sandbox**:
+
+<iframe
+  src="https://codesandbox.io/embed/github/kickstartDS/ds-guide/tree/step%2F4/?fontsize=14&hidenavigation=1&module=%2Fsrc%2Fcomponents%2Fbutton%2FButtonComponent.tsx&theme=dark&view=editor"
+  style={{
+    width: '100%',
+    height: '500px',
+    border: 0,
+    borderRadius: '4px',
+    overflow: 'hidden',
+  }}
+  title="ds-guide"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
+
+Toggle the file browser with the hamburger icon at the top left, [or open it directly in your browser](https://codesandbox.io/s/github/kickstartDS/ds-guide/tree/step/4?file=/src/components/button/ButtonComponent.tsx).
+
+```
+
+```
+
+```
+
+```

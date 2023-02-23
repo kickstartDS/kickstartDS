@@ -1,0 +1,46 @@
+---
+sidebar_position: 2
+---
+
+import { Section } from '@kickstartds/base/lib/section';
+import { TeaserBox } from '@kickstartds/base/lib/teaser-box';
+import { Columns } from '@bedrock-layout/primitives';
+
+# React
+
+<div ks-theme="docs">
+
+**React** as our templating language of choice offers great integration capabilities, and we've built some on top of those... to help you even more when creating your own components.
+
+<br />
+  <Columns columns={3} gutter="md" switchAt={768}>
+    <TeaserBox
+      topic="Image Rendering"
+      text="How to replace images in your **Gatsby** or **Next.js** project."
+      link={{
+        href: './image-rendering',
+        label: 'Images',
+        variant: 'clear',
+        size: 'small',
+        iconAnimation: true,
+        iconAfter: {
+          icon: 'chevron-right',
+        },
+      }}
+    />
+    <TeaserBox
+      topic="Rich Text Rendering"
+      text="How to replace rendered text with a custom RTE implementation, e.g. **Sanity**s `PortableText`"
+      link={{
+        href: './rich-text-rendering',
+        label: 'Rich Text',
+        variant: 'clear',
+        size: 'small',
+        iconAnimation: true,
+        iconAfter: {
+          icon: 'chevron-right',
+        },
+      }}
+    />
+  </Columns>
+</div>

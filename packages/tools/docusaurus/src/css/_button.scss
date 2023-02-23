@@ -14,10 +14,11 @@ a.c-button {
     display: inline;
   }
 
-  .c-teaser &.c-button--clear {
-    --c-button--padding: 0;
+  &.c-button--clear {
+    padding-left: 0;
+    padding-right: 0;
     --c-button--background-color-hover: transparent;
-    --c-button--color-hover: var(--ks-color-primary-to-fg-2);
+    --c-button--color-hover: var(--ks-color-primary-to-fg-8);
   }
 
   &.c-button--solid {

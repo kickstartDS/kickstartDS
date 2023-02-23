@@ -84,3 +84,20 @@
     width: 100%;
   }
 }
+
+:root [class^='announcementBar'][role='banner'] {
+  border-bottom: 0;
+
+  > div {
+    color: var(--ks-color-fg-inverted-base);
+    background-color: var(--ks-color-primary-base);
+
+    a {
+      color: var(--ks-text-color-primary-inverted-interactive-base) !important;
+    }
+
+    [data-theme='dark'] & {
+      background-color: var(--ks-background-color-accent-base);
+    }
+  }
+}
