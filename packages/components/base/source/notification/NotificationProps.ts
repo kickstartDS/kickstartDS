@@ -28,15 +28,7 @@ export type Undo = boolean;
 /**
  * Choose whether the action can be undone or not
  */
-export type Dismiss = boolean;
-/**
- * Choose whether the action can be undone or not
- */
 export type Reply = boolean;
-/**
- * Choose whether the action can be undone or not
- */
-export type Reply1 = boolean;
 /**
  * Add additional css classes that should be applied to the label
  */
@@ -56,9 +48,7 @@ export interface NotificationProps {
   actions?: {
     close?: Close;
     undo?: Undo;
-    dismiss?: Dismiss;
-    reply?: Reply;
-    accept?: Reply1;
+    accept?: Reply;
     [k: string]: unknown;
   };
   className?: AdditionalClasses;

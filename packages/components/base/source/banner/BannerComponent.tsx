@@ -33,11 +33,11 @@ export const BannerComponent: ForwardRefRenderFunction<
     {type === 'info' ? (
       <Icon className="c-banner__icon" icon="info" />
     ) : type === 'error' ? (
-      <Icon className="c-banner__icon" icon="close" />
+      <Icon className="c-banner__icon" icon="error" />
     ) : type === 'succes' ? (
-      <Icon className="c-banner__icon" icon="chevron-right" />
+      <Icon className="c-banner__icon" icon="succes" />
     ) : type === 'warning' ? (
-      <Icon className="c-banner__icon" icon="chevron-right" />
+      <Icon className="c-banner__icon" icon="warning" />
     ) : (
       ''
     )}

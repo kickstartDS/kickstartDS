@@ -1,4 +1,5 @@
-import { forwardRef, createElement, createContext, useContext } from 'react';
+import { forwardRef, createContext } from 'react';
+import { withContainer } from '@kickstartds/core/lib/container';
 import { BannerComponent } from './BannerComponent';
 import type { BannerProps } from './BannerComponent';
 import './banner.scss';
@@ -6,6 +7,4 @@ import './banner.scss';
 export { BannerProps };
 export const BannerContextDefault = forwardRef(BannerComponent);
 export const BannerContext = createContext(BannerContextDefault);
-export const Banner: typeof BannerContextDefault = forwardRef((props, ref) =>
-  createElement(useContext(BannerContext), { ...props, ref })
-);
+export const Banner = withContainer('banner', BannerContext);

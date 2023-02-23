@@ -11,14 +11,17 @@ $host: (
     icon-size: calc(var(--c-banner--line-height) * var(--c-banner--font-size)),
   ),
   '.c-banner--contrast-high': (
-    color: var(--ks-text-color-interface-inverted),
+    color: var(--ks-text-color-default-inverted),
   ),
   '.c-banner--s': (
     font: var(--ks-font-interface-xs),
     font-size: var(--ks-font-size-interface-xs),
     line-height: var(--ks-line-height-interface-xs),
     font-weight: var(--ks-font-weight-regular),
-    padding: var(--ks-spacing-inset-squish-s),
+    padding: (
+      0: 0.5em 0.25em,
+      640: 0.75em,
+    ),
     gap: var(--ks-spacing-xxs),
   ),
   '.c-banner--m': (
@@ -26,7 +29,10 @@ $host: (
     font-size: var(--ks-font-size-interface-s),
     line-height: var(--ks-line-height-interface-s),
     font-weight: var(--ks-font-weight-regular),
-    padding: var(--ks-spacing-inset-squish-m),
+    padding: (
+      0: 0.75em 0.5em,
+      640: 1em,
+    ),
     gap: var(--ks-spacing-xs),
   ),
   '.c-banner--l': (
@@ -34,7 +40,10 @@ $host: (
     font-size: var(--ks-font-size-interface-m),
     line-height: var(--ks-line-height-interface-m),
     font-weight: var(--ks-font-weight-regular),
-    padding: var(--ks-spacing-inset-squish-l),
+    padding: (
+      0: 1em 0.75em,
+      640: 1.25em,
+    ),
     gap: var(--ks-spacing-s),
   ),
   '.c-banner--plain.c-banner--contrast-low': (

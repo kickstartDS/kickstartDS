@@ -39,16 +39,6 @@
           "description": "Choose whether the action can be undone or not",
           "type": "boolean"
         },
-        "dismiss": {
-          "title": "Dismiss",
-          "description": "Choose whether the action can be undone or not",
-          "type": "boolean"
-        },
-        "reply": {
-          "title": "Reply",
-          "description": "Choose whether the action can be undone or not",
-          "type": "boolean"
-        },
         "accept": {
           "title": "Reply",
           "description": "Choose whether the action can be undone or not",

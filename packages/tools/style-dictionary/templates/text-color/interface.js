@@ -6,7 +6,7 @@ const token = (value) => ({
 
 module.exports = () => ({
   interface: {
-    base: token('{ks.color.fg.alpha.2.base}'),
+    base: token('{ks.color.fg.alpha.3.base}'),
     interactive: {
       base: token('{ks.color.fg.base}'),
       hover: { base: token('{ks.color.fg.base') },
@@ -15,7 +15,7 @@ module.exports = () => ({
     },
   },
   'interface-inverted': {
-    base: token('{ks.color.fg-inverted.alpha.2.base}'),
+    base: token('{ks.color.fg-inverted.alpha.3.base}'),
     interactive: {
       base: token('{ks.color.fg-inverted.base}'),
       hover: { base: token('{ks.color.fg-inverted.base}') },

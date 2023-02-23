@@ -2,24 +2,39 @@ $name-: 'c-notification';
 
 $host: (
   '.c-notification': (
-    border-color: var(--ks-border-color-interface-interactive),
+    border-color: var(--ks-border-color-interface),
     border-width: var(--ks-border-width-default),
     box-shadow: var(--ks-box-shadow-card),
     color: var(--ks-text-color-interface),
+    icon-color: var(--ks-text-color-interface),
     color-hover: var(--ks-text-color-interface-hover),
     title-font-weight: var(--ks-font-weight-semi-bold),
-    info-background-color: var(--ks-background-color-info),
     border-radius: var(--ks-border-radius-surface),
     icon-size:
       calc(
         var(--c-notification--line-height) * var(--c-notification--font-size)
       ),
-    background-color: var(--ks-background-color-interface-interactive),
+    background-color: var(--ks-background-color-default),
     font: var(--ks-font-interface-s),
     font-size: var(--ks-font-size-interface-s),
     line-height: var(--ks-line-height-interface-s),
     font-weight: var(--ks-font-weight-regular),
-    padding: var(--ks-spacing-inset-squish-m),
-    gap: var(--ks-spacing-xs),
+    padding: 1em,
+    gap: var(--ks-spacing-m-base),
+  ),
+  '[ks-inverted="true"] .c-notification': (
+    background-color: var(--ks-color-fg-alpha-9),
+  ),
+  '.c-notification--info': (
+    icon-color: var(--ks-color-informative),
+  ),
+  '.c-notification--warning': (
+    icon-color: var(--ks-color-notice),
+  ),
+  '.c-notification--succes': (
+    icon-color: var(--ks-color-positive),
+  ),
+  '.c-notification--error': (
+    icon-color: var(--ks-color-negative),
   ),
 ) !default;

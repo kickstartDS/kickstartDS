@@ -10,7 +10,7 @@
     "positive-inverted": "#94d82d",
     "informative": "#1a78cc",
     "informative-inverted": "#4dabf7",
-    "notice": "#fab005",
+    "notice": "#ed8900",
     "notice-inverted": "#f59f00",
     "negative": "#e03131",
     "negative-inverted": "#fa5c5c"
@@ -63,7 +63,7 @@
   "spacing": {
     "base": 8,
     "scale-ratio": 1.618,
-    "bp-ratio": 1.414
+    "bp-ratio": 1.25
   },
   "border-radius": "2px",
   "box-shadow": {

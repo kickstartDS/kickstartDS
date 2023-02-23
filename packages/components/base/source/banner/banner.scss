@@ -1,10 +1,12 @@
 @use 'sass:meta';
 @use 'bourbon/core/bourbon';
 @use '@kickstartds/core/source/core/custom-properties';
+@use '@kickstartds/base/source/helpers/details-reset';
+@use './container';
 @use './banner-vars';
 
 $vars: meta.module-variables(banner-vars);
-@include custom-properties.styles($vars);
+@include custom-properties.styles($vars, container.$name);
 
 .c-banner {
   display: flex;
@@ -19,6 +21,10 @@ $vars: meta.module-variables(banner-vars);
   font-weight: var(--c-banner--font-weight);
   border-radius: var(--c-banner--border-radius);
   padding: var(--c-banner--padding);
+
+  @include container.size('≥', 640px) {
+    padding: 2em;
+  }
 
   &__title {
     font: var(--c-banner--font);
@@ -38,8 +44,10 @@ $vars: meta.module-variables(banner-vars);
   }
 
   &__icon {
-    min-width: var(--c-banner--icon-size);
-    min-height: var(--c-banner--icon-size);
+    max-width: var(--c-banner--icon-size);
+    max-height: var(--c-banner--icon-size);
+    width: auto;
+    height: auto;
   }
 
   .l-container {
