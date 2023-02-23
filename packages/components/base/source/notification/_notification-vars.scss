@@ -1,0 +1,25 @@
+$name-: 'c-notification';
+
+$host: (
+  '.c-notification': (
+    border-color: var(--ks-border-color-interface-interactive),
+    border-width: var(--ks-border-width-default),
+    box-shadow: var(--ks-box-shadow-card),
+    color: var(--ks-text-color-interface),
+    color-hover: var(--ks-text-color-interface-hover),
+    title-font-weight: var(--ks-font-weight-semi-bold),
+    info-background-color: var(--ks-background-color-info),
+    border-radius: var(--ks-border-radius-surface),
+    icon-size:
+      calc(
+        var(--c-notification--line-height) * var(--c-notification--font-size)
+      ),
+    background-color: var(--ks-background-color-interface-interactive),
+    font: var(--ks-font-interface-s),
+    font-size: var(--ks-font-size-interface-s),
+    line-height: var(--ks-line-height-interface-s),
+    font-weight: var(--ks-font-weight-regular),
+    padding: var(--ks-spacing-inset-squish-m),
+    gap: var(--ks-spacing-xs),
+  ),
+) !default;

@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/base/banner.schema.json",
+  "title": "Banner",
+  "description": "Component to render a pill / tag / label",
+  "type": "object",
+  "properties": {
+    "title": {
+      "title": "Title",
+      "description": "A short title of the banner",
+      "type": "string",
+      "examples": ["Updated policy"]
+    },
+    "message": {
+      "title": "Message",
+      "description": "The main message delivered by the banner",
+      "type": "string",
+      "examples": [
+        "We have updated our policy regarding shipments. [Check it our here](#)."
+      ]
+    },
+    "size": {
+      "title": "Size",
+      "description": "Choose a size to scale the banner up or down",
+      "type": "string",
+      "enum": ["s", "m", "l"],
+      "default": "m"
+    },
+    "contrast": {
+      "title": "Contrast",
+      "description": "Set the color contrast of the banner",
+      "type": "string",
+      "enum": ["low", "high"],
+      "default": "low"
+    },
+    "type": {
+      "title": "Type",
+      "description": "Choose the type of information being displayed in the banner",
+      "type": "string",
+      "enum": ["plain", "info", "warning", "succes", "error"],
+      "default": "plain"
+    },
+    "className": {
+      "title": "Additional Classes",
+      "description": "Add additional css classes that should be applied to the label",
+      "type": "string"
+    },
+    "component": {
+      "title": "`ks-component` attribute",
+      "description": "Optional custom component identifier",
+      "type": "string"
+    }
+  },
+  "required": ["message"],
+  "additionalProperties": false
+}

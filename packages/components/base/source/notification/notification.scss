@@ -1,0 +1,93 @@
+@use 'sass:meta';
+@use 'bourbon/core/bourbon';
+@use '@kickstartds/core/source/core/custom-properties';
+@use './notification-vars';
+
+$vars: meta.module-variables(notification-vars);
+@include custom-properties.styles($vars);
+
+.c-notification {
+  font: var(--c-notification--font);
+  font-size: var(--c-notification--font-size);
+  line-height: var(--c-notification--line-height);
+
+  display: flex;
+  flex-direction: row;
+  gap: var(--ks-spacing-s);
+
+  max-width: 400px;
+
+  text-decoration: none;
+  background-color: var(--c-notification--background-color);
+  border: var(--c-notification--border-color)
+    var(--c-notification--border-width) solid;
+  box-shadow: var(--c-notification--box-shadow);
+  color: var(--c-notification--color);
+  border-radius: var(--c-notification--border-radius);
+  padding: var(--c-notification--padding);
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--c-notification--gap);
+  }
+
+  &__actions {
+    display: flex;
+    gap: var(--ks-spacing-xs);
+    align-items: center;
+    height: fit-content;
+  }
+
+  * {
+    font: inherit;
+    font-size: inherit;
+    line-height: inherit;
+  }
+
+  &__title {
+    font-weight: var(--c-notification--title-font-weight);
+    display: block;
+  }
+
+  &__message {
+    --c-rich-text--color: var(--c-notification--color);
+  }
+
+  &__icon {
+    min-width: var(--c-notification--icon-size);
+    min-height: var(--c-notification--icon-size);
+  }
+
+  &__remove-btn {
+    height: fit-content;
+    margin-left: auto;
+    border-radius: var(--ks-border-radius-control);
+    transition: var(--ks-transition-hover);
+    color: var(--ks-text-color-interface);
+    opacity: 0.75;
+
+    .icon {
+      transform: scale(0.85);
+    }
+
+    &:hover {
+      background-color: var(--ks-background-color-interface-interactive-hover);
+      opacity: 1;
+    }
+
+    &:active {
+      background-color: var(--ks-background-color-interface-interactive-active);
+    }
+  }
+
+  &__accept {
+    display: flex;
+    align-items: stretch;
+    gap: var(--ks-spacing-xs);
+  }
+
+  .l-container {
+    container-type: normal;
+  }
+}

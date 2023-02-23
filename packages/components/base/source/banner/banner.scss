@@ -1,0 +1,48 @@
+@use 'sass:meta';
+@use 'bourbon/core/bourbon';
+@use '@kickstartds/core/source/core/custom-properties';
+@use './banner-vars';
+
+$vars: meta.module-variables(banner-vars);
+@include custom-properties.styles($vars);
+
+.c-banner {
+  display: flex;
+  flex-direction: row;
+  gap: var(--c-banner--gap);
+  text-decoration: none;
+  background-color: var(--c-banner--background-color);
+  border: var(--banner--border);
+  color: var(--c-banner--color);
+  font: var(--c-banner--font);
+  line-height: var(--c-banner--line-height);
+  font-weight: var(--c-banner--font-weight);
+  border-radius: var(--c-banner--border-radius);
+  padding: var(--c-banner--padding);
+
+  &__title {
+    font: var(--c-banner--font);
+    font-size: var(--c-banner--font-size);
+    font-weight: var(--c-banner--title-font-weight);
+    line-height: var(--c-banner--line-height);
+    display: block;
+  }
+
+  &__message {
+    --g-link--color: var(--c-banner--color);
+    --g-link--color-hover: var(--c-banner--color);
+    --c-rich-text--color: var(--c-banner--color);
+    font: var(--c-banner--font);
+    font-size: var(--c-banner--font-size);
+    line-height: var(--c-banner--line-height);
+  }
+
+  &__icon {
+    min-width: var(--c-banner--icon-size);
+    min-height: var(--c-banner--icon-size);
+  }
+
+  .l-container {
+    container-type: normal;
+  }
+}
