@@ -1,6 +1,6 @@
 import {
   ForwardRefRenderFunction,
-  HTMLAttributes,
+  LabelHTMLAttributes,
   InputHTMLAttributes,
 } from 'react';
 import classnames from 'classnames';
@@ -9,7 +9,7 @@ import type { RadioButtonProps as RadioButtonSchemaProps } from './RadioProps';
 
 export type RadioButtonProps = RadioButtonSchemaProps & {
   renderLabel?: typeof defaultRenderFn;
-  labelProps?: HTMLAttributes<HTMLLabelElement>;
+  labelProps?: LabelHTMLAttributes<HTMLLabelElement>;
 };
 
 export const RadioComponent: ForwardRefRenderFunction<

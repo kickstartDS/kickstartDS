@@ -1,4 +1,4 @@
-import { ForwardRefRenderFunction, HTMLAttributes, forwardRef } from 'react';
+import { ForwardRefRenderFunction, ImgHTMLAttributes, forwardRef } from 'react';
 import classnames from 'classnames';
 import type { PictureProps } from './PictureProps';
 
@@ -6,7 +6,7 @@ export { PictureProps };
 
 const Image = forwardRef<
   HTMLImageElement,
-  PictureProps & HTMLAttributes<HTMLImageElement>
+  PictureProps & ImgHTMLAttributes<HTMLImageElement>
 >(
   (
     {
@@ -42,7 +42,7 @@ const Image = forwardRef<
 
 export const PictureComponent: ForwardRefRenderFunction<
   HTMLImageElement,
-  PictureProps & HTMLAttributes<HTMLImageElement>
+  PictureProps & ImgHTMLAttributes<HTMLImageElement>
 > = ({ sources = [], lazy = true, pictureClassName, ...props }, ref) => {
   const fallbackImage = <Image {...props} lazy={lazy} ref={ref} />;
 

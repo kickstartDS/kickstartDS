@@ -1,6 +1,6 @@
 import {
   ForwardRefRenderFunction,
-  HTMLAttributes,
+  LabelHTMLAttributes,
   InputHTMLAttributes,
 } from 'react';
 import classnames from 'classnames';
@@ -9,7 +9,7 @@ import type { CheckboxProps as CheckboxSchemaProps } from './CheckboxProps';
 
 export type CheckboxProps = CheckboxSchemaProps & {
   renderLabel?: typeof defaultRenderFn;
-  labelProps?: HTMLAttributes<HTMLLabelElement>;
+  labelProps?: LabelHTMLAttributes<HTMLLabelElement>;
 };
 
 export const CheckboxComponent: ForwardRefRenderFunction<
