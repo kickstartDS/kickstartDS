@@ -42,7 +42,8 @@
                   "type": "boolean",
                   "default": false
                 }
-              }
+              },
+              "additionalProperties": false
             }
           ]
         },
@@ -57,7 +58,8 @@
           "type": "string",
           "default": "base.teaser"
         }
-      }
+      },
+      "additionalProperties": false
     }
   }
 }

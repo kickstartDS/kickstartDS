@@ -31,5 +31,6 @@
       "type": "string"
     }
   },
-  "required": ["label"]
+  "required": ["label"],
+  "additionalProperties": false
 }

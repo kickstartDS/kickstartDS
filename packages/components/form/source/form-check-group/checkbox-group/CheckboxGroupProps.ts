@@ -54,13 +54,12 @@ export interface CheckboxGroupProps {
   options?: Options;
   className?: Class;
   component?: KsComponentAttribute;
-  [k: string]: unknown;
 }
 /**
  * Checkboxes allow users to select multiple items from a list of individual items, or to mark one individual item as selected.
  */
 export interface Checkbox {
-  label?: Label1;
+  label: Label1;
   disabled?: Disabled;
   hint?: HintMessage;
   [k: string]: unknown;

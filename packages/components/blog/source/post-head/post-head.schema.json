@@ -76,5 +76,6 @@
       "description": "Optional custom component identifier",
       "type": "string"
     }
-  }
+  },
+  "additionalProperties": false
 }

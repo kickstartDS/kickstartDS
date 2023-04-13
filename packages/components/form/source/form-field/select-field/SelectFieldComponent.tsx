@@ -61,7 +61,6 @@ export const SelectFieldComponent: ForwardRefRenderFunction<
               <option
                 key={`option-${i}`}
                 value={option.value}
-                selected={option.selected}
                 disabled={option.disabled}
               >
                 {option.label}

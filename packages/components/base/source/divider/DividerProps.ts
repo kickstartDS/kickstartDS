@@ -25,5 +25,4 @@ export interface DividerProps {
   variant?: StyleOfTheDivider;
   className?: AdditionalClasses;
   component?: KsComponentAttribute;
-  [k: string]: unknown;
 }

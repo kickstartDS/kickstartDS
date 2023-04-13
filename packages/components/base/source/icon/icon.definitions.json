@@ -23,5 +23,6 @@
       "type": "string"
     }
   },
-  "required": ["icon"]
+  "required": ["icon"],
+  "additionalProperties": false
 }

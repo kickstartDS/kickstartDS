@@ -41,5 +41,4 @@ export interface TableProps {
   variant?: TableVariant;
   className?: AdditionalClasses;
   component?: KsComponentAttribute;
-  [k: string]: unknown;
 }

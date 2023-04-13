@@ -37,5 +37,4 @@ export interface LightboxImageProps {
   className?: AdditionalClass;
   captionClassName?: AdditionalCaptionClass;
   component?: KsComponentAttribute;
-  [k: string]: unknown;
 }

@@ -77,16 +77,24 @@ const MediaLightboxImage: FunctionComponent<ILightboxImage> = ({
   />
 );
 
+const isVideo = (media: IVideo | IImage | ILightboxImage): media is IVideo =>
+  'video' in media;
+const isImage = (media: IVideo | IImage | ILightboxImage): media is IImage =>
+  'image' in media;
+const isLightboxImage = (
+  media: IVideo | IImage | ILightboxImage
+): media is ILightboxImage => 'lightboxImage' in media;
+
 const Media: FunctionComponent<{ media: IMedia }> = ({ media }) =>
   media.length ? (
     <div className="text-media__gallery">
       {media.map((m, i) =>
-        (m.video as IVideo)?.src ? (
-          <MediaVideo {...(m as IVideo)} key={i} />
-        ) : (m.image as IImage)?.src ? (
-          <MediaImage {...(m as IImage)} key={i} />
-        ) : (m.lightboxImage as ILightboxImage)?.image ? (
-          <MediaLightboxImage {...(m as ILightboxImage)} key={i} />
+        isVideo(m) ? (
+          <MediaVideo {...m} key={i} />
+        ) : isImage(m) ? (
+          <MediaImage {...m} key={i} />
+        ) : isLightboxImage(m) ? (
+          <MediaLightboxImage {...m} key={i} />
         ) : null
       )}
     </div>

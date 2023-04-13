@@ -72,7 +72,6 @@ export type Sources = {
   srcSet?: PictureSourceset1;
   media?: TODOMEDIATITLE;
   type?: TODOTYPETITLE;
-  [k: string]: unknown;
 }[];
 /**
  * Set additional class(es) to the picture
@@ -163,7 +162,6 @@ export interface PostHeadProps {
   categories?: Categories;
   className?: Class;
   component?: KsComponentAttribute3;
-  [k: string]: unknown;
 }
 /**
  * Base component to display a picture
@@ -183,7 +181,6 @@ export interface Picture {
   lazy?: Lazy;
   sources?: Sources;
   pictureClassName?: ClassAttribute;
-  [k: string]: unknown;
 }
 /**
  * Headline
@@ -197,7 +194,6 @@ export interface Headline {
   subheadline?: Subheadline;
   className?: AdditionalClasses1;
   component?: KsComponentAttribute1;
-  [k: string]: unknown;
 }
 /**
  * Component to render a pill / tag / label

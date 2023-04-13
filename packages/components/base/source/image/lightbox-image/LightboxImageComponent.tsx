@@ -1,4 +1,8 @@
-import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
+import {
+  ForwardRefRenderFunction,
+  HTMLAttributes,
+  ImgHTMLAttributes,
+} from 'react';
 import classnames from 'classnames';
 import { Icon } from '../../icon';
 import { Link } from '../../link';
@@ -8,7 +12,10 @@ import type { LightboxImageProps } from './LightboxImageProps';
 export { LightboxImageProps };
 export const LightboxImageComponent: ForwardRefRenderFunction<
   HTMLElement,
-  LightboxImageProps & HTMLAttributes<HTMLElement>
+  LightboxImageProps &
+    HTMLAttributes<HTMLElement> & {
+      alt?: ImgHTMLAttributes<HTMLImageElement>['alt'];
+    }
 > = (
   {
     image,

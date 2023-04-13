@@ -22,19 +22,13 @@ export type Name = string;
  */
 export type Disabled = boolean;
 /**
- * Whether the element should be selected
- */
-export type Selected = boolean;
-/**
  * Whether the input is disabled
  */
 export type Disabled1 = boolean;
 export type Options = {
   value?: string;
   label: string;
-  selected?: Selected;
   disabled?: Disabled1;
-  [k: string]: unknown;
 }[];
 /**
  * Hide label visually
@@ -78,5 +72,4 @@ export interface SelectFieldProps {
   icon?: IconIdentifier;
   className?: Class;
   component?: KsComponentAttribute;
-  [k: string]: unknown;
 }

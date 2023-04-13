@@ -1,18 +1,13 @@
-import {
-  ForwardRefExoticComponent,
-  ForwardedRef,
-  ForwardRefRenderFunction,
-  HTMLAttributes,
-  forwardRef,
-} from 'react';
+import { ForwardRefRenderFunction, HTMLAttributes, forwardRef } from 'react';
 import classnames from 'classnames';
 import type { PictureProps } from './PictureProps';
 
 export { PictureProps };
 
-const Image: ForwardRefExoticComponent<
+const Image = forwardRef<
+  HTMLImageElement,
   PictureProps & HTMLAttributes<HTMLImageElement>
-> = forwardRef(
+>(
   (
     {
       className,
@@ -23,7 +18,7 @@ const Image: ForwardRefExoticComponent<
       component,
       ...props
     },
-    ref: ForwardedRef<HTMLImageElement>
+    ref
   ) => (
     <>
       <img

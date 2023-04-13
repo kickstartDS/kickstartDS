@@ -118,5 +118,6 @@
       "title": "`ks-component` attribute",
       "description": "Optional custom component identifier"
     }
-  }
+  },
+  "additionalProperties": false
 }

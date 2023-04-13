@@ -41,7 +41,8 @@
             "type": "boolean",
             "default": false
           }
-        }
+        },
+        "additionalProperties": false
       },
       "examples": [
         [
@@ -72,5 +73,6 @@
       "description": "Optional custom component identifier",
       "type": "string"
     }
-  }
+  },
+  "additionalProperties": false
 }
