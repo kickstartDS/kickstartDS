@@ -6,6 +6,7 @@
   "type": "object",
   "properties": {
     "headline": {
+      "type": "object",
       "allOf": [
         {
           "type": "object",
