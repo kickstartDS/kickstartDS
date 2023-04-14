@@ -217,7 +217,7 @@ There are some packages used internally (`@kickstartds/bundler`) by **kickstartD
 
 ### **kickstartDS** CLI
 
-`kickstartds` holds our CLI, and is the only package not published under the `@kickstartDS` org namespace, living directly at `kickstartds` instead. It's used to initialize and compile Design Token sets, generate **TypeScript** types for components and dereferenced **JSON Schema** files for you. To learn more about it, have a look at our ["CLI Usage"](./cli.md) page.
+`kickstartds` holds our CLI, and is the only package not published under the `@kickstartDS` org namespace, living directly at `kickstartds` instead. It's used to initialize and compile Design Token sets, generate **TypeScript** types for components and dereferenced **JSON Schema** files for you. To learn more about it, have a look at our ["CLI Usage"](./cli.mdx) page.
 
 You can find the CLI on:
 

@@ -1,0 +1,61 @@
+---
+sidebar_position: 6
+---
+
+import { TeaserBox } from '@kickstartds/base/lib/teaser-box';
+import { Columns } from '@bedrock-layout/primitives';
+
+# Next Steps
+
+With all of that introductory stuff out of the way, we recommend following one of the three following paths:
+
+<div ks-theme="docs">
+  <Columns columns={3} gutter="md" switchAt={672}>
+    <TeaserBox
+      link={{
+        size: 'small',
+        href: '/docs/guides/create/',
+        label: 'Follow main guide',
+        variant: 'clear',
+        iconAnimation: true,
+        iconAfter: {
+          icon: 'chevron-right',
+        },
+      }}
+      text="Follow our main guide **Create your Design System**. Learn everything from scratch, with detailed interactive guides. Learn implementing components in 4 different ways!"
+      topic="Keep Learning"
+    />
+    <TeaserBox
+      link={{
+        size: 'small',
+        href: '/docs/guides/use-our-starter',
+        label: 'Clone Starter',
+        variant: 'clear',
+        iconAnimation: true,
+        iconAfter: {
+          icon: 'chevron-right',
+        },
+      }}
+      text="Directly start with our **Design System Starter**. Clone our template repository on Github, and get programming immediately. Includes the 4 components of the main guide!"
+      topic="Start Coding"
+    />
+    <TeaserBox
+      link={{
+        size: 'small',
+        href: '/docs/guides/design-system-iniative',
+        label: 'Define Scope',
+        variant: 'clear',
+        iconAnimation: true,
+        iconAfter: {
+          icon: 'chevron-right',
+        },
+      }}
+      text="Learn about the **Design System Initiative**. This can help in getting an idea of the involved stakeholers, needed component scope, order of implementation, and the best pilot project."
+      topic="Take Initiative"
+    />
+
+  </Columns>
+</div>
+<br/>
+If you're interested in more background info, have a look through our blog... we try to give insights there as much as possible, too:<br/>
+https://www.kickstartDS.com/blog/

@@ -31,6 +31,12 @@ const config = {
 
   plugins: [
     'docusaurus-plugin-sass',
+    [
+      '@docusaurus/plugin-google-tag-manager',
+      {
+        containerId: 'GTM-WSKKW69',
+      },
+    ],
     (context) => ({
       name: 'compile-node-modules',
       configureWebpack(webpackConfig, isServer, utils) {
@@ -212,8 +218,6 @@ const config = {
         id: 'main_guide',
         content:
           'Follow our main guide to learn how you can "Create your Design System" in just 5 steps: <a target="_blank" rel="noopener noreferrer" href="https://www.kickstartDS.com/docs/guides/create/"><strong>Open guide</strong></a>',
-        backgroundColor: 'var(--ks-color-primary)',
-        textColor: 'var(--ks-color-primary-inverted)',
         isCloseable: false,
       },
     }),
