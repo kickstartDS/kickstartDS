@@ -60,12 +60,7 @@ module.exports = {
         },
         targets: { browsers: 'defaults, last 2 years', esmodules: true },
         presets: [
-          [
-            '@babel/preset-env',
-            {
-              bugfixes: true,
-            },
-          ],
+          ['@babel/preset-env', { bugfixes: true }],
           ['@babel/preset-typescript'],
         ],
         plugins: [['@babel/plugin-transform-runtime', { useESModules: true }]],

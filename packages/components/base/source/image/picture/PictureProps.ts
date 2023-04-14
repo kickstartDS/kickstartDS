@@ -72,7 +72,6 @@ export type Sources = {
   srcSet?: PictureSourceset1;
   media?: TODOMEDIATITLE;
   type?: TODOTYPETITLE;
-  [k: string]: unknown;
 }[];
 /**
  * Set additional class(es) to the picture
@@ -97,5 +96,4 @@ export interface PictureProps {
   lazy?: Lazy;
   sources?: Sources;
   pictureClassName?: ClassAttribute;
-  [k: string]: unknown;
 }

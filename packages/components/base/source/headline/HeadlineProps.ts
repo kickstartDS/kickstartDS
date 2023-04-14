@@ -50,5 +50,4 @@ export interface HeadlineProps {
   spaceAfter?: BottomSpacing;
   className?: AdditionalClasses;
   component?: KsComponentAttribute;
-  [k: string]: unknown;
 }

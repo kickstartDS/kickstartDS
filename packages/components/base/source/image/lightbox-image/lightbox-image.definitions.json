@@ -66,5 +66,6 @@
       "type": "string",
       "default": "base.lightbox-image"
     }
-  }
+  },
+  "additionalProperties": false
 }

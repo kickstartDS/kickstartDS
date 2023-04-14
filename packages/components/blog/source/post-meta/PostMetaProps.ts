@@ -72,7 +72,6 @@ export type Sources = {
   srcSet?: PictureSourceset1;
   media?: TODOMEDIATITLE;
   type?: TODOTYPETITLE;
-  [k: string]: unknown;
 }[];
 /**
  * Set additional class(es) to the picture
@@ -94,12 +93,10 @@ export interface PostMetaProps {
   author?: {
     name?: string;
     image?: Picture;
-    [k: string]: unknown;
   };
   items?: MetaItem[];
   className?: Class;
   component?: KsComponentAttribute1;
-  [k: string]: unknown;
 }
 /**
  * Base component to display a picture
@@ -119,10 +116,8 @@ export interface Picture {
   lazy?: Lazy;
   sources?: Sources;
   pictureClassName?: ClassAttribute;
-  [k: string]: unknown;
 }
 export interface MetaItem {
   icon?: string;
   text?: string;
-  [k: string]: unknown;
 }

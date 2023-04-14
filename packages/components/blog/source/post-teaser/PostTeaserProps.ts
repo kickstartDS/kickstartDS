@@ -72,7 +72,6 @@ export type Sources = {
   srcSet?: PictureSourceset1;
   media?: TODOMEDIATITLE;
   type?: TODOTYPETITLE;
-  [k: string]: unknown;
 }[];
 /**
  * Set additional class(es) to the picture
@@ -145,7 +144,6 @@ export type Sources1 = {
   srcSet?: PictureSourceset3;
   media?: TODOMEDIATITLE1;
   type?: TODOTYPETITLE1;
-  [k: string]: unknown;
 }[];
 /**
  * Set additional class(es) to the picture
@@ -221,7 +219,6 @@ export interface PostTeaserProps {
   categories?: Categories;
   className?: Class1;
   component?: KsComponentAttribute4;
-  [k: string]: unknown;
 }
 /**
  * Base component to display a picture
@@ -241,7 +238,6 @@ export interface Picture {
   lazy?: Lazy;
   sources?: Sources;
   pictureClassName?: ClassAttribute;
-  [k: string]: unknown;
 }
 /**
  * Post Meta
@@ -250,12 +246,10 @@ export interface PostMeta {
   author?: {
     name?: string;
     image?: Picture1;
-    [k: string]: unknown;
   };
   items?: MetaItem[];
   className?: Class;
   component?: KsComponentAttribute2;
-  [k: string]: unknown;
 }
 /**
  * Base component to display a picture
@@ -275,12 +269,10 @@ export interface Picture1 {
   lazy?: Lazy1;
   sources?: Sources1;
   pictureClassName?: ClassAttribute1;
-  [k: string]: unknown;
 }
 export interface MetaItem {
   icon?: string;
   text?: string;
-  [k: string]: unknown;
 }
 /**
  * Link for news item
@@ -288,7 +280,6 @@ export interface MetaItem {
 export interface Link {
   href: ButtonHref;
   label: Label;
-  [k: string]: unknown;
 }
 /**
  * Component to render a pill / tag / label

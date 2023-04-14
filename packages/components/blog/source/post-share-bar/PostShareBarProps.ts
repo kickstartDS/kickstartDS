@@ -58,7 +58,6 @@ export interface PostShareBarProps {
   links?: ShareLink[];
   className?: Class;
   component?: KsComponentAttribute1;
-  [k: string]: unknown;
 }
 /**
  * Headline
@@ -72,7 +71,6 @@ export interface Headline {
   subheadline?: Subheadline;
   className?: AdditionalClasses;
   component?: KsComponentAttribute;
-  [k: string]: unknown;
 }
 export interface ShareLink {
   href?: string;

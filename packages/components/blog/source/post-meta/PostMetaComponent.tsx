@@ -7,7 +7,7 @@ import type { PostMetaProps } from './PostMetaProps';
 export { PostMetaProps };
 export const PostMetaComponent: ForwardRefRenderFunction<
   HTMLDivElement,
-  PostMetaProps & HTMLAttributes<HTMLElement>
+  PostMetaProps & HTMLAttributes<HTMLDivElement>
 > = ({ author, items, className, component, ...props }, ref) => (
   <div
     className={classNames('c-post-meta', className)}

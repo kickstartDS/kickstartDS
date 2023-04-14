@@ -6,6 +6,7 @@
   "type": "object",
   "properties": {
     "headline": {
+      "type": "object",
       "allOf": [
         {
           "type": "object",
@@ -108,5 +109,6 @@
       "description": "Optional custom component identifier",
       "type": "string"
     }
-  }
+  },
+  "additionalProperties": false
 }

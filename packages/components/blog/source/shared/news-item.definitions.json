@@ -25,7 +25,8 @@
           "examples": ["weiter zum Newseintrag"]
         }
       },
-      "required": ["href", "label"]
+      "required": ["href", "label"],
+      "additionalProperties": false
     },
     "title": {
       "title": "Title",

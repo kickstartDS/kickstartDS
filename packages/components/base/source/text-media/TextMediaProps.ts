@@ -118,7 +118,6 @@ export type Sources = {
   srcSet?: PictureSourceset1;
   media?: TODOMEDIATITLE;
   type?: TODOTYPETITLE;
-  [k: string]: unknown;
 }[];
 /**
  * Set additional class(es) to the picture
@@ -182,7 +181,6 @@ export interface TextMediaVideo {
   video?: Video;
   full?: FullWidthMedia;
   caption?: Caption;
-  [k: string]: unknown;
 }
 /**
  * Video item to display
@@ -193,13 +191,11 @@ export interface Video {
   title?: VideoTitle;
   width: Width;
   height: Height;
-  [k: string]: unknown;
 }
 export interface TextMediaImage {
   image?: Picture;
   full?: FullWidthMedia1;
   caption?: Caption1;
-  [k: string]: unknown;
 }
 /**
  * Base component to display a picture
@@ -219,13 +215,11 @@ export interface Picture {
   lazy?: Lazy;
   sources?: Sources;
   pictureClassName?: ClassAttribute;
-  [k: string]: unknown;
 }
 export interface TextMediaLazyImage {
   lightboxImage?: LightboxImage;
   full?: FullWidthMedia2;
   caption?: Caption3;
-  [k: string]: unknown;
 }
 /**
  * Lightbox Image
@@ -243,5 +237,4 @@ export interface LightboxImage {
   className?: AdditionalClass;
   captionClassName?: AdditionalCaptionClass;
   component?: KsComponentAttribute1;
-  [k: string]: unknown;
 }

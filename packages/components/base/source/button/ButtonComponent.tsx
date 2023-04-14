@@ -1,4 +1,9 @@
-import { ForwardRefRenderFunction, HTMLAttributes, ElementType } from 'react';
+import {
+  ForwardRefRenderFunction,
+  ElementType,
+  ButtonHTMLAttributes,
+  AnchorHTMLAttributes,
+} from 'react';
 import classnames from 'classnames';
 import { defaultRenderFn } from '@kickstartds/core/lib/core';
 import { Link } from '../link';
@@ -11,7 +16,11 @@ export type ButtonProps = ButtonSchemaProps & {
 
 export const ButtonComponent: ForwardRefRenderFunction<
   HTMLButtonElement | HTMLAnchorElement,
-  ButtonProps & HTMLAttributes<HTMLButtonElement | HTMLAnchorElement>
+  ButtonProps &
+    (
+      | ButtonHTMLAttributes<HTMLButtonElement>
+      | AnchorHTMLAttributes<HTMLAnchorElement>
+    )
 > = (
   {
     label,

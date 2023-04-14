@@ -110,7 +110,6 @@ We think this module is a nice addition when building your Design System, but it
         align: null,
         content: 'kickstartDS Content Module',
         level: 'h2',
-        pageHeader: false,
         spaceAfter: 'none',
         styleAs: 'h1',
         subheadline: 'The perfect addition to our Open Source base',

@@ -72,7 +72,6 @@ export type Sources = {
   srcSet?: PictureSourceset1;
   media?: TODOMEDIATITLE;
   type?: TODOTYPETITLE;
-  [k: string]: unknown;
 }[];
 /**
  * Set additional class(es) to the picture
@@ -170,7 +169,6 @@ export type Sources1 = {
   srcSet?: PictureSourceset3;
   media?: TODOMEDIATITLE1;
   type?: TODOTYPETITLE1;
-  [k: string]: unknown;
 }[];
 /**
  * Set additional class(es) to the picture
@@ -246,7 +244,6 @@ export interface PostAsideProps {
   shareBar?: PostShareBar;
   className?: Class3;
   component?: KsComponentAttribute6;
-  [k: string]: unknown;
 }
 /**
  * Component to show contact information
@@ -260,13 +257,11 @@ export interface Author {
     label?: string;
     href?: string;
     newTab?: OpenLinkInNewTab;
-    [k: string]: unknown;
   }[];
   copy?: CopyText;
   className?: Class;
   component?: KsComponentAttribute1;
   headline?: Text;
-  [k: string]: unknown;
 }
 /**
  * Base component to display a picture
@@ -286,7 +281,6 @@ export interface Picture {
   lazy?: Lazy;
   sources?: Sources;
   pictureClassName?: ClassAttribute;
-  [k: string]: unknown;
 }
 /**
  * Post Meta
@@ -295,12 +289,10 @@ export interface PostMeta {
   author?: {
     name?: string;
     image?: Picture1;
-    [k: string]: unknown;
   };
   items?: MetaItem[];
   className?: Class1;
   component?: KsComponentAttribute3;
-  [k: string]: unknown;
 }
 /**
  * Base component to display a picture
@@ -320,12 +312,10 @@ export interface Picture1 {
   lazy?: Lazy1;
   sources?: Sources1;
   pictureClassName?: ClassAttribute1;
-  [k: string]: unknown;
 }
 export interface MetaItem {
   icon?: string;
   text?: string;
-  [k: string]: unknown;
 }
 /**
  * Post Share Bar
@@ -335,7 +325,6 @@ export interface PostShareBar {
   links?: ShareLink[];
   className?: Class2;
   component?: KsComponentAttribute5;
-  [k: string]: unknown;
 }
 /**
  * Headline
@@ -349,7 +338,6 @@ export interface Headline {
   subheadline?: Subheadline;
   className?: AdditionalClasses2;
   component?: KsComponentAttribute4;
-  [k: string]: unknown;
 }
 export interface ShareLink {
   href?: string;

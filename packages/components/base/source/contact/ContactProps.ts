@@ -72,7 +72,6 @@ export type Sources = {
   srcSet?: PictureSourceset1;
   media?: TODOMEDIATITLE;
   type?: TODOTYPETITLE;
-  [k: string]: unknown;
 }[];
 /**
  * Set additional class(es) to the picture
@@ -112,12 +111,10 @@ export interface ContactProps {
     label?: string;
     href?: string;
     newTab?: OpenLinkInNewTab;
-    [k: string]: unknown;
   }[];
   copy?: CopyText;
   className?: Class;
   component?: KsComponentAttribute1;
-  [k: string]: unknown;
 }
 /**
  * Base component to display a picture
@@ -137,5 +134,4 @@ export interface Picture {
   lazy?: Lazy;
   sources?: Sources;
   pictureClassName?: ClassAttribute;
-  [k: string]: unknown;
 }

@@ -1,4 +1,8 @@
-import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
+import {
+  ForwardRefRenderFunction,
+  LabelHTMLAttributes,
+  TextareaHTMLAttributes,
+} from 'react';
 import classnames from 'classnames';
 import { defaultRenderFn } from '@kickstartds/core/lib/core';
 import { Icon } from '@kickstartds/base/lib/icon';
@@ -6,12 +10,12 @@ import type { TextAreaProps as TextAreaSchemaProps } from './TextAreaProps';
 
 export type TextAreaProps = TextAreaSchemaProps & {
   renderLabel?: typeof defaultRenderFn;
-  labelProps?: HTMLAttributes<HTMLLabelElement>;
+  labelProps?: LabelHTMLAttributes<HTMLLabelElement>;
 };
 
 export const TextAreaComponent: ForwardRefRenderFunction<
   HTMLTextAreaElement,
-  TextAreaProps & HTMLAttributes<HTMLTextAreaElement>
+  TextAreaProps & TextareaHTMLAttributes<HTMLTextAreaElement>
 > = (
   {
     value,
