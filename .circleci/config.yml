@@ -2,7 +2,7 @@ version: 2.1
 
 defaults: &defaults
   docker:
-    - image: cimg/node:16.14
+    - image: cimg/node:16.20
   working_directory: /mnt/ramdisk
   resource_class: medium+
 

@@ -51,9 +51,9 @@
     "rollup-plugin-import-resolver": "^1.2.0",
     "rollup-plugin-node-externals": "^5.0.2",
     "rollup-plugin-terser": "^7.0.2",
-    "rollup-plugin-ts": "^3.0.2",
+    "rollup-plugin-ts": "^3.2.0",
     "sass": "^1.56.0",
-    "typescript": "^4.8.4"
+    "typescript": "^4.9.5"
   },
   "peerDependencies": {
     "@kickstartds/base": "^1.5.1",
