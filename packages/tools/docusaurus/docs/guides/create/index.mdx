@@ -14,17 +14,24 @@ You could say that this is **the** main guide for **kickstartDS**, as it branche
 
 This guide can act as a great reference, too. If you're struggling somewhere, just look up the section concerned with that part of the setup!
 
-And if following such a long guide (it's quite comprehensive) seems daunting, we also have a starter in the works you'll be able to use to have something running in no time. You can always come back to specific sections then anyways!
+<p align="center">
+  <img
+    src={require('./assets/5-steps.png').default}
+    alt="5 steps to your own Design System"
+  />
+</p>
+
+And if following such a long guide (it's quite comprehensive) seems daunting, we [also have a starter you can use](../use-our-starter.mdx) to have something running in no time (okay, okay... it **will** take you 5 minutes, but not more!). You can always come back to specific sections here then! The starter also includes exactly the same components that are created in this guide, it just adds more features and configuration to your **Design System**.
 
 Just keep this page in mind as a great overview and intro point into **kickstartDS** in general!
 
 The main steps involved go as follows:
 
-1. [Start your Design System](./start.mdx)
+1. [Start your **Design System**](./start.mdx)
 2. [Design Application](./design.mdx)
-3. [Configure Storybook](./storybook.mdx)
+3. [Configure **Storybook**](./storybook.mdx)
 4. [Add Components](./components.mdx)
-5. [Publish your Design System](./publish.mdx)
+5. [Publish your **Design System**](./publish.mdx)
 
 The resulting Design System will obviously not be finished by the end of this guide, but you'll have everything set up to start on the real work. We'll add links along the way when it makes sense, calling out concepts at play, or processes to use, to find and refine your own personalized worfklow with **kickstartDS**, and ultimately your own Design System (stuff like choosing an initial component set for your Design System).
 
@@ -38,7 +45,9 @@ We also recommend having a look over at our guide for the ["Design System Initia
 
 This will not be strictly needed for this guide, though. So feel free to just continue on!
 
-## 1. Start your Design System
+## Implementation
+
+### 1. Start your Design System
 
 In this step you'll either create a new project entirely, or learn which basics to add to your existing project to get started!
 
@@ -71,7 +80,7 @@ See the result of this step in the **Code Sandbox** below. It's showing specific
 
 Toggle the file browser with the hamburger icon at the top left, [or open it directly in your browser](https://codesandbox.io/s/github/kickstartDS/ds-guide/tree/step/1?file=/package.json).
 
-## 2. Design Application
+### 2. Design Application
 
 We will create your initial Design Token set by applying your corporate design, as a reduced set of [**Branding Token**](../../foundations/token/branding-token.mdx).<br/>
 We'll then fine-tune this, at least as much as sensibly possible in such a guide. We also compile a first semantic [**Design Token**](../../foundations/token/design-token/index.md) set with our newly created **Style Dictionary**.
@@ -110,7 +119,7 @@ See the result of this step in the **Code Sandbox** below. It's showing specific
 
 Toggle the file browser with the hamburger icon at the top left, [or open it directly in your browser](https://codesandbox.io/s/github/kickstartDS/ds-guide/tree/step/2?file=/package.json).
 
-## 3. Configure Storybook
+### 3. Configure Storybook
 
 We add **Storybook** here, which includes installing and configuring all the addons we suggest to use. This also includes some we've written ourselves, to really get the most out of **kickstartDS**. We'll also add those, and add integration with **kickstartDS** (tokens, icons, etc). You will end with a fully configured **Storybook**.
 
@@ -154,7 +163,7 @@ See the result of this step in the **Code Sandbox** below. It's showing specific
 
 Toggle the file browser with the hamburger icon at the top left, [or open it directly in your browser](https://codesandbox.io/s/github/kickstartDS/ds-guide/tree/step/3?file=/package.json).
 
-## 4. Add Components
+### 4. Add Components
 
 In this part we'll add 4 exemplary components to illustrate the 4 main ways of adding a component to **kickstartDS**. A `Button` to show [adaptation](../components/adapt.mdx), a `Headline` to show [customization](../components/customize.mdx), a `TeaserCard` to show [creation](../components/create.mdx), and finally a `Section` for [extension](../components/extend.mdx).
 
@@ -194,8 +203,37 @@ See the result of this step in the **Code Sandbox** below. It's showing specific
 
 Toggle the file browser with the hamburger icon at the top left, [or open it directly in your browser](https://codesandbox.io/s/github/kickstartDS/ds-guide/tree/step/4?file=/package.json).
 
-## 5. Publish your Design System
+### 5. Publish your Design System
 
 We're currently in the process of finishing this section. Come back real soon, and it should be here!
 
 Start: [Go to step 5](./publish.mdx)
+
+## Result
+
+This concludes setting up your own **Design System** from scratch. Hopefully everything made sense, and you were able to learn about **kickstartDS**, the reasoning behind decisions taken, and how best to approach the creation of components in a **Design System**-y way.
+
+You can find all the code for this guide, the one also embedded in the **Code Sandboxes** above, on **Github** here:<br/>
+https://github.com/kickstartDS/ds-guide
+
+There are branches on that repository containing the result for every major step of this guide:
+
+1. [Start your **Design System**](https://github.com/kickstartDS/ds-guide/tree/step/1) on branch `step/1`
+2. [Design Application](https://github.com/kickstartDS/ds-guide/tree/step/2) on branch `step/2`
+3. [Configure **Storybook**](https://github.com/kickstartDS/ds-guide/tree/step/3) on branch `step/3`
+4. [Add Components](https://github.com/kickstartDS/ds-guide/tree/step/4) on branch `step/4`
+5. Publish your **Design System** _coming soon..._
+
+You can also have a look at our [**Design System Starter**](../use-our-starter.mdx), which, while including the same components this guide added, also adds lots of additional features out-of-the-box for you.
+
+## Next Steps
+
+Your next steps will depend heavily on your unique circumstances. But to give some pointers to resources that could help in the most common scenarios:
+
+| Question                          | Description                                                                                                                                                                                                                                                      | Link                                                       |
+| --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| **What should I build next?**     | If you need a process that helps in identifying **Design System** requirements, and in ultimately deciding on what components need to be built, in which order they should be built... and what a good pilot project for your **Design System** could look like. | [Design System Initiative](../design-system-initiative.md) |
+| **Selecting component processes** | Background about when to choose which component creation approach, and what should be taken into consideration. this, for example, can have great impact on the technical debt added.                                                                            | [Components](../components/index.mdx)                      |
+| **How will this integrate?**      | Learn about potential integrations that can be leveraged to integrate your **Design System** into different systems, like headless CMS, or technologies, like **Next.js** or **Gatsby**.                                                                         | [Integrations](../../integration/index.mdx)                |
+| **I need more support!**          | If you feel like need more support, or just a helping hand, feel free to have a look at the services we offer around **Design Systems**. These are in no way a requirement to setup your **Design System**, but we're always happy to help!                      | [Services](https://www.kickstartDS.com/services)           |
+| **I want to leave feedback**      | If you have feedback that you want to share with us, or just want to hang out in our small **Design System** community, head over to our **Feedback** page. We love to hear from you!                                                                            | [Feedback](../../feedback/index.md)                        |

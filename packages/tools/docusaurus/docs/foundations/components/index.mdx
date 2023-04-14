@@ -1,0 +1,86 @@
+---
+sidebar_position: 3
+---
+
+import { Section } from '@kickstartds/base/lib/section';
+import { TeaserBox } from '@kickstartds/base/lib/teaser-box';
+import { Columns } from '@bedrock-layout/primitives';
+
+# Components
+
+Components are the main building blocks for any user interface. Using a reusable component library will enhance your product development workflow by reducing design and tech debt and speeding up the process.
+
+<Section ks-theme="docs" spaceBefore="none" width="full">
+  <Columns columns={2} gutter="md" switchAt={480}>
+    <TeaserBox
+      topic="Anatomy"
+      text="Describes all the layers that are at play when working with components in **kickstartDS**."
+      link={{
+        href: './anatomy/',
+        label: 'Explore component anatomy',
+        variant: 'clear',
+        size: 'small',
+        iconAnimation: true,
+        iconAfter: {
+          icon: 'chevron-right',
+        },
+      }}
+    />
+    <TeaserBox
+      topic="Component API"
+      text="Introduction to our way of encoding component APIs using structured **JSON Schema** definitions."
+      link={{
+        href: './component-api/',
+        label: 'About component APIs',
+        variant: 'clear',
+        size: 'small',
+        iconAnimation: true,
+        iconAfter: {
+          icon: 'chevron-right',
+        },
+      }}
+    />
+    <TeaserBox
+      topic="Styling"
+      text="Learn about the different possible ways to influence the styling / design of components (coming soon...)."
+      link={{
+        href: './styling/',
+        label: 'See styling options',
+        variant: 'clear',
+        size: 'small',
+        iconAnimation: true,
+        iconAfter: {
+          icon: 'chevron-right',
+        },
+      }}
+    />
+    <TeaserBox
+      topic="Template"
+      text="Learn about the way we write HTML / markup, independent of the **React** template implementing it."
+      link={{
+        href: './template/',
+        label: 'Explore template features',
+        variant: 'clear',
+        size: 'small',
+        iconAnimation: true,
+        iconAfter: {
+          icon: 'chevron-right',
+        },
+      }}
+    />
+    <TeaserBox
+      topic="React"
+      text="Description of different core **React** features you can use when creating component templates."
+      link={{
+        href: './react/',
+        label: 'Learn about integration',
+        variant: 'clear',
+        size: 'small',
+        iconAnimation: true,
+        iconAfter: {
+          icon: 'chevron-right',
+        },
+      }}
+    />
+  </Columns>
+</Section>

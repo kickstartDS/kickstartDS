@@ -1,0 +1,44 @@
+---
+sidebar_position: 4
+---
+
+import { Section } from '@kickstartds/base/lib/section';
+import { TeaserBox } from '@kickstartds/base/lib/teaser-box';
+import { Columns } from '@bedrock-layout/primitives';
+
+# Frameworks
+
+<div ks-theme="docs">
+  Integration with common **React** frameworks can really speed up adoption, and
+  make the difference between a successful Design System... and one that fails!
+  <Columns columns={3} gutter="md" switchAt={768}>
+    <TeaserBox
+      topic="Gatsby"
+      text="How we can help with **Gatsby** through our own theme, specific to **kickstartDS** and its components."
+      link={{
+        href: './gatsby',
+        label: 'Theme',
+        variant: 'clear',
+        size: 'small',
+        iconAnimation: true,
+        iconAfter: {
+          icon: 'chevron-right',
+        },
+      }}
+    />
+    <TeaserBox
+      topic="Next.js"
+      text="Helper and tipps to aid you in creating an app or interface based on **Next.js** with **kickstartDS**."
+      link={{
+        href: './nextjs',
+        label: 'Helper',
+        variant: 'clear',
+        size: 'small',
+        iconAnimation: true,
+        iconAfter: {
+          icon: 'chevron-right',
+        },
+      }}
+    />
+  </Columns>
+</div>

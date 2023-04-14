@@ -1,0 +1,88 @@
+---
+sidebar_position: 1
+---
+
+import { Section } from '@kickstartds/base/lib/section';
+import { TeaserBox } from '@kickstartds/base/lib/teaser-box';
+import { Columns } from '@bedrock-layout/primitives';
+
+# Storybook
+
+<div ks-theme="docs">
+  Integrating well with **Storybook** means giving all the users of your Design System the best experience possible. It should be the perfect workbench, welcoming every type of stakeholder!
+
+<br />
+
+  <Columns columns={3} gutter="md" switchAt={768}>
+    <TeaserBox
+      topic="JSON Schema"
+      text="Integrate your component API directly into **Storybook**"
+      link={{
+        href: './schema',
+        label: 'Schema',
+        variant: 'clear',
+        size: 'small',
+        iconAnimation: true,
+        iconAfter: {
+          icon: 'chevron-right',
+        },
+      }}
+    />
+    <TeaserBox
+      topic="Design & Component Token"
+      text="Integrate, view and document token in **Storybook**."
+      link={{
+        href: './token',
+        label: 'Token',
+        variant: 'clear',
+        size: 'small',
+        iconAnimation: true,
+        iconAfter: {
+          icon: 'chevron-right',
+        },
+      }}
+    />
+    <TeaserBox
+      topic="Generated Controls"
+      text="Get generated Controls for **Storybook** for free, with enhanced documentation included."
+      link={{
+        href: './controls',
+        label: 'Controls',
+        variant: 'clear',
+        size: 'small',
+        iconAnimation: true,
+        iconAfter: {
+          icon: 'chevron-right',
+        },
+      }}
+    />
+    <TeaserBox
+      topic="Premade Stories"
+      text="Re-use stories already created, to get your docs up and running even faster"
+      link={{
+        href: './stories',
+        label: 'Stories',
+        variant: 'clear',
+        size: 'small',
+        iconAnimation: true,
+        iconAfter: {
+          icon: 'chevron-right',
+        },
+      }}
+    />
+    <TeaserBox
+      topic="Theming"
+      text="Add some flavour to the way your **Storybook** looks!"
+      link={{
+        href: './theming',
+        label: 'Theming',
+        variant: 'clear',
+        size: 'small',
+        iconAnimation: true,
+        iconAfter: {
+          icon: 'chevron-right',
+        },
+      }}
+    />
+  </Columns>
+</div>

@@ -733,7 +733,7 @@ yarn add kickstartds
 
 </CH.Code>
 
-Read more [about our CLI here](../../intro/cli.md)
+Read more [about our CLI here](../../intro/cli.mdx)
 
 Then add the following two additional lines to your `package.json` scripts block:
 
@@ -842,7 +842,7 @@ To learn more about the categories represented by those generated files, have a 
 
 ### Compile **Design Token** set
 
-Finally, to test the integration works as expected, we'll first want to create one additional file: `sd.config.js`. As the name may imply, this is further configuration for our **Design Token**, to convert them into different outputs (more specifically the **Style Dictionary** that gets used under the hood):
+Finally, to test the integration works as expected, we'll first want to create one additional file: `sd.config.cjs` at our projects root. As the name may imply, this is further configuration for our **Design Token**, to convert them into different outputs (more specifically the **Style Dictionary** that gets used under the hood):
 
 And, as this is based on **Style Dictionary**, it generally follows [their configuration scheme](https://amzn.github.io/style-dictionary/#/config?id=using-configuration-files).
 
@@ -1045,8 +1045,8 @@ yarn build-tokens
 If everything worked as expected, you should end up with a long `src/token/tokens.css` file and the following output on your terminal:
 
 ```shellscript
-yarn run v1.22.18
-$ kickstartDS tokens init
+yarn run v1.22.19
+$ kickstartDS tokens compile
   _    _      _        _             _   ____  ____
  | | _(_) ___| | _____| |_ __ _ _ __| |_|  _ \/ ___|
  | |/ / |/ __| |/ / __| __/ _` | '__| __| | | \___ \
@@ -1063,23 +1063,40 @@ ______________/\\\\\\\\\__/\\\______________/\\\\\\\\\\\_______
        __/\\\____\////\\\\\\\\\_\/\\\\\\\\\\\\\\\__/\\\\\\\\\\\__/\\\_
         _\///________\/////////__\///////////////__\///////////__\///__
 
-Version: 1.0.0
+Version: 1.0.4
 For more information visit:
-https://www.kickstartDS.com/docs/intro/cli
+https://www.kickstartds.com/docs/intro/cli/
 
 Starting...
-[kickstartDS: general] [info: welcome to the kickstartDS CLI
-[kickstartDS: tokens/init] starting: init command with init variable init-task
-[1/1] [init: check] [info: checking prerequesites before starting
-[1/1] [init: check] [info: prerequesites met, starting
-[init: cleanup] [info: cleaning up temp dir /tmp/tokens-init-init-task before starting command
-[init: cleanup] [info: finished cleaning up temp dir /tmp/tokens-init-init-task before starting command
-[1/1] [init: init] [info: running the init subtask
-[[info] generating your token set from primitives tokens file /tmp/tokens-init-init-task/token-primitives.json
-[[info] successfully generated primitives tokens and wrote them to folder /tmp/tokens-init-init-task/./src/token/dictionary
-[1/1] [init: init] [info: finished running the init subtask successfully
-[kickstartDS: tokens/init] finished: init command with init variable init-task
-Done in 1.25s.
+[kickstartDS: general] [info]: welcome to the kickstartDS CLI
+[kickstartDS: tokens/compile] starting: compile command with compile variable compile-task
+[1/1] [compile: check] [info]: checking prerequesites before starting
+[1/1] [compile: check] [info]: prerequesites met, starting
+[compile: cleanup] [info]: cleaning up temp dir /tmp/tokens-compile-compile-task before starting command
+[compile: cleanup] [info]: finished cleaning up temp dir /tmp/tokens-compile-compile-task before starting command
+[1/1] [compile: compile] [info]: running the compile subtask
+[1/1] [compile: compile] [info]: getting Style Dictionary from token files
+[1/1] [compile: compile] [info]: compiling Style Dictionary to needed CSS and assets
+
+css
+✔︎ src/token/tokens.css
+
+html
+✔︎ src/token/icons/icon-sprite.html
+
+jsx
+✔︎ src/token/icons/IconSprite.js
+
+storybook
+✔︎ src/token/storybook/tokens.css
+✔︎ src/token/storybook/icons.svg
+
+js
+✔︎ src/token/storybook/tokens.js
+[1/1] [compile: compile] [info]: copying generated CSS and assets to local folder
+[1/1] [compile: compile] [info]: finished running the compile subtask successfully
+[kickstartDS: tokens/compile] finished: compile command with compile variable compile-task
+Done in 2.41s.
 
 ```
 
@@ -3029,7 +3046,7 @@ We want to go real big with our desktop font-size, however to have a more nuance
 
 `line-height`
 
-If you have a hugley variying font size it makes sense to adjust the line-height.
+If you have a hugely variying font size it makes sense to adjust the line-height.
 
 <CH.Code>
 ```json typo.json focus=377:402
