@@ -72,6 +72,7 @@ jobs:
                 paths:
                   - packages/components
                   - packages/tools/storybook/.storybook
+      - run: echo 0
 
   chromatic:
     <<: *defaults
@@ -85,6 +86,7 @@ jobs:
             - run:
                 name: Build Storybook & deploy to Chromatic
                 command: yarn run chromatic
+      - run: echo 0
 
   docusaurus:
     <<: *defaults
