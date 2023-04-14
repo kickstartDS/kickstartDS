@@ -34,7 +34,7 @@
     "watch": "yarn build-tokens && kdsBundle --watch"
   },
   "dependencies": {
-    "@babel/runtime": "^7.20.1",
+    "@babel/runtime": "^7.21.0",
     "bourbon": "^7.2.0",
     "classnames": "^2.2.6",
     "del": "^6.0.0",
