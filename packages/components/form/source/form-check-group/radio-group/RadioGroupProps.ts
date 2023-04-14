@@ -54,7 +54,6 @@ export interface RadioGroupProps {
   options?: Options;
   className?: Class;
   component?: KsComponentAttribute;
-  [k: string]: unknown;
 }
 /**
  * Radio buttons allow users to select a single option from a list of mutually exclusive options.

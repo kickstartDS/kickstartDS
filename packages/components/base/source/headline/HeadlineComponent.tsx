@@ -17,7 +17,6 @@ export const HeadlineComponent: ForwardRefRenderFunction<
     level = 'h2',
     styleAs = 'none',
     align = 'left',
-    pageHeader,
     subheadline,
     spaceAfter = 'minimum',
     renderContent = defaultRenderFn,
@@ -35,7 +34,6 @@ export const HeadlineComponent: ForwardRefRenderFunction<
         'c-headline',
         align && `c-headline--align-${align}`,
         spaceAfter && `c-headline--space-after-${spaceAfter}`,
-        { 'c-headline--page-header': pageHeader },
         className
       )}
       ks-component={component}

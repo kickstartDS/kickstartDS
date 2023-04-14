@@ -97,7 +97,8 @@
             "description": "TODO TYPE DESCRIPTION",
             "type": "string"
           }
-        }
+        },
+        "additionalProperties": false
       }
     },
     "pictureClassName": {
@@ -105,5 +106,6 @@
       "description": "Set additional class(es) to the picture",
       "type": "string"
     }
-  }
+  },
+  "additionalProperties": false
 }

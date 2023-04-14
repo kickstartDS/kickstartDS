@@ -34,7 +34,8 @@
           "hint": {
             "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/hint"
           }
-        }
+        },
+        "required": ["label"]
       }
     },
     "className": {
@@ -48,5 +49,6 @@
       "type": "string"
     }
   },
-  "required": ["label"]
+  "required": ["label"],
+  "additionalProperties": false
 }

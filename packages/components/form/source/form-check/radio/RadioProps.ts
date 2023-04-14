@@ -45,5 +45,4 @@ export interface RadioButtonProps {
   hint?: HintMessage;
   className?: Class;
   component?: KsComponentAttribute;
-  [k: string]: unknown;
 }

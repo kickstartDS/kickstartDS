@@ -22,5 +22,4 @@ export interface HTMLProps {
   html?: HTMLString;
   className?: AdditionalClasses;
   component?: KsComponentAttribute;
-  [k: string]: unknown;
 }
