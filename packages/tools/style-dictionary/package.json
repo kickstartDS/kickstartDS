@@ -15,7 +15,7 @@
   "author": "Jonas Ulrich <jonas.ulrich@kickstartds.com> (https://www.kickstartDS.com/)",
   "main": "./index.js",
   "dependencies": {
-    "@babel/core": "^7.17.8",
+    "@babel/core": "^7.21.4",
     "@babel/preset-react": "^7.16.7",
     "ajv": "^8.10.0",
     "bezier-js": "^6.1.0",
