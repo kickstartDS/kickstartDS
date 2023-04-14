@@ -13,6 +13,13 @@ release_branches_only: &release_branches_only
         - master
         - next
 
+not_dependabot_branch: &not_dependabot_branch
+  condition:
+    not:
+      matches:
+        pattern: '^dependabot\/.*$'
+        value: << pipeline.git.branch >>
+
 aliases:
   - &save-cache-yarn
     key: yarn-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
@@ -39,39 +46,45 @@ jobs:
   release:
     <<: *defaults
     steps:
-      - checkout
-      - restore_cache: *restore-cache-yarn
-      - restore_cache: *restore-cache-node
-      - run:
-          name: Install Dependencies
-          command: yarn install --frozen-lockfile --cache-folder /mnt/ramdisk/.yarn-cache
-      - save_cache: *save-cache-yarn
-      - save_cache: *save-cache-node
-      - run:
-          name: Build
-          environment:
-            NODE_ENV: production
-          command: yarn build
-      - run:
-          name: Create Release
-          environment:
-            HUSKY: 0
-          command: yarn auto shipit
-      - persist_to_workspace:
-          root: .
-          paths:
-            - packages/components
-            - packages/tools/storybook/.storybook
+      - when:
+          <<: *not_dependabot_branch
+          steps:
+            - checkout
+            - restore_cache: *restore-cache-yarn
+            - restore_cache: *restore-cache-node
+            - run:
+                name: Install Dependencies
+                command: yarn install --frozen-lockfile --cache-folder /mnt/ramdisk/.yarn-cache
+            - save_cache: *save-cache-yarn
+            - save_cache: *save-cache-node
+            - run:
+                name: Build
+                environment:
+                  NODE_ENV: production
+                command: yarn build
+            - run:
+                name: Create Release
+                environment:
+                  HUSKY: 0
+                command: yarn auto shipit
+            - persist_to_workspace:
+                root: .
+                paths:
+                  - packages/components
+                  - packages/tools/storybook/.storybook
 
   chromatic:
     <<: *defaults
     steps:
-      - checkout
-      - restore_cache: *restore-cache-node
-      - *attach_workspace
-      - run:
-          name: Build Storybook & deploy to Chromatic
-          command: yarn run chromatic
+      - when:
+          <<: *not_dependabot_branch
+          steps:
+            - checkout
+            - restore_cache: *restore-cache-node
+            - *attach_workspace
+            - run:
+                name: Build Storybook & deploy to Chromatic
+                command: yarn run chromatic
 
   docusaurus:
     <<: *defaults
@@ -131,9 +144,6 @@ workflows:
     jobs:
       - release:
           context: kickstartDS
-          filters:
-            branches:
-              ignore: /^dependabot\/.*$/
 
       - chromatic:
           context: kickstartDS
