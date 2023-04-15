@@ -7,7 +7,7 @@ const { toArray } = require('react-emoji-render');
 const { root } = require('../utils/utils');
 
 const template = ({ title, content }) => `
-import { Meta } from '@storybook/addon-docs';
+import { Meta } from '@storybook/blocks';
 
 <Meta title="${title}" />
 
@@ -32,7 +32,7 @@ module.exports = async (modPath, mod) => {
   const filePaths = await glob(`${modPath}/**/*.md`, {
     cwd: root,
     absolute: true,
-    ignore: 'node_modules',
+    ignore: '**/node_modules',
   });
   filePaths.forEach(async (filePath) => {
     const content = await fs.readFile(filePath);
@@ -47,7 +47,7 @@ module.exports = async (modPath, mod) => {
       ),
     };
     return fs.outputFile(
-      `${modPath}/storybook-tmp/${name}.story.mdx`,
+      `${modPath}/storybook-tmp/${name}.mdx`,
       template(options)
     );
   });
