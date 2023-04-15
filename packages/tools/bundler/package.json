@@ -59,7 +59,7 @@
     "@kickstartds/base": "^1.5.1",
     "@kickstartds/core": "^1.5.0",
     "@kickstartds/style-dictionary": "^1.5.0",
-    "react": "^17.0.2",
+    "react": "^18.2.0",
     "storybook-dark-mode": "^1.1.2"
   }
 }

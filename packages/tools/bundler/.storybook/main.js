@@ -1,26 +1,31 @@
 module.exports = {
-  framework: '@storybook/react',
   stories: [
-    `${process.env.KDS_MODULES_GLOB}/{lib/**,storybook-tmp}/*.stor(ies|y).@(js|mdx)`,
+    // `${process.env.KDS_MODULES_GLOB}/{lib/**,storybook-tmp}/*.stor(ies|y).@(js|mdx)`,
+    `${process.env.KDS_MODULES_GLOB}/{lib/**,storybook-tmp}/*.@(stories.js|mdx)`,
   ],
   addons: [
-    'storybook-dark-mode',
     '@storybook/addon-essentials',
-    '@kickstartds/storybook-addon-component-tokens',
-    '@whitespace/storybook-addon-html',
     '@storybook/addon-a11y',
+    'storybook-dark-mode',
+    // '@kickstartds/storybook-addon-component-tokens',
+    '@whitespace/storybook-addon-html',
+    // "@kickstartds/storybook-addon-jsonschema",
+    {
+      name: 'storybook-design-token',
+      options: {
+        designTokenGlob: `../../tools/bundler/storybook-tmp/*.@(css|svg)`,
+      },
+    },
+    '@storybook/addon-mdx-gfm',
   ],
   features: {
     postcss: false,
   },
-  async webpackFinal(config) {
-    const babelRuleIndex = config.module.rules.findIndex((rule) =>
-      rule?.use?.some((u) => u?.loader.includes('babel-loader'))
-    );
-
-    config.module.rules[babelRuleIndex].exclude =
-      /node_modules\/(?!(@kickstartds\/))/;
-
-    return config;
+  framework: {
+    name: '@storybook/react-vite',
+    options: {},
+  },
+  docs: {
+    autodocs: true,
   },
 };

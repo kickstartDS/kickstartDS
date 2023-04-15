@@ -41,12 +41,12 @@
   },
   "devDependencies": {
     "@kickstartds/bundler": "^2.0.3",
-    "@types/react": "^17.0.43",
+    "@types/react": "^18.0.35",
     "bourbon": "^7.2.0",
     "sass-yiq": "^1.0.0"
   },
   "peerDependencies": {
-    "react": "^17.0.2"
+    "react": "^18.2.0"
   },
   "storybook": {
     "url": "https://master--60832aa30a8f94002193547c.chromatic.com"

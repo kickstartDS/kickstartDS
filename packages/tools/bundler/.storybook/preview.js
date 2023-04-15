@@ -11,8 +11,8 @@ import '@kickstartds/core/lib/design-tokens/tokens.css';
 import '@kickstartds/base/lib/global/base.js';
 import '@kickstartds/base/lib/global/base.css';
 
-import designTokens from '!!raw-loader!../storybook-tmp/tokens.css';
-import icons from '!!raw-loader!../storybook-tmp/icons.svg';
+import designTokens from '../storybook-tmp/tokens.css?inline';
+import icons from '../storybook-tmp/icons.svg';
 
 const myActions = actions('radio');
 window._ks.radio.on('*', myActions.radio);

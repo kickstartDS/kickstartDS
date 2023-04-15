@@ -8,7 +8,7 @@ const template = ({
   schema,
   loadComponentTokens,
 }) => `
-import { jsx } from 'react/jsx-runtime';
+import type { Meta, StoryObj } from '@storybook/react';
 import { getArgsShared } from "@kickstartds/core/lib/storybook/helpers";
 import { ${componentPascalcased} } from './index.js';
 ${
@@ -17,11 +17,9 @@ ${
     : ''
 }
 
-${componentPascalcased}.displayName = '${componentPascalcased}';
 const schema = ${JSON.stringify(schema, null, 2)};
-export const Template = (args) => /*#__PURE__*/jsx(${componentPascalcased}, args);
 
-export default {
+const meta: Meta<typeof ${componentPascalcased}> = {
   title: '${capitalCase(moduleDir)}/${capitalCase(schema.title)}',
   component: ${componentPascalcased},
   excludeStories: ['Template'],
@@ -30,8 +28,10 @@ export default {
   },
   ...getArgsShared(schema),
 };
+export default meta;
+type Story = StoryObj<typeof ${componentPascalcased}>;
 
-export const Default = Template.bind({});
+export const Default: Story = {};
 `;
 
 const createStory = (schema, dest) => {
@@ -43,7 +43,7 @@ const createStory = (schema, dest) => {
   if (type === 'schema' && schema.properties) {
     return Promise.all([
       fs.outputFile(
-        `${dest}/${componentName}.stories.js`,
+        `${dest}/${componentName}.stories.ts`,
         template({
           moduleDir,
           componentName,
