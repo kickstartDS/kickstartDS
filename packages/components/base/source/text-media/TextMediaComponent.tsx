@@ -2,6 +2,7 @@ import {
   FunctionComponent,
   ForwardRefRenderFunction,
   HTMLAttributes,
+  PropsWithChildren,
 } from 'react';
 import classnames from 'classnames';
 import { Picture } from '../image/picture';
@@ -28,10 +29,12 @@ const figureClassName = (full: TFullWidthMedia) =>
   classnames('text-media__media', {
     'text-media__media--full': full,
   });
-const Figure: FunctionComponent<{
-  full?: TFullWidthMedia;
-  caption?: TCaption;
-}> = ({ full, caption, children }) => (
+const Figure: FunctionComponent<
+  PropsWithChildren<{
+    full?: TFullWidthMedia;
+    caption?: TCaption;
+  }>
+> = ({ full, caption, children }) => (
   <figure className={figureClassName(full)}>
     {children}
     {caption ? (
