@@ -1,7 +1,7 @@
 module.exports = {
   stories: [
     // `${process.env.KDS_MODULES_GLOB}/{lib/**,storybook-tmp}/*.stor(ies|y).@(js|mdx)`,
-    `${process.env.KDS_MODULES_GLOB}/{lib/**,storybook-tmp}/*.@(stories.js|mdx)`,
+    `${process.env.KDS_MODULES_GLOB}/{lib/**,storybook-tmp}/*.@(stories.js|stories.ts|mdx)`,
   ],
   addons: [
     '@storybook/addon-essentials',
