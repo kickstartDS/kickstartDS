@@ -2,12 +2,13 @@ import {
   FunctionComponent,
   ForwardRefRenderFunction,
   HTMLAttributes,
+  PropsWithChildren,
 } from 'react';
 import classnames from 'classnames';
 import { Headline } from '../headline';
 import type { SectionProps } from './SectionProps';
 
-const SectionContainer: FunctionComponent<SectionProps> = ({
+const SectionContainer: FunctionComponent<PropsWithChildren<SectionProps>> = ({
   width,
   gutter,
   mode,
