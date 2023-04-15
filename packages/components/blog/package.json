@@ -41,7 +41,7 @@
     "@kickstartds/bundler": "^2.0.3"
   },
   "peerDependencies": {
-    "react": "^18.2.0"
+    "react": "^17.0.2 || ^18.2.0"
   },
   "storybook": {
     "url": "https://master--608332299164bb0021bc47c4.chromatic.com"

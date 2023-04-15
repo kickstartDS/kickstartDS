@@ -55,6 +55,6 @@
     "style-dictionary": "^3.7.1"
   },
   "peerDependencies": {
-    "react": "^18.2.0"
+    "react": "^17.0.2 || ^18.2.0"
   }
 }

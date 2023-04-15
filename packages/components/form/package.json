@@ -41,7 +41,7 @@
     "bourbon": "^7.2.0"
   },
   "peerDependencies": {
-    "react": "^18.2.0"
+    "react": "^17.0.2 || ^18.2.0"
   },
   "storybook": {
     "url": "https://master--60d382053a7c1f00494ae27f.chromatic.com"
