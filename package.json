@@ -68,7 +68,7 @@
     "@auto-it/npm": "^10.37.6",
     "@auto-it/released": "^10.37.6",
     "@commitlint/cli": "^17.2.0",
-    "@commitlint/config-conventional": "^17.1.0",
+    "@commitlint/config-conventional": "^17.6.1",
     "@types/react": "^17.0.50",
     "@types/react-dom": "^17.0.17",
     "auto": "^10.37.6",
