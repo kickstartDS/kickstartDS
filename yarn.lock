@@ -171,12 +171,63 @@
   resolved "https://registry.yarnpkg.com/@auto-it/bot-list/-/bot-list-10.37.6.tgz#3ca9380a44b9c8d33b2088b8fed2c2ffc79c91ed"
   integrity sha512-ltcLZEzXOOWh24qgNE4mPYJR25Dh9mQy2QwyD8uOE01Vy0yu89RGLi0TahUlUNZUSPBjLYUCxNOcp9WHKBJ7Sg==
 
+"@auto-it/bot-list@10.44.0":
+  version "10.44.0"
+  resolved "https://registry.yarnpkg.com/@auto-it/bot-list/-/bot-list-10.44.0.tgz#c3c94f9e5cfb259e46ed6814b3cc614710bd7aad"
+  integrity sha512-RRiLVl8OJBlBuho7JfzVuSEIr9nwHA6NXUooVZkaDELLXweHkMfZCUyVTacQDRfqMF6nHJvFvryo5JpL70nUyQ==
+
 "@auto-it/core@10.37.6":
   version "10.37.6"
   resolved "https://registry.yarnpkg.com/@auto-it/core/-/core-10.37.6.tgz#04e5f47dbd89a4ab253f9562cd214ff8b7408b7c"
   integrity sha512-XfQq+DmUAg7hXSwq0KxOCGyPLlri8hJoEAp3QDaAa42CSnM5A5oZ67VaL7D/mFcSPDYK8o3w69mQfwcmOENjBA==
   dependencies:
     "@auto-it/bot-list" "10.37.6"
+    "@endemolshinegroup/cosmiconfig-typescript-loader" "^3.0.2"
+    "@octokit/core" "^3.5.1"
+    "@octokit/plugin-enterprise-compatibility" "1.3.0"
+    "@octokit/plugin-retry" "^3.0.9"
+    "@octokit/plugin-throttling" "^3.6.2"
+    "@octokit/rest" "^18.12.0"
+    await-to-js "^3.0.0"
+    chalk "^4.0.0"
+    cosmiconfig "7.0.0"
+    deepmerge "^4.0.0"
+    dotenv "^8.0.0"
+    endent "^2.1.0"
+    enquirer "^2.3.4"
+    env-ci "^5.0.1"
+    fast-glob "^3.1.1"
+    fp-ts "^2.5.3"
+    fromentries "^1.2.0"
+    gitlog "^4.0.3"
+    https-proxy-agent "^5.0.0"
+    import-cwd "^3.0.0"
+    import-from "^3.0.0"
+    io-ts "^2.1.2"
+    lodash.chunk "^4.2.0"
+    log-symbols "^4.0.0"
+    node-fetch "2.6.7"
+    parse-author "^2.0.0"
+    parse-github-url "1.0.2"
+    pretty-ms "^7.0.0"
+    requireg "^0.2.2"
+    semver "^7.0.0"
+    signale "^1.4.0"
+    tapable "^2.2.0"
+    terminal-link "^2.1.1"
+    tinycolor2 "^1.4.1"
+    ts-node "^10.9.1"
+    tslib "2.1.0"
+    type-fest "^0.21.1"
+    typescript-memoize "^1.0.0-alpha.3"
+    url-join "^4.0.0"
+
+"@auto-it/core@10.44.0":
+  version "10.44.0"
+  resolved "https://registry.yarnpkg.com/@auto-it/core/-/core-10.44.0.tgz#93940c89f55efa4e24c0d0c0446f73d5289e7056"
+  integrity sha512-yr+dnOBg5kF/wcnQLAZaNIqTVmmZXJViatEI0R1f9Y/lNCVulSPvUimjwVEvTtAgWghJSiKgPNBOTLic5U/1ow==
+  dependencies:
+    "@auto-it/bot-list" "10.44.0"
     "@endemolshinegroup/cosmiconfig-typescript-loader" "^3.0.2"
     "@octokit/core" "^3.5.1"
     "@octokit/plugin-enterprise-compatibility" "1.3.0"
@@ -229,7 +280,7 @@
     tslib "2.1.0"
     url-join "^4.0.0"
 
-"@auto-it/npm@10.37.6", "@auto-it/npm@^10.37.6":
+"@auto-it/npm@10.37.6":
   version "10.37.6"
   resolved "https://registry.yarnpkg.com/@auto-it/npm/-/npm-10.37.6.tgz#a838c7880747d1871a4afacd38ccfa750cbc6500"
   integrity sha512-18CpaX3YfpJ6vwONYEBy9ORiPGplrtQ30pzRtDpKZzHin5wakdOyPd1P5lWeZBmCQCyiszdRteeQsXzFbaSuoQ==
@@ -249,10 +300,38 @@
     url-join "^4.0.0"
     user-home "^2.0.0"
 
+"@auto-it/npm@^10.44.0":
+  version "10.44.0"
+  resolved "https://registry.yarnpkg.com/@auto-it/npm/-/npm-10.44.0.tgz#06cfbd21e0b1ff2f100d3c08148b1c771797b6ab"
+  integrity sha512-QQ/ZbLCWd7nrREmG4vgBzBeKb4uKHx2TkGwFB3MrLgyCry0JM91OdG0/p485vdbyPC1gX31eYMhfAswiglboDA==
+  dependencies:
+    "@auto-it/core" "10.44.0"
+    "@auto-it/package-json-utils" "10.44.0"
+    await-to-js "^3.0.0"
+    endent "^2.1.0"
+    env-ci "^5.0.1"
+    fp-ts "^2.5.3"
+    get-monorepo-packages "^1.1.0"
+    io-ts "^2.1.2"
+    registry-url "^5.1.0"
+    semver "^7.0.0"
+    tslib "2.1.0"
+    typescript-memoize "^1.0.0-alpha.3"
+    url-join "^4.0.0"
+    user-home "^2.0.0"
+
 "@auto-it/package-json-utils@10.37.6":
   version "10.37.6"
   resolved "https://registry.yarnpkg.com/@auto-it/package-json-utils/-/package-json-utils-10.37.6.tgz#442716eff1a82d39326e905d29fc1fba7155db77"
   integrity sha512-rUoEcEnPgHG8X/XkPe3PKFHhXD3AsplXB0Rpr7lJQta5XzDqmWzc/xVL1vMmM4IpXMI5lK7A9OZosWjgJVI7jA==
+  dependencies:
+    parse-author "^2.0.0"
+    parse-github-url "1.0.2"
+
+"@auto-it/package-json-utils@10.44.0":
+  version "10.44.0"
+  resolved "https://registry.yarnpkg.com/@auto-it/package-json-utils/-/package-json-utils-10.44.0.tgz#26488b01d2d0d5b7318d713c74a08b0c21986dd8"
+  integrity sha512-M6khrxIl0jmeCHs2/rH93ZExybdN8+5CEBZaGrkmNhqLB1zCyST04Gi1yL2clT+w3ifCshgG1A/xGYKD/AhMzQ==
   dependencies:
     parse-author "^2.0.0"
     parse-github-url "1.0.2"
