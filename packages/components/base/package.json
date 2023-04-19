@@ -35,8 +35,8 @@
     "@kickstartds/core": "^2.0.3",
     "classnames": "^2.3.2",
     "focus-visible": "^5.0.2",
+    "markdown-to-jsx": "^7.2.0",
     "photoswipe": "^5.3.2",
-    "react-markdown": "^8.0.3",
     "vhtml": "^2.2.0"
   },
   "devDependencies": {

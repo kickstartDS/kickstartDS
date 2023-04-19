@@ -32,13 +32,13 @@ export const Button = forwardRef(({ children, ...props }, ref) => (
 ```js
 import { forwardRef } from 'react';
 import { Button as KdsButton } from '@kickstartds/base/lib/button';
-import ReactMarkdown from 'react-markdown';
+import Markdown from 'markdown-to-jsx';
 
 export const Button = forwardRef((props, ref) => (
   <KdsButton
     {...props}
     ref={ref}
-    renderLabel={(label) => <ReactMarkdown children={label} />}
+    renderLabel={(label) => <Markdown children={label} />}
   />
 ));
 
@@ -56,13 +56,13 @@ import {
   ButtonContextDefault,
 } from '@kickstartds/base/lib/button';
 import { ContentBox } from "@kickstartds/base/content-box";
-import ReactMarkdown from 'react-markdown';
+import Markdown from 'markdown-to-jsx';
 
 const Button = forwardRef((props, ref) => (
   <ButtonContextDefault
     {...props}
     ref={ref}
-    renderLabel={(label) => <ReactMarkdown children={label} />}
+    renderLabel={(label) => <Markdown children={label} />}
   />
 ));
 
