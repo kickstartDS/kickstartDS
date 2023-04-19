@@ -1,1 +1,2 @@
-export * from '@kickstartds/bundler/.storybook/preview';
+import preview from '@kickstartds/bundler/.storybook/preview';
+export default preview;

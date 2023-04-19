@@ -1,7 +1,9 @@
-module.exports = {
+import { StorybookConfig } from '@storybook/react-vite';
+
+const config: StorybookConfig = {
   stories: [
-    // `${process.env.KDS_MODULES_GLOB}/{lib/**,storybook-tmp}/*.stor(ies|y).@(js|mdx)`,
-    `${process.env.KDS_MODULES_GLOB}/{lib/**,storybook-tmp}/*.@(stories.js|stories.ts|mdx)`,
+    `${process.env.KDS_MODULES_GLOB}/{lib/**,storybook-tmp}/*.@(stories.ts|mdx)`,
+    `${process.env.KDS_MODULES_GLOB}/source/**/*.mdx`,
   ],
   addons: [
     '@storybook/addon-essentials',
@@ -18,9 +20,6 @@ module.exports = {
     },
     '@storybook/addon-mdx-gfm',
   ],
-  features: {
-    postcss: false,
-  },
   framework: {
     name: '@storybook/react-vite',
     options: {},
@@ -29,3 +28,5 @@ module.exports = {
     autodocs: true,
   },
 };
+
+export default config;
