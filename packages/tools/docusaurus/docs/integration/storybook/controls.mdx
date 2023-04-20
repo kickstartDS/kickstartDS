@@ -45,7 +45,7 @@ Using our helpers provides the following conversion for your **JSON Schema**:
 ### Implementation
 
 You can find the implementation in our **Github** mono-repository:<br/>
-https://github.com/kickstartDS/kickstartDS/tree/next/packages/components/core/source/storybook/helpers.js
+https://github.com/kickstartDS/kickstartDS/tree/next/packages/components/core/source/storybook/helpers.ts
 
 There are four functions exported to be used in your own stories for **Storybook Controls**:
 
@@ -63,7 +63,7 @@ Integration works by adding the `unpackDecorator` to all of your stories in `.st
 ```js .storybook/preview.js
 import {
   unpackDecorator,
-} from "@kickstartds/core/lib/storybook/helpers";
+} from "@kickstartds/core/lib/storybook";
 
 [...]
 
@@ -164,7 +164,7 @@ The corresponding story for our `Button` might look a little like this when addi
 <CH.Code>
 ```jsx src/components/button/Button.stories.jsx
 import { Button } from "./ButtonComponent";
-import { pack, getArgsShared } from "@kickstartds/core/lib/storybook/helpers";
+import { pack, getArgsShared } from "@kickstartds/core/lib/storybook";
 import ButtonStories from "@kickstartds/base/lib/button/button.stories";
 import schema from "./button.schema.dereffed.json";
 
@@ -199,7 +199,7 @@ First we import all helpers we'll use, and the dereferenced version ouf our comp
 <CH.Code>
 ```jsx src/components/button/Button.stories.jsx focus=2,4
 import { Button } from "./ButtonComponent";
-import { pack, getArgsShared } from "@kickstartds/core/lib/storybook/helpers";
+import { pack, getArgsShared } from "@kickstartds/core/lib/storybook";
 import ButtonStories from "@kickstartds/base/lib/button/button.stories";
 import schema from "./button.schema.dereffed.json";
 
@@ -234,7 +234,7 @@ We pull out `args` (as `defaultArgs`) and `argTypes` for our schema out of `getA
 <CH.Code>
 ```jsx src/components/button/Button.stories.jsx focus=6
 import { Button } from "./ButtonComponent";
-import { pack, getArgsShared } from "@kickstartds/core/lib/storybook/helpers";
+import { pack, getArgsShared } from "@kickstartds/core/lib/storybook";
 import ButtonStories from "@kickstartds/base/lib/button/button.stories";
 import schema from "./button.schema.dereffed.json";
 
@@ -269,7 +269,7 @@ We tell our `Template` to pass through our `unpack`ed (by the `unpackDecorator`)
 <CH.Code>
 ```jsx src/components/button/Button.stories.jsx focus=8
 import { Button } from "./ButtonComponent";
-import { pack, getArgsShared } from "@kickstartds/core/lib/storybook/helpers";
+import { pack, getArgsShared } from "@kickstartds/core/lib/storybook";
 import ButtonStories from "@kickstartds/base/lib/button/button.stories";
 import schema from "./button.schema.dereffed.json";
 
@@ -304,7 +304,7 @@ Setting `args` and `argTypes` in the `default` export ensures all variants of th
 <CH.Code>
 ```jsx src/components/button/Button.stories.jsx focus=13:14
 import { Button } from "./ButtonComponent";
-import { pack, getArgsShared } from "@kickstartds/core/lib/storybook/helpers";
+import { pack, getArgsShared } from "@kickstartds/core/lib/storybook";
 import ButtonStories from "@kickstartds/base/lib/button/button.stories";
 import schema from "./button.schema.dereffed.json";
 
@@ -339,7 +339,7 @@ Finally, we'll need to `pack` options given to our stories / components.
 <CH.Code>
 ```jsx src/components/button/Button.stories.jsx focus=21:24
 import { Button } from "./ButtonComponent";
-import { pack, getArgsShared } from "@kickstartds/core/lib/storybook/helpers";
+import { pack, getArgsShared } from "@kickstartds/core/lib/storybook";
 import ButtonStories from "@kickstartds/base/lib/button/button.stories";
 import schema from "./button.schema.dereffed.json";
 

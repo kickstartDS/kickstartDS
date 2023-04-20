@@ -1,20 +1,54 @@
 /* eslint-disable no-nested-ternary */
-const getArgsShared = (initialSchema) => {
-  const argTypes = {};
-  const args = {};
+import type {
+  JSONSchema7,
+  JSONSchema7Definition,
+  JSONSchema7TypeName,
+} from 'json-schema';
+import type {
+  ArgTypes,
+  Args,
+  DecoratorFunction,
+  InputType,
+  SBType,
+} from '@storybook/types';
+
+const definitionIsSchema = (
+  schema: JSONSchema7Definition | JSONSchema7Definition[]
+): schema is JSONSchema7 =>
+  !Array.isArray(schema) && typeof schema !== 'boolean';
+
+const getTypeName = (
+  schemaType: JSONSchema7TypeName | JSONSchema7TypeName[]
+) => {
+  const typeName = Array.isArray(schemaType) ? schemaType[0] : schemaType;
+  switch (typeName) {
+    case 'null':
+      return 'object';
+    case 'integer':
+      return 'number';
+    default:
+      return typeName;
+  }
+};
+
+const getArgsShared = (
+  initialSchema: JSONSchema7
+): { argTypes: ArgTypes; args: Args } => {
+  const argTypes: ArgTypes = {};
+  const args: Args = {};
 
   const getArgTypes = (
-    schema,
-    name,
-    category,
-    subcategory,
-    required,
+    schema: JSONSchema7,
+    name?: string,
+    category?: string,
+    subcategory?: string,
+    required?: boolean,
     defaultValue = schema.default,
     example = schema.examples?.[0]
   ) => {
     if ('const' in schema) return;
 
-    const add = (typeProps) => {
+    const add = (typeProps: InputType) => {
       argTypes[name] = {
         name,
         description: `**${schema.title}${schema.description ? ':' : ''}**${
@@ -22,8 +56,8 @@ const getArgsShared = (initialSchema) => {
         }`,
         type: {
           required,
-          summary: schema.type,
-        },
+          name: getTypeName(schema.type),
+        } as SBType,
         table: {
           category: category ?? 'general',
           defaultValue: { summary: defaultValue },
@@ -80,21 +114,23 @@ const getArgsShared = (initialSchema) => {
           const cat = category ?? name;
           Object.entries(schema.properties).forEach(
             ([propName, propSchema]) => {
-              const subcat =
-                cat &&
-                (subcategory ||
-                  ((propSchema.type === 'object' ||
-                    propSchema.type === 'array') &&
-                    `${name}.${propName}`));
-              getArgTypes(
-                propSchema,
-                name ? `${name}.${propName}` : propName,
-                cat,
-                subcat,
-                schema.required?.includes(propName),
-                defaultValue?.[propName] ?? schema.default?.[propName],
-                example?.[propName] ?? schema.examples?.[0][propName]
-              );
+              if (definitionIsSchema(propSchema)) {
+                const subcat =
+                  cat &&
+                  (subcategory ||
+                    ((propSchema.type === 'object' ||
+                      propSchema.type === 'array') &&
+                      `${name}.${propName}`));
+                getArgTypes(
+                  propSchema,
+                  name ? `${name}.${propName}` : propName,
+                  cat,
+                  subcat,
+                  schema.required?.includes(propName),
+                  defaultValue?.[propName] ?? schema.default?.[propName],
+                  example?.[propName] ?? schema.examples?.[0][propName]
+                );
+              }
             }
           );
         } else {
@@ -105,26 +141,32 @@ const getArgsShared = (initialSchema) => {
         break;
 
       case 'array':
-        if (schema.items && schema.items.type) {
+        if (
+          schema.items &&
+          definitionIsSchema(schema.items) &&
+          schema.items.type
+        ) {
           const cat = category ?? name;
           const examples = example ?? schema.examples?.[0] ?? defaultValue;
           const count = examples?.length ?? 3;
-          new Array(count).fill().forEach((_, index) => {
-            const subcat =
-              cat &&
-              (subcategory ||
-                ((schema.items.type === 'object' ||
-                  schema.items.type === 'array') &&
-                  `${name}.${index}`));
-            getArgTypes(
-              schema.items,
-              name ? `${name}.${index}` : index,
-              cat,
-              subcat,
-              undefined,
-              defaultValue?.[index] ?? schema.default?.[index],
-              examples?.[index]
-            );
+          new Array(count).fill(0).forEach((_, index) => {
+            if (definitionIsSchema(schema.items)) {
+              const subcat =
+                cat &&
+                (subcategory ||
+                  ((schema.items.type === 'object' ||
+                    schema.items.type === 'array') &&
+                    `${name}.${index}`));
+              getArgTypes(
+                schema.items,
+                name ? `${name}.${index}` : String(index),
+                cat,
+                subcat,
+                undefined,
+                defaultValue?.[index] ?? schema.default?.[index],
+                examples?.[index]
+              );
+            }
           });
         } else {
           add({
@@ -142,8 +184,8 @@ const getArgsShared = (initialSchema) => {
   return { argTypes, args };
 };
 
-const unpack = (flatArgs) => {
-  const args = {};
+const unpack = (flatArgs: Args): Args => {
+  const args: Args = {};
 
   // eslint-disable-next-line no-restricted-syntax
   for (const [key, value] of Object.entries(flatArgs)) {
@@ -159,13 +201,13 @@ const unpack = (flatArgs) => {
   return args;
 };
 
-const unpackDecorator = (story, config) =>
+const unpackDecorator: DecoratorFunction = (story, config) =>
   story({ ...config, args: unpack(config.args) });
 
-const isObject = (obj) =>
+const isObject = (obj: unknown): obj is Record<string, unknown> =>
   Object.prototype.toString.call(obj) === '[object Object]';
 
-const pack = (obj) =>
+const pack = (obj: Record<string, unknown> | unknown[]): Args =>
   Object.entries(obj).reduce((prev, [key, value]) => {
     if (isObject(value) || Array.isArray(value)) {
       Object.entries(pack(value)).forEach(([key2, value2]) => {

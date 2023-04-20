@@ -9,7 +9,7 @@ const template = ({
   loadComponentTokens,
 }) => `
 import type { Meta, StoryObj } from '@storybook/react';
-import { getArgsShared } from "@kickstartds/core/lib/storybook/helpers";
+import { getArgsShared } from "@kickstartds/core/lib/storybook";
 import { ${componentPascalcased} } from './index.js';
 ${
   loadComponentTokens

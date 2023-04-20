@@ -4,7 +4,7 @@ import { createPageDecorator } from '@kickstartds/bundler/stories/createPageDeco
 import { InvertedDecorator } from '@kickstartds/bundler/stories/InvertedDecorator';
 // @see https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/attrchange
 import 'lazysizes/plugins/attrchange/ls.attrchange';
-import { unpackDecorator } from '@kickstartds/core/lib/storybook/helpers';
+import { unpackDecorator } from '@kickstartds/core/lib/storybook';
 import IconSprite from '../storybook-tmp/IconSprite';
 
 import '@kickstartds/core/lib/design-tokens/tokens.css';

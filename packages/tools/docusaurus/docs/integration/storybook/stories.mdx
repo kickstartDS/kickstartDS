@@ -54,7 +54,7 @@ Let's see how this would look like when building a story for your own, hypotheti
 <CH.Code>
 ```jsx src/components/button/Button.stories.jsx
 import { Button } from "./ButtonComponent";
-import { pack, getArgsShared } from "@kickstartds/core/lib/storybook/helpers";
+import { pack, getArgsShared } from "@kickstartds/core/lib/storybook";
 import ButtonStories from "@kickstartds/base/lib/button/button.stories";
 import schema from "./button.schema.dereffed.json";
 
@@ -84,7 +84,7 @@ First we import the existing `ButtonStories` from `@kickstartds/base`.
 <CH.Code>
 ```jsx src/components/button/Button.stories.jsx focus=3
 import { Button } from "./ButtonComponent";
-import { pack, getArgsShared } from "@kickstartds/core/lib/storybook/helpers";
+import { pack, getArgsShared } from "@kickstartds/core/lib/storybook";
 import ButtonStories from "@kickstartds/base/lib/button/button.stories";
 import schema from "./button.schema.dereffed.json";
 
@@ -114,7 +114,7 @@ Destructure them into your `default` export as defaults, and overwrite just what
 <CH.Code>
 ```jsx src/components/button/Button.stories.jsx focus=11,16
 import { Button } from "./ButtonComponent";
-import { pack, getArgsShared } from "@kickstartds/core/lib/storybook/helpers";
+import { pack, getArgsShared } from "@kickstartds/core/lib/storybook";
 import ButtonStories from "@kickstartds/base/lib/button/button.stories";
 import schema from "./button.schema.dereffed.json";
 

@@ -42,6 +42,7 @@
     "esbuild": "^0.15.10",
     "fast-glob": "^3.2.11",
     "fs-extra": "^10.1.0",
+    "json-schema": "^0.4.0",
     "lazysizes": "^5.3.2",
     "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",
@@ -51,10 +52,12 @@
   "devDependencies": {
     "@kickstartds/bundler": "^2.0.3",
     "@kickstartds/style-dictionary": "^2.0.0",
+    "@storybook/types": "^7.0.5",
     "storybook-design-token": "3.0.0-beta.2",
     "style-dictionary": "^3.7.1"
   },
   "peerDependencies": {
+    "@storybook/types": "^7.0.5",
     "react": "^17.0.2 || ^18.2.0"
   }
 }
