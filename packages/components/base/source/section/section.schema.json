@@ -94,14 +94,8 @@
           "type": "object",
           "properties": {
             "align": {
-              "allOf": [
-                {
-                  "default": "center"
-                },
-                {
-                  "$ref": "http://schema.kickstartds.com/base/headline.schema.json#/properties/align"
-                }
-              ]
+              "type": "string",
+              "default": "center"
             }
           }
         },
