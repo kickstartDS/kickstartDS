@@ -1675,10 +1675,10 @@
     resolve-global "1.0.0"
     yargs "^17.0.0"
 
-"@commitlint/config-conventional@^17.1.0":
-  version "17.1.0"
-  resolved "https://registry.yarnpkg.com/@commitlint/config-conventional/-/config-conventional-17.1.0.tgz#9bd852766e08842bfe0fe4deb40e152eb718ec1b"
-  integrity sha512-WU2p0c9/jLi8k2q2YrDV96Y8XVswQOceIQ/wyJvQxawJSCasLdRB3kUIYdNjOCJsxkpoUlV/b90ZPxp1MYZDiA==
+"@commitlint/config-conventional@^17.6.3":
+  version "17.6.3"
+  resolved "https://registry.yarnpkg.com/@commitlint/config-conventional/-/config-conventional-17.6.3.tgz#21f5835235493e386effeaa98b898124230b1000"
+  integrity sha512-bLyHEjjRWqlLQWIgYFHmUPbEFMOOLXeF3QbUinDIJev/u9e769tkoTH9YPknEywiuIrAgZaVo+OfzAIsJP0fsw==
   dependencies:
     conventional-changelog-conventionalcommits "^5.0.0"
 
@@ -16677,13 +16677,6 @@ postcss-selector-parser@^6.0.0, postcss-selector-parser@^6.0.10, postcss-selecto
   dependencies:
     cssesc "^3.0.0"
     util-deprecate "^1.0.2"
-
-"postcss-sort-container-queries@git+https://github.com/lmestel/postcss-sort-container-queries.git":
-  version "1.0.0"
-  uid "6e5415ef4d26de8975f6fa15b78d72a0a3420655"
-  resolved "git+https://github.com/lmestel/postcss-sort-container-queries.git#6e5415ef4d26de8975f6fa15b78d72a0a3420655"
-  dependencies:
-    sort-css-media-queries "2.0.4"
 
 "postcss-sort-container-queries@https://github.com/lmestel/postcss-sort-container-queries":
   version "1.0.0"
