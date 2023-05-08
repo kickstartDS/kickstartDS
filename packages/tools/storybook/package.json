@@ -31,7 +31,7 @@
     "@storybook/addon-a11y": "6.5.13",
     "@storybook/addon-essentials": "6.5.13",
     "@storybook/cli": "6.5.13",
-    "@storybook/core": "6.5.13",
+    "@storybook/core": "6.5.16",
     "@storybook/react": "6.5.13",
     "@types/react": "^17.0.43",
     "@types/react-dom": "^17.0.14",
