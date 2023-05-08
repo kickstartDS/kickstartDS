@@ -2696,19 +2696,6 @@
     react-markdown "^8.0.2"
     vhtml "^2.2.0"
 
-"@kickstartds/base@2.0.4-next.5":
-  version "2.0.4-next.5"
-  resolved "https://registry.npmjs.org/@kickstartds/base/-/base-2.0.4-next.5.tgz#edb755d0c06637304e148a05ef251a1f31d6635f"
-  integrity sha512-UrvqCyTsU5xmVh14AgPuj5kUCBNOkQGgDhZy60jNvQqjn3SiXM47PmvF11gXDk4B3hsueICZGSdV4mYMB7HWrQ==
-  dependencies:
-    "@babel/runtime" "^7.21.0"
-    "@kickstartds/core" "^2.0.3"
-    classnames "^2.3.2"
-    focus-visible "^5.0.2"
-    photoswipe "^5.3.2"
-    react-markdown "^8.0.3"
-    vhtml "^2.2.0"
-
 "@kickstartds/blog@2.0.0-canary.922.4419.0":
   version "2.0.0-canary.922.4419.0"
   resolved "https://registry.npmjs.org/@kickstartds/blog/-/blog-2.0.0-canary.922.4419.0.tgz#bb3386f698fbf05d5968c2bd753ba0d555985130"
@@ -2720,49 +2707,6 @@
     "@kickstartds/core" "2.0.0-canary.922.4419.0"
     classnames "^2.2.6"
     date-fns "^2.28.0"
-
-"@kickstartds/bundler@2.0.4-next.1":
-  version "2.0.4-next.1"
-  resolved "https://registry.npmjs.org/@kickstartds/bundler/-/bundler-2.0.4-next.1.tgz#34601c5dd04ba45b129208fe8950078b2408f000"
-  integrity sha512-nWk/nlplA8KYJpJ+z+TCpR+Lc4B8n37vD2YOADK+wl3ZUrSwUzJOpnUm4VMgupyr3akDuBFnahc1av6JWp4DOw==
-  dependencies:
-    "@babel/core" "^7.21.4"
-    "@babel/plugin-transform-runtime" "^7.21.4"
-    "@babel/preset-env" "^7.21.4"
-    "@babel/preset-react" "^7.18.6"
-    "@babel/preset-typescript" "^7.21.4"
-    "@rollup/plugin-babel" "^6.0.3"
-    "@rollup/plugin-commonjs" "^23.0.0"
-    "@rollup/plugin-node-resolve" "^15.0.2"
-    "@rollup/plugin-replace" "^4.0.0"
-    autoprefixer "^10.4.12"
-    builtin-modules "^3.3.0"
-    change-case "^4.1.2"
-    chokidar "^3.5.3"
-    cssnano "^5.1.13"
-    custom-property-extract "^1.2.1"
-    debug "^4.3.4"
-    del "^6.0.0"
-    fast-glob "^3.2.11"
-    find-up "^5.0.0"
-    fs-extra "^10.1.0"
-    json-schema-merge-allof "^0.8.1"
-    json-schema-ref-parser "^9.0.7"
-    json-schema-to-typescript "^11.0.2"
-    json-schema-traverse "^1.0.0"
-    lodash "^4.17.21"
-    postcss "^8.4.21"
-    postcss-combine-duplicated-selectors "^10.0.3"
-    postcss-sort-container-queries "https://github.com/lmestel/postcss-sort-container-queries"
-    postcss-sort-media-queries "^4.3.0"
-    react-emoji-render "^1.2.4"
-    rollup "^2.79.1"
-    rollup-plugin-import-resolver "^1.2.0"
-    rollup-plugin-node-externals "^5.0.2"
-    rollup-plugin-terser "^7.0.2"
-    rollup-plugin-ts "^3.2.0"
-    sass "^1.56.0"
-    typescript "^4.9.5"
 
 "@kickstartds/content@2.0.0-canary.922.4419.0":
   version "2.0.0-canary.922.4419.0"
@@ -2806,25 +2750,6 @@
     sass "^1.50.0"
     svgstore "^3.0.1"
     tinycolor2 "^1.4.2"
-
-"@kickstartds/core@2.0.4-next.2":
-  version "2.0.4-next.2"
-  resolved "https://registry.npmjs.org/@kickstartds/core/-/core-2.0.4-next.2.tgz#5abadfc8a7134e625ad2ce265fcc1344e35d3789"
-  integrity sha512-hN9EQR/1yKS65wWs15kPiRKNDjEix0gfT3EkmikS8cqhrJptst8ir+8BtSUCZGalOGqf3mB48dE/EYxxw/R22w==
-  dependencies:
-    "@babel/runtime" "^7.21.0"
-    bourbon "^7.2.0"
-    classnames "^2.2.6"
-    del "^6.0.0"
-    dependency-graph "^0.11.0"
-    esbuild "^0.15.10"
-    fast-glob "^3.2.11"
-    fs-extra "^10.1.0"
-    lazysizes "^5.3.2"
-    lodash "^4.17.21"
-    lodash-es "^4.17.21"
-    pubsub-js "^1.9.4"
-    sass "^1.56.0"
 
 "@kickstartds/design-system@^2.1.29":
   version "2.1.29"
@@ -2873,27 +2798,6 @@
   version "0.1.6"
   resolved "https://registry.yarnpkg.com/@kickstartds/storybook-addon-component-tokens/-/storybook-addon-component-tokens-0.1.6.tgz#612864503743cf684ca30429d3f55a0f7710dd97"
   integrity sha512-pqk4aX7aPK0a62WQGB3ukpNYrhTyXBM4fSShtd/bOuJPJLQV80Q+goAo7p0hfwklSKZlOgAoAdTuhsDqhfygiQ==
-
-"@kickstartds/style-dictionary@2.0.1-next.1":
-  version "2.0.1-next.1"
-  resolved "https://registry.npmjs.org/@kickstartds/style-dictionary/-/style-dictionary-2.0.1-next.1.tgz#ed4f7864ca8a730b3c1fbd1138f083cddbef970f"
-  integrity sha512-VhfYNfzvUJtv2A8v7u/g0GOJTDy2w48+QCUJZq7CLW1oo1Jv8NAIYCurpQcRdoHoKODkp3GpPYltoLRAbmuuig==
-  dependencies:
-    "@babel/core" "^7.21.4"
-    "@babel/preset-react" "^7.18.6"
-    ajv "^8.10.0"
-    bezier-js "^6.1.0"
-    htmltojsx "^0.3.0"
-    lodash "^4.17.21"
-    node-html-parser "^5.2.0"
-    postcss "^8.4.21"
-    postcss-calc "^8.2.4"
-    postcss-colormin "^5.3.0"
-    postcss-normalize-whitespace "^6.0.0"
-    postcss-sort-media-queries "^4.2.1"
-    style-dictionary "^3.7.0"
-    svgstore "^3.0.1"
-    tinycolor2 "^1.4.2"
 
 "@kickstartds/stylelint-config@^2.1.0":
   version "2.1.0"
@@ -16677,13 +16581,6 @@ postcss-selector-parser@^6.0.0, postcss-selector-parser@^6.0.10, postcss-selecto
   dependencies:
     cssesc "^3.0.0"
     util-deprecate "^1.0.2"
-
-"postcss-sort-container-queries@git+https://github.com/lmestel/postcss-sort-container-queries.git":
-  version "1.0.0"
-  uid "6e5415ef4d26de8975f6fa15b78d72a0a3420655"
-  resolved "git+https://github.com/lmestel/postcss-sort-container-queries.git#6e5415ef4d26de8975f6fa15b78d72a0a3420655"
-  dependencies:
-    sort-css-media-queries "2.0.4"
 
 "postcss-sort-container-queries@https://github.com/lmestel/postcss-sort-container-queries":
   version "1.0.0"

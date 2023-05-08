@@ -56,9 +56,9 @@
     "typescript": "^4.9.5"
   },
   "peerDependencies": {
-    "@kickstartds/base": "^1.5.1",
-    "@kickstartds/core": "^1.5.0",
-    "@kickstartds/style-dictionary": "^1.5.0",
+    "@kickstartds/base": "^2.0.3",
+    "@kickstartds/core": "^2.0.3",
+    "@kickstartds/style-dictionary": "^2.0.0",
     "react": "^17.0.2",
     "storybook-dark-mode": "^1.1.2"
   }
