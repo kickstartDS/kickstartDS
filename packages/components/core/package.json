@@ -49,8 +49,8 @@
     "sass": "^1.56.0"
   },
   "devDependencies": {
-    "@kickstartds/bundler": "2.0.4-next.1",
-    "@kickstartds/style-dictionary": "2.0.1-next.1",
+    "@kickstartds/bundler": "^2.0.3",
+    "@kickstartds/style-dictionary": "^2.0.0",
     "storybook-design-token": "^2.9.0",
     "style-dictionary": "^3.7.1"
   },
