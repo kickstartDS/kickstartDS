@@ -9,6 +9,12 @@ module.exports = {
     '@kickstartds/storybook-addon-component-tokens',
     '@whitespace/storybook-addon-html',
     '@storybook/addon-a11y',
+    {
+      name: 'storybook-design-token',
+      options: {
+        designTokenGlob: '.storybook/tokens/*.{css,svg}',
+      },
+    },
   ],
   features: {
     postcss: false,

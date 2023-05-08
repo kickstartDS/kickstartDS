@@ -29,7 +29,7 @@ const parseEmojis = (value) => {
 };
 
 module.exports = async (modPath, mod) => {
-  const filePaths = await glob(`${modPath}/**/*.md`, {
+  const filePaths = await glob(`${modPath}/*.md`, {
     cwd: root,
     absolute: true,
     ignore: 'node_modules',

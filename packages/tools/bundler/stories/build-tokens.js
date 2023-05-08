@@ -18,7 +18,7 @@ module.exports = () =>
           buildPath: path.join(__dirname, '../storybook-tmp/'),
         },
         storybook: {
-          buildPath: path.join(__dirname, '../storybook-tmp/'),
+          buildPath: '.storybook/tokens/',
         },
       },
     })
