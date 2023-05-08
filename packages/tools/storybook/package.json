@@ -37,6 +37,7 @@
     "@types/react-dom": "^17.0.14",
     "@whitespace/storybook-addon-html": "git+https://github.com/lmestel/storybook-addon-html.git#v5.3.1",
     "chromatic": "^6.10.1",
+    "storybook-design-token": "^2.9.0",
     "storybook-dark-mode": "^1.1.2"
   }
 }
