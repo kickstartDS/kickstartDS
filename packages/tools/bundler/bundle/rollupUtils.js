@@ -23,6 +23,7 @@ module.exports = {
       extensions: ['.js', '.ts', '.tsx'],
     }),
   ],
+  strictDeprecations: true,
   sharedOutputOptions: {
     dir: 'lib',
     format: 'es',

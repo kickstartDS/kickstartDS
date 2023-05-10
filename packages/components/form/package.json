@@ -31,14 +31,14 @@
     "watch": "kdsBundle --watch"
   },
   "dependencies": {
-    "@babel/runtime": "^7.21.0",
+    "@babel/runtime": "^7.21.5",
     "classnames": "^2.3.2"
   },
   "devDependencies": {
     "@kickstartds/base": "^2.0.3",
     "@kickstartds/bundler": "^2.0.3",
     "@kickstartds/core": "^2.0.3",
-    "bourbon": "^7.2.0"
+    "bourbon": "^7.3.0"
   },
   "peerDependencies": {
     "@kickstartds/base": "^2.0.3",
