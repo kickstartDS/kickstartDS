@@ -34,14 +34,14 @@ export const PostTeaserComponent: ForwardRefRenderFunction<
     ref={ref}
     {...props}
   >
-    {categories && categories.length && (
+    {categories && categories.length ? (
       <TagLabelContainer
         tagLabels={categories.map((category) => ({
           ...category,
           size: 's',
         }))}
       />
-    )}
+    ) : null}
     <Teaser
       topic={title}
       text={body}

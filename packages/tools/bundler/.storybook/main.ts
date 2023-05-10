@@ -15,7 +15,7 @@ const config: StorybookConfig = {
     {
       name: 'storybook-design-token',
       options: {
-        designTokenGlob: `../../tools/bundler/storybook-tmp/*.@(css|svg)`,
+        designTokenGlob: '.storybook/tokens/*.{css,svg}',
       },
     },
     '@storybook/addon-mdx-gfm',

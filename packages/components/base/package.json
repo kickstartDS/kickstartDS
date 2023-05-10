@@ -32,7 +32,6 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.21.0",
-    "@kickstartds/core": "^2.0.3",
     "classnames": "^2.3.2",
     "focus-visible": "^5.0.2",
     "markdown-to-jsx": "^7.2.0",
@@ -46,7 +45,8 @@
     "sass-yiq": "^1.0.0"
   },
   "peerDependencies": {
-    "react": "^17.0.2 || ^18.2.0"
+    "react": "^17.0.2 || ^18.2.0",
+    "@kickstartds/core": "^2.0.3"
   },
   "storybook": {
     "url": "https://master--60832aa30a8f94002193547c.chromatic.com"

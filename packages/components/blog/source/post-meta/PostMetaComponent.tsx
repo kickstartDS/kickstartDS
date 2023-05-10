@@ -23,13 +23,13 @@ export const PostMetaComponent: ForwardRefRenderFunction<
         {author.name}
       </div>
     )}
-    {items &&
-      items.length &&
-      items.map(({ icon, text }, i) => (
-        <span className="c-post-meta__item" key={i}>
-          {icon && <Icon icon={icon} />}
-          {text}
-        </span>
-      ))}
+    {items && items.length
+      ? items.map(({ icon, text }, i) => (
+          <span className="c-post-meta__item" key={i}>
+            {icon && <Icon icon={icon} />}
+            {text}
+          </span>
+        ))
+      : null}
   </div>
 );
