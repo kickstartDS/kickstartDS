@@ -25,7 +25,6 @@ const meta: Meta<typeof ${componentPascalcased}> = {
   excludeStories: ['Template'],
   parameters: {
     ${loadComponentTokens ? 'cssprops,' : ''}
-    chromatic: { delay: 300 },
   },
   ...getArgsShared(schema),
 };
