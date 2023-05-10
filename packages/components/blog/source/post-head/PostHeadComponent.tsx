@@ -38,7 +38,7 @@ export const PostHeadComponent: ForwardRefRenderFunction<
           {format(new Date(date), 'dd.MM.yyyy')}
         </time>
       )}
-      {categories.length ? (
+      {categories && categories.length > 0 ? (
         <TagLabelContainer
           tagLabels={categories.map((category) => ({
             ...category,

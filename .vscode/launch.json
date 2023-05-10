@@ -36,8 +36,14 @@
       "request": "launch",
       "runtimeVersion": "16.14.2",
       "name": "Launch Storybook Start",
-      "program": "${workspaceRoot}/node_modules/.bin/start-storybook",
-      "args": ["-c", "packages/tools/storybook/.storybook", "-s", "dist/"],
+      "program": "${workspaceRoot}/node_modules/.bin/storybook",
+      "args": [
+        "dev",
+        "-c",
+        "packages/tools/storybook/.storybook",
+        "-s",
+        "dist/"
+      ],
       "cwd": "${workspaceRoot}",
       "outputCapture": "std"
     },
@@ -46,8 +52,9 @@
       "request": "launch",
       "runtimeVersion": "16.14.2",
       "name": "Launch Storybook Build",
-      "program": "${workspaceRoot}/node_modules/.bin/build-storybook",
+      "program": "${workspaceRoot}/node_modules/.bin/storybook",
       "args": [
+        "build",
         "--config-dir",
         "${workspaceRoot}/packages/tools/storybook/.storybook",
         "--output-dir",
