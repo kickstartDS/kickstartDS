@@ -1,9 +1,9 @@
 import { ForwardRefRenderFunction, HTMLAttributes, ReactNode } from 'react';
-import ReactMarkdown from 'react-markdown';
+import Markdown from 'markdown-to-jsx';
 import classnames from 'classnames';
 
 export const defaultRenderFn = (t: string): ReactNode => (
-  <ReactMarkdown children={t} />
+  <Markdown children={t} />
 );
 
 export type RichTextProps = {

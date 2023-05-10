@@ -33,8 +33,8 @@ Let's have a look at our `package.json`, after having added **Storybook**:
     "init-tokens": "kickstartDS tokens init",
     "build-tokens": "kickstartDS tokens compile",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "author": "Jonas Ulrich",
   "license": "MIT",
@@ -80,8 +80,8 @@ It also includes **Storybook**s Essential addon, adding recommended addons by de
     "init-tokens": "kickstartDS tokens init",
     "build-tokens": "kickstartDS tokens compile",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "author": "Jonas Ulrich",
   "license": "MIT",
@@ -114,7 +114,7 @@ It also includes **Storybook**s Essential addon, adding recommended addons by de
 
 Next to the dependencies, two `scripts` entries were added by the **Storybook** init:
 
-1. **Storybook**: to start your **Storybook** in development / watch mode
+1. `storybook`: to start your **Storybook** in development / watch mode
 2. `build-storybook`: to build a production ready, deployable version of your **Storybook**
 
 <CH.Code>
@@ -128,8 +128,8 @@ Next to the dependencies, two `scripts` entries were added by the **Storybook** 
     "init-tokens": "kickstartDS tokens init",
     "build-tokens": "kickstartDS tokens compile",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "author": "Jonas Ulrich",
   "license": "MIT",
@@ -717,8 +717,8 @@ A single entry in `devDependencies` should've been added.
     "init-tokens": "kickstartDS tokens init",
     "build-tokens": "kickstartDS tokens compile",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "author": "Jonas Ulrich",
   "license": "MIT",
@@ -764,10 +764,10 @@ To keep some order in our `scripts` entries, we re-order them to be sorted alpha
   "description": "Design System for all @MY needs",
   "main": "dist/index.js",
   "scripts": {
-    "build-storybook": "build-storybook",
+    "build-storybook": "storybook build",
     "build-tokens": "kickstartDS tokens compile",
     "init-tokens": "kickstartDS tokens init",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "storybook dev -p 6006",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jonas Ulrich",
@@ -810,11 +810,11 @@ We add a script entry called `sass-manager`, which when called will compile our 
   "description": "Design System for all @MY needs",
   "main": "dist/index.js",
   "scripts": {
-    "build-storybook": "build-storybook",
+    "build-storybook": "storybook build",
     "build-tokens": "kickstartDS tokens compile",
     "init-tokens": "kickstartDS tokens init",
     "sass-manager": "sass --load-path=node_modules .storybook/manager.scss static/manager.css",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "storybook dev -p 6006",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jonas Ulrich",
@@ -857,11 +857,11 @@ And while we're at it, we'll also add a watch task that can be used in developme
   "description": "Design System for all @MY needs",
   "main": "dist/index.js",
   "scripts": {
-    "build-storybook": "build-storybook",
+    "build-storybook": "storybook build",
     "build-tokens": "kickstartDS tokens compile",
     "init-tokens": "kickstartDS tokens init",
     "sass-manager": "sass --load-path=node_modules .storybook/manager.scss static/manager.css",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "storybook dev -p 6006",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch:sass-manager": "yarn sass-manager --watch"
   },
@@ -1780,11 +1780,11 @@ Let us review our `package.json` again now, it's starting to grow already:
   "description": "Design System for all @MY needs",
   "main": "dist/index.js",
   "scripts": {
-    "build-storybook": "build-storybook",
+    "build-storybook": "storybook build",
     "build-tokens": "kickstartDS tokens compile",
     "init-tokens": "kickstartDS tokens init",
     "sass-manager": "sass --load-path=node_modules .storybook/manager.scss static/manager.css",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "storybook dev -p 6006",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch:sass-manager": "yarn sass-manager --watch"
   },
@@ -1832,11 +1832,11 @@ We use [`@whitespace/storybook-addon-html`](https://storybook.js.org/addons/@whi
   "description": "Design System for all @MY needs",
   "main": "dist/index.js",
   "scripts": {
-    "build-storybook": "build-storybook",
+    "build-storybook": "storybook build",
     "build-tokens": "kickstartDS tokens compile",
     "init-tokens": "kickstartDS tokens init",
     "sass-manager": "sass --load-path=node_modules .storybook/manager.scss static/manager.css",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "storybook dev -p 6006",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch:sass-manager": "yarn sass-manager --watch"
   },
@@ -1885,11 +1885,11 @@ For **Design Token** documentation we use [`storybook-design-token`](https://sto
   "description": "Design System for all @MY needs",
   "main": "dist/index.js",
   "scripts": {
-    "build-storybook": "build-storybook",
+    "build-storybook": "storybook build",
     "build-tokens": "kickstartDS tokens compile",
     "init-tokens": "kickstartDS tokens init",
     "sass-manager": "sass --load-path=node_modules .storybook/manager.scss static/manager.css",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "storybook dev -p 6006",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch:sass-manager": "yarn sass-manager --watch"
   },
@@ -1939,11 +1939,11 @@ Read more about it on our [dedicated integration page](../../integration/storybo
   "description": "Design System for all @MY needs",
   "main": "dist/index.js",
   "scripts": {
-    "build-storybook": "build-storybook",
+    "build-storybook": "storybook build",
     "build-tokens": "kickstartDS tokens compile",
     "init-tokens": "kickstartDS tokens init",
     "sass-manager": "sass --load-path=node_modules .storybook/manager.scss static/manager.css",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "storybook dev -p 6006",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch:sass-manager": "yarn sass-manager --watch"
   },
@@ -1993,11 +1993,11 @@ Read more about it on our [dedicated integration page](../../integration/storybo
   "description": "Design System for all @MY needs",
   "main": "dist/index.js",
   "scripts": {
-    "build-storybook": "build-storybook",
+    "build-storybook": "storybook build",
     "build-tokens": "kickstartDS tokens compile",
     "init-tokens": "kickstartDS tokens init",
     "sass-manager": "sass --load-path=node_modules .storybook/manager.scss static/manager.css",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "storybook dev -p 6006",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch:sass-manager": "yarn sass-manager --watch"
   },
