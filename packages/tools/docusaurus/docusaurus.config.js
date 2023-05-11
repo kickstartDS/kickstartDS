@@ -98,6 +98,8 @@ const config = {
     ],
   ],
 
+  trailingSlash: true,
+
   themes: ['mdx-v2'],
 
   themeConfig:
