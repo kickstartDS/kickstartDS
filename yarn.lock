@@ -19075,10 +19075,10 @@ storybook-dark-mode@^3.0.0:
     fast-deep-equal "^3.1.3"
     memoizerific "^1.11.3"
 
-storybook-design-token@3.0.0-beta.2:
-  version "3.0.0-beta.2"
-  resolved "https://registry.npmjs.org/storybook-design-token/-/storybook-design-token-3.0.0-beta.2.tgz#394ae978bc192c4aebdbb9bc8f96a586a9aee928"
-  integrity sha512-3WG7Yw0W+9NjbSe/0DOPYuPj5J73cBTDtwbAPvPolKvLR6gRt+xJDFkYYxWgmJ2cjDowBCxmGxpToCKIyglT0Q==
+storybook-design-token@3.0.0-beta.3:
+  version "3.0.0-beta.3"
+  resolved "https://registry.npmjs.org/storybook-design-token/-/storybook-design-token-3.0.0-beta.3.tgz#2a04dd41a4c24f160684d176dcd839376fee66ff"
+  integrity sha512-/HaGD85+Sf7Q2kubjJC0h0a+beUioLTw/JmqR2fsZkc/hTqlF0za06bWPI4MdQU6+5gDc74J/tjVV5Ok8BUeUA==
   dependencies:
     glob "^9.3.0"
     jsdom "^21.1.1"
