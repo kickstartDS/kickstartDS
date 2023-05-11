@@ -24,8 +24,7 @@
     "@kickstartds/bundler": "^2.0.3",
     "fast-glob": "^3.2.12",
     "react": "^18.2.0",
-    "yargs-parser": "^21.1.1",
-    "storybook": "^7.0.10"
+    "yargs-parser": "^21.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.21.8",
@@ -41,7 +40,8 @@
     "@types/react-dom": "^18.2.4",
     "@whitespace/storybook-addon-html": "git+https://github.com/lmestel/storybook-addon-html.git#v5.3.1",
     "chromatic": "^6.17.4",
-    "storybook-design-token": "3.0.0-beta.2",
+    "storybook": "^7.0.10",
+    "storybook-design-token": "3.0.0-beta.3",
     "storybook-dark-mode": "^3.0.0",
     "react-dom": "^18.2.0",
     "vite": "^4.3.5"

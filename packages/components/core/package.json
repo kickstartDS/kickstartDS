@@ -54,7 +54,7 @@
     "style-dictionary": "^3.8.0"
   },
   "peerDependencies": {
-    "storybook-design-token": "3.0.0-beta.2",
+    "storybook-design-token": "3.0.0-beta.3",
     "react": "^17.0.2 || ^18.2.0"
   }
 }
