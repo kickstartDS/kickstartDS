@@ -29,6 +29,9 @@ $host: (
   '.l-section__container': (
     gutter: var(--l-section--gutter-default),
   ),
+  '.l-section__container--gutter-none': (
+    gutter: 0,
+  ),
   '.l-section__container--gutter-small': (
     gutter: var(--l-section--gutter-small),
   ),
