@@ -1,6 +1,6 @@
 {
   "name": "@kickstartds/form",
-  "version": "2.0.3",
+  "version": "2.1.0",
   "description": "kickstartDS Form Module",
   "homepage": "https://www.kickstartDS.com",
   "bugs": {
@@ -35,9 +35,9 @@
     "classnames": "^2.3.2"
   },
   "devDependencies": {
-    "@kickstartds/base": "^2.0.3",
-    "@kickstartds/bundler": "^2.0.3",
-    "@kickstartds/core": "^2.0.3",
+    "@kickstartds/base": "^2.1.0",
+    "@kickstartds/bundler": "^2.1.0",
+    "@kickstartds/core": "^2.1.0",
     "bourbon": "^7.3.0"
   },
   "peerDependencies": {
