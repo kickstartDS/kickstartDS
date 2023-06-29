@@ -7,7 +7,7 @@ import type { PostMetaProps } from './PostMetaProps';
 export { PostMetaProps };
 export const PostMetaComponent: ForwardRefRenderFunction<
   HTMLDivElement,
-  PostMetaProps & HTMLAttributes<HTMLElement>
+  PostMetaProps & HTMLAttributes<HTMLDivElement>
 > = ({ author, items, className, component, ...props }, ref) => (
   <div
     className={classNames('c-post-meta', className)}
@@ -23,13 +23,13 @@ export const PostMetaComponent: ForwardRefRenderFunction<
         {author.name}
       </div>
     )}
-    {items &&
-      items.length &&
-      items.map(({ icon, text }, i) => (
-        <span className="c-post-meta__item" key={i}>
-          {icon && <Icon icon={icon} />}
-          {text}
-        </span>
-      ))}
+    {items && items.length
+      ? items.map(({ icon, text }, i) => (
+          <span className="c-post-meta__item" key={i}>
+            {icon && <Icon icon={icon} />}
+            {text}
+          </span>
+        ))
+      : null}
   </div>
 );

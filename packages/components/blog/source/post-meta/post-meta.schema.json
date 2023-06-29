@@ -15,7 +15,8 @@
         "image": {
           "$ref": "http://schema.kickstartds.com/base/picture.definitions.json"
         }
-      }
+      },
+      "additionalProperties": false
     },
     "items": {
       "type": "array",
@@ -29,7 +30,8 @@
           "text": {
             "type": "string"
           }
-        }
+        },
+        "additionalProperties": false
       },
       "examples": [
         [
@@ -54,5 +56,6 @@
       "description": "Optional custom component identifier",
       "type": "string"
     }
-  }
+  },
+  "additionalProperties": false
 }

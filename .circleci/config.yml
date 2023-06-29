@@ -2,7 +2,7 @@ version: 2.1
 
 defaults: &defaults
   docker:
-    - image: cimg/node:16.14
+    - image: cimg/node:18.12
   working_directory: /mnt/ramdisk
   resource_class: medium+
 
@@ -12,6 +12,13 @@ release_branches_only: &release_branches_only
       only:
         - master
         - next
+
+not_dependabot_branch: &not_dependabot_branch
+  condition:
+    not:
+      matches:
+        pattern: '^dependabot\/.*$'
+        value: << pipeline.git.branch >>
 
 aliases:
   - &save-cache-yarn
@@ -39,39 +46,51 @@ jobs:
   release:
     <<: *defaults
     steps:
-      - checkout
-      - restore_cache: *restore-cache-yarn
-      - restore_cache: *restore-cache-node
+      - when:
+          <<: *not_dependabot_branch
+          steps:
+            - checkout
+            - restore_cache: *restore-cache-yarn
+            - restore_cache: *restore-cache-node
+            - run:
+                name: Install Dependencies
+                command: yarn install --frozen-lockfile --cache-folder /mnt/ramdisk/.yarn-cache
+            - save_cache: *save-cache-yarn
+            - save_cache: *save-cache-node
+            - run:
+                name: Build
+                environment:
+                  NODE_ENV: production
+                command: yarn build
+            - run:
+                name: Create Release
+                environment:
+                  HUSKY: 0
+                command: yarn auto shipit
+            - persist_to_workspace:
+                root: .
+                paths:
+                  - packages/components
+                  - packages/tools/storybook/.storybook
       - run:
-          name: Install Dependencies
-          command: yarn install --frozen-lockfile --cache-folder /mnt/ramdisk/.yarn-cache
-      - save_cache: *save-cache-yarn
-      - save_cache: *save-cache-node
-      - run:
-          name: Build
-          environment:
-            NODE_ENV: production
-          command: yarn build
-      - run:
-          name: Create Release
-          environment:
-            HUSKY: 0
-          command: yarn auto shipit
-      - persist_to_workspace:
-          root: .
-          paths:
-            - packages/components
-            - packages/tools/storybook/.storybook
+          name: Success
+          command: echo 0
 
   chromatic:
     <<: *defaults
     steps:
-      - checkout
-      - restore_cache: *restore-cache-node
-      - *attach_workspace
+      - when:
+          <<: *not_dependabot_branch
+          steps:
+            - checkout
+            - restore_cache: *restore-cache-node
+            - *attach_workspace
+            - run:
+                name: Build Storybook & deploy to Chromatic
+                command: yarn run chromatic
       - run:
-          name: Build Storybook & deploy to Chromatic
-          command: yarn run chromatic
+          name: Success
+          command: echo 0
 
   docusaurus:
     <<: *defaults
@@ -131,9 +150,6 @@ workflows:
     jobs:
       - release:
           context: kickstartDS
-          filters:
-            branches:
-              ignore: /^dependabot\/.*$/
 
       - chromatic:
           context: kickstartDS

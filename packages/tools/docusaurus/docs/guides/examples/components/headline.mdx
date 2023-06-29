@@ -1056,7 +1056,6 @@ return (
     'c-headline',
     align && `c-headline--align-${align}`,
     spaceAfter && `c-headline--space-after-${spaceAfter}`,
-    { 'c-headline--page-header': pageHeader },
     className
   )}
   ks-component={component}
@@ -1548,7 +1547,7 @@ Add the following file to your `src/components/headline` folder:
 <CH.Code>
 ```jsx src/components/headline/Headline.stories.jsx
 import { Headline } from "./HeadlineComponent";
-import { pack, getArgsShared } from "@kickstartds/core/lib/storybook/helpers";
+import { pack, getArgsShared } from "@kickstartds/core/lib/storybook";
 import HeadlineStories from "@kickstartds/base/lib/headline/headline.stories";
 import schema from "./headline.schema.dereffed.json";
 

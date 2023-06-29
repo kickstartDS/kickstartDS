@@ -55,5 +55,6 @@
       "type": "string"
     }
   },
+  "additionalProperties": false,
   "required": ["content"]
 }

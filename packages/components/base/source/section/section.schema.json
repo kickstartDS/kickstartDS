@@ -94,14 +94,8 @@
           "type": "object",
           "properties": {
             "align": {
-              "allOf": [
-                {
-                  "default": "center"
-                },
-                {
-                  "$ref": "http://schema.kickstartds.com/base/headline.schema.json#/properties/align"
-                }
-              ]
+              "type": "string",
+              "default": "center"
             }
           }
         },
@@ -118,5 +112,6 @@
       "title": "`ks-component` attribute",
       "description": "Optional custom component identifier"
     }
-  }
+  },
+  "additionalProperties": false
 }

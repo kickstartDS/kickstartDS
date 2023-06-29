@@ -1,16 +1,20 @@
-import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
+import {
+  ForwardRefRenderFunction,
+  LabelHTMLAttributes,
+  InputHTMLAttributes,
+} from 'react';
 import classnames from 'classnames';
 import { defaultRenderFn } from '@kickstartds/core/lib/core';
 import type { CheckboxProps as CheckboxSchemaProps } from './CheckboxProps';
 
 export type CheckboxProps = CheckboxSchemaProps & {
   renderLabel?: typeof defaultRenderFn;
-  labelProps?: HTMLAttributes<HTMLLabelElement>;
+  labelProps?: LabelHTMLAttributes<HTMLLabelElement>;
 };
 
 export const CheckboxComponent: ForwardRefRenderFunction<
   HTMLInputElement,
-  CheckboxProps & HTMLAttributes<HTMLInputElement>
+  CheckboxProps & InputHTMLAttributes<HTMLInputElement>
 > = (
   {
     label,

@@ -1,4 +1,4 @@
-import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
+import { ForwardRefRenderFunction, TableHTMLAttributes } from 'react';
 import classnames from 'classnames';
 import { defaultRenderFn } from '@kickstartds/core/lib/core';
 import type { TableProps as TableSchemaProps } from './TableProps';
@@ -13,7 +13,7 @@ export type TableProps = TableSchemaProps & {
 
 export const TableComponent: ForwardRefRenderFunction<
   HTMLTableElement,
-  TableProps & HTMLAttributes<HTMLTableElement>
+  TableProps & TableHTMLAttributes<HTMLTableElement>
 > = (
   {
     caption,

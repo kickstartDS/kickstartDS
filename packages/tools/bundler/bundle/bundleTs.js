@@ -64,6 +64,7 @@ const prepare = async (tsPaths) => {
               },
             },
             babelConfig,
+            browserslist: babelConfig.targets,
           })
         : babel({
             ...babelConfig,

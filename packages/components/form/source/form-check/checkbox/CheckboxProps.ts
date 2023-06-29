@@ -45,5 +45,4 @@ export interface CheckboxProps {
   hint?: HintMessage;
   className?: Class;
   component?: KsComponentAttribute;
-  [k: string]: unknown;
 }

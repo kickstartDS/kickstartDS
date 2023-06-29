@@ -46,15 +46,16 @@ kdsModules
   .then(() => {
     switch (task) {
       case 'build': {
-        return exec('build-storybook', storybookOptionsBuild);
+        return exec('storybook', ['build', ...storybookOptionsBuild]);
       }
 
       case 'start': {
-        return exec('start-storybook', storybookOptionsStart);
+        return exec('storybook', ['dev', ...storybookOptionsStart]);
       }
 
       case 'debug': {
-        return exec('start-storybook', [
+        return exec('storybook', [
+          'dev',
           ...storybookOptionsStart,
           '--debug-webpack',
         ]);

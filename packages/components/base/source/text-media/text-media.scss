@@ -93,4 +93,8 @@
     text-align: left;
     color: var(--ks-text-color-default);
   }
+
+  .l-container--rich-text {
+    display: contents;
+  }
 }

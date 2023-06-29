@@ -21,5 +21,4 @@ export interface IconProps {
   role?: AriaRole;
   className?: AdditionalClass;
   component?: KsComponentAttribute;
-  [k: string]: unknown;
 }

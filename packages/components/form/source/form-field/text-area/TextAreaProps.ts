@@ -70,5 +70,4 @@ export interface TextAreaProps {
   hint?: HintMessage;
   className?: Class;
   component?: KsComponentAttribute;
-  [k: string]: unknown;
 }

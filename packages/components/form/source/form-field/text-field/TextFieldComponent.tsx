@@ -1,4 +1,8 @@
-import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
+import {
+  ForwardRefRenderFunction,
+  InputHTMLAttributes,
+  LabelHTMLAttributes,
+} from 'react';
 import classnames from 'classnames';
 import { defaultRenderFn } from '@kickstartds/core/lib/core';
 import { Icon } from '@kickstartds/base/lib/icon';
@@ -6,12 +10,12 @@ import type { TextFieldProps as TextFieldSchemaProps } from './TextFieldProps';
 
 export type TextFieldProps = TextFieldSchemaProps & {
   renderLabel?: typeof defaultRenderFn;
-  labelProps?: HTMLAttributes<HTMLLabelElement>;
+  labelProps?: LabelHTMLAttributes<HTMLLabelElement>;
 };
 
 export const TextFieldComponent: ForwardRefRenderFunction<
   HTMLInputElement,
-  TextFieldProps & HTMLAttributes<HTMLInputElement>
+  TextFieldProps & InputHTMLAttributes<HTMLInputElement>
 > = (
   {
     type = 'text',

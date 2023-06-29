@@ -23,6 +23,7 @@ module.exports = {
       extensions: ['.js', '.ts', '.tsx'],
     }),
   ],
+  strictDeprecations: true,
   sharedOutputOptions: {
     dir: 'lib',
     format: 'es',
@@ -58,13 +59,11 @@ module.exports = {
           noNewArrows: true,
           setComputedProperties: true,
         },
+        targets: 'defaults, last 2 years',
         presets: [
           [
             '@babel/preset-env',
-            {
-              bugfixes: true,
-              targets: { browsers: 'defaults, last 2 years', esmodules: true },
-            },
+            { bugfixes: true, targets: { esmodules: true } },
           ],
           ['@babel/preset-typescript'],
         ],

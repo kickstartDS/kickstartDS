@@ -1,0 +1,13 @@
+diff --git a/node_modules/storybook-design-token/package.json b/node_modules/storybook-design-token/package.json
+index 582acbe..dd37cc4 100644
+--- a/node_modules/storybook-design-token/package.json
++++ b/node_modules/storybook-design-token/package.json
+@@ -35,7 +35,7 @@
+       "import": "./dist/preset.mjs",
+       "types": "./dist/preset.d.ts"
+     },
+-    "./doc-bocks": {
++    "./dist/doc-blocks": {
+       "require": "./dist/doc-blocks.js",
+       "import": "./dist/doc-blocks.mjs",
+       "types": "./dist/doc-blocks.d.ts"

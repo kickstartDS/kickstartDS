@@ -175,7 +175,6 @@ export type Sources = {
   srcSet?: PictureSourceset1;
   media?: TODOMEDIATITLE;
   type?: TODOTYPETITLE;
-  [k: string]: unknown;
 }[];
 /**
  * Set additional class(es) to the picture
@@ -462,7 +461,6 @@ export type Sources1 = {
   srcSet?: PictureSourceset3;
   media?: TODOMEDIATITLE1;
   type?: TODOTYPETITLE1;
-  [k: string]: unknown;
 }[];
 /**
  * Set additional class(es) to the picture
@@ -782,7 +780,6 @@ export interface SectionProps {
   headline?: Headline1;
   className?: AdditionalClass9;
   component?: KsComponentAttribute24;
-  [k: string]: unknown;
 }
 /**
  * Component to display links and call-to-actions
@@ -813,7 +810,6 @@ export interface IconBeforeButton {
   role?: AriaRole;
   className?: AdditionalClass;
   component?: KsComponentAttribute;
-  [k: string]: unknown;
 }
 /**
  * Icon identifier for icon after the button text
@@ -823,7 +819,6 @@ export interface IconAfterButton {
   role?: AriaRole1;
   className?: AdditionalClass1;
   component?: KsComponentAttribute1;
-  [k: string]: unknown;
 }
 /**
  * Component to render a pill / tag / label
@@ -848,12 +843,10 @@ export interface Contact {
     label?: string;
     href?: string;
     newTab?: OpenLinkInNewTab1;
-    [k: string]: unknown;
   }[];
   copy?: CopyText;
   className?: Class;
   component?: KsComponentAttribute5;
-  [k: string]: unknown;
 }
 /**
  * Base component to display a picture
@@ -873,7 +866,6 @@ export interface Picture {
   lazy?: Lazy;
   sources?: Sources;
   pictureClassName?: ClassAttribute;
-  [k: string]: unknown;
 }
 /**
  * Component to conditionally show additional info
@@ -927,7 +919,6 @@ export interface IconBeforeButton1 {
   role?: AriaRole2;
   className?: AdditionalClass2;
   component?: KsComponentAttribute7;
-  [k: string]: unknown;
 }
 /**
  * Icon identifier for icon after the button text
@@ -937,7 +928,6 @@ export interface IconAfterButton1 {
   role?: AriaRole3;
   className?: AdditionalClass3;
   component?: KsComponentAttribute8;
-  [k: string]: unknown;
 }
 /**
  * Headline
@@ -951,7 +941,6 @@ export interface Headline {
   spaceAfter?: BottomSpacing;
   className?: AdditionalClasses5;
   component?: KsComponentAttribute11;
-  [k: string]: unknown;
 }
 /**
  * Component to display copy text, including media
@@ -967,7 +956,6 @@ export interface TextMediaVideo {
   video?: Video;
   full?: FullWidthMedia;
   caption?: Caption;
-  [k: string]: unknown;
 }
 /**
  * Video item to display
@@ -978,13 +966,11 @@ export interface Video {
   title?: VideoTitle;
   width: Width2;
   height: Height1;
-  [k: string]: unknown;
 }
 export interface TextMediaImage {
   image?: Picture1;
   full?: FullWidthMedia1;
   caption?: Caption1;
-  [k: string]: unknown;
 }
 /**
  * Base component to display a picture
@@ -1004,13 +990,11 @@ export interface Picture1 {
   lazy?: Lazy1;
   sources?: Sources1;
   pictureClassName?: ClassAttribute1;
-  [k: string]: unknown;
 }
 export interface TextMediaLazyImage {
   lightboxImage?: LightboxImage;
   full?: FullWidthMedia2;
   caption?: Caption3;
-  [k: string]: unknown;
 }
 /**
  * Lightbox Image
@@ -1028,7 +1012,6 @@ export interface LightboxImage {
   className?: AdditionalClass4;
   captionClassName?: AdditionalCaptionClass;
   component?: KsComponentAttribute13;
-  [k: string]: unknown;
 }
 /**
  * Component to tease external content
@@ -1074,7 +1057,6 @@ export interface IconBeforeButton2 {
   role?: AriaRole4;
   className?: AdditionalClass5;
   component?: KsComponentAttribute15;
-  [k: string]: unknown;
 }
 /**
  * Icon identifier for icon after the button text
@@ -1084,7 +1066,6 @@ export interface IconAfterButton2 {
   role?: AriaRole5;
   className?: AdditionalClass6;
   component?: KsComponentAttribute16;
-  [k: string]: unknown;
 }
 /**
  * Component to tease external content
@@ -1127,7 +1108,6 @@ export interface IconBeforeButton3 {
   role?: AriaRole6;
   className?: AdditionalClass7;
   component?: KsComponentAttribute19;
-  [k: string]: unknown;
 }
 /**
  * Icon identifier for icon after the button text
@@ -1137,7 +1117,6 @@ export interface IconAfterButton3 {
   role?: AriaRole7;
   className?: AdditionalClass8;
   component?: KsComponentAttribute20;
-  [k: string]: unknown;
 }
 /**
  * Headline
@@ -1151,5 +1130,4 @@ export interface Headline1 {
   spaceAfter?: BottomSpacing1;
   className?: AdditionalClasses9;
   component?: KsComponentAttribute23;
-  [k: string]: unknown;
 }

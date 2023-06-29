@@ -31,17 +31,19 @@
     "watch": "kdsBundle --watch"
   },
   "dependencies": {
-    "@babel/runtime": "^7.20.1",
-    "@kickstartds/base": "^2.0.3",
-    "@kickstartds/core": "^2.0.3",
+    "@babel/runtime": "^7.21.5",
     "classnames": "^2.3.2",
-    "date-fns": "^2.29.3"
+    "date-fns": "^2.30.0"
   },
   "devDependencies": {
-    "@kickstartds/bundler": "^2.0.3"
+    "@kickstartds/base": "^2.0.3",
+    "@kickstartds/bundler": "^2.0.3",
+    "@kickstartds/core": "^2.0.3"
   },
   "peerDependencies": {
-    "react": "^17.0.2"
+    "@kickstartds/base": "^2.0.3",
+    "@kickstartds/core": "^2.0.3",
+    "react": "^17.0.2 || ^18.2.0"
   },
   "storybook": {
     "url": "https://master--608332299164bb0021bc47c4.chromatic.com"

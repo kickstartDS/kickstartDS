@@ -2,6 +2,7 @@ import {
   FunctionComponent,
   ForwardRefRenderFunction,
   HTMLAttributes,
+  PropsWithChildren,
 } from 'react';
 import classnames from 'classnames';
 import { Picture } from '../image/picture';
@@ -28,10 +29,12 @@ const figureClassName = (full: TFullWidthMedia) =>
   classnames('text-media__media', {
     'text-media__media--full': full,
   });
-const Figure: FunctionComponent<{
-  full?: TFullWidthMedia;
-  caption?: TCaption;
-}> = ({ full, caption, children }) => (
+const Figure: FunctionComponent<
+  PropsWithChildren<{
+    full?: TFullWidthMedia;
+    caption?: TCaption;
+  }>
+> = ({ full, caption, children }) => (
   <figure className={figureClassName(full)}>
     {children}
     {caption ? (
@@ -77,16 +80,24 @@ const MediaLightboxImage: FunctionComponent<ILightboxImage> = ({
   />
 );
 
+const isVideo = (media: IVideo | IImage | ILightboxImage): media is IVideo =>
+  'video' in media;
+const isImage = (media: IVideo | IImage | ILightboxImage): media is IImage =>
+  'image' in media;
+const isLightboxImage = (
+  media: IVideo | IImage | ILightboxImage
+): media is ILightboxImage => 'lightboxImage' in media;
+
 const Media: FunctionComponent<{ media: IMedia }> = ({ media }) =>
   media.length ? (
     <div className="text-media__gallery">
       {media.map((m, i) =>
-        (m.video as IVideo)?.src ? (
-          <MediaVideo {...(m as IVideo)} key={i} />
-        ) : (m.image as IImage)?.src ? (
-          <MediaImage {...(m as IImage)} key={i} />
-        ) : (m.lightboxImage as ILightboxImage)?.image ? (
-          <MediaLightboxImage {...(m as ILightboxImage)} key={i} />
+        isVideo(m) ? (
+          <MediaVideo {...m} key={i} />
+        ) : isImage(m) ? (
+          <MediaImage {...m} key={i} />
+        ) : isLightboxImage(m) ? (
+          <MediaLightboxImage {...m} key={i} />
         ) : null
       )}
     </div>
