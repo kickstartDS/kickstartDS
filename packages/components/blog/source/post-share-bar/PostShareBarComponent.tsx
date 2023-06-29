@@ -17,17 +17,17 @@ export const PostShareBarComponent: ForwardRefRenderFunction<
     {...props}
   >
     {headline?.content && <Headline spaceAfter="small" {...headline} />}
-    {links &&
-      links.length &&
-      links.map(({ icon, newTab, ...linkProps }, i) => (
-        <Link
-          className="c-post-share-bar__link"
-          {...(newTab ? { target: '_blank', rel: 'noopener' } : {})}
-          {...linkProps}
-          key={i}
-        >
-          <Icon icon={icon} />
-        </Link>
-      ))}
+    {links && links.length
+      ? links.map(({ icon, newTab, ...linkProps }, i) => (
+          <Link
+            className="c-post-share-bar__link"
+            {...(newTab ? { target: '_blank', rel: 'noopener' } : {})}
+            {...linkProps}
+            key={i}
+          >
+            <Icon icon={icon} />
+          </Link>
+        ))
+      : null}
   </div>
 );

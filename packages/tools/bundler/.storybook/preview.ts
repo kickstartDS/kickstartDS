@@ -11,9 +11,6 @@ import '@kickstartds/core/lib/design-tokens/tokens.css';
 import '@kickstartds/base/lib/global/base.js';
 import '@kickstartds/base/lib/global/base.css';
 
-import designTokens from '../storybook-tmp/tokens.css?inline';
-import icons from '../storybook-tmp/icons.svg';
-
 const myActions = actions('radio');
 window._ks.radio.on('*', myActions.radio);
 
@@ -42,16 +39,7 @@ const preview: Preview = {
       },
     },
     designToken: {
-      files: [
-        {
-          filename: './tokens.css',
-          content: designTokens,
-        },
-        {
-          filename: './icons.svg',
-          content: icons,
-        },
-      ],
+      disable: true,
     },
   },
   decorators: [

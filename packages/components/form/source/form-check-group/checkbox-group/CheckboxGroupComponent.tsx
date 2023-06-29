@@ -35,11 +35,11 @@ export const CheckboxGroupComponent: ForwardRefRenderFunction<
   >
     <span className="c-form-check-group__label">{renderLabel(label)}</span>
     <div className="c-form-check-group__group" role="presentation">
-      {options &&
-        options.length &&
-        options.map((option, index) => (
-          <Checkbox {...option} name={name} key={`checkbox-${index}`} />
-        ))}
+      {options && options.length
+        ? options.map((option, index) => (
+            <Checkbox {...option} name={name} key={`checkbox-${index}`} />
+          ))
+        : null}
       {invalid && invalidMessage && (
         <p className="c-form-check__invalid-message">{invalidMessage}</p>
       )}
