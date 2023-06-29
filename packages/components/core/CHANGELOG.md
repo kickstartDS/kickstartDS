@@ -1,3 +1,47 @@
+# v2.1.0 (Thu Jun 29 2023)
+
+#### 🚀 Enhancement
+
+- Upgrade to Storybook 7 [#1292](https://github.com/kickstartDS/kickstartDS/pull/1292) ([@julrich](https://github.com/julrich))
+
+#### 🐛 Bug Fix
+
+- chore: merge current next into feature branch ([@julrich](https://github.com/julrich))
+- Update design token addon beta [#1319](https://github.com/kickstartDS/kickstartDS/pull/1319) ([@julrich](https://github.com/julrich))
+- fix(dependencies): update design token addon beta ([@julrich](https://github.com/julrich))
+- fix(dependencies): update dependencies ([@julrich](https://github.com/julrich))
+- chore(merge): merge next into this branch ([@julrich](https://github.com/julrich))
+- Move internal dependencies to peerDependencies [#1315](https://github.com/kickstartDS/kickstartDS/pull/1315) ([@lmestel](https://github.com/lmestel))
+- Merge branch 'next' into feature/internal-dependencies ([@lmestel](https://github.com/lmestel))
+- build(deps-dev): bump storybook-design-token from 1.4.0 to 2.9.0 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build: move internal dependencies to peerDependencies ([@lmestel](https://github.com/lmestel))
+- Update internal dependencies [#1302](https://github.com/kickstartDS/kickstartDS/pull/1302) ([@julrich](https://github.com/julrich))
+- fix(dependencies): update internal dependencies ([@julrich](https://github.com/julrich))
+- refactor: rewrite storybook helper in ts ([@lmestel](https://github.com/lmestel))
+- chore(dependencies): update peerDependencies (React, kickstartDS) ([@julrich](https://github.com/julrich))
+- feat(storybook): first draft of Storybook 7 upgrade ([@julrich](https://github.com/julrich))
+- Merge branch 'next' into dependabot/npm_and_yarn/babel/core-7.21.4 ([@lmestel](https://github.com/lmestel))
+- build(deps): bump @babel/plugin-transform-runtime from 7.19.1 to 7.21.4 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- Merge branch 'master' into docs/adjust-banner-style ([@julrich](https://github.com/julrich))
+- Merge branch 'master' into docs/update-storybook-design-token-addon ([@lmestel](https://github.com/lmestel))
+
+#### 🏠 Internal
+
+- Rewrite Storybook helpers in Typescript [#1300](https://github.com/kickstartDS/kickstartDS/pull/1300) ([@lmestel](https://github.com/lmestel) [@julrich](https://github.com/julrich))
+
+#### 🔩 Dependency Updates
+
+- build(deps-dev): bump storybook-design-token from 1.4.0 to 2.9.0 [#1251](https://github.com/kickstartDS/kickstartDS/pull/1251) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@lmestel](https://github.com/lmestel))
+- build(deps): bump @babel/core from 7.19.6 to 7.21.4 [#1289](https://github.com/kickstartDS/kickstartDS/pull/1289) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@lmestel](https://github.com/lmestel))
+
+#### Authors: 3
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Jonas Ulrich ([@julrich](https://github.com/julrich))
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+
+---
+
 # v2.0.2 (Tue Nov 15 2022)
 
 #### ⚠️ Pushed to `master`

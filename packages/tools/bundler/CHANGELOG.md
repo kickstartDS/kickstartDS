@@ -1,3 +1,64 @@
+# v2.1.0 (Thu Jun 29 2023)
+
+#### 🚀 Enhancement
+
+- Upgrade to Storybook 7 [#1292](https://github.com/kickstartDS/kickstartDS/pull/1292) ([@julrich](https://github.com/julrich))
+
+#### 🐛 Bug Fix
+
+- chore: merge current next into feature branch ([@julrich](https://github.com/julrich))
+- fix(core): move rich text styles to global scope ([@julrich](https://github.com/julrich))
+- fix(chromatic): add delay to story snapshotting ([@julrich](https://github.com/julrich))
+- fix(dependencies): update dependencies ([@julrich](https://github.com/julrich))
+- chore(merge): merge next into this branch ([@julrich](https://github.com/julrich))
+- fix(storybook): deactivate darkmode addon for now ([@julrich](https://github.com/julrich))
+- Move internal dependencies to peerDependencies [#1315](https://github.com/kickstartDS/kickstartDS/pull/1315) ([@lmestel](https://github.com/lmestel))
+- Merge branch 'next' into feature/internal-dependencies ([@lmestel](https://github.com/lmestel))
+- build(deps-dev): bump storybook-design-token from 1.4.0 to 2.9.0 ([@lmestel](https://github.com/lmestel))
+- build: move internal dependencies to peerDependencies ([@lmestel](https://github.com/lmestel))
+- refactor: rewrite storybook helper in ts ([@lmestel](https://github.com/lmestel))
+- fix(storybook): move configuration to TypeScript ([@julrich](https://github.com/julrich))
+- fix(storybook): markdown stories after upgrade to 7 ([@julrich](https://github.com/julrich))
+- fix(storybook): add correct glob, including .ts ([@julrich](https://github.com/julrich))
+- chore(dependencies): update peerDependencies (React, kickstartDS) ([@julrich](https://github.com/julrich))
+- feat(storybook): first draft of Storybook 7 upgrade ([@julrich](https://github.com/julrich))
+- build(deps): bump rollup-plugin-ts from 3.0.2 to 3.2.0 ([@lmestel](https://github.com/lmestel))
+- build(deps): bump typescript from 4.8.4 to 4.9.5 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump postcss from 8.4.17 to 8.4.21 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- Merge branch 'next' into dependabot/npm_and_yarn/babel/core-7.21.4 ([@lmestel](https://github.com/lmestel))
+- build(deps): bump @babel/plugin-transform-runtime from 7.19.1 to 7.21.4 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump @rollup/plugin-babel from 5.3.1 to 6.0.3 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump @babel/core from 7.19.6 to 7.21.4 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump @rollup/plugin-node-resolve from 15.0.0 to 15.0.2 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- fix babel targets [#1277](https://github.com/kickstartDS/kickstartDS/pull/1277) ([@lmestel](https://github.com/lmestel))
+- build: add browserslist config to ts bundle ([@lmestel](https://github.com/lmestel))
+- Merge branch 'next' into build/babel-target ([@lmestel](https://github.com/lmestel))
+- build: fix babel targets ([@lmestel](https://github.com/lmestel))
+- Merge branch 'master' into docs/adjust-banner-style ([@julrich](https://github.com/julrich))
+- Merge branch 'master' into docs/update-storybook-design-token-addon ([@lmestel](https://github.com/lmestel))
+- Merge branch 'next' into docs/update-storybook-design-token-addon ([@lmestel](https://github.com/lmestel))
+
+#### 🏠 Internal
+
+- Rewrite Storybook helpers in Typescript [#1300](https://github.com/kickstartDS/kickstartDS/pull/1300) ([@lmestel](https://github.com/lmestel) [@julrich](https://github.com/julrich))
+
+#### 🔩 Dependency Updates
+
+- build(deps-dev): bump storybook-design-token from 1.4.0 to 2.9.0 [#1251](https://github.com/kickstartDS/kickstartDS/pull/1251) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@lmestel](https://github.com/lmestel))
+- build(deps): bump typescript from 4.8.4 to 4.9.5 [#1246](https://github.com/kickstartDS/kickstartDS/pull/1246) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@lmestel](https://github.com/lmestel))
+- build(deps): bump postcss from 8.4.17 to 8.4.21 [#1242](https://github.com/kickstartDS/kickstartDS/pull/1242) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump @babel/core from 7.19.6 to 7.21.4 [#1289](https://github.com/kickstartDS/kickstartDS/pull/1289) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@lmestel](https://github.com/lmestel))
+- build(deps): bump @rollup/plugin-babel from 5.3.1 to 6.0.3 [#1210](https://github.com/kickstartDS/kickstartDS/pull/1210) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump @rollup/plugin-node-resolve from 15.0.0 to 15.0.2 [#1288](https://github.com/kickstartDS/kickstartDS/pull/1288) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 3
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Jonas Ulrich ([@julrich](https://github.com/julrich))
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+
+---
+
 # v2.0.3 (Mon Nov 21 2022)
 
 #### 🐛 Bug Fix

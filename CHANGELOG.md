@@ -1,3 +1,87 @@
+# (Thu Jun 29 2023)
+
+#### 🚀 Enhancement
+
+- `@kickstartds/base@2.1.0`, `@kickstartds/blog@2.1.0`, `@kickstartds/core@2.1.0`, `@kickstartds/form@2.1.0`, `@kickstartds/bundler@2.1.0`
+  - Upgrade to Storybook 7 [#1292](https://github.com/kickstartDS/kickstartDS/pull/1292) ([@julrich](https://github.com/julrich))
+
+#### 🐛 Bug Fix
+
+- Master [#1278](https://github.com/kickstartDS/kickstartDS/pull/1278) ([@julrich](https://github.com/julrich) [@fleven-kds](https://github.com/fleven-kds) [@lmestel](https://github.com/lmestel) [@DanielLeyUX](https://github.com/DanielLeyUX))
+- `@kickstartds/base@2.1.0`
+  - Remove section gutter when option is set to `none` [#1333](https://github.com/kickstartDS/kickstartDS/pull/1333) ([@lmestel](https://github.com/lmestel))
+  - Simplify section headline referencing [#1299](https://github.com/kickstartDS/kickstartDS/pull/1299) ([@julrich](https://github.com/julrich))
+  - Fix text-media intext media alignment [#1274](https://github.com/kickstartDS/kickstartDS/pull/1274) ([@lmestel](https://github.com/lmestel))
+- `@kickstartds/core@2.1.0`
+  - Update design token addon beta [#1319](https://github.com/kickstartDS/kickstartDS/pull/1319) ([@julrich](https://github.com/julrich))
+- `@kickstartds/base@2.1.0`, `@kickstartds/blog@2.1.0`, `@kickstartds/core@2.1.0`, `@kickstartds/form@2.1.0`, `@kickstartds/bundler@2.1.0`
+  - Move internal dependencies to peerDependencies [#1315](https://github.com/kickstartDS/kickstartDS/pull/1315) ([@lmestel](https://github.com/lmestel))
+- `@kickstartds/base@2.1.0`, `@kickstartds/blog@2.1.0`, `@kickstartds/core@2.1.0`, `@kickstartds/form@2.1.0`
+  - Update internal dependencies [#1302](https://github.com/kickstartDS/kickstartDS/pull/1302) ([@julrich](https://github.com/julrich))
+- `@kickstartds/blog@2.1.0`, `@kickstartds/form@2.1.0`
+  - Don't render array length if length is `0` [#1301](https://github.com/kickstartDS/kickstartDS/pull/1301) ([@lmestel](https://github.com/lmestel))
+- `@kickstartds/bundler@2.1.0`
+  - fix babel targets [#1277](https://github.com/kickstartDS/kickstartDS/pull/1277) ([@lmestel](https://github.com/lmestel))
+- `@kickstartds/base@2.1.0`, `@kickstartds/blog@2.1.0`, `@kickstartds/form@2.1.0`
+  - narrow component prop types [#1276](https://github.com/kickstartDS/kickstartDS/pull/1276) ([@lmestel](https://github.com/lmestel))
+- `@kickstartds/style-dictionary@2.1.0`
+  - split style-dictionary scripts [#1250](https://github.com/kickstartDS/kickstartDS/pull/1250) ([@lmestel](https://github.com/lmestel))
+- `@kickstartds/blog@2.1.0`
+  - Add missing object types to schemas [#1275](https://github.com/kickstartDS/kickstartDS/pull/1275) ([@julrich](https://github.com/julrich))
+
+#### 🏠 Internal
+
+- run ci jobs on dependabot branches [#1279](https://github.com/kickstartDS/kickstartDS/pull/1279) ([@lmestel](https://github.com/lmestel))
+- `@kickstartds/core@2.1.0`, `@kickstartds/bundler@2.1.0`
+  - Rewrite Storybook helpers in Typescript [#1300](https://github.com/kickstartDS/kickstartDS/pull/1300) ([@lmestel](https://github.com/lmestel) [@julrich](https://github.com/julrich))
+
+#### 📝 Documentation
+
+- Always add trailing slash to internal URLs in docs [#1321](https://github.com/kickstartDS/kickstartDS/pull/1321) ([@julrich](https://github.com/julrich))
+- Always add trailing slashes in docs [#1320](https://github.com/kickstartDS/kickstartDS/pull/1320) ([@julrich](https://github.com/julrich))
+- Fix broken links on layouts overview page [#1272](https://github.com/kickstartDS/kickstartDS/pull/1272) ([@julrich](https://github.com/julrich))
+- docs(scripts): fix docs scripts [#1255](https://github.com/kickstartDS/kickstartDS/pull/1255) ([@julrich](https://github.com/julrich))
+- docs(scripts): add scripts to docs [#1254](https://github.com/kickstartDS/kickstartDS/pull/1254) ([@julrich](https://github.com/julrich))
+- Fix some typos and broken links, update some text in docs [#1234](https://github.com/kickstartDS/kickstartDS/pull/1234) ([@julrich](https://github.com/julrich))
+- Add docs for CLI and Starter, fill some gaps [#1214](https://github.com/kickstartDS/kickstartDS/pull/1214) ([@julrich](https://github.com/julrich))
+- Adjust banner style [#1208](https://github.com/kickstartDS/kickstartDS/pull/1208) ([@fleven-kds](https://github.com/fleven-kds) [@julrich](https://github.com/julrich))
+- docs(guides): update storybook-design-token addon [#1201](https://github.com/kickstartDS/kickstartDS/pull/1201) ([@julrich](https://github.com/julrich) [@lmestel](https://github.com/lmestel))
+- Fix typo in layout page [#1207](https://github.com/kickstartDS/kickstartDS/pull/1207) ([@DanielLeyUX](https://github.com/DanielLeyUX))
+
+#### 🔩 Dependency Updates
+
+- build(deps): bump webpack from 5.74.0 to 5.85.1 [#1346](https://github.com/kickstartDS/kickstartDS/pull/1346) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump vite from 4.3.5 to 4.3.9 [#1345](https://github.com/kickstartDS/kickstartDS/pull/1345) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump json5 from 1.0.1 to 1.0.2 [#1241](https://github.com/kickstartDS/kickstartDS/pull/1241) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump @sideway/formula from 3.0.0 to 3.0.1 [#1281](https://github.com/kickstartDS/kickstartDS/pull/1281) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump http-cache-semantics from 4.1.0 to 4.1.1 [#1249](https://github.com/kickstartDS/kickstartDS/pull/1249) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump ua-parser-js from 0.7.31 to 0.7.35 [#1285](https://github.com/kickstartDS/kickstartDS/pull/1285) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump qs from 6.5.2 to 6.5.3 [#1233](https://github.com/kickstartDS/kickstartDS/pull/1233) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump decode-uri-component from 0.2.0 to 0.2.2 [#1212](https://github.com/kickstartDS/kickstartDS/pull/1212) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump loader-utils from 1.4.0 to 1.4.2 [#1188](https://github.com/kickstartDS/kickstartDS/pull/1188) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- `@kickstartds/core@2.1.0`, `@kickstartds/bundler@2.1.0`
+  - build(deps-dev): bump storybook-design-token from 1.4.0 to 2.9.0 [#1251](https://github.com/kickstartDS/kickstartDS/pull/1251) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@lmestel](https://github.com/lmestel))
+- `@kickstartds/bundler@2.1.0`
+  - build(deps): bump typescript from 4.8.4 to 4.9.5 [#1246](https://github.com/kickstartDS/kickstartDS/pull/1246) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@lmestel](https://github.com/lmestel))
+  - build(deps): bump @rollup/plugin-babel from 5.3.1 to 6.0.3 [#1210](https://github.com/kickstartDS/kickstartDS/pull/1210) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+  - build(deps): bump @rollup/plugin-node-resolve from 15.0.0 to 15.0.2 [#1288](https://github.com/kickstartDS/kickstartDS/pull/1288) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- `@kickstartds/bundler@2.1.0`, `@kickstartds/style-dictionary@2.1.0`
+  - build(deps): bump postcss from 8.4.17 to 8.4.21 [#1242](https://github.com/kickstartDS/kickstartDS/pull/1242) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- `@kickstartds/style-dictionary@2.1.0`
+  - build(deps): bump postcss-normalize-whitespace from 5.1.1 to 6.0.0 [#1290](https://github.com/kickstartDS/kickstartDS/pull/1290) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- `@kickstartds/base@2.1.0`, `@kickstartds/blog@2.1.0`, `@kickstartds/core@2.1.0`, `@kickstartds/form@2.1.0`, `@kickstartds/bundler@2.1.0`, `@kickstartds/style-dictionary@2.1.0`
+  - build(deps): bump @babel/core from 7.19.6 to 7.21.4 [#1289](https://github.com/kickstartDS/kickstartDS/pull/1289) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@lmestel](https://github.com/lmestel))
+
+#### Authors: 5
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Daniel ([@DanielLeyUX](https://github.com/DanielLeyUX))
+- Franz ([@fleven-kds](https://github.com/fleven-kds))
+- Jonas Ulrich ([@julrich](https://github.com/julrich))
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+
+---
+
 # (Wed Dec 14 2022)
 
 #### ⚠️ Pushed to `master`

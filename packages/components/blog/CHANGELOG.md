@@ -1,3 +1,49 @@
+# v2.1.0 (Thu Jun 29 2023)
+
+#### 🚀 Enhancement
+
+- Upgrade to Storybook 7 [#1292](https://github.com/kickstartDS/kickstartDS/pull/1292) ([@julrich](https://github.com/julrich))
+
+#### 🐛 Bug Fix
+
+- chore: merge current next into feature branch ([@julrich](https://github.com/julrich))
+- fix(dependencies): update dependencies ([@julrich](https://github.com/julrich))
+- chore(merge): merge next into this branch ([@julrich](https://github.com/julrich))
+- fix(blog): check for categories array, before accessing length ([@julrich](https://github.com/julrich))
+- Move internal dependencies to peerDependencies [#1315](https://github.com/kickstartDS/kickstartDS/pull/1315) ([@lmestel](https://github.com/lmestel))
+- Merge branch 'next' into feature/internal-dependencies ([@lmestel](https://github.com/lmestel))
+- build: move internal dependencies to peerDependencies ([@lmestel](https://github.com/lmestel))
+- Update internal dependencies [#1302](https://github.com/kickstartDS/kickstartDS/pull/1302) ([@julrich](https://github.com/julrich))
+- fix(dependencies): update internal dependencies ([@julrich](https://github.com/julrich))
+- Simplify section headline referencing [#1299](https://github.com/kickstartDS/kickstartDS/pull/1299) ([@julrich](https://github.com/julrich))
+- Don't render array length if length is `0` [#1301](https://github.com/kickstartDS/kickstartDS/pull/1301) ([@lmestel](https://github.com/lmestel))
+- fix: don't render array length if length is `0` ([@lmestel](https://github.com/lmestel))
+- chore(dependencies): update peerDependencies (React, kickstartDS) ([@julrich](https://github.com/julrich))
+- feat(storybook): first draft of Storybook 7 upgrade ([@julrich](https://github.com/julrich))
+- Merge branch 'next' into dependabot/npm_and_yarn/babel/core-7.21.4 ([@lmestel](https://github.com/lmestel))
+- build(deps): bump @babel/plugin-transform-runtime from 7.19.1 to 7.21.4 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- Merge branch 'next' into build/babel-target ([@lmestel](https://github.com/lmestel))
+- narrow component prop types [#1276](https://github.com/kickstartDS/kickstartDS/pull/1276) ([@lmestel](https://github.com/lmestel))
+- split style-dictionary scripts [#1250](https://github.com/kickstartDS/kickstartDS/pull/1250) ([@lmestel](https://github.com/lmestel))
+- Add missing object types to schemas [#1275](https://github.com/kickstartDS/kickstartDS/pull/1275) ([@julrich](https://github.com/julrich))
+- test: narrow component dom prop types ([@lmestel](https://github.com/lmestel))
+- test: narrow component types ([@lmestel](https://github.com/lmestel))
+- fix(schema): add missing object types ([@julrich](https://github.com/julrich))
+- Merge branch 'master' into docs/adjust-banner-style ([@julrich](https://github.com/julrich))
+- Merge branch 'master' into docs/update-storybook-design-token-addon ([@lmestel](https://github.com/lmestel))
+
+#### 🔩 Dependency Updates
+
+- build(deps): bump @babel/core from 7.19.6 to 7.21.4 [#1289](https://github.com/kickstartDS/kickstartDS/pull/1289) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@lmestel](https://github.com/lmestel))
+
+#### Authors: 3
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Jonas Ulrich ([@julrich](https://github.com/julrich))
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+
+---
+
 # v2.0.2 (Tue Nov 15 2022)
 
 #### ⚠️ Pushed to `master`
