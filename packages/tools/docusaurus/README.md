@@ -10,7 +10,7 @@ https://www.kickstartds.com/docs/intro/packages
 Or see some background about component modules specifically:<br/>
 https://www.kickstartds.com/docs/foundations/modules
 
-See `CHANGELOG.md` for version history!
+See `CHANGELOG.md` for version history.
 
 ## Contributing
 
