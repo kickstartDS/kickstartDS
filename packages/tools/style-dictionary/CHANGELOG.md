@@ -1,3 +1,36 @@
+# v2.2.0 (Fri Jun 30 2023)
+
+#### 🐛 Bug Fix
+
+- Trigger more releases [#1372](https://github.com/kickstartDS/kickstartDS/pull/1372) ([@julrich](https://github.com/julrich))
+- chore(release): trigger more releases ([@julrich](https://github.com/julrich))
+- Trigger another release [#1370](https://github.com/kickstartDS/kickstartDS/pull/1370) ([@julrich](https://github.com/julrich))
+- chore(release): try updating missing released version in packages ([@julrich](https://github.com/julrich))
+- chore(release): trigger another release ([@julrich](https://github.com/julrich))
+- build(deps): bump postcss from 8.4.17 to 8.4.21 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump postcss-normalize-whitespace from 5.1.1 to 6.0.0 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- Merge branch 'next' into dependabot/npm_and_yarn/babel/core-7.21.4 ([@lmestel](https://github.com/lmestel))
+- build(deps): bump @babel/plugin-transform-runtime from 7.19.1 to 7.21.4 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump @babel/core from 7.19.6 to 7.21.4 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- Merge branch 'next' into build/babel-target ([@lmestel](https://github.com/lmestel))
+- narrow component prop types [#1276](https://github.com/kickstartDS/kickstartDS/pull/1276) ([@lmestel](https://github.com/lmestel))
+- split style-dictionary scripts [#1250](https://github.com/kickstartDS/kickstartDS/pull/1250) ([@lmestel](https://github.com/lmestel))
+- fix: split style-dictionary scripts ([@lmestel](https://github.com/lmestel))
+
+#### 🔩 Dependency Updates
+
+- build(deps): bump postcss from 8.4.17 to 8.4.21 [#1242](https://github.com/kickstartDS/kickstartDS/pull/1242) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump postcss-normalize-whitespace from 5.1.1 to 6.0.0 [#1290](https://github.com/kickstartDS/kickstartDS/pull/1290) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump @babel/core from 7.19.6 to 7.21.4 [#1289](https://github.com/kickstartDS/kickstartDS/pull/1289) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@lmestel](https://github.com/lmestel))
+
+#### Authors: 3
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Jonas Ulrich ([@julrich](https://github.com/julrich))
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+
+---
+
 # v2.0.0 (Tue Nov 15 2022)
 
 :tada: This release contains work from new contributors! :tada:
