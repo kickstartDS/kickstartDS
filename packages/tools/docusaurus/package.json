@@ -27,7 +27,7 @@
     "clsx": "^1.2.1",
     "docusaurus-plugin-sass": "^0.2.3",
     "docusaurus-theme-mdx-v2": "^0.1.2",
-    "prism-react-renderer": "^1.3.5",
+    "prism-react-renderer": "^2.0.6",
     "react": "^18.2.0",
     "react-admonitions": "^2.1.0",
     "react-dom": "^18.2.0",
