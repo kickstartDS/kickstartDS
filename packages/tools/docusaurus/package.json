@@ -33,7 +33,7 @@
     "react-dom": "^18.2.0",
     "sass": "^1.62.0",
     "shiki": "^0.14.1",
-    "styled-components": "^5.3.9"
+    "styled-components": "^6.0.2"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "2.4.0"
