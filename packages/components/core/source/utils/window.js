@@ -6,7 +6,6 @@ export const windowEvents = {
   resize: 'core.window.resize',
   scroll: 'core.window.scroll',
   scrollEnd: 'core.window.scrollEnd',
-  hashchange: 'core.window.hashchange',
 };
 
 if (inBrowser) {
@@ -32,8 +31,4 @@ if (inBrowser) {
     },
     { capture: true, passive: true }
   );
-  window.addEventListener('hashchange', (event) => {
-    event.preventDefault();
-    window._ks.radio.emit(windowEvents.hashchange);
-  });
 }
