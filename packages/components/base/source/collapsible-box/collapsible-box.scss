@@ -9,19 +9,17 @@ $vars: meta.module-variables(collapsible-box-vars);
 @include custom-properties.styles($vars, container.$name);
 @include container.wrapper {
   & + & {
-    details {
+    .c-collapsible-box {
       border-top: 0;
     }
   }
 }
 
 .c-collapsible-box {
-  details {
-    @include details-reset.details-reset;
+  @include details-reset.details-reset;
 
-    border-top: 1px solid var(--c-collapsible-box--border-color);
-    border-bottom: 1px solid var(--c-collapsible-box--border-color);
-  }
+  border-top: 1px solid var(--c-collapsible-box--border-color);
+  border-bottom: 1px solid var(--c-collapsible-box--border-color);
 
   &__header {
     &-wrapper {
@@ -47,7 +45,7 @@ $vars: meta.module-variables(collapsible-box-vars);
         @include bourbon.size(var(--c-collapsible-box_icon--size));
       }
 
-      [open] & {
+      .c-collapsible-box--open & {
         transform: var(--c-collapsible-box_icon--transform-open);
       }
 
@@ -58,12 +56,20 @@ $vars: meta.module-variables(collapsible-box-vars);
   }
 
   &__content {
-    &__item {
-      padding: var(--c-collapsible-box_content--padding);
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows var(--ks-transition-collapse);
+
+    .c-collapsible-box--open & {
+      grid-template-rows: 1fr;
     }
 
-    .is-closed & {
-      display: none;
+    &__item {
+      overflow: hidden;
+    }
+
+    &__inner {
+      padding: var(--c-collapsible-box_content--padding);
     }
   }
 }
