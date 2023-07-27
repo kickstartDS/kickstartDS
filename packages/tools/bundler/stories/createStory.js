@@ -49,7 +49,7 @@ const createStory = (schema, dest) => {
           componentName,
           componentPascalcased: pascalCase(componentName),
           schema,
-          hasComponentTokens,
+          loadComponentTokens: hasComponentTokens,
         })
       ),
     ]);
