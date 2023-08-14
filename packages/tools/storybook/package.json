@@ -30,7 +30,7 @@
     "@babel/core": "^7.21.8",
     "@kickstartds/storybook-addon-component-tokens": "^0.1.6",
     "@storybook/addon-a11y": "^7.0.10",
-    "@storybook/addon-essentials": "^7.0.10",
+    "@storybook/addon-essentials": "^7.2.3",
     "@storybook/addon-mdx-gfm": "^7.0.10",
     "@storybook/builder-vite": "^7.0.10",
     "@storybook/cli": "^7.0.10",
