@@ -1,3 +1,15 @@
+# (Wed Aug 16 2023)
+
+#### ⚠️ Pushed to `master`
+
+- fix(docs): broken links ([@julrich](https://github.com/julrich))
+
+#### Authors: 1
+
+- Jonas Ulrich ([@julrich](https://github.com/julrich))
+
+---
+
 # (Fri Jun 30 2023)
 
 #### 🚀 Enhancement
