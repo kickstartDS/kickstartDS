@@ -1309,7 +1309,7 @@ module.exports = {
 ```
 </CH.Code>
 
-This sets up everything needed to import components from `@kickstartDS` (e.g. `import { Button } from "@kickstartds/base/lib/button"`). First we [add exemptions to the `babel-loader`](focus://24:29) for JavaScript code transpilation, which normally ignores code in `node_modules`. Additionally we add [loaders for **CSS** / **SCSS**](focus://31:46), [allow includes from `node_modules`](focus://39:41), configure [the path our code lives in](focus://45), and [configure `mainFields`](focus://48) ([learn about them here](config.resolve.mainFields)).
+This sets up everything needed to import components from `@kickstartDS` (e.g. `import { Button } from "@kickstartds/base/lib/button"`). First we [add exemptions to the `babel-loader`](focus://24:29) for JavaScript code transpilation, which normally ignores code in `node_modules`. Additionally we add [loaders for **CSS** / **SCSS**](focus://31:46), [allow includes from `node_modules`](focus://39:41), configure [the path our code lives in](focus://45), and [configure `mainFields`](focus://48) ([learn about them here](https://webpack.js.org/configuration/resolve/#resolvemainfields)).
 
 Read more [about **Storybook**s **Webpack** builder](https://storybook.js.org/docs/react/builders/webpack), or [**Webpack** in general](https://webpack.js.org/), for details.
 </CH.Section>
