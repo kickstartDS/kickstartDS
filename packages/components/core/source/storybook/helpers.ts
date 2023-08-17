@@ -229,26 +229,30 @@ const unpack = (flatArgs: Args): Args => {
     if (key.endsWith('__count')) {
       const [arrayKey] = key.split('__count');
       arrayCounts[arrayKey] = value;
-    }
+    } else {
+      key.split('.').reduce((prev, currKey, i, arr) => {
+        if (prev[currKey] == null) {
+          if (Array.isArray(prev)) {
+            const prevPath = arr.slice(0, i).join('.');
+            const arrayCount = arrayCounts[prevPath];
+            const currIndex = +currKey;
 
-    key.split('.').reduce((prev, curr, i, arr) => {
-      if (prev[curr] == null) {
-        if (Array.isArray(prev)) {
-          const prevPath = arr.slice(0, i).join('.');
-          const arrayCount = arrayCounts[prevPath];
-          if (!isNaN(arrayCount)) {
-            const currIndex = +curr;
-            if (isNaN(currIndex) || currIndex >= arrayCount) {
+            if (
+              isNaN(currIndex) ||
+              isNaN(arrayCount) ||
+              currIndex >= arrayCount
+            ) {
+              arr.splice(i);
               return prev;
             }
           }
-        }
 
-        const next = arr[i + 1];
-        prev[curr] = next != null ? (isNaN(+next) ? {} : []) : value;
-      }
-      return prev[curr];
-    }, args);
+          const nextKey = arr[i + 1];
+          prev[currKey] = nextKey != null ? (isNaN(+nextKey) ? {} : []) : value;
+        }
+        return prev[currKey];
+      }, args);
+    }
   }
 
   return args;
