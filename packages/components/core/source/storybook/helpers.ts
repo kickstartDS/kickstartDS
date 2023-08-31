@@ -55,6 +55,8 @@ const getArgsShared = (
       : schema.type;
 
     const add = (typeProps: InputType) => {
+      if (!name) return;
+
       argTypes[name] = {
         name: name.replace(/__/, '.'),
         description: schema.title
