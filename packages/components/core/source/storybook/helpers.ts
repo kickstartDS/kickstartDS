@@ -49,6 +49,8 @@ const getArgsShared = (
     if ('const' in schema) return;
 
     const add = (typeProps: InputType) => {
+      if (!name) return;
+
       argTypes[name] = {
         name,
         description: `**${schema.title}${schema.description ? ':' : ''}**${
