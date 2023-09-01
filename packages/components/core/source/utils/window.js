@@ -1,5 +1,5 @@
-import throttle from 'lodash-es/throttle';
-import debounce from 'lodash-es/debounce';
+import { throttle } from './throttle';
+import { debounce } from './debounce';
 import { inBrowser } from '../core/domLoaded';
 
 export const windowEvents = {
