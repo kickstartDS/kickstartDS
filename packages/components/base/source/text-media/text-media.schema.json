@@ -40,7 +40,7 @@
         "anyOf": [
           {
             "type": "object",
-            "title": "TextMediaVideo",
+            "title": "MediaVideo",
             "properties": {
               "video": {
                 "title": "Video",
@@ -95,7 +95,7 @@
             "additionalProperties": false
           },
           {
-            "title": "TextMediaImage",
+            "title": "MediaImage",
             "type": "object",
             "properties": {
               "image": {
@@ -111,7 +111,7 @@
             "additionalProperties": false
           },
           {
-            "title": "TextMediaLazyImage",
+            "title": "MediaLazyImage",
             "type": "object",
             "properties": {
               "lightboxImage": {

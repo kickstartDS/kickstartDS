@@ -500,7 +500,7 @@ export type Caption3 = string;
 /**
  * Collection of media items to display
  */
-export type Media = (TextMediaVideo | TextMediaImage | TextMediaLazyImage)[];
+export type Media = (MediaVideo | MediaImage | MediaLazyImage)[];
 /**
  * Additional css classes attached to the wrapping element
  */
@@ -952,7 +952,7 @@ export interface TextMedia {
   className?: Class2;
   component?: KsComponentAttribute14;
 }
-export interface TextMediaVideo {
+export interface MediaVideo {
   video?: Video;
   full?: FullWidthMedia;
   caption?: Caption;
@@ -967,7 +967,7 @@ export interface Video {
   width: Width2;
   height: Height1;
 }
-export interface TextMediaImage {
+export interface MediaImage {
   image?: Picture1;
   full?: FullWidthMedia1;
   caption?: Caption1;
@@ -991,7 +991,7 @@ export interface Picture1 {
   sources?: Sources1;
   pictureClassName?: ClassAttribute1;
 }
-export interface TextMediaLazyImage {
+export interface MediaLazyImage {
   lightboxImage?: LightboxImage;
   full?: FullWidthMedia2;
   caption?: Caption3;
