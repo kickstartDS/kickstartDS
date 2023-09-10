@@ -11,9 +11,9 @@ import { IframeRatio } from '../iframe';
 import { RichText, defaultRenderFn } from '../rich-text';
 import {
   TextMediaProps as TextMediaSchemaProps,
-  TextMediaVideo as IVideo,
-  TextMediaImage as IImage,
-  TextMediaLazyImage as ILightboxImage,
+  MediaVideo as IVideo,
+  MediaImage as IImage,
+  MediaLazyImage as ILightboxImage,
   Media as IMedia,
   FullWidthMedia as TFullWidthMedia,
   Caption as TCaption,
