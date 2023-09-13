@@ -6,7 +6,7 @@ import {
   RichText,
   defaultRenderFn as richTextDefaultRenderFn,
 } from '../rich-text';
-import type { CollapsibleBoxProps as CollapsibleBoxSchemaProps } from './CollapsibleBoxProps';
+import type { CollapsibleBoxProps as CollapsibleBoxSchemaProps } from './typing';
 
 export type CollapsibleBoxProps = CollapsibleBoxSchemaProps & {
   renderText?: typeof richTextDefaultRenderFn;

@@ -8,7 +8,7 @@ import classnames from 'classnames';
 import { defaultRenderFn } from '@kickstartds/core/lib/core';
 import { Link } from '../link';
 import { Icon } from '../icon';
-import type { ButtonProps as ButtonSchemaProps } from './ButtonProps';
+import type { ButtonProps as ButtonSchemaProps } from './typing';
 
 export type ButtonProps = ButtonSchemaProps & {
   renderLabel?: typeof defaultRenderFn;
