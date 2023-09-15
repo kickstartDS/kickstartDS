@@ -1,6 +1,17 @@
 {
   "compilerOptions": {
     "jsx": "react-jsx",
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+      "@kickstartds/base/lib/headline/typing": [
+        "packages/components/base/source/headline/typing"
+      ],
+      "@kickstartds/base/lib/button/typing": [
+        "packages/components/base/source/button/typing"
+      ],
+      "@kickstartds/base/lib/collapsible-box/typing": [
+        "packages/components/base/source/collapsible-box/typing"
+      ]
+    }
   }
 }

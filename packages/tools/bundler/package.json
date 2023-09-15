@@ -47,6 +47,7 @@
     "postcss-sort-container-queries": "https://github.com/lmestel/postcss-sort-container-queries",
     "postcss-sort-media-queries": "^5.1.0",
     "react-emoji-render": "^2.0.1",
+    "replace-in-file": "^7.0.1",
     "rollup": "^2.79.1",
     "rollup-plugin-import-resolver": "^1.2.1",
     "rollup-plugin-node-externals": "^5.1.3",

@@ -2,9 +2,11 @@ const fs = require('fs-extra');
 const path = require('path');
 const rollup = require('rollup');
 const { babel } = require('@rollup/plugin-babel');
+const replace = require('replace-in-file');
 const ts = require('rollup-plugin-ts');
 const log = require('../utils/log');
 const { root, dirRe, sourcePath } = require('../utils/utils');
+const { pascalCase } = require('change-case');
 const {
   sharedInputPlugins,
   sharedOutputOptions,
@@ -23,6 +25,7 @@ const babelConfig = sharedBabelConfig({
   presets: [['@babel/preset-react', { runtime: 'automatic' }]],
 });
 
+const declarations = [];
 const prepare = async (tsPaths) => {
   const assets = await fs
     .readJSON(`${sourcePath}/assets.json`)
@@ -63,6 +66,14 @@ const prepare = async (tsPaths) => {
                 react: [`${root}/node_modules/@types/react`],
               },
             },
+            hook: {
+              outputPath: (path, kind) => {
+                if (kind === 'declaration' && !declarations.includes(path))
+                  declarations.push(path);
+
+                return;
+              },
+            },
             babelConfig,
             browserslist: babelConfig.targets,
           })
@@ -100,6 +111,10 @@ const prepare = async (tsPaths) => {
   };
 };
 
+function regExpEscape(literal_string) {
+  return literal_string.replace(/[-[\]{}()*+!<=:?.\/\\^$|#\s,]/g, '\\$&');
+}
+
 const bundleTs = async (tsPaths) => {
   log('starting ts bundle');
   const { inputOptions, outputOptions, cssAssets, jsAssets } = await prepare(
@@ -107,6 +122,32 @@ const bundleTs = async (tsPaths) => {
   );
   const bundle = await rollup.rollup(inputOptions);
   const { output } = await bundle.write(outputOptions);
+  for (const out of Object.values(output)) {
+    if (out.fileName.includes('/index.d.ts')) {
+      const declaration = declarations.find((declaration) =>
+        declaration.endsWith(out.fileName)
+      );
+      const regexComponentPath = new RegExp(/components\/(.*)\/index\.d\.ts/);
+      const componentPath = declaration.match(regexComponentPath)[1];
+      const componentName = pascalCase(componentPath.split('/').pop());
+      const regexImport = new RegExp(
+        regExpEscape('import("./typing.js")'),
+        'g'
+      );
+      const regexComponent = new RegExp(
+        regExpEscape('ForwardRefExoticComponent<any>;'),
+        'g'
+      );
+      replace.sync({
+        files: declaration,
+        from: [regexImport, regexComponent],
+        to: [
+          `import("@kickstartds/${componentPath}/typing")`,
+          `typeof ${componentName}ContextDefault;`,
+        ],
+      });
+    }
+  }
   await bundle.close();
   log('finished ts bundle');
   return { output, cssAssets, jsAssets };
