@@ -12,6 +12,7 @@ import type {
   InputType,
   SBType,
 } from '@storybook/types';
+import type { ReactRenderer } from '@storybook/react';
 
 const definitionIsSchema = (
   schema: JSONSchema7Definition | JSONSchema7Definition[]
@@ -260,8 +261,10 @@ const unpack = (flatArgs: Args): Args => {
   return args;
 };
 
-const unpackDecorator: DecoratorFunction = (story, config) =>
-  story({ ...config, args: unpack(config.args) });
+const unpackDecorator: DecoratorFunction<ReactRenderer, Args> = (
+  story,
+  config
+) => story({ ...config, args: unpack(config.args) });
 
 const isObject = (obj: unknown): obj is Record<string, unknown> =>
   Object.prototype.toString.call(obj) === '[object Object]';
