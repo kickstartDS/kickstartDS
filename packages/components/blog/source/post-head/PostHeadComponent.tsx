@@ -4,7 +4,7 @@ import { format } from 'date-fns';
 import { Headline } from '@kickstartds/base/lib/headline';
 import { Picture } from '@kickstartds/base/lib/picture';
 import { TagLabelContainer } from '@kickstartds/base/lib/tag-label-container';
-import type { PostHeadProps } from './PostHeadProps';
+import type { PostHeadProps } from './typing';
 
 export { PostHeadProps };
 export const PostHeadComponent: ForwardRefRenderFunction<

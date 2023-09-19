@@ -2,7 +2,7 @@ import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import { Picture } from '@kickstartds/base/lib/picture';
 import { Icon } from '@kickstartds/base/lib/icon';
 import classNames from 'classnames';
-import type { PostMetaProps } from './PostMetaProps';
+import type { PostMetaProps } from './typing';
 
 export { PostMetaProps };
 export const PostMetaComponent: ForwardRefRenderFunction<

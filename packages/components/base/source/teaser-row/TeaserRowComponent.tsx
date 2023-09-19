@@ -1,7 +1,8 @@
 import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
-import type { TeaserRowProps as TeaserRowSchemaProps } from './TeaserRowProps';
-import { Teaser, TeaserProps } from '../teaser';
+import type { TeaserRowProps as TeaserRowSchemaProps } from './typing';
+import { Teaser } from '../teaser';
+import { TeaserProps } from '../teaser/typing';
 
 export type TeaserRowProps = TeaserRowSchemaProps & TeaserProps;
 

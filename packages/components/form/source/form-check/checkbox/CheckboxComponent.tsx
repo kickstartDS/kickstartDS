@@ -5,7 +5,7 @@ import {
 } from 'react';
 import classnames from 'classnames';
 import { defaultRenderFn } from '@kickstartds/core/lib/core';
-import type { CheckboxProps as CheckboxSchemaProps } from './CheckboxProps';
+import type { CheckboxProps as CheckboxSchemaProps } from './typing';
 
 export type CheckboxProps = CheckboxSchemaProps & {
   renderLabel?: typeof defaultRenderFn;
