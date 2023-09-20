@@ -127,9 +127,13 @@ const bundleTs = async (tsPaths) => {
       const declaration = declarations.find((declaration) =>
         declaration.endsWith(out.fileName)
       );
-      const regexComponentPath = new RegExp(/components\/(.*)\/index\.d\.ts/);
-      const componentPath = declaration.match(regexComponentPath)[1];
-      const componentName = pascalCase(componentPath.split('/').pop());
+      const regexComponentPath = new RegExp(
+        /\/([a-zA-Z0-9-_]+)\/lib\/([a-zA-Z0-9-_]+)\/index\.d\.ts/
+      );
+      const matches = declaration.match(regexComponentPath);
+      const componentModule = matches[1];
+      const componentPath = matches[2];
+      const componentName = pascalCase(componentPath);
       const regexImport = new RegExp(
         regExpEscape('import("./typing.js")'),
         'g'
@@ -142,7 +146,7 @@ const bundleTs = async (tsPaths) => {
         files: declaration,
         from: [regexImport, regexComponent],
         to: [
-          `import("@kickstartds/${componentPath}/typing")`,
+          `import("@kickstartds/${componentModule}/lib/${componentPath}/typing")`,
           `typeof ${componentName}ContextDefault;`,
         ],
       });
