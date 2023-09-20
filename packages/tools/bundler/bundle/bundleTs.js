@@ -134,21 +134,40 @@ const bundleTs = async (tsPaths) => {
       const componentModule = matches[1];
       const componentPath = matches[2];
       const componentName = pascalCase(componentPath);
-      const regexImport = new RegExp(
-        regExpEscape('import("./typing.js")'),
-        'g'
-      );
-      const regexComponent = new RegExp(
-        regExpEscape('ForwardRefExoticComponent<any>;'),
-        'g'
-      );
       replace.sync({
         files: declaration,
-        from: [regexImport, regexComponent],
-        to: [
-          `import("@kickstartds/${componentModule}/lib/${componentPath}/typing")`,
-          `typeof ${componentName}ContextDefault;`,
-        ],
+        processor: (input) => {
+          const lines = input.split(/\r?\n/);
+
+          let componentTypeLines = [];
+          let componentTypeLinesDone = true;
+          const replaced = lines
+            .map((line) => {
+              if (line.includes('ContextDefault') || !componentTypeLinesDone) {
+                componentTypeLines.push(
+                  line
+                    .replace('ContextDefault', '')
+                    .replace(
+                      'import("./typing.js")',
+                      `import("@kickstartds/${componentModule}/lib/${componentPath}/typing")`
+                    )
+                    .replace(
+                      /import\("\.\.\/(.*)\/typing\.js"\)/,
+                      `import("@kickstartds/${componentModule}/lib/$1/typing")`
+                    )
+                );
+                componentTypeLinesDone =
+                  line.endsWith(';') && !line.startsWith('    ');
+                return line;
+              } else if (line.includes(`declare const ${componentName}:`)) {
+                return componentTypeLines.join('\n');
+              }
+              return line;
+            })
+            .join('\n');
+
+          return replaced;
+        },
       });
     }
   }
