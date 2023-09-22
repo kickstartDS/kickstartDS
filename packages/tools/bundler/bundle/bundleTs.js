@@ -127,6 +127,7 @@ const bundleTs = async (tsPaths) => {
   const { inputOptions, outputOptions, cssAssets, jsAssets } = await prepare(
     tsPaths
   );
+  const kdsModules = ['core', 'base', 'blog', 'form'];
   const bundle = await rollup.rollup(inputOptions);
   const { output } = await bundle.write(outputOptions);
   for (const out of Object.values(output)) {
@@ -138,7 +139,9 @@ const bundleTs = async (tsPaths) => {
         /\/([a-zA-Z0-9-_]+)\/lib\/([a-zA-Z0-9-_]+)\/index\.d\.ts/
       );
       const matches = declaration.match(regexComponentPath);
-      const componentModule = matches[1];
+      const componentModule = kdsModules.includes(matches[1])
+        ? matches[1]
+        : 'content';
       const componentPath = matches[2];
       const componentName = pascalCase(componentPath);
       replace.sync({
@@ -163,7 +166,7 @@ const bundleTs = async (tsPaths) => {
                   )
                 );
                 componentTypeLinesDone =
-                  line.endsWith(';') && !line.startsWith('    ');
+                  line.endsWith(';') && !line.startsWith('  ');
                 return line;
               } else if (line.includes(`declare const ${componentName}:`)) {
                 return componentTypeLines.join('\n');
