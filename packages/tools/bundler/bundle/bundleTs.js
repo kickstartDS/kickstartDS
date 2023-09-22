@@ -111,9 +111,16 @@ const prepare = async (tsPaths) => {
   };
 };
 
-function regExpEscape(literal_string) {
-  return literal_string.replace(/[-[\]{}()*+!<=:?.\/\\^$|#\s,]/g, '\\$&');
-}
+const fixImportPaths = (line, componentModule, componentPath) =>
+  line
+    .replace(
+      'import("./typing.js")',
+      `import("@kickstartds/${componentModule}/lib/${componentPath}/typing")`
+    )
+    .replace(
+      /import\("\.\.\/(.*)\/typing\.js"\)/,
+      `import("@kickstartds/${componentModule}/lib/$1/typing")`
+    );
 
 const bundleTs = async (tsPaths) => {
   log('starting ts bundle');
@@ -143,18 +150,17 @@ const bundleTs = async (tsPaths) => {
           let componentTypeLinesDone = true;
           const replaced = lines
             .map((line) => {
-              if (line.includes('ContextDefault') || !componentTypeLinesDone) {
+              if (
+                line.includes(
+                  `declare const ${componentName}ContextDefault:`
+                ) ||
+                !componentTypeLinesDone
+              ) {
                 componentTypeLines.push(
-                  line
-                    .replace('ContextDefault', '')
-                    .replace(
-                      'import("./typing.js")',
-                      `import("@kickstartds/${componentModule}/lib/${componentPath}/typing")`
-                    )
-                    .replace(
-                      /import\("\.\.\/(.*)\/typing\.js"\)/,
-                      `import("@kickstartds/${componentModule}/lib/$1/typing")`
-                    )
+                  fixImportPaths(line, componentModule, componentPath).replace(
+                    'ContextDefault',
+                    ''
+                  )
                 );
                 componentTypeLinesDone =
                   line.endsWith(';') && !line.startsWith('    ');
@@ -162,7 +168,7 @@ const bundleTs = async (tsPaths) => {
               } else if (line.includes(`declare const ${componentName}:`)) {
                 return componentTypeLines.join('\n');
               }
-              return line;
+              return fixImportPaths(line, componentModule, componentPath);
             })
             .join('\n');
 
