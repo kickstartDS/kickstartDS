@@ -1,11 +1,7 @@
 import { forwardRef, createElement, createContext, useContext } from 'react';
-import {
-  PostShareBarComponent,
-  type PostShareBarProps,
-} from './PostShareBarComponent';
+import { PostShareBarComponent } from './PostShareBarComponent';
 import './post-share-bar.scss';
 
-export { PostShareBarProps };
 export const PostShareBarContextDefault = forwardRef(PostShareBarComponent);
 export const PostShareBarContext = createContext(PostShareBarContextDefault);
 export const PostShareBar: typeof PostShareBarContextDefault = forwardRef(
