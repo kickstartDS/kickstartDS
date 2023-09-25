@@ -2,13 +2,19 @@ import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
 import { defaultRenderFn } from '@kickstartds/core/lib/core';
 import { TagLabelContainer } from '@kickstartds/base/lib/tag-label-container';
-import { Teaser, TeaserProps } from '@kickstartds/base/lib/teaser';
+import { Teaser } from '@kickstartds/base/lib/teaser';
+import { TeaserProps } from '@kickstartds/base/lib/teaser/typing';
 import { Picture } from '@kickstartds/base/lib/picture';
 import { defaultRenderFn as richTextDefaultRenderFn } from '@kickstartds/base/lib/rich-text';
 import { PostMeta } from '../post-meta';
-import type { PostTeaserProps as PostTeaserSchemaProps } from './PostTeaserProps';
+import type { PostTeaserProps as PostTeaserSchemaProps } from './typing';
 
-export type PostTeaserProps = PostTeaserSchemaProps & TeaserProps;
+export type PostTeaserProps = PostTeaserSchemaProps &
+  TeaserProps & {
+    renderTopic?: typeof defaultRenderFn;
+    renderText?: typeof richTextDefaultRenderFn;
+  };
+
 export const PostTeaserComponent: ForwardRefRenderFunction<
   HTMLElement,
   PostTeaserProps & HTMLAttributes<HTMLElement>

@@ -6,7 +6,7 @@ import {
 import classnames from 'classnames';
 import { defaultRenderFn } from '@kickstartds/core/lib/core';
 import { Icon } from '@kickstartds/base/lib/icon';
-import type { TextFieldProps as TextFieldSchemaProps } from './TextFieldProps';
+import type { TextFieldProps as TextFieldSchemaProps } from './typing';
 
 export type TextFieldProps = TextFieldSchemaProps & {
   renderLabel?: typeof defaultRenderFn;

@@ -6,7 +6,7 @@ import {
   defaultRenderFn as richTextDefaultRenderFn,
 } from '../rich-text';
 import { Button } from '../button';
-import type { TeaserProps as TeaserSchemaProps } from './TeaserProps';
+import type { TeaserProps as TeaserSchemaProps } from './typing';
 
 export type TeaserProps = TeaserSchemaProps & {
   renderTopic?: typeof defaultRenderFn;

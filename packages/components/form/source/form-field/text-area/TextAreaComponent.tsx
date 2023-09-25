@@ -6,7 +6,7 @@ import {
 import classnames from 'classnames';
 import { defaultRenderFn } from '@kickstartds/core/lib/core';
 import { Icon } from '@kickstartds/base/lib/icon';
-import type { TextAreaProps as TextAreaSchemaProps } from './TextAreaProps';
+import type { TextAreaProps as TextAreaSchemaProps } from './typing';
 
 export type TextAreaProps = TextAreaSchemaProps & {
   renderLabel?: typeof defaultRenderFn;
