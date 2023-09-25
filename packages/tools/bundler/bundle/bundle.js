@@ -12,7 +12,7 @@ const exportsFromRollupOutput = (output) =>
     return prev;
   }, new Map());
 
-const getTsPaths = fg('source/*/**/index.ts');
+const getTsPaths = fg('source/*/**/(index|typing).ts');
 
 const buildBundle = async () => {
   try {

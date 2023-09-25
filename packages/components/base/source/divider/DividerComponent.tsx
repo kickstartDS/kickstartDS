@@ -1,6 +1,6 @@
 import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classNames from 'classnames';
-import type { DividerProps } from './DividerProps';
+import type { DividerProps } from './typing';
 
 export { DividerProps };
 export const DividerComponent: ForwardRefRenderFunction<

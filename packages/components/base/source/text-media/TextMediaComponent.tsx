@@ -17,7 +17,7 @@ import {
   Media as IMedia,
   FullWidthMedia as TFullWidthMedia,
   Caption as TCaption,
-} from './TextMediaProps';
+} from './typing';
 
 export interface RenderFunctions {
   renderText?: typeof defaultRenderFn;
