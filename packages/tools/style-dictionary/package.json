@@ -23,7 +23,7 @@
     "lodash": "^4.17.21",
     "node-html-parser": "^5.2.0",
     "postcss": "^8.4.21",
-    "postcss-calc": "^8.2.4",
+    "postcss-calc": "^9.0.1",
     "postcss-colormin": "^5.3.0",
     "postcss-normalize-whitespace": "^6.0.0",
     "postcss-sort-media-queries": "^4.2.1",
