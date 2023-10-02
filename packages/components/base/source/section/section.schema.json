@@ -8,8 +8,36 @@
       "type": "string",
       "title": "Width",
       "description": "Width of section to use",
-      "enum": ["full", "max", "wide", "default", "narrow"],
+      "enum": ["narrow", "default", "wide", "max", "full"],
       "default": "default"
+    },
+    "headlineWidth": {
+      "type": "string",
+      "title": "Headline Width",
+      "description": "Width of headline to use",
+      "enum": ["unset", "narrow", "default", "wide"],
+      "default": "unset"
+    },
+    "headlineAlign": {
+      "title": "Headline Alignment",
+      "description": "Choose an alignment for the headline",
+      "type": "string",
+      "enum": ["left", "center", "right"],
+      "default": "center"
+    },
+    "contentWidth": {
+      "type": "string",
+      "title": "Content Width",
+      "description": "Width of content to use",
+      "enum": ["unset", "narrow", "default", "wide"],
+      "default": "unset"
+    },
+    "contentAlign": {
+      "title": "Content Alignment",
+      "description": "Choose an alignment for the content",
+      "type": "string",
+      "enum": ["left", "center", "right"],
+      "default": "center"
     },
     "gutter": {
       "type": "string",

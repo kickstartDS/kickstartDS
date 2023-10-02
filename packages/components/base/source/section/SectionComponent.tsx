@@ -8,16 +8,15 @@ import classnames from 'classnames';
 import { Headline } from '../headline';
 import type { SectionProps } from './typing';
 
-const SectionContainer: FunctionComponent<PropsWithChildren<SectionProps>> = ({
-  width,
-  gutter,
-  mode,
-  children,
-}) => (
+const SectionContainer: FunctionComponent<
+  PropsWithChildren<SectionProps & { align?: 'left' | 'center' | 'right' }>
+> = ({ width, align, gutter, mode, className, children }) => (
   <div
     className={classnames(
       'l-section__container',
-      width && width !== 'default' && `l-section__container--${width}`,
+      className,
+      width && `l-section__container--${width}`,
+      align && align !== 'center' && `l-section__container--${align}`,
       gutter &&
         gutter !== 'default' &&
         `l-section__container--gutter-${gutter}`,
@@ -41,6 +40,10 @@ export const SectionComponent: ForwardRefRenderFunction<
     spaceAfter = 'default',
     headline,
     width = 'default',
+    headlineWidth = 'unset',
+    headlineAlign = 'center',
+    contentWidth = 'unset',
+    contentAlign = 'center',
     gutter = 'default',
     mode = 'default',
     className,
@@ -67,15 +70,40 @@ export const SectionComponent: ForwardRefRenderFunction<
     ref={ref}
     {...props}
   >
-    {headline && headline.content && (
-      <SectionContainer width={width}>
-        <Headline align="center" {...headline} />
-      </SectionContainer>
-    )}
-    {children && (
-      <SectionContainer width={width} gutter={gutter} mode={mode}>
-        {children}
-      </SectionContainer>
-    )}
+    <SectionContainer
+      width={width !== 'default' ? width : undefined}
+      className="l-section__container--wrap"
+    >
+      {headline && headline.content && (
+        <SectionContainer
+          width={
+            headlineWidth !== 'unset'
+              ? headlineWidth !== 'default'
+                ? headlineWidth
+                : undefined
+              : width
+          }
+          align={headlineAlign}
+        >
+          <Headline align={headlineAlign} {...headline} />
+        </SectionContainer>
+      )}
+      {children && (
+        <SectionContainer
+          width={
+            contentWidth !== 'unset'
+              ? contentWidth !== 'default'
+                ? contentWidth
+                : undefined
+              : width
+          }
+          align={contentAlign}
+          gutter={gutter}
+          mode={mode}
+        >
+          {children}
+        </SectionContainer>
+      )}
+    </SectionContainer>
   </div>
 );

@@ -32,7 +32,6 @@ $vars: meta.module-variables(section-vars);
   }
 
   &__container {
-    padding: 0 var(--l-section--content-padding);
     margin: auto;
     width: 100%;
     max-width: var(--l-section--content-width-default);
@@ -59,8 +58,24 @@ $vars: meta.module-variables(section-vars);
     }
 
     &--full {
-      padding: 0;
       max-width: var(--l-section--content-width-full);
+    }
+
+    &--left {
+      margin-left: 0;
+    }
+
+    &--right {
+      margin-right: 0;
+    }
+
+    &--wrap {
+      display: block;
+      padding: 0 var(--l-section--content-padding);
+
+      &.l-section__container--full {
+        padding: 0;
+      }
     }
   }
 }
