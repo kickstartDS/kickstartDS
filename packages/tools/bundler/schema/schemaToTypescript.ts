@@ -4,7 +4,6 @@ import path from 'path';
 import { pascalCase } from 'change-case';
 
 import {
-  getCustomSchemaIds,
   getSchemaModule,
   getSchemaName,
   getSchemaRegistry,
@@ -32,11 +31,10 @@ const createTypes = async (schemaId: string, schemaGlob: string) => {
   const schemaPaths: string[] = await fg(schemaGlob);
 
   const ajv = getSchemaRegistry();
-  const schemaIds = await processSchemaGlob(schemaGlob, ajv, false);
-  const customSchemaIds = getCustomSchemaIds(schemaIds);
+  await processSchemaGlob(schemaGlob, ajv, false);
 
   const types: Record<string, string> = await createTypings(
-    customSchemaIds,
+    [schemaId],
     renderImportName,
     renderImportStatement,
     ajv

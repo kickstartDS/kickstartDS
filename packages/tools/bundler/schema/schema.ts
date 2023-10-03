@@ -8,12 +8,11 @@ import { createTypes } from './schemaToTypescript.js';
 import { createStory } from '../stories/createStory.js';
 import { JSONSchema } from 'json-schema-typed/draft-07.js';
 
-const schemaGlob: string = 'source/**/!(_)*.(schema|definitions).json';
+const schemaGlob: string = 'source/**/!(_)*.schema.json';
 
 const processSchema = async (schemaPath: string) => {
   const [, dir, base] = schemaPath.match(dirRe) || [];
   const dest = `lib/${dir}`;
-  console.log('schemaPath', schemaPath);
 
   return Promise.all([
     fs.copy(schemaPath, `${dest}/${base}.json`),
