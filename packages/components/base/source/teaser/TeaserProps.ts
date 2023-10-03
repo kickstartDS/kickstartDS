@@ -5,9 +5,7 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
-/**
- * Definitions for components to tease external content
- */
-export interface TeaserProps {
+import type { TeaserProps } from '@kickstartds/base/lib/teaser/typing';
+interface TeaserProps {
   [k: string]: unknown;
 }
