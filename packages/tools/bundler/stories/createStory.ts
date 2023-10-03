@@ -1,18 +1,26 @@
-const { capitalCase, pascalCase } = require('change-case');
-const fs = require('fs-extra');
+import fs from 'fs-extra';
+import { capitalCase, pascalCase } from 'change-case';
+
+type TemplateProps = {
+  moduleDir: string;
+  componentName: string;
+  componentPascalcased: string;
+  schema: any;
+  hasComponentTokens: boolean;
+};
 
 const template = ({
   moduleDir,
   componentName,
   componentPascalcased,
   schema,
-  loadComponentTokens,
-}) => `
+  hasComponentTokens,
+}: TemplateProps): string => `
 import type { Meta, StoryObj } from '@storybook/react';
 import { getArgsShared } from "@kickstartds/core/lib/storybook";
 import { ${componentPascalcased} } from './index.js';
 ${
-  loadComponentTokens
+  hasComponentTokens
     ? `import cssprops from './${componentName}-tokens.json';`
     : ''
 }
@@ -24,7 +32,7 @@ const meta: Meta<typeof ${componentPascalcased}> = {
   component: ${componentPascalcased},
   excludeStories: ['Template'],
   parameters: {
-    ${loadComponentTokens ? 'cssprops,' : ''}
+    ${hasComponentTokens ? 'cssprops,' : ''}
   },
   ...getArgsShared(schema),
 };
@@ -34,7 +42,10 @@ type Story = StoryObj<typeof ${componentPascalcased}>;
 export const Default: Story = {};
 `;
 
-const createStory = (schema, dest) => {
+const createStory = (
+  schema: any,
+  dest: string
+): Promise<void[]> | undefined => {
   const [, moduleDir, fileName] = schema.$id.match(/^.*\/(.+)\/(.*)$/);
   const [componentName, type] = fileName.split('.');
   const hasComponentTokens = fs.existsSync(
@@ -56,4 +67,4 @@ const createStory = (schema, dest) => {
   }
 };
 
-module.exports = { createStory };
+export { createStory };

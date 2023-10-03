@@ -1,14 +1,16 @@
-const { spawn } = require('child_process');
-const path = require('path');
-const argv = require('yargs-parser')(process.argv.slice(2));
-const fg = require('fast-glob');
-const createMarkdownStories = require('@kickstartds/bundler/stories/createStoriesFromMarkdown');
-const { root } = require('@kickstartds/bundler/utils/utils');
-const buildTokens = require('@kickstartds/bundler/stories/build-tokens');
+import { spawn, SpawnOptions } from 'node:child_process';
+import path from 'node:path';
+import yargsParser from 'yargs-parser';
+import fg from 'fast-glob';
+import createMarkdownStories from '@kickstartds/bundler/stories/createStoriesFromMarkdown';
+import { root } from '@kickstartds/bundler/utils/utils';
+import buildTokens from '@kickstartds/bundler/stories/build-tokens';
 
-const exec = (...args) =>
+const argv = yargsParser(process.argv.slice(2));
+
+const exec = (command: string, args: string[], options: SpawnOptions) =>
   new Promise((resolve, reject) => {
-    spawn(...args, { stdio: 'inherit' })
+    spawn(command, args, { ...options, stdio: 'inherit' })
       .on('exit', resolve)
       .on('error', reject);
   });
@@ -46,19 +48,19 @@ kdsModules
   .then(() => {
     switch (task) {
       case 'build': {
-        return exec('storybook', ['build', ...storybookOptionsBuild]);
+        return exec('storybook', ['build', ...storybookOptionsBuild], {});
       }
 
       case 'start': {
-        return exec('storybook', ['dev', ...storybookOptionsStart]);
+        return exec('storybook', ['dev', ...storybookOptionsStart], {});
       }
 
       case 'debug': {
-        return exec('storybook', [
-          'dev',
-          ...storybookOptionsStart,
-          '--debug-webpack',
-        ]);
+        return exec(
+          'storybook',
+          ['dev', ...storybookOptionsStart, '--debug-webpack'],
+          {}
+        );
       }
 
       default: {

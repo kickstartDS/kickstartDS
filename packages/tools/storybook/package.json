@@ -6,6 +6,7 @@
   "license": "(MIT OR Apache-2.0)",
   "author": "Jonas Ulrich <jonas.ulrich@kickstartds.com> (https://www.kickstartDS.com/)",
   "homepage": "https://github.com/kickstartDS/kickstartDS-cli",
+  "type": "module",
   "scripts": {
     "chromatic": "yarn run run-chromatic --build-script-name 'storybook:build'",
     "chromatic-base": "yarn run run-chromatic --build-script-name 'storybook-base:build'",
@@ -43,7 +44,7 @@
     "react-dom": "^18.2.0",
     "storybook": "^7.0.10",
     "storybook-dark-mode": "^3.0.0",
-    "storybook-design-token": "3.0.0-beta.3",
+    "storybook-design-token": "3.0.0-beta.6",
     "vite": "^4.3.9"
   }
 }

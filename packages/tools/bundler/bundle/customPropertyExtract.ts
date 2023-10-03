@@ -1,12 +1,12 @@
-const path = require('path');
-const fs = require('fs-extra');
-const { extract } = require('custom-property-extract');
+import path from 'path';
+import fs from 'fs-extra';
+import { extract } from 'custom-property-extract';
 
-const createTokens = (dest, css) => {
+const createTokens = (dest: string, css: string): Promise<void> => {
   const dir = path.dirname(dest);
   const base = `${path.basename(dest, '.css')}-tokens.json`;
   const tokens = extract(css, { source: 'content', mode: 'full' });
   return fs.outputJson(`${dir}/${base}`, tokens, { spaces: 2 });
 };
 
-module.exports = { createTokens };
+export { createTokens };

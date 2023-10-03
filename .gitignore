@@ -145,3 +145,7 @@ $RECYCLE.BIN/
 
 # PhpStrom
 .idea/
+
+# Bundler generated JavaScript
+packages/tools/bundler/**/*.js
+!packages/tools/bundler/.eslintrc.js

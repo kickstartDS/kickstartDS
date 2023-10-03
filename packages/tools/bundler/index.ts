@@ -4,26 +4,28 @@ process.env.DEBUG = 'kickstartDS:*';
 process.env.DEBUG_COLORS =
   process.env.NODE_ENV === 'production' ? undefined : 'true';
 
-const del = require('del');
-const { buildBundle, watchBundle } = require('./bundle/bundle');
-const { buildSchema, watchSchema } = require('./schema/schema');
-const { copy } = require('./stories/copy');
+import del from 'del';
+import { buildBundle, watchBundle } from './bundle/bundle.js';
+import { buildSchema, watchSchema } from './schema/schema.js';
+import { copy } from './stories/copy.js';
 
 (async () => {
-  const [, , param] = process.argv;
+  const [, , param]: string[] = process.argv;
   switch (param) {
     case '--schema': {
       return buildSchema();
     }
     case '--watch': {
       await watchSchema();
-      return watchBundle();
+      await watchBundle();
+      break;
     }
     default: {
       await del('lib');
       await buildSchema();
       await buildBundle();
-      return copy();
+      await copy();
+      break;
     }
   }
 })();

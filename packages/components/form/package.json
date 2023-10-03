@@ -13,6 +13,7 @@
   },
   "license": "(MIT OR Apache-2.0)",
   "author": "Jonas Ulrich <jonas.ulrich@kickstartds.com> (https://www.kickstartDS.com/)",
+  "type": "module",
   "files": [
     "lib",
     "source/**/_container.scss",

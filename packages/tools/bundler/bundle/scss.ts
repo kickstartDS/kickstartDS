@@ -1,13 +1,13 @@
-const fs = require('fs-extra');
-const path = require('path');
-const { pathToFileURL } = require('url');
-const sass = require('sass');
-const chokidar = require('chokidar');
-const postcss = require('postcss');
-const { root, dirRe } = require('../utils/utils');
-const postcssPlugins = require('./postcssPlugins');
-const log = require('../utils/log');
-const { createTokens } = require('./customPropertyExtract');
+import fs from 'fs-extra';
+import path from 'path';
+import { pathToFileURL } from 'url';
+import sass from 'sass';
+import chokidar from 'chokidar';
+import postcss from 'postcss';
+import postcssPlugins from './postcssPlugins.js';
+import log from '../utils/log.js';
+import { root, dirRe } from '../utils/utils.js';
+import { createTokens } from './customPropertyExtract.js';
 
 const cwd = process.cwd();
 const loadPaths = [`${root}/node_modules`];
@@ -16,7 +16,7 @@ const search = '@kickstartds/';
 const searchLength = search.length;
 const importers = [
   {
-    findFileUrl(url) {
+    findFileUrl(url: string) {
       if (url.indexOf(search) === 0) {
         return pathToFileURL(
           `${root}/packages/components/${url.slice(searchLength)}`
@@ -26,9 +26,9 @@ const importers = [
   },
 ];
 
-const dependencies = {};
+const dependencies: Record<string, string[]> = {};
 
-const compile = async (file) => {
+const compile = async (file: string) => {
   const { css, loadedUrls } = sass.compile(file, {
     loadPaths,
     importers,
@@ -53,14 +53,14 @@ const compile = async (file) => {
   return `${dir}/${base}.css`;
 };
 
-const compileScss = async (scssPaths) => {
+const compileScss = async (scssPaths: string[]) => {
   log('starting scss transform');
   const outFiles = await Promise.all(scssPaths.map(compile));
   log('finished scss transform');
   return outFiles.map((f) => [f, []]);
 };
 
-const watchScss = async (scssPaths) => {
+const watchScss = async (scssPaths: string[]) => {
   await compileScss(scssPaths);
   chokidar
     .watch('source/*/**/*.scss', { ignoreInitial: true })
@@ -82,4 +82,4 @@ const watchScss = async (scssPaths) => {
     });
 };
 
-module.exports = { compileScss, watchScss };
+export { compileScss, watchScss };

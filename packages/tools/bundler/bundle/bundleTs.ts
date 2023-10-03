@@ -1,19 +1,27 @@
-const fs = require('fs-extra');
-const path = require('path');
-const rollup = require('rollup');
-const { babel } = require('@rollup/plugin-babel');
-const replace = require('replace-in-file');
-const ts = require('rollup-plugin-ts');
-const log = require('../utils/log');
-const { root, dirRe, sourcePath } = require('../utils/utils');
-const { pascalCase } = require('change-case');
-const {
+import fs from 'fs-extra';
+import path from 'path';
+import replace from 'replace-in-file';
+import ts, { BrowserslistConfig } from 'rollup-plugin-ts';
+import { rollup, RollupOptions, OutputOptions, watch } from 'rollup';
+import { babel } from '@rollup/plugin-babel';
+import { pascalCase } from 'change-case';
+import log from '../utils/log.js';
+import { root, dirRe, sourcePath } from '../utils/utils.js';
+import {
   sharedInputPlugins,
   sharedOutputOptions,
   sharedBabelConfig,
-} = require('./rollupUtils');
+} from './rollupUtils.js';
 
-const assetPaths = (paths = []) =>
+// TODO hack, should be removed once fixed upstream:
+// https://github.com/adamreisnz/replace-in-file/issues/170
+declare module 'replace-in-file' {
+  export interface ReplaceInFileConfig {
+    processor: (string) => string | [(string) => string];
+  }
+}
+
+const assetPaths = (paths: string[] = []) =>
   paths.map((assetPath) => `${sourcePath}/${assetPath}`);
 
 const externalRe = {
@@ -25,8 +33,8 @@ const babelConfig = sharedBabelConfig({
   presets: [['@babel/preset-react', { runtime: 'automatic' }]],
 });
 
-const declarations = [];
-const prepare = async (tsPaths) => {
+let declarations: string[] = [];
+const prepare = async (tsPaths: string[]) => {
   const assets = await fs
     .readJSON(`${sourcePath}/assets.json`)
     .catch(() => ({}));
@@ -42,7 +50,7 @@ const prepare = async (tsPaths) => {
       return [`${dir}/${basename}`, file];
     })
   );
-  const inputOptions = {
+  const inputOptions: RollupOptions = {
     input,
     external: (id) => {
       if (externalRe.internal.test(id)) return !externalRe.external.test(id);
@@ -71,11 +79,11 @@ const prepare = async (tsPaths) => {
                 if (kind === 'declaration' && !declarations.includes(path))
                   declarations.push(path);
 
-                return;
+                return path;
               },
             },
             babelConfig,
-            browserslist: babelConfig.targets,
+            browserslist: babelConfig.targets as BrowserslistConfig,
           })
         : babel({
             ...babelConfig,
@@ -85,7 +93,7 @@ const prepare = async (tsPaths) => {
           }),
     ],
   };
-  const outputOptions = {
+  const outputOptions: OutputOptions = {
     ...sharedOutputOptions,
     paths(id) {
       if (path.isAbsolute(id) && id.indexOf('/node_modules/') === -1) {
@@ -111,7 +119,11 @@ const prepare = async (tsPaths) => {
   };
 };
 
-const fixImportPaths = (line, componentModule, componentPath) =>
+const fixImportPaths = (
+  line: string,
+  componentModule: string,
+  componentPath: string
+): string =>
   line
     .replace(
       'import("./typing.js")',
@@ -122,13 +134,13 @@ const fixImportPaths = (line, componentModule, componentPath) =>
       `import("@kickstartds/${componentModule}/lib/$1/typing")`
     );
 
-const bundleTs = async (tsPaths) => {
+const bundleTs = async (tsPaths: string[]) => {
   log('starting ts bundle');
   const { inputOptions, outputOptions, cssAssets, jsAssets } = await prepare(
     tsPaths
   );
   const kdsModules = ['core', 'base', 'blog', 'form'];
-  const bundle = await rollup.rollup(inputOptions);
+  const bundle = await rollup(inputOptions);
   const { output } = await bundle.write(outputOptions);
   for (const out of Object.values(output)) {
     if (out.fileName.includes('/index.d.ts')) {
@@ -144,14 +156,18 @@ const bundleTs = async (tsPaths) => {
         : 'content';
       const componentPath = matches[2];
       const componentName = pascalCase(componentPath);
+      // TODO remove "hack" when this is fixed upstream:
+      // https://github.com/adamreisnz/replace-in-file/issues/170
       replace.sync({
         files: declaration,
-        processor: (input) => {
+        from: 'THIS WILL NEVER MATCH',
+        to: 'SO IT WILL DO NOTHING',
+        processor: (input: string) => {
           const lines = input.split(/\r?\n/);
 
-          let componentTypeLines = [];
+          let componentTypeLines: string[] = [];
           let componentTypeLinesDone = true;
-          const replaced = lines
+          const replaced: string = lines
             .map((line) => {
               if (
                 line.includes(
@@ -185,22 +201,23 @@ const bundleTs = async (tsPaths) => {
   return { output, cssAssets, jsAssets };
 };
 
-const watchTs = async (tsPaths) => {
+const watchTs = async (
+  tsPaths: string[]
+): Promise<{ cssAssets: Set<string>; jsAssets: Set<string> }> => {
   const { inputOptions, outputOptions, cssAssets, jsAssets } = await prepare(
     tsPaths
   );
-  const watcher = rollup.watch({
+  const watcher = watch({
     ...inputOptions,
     output: [outputOptions],
   });
   return new Promise((resolve) => {
-    watcher.on('event', ({ result, code, error }) => {
-      if (result) {
-        result.close();
-      }
+    watcher.on('event', (event) => {
+      switch (event.code) {
+        case 'BUNDLE_END':
+          if (event.result) event.result.close();
+          break;
 
-      // eslint-disable-next-line default-case
-      switch (code) {
         case 'START':
           log('starting ts bundle');
           break;
@@ -211,14 +228,11 @@ const watchTs = async (tsPaths) => {
           break;
 
         case 'ERROR':
-          console.error(error);
+          console.error(event.error);
           break;
       }
     });
   });
 };
 
-module.exports = {
-  bundleTs,
-  watchTs,
-};
+export { bundleTs, watchTs };

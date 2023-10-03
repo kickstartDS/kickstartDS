@@ -1,21 +1,31 @@
-const fs = require('fs');
-const rollup = require('rollup');
-const { babel } = require('@rollup/plugin-babel');
-const replace = require('@rollup/plugin-replace');
-const commonjs = require('@rollup/plugin-commonjs');
-const { nodeResolve } = require('@rollup/plugin-node-resolve');
-const log = require('../utils/log');
-const { dirRe } = require('../utils/utils');
-const {
+import fs from 'fs';
+import {
+  rollup,
+  RollupOptions,
+  OutputOptions,
+  RollupBuild,
+  RollupWatcher,
+  watch,
+  RollupOutput,
+} from 'rollup';
+import { babel } from '@rollup/plugin-babel';
+import replace from '@rollup/plugin-replace';
+import commonjs from '@rollup/plugin-commonjs';
+import { nodeResolve } from '@rollup/plugin-node-resolve';
+import log from '../utils/log.js';
+import { dirRe } from '../utils/utils.js';
+import {
   sharedInputPlugins,
   sharedOutputOptions,
   sharedBabelConfig,
-} = require('./rollupUtils');
+} from './rollupUtils.js';
 
-const prepare = async (jsPaths) => {
-  const input = {};
-  const addInput = (filePath) => {
-    const [, dir, name] = filePath.match(dirRe);
+const prepare = async (
+  jsPaths: string[]
+): Promise<{ inputOptions: RollupOptions; outputOptions: OutputOptions }> => {
+  const input: Record<string, string> = {};
+  const addInput = (filePath: string) => {
+    const [, dir, name] = filePath.match(dirRe) || [];
     input[`${dir}/${name}`] = filePath;
   };
   jsPaths.forEach((jsPath) => {
@@ -26,7 +36,7 @@ const prepare = async (jsPaths) => {
       addInput(componentPath);
     }
   });
-  const inputOptions = {
+  const inputOptions: RollupOptions = {
     input,
     plugins: [
       ...sharedInputPlugins,
@@ -44,8 +54,6 @@ const prepare = async (jsPaths) => {
       replace({
         include: /\.tsx$/,
         values: {
-          // unfortunately, vhtml doesn't handle all special JSX attributes, so they have to be replaced manually
-          // https://github.com/developit/vhtml/blob/master/src/vhtml.js#L7 vs https://reactjs.org/docs/dom-elements.html#all-supported-html-attributes
           xmlnsXlink: '"xmlns:xlink"',
           xlinkHref: '"xlink:href"',
           tabIndex: 'tabindex',
@@ -55,7 +63,7 @@ const prepare = async (jsPaths) => {
     ],
     preserveEntrySignatures: 'allow-extension',
   };
-  const outputOptions = {
+  const outputOptions: OutputOptions = {
     ...sharedOutputOptions,
   };
   return {
@@ -64,31 +72,30 @@ const prepare = async (jsPaths) => {
   };
 };
 
-const bundleJs = async (jsPaths) => {
-  if (!jsPaths.length) return { output: [] };
+const bundleJs = async (jsPaths: string[]): Promise<RollupOutput> => {
+  if (!jsPaths.length) console.error('no jsPaths in bundleJs');
   log('starting js bundle');
   const { inputOptions, outputOptions } = await prepare(jsPaths);
-  const bundle = await rollup.rollup(inputOptions);
-  const { output } = await bundle.write(outputOptions);
+  const bundle: RollupBuild = await rollup(inputOptions);
+  const { output }: RollupOutput = await bundle.write(outputOptions);
   await bundle.close();
   log('finished js bundle');
   return { output };
 };
 
-const watchJs = async (jsPaths) => {
-  if (!jsPaths.length) return { output: [] };
+const watchJs = async (jsPaths: string[]): Promise<void> => {
+  if (!jsPaths.length) return;
   const { inputOptions, outputOptions } = await prepare(jsPaths);
-  const watcher = rollup.watch({
+  const watcher: RollupWatcher = watch({
     ...inputOptions,
     output: [outputOptions],
   });
-  watcher.on('event', ({ result, code, error }) => {
-    if (result) {
-      result.close();
-    }
+  watcher.on('event', (event) => {
+    switch (event.code) {
+      case 'BUNDLE_END':
+        if (event.result) event.result.close();
+        break;
 
-    // eslint-disable-next-line default-case
-    switch (code) {
       case 'START':
         log('starting js bundle');
         break;
@@ -98,10 +105,10 @@ const watchJs = async (jsPaths) => {
         break;
 
       case 'ERROR':
-        console.error(error);
+        console.error(event.error);
         break;
     }
   });
 };
 
-module.exports = { bundleJs, watchJs };
+export { bundleJs, watchJs };
