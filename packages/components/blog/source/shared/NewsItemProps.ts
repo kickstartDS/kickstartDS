@@ -5,7 +5,9 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
-import type { TeaserProps } from '@kickstartds/base/lib/teaser/typing';
-interface TeaserProps {
+/**
+ * News List / Latest Definitions
+ */
+export interface NewsListLatestDefinitionsProps {
   [k: string]: unknown;
 }

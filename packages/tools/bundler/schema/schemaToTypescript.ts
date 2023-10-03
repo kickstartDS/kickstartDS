@@ -31,10 +31,10 @@ const createTypes = async (schemaId: string, schemaGlob: string) => {
   const schemaPaths: string[] = await fg(schemaGlob);
 
   const ajv = getSchemaRegistry();
-  await processSchemaGlob(schemaGlob, ajv, false);
+  const schemaIds = await processSchemaGlob(schemaGlob, ajv, false);
 
   const types: Record<string, string> = await createTypings(
-    [schemaId],
+    schemaIds,
     renderImportName,
     renderImportStatement,
     ajv

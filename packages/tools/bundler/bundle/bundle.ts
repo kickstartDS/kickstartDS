@@ -21,17 +21,19 @@ const buildBundle = async (): Promise<void> => {
   try {
     const tsPaths = await getTsPaths;
     const { output: tsOutput, cssAssets, jsAssets } = await bundleTs(tsPaths);
-    const [{ output: jsOutput }, cssExports] = await Promise.all([
+    const result = await Promise.all([
       bundleJs([...jsAssets]),
       compileScss([...cssAssets]),
     ]);
+    const [jsOutput, cssExports] = result;
 
     const exports = [
       ...cssExports,
       ...exportsFromRollupOutput({ output: tsOutput }),
-      ...exportsFromRollupOutput({ output: jsOutput }),
-    ].sort();
-    await fs.writeJSON('lib/exports.json', Object.fromEntries(exports), {
+    ];
+    if (jsOutput)
+      exports.push(...exportsFromRollupOutput({ output: jsOutput.output }));
+    await fs.writeJSON('lib/exports.json', Object.fromEntries(exports.sort()), {
       spaces: 2,
     });
   } catch (e) {

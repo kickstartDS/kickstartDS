@@ -6,7 +6,7 @@
  */
 
 import type { PostMetaProps } from '@kickstartds/blog/lib/post-meta/typing';
-import type { TagLabelProps } from '@kickstartds/base/lib/tag-label/typing';
+import type { NewsItemProps } from '@kickstartds/blog/lib/news-item/typing';
 
 /**
  * Picture source
@@ -81,23 +81,6 @@ export type Sources = {
  */
 export type ClassAttribute = string;
 /**
- * Link used for button
- */
-export type ButtonHref = string;
-/**
- * Text used on button
- */
-export type Label = string;
-/**
- * Title for news item
- */
-export type Title = string;
-/**
- * Bodytext for news item
- */
-export type Bodytext = string;
-export type Categories = TagLabelProps[];
-/**
  * Additional css classes attached to the wrapping element
  */
 export type Class = string;
@@ -115,10 +98,22 @@ export interface PostTeaserProps {
    * Referenced component PostMetaProps
    */
   meta?: PostMetaProps;
-  link: Link;
-  title?: Title;
-  body?: Bodytext;
-  categories?: Categories;
+  /**
+   * Referenced component NewsItemProps
+   */
+  link: NewsItemProps;
+  /**
+   * Referenced component NewsItemProps
+   */
+  title?: NewsItemProps;
+  /**
+   * Referenced component NewsItemProps
+   */
+  body?: NewsItemProps;
+  /**
+   * Referenced component NewsItemProps
+   */
+  categories?: NewsItemProps;
   className?: Class;
   component?: KsComponentAttribute1;
 }
@@ -140,11 +135,4 @@ export interface Picture {
   lazy?: Lazy;
   sources?: Sources;
   pictureClassName?: ClassAttribute;
-}
-/**
- * Link for news item
- */
-export interface Link {
-  href: ButtonHref;
-  label: Label;
 }

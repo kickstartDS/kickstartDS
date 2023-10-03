@@ -5,30 +5,8 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
-/**
- * The label for the element
- */
-export type Label = string;
-/**
- * The name of the input element, used when submitting an HTML form
- */
-export type Name = string;
-/**
- * Wheter the input is invalid
- */
-export type Invalid = boolean;
-/**
- * Message to show if the input is invalid
- */
-export type InvalidMessage = string;
-/**
- * Whether the input is disabled
- */
-export type Disabled = boolean;
-/**
- * Help text that gives more context about what a user needs to input
- */
-export type HintMessage = string;
+import type { InputProps } from '@kickstartds/form/lib/input/typing';
+
 export type Options = RadioButton[];
 /**
  * Additional css classes attached to the wrapping element
@@ -43,10 +21,22 @@ export type KsComponentAttribute = string;
  * A Radio Group allows users to select one item from a list of choices.
  */
 export interface RadioGroupProps {
-  label: Label;
-  name?: Name;
-  invalid?: Invalid;
-  invalidMessage?: InvalidMessage;
+  /**
+   * Referenced component InputProps
+   */
+  label: InputProps;
+  /**
+   * Referenced component InputProps
+   */
+  name?: InputProps;
+  /**
+   * Referenced component InputProps
+   */
+  invalid?: InputProps;
+  /**
+   * Referenced component InputProps
+   */
+  invalidMessage?: InputProps;
   options?: Options;
   className?: Class;
   component?: KsComponentAttribute;
@@ -55,8 +45,17 @@ export interface RadioGroupProps {
  * Radio buttons allow users to select a single option from a list of mutually exclusive options.
  */
 export interface RadioButton {
-  label: Label;
-  disabled?: Disabled;
-  hint?: HintMessage;
+  /**
+   * Referenced component InputProps
+   */
+  label: InputProps;
+  /**
+   * Referenced component InputProps
+   */
+  disabled?: InputProps;
+  /**
+   * Referenced component InputProps
+   */
+  hint?: InputProps;
   [k: string]: unknown;
 }

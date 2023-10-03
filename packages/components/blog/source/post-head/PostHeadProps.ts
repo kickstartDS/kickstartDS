@@ -5,7 +5,7 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
-import type { TagLabelProps } from '@kickstartds/base/lib/tag-label/typing';
+import type { NewsItemProps } from '@kickstartds/blog/lib/news-item/typing';
 
 /**
  * Picture source
@@ -84,10 +84,6 @@ export type ClassAttribute = string;
  */
 export type Alignment = 'left' | 'center' | 'right';
 /**
- * Date for news item
- */
-export type Date = string;
-/**
  * Select the headline level to use, or p alternatively
  */
 export type Level = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
@@ -119,7 +115,6 @@ export type AdditionalClasses1 = string;
  * Optional custom component identifier
  */
 export type KsComponentAttribute1 = string;
-export type Categories = TagLabelProps[];
 /**
  * Additional css classes attached to the wrapping element
  */
@@ -135,9 +130,15 @@ export type KsComponentAttribute2 = string;
 export interface PostHeadProps {
   image?: Picture;
   imageAlignment?: Alignment;
-  date?: Date;
+  /**
+   * Referenced component NewsItemProps
+   */
+  date?: NewsItemProps;
   headline?: Headline;
-  categories?: Categories;
+  /**
+   * Referenced component NewsItemProps
+   */
+  categories?: NewsItemProps;
   className?: Class;
   component?: KsComponentAttribute2;
 }
