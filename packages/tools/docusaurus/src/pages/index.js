@@ -357,14 +357,17 @@ export default function Home() {
               navbar.items.slice(0, -4).map((section, idx) => (
                 <Stack key={idx} gutter="xs">
                   <Headline level="p" styleAs="h5" content={section.label} />
-                  {siteMap[section.docId] && siteMap[section.docId].length > 0 && (
-                    <>
-                      <strong>Section overview:</strong>
-                      <ul className="docs-pagetree">
-                        {siteMap[section.docId].map((page) => createMenu(page))}
-                      </ul>
-                    </>
-                  )}
+                  {siteMap[section.docId] &&
+                    siteMap[section.docId].length > 0 && (
+                      <>
+                        <strong>Section overview:</strong>
+                        <ul className="docs-pagetree">
+                          {siteMap[section.docId].map((page) =>
+                            createMenu(page)
+                          )}
+                        </ul>
+                      </>
+                    )}
                   <Button
                     label={`Open ${section.label} section`}
                     href={section.docId.replace('index', '')}

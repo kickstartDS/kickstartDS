@@ -72,6 +72,24 @@ const prepare = async (tsPaths: string[]) => {
               downlevelIteration: true,
               paths: {
                 react: [`${root}/node_modules/@types/react`],
+                '@kickstartds/base/lib/*/typing': [
+                  `${root}/packages/components/base/source/*/typing`,
+                ],
+                '@kickstartds/blog/lib/*/typing': [
+                  `${root}/packages/components/blog/source/*/typing`,
+                ],
+                '@kickstartds/core/lib/*/typing': [
+                  `${root}/packages/components/core/source/*/typing`,
+                ],
+                '@kickstartds/form/lib/*/typing': [
+                  `${root}/packages/components/form/source/*/typing`,
+                ],
+                '@kickstartds/base/lib/picture/typing': [
+                  `${root}/packages/components/base/source/image/picture/typing`,
+                ],
+                '@kickstartds/blog/lib/news-item/typing': [
+                  `${root}/packages/components/blog/source/shared/typing`,
+                ],
               },
             },
             hook: {

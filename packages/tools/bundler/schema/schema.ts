@@ -8,8 +8,13 @@ import { createTypes } from './schemaToTypescript.js';
 import { createStory } from '../stories/createStory.js';
 import { JSONSchema } from 'json-schema-typed/draft-07.js';
 
-const schemaGlob: string = 'source/**/!(_)*.schema.json';
+const schemaGlob: string =
+  'source/**/!(_)*.(schema|definitions|interface).json';
 
+// TODO this should probably always generate all derefs and types:
+// a change in one JSON Schema can mean a change in ones reffing it...
+// e.g. button.schema.json is changed, and teaser-box.schema.json includes
+// a ref to it... teaser-box.schema.dereffed.json should be updated!
 const processSchema = async (schemaPath: string) => {
   const [, dir, base] = schemaPath.match(dirRe) || [];
   const dest = `lib/${dir}`;

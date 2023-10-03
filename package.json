@@ -26,7 +26,7 @@
     "format": "prettier --cache --write .",
     "git-config": "git config --local include.path ../.gitconfig",
     "husky-commit-msg": "commitlint -E GIT_PARAMS",
-    "husky-pre-commit": "git add packages/*/*/source/**/*Props.ts && lint-staged",
+    "husky-pre-commit": "yarn run schema && git add packages/*/*/source/**/*Props.ts && lint-staged",
     "lint": "run-p eslint stylelint",
     "list": "lerna la",
     "postinstall": "run-p git-config copy-env-file",

@@ -15,7 +15,7 @@ const dereference = async (schemaPath: string, schemaGlob: string) => {
   if (!schemaId)
     throw new Error("Couldn't find matching schema id for schema path");
 
-  const dereffedSchemas = await schemaDereference([schemaId], ajv);
+  const dereffedSchemas = await schemaDereference(schemaIds, ajv);
   return dereffedSchemas[schemaId];
 };
 

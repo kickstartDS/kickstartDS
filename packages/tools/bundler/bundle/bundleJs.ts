@@ -72,8 +72,10 @@ const prepare = async (
   };
 };
 
-const bundleJs = async (jsPaths: string[]): Promise<RollupOutput> => {
-  if (!jsPaths.length) console.error('no jsPaths in bundleJs');
+const bundleJs = async (
+  jsPaths: string[]
+): Promise<RollupOutput | undefined> => {
+  if (!jsPaths.length) return;
   log('starting js bundle');
   const { inputOptions, outputOptions } = await prepare(jsPaths);
   const bundle: RollupBuild = await rollup(inputOptions);
