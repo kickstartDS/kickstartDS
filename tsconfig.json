@@ -1,6 +1,26 @@
 {
   "compilerOptions": {
     "jsx": "react-jsx",
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+      "@kickstartds/base/lib/*/typing": [
+        "./packages/components/base/source/*/typing"
+      ],
+      "@kickstartds/blog/lib/*/typing": [
+        "./packages/components/blog/source/*/typing"
+      ],
+      "@kickstartds/core/lib/*/typing": [
+        "./packages/components/core/source/*/typing"
+      ],
+      "@kickstartds/form/lib/*/typing": [
+        "./packages/components/form/source/*/typing"
+      ],
+      "@kickstartds/base/lib/picture/typing": [
+        "./packages/components/base/source/image/picture/typing"
+      ],
+      "@kickstartds/blog/lib/news-item/typing": [
+        "./packages/components/blog/source/shared/typing"
+      ]
+    }
   }
 }

@@ -21,12 +21,10 @@ const buildBundle = async (): Promise<void> => {
   try {
     const tsPaths = await getTsPaths;
     const { output: tsOutput, cssAssets, jsAssets } = await bundleTs(tsPaths);
-    const result = await Promise.all([
+    const [jsOutput, cssExports] = await Promise.all([
       bundleJs([...jsAssets]),
       compileScss([...cssAssets]),
     ]);
-    const [jsOutput, cssExports] = result;
-
     const exports = [
       ...cssExports,
       ...exportsFromRollupOutput({ output: tsOutput }),

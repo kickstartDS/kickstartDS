@@ -2925,10 +2925,10 @@
     ramda "^0.28.0"
     uppercamelcase "^3.0.0"
 
-"@kickstartds/jsonschema2types@^1.1.8":
-  version "1.1.8"
-  resolved "https://registry.npmjs.org/@kickstartds/jsonschema2types/-/jsonschema2types-1.1.8.tgz#ed354755a754e3d3113b559a4129ced3da173877"
-  integrity sha512-vBdJDu5gcBtla0u5Wq5ydcNPkytr+eQ+zbKJGLcIsw8yHjetmD8olaoZsTJFiVZZofTtRJXfvO1p+b6V5JqyYQ==
+"@kickstartds/jsonschema2types@^1.1.9":
+  version "1.1.9"
+  resolved "https://registry.npmjs.org/@kickstartds/jsonschema2types/-/jsonschema2types-1.1.9.tgz#8cd46ad5aa13d09f399046d35557e7990f56a035"
+  integrity sha512-5og6Dan0WzPGDroF/VWZT53MteBNudUzFS6S31VaH53Mf2/dx+snV6QrI4tjX1R5hTEobh4dNTwJRhsP1BNqEw==
   dependencies:
     "@kickstartds/json-schema-to-typescript" "~13.1.20"
     "@kickstartds/jsonschema-utils" "2.4.15"
