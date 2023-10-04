@@ -58,9 +58,6 @@ jobs:
             - save_cache: *save-cache-yarn
             - save_cache: *save-cache-node
             - run:
-                name: Compile
-                command: yarn workspace @kickstartds/bundler run tsc
-            - run:
                 name: Build
                 environment:
                   NODE_ENV: production
