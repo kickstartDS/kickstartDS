@@ -14,7 +14,7 @@
   "license": "(MIT OR Apache-2.0)",
   "author": "Jonas Ulrich <jonas.ulrich@kickstartds.com> (https://www.kickstartDS.com/)",
   "bin": {
-    "kdsBundle": "index.js"
+    "kdsBundle": "bundle.js"
   },
   "type": "module",
   "dependencies": {
