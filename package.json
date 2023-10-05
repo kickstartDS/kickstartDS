@@ -29,8 +29,7 @@
     "husky-pre-commit": "yarn run schema && git add packages/*/*/source/**/*Props.ts && lint-staged",
     "lint": "run-p eslint stylelint",
     "list": "lerna la",
-    "patch-package": "patch-package",
-    "postinstall": "run-p git-config copy-env-file patch-package",
+    "postinstall": "run-p git-config copy-env-file",
     "schema": "lerna run --parallel schema",
     "staged": "git diff --name-only --cached | grep '@kickstartds' | cut -d / -f 3 | awk '!seen[$0]++'",
     "start": "run-p watch \"storybook start\"",
@@ -38,7 +37,7 @@
     "storybook:build": "yarn run storybook build",
     "storybook:debug": "yarn run storybook debug",
     "stylelint": "stylelint \"**/*.scss\"",
-    "prepare": "husky install && yarn workspace @kickstartds/bundler run tsc",
+    "prepare": "patch-package && husky install && yarn workspace @kickstartds/bundler run tsc",
     "watch": "lerna run --parallel --verbose watch",
     "watch-tokens": "sass --watch --load-path=node_modules packages/components/core/source/design-tokens/tokens.scss packages/components/core/lib/design-tokens/tokens.css"
   },
