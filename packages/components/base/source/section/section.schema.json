@@ -22,8 +22,7 @@
       "title": "Headline Alignment",
       "description": "Choose an alignment for the headline",
       "type": "string",
-      "enum": ["left", "center", "right"],
-      "default": "center"
+      "enum": ["left", "center", "right"]
     },
     "contentWidth": {
       "type": "string",
@@ -123,7 +122,7 @@
           "properties": {
             "align": {
               "type": "string",
-              "default": "center"
+              "default": null
             }
           }
         },

@@ -40,10 +40,10 @@ export const SectionComponent: ForwardRefRenderFunction<
     spaceAfter = 'default',
     headline,
     width = 'default',
-    headlineWidth = 'unset',
-    headlineAlign = 'center',
     contentWidth = 'unset',
     contentAlign = 'center',
+    headlineWidth = 'unset',
+    headlineAlign = contentAlign,
     gutter = 'default',
     mode = 'default',
     className,
@@ -76,13 +76,7 @@ export const SectionComponent: ForwardRefRenderFunction<
     >
       {headline && headline.content && (
         <SectionContainer
-          width={
-            headlineWidth !== 'unset'
-              ? headlineWidth !== 'default'
-                ? headlineWidth
-                : undefined
-              : width
-          }
+          width={headlineWidth !== 'unset' ? headlineWidth : undefined}
           align={headlineAlign}
         >
           <Headline align={headlineAlign} {...headline} />
@@ -90,13 +84,7 @@ export const SectionComponent: ForwardRefRenderFunction<
       )}
       {children && (
         <SectionContainer
-          width={
-            contentWidth !== 'unset'
-              ? contentWidth !== 'default'
-                ? contentWidth
-                : undefined
-              : width
-          }
+          width={contentWidth !== 'unset' ? contentWidth : undefined}
           align={contentAlign}
           gutter={gutter}
           mode={mode}

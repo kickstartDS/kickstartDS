@@ -34,7 +34,6 @@ $vars: meta.module-variables(section-vars);
   &__container {
     margin: auto;
     width: 100%;
-    max-width: var(--l-section--content-width-default);
     display: grid;
     grid-template-columns: repeat(
       var(--l-section_col--repeat),
@@ -45,8 +44,22 @@ $vars: meta.module-variables(section-vars);
     );
     grid-gap: var(--l-section--gutter);
 
+    &--wrap {
+      display: block;
+      padding: 0 var(--l-section--content-padding);
+      max-width: var(--l-section--content-width-default);
+
+      &.l-section__container--full {
+        padding: 0;
+      }
+    }
+
     &--narrow {
       max-width: var(--l-section--content-width-narrow);
+    }
+
+    &--default {
+      max-width: var(--l-section--content-width-default);
     }
 
     &--wide {
@@ -67,15 +80,6 @@ $vars: meta.module-variables(section-vars);
 
     &--right {
       margin-right: 0;
-    }
-
-    &--wrap {
-      display: block;
-      padding: 0 var(--l-section--content-padding);
-
-      &.l-section__container--full {
-        padding: 0;
-      }
     }
   }
 }
