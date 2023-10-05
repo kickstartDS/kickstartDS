@@ -5,9 +5,4 @@
  * and run `yarn run schema` to regenerate this file.
  */
 
-/**
- * Definitions for components to tease external content
- */
-export interface TeaserProps {
-  [k: string]: unknown;
-}
+import type { TeaserProps } from '@kickstartds/base/lib/teaser/typing';
