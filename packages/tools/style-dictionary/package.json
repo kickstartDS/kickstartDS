@@ -22,7 +22,7 @@
     "bezier-js": "^6.1.0",
     "lodash": "^4.17.21",
     "node-html-parser": "^5.2.0",
-    "postcss": "^8.4.21",
+    "postcss": "^8.4.31",
     "postcss-calc": "^9.0.1",
     "postcss-colormin": "^5.3.0",
     "postcss-normalize-whitespace": "^6.0.0",
