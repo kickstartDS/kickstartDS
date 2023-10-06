@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "allowSyntheticDefaultImports": true,
+    "target": "ES2015",
+    "moduleResolution": "node",
+    "module": "ES2020"
+  }
+}

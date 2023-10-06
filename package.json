@@ -37,7 +37,7 @@
     "storybook:build": "yarn run storybook build",
     "storybook:debug": "yarn run storybook debug",
     "stylelint": "stylelint \"**/*.scss\"",
-    "prepare": "patch-package && husky install && yarn workspace @kickstartds/bundler run tsc",
+    "prepare": "patch-package && husky install && yarn workspace @kickstartds/bundler run tsc && yarn workspace @kickstartds-internal/storybook run tsc",
     "watch": "lerna run --parallel --verbose watch",
     "watch-tokens": "sass --watch --load-path=node_modules packages/components/core/source/design-tokens/tokens.scss packages/components/core/lib/design-tokens/tokens.css"
   },
