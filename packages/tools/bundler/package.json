@@ -33,7 +33,7 @@
     "cssnano": "^6.0.1",
     "custom-property-extract": "^1.2.1",
     "debug": "^4.3.4",
-    "del": "^6.1.1",
+    "del": "^7.1.0",
     "fast-glob": "^3.2.12",
     "find-up": "^5.0.0",
     "fs-extra": "^11.1.1",
