@@ -63,6 +63,11 @@ jobs:
                   NODE_ENV: production
                 command: yarn build
             - run:
+                name: Format
+                environment:
+                  NODE_ENV: production
+                command: yarn format
+            - run:
                 name: Create Release
                 environment:
                   HUSKY: 0
