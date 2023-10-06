@@ -7,7 +7,7 @@
 
 import type { MediaVideoProps } from '@kickstartds/base/lib/media-video/typing';
 import type { MediaImageProps } from '@kickstartds/base/lib/media-image/typing';
-import type { MediaLazyimageProps } from '@kickstartds/base/lib/media-lazyimage/typing';
+import type { MediaLazyImageProps } from '@kickstartds/base/lib/media-lazy-image/typing';
 
 /**
  * Copy text for the element
@@ -30,7 +30,7 @@ export type MediaAlignment =
 /**
  * Collection of media items to display
  */
-export type Media = (MediaVideoProps | MediaImageProps | MediaLazyimageProps)[];
+export type Media = (MediaVideoProps | MediaImageProps | MediaLazyImageProps)[];
 /**
  * Additional css classes attached to the wrapping element
  */

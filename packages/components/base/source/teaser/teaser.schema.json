@@ -3,5 +3,57 @@
   "$id": "http://schema.kickstartds.com/base/teaser.schema.json",
   "title": "Teaser",
   "description": "Component to tease external content",
-  "$ref": "http://schema.kickstartds.com/base/teaser.definitions.json#/definitions/teaser"
+  "properties": {
+    "topic": {
+      "title": "Topic",
+      "description": "Topic for the teaser box. Displayed before the text, in bold",
+      "type": "string",
+      "examples": ["Lorem Ipsum"]
+    },
+    "text": {
+      "title": "Text content",
+      "description": "Text for the teaser box",
+      "type": "string",
+      "format": "markdown",
+      "examples": [
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ispum dolor distinctio minima unde voluptatum aut. Lorem ipsum dolor sit amet."
+      ]
+    },
+    "inverted": {
+      "title": "Inverted",
+      "type": "boolean"
+    },
+    "link": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "http://schema.kickstartds.com/base/button.schema.json"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "hidden": {
+              "title": "Hide link",
+              "description": "Hides the link. The box as a whole keeps being clickable",
+              "type": "boolean",
+              "default": false
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "className": {
+      "title": "Class",
+      "description": "Additional css classes attached to the box",
+      "type": "string"
+    },
+    "component": {
+      "title": "`ks-component` attribute",
+      "description": "Optional custom component identifier",
+      "type": "string",
+      "default": "base.teaser"
+    }
+  },
+  "additionalProperties": false
 }

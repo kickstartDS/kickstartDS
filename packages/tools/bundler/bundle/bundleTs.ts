@@ -87,8 +87,20 @@ const prepare = async (tsPaths: string[]) => {
                 '@kickstartds/base/lib/picture/typing': [
                   `${root}/packages/components/base/source/image/picture/typing`,
                 ],
+                '@kickstartds/base/lib/lightbox-image/typing': [
+                  `${root}/packages/components/base/source/image/lightbox-image/typing`,
+                ],
                 '@kickstartds/blog/lib/news-item/typing': [
                   `${root}/packages/components/blog/source/shared/typing`,
+                ],
+                '@kickstartds/base/lib/media-video/typing': [
+                  `${root}/packages/components/base/source/text-media/MediaVideoProps`,
+                ],
+                '@kickstartds/base/lib/media-image/typing': [
+                  `${root}/packages/components/base/source/text-media/MediaImageProps`,
+                ],
+                '@kickstartds/base/lib/media-lazy-image/typing': [
+                  `${root}/packages/components/base/source/text-media/MediaLazyImageProps`,
                 ],
               },
             },

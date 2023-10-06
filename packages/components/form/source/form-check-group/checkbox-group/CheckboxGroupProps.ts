@@ -5,8 +5,30 @@
  * and run `yarn run schema` to regenerate this file.
  */
 
-import type { InputProps } from '@kickstartds/form/lib/input/typing';
-
+/**
+ * The label for the element
+ */
+export type Label = string;
+/**
+ * The name of the input element, used when submitting an HTML form
+ */
+export type Name = string;
+/**
+ * Wheter the input is invalid
+ */
+export type Invalid = boolean;
+/**
+ * Message to show if the input is invalid
+ */
+export type InvalidMessage = string;
+/**
+ * Whether the input is disabled
+ */
+export type Disabled = boolean;
+/**
+ * Help text that gives more context about what a user needs to input
+ */
+export type HintMessage = string;
 export type Options = Checkbox[];
 /**
  * Additional css classes attached to the wrapping element
@@ -21,22 +43,10 @@ export type KsComponentAttribute = string;
  * A CheckboxGroup allows users to select one or more items from a list of choices.
  */
 export interface CheckboxGroupProps {
-  /**
-   * Referenced component InputProps
-   */
-  label: InputProps;
-  /**
-   * Referenced component InputProps
-   */
-  name?: InputProps;
-  /**
-   * Referenced component InputProps
-   */
-  invalid?: InputProps;
-  /**
-   * Referenced component InputProps
-   */
-  invalidMessage?: InputProps;
+  label: Label;
+  name?: Name;
+  invalid?: Invalid;
+  invalidMessage?: InvalidMessage;
   options?: Options;
   className?: Class;
   component?: KsComponentAttribute;
@@ -45,17 +55,8 @@ export interface CheckboxGroupProps {
  * Checkboxes allow users to select multiple items from a list of individual items, or to mark one individual item as selected.
  */
 export interface Checkbox {
-  /**
-   * Referenced component InputProps
-   */
-  label: InputProps;
-  /**
-   * Referenced component InputProps
-   */
-  disabled?: InputProps;
-  /**
-   * Referenced component InputProps
-   */
-  hint?: InputProps;
+  label: Label;
+  disabled?: Disabled;
+  hint?: HintMessage;
   [k: string]: unknown;
 }

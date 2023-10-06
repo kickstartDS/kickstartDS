@@ -1,18 +1,2 @@
-import type {
-  TextMediaProps,
-  TextMediaVideo,
-  TextMediaImage,
-  TextMediaLazyImage,
-  Media,
-  FullWidthMedia,
-  Caption,
-} from './TextMediaProps';
-export {
-  TextMediaProps,
-  TextMediaVideo,
-  TextMediaImage,
-  TextMediaLazyImage,
-  Media,
-  FullWidthMedia,
-  Caption,
-};
+import type { TextMediaProps, Media } from './TextMediaProps';
+export { TextMediaProps, Media };

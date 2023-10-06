@@ -50,18 +50,35 @@ const createTypes = async (schemaId: string, schemaGlob: string) => {
     }
   );
 
-  const schemaPath: string | undefined = schemaPaths.find((schemaPath) =>
-    schemaPath.endsWith(schemaId.split('/').pop() || 'NO MATCH')
+  const module = getSchemaModule(schemaId);
+  const moduleSchemaIds = Object.keys(types).filter((schemaId) =>
+    schemaId.startsWith(`http://schema.kickstartds.com/${module}/`)
   );
-  if (!schemaPath)
-    throw new Error("Couldn't find matching schema path for schema $id");
-  const base = path.basename(schemaPath, '.json');
-  const dir = path.dirname(schemaPath);
 
-  return fs.writeFile(
-    `${dir}/${pascalCase(base.replace(/\.(schema|definitions)$/, ''))}Props.ts`,
-    types[schemaId]
-  );
+  for (const schemaId of moduleSchemaIds) {
+    const directPath: string | undefined = schemaPaths.find((schemaPath) =>
+      schemaPath.endsWith(schemaId.split('/').pop() || 'NO MATCH')
+    );
+    const indirectPath: string | undefined = schemaPaths.find((schemaPath) =>
+      schemaId.includes(`/${module}/${schemaPath.split('/')[1]}/`)
+    );
+    if (!directPath && !indirectPath)
+      throw new Error(
+        `Couldn't find matching schema path for schema $id: ${schemaId}`
+      );
+
+    const base = directPath
+      ? path.basename(directPath, '.json')
+      : getSchemaName(schemaId);
+    const dir = path.dirname(directPath || indirectPath);
+
+    fs.writeFile(
+      `${dir}/${pascalCase(
+        base.replace(/\.(schema|definitions|interface)$/, '')
+      )}Props.ts`,
+      types[schemaId]
+    );
+  }
 };
 
 export { createTypes };

@@ -5,16 +5,43 @@
  * and run `yarn run schema` to regenerate this file.
  */
 
-import type { InputProps } from '@kickstartds/form/lib/input/typing';
-
+/**
+ * The label for the element
+ */
+export type Label = string;
+/**
+ * The value of the input element, used when submitting an HTML form
+ */
+export type Value = string;
+/**
+ * The name of the input element, used when submitting an HTML form
+ */
+export type Name = string;
+/**
+ * Whether the input is disabled
+ */
+export type Disabled = boolean;
 export type Options = {
   value?: string;
   label: string;
-  /**
-   * Referenced component InputProps
-   */
-  disabled?: InputProps;
+  disabled?: Disabled;
 }[];
+/**
+ * Hide label visually
+ */
+export type HideLabel = boolean;
+/**
+ * Wheter the input is invalid
+ */
+export type Invalid = boolean;
+/**
+ * Message to show if the input is invalid
+ */
+export type InvalidMessage = string;
+/**
+ * Help text that gives more context about what a user needs to input
+ */
+export type HintMessage = string;
 export type IconIdentifier = string;
 /**
  * Additional css classes attached to the select element
@@ -29,39 +56,15 @@ export type KsComponentAttribute = string;
  * Input that allow users to select a single option from a list of mutually exclusive options.
  */
 export interface SelectFieldProps {
-  /**
-   * Referenced component InputProps
-   */
-  label?: InputProps;
-  /**
-   * Referenced component InputProps
-   */
-  value?: InputProps;
-  /**
-   * Referenced component InputProps
-   */
-  name?: InputProps;
-  /**
-   * Referenced component InputProps
-   */
-  disabled?: InputProps;
+  label?: Label;
+  value?: Value;
+  name?: Name;
+  disabled?: Disabled;
   options?: Options;
-  /**
-   * Referenced component InputProps
-   */
-  hideLabel?: InputProps;
-  /**
-   * Referenced component InputProps
-   */
-  invalid?: InputProps;
-  /**
-   * Referenced component InputProps
-   */
-  invalidMessage?: InputProps;
-  /**
-   * Referenced component InputProps
-   */
-  hint?: InputProps;
+  hideLabel?: HideLabel;
+  invalid?: Invalid;
+  invalidMessage?: InvalidMessage;
+  hint?: HintMessage;
   icon?: IconIdentifier;
   className?: Class;
   component?: KsComponentAttribute;

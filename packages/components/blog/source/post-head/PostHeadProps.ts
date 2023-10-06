@@ -5,7 +5,7 @@
  * and run `yarn run schema` to regenerate this file.
  */
 
-import type { NewsItemProps } from '@kickstartds/blog/lib/news-item/typing';
+import type { TagLabelProps } from '@kickstartds/base/lib/tag-label/typing';
 
 /**
  * Picture source
@@ -84,6 +84,10 @@ export type ClassAttribute = string;
  */
 export type Alignment = 'left' | 'center' | 'right';
 /**
+ * Date for news item
+ */
+export type Date = string;
+/**
  * Select the headline level to use, or p alternatively
  */
 export type Level = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
@@ -115,6 +119,7 @@ export type AdditionalClasses1 = string;
  * Optional custom component identifier
  */
 export type KsComponentAttribute1 = string;
+export type Categories = TagLabelProps[];
 /**
  * Additional css classes attached to the wrapping element
  */
@@ -130,15 +135,9 @@ export type KsComponentAttribute2 = string;
 export interface PostHeadProps {
   image?: Picture;
   imageAlignment?: Alignment;
-  /**
-   * Referenced component NewsItemProps
-   */
-  date?: NewsItemProps;
+  date?: Date;
   headline?: Headline;
-  /**
-   * Referenced component NewsItemProps
-   */
-  categories?: NewsItemProps;
+  categories?: Categories;
   className?: Class;
   component?: KsComponentAttribute2;
 }

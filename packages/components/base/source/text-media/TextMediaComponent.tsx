@@ -11,13 +11,15 @@ import { IframeRatio } from '../iframe';
 import { RichText, defaultRenderFn } from '../rich-text';
 import {
   TextMediaProps as TextMediaSchemaProps,
-  TextMediaVideo as IVideo,
-  TextMediaImage as IImage,
-  TextMediaLazyImage as ILightboxImage,
   Media as IMedia,
-  FullWidthMedia as TFullWidthMedia,
-  Caption as TCaption,
 } from './typing';
+import { MediaVideoProps as IVideo } from './MediaVideoProps';
+import {
+  FullWidthMedia as TFullWidthMedia,
+  MediaImageProps as IImage,
+  Caption as TCaption,
+} from './MediaImageProps';
+import { MediaLazyImageProps as ILightboxImage } from './MediaLazyImageProps';
 
 export interface RenderFunctions {
   renderText?: typeof defaultRenderFn;

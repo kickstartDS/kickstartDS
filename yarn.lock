@@ -2910,28 +2910,28 @@
     mkdirp "^1.0.4"
     prettier "^2.6.2"
 
-"@kickstartds/jsonschema-utils@2.4.15", "@kickstartds/jsonschema-utils@^2.4.15":
-  version "2.4.15"
-  resolved "https://registry.npmjs.org/@kickstartds/jsonschema-utils/-/jsonschema-utils-2.4.15.tgz#f199fc78be02e076452d25e935ba697b75c7cfbb"
-  integrity sha512-8vrXT3HCnJyFozyfDvBcCR1Vm8cRSA04CpaASr6/ZYmAGQ+OTuMwIXDk7Cduw8cQRozgZbMRHfa1F4C0D3zXXA==
+"@kickstartds/jsonschema-utils@2.4.18", "@kickstartds/jsonschema-utils@^2.4.18":
+  version "2.4.18"
+  resolved "https://registry.npmjs.org/@kickstartds/jsonschema-utils/-/jsonschema-utils-2.4.18.tgz#3cf71bd64091ee03595270adfeeae2cc331359a9"
+  integrity sha512-xCbn/CjdmIzf2bSAIiMhrIZTwdBRHvuFwRA8dGZ90jDW/bfrvql/UdrKh5rig6kdV3BE4UC31STv6uNQGooMdw==
   dependencies:
     "@bcherny/json-schema-ref-parser" "10.0.5-fork"
     ajv "^8.12.0"
+    change-case "^5.0.2"
     fast-glob "^3.2.12"
     import-meta-resolve "~3.0.0"
     json-schema-traverse "^1.0.0"
     jsonpointer "~5.0.1"
     lodash "^4.17.21"
     ramda "^0.28.0"
-    uppercamelcase "^3.0.0"
 
-"@kickstartds/jsonschema2types@^1.1.9":
-  version "1.1.9"
-  resolved "https://registry.npmjs.org/@kickstartds/jsonschema2types/-/jsonschema2types-1.1.9.tgz#8cd46ad5aa13d09f399046d35557e7990f56a035"
-  integrity sha512-5og6Dan0WzPGDroF/VWZT53MteBNudUzFS6S31VaH53Mf2/dx+snV6QrI4tjX1R5hTEobh4dNTwJRhsP1BNqEw==
+"@kickstartds/jsonschema2types@^1.1.12":
+  version "1.1.12"
+  resolved "https://registry.npmjs.org/@kickstartds/jsonschema2types/-/jsonschema2types-1.1.12.tgz#dcf8258f955386131d34f0349b30743bdd87bd51"
+  integrity sha512-1stNcxhmsv1Y5OEk9rRlu4+2/NQ5v7OxjM5jZws2XoPnYD7QxcfCVNSBGT5508KmLwqjFG7VkEzk7YAuR0tegA==
   dependencies:
     "@kickstartds/json-schema-to-typescript" "~13.1.20"
-    "@kickstartds/jsonschema-utils" "2.4.15"
+    "@kickstartds/jsonschema-utils" "2.4.18"
     ajv "^8.12.0"
     object-traversal "^1.0.1"
 
@@ -6849,11 +6849,6 @@ camelcase@^3.0.0:
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-3.0.0.tgz#32fc4b9fcdaf845fcdf7e73bb97cac2261f0ab0a"
   integrity sha1-MvxLn82vhF/N9+c7uXysImHwqwo=
 
-camelcase@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.npmjs.org/camelcase/-/camelcase-4.1.0.tgz#d545635be1e33c542649c69173e5de6acfae34dd"
-  integrity sha512-FxAv7HpHrXbh3aPo4o2qxHay2lkLY3x5Mw3KeE4KQE8ysVfziWeRZDwcjauvwBSGEC/nXUPzZy8zeh4HokqOnw==
-
 camelcase@^5.0.0, camelcase@^5.3.1:
   version "5.3.1"
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-5.3.1.tgz#e3c9b31569e106811df242f715725a1f4c494320"
@@ -6963,6 +6958,11 @@ change-case@^4.1.2:
     sentence-case "^3.0.4"
     snake-case "^3.0.4"
     tslib "^2.0.3"
+
+change-case@^5.0.2:
+  version "5.0.2"
+  resolved "https://registry.npmjs.org/change-case/-/change-case-5.0.2.tgz#0f1885d310b84065a17b20e8231c7dff37207627"
+  integrity sha512-tH6YZXViaeC2/Mnt8m4gSmbZfNorC2rhwCX2bXw8SYZWr8ljCPB7iA+1TLG9t7yroWBFauc63LlOZ1gucMVCWw==
 
 character-entities-html4@^1.0.0:
   version "1.1.4"
@@ -19455,13 +19455,6 @@ upper-case@^2.0.2:
   integrity sha512-KgdgDGJt2TpuwBUIjgG6lzw2GWFRCW9Qkfkiv0DxqHHLYJHmtmdUIKcZd8rHgFSjopVTlw6ggzCm1b8MFQwikg==
   dependencies:
     tslib "^2.0.3"
-
-uppercamelcase@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.npmjs.org/uppercamelcase/-/uppercamelcase-3.0.0.tgz#380b321b8d73cba16fec4d752a575152d1ef7317"
-  integrity sha512-zTWmRiOJACCdFGWjzye3L5cjSuVdZ/c8C0iHIwVbfORFD8IhGNAO6BOWkZ+fj+SI6/aFbdjGXE6gwPG780H4gQ==
-  dependencies:
-    camelcase "^4.1.0"
 
 uri-js@^4.2.2:
   version "4.4.1"

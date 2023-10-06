@@ -2,7 +2,7 @@ import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
 import { defaultRenderFn } from '@kickstartds/core/lib/core';
 import {
-  RichText,
+  RichTextContextDefault,
   defaultRenderFn as richTextDefaultRenderFn,
 } from '../rich-text';
 import { Button } from '../button';
@@ -59,7 +59,7 @@ export const ContentBoxComponent: ForwardRefRenderFunction<
     <div className="c-content-box__body">
       <div className="c-content-box__text">
         {topic && <p className="c-content-box__topic">{renderTopic(topic)}</p>}
-        {text && <RichText text={text} renderText={renderText} />}
+        {text && <RichTextContextDefault text={text} renderText={renderText} />}
       </div>
       {link && link.enabled && (
         <div className="c-content-box__link">

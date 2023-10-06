@@ -5,8 +5,26 @@
  * and run `yarn run schema` to regenerate this file.
  */
 
-import type { InputProps } from '@kickstartds/form/lib/input/typing';
-
+/**
+ * The label for the element
+ */
+export type Label = string;
+/**
+ * Whether the input is disabled
+ */
+export type Disabled = boolean;
+/**
+ * Wheter the input is invalid
+ */
+export type Invalid = boolean;
+/**
+ * Message to show if the input is invalid
+ */
+export type InvalidMessage = string;
+/**
+ * Help text that gives more context about what a user needs to input
+ */
+export type HintMessage = string;
 /**
  * Additional css classes attached to the input element
  */
@@ -20,26 +38,11 @@ export type KsComponentAttribute = string;
  * Checkboxes allow users to select multiple items from a list of individual items, or to mark one individual item as selected.
  */
 export interface CheckboxProps {
-  /**
-   * Referenced component InputProps
-   */
-  label: InputProps;
-  /**
-   * Referenced component InputProps
-   */
-  disabled?: InputProps;
-  /**
-   * Referenced component InputProps
-   */
-  invalid?: InputProps;
-  /**
-   * Referenced component InputProps
-   */
-  invalidMessage?: InputProps;
-  /**
-   * Referenced component InputProps
-   */
-  hint?: InputProps;
+  label: Label;
+  disabled?: Disabled;
+  invalid?: Invalid;
+  invalidMessage?: InvalidMessage;
+  hint?: HintMessage;
   className?: Class;
   component?: KsComponentAttribute;
 }
