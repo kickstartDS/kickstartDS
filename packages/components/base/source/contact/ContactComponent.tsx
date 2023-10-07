@@ -1,6 +1,6 @@
 import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
-import { Picture } from '../image/picture';
+import { Picture } from '../picture';
 import { HeadlineContextDefault } from '../headline';
 import { RichTextContextDefault } from '../rich-text';
 import { Icon } from '../icon';

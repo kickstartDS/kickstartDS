@@ -5,8 +5,8 @@ import {
   PropsWithChildren,
 } from 'react';
 import classnames from 'classnames';
-import { Picture } from '../image/picture';
-import { LightboxImage } from '../image/lightbox-image';
+import { Picture } from '../picture';
+import { LightboxImage } from '../lightbox-image';
 import { IframeRatio } from '../iframe';
 import { RichText, defaultRenderFn } from '../rich-text';
 import {

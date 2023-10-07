@@ -4,8 +4,8 @@ import {
   ImgHTMLAttributes,
 } from 'react';
 import classnames from 'classnames';
-import { Icon } from '../../icon';
-import { Link } from '../../link';
+import { Icon } from '../icon';
+import { Link } from '../link';
 import { Picture } from '../picture';
 import type { LightboxImageProps } from './typing';
 
