@@ -3147,10 +3147,15 @@
     ajv "^8.12.0"
     object-traversal "^1.0.1"
 
-"@kickstartds/storybook-addon-component-tokens@^0.1.6":
-  version "0.1.6"
-  resolved "https://registry.npmjs.org/@kickstartds/storybook-addon-component-tokens/-/storybook-addon-component-tokens-0.1.6.tgz#612864503743cf684ca30429d3f55a0f7710dd97"
-  integrity sha512-pqk4aX7aPK0a62WQGB3ukpNYrhTyXBM4fSShtd/bOuJPJLQV80Q+goAo7p0hfwklSKZlOgAoAdTuhsDqhfygiQ==
+"@kickstartds/storybook-addon-component-tokens@1.0.0-canary.18.36.0":
+  version "1.0.0-canary.18.36.0"
+  resolved "https://registry.npmjs.org/@kickstartds/storybook-addon-component-tokens/-/storybook-addon-component-tokens-1.0.0-canary.18.36.0.tgz#279e7fa763795d24bac41439dc6d7773514e67ab"
+  integrity sha512-gmKjwu3+hdFXk5rYHLuelurn95Vs5O8gB0ffXUZQUoqIFSqNa8CTBJbXYRsxENVwwwXh7UmcR8hMN6rirR0LNA==
+
+"@kickstartds/storybook-addon-jsonschema@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.npmjs.org/@kickstartds/storybook-addon-jsonschema/-/storybook-addon-jsonschema-2.0.1.tgz#4ed35b2f4647d12169941f76d40b7965db80211b"
+  integrity sha512-tjLeFipLK2haHDJ58yiWBpPJmZTjNW1/p3pyjZvrW/GDeiS/NosA9Ybn0gsdVB66ysiSxW8UT7KChuCfYNcLAg==
 
 "@kickstartds/style-dictionary@^2.2.1-next.1":
   version "2.2.1-next.1"
@@ -4184,7 +4189,7 @@
     p-map "^4.0.0"
     webpack-sources "^3.2.2"
 
-"@storybook/addon-a11y@^7.0.10":
+"@storybook/addon-a11y@^7.4.6":
   version "7.4.6"
   resolved "https://registry.npmjs.org/@storybook/addon-a11y/-/addon-a11y-7.4.6.tgz#b1d1d98e11d1130d98b737decbc27eaa2a0bf9b3"
   integrity sha512-RE8sXk9KEqgmjsFmG31eObgPMTOvvWnoNZIaZEHs88X30tNHtFwjc0jzvCR/xriKsBtQdYQTUSsB7pSjaJHNzQ==
@@ -4284,7 +4289,7 @@
     remark-slug "^6.0.0"
     ts-dedent "^2.0.0"
 
-"@storybook/addon-essentials@^7.0.10":
+"@storybook/addon-essentials@^7.4.6":
   version "7.4.6"
   resolved "https://registry.npmjs.org/@storybook/addon-essentials/-/addon-essentials-7.4.6.tgz#b9c83dbdae0ffd6f24fa9328b36488d563714260"
   integrity sha512-dWodufrt71TK7ELkeIvVae/x4PzECUlbOm57Iqqt4yQCyR291CgvI4PjeB8un2HbpcXCGZ+N/Oj3YkytvzBi4A==
@@ -4313,7 +4318,7 @@
     "@storybook/global" "^5.0.0"
     "@storybook/preview-api" "7.4.6"
 
-"@storybook/addon-mdx-gfm@^7.0.10":
+"@storybook/addon-mdx-gfm@^7.4.6":
   version "7.4.6"
   resolved "https://registry.npmjs.org/@storybook/addon-mdx-gfm/-/addon-mdx-gfm-7.4.6.tgz#578ccb339771ec198e06332887c4947cedd06b93"
   integrity sha512-5DCQd9syEsCjB4q8lplHwqOlrdgFn/Ttm7/7aNTeZxF1a4qH/n3Yi7P2SAehaKpJLU61aRFILzE46JD4yvMaHg==
@@ -4467,7 +4472,7 @@
     process "^0.11.10"
     util "^0.12.4"
 
-"@storybook/builder-vite@7.4.6", "@storybook/builder-vite@^7.0.10":
+"@storybook/builder-vite@7.4.6", "@storybook/builder-vite@^7.4.6":
   version "7.4.6"
   resolved "https://registry.npmjs.org/@storybook/builder-vite/-/builder-vite-7.4.6.tgz#b5aabb74c1e394b5e56be699408f0538eb483b1f"
   integrity sha512-xV9STYK+TkqWWTf2ydm6jx+7P70fjD2UPd1XTUw08uKszIjhuuxk+bG/OF5R1E25mPunAKXm6kBFh351AKejBg==
@@ -4513,7 +4518,7 @@
     telejson "^7.2.0"
     tiny-invariant "^1.3.1"
 
-"@storybook/cli@7.4.6", "@storybook/cli@^7.0.10":
+"@storybook/cli@7.4.6", "@storybook/cli@^7.4.6":
   version "7.4.6"
   resolved "https://registry.npmjs.org/@storybook/cli/-/cli-7.4.6.tgz#c322fcfdacf839a55a9c2aaa592a820fdaa1422c"
   integrity sha512-rRwaH8pOL+FHz/pJMEkNpMH2xvZvWsrl7obBYw26NQiHmiVSAkfHJicndSN1mwc+p5w+9iXthrgzbLtSAOSvkA==
@@ -4853,7 +4858,7 @@
   resolved "https://registry.npmjs.org/@storybook/react-dom-shim/-/react-dom-shim-7.4.6.tgz#7f7e01dbb6abe104ae140e25b7ed98c347a5fb9f"
   integrity sha512-DSq8l9FDocUF1ooVI+TF83pddj1LynE/Hv0/y8XZhc3IgJ/HkuOQuUmfz29ezgfAi9gFYUR8raTIBi3/xdoRmw==
 
-"@storybook/react-vite@^7.0.10":
+"@storybook/react-vite@^7.4.6":
   version "7.4.6"
   resolved "https://registry.npmjs.org/@storybook/react-vite/-/react-vite-7.4.6.tgz#c87393f5727e3b75693c0e3bc959eece12a32d96"
   integrity sha512-jkjnrf3FxzR5wcmebXRPflrsM4WIDjWyW/NVFJwxi5PeIOk7fE7/QAPrm4NFRUu2Q7DeuH3oLKsw8bigvUI9RA==
@@ -4867,7 +4872,7 @@
     magic-string "^0.30.0"
     react-docgen "6.0.0-alpha.3"
 
-"@storybook/react@7.4.6", "@storybook/react@^7.0.10":
+"@storybook/react@7.4.6", "@storybook/react@^7.4.6":
   version "7.4.6"
   resolved "https://registry.npmjs.org/@storybook/react/-/react-7.4.6.tgz#240a78547add8db69b5d2eeae3d6c45feb79559b"
   integrity sha512-w0dVo64baFFPTGpUOWFqkKsu6pQincoymegSNgqaBd5DxEyMDRiRoTWSJHMKE9BwgE8SyWhRkP1ak1mkccSOhQ==
@@ -7242,10 +7247,10 @@ chownr@^2.0.0:
   resolved "https://registry.npmjs.org/chownr/-/chownr-2.0.0.tgz#15bfbe53d2eab4cf70f18a8cd68ebe5b3cb1dece"
   integrity sha512-bIomtDF5KGpdogkLd9VspvFzk9KfpyyGlS8YFVZl7TGPBHL5snIOnxeshwVgPteQ9b4Eydl+pVbIyE1DcvCWgQ==
 
-chromatic@^6.17.4:
-  version "6.24.1"
-  resolved "https://registry.npmjs.org/chromatic/-/chromatic-6.24.1.tgz#848209706b423a78fe4876505a5dca3deb8e8b4c"
-  integrity sha512-XbpdWWHvFpEHtcq1Km71UcuQ07effB+8q8L47E1Y7HJmJ4ZCoKCuPd8liNrbnvwEAxqfBZvTcONYU/3BPz2i5w==
+chromatic@^7.2.3:
+  version "7.2.3"
+  resolved "https://registry.npmjs.org/chromatic/-/chromatic-7.2.3.tgz#35fb871953a5461faa474b1d99cd2cb2f3ee4f37"
+  integrity sha512-UEcHB1nkPoHWoRybPzv6BOVqPr7PqDNuz3u8NCRg7KJciouOb20HjiUQx4Dh9mgA7JUsb2WeGHE2SG/0fHH0PA==
 
 chrome-trace-event@^1.0.2:
   version "1.0.3"
@@ -18027,7 +18032,7 @@ store2@^2.12.0, store2@^2.14.2:
   resolved "https://registry.npmjs.org/store2/-/store2-2.14.2.tgz#56138d200f9fe5f582ad63bc2704dbc0e4a45068"
   integrity sha512-siT1RiqlfQnGqgT/YzXVUNsom9S0H1OX+dpdGN1xkyYATo4I6sep5NmsRD/40s3IIOvlCq6akxkqG82urIZW1w==
 
-storybook-dark-mode@^3.0.0:
+storybook-dark-mode@^3.0.1:
   version "3.0.1"
   resolved "https://registry.npmjs.org/storybook-dark-mode/-/storybook-dark-mode-3.0.1.tgz#b79e8809fc89da9c06edb5d2d20cba163c256adc"
   integrity sha512-3V6XBhkUq63BF6KzyDBbfV5/8sYtF4UtVccH1tK+Lrd4p0tF8k7yHOvVDhFL9hexnKXcLEnbC+42YDTPvjpK+A==
@@ -18057,7 +18062,7 @@ storybook-design-token@3.0.0-beta.6:
     react-use-clipboard "^1.0.9"
     react-virtual "^2.10.4"
 
-storybook@^7.0.10:
+storybook@^7.4.6:
   version "7.4.6"
   resolved "https://registry.npmjs.org/storybook/-/storybook-7.4.6.tgz#f688649af6c2cd1329dd120d8f61a930f76262d0"
   integrity sha512-YkFSpnR47j5zz7yElA+2axLjXN7K7TxDGJRHHlqXmG5iQ0PXzmjrj2RxMDKFz4Ybp/QjEUoJ4rx//ESEY0Nb5A==

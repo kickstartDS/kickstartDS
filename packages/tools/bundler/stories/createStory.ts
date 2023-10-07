@@ -33,6 +33,10 @@ const meta: Meta<typeof ${componentPascalcased}> = {
   excludeStories: ['Template'],
   parameters: {
     ${hasComponentTokens ? 'cssprops,' : ''}
+    designToken: {
+      disable: true,
+    },
+    jsonschema: schema,
   },
   ...getArgsShared(schema),
 };

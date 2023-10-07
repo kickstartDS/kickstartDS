@@ -8,10 +8,10 @@ const config: StorybookConfig = {
   addons: [
     '@storybook/addon-essentials',
     '@storybook/addon-a11y',
-    // 'storybook-dark-mode',
-    // '@kickstartds/storybook-addon-component-tokens',
+    'storybook-dark-mode',
+    '@kickstartds/storybook-addon-component-tokens',
     '@whitespace/storybook-addon-html',
-    // "@kickstartds/storybook-addon-jsonschema",
+    '@kickstartds/storybook-addon-jsonschema',
     {
       name: 'storybook-design-token',
       options: {
