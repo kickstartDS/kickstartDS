@@ -9,8 +9,8 @@ import {
   RollupOutput,
 } from 'rollup';
 import { babel } from '@rollup/plugin-babel';
-import replace from '@rollup/plugin-replace';
-import commonjs from '@rollup/plugin-commonjs';
+import replaceDefault from '@rollup/plugin-replace';
+import commonjsDefault from '@rollup/plugin-commonjs';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import log from '../utils/log.js';
 import { dirRe } from '../utils/utils.js';
@@ -19,6 +19,12 @@ import {
   sharedOutputOptions,
   sharedBabelConfig,
 } from './rollupUtils.js';
+
+// info on this monstrosity: https://github.com/rollup/plugins/issues/1329
+// @ts-expect-error
+const replace = replaceDefault as unknown as replaceDefault.default;
+// @ts-expect-error
+const commonjs = commonjsDefault as unknown as commonjsDefault.default;
 
 const prepare = async (
   jsPaths: string[]

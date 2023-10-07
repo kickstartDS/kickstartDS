@@ -1,12 +1,12 @@
 import fs from 'fs-extra';
 import fg from 'fast-glob';
 import chokidar from 'chokidar';
+import { JSONSchema } from 'json-schema-typed/draft-07';
 import log from '../utils/log.js';
 import { dirRe } from '../utils/utils.js';
 import { dereference } from './schemaDereference.js';
 import { createTypes } from './schemaToTypescript.js';
 import { createStory } from '../stories/createStory.js';
-import { JSONSchema } from 'json-schema-typed/draft-07.js';
 
 const schemaGlob: string =
   'source/**/!(_)*.(schema|definitions|interface).json';

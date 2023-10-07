@@ -1,10 +1,15 @@
-import path from 'path';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import StyleDictionary from 'style-dictionary';
 import merge from 'lodash/merge.js';
+import { resolve } from 'import-meta-resolve';
 import { config, createTokens } from '@kickstartds/style-dictionary';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 const corePath = path.dirname(
-  require.resolve('@kickstartds/core/package.json')
+  fileURLToPath(resolve('@kickstartds/core/package.json', import.meta.url))
 );
 
 const buildTokens = (): void => {

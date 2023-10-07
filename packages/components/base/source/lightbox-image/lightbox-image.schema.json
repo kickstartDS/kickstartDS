@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.kickstartds.com/base/lightbox-image.definitions.json",
+  "$id": "http://schema.kickstartds.com/base/lightbox-image.schema.json",
   "title": "Lightbox Image",
   "description": "Lightbox Image",
   "type": "object",

@@ -31,7 +31,11 @@ const createTypes = async (schemaId: string, schemaGlob: string) => {
   const schemaPaths: string[] = await fg(schemaGlob);
 
   const ajv = getSchemaRegistry();
-  const schemaIds = await processSchemaGlob(schemaGlob, ajv, false);
+  const schemaIds = await processSchemaGlob(schemaGlob, ajv, false, [
+    'base',
+    'blog',
+    'form',
+  ]);
 
   // TODO `style` should be loaded from `${root}/.prettierrc` again
   // https://github.com/kickstartDS/schema/issues/15
@@ -62,10 +66,12 @@ const createTypes = async (schemaId: string, schemaGlob: string) => {
     const indirectPath: string | undefined = schemaPaths.find((schemaPath) =>
       schemaId.includes(`/${module}/${schemaPath.split('/')[1]}/`)
     );
-    if (!directPath && !indirectPath)
+    if (!directPath && !indirectPath) {
+      console.log(schemaPaths, moduleSchemaIds);
       throw new Error(
         `Couldn't find matching schema path for schema $id: ${schemaId}`
       );
+    }
 
     const base = directPath
       ? path.basename(directPath, '.json')

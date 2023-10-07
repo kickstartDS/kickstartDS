@@ -1,6 +1,6 @@
 import path from 'path';
 import fs from 'fs-extra';
-import { glob } from 'fast-glob';
+import fg from 'fast-glob';
 import { capitalCase } from 'change-case';
 import { toArray } from 'react-emoji-render';
 import { ReactElement } from 'react';
@@ -36,7 +36,7 @@ const createStoriesFromMarkdown = async (
   modPath: string,
   mod: string
 ): Promise<void> => {
-  const filePaths = await glob(`${modPath}/*.md`, {
+  const filePaths = await fg(`${modPath}/*.md`, {
     cwd: root,
     absolute: true,
     ignore: ['**/node_modules'],

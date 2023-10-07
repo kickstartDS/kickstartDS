@@ -2,9 +2,9 @@ import { spawn, SpawnOptions } from 'node:child_process';
 import path from 'node:path';
 import yargsParser from 'yargs-parser';
 import fg from 'fast-glob';
-import createMarkdownStories from '@kickstartds/bundler/stories/createStoriesFromMarkdown';
-import { root } from '@kickstartds/bundler/utils/utils';
-import buildTokens from '@kickstartds/bundler/stories/build-tokens';
+import createMarkdownStories from '@kickstartds/bundler/stories/createStoriesFromMarkdown.js';
+import { root } from '@kickstartds/bundler/utils/utils.js';
+import buildTokens from '@kickstartds/bundler/stories/build-tokens.js';
 
 const argv = yargsParser(process.argv.slice(2));
 

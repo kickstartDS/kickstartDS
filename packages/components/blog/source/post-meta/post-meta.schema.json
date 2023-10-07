@@ -13,7 +13,7 @@
           "examples": ["Max Mütze"]
         },
         "image": {
-          "$ref": "http://schema.kickstartds.com/base/picture.definitions.json"
+          "$ref": "http://schema.kickstartds.com/base/picture.schema.json"
         }
       },
       "additionalProperties": false

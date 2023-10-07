@@ -99,7 +99,7 @@
             "type": "object",
             "properties": {
               "image": {
-                "$ref": "http://schema.kickstartds.com/base/picture.definitions.json"
+                "$ref": "http://schema.kickstartds.com/base/picture.schema.json"
               },
               "full": {
                 "$ref": "#/definitions/full"
@@ -115,7 +115,7 @@
             "type": "object",
             "properties": {
               "lightboxImage": {
-                "$ref": "http://schema.kickstartds.com/base/lightbox-image.definitions.json"
+                "$ref": "http://schema.kickstartds.com/base/lightbox-image.schema.json"
               },
               "full": {
                 "$ref": "#/definitions/full"
