@@ -14,7 +14,7 @@
     "build": "lerna run --stream --no-prefix --verbose --scope @kickstartds/* build",
     "build:prod": "NODE_ENV=production yarn run build",
     "copy-env-file": "[ ! -f .env ] && cp .env-example .env || true",
-    "chromatic": "yarn workspace @kickstartds-internal/storybook run tsc && yarn workspace @kickstartds-internal/storybook chromatic",
+    "chromatic": "yarn workspace @kickstartds/bundler run tsc && yarn workspace @kickstartds-internal/storybook run tsc && yarn workspace @kickstartds-internal/storybook chromatic",
     "chromatic-base": "yarn workspace @kickstartds-internal/storybook chromatic-base",
     "chromatic-blog": "yarn workspace @kickstartds-internal/storybook chromatic-blog",
     "chromatic-content": "yarn workspace @kickstartds-internal/storybook chromatic-content",
