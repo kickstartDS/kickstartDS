@@ -60,7 +60,8 @@
     "license-checker": "^25.0.1",
     "postcss": "^8.4.23",
     "postcss-scss": "^4.0.6",
-    "react": "^18.2.0"
+    "react": "^18.2.0",
+    "typescript": "^5.0.4"
   },
   "devDependencies": {
     "@auto-it/all-contributors": "^10.46.0",
@@ -69,6 +70,7 @@
     "@auto-it/released": "^10.46.0",
     "@commitlint/cli": "^17.6.3",
     "@commitlint/config-conventional": "^17.6.3",
+    "@types/node": "^20.7.1",
     "@types/react": "^18.2.6",
     "@types/react-dom": "^18.2.4",
     "auto": "^10.46.0",
