@@ -61,13 +61,12 @@ const createTypes = async (schemaId: string, schemaGlob: string) => {
 
   for (const schemaId of moduleSchemaIds) {
     const directPath: string | undefined = schemaPaths.find((schemaPath) =>
-      schemaPath.endsWith(schemaId.split('/').pop() || 'NO MATCH')
+      schemaPath.endsWith(`/${schemaId.split('/').pop()}` || 'NO MATCH')
     );
     const indirectPath: string | undefined = schemaPaths.find((schemaPath) =>
       schemaId.includes(`/${module}/${schemaPath.split('/')[1]}/`)
     );
     if (!directPath && !indirectPath) {
-      console.log(schemaPaths, moduleSchemaIds);
       throw new Error(
         `Couldn't find matching schema path for schema $id: ${schemaId}`
       );
