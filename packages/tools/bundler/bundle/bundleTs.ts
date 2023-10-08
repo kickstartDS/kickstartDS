@@ -84,6 +84,9 @@ const prepare = async (tsPaths: string[]) => {
                 '@kickstartds/form/lib/*/typing': [
                   `${root}/packages/components/form/source/*/typing`,
                 ],
+                '@kickstartds/content/lib/*/typing': [
+                  `${root}/source/*/typing`,
+                ],
                 '@kickstartds/blog/lib/news-item/typing': [
                   `${root}/packages/components/blog/source/shared/typing`,
                 ],
