@@ -3,6 +3,7 @@
   "$id": "http://schema.kickstartds.com/base/teaser.schema.json",
   "title": "Teaser",
   "description": "Component to tease external content",
+  "type": "object",
   "properties": {
     "topic": {
       "title": "Topic",
