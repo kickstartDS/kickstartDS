@@ -14,7 +14,7 @@ const dereference = async (schemaPath: string, schemaGlob: string) => {
     'form',
   ]);
   const schemaId = schemaIds.find((schemaId) =>
-    schemaId.endsWith(path.basename(schemaPath))
+    schemaId.endsWith(`/${path.basename(schemaPath)}`)
   );
   if (!schemaId)
     throw new Error("Couldn't find matching schema id for schema path");
