@@ -41,8 +41,8 @@
     "sass": "^1.62.1"
   },
   "devDependencies": {
-    "@kickstartds/bundler": "^2.2.0",
-    "@kickstartds/style-dictionary": "^2.2.0",
+    "@kickstartds/bundler": "^3.0.0-next.0",
+    "@kickstartds/style-dictionary": "^3.0.0-next.0",
     "@storybook/types": "^7.0.5",
     "lodash": "^4.17.21",
     "style-dictionary": "^3.8.0"
