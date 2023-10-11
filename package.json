@@ -64,7 +64,7 @@
     "typescript": "^5.0.4"
   },
   "devDependencies": {
-    "@auto-it/all-contributors": "^10.46.0",
+    "@auto-it/all-contributors": "^11.0.4",
     "@auto-it/first-time-contributor": "^10.46.0",
     "@auto-it/npm": "^10.46.0",
     "@auto-it/released": "^10.46.0",
