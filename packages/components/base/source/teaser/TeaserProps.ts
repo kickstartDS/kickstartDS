@@ -15,6 +15,10 @@ export type Topic = string;
 export type TextContent = string;
 export type Inverted = boolean;
 /**
+ * Hides the link. The box as a whole keeps being clickable
+ */
+export type HideLink = boolean;
+/**
  * Text used on button
  */
 export type Label = string;
@@ -82,10 +86,6 @@ export type AdditionalClasses = string;
  */
 export type KsComponentAttribute2 = string;
 /**
- * Hides the link. The box as a whole keeps being clickable
- */
-export type HideLink = boolean;
-/**
  * Additional css classes attached to the box
  */
 export type Class = string;
@@ -109,6 +109,7 @@ export interface TeaserProps {
  * Component to display links and call-to-actions
  */
 export interface Button {
+  hidden?: HideLink;
   label?: Label;
   variant?: ButtonStyle;
   inverted?: Inverted1;
@@ -125,7 +126,6 @@ export interface Button {
   newTab?: OpenLinkInNewTab;
   className?: AdditionalClasses;
   component?: KsComponentAttribute2;
-  hidden?: HideLink;
 }
 /**
  * Icon identifier for icon before the button text

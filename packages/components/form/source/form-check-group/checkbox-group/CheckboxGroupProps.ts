@@ -22,10 +22,6 @@ export type Invalid = boolean;
  */
 export type InvalidMessage = string;
 /**
- * The label for the element
- */
-export type Label1 = string;
-/**
  * Whether the input is disabled
  */
 export type Disabled = boolean;
@@ -59,7 +55,7 @@ export interface CheckboxGroupProps {
  * Checkboxes allow users to select multiple items from a list of individual items, or to mark one individual item as selected.
  */
 export interface Checkbox {
-  label: Label1;
+  label: Label;
   disabled?: Disabled;
   hint?: HintMessage;
   [k: string]: unknown;

@@ -14,7 +14,7 @@
     "build": "lerna run --stream --no-prefix --verbose --scope @kickstartds/* build",
     "build:prod": "NODE_ENV=production yarn run build",
     "copy-env-file": "[ ! -f .env ] && cp .env-example .env || true",
-    "chromatic": "yarn workspace @kickstartds-internal/storybook chromatic",
+    "chromatic": "yarn workspace @kickstartds/bundler run tsc && yarn workspace @kickstartds-internal/storybook run tsc && yarn workspace @kickstartds-internal/storybook chromatic",
     "chromatic-base": "yarn workspace @kickstartds-internal/storybook chromatic-base",
     "chromatic-blog": "yarn workspace @kickstartds-internal/storybook chromatic-blog",
     "chromatic-content": "yarn workspace @kickstartds-internal/storybook chromatic-content",
@@ -37,7 +37,7 @@
     "storybook:build": "yarn run storybook build",
     "storybook:debug": "yarn run storybook debug",
     "stylelint": "stylelint \"**/*.scss\"",
-    "prepare": "husky install",
+    "prepare": "patch-package && husky install && yarn workspace @kickstartds/bundler run tsc && yarn workspace @kickstartds-internal/storybook run tsc",
     "watch": "lerna run --parallel --verbose watch",
     "watch-tokens": "sass --watch --load-path=node_modules packages/components/core/source/design-tokens/tokens.scss packages/components/core/lib/design-tokens/tokens.css"
   },
@@ -60,7 +60,8 @@
     "license-checker": "^25.0.1",
     "postcss": "^8.4.31",
     "postcss-scss": "^4.0.6",
-    "react": "^18.2.0"
+    "react": "^18.2.0",
+    "typescript": "^5.0.4"
   },
   "devDependencies": {
     "@auto-it/all-contributors": "^10.46.0",
@@ -69,6 +70,7 @@
     "@auto-it/released": "^10.46.0",
     "@commitlint/cli": "^17.6.3",
     "@commitlint/config-conventional": "^17.6.3",
+    "@types/node": "^20.7.1",
     "@types/react": "^18.2.6",
     "@types/react-dom": "^18.2.4",
     "auto": "^10.46.0",
@@ -80,6 +82,8 @@
     "lerna": "^7.3.0",
     "lint-staged": "^13.2.2",
     "npm-run-all": "^4.1.5",
+    "patch-package": "^8.0.0",
+    "postinstall-postinstall": "^2.1.0",
     "prettier": "^2.8.8",
     "stylelint": "^15.10.3"
   },

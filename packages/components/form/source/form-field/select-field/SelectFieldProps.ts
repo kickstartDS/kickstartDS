@@ -21,14 +21,10 @@ export type Name = string;
  * Whether the input is disabled
  */
 export type Disabled = boolean;
-/**
- * Whether the input is disabled
- */
-export type Disabled1 = boolean;
 export type Options = {
   value?: string;
   label: string;
-  disabled?: Disabled1;
+  disabled?: Disabled;
 }[];
 /**
  * Hide label visually

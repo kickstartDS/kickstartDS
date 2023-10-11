@@ -26,10 +26,6 @@ export type Topic = string;
  */
 export type TextContent = string;
 /**
- * Toggles visibility of the link
- */
-export type DisplayLink = boolean;
-/**
  * Text used on button
  */
 export type Label = string;
@@ -97,6 +93,10 @@ export type AdditionalClasses = string;
  */
 export type KsComponentAttribute2 = string;
 /**
+ * Toggles visibility of the link
+ */
+export type DisplayLink = boolean;
+/**
  * Add additional css classes that should be applied to the content box
  */
 export type AdditionalClasses1 = string;
@@ -114,15 +114,14 @@ export interface ContentBoxProps {
   image?: ImageSource;
   topic?: Topic;
   text?: TextContent;
-  link?: Link;
+  link?: Button;
   className?: AdditionalClasses1;
   component?: KsComponentAttribute3;
 }
 /**
- * Content box link configuration
+ * Component to display links and call-to-actions
  */
-export interface Link {
-  enabled?: DisplayLink;
+export interface Button {
   label?: Label;
   variant?: ButtonStyle;
   inverted?: Inverted;
@@ -139,6 +138,7 @@ export interface Link {
   newTab?: OpenLinkInNewTab;
   className?: AdditionalClasses;
   component?: KsComponentAttribute2;
+  enabled?: DisplayLink;
 }
 /**
  * Icon identifier for icon before the button text

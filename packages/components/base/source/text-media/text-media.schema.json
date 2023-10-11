@@ -40,7 +40,7 @@
         "anyOf": [
           {
             "type": "object",
-            "title": "TextMediaVideo",
+            "title": "MediaVideo",
             "properties": {
               "video": {
                 "title": "Video",
@@ -95,11 +95,11 @@
             "additionalProperties": false
           },
           {
-            "title": "TextMediaImage",
+            "title": "MediaImage",
             "type": "object",
             "properties": {
               "image": {
-                "$ref": "http://schema.kickstartds.com/base/picture.definitions.json"
+                "$ref": "http://schema.kickstartds.com/base/picture.schema.json"
               },
               "full": {
                 "$ref": "#/definitions/full"
@@ -111,11 +111,11 @@
             "additionalProperties": false
           },
           {
-            "title": "TextMediaLazyImage",
+            "title": "MediaLazyImage",
             "type": "object",
             "properties": {
               "lightboxImage": {
-                "$ref": "http://schema.kickstartds.com/base/lightbox-image.definitions.json"
+                "$ref": "http://schema.kickstartds.com/base/lightbox-image.schema.json"
               },
               "full": {
                 "$ref": "#/definitions/full"

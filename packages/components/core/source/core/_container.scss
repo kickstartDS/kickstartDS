@@ -7,9 +7,6 @@
 $name: null !default;
 $unit-intervals: (
   'px': 1,
-  // 'em': 0.01,
-  // 'rem': 0.1,
-  // '': 0,,,,,,,,
 ) !default;
 
 @mixin wrapper($localName: $name) {

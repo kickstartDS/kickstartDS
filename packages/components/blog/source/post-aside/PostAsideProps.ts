@@ -5,78 +5,14 @@
  * and run `yarn run schema` to regenerate this file.
  */
 
+import type { PictureProps } from '@kickstartds/base/lib/picture/typing';
+import type { PostMetaProps } from '@kickstartds/blog/lib/post-meta/typing';
+import type { PostShareBarProps } from '@kickstartds/blog/lib/post-share-bar/typing';
+
 /**
- * Picture source
+ * Text content for the headline
  */
-export type Source = string;
-/**
- * Use a srcSet to display picture
- */
-export type PictureSourceset = string;
-/**
- * Alt text to display for picture
- */
-export type AltText = string;
-/**
- * Width of the picture
- */
-export type Width = number;
-/**
- * Height of the picture
- */
-export type Height = number;
-/**
- * Add additional css classes that should be applied to the button
- */
-export type AdditionalClasses = string;
-/**
- * Optional custom component identifier
- */
-export type KsComponentAttribute = string;
-/**
- * Add id attribute to the image
- */
-export type Id = string;
-/**
- * Define an itemprop attribute for the picture
- */
-export type ItempropAttribute = string;
-/**
- * Define a style attribute for the picture
- */
-export type StyleAttribute = string;
-/**
- * Render noscript fallback
- */
-export type Noscript = boolean;
-/**
- * Load the picture lazily
- */
-export type Lazy = boolean;
-/**
- * Use a srcSet to display picture
- */
-export type PictureSourceset1 = string;
-/**
- * TODO MEDIA DESCRIPTION
- */
-export type TODOMEDIATITLE = string;
-/**
- * TODO TYPE DESCRIPTION
- */
-export type TODOTYPETITLE = string;
-/**
- * Additional sources. This will result in a `picture`-Element
- */
-export type Sources = {
-  srcSet?: PictureSourceset1;
-  media?: TODOMEDIATITLE;
-  type?: TODOTYPETITLE;
-}[];
-/**
- * Set additional class(es) to the picture
- */
-export type ClassAttribute = string;
+export type Text = string;
 /**
  * Name, company name, etc.
  */
@@ -97,83 +33,7 @@ export type Class = string;
 /**
  * Optional custom component identifier
  */
-export type KsComponentAttribute1 = string;
-/**
- * Text content for the headline
- */
-export type Text = string;
-/**
- * Picture source
- */
-export type Source1 = string;
-/**
- * Use a srcSet to display picture
- */
-export type PictureSourceset2 = string;
-/**
- * Alt text to display for picture
- */
-export type AltText1 = string;
-/**
- * Width of the picture
- */
-export type Width1 = number;
-/**
- * Height of the picture
- */
-export type Height1 = number;
-/**
- * Add additional css classes that should be applied to the button
- */
-export type AdditionalClasses1 = string;
-/**
- * Optional custom component identifier
- */
-export type KsComponentAttribute2 = string;
-/**
- * Add id attribute to the image
- */
-export type Id1 = string;
-/**
- * Define an itemprop attribute for the picture
- */
-export type ItempropAttribute1 = string;
-/**
- * Define a style attribute for the picture
- */
-export type StyleAttribute1 = string;
-/**
- * Render noscript fallback
- */
-export type Noscript1 = boolean;
-/**
- * Load the picture lazily
- */
-export type Lazy1 = boolean;
-/**
- * Use a srcSet to display picture
- */
-export type PictureSourceset3 = string;
-/**
- * TODO MEDIA DESCRIPTION
- */
-export type TODOMEDIATITLE1 = string;
-/**
- * TODO TYPE DESCRIPTION
- */
-export type TODOTYPETITLE1 = string;
-/**
- * Additional sources. This will result in a `picture`-Element
- */
-export type Sources1 = {
-  srcSet?: PictureSourceset3;
-  media?: TODOMEDIATITLE1;
-  type?: TODOTYPETITLE1;
-}[];
-/**
- * Set additional class(es) to the picture
- */
-export type ClassAttribute1 = string;
+export type KsComponentAttribute = string;
 /**
  * Additional css classes attached to the wrapping element
  */
@@ -181,75 +41,33 @@ export type Class1 = string;
 /**
  * Optional custom component identifier
  */
-export type KsComponentAttribute3 = string;
-/**
- * Text content for the headline
- */
-export type Text1 = string;
-/**
- * Add additional spacing to the bottom of the headline
- */
-export type BottomSpacing = 'minimum' | 'small' | 'large';
-/**
- * Select the headline level to use, or p alternatively
- */
-export type Level = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
-/**
- * Select the headline style to use
- */
-export type Style = 'none' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
-/**
- * Choose an alignment for the headline
- */
-export type Alignment = 'left' | 'center' | 'right';
-/**
- * Text content for the optional subheadline
- */
-export type Subheadline = string;
-/**
- * Add additional css classes that should be applied to the headline
- */
-export type AdditionalClasses2 = string;
-/**
- * Optional custom component identifier
- */
-export type KsComponentAttribute4 = string;
-/**
- * Open link in new Tab
- */
-export type OpenLinkInNewTab1 = boolean;
-/**
- * Additional css classes attached to the wrapping element
- */
-export type Class2 = string;
-/**
- * Optional custom component identifier
- */
-export type KsComponentAttribute5 = string;
-/**
- * Additional css classes attached to the wrapping element
- */
-export type Class3 = string;
-/**
- * Optional custom component identifier
- */
-export type KsComponentAttribute6 = string;
+export type KsComponentAttribute1 = string;
 
 /**
  * Post Aside
  */
 export interface PostAsideProps {
-  author?: Author;
-  meta?: PostMeta;
-  shareBar?: PostShareBar;
-  className?: Class3;
-  component?: KsComponentAttribute6;
+  author?: Contact;
+  /**
+   * Referenced component PostMetaProps
+   */
+  meta?: PostMetaProps;
+  /**
+   * Referenced component PostShareBarProps
+   */
+  shareBar?: PostShareBarProps;
+  className?: Class1;
+  component?: KsComponentAttribute1;
 }
 /**
  * Component to show contact information
  */
-export interface Author {
-  image?: Picture;
+export interface Contact {
+  headline?: Text;
+  /**
+   * Referenced component PictureProps
+   */
+  image?: PictureProps;
   title?: Title;
   subtitle?: Subtitle;
   links?: {
@@ -260,89 +78,5 @@ export interface Author {
   }[];
   copy?: CopyText;
   className?: Class;
-  component?: KsComponentAttribute1;
-  headline?: Text;
-}
-/**
- * Base component to display a picture
- */
-export interface Picture {
-  src?: Source;
-  srcSet?: PictureSourceset;
-  alt?: AltText;
-  width?: Width;
-  height?: Height;
-  className?: AdditionalClasses;
   component?: KsComponentAttribute;
-  id?: Id;
-  itemProp?: ItempropAttribute;
-  style?: StyleAttribute;
-  noscript?: Noscript;
-  lazy?: Lazy;
-  sources?: Sources;
-  pictureClassName?: ClassAttribute;
-}
-/**
- * Post Meta
- */
-export interface PostMeta {
-  author?: {
-    name?: string;
-    image?: Picture1;
-  };
-  items?: MetaItem[];
-  className?: Class1;
-  component?: KsComponentAttribute3;
-}
-/**
- * Base component to display a picture
- */
-export interface Picture1 {
-  src?: Source1;
-  srcSet?: PictureSourceset2;
-  alt?: AltText1;
-  width?: Width1;
-  height?: Height1;
-  className?: AdditionalClasses1;
-  component?: KsComponentAttribute2;
-  id?: Id1;
-  itemProp?: ItempropAttribute1;
-  style?: StyleAttribute1;
-  noscript?: Noscript1;
-  lazy?: Lazy1;
-  sources?: Sources1;
-  pictureClassName?: ClassAttribute1;
-}
-export interface MetaItem {
-  icon?: string;
-  text?: string;
-}
-/**
- * Post Share Bar
- */
-export interface PostShareBar {
-  headline?: Headline;
-  links?: ShareLink[];
-  className?: Class2;
-  component?: KsComponentAttribute5;
-}
-/**
- * Headline
- */
-export interface Headline {
-  content: Text1;
-  spaceAfter?: BottomSpacing;
-  level?: Level;
-  styleAs?: Style;
-  align?: Alignment;
-  subheadline?: Subheadline;
-  className?: AdditionalClasses2;
-  component?: KsComponentAttribute4;
-}
-export interface ShareLink {
-  href?: string;
-  icon?: string;
-  title?: string;
-  newTab?: OpenLinkInNewTab1;
-  [k: string]: unknown;
 }
