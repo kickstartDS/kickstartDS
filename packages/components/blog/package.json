@@ -29,13 +29,13 @@
     "date-fns": "^2.30.0"
   },
   "devDependencies": {
-    "@kickstartds/base": "^2.2.0",
-    "@kickstartds/bundler": "^2.2.0",
-    "@kickstartds/core": "^2.2.0"
+    "@kickstartds/base": "^3.0.0-next.0",
+    "@kickstartds/bundler": "^3.0.0-next.0",
+    "@kickstartds/core": "^3.0.0-next.0"
   },
   "peerDependencies": {
-    "@kickstartds/base": "^2.0.3",
-    "@kickstartds/core": "^2.0.3",
+    "@kickstartds/base": "^3.0.0-next.0",
+    "@kickstartds/core": "^3.0.0-next.0",
     "react": "^17.0.2 || ^18.2.0"
   },
   "storybook": {
