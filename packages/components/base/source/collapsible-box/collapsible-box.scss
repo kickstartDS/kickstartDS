@@ -45,7 +45,8 @@ $vars: meta.module-variables(collapsible-box-vars);
         @include bourbon.size(var(--c-collapsible-box_icon--size));
       }
 
-      .c-collapsible-box--open & {
+      .c-collapsible-box--open &,
+      .c-collapsible-box[open]:not([data-uid]) & {
         transform: var(--c-collapsible-box_icon--transform-open);
       }
 
@@ -60,7 +61,8 @@ $vars: meta.module-variables(collapsible-box-vars);
     grid-template-rows: 0fr;
     transition: grid-template-rows var(--ks-transition-collapse);
 
-    .c-collapsible-box--open & {
+    .c-collapsible-box--open &,
+    .c-collapsible-box:not([data-uid]) & {
       grid-template-rows: 1fr;
     }
 
