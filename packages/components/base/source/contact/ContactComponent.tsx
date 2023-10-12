@@ -1,8 +1,8 @@
 import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
 import { Picture } from '../picture';
-import { HeadlineContextDefault } from '../headline';
-import { RichTextContextDefault } from '../rich-text';
+import { Headline } from '../headline';
+import { RichText } from '../rich-text';
 import { Icon } from '../icon';
 import { Link } from '../link';
 import type { ContactProps } from './typing';
@@ -30,7 +30,7 @@ export const ContactComponent: ForwardRefRenderFunction<
     )}
     <div className="c-contact__body">
       {title && (
-        <HeadlineContextDefault
+        <Headline
           level="h3"
           content={title}
           subheadline={subtitle}
@@ -56,9 +56,7 @@ export const ContactComponent: ForwardRefRenderFunction<
       ) : (
         ''
       )}
-      {copy && (
-        <RichTextContextDefault text={copy} className="c-contact__copy" />
-      )}
+      {copy && <RichText text={copy} className="c-contact__copy" />}
     </div>
   </address>
 );

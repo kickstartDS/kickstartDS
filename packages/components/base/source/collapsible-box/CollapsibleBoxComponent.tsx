@@ -3,7 +3,7 @@ import classnames from 'classnames';
 import { defaultRenderFn } from '@kickstartds/core/lib/core';
 import { Icon } from '../icon';
 import {
-  RichTextContextDefault,
+  RichText,
   defaultRenderFn as richTextDefaultRenderFn,
 } from '../rich-text';
 import type { CollapsibleBoxProps as CollapsibleBoxSchemaProps } from './typing';
@@ -48,7 +48,7 @@ export const CollapsibleBoxComponent: ForwardRefRenderFunction<
       </summary>
       <div className="c-collapsible-box__content">
         {text ? (
-          <RichTextContextDefault
+          <RichText
             className="c-collapsible-box__content__item"
             text={text}
             renderText={renderText}
