@@ -77,6 +77,10 @@ jobs:
                 paths:
                   - packages/components
                   - packages/tools/storybook/.storybook
+                  - packages/tools/storybook/index.js
+                  - packages/bundler/stories/createStoriesFromMarkdown.js
+                  - packages/bundler/utils/utils.js
+                  - packages/bundler/stories/build-tokens.js
       - run:
           name: Success
           command: echo 0
