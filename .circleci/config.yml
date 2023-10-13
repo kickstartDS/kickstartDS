@@ -78,9 +78,6 @@ jobs:
                   - packages/components
                   - packages/tools/storybook/.storybook
                   - packages/tools/storybook/index.js
-                  - packages/bundler/stories/createStoriesFromMarkdown.js
-                  - packages/bundler/utils/utils.js
-                  - packages/bundler/stories/build-tokens.js
       - run:
           name: Success
           command: echo 0
@@ -94,6 +91,11 @@ jobs:
             - checkout
             - restore_cache: *restore-cache-node
             - *attach_workspace
+            - run:
+                name: Install dependencies again
+                environment:
+                  NODE_ENV: production
+                command: yarn install
             - run:
                 name: Build Storybook & deploy to Chromatic
                 command: yarn run chromatic
