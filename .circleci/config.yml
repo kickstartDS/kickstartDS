@@ -125,13 +125,12 @@ jobs:
     <<: *defaults
     steps:
       - checkout
+      - restore_cache: *restore-cache-yarn
       - restore_cache: *restore-cache-node
       - *attach_workspace
       - run:
           name: Install dependencies again
-          environment:
-            NODE_ENV: production
-          command: yarn install
+          command: yarn install --frozen-lockfile --cache-folder /mnt/ramdisk/.yarn-cache
       - run:
           name: Publish Chromatic Module Base
           command: CHROMATIC_PROJECT_TOKEN=${CHROMATIC_PROJECT_TOKEN_BASE} yarn run chromatic-base
@@ -140,13 +139,12 @@ jobs:
     <<: *defaults
     steps:
       - checkout
+      - restore_cache: *restore-cache-yarn
       - restore_cache: *restore-cache-node
       - *attach_workspace
       - run:
           name: Install dependencies again
-          environment:
-            NODE_ENV: production
-          command: yarn install
+          command: yarn install --frozen-lockfile --cache-folder /mnt/ramdisk/.yarn-cache
       - run:
           name: Publish Chromatic Module Blog
           command: CHROMATIC_PROJECT_TOKEN=${CHROMATIC_PROJECT_TOKEN_BLOG} yarn run chromatic-blog
@@ -155,13 +153,12 @@ jobs:
     <<: *defaults
     steps:
       - checkout
+      - restore_cache: *restore-cache-yarn
       - restore_cache: *restore-cache-node
       - *attach_workspace
       - run:
           name: Install dependencies again
-          environment:
-            NODE_ENV: production
-          command: yarn install
+          command: yarn install --frozen-lockfile --cache-folder /mnt/ramdisk/.yarn-cache
       - run:
           name: Publish Chromatic Module Form
           command: CHROMATIC_PROJECT_TOKEN=${CHROMATIC_PROJECT_TOKEN_FORM} yarn run chromatic-form
