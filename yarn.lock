@@ -3036,17 +3036,17 @@
   resolved "https://registry.npmjs.org/@istanbuljs/schema/-/schema-0.1.3.tgz#e45e384e4b8ec16bce2fd903af78450f6bf7ec98"
   integrity sha512-ZXRY4jNvVgSVQ8DL3LTcakaAtXwTVUxE81hslsyD2AtoXW/wVob10HkOJ1X/pAlcI7D+2YoZKg5do8G/w6RYgA==
 
-"@iwsio/json-csv-core@^0.2.6":
-  version "0.2.13"
-  resolved "https://registry.npmjs.org/@iwsio/json-csv-core/-/json-csv-core-0.2.13.tgz#9bb86faa9ce81cd6a2459b12306d1453e5c8e4c5"
-  integrity sha512-pqkkl9wMRMQtGR9D+P8jc2Ts3Fm5QGnAkcbnqQRacBEvChubm1qIR2xh6Pq4dAc39KqgiZWrHZHRxf/N8dZXtA==
+"@iwsio/json-csv-core@^1":
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/@iwsio/json-csv-core/-/json-csv-core-1.1.3.tgz#4c88754ff0bac0db4109d52d505251b3e38b4d97"
+  integrity sha512-a8+v2sOK6XJIxOiZh8ygfMpiBy/z/9uzzdlKmZMyM4YUhLr5O8rPNpV6Lcn2YaaKtMGYyWQ2b9//KTS5vBCWAg==
 
-"@iwsio/json-csv-node@^5.0.9":
-  version "5.0.10"
-  resolved "https://registry.npmjs.org/@iwsio/json-csv-node/-/json-csv-node-5.0.10.tgz#61d175e18fcd9a6d506d367b85023d2d1ffe418b"
-  integrity sha512-lV6uNuqIMuLLwRXOOGa1OMQHU4i64HFGc1CZhtWDZoS3o6BeMPpYqTBntcQYBovTIBYun2wXzlMo4YmxibHlFQ==
+"@iwsio/json-csv-node@^6.1.2":
+  version "6.1.2"
+  resolved "https://registry.yarnpkg.com/@iwsio/json-csv-node/-/json-csv-node-6.1.2.tgz#00de39d9830a5c75a66ac58a910b55dbf125ecd0"
+  integrity sha512-vok1Zo2Xv+cIsfM+Gs2v6PQOVYHn/d6cCYdDLlwzRkSVSugEi/1XuoCClmhPA5eC833SBkfEsxQlWibwGui3sw==
   dependencies:
-    "@iwsio/json-csv-core" "^0.2.6"
+    "@iwsio/json-csv-core" "^1"
 
 "@jest/schemas@^29.6.3":
   version "29.6.3"
