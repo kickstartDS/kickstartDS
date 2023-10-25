@@ -10,7 +10,6 @@
     "statusBarItem.hoverBackground": "#097d9a",
     "statusBarItem.remoteBackground": "#06566a",
     "statusBarItem.remoteForeground": "#e7e7e7",
-    "tab.activeBorder": "#097d9a",
     "titleBar.activeBackground": "#06566a",
     "titleBar.activeForeground": "#e7e7e7",
     "titleBar.inactiveBackground": "#06566a99",
@@ -18,5 +17,6 @@
     "commandCenter.border": "#e7e7e799"
   },
   "peacock.color": "#06566a",
+  "peacock.affectActivityBar": false,
   "typescript.tsdk": "node_modules/typescript/lib"
 }
