@@ -18,7 +18,23 @@ import type { TeaserRowProps } from '@kickstartds/base/lib/teaser-row/typing';
 /**
  * Width of section to use
  */
-export type Width = 'full' | 'max' | 'wide' | 'default' | 'narrow';
+export type Width = 'narrow' | 'default' | 'wide' | 'max' | 'full';
+/**
+ * Width of headline to use
+ */
+export type HeadlineWidth = 'unset' | 'narrow' | 'default' | 'wide';
+/**
+ * Choose an alignment for the headline
+ */
+export type HeadlineAlignment = 'left' | 'center' | 'right';
+/**
+ * Width of content to use
+ */
+export type ContentWidth = 'unset' | 'narrow' | 'default' | 'wide';
+/**
+ * Choose an alignment for the content
+ */
+export type ContentAlignment = 'left' | 'center' | 'right';
 /**
  * Size of gutter to use
  */
@@ -100,6 +116,10 @@ export type KsComponentAttribute1 = string;
 
 export interface SectionProps {
   width?: Width;
+  headlineWidth?: HeadlineWidth;
+  headlineAlign?: HeadlineAlignment;
+  contentWidth?: ContentWidth;
+  contentAlign?: ContentAlignment;
   gutter?: Gutter;
   mode?: Mode;
   content?: Content;

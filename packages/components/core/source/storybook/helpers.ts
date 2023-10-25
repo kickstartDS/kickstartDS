@@ -50,6 +50,7 @@ const getArgsShared = (
     condition?: Conditional & { gt?: number }
   ) => {
     if ('const' in schema) return;
+    if (defaultValue == null) defaultValue = undefined;
 
     const schemaType = Array.isArray(schema.type)
       ? schema.type[0]
@@ -77,7 +78,8 @@ const getArgsShared = (
         if: condition,
         ...typeProps,
       };
-      args[name] = example ?? defaultValue;
+      const arg = example ?? defaultValue;
+      if (arg != null) args[name] = arg;
     };
 
     switch (schemaType) {

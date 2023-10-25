@@ -1,32 +1,24 @@
-import {
-  FunctionComponent,
-  ForwardRefRenderFunction,
-  HTMLAttributes,
-  PropsWithChildren,
-} from 'react';
+import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
 import { Headline } from '../headline';
 import type { SectionProps } from './typing';
 
-const SectionContainer: FunctionComponent<PropsWithChildren<SectionProps>> = ({
-  width,
-  gutter,
-  mode,
-  children,
-}) => (
-  <div
-    className={classnames(
-      'l-section__container',
-      width && width !== 'default' && `l-section__container--${width}`,
-      gutter &&
-        gutter !== 'default' &&
-        `l-section__container--gutter-${gutter}`,
-      mode && mode !== 'default' && `l-section__container--${mode}`
-    )}
-  >
-    {children}
-  </div>
-);
+const containerClassName = (
+  {
+    width,
+    align,
+    gutter,
+    mode,
+  }: SectionProps & { align?: 'left' | 'center' | 'right' },
+  className = 'l-section__container'
+) =>
+  classnames(
+    className,
+    width && `${className}--${width}`,
+    align && align !== 'center' && `${className}--${align}`,
+    gutter && gutter !== 'default' && `${className}--gutter-${gutter}`,
+    mode && mode !== 'default' && `${className}--${mode}`
+  );
 
 export { SectionProps };
 
@@ -41,6 +33,10 @@ export const SectionComponent: ForwardRefRenderFunction<
     spaceAfter = 'default',
     headline,
     width = 'default',
+    contentWidth = 'unset',
+    contentAlign = 'center',
+    headlineWidth = 'unset',
+    headlineAlign = contentAlign,
     gutter = 'default',
     mode = 'default',
     className,
@@ -67,15 +63,34 @@ export const SectionComponent: ForwardRefRenderFunction<
     ref={ref}
     {...props}
   >
-    {headline && headline.content && (
-      <SectionContainer width={width}>
-        <Headline align="center" {...headline} />
-      </SectionContainer>
-    )}
-    {children && (
-      <SectionContainer width={width} gutter={gutter} mode={mode}>
-        {children}
-      </SectionContainer>
-    )}
+    <div
+      className={containerClassName(
+        { width: width !== 'default' ? width : undefined },
+        'l-section__content'
+      )}
+    >
+      {headline && headline.content && (
+        <div
+          className={containerClassName({
+            width: headlineWidth !== 'unset' ? headlineWidth : undefined,
+            align: headlineAlign,
+          })}
+        >
+          <Headline align={headlineAlign} {...headline} />
+        </div>
+      )}
+      {children && (
+        <div
+          className={containerClassName({
+            width: contentWidth !== 'unset' ? contentWidth : undefined,
+            align: contentAlign,
+            gutter,
+            mode,
+          })}
+        >
+          {children}
+        </div>
+      )}
+    </div>
   </div>
 );
