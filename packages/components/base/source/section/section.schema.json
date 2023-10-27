@@ -52,42 +52,6 @@
       "enum": ["default", "tile", "list"],
       "default": "default"
     },
-    "content": {
-      "type": "array",
-      "title": "Content",
-      "description": "Allowed content for the section",
-      "items": {
-        "anyOf": [
-          {
-            "$ref": "http://schema.kickstartds.com/base/button.schema.json"
-          },
-          {
-            "$ref": "http://schema.kickstartds.com/base/tag-label.schema.json"
-          },
-          {
-            "$ref": "http://schema.kickstartds.com/base/contact.schema.json"
-          },
-          {
-            "$ref": "http://schema.kickstartds.com/base/collapsible-box.schema.json"
-          },
-          {
-            "$ref": "http://schema.kickstartds.com/base/content-box.schema.json"
-          },
-          {
-            "$ref": "http://schema.kickstartds.com/base/headline.schema.json"
-          },
-          {
-            "$ref": "http://schema.kickstartds.com/base/text-media.schema.json"
-          },
-          {
-            "$ref": "http://schema.kickstartds.com/base/teaser-box.schema.json"
-          },
-          {
-            "$ref": "http://schema.kickstartds.com/base/teaser-row.schema.json"
-          }
-        ]
-      }
-    },
     "background": {
       "type": "string",
       "title": "Background",
