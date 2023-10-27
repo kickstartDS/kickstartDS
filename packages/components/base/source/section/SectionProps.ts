@@ -5,16 +5,6 @@
  * and run `yarn run schema` to regenerate this file.
  */
 
-import type { ButtonProps } from '@kickstartds/base/lib/button/typing';
-import type { TagLabelProps } from '@kickstartds/base/lib/tag-label/typing';
-import type { ContactProps } from '@kickstartds/base/lib/contact/typing';
-import type { CollapsibleBoxProps } from '@kickstartds/base/lib/collapsible-box/typing';
-import type { ContentBoxProps } from '@kickstartds/base/lib/content-box/typing';
-import type { HeadlineProps } from '@kickstartds/base/lib/headline/typing';
-import type { TextMediaProps } from '@kickstartds/base/lib/text-media/typing';
-import type { TeaserBoxProps } from '@kickstartds/base/lib/teaser-box/typing';
-import type { TeaserRowProps } from '@kickstartds/base/lib/teaser-row/typing';
-
 /**
  * Width of section to use
  */
@@ -43,20 +33,6 @@ export type Gutter = 'large' | 'default' | 'small' | 'none';
  * Layout mode used for section contents
  */
 export type Mode = 'default' | 'tile' | 'list';
-/**
- * Allowed content for the section
- */
-export type Content = (
-  | ButtonProps
-  | TagLabelProps
-  | ContactProps
-  | CollapsibleBoxProps
-  | ContentBoxProps
-  | HeadlineProps
-  | TextMediaProps
-  | TeaserBoxProps
-  | TeaserRowProps
-)[];
 /**
  * Type of background
  */
@@ -122,7 +98,6 @@ export interface SectionProps {
   contentAlign?: ContentAlignment;
   gutter?: Gutter;
   mode?: Mode;
-  content?: Content;
   background?: Background;
   inverted?: Inverted;
   spaceBefore?: SpaceBefore;
