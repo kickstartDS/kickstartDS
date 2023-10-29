@@ -170,12 +170,15 @@ const bundleTs = async (tsPaths: string[]) => {
   const bundle = await rollup(inputOptions);
   const { output } = await bundle.write(outputOptions);
   for (const out of Object.values(output)) {
-    if (out.fileName.includes('/index.d.ts')) {
+    if (
+      out.fileName.includes('/index.d.ts') ||
+      out.fileName.includes('/typing.d.ts')
+    ) {
       const declaration = declarations.find((declaration) =>
         declaration.endsWith(out.fileName)
       );
       const regexComponentPath = new RegExp(
-        /\/([a-zA-Z0-9-_]+)\/lib\/([a-zA-Z0-9-_]+)\/index\.d\.ts/
+        /\/([a-zA-Z0-9-_]+)\/lib\/([a-zA-Z0-9-_]+)\/(index|typing)\.d\.ts/
       );
       const matches = declaration.match(regexComponentPath);
       const componentModule = kdsModules.includes(matches[1])
