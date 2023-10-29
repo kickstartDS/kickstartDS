@@ -159,6 +159,10 @@ const fixImportPaths = (
     .replace(
       /import\("\.\.\/(.*)\/typing\.js"\)/,
       `import("@kickstartds/${componentModule}/lib/$1/typing")`
+    )
+    .replace(
+      /from "\.\.\/(.*)\/typing\.js"/,
+      `from "@kickstartds/${componentModule}/lib/$1/typing"`
     );
 
 const bundleTs = async (tsPaths: string[]) => {
