@@ -5,6 +5,8 @@
  * and run `yarn run schema` to regenerate this file.
  */
 
+import type { HeadlineProps } from '@kickstartds/base/lib/headline/typing';
+
 /**
  * Width of section to use
  */
@@ -50,45 +52,13 @@ export type SpaceBefore = 'default' | 'small' | 'none';
  */
 export type SpaceAfter = 'default' | 'small' | 'none';
 /**
- * Select the headline level to use, or p alternatively
- */
-export type Level = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
-/**
- * Select the headline style to use
- */
-export type Style = 'none' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
-/**
- * Choose an alignment for the headline
- */
-export type Alignment = 'left' | 'center' | 'right';
-/**
- * Text content for the headline
- */
-export type Text = string;
-/**
- * Text content for the optional subheadline
- */
-export type Subheadline = string;
-/**
- * Add additional spacing to the bottom of the headline
- */
-export type BottomSpacing = 'minimum' | 'small' | 'large';
-/**
- * Add additional css classes that should be applied to the headline
- */
-export type AdditionalClasses = string;
-/**
- * Optional custom component identifier
- */
-export type KsComponentAttribute = string;
-/**
  * Add additional css classes that should be applied to the section
  */
 export type AdditionalClass = string;
 /**
  * Optional custom component identifier
  */
-export type KsComponentAttribute1 = string;
+export type KsComponentAttribute = string;
 
 export interface SectionProps {
   width?: Width;
@@ -102,20 +72,9 @@ export interface SectionProps {
   inverted?: Inverted;
   spaceBefore?: SpaceBefore;
   spaceAfter?: SpaceAfter;
-  headline?: Headline;
+  headline?: {
+    align?: string;
+  } & HeadlineProps;
   className?: AdditionalClass;
-  component?: KsComponentAttribute1;
-}
-/**
- * Headline
- */
-export interface Headline {
-  level?: Level;
-  styleAs?: Style;
-  align?: Alignment;
-  content: Text;
-  subheadline?: Subheadline;
-  spaceAfter?: BottomSpacing;
-  className?: AdditionalClasses;
   component?: KsComponentAttribute;
 }

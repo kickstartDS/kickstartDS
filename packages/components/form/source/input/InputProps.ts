@@ -5,6 +5,4 @@
  * and run `yarn run schema` to regenerate this file.
  */
 
-export interface InputProps {
-  [k: string]: unknown;
-}
+export interface InputProps {}

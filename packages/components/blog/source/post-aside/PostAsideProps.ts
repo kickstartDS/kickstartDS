@@ -5,27 +5,19 @@
  * and run `yarn run schema` to regenerate this file.
  */
 
-import type { PictureProps } from '@kickstartds/base/lib/picture/typing';
+import type { ContactProps } from '@kickstartds/base/lib/contact/typing';
 import type { PostMetaProps } from '@kickstartds/blog/lib/post-meta/typing';
 import type { PostShareBarProps } from '@kickstartds/blog/lib/post-share-bar/typing';
 
+export type Author = ContactProps & {
+  headline?: {
+    [k: string]: unknown;
+  } & Text;
+};
 /**
  * Text content for the headline
  */
 export type Text = string;
-/**
- * Name, company name, etc.
- */
-export type Title = string;
-/**
- * Position, profession, department, location, etc.
- */
-export type Subtitle = string;
-/**
- * Open link in new Tab
- */
-export type OpenLinkInNewTab = boolean;
-export type CopyText = string;
 /**
  * Additional css classes attached to the wrapping element
  */
@@ -34,20 +26,12 @@ export type Class = string;
  * Optional custom component identifier
  */
 export type KsComponentAttribute = string;
-/**
- * Additional css classes attached to the wrapping element
- */
-export type Class1 = string;
-/**
- * Optional custom component identifier
- */
-export type KsComponentAttribute1 = string;
 
 /**
  * Post Aside
  */
 export interface PostAsideProps {
-  author?: Contact;
+  author?: Author;
   /**
    * Referenced component PostMetaProps
    */
@@ -56,27 +40,6 @@ export interface PostAsideProps {
    * Referenced component PostShareBarProps
    */
   shareBar?: PostShareBarProps;
-  className?: Class1;
-  component?: KsComponentAttribute1;
-}
-/**
- * Component to show contact information
- */
-export interface Contact {
-  headline?: Text;
-  /**
-   * Referenced component PictureProps
-   */
-  image?: PictureProps;
-  title?: Title;
-  subtitle?: Subtitle;
-  links?: {
-    icon?: string;
-    label?: string;
-    href?: string;
-    newTab?: OpenLinkInNewTab;
-  }[];
-  copy?: CopyText;
   className?: Class;
   component?: KsComponentAttribute;
 }

@@ -9,7 +9,7 @@ import { Contact } from '@kickstartds/base/lib/contact';
 import classNames from 'classnames';
 import { PostShareBar } from '../post-share-bar';
 import { PostMeta } from '../post-meta';
-import type { PostAsideProps, Contact as AuthorProps } from './typing';
+import type { PostAsideProps, AuthorProps } from './typing';
 import './post-aside.scss';
 
 const Author: FunctionComponent<AuthorProps> = ({ headline, ...props }) => (

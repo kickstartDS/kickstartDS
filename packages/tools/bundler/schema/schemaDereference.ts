@@ -8,11 +8,10 @@ import {
 
 const dereference = async (schemaPath: string, schemaGlob: string) => {
   const ajv = getSchemaRegistry();
-  const schemaIds = await processSchemaGlob(schemaGlob, ajv, false, [
-    'base',
-    'blog',
-    'form',
-  ]);
+  const schemaIds = await processSchemaGlob(schemaGlob, ajv, {
+    typeResolution: false,
+    modules: ['base', 'blog', 'form'],
+  });
   const schemaId = schemaIds.find((schemaId) =>
     schemaId.endsWith(`/${path.basename(schemaPath)}`)
   );

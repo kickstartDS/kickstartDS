@@ -1,2 +1,2 @@
-import type { PostAsideProps, Contact } from './PostAsideProps';
-export { PostAsideProps, Contact };
+import type { PostAsideProps, Author as AuthorProps } from './PostAsideProps';
+export { PostAsideProps, AuthorProps };
