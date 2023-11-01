@@ -5,6 +5,8 @@
  * and run `yarn run schema` to regenerate this file.
  */
 
+import type { IconProps } from '@kickstartds/base/lib/icon/typing';
+
 /**
  * Text used on button
  */
@@ -22,20 +24,6 @@ export type ButtonSize = 'small' | 'medium' | 'large';
  * Link used for button
  */
 export type ButtonHref = string;
-export type IconIdentifier = string;
-export type AriaRole = string;
-export type AdditionalClass = string;
-/**
- * Optional custom component identifier
- */
-export type KsComponentAttribute = string;
-export type IconIdentifier1 = string;
-export type AriaRole1 = string;
-export type AdditionalClass1 = string;
-/**
- * Optional custom component identifier
- */
-export type KsComponentAttribute1 = string;
 /**
  * Add fill animation on hover
  */
@@ -71,7 +59,7 @@ export type AdditionalClasses = string;
 /**
  * Optional custom component identifier
  */
-export type KsComponentAttribute2 = string;
+export type KsComponentAttribute = string;
 
 /**
  * Component to display links and call-to-actions
@@ -82,8 +70,8 @@ export interface ButtonProps {
   inverted?: Inverted;
   size?: ButtonSize;
   href?: ButtonHref;
-  iconBefore?: IconBeforeButton;
-  iconAfter?: IconAfterButton;
+  iconBefore?: IconBeforeButton & IconProps;
+  iconAfter?: IconAfterButton & IconProps;
   fillAnimation?: FillAnimation;
   iconAnimation?: IconAnimation;
   type?: TypeAttribute;
@@ -92,23 +80,17 @@ export interface ButtonProps {
   disabled?: DisabledAttribute;
   newTab?: OpenLinkInNewTab;
   className?: AdditionalClasses;
-  component?: KsComponentAttribute2;
+  component?: KsComponentAttribute;
 }
 /**
  * Icon identifier for icon before the button text
  */
 export interface IconBeforeButton {
-  icon: IconIdentifier;
-  role?: AriaRole;
-  className?: AdditionalClass;
-  component?: KsComponentAttribute;
+  [k: string]: unknown;
 }
 /**
  * Icon identifier for icon after the button text
  */
 export interface IconAfterButton {
-  icon: IconIdentifier1;
-  role?: AriaRole1;
-  className?: AdditionalClass1;
-  component?: KsComponentAttribute1;
+  [k: string]: unknown;
 }

@@ -31,11 +31,11 @@ const createTypes = async (schemaId: string, schemaGlob: string) => {
   const schemaPaths: string[] = await fg(schemaGlob);
 
   const ajv = getSchemaRegistry();
-  const schemaIds = await processSchemaGlob(schemaGlob, ajv, false, [
-    'base',
-    'blog',
-    'form',
-  ]);
+  const schemaIds = await processSchemaGlob(schemaGlob, ajv, {
+    typeResolution: false,
+    modules: ['base', 'blog', 'form'],
+    mergeAllOf: false,
+  });
 
   // TODO `style` should be loaded from `${root}/.prettierrc` again
   // https://github.com/kickstartDS/schema/issues/15

@@ -3261,10 +3261,10 @@
     mkdirp "^1.0.4"
     prettier "^2.6.2"
 
-"@kickstartds/jsonschema-utils@2.5.0", "@kickstartds/jsonschema-utils@^2.5.0":
-  version "2.5.0"
-  resolved "https://registry.npmjs.org/@kickstartds/jsonschema-utils/-/jsonschema-utils-2.5.0.tgz#be5887b7173048b193cda2001a798c03aaadd1b3"
-  integrity sha512-JkCgrfSrFOdNtPqVxybWTTLY8Sd63emDH7EPQndQKyIg4KqambZFB4BTtoWKc3H9SmTndMPA68x5Myxhw9t70g==
+"@kickstartds/jsonschema-utils@2.8.0", "@kickstartds/jsonschema-utils@^2.8.0":
+  version "2.8.0"
+  resolved "https://registry.npmjs.org/@kickstartds/jsonschema-utils/-/jsonschema-utils-2.8.0.tgz#6012579ddb9b612922747531ffcfb1a7fbfd6a7e"
+  integrity sha512-qarjmTEr1zcKYXz7v7ccptZrxpx5IA0BAEqdIEPJHHPjuFHIfL39dCfaiiwKrSdVOiKWguItNjQCZJNuL37bVg==
   dependencies:
     "@bcherny/json-schema-ref-parser" "10.0.5-fork"
     ajv "^8.12.0"
@@ -3275,14 +3275,15 @@
     jsonpointer "~5.0.1"
     lodash "^4.17.21"
     ramda "^0.28.0"
+    typescript-graph "^0.3.0"
 
-"@kickstartds/jsonschema2types@^1.1.13":
-  version "1.1.13"
-  resolved "https://registry.npmjs.org/@kickstartds/jsonschema2types/-/jsonschema2types-1.1.13.tgz#2c6fad567d52c0edfcafed737b113234fdcfc931"
-  integrity sha512-s8W7Jizkv8/1PPBdLN2GVg9Vl3dhPW05ScjpG5TVy027tlfN+VLpvUmsjqfKhGwP/lJyLWK2VXW5Dj/9b36wYg==
+"@kickstartds/jsonschema2types@^1.1.19":
+  version "1.1.19"
+  resolved "https://registry.npmjs.org/@kickstartds/jsonschema2types/-/jsonschema2types-1.1.19.tgz#0e8e50983bdc9ff5c8accf3e044717b1ab9912ec"
+  integrity sha512-PYTunWbv9vN6zMNVMjreYlHOa6vpvopud+RPGTDipQ/77QuBTkcrzH+2YeeM7X+z+MsHchvUnZQevW1dcV70Uw==
   dependencies:
     "@kickstartds/json-schema-to-typescript" "~13.1.20"
-    "@kickstartds/jsonschema-utils" "2.5.0"
+    "@kickstartds/jsonschema-utils" "2.8.0"
     ajv "^8.12.0"
     object-traversal "^1.0.1"
 
@@ -14395,6 +14396,11 @@ object-assign@^4.0.1, object-assign@^4.1.0, object-assign@^4.1.1:
   resolved "https://registry.npmjs.org/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
   integrity sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg==
 
+object-hash@^2.0.3:
+  version "2.2.0"
+  resolved "https://registry.npmjs.org/object-hash/-/object-hash-2.2.0.tgz#5ad518581eefc443bd763472b8ff2e9c2c0d54a5"
+  integrity sha512-gScRMn0bS5fH+IuwyIFgnh9zBdo4DV+6GhygmWM9HyNJSgS0hScp1f5vjtm7oIIOiT9trXrShAkLFSc2IqKNgw==
+
 object-inspect@^1.12.3, object-inspect@^1.9.0:
   version "1.12.3"
   resolved "https://registry.npmjs.org/object-inspect/-/object-inspect-1.12.3.tgz#ba62dffd67ee256c8c086dfae69e016cd1f198b9"
@@ -18768,6 +18774,13 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.npmjs.org/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha512-/aCDEGatGvZ2BIk+HmLf4ifCJFwvKFNb9/JeZPMulfgFracn9QFcAf5GO8B/mweUjSoblS5In0cWhqpfs/5PQA==
+
+typescript-graph@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.npmjs.org/typescript-graph/-/typescript-graph-0.3.0.tgz#ead0bcdcba18c6211a578487f2d7367d12dc7989"
+  integrity sha512-9OuXEs8QksTao7Aa76sxOtlAZbnjyf1mjG0KO+TFKtG/PaWmnIGrr33gsyc35nfwyNKGHpv6tumW56/DY/68vA==
+  dependencies:
+    object-hash "^2.0.3"
 
 typescript-memoize@^1.0.0-alpha.3:
   version "1.1.1"
