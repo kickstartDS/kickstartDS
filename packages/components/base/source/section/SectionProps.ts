@@ -12,14 +12,6 @@ import type { HeadlineProps } from '@kickstartds/base/lib/headline/typing';
  */
 export type Width = 'narrow' | 'default' | 'wide' | 'max' | 'full';
 /**
- * Width of headline to use
- */
-export type HeadlineWidth = 'unset' | 'narrow' | 'default' | 'wide';
-/**
- * Choose an alignment for the headline
- */
-export type HeadlineAlignment = 'left' | 'center' | 'right';
-/**
  * Width of content to use
  */
 export type ContentWidth = 'unset' | 'narrow' | 'default' | 'wide';
@@ -52,6 +44,15 @@ export type SpaceBefore = 'default' | 'small' | 'none';
  */
 export type SpaceAfter = 'default' | 'small' | 'none';
 /**
+ * Width of headline to use
+ */
+export type HeadlineBoxWidth = 'unset' | 'narrow' | 'default' | 'wide';
+/**
+ * Choose an alignment for the headline
+ */
+export type HeadlineBoxAlignment = 'left' | 'center' | 'right';
+export type TextAlignment = 'left' | 'center' | 'right';
+/**
  * Add additional css classes that should be applied to the section
  */
 export type AdditionalClass = string;
@@ -62,18 +63,20 @@ export type KsComponentAttribute = string;
 
 export interface SectionProps {
   width?: Width;
-  headlineWidth?: HeadlineWidth;
-  headlineAlign?: HeadlineAlignment;
-  contentWidth?: ContentWidth;
-  contentAlign?: ContentAlignment;
-  gutter?: Gutter;
-  mode?: Mode;
+  content?: {
+    width?: ContentWidth;
+    align?: ContentAlignment;
+    gutter?: Gutter;
+    mode?: Mode;
+  };
   background?: Background;
   inverted?: Inverted;
   spaceBefore?: SpaceBefore;
   spaceAfter?: SpaceAfter;
   headline?: {
-    align?: string;
+    width?: HeadlineBoxWidth;
+    align?: HeadlineBoxAlignment;
+    textAlign?: TextAlignment;
   } & HeadlineProps;
   className?: AdditionalClass;
   component?: KsComponentAttribute;
