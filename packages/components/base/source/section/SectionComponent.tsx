@@ -9,7 +9,12 @@ const containerClassName = (
     align,
     gutter,
     mode,
-  }: SectionProps & { align?: 'left' | 'center' | 'right' },
+  }: {
+    width?: SectionProps['width'];
+    gutter?: SectionProps['content']['gutter'];
+    mode?: SectionProps['content']['mode'];
+    align?: SectionProps['content']['align'];
+  },
   className = 'l-section__container'
 ) =>
   classnames(
@@ -24,73 +29,85 @@ export { SectionProps };
 
 export const SectionComponent: ForwardRefRenderFunction<
   HTMLDivElement,
-  SectionProps & HTMLAttributes<HTMLDivElement>
+  SectionProps & Omit<HTMLAttributes<HTMLDivElement>, 'content'>
 > = (
   {
     background = 'default',
     inverted,
     spaceBefore = 'default',
     spaceAfter = 'default',
-    headline,
     width = 'default',
-    contentWidth = 'unset',
-    contentAlign = 'center',
-    headlineWidth = 'unset',
-    headlineAlign = contentAlign,
-    gutter = 'default',
-    mode = 'default',
+    content = {} as SectionProps['content'],
+    headline = {} as SectionProps['headline'],
     className,
     component,
     children,
     ...props
   },
   ref
-) => (
-  <div
-    className={classnames(
-      'l-section',
-      background && background !== 'default' && `l-section--${background}`,
-      spaceBefore &&
-        spaceBefore !== 'default' &&
-        `l-section--space-before-${spaceBefore}`,
-      spaceAfter &&
-        spaceAfter !== 'default' &&
-        `l-section--space-after-${spaceAfter}`,
-      className
-    )}
-    ks-inverted={inverted?.toString()}
-    ks-component={component}
-    ref={ref}
-    {...props}
-  >
+) => {
+  const {
+    width: contentWidth = 'unset',
+    align: contentAlign = 'center',
+    gutter = 'default',
+    mode = 'default',
+  } = content;
+  const {
+    width: headlineWidth = 'unset',
+    align: headlineAlign = contentAlign,
+    textAlign: headlineTextAlign,
+    ...headlineProps
+  } = headline;
+  return (
     <div
-      className={containerClassName(
-        { width: width !== 'default' ? width : undefined },
-        'l-section__content'
+      className={classnames(
+        'l-section',
+        background && background !== 'default' && `l-section--${background}`,
+        spaceBefore &&
+          spaceBefore !== 'default' &&
+          `l-section--space-before-${spaceBefore}`,
+        spaceAfter &&
+          spaceAfter !== 'default' &&
+          `l-section--space-after-${spaceAfter}`,
+        className
       )}
+      ks-inverted={inverted?.toString()}
+      ks-component={component}
+      ref={ref}
+      {...props}
     >
-      {headline && headline.content && (
-        <div
-          className={containerClassName({
-            width: headlineWidth !== 'unset' ? headlineWidth : undefined,
-            align: headlineAlign,
-          })}
-        >
-          <Headline align={headlineAlign} {...headline} />
-        </div>
-      )}
-      {children && (
-        <div
-          className={containerClassName({
-            width: contentWidth !== 'unset' ? contentWidth : undefined,
-            align: contentAlign,
-            gutter,
-            mode,
-          })}
-        >
-          {children}
-        </div>
-      )}
+      <div
+        className={containerClassName(
+          { width: width !== 'default' ? width : undefined },
+          'l-section__content'
+        )}
+      >
+        {headlineProps && headlineProps.content && (
+          <div
+            className={containerClassName({
+              width: headlineWidth !== 'unset' ? headlineWidth : undefined,
+              align: headlineAlign,
+            })}
+          >
+            <Headline
+              align={headlineTextAlign || headlineAlign}
+              {...headlineProps}
+            />
+          </div>
+        )}
+        {children && (
+          <div
+            className={containerClassName({
+              width: contentWidth !== 'unset' ? contentWidth : undefined,
+              align: contentAlign,
+              gutter,
+              mode,
+            })}
+          >
+            {children}
+          </div>
+        )}
+      </div>
     </div>
-  </div>
-);
+  );
+};

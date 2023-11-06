@@ -11,46 +11,38 @@
       "enum": ["narrow", "default", "wide", "max", "full"],
       "default": "default"
     },
-    "headlineWidth": {
-      "type": "string",
-      "title": "Headline Width",
-      "description": "Width of headline to use",
-      "enum": ["unset", "narrow", "default", "wide"],
-      "default": "unset"
-    },
-    "headlineAlign": {
-      "title": "Headline Alignment",
-      "description": "Choose an alignment for the headline",
-      "type": "string",
-      "enum": ["left", "center", "right"]
-    },
-    "contentWidth": {
-      "type": "string",
-      "title": "Content Width",
-      "description": "Width of content to use",
-      "enum": ["unset", "narrow", "default", "wide"],
-      "default": "unset"
-    },
-    "contentAlign": {
-      "title": "Content Alignment",
-      "description": "Choose an alignment for the content",
-      "type": "string",
-      "enum": ["left", "center", "right"],
-      "default": "center"
-    },
-    "gutter": {
-      "type": "string",
-      "title": "Gutter",
-      "description": "Size of gutter to use",
-      "enum": ["large", "default", "small", "none"],
-      "default": "default"
-    },
-    "mode": {
-      "type": "string",
-      "title": "Mode",
-      "description": "Layout mode used for section contents",
-      "enum": ["default", "tile", "list"],
-      "default": "default"
+    "content": {
+      "type": "object",
+      "properties": {
+        "width": {
+          "type": "string",
+          "title": "Content Width",
+          "description": "Width of content to use",
+          "enum": ["unset", "narrow", "default", "wide"],
+          "default": "unset"
+        },
+        "align": {
+          "title": "Content Alignment",
+          "description": "Choose an alignment for the content",
+          "type": "string",
+          "enum": ["left", "center", "right"],
+          "default": "center"
+        },
+        "gutter": {
+          "type": "string",
+          "title": "Gutter",
+          "description": "Size of gutter to use",
+          "enum": ["large", "default", "small", "none"],
+          "default": "default"
+        },
+        "mode": {
+          "type": "string",
+          "title": "Mode",
+          "description": "Layout mode used for section contents",
+          "enum": ["default", "tile", "list"],
+          "default": "default"
+        }
+      }
     },
     "background": {
       "type": "string",
@@ -84,9 +76,24 @@
         {
           "type": "object",
           "properties": {
-            "align": {
+            "width": {
               "type": "string",
+              "title": "Headline Box Width",
+              "description": "Width of headline to use",
+              "enum": ["unset", "narrow", "default", "wide"],
+              "default": "unset"
+            },
+            "align": {
+              "title": "Headline Box Alignment",
+              "description": "Choose an alignment for the headline",
+              "type": "string",
+              "enum": ["left", "center", "right"],
               "default": null
+            },
+            "textAlign": {
+              "title": "Text Alignment",
+              "type": "string",
+              "enum": ["left", "center", "right"]
             }
           }
         },
