@@ -41,6 +41,11 @@
           "description": "Layout mode used for section contents",
           "enum": ["default", "tile", "list"],
           "default": "default"
+        },
+        "className": {
+          "type": "string",
+          "title": "Additional Content Class",
+          "description": "Additional css classes that should be applied to the content section container"
         }
       }
     },
@@ -94,6 +99,11 @@
               "title": "Text Alignment",
               "type": "string",
               "enum": ["left", "center", "right"]
+            },
+            "className": {
+              "type": "string",
+              "title": "Additional Headline Class",
+              "description": "Additional css classes that should be applied to the headline section container"
             }
           }
         },

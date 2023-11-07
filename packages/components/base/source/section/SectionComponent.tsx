@@ -15,10 +15,12 @@ const containerClassName = (
     mode?: SectionProps['content']['mode'];
     align?: SectionProps['content']['align'];
   },
-  className = 'l-section__container'
+  className: string,
+  ...additionalClassNames: string[]
 ) =>
   classnames(
     className,
+    ...additionalClassNames,
     width && `${className}--${width}`,
     align && align !== 'center' && `${className}--${align}`,
     gutter && gutter !== 'default' && `${className}--gutter-${gutter}`,
@@ -51,11 +53,13 @@ export const SectionComponent: ForwardRefRenderFunction<
     align: contentAlign = 'center',
     gutter = 'default',
     mode = 'default',
+    className: contentClassName,
   } = content;
   const {
     width: headlineWidth = 'unset',
     align: headlineAlign = contentAlign,
     textAlign: headlineTextAlign,
+    className: headlineClassName,
     ...headlineProps
   } = headline;
   return (
@@ -84,10 +88,15 @@ export const SectionComponent: ForwardRefRenderFunction<
       >
         {headlineProps && headlineProps.content && (
           <div
-            className={containerClassName({
-              width: headlineWidth !== 'unset' ? headlineWidth : undefined,
-              align: headlineAlign,
-            })}
+            className={containerClassName(
+              {
+                width: headlineWidth !== 'unset' ? headlineWidth : undefined,
+                align: headlineAlign,
+              },
+              'l-section__container',
+              'l-section__container--headline',
+              headlineClassName
+            )}
           >
             <Headline
               align={headlineTextAlign || headlineAlign}
@@ -97,12 +106,17 @@ export const SectionComponent: ForwardRefRenderFunction<
         )}
         {children && (
           <div
-            className={containerClassName({
-              width: contentWidth !== 'unset' ? contentWidth : undefined,
-              align: contentAlign,
-              gutter,
-              mode,
-            })}
+            className={containerClassName(
+              {
+                width: contentWidth !== 'unset' ? contentWidth : undefined,
+                align: contentAlign,
+                gutter,
+                mode,
+              },
+              'l-section__container',
+              'l-section__container--content',
+              contentClassName
+            )}
           >
             {children}
           </div>

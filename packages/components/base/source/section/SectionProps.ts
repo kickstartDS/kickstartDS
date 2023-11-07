@@ -28,6 +28,10 @@ export type Gutter = 'large' | 'default' | 'small' | 'none';
  */
 export type Mode = 'default' | 'tile' | 'list';
 /**
+ * Additional css classes that should be applied to the content section container
+ */
+export type AdditionalContentClass = string;
+/**
  * Type of background
  */
 export type Background = 'default' | 'accent' | 'bold';
@@ -53,6 +57,10 @@ export type HeadlineBoxWidth = 'unset' | 'narrow' | 'default' | 'wide';
 export type HeadlineBoxAlignment = 'left' | 'center' | 'right';
 export type TextAlignment = 'left' | 'center' | 'right';
 /**
+ * Additional css classes that should be applied to the headline section container
+ */
+export type AdditionalHeadlineClass = string;
+/**
  * Add additional css classes that should be applied to the section
  */
 export type AdditionalClass = string;
@@ -68,6 +76,7 @@ export interface SectionProps {
     align?: ContentAlignment;
     gutter?: Gutter;
     mode?: Mode;
+    className?: AdditionalContentClass;
   };
   background?: Background;
   inverted?: Inverted;
@@ -77,6 +86,7 @@ export interface SectionProps {
     width?: HeadlineBoxWidth;
     align?: HeadlineBoxAlignment;
     textAlign?: TextAlignment;
+    className?: AdditionalHeadlineClass;
   } & HeadlineProps;
   className?: AdditionalClass;
   component?: KsComponentAttribute;
