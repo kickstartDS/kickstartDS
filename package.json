@@ -23,7 +23,7 @@
     "docusaurus-build": "yarn workspace @kickstartds-internal/docusaurus build",
     "eslint": "eslint \"**/*.{js,jsx,ts,tsx}\"",
     "find-licenses": "node ./scripts/license.js",
-    "format": "prettier --cache --write .",
+    "format": "prettier --cache --list-different --write . || true",
     "git-config": "git config --local include.path ../.gitconfig",
     "husky-commit-msg": "commitlint -E GIT_PARAMS",
     "husky-pre-commit": "yarn run schema && git add packages/*/*/source/**/*Props.ts && lint-staged",
