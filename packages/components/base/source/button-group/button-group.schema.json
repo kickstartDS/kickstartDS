@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.kickstartds.com/base/button-group.schema.json",
+  "title": "Button Group",
+  "description": "Component to display a group of links and call-to-actions",
+  "type": "object",
+  "properties": {
+    "items": {
+      "title": "Buttons",
+      "description": "Buttons of the Button Group",
+      "type": "array",
+      "items": {
+        "$ref": "http://schema.kickstartds.com/base/button.schema.json"
+      }
+    },
+    "align": {
+      "title": "Vertical Alignment",
+      "description": "Vertical alignment of the buttons",
+      "type": "string",
+      "enum": ["left", "center", "right", "space-between", "grow"],
+      "default": "left"
+    },
+    "className": {
+      "title": "Additional Classes",
+      "description": "Add additional css classes that should be applied to the button",
+      "type": "string"
+    },
+    "component": {
+      "title": "`ks-component` attribute",
+      "description": "Optional custom component identifier",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

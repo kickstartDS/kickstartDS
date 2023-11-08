@@ -1,0 +1,9 @@
+$name-: 'c-button-group';
+
+$host: (
+  '.c-button-group': (
+    button-min-width: 0,
+    vertical-gutter: var(--ks-spacing-stack-m),
+    horizontal-gutter: var(--ks-spacing-inline-s),
+  ),
+) !default;
