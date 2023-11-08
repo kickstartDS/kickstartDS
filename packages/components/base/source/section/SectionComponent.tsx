@@ -1,6 +1,7 @@
 import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
 import { Headline } from '../headline';
+import { ButtonGroup } from '../button-group';
 import type { SectionProps } from './typing';
 
 const containerClassName = (
@@ -41,6 +42,7 @@ export const SectionComponent: ForwardRefRenderFunction<
     width = 'default',
     content = {} as SectionProps['content'],
     headline = {} as SectionProps['headline'],
+    buttons = {} as SectionProps['buttons'],
     className,
     component,
     children,
@@ -62,6 +64,8 @@ export const SectionComponent: ForwardRefRenderFunction<
     className: headlineClassName,
     ...headlineProps
   } = headline;
+  const { align: buttonsAlign = contentAlign, className: buttonsClassName } =
+    buttons;
   return (
     <div
       className={classnames(
@@ -82,7 +86,7 @@ export const SectionComponent: ForwardRefRenderFunction<
     >
       <div
         className={containerClassName(
-          { width: width !== 'default' ? width : undefined },
+          { width: width !== 'default' ? width : undefined, gutter },
           'l-section__content'
         )}
       >
@@ -99,8 +103,8 @@ export const SectionComponent: ForwardRefRenderFunction<
             )}
           >
             <Headline
-              align={headlineTextAlign || headlineAlign}
               {...headlineProps}
+              align={headlineTextAlign || headlineAlign}
             />
           </div>
         )}
@@ -110,7 +114,6 @@ export const SectionComponent: ForwardRefRenderFunction<
               {
                 width: contentWidth !== 'unset' ? contentWidth : undefined,
                 align: contentAlign,
-                gutter,
                 mode,
               },
               'l-section__container',
@@ -119,6 +122,21 @@ export const SectionComponent: ForwardRefRenderFunction<
             )}
           >
             {children}
+          </div>
+        )}
+        {buttons.items && buttons.items.length > 0 && (
+          <div
+            className={containerClassName(
+              {
+                width: contentWidth !== 'unset' ? contentWidth : undefined,
+                align: contentAlign,
+              },
+              'l-section__container',
+              'l-section__container--buttons',
+              buttonsClassName
+            )}
+          >
+            <ButtonGroup {...buttons} align={buttonsAlign} />
           </div>
         )}
       </div>
