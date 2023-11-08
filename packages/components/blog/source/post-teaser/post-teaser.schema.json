@@ -22,7 +22,7 @@
           }
         },
         {
-          "$ref": "http://schema.kickstartds.com/base/picture.definitions.json"
+          "$ref": "http://schema.kickstartds.com/base/picture.schema.json"
         }
       ]
     },

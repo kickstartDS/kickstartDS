@@ -8,7 +8,7 @@ module.exports = {
       svgAttrs: {
         xmlns: 'http://www.w3.org/2000/svg',
         'xmlns:xlink': 'http://www.w3.org/1999/xlink',
-        hidden: '',
+        hidden: 'hidden',
         height: '0',
         width: '0',
       },

@@ -8,57 +8,45 @@
       "type": "string",
       "title": "Width",
       "description": "Width of section to use",
-      "enum": ["full", "max", "wide", "default", "narrow"],
-      "default": "default"
-    },
-    "gutter": {
-      "type": "string",
-      "title": "Gutter",
-      "description": "Size of gutter to use",
-      "enum": ["large", "default", "small", "none"],
-      "default": "default"
-    },
-    "mode": {
-      "type": "string",
-      "title": "Mode",
-      "description": "Layout mode used for section contents",
-      "enum": ["default", "tile", "list"],
+      "enum": ["narrow", "default", "wide", "max", "full"],
       "default": "default"
     },
     "content": {
-      "type": "array",
-      "title": "Content",
-      "description": "Allowed content for the section",
-      "items": {
-        "anyOf": [
-          {
-            "$ref": "http://schema.kickstartds.com/base/button.schema.json"
-          },
-          {
-            "$ref": "http://schema.kickstartds.com/base/tag-label.schema.json"
-          },
-          {
-            "$ref": "http://schema.kickstartds.com/base/contact.schema.json"
-          },
-          {
-            "$ref": "http://schema.kickstartds.com/base/collapsible-box.schema.json"
-          },
-          {
-            "$ref": "http://schema.kickstartds.com/base/content-box.schema.json"
-          },
-          {
-            "$ref": "http://schema.kickstartds.com/base/headline.schema.json"
-          },
-          {
-            "$ref": "http://schema.kickstartds.com/base/text-media.schema.json"
-          },
-          {
-            "$ref": "http://schema.kickstartds.com/base/teaser-box.schema.json"
-          },
-          {
-            "$ref": "http://schema.kickstartds.com/base/teaser-row.schema.json"
-          }
-        ]
+      "type": "object",
+      "properties": {
+        "width": {
+          "type": "string",
+          "title": "Content Width",
+          "description": "Width of content to use",
+          "enum": ["unset", "narrow", "default", "wide"],
+          "default": "unset"
+        },
+        "align": {
+          "title": "Content Alignment",
+          "description": "Choose an alignment for the content",
+          "type": "string",
+          "enum": ["left", "center", "right"],
+          "default": "center"
+        },
+        "gutter": {
+          "type": "string",
+          "title": "Gutter",
+          "description": "Size of gutter to use",
+          "enum": ["large", "default", "small", "none"],
+          "default": "default"
+        },
+        "mode": {
+          "type": "string",
+          "title": "Mode",
+          "description": "Layout mode used for section contents",
+          "enum": ["default", "tile", "list"],
+          "default": "default"
+        },
+        "className": {
+          "type": "string",
+          "title": "Additional Content Class",
+          "description": "Additional css classes that should be applied to the content section container"
+        }
       }
     },
     "background": {
@@ -93,9 +81,29 @@
         {
           "type": "object",
           "properties": {
-            "align": {
+            "width": {
               "type": "string",
-              "default": "center"
+              "title": "Headline Box Width",
+              "description": "Width of headline to use",
+              "enum": ["unset", "narrow", "default", "wide"],
+              "default": "unset"
+            },
+            "align": {
+              "title": "Headline Box Alignment",
+              "description": "Choose an alignment for the headline",
+              "type": "string",
+              "enum": ["left", "center", "right"],
+              "default": null
+            },
+            "textAlign": {
+              "title": "Text Alignment",
+              "type": "string",
+              "enum": ["left", "center", "right"]
+            },
+            "className": {
+              "type": "string",
+              "title": "Additional Headline Class",
+              "description": "Additional css classes that should be applied to the headline section container"
             }
           }
         },

@@ -11,10 +11,10 @@
     "packages/tools/*"
   ],
   "scripts": {
-    "build": "lerna run --stream --no-prefix --scope @kickstartds/* build",
+    "build": "lerna run --stream --no-prefix --verbose --scope @kickstartds/* build",
     "build:prod": "NODE_ENV=production yarn run build",
     "copy-env-file": "[ ! -f .env ] && cp .env-example .env || true",
-    "chromatic": "yarn workspace @kickstartds-internal/storybook chromatic",
+    "chromatic": "yarn workspace @kickstartds/bundler run tsc && yarn workspace @kickstartds-internal/storybook run tsc && yarn workspace @kickstartds-internal/storybook chromatic",
     "chromatic-base": "yarn workspace @kickstartds-internal/storybook chromatic-base",
     "chromatic-blog": "yarn workspace @kickstartds-internal/storybook chromatic-blog",
     "chromatic-content": "yarn workspace @kickstartds-internal/storybook chromatic-content",
@@ -23,22 +23,22 @@
     "docusaurus-build": "yarn workspace @kickstartds-internal/docusaurus build",
     "eslint": "eslint \"**/*.{js,jsx,ts,tsx}\"",
     "find-licenses": "node ./scripts/license.js",
-    "format": "prettier --cache --write .",
+    "format": "prettier --cache --list-different --write . || true",
     "git-config": "git config --local include.path ../.gitconfig",
     "husky-commit-msg": "commitlint -E GIT_PARAMS",
     "husky-pre-commit": "yarn run schema && git add packages/*/*/source/**/*Props.ts && lint-staged",
     "lint": "run-p eslint stylelint",
     "list": "lerna la",
     "postinstall": "run-p git-config copy-env-file",
-    "schema": "lerna run --parallel --no-prefix schema",
+    "schema": "lerna run --parallel schema",
     "staged": "git diff --name-only --cached | grep '@kickstartds' | cut -d / -f 3 | awk '!seen[$0]++'",
     "start": "run-p watch \"storybook start\"",
     "storybook": "yarn workspace @kickstartds-internal/storybook storybook",
     "storybook:build": "yarn run storybook build",
     "storybook:debug": "yarn run storybook debug",
     "stylelint": "stylelint \"**/*.scss\"",
-    "prepare": "husky install",
-    "watch": "lerna run --parallel --no-prefix watch",
+    "prepare": "patch-package && husky install && yarn workspace @kickstartds/bundler run tsc && yarn workspace @kickstartds-internal/storybook run tsc",
+    "watch": "lerna run --parallel --verbose watch",
     "watch-tokens": "sass --watch --load-path=node_modules packages/components/core/source/design-tokens/tokens.scss packages/components/core/lib/design-tokens/tokens.css"
   },
   "lint-staged": {
@@ -58,9 +58,10 @@
     "fast-glob": "^3.2.12",
     "fs-extra": "^11.1.1",
     "license-checker": "^25.0.1",
-    "postcss": "^8.4.23",
+    "postcss": "^8.4.31",
     "postcss-scss": "^4.0.6",
-    "react": "^18.2.0"
+    "react": "^18.2.0",
+    "typescript": "^5.0.4"
   },
   "devDependencies": {
     "@auto-it/all-contributors": "^10.46.0",
@@ -69,6 +70,7 @@
     "@auto-it/released": "^10.46.0",
     "@commitlint/cli": "^17.6.3",
     "@commitlint/config-conventional": "^17.6.3",
+    "@types/node": "^20.7.1",
     "@types/react": "^18.2.6",
     "@types/react-dom": "^18.2.4",
     "auto": "^10.46.0",
@@ -77,11 +79,13 @@
     "eslint": "^8.40.0",
     "eslint-import-resolver-lerna": "^2.0.0",
     "husky": "^8.0.3",
-    "lerna": "^5.6.2",
+    "lerna": "^7.3.0",
     "lint-staged": "^13.2.2",
     "npm-run-all": "^4.1.5",
+    "patch-package": "^8.0.0",
+    "postinstall-postinstall": "^2.1.0",
     "prettier": "^2.8.8",
-    "stylelint": "^15.6.1"
+    "stylelint": "^15.10.3"
   },
   "publishConfig": {
     "access": "public",

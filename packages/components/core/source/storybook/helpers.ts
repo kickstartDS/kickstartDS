@@ -7,27 +7,26 @@ import type {
 import type {
   ArgTypes,
   Args,
+  Conditional,
   DecoratorFunction,
   InputType,
   SBType,
 } from '@storybook/types';
+import type { ReactRenderer } from '@storybook/react';
 
 const definitionIsSchema = (
   schema: JSONSchema7Definition | JSONSchema7Definition[]
 ): schema is JSONSchema7 =>
   !Array.isArray(schema) && typeof schema !== 'boolean';
 
-const getTypeName = (
-  schemaType: JSONSchema7TypeName | JSONSchema7TypeName[]
-) => {
-  const typeName = Array.isArray(schemaType) ? schemaType[0] : schemaType;
-  switch (typeName) {
+const getTypeName = (schemaType: JSONSchema7TypeName) => {
+  switch (schemaType) {
     case 'null':
       return 'object';
     case 'integer':
       return 'number';
     default:
-      return typeName;
+      return schemaType;
   }
 };
 
@@ -37,6 +36,9 @@ const getArgsShared = (
   const argTypes: ArgTypes = {};
   const args: Args = {};
 
+  const hideArgType = (name: string) => {
+    argTypes[name] = { table: { disable: true } };
+  };
   const getArgTypes = (
     schema: JSONSchema7,
     name?: string,
@@ -44,31 +46,43 @@ const getArgsShared = (
     subcategory?: string,
     required?: boolean,
     defaultValue = schema.default,
-    example = schema.examples?.[0]
+    example = schema.examples?.[0],
+    condition?: Conditional & { gt?: number }
   ) => {
     if ('const' in schema) return;
+    if (defaultValue == null) defaultValue = undefined;
+
+    const schemaType = Array.isArray(schema.type)
+      ? schema.type[0]
+      : schema.type;
 
     const add = (typeProps: InputType) => {
+      if (!name) return;
+
       argTypes[name] = {
-        name,
-        description: `**${schema.title}${schema.description ? ':' : ''}**${
-          schema.description ? `\n\n${schema.description}` : ''
-        }`,
+        name: name.replace(/__/, '.'),
+        description: schema.title
+          ? `**${schema.title}${schema.description ? ':' : ''}**${
+              schema.description ? `\n\n${schema.description}` : ''
+            }`
+          : undefined,
         type: {
           required,
-          name: getTypeName(schema.type),
+          name: getTypeName(schemaType),
         } as SBType,
         table: {
           category: category ?? 'general',
           defaultValue: { summary: defaultValue },
           subcategory,
         },
+        if: condition,
         ...typeProps,
       };
-      args[name] = example ?? defaultValue;
+      const arg = example ?? defaultValue;
+      if (arg != null) args[name] = arg;
     };
 
-    switch (schema.type) {
+    switch (schemaType) {
       case 'string':
         add({
           options:
@@ -111,6 +125,8 @@ const getArgsShared = (
 
       case 'object':
         if (schema.properties) {
+          hideArgType(name);
+
           const cat = category ?? name;
           Object.entries(schema.properties).forEach(
             ([propName, propSchema]) => {
@@ -128,7 +144,8 @@ const getArgsShared = (
                   subcat,
                   schema.required?.includes(propName),
                   defaultValue?.[propName] ?? schema.default?.[propName],
-                  example?.[propName] ?? schema.examples?.[0][propName]
+                  example?.[propName] ?? schema.examples?.[0][propName],
+                  condition
                 );
               }
             }
@@ -146,28 +163,52 @@ const getArgsShared = (
           definitionIsSchema(schema.items) &&
           schema.items.type
         ) {
+          hideArgType(name);
+
           const cat = category ?? name;
           const examples = example ?? schema.examples?.[0] ?? defaultValue;
-          const count = examples?.length ?? 3;
-          new Array(count).fill(0).forEach((_, index) => {
-            if (definitionIsSchema(schema.items)) {
-              const subcat =
-                cat &&
-                (subcategory ||
-                  ((schema.items.type === 'object' ||
-                    schema.items.type === 'array') &&
-                    `${name}.${index}`));
-              getArgTypes(
-                schema.items,
-                name ? `${name}.${index}` : String(index),
-                cat,
-                subcat,
-                undefined,
-                defaultValue?.[index] ?? schema.default?.[index],
-                examples?.[index]
-              );
-            }
-          });
+          const countValue = examples?.length ?? 3;
+          const countMin = schema.minItems || 0;
+          const countMax = Math.max(countValue, schema.maxItems || 10);
+          const countName = `${name}__count`;
+
+          if (countMin === countMax) {
+            hideArgType(countName);
+          } else {
+            getArgTypes(
+              {
+                type: 'integer',
+                title: countName,
+                minimum: countMin,
+                maximum: countMax,
+              },
+              countName,
+              cat,
+              subcategory,
+              undefined,
+              countValue
+            );
+          }
+
+          for (let index = 0; index < countMax; index++) {
+            const subcat =
+              cat &&
+              (subcategory ||
+                ((schema.items.type === 'object' ||
+                  schema.items.type === 'array') &&
+                  `${name}.${index}`));
+            getArgTypes(
+              schema.items,
+              name ? `${name}.${index}` : String(index),
+              cat,
+              subcat,
+              undefined,
+              defaultValue?.[index % countValue] ??
+                schema.default?.[index % countValue],
+              examples?.[index % countValue],
+              { arg: countName, gt: index }
+            );
+          }
         } else {
           add({
             control: 'object',
@@ -186,30 +227,57 @@ const getArgsShared = (
 
 const unpack = (flatArgs: Args): Args => {
   const args: Args = {};
+  const arrayCounts: Record<string, number> = {};
 
   // eslint-disable-next-line no-restricted-syntax
   for (const [key, value] of Object.entries(flatArgs)) {
-    key.split('.').reduce((prev, curr, i, arr) => {
-      if (prev[curr] == null) {
-        const next = arr[i + 1];
-        prev[curr] = next != null ? (Number.isNaN(+next) ? {} : []) : value;
-      }
-      return prev[curr];
-    }, args);
+    if (key.endsWith('__count')) {
+      const [arrayKey] = key.split('__count');
+      arrayCounts[arrayKey] = value;
+    } else {
+      key.split('.').reduce((prev, currKey, i, arr) => {
+        if (prev[currKey] == null) {
+          if (Array.isArray(prev)) {
+            const prevPath = arr.slice(0, i).join('.');
+            const arrayCount = arrayCounts[prevPath];
+            const currIndex = +currKey;
+
+            if (
+              isNaN(currIndex) ||
+              isNaN(arrayCount) ||
+              currIndex >= arrayCount
+            ) {
+              arr.splice(i);
+              return prev;
+            }
+          }
+
+          const nextKey = arr[i + 1];
+          prev[currKey] = nextKey != null ? (isNaN(+nextKey) ? {} : []) : value;
+        }
+        return prev[currKey];
+      }, args);
+    }
   }
 
   return args;
 };
 
-const unpackDecorator: DecoratorFunction = (story, config) =>
-  story({ ...config, args: unpack(config.args) });
+const unpackDecorator: DecoratorFunction<ReactRenderer, Args> = (
+  story,
+  config
+) => story({ ...config, args: unpack(config.args) });
 
 const isObject = (obj: unknown): obj is Record<string, unknown> =>
   Object.prototype.toString.call(obj) === '[object Object]';
 
 const pack = (obj: Record<string, unknown> | unknown[]): Args =>
   Object.entries(obj).reduce((prev, [key, value]) => {
-    if (isObject(value) || Array.isArray(value)) {
+    const valueIsArray = Array.isArray(value);
+    if (valueIsArray) {
+      prev[`${key}__count`] = value.length;
+    }
+    if (isObject(value) || valueIsArray) {
       Object.entries(pack(value)).forEach(([key2, value2]) => {
         prev[`${key}.${key2}`] = value2;
       });

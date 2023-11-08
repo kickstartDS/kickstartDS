@@ -6,7 +6,7 @@
   "type": "object",
   "allOf": [
     {
-      "$ref": "http://schema.kickstartds.com/base/teaser.definitions.json#/definitions/teaser"
+      "$ref": "http://schema.kickstartds.com/base/teaser.schema.json"
     },
     {
       "type": "object",
