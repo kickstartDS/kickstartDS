@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.21.8",
-    "@kickstartds/storybook-addon-component-tokens": "1.0.0-canary.18.36.0",
+    "@kickstartds/storybook-addon-component-tokens": "^1.0.0",
     "@kickstartds/storybook-addon-jsonschema": "^2.0.1",
     "@storybook/addon-a11y": "^7.4.6",
     "@storybook/addon-essentials": "^7.4.6",

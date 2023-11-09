@@ -3287,10 +3287,10 @@
     ajv "^8.12.0"
     object-traversal "^1.0.1"
 
-"@kickstartds/storybook-addon-component-tokens@1.0.0-canary.18.36.0":
-  version "1.0.0-canary.18.36.0"
-  resolved "https://registry.npmjs.org/@kickstartds/storybook-addon-component-tokens/-/storybook-addon-component-tokens-1.0.0-canary.18.36.0.tgz#279e7fa763795d24bac41439dc6d7773514e67ab"
-  integrity sha512-gmKjwu3+hdFXk5rYHLuelurn95Vs5O8gB0ffXUZQUoqIFSqNa8CTBJbXYRsxENVwwwXh7UmcR8hMN6rirR0LNA==
+"@kickstartds/storybook-addon-component-tokens@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@kickstartds/storybook-addon-component-tokens/-/storybook-addon-component-tokens-1.0.0.tgz#509344767305efa4b4b56ce25d66e62061e651ed"
+  integrity sha512-gVUG3dZpfRSeijLbM6UU9wW1C9uBQ+nCcvT5ugzo+xUJMcGQ/4ZKcgZCwoBnJSR+cqXZyvAocvzvCsCi1ke1Cw==
 
 "@kickstartds/storybook-addon-jsonschema@^2.0.1":
   version "2.0.1"
