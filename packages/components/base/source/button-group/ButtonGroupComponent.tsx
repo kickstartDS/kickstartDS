@@ -8,11 +8,14 @@ export { ButtonGroupProps };
 export const ButtonGroupComponent: ForwardRefRenderFunction<
   HTMLDivElement,
   ButtonGroupProps & HTMLAttributes<HTMLDivElement>
-> = ({ items = [], align = 'left', className, component, ...props }, ref) => (
+> = (
+  { items = [], arrangement = 'left', className, component, ...props },
+  ref
+) => (
   <div
     className={classnames(
       'c-button-group',
-      `c-button-group--${align}`,
+      `c-button-group--${arrangement}`,
       className
     )}
     ks-component={component}

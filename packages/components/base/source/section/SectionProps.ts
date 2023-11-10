@@ -94,7 +94,7 @@ export interface SectionProps {
     className?: AdditionalHeadlineClass;
   } & HeadlineProps;
   buttons?: {
-    align?: string;
+    arrangement?: string;
     className?: AdditionalButtonsClass;
   } & ButtonGroupProps;
   className?: AdditionalClass;

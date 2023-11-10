@@ -64,8 +64,10 @@ export const SectionComponent: ForwardRefRenderFunction<
     className: headlineClassName,
     ...headlineProps
   } = headline;
-  const { align: buttonsAlign = contentAlign, className: buttonsClassName } =
-    buttons;
+  const {
+    arrangement: buttonsArrangement = contentAlign,
+    className: buttonsClassName,
+  } = buttons;
   return (
     <div
       className={classnames(
@@ -136,7 +138,7 @@ export const SectionComponent: ForwardRefRenderFunction<
               buttonsClassName
             )}
           >
-            <ButtonGroup {...buttons} align={buttonsAlign} />
+            <ButtonGroup {...buttons} arrangement={buttonsArrangement} />
           </div>
         )}
       </div>

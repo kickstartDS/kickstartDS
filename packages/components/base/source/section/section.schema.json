@@ -115,7 +115,7 @@
         {
           "type": "object",
           "properties": {
-            "align": {
+            "arrangement": {
               "type": "string",
               "default": null
             },
