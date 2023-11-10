@@ -1,3 +1,16 @@
+# v2.2.1 (Fri Nov 10 2023)
+
+#### 🐛 Bug Fix
+
+- Feature/accesibility improvements [#1529](https://github.com/kickstartDS/kickstartDS/pull/1529) ([@fleven-kds](https://github.com/fleven-kds))
+- feat(LightboxImageComponent): add aria-role to Icon ([@fleven-kds](https://github.com/fleven-kds))
+
+#### Authors: 1
+
+- Franz ([@fleven-kds](https://github.com/fleven-kds))
+
+---
+
 # v2.2.0 (Fri Jun 30 2023)
 
 #### 🚀 Enhancement

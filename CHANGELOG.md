@@ -1,3 +1,25 @@
+# (Fri Nov 10 2023)
+
+#### 🐛 Bug Fix
+
+- `@kickstartds/base@2.2.1`
+  - Feature/accesibility improvements [#1529](https://github.com/kickstartDS/kickstartDS/pull/1529) ([@fleven-kds](https://github.com/fleven-kds))
+
+#### ⚠️ Pushed to `master`
+
+- fix(docs): broken links ([@julrich](https://github.com/julrich))
+
+#### 📝 Documentation
+
+- Fix broken video on intro index page in docs [#1468](https://github.com/kickstartDS/kickstartDS/pull/1468) ([@julrich](https://github.com/julrich))
+
+#### Authors: 2
+
+- Franz ([@fleven-kds](https://github.com/fleven-kds))
+- Jonas Ulrich ([@julrich](https://github.com/julrich))
+
+---
+
 # (Wed Aug 16 2023)
 
 #### ⚠️ Pushed to `master`
