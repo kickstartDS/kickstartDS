@@ -110,6 +110,27 @@
         { "$ref": "http://schema.kickstartds.com/base/headline.schema.json" }
       ]
     },
+    "buttons": {
+      "allOf": [
+        {
+          "type": "object",
+          "properties": {
+            "arrangement": {
+              "type": "string",
+              "default": null
+            },
+            "className": {
+              "type": "string",
+              "title": "Additional Buttons Class",
+              "description": "Additional css classes that should be applied to the buttons section container"
+            }
+          }
+        },
+        {
+          "$ref": "http://schema.kickstartds.com/base/button-group.schema.json"
+        }
+      ]
+    },
     "className": {
       "type": "string",
       "title": "Additional Class",

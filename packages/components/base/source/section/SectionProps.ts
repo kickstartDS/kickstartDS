@@ -6,6 +6,7 @@
  */
 
 import type { HeadlineProps } from '@kickstartds/base/lib/headline/typing';
+import type { ButtonGroupProps } from '@kickstartds/base/lib/button-group/typing';
 
 /**
  * Width of section to use
@@ -61,6 +62,10 @@ export type TextAlignment = 'left' | 'center' | 'right';
  */
 export type AdditionalHeadlineClass = string;
 /**
+ * Additional css classes that should be applied to the buttons section container
+ */
+export type AdditionalButtonsClass = string;
+/**
  * Add additional css classes that should be applied to the section
  */
 export type AdditionalClass = string;
@@ -88,6 +93,10 @@ export interface SectionProps {
     textAlign?: TextAlignment;
     className?: AdditionalHeadlineClass;
   } & HeadlineProps;
+  buttons?: {
+    arrangement?: string;
+    className?: AdditionalButtonsClass;
+  } & ButtonGroupProps;
   className?: AdditionalClass;
   component?: KsComponentAttribute;
 }

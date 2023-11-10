@@ -49,16 +49,23 @@ $vars: meta.module-variables(section-vars);
 
   &__container {
     margin: auto;
-    display: grid;
-    grid-template-columns: repeat(
-      var(--l-section_col--repeat),
-      minmax(
-        min(var(--l-section_col--min-width), 100%),
-        var(--l-section_col--max-width)
-      )
-    );
-    grid-gap: var(--l-section--gutter);
     box-sizing: border-box;
+
+    &--content {
+      display: grid;
+      grid-template-columns: repeat(
+        var(--l-section_col--repeat),
+        minmax(
+          min(var(--l-section_col--min-width), 100%),
+          var(--l-section_col--max-width)
+        )
+      );
+      grid-gap: var(--l-section--gutter);
+    }
+
+    &--buttons:not(:first-child) {
+      margin-top: var(--l-section_buttons--space-before);
+    }
 
     &--default {
       max-width: var(--l-section--content-width-default);

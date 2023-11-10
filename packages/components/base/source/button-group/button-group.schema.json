@@ -13,9 +13,9 @@
         "$ref": "http://schema.kickstartds.com/base/button.schema.json"
       }
     },
-    "align": {
-      "title": "Vertical Alignment",
-      "description": "Vertical alignment of the buttons",
+    "arrangement": {
+      "title": "Button arrangement",
+      "description": "Vertical arrangement of the buttons",
       "type": "string",
       "enum": ["left", "center", "right", "space-between", "grow"],
       "default": "left"

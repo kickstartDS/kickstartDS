@@ -26,16 +26,16 @@ $host: (
   '.l-section--bold': (
     background: var(--l-section--background-bold),
   ),
-  '.l-section__container': (
+  '.l-section__content': (
     gutter: var(--l-section--gutter-default),
   ),
-  '.l-section__container--gutter-none': (
+  '.l-section__content--gutter-none': (
     gutter: 0,
   ),
-  '.l-section__container--gutter-small': (
+  '.l-section__content--gutter-small': (
     gutter: var(--l-section--gutter-small),
   ),
-  '.l-section__container--gutter-large': (
+  '.l-section__content--gutter-large': (
     gutter: var(--l-section--gutter-large),
   ),
 ) !default;
@@ -51,5 +51,11 @@ $col: (
   ),
   '.l-section__container--list': (
     repeat: 1,
+  ),
+) !default;
+
+$buttons: (
+  '.l-section__content': (
+    space-before: var(--l-section--gutter),
   ),
 ) !default;
