@@ -9,6 +9,8 @@ import log from '../utils/log.js';
 import { root, dirRe } from '../utils/utils.js';
 import { createTokens } from './customPropertyExtract.js';
 
+const sassCompile = sass.compile || sass.default.compile;
+
 const cwd = process.cwd();
 const loadPaths = [`${root}/node_modules`];
 
@@ -29,7 +31,7 @@ const importers = [
 const dependencies: Record<string, string[]> = {};
 
 const compile = async (file: string) => {
-  const { css, loadedUrls } = sass.compile(file, {
+  const { css, loadedUrls } = sassCompile(file, {
     loadPaths,
     importers,
   });
