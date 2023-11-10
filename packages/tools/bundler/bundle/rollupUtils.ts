@@ -15,9 +15,7 @@ function customizer(objValue: any, srcValue: any): any[] | undefined {
 }
 
 export const sharedInputPlugins: Plugin[] = [
-  externals({
-    exclude: ['@glidejs/glide'],
-  }),
+  externals(),
   nodeResolve({
     extensions: ['.js', '.tsx', '.ts'],
   }),
