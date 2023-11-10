@@ -62,7 +62,7 @@ export const LightboxImageComponent: ForwardRefRenderFunction<
       />
       {zoomIcon ? (
         <div className="lightbox-image__zoom-icon">
-          <Icon icon="zoom" role="img" />
+          <Icon icon="zoom" aria-label="Zoom Image" role="img" />
         </div>
       ) : (
         ''
