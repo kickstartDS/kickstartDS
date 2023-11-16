@@ -6,6 +6,7 @@ import { events } from '../lazysizes';
 
 const componentClasses = {};
 const componentAttribute = 'ks-component';
+const componentMountedAttribute = 'data-uid';
 
 const eachElement = (nodeList, cb) =>
   nodeList.forEach((node) => {
@@ -45,8 +46,8 @@ const mountElement = (element, componentClassName, ComponentClassOrFn) =>
   })
     .then(findComponentClass)
     .then((ComponentClass) => {
-      if (ComponentClass) {
-        element.setAttribute('data-uid', uid());
+      if (ComponentClass && !element.hasAttribute(componentMountedAttribute)) {
+        element.setAttribute(componentMountedAttribute, uid());
         element._ks = { d: [] };
         new ComponentClass(element);
       }
@@ -58,7 +59,7 @@ const mountElement = (element, componentClassName, ComponentClassOrFn) =>
 
 const mount = (nodeList) =>
   eachElement(nodeList, (element) => {
-    if (element.hasAttribute('data-uid')) return;
+    if (element.hasAttribute(componentMountedAttribute)) return;
 
     const componentClassName = element.getAttribute(componentAttribute);
     const ComponentClassOrFn = componentClasses[componentClassName];
@@ -69,9 +70,7 @@ const mount = (nodeList) =>
 
 const unmount = (nodeList) =>
   eachElement(nodeList, (element) => {
-    if (element.hasAttribute('data-uid')) {
-      element.removeAttribute('data-uid');
-    }
+    element.removeAttribute(componentMountedAttribute);
     element._ks?.d.forEach((disconnectCb) => {
       try {
         disconnectCb();
@@ -96,11 +95,12 @@ if (inBrowser) {
       // eslint-disable-next-line default-case
       switch (mutation.type) {
         case 'attributes':
+          const { target } = mutation;
           if (mutation.oldValue) {
-            unmount([mutation.target]);
+            unmount([target]);
           }
-          if (mutation.target.hasAttribute(componentAttribute)) {
-            mount([mutation.target]);
+          if (target.hasAttribute(componentAttribute)) {
+            mount([target]);
           }
           break;
         case 'childList':
@@ -117,7 +117,7 @@ if (inBrowser) {
       subtree: true,
       attributes: true,
       attributeOldValue: true,
-      attributeFilter: [componentAttribute],
+      attributeFilter: [componentAttribute, componentMountedAttribute],
     });
   });
 }
