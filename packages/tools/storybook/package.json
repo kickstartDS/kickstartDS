@@ -41,7 +41,7 @@
     "@storybook/react": "^7.4.6",
     "@storybook/react-vite": "^7.4.6",
     "@types/react": "^18.2.6",
-    "@types/react-dom": "^18.2.4",
+    "@types/react-dom": "^18.2.15",
     "@whitespace/storybook-addon-html": "git+https://github.com/lmestel/storybook-addon-html.git#v5.3.1",
     "chromatic": "^7.2.3",
     "react-dom": "^18.2.0",
