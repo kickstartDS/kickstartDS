@@ -51,7 +51,9 @@ export default class CollapsibleBox extends Component {
     slideDown(this.content).then(() => {
       this.element.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
     });
-    window.history.replaceState(null, '', `#${this.element.id}`);
+    if (this.element.id) {
+      window.history.replaceState(null, '', `#${this.element.id}`);
+    }
   }
 
   close() {
