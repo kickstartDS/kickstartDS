@@ -1,3 +1,16 @@
+# (Mon Nov 27 2023)
+
+#### 🐛 Bug Fix
+
+- `@kickstartds/base@2.2.2`, `@kickstartds/core@2.2.1`, `@kickstartds/style-dictionary@2.2.1`
+  - Fix token create import [#1548](https://github.com/kickstartDS/kickstartDS/pull/1548) ([@lmestel](https://github.com/lmestel))
+
+#### Authors: 1
+
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+
+---
+
 # (Fri Nov 10 2023)
 
 #### 🐛 Bug Fix
