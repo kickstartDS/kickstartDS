@@ -11,9 +11,16 @@ $vars: meta.module-variables(section-vars);
 .l-section {
   @include anchor.anchor-target;
 
+  --l-section--container-width: var(--l-section--content-width-default);
+
+  @each $width in ('narrow', 'wide', 'max', 'full') {
+    &--#{$width} {
+      --l-section--container-width: var(--l-section--content-width-#{$width});
+    }
+  }
+
   padding: var(--l-section--space-default) 0;
   background: var(--l-section--background);
-  box-sizing: border-box;
 
   &--space-before-small {
     padding-top: var(--l-section--space-small);
@@ -31,44 +38,61 @@ $vars: meta.module-variables(section-vars);
     padding-bottom: 0;
   }
 
-  &__content {
+  &__container {
     margin: auto;
-    padding: 0 var(--l-section--content-padding);
-    max-width: var(--l-section--content-width-default);
+    max-width: var(--l-section--container-width);
     box-sizing: content-box;
+    padding: 0 var(--l-section--content-padding);
 
-    &--max {
-      max-width: var(--l-section--content-width-max);
-    }
-
-    &--full {
-      max-width: var(--l-section--content-width-full);
+    .l-section--full &--content {
       padding: 0;
     }
   }
 
-  &__container {
+  &__content {
+    --l-section--content-width: var(--l-section--container-width);
+
+    @each $width in ('narrow', 'default', 'wide') {
+      &--#{$width} {
+        --l-section--content-width: var(--l-section--content-width-#{$width});
+      }
+    }
+
     margin: auto;
     box-sizing: border-box;
+    max-width: min(
+      var(--l-section--container-width),
+      var(--l-section--content-width)
+    );
 
-    &--content {
+    .l-section__container--content & {
+      --l-section_col--width: minmax(
+        min(var(--l-section_col--min-width), 100%),
+        var(--l-section_col--max-width)
+      );
       display: grid;
       grid-template-columns: repeat(
         var(--l-section_col--repeat),
-        minmax(
-          min(var(--l-section_col--min-width), 100%),
-          var(--l-section_col--max-width)
-        )
+        var(--l-section_col--width)
       );
       grid-gap: var(--l-section--gutter);
     }
 
-    &--buttons:not(:first-child) {
+    .l-section__container--buttons:not(:first-child) & {
       margin-top: var(--l-section_buttons--space-before);
     }
 
-    &--default {
-      max-width: var(--l-section--content-width-default);
+    &--slider {
+      grid-auto-columns: var(--l-section_col--width);
+      grid-auto-flow: column;
+
+      &::after {
+        content: '';
+        width: calc(
+          var(--l-section--content-padding) - var(--l-section--gutter)
+        );
+        min-width: 0.1px;
+      }
     }
 
     &--left {
@@ -80,13 +104,74 @@ $vars: meta.module-variables(section-vars);
     }
   }
 
-  &__content,
-  &__container {
-    &--narrow {
-      max-width: var(--l-section--content-width-narrow);
+  &__slider {
+    overflow: auto;
+
+    /* Hide scrollbar */
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
     }
-    &--wide {
-      max-width: var(--l-section--content-width-wide);
+
+    a,
+    button,
+    img {
+      -webkit-user-drag: none;
+    }
+  }
+
+  &__slider-nav {
+    display: flex;
+    justify-content: center;
+    pointer-events: none;
+
+    &--overlay {
+      left: 0;
+      right: 0;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &--below-edge,
+    &--overlay {
+      justify-content: space-between;
+    }
+  }
+
+  &__slider-arrow {
+    pointer-events: auto;
+    padding: var(--l-section_slider-arrow--padding);
+    border-radius: var(--ks-border-radius-circle);
+    color: var(--l-section_slider-arrow--color);
+    background: var(--l-section_slider-arrow--background);
+    opacity: var(--l-section_slider-arrow--opacity);
+    transition: var(--ks-duration-fast);
+    visibility: hidden;
+
+    &:hover {
+      opacity: var(--l-section_slider-arrow--opacity-hover);
+    }
+
+    &:disabled {
+      opacity: var(--l-section_slider-arrow--opacity-disabled);
+    }
+
+    &--back {
+      .l-section__slider-nav--overlay & {
+        margin-left: var(--l-section--content-padding);
+      }
+    }
+
+    &--forward {
+      .l-section__slider-nav--overlay & {
+        margin-right: var(--l-section--content-padding);
+      }
+    }
+
+    .icon {
+      width: var(--l-section_slider-arrow--size);
+      height: var(--l-section_slider-arrow--size);
     }
   }
 }

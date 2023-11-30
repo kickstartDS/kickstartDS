@@ -19,6 +19,7 @@ $host: (
   ),
   '.l-section': (
     background: var(--l-section--background-default),
+    gutter: var(--l-section--gutter-default),
   ),
   '.l-section--accent': (
     background: var(--l-section--background-accent),
@@ -26,30 +27,27 @@ $host: (
   '.l-section--bold': (
     background: var(--l-section--background-bold),
   ),
-  '.l-section__content': (
-    gutter: var(--l-section--gutter-default),
+  '.l-section--gutter-none': (
+    gutter: 0px,
   ),
-  '.l-section__content--gutter-none': (
-    gutter: 0,
-  ),
-  '.l-section__content--gutter-small': (
+  '.l-section--gutter-small': (
     gutter: var(--l-section--gutter-small),
   ),
-  '.l-section__content--gutter-large': (
+  '.l-section--gutter-large': (
     gutter: var(--l-section--gutter-large),
   ),
 ) !default;
 
 $col: (
-  '.l-section__container': (
+  '.l-section__content': (
     min-width: 18rem,
     max-width: 1fr,
     repeat: 'auto-fit',
   ),
-  '.l-section__container--tile': (
+  '.l-section__content--tile': (
     repeat: 'auto-fill',
   ),
-  '.l-section__container--list': (
+  '.l-section__content--list': (
     repeat: 1,
   ),
 ) !default;
@@ -57,5 +55,17 @@ $col: (
 $buttons: (
   '.l-section__content': (
     space-before: var(--l-section--gutter),
+  ),
+) !default;
+
+$slider-arrow: (
+  '.l-section': (
+    size: 2.5rem,
+    padding: var(--ks-spacing-xs),
+    color: var(--ks-color-primary),
+    opacity-disabled: 0.3,
+    opacity: 0.6,
+    opacity-hover: 0.9,
+    background: var(--ks-background-color-interface-interactive),
   ),
 ) !default;
