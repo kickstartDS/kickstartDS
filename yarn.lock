@@ -7070,10 +7070,10 @@ change-case@^4.1.2:
     snake-case "^3.0.4"
     tslib "^2.0.3"
 
-change-case@^5.0.2:
-  version "5.0.2"
-  resolved "https://registry.npmjs.org/change-case/-/change-case-5.0.2.tgz#0f1885d310b84065a17b20e8231c7dff37207627"
-  integrity sha512-tH6YZXViaeC2/Mnt8m4gSmbZfNorC2rhwCX2bXw8SYZWr8ljCPB7iA+1TLG9t7yroWBFauc63LlOZ1gucMVCWw==
+change-case@^5.0.2, change-case@^5.3.0:
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/change-case/-/change-case-5.3.0.tgz#b2fc5a8bea0cf8b4856a5a9aaf79abd8ea5309f6"
+  integrity sha512-Eykca0fGS/xYlx2fG5NqnGSnsWauhSGiSXYhB1kO6E909GUfo8S54u4UZNS7lMJmgZumZ2SUpWaoLgAcfQRICg==
 
 character-entities-html4@^1.0.0:
   version "1.1.4"
