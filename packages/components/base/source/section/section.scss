@@ -58,6 +58,12 @@ $vars: meta.module-variables(section-vars);
       }
     }
 
+    @each $tileWidth in ('smallest', 'medium', 'large', 'largest') {
+      &--tiles-#{$tileWidth} {
+        --l-section_col--min-width: var(--l-section_tile-width--#{$tileWidth});
+      }
+    }
+
     margin: auto;
     box-sizing: border-box;
     max-width: min(

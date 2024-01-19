@@ -42,6 +42,13 @@
           "enum": ["default", "tile", "list", "slider"],
           "default": "default"
         },
+        "tileWidth": {
+          "type": "string",
+          "title": "Tile Width",
+          "description": "Set min-width for the tiles in the grid",
+          "enum": ["smallest", "default", "medium", "large", "largest"],
+          "default": "default"
+        },
         "className": {
           "type": "string",
           "title": "Additional Content Class",

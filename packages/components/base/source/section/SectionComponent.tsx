@@ -78,8 +78,12 @@ export const SectionComponent: ForwardRefRenderFunction<
     align: contentAlign = 'center',
     gutter = 'default',
     mode = 'default',
-    className: contentClassName,
+    tileWidth = 'default',
   } = content;
+  const contentClassName = classnames(
+    content.className,
+    tileWidth !== 'default' && `l-section__content--tiles-${tileWidth}`
+  );
   const {
     width: headlineWidth = 'unset',
     align: headlineAlign = contentAlign,
