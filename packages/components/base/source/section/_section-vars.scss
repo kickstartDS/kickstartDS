@@ -40,7 +40,7 @@ $host: (
 
 $col: (
   '.l-section__content': (
-    min-width: 18rem,
+    min-width: var(--l-section_tile-width--default),
     max-width: 1fr,
     repeat: 'auto-fit',
   ),
@@ -49,6 +49,16 @@ $col: (
   ),
   '.l-section__content--list': (
     repeat: 1,
+  ),
+) !default;
+
+$tile-width: (
+  '.l-section__content': (
+    smallest: 14rem,
+    default: 18rem,
+    medium: var(--l-section--content-width-narrow),
+    large: var(--l-section--content-width-default),
+    largest: var(--l-section--content-width-wide),
   ),
 ) !default;
 

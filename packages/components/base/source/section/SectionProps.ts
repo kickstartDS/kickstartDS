@@ -29,6 +29,10 @@ export type Gutter = 'large' | 'default' | 'small' | 'none';
  */
 export type Mode = 'default' | 'tile' | 'list' | 'slider';
 /**
+ * Set min-width for the tiles in the grid
+ */
+export type TileWidth = 'smallest' | 'default' | 'medium' | 'large' | 'largest';
+/**
  * Additional css classes that should be applied to the content section container
  */
 export type AdditionalContentClass = string;
@@ -95,6 +99,7 @@ export interface SectionProps {
     align?: ContentAlignment;
     gutter?: Gutter;
     mode?: Mode;
+    tileWidth?: TileWidth;
     className?: AdditionalContentClass;
   };
   background?: Background;
