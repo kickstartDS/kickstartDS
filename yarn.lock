@@ -3156,28 +3156,6 @@
   resolved "https://registry.npmjs.org/@kickstartds/storybook-addon-jsonschema/-/storybook-addon-jsonschema-2.0.1.tgz#4ed35b2f4647d12169941f76d40b7965db80211b"
   integrity sha512-tjLeFipLK2haHDJ58yiWBpPJmZTjNW1/p3pyjZvrW/GDeiS/NosA9Ybn0gsdVB66ysiSxW8UT7KChuCfYNcLAg==
 
-"@kickstartds/style-dictionary@^2.2.1-next.1":
-  version "2.2.1-next.1"
-  resolved "https://registry.npmjs.org/@kickstartds/style-dictionary/-/style-dictionary-2.2.1-next.1.tgz#4d5b5fd02d42ebe399a1d869fd9a2a824088af0b"
-  integrity sha512-lCVwx23FHOeAd379I24oWzJG/IPe+11OdE1bb6p2QMwx+23ikOztExysQLYYM2ggrr7v/JXoei1Q99BfQbRnWA==
-  dependencies:
-    "@babel/core" "^7.21.4"
-    "@babel/preset-react" "^7.18.6"
-    "@mapbox/hast-util-to-jsx" "^2.0.0"
-    ajv "^8.10.0"
-    bezier-js "^6.1.0"
-    lodash "^4.17.21"
-    node-html-parser "^5.2.0"
-    postcss "^8.4.21"
-    postcss-calc "^9.0.1"
-    postcss-colormin "^5.3.0"
-    postcss-normalize-whitespace "^6.0.0"
-    postcss-sort-media-queries "^4.2.1"
-    style-dictionary "^3.7.0"
-    svg-parser "^2.0.4"
-    svgstore "^3.0.1"
-    tinycolor2 "^1.4.2"
-
 "@kickstartds/stylelint-config@^2.1.2":
   version "2.1.2"
   resolved "https://registry.npmjs.org/@kickstartds/stylelint-config/-/stylelint-config-2.1.2.tgz#c2fe15ee295d83343188ff6ee0181113d38fe003"
