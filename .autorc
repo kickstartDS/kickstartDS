@@ -3,6 +3,7 @@
   "baseBranch": "master",
   "prereleaseBranches": [
     "next",
+    "next-v2",
     "beta"
   ],
   "plugins": [
