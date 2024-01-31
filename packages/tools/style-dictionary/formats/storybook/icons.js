@@ -7,6 +7,7 @@ module.exports = {
       .map(([name, { value }]) => {
         const root = parse(value);
         root.firstChild.setAttribute('data-token-name', name);
+        root.firstChild.setAttribute('fill', 'currentColor');
         return root.toString();
       })
       .join('\n');
