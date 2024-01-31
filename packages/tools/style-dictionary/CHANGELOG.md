@@ -1,3 +1,16 @@
+# v2.2.1 (Mon Nov 27 2023)
+
+#### 🐛 Bug Fix
+
+- Fix token create import [#1548](https://github.com/kickstartDS/kickstartDS/pull/1548) ([@lmestel](https://github.com/lmestel))
+- fix: fix createTokens import ([@lmestel](https://github.com/lmestel))
+
+#### Authors: 1
+
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+
+---
+
 # v2.2.0 (Fri Jun 30 2023)
 
 #### 🐛 Bug Fix
