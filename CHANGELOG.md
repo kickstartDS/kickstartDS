@@ -1,3 +1,16 @@
+# (Wed Jan 31 2024)
+
+#### 🐛 Bug Fix
+
+- `@kickstartds/style-dictionary@2.2.2`
+  - Fix hidden icons in storybook [#1595](https://github.com/kickstartDS/kickstartDS/pull/1595) ([@lmestel](https://github.com/lmestel))
+
+#### Authors: 1
+
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+
+---
+
 # (Mon Nov 27 2023)
 
 #### 🐛 Bug Fix

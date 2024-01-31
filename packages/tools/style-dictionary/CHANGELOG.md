@@ -1,3 +1,16 @@
+# v2.2.2 (Wed Jan 31 2024)
+
+#### 🐛 Bug Fix
+
+- Fix hidden icons in storybook [#1595](https://github.com/kickstartDS/kickstartDS/pull/1595) ([@lmestel](https://github.com/lmestel))
+- fix: overwrite `fill` attribute in icons for storybook design token addon ([@lmestel](https://github.com/lmestel))
+
+#### Authors: 1
+
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+
+---
+
 # v2.2.1 (Mon Nov 27 2023)
 
 #### 🐛 Bug Fix
