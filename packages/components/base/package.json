@@ -34,7 +34,7 @@
   "devDependencies": {
     "@kickstartds/bundler": "^2.2.0",
     "@kickstartds/core": "^2.2.1",
-    "@types/react": "^18.2.6",
+    "@types/react": "^18.2.56",
     "bourbon": "^7.3.0",
     "sass-yiq": "^1.0.0"
   },
