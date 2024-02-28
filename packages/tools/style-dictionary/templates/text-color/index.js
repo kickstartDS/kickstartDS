@@ -2,6 +2,7 @@ const textColorDefault = require('./default');
 const textColorCopy = require('./copy');
 const textColorDisplay = require('./display');
 const textColorInterface = require('./interface');
+const textColorCard = require('./card');
 const textColorCustom = require('./custom');
 
 const predefined = ['background', 'foreground', 'link'];
@@ -29,6 +30,7 @@ module.exports = (data) => {
         ...textColorCopy(data),
         ...textColorDisplay(data),
         ...textColorInterface(data),
+        ...textColorCard(data),
         ...additional,
       },
     },

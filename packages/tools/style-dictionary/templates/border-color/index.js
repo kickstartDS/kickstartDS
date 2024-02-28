@@ -2,6 +2,7 @@ const borderColorAccent = require('./accent');
 const borderColorClear = require('./clear');
 const borderColorDefault = require('./default');
 const borderColorInterface = require('./interface');
+const borderColorCard = require('./card');
 const borderColorCustom = require('./custom');
 
 const predefined = ['background', 'foreground', 'link'];
@@ -29,6 +30,7 @@ module.exports = (data) => {
         ...borderColorClear(data),
         ...borderColorDefault(data),
         ...borderColorInterface(data),
+        ...borderColorCard(data),
         ...additional,
       },
     },

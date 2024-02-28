@@ -101,6 +101,8 @@
             "default-inverted",
             "interface",
             "interface-inverted",
+            "card",
+            "card-inverted",
             "primary",
             "primary-inverted"
           ]

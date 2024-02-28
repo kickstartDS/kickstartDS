@@ -223,6 +223,82 @@
               },
               "additionalProperties": false,
               "required": ["base", "interactive"]
+            },
+            "card": {
+              "type": "object",
+              "properties": {
+                "base": {
+                  "$ref": "#/definitions/color-token"
+                },
+                "interactive": {
+                  "type": "object",
+                  "properties": {
+                    "base": {
+                      "$ref": "#/definitions/color-token"
+                    },
+                    "disabled": {
+                      "$ref": "#/definitions/base"
+                    },
+                    "hover": {
+                      "$ref": "#/definitions/base"
+                    },
+                    "active": {
+                      "$ref": "#/definitions/base"
+                    },
+                    "selected": {
+                      "$ref": "#/definitions/base"
+                    }
+                  },
+                  "additionalProperties": false,
+                  "required": [
+                    "base",
+                    "disabled",
+                    "hover",
+                    "active",
+                    "selected"
+                  ]
+                }
+              },
+              "additionalProperties": false,
+              "required": ["base", "interactive"]
+            },
+            "card-inverted": {
+              "type": "object",
+              "properties": {
+                "base": {
+                  "$ref": "#/definitions/color-token"
+                },
+                "interactive": {
+                  "type": "object",
+                  "properties": {
+                    "base": {
+                      "$ref": "#/definitions/color-token"
+                    },
+                    "disabled": {
+                      "$ref": "#/definitions/base"
+                    },
+                    "hover": {
+                      "$ref": "#/definitions/base"
+                    },
+                    "active": {
+                      "$ref": "#/definitions/base"
+                    },
+                    "selected": {
+                      "$ref": "#/definitions/base"
+                    }
+                  },
+                  "additionalProperties": false,
+                  "required": [
+                    "base",
+                    "disabled",
+                    "hover",
+                    "active",
+                    "selected"
+                  ]
+                }
+              },
+              "additionalProperties": false,
+              "required": ["base", "interactive"]
             }
           },
           "additionalProperties": {
@@ -266,6 +342,8 @@
             "default-inverted",
             "interface",
             "interface-inverted",
+            "card",
+            "card-inverted",
             "primary",
             "primary-inverted"
           ]

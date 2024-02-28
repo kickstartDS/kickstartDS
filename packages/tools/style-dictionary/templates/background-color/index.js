@@ -2,6 +2,7 @@ const backgroundColorAccent = require('./accent');
 const backgroundColorClear = require('./clear');
 const backgroundColorDefault = require('./default');
 const backgroundColorInterface = require('./interface');
+const backgroundColorCard = require('./card');
 const backgroundColorCustom = require('./custom');
 
 const predefined = ['background', 'foreground', 'link'];
@@ -29,6 +30,7 @@ module.exports = (data) => {
         ...backgroundColorClear(data),
         ...backgroundColorDefault(data),
         ...backgroundColorInterface(data),
+        ...backgroundColorCard(data),
         ...additional,
       },
     },
