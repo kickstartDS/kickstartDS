@@ -2,7 +2,14 @@ const Color = require('tinycolor2');
 const { parseLength } = require('../_helper');
 
 const token = { category: 'Box Shadow', presenter: 'Shadow' };
-const categories = ['control', 'card', 'surface'];
+const categories = [
+  'control',
+  'control-inverted',
+  'card',
+  'card-inverted',
+  'surface',
+  'surface-inverted',
+];
 
 module.exports = ({ color, 'box-shadow': boxShadow }) => {
   const shadowColor = Color(color.foreground).toRgb();
@@ -17,11 +24,23 @@ module.exports = ({ color, 'box-shadow': boxShadow }) => {
             _: { value: '0.2' },
             hover: { value: '0.3' },
           },
+          'control-inverted': {
+            _: { value: '0.2' },
+            hover: { value: '0.3' },
+          },
           card: {
             _: { value: '0.2' },
             hover: { value: '0.3' },
           },
+          'card-inverted': {
+            _: { value: '0.2' },
+            hover: { value: '0.3' },
+          },
           surface: {
+            _: { value: '0.1' },
+            hover: { value: '0.2' },
+          },
+          'surface-inverted': {
             _: { value: '0.1' },
             hover: { value: '0.2' },
           },
@@ -50,6 +69,17 @@ module.exports = ({ color, 'box-shadow': boxShadow }) => {
             }${blurUnit} {ks.box-shadow.color.control.hover}`,
           },
         },
+        'control-inverted': {
+          _: {
+            value: `0 1px ${blurNumber}${blurUnit} {ks.box-shadow.color.control-inverted._}`,
+            token,
+          },
+          hover: {
+            value: `0 1px ${
+              blurNumber * 2
+            }${blurUnit} {ks.box-shadow.color.control-inverted.hover}`,
+          },
+        },
         card: {
           _: {
             value: `0 1px ${
@@ -63,6 +93,19 @@ module.exports = ({ color, 'box-shadow': boxShadow }) => {
             }${blurUnit} {ks.box-shadow.color.card.hover}`,
           },
         },
+        'card-inverted': {
+          _: {
+            value: `0 1px ${
+              blurNumber * 2
+            }${blurUnit} {ks.box-shadow.color.card-inverted._}`,
+            token,
+          },
+          hover: {
+            value: `0 1px ${
+              blurNumber * 4
+            }${blurUnit} {ks.box-shadow.color.card-inverted.hover}`,
+          },
+        },
         surface: {
           _: {
             value: `0 1px ${
@@ -74,6 +117,19 @@ module.exports = ({ color, 'box-shadow': boxShadow }) => {
             value: `0 1px ${
               blurNumber * 8
             }${blurUnit} {ks.box-shadow.color.surface.hover}`,
+          },
+        },
+        'surface-inverted': {
+          _: {
+            value: `0 1px ${
+              blurNumber * 4
+            }${blurUnit} {ks.box-shadow.color.surface-inverted._}`,
+            token,
+          },
+          hover: {
+            value: `0 1px ${
+              blurNumber * 8
+            }${blurUnit} {ks.box-shadow.color.surface-inverted.hover}`,
           },
         },
       },
