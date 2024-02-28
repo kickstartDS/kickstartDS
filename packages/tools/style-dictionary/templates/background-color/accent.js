@@ -6,9 +6,9 @@ const token = (value) => ({
 
 module.exports = () => ({
   accent: {
-    base: token('{ks.color.fg.alpha.8.base}'),
+    base: token('{ks.color.bg.to-fg.8.base}'),
   },
   'accent-inverted': {
-    base: token('{ks.color.fg-inverted.alpha.8.base}'),
+    base: token('{ks.color.bg-inverted.to-fg.8.base}'),
   },
 });

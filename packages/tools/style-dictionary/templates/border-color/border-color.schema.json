@@ -223,73 +223,40 @@
               },
               "additionalProperties": false,
               "required": ["base", "interactive"]
-            },
-            "primary": {
-              "type": "object",
-              "properties": {
-                "base": {
-                  "$ref": "#/definitions/color-token"
-                },
-                "interactive": {
-                  "type": "object",
-                  "properties": {
-                    "base": {
-                      "$ref": "#/definitions/color-token"
-                    },
-                    "hover": {
-                      "$ref": "#/definitions/base"
-                    },
-                    "active": {
-                      "$ref": "#/definitions/base"
-                    },
-                    "selected": {
-                      "$ref": "#/definitions/base"
-                    }
-                  },
-                  "additionalProperties": false,
-                  "required": ["base", "hover", "active", "selected"]
-                },
-                "translucent": {
-                  "$ref": "#/definitions/base"
-                }
-              },
-              "additionalProperties": false,
-              "required": ["base", "interactive", "translucent"]
-            },
-            "primary-inverted": {
-              "type": "object",
-              "properties": {
-                "base": {
-                  "$ref": "#/definitions/color-token"
-                },
-                "interactive": {
-                  "type": "object",
-                  "properties": {
-                    "base": {
-                      "$ref": "#/definitions/color-token"
-                    },
-                    "hover": {
-                      "$ref": "#/definitions/base"
-                    },
-                    "active": {
-                      "$ref": "#/definitions/base"
-                    },
-                    "selected": {
-                      "$ref": "#/definitions/base"
-                    }
-                  },
-                  "additionalProperties": false,
-                  "required": ["base", "hover", "active", "selected"]
-                },
-                "translucent": {
-                  "$ref": "#/definitions/base"
-                }
-              },
-              "additionalProperties": false,
-              "required": ["base", "interactive", "translucent"]
             }
           },
-          "additionalProperties": false,
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "base": {
+                "$ref": "#/definitions/color-token"
+              },
+              "interactive": {
+                "type": "object",
+                "properties": {
+                  "base": {
+                    "$ref": "#/definitions/color-token"
+                  },
+                  "hover": {
+                    "$ref": "#/definitions/base"
+                  },
+                  "active": {
+                    "$ref": "#/definitions/base"
+                  },
+                  "selected": {
+                    "$ref": "#/definitions/base"
+                  }
+                },
+                "additionalProperties": false,
+                "required": ["base", "hover", "active", "selected"]
+              },
+              "translucent": {
+                "$ref": "#/definitions/base"
+              }
+            },
+            "additionalProperties": false,
+            "required": ["base", "interactive", "translucent"]
+          },
           "required": [
             "accent",
             "accent-inverted",

@@ -77,183 +77,25 @@
       "properties": {
         "text-color": {
           "type": "object",
-          "properties": {
-            "default": {
-              "type": "object",
-              "properties": {
-                "base": {
-                  "$ref": "#/definitions/color-token"
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "base": { "$ref": "#/definitions/color-token" },
+              "interactive": {
+                "type": "object",
+                "properties": {
+                  "base": { "$ref": "#/definitions/color-token" },
+                  "hover": { "$ref": "#/definitions/base" },
+                  "active": { "$ref": "#/definitions/base" },
+                  "selected": { "$ref": "#/definitions/base" }
                 },
-                "interactive": {
-                  "type": "object",
-                  "properties": {
-                    "base": {
-                      "$ref": "#/definitions/color-token"
-                    },
-                    "hover": {
-                      "$ref": "#/definitions/base"
-                    },
-                    "active": {
-                      "$ref": "#/definitions/base"
-                    },
-                    "visited": {
-                      "$ref": "#/definitions/base"
-                    }
-                  },
-                  "additionalProperties": false,
-                  "required": ["base", "hover", "active", "visited"]
-                }
-              },
-              "additionalProperties": false,
-              "required": ["base", "interactive"]
+                "additionalProperties": false,
+                "required": ["base", "hover", "active", "selected"]
+              }
             },
-            "default-inverted": {
-              "type": "object",
-              "properties": {
-                "base": {
-                  "$ref": "#/definitions/color-token"
-                },
-                "interactive": {
-                  "type": "object",
-                  "properties": {
-                    "base": {
-                      "$ref": "#/definitions/color-token"
-                    },
-                    "hover": {
-                      "$ref": "#/definitions/base"
-                    },
-                    "active": {
-                      "$ref": "#/definitions/base"
-                    },
-                    "visited": {
-                      "$ref": "#/definitions/base"
-                    }
-                  },
-                  "additionalProperties": false,
-                  "required": ["base", "hover", "active", "visited"]
-                }
-              },
-              "additionalProperties": false,
-              "required": ["base", "interactive"]
-            },
-            "interface": {
-              "type": "object",
-              "properties": {
-                "base": {
-                  "$ref": "#/definitions/color-token"
-                },
-                "interactive": {
-                  "type": "object",
-                  "properties": {
-                    "base": {
-                      "$ref": "#/definitions/color-token"
-                    },
-                    "hover": {
-                      "$ref": "#/definitions/base"
-                    },
-                    "active": {
-                      "$ref": "#/definitions/base"
-                    },
-                    "visited": {
-                      "$ref": "#/definitions/base"
-                    }
-                  },
-                  "additionalProperties": false,
-                  "required": ["base", "hover", "active", "visited"]
-                }
-              },
-              "additionalProperties": false,
-              "required": ["base", "interactive"]
-            },
-            "interface-inverted": {
-              "type": "object",
-              "properties": {
-                "base": {
-                  "$ref": "#/definitions/base"
-                },
-                "interactive": {
-                  "type": "object",
-                  "properties": {
-                    "base": {
-                      "$ref": "#/definitions/base"
-                    },
-                    "hover": {
-                      "$ref": "#/definitions/base"
-                    },
-                    "active": {
-                      "$ref": "#/definitions/base"
-                    },
-                    "visited": {
-                      "$ref": "#/definitions/base"
-                    }
-                  },
-                  "additionalProperties": false,
-                  "required": ["base", "hover", "active", "visited"]
-                }
-              },
-              "additionalProperties": false,
-              "required": ["base", "interactive"]
-            },
-            "primary": {
-              "type": "object",
-              "properties": {
-                "base": {
-                  "$ref": "#/definitions/color-token"
-                },
-                "interactive": {
-                  "type": "object",
-                  "properties": {
-                    "base": {
-                      "$ref": "#/definitions/color-token"
-                    },
-                    "hover": {
-                      "$ref": "#/definitions/base"
-                    },
-                    "active": {
-                      "$ref": "#/definitions/base"
-                    },
-                    "visited": {
-                      "$ref": "#/definitions/base"
-                    }
-                  },
-                  "additionalProperties": false,
-                  "required": ["base", "hover", "active", "visited"]
-                }
-              },
-              "additionalProperties": false,
-              "required": ["base", "interactive"]
-            },
-            "primary-inverted": {
-              "type": "object",
-              "properties": {
-                "base": {
-                  "$ref": "#/definitions/color-token"
-                },
-                "interactive": {
-                  "type": "object",
-                  "properties": {
-                    "base": {
-                      "$ref": "#/definitions/color-token"
-                    },
-                    "hover": {
-                      "$ref": "#/definitions/base"
-                    },
-                    "active": {
-                      "$ref": "#/definitions/base"
-                    },
-                    "visited": {
-                      "$ref": "#/definitions/base"
-                    }
-                  },
-                  "additionalProperties": false,
-                  "required": ["base", "hover", "active", "visited"]
-                }
-              },
-              "additionalProperties": false,
-              "required": ["base", "interactive"]
-            }
+            "additionalProperties": false,
+            "required": ["base", "interactive"]
           },
-          "additionalProperties": false,
           "required": [
             "default",
             "default-inverted",

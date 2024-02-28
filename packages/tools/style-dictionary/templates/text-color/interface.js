@@ -11,7 +11,7 @@ module.exports = () => ({
       base: token('{ks.color.fg.base}'),
       hover: { base: token('{ks.color.fg.base') },
       active: { base: token('{ks.color.fg.base') },
-      visited: { base: token('{ks.color.fg.base') },
+      selected: { base: token('{ks.color.fg.base') },
     },
   },
   'interface-inverted': {
@@ -20,7 +20,7 @@ module.exports = () => ({
       base: token('{ks.color.fg-inverted.base}'),
       hover: { base: token('{ks.color.fg-inverted.base}') },
       active: { base: token('{ks.color.fg-inverted.base}') },
-      visited: { base: token('{ks.color.fg-inverted.base}') },
+      selected: { base: token('{ks.color.fg-inverted.base}') },
     },
   },
 });
