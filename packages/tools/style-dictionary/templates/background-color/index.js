@@ -1,4 +1,5 @@
 const backgroundColorAccent = require('./accent');
+const backgroundColorBold = require('./bold');
 const backgroundColorClear = require('./clear');
 const backgroundColorDefault = require('./default');
 const backgroundColorInterface = require('./interface');
@@ -27,6 +28,7 @@ module.exports = (data) => {
     ks: {
       'background-color': {
         ...backgroundColorAccent(data),
+        ...backgroundColorBold(data),
         ...backgroundColorClear(data),
         ...backgroundColorDefault(data),
         ...backgroundColorInterface(data),
