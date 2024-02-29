@@ -84,6 +84,12 @@
             "accent-inverted": {
               "$ref": "#/definitions/base"
             },
+            "bold": {
+              "$ref": "#/definitions/base"
+            },
+            "bold-inverted": {
+              "$ref": "#/definitions/base"
+            },
             "clear": {
               "type": "object",
               "properties": {
