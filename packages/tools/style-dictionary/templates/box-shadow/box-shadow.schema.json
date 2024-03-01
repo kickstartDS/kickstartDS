@@ -69,48 +69,46 @@
           "properties": {
             "opacity": {
               "type": "object",
-              "properties": {
-                "control": {
-                  "$ref": "#/definitions/base-tokens"
-                },
-                "card": {
-                  "$ref": "#/definitions/base-tokens"
-                },
-                "surface": {
-                  "$ref": "#/definitions/base-tokens"
-                }
-              },
-              "additionalProperties": false,
-              "required": ["control", "card", "surface"]
+              "additionalProperties": { "$ref": "#/definitions/base-tokens" },
+              "required": [
+                "control",
+                "control-inverted",
+                "card",
+                "card-inverted",
+                "surface",
+                "surface-inverted"
+              ]
             },
             "color": {
               "type": "object",
-              "properties": {
-                "control": {
-                  "$ref": "#/definitions/base-tokens"
-                },
-                "card": {
-                  "$ref": "#/definitions/base-tokens"
-                },
-                "surface": {
-                  "$ref": "#/definitions/base-tokens"
-                }
-              },
-              "additionalProperties": false,
-              "required": ["control", "card", "surface"]
+              "additionalProperties": { "$ref": "#/definitions/base-tokens" },
+              "required": [
+                "control",
+                "control-inverted",
+                "card",
+                "card-inverted",
+                "surface",
+                "surface-inverted"
+              ]
             },
-            "control": {
-              "$ref": "#/definitions/base-tokens"
-            },
-            "card": {
-              "$ref": "#/definitions/base-tokens"
-            },
-            "surface": {
-              "$ref": "#/definitions/base-tokens"
-            }
+            "control": { "$ref": "#/definitions/base-tokens" },
+            "control-inverted": { "$ref": "#/definitions/base-tokens" },
+            "card": { "$ref": "#/definitions/base-tokens" },
+            "card-inverted": { "$ref": "#/definitions/base-tokens" },
+            "surface": { "$ref": "#/definitions/base-tokens" },
+            "surface-inverted": { "$ref": "#/definitions/base-tokens" }
           },
           "additionalProperties": false,
-          "required": ["opacity", "color", "control", "card", "surface"]
+          "required": [
+            "opacity",
+            "color",
+            "control",
+            "control-inverted",
+            "card",
+            "card-inverted",
+            "surface",
+            "surface-inverted"
+          ]
         }
       },
       "required": ["box-shadow"]
