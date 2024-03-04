@@ -34,8 +34,8 @@
     "bourbon": "^7.3.0"
   },
   "peerDependencies": {
-    "@kickstartds/base": "^2.2.0",
-    "@kickstartds/core": "^2.2.0",
+    "@kickstartds/base": "^3.0.0",
+    "@kickstartds/core": "^3.0.0",
     "react": "^17.0.2 || ^18.2.0"
   },
   "storybook": {
