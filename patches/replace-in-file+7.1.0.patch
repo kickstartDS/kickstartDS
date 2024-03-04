@@ -1,5 +1,5 @@
 diff --git a/node_modules/replace-in-file/types/index.d.ts b/node_modules/replace-in-file/types/index.d.ts
-index 97409d5..bd88df2 100644
+index 0e05665..8b9ab18 100644
 --- a/node_modules/replace-in-file/types/index.d.ts
 +++ b/node_modules/replace-in-file/types/index.d.ts
 @@ -1,7 +1,5 @@
@@ -9,7 +9,7 @@ index 97409d5..bd88df2 100644
 -  export function replaceInFile(config: ReplaceInFileConfig, cb: (error: Error, results: ReplaceResult[]) => void): void;
    export default replaceInFile;
  
-   namespace replaceInFile {
+   export namespace replaceInFile {
 @@ -11,9 +9,6 @@ declare module 'replace-in-file' {
      export function replaceInFile(config: ReplaceInFileConfig, cb: (error: Error, results: ReplaceResult[]) => void): void;
    }
