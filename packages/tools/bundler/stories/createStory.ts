@@ -22,7 +22,7 @@ import { getArgsShared } from "@kickstartds/core/lib/storybook";
 import { ${componentPascalcased} } from './index.js';
 ${
   hasComponentTokens
-    ? `import cssprops from './${componentName}-tokens.json';`
+    ? `import customProperties from './${componentName}-tokens.json';`
     : ''
 }
 
@@ -33,11 +33,11 @@ const meta: Meta<typeof ${componentPascalcased}> = {
   component: ${componentPascalcased},
   excludeStories: ['Template'],
   parameters: {
-    ${hasComponentTokens ? 'cssprops,' : ''}
+    ${hasComponentTokens ? 'cssprops: { customProperties },' : ''}
     designToken: {
       disable: true,
     },
-    jsonschema: schema,
+    jsonschema: { schema },
   },
   ...getArgsShared(schema),
 };
