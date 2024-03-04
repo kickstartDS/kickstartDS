@@ -224,7 +224,7 @@
               "additionalProperties": false,
               "required": ["base", "interactive"]
             },
-            "primary": {
+            "card": {
               "type": "object",
               "properties": {
                 "base": {
@@ -235,6 +235,9 @@
                   "properties": {
                     "base": {
                       "$ref": "#/definitions/color-token"
+                    },
+                    "disabled": {
+                      "$ref": "#/definitions/base"
                     },
                     "hover": {
                       "$ref": "#/definitions/base"
@@ -247,16 +250,19 @@
                     }
                   },
                   "additionalProperties": false,
-                  "required": ["base", "hover", "active", "selected"]
-                },
-                "translucent": {
-                  "$ref": "#/definitions/base"
+                  "required": [
+                    "base",
+                    "disabled",
+                    "hover",
+                    "active",
+                    "selected"
+                  ]
                 }
               },
               "additionalProperties": false,
-              "required": ["base", "interactive", "translucent"]
+              "required": ["base", "interactive"]
             },
-            "primary-inverted": {
+            "card-inverted": {
               "type": "object",
               "properties": {
                 "base": {
@@ -267,6 +273,9 @@
                   "properties": {
                     "base": {
                       "$ref": "#/definitions/color-token"
+                    },
+                    "disabled": {
+                      "$ref": "#/definitions/base"
                     },
                     "hover": {
                       "$ref": "#/definitions/base"
@@ -279,17 +288,51 @@
                     }
                   },
                   "additionalProperties": false,
-                  "required": ["base", "hover", "active", "selected"]
-                },
-                "translucent": {
-                  "$ref": "#/definitions/base"
+                  "required": [
+                    "base",
+                    "disabled",
+                    "hover",
+                    "active",
+                    "selected"
+                  ]
                 }
               },
               "additionalProperties": false,
-              "required": ["base", "interactive", "translucent"]
+              "required": ["base", "interactive"]
             }
           },
-          "additionalProperties": false,
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "base": {
+                "$ref": "#/definitions/color-token"
+              },
+              "interactive": {
+                "type": "object",
+                "properties": {
+                  "base": {
+                    "$ref": "#/definitions/color-token"
+                  },
+                  "hover": {
+                    "$ref": "#/definitions/base"
+                  },
+                  "active": {
+                    "$ref": "#/definitions/base"
+                  },
+                  "selected": {
+                    "$ref": "#/definitions/base"
+                  }
+                },
+                "additionalProperties": false,
+                "required": ["base", "hover", "active", "selected"]
+              },
+              "translucent": {
+                "$ref": "#/definitions/base"
+              }
+            },
+            "additionalProperties": false,
+            "required": ["base", "interactive", "translucent"]
+          },
           "required": [
             "accent",
             "accent-inverted",
@@ -299,6 +342,8 @@
             "default-inverted",
             "interface",
             "interface-inverted",
+            "card",
+            "card-inverted",
             "primary",
             "primary-inverted"
           ]

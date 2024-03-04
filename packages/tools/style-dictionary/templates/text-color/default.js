@@ -13,7 +13,7 @@ module.exports = () => ({
       base: token('{ks.color.link.base}'),
       hover: { base: token('{ks.color.link.base}') },
       active: { base: token('{ks.color.link.base}') },
-      visited: { base: token('{ks.color.link.base}') },
+      selected: { base: token('{ks.color.link.base}') },
     },
   },
   'default-inverted': {
@@ -22,7 +22,7 @@ module.exports = () => ({
       base: token('{ks.color.link-inverted.base}'),
       hover: { base: token('{ks.color.link-inverted.base}') },
       active: { base: token('{ks.color.link-inverted.base}') },
-      visited: { base: token('{ks.color.link-inverted.base}') },
+      selected: { base: token('{ks.color.link-inverted.base}') },
     },
   },
 });

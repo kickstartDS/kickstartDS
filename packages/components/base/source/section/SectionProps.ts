@@ -27,7 +27,11 @@ export type Gutter = 'large' | 'default' | 'small' | 'none';
 /**
  * Layout mode used for section contents
  */
-export type Mode = 'default' | 'tile' | 'list';
+export type Mode = 'default' | 'tile' | 'list' | 'slider';
+/**
+ * Set min-width for the tiles in the grid
+ */
+export type TileWidth = 'smallest' | 'default' | 'medium' | 'large' | 'largest';
 /**
  * Additional css classes that should be applied to the content section container
  */
@@ -65,6 +69,20 @@ export type AdditionalHeadlineClass = string;
  * Additional css classes that should be applied to the buttons section container
  */
 export type AdditionalButtonsClass = string;
+export type SliderNavigationPosition =
+  | 'below-center'
+  | 'below-edge'
+  | 'overlay';
+/**
+ * Icon identifier for the slider back button
+ */
+export type BackIconForSlider = string;
+export type InvisibleBackIconLabel = string;
+/**
+ * Icon identifier for the slider forward button
+ */
+export type ForwardIconForSlider = string;
+export type InvisibleForwardIconLabel = string;
 /**
  * Add additional css classes that should be applied to the section
  */
@@ -81,6 +99,7 @@ export interface SectionProps {
     align?: ContentAlignment;
     gutter?: Gutter;
     mode?: Mode;
+    tileWidth?: TileWidth;
     className?: AdditionalContentClass;
   };
   background?: Background;
@@ -97,6 +116,11 @@ export interface SectionProps {
     arrangement?: string;
     className?: AdditionalButtonsClass;
   } & ButtonGroupProps;
+  sliderNavPosition?: SliderNavigationPosition;
+  sliderBackIcon?: BackIconForSlider;
+  sliderBackLabel?: InvisibleBackIconLabel;
+  sliderForwardIcon?: ForwardIconForSlider;
+  sliderForwardLabel?: InvisibleForwardIconLabel;
   className?: AdditionalClass;
   component?: KsComponentAttribute;
 }

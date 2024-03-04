@@ -50,7 +50,7 @@
       "$ref": "http://schema.kickstartds.com/form/input.definitions.json#/definitions/hint"
     },
     "icon": {
-      "type": "object",
+      "type": "string",
       "allOf": [
         {
           "type": "string",

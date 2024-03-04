@@ -7,35 +7,19 @@
     "color": {
       "title": "Colors",
       "type": "object",
-      "properties": {
-        "primary": {
-          "title": "Primary Color",
-          "type": "string"
-        },
-        "primary-inverted": {
-          "title": "Primary Inverted Color",
-          "type": "string"
-        },
-        "background": {
-          "title": "Background Color",
-          "type": "string"
-        },
-        "foreground": {
-          "title": "Foreground Color",
-          "type": "string"
-        },
-        "link": {
-          "title": "Link Color",
-          "type": "string"
-        },
-        "link-inverted": {
-          "title": "Link Inverted Color",
-          "type": "string"
-        }
-      },
       "additionalProperties": {
         "type": "string"
-      }
+      },
+      "required": [
+        "primary",
+        "primary-inverted",
+        "background",
+        "background-inverted",
+        "foreground",
+        "foreground-inverted",
+        "link",
+        "link-inverted"
+      ]
     },
     "font": {
       "title": "Typography",
