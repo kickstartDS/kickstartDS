@@ -6,21 +6,21 @@ const token = (value) => ({
 
 module.exports = () => ({
   interface: {
-    base: token('{ks.color.fg.alpha.2.base}'),
+    base: token('{ks.color.fg.alpha.4.base}'),
     interactive: {
-      base: token('{ks.color.fg.base}'),
-      hover: { base: token('{ks.color.fg.base') },
-      active: { base: token('{ks.color.fg.base') },
-      visited: { base: token('{ks.color.fg.base') },
+      base: token('{ks.color.fg.alpha.3.base}'),
+      hover: { base: token('{ks.color.fg.base}') },
+      active: { base: token('{ks.color.fg.base}') },
+      selected: { base: token('{ks.color.fg.base}') },
     },
   },
   'interface-inverted': {
-    base: token('{ks.color.fg-inverted.alpha.2.base}'),
+    base: token('{ks.color.fg-inverted.alpha.4.base}'),
     interactive: {
-      base: token('{ks.color.fg-inverted.base}'),
+      base: token('{ks.color.fg-inverted.alpha.3.base}'),
       hover: { base: token('{ks.color.fg-inverted.base}') },
       active: { base: token('{ks.color.fg-inverted.base}') },
-      visited: { base: token('{ks.color.fg-inverted.base}') },
+      selected: { base: token('{ks.color.fg-inverted.base}') },
     },
   },
 });

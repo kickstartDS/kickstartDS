@@ -1,0 +1,38 @@
+@use 'sass:meta';
+@use '@kickstartds/core/source/core/custom-properties';
+@use './container';
+@use './button-group-vars';
+
+$vars: meta.module-variables(button-group-vars);
+@include custom-properties.styles($vars, container.$name);
+
+.c-button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--c-button-group--vertical-gutter)
+    var(--c-button-group--horizontal-gutter);
+
+  &--left {
+    justify-content: flex-start;
+  }
+
+  &--center {
+    justify-content: center;
+  }
+
+  &--right {
+    justify-content: flex-end;
+  }
+
+  &--space-between {
+    justify-content: space-between;
+  }
+
+  &__item {
+    min-width: var(--ks-button-group--button-min-width);
+
+    .c-button-group--grow & {
+      flex-grow: 1;
+    }
+  }
+}

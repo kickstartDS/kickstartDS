@@ -13,13 +13,6 @@
   },
   "license": "(MIT OR Apache-2.0)",
   "author": "Jonas Ulrich <jonas.ulrich@kickstartds.com> (https://www.kickstartDS.com/)",
-  "typesVersions": {
-    "*": {
-      "*": [
-        "*/index.d.ts"
-      ]
-    }
-  },
   "files": [
     "lib",
     "source/**/_container.scss",
@@ -41,12 +34,12 @@
   "devDependencies": {
     "@kickstartds/bundler": "^2.2.0",
     "@kickstartds/core": "^2.2.2",
-    "@types/react": "^18.2.6",
+    "@types/react": "^18.2.61",
     "bourbon": "^7.3.0",
     "sass-yiq": "^1.0.0"
   },
   "peerDependencies": {
-    "@kickstartds/core": "^2.0.3",
+    "@kickstartds/core": "^2.2.0",
     "react": "^17.0.2 || ^18.2.0"
   },
   "storybook": {

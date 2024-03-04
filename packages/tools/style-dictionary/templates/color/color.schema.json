@@ -89,10 +89,13 @@
         },
         "to-bg": {
           "$ref": "#/definitions/scale"
+        },
+        "to-fg": {
+          "$ref": "#/definitions/scale"
         }
       },
       "additionalProperties": false,
-      "required": ["base", "alpha", "to-bg"]
+      "required": ["base", "alpha", "to-bg", "to-fg"]
     }
   },
   "type": "object",
@@ -103,50 +106,48 @@
         "color": {
           "type": "object",
           "properties": {
-            "primary": {
-              "$ref": "#/definitions/scales"
+            "bg": {
+              "type": "object",
+              "properties": {
+                "base": { "$ref": "#/definitions/base" },
+                "alpha": { "$ref": "#/definitions/scale" },
+                "to-fg": { "$ref": "#/definitions/scale" }
+              },
+              "additionalProperties": false,
+              "required": ["base", "alpha", "to-fg"]
             },
-            "primary-inverted": {
-              "$ref": "#/definitions/scales"
+            "bg-inverted": {
+              "type": "object",
+              "properties": {
+                "base": { "$ref": "#/definitions/base" },
+                "alpha": { "$ref": "#/definitions/scale" },
+                "to-fg": { "$ref": "#/definitions/scale" }
+              },
+              "additionalProperties": false,
+              "required": ["base", "alpha", "to-fg"]
             },
             "fg": {
-              "$ref": "#/definitions/scales"
+              "type": "object",
+              "properties": {
+                "base": { "$ref": "#/definitions/base" },
+                "alpha": { "$ref": "#/definitions/scale" },
+                "to-bg": { "$ref": "#/definitions/scale" }
+              },
+              "additionalProperties": false,
+              "required": ["base", "alpha", "to-bg"]
             },
             "fg-inverted": {
-              "$ref": "#/definitions/scales"
-            },
-            "link": {
-              "$ref": "#/definitions/base"
-            },
-            "link-inverted": {
-              "$ref": "#/definitions/base"
+              "type": "object",
+              "properties": {
+                "base": { "$ref": "#/definitions/base" },
+                "alpha": { "$ref": "#/definitions/scale" },
+                "to-bg": { "$ref": "#/definitions/scale" }
+              },
+              "additionalProperties": false,
+              "required": ["base", "alpha", "to-bg"]
             },
             "transparent": {
               "$ref": "#/definitions/base"
-            },
-            "positive": {
-              "$ref": "#/definitions/scales"
-            },
-            "positive-inverted": {
-              "$ref": "#/definitions/scales"
-            },
-            "informative": {
-              "$ref": "#/definitions/scales"
-            },
-            "informative-inverted": {
-              "$ref": "#/definitions/scales"
-            },
-            "notice": {
-              "$ref": "#/definitions/scales"
-            },
-            "notice-inverted": {
-              "$ref": "#/definitions/scales"
-            },
-            "negative": {
-              "$ref": "#/definitions/scales"
-            },
-            "negative-inverted": {
-              "$ref": "#/definitions/scales"
             }
           },
           "additionalProperties": {
@@ -157,6 +158,8 @@
             "primary-inverted",
             "fg",
             "fg-inverted",
+            "bg",
+            "bg-inverted",
             "link",
             "link-inverted",
             "transparent"

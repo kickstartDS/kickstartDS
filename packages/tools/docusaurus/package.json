@@ -22,7 +22,7 @@
     "@docusaurus/core": "2.4.0",
     "@docusaurus/plugin-google-tag-manager": "^2.4.0",
     "@docusaurus/preset-classic": "2.4.0",
-    "@kickstartds/design-system": "^2.4.27",
+    "@kickstartds/design-system": "2.5.21--canary.110.3345.0",
     "@mdx-js/react": "2.3.0",
     "clsx": "^1.2.1",
     "docusaurus-plugin-sass": "^0.2.3",
@@ -32,7 +32,7 @@
     "react-admonitions": "^2.1.0",
     "react-dom": "^18.2.0",
     "sass": "^1.62.0",
-    "shiki": "^0.14.1",
+    "shiki": "^0.14.5",
     "styled-components": "^5.3.9"
   },
   "devDependencies": {

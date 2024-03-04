@@ -5,6 +5,8 @@
  * and run `yarn run schema` to regenerate this file.
  */
 
+import type { ButtonProps } from '@kickstartds/base/lib/button/typing';
+
 /**
  * Choose one of the set ratios, all ratios except `none` stretch the image to 100% width
  */
@@ -26,84 +28,24 @@ export type Topic = string;
  */
 export type TextContent = string;
 /**
+ * Content box link configuration
+ */
+export type Link = {
+  enabled?: DisplayLink;
+  [k: string]: unknown;
+} & ButtonProps;
+/**
  * Toggles visibility of the link
  */
 export type DisplayLink = boolean;
 /**
- * Text used on button
- */
-export type Label = string;
-/**
- * Choose one of the styles from the list
- */
-export type ButtonStyle = 'solid' | 'clear' | 'outline';
-export type Inverted = boolean;
-/**
- * Choose a size between small, medium and large
- */
-export type ButtonSize = 'small' | 'medium' | 'large';
-/**
- * Link used for button
- */
-export type ButtonHref = string;
-export type IconIdentifier = string;
-export type AriaRole = string;
-export type AdditionalClass = string;
-/**
- * Optional custom component identifier
- */
-export type KsComponentAttribute = string;
-export type IconIdentifier1 = string;
-export type AriaRole1 = string;
-export type AdditionalClass1 = string;
-/**
- * Optional custom component identifier
- */
-export type KsComponentAttribute1 = string;
-/**
- * Add fill animation on hover
- */
-export type FillAnimation = boolean;
-/**
- * Add icon animation on hover
- */
-export type IconAnimation = boolean;
-/**
- * Select the type attribute for the button
- */
-export type TypeAttribute = 'button' | 'submit' | 'reset';
-/**
- * Define a value attribute for the button
- */
-export type ValueAttribute = string;
-/**
- * Define a name attribute for the button
- */
-export type NameAttribute = string;
-/**
- * Set the disabled attribute for the button
- */
-export type DisabledAttribute = boolean;
-/**
- * Open link in new Tab
- */
-export type OpenLinkInNewTab = boolean;
-/**
- * Add additional css classes that should be applied to the button
+ * Add additional css classes that should be applied to the content box
  */
 export type AdditionalClasses = string;
 /**
  * Optional custom component identifier
  */
-export type KsComponentAttribute2 = string;
-/**
- * Add additional css classes that should be applied to the content box
- */
-export type AdditionalClasses1 = string;
-/**
- * Optional custom component identifier
- */
-export type KsComponentAttribute3 = string;
+export type KsComponentAttribute = string;
 
 /**
  * Component to display content in a condensed, boxed form
@@ -115,46 +57,6 @@ export interface ContentBoxProps {
   topic?: Topic;
   text?: TextContent;
   link?: Link;
-  className?: AdditionalClasses1;
-  component?: KsComponentAttribute3;
-}
-/**
- * Content box link configuration
- */
-export interface Link {
-  enabled?: DisplayLink;
-  label?: Label;
-  variant?: ButtonStyle;
-  inverted?: Inverted;
-  size?: ButtonSize;
-  href?: ButtonHref;
-  iconBefore?: IconBeforeButton;
-  iconAfter?: IconAfterButton;
-  fillAnimation?: FillAnimation;
-  iconAnimation?: IconAnimation;
-  type?: TypeAttribute;
-  value?: ValueAttribute;
-  name?: NameAttribute;
-  disabled?: DisabledAttribute;
-  newTab?: OpenLinkInNewTab;
   className?: AdditionalClasses;
-  component?: KsComponentAttribute2;
-}
-/**
- * Icon identifier for icon before the button text
- */
-export interface IconBeforeButton {
-  icon: IconIdentifier;
-  role?: AriaRole;
-  className?: AdditionalClass;
   component?: KsComponentAttribute;
-}
-/**
- * Icon identifier for icon after the button text
- */
-export interface IconAfterButton {
-  icon: IconIdentifier1;
-  role?: AriaRole1;
-  className?: AdditionalClass1;
-  component?: KsComponentAttribute1;
 }

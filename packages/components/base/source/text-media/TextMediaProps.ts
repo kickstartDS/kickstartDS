@@ -5,6 +5,10 @@
  * and run `yarn run schema` to regenerate this file.
  */
 
+import type { MediaVideoProps } from '@kickstartds/base/lib/media-video/typing';
+import type { MediaImageProps } from '@kickstartds/base/lib/media-image/typing';
+import type { MediaLazyImageProps } from '@kickstartds/base/lib/media-lazy-image/typing';
+
 /**
  * Copy text for the element
  */
@@ -24,140 +28,9 @@ export type MediaAlignment =
   | 'below-center'
   | 'below-right';
 /**
- * Url (mp4) for the video to display
- */
-export type Source = string;
-/**
- * Use an iframe embed
- */
-export type EmbeddedIframe = boolean;
-/**
- * Title to use for the video
- */
-export type VideoTitle = string;
-/**
- * Width of the video
- */
-export type Width = number;
-/**
- * Height of the video
- */
-export type Height = number;
-/**
- * Display media item over full width
- */
-export type FullWidthMedia = boolean;
-/**
- * Caption
- */
-export type Caption = string;
-/**
- * Picture source
- */
-export type Source1 = string;
-/**
- * Use a srcSet to display picture
- */
-export type PictureSourceset = string;
-/**
- * Alt text to display for picture
- */
-export type AltText = string;
-/**
- * Width of the picture
- */
-export type Width1 = number;
-/**
- * Height of the picture
- */
-export type Height1 = number;
-/**
- * Add additional css classes that should be applied to the button
- */
-export type AdditionalClasses = string;
-/**
- * Optional custom component identifier
- */
-export type KsComponentAttribute = string;
-/**
- * Add id attribute to the image
- */
-export type Id = string;
-/**
- * Define an itemprop attribute for the picture
- */
-export type ItempropAttribute = string;
-/**
- * Define a style attribute for the picture
- */
-export type StyleAttribute = string;
-/**
- * Render noscript fallback
- */
-export type Noscript = boolean;
-/**
- * Load the picture lazily
- */
-export type Lazy = boolean;
-/**
- * Use a srcSet to display picture
- */
-export type PictureSourceset1 = string;
-/**
- * TODO MEDIA DESCRIPTION
- */
-export type TODOMEDIATITLE = string;
-/**
- * TODO TYPE DESCRIPTION
- */
-export type TODOTYPETITLE = string;
-/**
- * Additional sources. This will result in a `picture`-Element
- */
-export type Sources = {
-  srcSet?: PictureSourceset1;
-  media?: TODOMEDIATITLE;
-  type?: TODOTYPETITLE;
-}[];
-/**
- * Set additional class(es) to the picture
- */
-export type ClassAttribute = string;
-/**
- * Display media item over full width
- */
-export type FullWidthMedia1 = boolean;
-/**
- * Caption
- */
-export type Caption1 = string;
-export type ThumbnailSource = string;
-export type LightboxImageSource = string;
-export type Width2 = number;
-export type Height2 = number;
-export type HoverZoomIcon = boolean;
-export type Caption2 = string;
-export type HideCaptionVisually = boolean;
-export type GalleryIdentifier = string;
-export type ID = string;
-export type AdditionalClass = string;
-export type AdditionalCaptionClass = string;
-/**
- * Optional custom component identifier
- */
-export type KsComponentAttribute1 = string;
-/**
- * Display media item over full width
- */
-export type FullWidthMedia2 = boolean;
-/**
- * Caption
- */
-export type Caption3 = string;
-/**
  * Collection of media items to display
  */
-export type Media = (TextMediaVideo | TextMediaImage | TextMediaLazyImage)[];
+export type Media = (MediaVideoProps | MediaImageProps | MediaLazyImageProps)[];
 /**
  * Additional css classes attached to the wrapping element
  */
@@ -165,7 +38,7 @@ export type Class = string;
 /**
  * Optional custom component identifier
  */
-export type KsComponentAttribute2 = string;
+export type KsComponentAttribute = string;
 
 /**
  * Component to display copy text, including media
@@ -175,66 +48,5 @@ export interface TextMediaProps {
   mediaAlignment?: MediaAlignment;
   media?: Media;
   className?: Class;
-  component?: KsComponentAttribute2;
-}
-export interface TextMediaVideo {
-  video?: Video;
-  full?: FullWidthMedia;
-  caption?: Caption;
-}
-/**
- * Video item to display
- */
-export interface Video {
-  src: Source;
-  iframe?: EmbeddedIframe;
-  title?: VideoTitle;
-  width: Width;
-  height: Height;
-}
-export interface TextMediaImage {
-  image?: Picture;
-  full?: FullWidthMedia1;
-  caption?: Caption1;
-}
-/**
- * Base component to display a picture
- */
-export interface Picture {
-  src?: Source1;
-  srcSet?: PictureSourceset;
-  alt?: AltText;
-  width?: Width1;
-  height?: Height1;
-  className?: AdditionalClasses;
   component?: KsComponentAttribute;
-  id?: Id;
-  itemProp?: ItempropAttribute;
-  style?: StyleAttribute;
-  noscript?: Noscript;
-  lazy?: Lazy;
-  sources?: Sources;
-  pictureClassName?: ClassAttribute;
-}
-export interface TextMediaLazyImage {
-  lightboxImage?: LightboxImage;
-  full?: FullWidthMedia2;
-  caption?: Caption3;
-}
-/**
- * Lightbox Image
- */
-export interface LightboxImage {
-  thumb?: ThumbnailSource;
-  image?: LightboxImageSource;
-  width?: Width2;
-  height?: Height2;
-  zoomIcon?: HoverZoomIcon;
-  caption?: Caption2;
-  hideCaption?: HideCaptionVisually;
-  gallery?: GalleryIdentifier;
-  id?: ID;
-  className?: AdditionalClass;
-  captionClassName?: AdditionalCaptionClass;
-  component?: KsComponentAttribute1;
 }

@@ -1,0 +1,22 @@
+diff --git a/node_modules/replace-in-file/types/index.d.ts b/node_modules/replace-in-file/types/index.d.ts
+index 0e05665..8b9ab18 100644
+--- a/node_modules/replace-in-file/types/index.d.ts
++++ b/node_modules/replace-in-file/types/index.d.ts
+@@ -1,7 +1,5 @@
+ 
+ declare module 'replace-in-file' {
+-  export function replaceInFile(config: ReplaceInFileConfig): Promise<ReplaceResult[]>;
+-  export function replaceInFile(config: ReplaceInFileConfig, cb: (error: Error, results: ReplaceResult[]) => void): void;
+   export default replaceInFile;
+ 
+   export namespace replaceInFile {
+@@ -11,9 +9,6 @@ declare module 'replace-in-file' {
+     export function replaceInFile(config: ReplaceInFileConfig, cb: (error: Error, results: ReplaceResult[]) => void): void;
+   }
+ 
+-  export function sync(config: ReplaceInFileConfig): ReplaceResult[];
+-  export function replaceInFileSync(config: ReplaceInFileConfig): ReplaceResult[];
+-
+   export type From = string | RegExp | FromCallback;
+   export type To = string | ToCallback;
+ 

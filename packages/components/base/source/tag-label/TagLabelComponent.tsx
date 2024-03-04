@@ -3,7 +3,7 @@ import classnames from 'classnames';
 import { defaultRenderFn } from '@kickstartds/core/lib/core';
 import { Icon } from '../icon';
 import { Link } from '../link';
-import { TagLabelProps as TagLabelSchemaProps } from './TagLabelProps';
+import { TagLabelProps as TagLabelSchemaProps } from './typing';
 
 export type TagLabelProps = TagLabelSchemaProps & {
   renderLabel?: typeof defaultRenderFn;

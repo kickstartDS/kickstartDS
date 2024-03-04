@@ -1,12 +1,11 @@
-import throttle from 'lodash-es/throttle';
-import debounce from 'lodash-es/debounce';
+import { throttle } from './throttle';
+import { debounce } from './debounce';
 import { inBrowser } from '../core/domLoaded';
 
 export const windowEvents = {
   resize: 'core.window.resize',
   scroll: 'core.window.scroll',
   scrollEnd: 'core.window.scrollEnd',
-  hashchange: 'core.window.hashchange',
 };
 
 if (inBrowser) {
@@ -32,8 +31,4 @@ if (inBrowser) {
     },
     { capture: true, passive: true }
   );
-  window.addEventListener('hashchange', (event) => {
-    event.preventDefault();
-    window._ks.radio.emit(windowEvents.hashchange);
-  });
 }

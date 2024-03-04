@@ -5,7 +5,7 @@ $box: (
     size: 1rem,
     border: var(--ks-border-width-default) solid,
     border-color: var(--ks-border-color-interface-interactive),
-    background: var(--ks-background-color-interface-interactive),
+    background: transparent,
   ),
   '.c-form-check--checkbox': (
     border-radius: var(--ks-border-radius-control),

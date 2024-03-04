@@ -1,11 +1,11 @@
 import { ForwardRefRenderFunction, HTMLAttributes } from 'react';
 import classnames from 'classnames';
-import { Picture } from '../image/picture';
+import { Picture } from '../picture';
 import { Headline } from '../headline';
 import { RichText } from '../rich-text';
 import { Icon } from '../icon';
 import { Link } from '../link';
-import type { ContactProps } from './ContactProps';
+import type { ContactProps } from './typing';
 
 export { ContactProps };
 export const ContactComponent: ForwardRefRenderFunction<

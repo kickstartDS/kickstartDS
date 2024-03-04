@@ -1,5 +1,6 @@
 import { Component } from '@kickstartds/core/lib/component';
-import { slideDown, slideUp, windowEvents } from '@kickstartds/core/lib/utils';
+
+const openClassName = 'c-collapsible-box--open';
 
 export default class CollapsibleBox extends Component {
   static identifier = 'base.collapsible-box';
@@ -7,56 +8,44 @@ export default class CollapsibleBox extends Component {
   constructor(element) {
     super(element);
 
-    this.details = element.querySelector('details');
     this.trigger = element.querySelector('.c-collapsible-box__header');
     this.content = element.querySelector('.c-collapsible-box__content');
 
+    element.addEventListener('toggle', this);
     this.trigger.addEventListener('click', this);
-    const token = window._ks.radio.on(windowEvents.hashchange, () =>
-      this.openFromHash()
-    );
-
-    this.openFromHash();
+    this.content.addEventListener('transitionend', this);
 
     this.onDisconnect(() => {
+      element.removeEventListener('toggle', this);
       this.trigger.removeEventListener('click', this);
-      window._ks.radio.off(token);
+      this.content.removeEventListener('transitionend', this);
     });
   }
 
-  get isOpen() {
-    return this.details.hasAttribute('open');
+  ontoggle() {
+    if (this.element.open) {
+      window.requestAnimationFrame(() => {
+        this.element.classList.add(openClassName);
+      });
+    }
   }
 
   onclick(event) {
     event.preventDefault();
 
-    if (this.isOpen) {
-      this.close();
+    if (this.element.open) {
+      this.element.classList.remove(openClassName);
     } else {
-      this.open();
-    }
-  }
-
-  openFromHash() {
-    const hash = window.location.hash.slice(1);
-    if (hash && hash === this.element.id && !this.isOpen) {
-      this.open();
-    }
-  }
-
-  open() {
-    this.content.style.height = 0;
-    this.details.setAttribute('open', '');
-    slideDown(this.content).then(() => {
+      this.element.open = true;
       this.element.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
-    });
-    if (this.element.id) {
-      window.history.replaceState(null, '', `#${this.element.id}`);
     }
   }
 
-  close() {
-    slideUp(this.content).then(() => this.details.removeAttribute('open'));
+  ontransitionend(event) {
+    if (event.target === this.content) {
+      if (!this.element.classList.contains(openClassName)) {
+        this.element.open = false;
+      }
+    }
   }
 }
