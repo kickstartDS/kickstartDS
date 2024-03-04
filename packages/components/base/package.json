@@ -39,7 +39,7 @@
     "sass-yiq": "^1.0.0"
   },
   "peerDependencies": {
-    "@kickstartds/core": "^2.2.0",
+    "@kickstartds/core": "^3.0.0",
     "react": "^17.0.2 || ^18.2.0"
   },
   "storybook": {
