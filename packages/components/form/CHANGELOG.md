@@ -1,3 +1,60 @@
+# v3.0.0 (Mon Mar 04 2024)
+
+#### 💥 Breaking Change
+
+- Section content alignment [#1486](https://github.com/kickstartDS/kickstartDS/pull/1486) ([@lmestel](https://github.com/lmestel))
+- Switch `@kickstartds/bundler` to TypeScript and schema tooling [#1489](https://github.com/kickstartDS/kickstartDS/pull/1489) ([@julrich](https://github.com/julrich))
+
+#### 🚀 Enhancement
+
+- Style dictionary improvements [#1615](https://github.com/kickstartDS/kickstartDS/pull/1615) ([@lmestel](https://github.com/lmestel) [@fleven-kds](https://github.com/fleven-kds))
+- Add section mode `slider` [#1550](https://github.com/kickstartDS/kickstartDS/pull/1550) ([@lmestel](https://github.com/lmestel))
+- Stop merging allOfs in component TypeScript type generation [#1518](https://github.com/kickstartDS/kickstartDS/pull/1518) ([@julrich](https://github.com/julrich))
+- Have overwritable types for components [#1457](https://github.com/kickstartDS/kickstartDS/pull/1457) ([@lmestel](https://github.com/lmestel) [@julrich](https://github.com/julrich))
+
+#### 🐛 Bug Fix
+
+- Merge branch 'next' into beta ([@lmestel](https://github.com/lmestel))
+- Merge branch 'master' into next ([@lmestel](https://github.com/lmestel))
+- fix: set default background color for form fields to transparent ([@lmestel](https://github.com/lmestel))
+- Merge branch 'master' into beta ([@lmestel](https://github.com/lmestel))
+- Fix `Select Field` schema: `icon` property set to `object`, should be `string` [#1573](https://github.com/kickstartDS/kickstartDS/pull/1573) ([@julrich](https://github.com/julrich))
+- fix(form): add corrected types for fixed select field ([@julrich](https://github.com/julrich))
+- fix(form): use correct type in icon of select-field in form ([@julrich](https://github.com/julrich))
+- feat(merge): upstream changes from next branch ([@julrich](https://github.com/julrich))
+- feat(types): stop merging allOfs in component TypeScript type generation ([@julrich](https://github.com/julrich))
+- ci(dependencies): switch package.json dependencies back to released version ([@julrich](https://github.com/julrich))
+- Update all peerDependencies [#1496](https://github.com/kickstartDS/kickstartDS/pull/1496) ([@julrich](https://github.com/julrich))
+- chore(dependencies): update all peerDependencies ([@julrich](https://github.com/julrich))
+- chore(merge): upstream next changes to resolve conflicts ([@julrich](https://github.com/julrich))
+- fix(bundler): first working build after TypeScript switch ([@julrich](https://github.com/julrich))
+- fix(bundler): more improvements, squash some bugs ([@julrich](https://github.com/julrich))
+- fix(bundler): yarn build runs through, again ([@julrich](https://github.com/julrich))
+- fix(bundler): fix dereferencing ([@julrich](https://github.com/julrich))
+- feat(bundler): move to TypeScript ([@julrich](https://github.com/julrich))
+- Merge branch 'next' into build/replace-htmltojsx-dependency ([@lmestel](https://github.com/lmestel))
+- Merge branch 'next' into dependabot/npm_and_yarn/stylelint-15.10.3 ([@lmestel](https://github.com/lmestel))
+- Merge branch 'feature/1407-improve-storybook-controls' into feature/split-typing-in-typescript-declarations ([@julrich](https://github.com/julrich))
+- chore(merge): upstream changes from next ([@julrich](https://github.com/julrich))
+- feat(bundling): split out typings for all components ([@julrich](https://github.com/julrich))
+- fix(bundling): remove typesVersions from package.jsons ([@julrich](https://github.com/julrich))
+
+#### 🔩 Dependency Updates
+
+- build(deps-dev): bump vite from 4.4.12 to 4.5.2 [#1587](https://github.com/kickstartDS/kickstartDS/pull/1587) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump replace-in-file from 7.0.1 to 7.1.0 [#1571](https://github.com/kickstartDS/kickstartDS/pull/1571) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump shiki from 0.14.4 to 0.14.5 [#1509](https://github.com/kickstartDS/kickstartDS/pull/1509) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump @rollup/plugin-replace from 5.0.3 to 5.0.5 [#1519](https://github.com/kickstartDS/kickstartDS/pull/1519) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 4
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Franz ([@fleven-kds](https://github.com/fleven-kds))
+- Jonas Ulrich ([@julrich](https://github.com/julrich))
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+
+---
+
 # v2.2.0 (Fri Jun 30 2023)
 
 #### 🚀 Enhancement

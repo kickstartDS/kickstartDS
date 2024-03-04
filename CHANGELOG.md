@@ -1,3 +1,98 @@
+# (Mon Mar 04 2024)
+
+#### 💥 Breaking Change
+
+- `@kickstartds/base@3.0.0`, `@kickstartds/core@3.0.0`
+  - Simplify Collapsible Box Transition [#1387](https://github.com/kickstartDS/kickstartDS/pull/1387) ([@lmestel](https://github.com/lmestel))
+  - Section content alignment [#1486](https://github.com/kickstartDS/kickstartDS/pull/1486) ([@lmestel](https://github.com/lmestel))
+- `@kickstartds/base@3.0.0`, `@kickstartds/bundler@3.0.0`
+  - Restructure section props [#1523](https://github.com/kickstartDS/kickstartDS/pull/1523) ([@lmestel](https://github.com/lmestel))
+- `@kickstartds/base@3.0.0`, `@kickstartds/blog@3.0.0`, `@kickstartds/core@3.0.0`, `@kickstartds/form@3.0.0`, `@kickstartds/bundler@3.0.0`
+  - Switch `@kickstartds/bundler` to TypeScript and schema tooling [#1489](https://github.com/kickstartDS/kickstartDS/pull/1489) ([@julrich](https://github.com/julrich))
+
+#### 🚀 Enhancement
+
+- `@kickstartds/form@3.0.0`, `@kickstartds/style-dictionary@3.0.0`
+  - Style dictionary improvements [#1615](https://github.com/kickstartDS/kickstartDS/pull/1615) ([@lmestel](https://github.com/lmestel) [@fleven-kds](https://github.com/fleven-kds))
+- `@kickstartds/base@3.0.0`
+  - Add `tileWidth` Prop to section [#1586](https://github.com/kickstartDS/kickstartDS/pull/1586) ([@lmestel](https://github.com/lmestel))
+  - Add section mode `slider` [#1550](https://github.com/kickstartDS/kickstartDS/pull/1550) ([@lmestel](https://github.com/lmestel))
+  - Add button group to section [#1527](https://github.com/kickstartDS/kickstartDS/pull/1527) ([@lmestel](https://github.com/lmestel))
+  - Add button group component [#1526](https://github.com/kickstartDS/kickstartDS/pull/1526) ([@lmestel](https://github.com/lmestel))
+- `@kickstartds/core@3.0.0`
+  - Add `useKsComponent` hook [#1453](https://github.com/kickstartDS/kickstartDS/pull/1453) ([@lmestel](https://github.com/lmestel))
+- `@kickstartds/base@3.0.0`, `@kickstartds/blog@3.0.0`, `@kickstartds/form@3.0.0`, `@kickstartds/bundler@3.0.0`
+  - Stop merging allOfs in component TypeScript type generation [#1518](https://github.com/kickstartDS/kickstartDS/pull/1518) ([@julrich](https://github.com/julrich))
+- `@kickstartds/base@3.0.0`, `@kickstartds/blog@3.0.0`, `@kickstartds/core@3.0.0`, `@kickstartds/form@3.0.0`, `@kickstartds/bundler@3.0.0`
+  - Have overwritable types for components [#1457](https://github.com/kickstartDS/kickstartDS/pull/1457) ([@lmestel](https://github.com/lmestel) [@julrich](https://github.com/julrich))
+- `@kickstartds/core@3.0.0`, `@kickstartds/bundler@3.0.0`
+  - Add debounce & throttle utility functions [#1444](https://github.com/kickstartDS/kickstartDS/pull/1444) ([@lmestel](https://github.com/lmestel))
+
+#### 🐛 Bug Fix
+
+- Reactivate storybook component-tokens addon [#1405](https://github.com/kickstartDS/kickstartDS/pull/1405) ([@lmestel](https://github.com/lmestel) [@julrich](https://github.com/julrich))
+- Cache generated js files for monorepo build / chromatic [#1497](https://github.com/kickstartDS/kickstartDS/pull/1497) ([@julrich](https://github.com/julrich))
+- `@kickstartds/form@3.0.0`
+  - Fix `Select Field` schema: `icon` property set to `object`, should be `string` [#1573](https://github.com/kickstartDS/kickstartDS/pull/1573) ([@julrich](https://github.com/julrich))
+- `@kickstartds/bundler@3.0.0`
+  - Remove glide from bundle [#1528](https://github.com/kickstartDS/kickstartDS/pull/1528) ([@lmestel](https://github.com/lmestel))
+  - Fix json schema types in generated stories [#1479](https://github.com/kickstartDS/kickstartDS/pull/1479) ([@lmestel](https://github.com/lmestel))
+- `@kickstartds/core@3.0.0`
+  - Pass all arguments to debounced function [#1522](https://github.com/kickstartDS/kickstartDS/pull/1522) ([@lmestel](https://github.com/lmestel))
+  - Complete `unpackDecorator` types [#1461](https://github.com/kickstartDS/kickstartDS/pull/1461) ([@lmestel](https://github.com/lmestel))
+  - Move react utils into its own module [#1443](https://github.com/kickstartDS/kickstartDS/pull/1443) ([@lmestel](https://github.com/lmestel))
+- `@kickstartds/base@3.0.0`
+  - Remove content prop from Section component [#1517](https://github.com/kickstartDS/kickstartDS/pull/1517) ([@julrich](https://github.com/julrich))
+  - Undo change to default contexts for some component imports [#1498](https://github.com/kickstartDS/kickstartDS/pull/1498) ([@julrich](https://github.com/julrich))
+  - Don't add hash to url on collapsible box click, if the element has no id attribute [#1388](https://github.com/kickstartDS/kickstartDS/pull/1388) ([@lmestel](https://github.com/lmestel))
+- `@kickstartds/style-dictionary@3.0.0`
+  - Bring back `hidden` attribute on icon sprite component [#1516](https://github.com/kickstartDS/kickstartDS/pull/1516) ([@lmestel](https://github.com/lmestel))
+  - Fix createTokens import [#1406](https://github.com/kickstartDS/kickstartDS/pull/1406) ([@lmestel](https://github.com/lmestel))
+- `@kickstartds/base@3.0.0`, `@kickstartds/blog@3.0.0`, `@kickstartds/core@3.0.0`, `@kickstartds/form@3.0.0`
+  - Update all peerDependencies [#1496](https://github.com/kickstartDS/kickstartDS/pull/1496) ([@julrich](https://github.com/julrich))
+
+#### 🏠 Internal
+
+- Fix Storybook CI Build [#1511](https://github.com/kickstartDS/kickstartDS/pull/1511) ([@lmestel](https://github.com/lmestel))
+
+#### 🔩 Dependency Updates
+
+- build(deps): bump ip from 2.0.0 to 2.0.1 [#1609](https://github.com/kickstartDS/kickstartDS/pull/1609) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump vite from 4.4.12 to 4.5.2 [#1587](https://github.com/kickstartDS/kickstartDS/pull/1587) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump es5-ext from 0.10.62 to 0.10.64 [#1614](https://github.com/kickstartDS/kickstartDS/pull/1614) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump follow-redirects from 1.15.3 to 1.15.4 [#1579](https://github.com/kickstartDS/kickstartDS/pull/1579) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump vite from 4.4.11 to 4.4.12 [#1557](https://github.com/kickstartDS/kickstartDS/pull/1557) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump @types/react-dom from 18.2.11 to 18.2.17 [#1547](https://github.com/kickstartDS/kickstartDS/pull/1547) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump @commitlint/cli from 17.7.2 to 18.4.2 [#1536](https://github.com/kickstartDS/kickstartDS/pull/1536) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump shiki from 0.14.4 to 0.14.5 [#1509](https://github.com/kickstartDS/kickstartDS/pull/1509) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump auto from 10.46.0 to 11.0.4 [#1503](https://github.com/kickstartDS/kickstartDS/pull/1503) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump @babel/traverse from 7.22.8 to 7.23.2 [#1512](https://github.com/kickstartDS/kickstartDS/pull/1512) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump semver from 5.7.1 to 5.7.2 [#1386](https://github.com/kickstartDS/kickstartDS/pull/1386) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump stylelint from 15.6.1 to 15.10.3 [#1422](https://github.com/kickstartDS/kickstartDS/pull/1422) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@lmestel](https://github.com/lmestel))
+- build(deps-dev): bump lerna from 5.6.2 to 7.3.0 [#1463](https://github.com/kickstartDS/kickstartDS/pull/1463) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump word-wrap from 1.2.3 to 1.2.5 [#1462](https://github.com/kickstartDS/kickstartDS/pull/1462) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- `@kickstartds/bundler@3.0.0`
+  - build(deps-dev): bump storybook from 7.4.6 to 7.6.17 [#1611](https://github.com/kickstartDS/kickstartDS/pull/1611) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+  - build(deps): bump replace-in-file from 7.0.1 to 7.1.0 [#1571](https://github.com/kickstartDS/kickstartDS/pull/1571) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+  - build(deps): bump rollup-plugin-node-externals from 5.1.3 to 6.1.2 [#1506](https://github.com/kickstartDS/kickstartDS/pull/1506) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+  - build(deps): bump @rollup/plugin-replace from 5.0.3 to 5.0.5 [#1519](https://github.com/kickstartDS/kickstartDS/pull/1519) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- `@kickstartds/base@3.0.0`
+  - build(deps-dev): bump @types/react from 18.2.25 to 18.2.61 [#1618](https://github.com/kickstartDS/kickstartDS/pull/1618) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- `@kickstartds/bundler@3.0.0`, `@kickstartds/style-dictionary@3.0.0`
+  - build(deps): bump postcss from 8.4.29 to 8.4.31 [#1490](https://github.com/kickstartDS/kickstartDS/pull/1490) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- `@kickstartds/style-dictionary@3.0.0`
+  - build(deps): bump postcss-calc from 8.2.4 to 9.0.1 [#1331](https://github.com/kickstartDS/kickstartDS/pull/1331) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+  - Replace `htmltojsx` dependency [#1381](https://github.com/kickstartDS/kickstartDS/pull/1381) ([@lmestel](https://github.com/lmestel))
+
+#### Authors: 4
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Franz ([@fleven-kds](https://github.com/fleven-kds))
+- Jonas Ulrich ([@julrich](https://github.com/julrich))
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+
+---
+
 # (Wed Jan 31 2024)
 
 #### 🐛 Bug Fix

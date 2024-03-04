@@ -1,3 +1,94 @@
+# v3.0.0 (Mon Mar 04 2024)
+
+#### 💥 Breaking Change
+
+- Simplify Collapsible Box Transition [#1387](https://github.com/kickstartDS/kickstartDS/pull/1387) ([@lmestel](https://github.com/lmestel))
+- Restructure section props [#1523](https://github.com/kickstartDS/kickstartDS/pull/1523) ([@lmestel](https://github.com/lmestel))
+- Section content alignment [#1486](https://github.com/kickstartDS/kickstartDS/pull/1486) ([@lmestel](https://github.com/lmestel))
+- Switch `@kickstartds/bundler` to TypeScript and schema tooling [#1489](https://github.com/kickstartDS/kickstartDS/pull/1489) ([@julrich](https://github.com/julrich))
+
+#### 🚀 Enhancement
+
+- Add `tileWidth` Prop to section [#1586](https://github.com/kickstartDS/kickstartDS/pull/1586) ([@lmestel](https://github.com/lmestel))
+- Add section mode `slider` [#1550](https://github.com/kickstartDS/kickstartDS/pull/1550) ([@lmestel](https://github.com/lmestel))
+- Add button group to section [#1527](https://github.com/kickstartDS/kickstartDS/pull/1527) ([@lmestel](https://github.com/lmestel))
+- Add button group component [#1526](https://github.com/kickstartDS/kickstartDS/pull/1526) ([@lmestel](https://github.com/lmestel))
+- Stop merging allOfs in component TypeScript type generation [#1518](https://github.com/kickstartDS/kickstartDS/pull/1518) ([@julrich](https://github.com/julrich))
+- Have overwritable types for components [#1457](https://github.com/kickstartDS/kickstartDS/pull/1457) ([@lmestel](https://github.com/lmestel) [@julrich](https://github.com/julrich))
+
+#### 🐛 Bug Fix
+
+- Merge branch 'next' into beta ([@lmestel](https://github.com/lmestel))
+- Merge branch 'master' into next ([@lmestel](https://github.com/lmestel))
+- build(deps-dev): bump @types/react from 18.2.25 to 18.2.61 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- Merge branch 'master' into beta ([@lmestel](https://github.com/lmestel))
+- feat: add `tileWidth` prop to section ([@lmestel](https://github.com/lmestel))
+- feat: add section mode `slider` ([@lmestel](https://github.com/lmestel))
+- feat: keep collapsible box functionality with disabled javascript ([@lmestel](https://github.com/lmestel))
+- feat: simplify collapsible box transition ([@lmestel](https://github.com/lmestel))
+- feat: rename button group prop align to arrangement ([@lmestel](https://github.com/lmestel))
+- feat: add button group to section ([@lmestel](https://github.com/lmestel))
+- feat(merge): upstream changes from next branch ([@julrich](https://github.com/julrich))
+- feat: add button group component ([@lmestel](https://github.com/lmestel))
+- feat: add `className` props to section's headline & content ([@lmestel](https://github.com/lmestel))
+- fix: ensure same widths for sections with the same configuration ([@lmestel](https://github.com/lmestel))
+- feat: restructure section props ([@lmestel](https://github.com/lmestel))
+- feat(types): stop merging allOfs in component TypeScript type generation ([@julrich](https://github.com/julrich))
+- Remove content prop from Section component [#1517](https://github.com/kickstartDS/kickstartDS/pull/1517) ([@julrich](https://github.com/julrich))
+- fix(schema): remove content prop from Section component ([@julrich](https://github.com/julrich))
+- feat: rename `.l-section__container--wrap` to `.l-section__content` ([@lmestel](https://github.com/lmestel))
+- ci(dependencies): switch package.json dependencies back to released version ([@julrich](https://github.com/julrich))
+- Undo change to default contexts for some component imports [#1498](https://github.com/kickstartDS/kickstartDS/pull/1498) ([@julrich](https://github.com/julrich))
+- fix: undo change to default contexts for some component imports ([@julrich](https://github.com/julrich))
+- Update all peerDependencies [#1496](https://github.com/kickstartDS/kickstartDS/pull/1496) ([@julrich](https://github.com/julrich))
+- chore(dependencies): update all peerDependencies ([@julrich](https://github.com/julrich))
+- chore(merge): upstream next changes to resolve conflicts ([@julrich](https://github.com/julrich))
+- fix(base): fix teaser schema ([@julrich](https://github.com/julrich))
+- fix(ci): broken build after picuture / lazy image move ([@julrich](https://github.com/julrich))
+- fix(storybook): get storybook start running again, move picture / lazy-image ([@julrich](https://github.com/julrich))
+- fix(bundler): first working build after TypeScript switch ([@julrich](https://github.com/julrich))
+- fix(bundler): add shebang for node to bundle entrypoint ([@julrich](https://github.com/julrich))
+- fix(bundler): change entrypoint for bundler independent of TypeScript ([@julrich](https://github.com/julrich))
+- chore: remove unused comment ([@julrich](https://github.com/julrich))
+- chore(ci): re-arrange patch command ([@julrich](https://github.com/julrich))
+- feat: inherit headlineAlign from contentAlign in section if not set ([@lmestel](https://github.com/lmestel))
+- chore(linting): fix formatting ([@julrich](https://github.com/julrich))
+- fix(bundler): more improvements, squash some bugs ([@julrich](https://github.com/julrich))
+- chore(linting): format type files ([@julrich](https://github.com/julrich))
+- fix(bundler): linting fixes ([@julrich](https://github.com/julrich))
+- fix(bundler): re-add schema generation to pre commit ([@julrich](https://github.com/julrich))
+- fix(bundler): yarn build runs through, again ([@julrich](https://github.com/julrich))
+- fix(bundler): fix dereferencing ([@julrich](https://github.com/julrich))
+- feat(bundler): move to TypeScript ([@julrich](https://github.com/julrich))
+- feat: add `headlineWidth` & `contentWidth` props to section ([@lmestel](https://github.com/lmestel))
+- fix: remove max-width and fix text align in headline component ([@lmestel](https://github.com/lmestel))
+- Merge branch 'next' into build/replace-htmltojsx-dependency ([@lmestel](https://github.com/lmestel))
+- Merge branch 'next' into dependabot/npm_and_yarn/stylelint-15.10.3 ([@lmestel](https://github.com/lmestel))
+- Merge branch 'feature/1407-improve-storybook-controls' into feature/split-typing-in-typescript-declarations ([@julrich](https://github.com/julrich))
+- chore(merge): upstream changes from next ([@julrich](https://github.com/julrich))
+- feat(bundling): split out typings for all components ([@julrich](https://github.com/julrich))
+- fix(bundling): remove typesVersions from package.jsons ([@julrich](https://github.com/julrich))
+- feat(bundle): have overwritable types for components ([@julrich](https://github.com/julrich))
+- Don't add hash to url on collapsible box click, if the element has no id attribute [#1388](https://github.com/kickstartDS/kickstartDS/pull/1388) ([@lmestel](https://github.com/lmestel))
+- fix: replace history state on collapsible open only if component has id attribute ([@lmestel](https://github.com/lmestel))
+
+#### 🔩 Dependency Updates
+
+- build(deps-dev): bump @types/react from 18.2.25 to 18.2.61 [#1618](https://github.com/kickstartDS/kickstartDS/pull/1618) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump vite from 4.4.12 to 4.5.2 [#1587](https://github.com/kickstartDS/kickstartDS/pull/1587) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump replace-in-file from 7.0.1 to 7.1.0 [#1571](https://github.com/kickstartDS/kickstartDS/pull/1571) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump shiki from 0.14.4 to 0.14.5 [#1509](https://github.com/kickstartDS/kickstartDS/pull/1509) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump @rollup/plugin-replace from 5.0.3 to 5.0.5 [#1519](https://github.com/kickstartDS/kickstartDS/pull/1519) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 4
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Franz ([@fleven-kds](https://github.com/fleven-kds))
+- Jonas Ulrich ([@julrich](https://github.com/julrich))
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+
+---
+
 # v2.2.2 (Mon Nov 27 2023)
 
 #### 🐛 Bug Fix

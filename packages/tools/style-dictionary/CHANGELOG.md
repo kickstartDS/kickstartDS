@@ -1,3 +1,55 @@
+# v3.0.0 (Mon Mar 04 2024)
+
+#### 💥 Breaking Change
+
+- Section content alignment [#1486](https://github.com/kickstartDS/kickstartDS/pull/1486) ([@lmestel](https://github.com/lmestel))
+
+#### 🚀 Enhancement
+
+- Style dictionary improvements [#1615](https://github.com/kickstartDS/kickstartDS/pull/1615) ([@lmestel](https://github.com/lmestel) [@fleven-kds](https://github.com/fleven-kds))
+
+#### 🐛 Bug Fix
+
+- Merge branch 'next' into beta ([@lmestel](https://github.com/lmestel))
+- Merge branch 'master' into next ([@lmestel](https://github.com/lmestel))
+- feat(style-dictionary): swap bold & accent token ([@fleven-kds](https://github.com/fleven-kds))
+- feat(style-dictionary): add missing import ([@fleven-kds](https://github.com/fleven-kds))
+- feat(style-dictionary): fix false token category ([@fleven-kds](https://github.com/fleven-kds))
+- feat(style-dictionary): improve default values ([@fleven-kds](https://github.com/fleven-kds))
+- feat: add card variant for background-, border- & text-color tokens ([@lmestel](https://github.com/lmestel))
+- feat: add inverted variants of box-shadow tokens ([@lmestel](https://github.com/lmestel))
+- feat: create semantic token sets for all color toke ([@lmestel](https://github.com/lmestel))
+- feat: add branding token `background-inverted` & `foreground-inverted` ([@lmestel](https://github.com/lmestel))
+- Merge branch 'master' into beta ([@lmestel](https://github.com/lmestel))
+- feat(merge): upstream changes from next branch ([@julrich](https://github.com/julrich))
+- Bring back `hidden` attribute on icon sprite component [#1516](https://github.com/kickstartDS/kickstartDS/pull/1516) ([@lmestel](https://github.com/lmestel))
+- fix: bring back `hidden` attribute on icon sprite component ([@lmestel](https://github.com/lmestel))
+- chore(merge): upstream next changes to resolve conflicts ([@julrich](https://github.com/julrich))
+- build(deps): bump postcss from 8.4.29 to 8.4.31 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump postcss-calc from 8.2.4 to 9.0.1 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- Merge branch 'next' into build/replace-htmltojsx-dependency ([@lmestel](https://github.com/lmestel))
+- Fix createTokens import [#1406](https://github.com/kickstartDS/kickstartDS/pull/1406) ([@lmestel](https://github.com/lmestel))
+- fix: fix createTokens import ([@lmestel](https://github.com/lmestel))
+- build(deps): replace htmltojsx dependency ([@lmestel](https://github.com/lmestel))
+
+#### 🔩 Dependency Updates
+
+- build(deps-dev): bump vite from 4.4.12 to 4.5.2 [#1587](https://github.com/kickstartDS/kickstartDS/pull/1587) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump replace-in-file from 7.0.1 to 7.1.0 [#1571](https://github.com/kickstartDS/kickstartDS/pull/1571) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump shiki from 0.14.4 to 0.14.5 [#1509](https://github.com/kickstartDS/kickstartDS/pull/1509) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump postcss from 8.4.29 to 8.4.31 [#1490](https://github.com/kickstartDS/kickstartDS/pull/1490) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump postcss-calc from 8.2.4 to 9.0.1 [#1331](https://github.com/kickstartDS/kickstartDS/pull/1331) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- Replace `htmltojsx` dependency [#1381](https://github.com/kickstartDS/kickstartDS/pull/1381) ([@lmestel](https://github.com/lmestel))
+
+#### Authors: 4
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Franz ([@fleven-kds](https://github.com/fleven-kds))
+- Jonas Ulrich ([@julrich](https://github.com/julrich))
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+
+---
+
 # v2.2.2 (Wed Jan 31 2024)
 
 #### 🐛 Bug Fix
