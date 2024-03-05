@@ -30,14 +30,14 @@ aliases:
       - yarn-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
       - yarn-{{ checksum "yarn.lock" }}
   - &save-cache-node
-    key: node-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
+    key: node-1-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
     paths:
       - node_modules
   - &restore-cache-node
     keys:
-      - node-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
-      - node-{{ checksum "yarn.lock" }}
-      - node-
+      - node-1-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
+      - node-1-{{ checksum "yarn.lock" }}
+      - node-1-
   - &attach_workspace
     attach_workspace:
       at: /mnt/ramdisk
