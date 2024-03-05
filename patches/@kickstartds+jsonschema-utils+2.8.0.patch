@@ -1,0 +1,13 @@
+diff --git a/node_modules/@kickstartds/jsonschema-utils/lib/helpers.js b/node_modules/@kickstartds/jsonschema-utils/lib/helpers.js
+index 428a7ed..da632db 100644
+--- a/node_modules/@kickstartds/jsonschema-utils/lib/helpers.js
++++ b/node_modules/@kickstartds/jsonschema-utils/lib/helpers.js
+@@ -376,7 +376,7 @@ export function getSchemaGraph(jsonSchemas) {
+ }
+ export const defaultProcessingOptions = {
+     typeResolution: true,
+-    modules: ['base', 'blog', 'form', 'content'],
++    modules: ['base', 'blog', 'form'],
+     additionalProperties: 'forceFalse',
+     loadPageSchema: true,
+     mergeAllOf: true,
