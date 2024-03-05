@@ -67,8 +67,8 @@
     "@types/node": "^20.7.1"
   },
   "peerDependencies": {
-    "@kickstartds/base": "^3.0.0",
-    "@kickstartds/core": "^3.0.0",
+    "@kickstartds/base": "^4.0.1",
+    "@kickstartds/core": "^4.0.1",
     "@kickstartds/style-dictionary": "^3.0.0",
     "react": "^17.0.2 || ^18.2.0",
     "storybook-dark-mode": "^3.0.0"
