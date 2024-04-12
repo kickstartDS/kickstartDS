@@ -18,7 +18,6 @@ const config: StorybookConfig = {
         designTokenGlob: '.storybook/tokens/*.{css,svg}',
       },
     },
-    '@storybook/addon-mdx-gfm',
   ],
   framework: {
     name: '@storybook/react-vite',
@@ -26,6 +25,9 @@ const config: StorybookConfig = {
   },
   docs: {
     autodocs: true,
+  },
+  core: {
+    disableTelemetry: true,
   },
 };
 

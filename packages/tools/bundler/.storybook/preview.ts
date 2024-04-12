@@ -43,12 +43,7 @@ const preview: Preview = {
       disable: true,
     },
     jsonschema: {
-      async toArgs(obj) {
-        return (await import('@kickstartds/core/lib/storybook')).pack(obj);
-      },
-      async fromArgs(args) {
-        return (await import('@kickstartds/core/lib/storybook')).unpack(args);
-      },
+      packArgs: true,
     },
     html: {
       decorators: [unpackDecorator],
