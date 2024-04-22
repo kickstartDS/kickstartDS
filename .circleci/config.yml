@@ -67,11 +67,11 @@ jobs:
                 environment:
                   NODE_ENV: production
                 command: yarn format
-            # - run:
-            #     name: Create Release
-            #     environment:
-            #       HUSKY: 0
-            #     command: yarn auto shipit
+            - run:
+                name: Create Release
+                environment:
+                  HUSKY: 0
+                command: yarn auto shipit
             - persist_to_workspace:
                 root: .
                 paths:

@@ -25,9 +25,11 @@
       "description": "The type of input to render",
       "type": "string",
       "enum": [
+        "color",
         "date",
         "datetime-local",
         "email",
+        "file",
         "month",
         "number",
         "password",
