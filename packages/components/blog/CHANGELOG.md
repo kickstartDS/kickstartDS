@@ -1,3 +1,24 @@
+# v4.0.3 (Mon Apr 22 2024)
+
+#### 🐛 Bug Fix
+
+- build(deps): bump classnames from 2.3.2 to 2.5.1 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### 📝 Documentation
+
+
+#### 🔩 Dependency Updates
+
+- build(deps): bump classnames from 2.3.2 to 2.5.1 [#1624](https://github.com/kickstartDS/kickstartDS/pull/1624) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 3
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Jonas Ulrich ([@julrich](https://github.com/julrich))
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+
+---
+
 # v4.0.0 (Mon Mar 04 2024)
 
 #### 💥 Breaking Change

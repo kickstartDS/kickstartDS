@@ -1,3 +1,42 @@
+# (Mon Apr 22 2024)
+
+#### 🐛 Bug Fix
+
+- `@kickstartds/core@4.0.3`
+  - Add types for window._ks [#1643](https://github.com/kickstartDS/kickstartDS/pull/1643) ([@lmestel](https://github.com/lmestel))
+- `@kickstartds/form@4.0.3`
+  - Add `color` & `file` to text-field's type prop [#1642](https://github.com/kickstartDS/kickstartDS/pull/1642) ([@lmestel](https://github.com/lmestel))
+
+#### ⚠️ Pushed to `master`
+
+- build: invalidate node cache on ci ([@lmestel](https://github.com/lmestel))
+- build: ignore content module while schema generation ([@lmestel](https://github.com/lmestel))
+- docs: fix docusaurus build ([@lmestel](https://github.com/lmestel))
+
+#### 📝 Documentation
+
+- `@kickstartds/base@4.0.3`, `@kickstartds/bundler@4.0.3`
+  - Upgrade storybook [#1636](https://github.com/kickstartDS/kickstartDS/pull/1636) ([@lmestel](https://github.com/lmestel) [@julrich](https://github.com/julrich))
+
+#### 🔩 Dependency Updates
+
+- build(deps-dev): bump vite from 4.5.2 to 4.5.3 [#1633](https://github.com/kickstartDS/kickstartDS/pull/1633) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump express from 4.18.2 to 4.19.2 [#1630](https://github.com/kickstartDS/kickstartDS/pull/1630) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump webpack-dev-middleware from 5.3.3 to 5.3.4 [#1629](https://github.com/kickstartDS/kickstartDS/pull/1629) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump follow-redirects from 1.15.4 to 1.15.6 [#1628](https://github.com/kickstartDS/kickstartDS/pull/1628) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- `@kickstartds/core@4.0.3`, `@kickstartds/bundler@4.0.3`
+  - build(deps): bump fs-extra and @types/fs-extra [#1623](https://github.com/kickstartDS/kickstartDS/pull/1623) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- `@kickstartds/base@4.0.3`, `@kickstartds/blog@4.0.3`, `@kickstartds/core@4.0.3`, `@kickstartds/form@4.0.3`
+  - build(deps): bump classnames from 2.3.2 to 2.5.1 [#1624](https://github.com/kickstartDS/kickstartDS/pull/1624) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 3
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Jonas Ulrich ([@julrich](https://github.com/julrich))
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+
+---
+
 # (Mon Mar 04 2024)
 
 #### 💥 Breaking Change

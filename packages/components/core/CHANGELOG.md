@@ -1,3 +1,29 @@
+# v4.0.3 (Mon Apr 22 2024)
+
+#### 🐛 Bug Fix
+
+- Add types for window._ks [#1643](https://github.com/kickstartDS/kickstartDS/pull/1643) ([@lmestel](https://github.com/lmestel))
+- feat: add types for window._ks ([@lmestel](https://github.com/lmestel))
+- build(deps): bump fs-extra and @types/fs-extra ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump classnames from 2.3.2 to 2.5.1 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### 📝 Documentation
+
+- Upgrade storybook [#1636](https://github.com/kickstartDS/kickstartDS/pull/1636) ([@lmestel](https://github.com/lmestel) [@julrich](https://github.com/julrich))
+
+#### 🔩 Dependency Updates
+
+- build(deps): bump fs-extra and @types/fs-extra [#1623](https://github.com/kickstartDS/kickstartDS/pull/1623) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump classnames from 2.3.2 to 2.5.1 [#1624](https://github.com/kickstartDS/kickstartDS/pull/1624) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 3
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Jonas Ulrich ([@julrich](https://github.com/julrich))
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+
+---
+
 # v4.0.0 (Mon Mar 04 2024)
 
 #### 💥 Breaking Change
