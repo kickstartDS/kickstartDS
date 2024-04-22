@@ -3,7 +3,7 @@ export const inBrowser = typeof window !== 'undefined';
 const ready = () =>
   inBrowser &&
   (document.readyState === 'interactive' || document.readyState === 'complete');
-const queue = [];
+const queue: (() => void)[] = [];
 
 if (inBrowser && !ready()) {
   document.addEventListener('DOMContentLoaded', () => {
@@ -13,7 +13,7 @@ if (inBrowser && !ready()) {
   });
 }
 
-export function domLoaded(callback) {
+export function domLoaded(callback: () => void) {
   if (inBrowser) {
     if (ready()) {
       setTimeout(callback);
