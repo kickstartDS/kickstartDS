@@ -29,9 +29,11 @@ export type Placeholder = string;
  * The type of input to render
  */
 export type Type =
+  | 'color'
   | 'date'
   | 'datetime-local'
   | 'email'
+  | 'file'
   | 'month'
   | 'number'
   | 'password'
