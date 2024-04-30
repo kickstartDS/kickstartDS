@@ -209,6 +209,7 @@ export type SummaryTextForTheCollapsible = string;
  * Include the text for the collapsible that should be visible after opening
  */
 export type ContentOfTheCollapsible = string;
+export type InitialOpen = boolean;
 /**
  * Additional css classes attached to the wrapping element
  */
@@ -873,6 +874,7 @@ export interface Picture {
 export interface CollapsibleBox {
   summary: SummaryTextForTheCollapsible;
   text: ContentOfTheCollapsible;
+  open?: InitialOpen;
   className?: Class1;
   component?: KsComponentAttribute6;
 }

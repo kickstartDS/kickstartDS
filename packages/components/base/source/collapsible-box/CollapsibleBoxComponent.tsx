@@ -22,6 +22,7 @@ export const CollapsibleBoxComponent: ForwardRefRenderFunction<
     renderSummary = defaultRenderFn,
     text,
     renderText = richTextDefaultRenderFn,
+    open,
     children,
     className,
     component = 'base.collapsible-box',
@@ -35,7 +36,7 @@ export const CollapsibleBoxComponent: ForwardRefRenderFunction<
     ref={ref}
     {...props}
   >
-    <details>
+    <details open={open}>
       <summary className="c-collapsible-box__header">
         <div className="c-collapsible-box__header-wrapper">
           <span className="c-collapsible-box__header__text">
