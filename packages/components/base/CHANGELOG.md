@@ -1,3 +1,19 @@
+# v2.3.0 (Tue Apr 30 2024)
+
+#### 🚀 Enhancement
+
+- Add `open` prop to collapsible box [#1646](https://github.com/kickstartDS/kickstartDS/pull/1646) ([@lmestel](https://github.com/lmestel))
+
+#### 🐛 Bug Fix
+
+- feat: add `open` prop to collapsible box ([@lmestel](https://github.com/lmestel))
+
+#### Authors: 1
+
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+
+---
+
 # v2.2.2 (Mon Nov 27 2023)
 
 #### 🐛 Bug Fix
