@@ -6,6 +6,7 @@
     "next-v2",
     "beta"
   ],
+  "versionBranches": true,
   "plugins": [
     "npm",
     [
