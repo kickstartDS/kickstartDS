@@ -161,13 +161,13 @@
     call-me-maybe "^1.0.1"
     js-yaml "^4.1.0"
 
-"@auto-it/all-contributors@^11.1.1":
-  version "11.1.1"
-  resolved "https://registry.yarnpkg.com/@auto-it/all-contributors/-/all-contributors-11.1.1.tgz#368d794ace6930d20175d3c627888e7913880db5"
-  integrity sha512-MSiif/W/cWskqRew1V5xO3Z3VCP3evsaRyl3paTzw1DAI6o7QRGW/M5qSZhCDqPg1v7C43/59yhhBPzlAvf/Sg==
+"@auto-it/all-contributors@^11.1.6":
+  version "11.1.6"
+  resolved "https://registry.yarnpkg.com/@auto-it/all-contributors/-/all-contributors-11.1.6.tgz#59a179a3b7a9af82c0837bc0e9819c7e4c0308d2"
+  integrity sha512-j1VpEojfJMKj3qG37d6foZY1fATH9wZQQ3+ly7yFDw+aEYPS+aYFJUtUL9uUBzACwN/JhmnSztP2VaIgE/33Pw==
   dependencies:
-    "@auto-it/bot-list" "11.1.1"
-    "@auto-it/core" "11.1.1"
+    "@auto-it/bot-list" "11.1.6"
+    "@auto-it/core" "11.1.6"
     "@octokit/rest" "^18.12.0"
     all-contributors-cli "6.19.0"
     anymatch "^3.1.1"
@@ -179,17 +179,17 @@
     io-ts "^2.1.2"
     tslib "2.1.0"
 
-"@auto-it/bot-list@11.1.1":
-  version "11.1.1"
-  resolved "https://registry.yarnpkg.com/@auto-it/bot-list/-/bot-list-11.1.1.tgz#944d5073a0107ab6172aa6742fa131c69d804b9a"
-  integrity sha512-uKZ08KC9FUjMBYqiizZ3VlXyEAeRHEAJaeNMqQFPi0jFKRtX/Dm4tAhDXqfQeuOuAsUHNh5Pp+4zOX2RmTPZaA==
+"@auto-it/bot-list@11.1.6":
+  version "11.1.6"
+  resolved "https://registry.yarnpkg.com/@auto-it/bot-list/-/bot-list-11.1.6.tgz#143cdf12d73c36a01fca3bdf80853c6cc2920187"
+  integrity sha512-3Qdphiw9JlzYX15moLZSaP+jNuM3UAFDHTgIpsfnfIQwQDNSjZhM4rwxqsAY/r1mJAyxt16c6wbqisi7KNFD/A==
 
-"@auto-it/core@11.1.1":
-  version "11.1.1"
-  resolved "https://registry.yarnpkg.com/@auto-it/core/-/core-11.1.1.tgz#849565aa023a0161b2134d818c9e3aaefbe27fbc"
-  integrity sha512-CIQYqJG/pXmWsQjgbjMF6qnwAu7Klrpm5fWHrXpzIEq/3qQfgGmTkauuJRSz9bM5z6pHHCjT1eypVV/EDj9ijg==
+"@auto-it/core@11.1.6":
+  version "11.1.6"
+  resolved "https://registry.yarnpkg.com/@auto-it/core/-/core-11.1.6.tgz#274d1c61e80e1d3d25952fd5ffdebdaad145023a"
+  integrity sha512-bxiUXJVyRYs7Bf4DH/JLT5pdR14RYSpoX0eBw0ilkU9qNqylTCbThuKofM7Bqn7jaQF2PDUoC72c8xCkqvHGQg==
   dependencies:
-    "@auto-it/bot-list" "11.1.1"
+    "@auto-it/bot-list" "11.1.6"
     "@endemolshinegroup/cosmiconfig-typescript-loader" "^3.0.2"
     "@octokit/core" "^3.5.1"
     "@octokit/plugin-enterprise-compatibility" "1.3.0"
@@ -230,25 +230,25 @@
     typescript-memoize "^1.0.0-alpha.3"
     url-join "^4.0.0"
 
-"@auto-it/first-time-contributor@^11.1.1":
-  version "11.1.1"
-  resolved "https://registry.yarnpkg.com/@auto-it/first-time-contributor/-/first-time-contributor-11.1.1.tgz#72313f24af8037716729b38dafb638d4a79646ab"
-  integrity sha512-xyKULf7+EoaPUZdYE1jVLMo4GUUxiIU5Q9ENdcTrCsw9Y4jSIdCBZKR+wxbxZNdqsJHnLGfAaW+SbLY8OrN2ng==
+"@auto-it/first-time-contributor@^11.1.6":
+  version "11.1.6"
+  resolved "https://registry.yarnpkg.com/@auto-it/first-time-contributor/-/first-time-contributor-11.1.6.tgz#0b78d0a9a6410791feb17feb31387c892f92f536"
+  integrity sha512-yiHP24rf/sNrRBSvzXf4nHndw8D5IAbHNjWN7JXjLYIbcyBeGUu9wsIUhuMQsrLEGu54AC/hbb+IQEhWGF+mjg==
   dependencies:
-    "@auto-it/bot-list" "11.1.1"
-    "@auto-it/core" "11.1.1"
+    "@auto-it/bot-list" "11.1.6"
+    "@auto-it/core" "11.1.6"
     array.prototype.flatmap "^1.2.2"
     endent "^2.1.0"
     tslib "2.1.0"
     url-join "^4.0.0"
 
-"@auto-it/npm@11.1.1", "@auto-it/npm@^11.1.1":
-  version "11.1.1"
-  resolved "https://registry.yarnpkg.com/@auto-it/npm/-/npm-11.1.1.tgz#54f136ebb947cfc116bc0a3f4e144643f20291f9"
-  integrity sha512-I7qWPdU2goCmqdvAEpa6yGwQmzx5YXEsZywqs6uTQXIDuGbFzNt/7jwJNt8p/MNE8M0ra8FJ05eHavBLFZuEfg==
+"@auto-it/npm@11.1.6", "@auto-it/npm@^11.1.6":
+  version "11.1.6"
+  resolved "https://registry.yarnpkg.com/@auto-it/npm/-/npm-11.1.6.tgz#2a4e30bff25c5e3e74839245f23f024bbaf565ea"
+  integrity sha512-eFWzR+6N1lMSXi32BunnlIdXIFikX6mieaFLmPk9VNM4vOXqsfkc7BQ0xhsZRsn5sxSR/XBwlQXoExAHybjs3g==
   dependencies:
-    "@auto-it/core" "11.1.1"
-    "@auto-it/package-json-utils" "11.1.1"
+    "@auto-it/core" "11.1.6"
+    "@auto-it/package-json-utils" "11.1.6"
     await-to-js "^3.0.0"
     endent "^2.1.0"
     env-ci "^5.0.1"
@@ -262,32 +262,32 @@
     url-join "^4.0.0"
     user-home "^2.0.0"
 
-"@auto-it/package-json-utils@11.1.1":
-  version "11.1.1"
-  resolved "https://registry.yarnpkg.com/@auto-it/package-json-utils/-/package-json-utils-11.1.1.tgz#b7e086ce394b14d674d1c89b8e384f23598695a9"
-  integrity sha512-hk6wKuP7fPonXnP/blPHYS4iQaKZ6s+dVBRPSW7pjWZv6H/A131mWVSQC59nhe8lqZhbQ2MrDH4xxfhYnq21sA==
+"@auto-it/package-json-utils@11.1.6":
+  version "11.1.6"
+  resolved "https://registry.yarnpkg.com/@auto-it/package-json-utils/-/package-json-utils-11.1.6.tgz#e06492a1b210bccef07d368899d565865a7aa5bc"
+  integrity sha512-RSXmO+KegaEY7uw1vt8iXL9FShiinFigKNFuIWM9oLSaSHJfeQ2ZD291i9nV+tz86bPGySBb5ktdJ3uo2pAZ+Q==
   dependencies:
     parse-author "^2.0.0"
     parse-github-url "1.0.2"
 
-"@auto-it/released@11.1.1", "@auto-it/released@^11.1.1":
-  version "11.1.1"
-  resolved "https://registry.yarnpkg.com/@auto-it/released/-/released-11.1.1.tgz#483a2d6e3b7e0fe8bc9d29c57bb7fbd40ca36b40"
-  integrity sha512-iRUebl2q5V7hFEgScGVUMUVoOXrFFi5O280hUCpZxmd6kkG2v7Kl+Weii5zKpd7YSqG0HibJCD+LVwPClAfrCA==
+"@auto-it/released@11.1.6", "@auto-it/released@^11.1.6":
+  version "11.1.6"
+  resolved "https://registry.yarnpkg.com/@auto-it/released/-/released-11.1.6.tgz#57832fc034adeb3d3fe9007593b03cf280f1aba6"
+  integrity sha512-RHTSjq5fAQxkhcC84aWItotyPGH67o+bzSxzr9H4mzvP8OrIxj7Jsfmk8wT4rjgupCTl9fu8DiGoCGjcQpCdCw==
   dependencies:
-    "@auto-it/bot-list" "11.1.1"
-    "@auto-it/core" "11.1.1"
+    "@auto-it/bot-list" "11.1.6"
+    "@auto-it/core" "11.1.6"
     deepmerge "^4.0.0"
     fp-ts "^2.5.3"
     io-ts "^2.1.2"
     tslib "2.1.0"
 
-"@auto-it/version-file@11.1.1":
-  version "11.1.1"
-  resolved "https://registry.yarnpkg.com/@auto-it/version-file/-/version-file-11.1.1.tgz#3642728e9119672193408f45b5ae96e58b72ef66"
-  integrity sha512-KHKunip2nXWKd7zJ0hdALojY+E6sTdmxuq9SXYgTMXUcZw2BtxunVSK1hb2wmS6iUH4CCILk12dHksAO5BFzeQ==
+"@auto-it/version-file@11.1.6":
+  version "11.1.6"
+  resolved "https://registry.yarnpkg.com/@auto-it/version-file/-/version-file-11.1.6.tgz#f6afce4a1dcf4b9c1db2d1115fdbf64c5293931b"
+  integrity sha512-iDAK0IrCYFPDgkX4DGB97VFbiFEfxN+IMW1NiF+Qk7Kd3SX2899vwuFxyVvGwovX7ssuCi/4tSTrvx6PLhH6zw==
   dependencies:
-    "@auto-it/core" "11.1.1"
+    "@auto-it/core" "11.1.6"
     fp-ts "^2.5.3"
     io-ts "^2.1.2"
     semver "^7.0.0"
@@ -2280,7 +2280,7 @@
     "@docusaurus/theme-search-algolia" "2.4.0"
     "@docusaurus/types" "2.4.0"
 
-"@docusaurus/react-loadable@5.5.2":
+"@docusaurus/react-loadable@5.5.2", "react-loadable@npm:@docusaurus/react-loadable@5.5.2":
   version "5.5.2"
   resolved "https://registry.npmjs.org/@docusaurus/react-loadable/-/react-loadable-5.5.2.tgz#81aae0db81ecafbdaee3651f12804580868fa6ce"
   integrity sha512-A3dYjdBGuy0IGT+wyLIGIKLRE+sAk1iNk0f1HjNDysO7u8lhL4N3VEm+FAubmJbAztn94F7MxBTPmnixbiyFdQ==
@@ -6012,15 +6012,15 @@ author-regex@^1.0.0:
   resolved "https://registry.npmjs.org/author-regex/-/author-regex-1.0.0.tgz#d08885be6b9bbf9439fe087c76287245f0a81450"
   integrity sha512-KbWgR8wOYRAPekEmMXrYYdc7BRyhn2Ftk7KWfMUnQ43hFdojWEFRxhhRUm3/OFEdPa1r0KAvTTg9YQK57xTe0g==
 
-auto@^11.1.1:
-  version "11.1.1"
-  resolved "https://registry.yarnpkg.com/auto/-/auto-11.1.1.tgz#874681d990c567208457a1f30d207b3df1484bd5"
-  integrity sha512-mOucdDWMjtuBDH8phH9Z0s1dD4uFrFIhYQ/Zh4wCH2uB3eEf8qZbu20DLOWCfj1zEUU2gxqVAuqJD4OyLWvaSQ==
+auto@^11.1.6:
+  version "11.1.6"
+  resolved "https://registry.yarnpkg.com/auto/-/auto-11.1.6.tgz#f905899756cdadced91a8226127221d286ab22fa"
+  integrity sha512-GKeZbFWPp7V9d+yWuFvaffVNyLSGFpR/+SrzXt29YKhg8axx5bKQKzbBN0eSzX5DLmhBwS81tWXS+SYpECil9Q==
   dependencies:
-    "@auto-it/core" "11.1.1"
-    "@auto-it/npm" "11.1.1"
-    "@auto-it/released" "11.1.1"
-    "@auto-it/version-file" "11.1.1"
+    "@auto-it/core" "11.1.6"
+    "@auto-it/npm" "11.1.6"
+    "@auto-it/released" "11.1.6"
+    "@auto-it/version-file" "11.1.6"
     await-to-js "^3.0.0"
     chalk "^4.0.0"
     command-line-application "^0.10.1"
@@ -15607,14 +15607,6 @@ react-loadable-ssr-addon-v5-slorber@^1.0.1:
   dependencies:
     "@babel/runtime" "^7.10.3"
 
-"react-loadable@npm:@docusaurus/react-loadable@5.5.2":
-  version "5.5.2"
-  resolved "https://registry.npmjs.org/@docusaurus/react-loadable/-/react-loadable-5.5.2.tgz#81aae0db81ecafbdaee3651f12804580868fa6ce"
-  integrity sha512-A3dYjdBGuy0IGT+wyLIGIKLRE+sAk1iNk0f1HjNDysO7u8lhL4N3VEm+FAubmJbAztn94F7MxBTPmnixbiyFdQ==
-  dependencies:
-    "@types/react" "*"
-    prop-types "^15.6.2"
-
 react-refresh@^0.14.0:
   version "0.14.0"
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.14.0.tgz#4e02825378a5f227079554d4284889354e5f553e"
@@ -17221,7 +17213,7 @@ string-replace-to-array@^1.0.1:
     lodash.flatten "^4.2.0"
     lodash.isstring "^4.0.1"
 
-"string-width-cjs@npm:string-width@^4.2.0":
+"string-width-cjs@npm:string-width@^4.2.0", "string-width@^1.0.2 || 2 || 3 || 4", string-width@^4.0.0, string-width@^4.1.0, string-width@^4.2.0, string-width@^4.2.2, string-width@^4.2.3:
   version "4.2.3"
   resolved "https://registry.npmjs.org/string-width/-/string-width-4.2.3.tgz#269c7117d27b05ad2e536830a8ec895ef9c6d010"
   integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==
@@ -17238,15 +17230,6 @@ string-width@^1.0.1:
     code-point-at "^1.0.0"
     is-fullwidth-code-point "^1.0.0"
     strip-ansi "^3.0.0"
-
-"string-width@^1.0.2 || 2 || 3 || 4", string-width@^4.0.0, string-width@^4.1.0, string-width@^4.2.0, string-width@^4.2.2, string-width@^4.2.3:
-  version "4.2.3"
-  resolved "https://registry.npmjs.org/string-width/-/string-width-4.2.3.tgz#269c7117d27b05ad2e536830a8ec895ef9c6d010"
-  integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==
-  dependencies:
-    emoji-regex "^8.0.0"
-    is-fullwidth-code-point "^3.0.0"
-    strip-ansi "^6.0.1"
 
 string-width@^5.0.0, string-width@^5.0.1, string-width@^5.1.2:
   version "5.1.2"
@@ -17333,7 +17316,7 @@ stringify-object@^3.3.0:
     is-obj "^1.0.1"
     is-regexp "^1.0.0"
 
-"strip-ansi-cjs@npm:strip-ansi@^6.0.1":
+"strip-ansi-cjs@npm:strip-ansi@^6.0.1", strip-ansi@^6.0.0, strip-ansi@^6.0.1:
   version "6.0.1"
   resolved "https://registry.npmjs.org/strip-ansi/-/strip-ansi-6.0.1.tgz#9e26c63d30f53443e9489495b2105d37b67a85d9"
   integrity sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==
@@ -17346,13 +17329,6 @@ strip-ansi@^3.0.0, strip-ansi@^3.0.1:
   integrity sha512-VhumSSbBqDTP8p2ZLKj40UjBCV4+v8bUSEpUb4KjRgWk9pbqGF4REFj6KEagidb2f/M6AzC0EmFyDNGaw9OCzg==
   dependencies:
     ansi-regex "^2.0.0"
-
-strip-ansi@^6.0.0, strip-ansi@^6.0.1:
-  version "6.0.1"
-  resolved "https://registry.npmjs.org/strip-ansi/-/strip-ansi-6.0.1.tgz#9e26c63d30f53443e9489495b2105d37b67a85d9"
-  integrity sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==
-  dependencies:
-    ansi-regex "^5.0.1"
 
 strip-ansi@^7.0.1:
   version "7.1.0"
@@ -19240,7 +19216,7 @@ wordwrapjs@^4.0.0:
     reduce-flatten "^2.0.0"
     typical "^5.2.0"
 
-"wrap-ansi-cjs@npm:wrap-ansi@^7.0.0":
+"wrap-ansi-cjs@npm:wrap-ansi@^7.0.0", wrap-ansi@^7.0.0:
   version "7.0.0"
   resolved "https://registry.npmjs.org/wrap-ansi/-/wrap-ansi-7.0.0.tgz#67e145cff510a6a6984bdf1152911d69d2eb9e43"
   integrity sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==
@@ -19261,15 +19237,6 @@ wrap-ansi@^6.0.1, wrap-ansi@^6.2.0:
   version "6.2.0"
   resolved "https://registry.npmjs.org/wrap-ansi/-/wrap-ansi-6.2.0.tgz#e9393ba07102e6c91a3b221478f0257cd2856e53"
   integrity sha512-r6lPcBGxZXlIcymEu7InxDMhdW0KDxpLgoFLcguasxCaJ/SOIZwINatK9KY/tf+ZrlywOKU0UDj3ATXUBfxJXA==
-  dependencies:
-    ansi-styles "^4.0.0"
-    string-width "^4.1.0"
-    strip-ansi "^6.0.0"
-
-wrap-ansi@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.npmjs.org/wrap-ansi/-/wrap-ansi-7.0.0.tgz#67e145cff510a6a6984bdf1152911d69d2eb9e43"
-  integrity sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==
   dependencies:
     ansi-styles "^4.0.0"
     string-width "^4.1.0"
