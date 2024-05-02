@@ -4,7 +4,7 @@ $host: (
   ':root, [ks-theme], [ks-inverted]': (
     font: var(--ks-font-copy-m),
     color: var(--ks-text-color-default),
-    background: var(--ks-background-color-primary-inverted-translucent),
+    background: var(--ks-color-fg-alpha-8),
     border: var(--ks-border-width-default) solid
       var(--ks-border-color-interface),
     border-radius: null,

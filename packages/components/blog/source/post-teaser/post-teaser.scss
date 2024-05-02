@@ -17,6 +17,7 @@ $vars: meta.module-variables(post-teaser-vars);
     --c-teaser--border: 0;
     --c-teaser--shadow-hover: none;
     --c-teaser--color: var(--c-post-teaser--color);
+    --c-teaser--background: transparent;
 
     display: flex;
     flex-flow: row-reverse wrap;
