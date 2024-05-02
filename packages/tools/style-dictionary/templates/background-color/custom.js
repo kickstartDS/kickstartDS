@@ -18,7 +18,7 @@ module.exports = (key) => {
         active: { base: token(`{ks.color.${key}.to-bg.2.base}`) },
         selected: { base: token(`{ks.color.${key}.to-bg.4.base}`) },
       },
-      translucent: { base: token(`{ks.color.${key}.alpha.5.base}`) },
+      translucent: { base: token(`{ks.color.${key}.alpha.2.base}`) },
     },
     [`${key}-inverted`]: {
       base: token(`{ks.color.${key}-inverted.base}`),

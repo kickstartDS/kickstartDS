@@ -3046,21 +3046,7 @@
     mkdirp "^1.0.4"
     prettier "^2.6.2"
 
-"@kickstartds/jsonschema-utils@3.0.14":
-  version "3.0.14"
-  resolved "https://registry.npmjs.org/@kickstartds/jsonschema-utils/-/jsonschema-utils-3.0.14.tgz#7b8d55b29b1ea7d1f470ab16e8a9ccfdd8a51e6d"
-  integrity sha512-PBT1ZyfOuADnhVd3OiBGoimx3U4Cs8EufhDgigaK7qtrFvgwBHxx/Iq1gTrlCh3ykVZN0mwo54/rbBgf1FRLlw==
-  dependencies:
-    "@bcherny/json-schema-ref-parser" "10.0.5-fork"
-    ajv "^8.12.0"
-    change-case "^5.0.2"
-    directed-graph-typed "~1.52.0"
-    fast-glob "^3.2.12"
-    import-meta-resolve "~3.0.0"
-    json-schema-traverse "^1.0.0"
-    jsonpointer "~5.0.1"
-
-"@kickstartds/jsonschema-utils@^3.0.15":
+"@kickstartds/jsonschema-utils@3.0.15", "@kickstartds/jsonschema-utils@^3.0.15":
   version "3.0.15"
   resolved "https://registry.npmjs.org/@kickstartds/jsonschema-utils/-/jsonschema-utils-3.0.15.tgz#204ce32ab85636428cafac7552e8be13f8298972"
   integrity sha512-+cAFOwZ3PV35i8HiKSmUMmPmwOsjOTSG/6IAJB1EGJ8k1xop5k1Wg4iNnekvNU4yvKxGCAVvf+1H+I2eaSeZzA==
@@ -3074,13 +3060,13 @@
     json-schema-traverse "^1.0.0"
     jsonpointer "~5.0.1"
 
-"@kickstartds/jsonschema2types@^1.1.40":
-  version "1.1.40"
-  resolved "https://registry.npmjs.org/@kickstartds/jsonschema2types/-/jsonschema2types-1.1.40.tgz#4e2390e74e42ede5c36f0e61c1f26ceafd66f763"
-  integrity sha512-cack9P2Xk0FmgAb0xzQTAGHKDd6LWQNLqGcIirhO5h3niRnqvfutObHGaSXPaLsUB6rweP+Mfk6CIgL72y9krw==
+"@kickstartds/jsonschema2types@^1.1.41":
+  version "1.1.41"
+  resolved "https://registry.yarnpkg.com/@kickstartds/jsonschema2types/-/jsonschema2types-1.1.41.tgz#4b71ddda3b50e7d6fecb2067a3e36807212807c2"
+  integrity sha512-gFqdXG3XXWtM5sp5Vnk9U6C/BXVekPDXWqWYKZgg3JP4cRqFmKk1o2a+CQt312J6vR1JFroUNl15fPYC4ReIvw==
   dependencies:
     "@kickstartds/json-schema-to-typescript" "~13.1.20"
-    "@kickstartds/jsonschema-utils" "3.0.14"
+    "@kickstartds/jsonschema-utils" "3.0.15"
     ajv "^8.12.0"
     object-traversal "^1.0.1"
 
