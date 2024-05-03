@@ -1,3 +1,17 @@
+# v4.0.3 (Fri May 03 2024)
+
+#### 🐛 Bug Fix
+
+- Revert translucent color token [#1648](https://github.com/kickstartDS/kickstartDS/pull/1648) ([@lmestel](https://github.com/lmestel))
+- fix: revert translucent color token ([@lmestel](https://github.com/lmestel))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+
+---
+
 # v3.0.0 (Mon Mar 04 2024)
 
 #### 💥 Breaking Change

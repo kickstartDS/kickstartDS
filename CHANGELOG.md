@@ -1,3 +1,22 @@
+# (Fri May 03 2024)
+
+#### 🐛 Bug Fix
+
+- `@kickstartds/base@4.0.4`, `@kickstartds/blog@4.0.4`, `@kickstartds/bundler@4.0.4`, `@kickstartds/style-dictionary@4.0.3`
+  - Revert translucent color token [#1648](https://github.com/kickstartDS/kickstartDS/pull/1648) ([@lmestel](https://github.com/lmestel))
+
+#### 🔩 Dependency Updates
+
+- build(deps-dev): bump @auto-it/all-contributors from 11.1.1 to 11.1.6 [#1638](https://github.com/kickstartDS/kickstartDS/pull/1638) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump ejs from 3.1.9 to 3.1.10 [#1647](https://github.com/kickstartDS/kickstartDS/pull/1647) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+
+---
+
 # (Mon Apr 22 2024)
 
 #### 🐛 Bug Fix
