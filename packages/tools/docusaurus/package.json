@@ -22,7 +22,7 @@
     "@docusaurus/core": "2.4.0",
     "@docusaurus/plugin-google-tag-manager": "^2.4.0",
     "@docusaurus/preset-classic": "2.4.0",
-    "@kickstartds/design-system": "2.5.21--canary.110.3345.0",
+    "@kickstartds/design-system": "2.5.23",
     "@mdx-js/react": "2.3.0",
     "clsx": "^1.2.1",
     "docusaurus-plugin-sass": "^0.2.3",
