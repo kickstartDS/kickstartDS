@@ -1,6 +1,6 @@
 {
   "name": "@kickstartds/blog",
-  "version": "4.0.3",
+  "version": "4.0.4",
   "description": "kickstartDS Blog Module",
   "homepage": "https://www.kickstartDS.com",
   "bugs": {
@@ -29,9 +29,9 @@
     "date-fns": "^2.30.0"
   },
   "devDependencies": {
-    "@kickstartds/base": "^4.0.3",
-    "@kickstartds/bundler": "^4.0.3",
-    "@kickstartds/core": "^4.0.3"
+    "@kickstartds/base": "^4.0.4",
+    "@kickstartds/bundler": "^4.0.4",
+    "@kickstartds/core": "^4.0.4"
   },
   "peerDependencies": {
     "@kickstartds/base": "^4.0.1",
