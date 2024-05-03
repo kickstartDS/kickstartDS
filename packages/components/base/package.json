@@ -1,6 +1,6 @@
 {
   "name": "@kickstartds/base",
-  "version": "4.0.4",
+  "version": "4.0.5",
   "description": "kickstartDS Base Module",
   "homepage": "https://www.kickstartDS.com",
   "bugs": {
@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@kickstartds/bundler": "^4.0.4",
-    "@kickstartds/core": "^4.0.4",
+    "@kickstartds/core": "^4.0.5",
     "@types/react": "^18.2.61",
     "bourbon": "^7.3.0",
     "sass-yiq": "^1.0.0"

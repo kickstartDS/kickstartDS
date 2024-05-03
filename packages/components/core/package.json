@@ -1,6 +1,6 @@
 {
   "name": "@kickstartds/core",
-  "version": "4.0.4",
+  "version": "4.0.5",
   "description": "kickstartDS Core Module",
   "homepage": "https://www.kickstartDS.com",
   "bugs": {
@@ -42,7 +42,7 @@
   },
   "devDependencies": {
     "@kickstartds/bundler": "^4.0.4",
-    "@kickstartds/style-dictionary": "^4.0.3",
+    "@kickstartds/style-dictionary": "^4.0.4",
     "@storybook/types": "^7.0.5",
     "@types/pubsub-js": "^1.8.6",
     "lodash": "^4.17.21",
