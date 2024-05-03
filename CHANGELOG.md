@@ -2,6 +2,19 @@
 
 #### 🐛 Bug Fix
 
+- `@kickstartds/style-dictionary@4.0.4`
+  - Fix inverted translucent background color [#1651](https://github.com/kickstartDS/kickstartDS/pull/1651) ([@lmestel](https://github.com/lmestel))
+
+#### Authors: 1
+
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+
+---
+
+# (Fri May 03 2024)
+
+#### 🐛 Bug Fix
+
 - `@kickstartds/base@4.0.4`, `@kickstartds/blog@4.0.4`, `@kickstartds/bundler@4.0.4`, `@kickstartds/style-dictionary@4.0.3`
   - Revert translucent color token [#1648](https://github.com/kickstartDS/kickstartDS/pull/1648) ([@lmestel](https://github.com/lmestel))
 

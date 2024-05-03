@@ -1,3 +1,16 @@
+# v4.0.4 (Fri May 03 2024)
+
+#### 🐛 Bug Fix
+
+- Fix inverted translucent background color [#1651](https://github.com/kickstartDS/kickstartDS/pull/1651) ([@lmestel](https://github.com/lmestel))
+- fix: fix inverted translucent background color ([@lmestel](https://github.com/lmestel))
+
+#### Authors: 1
+
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+
+---
+
 # v4.0.3 (Fri May 03 2024)
 
 #### 🐛 Bug Fix
