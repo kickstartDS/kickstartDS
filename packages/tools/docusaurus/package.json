@@ -32,7 +32,7 @@
     "react-admonitions": "^2.1.0",
     "react-dom": "^18.2.0",
     "sass": "^1.62.0",
-    "shiki": "^0.14.5",
+    "shiki": "^1.4.0",
     "styled-components": "^5.3.9"
   },
   "devDependencies": {
