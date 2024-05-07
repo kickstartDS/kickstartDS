@@ -18,5 +18,6 @@
   },
   "peacock.color": "#06566a",
   "peacock.affectActivityBar": false,
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "circleci.persistedProjectSelection": []
 }

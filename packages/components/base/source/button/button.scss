@@ -28,13 +28,13 @@ $vars: meta.module-variables(button-vars);
 
   &:hover,
   &:focus {
-    color: var(--c-button--color-hover, var(--c-button--color));
+    color: var(--c-button--color_hover, var(--c-button--color));
     background-color: var(
-      --c-button--background-color-hover,
+      --c-button--background-color_hover,
       var(--c-button--background-color)
     );
     border-color: var(
-      --c-button--border-color-hover,
+      --c-button--border-color_hover,
       var(--c-button--border-color)
     );
     text-decoration: none;
@@ -49,24 +49,39 @@ $vars: meta.module-variables(button-vars);
   &:active:not(:disabled),
   &:active:not(.c-button--disabled) {
     color: var(
-      --c-button--color-active,
-      var(--c-button--color-hover, var(--c-button--color))
+      --c-button--color_active,
+      var(--c-button--color_hover, var(--c-button--color))
     );
     background-color: var(
-      --c-button--background-color-active,
-      var(--c-button--background-color-hover, var(--c-button--background-color))
+      --c-button--background-color_active,
+      var(--c-button--background-color_hover, var(--c-button--background-color))
     );
     border-color: var(
-      --c-button--border-color-active,
-      var(--c-button--border-color-hover, var(--c-button--border-color))
+      --c-button--border-color_active,
+      var(--c-button--border-color_hover, var(--c-button--border-color))
     );
-    transform: var(--c-button--transform-active);
+    transform: var(--c-button--transform_active);
+  }
+
+  &--small {
+    --c-button--padding: var(--c-button_small--padding);
+    --c-button--font: var(--c-button_small--font);
+  }
+
+  &--medium {
+    --c-button--padding: var(--c-button_medium--padding);
+    --c-button--font: var(--c-button_medium--font);
+  }
+
+  &--large {
+    --c-button--padding: var(--c-button_large--padding);
+    --c-button--font: var(--c-button_large--font);
   }
 
   &--fill-animation {
     background: linear-gradient(
         to right,
-        var(--c-button_fill-animation--background-color-hover) 50%,
+        var(--c-button_fill-animation--background-color_hover) 50%,
         var(--c-button--background-color) 50%
       )
       no-repeat;
@@ -76,15 +91,83 @@ $vars: meta.module-variables(button-vars);
 
     &:focus,
     &:hover {
-      color: var(--c-button_fill-animation--color-hover);
+      color: var(--c-button_fill-animation--color_hover);
       background-position: left bottom;
       background-color: var(--c-button--background-color);
-      border-color: var(--c-button_fill-animation--background-color-hover);
+      border-color: var(--c-button_fill-animation--background-color_hover);
     }
   }
 
   @media print {
     display: none;
+  }
+
+  &--solid {
+    --c-button--color: var(--c-button_solid--color);
+    --c-button--color_hover: var(--c-button_solid--color_hover);
+    --c-button--color_active: var(--c-button_solid--color_active);
+    --c-button--border-color: var(--c-button_solid--border-color);
+    --c-button--border-color_hover: var(--c-button_solid--border-color_hover);
+    --c-button--border-color_active: var(--c-button_solid--border-color_active);
+    --c-button--border-color_selected: var(
+      --c-button_solid--border-color_selected
+    );
+    --c-button--background-color: var(--c-button_solid--background-color);
+    --c-button--background-color_hover: var(
+      --c-button_solid--background-color_hover
+    );
+    --c-button--background-color_active: var(
+      --c-button_solid--background-color_active
+    );
+    --c-button--background-color_selected: var(
+      --c-button_solid--background-color_selected
+    );
+  }
+
+  &--outline {
+    --c-button--color: var(--c-button_outline--color);
+    --c-button--color_hover: var(--c-button_outline--color_hover);
+    --c-button--color_active: var(--c-button_outline--color_active);
+    --c-button--border-color: var(--c-button_outline--border-color);
+    --c-button--border-color_hover: var(--c-button_outline--border-color_hover);
+    --c-button--border-color_active: var(
+      --c-button_outline--border-color_active
+    );
+    --c-button--border-color_selected: var(
+      --c-button_outline--border-color_selected
+    );
+    --c-button--background-color: var(--c-button_outline--background-color);
+    --c-button--background-color_hover: var(
+      --c-button_outline--background-color_hover
+    );
+    --c-button--background-color_active: var(
+      --c-button_outline--background-color_active
+    );
+    --c-button--background-color_selected: var(
+      --c-button_outline--background-color_selected
+    );
+  }
+
+  &--clear {
+    --c-button--color: var(--c-button_clear--color);
+    --c-button--color_hover: var(--c-button_clear--color_hover);
+    --c-button--color_active: var(--c-button_clear--color_active);
+    --c-button--border-color: var(--c-button_clear--border-color);
+    --c-button--border-color_hover: var(--c-button_clear--border-color_hover);
+    --c-button--border-color_active: var(--c-button_clear--border-color_active);
+    --c-button--border-color_selected: var(
+      --c-button_clear--border-color_selected
+    );
+    --c-button--background-color: var(--c-button_clear--background-color);
+    --c-button--background-color_hover: var(
+      --c-button_clear--background-color_hover
+    );
+    --c-button--background-color_active: var(
+      --c-button_clear--background-color_active
+    );
+    --c-button--background-color_selected: var(
+      --c-button_clear--background-color_selected
+    );
   }
 
   &--clear,

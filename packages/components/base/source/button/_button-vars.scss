@@ -4,48 +4,68 @@ $host: (
   '.c-button': (
     color-primary: var(--ks-color-primary),
     color-secondary: var(--ks-color-primary-inverted),
-    font: var(--ks-font-interface-m),
     font-weight: var(--ks-font-weight-regular),
     icon-size: 1.5em,
-    padding: 0.4rem 1.3rem 0.35rem,
     border-radius: var(--ks-border-radius-control),
     border-color: var(--c-button--color),
     background-color: transparent,
     transform-active: scale(0.95),
+    border-width: var(--ks-border-width-default),
   ),
-  '.c-button--clear': (
-    color: var(--ks-text-color-primary-interactive),
-    color-hover: var(--ks-text-color-primary-interactive-hover),
-    color-active: var(--ks-text-color-primary-interactive-hover),
-    background-color: var(--ks-background-color-clear-interactive),
-    background-color-hover: var(--ks-background-color-clear-interactive-hover),
-    background-color-active: var(--ks-background-color-clear-interactive-active),
+) !default;
+
+$small: (
+  '.c-button': (
+    font: var(--ks-font-interface-s),
+    padding: 0.4em 1.25em 0.45em,
   ),
-  '.c-button--solid': (
-    color: var(--ks-text-color-primary-inverted-interactive),
-    color-hover: var(--ks-text-color-primary-inverted-interactive-hover),
-    color-active: var(--ks-text-color-primary-inverted-interactive-hover),
+) !default;
+
+$medium: (
+  '.c-button': (
+    font: var(--ks-font-interface-m),
+    padding: 0.4em 1.25em 0.45em,
+  ),
+) !default;
+
+$large: (
+  '.c-button': (
+    font: var(--ks-font-interface-l),
+    padding: 0.4em 1.25em 0.45em,
+  ),
+) !default;
+
+$solid: (
+  '.c-button': (
+    color: var(--ks-color-fg-inverted),
+    color_hover: var(--ks-color-fg-inverted),
+    color_active: var(--ks-color-fg-inverted),
     background-color: var(--ks-background-color-primary-interactive),
-    background-color-hover: var(--ks-background-color-primary-interactive-hover),
-    background-color-active:
+    background-color_hover: var(--ks-background-color-primary-interactive-hover),
+    background-color_active:
       var(--ks-background-color-primary-interactive-active),
   ),
-  '.c-button--outline': (
-    border-width: 1px,
-    color: var(--ks-text-color-primary-interactive),
-    color-hover: var(--ks-text-color-primary-interactive-hover),
-    color-active: var(--ks-text-color-primary-interactive-hover),
+) !default;
+
+$outline: (
+  '.c-button': (
+    color: var(--ks-text-color-default),
+    color_hover: var(--ks-text-color-default),
+    color_active: var(--ks-text-color-default),
+    border-color: var(--ks-border-color-interface-interactive),
+    border-color_hover: var(--ks-border-color-interface-interactive-hover),
+    border-color_active: var(--ks-border-color-interface-interactive-active),
+  ),
+) !default;
+
+$clear: (
+  '.c-button': (
+    color: var(--ks-text-color-default),
+    color_hover: var(--ks-text-color-default),
+    color_active: var(--ks-text-color-default),
     background-color: var(--ks-background-color-clear-interactive),
-    background-color-hover: var(--ks-background-color-clear-interactive-hover),
-    background-color-active: var(--ks-background-color-clear-interactive-active),
-  ),
-  '.c-button--small': (
-    padding: 0.4rem 1rem 0.45rem,
-    font: var(--ks-font-interface-s),
-  ),
-  '.c-button--large': (
-    padding: 0.45rem 1.7rem 0.5rem,
-    font: var(--ks-font-interface-l),
+    background-color_hover: var(--ks-background-color-clear-interactive-hover),
+    background-color_active: var(--ks-background-color-clear-interactive-active),
   ),
 ) !default;
 
