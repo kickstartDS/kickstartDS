@@ -11,6 +11,7 @@ import '@kickstartds/core/lib/design-tokens/tokens.css';
 import '@kickstartds/base/lib/global/base.js';
 import '@kickstartds/core/lib/utils/window.js';
 import '@kickstartds/base/lib/global/base.css';
+import './preview.css';
 
 const myActions = actions('radio');
 window._ks.radio.on('*', myActions.radio);
