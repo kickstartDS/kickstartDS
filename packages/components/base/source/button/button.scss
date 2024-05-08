@@ -81,7 +81,7 @@ $vars: meta.module-variables(button-vars);
   &--fill-animation {
     background: linear-gradient(
         to right,
-        var(--c-button_fill-animation--background-color_hover) 50%,
+        var(--c-button--background-color_hover) 50%,
         var(--c-button--background-color) 50%
       )
       no-repeat;
@@ -91,10 +91,10 @@ $vars: meta.module-variables(button-vars);
 
     &:focus,
     &:hover {
-      color: var(--c-button_fill-animation--color_hover);
+      color: var(--c-button--color_hover);
       background-position: left bottom;
       background-color: var(--c-button--background-color);
-      border-color: var(--c-button_fill-animation--background-color_hover);
+      border-color: var(--c-button--background-color_hover);
     }
   }
 

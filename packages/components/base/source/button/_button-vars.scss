@@ -68,27 +68,3 @@ $clear: (
     background-color_active: var(--ks-background-color-clear-interactive-active),
   ),
 ) !default;
-
-$fill-animation: (
-  '.c-button': (
-    background-color-hover: var(--c-button--color),
-  ),
-  '.c-button--clear': (
-    color-hover: var(--c-button--color-secondary),
-  ),
-  '.c-button--clear-inverted': (
-    color-hover: var(--c-button--color-primary),
-  ),
-  '.c-button--solid': (
-    color-hover: var(--c-button--color-primary),
-  ),
-  '.c-button--solid-inverted': (
-    color-hover: var(--c-button--color-secondary),
-  ),
-  '.c-button--outline': (
-    color-hover: var(--c-button--color-secondary),
-  ),
-  '.c-button--outline-inverted': (
-    color-hover: var(--c-button--color-primary),
-  ),
-) !default;
