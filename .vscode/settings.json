@@ -19,5 +19,5 @@
   "peacock.color": "#06566a",
   "peacock.affectActivityBar": false,
   "typescript.tsdk": "node_modules/typescript/lib",
-  "circleci.persistedProjectSelection": []
+  "circleci.persistedProjectSelection": ["gh/kickstartDS/kickstartDS"]
 }
