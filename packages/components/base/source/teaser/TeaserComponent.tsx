@@ -45,7 +45,13 @@ export const TeaserComponent: ForwardRefRenderFunction<
     >
       <div className="c-teaser__text">
         <p className="c-teaser__topic">{renderTopic(topic)}</p>
-        {text && <RichText text={text} renderText={renderText} />}
+        {text && (
+          <RichText
+            className="c-teaser__copy"
+            text={text}
+            renderText={renderText}
+          />
+        )}
       </div>
       {link?.label ? (
         <div className="c-teaser__link" hidden={link.hidden}>
