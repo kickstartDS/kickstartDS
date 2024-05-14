@@ -13,10 +13,7 @@ $vars: meta.module-variables(teaser-vars);
   box-shadow: var(--c-teaser--shadow);
   overflow: hidden;
   width: 100%;
-
-  .c-rich-text {
-    color: var(--c-teaser--color);
-  }
+  font: var(--c-teaser_copy--font);
 
   &.js-linked {
     transition: box-shadow 0.2s;
@@ -30,20 +27,18 @@ $vars: meta.module-variables(teaser-vars);
   &__body {
     display: flex;
     padding: var(--c-teaser--padding);
+    gap: var(--c-teaser_body--gap);
   }
 
   &__text {
     flex: 1 auto;
-
-    > * + * {
-      margin-top: var(--c-teaser_copy--spacing);
-    }
   }
 
-  &__copy {
-    font: var(--c-teaser_copy--font);
-    font-weight: var(--c-teaser_copy--font-weight);
-    color: var(--c-teaser_copy--color);
+  &__copy.c-rich-text {
+    --c-rich-text--font: var(--c-teaser_copy--font);
+    --c-rich-text--color: var(--c-teaser_copy--color);
+    --c-rich-text--font-weight: var(--c-teaser_copy--font-weight);
+    margin-top: var(--c-teaser_copy--spacing);
   }
 
   &__topic {
@@ -51,9 +46,5 @@ $vars: meta.module-variables(teaser-vars);
     font-weight: var(--c-teaser_topic--font-weight);
     color: var(--c-teaser_topic--color);
     margin: 0;
-
-    .c-teaser--style-dark & {
-      color: white;
-    }
   }
 }
