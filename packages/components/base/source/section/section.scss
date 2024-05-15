@@ -11,19 +11,28 @@ $vars: meta.module-variables(section-vars);
 .l-section {
   @include anchor.anchor-target;
 
-  --l-section--container-width: var(--l-section--content-width-default);
+  --l-section_container--width: var(--l-section_content--width_default);
+  --l-section--background-color: var(--l-section--background-color_default);
 
   @each $width in ('narrow', 'wide', 'max', 'full') {
     &--#{$width} {
-      --l-section--container-width: var(--l-section--content-width-#{$width});
+      --l-section_container--width: var(--l-section_content--width_#{$width});
     }
   }
 
-  padding: var(--l-section--space-default) 0;
-  background: var(--l-section--background);
+  padding: var(--l-section--space_default) 0;
+  background: var(--l-section--background-color);
+
+  &--bold {
+    --l-section--background-color: var(--l-section--background-color_bold);
+  }
+
+  &--accent {
+    --l-section--background-color: var(--l-section--background-color_accent);
+  }
 
   &--space-before-small {
-    padding-top: var(--l-section--space-small);
+    padding-top: var(--l-section--space_small);
   }
 
   &--space-before-none {
@@ -31,7 +40,7 @@ $vars: meta.module-variables(section-vars);
   }
 
   &--space-after-small {
-    padding-bottom: var(--l-section--space-small);
+    padding-bottom: var(--l-section--space_small);
   }
 
   &--space-after-none {
@@ -40,9 +49,9 @@ $vars: meta.module-variables(section-vars);
 
   &__container {
     margin: auto;
-    max-width: var(--l-section--container-width);
+    max-width: var(--l-section_container--width);
     box-sizing: content-box;
-    padding: 0 var(--l-section--content-padding);
+    padding: 0 var(--l-section_content--padding);
 
     .l-section--full &--content {
       padding: 0;
@@ -50,25 +59,27 @@ $vars: meta.module-variables(section-vars);
   }
 
   &__content {
-    --l-section--content-width: var(--l-section--container-width);
+    --l-section_content--width: var(--l-section_container--width);
 
     @each $width in ('narrow', 'default', 'wide') {
       &--#{$width} {
-        --l-section--content-width: var(--l-section--content-width-#{$width});
+        --l-section_content--width: var(--l-section_content--width_#{$width});
       }
     }
 
     @each $tileWidth in ('smallest', 'medium', 'large', 'largest') {
       &--tiles-#{$tileWidth} {
-        --l-section_col--min-width: var(--l-section_tile-width--#{$tileWidth});
+        --l-section_col--min-width: var(
+          --l-section_content--tile-width_#{$tileWidth}
+        );
       }
     }
 
     margin: auto;
     box-sizing: border-box;
     max-width: min(
-      var(--l-section--container-width),
-      var(--l-section--content-width)
+      var(--l-section_container--width),
+      var(--l-section_content--width)
     );
 
     .l-section__container--content & {
@@ -95,7 +106,7 @@ $vars: meta.module-variables(section-vars);
       &::after {
         content: '';
         width: calc(
-          var(--l-section--content-padding) - var(--l-section--gutter)
+          var(--l-section_content--padding) - var(--l-section--gutter)
         );
         min-width: 0.1px;
       }
@@ -156,22 +167,22 @@ $vars: meta.module-variables(section-vars);
     visibility: hidden;
 
     &:hover {
-      opacity: var(--l-section_slider-arrow--opacity-hover);
+      opacity: var(--l-section_slider-arrow--opacity_hover);
     }
 
     &:disabled {
-      opacity: var(--l-section_slider-arrow--opacity-disabled);
+      opacity: var(--l-section_slider-arrow--opacity_disabled);
     }
 
     &--back {
       .l-section__slider-nav--overlay & {
-        margin-left: var(--l-section--content-padding);
+        margin-left: var(--l-section_content--padding);
       }
     }
 
     &--forward {
       .l-section__slider-nav--overlay & {
-        margin-right: var(--l-section--content-padding);
+        margin-right: var(--l-section_content--padding);
       }
     }
 

@@ -138,33 +138,38 @@
         }
       ]
     },
-    "sliderNavPosition": {
-      "title": "Slider navigation position",
-      "type": "string",
-      "enum": ["below-center", "below-edge", "overlay"],
-      "default": "below-center"
-    },
-    "sliderBackIcon": {
-      "title": "Back Icon for Slider",
-      "description": "Icon identifier for the slider back button",
-      "type": "string",
-      "default": "arrow-left"
-    },
-    "sliderBackLabel": {
-      "title": "Invisible back icon label",
-      "type": "string",
-      "default": "Back"
-    },
-    "sliderForwardIcon": {
-      "title": "Forward Icon for Slider",
-      "description": "Icon identifier for the slider forward button",
-      "type": "string",
-      "default": "arrow-right"
-    },
-    "sliderForwardLabel": {
-      "title": "Invisible forward icon label",
-      "type": "string",
-      "default": "Forward"
+    "slider": {
+      "type": "object",
+      "properties": {
+        "navPosition": {
+          "title": "Slider navigation position",
+          "type": "string",
+          "enum": ["below-center", "below-edge", "overlay"],
+          "default": "below-center"
+        },
+        "backIcon": {
+          "title": "Back Icon for Slider",
+          "description": "Icon identifier for the slider back button",
+          "type": "string",
+          "default": "arrow-left"
+        },
+        "backLabel": {
+          "title": "Invisible back icon label",
+          "type": "string",
+          "default": "Back"
+        },
+        "forwardIcon": {
+          "title": "Forward Icon for Slider",
+          "description": "Icon identifier for the slider forward button",
+          "type": "string",
+          "default": "arrow-right"
+        },
+        "forwardLabel": {
+          "title": "Invisible forward icon label",
+          "type": "string",
+          "default": "Forward"
+        }
+      }
     },
     "className": {
       "type": "string",
