@@ -23,6 +23,18 @@ $vars: meta.module-variables(headline-vars);
     margin-top: calc(var(--c-headline--space-after) * 1.5);
   }
 
+  &--space-after-minimum {
+    --c-headline--space-after: var(--c-headline--space-after_minimum);
+  }
+
+  &--space-after-small {
+    --c-headline--space-after: var(--c-headline--space-after_small);
+  }
+
+  &--space-after-large {
+    --c-headline--space-after: var(--c-headline--space-after_large);
+  }
+
   &__headline {
     margin: 0;
     font: var(--c-rich-text_headline--font);
