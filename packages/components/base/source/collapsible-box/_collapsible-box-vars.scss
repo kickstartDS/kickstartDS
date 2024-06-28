@@ -1,36 +1,24 @@
-$name-: 'c-collapsible-box';
+@use './container';
 
-$host: (
-  '.c-collapsible-box': (
-    border-color: var(--ks-border-color-interface),
-  ),
-) !default;
+.c-collapsible-box {
+  --c-collapsible-box--border-color: var(--ks-border-color-interface);
+  --c-collapsible-box__header--font: var(--ks-font-copy-m);
+  --c-collapsible-box__header--padding: 1em 0;
 
-$header: (
-  '.c-collapsible-box': (
-    font: var(--ks-font-copy-m),
-    padding: (
-      0: 1em 0,
-      640: 1em,
-    ),
-  ),
-) !default;
+  @include container.size('≥', 640px) {
+    --c-collapsible-box__header--padding: 1em;
+  }
 
-$icon: (
-  '.c-collapsible-box': (
-    size: (
-      0: 1.65em,
-      640: 1.85em,
-    ),
-    transform-open: rotate(-180deg),
-  ),
-) !default;
+  --c-collapsible-box__icon--size: 1.65em;
 
-$content: (
-  '.c-collapsible-box': (
-    padding: (
-      0: 1em 0,
-      640: 1em 4em 1em 1em,
-    ),
-  ),
-) !default;
+  @include container.size('≥', 640px) {
+    --c-collapsible-box__icon--size: 1.85em;
+  }
+
+  --c-collapsible-box__icon--transform-open: rotate(-180deg);
+  --c-collapsible-box__content--padding: 1em 0;
+
+  @include container.size('≥', 640px) {
+    --c-collapsible-box__content--padding: 0 4em 1em 1em;
+  }
+}
