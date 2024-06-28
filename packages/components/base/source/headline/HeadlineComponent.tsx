@@ -33,6 +33,11 @@ export const HeadlineComponent: ForwardRefRenderFunction<
       className={classnames(
         'c-headline',
         align && `c-headline--align-${align}`,
+        styleAs === 'none'
+          ? `c-headline--${level}`
+          : styleAs
+          ? `c-headline--${styleAs}`
+          : '',
         spaceAfter && `c-headline--space-after-${spaceAfter}`,
         className
       )}
@@ -40,12 +45,7 @@ export const HeadlineComponent: ForwardRefRenderFunction<
       ref={ref}
       {...props}
     >
-      <TagName
-        className={classnames(
-          'c-headline__headline',
-          styleAs !== 'none' && styleAs !== level && `c-headline__${styleAs}`
-        )}
-      >
+      <TagName className={classnames('c-headline__headline')}>
         {renderContent(content)}
       </TagName>
       {subheadline && (
