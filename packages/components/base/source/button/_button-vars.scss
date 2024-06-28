@@ -1,70 +1,63 @@
-$name-: 'c-button';
+.c-button {
+  --c-button--border-radius: var(--ks-border-radius-control);
+  --c-button--border-width: var(--ks-border-width-default);
+  --c-button--font-weight: var(--ks-font-weight-regular);
+  --c-button--transform_active: scale(0.95);
 
-$host: (
-  '.c-button': (
-    color-primary: var(--ks-color-primary),
-    color-secondary: var(--ks-color-primary-inverted),
-    font-weight: var(--ks-font-weight-regular),
-    icon-size: 1.5em,
-    border-radius: var(--ks-border-radius-control),
-    border-color: var(--c-button--color),
-    background-color: transparent,
-    transform-active: scale(0.95),
-    border-width: var(--ks-border-width-default),
-  ),
-) !default;
+  // Small
+  --c-button_small--font: var(--ks-font-interface-s);
+  --c-button_small--padding: 0.4em 1.25em 0.45em;
+  --c-button_small--icon-size: 1.5em;
 
-$small: (
-  '.c-button': (
-    font: var(--ks-font-interface-s),
-    padding: 0.4em 1.25em 0.45em,
-  ),
-) !default;
+  // Medium
+  --c-button_medium--font: var(--ks-font-interface-m);
+  --c-button_medium--padding: 0.4em 1.25em 0.45em;
+  --c-button_medium--icon-size: 1.5em;
 
-$medium: (
-  '.c-button': (
-    font: var(--ks-font-interface-m),
-    padding: 0.4em 1.25em 0.45em,
-  ),
-) !default;
+  // Large
+  --c-button_large--font: var(--ks-font-interface-l);
+  --c-button_large--padding: 0.4em 1.25em 0.45em;
+  --c-button_large--icon-size: 1.5em;
 
-$large: (
-  '.c-button': (
-    font: var(--ks-font-interface-l),
-    padding: 0.4em 1.25em 0.45em,
-  ),
-) !default;
+  // Solid
+  --c-button_solid--color: var(--ks-color-fg-inverted);
+  --c-button_solid--color_hover: var(--ks-color-fg-inverted);
+  --c-button_solid--color_active: var(--ks-color-fg-inverted);
+  --c-button_solid--background-color: var(
+    --ks-background-color-primary-interactive
+  );
+  --c-button_solid--background-color_hover: var(
+    --ks-background-color-primary-interactive-hover
+  );
+  --c-button_solid--background-color_active: var(
+    --ks-background-color-primary-interactive-active
+  );
 
-$solid: (
-  '.c-button': (
-    color: var(--ks-color-fg-inverted),
-    color_hover: var(--ks-color-fg-inverted),
-    color_active: var(--ks-color-fg-inverted),
-    background-color: var(--ks-background-color-primary-interactive),
-    background-color_hover: var(--ks-background-color-primary-interactive-hover),
-    background-color_active:
-      var(--ks-background-color-primary-interactive-active),
-  ),
-) !default;
+  // Outline
+  --c-button_outline--color: var(--ks-text-color-default);
+  --c-button_outline--color_hover: var(--ks-text-color-default);
+  --c-button_outline--color_active: var(--ks-text-color-default);
+  --c-button_outline--border-color: var(
+    --ks-border-color-interface-interactive
+  );
+  --c-button_outline--border-color_hover: var(
+    --ks-border-color-interface-interactive-hover
+  );
+  --c-button_outline--border-color_active: var(
+    --ks-border-color-interface-interactive-active
+  );
 
-$outline: (
-  '.c-button': (
-    color: var(--ks-text-color-default),
-    color_hover: var(--ks-text-color-default),
-    color_active: var(--ks-text-color-default),
-    border-color: var(--ks-border-color-interface-interactive),
-    border-color_hover: var(--ks-border-color-interface-interactive-hover),
-    border-color_active: var(--ks-border-color-interface-interactive-active),
-  ),
-) !default;
-
-$clear: (
-  '.c-button': (
-    color: var(--ks-text-color-default),
-    color_hover: var(--ks-text-color-default),
-    color_active: var(--ks-text-color-default),
-    background-color: var(--ks-background-color-clear-interactive),
-    background-color_hover: var(--ks-background-color-clear-interactive-hover),
-    background-color_active: var(--ks-background-color-clear-interactive-active),
-  ),
-) !default;
+  // Clear
+  --c-button_clear--color: var(--ks-text-color-default);
+  --c-button_clear--color_hover: var(--ks-text-color-default);
+  --c-button_clear--color_active: var(--ks-text-color-default);
+  --c-button_clear--background-color: var(
+    --ks-background-color-clear-interactive
+  );
+  --c-button_clear--background-color_hover: var(
+    --ks-background-color-clear-interactive-hover
+  );
+  --c-button_clear--background-color_active: var(
+    --ks-background-color-clear-interactive-active
+  );
+}

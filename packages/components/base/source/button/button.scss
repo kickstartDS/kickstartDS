@@ -1,11 +1,7 @@
 @use 'sass:meta';
 @use 'bourbon/core/bourbon';
-@use '@kickstartds/core/source/core/custom-properties';
 @use '../helpers/button';
 @use './button-vars';
-
-$vars: meta.module-variables(button-vars);
-@include custom-properties.styles($vars);
 
 .c-button {
   display: inline-flex;
@@ -66,16 +62,19 @@ $vars: meta.module-variables(button-vars);
   &--small {
     --c-button--padding: var(--c-button_small--padding);
     --c-button--font: var(--c-button_small--font);
+    --c-button--icon-size: var(--c-button_small--icon-size);
   }
 
   &--medium {
     --c-button--padding: var(--c-button_medium--padding);
     --c-button--font: var(--c-button_medium--font);
+    --c-button--icon-size: var(--c-button_medium--icon-size);
   }
 
   &--large {
     --c-button--padding: var(--c-button_large--padding);
     --c-button--font: var(--c-button_large--font);
+    --c-button--icon-size: var(--c-button_large--icon-size);
   }
 
   &--fill-animation {
