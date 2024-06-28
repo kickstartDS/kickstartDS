@@ -8,14 +8,14 @@
     "image": {
       "$ref": "http://schema.kickstartds.com/base/picture.schema.json"
     },
-    "title": {
-      "title": "Title",
+    "name": {
+      "title": "Name",
       "description": "Name, company name, etc.",
       "type": "string",
       "examples": ["Max Mütze"]
     },
-    "subtitle": {
-      "title": "Subtitle",
+    "title": {
+      "title": "Title",
       "description": "Position, profession, department, location, etc.",
       "type": "string",
       "examples": ["Geschäftsführer"]

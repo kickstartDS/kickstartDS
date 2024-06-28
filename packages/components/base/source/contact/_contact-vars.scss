@@ -1,8 +1,29 @@
-$name-: 'c-contact';
+.c-contact {
+  // Layout
+  --c-contact--gap: var(--ks-spacing-inline-l) var(--ks-spacing-stack-l);
+  --c-contact--flex-basis: 150px;
 
-$host: (
-  '.c-contact': (
-    gutter: 0.7rem,
-    wrap-threshold: 40rem,
-  ),
-) !default;
+  // Header
+  --c-contact__header--gap: 0;
+
+  // Body
+  --c-contact__body--gap: var(--ks-spacing-stack-m);
+
+  // Name
+  --c-contact__name--color: var(--ks-text-color-display);
+  --c-contact__name--font: var(--ks-font-display-l);
+  --c-contact__name--font-weight: var(--ks-font-weight-bold);
+
+  // Title
+  --c-contact__title--color: var(--ks-text-color-copy);
+  --c-contact__title--font: var(--ks-font-copy-m);
+  --c-contact__title--font-weight: var(--ks-font-weight-regular);
+
+  // Links
+  // TBD: verschachtelte Token
+  --c-contact__links--gap: 0;
+  --c-contact__links--font: var(--ks-font-interface-s);
+  --c-contact__links__icon--margin-right: var(--ks-spacing-inline-xs);
+  --c-contact__links__icon--size: 1.5rem;
+  --c-contact__links__icon--color: var(--ks-text-color-default);
+}
