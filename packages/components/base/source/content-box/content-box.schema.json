@@ -5,6 +5,21 @@
   "description": "Component to display content in a condensed, boxed form",
   "type": "object",
   "properties": {
+    "headline": {
+      "title": "Headline",
+      "type": "string",
+      "description": "Topic for the content box. Displayed before the text, in bold",
+      "examples": ["Lorem Ipsum"]
+    },
+    "text": {
+      "title": "Text content",
+      "type": "string",
+      "examples": [
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ispum dolor distinctio minima unde voluptatum aut. Lorem ipsum dolor sit amet."
+      ],
+      "description": "Text for the content box",
+      "format": "markdown"
+    },
     "ratio": {
       "title": "Image ratio",
       "type": "string",
@@ -25,21 +40,6 @@
       "format": "image",
       "description": "Select an image to display inside the content box, at the top",
       "examples": ["https://picsum.photos/seed/kdscontentbox/500/300"]
-    },
-    "topic": {
-      "title": "Topic",
-      "type": "string",
-      "description": "Topic for the content box. Displayed before the text, in bold",
-      "examples": ["Lorem Ipsum"]
-    },
-    "text": {
-      "title": "Text content",
-      "type": "string",
-      "examples": [
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ispum dolor distinctio minima unde voluptatum aut. Lorem ipsum dolor sit amet."
-      ],
-      "description": "Text for the content box",
-      "format": "markdown"
     },
     "link": {
       "title": "Link",

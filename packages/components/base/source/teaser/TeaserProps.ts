@@ -20,9 +20,13 @@ export type TextContent = string;
  */
 export type ImageSource = string;
 /**
+ * Choose the layout of the teaser
+ */
+export type BoxLayout = 'box' | 'row';
+/**
  * Choose the ratio used to crop and display the image
  */
-export type ImageRatio = '4:3' | '16:9' | '1:1';
+export type ImageRatio = '4:3' | '16:9' | '1:1' | 'unset';
 /**
  * Optionally add inner spacing to the displayed image
  */
@@ -48,6 +52,7 @@ export interface TeaserProps {
   headline?: Headline;
   text?: TextContent;
   image?: ImageSource;
+  layout?: BoxLayout;
   ratio?: ImageRatio;
   imageSpacing?: ImageSpacing;
   inverted?: Inverted;

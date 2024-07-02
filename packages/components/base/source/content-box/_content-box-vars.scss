@@ -1,13 +1,16 @@
-$name-: 'c-content-box' !default;
+.c-content-box {
+  // Headline
+  --c-content-box_s__headline--font: var(--ks-font-display-s);
+  --c-content-box_m__headline--font: var(--ks-font-display-m);
+  --c-content-box_l__headline--font: var(--ks-font-display-l);
+  --c-content-box__headline--font-weight: var(--ks-font-weight-bold);
+  --c-content-box__headline--color: var(--ks-text-color-display);
+  --c-content-box__headline--margin-top: 0.5em;
 
-$topic: (
-  '.c-content-box': (
-    font-xs: var(--ks-font-display-s),
-    font-s: var(--ks-font-display-m),
-    font-m: var(--ks-font-display-l),
-    font: var(--c-content-box_topic--font-m),
-    font-weight: var(--c-rich-text_headline--font-weight),
-    color: var(--c-rich-text_headline--color),
-    margin: null,
-  ),
-) !default;
+  // Rich Text
+  --c-content-box_s__rich-text--font: var(--ks-font-copy-s);
+  --c-content-box_m__rich-text--font: var(--ks-font-copy-m);
+  --c-content-box_l__rich-text--font: var(--ks-font-copy-l);
+  --c-content-box__rich-text--color: var(--ks-text-color-copy);
+  --c-content-box__rich-text--margin-top: 0.125em;
+}

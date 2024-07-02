@@ -1,17 +1,23 @@
 @use 'sass:meta';
-@use '@kickstartds/core/source/core/custom-properties';
 @use './content-box-vars';
 @use './container';
 
-$vars: meta.module-variables(content-box-vars);
-@include custom-properties.styles($vars);
 @include container.wrapper('content-box') {
   display: flex;
   flex-direction: column;
 }
 
 .c-content-box {
-  margin-bottom: 2em;
+  --c-content-box__headline--font: var(--c-content-box_s__headline--font);
+
+  @include container.size('≥', 400px) {
+    --c-content-box__headline--font: var(--c-content-box_m__headline--font);
+  }
+
+  @include container.size('≥', 500px) {
+    --c-content-box__headline--font: var(--c-content-box_l__headline--font);
+  }
+
   box-sizing: border-box;
   contain: layout inline-size style;
   display: flex;
@@ -30,7 +36,6 @@ $vars: meta.module-variables(content-box-vars);
     flex-grow: 0;
     flex-shrink: 0;
     width: 100%;
-    margin-bottom: 1em;
 
     img {
       width: auto;
@@ -72,15 +77,33 @@ $vars: meta.module-variables(content-box-vars);
     flex: 1 auto;
   }
 
-  &__topic {
-    font: var(--c-content-box_topic--font);
-    font-weight: var(--c-content-box_topic--font-weight);
-    color: var(--c-content-box_topic--color);
-    margin: var(--c-content-box_topic--margin);
+  .c-headline {
+    --c-headline--font: var(--c-content-box__headline--font);
+    --c-headline--color: var(--c-content-box__headline--color);
+    --c-headline--font-weight: var(--c-content-box__headline--font-weight);
+
+    &__headline {
+      margin-top: var(--c-content-box__headline--margin-top);
+    }
   }
 
   &__text {
     flex: 1 auto;
+  }
+
+  &__rich-text {
+    --c-rich-text--color: var(--c-content-box__rich-text--color);
+    --c-rich-text--font: var(--c-content-box_s__rich-text--font);
+
+    @include container.size('≥', 400px) {
+      --c-rich-text--font: var(--c-content-box_m__rich-text--font);
+    }
+
+    @include container.size('≥', 500px) {
+      --c-rich-text--font: var(--c-content-box_l__rich-text--font);
+    }
+
+    margin-top: var(--c-content-box__rich-text--margin-top);
   }
 
   &__link {
