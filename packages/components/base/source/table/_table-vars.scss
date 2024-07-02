@@ -1,38 +1,22 @@
-$name-: 'c-table';
+.c-table {
+  --c-table--font: var(--ks-font-copy-s);
+  --c-table--font-weight: var(--ks-font-weight-regular);
+  --c-table--cell-padding: 0.5rem 1.5rem 0.5rem 0.25rem;
 
-$host: (
-  '.c-table': (
-    font: var(--ks-font-copy-s),
-    font-weight: var(--ks-font-weight-regular),
-    cell-padding: 0.5rem 1.5rem 0.5rem 0.25rem,
-  ),
-) !default;
+  // Header
+  --c-table__header--font: var(--ks-font-display-s);
+  --c-table__header--font-weight: var(--ks-font-weight-bold);
 
-$header: (
-  '.c-table': (
-    font: var(--ks-font-display-s),
-    font-weight: var(--ks-font-weight-bold),
-  ),
-) !default;
+  // Border
+  --c-table_border--border: var(--ks-border-width-default) solid
+    var(--ks-border-color-interface);
 
-$border: (
-  '.c-table': (
-    border: var(--ks-border-width-default) solid
-      var(--ks-border-color-interface),
-  ),
-) !default;
+  // Zebra
+  --c-table_zebra--background-odd: var(--ks-background-color-accent);
+  --c-table_zebra--background-even: transparent;
 
-$zebra: (
-  '.c-table': (
-    background-odd: var(--ks-background-color-accent),
-    background-even: transparent,
-  ),
-) !default;
-
-$caption: (
-  '.c-table': (
-    font: var(--ks-font-interface-xs),
-    font-weight: null,
-    font-style: italic,
-  ),
-) !default;
+  // Caption
+  --c-table__caption--font: var(--ks-font-interface-xs);
+  --c-table__caption--font-weight: null;
+  --c-table__caption--font-style: italic;
+}

@@ -1,53 +1,50 @@
-$name-: 'l-section';
-$host: (
-  '.l-section': (
-    content-padding: var(--ks-spacing-m),
-    background-color_default: var(--ks-background-color-default),
-    background-color_accent: var(--ks-background-color-accent),
-    background-color_bold: var(--ks-color-fg-alpha-4),
-    space_default: var(--ks-spacing-xxl),
-    space_small: calc(var(--l-section--space_default) / 2),
-    gutter_none: 0,
-    gutter_small: var(--ks-spacing-xs),
-    gutter_default: var(--ks-spacing-m),
-    gutter_large: var(--ks-spacing-xl),
-  ),
-) !default;
+.l-section {
+  --l-section--background-color_default: var(--ks-background-color-default);
+  --l-section--background-color_accent: var(--ks-background-color-accent);
+  --l-section--background-color_bold: var(--ks-color-fg-alpha-4);
+  --l-section--space_default: var(--ks-spacing-xxl);
+  --l-section--space_small: calc(var(--l-section--space_default) / 2);
+  --l-section--gutter_none: 0;
+  --l-section--gutter_small: var(--ks-spacing-xs);
+  --l-section--gutter_default: var(--ks-spacing-m);
+  --l-section--gutter_large: var(--ks-spacing-xl);
 
-$content: (
-  '.l-section': (
-    min-width: var(--l-section_tile-width_default),
-    max-width: 1fr,
-    repeat_default: 'auto-fit',
-    repeat_tile: 'auto-fill',
-    repeat_list: 1,
-    tile-width_smallest: 14rem,
-    tile-width_default: 18rem,
-    tile-width_medium: var(--l-section--content-width-narrow),
-    tile-width_large: var(--l-section--content-width-default),
-    tile-width_largest: var(--l-section--content-width-wide),
-    width_narrow: 46.5rem,
-    width_default: 62rem,
-    width_wide: 75rem,
-    width_max: 120rem,
-    width_full: 120rem,
-  ),
-) !default;
+  // Content
+  --l-section__content--padding: var(--ks-spacing-m);
+  --l-section__content--min-width: var(--l-section_tile-width_default);
+  --l-section__content--max-width: 1fr;
+  --l-section__content--repeat_default: 'auto-fit';
+  --l-section__content--repeat_tile: 'auto-fill';
+  --l-section__content--repeat_list: 1;
+  --l-section__content--tile-width_smallest: 14rem;
+  --l-section__content--tile-width_default: 18rem;
+  --l-section__content--tile-width_medium: var(
+    --l-section--content-width-narrow
+  );
+  --l-section__content--tile-width_large: var(
+    --l-section--content-width-default
+  );
+  --l-section__content--tile-width_largest: var(
+    --l-section--content-width-wide
+  );
+  --l-section__content--width_narrow: 46.5rem;
+  --l-section__content--width_default: 62rem;
+  --l-section__content--width_wide: 75rem;
+  --l-section__content--width_max: 120rem;
+  --l-section__content--width_full: 120rem;
 
-$buttons: (
-  '.l-section': (
-    space-before: var(--l-section--gutter),
-  ),
-) !default;
+  // Buttons
+  --l-section__buttons--space-before: var(--l-section--gutter);
 
-$slider-arrow: (
-  '.l-section': (
-    size: 2.5rem,
-    padding: var(--ks-spacing-xs),
-    color: var(--ks-color-primary),
-    opacity: 0.6,
-    opacity_disabled: 0.3,
-    opacity_hover: 0.9,
-    background: var(--ks-background-color-interface-interactive),
-  ),
-) !default;
+  // Slider Arrow
+  --l-section__slider-arrow--size: 2.5rem;
+  --l-section__slider-arrow--padding: var(--ks-spacing-xs);
+  --l-section__slider-arrow--color: var(--ks-color-primary);
+  --l-section__slider-arrow--opacity: 0.6;
+  --l-section__slider-arrow--opacity_disabled: 0.3;
+  --l-section__slider-arrow--opacity_hover: 0.9;
+  --l-section__slider-arrow--background: var(
+    --ks-background-color-interface-interactive
+  );
+  --l-section__slider-arrow--border-radius: var(--ks-border-radius-circle);
+}

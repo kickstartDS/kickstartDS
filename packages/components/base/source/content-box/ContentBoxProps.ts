@@ -8,6 +8,14 @@
 import type { ButtonProps } from '@kickstartds/base/lib/button/typing';
 
 /**
+ * Topic for the content box. Displayed before the text, in bold
+ */
+export type Headline = string;
+/**
+ * Text for the content box
+ */
+export type TextContent = string;
+/**
  * Choose one of the set ratios, all ratios except `none` stretch the image to 100% width
  */
 export type ImageRatio = 'none' | '4:3' | '16:9' | '1:1';
@@ -19,14 +27,6 @@ export type Alignment = 'left' | 'center' | 'right';
  * Select an image to display inside the content box, at the top
  */
 export type ImageSource = string;
-/**
- * Topic for the content box. Displayed before the text, in bold
- */
-export type Topic = string;
-/**
- * Text for the content box
- */
-export type TextContent = string;
 /**
  * Content box link configuration
  */
@@ -51,11 +51,11 @@ export type KsComponentAttribute = string;
  * Component to display content in a condensed, boxed form
  */
 export interface ContentBoxProps {
+  headline?: Headline;
+  text?: TextContent;
   ratio?: ImageRatio;
   alignement?: Alignment;
   image?: ImageSource;
-  topic?: Topic;
-  text?: TextContent;
   link?: Link;
   className?: AdditionalClasses;
   component?: KsComponentAttribute;
