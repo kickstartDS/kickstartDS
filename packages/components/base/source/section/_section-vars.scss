@@ -19,13 +19,13 @@
   --l-section__content--tile-width_smallest: 14rem;
   --l-section__content--tile-width_default: 18rem;
   --l-section__content--tile-width_medium: var(
-    --l-section--content-width-narrow
+    --l-section__content--width_narrow
   );
   --l-section__content--tile-width_large: var(
-    --l-section--content-width-default
+    --l-section__content--width_default
   );
   --l-section__content--tile-width_largest: var(
-    --l-section--content-width-wide
+    --l-section--content--width_wide
   );
   --l-section__content--width_narrow: 46.5rem;
   --l-section__content--width_default: 62rem;

@@ -1,18 +1,16 @@
 @use 'sass:meta';
-@use '@kickstartds/core/source/core/custom-properties';
 @use './post-share-bar-vars';
-
-$vars: meta.module-variables(post-share-bar-vars);
-@include custom-properties.styles($vars);
 
 .c-post-share-bar {
   &__link {
+    --g-link--color: var(--c-post-share-bar__icon--color);
+    --g-link--color-hover: var(--c-post-share-bar__icon--color_hover);
     display: inline-block;
-    padding: var(--c-post-share-bar_link--padding);
+    padding: var(--c-post-share-bar__icon--padding);
 
     .icon {
-      height: var(--c-post-share-bar_link--icon-size);
-      width: var(--c-post-share-bar_link--icon-size);
+      height: var(--c-post-share-bar__icon--size);
+      width: var(--c-post-share-bar__icon--size);
     }
   }
 }

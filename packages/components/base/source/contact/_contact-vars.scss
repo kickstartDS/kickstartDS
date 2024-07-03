@@ -1,13 +1,13 @@
 .c-contact {
   // Layout
-  --c-contact--gap: var(--ks-spacing-inline-l) var(--ks-spacing-stack-l);
+  --c-contact--gap: var(--ks-spacing-stack-m) var(--ks-spacing-inline-m);
   --c-contact--flex-basis: 150px;
 
   // Header
   --c-contact__header--gap: 0;
 
   // Body
-  --c-contact__body--gap: var(--ks-spacing-stack-m);
+  --c-contact__body--gap: var(--ks-spacing-stack-s);
 
   // Name
   --c-contact__name--color: var(--ks-text-color-display);

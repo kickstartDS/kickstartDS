@@ -10,11 +10,11 @@
 .c-content-box {
   --c-content-box__headline--font: var(--c-content-box_s__headline--font);
 
-  @include container.size('≥', 400px) {
+  @include container.size('≥', 360px) {
     --c-content-box__headline--font: var(--c-content-box_m__headline--font);
   }
 
-  @include container.size('≥', 500px) {
+  @include container.size('≥', 640px) {
     --c-content-box__headline--font: var(--c-content-box_l__headline--font);
   }
 

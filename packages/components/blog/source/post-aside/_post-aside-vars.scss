@@ -1,7 +1,8 @@
-$name-: 'c-post-aside' !default;
+.c-post-aside {
+  --c-post-aside--gap: var(--ks-spacing-stack-m);
 
-$host: (
-  '.c-post-aside': (
-    gap: var(--ks-spacing-m),
-  ),
-) !default;
+  // Meta
+  --c-post-aside__meta--vertical-spacing: 0.75em;
+  --c-post-aside__meta--border: var(--ks-border-width-default) solid
+    var(--ks-border-color-interface);
+}

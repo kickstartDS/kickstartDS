@@ -15,22 +15,6 @@ export type Headline = string;
  * Text for the teaser box
  */
 export type TextContent = string;
-/**
- * Select an image to display inside the teaser box, at the top
- */
-export type ImageSource = string;
-/**
- * Choose the layout of the teaser
- */
-export type BoxLayout = 'box' | 'row';
-/**
- * Choose the ratio used to crop and display the image
- */
-export type ImageRatio = '4:3' | '16:9' | '1:1' | 'unset';
-/**
- * Optionally add inner spacing to the displayed image
- */
-export type ImageSpacing = boolean;
 export type Inverted = boolean;
 /**
  * Hides the link. The box as a whole keeps being clickable
@@ -51,10 +35,6 @@ export type KsComponentAttribute = string;
 export interface TeaserProps {
   headline?: Headline;
   text?: TextContent;
-  image?: ImageSource;
-  layout?: BoxLayout;
-  ratio?: ImageRatio;
-  imageSpacing?: ImageSpacing;
   inverted?: Inverted;
   link?: ButtonProps & {
     hidden?: HideLink;
