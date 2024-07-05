@@ -32,6 +32,8 @@
 
   // Label
   --c-form-field__label--padding: 0 0 0.25rem;
+  --c-form-field__label--font: var(--ks-font-interface-s);
+  --c-form-field__label--color: var(--ks-text-color-interface);
 
   // Invalid Message
   --c-form-field__invalid-message--margin: 0.35em 0 0 0;

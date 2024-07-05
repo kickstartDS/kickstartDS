@@ -29,4 +29,13 @@
   --c-form-check__checkmark--color: var(--ks-color-primary-inverted);
   --c-form-check_checkbox__checkmark--width: 2px;
   --c-form-check_radio__checkmark--size: 0.5rem;
+
+  // Label
+  --c-form-check__label--margin-left: 0.5rem;
+  --c-form-check__label--color: var(--ks-text-color-default);
+  --c-form-check__label--font: var(--ks-font-interface-s);
+
+  // Hint
+  --c-form-check__hint--color: var(--ks-color-fg-alpha-3);
+  --c-form-check__hint--margin: 0.25rem 0 0;
 }

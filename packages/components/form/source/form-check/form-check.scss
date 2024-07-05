@@ -111,7 +111,9 @@
   }
 
   &__label {
-    margin-left: 0.5rem;
+    margin-left: var(--c-form-check__label--margin-left);
+    color: var(--c-form-check__label--color);
+    font: var(--c-form-check__label--font);
   }
 
   &__invalid-message {
@@ -123,7 +125,7 @@
   }
 
   &__hint {
-    margin: 0.25rem 0 0;
-    color: var(--ks-color-fg-alpha-3);
+    margin: var(--c-form-check__hint--margin);
+    color: var(--c-form-check__hint--color);
   }
 }

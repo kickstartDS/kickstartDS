@@ -11,6 +11,8 @@
 
   &__label {
     padding: var(--c-form-field__label--padding);
+    font: var(--c-form-field__label--font);
+    color: var(--c-form-field__label--color);
 
     &--hidden {
       @include bourbon.hide-visually;

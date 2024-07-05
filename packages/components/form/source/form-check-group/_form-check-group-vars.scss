@@ -1,14 +1,7 @@
-$name-: 'c-form-check-group';
+.c-form-check-group {
+  --c-form-check-group--vertical-gutter: 0.125rem;
 
-$host: (
-  '.c-form-check-group': (
-    horizontal-gutter: 0.75rem,
-    vertical-gutter: 0.125rem,
-  ),
-) !default;
-
-$label: (
-  '.c-form-check-group': (
-    padding: 0.25rem 0,
-  ),
-) !default;
+  // Label
+  --c-form-check-group__label--padding: 0 0 0.25rem;
+  --c-form-check-group__label--font: var(--ks-font-interface-s);
+}
