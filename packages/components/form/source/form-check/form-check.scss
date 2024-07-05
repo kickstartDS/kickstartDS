@@ -1,16 +1,26 @@
 @use 'sass:meta';
 @use 'bourbon/core/bourbon';
-@use '@kickstartds/core/source/core/custom-properties';
 @use '../input-field';
 @use './form-check-vars';
-
-$vars: meta.module-variables(form-check-vars);
-@include custom-properties.styles($vars);
 
 .c-form-check {
   @include input-field.wrapper($width: null);
   flex-direction: column;
   align-items: flex-start;
+  font: var(--c-form-check--font);
+  color: var(--c-form-check--color);
+
+  &--radio {
+    --c-form-check__box--border-radius: var(
+      --c-form-check_radio__box--border-radius
+    );
+  }
+
+  &--checkbox {
+    --c-form-check__box--border-radius: var(
+      --c-form-check_checkbox__box--border-radius
+    );
+  }
 
   &__field {
     position: relative;
@@ -26,42 +36,42 @@ $vars: meta.module-variables(form-check-vars);
   }
 
   &__box {
-    @include bourbon.size(var(--c-form-check_box--size));
+    @include bourbon.size(var(--c-form-check__box--size));
     position: relative;
-    flex: 0 0 var(--c-form-check_box--size);
-    border: var(--c-form-check_box--border);
-    border-color: var(--c-form-check_box--border-color);
-    border-radius: var(--c-form-check_box--border-radius);
+    flex: 0 0 var(--c-form-check__box--size);
+    border: var(--c-form-check__box--border);
+    border-color: var(--c-form-check__box--border-color);
+    border-radius: var(--c-form-check__box--border-radius);
     margin-top: calc(
       (
           calc(var(--ks-line-height-interface-s) * 1em) -
-            var(--c-form-check_box--size)
+            var(--c-form-check__box--size)
         ) / 2
     );
-    background: var(--c-form-check_box--background);
+    background: var(--c-form-check__box--background);
     transition: 0.2s;
 
     :hover > & {
-      border-color: var(--c-form-check_box-hover--border-color);
+      border-color: var(--c-form-check__box--border-color_hover);
     }
 
     :focus ~ & {
-      border-color: var(--c-form-check_box-focus--border-color);
+      border-color: var(--c-form-check__box--border-color_focus);
     }
 
     :focus-visible ~ & {
-      box-shadow: var(--c-form-check_box-focus--shadow)
-        var(--c-form-check_box-focus--border-color);
+      box-shadow: var(--c-form-check__box--shadow_focus)
+        var(--c-form-check__box--border-color_focus);
     }
 
     .focus-visible ~ & {
-      box-shadow: var(--c-form-check_box-focus--shadow)
-        var(--c-form-check_box-focus--border-color);
+      box-shadow: var(--c-form-check__box--shadow_focus)
+        var(--c-form-check__box--border-color_focus);
     }
 
     :checked ~ & {
-      background: var(--c-form-check_box-checked--background);
-      border-color: var(--c-form-check_box-checked--border-color);
+      background: var(--c-form-check__box--background_checked);
+      border-color: var(--c-form-check__box--border-color_checked);
     }
 
     &::after {
@@ -71,32 +81,32 @@ $vars: meta.module-variables(form-check-vars);
 
       [type='checkbox']:checked ~ & {
         transform: translate(-50%, -50%) rotate(45deg);
-        top: calc(50% - var(--c-form-check_checkmark--width));
+        top: calc(50% - var(--c-form-check_checkbox__checkmark--width));
         left: 50%;
         width: 0.4em;
         height: 0.7em;
-        border: solid var(--c-form-check_checkmark--color);
-        border-width: 0 var(--c-form-check_checkmark--width)
-          var(--c-form-check_checkmark--width) 0;
+        border: solid var(--c-form-check__checkmark--color);
+        border-width: 0 var(--c-form-check_checkbox__checkmark--width)
+          var(--c-form-check_checkbox__checkmark--width) 0;
       }
 
       [type='radio']:checked ~ & {
-        @include bourbon.size(var(--c-form-check_checkmark--size));
+        @include bourbon.size(var(--c-form-check_radio__checkmark--size));
         transform: translate(-50%, -50%);
         top: 50%;
         left: 50%;
-        background: var(--c-form-check_checkmark--color);
+        background: var(--c-form-check__checkmark--color);
         border-radius: 50%;
       }
     }
 
     .c-form-check-group--is-invalid &,
     .c-form-check__input--is-invalid ~ & {
-      --c-form-check_box--border-color: var(--ks-color-negative);
-      --c-form-check_box-hover--border-color: var(--ks-color-negative);
-      --c-form-check_box-checked--border-color: var(--ks-color-negative);
-      --c-form-check_box-checked--background: var(--ks-color-negative);
-      --c-form-check_box-focus--border-color: var(--ks-color-negative);
+      --c-form-check__box--border-color: var(--ks-color-negative);
+      --c-form-check__box--border-color_hover: var(--ks-color-negative);
+      --c-form-check__box--border-color_checked: var(--ks-color-negative);
+      --c-form-check__box--background_checked: var(--ks-color-negative);
+      --c-form-check__box--border-color_focus: var(--ks-color-negative);
     }
   }
 

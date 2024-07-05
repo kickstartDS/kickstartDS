@@ -1,33 +1,39 @@
-$name-: 'c-form-field';
+.c-form-field {
+  --c-form-field--font: var(--ks-font-interface-s);
+  --c-form-field--border: var(--ks-border-width-default) solid;
+  --c-form-field--border-color: var(--ks-border-color-interface-interactive);
+  --c-form-field--border-color_hover: var(
+    --ks-border-color-interface-interactive-hover
+  );
+  --c-form-field--border-color_focus: var(
+    --ks-border-color-interface-interactive-active
+  );
+  --c-form-field--border-radius: var(--ks-border-radius-control);
+  --c-form-field--background: transparent;
+  --c-form-field--background-disabled: var(
+    --ks-background-color-interface-interactive-disabled
+  );
+  --c-form-field--color: var(--ks-text-color-interface-interactive);
+  --c-form-field--shadow_focus: 0 0 4px -1px;
 
-$host: (
-  ':root, [ks-theme], [ks-inverted]': (
-    border: var(--ks-border-width-default) solid,
-    border-color: var(--ks-border-color-interface-interactive),
-    border-radius: var(--ks-border-radius-control),
-    background: transparent,
-    background-disabled:
-      var(--ks-background-color-interface-interactive-disabled),
-    color: var(--ks-text-color-interface-interactive),
-  ),
-) !default;
+  // Icon
+  --c-form-field__icon--size: calc(var(--ks-line-height-interface-m) * 0.75em);
+  --c-form-field__icon--color: var(--ks-color-fg-alpha-3);
 
-$hover: (
-  ':root, [ks-theme], [ks-inverted]': (
-    border-color: var(--ks-border-color-interface-interactive-hover),
-  ),
-) !default;
+  // Hint
+  --c-form-field__hint--color: var(--ks-color-fg-alpha-3);
+  --c-form-field__hint--margin: 0.25rem 0 0;
 
-$focus: (
-  ':root, [ks-theme], [ks-inverted]': (
-    border-color: var(--ks-border-color-interface-interactive-active),
-    shadow: 0 0 4px -1px,
-  ),
-) !default;
+  // Input
+  --c-form-field__input--padding: 0.4rem 0.75rem 0.35rem;
 
-$icon: (
-  ':root, [ks-theme], [ks-inverted]': (
-    size: calc(var(--ks-line-height-interface-m) * 0.75em),
-    color: var(--ks-color-fg-alpha-3),
-  ),
-) !default;
+  // Placeholder
+  --c-form-field__input__placeholder--color: var(--ks-color-fg-alpha-5);
+
+  // Label
+  --c-form-field__label--padding: 0 0 0.25rem;
+
+  // Invalid Message
+  --c-form-field__invalid-message--margin: 0.35em 0 0 0;
+  --c-form-field__invalid-message--padding: 0.125rem 0.85rem;
+}

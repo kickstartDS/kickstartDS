@@ -1,20 +1,16 @@
 @use 'sass:meta';
 @use 'bourbon/core/bourbon';
-@use '@kickstartds/core/source/core/custom-properties';
 @use '../input-field';
 @use './form-field-vars';
 
-$vars: meta.module-variables(form-field-vars);
-@include custom-properties.styles($vars);
-
 .c-form-field {
-  $input-padding: 0.4rem 0.75rem 0.35rem;
+  $input-padding: var(--c-form-field__input--padding);
 
   @include input-field.wrapper;
   flex-direction: column;
 
   &__label {
-    padding: 0.25rem 0;
+    padding: var(--c-form-field__label--padding);
 
     &--hidden {
       @include bourbon.hide-visually;
@@ -31,9 +27,13 @@ $vars: meta.module-variables(form-field-vars);
     width: 100%;
     background-color: var(--c-form-field--background);
     color: var(--c-form-field--color);
-    font: var(--ks-font-interface-m);
-    transition: 0.2s;
+    font: var(--c-form-field--font);
+    transition: var(--ks-duration-medium);
     resize: vertical;
+
+    &::placeholder {
+      color: var(--c-form-field__input__placeholder--color);
+    }
 
     &:disabled {
       background-color: var(--c-form-field--background-disabled);
@@ -41,28 +41,28 @@ $vars: meta.module-variables(form-field-vars);
     }
 
     &:hover {
-      border-color: var(--c-form-field_hover--border-color);
+      border-color: var(--c-form-field--border-color_hover);
     }
 
     &:focus {
-      border-color: var(--c-form-field_focus--border-color);
+      border-color: var(--c-form-field--border-color_focus);
     }
 
     &:focus-visible {
-      box-shadow: var(--c-form-field_focus--shadow)
-        var(--c-form-field_focus--border-color);
+      box-shadow: var(--c-form-field--shadow_focus)
+        var(--c-form-field--border-color_focus);
     }
 
     &.focus-visible {
-      box-shadow: var(--c-form-field_focus--shadow)
-        var(--c-form-field_focus--border-color);
+      box-shadow: var(--c-form-field--shadow_focus)
+        var(--c-form-field--border-color_focus);
     }
 
     &--is-invalid {
       --c-form-field--color: var(--ks-color-negative);
       --c-form-field--border-color: var(--ks-color-negative);
-      --c-form-field_hover--border-color: var(--ks-color-negative);
-      --c-form-field_focus--border-color: var(--ks-color-negative);
+      --c-form-field--border-color_hover: var(--ks-color-negative);
+      --c-form-field--border-color_focus: var(--ks-color-negative);
     }
   }
 
@@ -72,32 +72,32 @@ $vars: meta.module-variables(form-field-vars);
     flex-direction: column;
 
     .icon {
-      @include bourbon.size(var(--c-form-field_icon--size));
+      @include bourbon.size(var(--c-form-field__icon--size));
       position: absolute;
       right: 0;
       bottom: calc(
-        var(--ks-line-height-interface-m) * 1em - var(--c-form-field_icon--size)
+        var(--ks-line-height-interface-m) * 1em -
+          var(--c-form-field__icon--size)
       );
       margin: $input-padding;
-      color: var(--c-form-field_icon--color);
+      color: var(--c-form-field__icon--color);
 
       + .c-form-field__input {
-        padding-right: calc(var(--c-form-field_icon--size) + 1rem);
+        padding-right: calc(var(--c-form-field__icon--size) + 1rem);
       }
     }
   }
 
   &__invalid-message {
-    margin: calc(-1 * var(--c-form-field--border-radius)) 0 0;
-    padding: var(--c-form-field--border-radius) 0.5rem 0.125rem;
+    margin: var(--c-form-field__invalid-message--margin);
+    padding: var(--c-form-field__invalid-message--padding);
     color: var(--ks-text-color-default-inverted);
     background: var(--ks-color-negative);
-    border-bottom-left-radius: var(--c-form-field--border-radius);
-    border-bottom-right-radius: var(--c-form-field--border-radius);
+    border-radius: var(--c-form-field--border-radius);
   }
 
   &__hint {
-    margin: 0.25rem 0 0;
-    color: var(--ks-color-fg-alpha-3);
+    margin: var(--c-form-field__hint--margin);
+    color: var(--c-form-field__hint--color);
   }
 }
