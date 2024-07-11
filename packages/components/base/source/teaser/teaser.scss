@@ -1,11 +1,26 @@
 @use 'sass:meta';
-@use '@kickstartds/core/source/core/custom-properties';
 @use './teaser-vars';
+@use './container';
 
-$vars: meta.module-variables(teaser-vars);
-@include custom-properties.styles($vars);
+@include container.wrapper('teaser');
 
 .c-teaser {
+  --c-teaser__copy--font: var(--c-teaser_s__copy--font);
+  --c-teaser__headline--font: var(--c-teaser_s__headline--font);
+  --c-teaser__button--font: var(--c-teaser_s__button--font);
+
+  @include container.size('≥', 360px) {
+    --c-teaser__copy--font: var(--c-teaser_m__copy--font);
+    --c-teaser__headline--font: var(--c-teaser_m__headline--font);
+    --c-teaser__button--font: var(--c-teaser_m__button--font);
+  }
+
+  @include container.size('≥', 640px) {
+    --c-teaser__copy--font: var(--c-teaser_l__copy--font);
+    --c-teaser__headline--font: var(--c-teaser_l__headline--font);
+    --c-teaser__button--font: var(--c-teaser_l__button--font);
+  }
+
   box-sizing: border-box;
   background: var(--c-teaser--background);
   border: var(--c-teaser--border);
@@ -13,7 +28,6 @@ $vars: meta.module-variables(teaser-vars);
   box-shadow: var(--c-teaser--shadow);
   overflow: hidden;
   width: 100%;
-  font: var(--c-teaser_copy--font);
 
   &.js-linked {
     transition: box-shadow 0.2s;
@@ -27,7 +41,7 @@ $vars: meta.module-variables(teaser-vars);
   &__body {
     display: flex;
     padding: var(--c-teaser--padding);
-    gap: var(--c-teaser_body--gap);
+    gap: var(--c-teaser__body--gap);
   }
 
   &__text {
@@ -35,16 +49,27 @@ $vars: meta.module-variables(teaser-vars);
   }
 
   &__copy.c-rich-text {
-    --c-rich-text--font: var(--c-teaser_copy--font);
-    --c-rich-text--color: var(--c-teaser_copy--color);
+    --c-rich-text--font: var(--c-teaser__copy--font);
+    --c-rich-text--color: var(--c-teaser__copy--color);
     --c-rich-text--font-weight: var(--c-teaser_copy--font-weight);
-    margin-top: var(--c-teaser_copy--spacing);
+    margin-top: var(--c-teaser__copy--margin-top);
   }
 
-  &__topic {
-    font: var(--c-teaser_topic--font);
-    font-weight: var(--c-teaser_topic--font-weight);
-    color: var(--c-teaser_topic--color);
-    margin: 0;
+  &__headline {
+    --c-headline--font: var(--c-teaser__headline--font);
+    --c-headline--font-weight: var(--c-teaser__headline--font-weight);
+    --c-headline--color: var(--c-teaser__headline--color);
+
+    .c-headline__headline {
+      margin-top: var(--c-teaser__headline--margin-top);
+    }
+  }
+
+  &__link {
+    .c-button {
+      // TBD: macht es sinn hier alle button token auf teaser__button token zu mappen oder nur die erforderlichen?
+      --c-button--font: var(--c-teaser__button--font);
+      margin-top: var(--c-teaser__button--margin-top);
+    }
   }
 }

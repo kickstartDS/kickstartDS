@@ -7,9 +7,10 @@ import {
 } from '../rich-text';
 import { Button } from '../button';
 import type { TeaserProps as TeaserSchemaProps } from './typing';
+import { Headline } from '../headline';
 
 export type TeaserProps = TeaserSchemaProps & {
-  renderTopic?: typeof defaultRenderFn;
+  renderHeadline?: typeof defaultRenderFn;
   renderText?: typeof defaultRenderFn;
 };
 
@@ -18,12 +19,12 @@ export const TeaserComponent: ForwardRefRenderFunction<
   TeaserProps & HTMLAttributes<HTMLDivElement>
 > = (
   {
-    topic,
+    headline,
     text,
     inverted,
     link,
     renderText = richTextDefaultRenderFn,
-    renderTopic = defaultRenderFn,
+    renderHeadline = defaultRenderFn,
     className,
     children,
     component = 'base.teaser',
@@ -41,11 +42,16 @@ export const TeaserComponent: ForwardRefRenderFunction<
     {children}
     <div
       className="c-teaser__body"
-      hidden={!topic && !text && (!link || link.hidden)}
+      hidden={!headline && !text && (!link || link.hidden)}
     >
       <div className="c-teaser__text">
-        <p className="c-teaser__topic">{renderTopic(topic)}</p>
+        {renderHeadline(
+          //TBD: topic
+          <Headline className="c-teaser__headline" content={headline} />
+        )}
+
         {text && (
+          //TBD: Rich Text oder Copy? Ist hier die RichText Funktion aktiviert?
           <RichText
             className="c-teaser__copy"
             text={text}

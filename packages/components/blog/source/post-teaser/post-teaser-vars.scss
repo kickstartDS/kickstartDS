@@ -1,8 +1,18 @@
-$name-: 'c-post-teaser' !default;
+.c-post-teaser {
+  --c-post-teaser--gap: var(--ks-spacing-stack-s);
 
-$host: (
-  '.c-post-teaser': (
-    gap: var(--ks-spacing-m),
-    color: var(--ks-text-color-default),
-  ),
-) !default;
+  // Headline
+  --c-post-teaser__headline--color: var(--ks-text-color-default);
+  --c-post-teaser__headline--font: var(--ks-font-display-l);
+
+  // Copy
+  --c-post-teaser__copy--font: var(--ks-font-copy-m);
+  --c-post-teaser__copy--color: var(--ks-text-color-default);
+
+  // Image
+  --c-post-teaser__image--aspect-ratio: 16/9;
+
+  // Meta Item
+  --c-post-teaser__meta__item--font: var(--ks-font-interface-s);
+  --c-post-teaser__meta__item--color: var(--ks-text-color-interface);
+}

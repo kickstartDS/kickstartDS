@@ -1,56 +1,35 @@
-$name-: 'c-teaser' !default;
+.c-teaser {
+  --c-teaser--background: var(--ks-background-color-card-interactive);
+  --c-teaser--border: var(--ks-border-width-default) solid
+    var(--ks-border-color-interface);
+  --c-teaser--border-color_hover: var(--ks-border-color-card-interactive-hover);
+  --c-teaser--border-radius: var(--ks-border-radius-card);
+  --c-teaser--shadow: null;
+  --c-teaser--shadow-hover: var(--ks-box-shadow-card-hover);
+  --c-teaser--padding: 1em;
 
-$host: (
-  '.c-teaser': (
-    background: var(--ks-background-color-card-interactive),
-    border: var(--ks-border-width-default) solid
-      var(--ks-border-color-interface),
-    border-radius: var(--ks-border-radius-card),
-    shadow: null,
-    shadow-hover: var(--ks-box-shadow-card-hover),
-    padding: 1em,
-  ),
-  '[ks-inverted=true] .c-teaser, [ks-inverted=true].c-teaser': (
-    border: null,
-    shadow: null,
-    shadow-hover: (
-      0 0 30px rgba(0, 0, 0, 0.2),
-      0 10px 20px -15px rgba(0, 0, 0, 0.15),
-      0 25px 25px -35px rgba(0, 0, 0, 0.25),
-    ),
-  ),
-) !default;
+  // Body
+  --c-teaser__body--gap: 1em;
 
-$background: (
-  '.c-teaser': (
-    background: var(--ks-background-color-card-interactive),
-    border-width: var(--ks-border-width-default),
-    border-color: var(--ks-border-color-card-interactive),
-    border-color_hover: var(--ks-border-color-card-interactive-hover),
-    border-radius: var(--ks-border-radius-card),
-    shadow_hover: var(--ks-box-shadow-card-hover),
-  ),
-) !default;
+  // Headline
+  --c-teaser__headline--font-weight: var(--ks-font-weight-bold);
+  --c-teaser__headline--color: var(--ks-text-color-default);
+  --c-teaser__headline--margin-top: 0;
+  --c-teaser_s__headline--font: var(--ks-font-display-s);
+  --c-teaser_m__headline--font: var(--ks-font-display-m);
+  --c-teaser_l__headline--font: var(--ks-font-display-l);
 
-$body: (
-  '.c-teaser': (
-    gap: 1em,
-  ),
-) !default;
+  // Copy
+  --c-teaser__copy--font-weight: var(--ks-font-weight-regular);
+  --c-teaser__copy--color: var(--ks-text-color-default);
+  --c-teaser__copy--margin-top: 0.5em;
+  --c-teaser_s__copy--font: var(--ks-font-copy-s);
+  --c-teaser_m__copy--font: var(--ks-font-copy-m);
+  --c-teaser_l__copy--font: var(--ks-font-copy-l);
 
-$topic: (
-  '.c-teaser': (
-    font: var(--ks-font-display-m),
-    font-weight: var(--ks-font-weight-bold),
-    color: var(--ks-text-color-default),
-  ),
-) !default;
-
-$copy: (
-  '.c-teaser': (
-    font: var(--ks-font-copy-m),
-    font-weight: var(--ks-font-weight-regular),
-    color: var(--ks-text-color-default),
-    spacing: 0.5em,
-  ),
-) !default;
+  // Button
+  --c-teaser__button--margin-top: 0.5em;
+  --c-teaser_s__button--font: var(--ks-font-interface-s);
+  --c-teaser_m__button--font: var(--ks-font-interface-m);
+  --c-teaser_l__button--font: var(--ks-font-interface-l);
+}
