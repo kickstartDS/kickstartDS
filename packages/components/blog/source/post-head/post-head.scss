@@ -1,22 +1,18 @@
 @use 'sass:meta';
-@use '@kickstartds/core/source/core/custom-properties';
 @use './post-head-vars';
-
-$vars: meta.module-variables(post-head-vars);
-@include custom-properties.styles($vars);
 
 .c-post-head {
   &__meta {
     display: flex;
     align-items: baseline;
-    margin-bottom: 0.5rem;
+    margin-bottom: var(--c-post-head__meta--margin-bottom);
   }
 
   &__date {
-    font: var(--c-post-head_date--font);
-    font-weight: var(--c-post-head_date--font-weight);
-    color: var(--c-post-head_date--color);
-    padding-right: 1rem;
+    font: var(--c-post-head__date--font);
+    font-weight: var(--c-post-head__date--font-weight);
+    color: var(--c-post-head__date--color);
+    padding-right: var(--c-post-head__date--padding-right);
   }
 
   &__image {

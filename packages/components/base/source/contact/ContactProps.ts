@@ -10,11 +10,11 @@ import type { PictureProps } from '@kickstartds/base/lib/picture/typing';
 /**
  * Name, company name, etc.
  */
-export type Title = string;
+export type Name = string;
 /**
  * Position, profession, department, location, etc.
  */
-export type Subtitle = string;
+export type Title = string;
 /**
  * Open link in new Tab
  */
@@ -37,8 +37,8 @@ export interface ContactProps {
    * Referenced component PictureProps
    */
   image?: PictureProps;
+  name?: Name;
   title?: Title;
-  subtitle?: Subtitle;
   links?: {
     icon?: string;
     label?: string;

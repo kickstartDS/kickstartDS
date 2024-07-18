@@ -1,9 +1,5 @@
 @use 'sass:meta';
-@use '@kickstartds/core/source/core/custom-properties';
 @use './post-teaser-vars';
-
-$vars: meta.module-variables(post-teaser-vars);
-@include custom-properties.styles($vars);
 
 .c-post-teaser {
   --c-rich-text--font: var(--ks-font-copy-s);
@@ -16,8 +12,11 @@ $vars: meta.module-variables(post-teaser-vars);
     --c-teaser--padding: 0;
     --c-teaser--border: 0;
     --c-teaser--shadow-hover: none;
-    --c-teaser--color: var(--c-post-teaser--color);
     --c-teaser--background: transparent;
+    --c-teaser__headline--color: var(--c-post-teaser__headline--color);
+    --c-teaser__headline--font: var(--c-post-teaser__headline--font);
+    --c-teaser__copy--color: var(--c-post-teaser__copy--color);
+    --c-teaser__copy--font: var(--c-post-teaser__copy--font);
 
     display: flex;
     flex-flow: row-reverse wrap;
@@ -35,41 +34,32 @@ $vars: meta.module-variables(post-teaser-vars);
     page-break-inside: avoid;
   }
 
-  &__meta {
-    display: flex;
-    align-items: baseline;
-    margin-bottom: 0.5rem;
-  }
-
   &__image,
   .c-teaser__body {
-    flex: 1 1 calc((500px - 100%) * 999);
+    flex: 1 1 250px;
     max-width: 100%;
   }
 
   &__image {
-    min-width: calc(37.5% - var(--c-post-teaser--gap));
+    min-width: calc(40% - var(--c-post-teaser--gap));
     position: relative;
 
-    &::after {
-      padding-bottom: 56.25%;
-      content: '';
-      display: block;
-    }
-
     img {
-      position: absolute;
       object-fit: cover;
-      width: 100%;
-      height: 100%;
+      aspect-ratio: var(--c-post-teaser__image--aspect-ratio);
     }
   }
 
   .c-teaser__body {
-    min-width: calc(62.5% - var(--c-post-teaser--gap));
+    min-width: calc(60% - var(--c-post-teaser--gap));
   }
 
   .c-post-meta {
+    --c-post-meta__item--font: var(--c-post-teaser__meta__item--font);
+    --c-post-meta__item--color: var(--c-post-teaser__meta__item--color);
+    --c-post-meta__author--font: var(--c-post-teaser__meta__item--font);
+    --c-post-meta__author--color: var(--c-post-teaser__meta__item--color);
+
     margin: var(--c-post-teaser--gap) 0;
   }
 }

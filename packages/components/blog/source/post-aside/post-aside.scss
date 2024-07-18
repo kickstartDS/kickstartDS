@@ -1,9 +1,8 @@
 @use 'sass:meta';
-@use '@kickstartds/core/source/core/custom-properties';
 @use './post-aside-vars';
+@use './container';
 
-$vars: meta.module-variables(post-aside-vars);
-@include custom-properties.styles($vars);
+@include container.wrapper('post-aside');
 
 .c-post-aside {
   display: flex;
@@ -20,6 +19,16 @@ $vars: meta.module-variables(post-aside-vars);
       &__image {
         text-align: start;
       }
+    }
+  }
+
+  &__meta {
+    border-top: var(--c-post-aside__meta--border);
+    border-bottom: var(--c-post-aside__meta--border);
+
+    .c-post-meta__item {
+      padding-top: var(--c-post-aside__meta--vertical-spacing);
+      padding-bottom: var(--c-post-aside__meta--vertical-spacing);
     }
   }
 }

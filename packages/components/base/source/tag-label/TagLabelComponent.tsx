@@ -26,7 +26,12 @@ export const TagLabelComponent: ForwardRefRenderFunction<
   ref
 ) => (
   <div
-    className={classnames('c-tag-label', `c-tag-label--${size}`, className)}
+    className={classnames(
+      'c-tag-label',
+      `c-tag-label--${size}`,
+      removable ? 'tag-label--removable' : '',
+      className
+    )}
     ks-component={component}
     ref={ref}
     {...props}

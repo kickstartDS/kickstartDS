@@ -1,14 +1,27 @@
-$name-: 'c-lightbox' !default;
+:root,
+[ks-theme],
+[ks-inverted] {
+  --c-lightbox--background: var(--ks-color-fg-alpha-1);
+  --c-lightbox--root-z-index: var(--ks-depth-modal);
+  --c-lightbox--error-text-color: var(--ks-color-fg-to-bg-9);
 
-$host: (
-  ':root, [ks-theme], [ks-inverted]': (
-    bg: var(--ks-color-fg),
-    placeholder-bg: var(--ks-color-fg-to-bg-1),
-    root-z-index: var(--ks-depth-modal),
-    icon-color: var(--ks-color-fg-to-bg-9),
-    icon-color-secondary: var(--ks-color-fg-alpha-3),
-    stroke-color: var(--ks-color-fg-alpha-4),
-    stroke-width: 2px,
-    error-text-color: var(--ks-color-fg-to-bg-9),
-  ),
-) !default;
+  // Icon
+  --c-lightbox__icon--color: var(--ks-color-fg-to-bg-9);
+  --c-lightbox__icon--color-secondary: var(--ks-color-fg-alpha-3);
+  --c-lightbox__icon--stroke-color: transparent;
+  --c-lightbox__icon--stroke-width: 8px;
+  --c-lightbox__icon--shadow: 0 0 2px var(--ks-color-fg-alpha-4);
+
+  // Counter
+  --c-lightbox__counter--text-shadow: 1px 1px 3px var(--ks-color-fg-alpha-4);
+  --c-lightbox__counter--font: var(--ks-font-interface-s);
+  --c-lightbox__counter--font-weight: var(--ks-font-weight-regular);
+
+  // Placeholder
+  --c-lightbox__placeholder--background: var(--ks-color-fg-to-bg-1);
+
+  // Caption
+  --c-lightbox__caption--color: var(--ks-color-fg-inverted);
+  --c-lightbox__caption--background-color: var(--ks-color-fg-alpha-7);
+  --c-lightbox__caption--font: var(--ks-font-interface-s);
+}

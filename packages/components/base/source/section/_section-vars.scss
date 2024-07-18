@@ -1,81 +1,50 @@
-$name-: 'l-section';
+.l-section {
+  --l-section--background-color_default: var(--ks-background-color-default);
+  --l-section--background-color_accent: var(--ks-background-color-accent);
+  --l-section--background-color_bold: var(--ks-color-fg-alpha-4);
+  --l-section--space_default: var(--ks-spacing-xxl);
+  --l-section--space_small: calc(var(--l-section--space_default) / 2);
+  --l-section--gutter_none: 0;
+  --l-section--gutter_small: var(--ks-spacing-xs);
+  --l-section--gutter_default: var(--ks-spacing-m);
+  --l-section--gutter_large: var(--ks-spacing-xl);
 
-$host: (
-  ':root, [ks-theme], [ks-inverted]': (
-    content-width-narrow: 46.5rem,
-    content-width-default: 62rem,
-    content-width-wide: 75rem,
-    content-width-max: 120rem,
-    content-width-full: 120rem,
-    content-padding: var(--ks-spacing-m),
-    background-default: var(--ks-background-color-default),
-    background-accent: var(--ks-background-color-accent),
-    background-bold: var(--ks-color-fg-alpha-4),
-    space-default: var(--ks-spacing-xxl),
-    space-small: calc(var(--l-section--space-default) / 2),
-    gutter-small: var(--ks-spacing-xs),
-    gutter-default: var(--ks-spacing-m),
-    gutter-large: var(--ks-spacing-xl),
-  ),
-  '.l-section': (
-    background: var(--l-section--background-default),
-    gutter: var(--l-section--gutter-default),
-  ),
-  '.l-section--accent': (
-    background: var(--l-section--background-accent),
-  ),
-  '.l-section--bold': (
-    background: var(--l-section--background-bold),
-  ),
-  '.l-section--gutter-none': (
-    gutter: 0px,
-  ),
-  '.l-section--gutter-small': (
-    gutter: var(--l-section--gutter-small),
-  ),
-  '.l-section--gutter-large': (
-    gutter: var(--l-section--gutter-large),
-  ),
-) !default;
+  // Content
+  --l-section__content--padding: var(--ks-spacing-m);
+  --l-section__content--min-width: var(--l-section_tile-width_default);
+  --l-section__content--max-width: 1fr;
+  --l-section__content--repeat_default: 'auto-fit';
+  --l-section__content--repeat_tile: 'auto-fill';
+  --l-section__content--repeat_list: 1;
+  --l-section__content--tile-width_smallest: 14rem;
+  --l-section__content--tile-width_default: 18rem;
+  --l-section__content--tile-width_medium: var(
+    --l-section__content--width_narrow
+  );
+  --l-section__content--tile-width_large: var(
+    --l-section__content--width_default
+  );
+  --l-section__content--tile-width_largest: var(
+    --l-section--content--width_wide
+  );
+  --l-section__content--width_narrow: 46.5rem;
+  --l-section__content--width_default: 62rem;
+  --l-section__content--width_wide: 75rem;
+  --l-section__content--width_max: 120rem;
+  --l-section__content--width_full: 120rem;
 
-$col: (
-  '.l-section__content': (
-    min-width: var(--l-section_tile-width--default),
-    max-width: 1fr,
-    repeat: 'auto-fit',
-  ),
-  '.l-section__content--tile': (
-    repeat: 'auto-fill',
-  ),
-  '.l-section__content--list': (
-    repeat: 1,
-  ),
-) !default;
+  // Buttons
+  --l-section__buttons--space-before: var(--l-section--gutter);
 
-$tile-width: (
-  '.l-section__content': (
-    smallest: 14rem,
-    default: 18rem,
-    medium: var(--l-section--content-width-narrow),
-    large: var(--l-section--content-width-default),
-    largest: var(--l-section--content-width-wide),
-  ),
-) !default;
-
-$buttons: (
-  '.l-section__content': (
-    space-before: var(--l-section--gutter),
-  ),
-) !default;
-
-$slider-arrow: (
-  '.l-section': (
-    size: 2.5rem,
-    padding: var(--ks-spacing-xs),
-    color: var(--ks-color-primary),
-    opacity-disabled: 0.3,
-    opacity: 0.6,
-    opacity-hover: 0.9,
-    background: var(--ks-background-color-interface-interactive),
-  ),
-) !default;
+  // Slider Arrow
+  --l-section__slider-arrow--size: 2.5rem;
+  --l-section__slider-arrow--padding: var(--ks-spacing-xs);
+  --l-section__slider-arrow--color: var(--ks-color-primary);
+  --l-section__slider-arrow--opacity: 0.6;
+  --l-section__slider-arrow--opacity_disabled: 0.3;
+  --l-section__slider-arrow--opacity_hover: 0.9;
+  --l-section__slider-arrow--background: var(
+    --ks-background-color-interface-interactive
+  );
+  --l-section__slider-arrow--border-radius: var(--ks-border-radius-circle);
+}

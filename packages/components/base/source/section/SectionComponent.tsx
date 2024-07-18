@@ -59,13 +59,9 @@ export const SectionComponent: ForwardRefRenderFunction<
     content = {} as SectionSchemaProps['content'],
     headline = {} as SectionSchemaProps['headline'],
     buttons = {} as SectionSchemaProps['buttons'],
-    sliderNavPosition,
-    sliderBackIcon = 'arrow-left',
+    slider,
     renderSliderBackIcon = defaultIconRenderFn,
-    sliderBackLabel = 'Back',
-    sliderForwardIcon = 'arrow-right',
     renderSliderForwardIcon = defaultIconRenderFn,
-    sliderForwardLabel = 'Forward',
     className,
     component = 'base.section',
     children,
@@ -153,21 +149,21 @@ export const SectionComponent: ForwardRefRenderFunction<
               <div
                 className={classnames(
                   'l-section__slider-nav',
-                  sliderNavPosition &&
-                    `l-section__slider-nav--${sliderNavPosition}`
+                  slider?.navPosition &&
+                    `l-section__slider-nav--${slider?.navPosition}`
                 )}
               >
                 <button
-                  aria-label={sliderBackLabel}
+                  aria-label={slider?.backLabel}
                   className="l-section__slider-arrow l-section__slider-arrow--back"
                 >
-                  {renderSliderBackIcon(sliderBackIcon)}
+                  {renderSliderBackIcon(slider?.backIcon)}
                 </button>
                 <button
-                  aria-label={sliderForwardLabel}
+                  aria-label={slider?.forwardLabel}
                   className="l-section__slider-arrow l-section__slider-arrow--forward"
                 >
-                  {renderSliderForwardIcon(sliderForwardIcon)}
+                  {renderSliderForwardIcon(slider?.forwardIcon)}
                 </button>
               </div>
             </SectionContainer>

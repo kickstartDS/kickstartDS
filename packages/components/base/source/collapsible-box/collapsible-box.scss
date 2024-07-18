@@ -1,12 +1,9 @@
 @use 'sass:meta';
 @use 'bourbon/core/bourbon';
 @use '@kickstartds/base/source/helpers/details-reset';
-@use '@kickstartds/core/source/core/custom-properties';
 @use './container';
 @use './collapsible-box-vars';
 
-$vars: meta.module-variables(collapsible-box-vars);
-@include custom-properties.styles($vars, container.$name);
 @include container.wrapper {
   & + & {
     .c-collapsible-box {
@@ -24,12 +21,12 @@ $vars: meta.module-variables(collapsible-box-vars);
   &__header {
     &-wrapper {
       position: relative;
-      padding: var(--c-collapsible-box_header--padding);
+      padding: var(--c-collapsible-box__header--padding);
       cursor: pointer;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font: var(--c-collapsible-box_header--font);
+      font: var(--c-collapsible-box__header--font);
     }
 
     &__text {
@@ -42,12 +39,12 @@ $vars: meta.module-variables(collapsible-box-vars);
 
     &__icon {
       .icon {
-        @include bourbon.size(var(--c-collapsible-box_icon--size));
+        @include bourbon.size(var(--c-collapsible-box__icon--size));
       }
 
       .c-collapsible-box--open &,
       .c-collapsible-box[open]:not([data-uid]) & {
-        transform: var(--c-collapsible-box_icon--transform-open);
+        transform: var(--c-collapsible-box__icon--transform-open);
       }
 
       svg {
@@ -71,7 +68,7 @@ $vars: meta.module-variables(collapsible-box-vars);
     }
 
     &__inner {
-      padding: var(--c-collapsible-box_content--padding);
+      padding: var(--c-collapsible-box__content--padding);
     }
   }
 }

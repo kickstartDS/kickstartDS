@@ -4,7 +4,6 @@ import {
   FunctionComponent,
 } from 'react';
 import { Headline } from '@kickstartds/base/lib/headline';
-import { Divider } from '@kickstartds/base/lib/divider';
 import { Contact } from '@kickstartds/base/lib/contact';
 import classNames from 'classnames';
 import { PostShareBar } from '../post-share-bar';
@@ -32,19 +31,7 @@ export const PostAsideComponent: ForwardRefRenderFunction<
     {...props}
   >
     {author && <Author {...author} />}
-
-    {meta && (
-      <>
-        <Divider />
-        <PostMeta {...meta} />
-      </>
-    )}
-
-    {shareBar && (
-      <>
-        <Divider />
-        <PostShareBar {...shareBar} />
-      </>
-    )}
+    {meta && <PostMeta className="c-post-aside__meta" {...meta} />}
+    {shareBar && <PostShareBar {...shareBar} />}
   </div>
 );

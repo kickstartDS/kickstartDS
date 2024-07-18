@@ -1,48 +1,41 @@
-$name-: 'c-form-check';
+.c-form-check {
+  --c-form-check--color: var(--ks-text-color-default);
+  --c-form-check--font: var(--ks-font-interface-s);
 
-$box: (
-  ':root, [ks-theme], [ks-inverted]': (
-    size: 1rem,
-    border: var(--ks-border-width-default) solid,
-    border-color: var(--ks-border-color-interface-interactive),
-    background: transparent,
-  ),
-  '.c-form-check--checkbox': (
-    border-radius: var(--ks-border-radius-control),
-  ),
-  '.c-form-check--radio': (
-    border-radius: var(--ks-border-radius-circle),
-  ),
-) !default;
+  // Box
+  --c-form-check__box--size: 1rem;
+  --c-form-check__box--border: var(--ks-border-width-default) solid;
+  --c-form-check__box--border-color: var(
+    --ks-border-color-interface-interactive
+  );
+  --c-form-check__box--background: transparent;
+  --c-form-check__box--background_checked: var(
+    --ks-background-color-interface-interactive-selected
+  );
+  --c-form-check__box--border-color_hover: var(
+    --ks-border-color-interface-interactive-hover
+  );
+  --c-form-check__box--border-color_focus: var(
+    --ks-border-color-interface-interactive-active
+  );
+  --c-form-check__box--border-color_checked: var(
+    --ks-border-color-interface-interactive-selected
+  );
+  --c-form-check__box--shadow_focus: 0 0 4px 0;
+  --c-form-check_checkbox__box--border-radius: var(--ks-border-radius-control);
+  --c-form-check_radio__box--border-radius: var(--ks-border-radius-circle);
 
-$box-hover: (
-  ':root, [ks-theme], [ks-inverted]': (
-    border-color: var(--ks-border-color-interface-interactive-hover),
-  ),
-) !default;
+  // Checkmark
+  --c-form-check__checkmark--color: var(--ks-color-primary-inverted);
+  --c-form-check_checkbox__checkmark--width: 2px;
+  --c-form-check_radio__checkmark--size: 0.5rem;
 
-$box-focus: (
-  ':root, [ks-theme], [ks-inverted]': (
-    border-color: var(--ks-border-color-interface-interactive-active),
-    shadow: 0 0 4px 0,
-  ),
-) !default;
+  // Label
+  --c-form-check__label--margin-left: 0.5rem;
+  --c-form-check__label--color: var(--ks-text-color-default);
+  --c-form-check__label--font: var(--ks-font-interface-s);
 
-$box-checked: (
-  ':root, [ks-theme], [ks-inverted]': (
-    background: var(--ks-background-color-interface-interactive-selected),
-    border-color: var(--ks-border-color-interface-interactive-selected),
-  ),
-) !default;
-
-$checkmark: (
-  ':root, [ks-theme], [ks-inverted]': (
-    color: var(--ks-color-primary-inverted),
-  ),
-  '.c-form-check--checkbox': (
-    width: 2px,
-  ),
-  '.c-form-check--radio': (
-    size: 0.5rem,
-  ),
-) !default;
+  // Hint
+  --c-form-check__hint--color: var(--ks-color-fg-alpha-3);
+  --c-form-check__hint--margin: 0.25rem 0 0;
+}

@@ -5,9 +5,9 @@
   "description": "Component to tease external content",
   "type": "object",
   "properties": {
-    "topic": {
-      "title": "Topic",
-      "description": "Topic for the teaser box. Displayed before the text, in bold",
+    "headline": {
+      "title": "Headline",
+      "description": "Headline for the teaser box. Displayed before the text, in bold",
       "type": "string",
       "examples": ["Lorem Ipsum"]
     },

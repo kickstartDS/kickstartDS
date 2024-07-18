@@ -16,7 +16,9 @@ export const PostShareBarComponent: ForwardRefRenderFunction<
     ref={ref}
     {...props}
   >
-    {headline?.content && <Headline spaceAfter="small" {...headline} />}
+    {headline?.content && (
+      <Headline spaceAfter="small" {...headline} level="h3" />
+    )}
     {links && links.length
       ? links.map(({ icon, newTab, ...linkProps }, i) => (
           <Link

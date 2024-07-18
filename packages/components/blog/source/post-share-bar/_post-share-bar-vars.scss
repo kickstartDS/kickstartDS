@@ -1,8 +1,9 @@
-$name-: 'c-post-share-bar' !default;
-
-$link: (
-  '.c-post-share-bar': (
-    padding: 0.5rem,
-    icon-size: 1.5rem,
-  ),
-) !default;
+.c-post-share-bar {
+  // Icon
+  --c-post-share-bar__icon--color: var(--ks-text-color-default-interactive);
+  --c-post-share-bar__icon--color_hover: var(
+    --ks-text-color-default-interactive-hover
+  );
+  --c-post-share-bar__icon--padding: 0.5rem;
+  --c-post-share-bar__icon--size: 1.5rem;
+}

@@ -11,7 +11,7 @@ import type { PostTeaserProps as PostTeaserSchemaProps } from './typing';
 
 export type PostTeaserProps = PostTeaserSchemaProps &
   TeaserProps & {
-    renderTopic?: typeof defaultRenderFn;
+    renderHeadline?: typeof defaultRenderFn;
     renderText?: typeof richTextDefaultRenderFn;
   };
 
@@ -25,7 +25,7 @@ export const PostTeaserComponent: ForwardRefRenderFunction<
     title,
     body,
     categories = [],
-    renderTopic = defaultRenderFn,
+    renderHeadline = defaultRenderFn,
     renderText = richTextDefaultRenderFn,
     meta,
     className,
@@ -49,10 +49,10 @@ export const PostTeaserComponent: ForwardRefRenderFunction<
       />
     ) : null}
     <Teaser
-      topic={title}
+      headline={title}
       text={body}
       link={{ ...link, hidden: true }}
-      renderTopic={renderTopic}
+      renderHeadline={renderHeadline}
       renderText={(text) => (
         <>
           {renderText(text)}

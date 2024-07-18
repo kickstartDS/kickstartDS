@@ -1,17 +1,13 @@
 @use 'sass:meta';
 @use 'bourbon/core/bourbon';
-@use '@kickstartds/core/source/core/custom-properties';
 @use './tag-label-vars';
-
-$vars: meta.module-variables(tag-label-vars);
-@include custom-properties.styles($vars);
 
 .c-tag-label {
   display: inline-flex;
   align-items: center;
   text-decoration: none;
   background-color: var(--c-tag-label--background-color);
-  border: var(--tag-label--border);
+  border: var(--c-tag-label--border);
   color: var(--c-tag-label--color);
   font: var(--c-tag-label--font);
   font-weight: var(--c-tag-label--font-weight);
@@ -42,9 +38,9 @@ $vars: meta.module-variables(tag-label-vars);
   &__remove-btn {
     line-height: 0;
     border-radius: inherit;
-    margin-left: var(--c-tag-label_icon--margin-left);
+    margin-left: var(--c-tag-label__icon--margin-left);
     padding: var(--c-tag-label--vertical-padding)
-      var(--c-tag-label_icon--horizontal-padding);
+      var(--c-tag-label__icon--horizontal-padding);
 
     &:hover,
     &:focus {
@@ -53,7 +49,52 @@ $vars: meta.module-variables(tag-label-vars);
     }
 
     .icon {
-      @include bourbon.size(var(--c-tag-label_icon--size));
+      @include bourbon.size(var(--c-tag-label__icon--size));
+    }
+  }
+
+  &--s {
+    --c-tag-label--font: var(--c-tag-label_s--font);
+    --c-tag-label--font-weight: var(--c-tag-label_s--font-weight);
+    --c-tag-label--vertical-padding: var(--c-tag-label_s--vertical-padding);
+    --c-tag-label--horizontal-padding: var(--c-tag-label_s--horizontal-padding);
+
+    .c-tag-label__remove-btn {
+      --c-tag-label__icon--size: var(--c-tag-label_s__icon--size);
+      --c-tag-label__icon--margin-left: var(--c-tag-label_s__icon--margin-left);
+      --c-tag-label__icon--horizontal-padding: var(
+        --c-tag-label_s__icon--horizontal-padding
+      );
+    }
+  }
+
+  &--m {
+    --c-tag-label--font: var(--c-tag-label_m--font);
+    --c-tag-label--font-weight: var(--c-tag-label_m--font-weight);
+    --c-tag-label--vertical-padding: var(--c-tag-label_m--vertical-padding);
+    --c-tag-label--horizontal-padding: var(--c-tag-label_m--horizontal-padding);
+
+    .c-tag-label__remove-btn {
+      --c-tag-label__icon--size: var(--c-tag-label_m__icon--size);
+      --c-tag-label__icon--margin-left: var(--c-tag-label_m__icon--margin-left);
+      --c-tag-label__icon--horizontal-padding: var(
+        --c-tag-label_m__icon--horizontal-padding
+      );
+    }
+  }
+
+  &--l {
+    --c-tag-label--font: var(--c-tag-label_l--font);
+    --c-tag-label--font-weight: var(--c-tag-label_l--font-weight);
+    --c-tag-label--vertical-padding: var(--c-tag-label_l--vertical-padding);
+    --c-tag-label--horizontal-padding: var(--c-tag-label_l--horizontal-padding);
+
+    .c-tag-label__remove-btn {
+      --c-tag-label__icon--size: var(--c-tag-label_l__icon--size);
+      --c-tag-label__icon--margin-left: var(--c-tag-label_l__icon--margin-left);
+      --c-tag-label__icon--horizontal-padding: var(
+        --c-tag-label_l__icon--horizontal-padding
+      );
     }
   }
 }

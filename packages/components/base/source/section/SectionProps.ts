@@ -116,11 +116,13 @@ export interface SectionProps {
     arrangement?: string;
     className?: AdditionalButtonsClass;
   } & ButtonGroupProps;
-  sliderNavPosition?: SliderNavigationPosition;
-  sliderBackIcon?: BackIconForSlider;
-  sliderBackLabel?: InvisibleBackIconLabel;
-  sliderForwardIcon?: ForwardIconForSlider;
-  sliderForwardLabel?: InvisibleForwardIconLabel;
+  slider?: {
+    navPosition?: SliderNavigationPosition;
+    backIcon?: BackIconForSlider;
+    backLabel?: InvisibleBackIconLabel;
+    forwardIcon?: ForwardIconForSlider;
+    forwardLabel?: InvisibleForwardIconLabel;
+  };
   className?: AdditionalClass;
   component?: KsComponentAttribute;
 }

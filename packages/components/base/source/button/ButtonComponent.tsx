@@ -53,6 +53,7 @@ export const ButtonComponent: ForwardRefRenderFunction<
         `c-button--${variant}`,
         {
           'c-button--small': size === 'small',
+          'c-button--medium': size === 'medium',
           'c-button--large': size === 'large',
           'c-button--fill-animation': fillAnimation,
           'c-button--icon-animation': iconAnimation,

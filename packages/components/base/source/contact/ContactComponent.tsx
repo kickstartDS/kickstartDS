@@ -12,7 +12,7 @@ export const ContactComponent: ForwardRefRenderFunction<
   HTMLElement,
   ContactProps & HTMLAttributes<HTMLElement>
 > = (
-  { image, title, subtitle, links = [], copy, className, component, ...props },
+  { image, name, title, links = [], copy, className, component, ...props },
   ref
 ) => (
   <address
@@ -30,13 +30,10 @@ export const ContactComponent: ForwardRefRenderFunction<
     )}
     <div className="c-contact__body">
       {title && (
-        <Headline
-          level="h3"
-          content={title}
-          subheadline={subtitle}
-          align="left"
-          spaceAfter="small"
-        />
+        <div className="c-contact__header">
+          <span className="c-contact__name">{name}</span>
+          <span className="c-contact__title">{title}</span>
+        </div>
       )}
       {links.length ? (
         <ul className="c-contact__links">
