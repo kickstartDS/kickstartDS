@@ -17,7 +17,7 @@
     "write-heading-ids": "docusaurus write-heading-ids"
   },
   "dependencies": {
-    "@bedrock-layout/primitives": "^2.2.4",
+    "@bedrock-layout/primitives": "^3.0.45",
     "@code-hike/mdx": "^0.8.2",
     "@docusaurus/core": "2.4.0",
     "@docusaurus/plugin-google-tag-manager": "^2.4.0",
