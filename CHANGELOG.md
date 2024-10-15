@@ -1,3 +1,16 @@
+# (Tue Oct 15 2024)
+
+#### 🐛 Bug Fix
+
+- `@kickstartds/base@2.3.1`, `@kickstartds/form@2.3.1`
+  - Remove obsolete polyfills [#1700](https://github.com/kickstartDS/kickstartDS/pull/1700) ([@lmestel](https://github.com/lmestel))
+
+#### Authors: 1
+
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+
+---
+
 # (Tue Apr 30 2024)
 
 #### 🚀 Enhancement
