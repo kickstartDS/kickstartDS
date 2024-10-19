@@ -27,7 +27,7 @@
     "@babel/runtime": "^7.21.5",
     "classnames": "^2.5.1",
     "focus-visible": "^5.2.0",
-    "markdown-to-jsx": "^7.2.0",
+    "markdown-to-jsx": "^7.4.0",
     "photoswipe": "^5.3.7"
   },
   "devDependencies": {
