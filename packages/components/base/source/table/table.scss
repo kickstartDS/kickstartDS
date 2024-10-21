@@ -1,11 +1,8 @@
 /* stylelint-disable no-descending-specificity */
 @use 'sass:meta';
-@use '@kickstartds/core/source/core/custom-properties';
 @use './container';
 @use './table-vars';
 
-$vars: meta.module-variables(table-vars);
-@include custom-properties.styles($vars);
 @include container.wrapper;
 
 .c-table {
@@ -31,8 +28,8 @@ $vars: meta.module-variables(table-vars);
   }
 
   th {
-    font: var(--c-table_header--font);
-    font-weight: var(--c-table_header--font-weight);
+    font: var(--c-table__header--font);
+    font-weight: var(--c-table__header--font-weight);
   }
 
   &--border {
@@ -85,8 +82,8 @@ $vars: meta.module-variables(table-vars);
 
       [data-th] {
         &::before {
-          font: var(--c-table_header--font);
-          font-weight: var(--c-table_header--font-weight);
+          font: var(--c-table__header--font);
+          font-weight: var(--c-table__header--font-weight);
           padding-right: 0.5em;
           content: attr(data-th);
         }

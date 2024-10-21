@@ -1,9 +1,5 @@
 @use 'sass:meta';
-@use '@kickstartds/core/source/core/custom-properties';
 @use './divider-vars';
-
-$vars: meta.module-variables(divider-vars);
-@include custom-properties.styles($vars);
 
 .c-divider {
   border: 0;
@@ -11,4 +7,8 @@ $vars: meta.module-variables(divider-vars);
   border-radius: var(--c-divider--height);
   background: var(--c-divider--background);
   margin: 0;
+
+  &--accent {
+    background: var(--c-divider_accent--background);
+  }
 }

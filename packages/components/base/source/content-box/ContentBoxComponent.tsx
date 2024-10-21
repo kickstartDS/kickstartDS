@@ -8,9 +8,10 @@ import {
 import { Button } from '../button';
 import { Picture } from '../picture';
 import type { ContentBoxProps as ContentBoxSchemaProps } from './typing';
+import { Headline } from '../headline';
 
 export type ContentBoxProps = ContentBoxSchemaProps & {
-  renderTopic?: typeof defaultRenderFn;
+  renderHeadline?: typeof defaultRenderFn;
   renderText?: typeof richTextDefaultRenderFn;
 };
 
@@ -20,12 +21,12 @@ export const ContentBoxComponent: ForwardRefRenderFunction<
 > = (
   {
     image,
-    topic,
+    headline,
     alignement = 'left',
     text,
     link,
     ratio = 'none',
-    renderTopic = defaultRenderFn,
+    renderHeadline = defaultRenderFn,
     renderText = richTextDefaultRenderFn,
     className,
     component,
@@ -58,8 +59,24 @@ export const ContentBoxComponent: ForwardRefRenderFunction<
     )}
     <div className="c-content-box__body">
       <div className="c-content-box__text">
-        {topic && <p className="c-content-box__topic">{renderTopic(topic)}</p>}
-        {text && <RichText text={text} renderText={renderText} />}
+        {headline && (
+          <>
+            {renderHeadline(
+              //TBD: topic
+              <Headline
+                className="c-content-box__headline"
+                content={headline}
+              />
+            )}
+          </>
+        )}
+        {text && (
+          <RichText
+            className="c-content-box__rich-text"
+            text={text}
+            renderText={renderText}
+          />
+        )}
       </div>
       {link && link.enabled && (
         <div className="c-content-box__link">

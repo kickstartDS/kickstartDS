@@ -1,27 +1,19 @@
-$name-: 'c-post-meta' !default;
+.c-post-meta {
+  --c-post-meta--gap: var(--ks-spacing-m);
 
-$host: (
-  '.c-post-meta': (
-    gap: var(--ks-spacing-m),
-  ),
-) !default;
+  // Item
+  --c-post-meta__item--gap: var(--ks-spacing-xs);
+  --c-post-meta__item--font: var(--ks-font-interface-s);
+  --c-post-meta__item--color: var(--ks-text-color-interface);
+  --c-post-meta__item--icon-size: 1.2em;
 
-$item: (
-  '.c-post-meta': (
-    gap: var(--ks-spacing-xs),
-    font: var(--ks-font-interface-s),
-    color: var(--ks-text-color-interface),
-    icon-size: 1.2em,
-  ),
-) !default;
+  // Author
+  --c-post-meta__author--gap: var(--c-post-meta__item--gap);
+  --c-post-meta__author--font: var(--c-post-meta__item--font);
+  --c-post-meta__author--color: var(--c-post-meta__item--color);
+  --c-post-meta__author--font-weight: var(--ks-font-weight-bold);
 
-$author: (
-  '.c-post-meta': (
-    gap: var(--c-post-meta_item--gap),
-    font: var(--c-post-meta_item--font),
-    color: var(--c-post-meta_item--color),
-    font-weight: var(--ks-font-weight-bold),
-    avatar-size: 1.5em,
-    avatar-border-radius: var(--ks-border-radius-circle),
-  ),
-) !default;
+  // Avatar
+  --c-post-meta__avatar--size: 1.5em;
+  --c-post-meta__avatar--border-radius: var(--ks-border-radius-circle);
+}

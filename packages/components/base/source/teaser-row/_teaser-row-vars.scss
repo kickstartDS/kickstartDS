@@ -1,8 +1,4 @@
-$name-: 'c-teaser-row';
-
-$body: (
-  '.c-teaser-row': (
-    gutter: 0.7rem,
-    wrap-threshold: 40rem,
-  ),
-) !default;
+.c-teaser-row {
+  --c-teaser-row__body--gutter: 0.7rem;
+  --c-teaser-row__body--wrap-threshold: 40rem;
+}

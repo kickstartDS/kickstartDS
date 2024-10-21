@@ -1,18 +1,16 @@
-$name-: 'c-post-head' !default;
+.c-post-head {
+  // Date
+  --c-post-head__date--font: var(--ks-font-interface-xs);
+  --c-post-head__date--font-weight: var(--ks-font-weight-bold);
+  --c-post-head__date--color: var(--ks-color-fg-alpha-5);
+  --c-post-head__date--padding-right: 0.5em;
 
-$date: (
-  '.c-post-head': (
-    font: var(--ks-font-interface-xs),
-    font-weight: var(--ks-font-weight-bold),
-    color: var(--ks-color-fg-alpha-5),
-  ),
-) !default;
+  // Headline
+  --c-post-head__headline--font: var(--ks-font-display-l);
+  --c-post-head__headline--font-weight: var(--ks-font-weight-bold);
+  --c-post-head__headline--color: var(--ks-text-color-default);
+  --c-post-head__headline--color-hover: var(--ks-text-color-default);
 
-$headline: (
-  '.c-post-head': (
-    font: var(--ks-font-display-l),
-    font-weight: var(--ks-font-weight-bold),
-    color: var(--ks-text-color-default),
-    color-hover: var(--ks-text-color-default),
-  ),
-) !default;
+  // Meta
+  --c-post-head__meta--margin-bottom: 0.5rem;
+}

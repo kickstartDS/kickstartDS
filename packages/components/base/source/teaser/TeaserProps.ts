@@ -8,9 +8,9 @@
 import type { ButtonProps } from '@kickstartds/base/lib/button/typing';
 
 /**
- * Topic for the teaser box. Displayed before the text, in bold
+ * Headline for the teaser box. Displayed before the text, in bold
  */
-export type Topic = string;
+export type Headline = string;
 /**
  * Text for the teaser box
  */
@@ -33,7 +33,7 @@ export type KsComponentAttribute = string;
  * Component to tease external content
  */
 export interface TeaserProps {
-  topic?: Topic;
+  headline?: Headline;
   text?: TextContent;
   inverted?: Inverted;
   link?: ButtonProps & {
