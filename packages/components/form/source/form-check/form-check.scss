@@ -54,11 +54,6 @@ $vars: meta.module-variables(form-check-vars);
         var(--c-form-check_box-focus--border-color);
     }
 
-    .focus-visible ~ & {
-      box-shadow: var(--c-form-check_box-focus--shadow)
-        var(--c-form-check_box-focus--border-color);
-    }
-
     :checked ~ & {
       background: var(--c-form-check_box-checked--background);
       border-color: var(--c-form-check_box-checked--border-color);

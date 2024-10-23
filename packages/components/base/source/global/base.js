@@ -1,11 +1,5 @@
-import { domLoaded, inBrowser } from '@kickstartds/core/lib/core';
-import svgFixer from '../helpers/svg-icon-baseurl';
-import '../generic/polyfills/polyfills';
+import { inBrowser } from '@kickstartds/core/lib/core';
 
 if (inBrowser) {
   document.documentElement.classList.add('js');
 }
-
-domLoaded(() => {
-  svgFixer();
-});
