@@ -47,8 +47,8 @@ const SectionContainer: FC<
 );
 
 export const SectionComponent: ForwardRefRenderFunction<
-  HTMLDivElement,
-  SectionProps & Omit<HTMLAttributes<HTMLDivElement>, 'content'>
+  HTMLElement,
+  SectionProps & Omit<HTMLAttributes<HTMLElement>, 'content'>
 > = (
   {
     background = 'default',
@@ -97,7 +97,7 @@ export const SectionComponent: ForwardRefRenderFunction<
   } = buttons;
 
   return (
-    <div
+    <section
       className={classnames(
         'l-section',
         background && background !== 'default' && `l-section--${background}`,
@@ -194,6 +194,6 @@ export const SectionComponent: ForwardRefRenderFunction<
           <ButtonGroup {...buttons} arrangement={buttonsArrangement} />
         </SectionContainer>
       )}
-    </div>
+    </section>
   );
 };
