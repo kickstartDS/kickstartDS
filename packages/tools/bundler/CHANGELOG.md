@@ -1,3 +1,21 @@
+# v4.1.0 (Fri Oct 25 2024)
+
+#### 🐛 Bug Fix
+
+- docs: add background color to storybook ([@lmestel](https://github.com/lmestel))
+
+#### 📝 Documentation
+
+- Add background color to storybook [#1657](https://github.com/kickstartDS/kickstartDS/pull/1657) ([@lmestel](https://github.com/lmestel))
+
+#### Authors: 3
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+- Snyk bot ([@snyk-bot](https://github.com/snyk-bot))
+
+---
+
 # v4.0.4 (Fri May 03 2024)
 
 #### 🐛 Bug Fix

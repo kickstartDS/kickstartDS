@@ -1,3 +1,29 @@
+# v4.1.0 (Fri Oct 25 2024)
+
+#### 🚀 Enhancement
+
+- Use `section` element for section component [#1704](https://github.com/kickstartDS/kickstartDS/pull/1704) ([@lmestel](https://github.com/lmestel))
+
+#### 🐛 Bug Fix
+
+- feat: use section element for section component ([@lmestel](https://github.com/lmestel))
+- Remove obsolete polyfills [#1702](https://github.com/kickstartDS/kickstartDS/pull/1702) ([@lmestel](https://github.com/lmestel))
+- fix: remove obsolete polyfills ([@lmestel](https://github.com/lmestel))
+- build(deps-dev): bump markdown-to-jsx to reduce vulnerabilities ([@snyk-bot](https://github.com/snyk-bot))
+
+#### 🔩 Dependency Updates
+
+- [Snyk] Security upgrade markdown-to-jsx from 7.3.2 to 7.4.0 [#1701](https://github.com/kickstartDS/kickstartDS/pull/1701) ([@snyk-bot](https://github.com/snyk-bot) [@julrich](https://github.com/julrich))
+
+#### Authors: 4
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Jonas Ulrich ([@julrich](https://github.com/julrich))
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+- Snyk bot ([@snyk-bot](https://github.com/snyk-bot))
+
+---
+
 # v4.0.4 (Fri May 03 2024)
 
 #### 🐛 Bug Fix

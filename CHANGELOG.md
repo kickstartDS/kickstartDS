@@ -1,3 +1,36 @@
+# (Fri Oct 25 2024)
+
+#### 🚀 Enhancement
+
+- `@kickstartds/base@4.1.0`
+  - Use `section` element for section component [#1704](https://github.com/kickstartDS/kickstartDS/pull/1704) ([@lmestel](https://github.com/lmestel))
+
+#### 🐛 Bug Fix
+
+- `@kickstartds/base@4.1.0`, `@kickstartds/form@4.1.0`
+  - Remove obsolete polyfills [#1702](https://github.com/kickstartDS/kickstartDS/pull/1702) ([@lmestel](https://github.com/lmestel))
+
+#### 📝 Documentation
+
+- `@kickstartds/bundler@4.1.0`
+  - Add background color to storybook [#1657](https://github.com/kickstartDS/kickstartDS/pull/1657) ([@lmestel](https://github.com/lmestel))
+
+#### 🔩 Dependency Updates
+
+- build(deps): bump ws from 7.5.9 to 7.5.10 [#1670](https://github.com/kickstartDS/kickstartDS/pull/1670) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump braces from 3.0.2 to 3.0.3 [#1669](https://github.com/kickstartDS/kickstartDS/pull/1669) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- `@kickstartds/base@4.1.0`
+  - [Snyk] Security upgrade markdown-to-jsx from 7.3.2 to 7.4.0 [#1701](https://github.com/kickstartDS/kickstartDS/pull/1701) ([@snyk-bot](https://github.com/snyk-bot) [@julrich](https://github.com/julrich))
+
+#### Authors: 4
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Jonas Ulrich ([@julrich](https://github.com/julrich))
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+- Snyk bot ([@snyk-bot](https://github.com/snyk-bot))
+
+---
+
 # (Fri May 03 2024)
 
 #### 🐛 Bug Fix

@@ -1,3 +1,18 @@
+# v4.1.0 (Fri Oct 25 2024)
+
+#### 🐛 Bug Fix
+
+- Remove obsolete polyfills [#1702](https://github.com/kickstartDS/kickstartDS/pull/1702) ([@lmestel](https://github.com/lmestel))
+- fix: remove obsolete polyfills ([@lmestel](https://github.com/lmestel))
+
+#### Authors: 3
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+- Snyk bot ([@snyk-bot](https://github.com/snyk-bot))
+
+---
+
 # v4.0.3 (Mon Apr 22 2024)
 
 #### 🐛 Bug Fix
