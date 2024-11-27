@@ -22,6 +22,8 @@ $vars: meta.module-variables(collapsible-box-vars);
   border-bottom: 1px solid var(--c-collapsible-box--border-color);
 
   &__header {
+    color: var(--c-collapsible-box_header--color);
+
     &-wrapper {
       position: relative;
       padding: var(--c-collapsible-box_header--padding);

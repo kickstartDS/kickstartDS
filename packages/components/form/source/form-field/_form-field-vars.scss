@@ -12,6 +12,13 @@ $host: (
   ),
 ) !default;
 
+$label: (
+  ':root, [ks-theme], [ks-inverted]': (
+    color: var(--ks-text-color-interface),
+    padding: 0.25rem 0,
+  ),
+) !default;
+
 $hover: (
   ':root, [ks-theme], [ks-inverted]': (
     border-color: var(--ks-border-color-interface-interactive-hover),
