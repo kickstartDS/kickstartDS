@@ -14,7 +14,8 @@ $vars: meta.module-variables(form-field-vars);
   flex-direction: column;
 
   &__label {
-    padding: 0.25rem 0;
+    color: var(--c-form-field_label--color);
+    padding: var(--c-form-field_label--padding);
 
     &--hidden {
       @include bourbon.hide-visually;
