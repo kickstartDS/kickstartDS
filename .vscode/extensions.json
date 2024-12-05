@@ -7,8 +7,8 @@
     "dbaeumer.vscode-eslint",
     "editorconfig.editorconfig",
     "esbenp.prettier-vscode",
-    "silvenon.mdx",
-    "stylelint.vscode-stylelint"
+    "stylelint.vscode-stylelint",
+    "unifiedjs.vscode-mdx"
   ],
   // List of extensions recommended by VS Code that should not be recommended for users of this workspace.
   "unwantedRecommendations": []

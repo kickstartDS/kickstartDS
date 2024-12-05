@@ -13,6 +13,10 @@ import type { ButtonGroupProps } from '@kickstartds/base/lib/button-group/typing
  */
 export type Width = 'narrow' | 'default' | 'wide' | 'max' | 'full';
 /**
+ * Background image for the whole section
+ */
+export type BackgroundImage = string;
+/**
  * Width of content to use
  */
 export type ContentWidth = 'unset' | 'narrow' | 'default' | 'wide';
@@ -94,6 +98,7 @@ export type KsComponentAttribute = string;
 
 export interface SectionProps {
   width?: Width;
+  backgroundImage?: BackgroundImage;
   content?: {
     width?: ContentWidth;
     align?: ContentAlignment;
