@@ -21,6 +21,8 @@ $vars: meta.module-variables(section-vars);
 
   padding: var(--l-section--space-default) 0;
   background: var(--l-section--background);
+  background-size: cover;
+  background-position: center;
 
   @include container.size('≤', 776px) {
     background-image: none !important;
