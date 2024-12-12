@@ -1,3 +1,26 @@
+# v4.2.0 (Thu Dec 12 2024)
+
+#### 🚀 Enhancement
+
+- Add Section background image support [#1708](https://github.com/kickstartDS/kickstartDS/pull/1708) ([@fleven-kds](https://github.com/fleven-kds) [@lmestel](https://github.com/lmestel))
+
+#### 🐛 Bug Fix
+
+- feat: don't render `data-bg` attribute when section background is empty ([@lmestel](https://github.com/lmestel))
+- feat(section): remove example from schema ([@fleven-kds](https://github.com/fleven-kds))
+- feat(section): improve background positioning ([@fleven-kds](https://github.com/fleven-kds))
+- feat(section): disable background-image on small breakpoint ([@fleven-kds](https://github.com/fleven-kds))
+- feat(section): implement backgroundImage support ([@fleven-kds](https://github.com/fleven-kds))
+- add missing component token #993 [#1706](https://github.com/kickstartDS/kickstartDS/pull/1706) ([@fleven-kds](https://github.com/fleven-kds))
+- feat(component-token): add missing component token #993 ([@fleven-kds](https://github.com/fleven-kds))
+
+#### Authors: 2
+
+- Franz ([@fleven-kds](https://github.com/fleven-kds))
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+
+---
+
 # v4.1.0 (Fri Oct 25 2024)
 
 #### 🚀 Enhancement

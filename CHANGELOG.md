@@ -1,3 +1,22 @@
+# (Thu Dec 12 2024)
+
+#### 🚀 Enhancement
+
+- `@kickstartds/base@4.2.0`
+  - Add Section background image support [#1708](https://github.com/kickstartDS/kickstartDS/pull/1708) ([@fleven-kds](https://github.com/fleven-kds) [@lmestel](https://github.com/lmestel))
+
+#### 🐛 Bug Fix
+
+- `@kickstartds/base@4.2.0`, `@kickstartds/form@4.2.0`
+  - add missing component token #993 [#1706](https://github.com/kickstartDS/kickstartDS/pull/1706) ([@fleven-kds](https://github.com/fleven-kds))
+
+#### Authors: 2
+
+- Franz ([@fleven-kds](https://github.com/fleven-kds))
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+
+---
+
 # (Fri Oct 25 2024)
 
 #### 🚀 Enhancement
