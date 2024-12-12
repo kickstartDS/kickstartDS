@@ -11,7 +11,7 @@ $vars: meta.module-variables(content-box-vars);
 }
 
 .c-content-box {
-  margin-bottom: 2em;
+  margin-bottom: var(--c-content-box--margin-bottom);
   box-sizing: border-box;
   contain: layout inline-size style;
   display: flex;
@@ -30,7 +30,7 @@ $vars: meta.module-variables(content-box-vars);
     flex-grow: 0;
     flex-shrink: 0;
     width: 100%;
-    margin-bottom: 1em;
+    margin-bottom: var(--c-content-box_image--margin-bottom);
 
     img {
       width: auto;
@@ -84,6 +84,6 @@ $vars: meta.module-variables(content-box-vars);
   }
 
   &__link {
-    margin-top: 1em;
+    margin-top: var(--c-content-box_link--margin-top);
   }
 }

@@ -2,8 +2,12 @@ import {
   FC,
   ForwardRefRenderFunction,
   HTMLAttributes,
+  MutableRefObject,
   PropsWithChildren,
   ReactNode,
+  RefCallback,
+  useEffect,
+  useRef,
 } from 'react';
 import classnames from 'classnames';
 import { Headline } from '../headline';
@@ -46,6 +50,19 @@ const SectionContainer: FC<
   </div>
 );
 
+function mergeRefs<T>(
+  ...refs: Array<MutableRefObject<T> | RefCallback<T>>
+): RefCallback<T> {
+  return (value) =>
+    refs.forEach((ref) => {
+      if (typeof ref === 'function') {
+        ref(value);
+      } else if (ref != null) {
+        ref.current = value;
+      }
+    });
+}
+
 export const SectionComponent: ForwardRefRenderFunction<
   HTMLElement,
   SectionProps & Omit<HTMLAttributes<HTMLElement>, 'content'>
@@ -59,6 +76,7 @@ export const SectionComponent: ForwardRefRenderFunction<
     content = {} as SectionSchemaProps['content'],
     headline = {} as SectionSchemaProps['headline'],
     buttons = {} as SectionSchemaProps['buttons'],
+    backgroundImage,
     sliderNavPosition,
     sliderBackIcon = 'arrow-left',
     renderSliderBackIcon = defaultIconRenderFn,
@@ -95,6 +113,13 @@ export const SectionComponent: ForwardRefRenderFunction<
     arrangement: buttonsArrangement = contentAlign,
     className: buttonsClassName,
   } = buttons;
+  const localRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    // remove lazy loaded background image
+    if (!backgroundImage) {
+      localRef.current.style.backgroundImage = null;
+    }
+  }, [backgroundImage]);
 
   return (
     <section
@@ -109,11 +134,13 @@ export const SectionComponent: ForwardRefRenderFunction<
           `l-section--space-after-${spaceAfter}`,
         width && width !== 'default' && `l-section--${width}`,
         gutter && gutter !== 'default' && `l-section--gutter-${gutter}`,
+        backgroundImage && 'lazyload',
         className
       )}
       ks-inverted={inverted?.toString()}
       ks-component={component}
-      ref={ref}
+      ref={mergeRefs(ref, localRef)}
+      data-bg={backgroundImage || undefined}
       {...props}
     >
       {headlineProps && headlineProps.content && (

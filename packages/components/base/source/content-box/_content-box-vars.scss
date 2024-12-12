@@ -1,5 +1,11 @@
 $name-: 'c-content-box' !default;
 
+$host: (
+  '.c-content-box': (
+    margin-bottom: null,
+  ),
+) !default;
+
 $topic: (
   '.c-content-box': (
     font-xs: var(--ks-font-display-s),
@@ -9,5 +15,16 @@ $topic: (
     font-weight: var(--c-rich-text_headline--font-weight),
     color: var(--c-rich-text_headline--color),
     margin: null,
+  ),
+) !default;
+
+$image: (
+  '.c-content-box': (
+    margin-bottom: 1em,
+  ),
+) !default;
+$link: (
+  '.c-content-box': (
+    margin-top: 1em,
   ),
 ) !default;

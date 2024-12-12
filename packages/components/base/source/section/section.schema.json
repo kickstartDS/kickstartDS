@@ -11,6 +11,12 @@
       "enum": ["narrow", "default", "wide", "max", "full"],
       "default": "default"
     },
+    "backgroundImage": {
+      "title": "Background image",
+      "description": "Background image for the whole section",
+      "type": "string",
+      "format": "image"
+    },
     "content": {
       "type": "object",
       "properties": {
