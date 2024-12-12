@@ -15,8 +15,7 @@
       "title": "Background image",
       "description": "Background image for the whole section",
       "type": "string",
-      "format": "image",
-      "examples": ["https://picsum.photos/seed/visual/1920/600"]
+      "format": "image"
     },
     "content": {
       "type": "object",
