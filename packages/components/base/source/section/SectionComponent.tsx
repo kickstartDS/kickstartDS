@@ -134,15 +134,13 @@ export const SectionComponent: ForwardRefRenderFunction<
           `l-section--space-after-${spaceAfter}`,
         width && width !== 'default' && `l-section--${width}`,
         gutter && gutter !== 'default' && `l-section--gutter-${gutter}`,
-        {
-          lazyload: backgroundImage,
-        },
+        backgroundImage && 'lazyload',
         className
       )}
       ks-inverted={inverted?.toString()}
       ks-component={component}
       ref={mergeRefs(ref, localRef)}
-      data-bg={backgroundImage}
+      data-bg={backgroundImage || undefined}
       {...props}
     >
       {headlineProps && headlineProps.content && (
