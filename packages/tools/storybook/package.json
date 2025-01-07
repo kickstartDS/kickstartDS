@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@kickstartds/bundler": "^4.1.0",
-    "fast-glob": "^3.2.12",
+    "fast-glob": "^3.3.3",
     "react": "^18.2.0",
     "typescript": "^5.0.4",
     "yargs-parser": "^21.1.1"

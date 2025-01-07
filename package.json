@@ -55,7 +55,7 @@
     "@kickstartds/eslint-config": "^1.1.2",
     "@kickstartds/stylelint-config": "^2.1.2",
     "execa": "^5.1.1",
-    "fast-glob": "^3.2.12",
+    "fast-glob": "^3.3.3",
     "fs-extra": "^11.2.0",
     "license-checker": "^25.0.1",
     "postcss": "^8.4.31",
