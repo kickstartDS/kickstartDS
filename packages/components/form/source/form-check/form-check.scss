@@ -50,8 +50,9 @@ $vars: meta.module-variables(form-check-vars);
     }
 
     :focus-visible ~ & {
-      box-shadow: var(--c-form-check_box-focus--shadow)
+      outline: var(--ks-border-width-emphasized) solid
         var(--c-form-check_box-focus--border-color);
+      outline-offset: 2px;
     }
 
     :checked ~ & {

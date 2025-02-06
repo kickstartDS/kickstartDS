@@ -28,7 +28,6 @@ $hover: (
 $focus: (
   ':root, [ks-theme], [ks-inverted]': (
     border-color: var(--ks-border-color-interface-interactive-active),
-    shadow: 0 0 4px -1px,
   ),
 ) !default;
 

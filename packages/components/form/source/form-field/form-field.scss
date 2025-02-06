@@ -50,7 +50,7 @@ $vars: meta.module-variables(form-field-vars);
     }
 
     &:focus-visible {
-      box-shadow: var(--c-form-field_focus--shadow)
+      outline: var(--ks-border-width-default) solid
         var(--c-form-field_focus--border-color);
     }
 
@@ -90,6 +90,10 @@ $vars: meta.module-variables(form-field-vars);
     background: var(--ks-color-negative);
     border-bottom-left-radius: var(--c-form-field--border-radius);
     border-bottom-right-radius: var(--c-form-field--border-radius);
+
+    .c-form-field__field:has(:focus-visible) + & {
+      outline: var(--ks-border-width-default) solid var(--ks-color-negative);
+    }
   }
 
   &__hint {
