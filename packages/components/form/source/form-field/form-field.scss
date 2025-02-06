@@ -33,7 +33,7 @@ $vars: meta.module-variables(form-field-vars);
     background-color: var(--c-form-field--background);
     color: var(--c-form-field--color);
     font: var(--ks-font-interface-m);
-    transition: 0.2s;
+    transition: border-color 0.2s;
     resize: vertical;
 
     &:disabled {
@@ -52,6 +52,7 @@ $vars: meta.module-variables(form-field-vars);
     &:focus-visible {
       outline: var(--ks-border-width-default) solid
         var(--c-form-field_focus--border-color);
+      outline-offset: calc(var(--ks-border-width-emphasized) * -1);
     }
 
     &--is-invalid {
@@ -90,10 +91,6 @@ $vars: meta.module-variables(form-field-vars);
     background: var(--ks-color-negative);
     border-bottom-left-radius: var(--c-form-field--border-radius);
     border-bottom-right-radius: var(--c-form-field--border-radius);
-
-    .c-form-field__field:has(:focus-visible) + & {
-      outline: var(--ks-border-width-default) solid var(--ks-color-negative);
-    }
   }
 
   &__hint {
