@@ -50,7 +50,7 @@ $vars: meta.module-variables(form-field-vars);
     }
 
     &:focus-visible {
-      outline: var(--ks-border-width-default) solid
+      outline: var(--ks-border-width-emphasized) solid
         var(--c-form-field_focus--border-color);
       outline-offset: calc(var(--ks-border-width-emphasized) * -1);
     }

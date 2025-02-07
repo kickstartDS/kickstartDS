@@ -12,6 +12,9 @@ $host: (
     border-color: var(--c-button--color),
     background-color: transparent,
     transform-active: scale(0.95),
+    focus-outline: var(--ks-border-width-emphasized) solid
+      var(--ks-border-color-interface-interactive-active),
+    focus-outline-offset: var(--ks-border-width-emphasized),
   ),
   '.c-button--clear': (
     color: var(--ks-text-color-fg-inverted),
