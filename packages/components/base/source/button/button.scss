@@ -40,6 +40,11 @@ $vars: meta.module-variables(button-vars);
     text-decoration: none;
   }
 
+  &:focus-visible {
+    outline: var(--c-button--focus-outline);
+    outline-offset: var(--c-button--focus-outline-offset);
+  }
+
   &:disabled,
   &--disabled {
     box-shadow: none;
