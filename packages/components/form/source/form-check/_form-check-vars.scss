@@ -36,7 +36,7 @@ $box-checked: (
 
 $checkmark: (
   ':root, [ks-theme], [ks-inverted]': (
-    color: var(--ks-color-primary-inverted),
+    color: var(--ks-color-fg-inverted),
   ),
   '.c-form-check--checkbox': (
     width: 2px,

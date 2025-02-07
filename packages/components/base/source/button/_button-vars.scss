@@ -14,7 +14,7 @@ $host: (
     transform-active: scale(0.95),
   ),
   '.c-button--clear': (
-    color: var(--ks-text-color-primary-interactive),
+    color: var(--ks-text-color-fg-inverted),
     color-hover: var(--ks-text-color-primary-interactive-hover),
     color-active: var(--ks-text-color-primary-interactive-hover),
     background-color: var(--ks-background-color-clear-interactive),
@@ -22,9 +22,9 @@ $host: (
     background-color-active: var(--ks-background-color-clear-interactive-active),
   ),
   '.c-button--solid': (
-    color: var(--ks-text-color-primary-inverted-interactive),
-    color-hover: var(--ks-text-color-primary-inverted-interactive-hover),
-    color-active: var(--ks-text-color-primary-inverted-interactive-hover),
+    color: var(--ks-color-fg-inverted),
+    color-hover: var(--ks-color-fg-inverted),
+    color-active: var(--ks-color-fg-inverted),
     background-color: var(--ks-background-color-primary-interactive),
     background-color-hover: var(--ks-background-color-primary-interactive-hover),
     background-color-active:
