@@ -1,3 +1,16 @@
+# (Mon Feb 10 2025)
+
+#### 🐛 Bug Fix
+
+- `@kickstartds/form@2.3.2`
+  - Reinforce form field focus style [#1732](https://github.com/kickstartDS/kickstartDS/pull/1732) ([@lmestel](https://github.com/lmestel))
+
+#### Authors: 1
+
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+
+---
+
 # (Tue Oct 15 2024)
 
 #### 🐛 Bug Fix

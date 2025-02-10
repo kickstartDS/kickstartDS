@@ -1,3 +1,17 @@
+# v2.3.2 (Mon Feb 10 2025)
+
+#### 🐛 Bug Fix
+
+- Reinforce form field focus style [#1732](https://github.com/kickstartDS/kickstartDS/pull/1732) ([@lmestel](https://github.com/lmestel))
+- feat: draw input field focus ring inside the field ([@lmestel](https://github.com/lmestel))
+- feat: reinforce form field focus style ([@lmestel](https://github.com/lmestel))
+
+#### Authors: 1
+
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+
+---
+
 # v2.3.1 (Tue Oct 15 2024)
 
 #### 🐛 Bug Fix
