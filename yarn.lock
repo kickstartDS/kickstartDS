@@ -2962,17 +2962,17 @@
     wrap-ansi "^8.1.0"
     wrap-ansi-cjs "npm:wrap-ansi@^7.0.0"
 
-"@iwsio/json-csv-core@^0.2.6":
-  version "0.2.13"
-  resolved "https://registry.npmjs.org/@iwsio/json-csv-core/-/json-csv-core-0.2.13.tgz#9bb86faa9ce81cd6a2459b12306d1453e5c8e4c5"
-  integrity sha512-pqkkl9wMRMQtGR9D+P8jc2Ts3Fm5QGnAkcbnqQRacBEvChubm1qIR2xh6Pq4dAc39KqgiZWrHZHRxf/N8dZXtA==
+"@iwsio/json-csv-core@^1":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@iwsio/json-csv-core/-/json-csv-core-1.2.0.tgz#63143cb9d2e8223a0c2d925e39b69121f1a29f35"
+  integrity sha512-qEwlmyJ61xpAXuAzsO6aXnFduLFXLFu3NoPfU+MEOmQJt/G5mfdxKbwe4itil1NLF50NpAdnAcgXsYtMkMUQVw==
 
-"@iwsio/json-csv-node@^5.0.9":
-  version "5.0.10"
-  resolved "https://registry.npmjs.org/@iwsio/json-csv-node/-/json-csv-node-5.0.10.tgz#61d175e18fcd9a6d506d367b85023d2d1ffe418b"
-  integrity sha512-lV6uNuqIMuLLwRXOOGa1OMQHU4i64HFGc1CZhtWDZoS3o6BeMPpYqTBntcQYBovTIBYun2wXzlMo4YmxibHlFQ==
+"@iwsio/json-csv-node@^6.2.0":
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/@iwsio/json-csv-node/-/json-csv-node-6.2.0.tgz#a420e2a96e0128252600e891e1a66e8d96f870e9"
+  integrity sha512-c04QlZ1t0vMNAbcVZPeu/pR0WXny5HF2Y5rLebjH8xA7eBeQ8W9L5H5UD68XPhiDgPbXVXBKJ8aQ8kAAwHWvwg==
   dependencies:
-    "@iwsio/json-csv-core" "^0.2.6"
+    "@iwsio/json-csv-core" "^1"
 
 "@jest/schemas@^29.6.3":
   version "29.6.3"
