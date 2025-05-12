@@ -1466,6 +1466,15 @@
     "@bedrock-layout/center" "^2.7.2"
     "@bedrock-layout/spacing-constants" "^2.9.0"
 
+"@bedrock-layout/appboundary@^3.2.16":
+  version "3.2.16"
+  resolved "https://registry.yarnpkg.com/@bedrock-layout/appboundary/-/appboundary-3.2.16.tgz#e6d50d69cff0479038be25410b051d8221ece94a"
+  integrity sha512-bs27ixxzsy0brHux/+LS9kPOB0/asf7opyTsW8qCbE95W4on8MuVrxT4zsCQEbplOgaiOmQHHIE9smwZCCOuzg==
+  dependencies:
+    "@bedrock-layout/center" "^3.2.15"
+    "@bedrock-layout/spacing-constants" "^3.3.10"
+    "@bedrock-layout/type-utils" "^0.1.14"
+
 "@bedrock-layout/center@^2.7.2":
   version "2.7.2"
   resolved "https://registry.npmjs.org/@bedrock-layout/center/-/center-2.7.2.tgz#2f5d5ad89189c36ff0441f3c4666e66e4c79b902"
@@ -1473,12 +1482,28 @@
   dependencies:
     "@bedrock-layout/spacing-constants" "^2.9.0"
 
+"@bedrock-layout/center@^3.2.15":
+  version "3.2.15"
+  resolved "https://registry.yarnpkg.com/@bedrock-layout/center/-/center-3.2.15.tgz#bd9919dbcb042bef296d05b2105f713aac831f52"
+  integrity sha512-LFadnEI86hpAlp7ggG5c12BAPfduisSXc6TU9lXzxt+wLCQWhRuRIyeFeYEWd8mn0zFb4Y07q72pYcOjnX8oqQ==
+  dependencies:
+    "@bedrock-layout/spacing-constants" "^3.3.10"
+    "@bedrock-layout/type-utils" "^0.1.14"
+
 "@bedrock-layout/column-drop@^2.1.2":
   version "2.1.2"
   resolved "https://registry.npmjs.org/@bedrock-layout/column-drop/-/column-drop-2.1.2.tgz#4f04daf269bc9b74570202ff635ed70f1d61e541"
   integrity sha512-dy/dIwqjSIzE6On41tVA8wKoeJx95w0vrAwQ3bHU/Ebn2773GDkWoWZRmr8mvEe2cNE2WBlu0a3FL3VZx7uWag==
   dependencies:
     "@bedrock-layout/spacing-constants" "^2.9.0"
+
+"@bedrock-layout/column-drop@^3.4.4":
+  version "3.4.4"
+  resolved "https://registry.yarnpkg.com/@bedrock-layout/column-drop/-/column-drop-3.4.4.tgz#8f24ec6b0ddcec9a8c2e8361c8650698bf85e105"
+  integrity sha512-ZQCGlBoOxMsjf8ZQ6ljc/nUZJmFQjGzRabuVSfP0y5YK8/oyBiQJMoGBnqWH1UqDM1Pzqi0+dxjNQIBlrBMa4w==
+  dependencies:
+    "@bedrock-layout/spacing-constants" "^3.3.10"
+    "@bedrock-layout/type-utils" "^0.1.14"
 
 "@bedrock-layout/columns@^2.7.4":
   version "2.7.4"
@@ -1491,12 +1516,28 @@
     "@bedrock-layout/use-container-query" "^1.7.1"
     "@bedrock-layout/use-forwarded-ref" "^1.6.1"
 
+"@bedrock-layout/columns@^3.3.4":
+  version "3.3.4"
+  resolved "https://registry.yarnpkg.com/@bedrock-layout/columns/-/columns-3.3.4.tgz#ec8ce2c4f68cb14a97cb9e4f81caf36ca1060220"
+  integrity sha512-Ry4F+sIs9KGlPjlM2PMw+VOlGLNkYbqqpGfvCE8MjkjioT6RKLKSGEWQpu/G6e53N9w2v5aXyS2zSiHQ1Bcu8w==
+  dependencies:
+    "@bedrock-layout/spacing-constants" "^3.3.10"
+    "@bedrock-layout/type-utils" "^0.1.14"
+
 "@bedrock-layout/cover@^2.5.2":
   version "2.5.2"
   resolved "https://registry.npmjs.org/@bedrock-layout/cover/-/cover-2.5.2.tgz#e854db06f22dcfc9967c9b113752eb43133ebdc9"
   integrity sha512-8Fd/Qg6iKhvsf4q5m1TuxcljfVo87u2x1Vwc85Dg4OAHlMpUvMKPEgI9JvsmbF6XvYxzwP5CI7GJITOwskWU0A==
   dependencies:
     "@bedrock-layout/spacing-constants" "^2.9.0"
+
+"@bedrock-layout/cover@^3.5.4":
+  version "3.5.4"
+  resolved "https://registry.yarnpkg.com/@bedrock-layout/cover/-/cover-3.5.4.tgz#261250f79180f7ead07ccc1d9d28ca778f790e74"
+  integrity sha512-qw3xuOmMS0u/AWL7pVcNWstuuUOWkrHYkeTqi4h6fH3reMJiD177h+UBuLbjomid71qzRje4qva6wzCsimEFVg==
+  dependencies:
+    "@bedrock-layout/spacing-constants" "^3.3.10"
+    "@bedrock-layout/type-utils" "^0.1.14"
 
 "@bedrock-layout/css-reset@^1.5.0":
   version "1.5.2"
@@ -1510,12 +1551,27 @@
   dependencies:
     "@bedrock-layout/spacing-constants" "^2.9.0"
 
+"@bedrock-layout/frame@^3.2.14":
+  version "3.2.14"
+  resolved "https://registry.yarnpkg.com/@bedrock-layout/frame/-/frame-3.2.14.tgz#efa4d626b763f52ed2c3e80eb3fdb02520d2e82f"
+  integrity sha512-tWyjALu5D47t7TJll54VAYn6JpjklpwN95HiT6wrnyyD9CRNHE1BV0NlOLypV5nWwhOhYngd04D71CBV5g/vrw==
+  dependencies:
+    "@bedrock-layout/type-utils" "^0.1.14"
+
 "@bedrock-layout/grid@^3.1.2":
   version "3.1.2"
   resolved "https://registry.npmjs.org/@bedrock-layout/grid/-/grid-3.1.2.tgz#4d5d5e20e47c00c03129e4ae84c7fa674cd83115"
   integrity sha512-DkZTssfU3K6i+f61NNVeuvEsAr3Cj6vgiv/0zBIUeyf0i2Ix+7hMrV88JkABbApnXcX23dreQHGa33S2tsekxw==
   dependencies:
     "@bedrock-layout/spacing-constants" "^2.9.0"
+
+"@bedrock-layout/grid@^4.4.4":
+  version "4.4.4"
+  resolved "https://registry.yarnpkg.com/@bedrock-layout/grid/-/grid-4.4.4.tgz#5474ce2b23d7b8277f05264be68765cfab192851"
+  integrity sha512-e8GS8OpBDipeu95kvAwlfUhKYoUiSLgNl8sDdhC6UVmKiqQLzMsue5gq9AmOjDM6Mu4asvUNhEad1kzettFtjQ==
+  dependencies:
+    "@bedrock-layout/spacing-constants" "^3.3.10"
+    "@bedrock-layout/type-utils" "^0.1.14"
 
 "@bedrock-layout/inline-cluster@^2.7.2":
   version "2.7.2"
@@ -1524,6 +1580,14 @@
   dependencies:
     "@bedrock-layout/spacing-constants" "^2.9.0"
 
+"@bedrock-layout/inline-cluster@^3.4.4":
+  version "3.4.4"
+  resolved "https://registry.yarnpkg.com/@bedrock-layout/inline-cluster/-/inline-cluster-3.4.4.tgz#68f74d772f3b307182115cb2c3e49342eb71bacf"
+  integrity sha512-NrjwL9aHDIuuIo8PqggHhlE2pAgOMJG9TEX2YmdCMnByNPVX6Q6AQX+WMBnck4QMsYVxL1sKYoM5NQ5Hkg43cQ==
+  dependencies:
+    "@bedrock-layout/spacing-constants" "^3.3.10"
+    "@bedrock-layout/type-utils" "^0.1.14"
+
 "@bedrock-layout/inline@^3.1.2":
   version "3.1.2"
   resolved "https://registry.npmjs.org/@bedrock-layout/inline/-/inline-3.1.2.tgz#af82934db9b0d916bc8f399184dce3ff1148e586"
@@ -1531,6 +1595,14 @@
   dependencies:
     "@bedrock-layout/inline-cluster" "^2.7.2"
     "@bedrock-layout/spacing-constants" "^2.9.0"
+
+"@bedrock-layout/inline@^4.4.4":
+  version "4.4.4"
+  resolved "https://registry.yarnpkg.com/@bedrock-layout/inline/-/inline-4.4.4.tgz#a99aa73327c7d86032db98b2affc7a4f099dac9c"
+  integrity sha512-+UN18Ta/mftmdp4oX5o8mIbZg+ndltvYh2PQWpyf8NXYGAlY/Fh1SgUc7IExBCkaCwxoprSGhOCNayUGFbhVSQ==
+  dependencies:
+    "@bedrock-layout/spacing-constants" "^3.3.10"
+    "@bedrock-layout/type-utils" "^0.1.14"
 
 "@bedrock-layout/masonry-grid@^3.2.3":
   version "3.2.3"
@@ -1541,6 +1613,16 @@
     "@bedrock-layout/spacing-constants" "^2.9.0"
     "@bedrock-layout/use-resize-observer" "^1.4.1"
 
+"@bedrock-layout/masonry-grid@^4.3.6":
+  version "4.3.6"
+  resolved "https://registry.yarnpkg.com/@bedrock-layout/masonry-grid/-/masonry-grid-4.3.6.tgz#f915c11574d845b62412bfaf15b02765de91ab14"
+  integrity sha512-XLbPW6+NGffA4Ryq2t2W0yqS2MJ5QHja1/UhwO85ZGYTOrUDdf25gGc5mPrQTbdodme8LoCovaKgqCBz4BNTfg==
+  dependencies:
+    "@bedrock-layout/grid" "^4.4.4"
+    "@bedrock-layout/spacing-constants" "^3.3.10"
+    "@bedrock-layout/type-utils" "^0.1.14"
+    "@bedrock-layout/use-resize-observer" "^2.0.17"
+
 "@bedrock-layout/padbox@^2.4.2":
   version "2.4.2"
   resolved "https://registry.npmjs.org/@bedrock-layout/padbox/-/padbox-2.4.2.tgz#af0097038834ae2139f63b823db3680c2d1f5bcc"
@@ -1548,7 +1630,15 @@
   dependencies:
     "@bedrock-layout/spacing-constants" "^2.9.0"
 
-"@bedrock-layout/primitives@^2.2.4", "@bedrock-layout/primitives@^2.2.5":
+"@bedrock-layout/padbox@^3.2.14":
+  version "3.2.14"
+  resolved "https://registry.yarnpkg.com/@bedrock-layout/padbox/-/padbox-3.2.14.tgz#5f616941d4e0f76ea9600f7669615013c3c0f824"
+  integrity sha512-OwSJqoReoKC/2/4HiAVaMkrdjhUBHMNffeXBHjad707S95hYTzTjZpvOK9B1lHFkouCgJAntTUtxpa4rMBAlJA==
+  dependencies:
+    "@bedrock-layout/spacing-constants" "^3.3.10"
+    "@bedrock-layout/type-utils" "^0.1.14"
+
+"@bedrock-layout/primitives@^2.2.5":
   version "2.2.5"
   resolved "https://registry.npmjs.org/@bedrock-layout/primitives/-/primitives-2.2.5.tgz#245bc76db767e1f363675cde24e3c7deafcd24f3"
   integrity sha512-MAvE9XbU9H9PYmhZmlRVvT+WyAWH8AKhRxEWiyX843MWN1DgX7n4TclXifqXR0uM64aGdy75V0ZFpdAHWqqcRw==
@@ -1576,6 +1666,32 @@
     "@bedrock-layout/use-resize-observer" "^1.4.1"
     "@bedrock-layout/use-stateful-ref" "^1.4.1"
 
+"@bedrock-layout/primitives@^3.0.47":
+  version "3.0.47"
+  resolved "https://registry.yarnpkg.com/@bedrock-layout/primitives/-/primitives-3.0.47.tgz#4c973a20dff173e4c5e8fc02ef41a1d67dd15761"
+  integrity sha512-u24snWKSdDQKQ13ImBRd0ESqSSw09taAaQMbPiEyqaITtG0BVl8Qbm0vsxTjJEDOLz4TaCEsK3e+ybIt0fyg4w==
+  dependencies:
+    "@bedrock-layout/appboundary" "^3.2.16"
+    "@bedrock-layout/center" "^3.2.15"
+    "@bedrock-layout/column-drop" "^3.4.4"
+    "@bedrock-layout/columns" "^3.3.4"
+    "@bedrock-layout/cover" "^3.5.4"
+    "@bedrock-layout/frame" "^3.2.14"
+    "@bedrock-layout/grid" "^4.4.4"
+    "@bedrock-layout/inline" "^4.4.4"
+    "@bedrock-layout/inline-cluster" "^3.4.4"
+    "@bedrock-layout/masonry-grid" "^4.3.6"
+    "@bedrock-layout/padbox" "^3.2.14"
+    "@bedrock-layout/reel" "^2.2.4"
+    "@bedrock-layout/register-resize-callback" "^2.0.14"
+    "@bedrock-layout/spacing-constants" "^3.3.10"
+    "@bedrock-layout/split" "^3.2.4"
+    "@bedrock-layout/stack" "^3.3.4"
+    "@bedrock-layout/use-container-query" "^2.0.17"
+    "@bedrock-layout/use-forwarded-ref" "^2.0.16"
+    "@bedrock-layout/use-resize-observer" "^2.0.17"
+    "@bedrock-layout/use-stateful-ref" "^2.0.16"
+
 "@bedrock-layout/reel@^1.4.2":
   version "1.4.2"
   resolved "https://registry.npmjs.org/@bedrock-layout/reel/-/reel-1.4.2.tgz#8fe94951b032b192e7c47e799b0dca722adc224d"
@@ -1583,15 +1699,33 @@
   dependencies:
     "@bedrock-layout/spacing-constants" "^2.9.0"
 
+"@bedrock-layout/reel@^2.2.4":
+  version "2.2.4"
+  resolved "https://registry.yarnpkg.com/@bedrock-layout/reel/-/reel-2.2.4.tgz#e7f6604de6d2eaa3360cb1e567ce57a64974879c"
+  integrity sha512-FEHBkRKclD2AmZvx1uvuns2b8e3mqleZSvBONp5aXjJgDshp3oHjPPjeD8nuAORdaRupuuXFTYCSF5wzpg6V6Q==
+  dependencies:
+    "@bedrock-layout/spacing-constants" "^3.3.10"
+    "@bedrock-layout/type-utils" "^0.1.14"
+
 "@bedrock-layout/register-resize-callback@^1.2.1":
   version "1.2.1"
   resolved "https://registry.npmjs.org/@bedrock-layout/register-resize-callback/-/register-resize-callback-1.2.1.tgz#0eac26fd65655e138f70d1dd52f8f8fdc653b54b"
   integrity sha512-u3F57pVooayCUr3RcmUOMLVSoVIT10Dq8robX1WmtvAoSjbTXr7ASvJCti2dCREP1XbwunxupOP/HAL/jRxPeA==
 
+"@bedrock-layout/register-resize-callback@^2.0.14":
+  version "2.0.14"
+  resolved "https://registry.yarnpkg.com/@bedrock-layout/register-resize-callback/-/register-resize-callback-2.0.14.tgz#97a9de4f1e30072149658ec53bd6e670f4e69904"
+  integrity sha512-BCa8SsA4yHkpUgN0ZWdi4bZNJuw9y4kLdoLW0ujnkYmu2aUHxQ2ajLgmrdEsFSAa/YW+K2Lu5EOmBPpaH4MXJw==
+
 "@bedrock-layout/spacing-constants@^2.9.0":
   version "2.9.0"
   resolved "https://registry.npmjs.org/@bedrock-layout/spacing-constants/-/spacing-constants-2.9.0.tgz#90e6c84c7ff5474ab7dfe095b39ec9dbb08d28fc"
   integrity sha512-PxDKmDaZlP98SW4VYt8P8RtELSNf2xx+B1N2T1wwrqOxiHGd5vl04DdD+aTzeka+V880i49cpzYi32eiihfQGw==
+
+"@bedrock-layout/spacing-constants@^3.3.10":
+  version "3.3.10"
+  resolved "https://registry.yarnpkg.com/@bedrock-layout/spacing-constants/-/spacing-constants-3.3.10.tgz#2adc95d808f7409719be9e57a8ce22c522c4c851"
+  integrity sha512-VYrJuAIPVI7RJ2mtshAspn7BMtK8Lg3YxF45nMYjDp/hYbzDckKMXHy9VSBgaujT6LEDcohDBNKlKDuh+RLX9A==
 
 "@bedrock-layout/split@^2.8.2":
   version "2.8.2"
@@ -1600,12 +1734,28 @@
   dependencies:
     "@bedrock-layout/spacing-constants" "^2.9.0"
 
+"@bedrock-layout/split@^3.2.4":
+  version "3.2.4"
+  resolved "https://registry.yarnpkg.com/@bedrock-layout/split/-/split-3.2.4.tgz#baa701a53cb6a0dd6e815623f84bf826850e728a"
+  integrity sha512-WgqCJeI6qzalcP69ARgQ4twtT0/w3FAi+R5VOUX1lz2zY7cmisAeMKsI9z3pENTku84BdEfyAh1DcEsn24s5WA==
+  dependencies:
+    "@bedrock-layout/spacing-constants" "^3.3.10"
+    "@bedrock-layout/type-utils" "^0.1.14"
+
 "@bedrock-layout/stack@^2.5.3":
   version "2.5.3"
   resolved "https://registry.npmjs.org/@bedrock-layout/stack/-/stack-2.5.3.tgz#51fb4b83f2fb1a0fbdeaf8c24548252d447b4a52"
   integrity sha512-/QBWRZyJ/jXr0Wg1Hx5cXvHFRXIqnaLNxFKnY1dWeelC9g+J9pAXGG3q0fUxJojxPVfjKUiUP7HEdbu5vTs7kA==
   dependencies:
     "@bedrock-layout/spacing-constants" "^2.9.0"
+
+"@bedrock-layout/stack@^3.3.4":
+  version "3.3.4"
+  resolved "https://registry.yarnpkg.com/@bedrock-layout/stack/-/stack-3.3.4.tgz#c8eedff5fd6de0d7b2a1958cded4e9b4ec9a045a"
+  integrity sha512-OKxMeOPFUOFQm2R0v5FZX/tWhg3tcd3Jp8ehsnj5WS7WkW5CjxtSGsp8pcUjeZCmGO80V/zvQI7klNekF1g/og==
+  dependencies:
+    "@bedrock-layout/spacing-constants" "^3.3.10"
+    "@bedrock-layout/type-utils" "^0.1.14"
 
 "@bedrock-layout/type-utils@^0.0.12":
   version "0.0.12"
@@ -1617,6 +1767,11 @@
   resolved "https://registry.npmjs.org/@bedrock-layout/type-utils/-/type-utils-0.0.18.tgz#6a46a5cb3af73cd031f6f3bb141142de664be93e"
   integrity sha512-OynDBRhRnFm3MnErf1IYTiDzWyPYcjqgogwsBX52XOAXdUZTSIsjRw9dZcS80xPh6GD3LpFFz7tyqoEh44Eicg==
 
+"@bedrock-layout/type-utils@^0.1.14":
+  version "0.1.14"
+  resolved "https://registry.yarnpkg.com/@bedrock-layout/type-utils/-/type-utils-0.1.14.tgz#6a8897646b133f201aa86b151eae1ac0deefd6cd"
+  integrity sha512-XUX1IBzwu1/Gocj/FBGXxbKYu0BCbjxxAuwSAsw0kXt8I0riI0H4hulk4lncLGD21f6u5livFNF0WwjZvFRjoQ==
+
 "@bedrock-layout/use-container-query@^1.7.1":
   version "1.7.1"
   resolved "https://registry.npmjs.org/@bedrock-layout/use-container-query/-/use-container-query-1.7.1.tgz#fb5ebd51a83be3460be7c199ee9f4bd26b185a5a"
@@ -1624,12 +1779,27 @@
   dependencies:
     "@bedrock-layout/use-resize-observer" "^1.4.1"
 
+"@bedrock-layout/use-container-query@^2.0.17":
+  version "2.0.17"
+  resolved "https://registry.yarnpkg.com/@bedrock-layout/use-container-query/-/use-container-query-2.0.17.tgz#8d89555024c9d19e391e8a50abfd151e9c6a95dd"
+  integrity sha512-3jMpUJdvWhGgs1w5RcpirwsJbUOveEAizbgQi3aXKtA0DWj0Ou8EYlu0bRk7QFFfeyI9goOADoOVOXAgrUknnw==
+  dependencies:
+    "@bedrock-layout/use-forwarded-ref" "^2.0.16"
+    "@bedrock-layout/use-resize-observer" "^2.0.17"
+
 "@bedrock-layout/use-forwarded-ref@^1.6.1":
   version "1.6.1"
   resolved "https://registry.npmjs.org/@bedrock-layout/use-forwarded-ref/-/use-forwarded-ref-1.6.1.tgz#e0d25c35af41ccaa36df809a7de8d5ccd9c70d1e"
   integrity sha512-GD9A9AFLzFNjr7k6fgerSqxfwDWl+wsPS11PErOKe1zkVz0y7RGC9gzlOiX/JrgpyB3NFHWIuGtoOQqifJQQpw==
   dependencies:
     "@bedrock-layout/use-stateful-ref" "^1.4.1"
+
+"@bedrock-layout/use-forwarded-ref@^2.0.16":
+  version "2.0.16"
+  resolved "https://registry.yarnpkg.com/@bedrock-layout/use-forwarded-ref/-/use-forwarded-ref-2.0.16.tgz#49f28f548ff0a09542892a3aa076070017f7b7cf"
+  integrity sha512-y3ruK3k3khT+XuE9Kr+1pFNHaBalQFnwbfsC/BDpOzpmxLq0R6J0zW72ZQnO6BxO5hGVJhtMUxkfbA/LYZB8Fg==
+  dependencies:
+    "@bedrock-layout/use-stateful-ref" "^2.0.16"
 
 "@bedrock-layout/use-resize-observer@^1.4.1":
   version "1.4.1"
@@ -1639,10 +1809,23 @@
     "@bedrock-layout/register-resize-callback" "^1.2.1"
     "@bedrock-layout/use-stateful-ref" "^1.4.1"
 
+"@bedrock-layout/use-resize-observer@^2.0.17":
+  version "2.0.17"
+  resolved "https://registry.yarnpkg.com/@bedrock-layout/use-resize-observer/-/use-resize-observer-2.0.17.tgz#f731c4587c6778f5f09cd16183c09314cea648d8"
+  integrity sha512-o5wnwywTnwjm1KJt7mp/fr0K/6rItLILyJF2rBBU6T8FeuAS0uCg4SGRcfd5E4EKILm3n85dhJWDDritbWDh0A==
+  dependencies:
+    "@bedrock-layout/register-resize-callback" "^2.0.14"
+    "@bedrock-layout/use-stateful-ref" "^2.0.16"
+
 "@bedrock-layout/use-stateful-ref@^1.4.1":
   version "1.4.1"
   resolved "https://registry.npmjs.org/@bedrock-layout/use-stateful-ref/-/use-stateful-ref-1.4.1.tgz#c543c61d15885e19506f068618a4d6427a5bf817"
   integrity sha512-4eKO2KdQEXcR5LI4QcxqlJykJUDQJWDeWYAukIn6sRQYoabcfI5kDl61PUi6FR6o8VFgQ8IEP7HleKqWlSe8SQ==
+
+"@bedrock-layout/use-stateful-ref@^2.0.16":
+  version "2.0.16"
+  resolved "https://registry.yarnpkg.com/@bedrock-layout/use-stateful-ref/-/use-stateful-ref-2.0.16.tgz#ee83e8b17f1f27f69a5ab8456c493e5a169583e9"
+  integrity sha512-Q9wq4YdXqy+h0JvHdHjyWb7n4qIXv9lUScjt0JJBT7Rg47EaMBFhdldQqcNLQmidPc9QF6f7G23UojbcwEXnCA==
 
 "@code-hike/lighter@0.6.4":
   version "0.6.4"
