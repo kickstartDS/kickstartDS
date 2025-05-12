@@ -1403,12 +1403,10 @@
     core-js-pure "^3.30.2"
     regenerator-runtime "^0.14.0"
 
-"@babel/runtime@^7.1.2", "@babel/runtime@^7.10.3", "@babel/runtime@^7.12.13", "@babel/runtime@^7.12.5", "@babel/runtime@^7.13.10", "@babel/runtime@^7.17.8", "@babel/runtime@^7.18.6", "@babel/runtime@^7.18.9", "@babel/runtime@^7.20.13", "@babel/runtime@^7.21.0", "@babel/runtime@^7.21.5", "@babel/runtime@^7.7.6", "@babel/runtime@^7.8.4":
-  version "7.23.1"
-  resolved "https://registry.npmjs.org/@babel/runtime/-/runtime-7.23.1.tgz#72741dc4d413338a91dcb044a86f3c0bc402646d"
-  integrity sha512-hC2v6p8ZSI/W0HUzh3V8C5g+NwSKzKPtJwSpTjwl0o297GP9+ZLQSkdvHz46CM3LqyoXxq+5G9komY+eSqSO0g==
-  dependencies:
-    regenerator-runtime "^0.14.0"
+"@babel/runtime@^7.1.2", "@babel/runtime@^7.10.3", "@babel/runtime@^7.12.13", "@babel/runtime@^7.12.5", "@babel/runtime@^7.13.10", "@babel/runtime@^7.17.8", "@babel/runtime@^7.18.6", "@babel/runtime@^7.18.9", "@babel/runtime@^7.20.13", "@babel/runtime@^7.21.0", "@babel/runtime@^7.21.5", "@babel/runtime@^7.24.5", "@babel/runtime@^7.7.6", "@babel/runtime@^7.8.4":
+  version "7.27.1"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.27.1.tgz#9fce313d12c9a77507f264de74626e87fd0dc541"
+  integrity sha512-1x3D2xEk2fRo3PAhwQwu5UubzgiVWSXTBfWpVd2Mx2AzRqJuDJCsgaDVZ7HB5iGzDW1Hl1sWN2mFyKjmR9uAog==
 
 "@babel/template@^7.12.7", "@babel/template@^7.22.15", "@babel/template@^7.24.0", "@babel/template@^7.26.9":
   version "7.26.9"
@@ -2905,6 +2903,11 @@
   resolved "https://registry.npmjs.org/@fal-works/esbuild-plugin-global-externals/-/esbuild-plugin-global-externals-2.1.2.tgz#c05ed35ad82df8e6ac616c68b92c2282bd083ba4"
   integrity sha512-cEee/Z+I12mZcFJshKcCqC8tuX5hG3s+d+9nZ3LabqKF1vKdF41B92pJVCBggjAGORAeOzyyDDKrZwIkLffeOQ==
 
+"@glidejs/glide@^3.6.0":
+  version "3.7.1"
+  resolved "https://registry.yarnpkg.com/@glidejs/glide/-/glide-3.7.1.tgz#cd3fb256006d9c7aec2f95873d268410df2ab0ce"
+  integrity sha512-8he0pZpLSqTesSFYiuWdhBmtdlYSPWxfPUCKtkkiX6ZmT8UdMdmoFPtJaOwLBXv4p2JiGxqbuPdiRGGo2e/htQ==
+
 "@hapi/hoek@^9.0.0":
   version "9.3.0"
   resolved "https://registry.npmjs.org/@hapi/hoek/-/hoek-9.3.0.tgz#8368869dcb735be2e7f5cb7647de78e167a251fb"
@@ -3077,6 +3080,16 @@
     classnames "^2.3.2"
     countup.js "^2.6.2"
     lodash-es "^4.17.21"
+
+"@kickstartds/content@4.1.4":
+  version "4.1.4"
+  resolved "https://registry.yarnpkg.com/@kickstartds/content/-/content-4.1.4.tgz#84429c490d237b7869047a84dd9a8d2ebcdd2001"
+  integrity sha512-4Uf4yAuYeqnnhwBMSNM9xUUiGOxjqXEgMQYOSstoL81rGrc/YtD2tXWkFWq2/0cQnhyx7YpwSnfp7jZ4ytczRA==
+  dependencies:
+    "@babel/runtime" "^7.24.5"
+    "@glidejs/glide" "^3.6.0"
+    classnames "^2.5.1"
+    countup.js "^2.8.0"
 
 "@kickstartds/core@2.3.0-next.3":
   version "2.3.0-next.3"
@@ -7585,10 +7598,10 @@ cosmiconfig@^8.2.0, cosmiconfig@^8.3.6:
     parse-json "^5.2.0"
     path-type "^4.0.0"
 
-countup.js@^2.6.2:
-  version "2.8.0"
-  resolved "https://registry.npmjs.org/countup.js/-/countup.js-2.8.0.tgz#64951f2df3ede28839413d654d8fef28251c32a8"
-  integrity sha512-f7xEhX0awl4NOElHulrl4XRfKoNH3rB+qfNSZZyjSZhaAoUk6elvhH+MNxMmlmuUJ2/QNTWPSA7U4mNtIAKljQ==
+countup.js@^2.6.2, countup.js@^2.8.0:
+  version "2.8.2"
+  resolved "https://registry.yarnpkg.com/countup.js/-/countup.js-2.8.2.tgz#ea49e8781693612cf11d81209a230058ef226da5"
+  integrity sha512-UtRoPH6udaru/MOhhZhI/GZHJKAyAxuKItD2Tr7AbrqrOPBX/uejWBBJt8q86169AMqKkE9h9/24kFWbUk/Bag==
 
 create-require@^1.1.0:
   version "1.1.1"
