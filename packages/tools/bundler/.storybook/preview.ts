@@ -9,6 +9,7 @@ import IconSprite from '../storybook-tmp/IconSprite';
 
 import '@kickstartds/core/lib/design-tokens/tokens.css';
 import '@kickstartds/base/lib/global/base.js';
+import '@kickstartds/core/lib/utils/window.js';
 import '@kickstartds/base/lib/global/base.css';
 
 const myActions = actions('radio');

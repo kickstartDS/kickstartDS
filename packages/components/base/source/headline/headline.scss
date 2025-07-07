@@ -8,25 +8,19 @@ $vars: meta.module-variables(headline-vars);
 @include container.wrapper;
 
 .c-headline {
-  margin: 0 auto var(--c-headline--space-after);
+  margin: 0 0 var(--c-headline--space-after);
   text-align: center;
 
   &--align-left {
-    margin-left: 0;
     text-align: left;
   }
 
   &--align-right {
-    margin-right: 0;
-    text-align: left;
+    text-align: right;
   }
 
   .l-section &:not(:first-child) {
     margin-top: calc(var(--c-headline--space-after) * 1.5);
-  }
-
-  @include container.size('≥', 640px) {
-    max-width: 70%;
   }
 
   &__headline {

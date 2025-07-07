@@ -1,4 +1,4 @@
-import debounce from 'lodash-es/debounce';
+import { debounce } from './debounce';
 import { domLoaded } from '../core/domLoaded';
 
 export const breakpointEvents = {

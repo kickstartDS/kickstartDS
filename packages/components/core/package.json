@@ -34,9 +34,9 @@
     "watch": "yarn build-tokens && kdsBundle --watch"
   },
   "dependencies": {
-    "@babel/runtime": "^7.21.5",
+    "@babel/runtime": "^7.27.6",
     "bourbon": "^7.3.0",
-    "classnames": "^2.3.2",
+    "classnames": "^2.5.1",
     "del": "^6.1.1",
     "dependency-graph": "^0.11.0",
     "esbuild": "^0.17.18",
@@ -44,8 +44,6 @@
     "fs-extra": "^11.1.1",
     "json-schema": "^0.4.0",
     "lazysizes": "^5.3.2",
-    "lodash": "^4.17.21",
-    "lodash-es": "^4.17.21",
     "pubsub-js": "^1.9.4",
     "sass": "^1.62.1"
   },
@@ -53,6 +51,7 @@
     "@kickstartds/bundler": "^2.2.0",
     "@kickstartds/style-dictionary": "^2.2.2",
     "@storybook/types": "^7.0.5",
+    "lodash": "^4.17.21",
     "style-dictionary": "^3.8.0"
   },
   "peerDependencies": {
