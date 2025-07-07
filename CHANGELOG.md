@@ -1,3 +1,19 @@
+# (Mon Jul 07 2025)
+
+#### 🐛 Bug Fix
+
+- `@kickstartds/base@2.3.2`, `@kickstartds/blog@2.3.2`, `@kickstartds/core@2.2.3`, `@kickstartds/form@2.3.3`, `@kickstartds/bundler@2.2.1`, `@kickstartds/style-dictionary@2.2.3`
+  - add button focus style [#1774](https://github.com/kickstartDS/kickstartDS/pull/1774) ([@lmestel](https://github.com/lmestel) [@dependabot[bot]](https://github.com/dependabot[bot]) [@snyk-bot](https://github.com/snyk-bot) [@fleven-kds](https://github.com/fleven-kds))
+
+#### Authors: 4
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Franz ([@fleven-kds](https://github.com/fleven-kds))
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+- Snyk bot ([@snyk-bot](https://github.com/snyk-bot))
+
+---
+
 # (Mon Feb 10 2025)
 
 #### 🐛 Bug Fix

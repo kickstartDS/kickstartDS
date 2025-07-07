@@ -1,3 +1,22 @@
+# v2.2.3 (Mon Jul 07 2025)
+
+#### 🐛 Bug Fix
+
+- add button focus style [#1774](https://github.com/kickstartDS/kickstartDS/pull/1774) ([@lmestel](https://github.com/lmestel) [@dependabot[bot]](https://github.com/dependabot[bot]) [@snyk-bot](https://github.com/snyk-bot) [@fleven-kds](https://github.com/fleven-kds))
+- fix: bring back `hidden` attribute on icon sprite component ([@lmestel](https://github.com/lmestel))
+- build(deps): bump postcss from 8.4.29 to 8.4.31 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump postcss-calc from 8.2.4 to 9.0.1 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): replace htmltojsx dependency ([@lmestel](https://github.com/lmestel))
+
+#### Authors: 4
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Franz ([@fleven-kds](https://github.com/fleven-kds))
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+- Snyk bot ([@snyk-bot](https://github.com/snyk-bot))
+
+---
+
 # v2.2.2 (Wed Jan 31 2024)
 
 #### 🐛 Bug Fix

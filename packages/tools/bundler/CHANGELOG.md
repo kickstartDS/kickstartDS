@@ -1,3 +1,21 @@
+# v2.2.1 (Mon Jul 07 2025)
+
+#### 🐛 Bug Fix
+
+- add button focus style [#1774](https://github.com/kickstartDS/kickstartDS/pull/1774) ([@lmestel](https://github.com/lmestel) [@dependabot[bot]](https://github.com/dependabot[bot]) [@snyk-bot](https://github.com/snyk-bot) [@fleven-kds](https://github.com/fleven-kds))
+- build(deps): bump @rollup/plugin-replace from 5.0.3 to 5.0.5 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps): bump postcss from 8.4.29 to 8.4.31 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- feat: add debounce & throttle utility functions ([@lmestel](https://github.com/lmestel))
+
+#### Authors: 4
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Franz ([@fleven-kds](https://github.com/fleven-kds))
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+- Snyk bot ([@snyk-bot](https://github.com/snyk-bot))
+
+---
+
 # v2.2.0 (Fri Jun 30 2023)
 
 #### 🚀 Enhancement

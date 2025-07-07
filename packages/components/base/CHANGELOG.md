@@ -1,3 +1,24 @@
+# v2.3.2 (Mon Jul 07 2025)
+
+#### 🐛 Bug Fix
+
+- add button focus style [#1774](https://github.com/kickstartDS/kickstartDS/pull/1774) ([@lmestel](https://github.com/lmestel) [@dependabot[bot]](https://github.com/dependabot[bot]) [@snyk-bot](https://github.com/snyk-bot) [@fleven-kds](https://github.com/fleven-kds))
+- fix: packages/components/base/package.json to reduce vulnerabilities ([@snyk-bot](https://github.com/snyk-bot))
+- feat(button): add focus outline token ([@fleven-kds](https://github.com/fleven-kds))
+- build(deps-dev): bump markdown-to-jsx to reduce vulnerabilities ([@snyk-bot](https://github.com/snyk-bot))
+- build(deps): bump classnames from 2.3.2 to 2.5.1 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- build(deps-dev): bump @types/react from 18.2.25 to 18.2.61 ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- fix: remove max-width and fix text align in headline component ([@lmestel](https://github.com/lmestel))
+
+#### Authors: 4
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Franz ([@fleven-kds](https://github.com/fleven-kds))
+- Lukas Mestel ([@lmestel](https://github.com/lmestel))
+- Snyk bot ([@snyk-bot](https://github.com/snyk-bot))
+
+---
+
 # v2.3.1 (Tue Oct 15 2024)
 
 #### 🐛 Bug Fix
