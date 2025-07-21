@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@bedrock-layout/primitives": "^2.2.4",
-    "@code-hike/mdx": "^0.8.2",
+    "@code-hike/mdx": "^0.9.0",
     "@docusaurus/core": "2.4.0",
     "@docusaurus/plugin-google-tag-manager": "^2.4.0",
     "@docusaurus/preset-classic": "2.4.0",
