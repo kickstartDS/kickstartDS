@@ -45,3 +45,12 @@ $checkmark: (
     size: 0.5rem,
   ),
 ) !default;
+
+@media (forced-colors: active) {
+  :root,
+  [ks-theme],
+  [ks-inverted] {
+    --c-form-check_box-checked--background: SelectedItem !important;
+    --c-form-check_checkmark--color: SelectedItemText !important;
+  }
+}

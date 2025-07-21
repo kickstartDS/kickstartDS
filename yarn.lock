@@ -3191,6 +3191,16 @@
     classnames "^2.3.2"
     date-fns "^2.30.0"
 
+"@kickstartds/cambria@1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@kickstartds/cambria/-/cambria-1.0.5.tgz#3cf76d61b0a1f2a53bf27af7622d97d6165450fd"
+  integrity sha512-W+KtExbtA9yqZyBPRB4tWlHfatkrMOkGhzh7+BBEfS+cpA17SEvBiGKHRPnoksiUKpsB22FNy7UXZqwZhJF3vw==
+  dependencies:
+    fast-json-patch "^3.1.1"
+    graphlib "^2.1.8"
+    js-yaml "^4.1.0"
+    to-json-schema "^0.2.5"
+
 "@kickstartds/content@2.2.0-next.2":
   version "2.2.0-next.2"
   resolved "https://registry.npmjs.org/@kickstartds/content/-/content-2.2.0-next.2.tgz#c1c08a05e30d3e898d6ebb668c0f9e14271c2d11"
@@ -3275,12 +3285,13 @@
     mkdirp "^1.0.4"
     prettier "^2.6.2"
 
-"@kickstartds/jsonschema-utils@3.0.15", "@kickstartds/jsonschema-utils@^3.0.15":
-  version "3.0.15"
-  resolved "https://registry.npmjs.org/@kickstartds/jsonschema-utils/-/jsonschema-utils-3.0.15.tgz#204ce32ab85636428cafac7552e8be13f8298972"
-  integrity sha512-+cAFOwZ3PV35i8HiKSmUMmPmwOsjOTSG/6IAJB1EGJ8k1xop5k1Wg4iNnekvNU4yvKxGCAVvf+1H+I2eaSeZzA==
+"@kickstartds/jsonschema-utils@3.7.0", "@kickstartds/jsonschema-utils@^3.7.0":
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/@kickstartds/jsonschema-utils/-/jsonschema-utils-3.7.0.tgz#95ffd90cc808d6ea5010436b6e3327f170e637bf"
+  integrity sha512-fgzLDl6ALF81Oi4e3Jw8a+NyspTfyqmierdde3sOWHrmP+me1j7D3I9if4qeXVx5vTsw5tbEKQpbow2GWSNnww==
   dependencies:
     "@bcherny/json-schema-ref-parser" "10.0.5-fork"
+    "@kickstartds/cambria" "1.0.5"
     ajv "^8.12.0"
     change-case "^5.0.2"
     directed-graph-typed "~1.52.0"
@@ -3289,13 +3300,13 @@
     json-schema-traverse "^1.0.0"
     jsonpointer "~5.0.1"
 
-"@kickstartds/jsonschema2types@^1.1.41":
-  version "1.1.41"
-  resolved "https://registry.yarnpkg.com/@kickstartds/jsonschema2types/-/jsonschema2types-1.1.41.tgz#4b71ddda3b50e7d6fecb2067a3e36807212807c2"
-  integrity sha512-gFqdXG3XXWtM5sp5Vnk9U6C/BXVekPDXWqWYKZgg3JP4cRqFmKk1o2a+CQt312J6vR1JFroUNl15fPYC4ReIvw==
+"@kickstartds/jsonschema2types@^1.2.5":
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/@kickstartds/jsonschema2types/-/jsonschema2types-1.2.5.tgz#6ad9feee3a8b66f61293c34a213a7b3f63467c42"
+  integrity sha512-JItd6ZKK6FsW4vS1EFoQRdElyi99EXAZgsWs1tZEXdo1pzm77aYuCvPgXzeTE0qvRyyjoikTYJO5Z2ocah4s0A==
   dependencies:
     "@kickstartds/json-schema-to-typescript" "~13.1.20"
-    "@kickstartds/jsonschema-utils" "3.0.15"
+    "@kickstartds/jsonschema-utils" "3.7.0"
     ajv "^8.12.0"
     object-traversal "^1.0.1"
 
@@ -6821,9 +6832,9 @@ caniuse-api@^3.0.0:
     lodash.uniq "^4.5.0"
 
 caniuse-lite@^1.0.0, caniuse-lite@^1.0.30001518, caniuse-lite@^1.0.30001538, caniuse-lite@^1.0.30001587:
-  version "1.0.30001669"
-  resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001669.tgz"
-  integrity sha512-DlWzFDJqstqtIVx1zeSpIMLjunf5SmwOw0N2Ck/QSQdS8PLS4+9HrLaYei4w8BIAL7IB/UEDu889d8vhCTPA0w==
+  version "1.0.30001727"
+  resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001727.tgz"
+  integrity sha512-pB68nIHmbN6L/4C6MH1DokyR3bYqFwjaSs/sWDHGj4CTcFtQUQMuJftVwWkXq7mNWOybD3KhUv3oWHoGxgP14Q==
 
 capital-case@^1.0.4:
   version "1.0.4"
@@ -9487,6 +9498,11 @@ fast-json-parse@^1.0.3:
   resolved "https://registry.npmjs.org/fast-json-parse/-/fast-json-parse-1.0.3.tgz#43e5c61ee4efa9265633046b770fb682a7577c4d"
   integrity sha512-FRWsaZRWEJ1ESVNbDWmsAlqDk96gPQezzLghafp5J4GUKjbCz3OkAHuZs5TuPEtkbVQERysLp9xv6c24fBm8Aw==
 
+fast-json-patch@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/fast-json-patch/-/fast-json-patch-3.1.1.tgz#85064ea1b1ebf97a3f7ad01e23f9337e72c66947"
+  integrity sha512-vf6IHUX2SBcA+5/+4883dsIjpBTqmfBjmYiWK1savxQmFk4JfBMLa7ynTYOs1Rolp/T1betJxHiGD3g1Mn8lUQ==
+
 fast-json-stable-stringify@^2.0.0:
   version "2.1.0"
   resolved "https://registry.npmjs.org/fast-json-stable-stringify/-/fast-json-stable-stringify-2.1.0.tgz#874bf69c6f404c2b5d99c481341399fd55892633"
@@ -10398,6 +10414,13 @@ graphemer@^1.4.0:
   version "1.4.0"
   resolved "https://registry.npmjs.org/graphemer/-/graphemer-1.4.0.tgz#fb2f1d55e0e3a1849aeffc90c4fa0dd53a0e66c6"
   integrity sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag==
+
+graphlib@^2.1.8:
+  version "2.1.8"
+  resolved "https://registry.yarnpkg.com/graphlib/-/graphlib-2.1.8.tgz#5761d414737870084c92ec7b5dbcb0592c9d35da"
+  integrity sha512-jcLLfkpoVGmH7/InMC/1hIvOPSUh38oJtGhvrOFGzioE1DZ+0YW16RgmOJhHiuWTvGiJQ9Z1Ik43JvkRPRvE+A==
+  dependencies:
+    lodash "^4.17.15"
 
 gray-matter@^4.0.3:
   version "4.0.3"
@@ -12492,6 +12515,11 @@ lodash.invokemap@^4.6.0:
   resolved "https://registry.npmjs.org/lodash.invokemap/-/lodash.invokemap-4.6.0.tgz#1748cda5d8b0ef8369c4eb3ec54c21feba1f2d62"
   integrity sha512-CfkycNtMqgUlfjfdh2BhKO/ZXrP8ePOX5lEU/g0R3ItJcnuxWDwokMGKx1hWcfOikmyOVx6X9IwWnDGlgKl61w==
 
+lodash.isequal@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/lodash.isequal/-/lodash.isequal-4.5.0.tgz#415c4478f2bcc30120c22ce10ed3226f7d3e18e0"
+  integrity sha512-pDo3lu8Jhfjqls6GkMgpahsF9kCyayhgykjyLMNFTKWrpVdAQtYyB4muAMWozBB4ig/dtWAmsMxLEI8wuz+DYQ==
+
 lodash.isfunction@^3.0.9:
   version "3.0.9"
   resolved "https://registry.npmjs.org/lodash.isfunction/-/lodash.isfunction-3.0.9.tgz#06de25df4db327ac931981d1bdb067e5af68d051"
@@ -12517,6 +12545,11 @@ lodash.kebabcase@^4.1.1:
   resolved "https://registry.npmjs.org/lodash.kebabcase/-/lodash.kebabcase-4.1.1.tgz#8489b1cb0d29ff88195cceca448ff6d6cc295c36"
   integrity sha512-N8XRTIMMqqDgSy4VLKPnJ/+hpGZN+PHQiJnSenYqPaVV/NCqEogTnAdZLQiGKhxX+JCs8waWq2t1XHWKOmlY8g==
 
+lodash.keys@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/lodash.keys/-/lodash.keys-4.2.0.tgz#a08602ac12e4fb83f91fc1fb7a360a4d9ba35205"
+  integrity sha512-J79MkJcp7Df5mizHiVNpjoHXLi4HLjh9VLS/M7lQSGoQ+0oQ+lWEigREkqKyizPB1IawvQLLKY8mzEcm1tkyxQ==
+
 lodash.map@^4.5.1:
   version "4.6.0"
   resolved "https://registry.npmjs.org/lodash.map/-/lodash.map-4.6.0.tgz#771ec7839e3473d9c4cde28b19394c3562f4f6d3"
@@ -12536,6 +12569,11 @@ lodash.mergewith@^4.6.2:
   version "4.6.2"
   resolved "https://registry.npmjs.org/lodash.mergewith/-/lodash.mergewith-4.6.2.tgz#617121f89ac55f59047c7aec1ccd6654c6590f55"
   integrity sha512-GK3g5RPZWTRSeLSpgP8Xhra+pnjBC56q9FZYe1d5RN3TJ35dbkGy3YqBSMbyCrlbi+CM9Z3Jk5yTL7RCsqboyQ==
+
+lodash.omit@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/lodash.omit/-/lodash.omit-4.5.0.tgz#6eb19ae5a1ee1dd9df0b969e66ce0b7fa30b5e60"
+  integrity sha512-XeqSp49hNGmlkj2EJlfrQFIzQ6lXdNro9sddtQzcJY8QaoC2GO0DT7xaIokHeyM+mIT0mPMlPvkYzg2xCuHdZg==
 
 lodash.pullall@^4.2.0:
   version "4.2.0"
@@ -12571,6 +12609,16 @@ lodash.upperfirst@^4.3.1:
   version "4.3.1"
   resolved "https://registry.npmjs.org/lodash.upperfirst/-/lodash.upperfirst-4.3.1.tgz#1365edf431480481ef0d1c68957a5ed99d49f7ce"
   integrity sha512-sReKOYJIJf74dhJONhU4e0/shzi1trVbSWDOhKYE5XV2O+H7Sb2Dihwuc7xWxVl+DgFPyTqIN3zMfT9cq5iWDg==
+
+lodash.without@^4.4.0:
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/lodash.without/-/lodash.without-4.4.0.tgz#3cd4574a00b67bae373a94b748772640507b7aac"
+  integrity sha512-M3MefBwfDhgKgINVuBJCO1YR3+gf6s9HNJsIiZ/Ru77Ws6uTb9eBuvrkpzO+9iLoAaRodGuq7tyrPCx+74QYGQ==
+
+lodash.xor@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/lodash.xor/-/lodash.xor-4.5.0.tgz#4d48ed7e98095b0632582ba714d3ff8ae8fb1db6"
+  integrity sha512-sVN2zimthq7aZ5sPGXnSz32rZPuqcparVW50chJQe+mzTYV+IsxSsl/2gnkWWE2Of7K3myBQBqtLKOUEHJKRsQ==
 
 lodash@4.17.21, lodash@^4.11.2, lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.20, lodash@^4.17.21, lodash@^4.17.4:
   version "4.17.21"
@@ -18320,6 +18368,18 @@ tmp@~0.2.1:
   integrity sha512-76SUhtfqR2Ijn+xllcI5P1oyannHNHByD80W1q447gU3mp9G9PSpGdWmjUOHRDPiHYacIk66W7ubDTuPF3BEtQ==
   dependencies:
     rimraf "^3.0.0"
+
+to-json-schema@^0.2.5:
+  version "0.2.5"
+  resolved "https://registry.yarnpkg.com/to-json-schema/-/to-json-schema-0.2.5.tgz#ef3c3f11ad64460dcfbdbafd0fd525d69d62a98f"
+  integrity sha512-jP1ievOee8pec3tV9ncxLSS48Bnw7DIybgy112rhMCEhf3K4uyVNZZHr03iQQBzbV5v5Hos+dlZRRyk6YSMNDw==
+  dependencies:
+    lodash.isequal "^4.5.0"
+    lodash.keys "^4.2.0"
+    lodash.merge "^4.6.2"
+    lodash.omit "^4.5.0"
+    lodash.without "^4.4.0"
+    lodash.xor "^4.5.0"
 
 to-readable-stream@^1.0.0:
   version "1.0.0"
