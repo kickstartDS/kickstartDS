@@ -37,3 +37,15 @@ $icon: (
     color: var(--ks-color-fg-alpha-3),
   ),
 ) !default;
+
+@media (forced-colors: active) {
+  :root,
+  [ks-theme],
+  [ks-inverted] {
+    --c-form-field--background: Field !important;
+    --c-form-field--color: FieldText !important;
+    --c-form-field--border-color: currentColor !important;
+    --c-form-field_hover--border-color: currentColor !important;
+    --c-form-field_focus--border-color: currentColor !important;
+  }
+}
